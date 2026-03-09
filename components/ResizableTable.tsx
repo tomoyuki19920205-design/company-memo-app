@@ -58,7 +58,7 @@ export function useColumnResize({ storageKey, columns }: UseColumnResizeOptions)
             const handleMouseMove = (moveEvent: MouseEvent) => {
                 if (!dragState.current) return;
                 const diff = moveEvent.clientX - dragState.current.startX;
-                const newWidth = Math.max(40, dragState.current.startWidth + diff);
+                const newWidth = Math.max(24, dragState.current.startWidth + diff);
                 setWidths((prev) => {
                     const next = [...prev];
                     next[dragState.current!.colIndex] = newWidth;

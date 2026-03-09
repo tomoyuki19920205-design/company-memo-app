@@ -1,9 +1,8 @@
 /* ============================================================
    Company Viewer — globals.css
-   企業詳細ビューア + Excel ライクメモ
+   企業詳細ビューア — PL最大化 + Excelライク操作
    ============================================================ */
 
-/* --- リセット & ベース --- */
 *,
 *::before,
 *::after {
@@ -22,7 +21,6 @@
   --primary-hover: #3461b0;
   --primary-light: #e8f0fe;
   --danger: #e74c3c;
-  --danger-hover: #c0392b;
   --success: #27ae60;
   --warning: #e67e22;
   --text: #1a1a1a;
@@ -33,14 +31,10 @@
   --row-alt: #f8fafc;
   --row-hover: #f0f4ff;
   --row-selected: #dbeafe;
-  --row-selected-border: #93c5fd;
-  --row-number-bg: #f0f0f0;
-  --section-title-bg: #f7f8fa;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --mono: 'Consolas', 'SF Mono', monospace;
   --radius: 8px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -52,23 +46,82 @@ body {
 }
 
 /* ============================================================
-   Viewer Container
+   フォントテーマ切替
    ============================================================ */
-.viewer-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 16px 20px;
+.font-default {
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Consolas', 'SF Mono', monospace;
+}
+
+.font-sans {
+  --font: Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  --mono: 'Consolas', 'Courier New', monospace;
+}
+
+.font-serif {
+  --font: Georgia, 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+  --mono: 'Courier New', 'Yu Gothic', monospace;
+}
+
+.font-mono {
+  --font: 'Consolas', 'SF Mono', 'Courier New', monospace;
+  --mono: 'Consolas', 'SF Mono', 'Courier New', monospace;
+}
+
+/* フォントテーマ適用先: 全体に反映 */
+.font-default,
+.font-sans,
+.font-serif,
+.font-mono {
+  font-family: var(--font);
+}
+
+/* フォントセレクタUI */
+.font-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+}
+
+.font-selector-label {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.font-selector select {
+  font-family: var(--font);
+  font-size: 0.78rem;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.font-selector select:focus {
+  outline: none;
+  border-color: var(--border-focus);
 }
 
 /* ============================================================
-   Viewer Header
+   Container — 余白最小
+   ============================================================ */
+.viewer-container {
+  max-width: 100%;
+  padding: 6px 8px;
+}
+
+/* ============================================================
+   Header
    ============================================================ */
 .viewer-header {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 20px;
-  margin-bottom: 16px;
+  padding: 8px 14px;
+  margin-bottom: 8px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -80,10 +133,9 @@ body {
 }
 
 .viewer-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary);
-  letter-spacing: -0.02em;
   margin-right: 8px;
   white-space: nowrap;
 }
@@ -179,21 +231,8 @@ body {
   background: #219a52;
 }
 
-.btn-clear {
-  background: var(--card-bg);
-  color: var(--danger);
-  border: 1px solid var(--danger);
-  padding: 4px 12px;
-  font-size: 0.8rem;
-}
-
-.btn-clear:hover {
-  background: var(--danger);
-  color: #fff;
-}
-
 /* ============================================================
-   Error & Status
+   Status
    ============================================================ */
 .error-bar {
   margin-top: 10px;
@@ -212,51 +251,55 @@ body {
   font-size: 1.1rem;
 }
 
-.save-status {
+/* ============================================================
+   同時閲覧ユーザーバー (Presence)
+   ============================================================ */
+.presence-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
   font-weight: 600;
-  font-size: 0.83rem;
+  color: #92400e;
+  animation: presencePulse 2s ease-in-out infinite;
 }
 
-.save-status.unsaved {
-  color: var(--warning);
+.presence-icon {
+  font-size: 1.1rem;
 }
 
-.save-status.saved {
-  color: var(--success);
+.presence-text {
+  flex: 1;
 }
 
-.updated-at {
-  color: var(--text-muted);
-  font-size: 0.83rem;
+@keyframes presencePulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
 }
 
 /* ============================================================
-   2-Column Layout
+   Main Layout
    ============================================================ */
-.viewer-layout {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.viewer-left {
-  width: 35%;
-  min-width: 340px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 16px;
-}
-
-.viewer-right {
-  flex: 1;
-  min-width: 0;
+.viewer-main {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 /* ============================================================
-   Data Section (共通カード)
+   Data Section
    ============================================================ */
 .data-section {
   background: var(--card-bg);
@@ -264,19 +307,21 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  outline: none;
 }
 
 .section-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text);
-  padding: 10px 16px;
-  background: var(--section-title-bg);
+  padding: 8px 12px;
+  background: #f7f8fa;
   border-bottom: 1px solid var(--border-light);
   margin: 0;
 }
 
-.loading-message {
+.loading-message,
+.no-data-message {
   padding: 24px 16px;
   text-align: center;
   color: var(--text-muted);
@@ -284,10 +329,7 @@ body {
 }
 
 .no-data-message {
-  padding: 24px 16px;
-  text-align: center;
   color: var(--text-dim);
-  font-size: 0.9rem;
   font-style: italic;
 }
 
@@ -311,20 +353,71 @@ body {
 }
 
 /* ============================================================
-   Data Tables
+   フォーミュラバー (Excel数式バー風)
    ============================================================ */
-.table-wrapper {
-  overflow-x: auto;
+.formula-bar {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border-light);
+  background: #fafbfc;
 }
 
+.formula-bar-label {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-right: 1px solid var(--border-light);
+  background: #f0f0f0;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.cell-ref {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell-ref-empty {
+  color: var(--text-dim);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.formula-bar-input {
+  flex: 1;
+  padding: 6px 10px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  border: none;
+  outline: none;
+  resize: none;
+  background: var(--card-bg);
+  line-height: 1.4;
+  min-height: 36px;
+}
+
+.formula-bar-input:focus {
+  background: #fefce8;
+  box-shadow: inset 0 0 0 2px #fbbf24;
+}
+
+.formula-bar-input:disabled {
+  background: #f5f5f5;
+  cursor: default;
+}
+
+/* ============================================================
+   Data Tables
+   ============================================================ */
 .data-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.83rem;
-  table-layout: fixed;
-}
-
-.resizable-table {
   table-layout: fixed;
 }
 
@@ -340,7 +433,6 @@ body {
   white-space: nowrap;
   border-bottom: 2px solid #3461b0;
   position: relative;
-  overflow: hidden;
 }
 
 .th-content {
@@ -353,9 +445,10 @@ body {
 .th-content span {
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
 }
 
-/* --- 列リサイズハンドル --- */
 .resize-handle {
   position: absolute;
   right: 0;
@@ -413,7 +506,9 @@ body {
   max-width: 220px;
 }
 
-/* --- PL行選択ハイライト --- */
+/* ============================================================
+   PL行
+   ============================================================ */
 .pl-row {
   cursor: pointer;
   transition: background 0.1s, box-shadow 0.1s;
@@ -432,247 +527,20 @@ body {
   background: #bfdbfe !important;
 }
 
-/* ============================================================
-   Memo Section
-   ============================================================ */
-.memo-section {
-  display: flex;
-  flex-direction: column;
+.pl-row-fy {
+  background: #fffde7 !important;
 }
 
-.memo-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 16px;
-  background: var(--section-title-bg);
-  border-bottom: 1px solid var(--border-light);
+.pl-row-fy:hover {
+  background: #fff9c4 !important;
 }
 
-.memo-header-row .section-title {
-  padding: 4px 0;
-  background: transparent;
-  border-bottom: none;
-}
-
-.memo-actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.memo-status-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 4px 16px;
-  font-size: 0.8rem;
-  flex-wrap: wrap;
+.pl-row-fy.pl-row-selected {
+  background: var(--row-selected) !important;
 }
 
 /* ============================================================
-   Memo Target Bar (対象 period/quarter 表示)
-   ============================================================ */
-.memo-target-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: #eef2ff;
-  border-bottom: 1px solid #c7d2fe;
-  font-size: 0.83rem;
-}
-
-.memo-target-label {
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.memo-target-value {
-  font-family: var(--mono);
-  font-weight: 700;
-  color: var(--primary);
-}
-
-/* ============================================================
-   Text Bar (Excel 数式バー風)
-   ============================================================ */
-.text-bar {
-  border-bottom: 1px solid var(--border-light);
-  background: #fafbfc;
-}
-
-.text-bar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 12px;
-  background: #f0f0f0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.cell-ref {
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 1px 8px;
-  min-width: 36px;
-  text-align: center;
-}
-
-.text-bar-height-select {
-  font-family: var(--font);
-  font-size: 0.72rem;
-  padding: 1px 6px;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  background: var(--card-bg);
-  cursor: pointer;
-  color: var(--text-muted);
-}
-
-.text-bar-input {
-  width: 100%;
-  padding: 6px 12px;
-  font-family: var(--font);
-  font-size: 0.85rem;
-  border: none;
-  outline: none;
-  resize: none;
-  background: var(--card-bg);
-  line-height: 1.4;
-}
-
-.text-bar-input:focus {
-  background: #fefce8;
-  box-shadow: inset 0 0 0 2px #fbbf24;
-}
-
-/* ============================================================
-   MemoGrid — Excel ライクスタイル
-   ============================================================ */
-.memo-grid-container {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.grid-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 4px 12px;
-  background: #f8f8f8;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.grid-hint {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-/* --- グリッド本体 --- */
-.memo-grid {
-  overflow-x: auto;
-  max-height: 500px;
-  overflow-y: auto;
-}
-
-.grid-row {
-  display: flex;
-  border-bottom: 1px solid #e8e8e8;
-}
-
-.grid-row:nth-child(odd) {
-  background: var(--row-alt);
-}
-
-.grid-row:last-child {
-  border-bottom: none;
-}
-
-/* ヘッダー行 */
-.grid-header-row {
-  background: var(--header-bg) !important;
-  border-bottom: 2px solid #3461b0;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.grid-col-header {
-  color: var(--header-text);
-  font-weight: 600;
-  font-size: 0.78rem;
-  text-align: center;
-  padding: 5px 8px;
-  flex: 1;
-  min-width: 130px;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.grid-corner {
-  color: var(--header-text);
-  font-weight: 600;
-  font-size: 0.72rem;
-  text-align: center;
-  padding: 5px 0;
-}
-
-/* セル共通 */
-.grid-cell {
-  border-right: 1px solid #e8e8e8;
-}
-
-.grid-cell:last-child {
-  border-right: none;
-}
-
-/* 行番号 */
-.grid-row-number {
-  width: 34px;
-  min-width: 34px;
-  max-width: 34px;
-  text-align: center;
-  font-size: 0.72rem;
-  font-family: var(--mono);
-  color: var(--text-muted);
-  background: var(--row-number-bg);
-  padding: 4px 0;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* input セル */
-.grid-input {
-  flex: 1;
-  min-width: 130px;
-  padding: 4px 8px;
-  font-family: var(--font);
-  font-size: 0.83rem;
-  border: none;
-  background: transparent;
-  outline: none;
-  transition: background 0.1s;
-}
-
-.grid-input:focus {
-  background: #e8f0fe;
-  box-shadow: inset 0 0 0 2px var(--border-focus);
-}
-
-.grid-cell-focused {
-  background: #e8f0fe;
-}
-
-/* ============================================================
-   PL Memo Columns (一覧用メモ列)
+   メモセル — Excelライク操作
    ============================================================ */
 .memo-cell {
   font-size: 0.78rem;
@@ -682,15 +550,8 @@ body {
   text-overflow: ellipsis;
   max-width: 200px;
   background: #fefce8;
-  cursor: default;
-}
-
-.memo-cell:hover {
-  white-space: normal;
-  overflow: visible;
-  background: #fef9c3;
-  position: relative;
-  z-index: 1;
+  cursor: cell;
+  transition: background 0.1s;
 }
 
 .memo-empty {
@@ -698,28 +559,36 @@ body {
   font-style: italic;
 }
 
-/* --- PL Memo インライン編集 --- */
-.memo-cell-editable {
-  cursor: text;
-  transition: background 0.15s;
-}
-
-.memo-cell-editable:hover {
-  background: #eff6ff !important;
-  outline: 1px solid #93c5fd;
+/* セル選択可能状態 */
+.memo-cell-selectable:hover {
+  background: #fef9c3 !important;
+  outline: 1px solid #d4d4d4;
   outline-offset: -1px;
 }
 
+/* アクティブセル（選択中）— 太い青枠 */
+.memo-cell-active {
+  background: #e8f0fe !important;
+  outline: 2px solid var(--primary) !important;
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
+}
+
+/* 編集中 */
 .memo-cell-editing {
   padding: 0 !important;
+  background: #fff !important;
+  outline: 2px solid var(--primary) !important;
+  outline-offset: -2px;
 }
 
 .memo-inline-input {
   width: 100%;
   height: 100%;
+  min-height: 28px;
   border: none;
-  outline: 2px solid var(--primary);
-  outline-offset: -2px;
+  outline: none;
   padding: 4px 6px;
   font-family: var(--font);
   font-size: 0.82rem;
@@ -728,7 +597,7 @@ body {
 }
 
 /* ============================================================
-   PL セクション — スクロール & デュアルテーブル
+   PL セクション
    ============================================================ */
 .pl-section {
   overflow: hidden;
@@ -737,14 +606,13 @@ body {
 .pl-scroll-area {
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 600px;
   border: 1px solid var(--border-light);
-  border-radius: 6px;
+  border-radius: 0 0 6px 6px;
 }
 
 .pl-dual-tables {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   width: max-content;
 }
 
@@ -762,9 +630,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* --- PL テーブル本体 --- */
+.seg-label-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #8b5cf6;
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+
 .pl-table {
   border-collapse: collapse;
   font-size: 0.83rem;
@@ -783,6 +662,8 @@ body {
   border-bottom: 2px solid #3461b0;
   position: relative;
   overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
 }
 
 .pl-table tbody td {
@@ -797,22 +678,63 @@ body {
 }
 
 /* ============================================================
-   FY 行カラーリング
+   PLリサイズハンドル
    ============================================================ */
-.pl-row-fy {
-  background: #fffde7 !important;
+.pl-resize-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  cursor: row-resize;
+  background: linear-gradient(to bottom, #e8e8e8, #d4d4d4);
+  border-radius: 0 0 6px 6px;
+  user-select: none;
+  transition: background 0.15s;
 }
 
-.pl-row-fy:hover {
-  background: #fff9c4 !important;
+.pl-resize-handle:hover {
+  background: linear-gradient(to bottom, #d4d4d4, #bbb);
 }
 
-.pl-row-fy.pl-row-selected {
-  background: #dbeafe !important;
+.pl-resize-handle:active {
+  background: linear-gradient(to bottom, #bbb, #999);
+}
+
+.pl-resize-grip {
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 /* ============================================================
-   User Info / Header
+   セグメント列
+   ============================================================ */
+.seg-header-cell {
+  background: #6d28d9 !important;
+  color: #fff !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0;
+  text-transform: none !important;
+  border-left: 2px solid #5b21b6;
+}
+
+.seg-data-cell {
+  font-size: 0.8rem;
+  color: var(--text);
+  border-left: 1px solid var(--border-light);
+}
+
+.pl-table tbody tr:nth-child(even) .seg-data-cell {
+  background: #f5f3ff;
+}
+
+.pl-table tbody tr:hover .seg-data-cell {
+  background: #ede9fe;
+}
+
+/* ============================================================
+   User / Header
    ============================================================ */
 .user-info {
   display: flex;
@@ -852,7 +774,6 @@ body {
   color: var(--text);
 }
 
-/* --- 共有データ通知 --- */
 .shared-notice {
   font-size: 0.78rem;
   color: #8b5cf6;
@@ -863,6 +784,24 @@ body {
   font-size: 0.78rem;
   color: var(--text-muted);
   font-style: italic;
+}
+
+.save-status {
+  font-weight: 600;
+  font-size: 0.83rem;
+}
+
+.save-status.unsaved {
+  color: var(--warning);
+}
+
+.save-status.saved {
+  color: var(--success);
+}
+
+.updated-at {
+  color: var(--text-muted);
+  font-size: 0.83rem;
 }
 
 /* ============================================================
@@ -971,4 +910,90 @@ body {
   font-size: 0.78rem;
   color: var(--text-dim);
   margin-top: 20px;
+}
+
+/* ============================================================
+   KPI列
+   ============================================================ */
+.kpi-header-cell {
+  background: #065f46 !important;
+  color: #fff !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0;
+  text-transform: none !important;
+  border-left: 2px solid #064e3b;
+  cursor: pointer;
+}
+
+.kpi-header-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.kpi-header-label:hover {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+.kpi-header-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 2px 4px;
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #fff;
+  color: #000;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #34d399;
+}
+
+.kpi-data-cell {
+  font-size: 0.8rem;
+  color: var(--text);
+  border-left: 1px solid var(--border-light);
+  cursor: cell;
+  background: #f0fdf4;
+}
+
+.kpi-data-cell:hover {
+  background: #dcfce7 !important;
+  outline: 1px solid #a7f3d0;
+  outline-offset: -1px;
+}
+
+.kpi-data-cell.kpi-editing {
+  padding: 0 !important;
+  background: #fff !important;
+  outline: 2px solid #059669 !important;
+  outline-offset: -2px;
+}
+
+.kpi-cell-input {
+  width: 100%;
+  height: 100%;
+  min-height: 28px;
+  border: none;
+  outline: none;
+  padding: 4px 6px;
+  font-family: var(--font);
+  font-size: 0.82rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.kpi-cell-value {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.pl-table tbody tr:nth-child(even) .kpi-data-cell {
+  background: #ecfdf5;
+}
+
+.pl-table tbody tr:hover .kpi-data-cell {
+  background: #d1fae5;
 }

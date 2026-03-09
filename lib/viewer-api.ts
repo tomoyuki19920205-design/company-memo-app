@@ -215,3 +215,51 @@ export async function loadKpiData(ticker: string): Promise<KpiRecord[]> {
         return [];
     }
 }
+
+// ============================================================
+// Segment Financials — セグメント業績
+// ============================================================
+
+import type { SegmentRecord } from "@/types/segment";
+import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
+
+/**
+ * セグメント業績データを取得する。
+ * テーブルが存在しない場合は空配列を返す。
+ * period / quarter は正規化してPL行とのjoinを保証する。
+ */
+export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    try {
+        const { data, error } = await supabase
+            .from("segment_financials")
+            .select("ticker,period,quarter,segment_name,segment_sales,segment_profit")
+            .eq("ticker", t)
+            .order("period", { ascending: false })
+            .order("quarter", { ascending: false })
+            .limit(500);
+
+        if (error) {
+            console.warn("[segment_financials] スキップ (テーブル未作成の可能性):", error.message);
+            return [];
+        }
+
+        if (!data || data.length === 0) return [];
+
+        // period / quarter を正規化して返す
+        return data.map((row) => ({
+            ticker: row.ticker,
+            period: normalizePeriod(row.period),
+            quarter: normalizeQuarter(row.quarter),
+            segment_name: row.segment_name,
+            segment_sales: row.segment_sales !== null ? Number(row.segment_sales) : null,
+            segment_profit: row.segment_profit !== null ? Number(row.segment_profit) : null,
+        }));
+    } catch (err) {
+        console.warn("[segment_financials] 取得例外 (空配列で継続):", err);
+        return [];
+    }
+}
+

@@ -12,6 +12,8 @@ interface TickerHeaderProps {
     companyName: string | null;
     errorMsg: string;
     userEmail?: string | null;
+    fontTheme: string;
+    onFontThemeChange: (theme: string) => void;
 }
 
 export default function TickerHeader({
@@ -23,6 +25,8 @@ export default function TickerHeader({
     companyName,
     errorMsg,
     userEmail,
+    fontTheme,
+    onFontThemeChange,
 }: TickerHeaderProps) {
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === "Enter") {
@@ -70,6 +74,19 @@ export default function TickerHeader({
                         )}
                     </div>
                 )}
+                {/* フォント切替 */}
+                <div className="font-selector">
+                    <span className="font-selector-label">🔤</span>
+                    <select
+                        value={fontTheme}
+                        onChange={(e) => onFontThemeChange(e.target.value)}
+                    >
+                        <option value="default">Default</option>
+                        <option value="sans">Sans</option>
+                        <option value="serif">Serif</option>
+                        <option value="mono">Mono</option>
+                    </select>
+                </div>
                 {/* ユーザー情報・ログアウト */}
                 <div className="user-info">
                     {userEmail && (
