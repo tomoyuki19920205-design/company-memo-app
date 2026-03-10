@@ -234,31 +234,31 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
 
     try {
         const { data, error } = await supabase
-            .from("segment_financials")
-            .select("ticker,period,quarter,segment_name,segment_sales,segment_profit")
+            .from("segment_canonical")
+            .select("ticker,period,quarter,segment_name,sales,profit")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: false })
             .limit(500);
 
         if (error) {
-            console.warn("[segment_financials] スキップ (テーブル未作成の可能性):", error.message);
+            console.warn("[segment_canonical] スキップ (テーブル未作成の可能性):", error.message);
             return [];
         }
 
         if (!data || data.length === 0) return [];
 
-        // period / quarter を正規化して返す
+        // period / quarter を正規化、カラム名を内部型に合わせて返す
         return data.map((row) => ({
             ticker: row.ticker,
             period: normalizePeriod(row.period),
             quarter: normalizeQuarter(row.quarter),
             segment_name: row.segment_name,
-            segment_sales: row.segment_sales !== null ? Number(row.segment_sales) : null,
-            segment_profit: row.segment_profit !== null ? Number(row.segment_profit) : null,
+            segment_sales: row.sales !== null ? Number(row.sales) : null,
+            segment_profit: row.profit !== null ? Number(row.profit) : null,
         }));
     } catch (err) {
-        console.warn("[segment_financials] 取得例外 (空配列で継続):", err);
+        console.warn("[segment_canonical] 取得例外 (空配列で継続):", err);
         return [];
     }
 }

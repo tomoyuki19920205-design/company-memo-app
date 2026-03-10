@@ -3,6 +3,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import TickerHeader from "@/components/TickerHeader";
 import FinancialsTable from "@/components/FinancialsTable";
+import SegmentTable from "@/components/SegmentTable";
 import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
@@ -361,6 +362,7 @@ export default function ViewerPage() {
                         onKpiHeaderEdit={handleKpiHeaderEdit}
                         onKpiValueEdit={handleKpiValueEdit}
                     />
+                    <SegmentTable data={segments} loading={dataLoading} />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />
