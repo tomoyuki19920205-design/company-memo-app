@@ -1,11 +1,12 @@
 /**
  * 数値を百万円単位で桁区切り表示にフォーマットする
+ * ※ financials テーブルの値は既に百万円単位で格納されているため、
+ *    追加の除算は行わない（÷1,000,000 は不要）
  * null/undefined は "–" を返す
  */
 export function formatMillions(val: number | null | undefined): string {
     if (val === null || val === undefined) return "–";
-    const millions = Math.round(val / 1000000);
-    return millions.toLocaleString("ja-JP");
+    return Math.round(val).toLocaleString("ja-JP");
 }
 
 /**
