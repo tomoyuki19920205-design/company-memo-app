@@ -721,8 +721,11 @@ body {
 
 .seg-data-cell {
   font-size: 0.8rem;
+  font-family: var(--mono);
   color: var(--text);
   border-left: 1px solid var(--border-light);
+  text-align: right;
+  padding-right: 10px !important;
 }
 
 .pl-table tbody tr:nth-child(even) .seg-data-cell {
@@ -996,4 +999,222 @@ body {
 
 .pl-table tbody tr:hover .kpi-data-cell {
   background: #d1fae5;
+}
+
+/* ============================================================
+   Segment Table — セグメント業績テーブル
+   ============================================================ */
+.segment-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  background: #f7f8fa;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.segment-header-row .section-title {
+  border-bottom: none;
+}
+
+.segment-edit-toggle {
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  margin-right: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.segment-edit-toggle:hover {
+  background: #f0f4ff;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.segment-edit-toggle.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.segment-scroll-area {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.segment-group {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.segment-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #f0f2f5;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.segment-period {
+  color: var(--text);
+}
+
+.segment-quarter {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.segment-edit-hint {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--warning);
+  margin-left: auto;
+}
+
+.segment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+
+.segment-table thead th {
+  text-align: left;
+  padding: 6px 10px;
+  background: #e8eaed;
+  font-weight: 600;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.segment-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.segment-table tbody tr:nth-child(even) {
+  background: var(--row-alt);
+}
+
+.segment-table tbody td {
+  padding: 5px 10px;
+}
+
+.segment-name-col {
+  font-weight: 500;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Segment Cell — 表示 / 入力 / バッジ
+   ============================================================ */
+.segment-cell-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  width: 100%;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.segment-cell-display.editable {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  transition: background 0.15s;
+}
+
+.segment-cell-display.editable:hover {
+  background: #fef3c7;
+  outline: 1px dashed var(--warning);
+  outline-offset: -1px;
+}
+
+.segment-cell-display.saving {
+  opacity: 0.5;
+}
+
+.segment-cell-placeholder {
+  color: var(--text-dim);
+  font-style: italic;
+  font-family: var(--font);
+  font-size: 0.75rem;
+}
+
+.segment-cell-edit {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.segment-cell-input {
+  width: 100%;
+  border: none;
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-align: right;
+  background: #fff;
+}
+
+.segment-cell-input:focus {
+  background: #fffde7;
+}
+
+/* M バッジ — Manual Override マーカー */
+.segment-manual-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+  background: #8b5cf6;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+  line-height: 1;
+  padding: 0 3px;
+}
+
+.segment-manual-badge:hover {
+  background: #7c3aed;
+}
+
+/* PL テーブル内のセグメント編集セル */
+.seg-editable {
+  cursor: pointer !important;
+  transition: background 0.15s;
+}
+
+.seg-editable:hover {
+  background: #fef3c7 !important;
+  outline: 1px dashed var(--warning);
+  outline-offset: -1px;
+}
+
+.seg-saving {
+  opacity: 0.5;
 }

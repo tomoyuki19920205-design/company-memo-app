@@ -8,6 +8,7 @@ import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
 import { parseTsvClipboard } from "@/lib/tsv-parser";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
+import { extractFiscalYear } from "@/lib/viewer-api";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -45,6 +46,21 @@ interface FinancialsTableProps {
     kpiValues?: KpiValueMap;
     onKpiHeaderEdit?: (kpiSlot: number, newName: string) => void;
     onKpiValueEdit?: (period: string, quarter: string, kpiSlot: number, value: string) => void;
+    /** Segment override: save a manual value for a segment cell */
+    onSegmentOverrideSave?: (
+        fiscalYear: number,
+        quarter: string,
+        segmentName: string,
+        metric: string,
+        value: number,
+    ) => Promise<void>;
+    /** Segment override: delete a manual value */
+    onSegmentOverrideDelete?: (
+        fiscalYear: number,
+        quarter: string,
+        segmentName: string,
+        metric: string,
+    ) => Promise<void>;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -192,7 +208,19 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         if (firstKey) console.log("[SEG-DEBUG] segmentQMap sample:", firstKey, segmentQMap.get(firstKey));
     }
 
-    return { segmentColumns, segmentMap, segmentQMap };
+    // Per-cell source tracking: build from SegmentRecord._salesSource / _profitSource
+    // Key: "period|quarter|seg:name:sales" or "period|quarter|seg:name:profit"
+    const sourceMap = new Map<string, string>();
+    for (const seg of segments) {
+        const key = `${seg.period}|${seg.quarter}`;
+        const col = segmentColumns.find((c) => c.segmentName === seg.segment_name);
+        if (col) {
+            if (seg._salesSource) sourceMap.set(`${key}|${col.salesKey}`, seg._salesSource);
+            if (seg._profitSource) sourceMap.set(`${key}|${col.profitKey}`, seg._profitSource);
+        }
+    }
+
+    return { segmentColumns, segmentMap, segmentQMap, sourceMap };
 }
 
 // ============================================================
@@ -349,6 +377,8 @@ export default function FinancialsTable({
     kpiValues,
     onKpiHeaderEdit,
     onKpiValueEdit,
+    onSegmentOverrideSave,
+    onSegmentOverrideDelete,
 }: FinancialsTableProps) {
     const filtered = useMemo(() => filterLast5Years(data), [data]);
     const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
@@ -356,7 +386,7 @@ export default function FinancialsTable({
     const qRows = useMemo(() => buildQStandaloneRows(sorted), [sorted]);
 
     // セグメント列
-    const { segmentColumns, segmentMap, segmentQMap } = useMemo(
+    const { segmentColumns, segmentMap, segmentQMap, sourceMap } = useMemo(
         () => buildSegmentInfo(segments || []),
         [segments]
     );
@@ -933,10 +963,39 @@ export default function FinancialsTable({
                                                         const profitVal = getSegValue(row.period, row.quarter, sc.profitKey);
                                                         const sIdx = scIdx * 2;
                                                         const pIdx = scIdx * 2 + 1;
+                                                        const mapKey = `${normalizePeriod(row.period)}|${normalizeQuarter(row.quarter)}`;
+                                                        const salesSource = sourceMap.get(`${mapKey}|${sc.salesKey}`);
+                                                        const profitSource = sourceMap.get(`${mapKey}|${sc.profitKey}`);
+                                                        const isEditableQ = row.quarter === "1Q" || row.quarter === "3Q";
+                                                        const fy = extractFiscalYear(row.period);
                                                         return (
                                                             <React.Fragment key={sc.segmentName}>
-                                                                <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatNumber(salesVal) : "–"}</td>
-                                                                <td className="num-col seg-data-cell" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatNumber(profitVal) : "–"}</td>
+                                                                <SegOverrideCell
+                                                                    value={salesVal}
+                                                                    source={salesSource}
+                                                                    width={segWidths[sIdx]}
+                                                                    editable={isEditableQ && salesVal === null && !!onSegmentOverrideSave}
+                                                                    isManual={salesSource === "manual"}
+                                                                    fiscalYear={fy}
+                                                                    quarter={row.quarter}
+                                                                    segmentName={sc.segmentName}
+                                                                    metric="sales"
+                                                                    onSave={onSegmentOverrideSave}
+                                                                    onDelete={onSegmentOverrideDelete}
+                                                                />
+                                                                <SegOverrideCell
+                                                                    value={profitVal}
+                                                                    source={profitSource}
+                                                                    width={segWidths[pIdx]}
+                                                                    editable={isEditableQ && profitVal === null && !!onSegmentOverrideSave}
+                                                                    isManual={profitSource === "manual"}
+                                                                    fiscalYear={fy}
+                                                                    quarter={row.quarter}
+                                                                    segmentName={sc.segmentName}
+                                                                    metric="operating_profit"
+                                                                    onSave={onSegmentOverrideSave}
+                                                                    onDelete={onSegmentOverrideDelete}
+                                                                />
                                                             </React.Fragment>
                                                         );
                                                     })}
@@ -1012,8 +1071,8 @@ export default function FinancialsTable({
                                                     const pIdx = scIdx * 2 + 1;
                                                     return (
                                                         <React.Fragment key={sc.segmentName}>
-                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatNumber(salesVal) : "–"}</td>
-                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatNumber(profitVal) : "–"}</td>
+                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : "–"}</td>
+                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
                                                         </React.Fragment>
                                                     );
                                                 })}
@@ -1128,6 +1187,134 @@ function MemoCellExcel({
             title={preview}
         >
             {preview || <span className="memo-empty">–</span>}
+        </td>
+    );
+}
+
+// ============================================================
+// Segment Override Cell — PL テーブル内のセグメント編集セル
+// ============================================================
+function SegOverrideCell({
+    value,
+    source,
+    width,
+    editable,
+    isManual,
+    fiscalYear,
+    quarter,
+    segmentName,
+    metric,
+    onSave,
+    onDelete,
+}: {
+    value: number | null;
+    source?: string;
+    width: number;
+    editable: boolean;
+    isManual: boolean;
+    fiscalYear: number;
+    quarter: string;
+    segmentName: string;
+    metric: string;
+    onSave?: FinancialsTableProps["onSegmentOverrideSave"];
+    onDelete?: FinancialsTableProps["onSegmentOverrideDelete"];
+}) {
+    const [editing, setEditing] = useState(false);
+    const [inputVal, setInputVal] = useState("");
+    const [saving, setSaving] = useState(false);
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    const handleClick = useCallback((e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (!editable && !isManual) return;
+        if (isManual) return; // manual cells use badge click to delete
+        setInputVal("");
+        setEditing(true);
+        setTimeout(() => inputRef.current?.focus(), 0);
+    }, [editable, isManual]);
+
+    const handleSave = useCallback(async () => {
+        setEditing(false);
+        const trimmed = inputVal.trim();
+        if (!trimmed || !onSave) return;
+        const numVal = Number(trimmed);
+        if (isNaN(numVal)) return;
+        setSaving(true);
+        try {
+            await onSave(fiscalYear, quarter, segmentName, metric, numVal);
+        } catch (err) {
+            console.error("Seg override save failed:", err);
+        } finally {
+            setSaving(false);
+        }
+    }, [inputVal, onSave, fiscalYear, quarter, segmentName, metric]);
+
+    const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+        if (e.key === "Enter") { e.preventDefault(); handleSave(); }
+        else if (e.key === "Escape") { e.preventDefault(); setEditing(false); }
+        e.stopPropagation();
+    }, [handleSave]);
+
+    const handleDeleteOverride = useCallback(async (e: React.MouseEvent) => {
+        e.stopPropagation();
+        if (!onDelete) return;
+        if (!confirm("この手入力値を削除しますか？")) return;
+        setSaving(true);
+        try {
+            await onDelete(fiscalYear, quarter, segmentName, metric);
+        } catch (err) {
+            console.error("Seg override delete failed:", err);
+        } finally {
+            setSaving(false);
+        }
+    }, [onDelete, fiscalYear, quarter, segmentName, metric]);
+
+    if (editing) {
+        return (
+            <td className="num-col seg-data-cell" style={{ width, minWidth: width }}>
+                <div className="segment-cell-edit">
+                    <input
+                        ref={inputRef}
+                        type="number"
+                        className="segment-cell-input"
+                        placeholder="百万円"
+                        value={inputVal}
+                        onChange={(e) => setInputVal(e.target.value)}
+                        onBlur={handleSave}
+                        onKeyDown={handleKeyDown}
+                        disabled={saving}
+                        autoFocus
+                    />
+                </div>
+            </td>
+        );
+    }
+
+    const displayVal = value !== null ? formatMillions(value) : "–";
+
+    return (
+        <td
+            className={`num-col seg-data-cell ${editable ? "seg-editable" : ""} ${saving ? "seg-saving" : ""}`}
+            style={{ width, minWidth: width }}
+            onClick={editable ? handleClick : undefined}
+            title={editable ? "クリックして入力" : isManual ? "手入力値 (M)" : undefined}
+        >
+            <div className="segment-cell-display">
+                {editable && value === null ? (
+                    <span className="segment-cell-placeholder">入力</span>
+                ) : (
+                    <span>{displayVal}</span>
+                )}
+                {isManual && (
+                    <span
+                        className="segment-manual-badge"
+                        onClick={handleDeleteOverride}
+                        title="手入力値 — クリックで削除"
+                    >
+                        M
+                    </span>
+                )}
+            </div>
         </td>
     );
 }

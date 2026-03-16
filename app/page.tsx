@@ -3,7 +3,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import TickerHeader from "@/components/TickerHeader";
 import FinancialsTable from "@/components/FinancialsTable";
-import SegmentTable from "@/components/SegmentTable";
 import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
@@ -31,14 +30,23 @@ import {
     loadMonthlyData,
     loadKpiData,
     loadSegmentData,
+    extractFiscalYears,
+    resolveSegmentsWithOverrides,
+    generateMissingQuarterStubs,
     type CompanyInfo,
 } from "@/lib/viewer-api";
+import {
+    loadSegmentOverrides,
+    saveSegmentOverride,
+    deleteSegmentOverride,
+} from "@/lib/segment-override-api";
 import { useTickerPresence } from "@/hooks/useTickerPresence";
 import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
 import type { SegmentRecord } from "@/types/segment";
+import type { SegmentCellOverride } from "@/types/segment-override";
 import type { User } from "@supabase/supabase-js";
 
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
@@ -66,6 +74,8 @@ export default function ViewerPage() {
     const [monthly, setMonthly] = useState<MonthlyRecord[]>([]);
     const [kpi, setKpi] = useState<KpiRecord[]>([]);
     const [segments, setSegments] = useState<SegmentRecord[]>([]);
+    const [segmentOverrides, setSegmentOverrides] = useState<SegmentCellOverride[]>([]);
+    const [resolvedSegments, setResolvedSegments] = useState<SegmentRecord[]>([]);
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
     const [status, setStatus] = useState<AppStatus>("idle");
@@ -111,6 +121,8 @@ export default function ViewerPage() {
         setSelectedQuarter("");
         setMemoMap({});
         setSegments([]);
+        setSegmentOverrides([]);
+        setResolvedSegments([]);
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
@@ -142,6 +154,26 @@ export default function ViewerPage() {
         setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);
         const segData = segmentResult.status === "fulfilled" ? segmentResult.value : [];
         setSegments(segData);
+
+        // Load overrides for displayed fiscal years
+        let overridesData: SegmentCellOverride[] = [];
+        if (segData.length > 0) {
+            const fiscalYears = extractFiscalYears(segData);
+            try {
+                overridesData = await loadSegmentOverrides(ticker, fiscalYears);
+            } catch (err) {
+                console.warn("[segment_cell_overrides] load failed:", err);
+            }
+        }
+        setSegmentOverrides(overridesData);
+
+        // Generate 1Q/3Q stub rows from existing FY/2Q segment names
+        const stubs = generateMissingQuarterStubs(segData);
+        const withStubs = [...segData, ...stubs];
+
+        // Resolve with overrides (stubs + base → overlay)
+        const resolved = resolveSegmentsWithOverrides(withStubs, overridesData);
+        setResolvedSegments(resolved);
 
         // DEBUG: PL/segment結合キー確認
         if (plData.length > 0) {
@@ -306,6 +338,119 @@ export default function ViewerPage() {
         [activeTicker, memoMap, user]
     );
 
+    // ============================================================
+    // Segment Override — 1Q/3Q 欠損セル手入力
+    // ============================================================
+
+    const handleSaveOverride = useCallback(
+        async (
+            fiscalYear: number,
+            quarter: string,
+            segmentName: string,
+            metric: string,
+            value: number,
+        ) => {
+            if (!activeTicker || !user?.email) return;
+
+            try {
+                const saved = await saveSegmentOverride(
+                    {
+                        ticker: activeTicker,
+                        fiscal_year: fiscalYear,
+                        quarter,
+                        segment_name: segmentName,
+                        metric,
+                        value,
+                    },
+                    user.email,
+                );
+
+                if (saved) {
+                    // Build new overrides list
+                    const newOverrides = [
+                        ...segmentOverrides.filter(
+                            (ov) =>
+                                !(
+                                    ov.fiscal_year === fiscalYear &&
+                                    ov.quarter === quarter &&
+                                    ov.segment_name === segmentName &&
+                                    ov.metric === metric
+                                ),
+                        ),
+                        saved,
+                    ];
+                    setSegmentOverrides(newOverrides);
+
+                    // Re-resolve segments with new overrides
+                    const stubs = generateMissingQuarterStubs(segments);
+                    const withStubs = [...segments, ...stubs];
+                    const resolved = resolveSegmentsWithOverrides(
+                        withStubs,
+                        newOverrides,
+                    );
+                    setResolvedSegments(resolved);
+                }
+            } catch (err) {
+                console.error("Override save failed:", err);
+                setErrorMsg(
+                    `手入力保存失敗: ${err instanceof Error ? err.message : String(err)}`,
+                );
+            }
+        },
+        [activeTicker, user, segments, segmentOverrides],
+    );
+
+    const handleDeleteOverride = useCallback(
+        async (
+            fiscalYear: number,
+            quarter: string,
+            segmentName: string,
+            metric: string,
+        ) => {
+            if (!activeTicker || !user?.email) return;
+
+            try {
+                const success = await deleteSegmentOverride(
+                    activeTicker,
+                    fiscalYear,
+                    quarter,
+                    segmentName,
+                    metric,
+                    user.email,
+                );
+
+                if (success) {
+                    // Build new overrides list (removed)
+                    const newOverrides = segmentOverrides.filter(
+                        (ov) =>
+                            !(
+                                ov.fiscal_year === fiscalYear &&
+                                ov.quarter === quarter &&
+                                ov.segment_name === segmentName &&
+                                ov.metric === metric
+                            ),
+                    );
+                    setSegmentOverrides(newOverrides);
+
+                    // Re-resolve segments
+                    const stubs = generateMissingQuarterStubs(segments);
+                    const withStubs = [...segments, ...stubs];
+                    const resolved = resolveSegmentsWithOverrides(
+                        withStubs,
+                        newOverrides,
+                    );
+                    setResolvedSegments(resolved);
+                }
+            } catch (err) {
+                console.error("Override delete failed:", err);
+                setErrorMsg(
+                    `手入力削除失敗: ${err instanceof Error ? err.message : String(err)}`,
+                );
+            }
+        },
+        [activeTicker, user, segments, segmentOverrides],
+    );
+
     useEffect(() => {
         if (status === "saved") {
             const timer = setTimeout(() => setStatus("loaded"), 3000);
@@ -356,13 +501,14 @@ export default function ViewerPage() {
                         memoMap={memoMap}
                         onMemoEdit={handlePLMemoEdit}
                         onMemoPaste={handlePLMemoPaste}
-                        segments={segments}
+                        segments={resolvedSegments}
                         kpiDefs={kpiDefs}
                         kpiValues={kpiValues}
                         onKpiHeaderEdit={handleKpiHeaderEdit}
                         onKpiValueEdit={handleKpiValueEdit}
+                        onSegmentOverrideSave={handleSaveOverride}
+                        onSegmentOverrideDelete={handleDeleteOverride}
                     />
-                    <SegmentTable data={segments} loading={dataLoading} />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />

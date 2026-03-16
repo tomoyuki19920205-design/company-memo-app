@@ -77,8 +77,8 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
     try {
         const { data, error } = await supabase
-            .from("financials")
-            .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
+            .from("api_latest_financials")
+            .select("ticker,period,quarter,sales,gross_profit,operating_profit,updated_at")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: false })
@@ -86,7 +86,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (error) {
             if (error.code === "PGRST200" || error.message?.includes("not find")) {
-                console.warn("financials テーブルが未作成です");
+                console.warn("api_latest_financials view が未作成です");
                 return [];
             }
             throw new Error(`PL取得に失敗しました: ${error.message}`);
@@ -105,7 +105,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
             ordinary_profit: null,
             net_income: null,
             eps: null,
-            source: row.source || "",
+            source: "",
             updated_at: row.updated_at || "",
         }));
 
@@ -221,7 +221,9 @@ export async function loadKpiData(ticker: string): Promise<KpiRecord[]> {
 // ============================================================
 
 import type { SegmentRecord } from "@/types/segment";
+import type { SegmentCellOverride } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
+import { buildOverrideKey } from "@/lib/segment-normalize";
 
 /**
  * セグメント業績データを取得する。
@@ -261,5 +263,170 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
         console.warn("[segment_canonical] 取得例外 (空配列で継続):", err);
         return [];
     }
+}
+
+// ============================================================
+// Segment Override — Overlay Resolution
+// ============================================================
+
+/**
+ * period 文字列 (YYYY-MM-DD) から fiscal_year (integer) を抽出する。
+ * 例: "2025-03-31" → 2025
+ */
+export function extractFiscalYear(period: string): number {
+    const match = period.match(/^(\d{4})/);
+    return match ? parseInt(match[1], 10) : 0;
+}
+
+/**
+ * segments 配列からユニークな fiscal_year のリストを取得する。
+ */
+export function extractFiscalYears(segments: SegmentRecord[]): number[] {
+    const years = new Set<number>();
+    for (const seg of segments) {
+        const fy = extractFiscalYear(seg.period);
+        if (fy > 0) years.add(fy);
+    }
+    return Array.from(years);
+}
+
+/**
+ * base セグメントデータに override を overlay して resolved data を返す。
+ *
+ * - override は normalized segment_name + fiscal_year + quarter + metric で照合
+ * - resolved_value = manual_override ?? base_value
+ * - source は manual override がある場合 'manual' に設定
+ */
+export function resolveSegmentsWithOverrides(
+    baseSegments: SegmentRecord[],
+    overrides: SegmentCellOverride[],
+): SegmentRecord[] {
+    if (overrides.length === 0) return baseSegments;
+
+    // Build override lookup: key → SegmentCellOverride
+    const overrideMap = new Map<string, SegmentCellOverride>();
+    for (const ov of overrides) {
+        if (ov.is_deleted) continue;
+
+        const salesKey = buildOverrideKey(
+            ov.fiscal_year,
+            ov.quarter,
+            ov.segment_name,
+            "sales",
+        );
+        const profitKey = buildOverrideKey(
+            ov.fiscal_year,
+            ov.quarter,
+            ov.segment_name,
+            "operating_profit",
+        );
+
+        if (ov.metric === "sales") {
+            overrideMap.set(salesKey, ov);
+        } else if (ov.metric === "operating_profit") {
+            overrideMap.set(profitKey, ov);
+        }
+    }
+
+    return baseSegments.map((seg) => {
+        const fy = extractFiscalYear(seg.period);
+        const q = seg.quarter;
+
+        const salesKey = buildOverrideKey(fy, q, seg.segment_name, "sales");
+        const profitKey = buildOverrideKey(fy, q, seg.segment_name, "operating_profit");
+
+        const salesOverride = overrideMap.get(salesKey);
+        const profitOverride = overrideMap.get(profitKey);
+
+        const hasSalesOverride = salesOverride && salesOverride.value !== null;
+        const hasProfitOverride = profitOverride && profitOverride.value !== null;
+
+        if (!hasSalesOverride && !hasProfitOverride) return seg;
+
+        return {
+            ...seg,
+            segment_sales: hasSalesOverride ? salesOverride.value : seg.segment_sales,
+            segment_profit: hasProfitOverride ? profitOverride.value : seg.segment_profit,
+            source: hasSalesOverride || hasProfitOverride ? "manual" : seg.source,
+            // Per-metric source tracking for badge display
+            _salesSource: hasSalesOverride ? "manual" : (seg.source || "base"),
+            _profitSource: hasProfitOverride ? "manual" : (seg.source || "base"),
+        } as SegmentRecord;
+    });
+}
+
+// ============================================================
+// 1Q/3Q スタブ行生成 — 欠損クォーターの空行を補完
+// ============================================================
+
+/**
+ * 既存の FY/2Q データから、存在しない 1Q/3Q の空行を生成する。
+ *
+ * ロジック:
+ * - period ごとに既存の quarter を集計
+ * - 1Q が無い period には、その period のセグメント名一覧で 1Q 空行を生成
+ * - 3Q が無い period には、同様に 3Q 空行を生成
+ * - スタブ行の sales / profit は null、source は undefined
+ */
+export function generateMissingQuarterStubs(
+    baseSegments: SegmentRecord[],
+): SegmentRecord[] {
+    if (baseSegments.length === 0) return [];
+
+    // period ごとに { quarters: Set, segmentNames: string[] } を集計
+    const periodMap = new Map<
+        string,
+        {
+            ticker: string;
+            quarters: Set<string>;
+            segmentNames: string[];
+        }
+    >();
+
+    for (const seg of baseSegments) {
+        if (!periodMap.has(seg.period)) {
+            periodMap.set(seg.period, {
+                ticker: seg.ticker,
+                quarters: new Set<string>(),
+                segmentNames: [],
+            });
+        }
+        const entry = periodMap.get(seg.period)!;
+        entry.quarters.add(seg.quarter);
+
+        // セグメント名をユニークに収集 (FY or 2Q のセグメント名を使用)
+        if (
+            (seg.quarter === "FY" || seg.quarter === "2Q") &&
+            !entry.segmentNames.includes(seg.segment_name)
+        ) {
+            entry.segmentNames.push(seg.segment_name);
+        }
+    }
+
+    const stubs: SegmentRecord[] = [];
+    const missingQuarters = ["1Q", "3Q"];
+
+    for (const [period, entry] of periodMap) {
+        // segmentNames が空なら (1Q/3Q のみのケース) スキップ
+        if (entry.segmentNames.length === 0) continue;
+
+        for (const q of missingQuarters) {
+            if (entry.quarters.has(q)) continue; // 既にデータあり
+
+            for (const name of entry.segmentNames) {
+                stubs.push({
+                    ticker: entry.ticker,
+                    period,
+                    quarter: q,
+                    segment_name: name,
+                    segment_sales: null,
+                    segment_profit: null,
+                    source: undefined,
+                });
+            }
+        }
+    }
+
+    return stubs;
 }
 
