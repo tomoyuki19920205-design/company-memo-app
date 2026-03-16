@@ -151,6 +151,38 @@ export async function saveSegmentOverride(
 }
 
 // ============================================================
+// Bulk Save — 複数セル一括 UPSERT
+// ============================================================
+
+/**
+ * 複数セルの override を一括保存する。
+ * 各 item を順次 upsert し、成功・失敗件数を返す。
+ */
+export async function saveSegmentOverridesBulk(
+    items: SegmentOverrideSaveRequest[],
+    userEmail: string,
+): Promise<{ saved: SegmentCellOverride[]; failed: number }> {
+    const saved: SegmentCellOverride[] = [];
+    let failed = 0;
+
+    for (const item of items) {
+        try {
+            const result = await saveSegmentOverride(item, userEmail);
+            if (result) {
+                saved.push(result);
+            } else {
+                failed++;
+            }
+        } catch (err) {
+            console.error("[segment_cell_overrides] bulk item failed:", err);
+            failed++;
+        }
+    }
+
+    return { saved, failed };
+}
+
+// ============================================================
 // Delete — 論理削除
 // ============================================================
 

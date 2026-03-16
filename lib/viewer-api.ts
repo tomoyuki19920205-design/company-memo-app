@@ -78,7 +78,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
     try {
         const { data, error } = await supabase
             .from("api_latest_financials")
-            .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
+            .select("ticker,period,quarter,sales,gross_profit,operating_profit,updated_at")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: false })
@@ -100,7 +100,13 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
             v !== null ? Math.round(v / 1_000_000) : null;
 
         const records: FinancialRecord[] = data.map((row) => {
-            const isYen = row.source === "jquants";
+            // source カラムが存在しない場合は row から取得を試み、なければ自動判定
+            const rowSource = (row as Record<string, unknown>).source as string | undefined;
+            // source 明示: jquants は円単位、それ以外は百万円単位
+            // source なし: 売上が 1億超 (100,000,000) なら円単位と推定
+            const isYen = rowSource
+                ? rowSource === "jquants"
+                : (row.sales !== null && Math.abs(row.sales) >= 100_000_000);
             const convert = (v: number | null) => isYen ? toMillions(v) : v;
             return {
                 ticker: row.ticker,
@@ -112,7 +118,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
                 ordinary_profit: null,
                 net_income: null,
                 eps: null,
-                source: row.source || "",
+                source: rowSource || (isYen ? "jquants" : ""),
                 updated_at: row.updated_at || "",
             };
         });

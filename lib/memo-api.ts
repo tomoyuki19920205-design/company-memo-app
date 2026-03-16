@@ -224,7 +224,7 @@ export async function fetchCompanyName(
 
     try {
         const { data } = await supabase
-            .from("financials")
+            .from("api_latest_financials")
             .select("ticker")
             .eq("ticker", t)
             .limit(1)

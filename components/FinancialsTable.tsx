@@ -7,6 +7,7 @@ import { formatMillions, formatNumber, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
 import { parseTsvClipboard } from "@/lib/tsv-parser";
+import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
@@ -28,6 +29,12 @@ interface CellCoord {
     tableId: "cum" | "q";
     rowIdx: number;
     colKey: string; // "memo_a" | "memo_b" | "kpi_1" | "kpi_2" | "kpi_3"
+}
+
+/** セグメントセルのアクティブ座標 */
+interface SegCellCoord {
+    rowIdx: number;   // cumRows 上の行インデックス
+    colIdx: number;   // セグメント列インデックス (scIdx * 2 + 0=sales/1=profit)
 }
 
 interface FinancialsTableProps {
@@ -61,6 +68,10 @@ interface FinancialsTableProps {
         segmentName: string,
         metric: string,
     ) => Promise<void>;
+    /** Segment override: bulk save multiple cells */
+    onBulkSaveOverrides?: (
+        items: SegmentOverrideSaveRequest[],
+    ) => Promise<{ saved: number; failed: number }>;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -102,6 +113,16 @@ function extractMemoValue(gridData: GridData | undefined, colIdx: number): strin
     if (!gridData || !gridData[0]) return "";
     const val = gridData[0]?.[colIdx];
     return val ?? "";
+}
+
+/** カンマ区切り数値を許容する数値パーサ。不正値は null。 */
+function parseNumericValue(text: string): number | null {
+    const trimmed = text.trim();
+    if (!trimmed) return null;
+    // カンマ除去
+    const cleaned = trimmed.replace(/,/g, "");
+    const num = Number(cleaned);
+    return isNaN(num) ? null : num;
 }
 
 // ============================================================
@@ -379,6 +400,7 @@ export default function FinancialsTable({
     onKpiValueEdit,
     onSegmentOverrideSave,
     onSegmentOverrideDelete,
+    onBulkSaveOverrides,
 }: FinancialsTableProps) {
     const filtered = useMemo(() => filterLast5Years(data), [data]);
     const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
@@ -550,6 +572,18 @@ export default function FinancialsTable({
     const editInputRef = useRef<HTMLInputElement>(null);
     const formulaBarRef = useRef<HTMLTextAreaElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
+
+    // セグメントセルのアクティブ管理
+    const [activeSegCell, setActiveSegCell] = useState<SegCellCoord | null>(null);
+    // トースト
+    const [toastMessage, setToastMessage] = useState<string | null>(null);
+    const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const showToast = useCallback((msg: string) => {
+        setToastMessage(msg);
+        if (toastTimer.current) clearTimeout(toastTimer.current);
+        toastTimer.current = setTimeout(() => setToastMessage(null), 4000);
+    }, []);
 
     // PLリサイズ高さ
     const [plHeight, setPlHeight] = useState(DEFAULT_HEIGHT);
@@ -833,10 +867,100 @@ export default function FinancialsTable({
 
     // --- Ctrl+V on active cell ---
     const handleTablePaste = useCallback((e: React.ClipboardEvent) => {
+        // セグメントセルがアクティブの場合 → セグメントペースト処理
+        if (activeSegCell && onBulkSaveOverrides) {
+            e.preventDefault();
+            e.stopPropagation();
+            const rawText = e.clipboardData.getData("text/plain");
+            if (!rawText) return;
+
+            console.log("[SEG-PASTE] clipboard raw:", JSON.stringify(rawText));
+            const parsed = parseTsvClipboard(rawText);
+            console.log("[SEG-PASTE] parsed 2D:", parsed);
+
+            if (parsed.length === 0) return;
+
+            const startRow = activeSegCell.rowIdx;
+            const startCol = activeSegCell.colIdx;
+            const totalSegCols = segmentColumns.length * 2; // 各セグメント × (sales + profit)
+
+            const items: SegmentOverrideSaveRequest[] = [];
+            let skipped = 0;
+            let invalid = 0;
+
+            for (let r = 0; r < parsed.length; r++) {
+                const targetRowIdx = startRow + r;
+                if (targetRowIdx >= cumRows.length) { skipped += parsed[r].length; continue; }
+                const row = cumRows[targetRowIdx];
+                const isEditableQ = row.quarter === "1Q" || row.quarter === "3Q";
+                if (!isEditableQ) { skipped += parsed[r].length; continue; }
+
+                const fy = extractFiscalYear(row.period);
+
+                for (let c = 0; c < parsed[r].length; c++) {
+                    const targetColIdx = startCol + c;
+                    if (targetColIdx >= totalSegCols) { skipped++; continue; }
+
+                    // セグメント列インデックスから segmentName と metric を逆算
+                    const scIdx = Math.floor(targetColIdx / 2);
+                    const metricIdx = targetColIdx % 2; // 0=sales, 1=profit
+                    if (scIdx >= segmentColumns.length) { skipped++; continue; }
+
+                    const sc = segmentColumns[scIdx];
+                    const segmentName = sc.segmentName;
+                    const metric = metricIdx === 0 ? "sales" : "operating_profit";
+
+                    // base 値チェック: base がある (非null かつ source !== "manual") セルはスキップ
+                    const mapKey = `${normalizePeriod(row.period)}|${normalizeQuarter(row.quarter)}`;
+                    const segKey = metricIdx === 0 ? sc.salesKey : sc.profitKey;
+                    const currentVal = segmentMap.get(mapKey)?.[segKey] ?? null;
+                    const cellSource = sourceMap.get(`${mapKey}|${segKey}`);
+                    const isManualCell = cellSource === "manual";
+                    const hasBaseValue = currentVal !== null && !isManualCell;
+                    if (hasBaseValue) { skipped++; continue; }
+
+                    // 数値パース（セル単位）
+                    const cellText = parsed[r][c];
+                    const numVal = parseNumericValue(cellText);
+                    console.log(`[SEG-PASTE] cell[${r}][${c}] = "${cellText}" → ${numVal}`);
+                    if (numVal === null) { invalid++; continue; }
+
+                    items.push({
+                        ticker: row.period.split("-").length > 0 ? "" : "", // ticker は親から渡される
+                        fiscal_year: fy,
+                        quarter: row.quarter,
+                        segment_name: segmentName,
+                        metric,
+                        value: numVal,
+                    });
+                }
+            }
+
+            console.log("[SEG-PASTE] items to save:", items);
+            console.log(`[SEG-PASTE] skipped: ${skipped}, invalid: ${invalid}`);
+
+            if (items.length === 0) {
+                showToast(`0件保存 / ${skipped}件スキップ / ${invalid}件不正値`);
+                return;
+            }
+
+            // 非同期で bulk save
+            onBulkSaveOverrides(items).then(({ saved, failed }) => {
+                const msg = `${saved}件保存 / ${skipped}件スキップ${invalid > 0 ? ` / ${invalid}件不正値` : ""}${failed > 0 ? ` / ${failed}件失敗` : ""}`;
+                showToast(msg);
+            }).catch((err) => {
+                console.error("[SEG-PASTE] bulk save error:", err);
+                showToast(`保存エラー: ${err instanceof Error ? err.message : String(err)}`);
+            });
+
+            return;
+        }
+
+        // メモセルがアクティブの場合 → メモペースト処理
         if (!activeCell || activeCell.tableId !== "cum") return;
         const colIdx = activeCell.colKey === "memo_a" ? 0 : 1;
         handleMemoPaste(activeCell.rowIdx, colIdx, e);
-    }, [activeCell, handleMemoPaste]);
+    }, [activeCell, activeSegCell, handleMemoPaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast]);
 
     if (loading) {
         return (
@@ -982,6 +1106,8 @@ export default function FinancialsTable({
                                                                     metric="sales"
                                                                     onSave={onSegmentOverrideSave}
                                                                     onDelete={onSegmentOverrideDelete}
+                                                                    isSegActive={activeSegCell?.rowIdx === idx && activeSegCell?.colIdx === sIdx}
+                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: sIdx }); setActiveCell(null); }}
                                                                 />
                                                                 <SegOverrideCell
                                                                     value={profitVal}
@@ -995,6 +1121,8 @@ export default function FinancialsTable({
                                                                     metric="operating_profit"
                                                                     onSave={onSegmentOverrideSave}
                                                                     onDelete={onSegmentOverrideDelete}
+                                                                    isSegActive={activeSegCell?.rowIdx === idx && activeSegCell?.colIdx === pIdx}
+                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: pIdx }); setActiveCell(null); }}
                                                                 />
                                                             </React.Fragment>
                                                         );
@@ -1112,6 +1240,10 @@ export default function FinancialsTable({
                     </div>
                 </>
             )}
+            {/* トースト通知 */}
+            {toastMessage && (
+                <div className="seg-paste-toast">{toastMessage}</div>
+            )}
         </div>
     );
 }
@@ -1206,6 +1338,8 @@ function SegOverrideCell({
     metric,
     onSave,
     onDelete,
+    isSegActive,
+    onActivate,
 }: {
     value: number | null;
     source?: string;
@@ -1218,25 +1352,16 @@ function SegOverrideCell({
     metric: string;
     onSave?: FinancialsTableProps["onSegmentOverrideSave"];
     onDelete?: FinancialsTableProps["onSegmentOverrideDelete"];
+    isSegActive?: boolean;
+    onActivate?: () => void;
 }) {
     const [editing, setEditing] = useState(false);
     const [inputVal, setInputVal] = useState("");
     const [saving, setSaving] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleClick = useCallback((e: React.MouseEvent) => {
-        e.stopPropagation();
-        if (!editable && !isManual) return;
-        if (isManual) {
-            // Re-edit: pre-fill with current manual value
-            setInputVal(value !== null ? String(value) : "");
-        } else {
-            // New input
-            setInputVal("");
-        }
-        setEditing(true);
-        setTimeout(() => inputRef.current?.focus(), 0);
-    }, [editable, isManual, value]);
+
+
 
     const handleSave = useCallback(async () => {
         setEditing(false);
@@ -1274,6 +1399,47 @@ function SegOverrideCell({
         }
     }, [onDelete, fiscalYear, quarter, segmentName, metric]);
 
+    // 編集中の input で paste イベントを横取りし、テーブルレベルのハンドラへ伝搬させる
+    const handleInputPaste = useCallback((e: React.ClipboardEvent<HTMLInputElement>) => {
+        const text = e.clipboardData.getData("text/plain");
+        // TSV （タブまたは改行含む）の場合はデフォルト動作を止めて上位へ伝搬
+        if (text && (text.includes("\t") || text.includes("\n"))) {
+            e.preventDefault();
+            // editing を閉じてからテーブルレベル paste を再発火
+            setEditing(false);
+            // カスタムイベントで再度 paste を発火（テーブル div が受け取る）
+            const tableDiv = (e.target as HTMLElement).closest(".pl-section");
+            if (tableDiv) {
+                // ClipboardEvent を再構成して発火
+                const newEvent = new ClipboardEvent("paste", {
+                    clipboardData: e.clipboardData as unknown as DataTransfer,
+                    bubbles: true,
+                    cancelable: true,
+                });
+                tableDiv.dispatchEvent(newEvent);
+            }
+        }
+        // 単一数値の場合は通常の input paste を許可
+    }, []);
+
+    const displayVal = value !== null ? formatMillions(value) : "–";
+    const canEdit = editable || isManual;
+
+    // readonly セルでもアクティブ化は許可（横貼りのスキップ対象を判断するため）
+    const handleCellClick = useCallback((e: React.MouseEvent) => {
+        e.stopPropagation();
+        onActivate?.();
+        if (canEdit) {
+            if (isManual) {
+                setInputVal(value !== null ? String(value) : "");
+            } else {
+                setInputVal("");
+            }
+            setEditing(true);
+            setTimeout(() => inputRef.current?.focus(), 0);
+        }
+    }, [canEdit, isManual, value, onActivate]);
+
     if (editing) {
         return (
             <td className="num-col seg-data-cell" style={{ width, minWidth: width }}>
@@ -1287,6 +1453,7 @@ function SegOverrideCell({
                         onChange={(e) => setInputVal(e.target.value)}
                         onBlur={handleSave}
                         onKeyDown={handleKeyDown}
+                        onPaste={handleInputPaste}
                         disabled={saving}
                         autoFocus
                     />
@@ -1295,16 +1462,12 @@ function SegOverrideCell({
         );
     }
 
-    const displayVal = value !== null ? formatMillions(value) : "–";
-
-    const canEdit = editable || isManual;
-
     return (
         <td
-            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""}`}
+            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""}`}
             style={{ width, minWidth: width }}
-            onClick={canEdit ? handleClick : undefined}
-            title={canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : undefined}
+            onClick={handleCellClick}
+            title={canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : "クリックして選択（ペースト用）"}
         >
             <div className="segment-cell-display">
                 {editable && value === null ? (

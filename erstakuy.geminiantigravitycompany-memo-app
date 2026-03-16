@@ -1,0 +1,772 @@
+[1mdiff --git a/app/page.tsx b/app/page.tsx[m
+[1mindex 34d83a5..4a05cc3 100644[m
+[1m--- a/app/page.tsx[m
+[1m+++ b/app/page.tsx[m
+[36m@@ -1,15 +1,14 @@[m
+ "use client";[m
+ [m
+ import React, { useState, useCallback, useEffect } from "react";[m
+[31m-import MemoGrid from "@/components/MemoGrid";[m
+ import TickerHeader from "@/components/TickerHeader";[m
+ import FinancialsTable from "@/components/FinancialsTable";[m
+[32m+[m[32mimport SegmentTable from "@/components/SegmentTable";[m
+ import ForecastTable from "@/components/ForecastTable";[m
+ import MonthlyTable from "@/components/MonthlyTable";[m
+ import KpiTable from "@/components/KpiTable";[m
+ import { createSupabaseBrowser } from "@/lib/supabase-browser";[m
+ import {[m
+[31m-    loadGridMemo,[m
+     saveGridMemo,[m
+     loadAllGridMemos,[m
+     createEmptyGrid,[m
+[36m@@ -17,29 +16,32 @@[m [mimport {[m
+     type GridData,[m
+     type GridMemoRecord,[m
+ } from "@/lib/memo-api";[m
+[32m+[m[32mimport {[m
+[32m+[m[32m    loadKpiDefinitions,[m
+[32m+[m[32m    loadKpiValues,[m
+[32m+[m[32m    saveKpiDefinition,[m
+[32m+[m[32m    saveKpiValue,[m
+[32m+[m[32m    type KpiDefMap,[m
+[32m+[m[32m    type KpiValueMap,[m
+[32m+[m[32m} from "@/lib/kpi-api";[m
+ import {[m
+     loadCompanyInfo,[m
+     loadFinancials,[m
+     loadForecastRevision,[m
+     loadMonthlyData,[m
+     loadKpiData,[m
+[32m+[m[32m    loadSegmentData,[m
+     type CompanyInfo,[m
+ } from "@/lib/viewer-api";[m
+[32m+[m[32mimport { useTickerPresence } from "@/hooks/useTickerPresence";[m
+ import type { FinancialRecord } from "@/types/financial";[m
+ import type { ForecastRevision } from "@/types/forecast";[m
+ import type { MonthlyRecord } from "@/types/monthly";[m
+ import type { KpiRecord } from "@/types/kpi";[m
+[32m+[m[32mimport type { SegmentRecord } from "@/types/segment";[m
+ import type { User } from "@supabase/supabase-js";[m
+ [m
+[31m-type AppStatus =[m
+[31m-    | "idle"[m
+[31m-    | "loading"[m
+[31m-    | "loaded"[m
+[31m-    | "saving"[m
+[31m-    | "saved"[m
+[31m-    | "error";[m
+[31m-[m
+[31m-// "period|quarter" → GridData[m
+[32m+[m[32mtype AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";[m
+ type MemoMapType = { [key: string]: GridData };[m
+ [m
+ function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {[m
+[36m@@ -51,105 +53,68 @@[m [mfunction buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {[m
+ }[m
+ [m
+ export default function ViewerPage() {[m
+[31m-    // --- 認証状態 ---[m
+     const [user, setUser] = useState<User | null>(null);[m
+     const [authLoading, setAuthLoading] = useState(true);[m
+[31m-[m
+[31m-    // --- ticker ---[m
+     const [tickerInput, setTickerInput] = useState("");[m
+     const [activeTicker, setActiveTicker] = useState("");[m
+[31m-[m
+[31m-    // --- 会社情報 ---[m
+     const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null);[m
+[31m-[m
+[31m-    // --- メモ (period/quarter 単位) ---[m
+[31m-    const [gridData, setGridData] = useState<GridData>(createEmptyGrid());[m
+[31m-    const [dirty, setDirty] = useState(false);[m
+[31m-    const [updatedAt, setUpdatedAt] = useState<string | null>(null);[m
+[31m-    const [updatedBy, setUpdatedBy] = useState<string | null>(null);[m
+     const [selectedPeriod, setSelectedPeriod] = useState<string>("");[m
+     const [selectedQuarter, setSelectedQuarter] = useState<string>("");[m
+[31m-    const [focusCell, setFocusCell] = useState<[number, number]>([0, 0]);[m
+[31m-    const [memoLoading, setMemoLoading] = useState(false);[m
+[31m-[m
+[31m-    // --- PL一覧用メモMap ---[m
+     const [memoMap, setMemoMap] = useState<MemoMapType>({});[m
+[31m-[m
+[31m-    // --- データ ---[m
+     const [financials, setFinancials] = useState<FinancialRecord[]>([]);[m
+     const [forecasts, setForecasts] = useState<ForecastRevision[]>([]);[m
+     const [monthly, setMonthly] = useState<MonthlyRecord[]>([]);[m
+     const [kpi, setKpi] = useState<KpiRecord[]>([]);[m
+[31m-[m
+[31m-    // --- ステータス ---[m
+[32m+[m[32m    const [segments, setSegments] = useState<SegmentRecord[]>([]);[m
+[32m+[m[32m    const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });[m
+[32m+[m[32m    const [kpiValues, setKpiValues] = useState<KpiValueMap>({});[m
+     const [status, setStatus] = useState<AppStatus>("idle");[m
+     const [dataLoading, setDataLoading] = useState(false);[m
+     const [errorMsg, setErrorMsg] = useState("");[m
+ [m
+[31m-    // --- 認証チェック ---[m
+[32m+[m[32m    // フォントテーマ[m
+[32m+[m[32m    const [fontTheme, setFontTheme] = useState(() => {[m
+[32m+[m[32m        if (typeof window !== "undefined") {[m
+[32m+[m[32m            return localStorage.getItem("app-font-theme") || "default";[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return "default";[m
+[32m+[m[32m    });[m
+[32m+[m[32m    useEffect(() => {[m
+[32m+[m[32m        localStorage.setItem("app-font-theme", fontTheme);[m
+[32m+[m[32m    }, [fontTheme]);[m
+[32m+[m
+[32m+[m[32m    // 同時閲覧ユーザー[m
+[32m+[m[32m    const { viewers } = useTickerPresence(activeTicker, user?.email, user?.id);[m
+[32m+[m
+     useEffect(() => {[m
+         const supabase = createSupabaseBrowser();[m
+         supabase.auth.getUser().then(({ data: { user: u } }) => {[m
+             setUser(u);[m
+             setAuthLoading(false);[m
+         });[m
+[31m-[m
+[31m-        const {[m
+[31m-            data: { subscription },[m
+[31m-        } = supabase.auth.onAuthStateChange((_event, session) => {[m
+[32m+[m[32m        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {[m
+             setUser(session?.user ?? null);[m
+         });[m
+[31m-[m
+         return () => subscription.unsubscribe();[m
+     }, []);[m
+ [m
+[31m-    // --- メモ読み込み (期ごと) ---[m
+[31m-    const loadMemoForPeriod = useCallback(async ([m
+[31m-        ticker: string,[m
+[31m-        period: string,[m
+[31m-        quarter: string[m
+[31m-    ) => {[m
+[31m-        setMemoLoading(true);[m
+[31m-        setFocusCell([0, 0]);[m
+[31m-        try {[m
+[31m-            const memoResult = await loadGridMemo(ticker, period, quarter);[m
+[31m-            if (memoResult) {[m
+[31m-                setGridData(memoResult.grid_json);[m
+[31m-                setUpdatedAt(memoResult.updated_at);[m
+[31m-                setUpdatedBy(memoResult.updated_by || null);[m
+[31m-            } else {[m
+[31m-                setGridData(createEmptyGrid());[m
+[31m-                setUpdatedAt(null);[m
+[31m-                setUpdatedBy(null);[m
+[31m-            }[m
+[31m-            setDirty(false);[m
+[31m-        } catch (err) {[m
+[31m-            console.error("メモ読込失敗:", err);[m
+[31m-            setGridData(createEmptyGrid());[m
+[31m-            setUpdatedAt(null);[m
+[31m-            setUpdatedBy(null);[m
+[31m-        }[m
+[31m-        setMemoLoading(false);[m
+[31m-    }, []);[m
+[31m-[m
+[31m-    // --- 全データ読み込み ---[m
+     const handleLoad = useCallback(async () => {[m
+[31m-        if (!user) return; // 未認証時は実行しない[m
+[31m-[m
+[32m+[m[32m        if (!user) return;[m
+         const ticker = normalizeTicker(tickerInput);[m
+         if (!ticker) return;[m
+ [m
+         setStatus("loading");[m
+         setDataLoading(true);[m
+         setErrorMsg("");[m
+[31m-        setDirty(false);[m
+         setActiveTicker(ticker);[m
+         setSelectedPeriod("");[m
+         setSelectedQuarter("");[m
+         setMemoMap({});[m
+[32m+[m[32m        setSegments([]);[m
+[32m+[m[32m        setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });[m
+[32m+[m[32m        setKpiValues({});[m
+ [m
+[31m-        // 全データを並列取得[m
+[31m-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult] =[m
+[32m+[m[32m        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult] =[m
+             await Promise.allSettled([[m
+                 loadCompanyInfo(ticker),[m
+                 loadFinancials(ticker),[m
+[36m@@ -157,46 +122,56 @@[m [mexport default function ViewerPage() {[m
+                 loadMonthlyData(ticker),[m
+                 loadKpiData(ticker),[m
+                 loadAllGridMemos(ticker),[m
+[32m+[m[32m                loadSegmentData(ticker),[m
+[32m+[m[32m                loadKpiDefinitions(ticker),[m
+[32m+[m[32m                loadKpiValues(ticker),[m
+             ]);[m
+ [m
+[31m-        // 会社情報[m
+[31m-        if (companyResult.status === "fulfilled") {[m
+[31m-            setCompanyInfo(companyResult.value);[m
+[31m-        } else {[m
+[31m-            setCompanyInfo({ ticker, companyName: null });[m
+[31m-        }[m
+[32m+[m[32m        setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });[m
+ [m
+[31m-        // PL[m
+         let plData: FinancialRecord[] = [];[m
+         if (financialsResult.status === "fulfilled") {[m
+             plData = financialsResult.value;[m
+             setFinancials(plData);[m
+         } else {[m
+             setFinancials([]);[m
+[31m-            console.error("Financials 取得失敗:", financialsResult.reason);[m
+         }[m
+ [m
+[31m-        // Forecast[m
+         setForecasts(forecastResult.status === "fulfilled" ? forecastResult.value : []);[m
+[31m-[m
+[31m-        // Monthly[m
+         setMonthly(monthlyResult.status === "fulfilled" ? monthlyResult.value : []);[m
+[31m-[m
+[31m-        // KPI[m
+         setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);[m
+[32m+[m[32m        const segData = segmentResult.status === "fulfilled" ? segmentResult.value : [];[m
+[32m+[m[32m        setSegments(segData);[m
+[32m+[m
+[32m+[m[32m        // DEBUG: PL/segment結合キー確認[m
+[32m+[m[32m        if (plData.length > 0) {[m
+[32m+[m[32m            console.log("[DEBUG] PL rows sample:", plData.slice(0, 3).map(r => ({ period: r.period, quarter: r.quarter })));[m
+[32m+[m[32m        }[m
+[32m+[m[32m        if (segData.length > 0) {[m
+[32m+[m[32m            console.log("[DEBUG] Segment rows:", segData.length, "件");[m
+[32m+[m[32m            console.log("[DEBUG] Segment sample:", segData.slice(0, 3).map(r => ({ period: r.period, quarter: r.quarter, seg: r.segment_name })));[m
+[32m+[m[32m            const segKeys = new Set(segData.map(r => `${r.period}|${r.quarter}`));[m
+[32m+[m[32m            const plKeys = new Set(plData.map(r => `${r.period}|${r.quarter}`));[m
+[32m+[m[32m            const matching = [...segKeys].filter(k => plKeys.has(k));[m
+[32m+[m[32m            console.log("[DEBUG] PL keys:", [...plKeys].slice(0, 5));[m
+[32m+[m[32m            console.log("[DEBUG] Seg keys:", [...segKeys].slice(0, 5));[m
+[32m+[m[32m            console.log("[DEBUG] Matching keys:", matching.length, matching.slice(0, 5));[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            console.log("[DEBUG] Segment data: 0件 (empty)");[m
+[32m+[m[32m        }[m
+ [m
+[31m-        // メモ一括 (PL一覧用)[m
+[31m-        let allMemos = new Map<string, GridMemoRecord>();[m
+         if (memosResult.status === "fulfilled") {[m
+[31m-            allMemos = memosResult.value;[m
+[31m-            setMemoMap(buildMemoMap(allMemos));[m
+[32m+[m[32m            setMemoMap(buildMemoMap(memosResult.value));[m
+[32m+[m[32m        }[m
+[32m+[m[32m        if (kpiDefsResult.status === "fulfilled") {[m
+[32m+[m[32m            setKpiDefs(kpiDefsResult.value);[m
+[32m+[m[32m        }[m
+[32m+[m[32m        if (kpiValsResult.status === "fulfilled") {[m
+[32m+[m[32m            setKpiValues(kpiValsResult.value);[m
+         }[m
+ [m
+[31m-        // financials エラー[m
+         if (financialsResult.status === "rejected") {[m
+[31m-            const msg = financialsResult.reason instanceof Error[m
+[31m-                ? financialsResult.reason.message[m
+[31m-                : String(financialsResult.reason);[m
+[32m+[m[32m            const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);[m
+             setErrorMsg(msg);[m
+             setStatus("error");[m
+         } else {[m
+[36m@@ -205,181 +180,132 @@[m [mexport default function ViewerPage() {[m
+ [m
+         setDataLoading(false);[m
+ [m
+[31m-        // PL先頭行のメモ[m
+         if (plData.length > 0) {[m
+[31m-            const firstRow = plData[0];[m
+[31m-            setSelectedPeriod(firstRow.period);[m
+[31m-            setSelectedQuarter(firstRow.quarter);[m
+[31m-[m
+[31m-            const memoKey = `${firstRow.period}|${firstRow.quarter}`;[m
+[31m-            const cachedMemo = allMemos.get(memoKey);[m
+[31m-            if (cachedMemo) {[m
+[31m-                setGridData(cachedMemo.grid_json);[m
+[31m-                setUpdatedAt(cachedMemo.updated_at);[m
+[31m-                setUpdatedBy(cachedMemo.updated_by || null);[m
+[31m-                setDirty(false);[m
+[31m-            } else {[m
+[31m-                setGridData(createEmptyGrid());[m
+[31m-                setUpdatedAt(null);[m
+[31m-                setUpdatedBy(null);[m
+[31m-            }[m
+[31m-        } else {[m
+[31m-            setGridData(createEmptyGrid());[m
+[31m-            setUpdatedAt(null);[m
+[31m-            setUpdatedBy(null);[m
+[32m+[m[32m            setSelectedPeriod(plData[0].period);[m
+[32m+[m[32m            setSelectedQuarter(plData[0].quarter);[m
+         }[m
+     }, [tickerInput, user]);[m
+ [m
+[31m-    // --- PL行クリック → メモ切替 ---[m
+[31m-    const handlePLRowClick = useCallback(async (period: string, quarter: string) => {[m
+[31m-        if (!activeTicker) return;[m
+[31m-        if (period === selectedPeriod && quarter === selectedQuarter) return;[m
+[31m-[m
+[31m-        if (dirty) {[m
+[31m-            const ok = window.confirm([m
+[31m-                `未保存の変更があります。\n${selectedPeriod} / ${selectedQuarter} のメモを破棄して切替えますか？`[m
+[31m-            );[m
+[31m-            if (!ok) return;[m
+[31m-        }[m
+[31m-[m
+[32m+[m[32m    const handlePLRowClick = useCallback((period: string, quarter: string) => {[m
+         setSelectedPeriod(period);[m
+         setSelectedQuarter(quarter);[m
+[31m-[m
+[31m-        const memoKey = `${period}|${quarter}`;[m
+[31m-        if (memoMap[memoKey]) {[m
+[31m-            setGridData(memoMap[memoKey]);[m
+[31m-            setDirty(false);[m
+[31m-            setFocusCell([0, 0]);[m
+[31m-            setUpdatedAt(null);[m
+[31m-            setUpdatedBy(null);[m
+[31m-        } else {[m
+[31m-            await loadMemoForPeriod(activeTicker, period, quarter);[m
+[31m-        }[m
+[31m-    }, [activeTicker, selectedPeriod, selectedQuarter, dirty, loadMemoForPeriod, memoMap]);[m
+[31m-[m
+[31m-    // --- メモ保存 (UPSERT) ---[m
+[31m-    const handleSave = useCallback(async () => {[m
+[31m-        if (!activeTicker || !selectedPeriod || !selectedQuarter) return;[m
+[31m-[m
+[31m-        setStatus("saving");[m
+[31m-        setErrorMsg("");[m
+[31m-[m
+[31m-        try {[m
+[31m-            const result = await saveGridMemo([m
+[31m-                activeTicker,[m
+[31m-                selectedPeriod,[m
+[31m-                selectedQuarter,[m
+[31m-                gridData,[m
+[31m-                user?.id[m
+[31m-            );[m
+[31m-            setUpdatedAt(result.updated_at);[m
+[31m-            setUpdatedBy(user?.email || null);[m
+[31m-            setDirty(false);[m
+[31m-            setStatus("saved");[m
+[31m-[m
+[31m-            // PL側のmemoMapも同期[m
+[31m-            const memoKey = `${selectedPeriod}|${selectedQuarter}`;[m
+[31m-            setMemoMap((prev) => ({[m
+[31m-                ...prev,[m
+[31m-                [memoKey]: gridData,[m
+[31m-            }));[m
+[31m-        } catch (err: unknown) {[m
+[31m-            const msg = err instanceof Error ? err.message : String(err);[m
+[31m-            setErrorMsg(msg);[m
+[31m-            setStatus("error");[m
+[31m-        }[m
+[31m-    }, [activeTicker, selectedPeriod, selectedQuarter, gridData, user]);[m
+[31m-[m
+[31m-    // --- グリッド変更 ---[m
+[31m-    const handleGridChange = useCallback((newData: GridData) => {[m
+[31m-        setGridData(newData);[m
+[31m-        setDirty(true);[m
+     }, []);[m
+ [m
+[31m-    // --- PL側メモ単一セル編集 ---[m
+[31m-    const handlePLMemoEdit = useCallback(async ([m
+[31m-        period: string,[m
+[31m-        quarter: string,[m
+[31m-        colIdx: number,[m
+[31m-        value: string[m
+[31m-    ) => {[m
+[31m-        if (!activeTicker) return;[m
+[31m-[m
+[31m-        // 既存のgrid_jsonを取得、なければ空グリッド[m
+[31m-        const memoKey = `${period}|${quarter}`;[m
+[31m-        const existingGrid = memoMap[memoKey][m
+[31m-            ? memoMap[memoKey].map((row) => [...row])[m
+[31m-            : createEmptyGrid();[m
+[31m-[m
+[31m-        // 先頭行の該当セルだけ更新[m
+[31m-        existingGrid[0][colIdx] = value;[m
+[31m-[m
+[31m-        // 即保存[m
+[31m-        try {[m
+[31m-            await saveGridMemo(activeTicker, period, quarter, existingGrid, user?.id);[m
+[31m-[m
+[31m-            // memoMap 同期[m
+[31m-            setMemoMap((prev) => ({[m
+[32m+[m[32m    // KPIヘッダー名変更[m
+[32m+[m[32m    const handleKpiHeaderEdit = useCallback([m
+[32m+[m[32m        async (kpiSlot: number, newName: string) => {[m
+[32m+[m[32m            if (!activeTicker) return;[m
+[32m+[m[32m            const prev = kpiDefs[kpiSlot];[m
+[32m+[m[32m            // 楽観的更新[m
+[32m+[m[32m            setKpiDefs((d) => ({ ...d, [kpiSlot]: newName }));[m
+[32m+[m[32m            try {[m
+[32m+[m[32m                await saveKpiDefinition(activeTicker, kpiSlot, newName);[m
+[32m+[m[32m            } catch (err) {[m
+[32m+[m[32m                console.error("KPIヘッダー保存失敗:", err);[m
+[32m+[m[32m                setKpiDefs((d) => ({ ...d, [kpiSlot]: prev }));[m
+[32m+[m[32m                setErrorMsg(`KPIヘッダー保存失敗: ${err instanceof Error ? err.message : String(err)}`);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        [activeTicker, kpiDefs][m
+[32m+[m[32m    );[m
+[32m+[m
+[32m+[m[32m    // KPI値変更[m
+[32m+[m[32m    const handleKpiValueEdit = useCallback([m
+[32m+[m[32m        async (period: string, quarter: string, kpiSlot: number, value: string) => {[m
+[32m+[m[32m            if (!activeTicker) return;[m
+[32m+[m[32m            const key = `${period}|${quarter}`;[m
+[32m+[m[32m            const prevValue = kpiValues[key]?.[kpiSlot];[m
+[32m+[m[32m            // 楽観的更新[m
+[32m+[m[32m            setKpiValues((prev) => ({[m
+                 ...prev,[m
+[31m-                [memoKey]: existingGrid,[m
+[32m+[m[32m                [key]: { ...(prev[key] || {}), [kpiSlot]: value },[m
+             }));[m
+[31m-[m
+[31m-            // 左メモ欄が同じ period/quarter を表示中なら同期[m
+[31m-            if (period === selectedPeriod && quarter === selectedQuarter) {[m
+[31m-                setGridData(existingGrid);[m
+[31m-                setDirty(false);[m
+[31m-            }[m
+[31m-        } catch (err) {[m
+[31m-            console.error("PLメモ保存失敗:", err);[m
+[31m-        }[m
+[31m-    }, [activeTicker, memoMap, selectedPeriod, selectedQuarter, user]);[m
+[31m-[m
+[31m-    // --- PL側メモ一括ペースト ---[m
+[31m-    const handlePLMemoPaste = useCallback(async ([m
+[31m-        edits: { period: string; quarter: string; colIdx: number; value: string }[][m
+[31m-    ) => {[m
+[31m-        if (!activeTicker || edits.length === 0) return;[m
+[31m-[m
+[31m-        // 行ごとにグルーピング[m
+[31m-        const byRow = new Map<string, { period: string; quarter: string; updates: { colIdx: number; value: string }[] }>();[m
+[31m-        for (const edit of edits) {[m
+[31m-            const key = `${edit.period}|${edit.quarter}`;[m
+[31m-            if (!byRow.has(key)) {[m
+[31m-                byRow.set(key, { period: edit.period, quarter: edit.quarter, updates: [] });[m
+[32m+[m[32m            try {[m
+[32m+[m[32m                await saveKpiValue(activeTicker, period, quarter, kpiSlot, value);[m
+[32m+[m[32m            } catch (err) {[m
+[32m+[m[32m                console.error("KPI値保存失敗:", err);[m
+[32m+[m[32m                setKpiValues((prev) => ({[m
+[32m+[m[32m                    ...prev,[m
+[32m+[m[32m                    [key]: { ...(prev[key] || {}), [kpiSlot]: prevValue ?? "" },[m
+[32m+[m[32m                }));[m
+[32m+[m[32m                setErrorMsg(`KPI値保存失敗: ${err instanceof Error ? err.message : String(err)}`);[m
+             }[m
+[31m-            byRow.get(key)!.updates.push({ colIdx: edit.colIdx, value: edit.value });[m
+[31m-        }[m
+[31m-[m
+[31m-        const newMemoMap = { ...memoMap };[m
+[32m+[m[32m        },[m
+[32m+[m[32m        [activeTicker, kpiValues][m
+[32m+[m[32m    );[m
+ [m
+[31m-        for (const [key, { period, quarter, updates }] of byRow) {[m
+[31m-            const existingGrid = newMemoMap[key][m
+[31m-                ? newMemoMap[key].map((row) => [...row])[m
+[32m+[m[32m    const handlePLMemoEdit = useCallback([m
+[32m+[m[32m        async (period: string, quarter: string, colIdx: number, value: string) => {[m
+[32m+[m[32m            if (!activeTicker) return;[m
+[32m+[m[32m            const memoKey = `${period}|${quarter}`;[m
+[32m+[m[32m            const existingGrid = memoMap[memoKey][m
+[32m+[m[32m                ? memoMap[memoKey].map((row) => [...row])[m
+                 : createEmptyGrid();[m
+[32m+[m[32m            existingGrid[0][colIdx] = value;[m
+ [m
+[31m-            for (const { colIdx, value } of updates) {[m
+[31m-                existingGrid[0][colIdx] = value;[m
+[31m-            }[m
+[32m+[m[32m            // 楽観的更新: 即座にUIに反映[m
+[32m+[m[32m            const prevGrid = memoMap[memoKey];[m
+[32m+[m[32m            setMemoMap((prev) => ({ ...prev, [memoKey]: existingGrid }));[m
+ [m
+             try {[m
+                 await saveGridMemo(activeTicker, period, quarter, existingGrid, user?.id);[m
+[31m-                newMemoMap[key] = existingGrid;[m
+             } catch (err) {[m
+[31m-                console.error(`PLメモ保存失敗 (${key}):`, err);[m
+[32m+[m[32m                console.error("PLメモ保存失敗:", err);[m
+[32m+[m[32m                // 保存失敗時はロールバック[m
+[32m+[m[32m                setMemoMap((prev) => {[m
+[32m+[m[32m                    const next = { ...prev };[m
+[32m+[m[32m                    if (prevGrid) {[m
+[32m+[m[32m                        next[memoKey] = prevGrid;[m
+[32m+[m[32m                    } else {[m
+[32m+[m[32m                        delete next[memoKey];[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                    return next;[m
+[32m+[m[32m                });[m
+[32m+[m[32m                setErrorMsg(`メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);[m
+             }[m
+[31m-        }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        [activeTicker, memoMap, user][m
+[32m+[m[32m    );[m
+ [m
+[31m-        setMemoMap(newMemoMap);[m
+[32m+[m[32m    const handlePLMemoPaste = useCallback([m
+[32m+[m[32m        async (edits: { period: string; quarter: string; colIdx: number; value: string }[]) => {[m
+[32m+[m[32m            if (!activeTicker || edits.length === 0) return;[m
+ [m
+[31m-        // 左メモ欄が表示中のデータが更新されていたら同期[m
+[31m-        const selectedKey = `${selectedPeriod}|${selectedQuarter}`;[m
+[31m-        if (newMemoMap[selectedKey]) {[m
+[31m-            setGridData(newMemoMap[selectedKey]);[m
+[31m-            setDirty(false);[m
+[31m-        }[m
+[31m-    }, [activeTicker, memoMap, selectedPeriod, selectedQuarter, user]);[m
+[32m+[m[32m            const byRow = new Map<string, { period: string; quarter: string; updates: { colIdx: number; value: string }[] }>();[m
+[32m+[m[32m            for (const edit of edits) {[m
+[32m+[m[32m                const key = `${edit.period}|${edit.quarter}`;[m
+[32m+[m[32m                if (!byRow.has(key)) byRow.set(key, { period: edit.period, quarter: edit.quarter, updates: [] });[m
+[32m+[m[32m                byRow.get(key)!.updates.push({ colIdx: edit.colIdx, value: edit.value });[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            // 楽観的更新: 即座にUIに反映[m
+[32m+[m[32m            const newMemoMap = { ...memoMap };[m
+[32m+[m[32m            const prevMemoMap = { ...memoMap };[m
+[32m+[m[32m            for (const [key, { updates }] of byRow) {[m
+[32m+[m[32m                const grid = newMemoMap[key] ? newMemoMap[key].map((row) => [...row]) : createEmptyGrid();[m
+[32m+[m[32m                for (const { colIdx, value } of updates) grid[0][colIdx] = value;[m
+[32m+[m[32m                newMemoMap[key] = grid;[m
+[32m+[m[32m            }[m
+[32m+[m[32m            setMemoMap(newMemoMap);[m
+[32m+[m
+[32m+[m[32m            // バックグラウンドで保存[m
+[32m+[m[32m            let hasErrors = false;[m
+[32m+[m[32m            for (const [key, { period, quarter }] of byRow) {[m
+[32m+[m[32m                try {[m
+[32m+[m[32m                    await saveGridMemo(activeTicker, period, quarter, newMemoMap[key], user?.id);[m
+[32m+[m[32m                } catch (err) {[m
+[32m+[m[32m                    console.error(`PLメモ保存失敗 (${key}):`, err);[m
+[32m+[m[32m                    hasErrors = true;[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m[32m            if (hasErrors) {[m
+[32m+[m[32m                setMemoMap(prevMemoMap);[m
+[32m+[m[32m                setErrorMsg("一部メモの保存に失敗しました。allowed_usersの登録を確認してください。");[m
+[32m+[m[32m            }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        [activeTicker, memoMap, user][m
+[32m+[m[32m    );[m
+ [m
+[31m-    // --- 保存後のステータスリセット ---[m
+     useEffect(() => {[m
+         if (status === "saved") {[m
+             const timer = setTimeout(() => setStatus("loaded"), 3000);[m
+[36m@@ -387,27 +313,11 @@[m [mexport default function ViewerPage() {[m
+         }[m
+     }, [status]);[m
+ [m
+[31m-    // --- 認証読込中 ---[m
+[31m-    if (authLoading) {[m
+[31m-        return ([m
+[31m-            <div className="viewer-container">[m
+[31m-                <div className="placeholder">認証確認中...</div>[m
+[31m-            </div>[m
+[31m-        );[m
+[31m-    }[m
+[31m-[m
+[31m-    // --- 未認証 (middleware がリダイレクトするが念のため) ---[m
+[31m-    if (!user) {[m
+[31m-        return ([m
+[31m-            <div className="viewer-container">[m
+[31m-                <div className="placeholder">ログインが必要です</div>[m
+[31m-            </div>[m
+[31m-        );[m
+[31m-    }[m
+[32m+[m[32m    if (authLoading) return <div className="viewer-container"><div className="placeholder">認証確認中...</div></div>;[m
+[32m+[m[32m    if (!user) return <div className="viewer-container"><div className="placeholder">ログインが必要です</div></div>;[m
+ [m
+     return ([m
+[31m-        <div className="viewer-container">[m
+[31m-            {/* ヘッダー */}[m
+[32m+[m[32m        <div className={`viewer-container font-${fontTheme}`}>[m
+             <TickerHeader[m
+                 tickerInput={tickerInput}[m
+                 onTickerChange={setTickerInput}[m
+[36m@@ -417,95 +327,45 @@[m [mexport default function ViewerPage() {[m
+                 companyName={companyInfo?.companyName || null}[m
+                 errorMsg={errorMsg}[m
+                 userEmail={user.email}[m
+[32m+[m[32m                fontTheme={fontTheme}[m
+[32m+[m[32m                onFontThemeChange={setFontTheme}[m
+             />[m
+ [m
+[31m-            {/* 未ロード時 */}[m
+[31m-            {!activeTicker && status === "idle" && ([m
+[31m-                <div className="placeholder">[m
+[31m-                    企業コードを入力して「読込」を押してください[m
+[32m+[m[32m            {/* 同時閲覧ユーザー表示 */}[m
+[32m+[m[32m            {viewers.length > 0 && ([m
+[32m+[m[32m                <div className="presence-bar">[m
+[32m+[m[32m                    <span className="presence-icon">👁️</span>[m
+[32m+[m[32m                    <span className="presence-text">[m
+[32m+[m[32m                        同時閲覧中: {viewers.map((v) => v.displayName).join(", ")}[m
+[32m+[m[32m                    </span>[m
+                 </div>[m
+             )}[m
+ [m
+[31m-            {/* 2カラムレイアウト */}[m
+[32m+[m[32m            {!activeTicker && status === "idle" && ([m
+[32m+[m[32m                <div className="placeholder">企業コードを入力して「読込」を押してください</div>[m
+[32m+[m[32m            )}[m
+[32m+[m
+             {activeTicker && ([m
+[31m-                <div className="viewer-layout">[m
+[31m-                    {/* 左カラム: メモ */}[m
+[31m-                    <div className="viewer-left">[m
+[31m-                        <div className="data-section memo-section">[m
+[31m-                            <div className="memo-header-row">[m
+[31m-                                <h2 className="section-title">📋 メモ</h2>[m
+[31m-                                <div className="memo-actions">[m
+[31m-                                    <button[m
+[31m-                                        className="btn btn-save"[m
+[31m-                                        onClick={handleSave}[m
+[31m-                                        disabled={[m
+[31m-                                            status === "saving" ||[m
+[31m-                                            !dirty ||[m
+[31m-                                            !selectedPeriod ||[m
+[31m-                                            !selectedQuarter[m
+[31m-                                        }[m
+[31m-                                    >[m
+[31m-                                        {status === "saving" ? "保存中..." : "保存"}[m
+[31m-                                    </button>[m
+[31m-                                </div>[m
+[31m-                            </div>[m
+[31m-                            <div className="memo-status-row">[m
+[31m-                                <span className="shared-notice">[m
+[31m-                                    🔗 共有データ（後勝ち上書き）[m
+[31m-                                </span>[m
+[31m-                                {updatedAt && ([m
+[31m-                                    <span className="updated-at">[m
+[31m-                                        最終更新: {new Date(updatedAt).toLocaleString("ja-JP")}[m
+[31m-                                    </span>[m
+[31m-                                )}[m
+[31m-                                {updatedBy && ([m
+[31m-                                    <span className="updated-by">[m
+[31m-                                        by {updatedBy}[m
+[31m-                                    </span>[m
+[31m-                                )}[m
+[31m-                                <span className={`save-status ${dirty ? "unsaved" : "saved"}`}>[m
+[31m-                                    {dirty[m
+[31m-                                        ? "● 未保存の変更あり"[m
+[31m-                                        : status === "saved"[m
+[31m-                                            ? "✓ 保存済み"[m
+[31m-                                            : ""}[m
+[31m-                                </span>[m
+[31m-                            </div>[m
+[31m-                            {memoLoading ? ([m
+[31m-                                <div className="loading-message">メモ読込中...</div>[m
+[31m-                            ) : selectedPeriod && selectedQuarter ? ([m
+[31m-                                <MemoGrid[m
+[31m-                                    data={gridData}[m
+[31m-                                    onChange={handleGridChange}[m
+[31m-                                    period={selectedPeriod}[m
+[31m-                                    quarter={selectedQuarter}[m
+[31m-                                    focusCell={focusCell}[m
+[31m-                                    onFocusCellChange={setFocusCell}[m
+[31m-                                />[m
+[31m-                            ) : ([m
+[31m-                                <div className="no-data-message">[m
+[31m-                                    PL の行をクリックしてメモを表示[m
+[31m-                                </div>[m
+[31m-                            )}[m
+[31m-                        </div>[m
+[31m-                    </div>[m
+[31m-[m
+[31m-                    {/* 右カラム: データテーブル群 */}[m
+[31m-                    <div className="viewer-right">[m
+[31m-                        <FinancialsTable[m
+[31m-                            data={financials}[m
+[31m-                            loading={dataLoading}[m
+[31m-                            selectedPeriod={selectedPeriod}[m
+[31m-                            selectedQuarter={selectedQuarter}[m
+[31m-                            onRowClick={handlePLRowClick}[m
+[31m-                            memoMap={memoMap}[m
+[31m-                            onMemoEdit={handlePLMemoEdit}[m
+[31m-                            onMemoPaste={handlePLMemoPaste}[m
+[31m-                        />[m
+[31m-                        <ForecastTable data={forecasts} loading={dataLoading} />[m
+[31m-                        <MonthlyTable data={monthly} loading={dataLoading} />[m
+[31m-                        <KpiTable data={kpi} loading={dataLoading} />[m
+[31m-                    </div>[m
+[32m+[m[32m                <div className="viewer-main">[m
+[32m+[m[32m                    <FinancialsTable[m
+[32m+[m[32m                        data={financials}[m
+[32m+[m[32m                        loading={dataLoading}[m
+[32m+[m[32m                        selectedPeriod={selectedPeriod}[m
+[32m+[m[32m                        selectedQuarter={selectedQuarter}[m
+[32m+[m[32m                        onRowClick={handlePLRowClick}[m
+[32m+[m[32m                        memoMap={memoMap}[m
+[32m+[m[32m                        onMemoEdit={handlePLMemoEdit}[m
+[32m+[m[32m                        onMemoPaste={handlePLMemoPaste}[m
+[32m+[m[32m                        segments={segments}[m
+[32m+[m[32m                        kpiDefs={kpiDefs}[m
+[32m+[m[32m                        kpiValues={kpiValues}[m
+[32m+[m[32m                        onKpiHeaderEdit={handleKpiHeaderEdit}[m
+[32m+[m[32m                        onKpiValueEdit={handleKpiValueEdit}[m
+[32m+[m[32m                    />[m
+[32m+[m[32m                    <SegmentTable data={segments} loading={dataLoading} />[m
+[32m+[m[32m                    <ForecastTable data={forecasts} loading={dataLoading} />[m
+[32m+[m[32m                    <MonthlyTable data={monthly} loading={dataLoading} />[m
+[32m+[m[32m                    <KpiTable data={kpi} loading={dataLoading} />[m
+                 </div>[m
+             )}[m
+         </div>[m
+[1mdiff --git a/lib/viewer-api.ts b/lib/viewer-api.ts[m
+[1mindex 57d5883..eb1304a 100644[m
+[1m--- a/lib/viewer-api.ts[m
+[1m+++ b/lib/viewer-api.ts[m
+[36m@@ -215,3 +215,51 @@[m [mexport async function loadKpiData(ticker: string): Promise<KpiRecord[]> {[m
+         return [];[m
+     }[m
+ }[m
+[32m+[m
+[32m+[m[32m// ============================================================[m
+[32m+[m[32m// Segment Financials — セグメント業績[m
+[32m+[m[32m// ============================================================[m
+[32m+[m
+[32m+[m[32mimport type { SegmentRecord } from "@/types/segment";[m
+[32m+[m[32mimport { normalizePeriod, normalizeQuarter } from "@/lib/normalize";[m
+[32m+[m
+[32m+[m[32m/**[m
+[32m+[m[32m * セグメント業績データを取得する。[m
+[32m+[m[32m * テーブルが存在しない場合は空配列を返す。[m
+[32m+[m[32m * period / quarter は正規化してPL行とのjoinを保証する。[m
+[32m+[m[32m */[m
+[32m+[m[32mexport async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> {[m
+[32m+[m[32m    const t = normalizeTicker(ticker);[m
+[32m+[m[32m    if (!t) return [];[m
+[32m+[m
+[32m+[m[32m    try {[m
+[32m+[m[32m        const { data, error } = await supabase[m
+[32m+[m[32m            .from("segment_canonical")[m
+[32m+[m[32m            .select("ticker,period,quarter,segment_name,sales,profit")[m
+[32m+[m[32m            .eq("ticker", t)[m
+[32m+[m[32m            .order("period", { ascending: false })[m
+[32m+[m[32m            .order("quarter", { ascending: false })[m
+[32m+[m[32m            .limit(500);[m
+[32m+[m
+[32m+[m[32m        if (error) {[m
+[32m+[m[32m            console.warn("[segment_canonical] スキップ (テーブル未作成の可能性):", error.message);[m
+[32m+[m[32m            return [];[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        if (!data || data.length === 0) return [];[m
+[32m+[m
+[32m+[m[32m        // period / quarter を正規化、カラム名を内部型に合わせて返す[m
+[32m+[m[32m        return data.map((row) => ({[m
+[32m+[m[32m            ticker: row.ticker,[m
+[32m+[m[32m            period: normalizePeriod(row.period),[m
+[32m+[m[32m            quarter: normalizeQuarter(row.quarter),[m
+[32m+[m[32m            segment_name: row.segment_name,[m
+[32m+[m[32m            segment_sales: row.sales !== null ? Number(row.sales) : null,[m
+[32m+[m[32m            segment_profit: row.profit !== null ? Number(row.profit) : null,[m
+[32m+[m[32m        }));[m
+[32m+[m[32m    } catch (err) {[m
+[32m+[m[32m        console.warn("[segment_canonical] 取得例外 (空配列で継続):", err);[m
+[32m+[m[32m        return [];[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[41m+[m

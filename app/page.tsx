@@ -38,6 +38,7 @@ import {
 import {
     loadSegmentOverrides,
     saveSegmentOverride,
+    saveSegmentOverridesBulk,
     deleteSegmentOverride,
 } from "@/lib/segment-override-api";
 import { useTickerPresence } from "@/hooks/useTickerPresence";
@@ -46,7 +47,7 @@ import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
 import type { SegmentRecord } from "@/types/segment";
-import type { SegmentCellOverride } from "@/types/segment-override";
+import type { SegmentCellOverride, SegmentOverrideSaveRequest } from "@/types/segment-override";
 import type { User } from "@supabase/supabase-js";
 
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
@@ -451,6 +452,59 @@ export default function ViewerPage() {
         [activeTicker, user, segments, segmentOverrides],
     );
 
+    // ============================================================
+    // Segment Override — Bulk Paste (複数セル一括保存)
+    // ============================================================
+
+    const handleBulkSaveOverrides = useCallback(
+        async (items: SegmentOverrideSaveRequest[]): Promise<{ saved: number; failed: number }> => {
+            if (!activeTicker || !user?.email) return { saved: 0, failed: items.length };
+
+            // ticker を items に注入（FinancialsTable 側では空文字で渡される）
+            const requests = items.map((item) => ({
+                ...item,
+                ticker: activeTicker,
+            }));
+
+            try {
+                const result = await saveSegmentOverridesBulk(requests, user.email);
+
+                if (result.saved.length > 0) {
+                    // 既存 overrides に merge
+                    let newOverrides = [...segmentOverrides];
+                    for (const saved of result.saved) {
+                        newOverrides = newOverrides.filter(
+                            (ov) =>
+                                !(
+                                    ov.fiscal_year === saved.fiscal_year &&
+                                    ov.quarter === saved.quarter &&
+                                    ov.segment_name === saved.segment_name &&
+                                    ov.metric === saved.metric
+                                ),
+                        );
+                        newOverrides.push(saved);
+                    }
+                    setSegmentOverrides(newOverrides);
+
+                    // Re-resolve
+                    const stubs = generateMissingQuarterStubs(segments);
+                    const withStubs = [...segments, ...stubs];
+                    const resolved = resolveSegmentsWithOverrides(withStubs, newOverrides);
+                    setResolvedSegments(resolved);
+                }
+
+                return { saved: result.saved.length, failed: result.failed };
+            } catch (err) {
+                console.error("Bulk override save failed:", err);
+                setErrorMsg(
+                    `一括保存失敗: ${err instanceof Error ? err.message : String(err)}`,
+                );
+                return { saved: 0, failed: items.length };
+            }
+        },
+        [activeTicker, user, segments, segmentOverrides],
+    );
+
     useEffect(() => {
         if (status === "saved") {
             const timer = setTimeout(() => setStatus("loaded"), 3000);
@@ -508,6 +562,7 @@ export default function ViewerPage() {
                         onKpiValueEdit={handleKpiValueEdit}
                         onSegmentOverrideSave={handleSaveOverride}
                         onSegmentOverrideDelete={handleDeleteOverride}
+                        onBulkSaveOverrides={handleBulkSaveOverrides}
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
