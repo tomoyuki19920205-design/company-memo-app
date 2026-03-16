@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import TickerHeader from "@/components/TickerHeader";
 import FinancialsTable from "@/components/FinancialsTable";
 import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
+import OrderKpiCard from "@/components/OrderKpiCard";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
     saveGridMemo,
@@ -33,6 +34,10 @@ import {
     extractFiscalYears,
     resolveSegmentsWithOverrides,
     generateMissingQuarterStubs,
+    loadOrderKpis,
+    updateOrderKpiReviewStatus,
+    loadRejectedOrderKpis,
+    restoreOrderKpi,
     type CompanyInfo,
 } from "@/lib/viewer-api";
 import {
@@ -48,6 +53,7 @@ import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
 import type { SegmentRecord } from "@/types/segment";
 import type { SegmentCellOverride, SegmentOverrideSaveRequest } from "@/types/segment-override";
+import type { OrderKpiItem } from "@/types/order-kpi";
 import type { User } from "@supabase/supabase-js";
 
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
@@ -77,11 +83,52 @@ export default function ViewerPage() {
     const [segments, setSegments] = useState<SegmentRecord[]>([]);
     const [segmentOverrides, setSegmentOverrides] = useState<SegmentCellOverride[]>([]);
     const [resolvedSegments, setResolvedSegments] = useState<SegmentRecord[]>([]);
+    const [orderKpis, setOrderKpis] = useState<OrderKpiItem[]>([]);
+    const [rejectedKpis, setRejectedKpis] = useState<OrderKpiItem[]>([]);
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
+
+    // ============================================================
+    // Undo スタック (Ctrl+Z)
+    // ============================================================
+    interface UndoEntry {
+        label: string;
+        restore: () => void;
+    }
+    const undoStackRef = useRef<UndoEntry[]>([]);
+    const MAX_UNDO = 50;
+
+    const pushUndo = useCallback((label: string, restore: () => void) => {
+        undoStackRef.current.push({ label, restore });
+        if (undoStackRef.current.length > MAX_UNDO) {
+            undoStackRef.current.shift();
+        }
+    }, []);
+
+    const handleUndo = useCallback(() => {
+        const entry = undoStackRef.current.pop();
+        if (!entry) return;
+        console.log(`[undo] ${entry.label}`);
+        entry.restore();
+    }, []);
+
+    // グローバル Ctrl+Z ハンドラ (PLテーブル外でも効く)
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
+                // textarea/input にフォーカスがある場合はブラウザ標準に任せる
+                const tag = (e.target as HTMLElement)?.tagName;
+                if (tag === "INPUT" || tag === "TEXTAREA") return;
+                e.preventDefault();
+                handleUndo();
+            }
+        };
+        document.addEventListener("keydown", handler);
+        return () => document.removeEventListener("keydown", handler);
+    }, [handleUndo]);
 
     // フォントテーマ
     const [fontTheme, setFontTheme] = useState(() => {
@@ -99,14 +146,26 @@ export default function ViewerPage() {
 
     useEffect(() => {
         const supabase = createSupabaseBrowser();
-        supabase.auth.getUser().then(({ data: { user: u } }) => {
-            setUser(u);
+        // 安全タイムアウト: getUser() がハングしても5秒で解除
+        const timeout = setTimeout(() => {
+            console.warn("[auth] getUser() timeout — forcing authLoading=false");
             setAuthLoading(false);
-        });
+        }, 5000);
+        supabase.auth.getUser()
+            .then(({ data: { user: u } }) => {
+                clearTimeout(timeout);
+                setUser(u);
+                setAuthLoading(false);
+            })
+            .catch((err) => {
+                clearTimeout(timeout);
+                console.error("[auth] getUser() failed:", err);
+                setAuthLoading(false);
+            });
         const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
             setUser(session?.user ?? null);
         });
-        return () => subscription.unsubscribe();
+        return () => { subscription.unsubscribe(); clearTimeout(timeout); };
     }, []);
 
     const handleLoad = useCallback(async () => {
@@ -124,10 +183,12 @@ export default function ViewerPage() {
         setSegments([]);
         setSegmentOverrides([]);
         setResolvedSegments([]);
+        setOrderKpis([]);
+        setRejectedKpis([]);
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult] =
+        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult] =
             await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
@@ -138,6 +199,7 @@ export default function ViewerPage() {
                 loadSegmentData(ticker),
                 loadKpiDefinitions(ticker),
                 loadKpiValues(ticker),
+                loadOrderKpis(ticker),
             ]);
 
         setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
@@ -202,6 +264,10 @@ export default function ViewerPage() {
         if (kpiValsResult.status === "fulfilled") {
             setKpiValues(kpiValsResult.value);
         }
+        setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
+
+        // 却下レコードは別途取得 (Promise.allSettled に含めず後から)
+        loadRejectedOrderKpis(ticker).then(setRejectedKpis).catch(() => setRejectedKpis([]));
 
         if (financialsResult.status === "rejected") {
             const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
@@ -229,6 +295,11 @@ export default function ViewerPage() {
         async (kpiSlot: number, newName: string) => {
             if (!activeTicker) return;
             const prev = kpiDefs[kpiSlot];
+            // Undo エントリ
+            pushUndo(`KPIヘッダー ${kpiSlot}`, () => {
+                setKpiDefs((d) => ({ ...d, [kpiSlot]: prev }));
+                saveKpiDefinition(activeTicker, kpiSlot, prev ?? `KPI ${kpiSlot}`).catch(console.error);
+            });
             // 楽観的更新
             setKpiDefs((d) => ({ ...d, [kpiSlot]: newName }));
             try {
@@ -239,7 +310,7 @@ export default function ViewerPage() {
                 setErrorMsg(`KPIヘッダー保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, kpiDefs]
+        [activeTicker, kpiDefs, pushUndo]
     );
 
     // KPI値変更
@@ -247,7 +318,15 @@ export default function ViewerPage() {
         async (period: string, quarter: string, kpiSlot: number, value: string) => {
             if (!activeTicker) return;
             const key = `${period}|${quarter}`;
-            const prevValue = kpiValues[key]?.[kpiSlot];
+            const prevValue = kpiValues[key]?.[kpiSlot] ?? "";
+            // Undo エントリ
+            pushUndo(`KPI値 ${key} slot${kpiSlot}`, () => {
+                setKpiValues((prev) => ({
+                    ...prev,
+                    [key]: { ...(prev[key] || {}), [kpiSlot]: prevValue },
+                }));
+                saveKpiValue(activeTicker, period, quarter, kpiSlot, prevValue).catch(console.error);
+            });
             // 楽観的更新
             setKpiValues((prev) => ({
                 ...prev,
@@ -259,12 +338,12 @@ export default function ViewerPage() {
                 console.error("KPI値保存失敗:", err);
                 setKpiValues((prev) => ({
                     ...prev,
-                    [key]: { ...(prev[key] || {}), [kpiSlot]: prevValue ?? "" },
+                    [key]: { ...(prev[key] || {}), [kpiSlot]: prevValue },
                 }));
                 setErrorMsg(`KPI値保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, kpiValues]
+        [activeTicker, kpiValues, pushUndo]
     );
 
     const handlePLMemoEdit = useCallback(
@@ -276,8 +355,19 @@ export default function ViewerPage() {
                 : createEmptyGrid();
             existingGrid[0][colIdx] = value;
 
-            // 楽観的更新: 即座にUIに反映
+            // Undo エントリ
             const prevGrid = memoMap[memoKey];
+            const prevGridCopy = prevGrid ? prevGrid.map((row) => [...row]) : undefined;
+            pushUndo(`メモ ${memoKey} col${colIdx}`, () => {
+                if (prevGridCopy) {
+                    setMemoMap((prev) => ({ ...prev, [memoKey]: prevGridCopy }));
+                    saveGridMemo(activeTicker, period, quarter, prevGridCopy, user?.id).catch(console.error);
+                } else {
+                    setMemoMap((prev) => { const next = { ...prev }; delete next[memoKey]; return next; });
+                }
+            });
+
+            // 楽観的更新: 即座にUIに反映
             setMemoMap((prev) => ({ ...prev, [memoKey]: existingGrid }));
 
             try {
@@ -297,7 +387,7 @@ export default function ViewerPage() {
                 setErrorMsg(`メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, memoMap, user]
+        [activeTicker, memoMap, user, pushUndo]
     );
 
     const handlePLMemoPaste = useCallback(
@@ -310,6 +400,20 @@ export default function ViewerPage() {
                 if (!byRow.has(key)) byRow.set(key, { period: edit.period, quarter: edit.quarter, updates: [] });
                 byRow.get(key)!.updates.push({ colIdx: edit.colIdx, value: edit.value });
             }
+
+            // Undo エントリ (ペースト前の全体スナップショット)
+            const prevMemoMapCopy: MemoMapType = {};
+            for (const key of Object.keys(memoMap)) {
+                prevMemoMapCopy[key] = memoMap[key].map((row) => [...row]);
+            }
+            pushUndo(`メモペースト ${edits.length}セル`, () => {
+                setMemoMap(prevMemoMapCopy);
+                // 変更されたキーのみ再保存
+                for (const [key, { period, quarter }] of byRow) {
+                    const restoreGrid = prevMemoMapCopy[key] ?? createEmptyGrid();
+                    saveGridMemo(activeTicker, period, quarter, restoreGrid, user?.id).catch(console.error);
+                }
+            });
 
             // 楽観的更新: 即座にUIに反映
             const newMemoMap = { ...memoMap };
@@ -336,7 +440,7 @@ export default function ViewerPage() {
                 setErrorMsg("一部メモの保存に失敗しました。allowed_usersの登録を確認してください。");
             }
         },
-        [activeTicker, memoMap, user]
+        [activeTicker, memoMap, user, pushUndo]
     );
 
     // ============================================================
@@ -505,6 +609,48 @@ export default function ViewerPage() {
         [activeTicker, user, segments, segmentOverrides],
     );
 
+    // ============================================================
+    // Order KPI — review承認/却下
+    // ============================================================
+
+    const handleOrderKpiReview = useCallback(
+        async (
+            id: number,
+            nextStatus: "auto_accepted" | "rejected",
+            reviewNote?: string,
+        ): Promise<{ success: boolean; error?: string }> => {
+            const result = await updateOrderKpiReviewStatus(
+                id,
+                nextStatus,
+                user?.email ?? undefined,
+                reviewNote,
+            );
+            if (result.success && activeTicker) {
+                // 再fetch でUI更新（却下されたレコードは best view から消える）
+                const updated = await loadOrderKpis(activeTicker);
+                setOrderKpis(updated);
+            }
+            return result;
+        },
+        [activeTicker, user],
+    );
+
+    const handleRestoreOrderKpi = useCallback(
+        async (id: number): Promise<{ success: boolean; error?: string }> => {
+            const result = await restoreOrderKpi(id, user?.email ?? undefined);
+            if (result.success && activeTicker) {
+                const [updated, rejected] = await Promise.all([
+                    loadOrderKpis(activeTicker),
+                    loadRejectedOrderKpis(activeTicker),
+                ]);
+                setOrderKpis(updated);
+                setRejectedKpis(rejected);
+            }
+            return result;
+        },
+        [activeTicker, user],
+    );
+
     useEffect(() => {
         if (status === "saved") {
             const timer = setTimeout(() => setStatus("loaded"), 3000);
@@ -563,10 +709,18 @@ export default function ViewerPage() {
                         onSegmentOverrideSave={handleSaveOverride}
                         onSegmentOverrideDelete={handleDeleteOverride}
                         onBulkSaveOverrides={handleBulkSaveOverrides}
+                        onUndo={handleUndo}
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />
+                    <OrderKpiCard
+                        data={orderKpis}
+                        rejectedData={rejectedKpis}
+                        loading={dataLoading}
+                        onReviewAction={handleOrderKpiReview}
+                        onRestoreAction={handleRestoreOrderKpi}
+                    />
                 </div>
             )}
         </div>

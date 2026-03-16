@@ -1,6 +1,5 @@
 import { supabase } from "./supabase";
 import { normalizeTicker } from "./memo-api";
-import { convertToMillions } from "./format";
 import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
@@ -71,6 +70,7 @@ export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
 
 /**
  * 四半期業績データを取得する (過去5年分表示のため十分な件数を取得)
+ * DB は全件 unit='million_yen' 統一済みのため、値をそのまま返す。
  */
 export async function loadFinancials(ticker: string): Promise<FinancialRecord[]> {
     const t = normalizeTicker(ticker);
@@ -79,7 +79,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
     try {
         const { data, error } = await supabase
             .from("api_latest_financials")
-            .select("ticker,period,quarter,sales,gross_profit,operating_profit,updated_at")
+            .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: false })
@@ -95,24 +95,21 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (!data || data.length === 0) return [];
 
-        // 単位変換: convertToMillions(value, source) で source 別に百万円正規化
+        // 全データ million_yen 統一済み — DB値をそのまま返す
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const records: FinancialRecord[] = data.map((row: any) => {
-            const src: string = row.source ?? "";
-            return {
-                ticker: row.ticker,
-                period: row.period,
-                quarter: row.quarter,
-                sales: convertToMillions(row.sales, src),
-                gross_profit: convertToMillions(row.gross_profit, src),
-                operating_profit: convertToMillions(row.operating_profit, src),
-                ordinary_profit: null,
-                net_income: null,
-                eps: null,
-                source: src,
-                updated_at: row.updated_at || "",
-            };
-        });
+        const records: FinancialRecord[] = data.map((row: any) => ({
+            ticker: row.ticker,
+            period: row.period,
+            quarter: row.quarter,
+            sales: row.sales,
+            gross_profit: row.gross_profit,
+            operating_profit: row.operating_profit,
+            ordinary_profit: null,
+            net_income: null,
+            eps: null,
+            source: row.source ?? "",
+            updated_at: row.updated_at || "",
+        }));
 
         // 明示的にソート: period DESC → quarter DESC (FY → 3Q → 2Q → 1Q)
         return sortFinancials(records);
@@ -435,3 +432,291 @@ export function generateMissingQuarterStubs(
     return stubs;
 }
 
+// ============================================================
+// Order KPI — 受注系KPI (order_kpis テーブル / ビュー)
+// ============================================================
+
+import type { OrderKpiItem } from "@/types/order-kpi";
+
+/**
+ * 受注系KPIデータを取得する。
+ * 優先: order_kpis_best ビュー → order_kpis テーブル直接
+ * テーブル/ビューが存在しない場合は空配列を返す。
+ */
+export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    // Try best view first
+    try {
+        const { data, error } = await supabase
+            .from("order_kpis_best")
+            .select(
+                "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
+                "review_status,confidence_score,filing_date,source_system," +
+                "source_type,raw_label,source_page,source_locator,extraction_method," +
+                "reviewed_at,reviewed_by,review_note"
+            )
+            .eq("ticker", t)
+            .order("canonical_kpi_name");
+
+        if (!error && data && data.length > 0) {
+            return data as unknown as OrderKpiItem[];
+        }
+
+        // View might not exist — fall through to direct table query
+        if (error) {
+            console.warn("[order_kpis_best] view not available:", error.message);
+        }
+    } catch (err) {
+        console.warn("[order_kpis_best] exception:", err);
+    }
+
+    // Fallback: query order_kpis table directly
+    try {
+        const { data, error } = await supabase
+            .from("order_kpis")
+            .select(
+                "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
+                "review_status,confidence_score,filing_date,source_system," +
+                "source_type,raw_label,source_page,source_locator,extraction_method," +
+                "reviewed_at,reviewed_by,review_note"
+            )
+            .eq("ticker", t)
+            .order("canonical_kpi_name")
+            .order("confidence_score", { ascending: false })
+            .limit(10);
+
+        if (error) {
+            console.warn("[order_kpis] スキップ (テーブル未作成の可能性):", error.message);
+            return [];
+        }
+
+        if (!data || data.length === 0) return [];
+
+        // Deduplicate: keep highest confidence per canonical_kpi_name
+        const bestMap = new Map<string, OrderKpiItem>();
+        for (const row of data as unknown as OrderKpiItem[]) {
+            const existing = bestMap.get(row.canonical_kpi_name);
+            if (!existing || (row.confidence_score ?? 0) > (existing.confidence_score ?? 0)) {
+                bestMap.set(row.canonical_kpi_name, row);
+            }
+        }
+
+        return Array.from(bestMap.values());
+    } catch (err) {
+        console.warn("[order_kpis] 取得例外 (空配列で継続):", err);
+        return [];
+    }
+}
+
+// ============================================================
+// Order KPI — review_status 更新
+// ============================================================
+
+type ReviewAction = "auto_accepted" | "rejected";
+
+/**
+ * order_kpis の review_status を更新する。
+ * needs_review / ambiguous → auto_accepted / rejected のみ許可。
+ * reviewed_at / reviewed_by / review_note を同時記録。
+ */
+export async function updateOrderKpiReviewStatus(
+    id: number,
+    nextStatus: ReviewAction,
+    reviewerEmail?: string,
+    reviewNote?: string,
+): Promise<{ success: boolean; error?: string }> {
+    if (nextStatus !== "auto_accepted" && nextStatus !== "rejected") {
+        return { success: false, error: `Invalid nextStatus: ${nextStatus}` };
+    }
+
+    try {
+        // まず現在のレコードを確認
+        const { data: current, error: fetchErr } = await supabase
+            .from("order_kpis")
+            .select("id,review_status")
+            .eq("id", id)
+            .maybeSingle();
+
+        if (fetchErr || !current) {
+            console.warn(`[order_kpi review] id=${id} not found`);
+            return { success: false, error: `Record id=${id} not found` };
+        }
+
+        const oldStatus = current.review_status;
+
+        // auto_accepted / rejected は no-op
+        if (oldStatus === "auto_accepted" || oldStatus === "rejected") {
+            console.log(`[order_kpi review] id=${id} already ${oldStatus}, no-op`);
+            return { success: true };
+        }
+
+        // 更新実行 (監査フィールド付き)
+        const updatePayload: Record<string, unknown> = {
+            review_status: nextStatus,
+            reviewed_at: new Date().toISOString(),
+        };
+        if (reviewerEmail) updatePayload.reviewed_by = reviewerEmail;
+        if (reviewNote) updatePayload.review_note = reviewNote;
+
+        const { error: updateErr } = await supabase
+            .from("order_kpis")
+            .update(updatePayload)
+            .eq("id", id);
+
+        if (updateErr) {
+            console.error(`[order_kpi review] update failed:`, updateErr.message);
+            return { success: false, error: updateErr.message };
+        }
+
+        console.log(`[order_kpi review] id=${id} ${oldStatus} → ${nextStatus} by=${reviewerEmail ?? 'unknown'}`);
+        return { success: true };
+    } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`[order_kpi review] exception:`, msg);
+        return { success: false, error: msg };
+    }
+}
+
+// ============================================================
+// Order KPI — 却下レコード取得
+// ============================================================
+
+/**
+ * 指定tickerの却下済み受注KPIを取得する。
+ */
+export async function loadRejectedOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    try {
+        const { data, error } = await supabase
+            .from("order_kpis")
+            .select(
+                "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
+                "review_status,confidence_score,filing_date,source_system," +
+                "source_type,raw_label,source_page,source_locator,extraction_method," +
+                "reviewed_at,reviewed_by,review_note"
+            )
+            .eq("ticker", t)
+            .eq("review_status", "rejected")
+            .order("canonical_kpi_name");
+
+        if (error) {
+            console.warn("[order_kpis rejected] query error:", error.message);
+            return [];
+        }
+
+        return (data as unknown as OrderKpiItem[]) ?? [];
+    } catch (err) {
+        console.warn("[order_kpis rejected] exception:", err);
+        return [];
+    }
+}
+
+// ============================================================
+// Order KPI — 却下レコード復活 (rejected → needs_review)
+// ============================================================
+
+/**
+ * 却下済みレコードを needs_review に戻す。
+ */
+export async function restoreOrderKpi(
+    id: number,
+    reviewerEmail?: string,
+): Promise<{ success: boolean; error?: string }> {
+    try {
+        const { data: current, error: fetchErr } = await supabase
+            .from("order_kpis")
+            .select("id,review_status")
+            .eq("id", id)
+            .maybeSingle();
+
+        if (fetchErr || !current) {
+            return { success: false, error: `Record id=${id} not found` };
+        }
+
+        if (current.review_status !== "rejected") {
+            console.log(`[order_kpi restore] id=${id} is ${current.review_status}, not rejected`);
+            return { success: true };
+        }
+
+        const { error: updateErr } = await supabase
+            .from("order_kpis")
+            .update({
+                review_status: "needs_review",
+                reviewed_at: new Date().toISOString(),
+                reviewed_by: reviewerEmail ?? null,
+                review_note: "却下から復活",
+            })
+            .eq("id", id);
+
+        if (updateErr) {
+            return { success: false, error: updateErr.message };
+        }
+
+        console.log(`[order_kpi restore] id=${id} rejected → needs_review by=${reviewerEmail ?? 'unknown'}`);
+        return { success: true };
+    } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        return { success: false, error: msg };
+    }
+}
+
+// ============================================================
+// Order KPI — 値の手修正
+// ============================================================
+
+/**
+ * order_kpis の normalized_value を手動で修正する。
+ * review_status を "manual_corrected" に変更し、監査情報を記録。
+ */
+export async function updateOrderKpiValue(
+    id: number,
+    newValue: number,
+    reviewerEmail?: string,
+    reviewNote?: string,
+): Promise<{ success: boolean; error?: string }> {
+    try {
+        const { data: current, error: fetchErr } = await supabase
+            .from("order_kpis")
+            .select("id,normalized_value,review_status")
+            .eq("id", id)
+            .maybeSingle();
+
+        if (fetchErr || !current) {
+            return { success: false, error: `Record id=${id} not found` };
+        }
+
+        const oldValue = current.normalized_value;
+        const oldStatus = current.review_status;
+
+        const updatePayload: Record<string, unknown> = {
+            normalized_value: newValue,
+            review_status: "manual_corrected",
+            reviewed_at: new Date().toISOString(),
+        };
+        if (reviewerEmail) updatePayload.reviewed_by = reviewerEmail;
+        updatePayload.review_note = reviewNote
+            ? reviewNote
+            : `手修正: ${oldValue} → ${newValue}`;
+
+        const { error: updateErr } = await supabase
+            .from("order_kpis")
+            .update(updatePayload)
+            .eq("id", id);
+
+        if (updateErr) {
+            console.error(`[order_kpi edit] update failed:`, updateErr.message);
+            return { success: false, error: updateErr.message };
+        }
+
+        console.log(`[order_kpi edit] id=${id} value ${oldValue} → ${newValue}, status ${oldStatus} → manual_corrected`);
+        return { success: true };
+    } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`[order_kpi edit] exception:`, msg);
+        return { success: false, error: msg };
+    }
+}

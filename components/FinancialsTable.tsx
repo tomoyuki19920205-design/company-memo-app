@@ -37,6 +37,20 @@ interface SegCellCoord {
     colIdx: number;   // セグメント列インデックス (scIdx * 2 + 0=sales/1=profit)
 }
 
+/** 範囲選択 */
+interface SelectionRange {
+    tableId: "cum" | "q";
+    startRow: number;
+    startColIdx: number;  // 絶対列インデックス (0-based)
+    endRow: number;
+    endColIdx: number;
+}
+
+// CUM: [period, quarter, sales, gp, sga, op, margin, memo_a, memo_b, ...segs, ...kpis]
+// Q:   [period, quarter, sales, gp, sga, op, margin, ...segs, ...kpis]
+const CUM_BASE_COL_COUNT = 9;
+const Q_BASE_COL_COUNT = 7;
+
 interface FinancialsTableProps {
     data: FinancialRecord[];
     loading: boolean;
@@ -72,6 +86,8 @@ interface FinancialsTableProps {
     onBulkSaveOverrides?: (
         items: SegmentOverrideSaveRequest[],
     ) => Promise<{ saved: number; failed: number }>;
+    /** Undo (Ctrl+Z) */
+    onUndo?: () => void;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -401,6 +417,7 @@ export default function FinancialsTable({
     onSegmentOverrideSave,
     onSegmentOverrideDelete,
     onBulkSaveOverrides,
+    onUndo,
 }: FinancialsTableProps) {
     const filtered = useMemo(() => filterLast5Years(data), [data]);
     const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
@@ -573,6 +590,54 @@ export default function FinancialsTable({
     const formulaBarRef = useRef<HTMLTextAreaElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
 
+    // 範囲選択
+    const [selectionRange, setSelectionRange] = useState<SelectionRange | null>(null);
+    const isDragging = useRef(false);
+    const dragDidMove = useRef(false);  // ドラッグ中に別セルへ移動したか
+
+    // フォーミュラバー高さリサイズ
+    const FB_HEIGHT_KEY = "formula-bar-height";
+    const FB_DEFAULT_HEIGHT = 52;
+    const FB_MIN_HEIGHT = 28;
+    const FB_MAX_HEIGHT = 300;
+    const [formulaBarHeight, setFormulaBarHeight] = useState(() => {
+        if (typeof window === "undefined") return FB_DEFAULT_HEIGHT;
+        const saved = localStorage.getItem(FB_HEIGHT_KEY);
+        if (saved) { const n = parseInt(saved, 10); if (!isNaN(n) && n >= FB_MIN_HEIGHT && n <= FB_MAX_HEIGHT) return n; }
+        return FB_DEFAULT_HEIGHT;
+    });
+    const fbResizing = useRef(false);
+    const fbResizeStartY = useRef(0);
+    const fbResizeStartH = useRef(0);
+
+    useEffect(() => {
+        localStorage.setItem(FB_HEIGHT_KEY, String(formulaBarHeight));
+    }, [formulaBarHeight]);
+
+    const handleFbResizeStart = useCallback((e: React.MouseEvent) => {
+        e.preventDefault();
+        fbResizing.current = true;
+        fbResizeStartY.current = e.clientY;
+        fbResizeStartH.current = formulaBarHeight;
+        const onMove = (ev: MouseEvent) => {
+            if (!fbResizing.current) return;
+            const diff = ev.clientY - fbResizeStartY.current;
+            const newH = Math.max(FB_MIN_HEIGHT, Math.min(FB_MAX_HEIGHT, fbResizeStartH.current + diff));
+            setFormulaBarHeight(newH);
+        };
+        const onUp = () => {
+            fbResizing.current = false;
+            document.removeEventListener("mousemove", onMove);
+            document.removeEventListener("mouseup", onUp);
+            document.body.style.cursor = "";
+            document.body.style.userSelect = "";
+        };
+        document.addEventListener("mousemove", onMove);
+        document.addEventListener("mouseup", onUp);
+        document.body.style.cursor = "row-resize";
+        document.body.style.userSelect = "none";
+    }, [formulaBarHeight]);
+
     // セグメントセルのアクティブ管理
     const [activeSegCell, setActiveSegCell] = useState<SegCellCoord | null>(null);
     // セグメントセルの編集管理（親制御）
@@ -641,10 +706,171 @@ export default function FinancialsTable({
     const selectCell = useCallback((coord: CellCoord) => {
         setActiveCell(coord);
         setEditingCell(null);
+        setSelectionRange(null);
         // セグメントセルの選択を解除
         setActiveSegCell(null);
         setEditingSegCell(null);
     }, []);
+
+    // 範囲選択: mousedown (ドラッグ開始)
+    const handleCellMouseDown = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number, e: React.MouseEvent) => {
+        // 左クリックのみ
+        if (e.button !== 0) return;
+        e.preventDefault(); // ブラウザのテキスト選択(灰色ハイライト)を防止
+        isDragging.current = true;
+        dragDidMove.current = false;
+        setSelectionRange({ tableId, startRow: rowIdx, startColIdx: colIdx, endRow: rowIdx, endColIdx: colIdx });
+        setEditingCell(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
+    }, []);
+
+    // 範囲選択: mouseenter (ドラッグ中の拡張)
+    const handleCellMouseEnter = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number) => {
+        if (!isDragging.current || !selectionRange) return;
+        if (selectionRange.tableId !== tableId) return;
+        // 別セルに入ったらドラッグ移動とみなす
+        if (rowIdx !== selectionRange.startRow || colIdx !== selectionRange.startColIdx) {
+            dragDidMove.current = true;
+        }
+        setSelectionRange((prev) => prev ? { ...prev, endRow: rowIdx, endColIdx: colIdx } : prev);
+    }, [selectionRange]);
+
+    // 範囲選択: mouseup (ドラッグ終了) — グローバルリスナー
+    useEffect(() => {
+        const handleMouseUp = () => {
+            if (isDragging.current) {
+                isDragging.current = false;
+                // 単一セルだけの場合(ドラッグしていない)は範囲クリア
+                if (!dragDidMove.current) {
+                    setSelectionRange(null);
+                }
+                // dragDidMove は click イベント後にリセット (少し遅延)
+                setTimeout(() => { dragDidMove.current = false; }, 0);
+            }
+        };
+        document.addEventListener("mouseup", handleMouseUp);
+        return () => document.removeEventListener("mouseup", handleMouseUp);
+    }, []);
+
+    // セルが範囲内か判定
+    const isCellInRange = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number): boolean => {
+        if (!selectionRange || selectionRange.tableId !== tableId) return false;
+        const minRow = Math.min(selectionRange.startRow, selectionRange.endRow);
+        const maxRow = Math.max(selectionRange.startRow, selectionRange.endRow);
+        const minCol = Math.min(selectionRange.startColIdx, selectionRange.endColIdx);
+        const maxCol = Math.max(selectionRange.startColIdx, selectionRange.endColIdx);
+        return rowIdx >= minRow && rowIdx <= maxRow && colIdx >= minCol && colIdx <= maxCol;
+    }, [selectionRange]);
+
+    // セル表示値を取得 (全列対応)
+    const getCellDisplayValue = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number): string => {
+        const rows = tableId === "cum" ? cumRows : qRows;
+        const row = rows[rowIdx];
+        if (!row) return "";
+        const baseCount = tableId === "cum" ? CUM_BASE_COL_COUNT : Q_BASE_COL_COUNT;
+        const segCount = segmentColumns.length * 2;
+        const segStart = baseCount;
+        const segEnd = segStart + segCount;
+        const kpiStart = segEnd;
+
+        // 基本列
+        if (colIdx < baseCount) {
+            if (colIdx === 0) return row.period || "";
+            if (colIdx === 1) return row.quarter || "";
+            if (colIdx === 2) return formatMillions(row.sales) ?? "";
+            if (colIdx === 3) return formatMillions(row.grossProfit) ?? "";
+            if (colIdx === 4) return formatMillions(row.sgAndA) ?? "";
+            if (colIdx === 5) return formatMillions(row.operatingProfit) ?? "";
+            if (colIdx === 6) return fmtMargin(row.opMargin);
+            if (tableId === "cum" && colIdx === 7) {
+                const mKey = `${row.period}|${row.quarter}`;
+                return extractMemoValue(memoMap?.[mKey], 0);
+            }
+            if (tableId === "cum" && colIdx === 8) {
+                const mKey = `${row.period}|${row.quarter}`;
+                return extractMemoValue(memoMap?.[mKey], 1);
+            }
+        }
+        // セグメント列
+        if (colIdx >= segStart && colIdx < segEnd) {
+            const segRelIdx = colIdx - segStart;
+            const scIdx = Math.floor(segRelIdx / 2);
+            const isProfit = segRelIdx % 2 === 1;
+            const sc = segmentColumns[scIdx];
+            if (!sc) return "";
+            const key = isProfit ? sc.profitKey : sc.salesKey;
+            const mapKey = `${row.period}|${row.quarter}`;
+            if (tableId === "cum") {
+                const val = segmentMap.get(mapKey)?.[key] ?? null;
+                return val !== null ? (formatMillions(val) ?? "") : "";
+            } else {
+                const val = segmentQMap.get(mapKey)?.[key] ?? null;
+                return val !== null ? (formatMillions(val) ?? "") : "";
+            }
+        }
+        // KPI列
+        if (colIdx >= kpiStart && colIdx < kpiStart + 3) {
+            const slot = colIdx - kpiStart + 1;
+            const kpiKey = `${row.period}|${row.quarter}`;
+            return kpiValues?.[kpiKey]?.[slot] ?? "";
+        }
+        return "";
+    }, [cumRows, qRows, segmentColumns, memoMap, kpiValues, segmentMap, segmentQMap]);
+
+    // TSVクォーティング (改行/タブを含むセルをダブルクォートで囲む)
+    const quoteTsvCell = (val: string): string => {
+        if (val.includes("\t") || val.includes("\n") || val.includes("\r") || val.includes('"')) {
+            return '"' + val.replace(/"/g, '""') + '"';
+        }
+        return val;
+    };
+
+    // 範囲のセル値を取得 (TSVフォーマット)
+    const getRangeAsTsv = useCallback((): string => {
+        if (!selectionRange) return "";
+        const minRow = Math.min(selectionRange.startRow, selectionRange.endRow);
+        const maxRow = Math.max(selectionRange.startRow, selectionRange.endRow);
+        const minCol = Math.min(selectionRange.startColIdx, selectionRange.endColIdx);
+        const maxCol = Math.max(selectionRange.startColIdx, selectionRange.endColIdx);
+        const lines: string[] = [];
+        for (let r = minRow; r <= maxRow; r++) {
+            const cells: string[] = [];
+            for (let c = minCol; c <= maxCol; c++) {
+                cells.push(quoteTsvCell(getCellDisplayValue(selectionRange.tableId, r, c)));
+            }
+            lines.push(cells.join("\t"));
+        }
+        return lines.join("\n");
+    }, [selectionRange, getCellDisplayValue]);
+
+    // 範囲クリア (Delete/Backspace) — 編集可能列のみ
+    const clearRange = useCallback(() => {
+        if (!selectionRange) return;
+        const rows = selectionRange.tableId === "cum" ? cumRows : qRows;
+        const baseCount = selectionRange.tableId === "cum" ? CUM_BASE_COL_COUNT : Q_BASE_COL_COUNT;
+        const segCount = segmentColumns.length * 2;
+        const kpiStart = baseCount + segCount;
+        const minRow = Math.min(selectionRange.startRow, selectionRange.endRow);
+        const maxRow = Math.max(selectionRange.startRow, selectionRange.endRow);
+        const minCol = Math.min(selectionRange.startColIdx, selectionRange.endColIdx);
+        const maxCol = Math.max(selectionRange.startColIdx, selectionRange.endColIdx);
+        for (let r = minRow; r <= maxRow; r++) {
+            const row = rows[r];
+            if (!row) continue;
+            for (let c = minCol; c <= maxCol; c++) {
+                // メモ列 (cumのみ: col 7=memo_a, 8=memo_b)
+                if (selectionRange.tableId === "cum" && (c === 7 || c === 8) && onMemoEdit) {
+                    onMemoEdit(row.period, row.quarter, c === 7 ? 0 : 1, "");
+                }
+                // KPI列
+                if (c >= kpiStart && c < kpiStart + 3 && onKpiValueEdit) {
+                    const slot = c - kpiStart + 1;
+                    onKpiValueEdit(row.period, row.quarter, slot, "");
+                }
+            }
+        }
+    }, [selectionRange, cumRows, qRows, segmentColumns, onMemoEdit, onKpiValueEdit]);
 
     // 編集開始
     const startEditing = useCallback((coord: CellCoord, initialValue?: string) => {
@@ -803,20 +1029,38 @@ export default function FinancialsTable({
         // 編集中の処理は input 側の onKeyDown で処理するため、ここではスキップ
         if (editingCell) return;
 
-        // 非編集中: 矢印キーで移動
-        if (e.key === "ArrowUp") { e.preventDefault(); moveActiveCell(-1, 0); }
-        else if (e.key === "ArrowDown") { e.preventDefault(); moveActiveCell(1, 0); }
-        else if (e.key === "ArrowLeft") { e.preventDefault(); moveActiveCell(0, -1); }
-        else if (e.key === "ArrowRight") { e.preventDefault(); moveActiveCell(0, 1); }
-        else if (e.key === "Tab") { e.preventDefault(); moveActiveCell(0, e.shiftKey ? -1 : 1); }
-        else if (e.key === "Enter") {
+        // Ctrl+Z: Undo
+        if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
             e.preventDefault();
-            const val = getActiveCellValue();
-            startEditing(activeCell, val);
+            onUndo?.();
+            return;
         }
-        else if (e.key === "Delete" || e.key === "Backspace") {
+
+        // Ctrl+C: 範囲コピー
+        if ((e.ctrlKey || e.metaKey) && e.key === "c" && !e.shiftKey) {
+            if (selectionRange) {
+                e.preventDefault();
+                const tsv = getRangeAsTsv();
+                if (tsv) navigator.clipboard.writeText(tsv).catch(console.error);
+                return;
+            }
+            // 単一セルの場合も value をコピー
+            if (activeCell) {
+                e.preventDefault();
+                const val = getActiveCellValue();
+                if (val) navigator.clipboard.writeText(val).catch(console.error);
+                return;
+            }
+        }
+
+        // Delete/Backspace: 範囲クリア or 単一セルクリア
+        if (e.key === "Delete" || e.key === "Backspace") {
             e.preventDefault();
-            // セル内容クリア
+            if (selectionRange) {
+                clearRange();
+                return;
+            }
+            // 単一セルクリア
             const rows = activeCell.tableId === "cum" ? cumRows : qRows;
             const row = rows[activeCell.rowIdx];
             if (row) {
@@ -829,18 +1073,39 @@ export default function FinancialsTable({
                     onKpiValueEdit(row.period, row.quarter, slot, "");
                 }
             }
+            return;
+        }
+
+        // 非編集中: 矢印キーで移動
+        if (e.key === "ArrowUp") { e.preventDefault(); setSelectionRange(null); moveActiveCell(-1, 0); }
+        else if (e.key === "ArrowDown") { e.preventDefault(); setSelectionRange(null); moveActiveCell(1, 0); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); setSelectionRange(null); moveActiveCell(0, -1); }
+        else if (e.key === "ArrowRight") { e.preventDefault(); setSelectionRange(null); moveActiveCell(0, 1); }
+        else if (e.key === "Tab") { e.preventDefault(); setSelectionRange(null); moveActiveCell(0, e.shiftKey ? -1 : 1); }
+        else if (e.key === "Enter") {
+            e.preventDefault();
+            setSelectionRange(null);
+            const val = getActiveCellValue();
+            startEditing(activeCell, val);
         }
         else if (e.key === "F2") {
             e.preventDefault();
+            setSelectionRange(null);
             const val = getActiveCellValue();
             startEditing(activeCell, val);
+        }
+        // Escape: 範囲解除
+        else if (e.key === "Escape") {
+            e.preventDefault();
+            setSelectionRange(null);
         }
         // 印字可能文字 → 新しい値で編集開始（既存値を上書き）
         else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
             e.preventDefault();
+            setSelectionRange(null);
             startEditing(activeCell, e.key);
         }
-    }, [activeCell, activeSegCell, editingCell, editingSegCell, moveActiveCell, moveActiveSegCell, startEditing, startSegEditing, getActiveCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
+    }, [activeCell, activeSegCell, editingCell, editingSegCell, moveActiveCell, moveActiveSegCell, startEditing, startSegEditing, getActiveCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, selectionRange, getRangeAsTsv, clearRange]);
 
     // PL側メモペースト
     const handleMemoPaste = useCallback(
@@ -1071,9 +1336,16 @@ export default function FinancialsTable({
                         // フォーミュラバーからフォーカスが外れたらgridにfocusを戻す
                         // ただしgrid内の他要素へ移動する場合はgrid側で処理される
                     }}
-                    rows={2}
+                    style={{ height: formulaBarHeight }}
                     disabled={!activeCell}
                 />
+            </div>
+            {/* フォーミュラバー リサイズハンドル */}
+            <div
+                className="formula-bar-resize-handle"
+                onMouseDown={handleFbResizeStart}
+            >
+                <span className="formula-bar-resize-grip">⋯</span>
             </div>
 
             {data.length === 0 ? (
@@ -1111,18 +1383,19 @@ export default function FinancialsTable({
                                                     className={`pl-row ${isSelected ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`}
                                                     onClick={() => onRowClick?.(row.period, row.quarter)}
                                                 >
-                                                    <td style={{ width: cumResize.widths[0], minWidth: cumResize.widths[0] }}>{displayValue(row.period)}</td>
-                                                    <td style={{ width: cumResize.widths[1], minWidth: cumResize.widths[1] }}>{displayValue(row.quarter)}</td>
-                                                    <td style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className="num-col">{formatMillions(row.sales)}</td>
-                                                    <td style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className="num-col">{formatMillions(row.grossProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className="num-col">{formatMillions(row.sgAndA)}</td>
-                                                    <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className="num-col">{formatMillions(row.operatingProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className="num-col">{fmtMargin(row.opMargin)}</td>
+                                                    <td style={{ width: cumResize.widths[0], minWidth: cumResize.widths[0] }} className={isCellInRange("cum", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 0)}>{displayValue(row.period)}</td>
+                                                    <td style={{ width: cumResize.widths[1], minWidth: cumResize.widths[1] }} className={isCellInRange("cum", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 1)}>{displayValue(row.quarter)}</td>
+                                                    <td style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className={`num-col ${isCellInRange("cum", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 2)}>{formatMillions(row.sales)}</td>
+                                                    <td style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className={`num-col ${isCellInRange("cum", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 3)}>{formatMillions(row.grossProfit)}</td>
+                                                    <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{formatMillions(row.sgAndA)}</td>
+                                                    <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.operatingProfit)}</td>
+                                                    <td style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{fmtMargin(row.opMargin)}</td>
                                                     {/* Memo A */}
                                                     <MemoCellExcel
                                                         value={memoA}
                                                         width={cumResize.widths[7]}
                                                         isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_a"}
+                                                        isInRange={isCellInRange("cum", idx, 7)}
                                                         isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_a"}
                                                         editValue={editValue}
                                                         onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey: "memo_a" })}
@@ -1131,12 +1404,15 @@ export default function FinancialsTable({
                                                         onCommit={commitEdit}
                                                         onCancel={cancelEdit}
                                                         inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_a" ? editInputRef : undefined}
+                                                        onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)}
+                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}
                                                     />
                                                     {/* Memo B */}
                                                     <MemoCellExcel
                                                         value={memoB}
                                                         width={cumResize.widths[8]}
                                                         isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_b"}
+                                                        isInRange={isCellInRange("cum", idx, 8)}
                                                         isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_b"}
                                                         editValue={editValue}
                                                         onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey: "memo_b" })}
@@ -1145,12 +1421,16 @@ export default function FinancialsTable({
                                                         onCommit={commitEdit}
                                                         onCancel={cancelEdit}
                                                         inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_b" ? editInputRef : undefined}
+                                                        onMouseDown={(e) => handleCellMouseDown("cum", idx, 8, e)}
+                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 8)}
                                                     />
                                                     {segmentColumns.map((sc, scIdx) => {
                                                         const salesVal = getSegValue(row.period, row.quarter, sc.salesKey);
                                                         const profitVal = getSegValue(row.period, row.quarter, sc.profitKey);
                                                         const sIdx = scIdx * 2;
                                                         const pIdx = scIdx * 2 + 1;
+                                                        const sAbsCol = CUM_BASE_COL_COUNT + sIdx;
+                                                        const pAbsCol = CUM_BASE_COL_COUNT + pIdx;
                                                         const mapKey = `${normalizePeriod(row.period)}|${normalizeQuarter(row.quarter)}`;
                                                         const salesSource = sourceMap.get(`${mapKey}|${sc.salesKey}`);
                                                         const profitSource = sourceMap.get(`${mapKey}|${sc.profitKey}`);
@@ -1175,6 +1455,9 @@ export default function FinancialsTable({
                                                                     isSegEditing={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === sIdx}
                                                                     segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === sIdx ? segEditValue : undefined}
                                                                     onSegEditDone={finishSegEditing}
+                                                                    isInRange={isCellInRange("cum", idx, sAbsCol)}
+                                                                    onRangeMouseDown={(e) => handleCellMouseDown("cum", idx, sAbsCol, e)}
+                                                                    onRangeMouseEnter={() => handleCellMouseEnter("cum", idx, sAbsCol)}
                                                                 />
                                                                 <SegOverrideCell
                                                                     value={profitVal}
@@ -1193,6 +1476,9 @@ export default function FinancialsTable({
                                                                     isSegEditing={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx}
                                                                     segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx ? segEditValue : undefined}
                                                                     onSegEditDone={finishSegEditing}
+                                                                    isInRange={isCellInRange("cum", idx, pAbsCol)}
+                                                                    onRangeMouseDown={(e) => handleCellMouseDown("cum", idx, pAbsCol, e)}
+                                                                    onRangeMouseEnter={() => handleCellMouseEnter("cum", idx, pAbsCol)}
                                                                 />
                                                             </React.Fragment>
                                                         );
@@ -1202,12 +1488,14 @@ export default function FinancialsTable({
                                                         const colKey = `kpi_${slot}`;
                                                         const kpiKey = `${row.period}|${row.quarter}`;
                                                         const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
+                                                        const kpiAbsCol = CUM_BASE_COL_COUNT + segmentColumns.length * 2 + (slot - 1);
                                                         return (
                                                             <MemoCellExcel
                                                                 key={colKey}
                                                                 value={cellVal}
                                                                 width={kpiWidths[slot - 1]}
                                                                 isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
+                                                                isInRange={isCellInRange("cum", idx, kpiAbsCol)}
                                                                 isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey}
                                                                 editValue={editValue}
                                                                 onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey })}
@@ -1216,7 +1504,9 @@ export default function FinancialsTable({
                                                                 onCommit={commitEdit}
                                                                 onCancel={cancelEdit}
                                                                 inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey ? editInputRef : undefined}
-                                                                className="kpi-data-cell"
+                                                                className="kpi-cell"
+                                                                onMouseDown={(e) => handleCellMouseDown("cum", idx, kpiAbsCol, e)}
+                                                                onMouseEnter={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
                                                             />
                                                         );
                                                     })}
@@ -1255,22 +1545,24 @@ export default function FinancialsTable({
                                                 className={`pl-row ${selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`}
                                                 onClick={() => onRowClick?.(row.period, row.quarter)}
                                             >
-                                                <td style={{ width: qResize.widths[0], minWidth: qResize.widths[0] }}>{displayValue(row.period)}</td>
-                                                <td style={{ width: qResize.widths[1], minWidth: qResize.widths[1] }}>{displayValue(row.quarter)}</td>
-                                                <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className="num-col">{formatMillions(row.sales)}</td>
-                                                <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className="num-col">{formatMillions(row.grossProfit)}</td>
-                                                <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className="num-col">{formatMillions(row.sgAndA)}</td>
-                                                <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className="num-col">{formatMillions(row.operatingProfit)}</td>
-                                                <td style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className="num-col">{fmtMargin(row.opMargin)}</td>
+                                                <td style={{ width: qResize.widths[0], minWidth: qResize.widths[0] }} className={isCellInRange("q", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 0)}>{displayValue(row.period)}</td>
+                                                <td style={{ width: qResize.widths[1], minWidth: qResize.widths[1] }} className={isCellInRange("q", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 1)}>{displayValue(row.quarter)}</td>
+                                                <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
+                                                <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
+                                                <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{formatMillions(row.sgAndA)}</td>
+                                                <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.operatingProfit)}</td>
+                                                <td style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{fmtMargin(row.opMargin)}</td>
                                                 {segmentColumns.map((sc, scIdx) => {
                                                     const salesVal = getSegQValue(row.period, row.quarter, sc.salesKey);
                                                     const profitVal = getSegQValue(row.period, row.quarter, sc.profitKey);
                                                     const sIdx = scIdx * 2;
                                                     const pIdx = scIdx * 2 + 1;
+                                                    const sAbsCol = Q_BASE_COL_COUNT + sIdx;
+                                                    const pAbsCol = Q_BASE_COL_COUNT + pIdx;
                                                     return (
                                                         <React.Fragment key={sc.segmentName}>
-                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : "–"}</td>
-                                                            <td className="num-col seg-data-cell" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
+                                                            <td className={`num-col seg-data-cell ${isCellInRange("q", idx, sAbsCol) ? "cell-in-range" : ""}`} style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }} onMouseDown={(e) => handleCellMouseDown("q", idx, sAbsCol, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, sAbsCol)}>{salesVal !== null ? formatMillions(salesVal) : "–"}</td>
+                                                            <td className={`num-col seg-data-cell ${isCellInRange("q", idx, pAbsCol) ? "cell-in-range" : ""}`} style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }} onMouseDown={(e) => handleCellMouseDown("q", idx, pAbsCol, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, pAbsCol)}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
                                                         </React.Fragment>
                                                     );
                                                 })}
@@ -1279,12 +1571,14 @@ export default function FinancialsTable({
                                                     const colKey = `kpi_${slot}`;
                                                     const kpiKey = `${row.period}|${row.quarter}`;
                                                     const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
+                                                    const kpiAbsCol = Q_BASE_COL_COUNT + segmentColumns.length * 2 + (slot - 1);
                                                     return (
                                                         <MemoCellExcel
                                                             key={colKey}
                                                             value={cellVal}
                                                             width={kpiWidths[slot - 1]}
                                                             isActive={activeCell?.tableId === "q" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
+                                                            isInRange={isCellInRange("q", idx, kpiAbsCol)}
                                                             isEditing={editingCell?.tableId === "q" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey}
                                                             editValue={editValue}
                                                             onSelect={() => selectCell({ tableId: "q", rowIdx: idx, colKey })}
@@ -1294,6 +1588,8 @@ export default function FinancialsTable({
                                                             onCancel={cancelEdit}
                                                             inputRef={editingCell?.tableId === "q" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey ? editInputRef : undefined}
                                                             className="kpi-data-cell"
+                                                            onMouseDown={(e) => handleCellMouseDown("q", idx, kpiAbsCol, e)}
+                                                            onMouseEnter={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
                                                         />
                                                     );
                                                 })}
@@ -1325,6 +1621,7 @@ function MemoCellExcel({
     value,
     width,
     isActive,
+    isInRange,
     isEditing,
     editValue,
     onSelect,
@@ -1334,10 +1631,13 @@ function MemoCellExcel({
     onCancel,
     inputRef,
     className,
+    onMouseDown,
+    onMouseEnter,
 }: {
     value: string;
     width: number;
     isActive: boolean;
+    isInRange?: boolean;
     isEditing: boolean;
     editValue: string;
     onSelect: () => void;
@@ -1347,6 +1647,8 @@ function MemoCellExcel({
     onCancel: () => void;
     inputRef?: React.RefObject<HTMLInputElement | null>;
     className?: string;
+    onMouseDown?: (e: React.MouseEvent) => void;
+    onMouseEnter?: () => void;
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
@@ -1383,9 +1685,18 @@ function MemoCellExcel({
     return (
         <td
             style={{ width, minWidth: width }}
-            className={`${extraClass} memo-cell-selectable ${isActive ? "memo-cell-active" : ""}`}
-            onClick={(e) => { e.stopPropagation(); onSelect(); }}
+            className={`${extraClass} memo-cell-selectable ${isActive ? "memo-cell-active" : ""} ${isInRange ? "memo-cell-in-range" : ""}`}
+            onClick={(e) => {
+                e.stopPropagation();
+                // mousedown で既に選択処理済み。ドラッグ後の click では何もしない
+            }}
             onDoubleClick={(e) => { e.stopPropagation(); onStartEdit(value); }}
+            onMouseDown={(e) => {
+                e.stopPropagation();
+                onSelect();  // 単一セル選択 (selectionRange はここではクリアされるが mouseDown で再設定)
+                onMouseDown?.(e);
+            }}
+            onMouseEnter={() => { onMouseEnter?.(); }}
             title={preview}
         >
             {preview || <span className="memo-empty">–</span>}
@@ -1413,6 +1724,9 @@ function SegOverrideCell({
     isSegEditing,
     segEditInitValue,
     onSegEditDone,
+    isInRange,
+    onRangeMouseDown,
+    onRangeMouseEnter,
 }: {
     value: number | null;
     source?: string;
@@ -1431,6 +1745,9 @@ function SegOverrideCell({
     isSegEditing?: boolean;
     segEditInitValue?: string;
     onSegEditDone?: () => void;
+    isInRange?: boolean;
+    onRangeMouseDown?: (e: React.MouseEvent) => void;
+    onRangeMouseEnter?: () => void;
 }) {
     const [editing, setEditing] = useState(false);
     const [inputVal, setInputVal] = useState("");
@@ -1559,9 +1876,11 @@ function SegOverrideCell({
 
     return (
         <td
-            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""}`}
+            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""} ${isInRange ? "cell-in-range" : ""}`}
             style={{ width, minWidth: width }}
             onClick={handleCellClick}
+            onMouseDown={(e) => { onRangeMouseDown?.(e); }}
+            onMouseEnter={() => { onRangeMouseEnter?.(); }}
             title={canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : "クリックして選択（ペースト用）"}
         >
             <div className="segment-cell-display">
