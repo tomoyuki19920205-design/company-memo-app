@@ -94,14 +94,17 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (!data || data.length === 0) return [];
 
-        // 型変換 + 明示的ソート (quarter 順を保証)
+        // 型変換 + 百万円単位に変換 (J-Quants API は円単位で格納)
+        const toMillions = (v: number | null): number | null =>
+            v !== null ? Math.round(v / 1_000_000) : null;
+
         const records: FinancialRecord[] = data.map((row) => ({
             ticker: row.ticker,
             period: row.period,
             quarter: row.quarter,
-            sales: row.sales,
-            gross_profit: row.gross_profit,
-            operating_profit: row.operating_profit,
+            sales: toMillions(row.sales),
+            gross_profit: toMillions(row.gross_profit),
+            operating_profit: toMillions(row.operating_profit),
             ordinary_profit: null,
             net_income: null,
             eps: null,
