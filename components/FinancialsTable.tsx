@@ -641,6 +641,9 @@ export default function FinancialsTable({
     const selectCell = useCallback((coord: CellCoord) => {
         setActiveCell(coord);
         setEditingCell(null);
+        // セグメントセルの選択を解除
+        setActiveSegCell(null);
+        setEditingSegCell(null);
     }, []);
 
     // 編集開始
@@ -1018,6 +1021,7 @@ export default function FinancialsTable({
 
         // メモセルがアクティブの場合 → メモペースト処理
         if (!activeCell || activeCell.tableId !== "cum") return;
+        if (activeCell.colKey !== "memo_a" && activeCell.colKey !== "memo_b") return;
         const colIdx = activeCell.colKey === "memo_a" ? 0 : 1;
         handleMemoPaste(activeCell.rowIdx, colIdx, e);
     }, [activeCell, activeSegCell, handleMemoPaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast]);
