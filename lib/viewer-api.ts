@@ -78,7 +78,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
     try {
         const { data, error } = await supabase
             .from("api_latest_financials")
-            .select("ticker,period,quarter,sales,gross_profit,operating_profit,updated_at")
+            .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: false })
@@ -94,23 +94,28 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (!data || data.length === 0) return [];
 
-        // 型変換 + 百万円単位に変換 (J-Quants API は円単位で格納)
+        // 単位変換: jquants ソースは円単位 → ÷1,000,000 で百万円に変換
+        //           tdnet ソースは既に百万円単位 → そのまま
         const toMillions = (v: number | null): number | null =>
             v !== null ? Math.round(v / 1_000_000) : null;
 
-        const records: FinancialRecord[] = data.map((row) => ({
-            ticker: row.ticker,
-            period: row.period,
-            quarter: row.quarter,
-            sales: toMillions(row.sales),
-            gross_profit: toMillions(row.gross_profit),
-            operating_profit: toMillions(row.operating_profit),
-            ordinary_profit: null,
-            net_income: null,
-            eps: null,
-            source: "",
-            updated_at: row.updated_at || "",
-        }));
+        const records: FinancialRecord[] = data.map((row) => {
+            const isYen = row.source === "jquants";
+            const convert = (v: number | null) => isYen ? toMillions(v) : v;
+            return {
+                ticker: row.ticker,
+                period: row.period,
+                quarter: row.quarter,
+                sales: convert(row.sales),
+                gross_profit: convert(row.gross_profit),
+                operating_profit: convert(row.operating_profit),
+                ordinary_profit: null,
+                net_income: null,
+                eps: null,
+                source: row.source || "",
+                updated_at: row.updated_at || "",
+            };
+        });
 
         // 明示的にソート: period DESC → quarter DESC (FY → 3Q → 2Q → 1Q)
         return sortFinancials(records);
