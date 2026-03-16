@@ -1,5 +1,6 @@
 import { supabase } from "./supabase";
 import { normalizeTicker } from "./memo-api";
+import { convertToMillions } from "./format";
 import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
@@ -94,31 +95,21 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (!data || data.length === 0) return [];
 
-        // 単位変換: jquants ソースは円単位 → ÷1,000,000 で百万円に変換
-        //           tdnet ソースは既に百万円単位 → そのまま
-        const toMillions = (v: number | null): number | null =>
-            v !== null ? Math.round(v / 1_000_000) : null;
-
-        const records: FinancialRecord[] = data.map((row) => {
-            // source カラムが存在しない場合は row から取得を試み、なければ自動判定
-            const rowSource = (row as Record<string, unknown>).source as string | undefined;
-            // source 明示: jquants は円単位、それ以外は百万円単位
-            // source なし: 売上が 1億超 (100,000,000) なら円単位と推定
-            const isYen = rowSource
-                ? rowSource === "jquants"
-                : (row.sales !== null && Math.abs(row.sales) >= 100_000_000);
-            const convert = (v: number | null) => isYen ? toMillions(v) : v;
+        // 単位変換: convertToMillions(value, source) で source 別に百万円正規化
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const records: FinancialRecord[] = data.map((row: any) => {
+            const src: string = row.source ?? "";
             return {
                 ticker: row.ticker,
                 period: row.period,
                 quarter: row.quarter,
-                sales: convert(row.sales),
-                gross_profit: convert(row.gross_profit),
-                operating_profit: convert(row.operating_profit),
+                sales: convertToMillions(row.sales, src),
+                gross_profit: convertToMillions(row.gross_profit, src),
+                operating_profit: convertToMillions(row.operating_profit, src),
                 ordinary_profit: null,
                 net_income: null,
                 eps: null,
-                source: rowSource || (isYen ? "jquants" : ""),
+                source: src,
                 updated_at: row.updated_at || "",
             };
         });
