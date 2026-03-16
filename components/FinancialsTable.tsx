@@ -575,6 +575,9 @@ export default function FinancialsTable({
 
     // セグメントセルのアクティブ管理
     const [activeSegCell, setActiveSegCell] = useState<SegCellCoord | null>(null);
+    // セグメントセルの編集管理（親制御）
+    const [editingSegCell, setEditingSegCell] = useState<SegCellCoord | null>(null);
+    const [segEditValue, setSegEditValue] = useState("");
     // トースト
     const [toastMessage, setToastMessage] = useState<string | null>(null);
     const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -714,6 +717,35 @@ export default function FinancialsTable({
         });
     }, [activeCell, cumRows, qRows, selectCell]);
 
+    // セグメントセル移動
+    const moveActiveSegCell = useCallback((dRow: number, dCol: number) => {
+        if (!activeSegCell) return;
+        const totalSegCols = segmentColumns.length * 2;
+        let newRow = activeSegCell.rowIdx + dRow;
+        let newCol = activeSegCell.colIdx + dCol;
+
+        // 列折り返し
+        if (newCol < 0) { newRow--; newCol = totalSegCols - 1; }
+        if (newCol >= totalSegCols) { newRow++; newCol = 0; }
+
+        if (newRow < 0 || newRow >= cumRows.length) return;
+
+        setActiveSegCell({ rowIdx: newRow, colIdx: newCol });
+    }, [activeSegCell, segmentColumns.length, cumRows.length]);
+
+    // セグメントセル: 親から編集開始
+    const startSegEditing = useCallback((coord: SegCellCoord, initialValue: string) => {
+        setEditingSegCell(coord);
+        setSegEditValue(initialValue);
+    }, []);
+
+    // セグメントセル: 編集完了（保存は SegOverrideCell 内で実行、親は状態リセットのみ）
+    const finishSegEditing = useCallback(() => {
+        setEditingSegCell(null);
+        setSegEditValue("");
+        requestAnimationFrame(() => gridRef.current?.focus());
+    }, []);
+
     // フォーミュラバーからの編集
     const handleFormulaBarChange = useCallback((value: string) => {
         if (!activeCell) return;
@@ -735,6 +767,34 @@ export default function FinancialsTable({
         // IME入力中は無視（日本語入力対応）
         if (e.nativeEvent.isComposing) return;
 
+        // --- セグメントセルがアクティブの場合 ---
+        if (activeSegCell && !editingSegCell) {
+            if (e.key === "ArrowUp") { e.preventDefault(); moveActiveSegCell(-1, 0); }
+            else if (e.key === "ArrowDown") { e.preventDefault(); moveActiveSegCell(1, 0); }
+            else if (e.key === "ArrowLeft") { e.preventDefault(); moveActiveSegCell(0, -1); }
+            else if (e.key === "ArrowRight") { e.preventDefault(); moveActiveSegCell(0, 1); }
+            else if (e.key === "Tab") { e.preventDefault(); moveActiveSegCell(0, e.shiftKey ? -1 : 1); }
+            else if (e.key === "Enter" || e.key === "F2") {
+                e.preventDefault();
+                // 現在のセルの値を取得して編集開始
+                startSegEditing(activeSegCell, "");
+            }
+            // 数字・マイナス・ドット → 直接入力で編集開始
+            else if (/^[0-9.\-]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                e.preventDefault();
+                startSegEditing(activeSegCell, e.key);
+            }
+            else if (e.key === "Escape") {
+                e.preventDefault();
+                setActiveSegCell(null);
+            }
+            return;
+        }
+
+        // セグメント編集中はスキップ（input 側で処理）
+        if (editingSegCell) return;
+
+        // --- メモ / KPI セルがアクティブの場合 ---
         if (!activeCell) return;
 
         // 編集中の処理は input 側の onKeyDown で処理するため、ここではスキップ
@@ -777,7 +837,7 @@ export default function FinancialsTable({
             e.preventDefault();
             startEditing(activeCell, e.key);
         }
-    }, [activeCell, editingCell, moveActiveCell, startEditing, getActiveCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
+    }, [activeCell, activeSegCell, editingCell, editingSegCell, moveActiveCell, moveActiveSegCell, startEditing, startSegEditing, getActiveCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
 
     // PL側メモペースト
     const handleMemoPaste = useCallback(
@@ -1107,7 +1167,10 @@ export default function FinancialsTable({
                                                                     onSave={onSegmentOverrideSave}
                                                                     onDelete={onSegmentOverrideDelete}
                                                                     isSegActive={activeSegCell?.rowIdx === idx && activeSegCell?.colIdx === sIdx}
-                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: sIdx }); setActiveCell(null); }}
+                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: sIdx }); setActiveCell(null); setEditingSegCell(null); }}
+                                                                    isSegEditing={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === sIdx}
+                                                                    segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === sIdx ? segEditValue : undefined}
+                                                                    onSegEditDone={finishSegEditing}
                                                                 />
                                                                 <SegOverrideCell
                                                                     value={profitVal}
@@ -1122,7 +1185,10 @@ export default function FinancialsTable({
                                                                     onSave={onSegmentOverrideSave}
                                                                     onDelete={onSegmentOverrideDelete}
                                                                     isSegActive={activeSegCell?.rowIdx === idx && activeSegCell?.colIdx === pIdx}
-                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: pIdx }); setActiveCell(null); }}
+                                                                    onActivate={() => { setActiveSegCell({ rowIdx: idx, colIdx: pIdx }); setActiveCell(null); setEditingSegCell(null); }}
+                                                                    isSegEditing={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx}
+                                                                    segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx ? segEditValue : undefined}
+                                                                    onSegEditDone={finishSegEditing}
                                                                 />
                                                             </React.Fragment>
                                                         );
@@ -1340,6 +1406,9 @@ function SegOverrideCell({
     onDelete,
     isSegActive,
     onActivate,
+    isSegEditing,
+    segEditInitValue,
+    onSegEditDone,
 }: {
     value: number | null;
     source?: string;
@@ -1354,17 +1423,38 @@ function SegOverrideCell({
     onDelete?: FinancialsTableProps["onSegmentOverrideDelete"];
     isSegActive?: boolean;
     onActivate?: () => void;
+    /** 親から編集開始を制御 */
+    isSegEditing?: boolean;
+    segEditInitValue?: string;
+    onSegEditDone?: () => void;
 }) {
     const [editing, setEditing] = useState(false);
     const [inputVal, setInputVal] = useState("");
     const [saving, setSaving] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
-
-
+    // 親から編集開始のシグナルを受け取る
+    useEffect(() => {
+        if (isSegEditing && !editing) {
+            const canEdit = editable || isManual;
+            if (canEdit) {
+                if (segEditInitValue !== undefined && segEditInitValue !== "") {
+                    // 直接入力: キー入力値をセット
+                    setInputVal(segEditInitValue);
+                } else if (isManual) {
+                    setInputVal(value !== null ? String(value) : "");
+                } else {
+                    setInputVal("");
+                }
+                setEditing(true);
+                setTimeout(() => inputRef.current?.focus(), 0);
+            }
+        }
+    }, [isSegEditing]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSave = useCallback(async () => {
         setEditing(false);
+        onSegEditDone?.(); // 親に編集完了を通知
         const trimmed = inputVal.trim();
         if (!trimmed || !onSave) return;
         const numVal = Number(trimmed);
@@ -1377,13 +1467,18 @@ function SegOverrideCell({
         } finally {
             setSaving(false);
         }
-    }, [inputVal, onSave, fiscalYear, quarter, segmentName, metric]);
+    }, [inputVal, onSave, onSegEditDone, fiscalYear, quarter, segmentName, metric]);
+
+    const handleCancel = useCallback(() => {
+        setEditing(false);
+        onSegEditDone?.();
+    }, [onSegEditDone]);
 
     const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
         if (e.key === "Enter") { e.preventDefault(); handleSave(); }
-        else if (e.key === "Escape") { e.preventDefault(); setEditing(false); }
+        else if (e.key === "Escape") { e.preventDefault(); handleCancel(); }
         e.stopPropagation();
-    }, [handleSave]);
+    }, [handleSave, handleCancel]);
 
     const handleDeleteOverride = useCallback(async (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -1402,15 +1497,12 @@ function SegOverrideCell({
     // 編集中の input で paste イベントを横取りし、テーブルレベルのハンドラへ伝搬させる
     const handleInputPaste = useCallback((e: React.ClipboardEvent<HTMLInputElement>) => {
         const text = e.clipboardData.getData("text/plain");
-        // TSV （タブまたは改行含む）の場合はデフォルト動作を止めて上位へ伝搬
         if (text && (text.includes("\t") || text.includes("\n"))) {
             e.preventDefault();
-            // editing を閉じてからテーブルレベル paste を再発火
             setEditing(false);
-            // カスタムイベントで再度 paste を発火（テーブル div が受け取る）
+            onSegEditDone?.();
             const tableDiv = (e.target as HTMLElement).closest(".pl-section");
             if (tableDiv) {
-                // ClipboardEvent を再構成して発火
                 const newEvent = new ClipboardEvent("paste", {
                     clipboardData: e.clipboardData as unknown as DataTransfer,
                     bubbles: true,
@@ -1419,13 +1511,12 @@ function SegOverrideCell({
                 tableDiv.dispatchEvent(newEvent);
             }
         }
-        // 単一数値の場合は通常の input paste を許可
-    }, []);
+    }, [onSegEditDone]);
 
     const displayVal = value !== null ? formatMillions(value) : "–";
     const canEdit = editable || isManual;
 
-    // readonly セルでもアクティブ化は許可（横貼りのスキップ対象を判断するため）
+    // クリック: アクティブ化 + 編集可能なら編集開始
     const handleCellClick = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
         onActivate?.();
@@ -1442,7 +1533,7 @@ function SegOverrideCell({
 
     if (editing) {
         return (
-            <td className="num-col seg-data-cell" style={{ width, minWidth: width }}>
+            <td className="num-col seg-data-cell seg-cell-active" style={{ width, minWidth: width }}>
                 <div className="segment-cell-edit">
                     <input
                         ref={inputRef}
