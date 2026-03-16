@@ -974,7 +974,7 @@ export default function FinancialsTable({
                                                                     value={salesVal}
                                                                     source={salesSource}
                                                                     width={segWidths[sIdx]}
-                                                                    editable={isEditableQ && salesVal === null && !!onSegmentOverrideSave}
+                                                                    editable={isEditableQ && (salesVal === null || salesSource === "manual") && !!onSegmentOverrideSave}
                                                                     isManual={salesSource === "manual"}
                                                                     fiscalYear={fy}
                                                                     quarter={row.quarter}
@@ -987,7 +987,7 @@ export default function FinancialsTable({
                                                                     value={profitVal}
                                                                     source={profitSource}
                                                                     width={segWidths[pIdx]}
-                                                                    editable={isEditableQ && profitVal === null && !!onSegmentOverrideSave}
+                                                                    editable={isEditableQ && (profitVal === null || profitSource === "manual") && !!onSegmentOverrideSave}
                                                                     isManual={profitSource === "manual"}
                                                                     fiscalYear={fy}
                                                                     quarter={row.quarter}
@@ -1227,11 +1227,16 @@ function SegOverrideCell({
     const handleClick = useCallback((e: React.MouseEvent) => {
         e.stopPropagation();
         if (!editable && !isManual) return;
-        if (isManual) return; // manual cells use badge click to delete
-        setInputVal("");
+        if (isManual) {
+            // Re-edit: pre-fill with current manual value
+            setInputVal(value !== null ? String(value) : "");
+        } else {
+            // New input
+            setInputVal("");
+        }
         setEditing(true);
         setTimeout(() => inputRef.current?.focus(), 0);
-    }, [editable, isManual]);
+    }, [editable, isManual, value]);
 
     const handleSave = useCallback(async () => {
         setEditing(false);
@@ -1292,12 +1297,14 @@ function SegOverrideCell({
 
     const displayVal = value !== null ? formatMillions(value) : "–";
 
+    const canEdit = editable || isManual;
+
     return (
         <td
-            className={`num-col seg-data-cell ${editable ? "seg-editable" : ""} ${saving ? "seg-saving" : ""}`}
+            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""}`}
             style={{ width, minWidth: width }}
-            onClick={editable ? handleClick : undefined}
-            title={editable ? "クリックして入力" : isManual ? "手入力値 (M)" : undefined}
+            onClick={canEdit ? handleClick : undefined}
+            title={canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : undefined}
         >
             <div className="segment-cell-display">
                 {editable && value === null ? (

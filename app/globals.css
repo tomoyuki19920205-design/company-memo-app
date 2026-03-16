@@ -1218,3 +1218,16 @@ body {
 .seg-saving {
   opacity: 0.5;
 }
+
+/* Manual override 済みセル — 再編集可能 */
+.seg-manual-editable {
+  cursor: pointer !important;
+  background: #faf5ff !important;
+  transition: background 0.15s;
+}
+
+.seg-manual-editable:hover {
+  background: #f3e8ff !important;
+  outline: 1px dashed #8b5cf6;
+  outline-offset: -1px;
+}
