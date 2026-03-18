@@ -7,6 +7,8 @@ import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
 import OrderKpiCard from "@/components/OrderKpiCard";
+import ValuationCard from "@/components/ValuationCard";
+import PerShareTable from "@/components/PerShareTable";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
     saveGridMemo,
@@ -38,6 +40,10 @@ import {
     updateOrderKpiReviewStatus,
     loadRejectedOrderKpis,
     restoreOrderKpi,
+    updateOrderKpiValue,
+    loadLatestMarketData,
+    loadPerShareData,
+    calculateValuation,
     type CompanyInfo,
 } from "@/lib/viewer-api";
 import {
@@ -54,6 +60,7 @@ import type { KpiRecord } from "@/types/kpi";
 import type { SegmentRecord } from "@/types/segment";
 import type { SegmentCellOverride, SegmentOverrideSaveRequest } from "@/types/segment-override";
 import type { OrderKpiItem } from "@/types/order-kpi";
+import type { MarketDataRecord, PerShareRecord, ValuationMetrics } from "@/types/market-data";
 import type { User } from "@supabase/supabase-js";
 
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
@@ -85,6 +92,9 @@ export default function ViewerPage() {
     const [resolvedSegments, setResolvedSegments] = useState<SegmentRecord[]>([]);
     const [orderKpis, setOrderKpis] = useState<OrderKpiItem[]>([]);
     const [rejectedKpis, setRejectedKpis] = useState<OrderKpiItem[]>([]);
+    const [marketData, setMarketData] = useState<MarketDataRecord | null>(null);
+    const [perShareData, setPerShareData] = useState<PerShareRecord[]>([]);
+    const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
     const [status, setStatus] = useState<AppStatus>("idle");
@@ -185,10 +195,13 @@ export default function ViewerPage() {
         setResolvedSegments([]);
         setOrderKpis([]);
         setRejectedKpis([]);
+        setMarketData(null);
+        setPerShareData([]);
+        setValuation(null);
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult] =
+        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult] =
             await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
@@ -200,6 +213,8 @@ export default function ViewerPage() {
                 loadKpiDefinitions(ticker),
                 loadKpiValues(ticker),
                 loadOrderKpis(ticker),
+                loadLatestMarketData(ticker),
+                loadPerShareData(ticker),
             ]);
 
         setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
@@ -265,6 +280,13 @@ export default function ViewerPage() {
             setKpiValues(kpiValsResult.value);
         }
         setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
+
+        // Market data & per share data
+        const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
+        const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+        setMarketData(mktData);
+        setPerShareData(psData);
+        setValuation(calculateValuation(mktData, psData));
 
         // 却下レコードは別途取得 (Promise.allSettled に含めず後から)
         loadRejectedOrderKpis(ticker).then(setRejectedKpis).catch(() => setRejectedKpis([]));
@@ -651,6 +673,27 @@ export default function ViewerPage() {
         [activeTicker, user],
     );
 
+    const handleEditOrderKpiValue = useCallback(
+        async (
+            id: number,
+            newValue: number,
+            reviewNote?: string,
+        ): Promise<{ success: boolean; error?: string }> => {
+            const result = await updateOrderKpiValue(
+                id,
+                newValue,
+                user?.email ?? undefined,
+                reviewNote,
+            );
+            if (result.success && activeTicker) {
+                const updated = await loadOrderKpis(activeTicker);
+                setOrderKpis(updated);
+            }
+            return result;
+        },
+        [activeTicker, user],
+    );
+
     useEffect(() => {
         if (status === "saved") {
             const timer = setTimeout(() => setStatus("loaded"), 3000);
@@ -713,6 +756,8 @@ export default function ViewerPage() {
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
+                    <ValuationCard valuation={valuation} loading={dataLoading} />
+                    <PerShareTable data={perShareData} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />
                     <OrderKpiCard
                         data={orderKpis}
@@ -720,6 +765,7 @@ export default function ViewerPage() {
                         loading={dataLoading}
                         onReviewAction={handleOrderKpiReview}
                         onRestoreAction={handleRestoreOrderKpi}
+                        onEditValue={handleEditOrderKpiValue}
                     />
                 </div>
             )}

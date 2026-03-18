@@ -28,7 +28,7 @@ function findPdfPath(ticker: string, filingDate: string): string | null {
 
             for (const row of rows) {
                 // cache_dir 指定あり
-                if (row.cache_dir) {
+                if (row.cache_dir && row.cache_dir.length > 0) {
                     const p = join(row.cache_dir, "source.pdf");
                     if (existsSync(p)) return p;
                 }
@@ -57,7 +57,7 @@ function findPdfPath(ticker: string, filingDate: string): string | null {
             db.close();
 
             for (const row of rows) {
-                if (row.cache_dir) {
+                if (row.cache_dir && row.cache_dir.length > 0) {
                     const p = join(row.cache_dir, "source.pdf");
                     if (existsSync(p)) return p;
                 }

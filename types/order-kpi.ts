@@ -3,6 +3,24 @@
 // ============================================================
 
 /**
+ * 比較指標データ (comparison_json のパース結果)
+ */
+export interface ComparisonData {
+    basis: string;             // yoy / yoy_end / prev_period_end / unknown
+    basis_raw: string;         // 前年同期比, 前年同期末 等
+    expression_type: string;   // rate / index / change_value
+    rate_percent?: number | null;
+    index_percent?: number | null;
+    change_value?: number | null;
+    change_unit?: string;
+    direction: string;         // increase / decrease / neutral / unknown
+    score: number;
+    review_status: string;     // ok / needs_review
+    review_reason?: string;
+    extraction_source?: string;
+}
+
+/**
  * Supabase order_kpis テーブルから取得する受注KPIアイテム。
  */
 export interface OrderKpiItem {
@@ -23,6 +41,7 @@ export interface OrderKpiItem {
     reviewed_at?: string | null;
     reviewed_by?: string | null;
     review_note?: string | null;
+    comparison_json?: string | null;
 }
 
 /**

@@ -33,6 +33,7 @@ export interface QStandaloneRow {
     quarter: string;
     sales: number | null;
     grossProfit: number | null;
+    grossMarginRate: number | null; // 粗利率 = GP / SALES (%)
     sgAndA: number | null;       // 管理費 = GP - OP
     operatingProfit: number | null;
     opMargin: number | null;     // 営業利益率 = OP / SALES (%)
@@ -46,6 +47,7 @@ export interface CumulativeRow {
     quarter: string;
     sales: number | null;
     grossProfit: number | null;
+    grossMarginRate: number | null; // 粗利率 = GP / SALES (%)
     sgAndA: number | null;       // 管理費 = GP - OP
     operatingProfit: number | null;
     opMargin: number | null;     // 営業利益率 = OP / SALES (%)
@@ -64,6 +66,15 @@ function safeSub(a: number | null, b: number | null): number | null {
 /** 管理費 = GP - OP */
 function calcSgAndA(gp: number | null, op: number | null): number | null {
     return safeSub(gp, op);
+}
+
+/** 粗利率 = GP / SALES (%) */
+function calcGrossMarginRate(gp: number | null, sales: number | null): number | null {
+    if (gp === null || gp === undefined) return null;
+    if (sales === null || sales === undefined || sales === 0) return null;
+    const rate = (gp / sales) * 100;
+    if (!isFinite(rate)) return null;
+    return rate;
 }
 
 /** 営業利益率 = OP / SALES (%) */
@@ -100,6 +111,7 @@ export function buildCumulativeRows(records: FinancialRecord[]): CumulativeRow[]
         quarter: r.quarter,
         sales: r.sales,
         grossProfit: r.gross_profit,
+        grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
         sgAndA: calcSgAndA(r.gross_profit, r.operating_profit),
         operatingProfit: r.operating_profit,
         opMargin: calcOpMargin(r.operating_profit, r.sales),
@@ -138,6 +150,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
                 quarter: r.quarter,
                 sales: r.sales,
                 grossProfit: r.gross_profit,
+                grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
                 sgAndA: calcSgAndA(r.gross_profit, r.operating_profit),
                 operatingProfit: r.operating_profit,
                 opMargin: calcOpMargin(r.operating_profit, r.sales),
@@ -155,6 +168,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
                 const sales = safeSub(r.sales, prevRecord.sales);
                 const gp = safeSub(r.gross_profit, prevRecord.gross_profit);
                 const op = safeSub(r.operating_profit, prevRecord.operating_profit);
+                const grossMarginRate = calcGrossMarginRate(gp, sales);
                 const sgAndA = calcSgAndA(gp, op);
                 const opMargin = calcOpMargin(op, sales);
 
@@ -163,6 +177,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
                     quarter: r.quarter,
                     sales,
                     grossProfit: gp,
+                    grossMarginRate,
                     sgAndA,
                     operatingProfit: op,
                     opMargin,
@@ -180,6 +195,7 @@ function emptyQRow(period: string, quarter: string): QStandaloneRow {
         quarter,
         sales: null,
         grossProfit: null,
+        grossMarginRate: null,
         sgAndA: null,
         operatingProfit: null,
         opMargin: null,

@@ -455,7 +455,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
                 "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
                 "review_status,confidence_score,filing_date,source_system," +
                 "source_type,raw_label,source_page,source_locator,extraction_method," +
-                "reviewed_at,reviewed_by,review_note"
+                "reviewed_at,reviewed_by,review_note,comparison_json"
             )
             .eq("ticker", t)
             .order("canonical_kpi_name");
@@ -480,7 +480,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
                 "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
                 "review_status,confidence_score,filing_date,source_system," +
                 "source_type,raw_label,source_page,source_locator,extraction_method," +
-                "reviewed_at,reviewed_by,review_note"
+                "reviewed_at,reviewed_by,review_note,comparison_json"
             )
             .eq("ticker", t)
             .order("canonical_kpi_name")
@@ -720,3 +720,282 @@ export async function updateOrderKpiValue(
         return { success: false, error: msg };
     }
 }
+
+// ============================================================
+// Market Data — 株価 (テーブル未存在時は null/空配列)
+// ============================================================
+
+import type {
+    MarketDataRecord,
+    PerShareRecord,
+    ValuationMetrics,
+} from "@/types/market-data";
+
+/**
+ * 指定銘柄の最新株価を取得する。
+ * テーブル未存在 → null を返す。
+ */
+export async function loadLatestMarketData(
+    ticker: string,
+): Promise<MarketDataRecord | null> {
+    const t = normalizeTicker(ticker);
+    if (!t) return null;
+
+    try {
+        const { data, error } = await supabase
+            .from("market_data")
+            .select(
+                "ticker,date,open,high,low,close,volume,turnover,adj_close,market_cap",
+            )
+            .eq("ticker", t)
+            .order("date", { ascending: false })
+            .limit(1)
+            .maybeSingle();
+
+        if (error) {
+            console.warn(
+                "[market_data] スキップ (テーブル未作成の可能性):",
+                error.message,
+            );
+            return null;
+        }
+
+        if (!data) return null;
+
+        return {
+            ticker: data.ticker,
+            date: data.date,
+            open: data.open !== null ? Number(data.open) : null,
+            high: data.high !== null ? Number(data.high) : null,
+            low: data.low !== null ? Number(data.low) : null,
+            close: data.close !== null ? Number(data.close) : null,
+            volume: data.volume !== null ? Number(data.volume) : null,
+            turnover: data.turnover !== null ? Number(data.turnover) : null,
+            adj_close: data.adj_close !== null ? Number(data.adj_close) : null,
+            market_cap:
+                data.market_cap !== null ? Number(data.market_cap) : null,
+        } as MarketDataRecord;
+    } catch (err) {
+        console.warn("[market_data] 取得例外:", err);
+        return null;
+    }
+}
+
+// ============================================================
+// Per Share Data — 1株指標
+// ============================================================
+
+/**
+ * 指定銘柄の1株指標を取得する (FY 行を優先表示)。
+ * テーブル未存在時は空配列。
+ */
+export async function loadPerShareData(
+    ticker: string,
+): Promise<PerShareRecord[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    try {
+        const { data, error } = await supabase
+            .from("per_share_data")
+            .select("*")
+            .eq("ticker", t)
+            .order("period", { ascending: false })
+            .order("quarter", { ascending: false })
+            .limit(50);
+
+        if (error) {
+            console.warn(
+                "[per_share_data] スキップ (テーブル未作成の可能性):",
+                error.message,
+            );
+            return [];
+        }
+
+        if (!data || data.length === 0) return [];
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        return data.map((row: any) => ({
+            ticker: row.ticker,
+            period: row.period,
+            quarter: row.quarter,
+            disclosed_date: row.disclosed_date,
+            eps: row.eps !== null ? Number(row.eps) : null,
+            diluted_eps:
+                row.diluted_eps !== null ? Number(row.diluted_eps) : null,
+            bps: row.bps !== null ? Number(row.bps) : null,
+            dividend_q1:
+                row.dividend_q1 !== null ? Number(row.dividend_q1) : null,
+            dividend_q2:
+                row.dividend_q2 !== null ? Number(row.dividend_q2) : null,
+            dividend_q3:
+                row.dividend_q3 !== null ? Number(row.dividend_q3) : null,
+            dividend_fy_end:
+                row.dividend_fy_end !== null
+                    ? Number(row.dividend_fy_end)
+                    : null,
+            dividend_annual:
+                row.dividend_annual !== null
+                    ? Number(row.dividend_annual)
+                    : null,
+            payout_ratio:
+                row.payout_ratio !== null ? Number(row.payout_ratio) : null,
+            forecast_eps:
+                row.forecast_eps !== null ? Number(row.forecast_eps) : null,
+            forecast_dividend_annual:
+                row.forecast_dividend_annual !== null
+                    ? Number(row.forecast_dividend_annual)
+                    : null,
+            forecast_payout_ratio:
+                row.forecast_payout_ratio !== null
+                    ? Number(row.forecast_payout_ratio)
+                    : null,
+            shares_outstanding:
+                row.shares_outstanding !== null
+                    ? Number(row.shares_outstanding)
+                    : null,
+            treasury_stock:
+                row.treasury_stock !== null
+                    ? Number(row.treasury_stock)
+                    : null,
+            avg_shares:
+                row.avg_shares !== null ? Number(row.avg_shares) : null,
+            total_assets:
+                row.total_assets !== null ? Number(row.total_assets) : null,
+            equity: row.equity !== null ? Number(row.equity) : null,
+            equity_ratio:
+                row.equity_ratio !== null ? Number(row.equity_ratio) : null,
+        })) as PerShareRecord[];
+    } catch (err) {
+        console.warn("[per_share_data] 取得例外:", err);
+        return [];
+    }
+}
+
+// ============================================================
+// Valuation Metrics — API側で都度計算
+// ============================================================
+
+/**
+ * バリュエーション指標を計算する。
+ *
+ * ルール:
+ * - PER: 予想EPS優先、なければ実績EPS。eps <= 0 なら null。
+ * - PBR: 最新実績BPS。bps <= 0 なら null。
+ * - 配当利回り: 予想配当優先、なければ実績配当。price <= 0 なら null。
+ * - 時価総額: market_data の値を使用 (既に算出済み)。
+ *   fallback: close * (shares_outstanding - treasury_stock)
+ */
+export function calculateValuation(
+    market: MarketDataRecord | null,
+    perShareRows: PerShareRecord[],
+): ValuationMetrics {
+    const empty: ValuationMetrics = {
+        stock_price: null,
+        market_cap: null,
+        per: null,
+        pbr: null,
+        div_yield: null,
+        price_date: null,
+        eps_used: null,
+        eps_basis: null,
+        bps_used: null,
+        dividend_used: null,
+        dividend_basis: null,
+    };
+
+    if (!market || market.close === null) return empty;
+
+    const price = market.close;
+    const priceDate = market.date;
+
+    // 最新の FY 行、または最新行から per_share 指標を選択
+    // FY行がなければ最新行で代替
+    const latestFY = perShareRows.find((r) => r.quarter === "FY");
+    const latest = perShareRows.length > 0 ? perShareRows[0] : null;
+    const primary = latestFY || latest;
+
+    if (!primary) {
+        return {
+            ...empty,
+            stock_price: price,
+            market_cap: market.market_cap,
+            price_date: priceDate,
+        };
+    }
+
+    // EPS: 予想 → 実績
+    let epsUsed: number | null = null;
+    let epsBasis: "forecast" | "actual" | null = null;
+    if (primary.forecast_eps !== null && primary.forecast_eps > 0) {
+        epsUsed = primary.forecast_eps;
+        epsBasis = "forecast";
+    } else if (primary.eps !== null && primary.eps > 0) {
+        epsUsed = primary.eps;
+        epsBasis = "actual";
+    }
+
+    // BPS: 最新実績
+    const bpsUsed = primary.bps;
+
+    // 配当: 予想 → 実績
+    let dividendUsed: number | null = null;
+    let dividendBasis: "forecast" | "actual" | null = null;
+    if (
+        primary.forecast_dividend_annual !== null &&
+        primary.forecast_dividend_annual > 0
+    ) {
+        dividendUsed = primary.forecast_dividend_annual;
+        dividendBasis = "forecast";
+    } else if (
+        primary.dividend_annual !== null &&
+        primary.dividend_annual > 0
+    ) {
+        dividendUsed = primary.dividend_annual;
+        dividendBasis = "actual";
+    }
+
+    // PER
+    const per =
+        epsUsed !== null && epsUsed > 0
+            ? Math.round((price / epsUsed) * 100) / 100
+            : null;
+
+    // PBR
+    const pbr =
+        bpsUsed !== null && bpsUsed > 0
+            ? Math.round((price / bpsUsed) * 100) / 100
+            : null;
+
+    // 配当利回り
+    const divYield =
+        price > 0 && dividendUsed !== null && dividendUsed > 0
+            ? Math.round((dividendUsed / price) * 100 * 100) / 100
+            : null;
+
+    // 時価総額 fallback
+    let marketCap = market.market_cap;
+    if (
+        marketCap === null &&
+        price > 0 &&
+        primary.shares_outstanding !== null
+    ) {
+        const treasuryStock = primary.treasury_stock ?? 0;
+        marketCap = price * (primary.shares_outstanding - treasuryStock);
+    }
+
+    return {
+        stock_price: price,
+        market_cap: marketCap,
+        per,
+        pbr,
+        div_yield: divYield,
+        price_date: priceDate,
+        eps_used: epsUsed,
+        eps_basis: epsBasis,
+        bps_used: bpsUsed,
+        dividend_used: dividendUsed,
+        dividend_basis: dividendBasis,
+    };
+}
+

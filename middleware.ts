@@ -41,6 +41,11 @@ export async function middleware(request: NextRequest) {
         data: { user },
     } = await supabase.auth.getUser();
 
+    // DEV BYPASS: 一時的にログインバイパス (確認後 revert)
+    if (process.env.NODE_ENV === "development") {
+        return supabaseResponse;
+    }
+
     // 未認証 → /login へリダイレクト (公開ルートは除外)
     if (!user && !request.nextUrl.pathname.startsWith("/login") &&
         !request.nextUrl.pathname.startsWith("/auth")) {

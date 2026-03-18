@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import type { OrderKpiItem } from "@/types/order-kpi";
+import React, { useState, useMemo } from "react";
+import type { OrderKpiItem, ComparisonData } from "@/types/order-kpi";
 import {
     formatOrderKpiLabel,
     formatReviewStatus,
@@ -9,6 +9,62 @@ import {
     ORDER_KPI_DISPLAY_ORDER,
 } from "@/types/order-kpi";
 import { formatMillions } from "@/lib/format";
+
+/**
+ * comparison_json → 表示可能な ComparisonData | null
+ * auto_accept(okステータス) のみ返す。needs_review/reject は null。
+ */
+function parseComparison(item: OrderKpiItem): ComparisonData | null {
+    if (!item.comparison_json) return null;
+    try {
+        const parsed: ComparisonData =
+            typeof item.comparison_json === "string"
+                ? JSON.parse(item.comparison_json)
+                : item.comparison_json;
+        // ok + needs_review を表示、reject のみ非表示
+        if (parsed.review_status === "reject") return null;
+        // 最低限の値が必要 (0 は有効値なので != null で判定)
+        if (parsed.rate_percent == null && parsed.index_percent == null && parsed.change_value == null) return null;
+        return parsed;
+    } catch {
+        return null;
+    }
+}
+
+/**
+ * ComparisonData → 表示テキスト
+ * 例: "前年同期末比 +18.3%", "前年同期比 112.3", "前期末比 +150億円"
+ */
+function formatComparison(c: ComparisonData): string {
+    const basisLabel = c.basis_raw || formatBasisLabel(c.basis);
+    let text = "";
+
+    if (c.expression_type === "rate" && c.rate_percent != null) {
+        const sign = c.rate_percent > 0 ? "+" : "";
+        text = `${basisLabel} ${sign}${c.rate_percent}%`;
+    } else if (c.expression_type === "index" && c.index_percent != null) {
+        text = `${basisLabel} ${c.index_percent}%`;
+    } else if (c.expression_type === "change_value" && c.change_value != null) {
+        const sign = c.change_value > 0 ? "+" : "";
+        const unit = c.change_unit || "百万円";
+        text = `${basisLabel} ${sign}${c.change_value.toLocaleString()}${unit}`;
+    }
+
+    if (text && c.review_status === "needs_review") {
+        text += " (要確認)";
+    }
+
+    return text;
+}
+
+function formatBasisLabel(basis: string): string {
+    switch (basis) {
+        case "yoy": return "前年同期比";
+        case "yoy_end": return "前年同期末比";
+        case "prev_period_end": return "前期末比";
+        default: return basis;
+    }
+}
 
 interface OrderKpiCardProps {
     data: OrderKpiItem[];
@@ -22,6 +78,11 @@ interface OrderKpiCardProps {
     onRestoreAction?: (
         id: number,
     ) => Promise<{ success: boolean; error?: string }>;
+    onEditValue?: (
+        id: number,
+        newValue: number,
+        reviewNote?: string,
+    ) => Promise<{ success: boolean; error?: string }>;
 }
 
 export default function OrderKpiCard({
@@ -30,13 +91,16 @@ export default function OrderKpiCard({
     loading,
     onReviewAction,
     onRestoreAction,
+    onEditValue,
 }: OrderKpiCardProps) {
-    const [actionLoading, setActionLoading] = useState<Record<number, boolean>>(
-        {},
-    );
+    const [actionLoading, setActionLoading] = useState<Record<number, boolean>>({});
     const [reviewNotes, setReviewNotes] = useState<Record<number, string>>({});
     const [actionError, setActionError] = useState<string | null>(null);
     const [showRejected, setShowRejected] = useState(false);
+    // 編集モード: editingId=編集中のレコードid, editValue=入力中の値
+    const [editingId, setEditingId] = useState<number | null>(null);
+    const [editValue, setEditValue] = useState("");
+    const [editNote, setEditNote] = useState("");
 
     if (loading) {
         return (
@@ -47,45 +111,31 @@ export default function OrderKpiCard({
         );
     }
 
-    // 3KPIとも無い && 却下もない場合はカードを非表示
     if ((!data || data.length === 0) && (!rejectedData || rejectedData.length === 0)) {
         return null;
     }
 
-    // canonical_kpi_name でルックアップ用マップを構築
     const kpiMap = new Map<string, OrderKpiItem>();
     for (const item of data) {
         kpiMap.set(item.canonical_kpi_name, item);
     }
 
-    const filingDates = new Set(
-        data.map((d) => d.filing_date).filter(Boolean),
-    );
-    const commonFilingDate =
-        filingDates.size === 1 ? data[0]?.filing_date : null;
+    const filingDates = new Set(data.map((d) => d.filing_date).filter(Boolean));
+    const commonFilingDate = filingDates.size === 1 ? data[0]?.filing_date : null;
     const commonSource =
         data.length > 0
             ? `${data[0].source_system ?? "–"} / ${data[0].source_type ?? "–"}`
             : null;
 
-    const handleReviewAction = async (
-        id: number,
-        nextStatus: "auto_accepted" | "rejected",
-    ) => {
+    const handleReviewAction = async (id: number, nextStatus: "auto_accepted" | "rejected") => {
         if (!onReviewAction) return;
         setActionLoading((prev) => ({ ...prev, [id]: true }));
         setActionError(null);
-
         const note = reviewNotes[id]?.trim() || undefined;
         const result = await onReviewAction(id, nextStatus, note);
-
         setActionLoading((prev) => ({ ...prev, [id]: false }));
         if (result.success) {
-            setReviewNotes((prev) => {
-                const next = { ...prev };
-                delete next[id];
-                return next;
-            });
+            setReviewNotes((prev) => { const n = { ...prev }; delete n[id]; return n; });
         } else if (result.error) {
             setActionError(result.error);
             setTimeout(() => setActionError(null), 5000);
@@ -96,11 +146,41 @@ export default function OrderKpiCard({
         if (!onRestoreAction) return;
         setActionLoading((prev) => ({ ...prev, [id]: true }));
         setActionError(null);
-
         const result = await onRestoreAction(id);
-
         setActionLoading((prev) => ({ ...prev, [id]: false }));
         if (!result.success && result.error) {
+            setActionError(result.error);
+            setTimeout(() => setActionError(null), 5000);
+        }
+    };
+
+    const startEdit = (item: OrderKpiItem) => {
+        setEditingId(item.id);
+        setEditValue(item.normalized_value !== null ? String(item.normalized_value) : "");
+        setEditNote("");
+    };
+
+    const cancelEdit = () => {
+        setEditingId(null);
+        setEditValue("");
+        setEditNote("");
+    };
+
+    const handleSaveEdit = async () => {
+        if (editingId === null || !onEditValue) return;
+        const parsed = parseFloat(editValue.replace(/,/g, ""));
+        if (isNaN(parsed)) {
+            setActionError("数値を入力してください");
+            setTimeout(() => setActionError(null), 3000);
+            return;
+        }
+        setActionLoading((prev) => ({ ...prev, [editingId]: true }));
+        setActionError(null);
+        const result = await onEditValue(editingId, parsed, editNote.trim() || undefined);
+        setActionLoading((prev) => ({ ...prev, [editingId]: false }));
+        if (result.success) {
+            cancelEdit();
+        } else if (result.error) {
             setActionError(result.error);
             setTimeout(() => setActionError(null), 5000);
         }
@@ -112,11 +192,8 @@ export default function OrderKpiCard({
         <section className="order-kpi-card">
             <h3 className="order-kpi-title">受注KPI</h3>
 
-            {actionError && (
-                <div className="order-kpi-error">{actionError}</div>
-            )}
+            {actionError && <div className="order-kpi-error">{actionError}</div>}
 
-            {/* Active KPIs */}
             {data.length > 0 && (
                 <div className="order-kpi-table">
                     {ORDER_KPI_DISPLAY_ORDER.map((canonical) => {
@@ -127,20 +204,93 @@ export default function OrderKpiCard({
                             formatReviewStatus(item.review_status);
                         const reviewable = isReviewableStatus(item.review_status);
                         const isLoading = actionLoading[item.id] ?? false;
+                        const isEditing = editingId === item.id;
 
                         return (
                             <div key={canonical} className="order-kpi-row">
                                 <div className="order-kpi-label">
                                     {formatOrderKpiLabel(canonical)}
                                 </div>
-                                <div className="order-kpi-value">
-                                    {formatMillions(item.normalized_value)}
-                                </div>
-                                <div className="order-kpi-unit">百万円</div>
-                                <div className={`order-kpi-badge ${badgeClass}`}>
-                                    {badgeLabel}
-                                </div>
-                                {reviewable && onReviewAction && (
+
+                                {/* 値セル: 編集モード or 表示モード */}
+                                {isEditing ? (
+                                    <div className="order-kpi-edit-area">
+                                        <input
+                                            type="text"
+                                            className="order-kpi-edit-input"
+                                            value={editValue}
+                                            autoFocus
+                                            onChange={(e) => setEditValue(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if (e.key === "Enter") { e.preventDefault(); handleSaveEdit(); }
+                                                if (e.key === "Escape") cancelEdit();
+                                            }}
+                                        />
+                                        <input
+                                            type="text"
+                                            className="order-kpi-note-input"
+                                            placeholder="修正理由（任意）"
+                                            value={editNote}
+                                            onChange={(e) => setEditNote(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if (e.key === "Enter") { e.preventDefault(); handleSaveEdit(); }
+                                                if (e.key === "Escape") cancelEdit();
+                                            }}
+                                        />
+                                        <button
+                                            className="order-kpi-btn order-kpi-btn-accept"
+                                            disabled={isLoading}
+                                            onClick={handleSaveEdit}
+                                        >
+                                            {isLoading ? "..." : "保存"}
+                                        </button>
+                                        <button
+                                            className="order-kpi-btn order-kpi-btn-cancel"
+                                            onClick={cancelEdit}
+                                        >
+                                            取消
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div
+                                            className={`order-kpi-value ${onEditValue ? "order-kpi-value-editable" : ""}`}
+                                            onClick={() => onEditValue && startEdit(item)}
+                                            title={onEditValue ? "クリックで修正" : undefined}
+                                        >
+                                            {formatMillions(item.normalized_value)}
+                                        </div>
+                                        <div className="order-kpi-unit">百万円</div>
+                                        <div className={`order-kpi-badge ${badgeClass}`}>
+                                            {badgeLabel}
+                                        </div>
+                                        {(() => {
+                                            const comp = parseComparison(item);
+                                            if (!comp) return null;
+                                            const text = formatComparison(comp);
+                                            if (!text) return null;
+                                            const dirClass =
+                                                comp.direction === "increase"
+                                                    ? "order-kpi-comp-up"
+                                                    : comp.direction === "decrease"
+                                                      ? "order-kpi-comp-down"
+                                                      : "";
+                                            const isReview = comp.review_status === "needs_review";
+                                            const reviewClass = isReview ? "order-kpi-comp-review" : "";
+                                            return (
+                                                <div
+                                                    className={`order-kpi-comparison ${dirClass} ${reviewClass}`}
+                                                    title={isReview ? "自動抽出候補。文脈からの確認を推奨します" : undefined}
+                                                >
+                                                    {text}
+                                                </div>
+                                            );
+                                        })()}
+                                    </>
+                                )}
+
+                                {/* Review buttons */}
+                                {!isEditing && reviewable && onReviewAction && (
                                     <div className="order-kpi-review-area">
                                         <input
                                             type="text"
@@ -179,17 +329,18 @@ export default function OrderKpiCard({
                                         </div>
                                     </div>
                                 )}
-                                {!commonFilingDate && item.filing_date && (
+                                {!isEditing && !commonFilingDate && item.filing_date && (
                                     <div className="order-kpi-date">{item.filing_date}</div>
                                 )}
-                                {reviewable && item.raw_label && (
+                                {!isEditing && reviewable && item.raw_label && (
                                     <div className="order-kpi-raw">原文: {item.raw_label}</div>
                                 )}
-                                {!reviewable && item.reviewed_at && (
+                                {!isEditing && !reviewable && item.reviewed_at && (
                                     <div className="order-kpi-audit">
                                         {item.reviewed_by && <span>承認者: {item.reviewed_by}</span>}
                                         <span>
-                                            承認日: {new Date(item.reviewed_at).toLocaleDateString("ja-JP")}
+                                            {item.review_status === "manual_corrected" ? "修正日" : "承認日"}:{" "}
+                                            {new Date(item.reviewed_at).toLocaleDateString("ja-JP")}
                                         </span>
                                         {item.review_note && <span>備考: {item.review_note}</span>}
                                     </div>
@@ -244,9 +395,7 @@ export default function OrderKpiCard({
                                             {formatMillions(item.normalized_value)}
                                         </div>
                                         <div className="order-kpi-unit">百万円</div>
-                                        <div className="order-kpi-badge badge-rejected">
-                                            却下
-                                        </div>
+                                        <div className="order-kpi-badge badge-rejected">却下</div>
                                         {onRestoreAction && (
                                             <button
                                                 className="order-kpi-btn order-kpi-btn-restore"
@@ -257,21 +406,15 @@ export default function OrderKpiCard({
                                             </button>
                                         )}
                                         {item.raw_label && (
-                                            <div className="order-kpi-raw">
-                                                原文: {item.raw_label}
-                                            </div>
+                                            <div className="order-kpi-raw">原文: {item.raw_label}</div>
                                         )}
                                         {item.reviewed_at && (
                                             <div className="order-kpi-audit">
-                                                {item.reviewed_by && (
-                                                    <span>却下者: {item.reviewed_by}</span>
-                                                )}
+                                                {item.reviewed_by && <span>却下者: {item.reviewed_by}</span>}
                                                 <span>
                                                     却下日: {new Date(item.reviewed_at).toLocaleDateString("ja-JP")}
                                                 </span>
-                                                {item.review_note && (
-                                                    <span>備考: {item.review_note}</span>
-                                                )}
+                                                {item.review_note && <span>備考: {item.review_note}</span>}
                                             </div>
                                         )}
                                     </div>
