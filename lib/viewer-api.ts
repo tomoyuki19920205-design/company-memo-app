@@ -76,28 +76,43 @@ import type { SearchCandidate } from "@/lib/company-search";
 
 /**
  * companies テーブルから全件取得し SearchCandidate[] として返す。
+ * PostgREST の行制限を回避するため、ページング (.range()) で全件取得。
  * ticker_code 昇順、重複排除済み。
  * テーブル未存在・エラー時は空配列。
  */
 export async function loadCompanyMaster(): Promise<SearchCandidate[]> {
-    try {
-        const { data, error } = await supabase
-            .from("companies")
-            .select("ticker_code, name_ja, name_en")
-            .order("ticker_code", { ascending: true })
-            .limit(10000);
+    const PAGE_SIZE = 1000;
+    const allRows: { ticker_code: string; name_ja: string | null; name_en: string | null }[] = [];
 
-        if (error) {
-            console.warn("[companies master] 取得スキップ:", error.message);
-            return [];
+    try {
+        let from = 0;
+        let hasMore = true;
+
+        while (hasMore) {
+            const { data, error } = await supabase
+                .from("companies")
+                .select("ticker_code, name_ja, name_en")
+                .order("ticker_code", { ascending: true })
+                .range(from, from + PAGE_SIZE - 1);
+
+            if (error) {
+                console.warn("[companies master] 取得スキップ:", error.message);
+                break;
+            }
+
+            if (!data || data.length === 0) break;
+
+            allRows.push(...data);
+            hasMore = data.length === PAGE_SIZE;
+            from += PAGE_SIZE;
         }
 
-        if (!data || data.length === 0) return [];
+        if (allRows.length === 0) return [];
 
         // ticker_code 単位で重複排除 + SearchCandidate にマッピング
         const seen = new Set<string>();
         const result: SearchCandidate[] = [];
-        for (const row of data) {
+        for (const row of allRows) {
             const t = row.ticker_code;
             if (!t || seen.has(t)) continue;
             seen.add(t);
