@@ -41,11 +41,10 @@ export default function TickerHeader({
     const composingRef = useRef(false);
 
     // 候補リスト（入力に応じてスコアリング）
-    const results = useMemo(() => {
-        const r = searchCompanies(tickerInput, candidates, 10);
-        console.log("[DEBUG search] query:", JSON.stringify(tickerInput), "candidates:", candidates.length, "results:", r.length, r.slice(0, 3).map(c => c.ticker + " " + c.company_name));
-        return r;
-    }, [tickerInput, candidates]);
+    const results = useMemo(
+        () => searchCompanies(tickerInput, candidates, 10),
+        [tickerInput, candidates],
+    );
 
     // ---- 候補選択 ----
     const selectCandidate = useCallback(

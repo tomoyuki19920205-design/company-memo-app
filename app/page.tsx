@@ -314,16 +314,13 @@ export default function ViewerPage() {
 
     // ---- 企業マスタ lazy load (多重ロード防止付き) ----
     const handleRequestMaster = useCallback(async () => {
-        console.log("[DEBUG master] handleRequestMaster called, loaded:", masterLoadedRef.current, "loading:", masterLoadingRef.current);
         if (masterLoadedRef.current || masterLoadingRef.current) return;
         masterLoadingRef.current = true;
         try {
             const raw = await loadCompanyMaster();
-            console.log("[DEBUG master] loadCompanyMaster returned:", raw.length, "items, sample:", raw.slice(0, 2));
             const normalized = preNormalizeCandidates(raw);
             setCompanyMaster(normalized);
             masterLoadedRef.current = true;
-            console.log("[DEBUG master] setCompanyMaster done, count:", normalized.length);
         } catch (err) {
             console.warn("[companies master] lazy load failed:", err);
         } finally {
