@@ -2132,3 +2132,60 @@ body {
 .forecast-val {
   color: #2563eb;
 }
+
+/* ============================================================
+   PLサマリバー — 累計PLテーブル最下部の最新PL要約
+   ============================================================ */
+.pl-summary-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 6px 14px;
+  background: linear-gradient(90deg, #f0f4ff 0%, #e8f0fe 100%);
+  border: 1px solid var(--border-light);
+  border-top: 2px solid var(--primary);
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-top: -1px;
+}
+
+.pl-summary-label {
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pl-summary-period {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pl-summary-metrics {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.pl-summary-metric {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.pl-summary-metric-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.pl-summary-metric-value {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

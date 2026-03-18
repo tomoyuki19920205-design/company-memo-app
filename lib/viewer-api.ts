@@ -38,25 +38,29 @@ export interface CompanyInfo {
 
 /**
  * 会社情報を取得する。
- * 失敗しても例外を投げず、ticker のみの CompanyInfo を返す。
+ * companies テーブルから ticker で会社名を取得。
+ * テーブル未存在・取得失敗時は companyName: null にフォールバック。
  */
 export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
     const t = normalizeTicker(ticker);
     if (!t) return { ticker: ticker, companyName: null };
 
     try {
-        // financials テーブルから1行取得して存在確認
-        // 将来 companies テーブルが追加されたらそこから会社名を取得
-        const { data } = await supabase
-            .from("financials")
-            .select("ticker")
+        const { data, error } = await supabase
+            .from("companies")
+            .select("company_name")
             .eq("ticker", t)
-            .limit(1)
             .maybeSingle();
+
+        if (error) {
+            // テーブル未存在 / RLS エラーなど → null フォールバック
+            console.warn("[companies] 取得スキップ:", error.message);
+            return { ticker: t, companyName: null };
+        }
 
         return {
             ticker: t,
-            companyName: data ? null : null, // 現状は会社名カラムが無いので null
+            companyName: data?.company_name ?? null,
         };
     } catch {
         // 失敗しても ticker だけ返す
@@ -453,7 +457,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
             .from("order_kpis_best")
             .select(
                 "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
-                "review_status,confidence_score,filing_date,source_system," +
+                "review_status,confidence_score,filing_date,fiscal_year,quarter,period_label,source_system," +
                 "source_type,raw_label,source_page,source_locator,extraction_method," +
                 "reviewed_at,reviewed_by,review_note,comparison_json"
             )
@@ -478,7 +482,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
             .from("order_kpis")
             .select(
                 "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
-                "review_status,confidence_score,filing_date,source_system," +
+                "review_status,confidence_score,filing_date,fiscal_year,quarter,period_label,source_system," +
                 "source_type,raw_label,source_page,source_locator,extraction_method," +
                 "reviewed_at,reviewed_by,review_note,comparison_json"
             )

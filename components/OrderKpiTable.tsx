@@ -10,23 +10,47 @@ function fmtNum(v: number | null | undefined): string {
     return v.toLocaleString("ja-JP", { maximumFractionDigits: 0 });
 }
 
-/** period_label "2026-02" → "2026/02" 表示用 */
-function fmtPeriod(p: string | null | undefined): string {
-    if (!p) return "—";
-    return p.replace(/-/g, "/");
+/**
+ * fiscal_year を解析して { year, month } を返す
+ * "2026年3月期" → { year: 2026, month: 3 }
+ * "2025年12月期" → { year: 2025, month: 12 }
+ * "" / null → null
+ */
+function parseFiscalYear(fy: string | null | undefined): { year: number; month: number } | null {
+    if (!fy) return null;
+    const m = fy.match(/(\d{4})年(\d{1,2})月期/);
+    if (!m) return null;
+    return { year: parseInt(m[1], 10), month: parseInt(m[2], 10) };
 }
 
-/** quarter を表示用に整形 ("1Q" → "1Q", null → "—") */
-function fmtQuarter(q: string | null | undefined): string {
-    if (!q) return "—";
-    return q;
+/**
+ * PERIOD表示を生成
+ * fiscal_year + quarter が使える → "2026/3期 3Q"
+ * fiscal_year のみ → "2026/3期"
+ * 両方なし → filing_date からのフォールバック
+ */
+function fmtPeriod(item: OrderKpiItem): string {
+    const fy = parseFiscalYear(item.fiscal_year);
+    if (fy) {
+        return `${fy.year}/${fy.month}期`;
+    }
+    // フォールバック: filing_date から推定
+    if (item.filing_date) {
+        return item.filing_date.substring(0, 7).replace("-", "/");
+    }
+    return "—";
+}
+
+function fmtQuarter(item: OrderKpiItem): string {
+    if (item.quarter) return item.quarter;
+    return "—";
 }
 
 /** ピボット行の型 */
 interface PivotRow {
-    period: string;
-    quarter: string;
-    filingDate: string;
+    periodDisplay: string;
+    quarterDisplay: string;
+    sortKey: string; // fiscal_year + quarter でソート
     values: Record<string, number | null>;
 }
 
@@ -36,45 +60,46 @@ interface Props {
 }
 
 export default function OrderKpiTable({ data, loading }: Props) {
-    // ピボット: (period, quarter) → { kpi_name: value }
     const { rows, kpiColumns } = useMemo(() => {
         if (!data || data.length === 0) return { rows: [] as PivotRow[], kpiColumns: [] as string[] };
 
-        // 存在するKPIの集合を収集
         const kpiSet = new Set<string>();
         const rowMap = new Map<string, PivotRow>();
 
         for (const item of data) {
-            const period = item.filing_date ?? "unknown";
-            const quarter = "—"; // 現状 quarter が null の場合
-            // period_label がある場合はそちらを優先
-            const periodKey = `${period}|${quarter}`;
+            const periodDisplay = fmtPeriod(item);
+            const quarterDisplay = fmtQuarter(item);
+            const pivotKey = `${periodDisplay}|${quarterDisplay}`;
 
             kpiSet.add(item.canonical_kpi_name);
 
-            if (!rowMap.has(periodKey)) {
-                rowMap.set(periodKey, {
-                    period,
-                    quarter,
-                    filingDate: item.filing_date ?? "",
+            // ソートキー: fiscal_year数値 + quarter番号 (降順用)
+            const fy = parseFiscalYear(item.fiscal_year);
+            const qNum = item.quarter?.match(/(\d)/)?.[1] ?? "9";
+            const sortKey = fy
+                ? `${fy.year}${String(fy.month).padStart(2, "0")}_${qNum}`
+                : `${item.filing_date ?? "0000-00-00"}_${qNum}`;
+
+            if (!rowMap.has(pivotKey)) {
+                rowMap.set(pivotKey, {
+                    periodDisplay,
+                    quarterDisplay,
+                    sortKey,
                     values: {},
                 });
             }
 
-            const row = rowMap.get(periodKey)!;
-            // 同一KPIが複数ある場合は confidence が高い方を優先 (best view から来るので通常は1つ)
-            if (row.values[item.canonical_kpi_name] == null || 
-                (item.normalized_value != null && item.normalized_value > (row.values[item.canonical_kpi_name] ?? 0))) {
+            const row = rowMap.get(pivotKey)!;
+            if (row.values[item.canonical_kpi_name] == null) {
                 row.values[item.canonical_kpi_name] = item.normalized_value;
             }
         }
 
-        // KPIカラムを表示順に並べる
         const kpiColumns = ORDER_KPI_DISPLAY_ORDER.filter(k => kpiSet.has(k));
 
-        // 行をperiod降順にソート
-        const rows = Array.from(rowMap.values()).sort((a, b) => 
-            b.period.localeCompare(a.period)
+        // 降順ソート (最新が上)
+        const rows = Array.from(rowMap.values()).sort((a, b) =>
+            b.sortKey.localeCompare(a.sortKey)
         );
 
         return { rows, kpiColumns };
@@ -91,9 +116,7 @@ export default function OrderKpiTable({ data, loading }: Props) {
         );
     }
 
-    if (rows.length === 0) {
-        return null; // データなしなら非表示
-    }
+    if (rows.length === 0) return null;
 
     return (
         <div className="order-kpi-table-card">
@@ -117,8 +140,8 @@ export default function OrderKpiTable({ data, loading }: Props) {
                     <tbody>
                         {rows.map((row, idx) => (
                             <tr key={idx}>
-                                <td className="order-kpi-td-period">{fmtPeriod(row.period)}</td>
-                                <td className="order-kpi-td-quarter">{fmtQuarter(row.quarter)}</td>
+                                <td className="order-kpi-td-period">{row.periodDisplay}</td>
+                                <td className="order-kpi-td-quarter">{row.quarterDisplay}</td>
                                 {kpiColumns.map(kpi => (
                                     <td key={kpi} className="order-kpi-td-value">
                                         {fmtNum(row.values[kpi])}

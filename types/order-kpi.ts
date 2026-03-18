@@ -32,6 +32,9 @@ export interface OrderKpiItem {
     review_status: "auto_accepted" | "needs_review" | "ambiguous" | "rejected" | "manual_corrected";
     confidence_score: number | null;
     filing_date: string | null;
+    fiscal_year: string | null;
+    quarter: string | null;
+    period_label: string | null;
     source_system: string | null;
     source_type: string | null;
     raw_label: string | null;
