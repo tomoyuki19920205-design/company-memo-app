@@ -253,39 +253,41 @@ export default function OrderKpiCard({
                                     </div>
                                 ) : (
                                     <>
-                                        <div
-                                            className={`order-kpi-value ${onEditValue ? "order-kpi-value-editable" : ""}`}
-                                            onClick={() => onEditValue && startEdit(item)}
-                                            title={onEditValue ? "クリックで修正" : undefined}
-                                        >
-                                            {formatMillions(item.normalized_value)}
+                                        <div className="order-kpi-value-block">
+                                            <span
+                                                className={`order-kpi-value ${onEditValue ? "order-kpi-value-editable" : ""}`}
+                                                onClick={() => onEditValue && startEdit(item)}
+                                                title={onEditValue ? "クリックで修正" : undefined}
+                                            >
+                                                {formatMillions(item.normalized_value)}
+                                            </span>
+                                            <span className="order-kpi-unit">百万円</span>
+                                            {(() => {
+                                                const comp = parseComparison(item);
+                                                if (!comp) return null;
+                                                const text = formatComparison(comp);
+                                                if (!text) return null;
+                                                const dirClass =
+                                                    comp.direction === "increase"
+                                                        ? "order-kpi-comp-up"
+                                                        : comp.direction === "decrease"
+                                                          ? "order-kpi-comp-down"
+                                                          : "";
+                                                const isReview = comp.review_status === "needs_review";
+                                                const reviewClass = isReview ? "order-kpi-comp-review" : "";
+                                                return (
+                                                    <div
+                                                        className={`order-kpi-comparison ${dirClass} ${reviewClass}`}
+                                                        title={isReview ? "自動抽出候補。文脈からの確認を推奨します" : undefined}
+                                                    >
+                                                        {text}
+                                                    </div>
+                                                );
+                                            })()}
                                         </div>
-                                        <div className="order-kpi-unit">百万円</div>
                                         <div className={`order-kpi-badge ${badgeClass}`}>
                                             {badgeLabel}
                                         </div>
-                                        {(() => {
-                                            const comp = parseComparison(item);
-                                            if (!comp) return null;
-                                            const text = formatComparison(comp);
-                                            if (!text) return null;
-                                            const dirClass =
-                                                comp.direction === "increase"
-                                                    ? "order-kpi-comp-up"
-                                                    : comp.direction === "decrease"
-                                                      ? "order-kpi-comp-down"
-                                                      : "";
-                                            const isReview = comp.review_status === "needs_review";
-                                            const reviewClass = isReview ? "order-kpi-comp-review" : "";
-                                            return (
-                                                <div
-                                                    className={`order-kpi-comparison ${dirClass} ${reviewClass}`}
-                                                    title={isReview ? "自動抽出候補。文脈からの確認を推奨します" : undefined}
-                                                >
-                                                    {text}
-                                                </div>
-                                            );
-                                        })()}
                                     </>
                                 )}
 
