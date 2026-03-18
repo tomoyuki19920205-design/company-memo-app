@@ -1,6 +1,6 @@
 /* ============================================================
    Company Viewer 窶・globals.css
-   莨∵･ｭ隧ｳ邏ｰ繝薙Η繝ｼ繧｢ 窶・PL譛螟ｧ蛹・+ Excel繝ｩ繧､繧ｯ謫堺ｽ・
+   莨∵�E��E�隧�E�邏ｰ繝薙Η繝ｼ繧�E� 窶・PL譛螟ｧ蛹・+ Excel繝ｩ繧�E�繧�E�謫堺�E�・
    ============================================================ */
 
 *,
@@ -68,7 +68,7 @@ body {
   --mono: 'Consolas', 'SF Mono', 'Courier New', monospace;
 }
 
-/* 繝輔か繝ｳ繝医ユ繝ｼ繝樣←逕ｨ蜈・ 蜈ｨ菴薙↓蜿肴丐 */
+/* 繝輔か繝ｳ繝医ユ繝ｼ繝樣←逕ｨ蜈�E 蜈ｨ菴薙�E蜿肴丁E*/
 .font-default,
 .font-sans,
 .font-serif,
@@ -76,7 +76,7 @@ body {
   font-family: var(--font);
 }
 
-/* 繝輔か繝ｳ繝医そ繝ｬ繧ｯ繧ｿUI */
+/* 繝輔か繝ｳ繝医そ繝ｬ繧�E�繧�E�UI */
 .font-selector {
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@ body {
 }
 
 /* ============================================================
-   Container 窶・菴咏區譛蟆・
+   Container 窶・菴咏區譛蟁E�E
    ============================================================ */
 .viewer-container {
   max-width: 100%;
@@ -191,6 +191,10 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ============================================================
@@ -252,7 +256,7 @@ body {
 }
 
 /* ============================================================
-   蜷梧凾髢ｲ隕ｧ繝ｦ繝ｼ繧ｶ繝ｼ繝舌・ (Presence)
+   蜷梧凾髢�E�隕ｧ繝ｦ繝ｼ繧�E�繝ｼ繝�E・ (Presence)
    ============================================================ */
 .presence-bar {
   display: flex;
@@ -353,7 +357,7 @@ body {
 }
 
 /* ============================================================
-   繝輔か繝ｼ繝溘Η繝ｩ繝舌・ (Excel謨ｰ蠑上ヰ繝ｼ鬚ｨ)
+   繝輔か繝ｼ繝溘Η繝ｩ繝�E・ (Excel謨�E�蠑上ヰ繝ｼ鬚ｨ)
    ============================================================ */
 .formula-bar {
   display: flex;
@@ -411,7 +415,7 @@ body {
   cursor: default;
 }
 
-/* 繝輔か繝ｼ繝溘Η繝ｩ繝舌・ 繝ｪ繧ｵ繧､繧ｺ繝上Φ繝峨Ν */
+/* 繝輔か繝ｼ繝溘Η繝ｩ繝�E・ 繝ｪ繧�E�繧�E�繧�E�繝上Φ繝峨΁E*/
 .formula-bar-resize-handle {
   display: flex;
   align-items: center;
@@ -568,7 +572,7 @@ body {
 }
 
 /* ============================================================
-   繝｡繝｢繧ｻ繝ｫ 窶・Excel繝ｩ繧､繧ｯ謫堺ｽ・
+   繝｡繝｢繧�E�繝ｫ 窶・Excel繝ｩ繧�E�繧�E�謫堺�E�・
    ============================================================ */
 .memo-cell {
   font-size: 0.78rem;
@@ -576,7 +580,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
+  min-width: 0;
   background: #fefce8;
   cursor: cell;
   transition: background 0.1s;
@@ -587,14 +591,14 @@ body {
   font-style: italic;
 }
 
-/* 繧ｻ繝ｫ驕ｸ謚槫庄閭ｽ迥ｶ諷・*/
+/* 繧�E�繝ｫ驕ｸ謚槫庁E���E�迥�E�諷・*/
 .memo-cell-selectable:hover {
   background: #fef9c3 !important;
   outline: 1px solid #d4d4d4;
   outline-offset: -1px;
 }
 
-/* 繧｢繧ｯ繝・ぅ繝悶そ繝ｫ・磯∈謚樔ｸｭ・俄・螟ｪ縺・搨譫� */
+/* 繧�E�繧�E�繝�EぁE��悶そ繝ｫ・磯∈謚樔ｸ�E�・俁E�・螟ｪ縺・搨譫�E� */
 .memo-cell-active {
   background: #e8f0fe !important;
   outline: 2px solid var(--primary) !important;
@@ -603,21 +607,21 @@ body {
   position: relative;
 }
 
-/* 遽・峇驕ｸ謚樔ｸｭ縺ｮ繧ｻ繝ｫ (繝｡繝｢/KPI) */
+/* 遽・峁E��ｸ謚樔ｸ�E�縺�E�繧�E�繝ｫ (繝｡繝｢/KPI) */
 .memo-cell-in-range {
   background: #dbeafe !important;
   outline: 1px solid #93c5fd !important;
   outline-offset: -1px;
 }
 
-/* 遽・峇驕ｸ謚樔ｸｭ縺ｮ繧ｻ繝ｫ (繝・・繧ｿ/繧ｻ繧ｰ繝｡繝ｳ繝・ */
+/* 遽・峁E��ｸ謚樔ｸ�E�縺�E�繧�E�繝ｫ (繝�E・繧�E�/繧�E�繧�E�繝｡繝ｳ繝�E */
 .cell-in-range {
   background: #dbeafe !important;
   outline: 1px solid #93c5fd !important;
   outline-offset: -1px;
 }
 
-/* 邱ｨ髮・ｸｭ */
+/* 邱�E�髮・�E��E� */
 .memo-cell-editing {
   padding: 0 !important;
   background: #fff !important;
@@ -638,7 +642,7 @@ body {
   box-sizing: border-box;
 }
 
-/* メモセル用 textarea (セル内改行対応) */
+/* メモセル用 textarea (セル冁E��行対忁E */
 .memo-inline-textarea {
   resize: none;
   overflow-y: auto;
@@ -647,7 +651,7 @@ body {
 }
 
 /* ============================================================
-   PL 繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ
+   PL 繧�E�繧�E�繧�E�繝ｧ繝ｳ
    ============================================================ */
 .pl-section {
   overflow: hidden;
@@ -702,7 +706,7 @@ body {
 
 .pl-table thead {
   position: sticky;
-  top: 27px; /* pl-table-label 縺ｮ鬮倥＆蛻・ｸ九↓繧ｪ繝輔そ繝・ヨ */
+  top: 27px; /* pl-table-label 縺�E�鬮倥�E�E��・�E�九�E繧�E�繝輔そ繝�Eヨ */
   z-index: 3;
 }
 
@@ -735,7 +739,7 @@ body {
 }
 
 /* ============================================================
-   PL繝ｪ繧ｵ繧､繧ｺ繝上Φ繝峨Ν
+   PL繝ｪ繧�E�繧�E�繧�E�繝上Φ繝峨΁E
    ============================================================ */
 .pl-resize-handle {
   display: flex;
@@ -764,8 +768,45 @@ body {
   line-height: 1;
 }
 
+/* PL最下部サマリ */
+.pl-summary-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #f0f4ff, #e8ecf9);
+  border: 1px solid var(--border-light);
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 0.82rem;
+  margin-top: -1px;
+}
+
+.pl-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pl-summary-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pl-summary-value {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pl-summary-period {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 /* ============================================================
-   繧ｻ繧ｰ繝｡繝ｳ繝亥・
+   繧�E�繧�E�繝｡繝ｳ繝亥・
    ============================================================ */
 .seg-header-cell {
   background: #6d28d9 !important;
@@ -1059,7 +1100,7 @@ body {
 }
 
 /* ============================================================
-   Segment Table 窶・繧ｻ繧ｰ繝｡繝ｳ繝域･ｭ邵ｾ繝・・繝悶Ν
+   Segment Table 窶・繧�E�繧�E�繝｡繝ｳ繝域�E��E�邵�E�繝�E・繝悶΁E
    ============================================================ */
 .segment-header-row {
   display: flex;
@@ -1176,7 +1217,7 @@ body {
 }
 
 /* ============================================================
-   Segment Cell 窶・陦ｨ遉ｺ / 蜈･蜉・/ 繝舌ャ繧ｸ
+   Segment Cell 窶・陦�E�遉ｺ / 蜈･蜉�E/ 繝�Eャ繧�E�
    ============================================================ */
 .segment-cell-display {
   display: inline-flex;
@@ -1237,7 +1278,7 @@ body {
   background: #fffde7;
 }
 
-/* M 繝舌ャ繧ｸ 窶・Manual Override 繝槭・繧ｫ繝ｼ */
+/* M 繝�Eャ繧�E� 窶・Manual Override 繝槭・繧�E�繝ｼ */
 .segment-manual-badge {
   display: inline-flex;
   align-items: center;
@@ -1260,7 +1301,7 @@ body {
   background: #7c3aed;
 }
 
-/* PL 繝・・繝悶Ν蜀・・繧ｻ繧ｰ繝｡繝ｳ繝育ｷｨ髮・そ繝ｫ */
+/* PL 繝�E・繝悶Ν蜀・・繧�E�繧�E�繝｡繝ｳ繝育�E��E�髮・そ繝ｫ */
 .seg-editable {
   cursor: pointer !important;
   transition: background 0.15s;
@@ -1276,7 +1317,7 @@ body {
   opacity: 0.5;
 }
 
-/* Manual override 貂医∩繧ｻ繝ｫ 窶・蜀咲ｷｨ髮・庄閭ｽ */
+/* Manual override 貂医∩繧�E�繝ｫ 窶・蜀咲�E��E�髮・庁E���E� */
 .seg-manual-editable {
   cursor: pointer !important;
   background: #faf5ff !important;
@@ -1289,7 +1330,7 @@ body {
   outline-offset: -1px;
 }
 
-/* 繧ｻ繧ｰ繝｡繝ｳ繝医そ繝ｫ 窶・繧｢繧ｯ繝・ぅ繝厄ｼ医・繝ｼ繧ｹ繝郁ｵｷ轤ｹ・・*/
+/* 繧�E�繧�E�繝｡繝ｳ繝医そ繝ｫ 窶・繧�E�繧�E�繝�EぁE��厄�E�医・繝ｼ繧�E�繝郁�E��E�轤�E�・・*/
 .seg-cell-active {
   outline: 2px solid #3b82f6 !important;
   outline-offset: -2px;
@@ -1298,7 +1339,7 @@ body {
   position: relative;
 }
 
-/* 繝壹・繧ｹ繝育ｵ先棡繝医・繧ｹ繝・*/
+/* 繝壹・繧�E�繝育�E�先棡繝医・繧�E�繝�E*/
 .seg-paste-toast {
   position: fixed;
   bottom: 24px;
@@ -1320,7 +1361,7 @@ body {
 }
 
 /* ============================================================
-   蜿玲ｳｨKPI繧ｫ繝ｼ繝・
+   蜿玲�E��E�KPI繧�E�繝ｼ繝�E
    ============================================================ */
 .order-kpi-card {
   background: var(--card-bg);
@@ -1701,15 +1742,17 @@ body {
 }
 
 /* ============================================================
-   Comparison (YoY) 比較指標表示
+   Comparison (YoY) 比輁E��標表示
    ============================================================ */
 .order-kpi-comparison {
+    grid-column: 2 / -1;
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-muted);
-    padding: 0 6px;
+    padding: 0;
     white-space: nowrap;
     letter-spacing: 0.02em;
+    margin-top: -2px;
 }
 .order-kpi-comp-up {
     color: #16a34a;
@@ -1723,7 +1766,7 @@ body {
 }
 
 /* ============================================================
-   ValuationCard 窶� 繝槭�繧ｱ繝�ヨ謖�ｨ吶き繝ｼ繝�
+   ValuationCard 窶�E� 繝槭�E�繧�E�繝�ヨ謖��E�吶き繝ｼ繝�
    ============================================================ */
 
 .valuation-card {
@@ -1820,8 +1863,7 @@ body {
 }
 
 /* ============================================================
-   PerShareTable 窶� 1譬ｪ謖�ｨ吶ユ繝ｼ繝悶Ν
-   ============================================================ */
+   PerShareTable 窶�E� 1譬�E�謖��E�吶ユ繝ｼ繝悶΁E   ============================================================ */
 
 .per-share-section {
   background: var(--card-bg);
