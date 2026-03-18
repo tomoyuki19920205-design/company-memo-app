@@ -729,6 +729,11 @@ export default function ViewerPage() {
                 </div>
             )}
 
+            {/* マーケット指標バー: 企業コード検索の直下 */}
+            {activeTicker && (
+                <ValuationCard valuation={valuation} loading={dataLoading} compact />
+            )}
+
             {!activeTicker && status === "idle" && (
                 <div className="placeholder">企業コードを入力して「読込」を押してください</div>
             )}
@@ -756,7 +761,7 @@ export default function ViewerPage() {
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />
-                    <ValuationCard valuation={valuation} loading={dataLoading} />
+
                     <PerShareTable data={perShareData} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />
                     <OrderKpiCard

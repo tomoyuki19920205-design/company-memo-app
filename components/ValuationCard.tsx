@@ -6,6 +6,7 @@ import type { ValuationMetrics } from "@/types/market-data";
 interface ValuationCardProps {
     valuation: ValuationMetrics | null;
     loading: boolean;
+    compact?: boolean;
 }
 
 /** 時価総額を読みやすい形式に (80,123,000,000 → 8.01兆) */
@@ -36,12 +37,14 @@ function BasisBadge({ basis }: { basis: "forecast" | "actual" | null }) {
     return <span className={cls}>{label}</span>;
 }
 
-export default function ValuationCard({ valuation, loading }: ValuationCardProps) {
+export default function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
+    const rootClass = compact ? "valuation-card valuation-card-compact" : "valuation-card";
+
     if (loading) {
         return (
-            <div className="valuation-card">
-                <h3 className="valuation-card-title">マーケット指標</h3>
-                <div className="valuation-card-loading">読込中...</div>
+            <div className={rootClass}>
+                <span className="valuation-card-title">マーケット指標</span>
+                <span className="valuation-card-loading">読込中...</span>
             </div>
         );
     }
@@ -49,9 +52,9 @@ export default function ValuationCard({ valuation, loading }: ValuationCardProps
     // データなし or テーブル未存在
     if (!valuation || valuation.stock_price === null) {
         return (
-            <div className="valuation-card">
-                <h3 className="valuation-card-title">マーケット指標</h3>
-                <div className="valuation-card-empty">データなし</div>
+            <div className={rootClass}>
+                <span className="valuation-card-title">マーケット指標</span>
+                <span className="valuation-card-empty">データなし</span>
             </div>
         );
     }
@@ -77,6 +80,35 @@ export default function ValuationCard({ valuation, loading }: ValuationCardProps
             badge: <BasisBadge basis={valuation.dividend_basis} />,
         },
     ];
+
+    if (compact) {
+        return (
+            <div className={rootClass} id="valuation-card">
+                <span className="valuation-card-title">マーケット指標</span>
+                {valuation.price_date && (
+                    <span className="valuation-card-date">
+                        ({valuation.price_date})
+                    </span>
+                )}
+                <div className="valuation-card-items">
+                    {items.map((item) => (
+                        <span key={item.label} className="valuation-compact-item">
+                            <span className="valuation-compact-label">
+                                {item.label}
+                                {"badge" in item && item.badge}
+                            </span>
+                            <span className="valuation-compact-value">
+                                {item.value}
+                                {item.unit && item.value !== "—" && (
+                                    <span className="valuation-compact-unit">{item.unit}</span>
+                                )}
+                            </span>
+                        </span>
+                    ))}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="valuation-card" id="valuation-card">
@@ -107,3 +139,4 @@ export default function ValuationCard({ valuation, loading }: ValuationCardProps
         </div>
     );
 }
+

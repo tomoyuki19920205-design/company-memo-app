@@ -1675,7 +1675,7 @@ function MemoCellExcel({
         // KPIセル: input (従来通り)
         return (
             <td
-                style={{ width, minWidth: width }}
+                style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
                 className={`${extraClass} memo-cell-editing`}
             >
                 {isMemoCell ? (
@@ -1731,7 +1731,7 @@ function MemoCellExcel({
 
     return (
         <td
-            style={{ width, minWidth: width }}
+            style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
             className={`${extraClass} memo-cell-selectable ${isActive ? "memo-cell-active" : ""} ${isInRange ? "memo-cell-in-range" : ""}`}
             onClick={(e) => {
                 e.stopPropagation();
@@ -1901,7 +1901,7 @@ function SegOverrideCell({
 
     if (editing) {
         return (
-            <td className="num-col seg-data-cell seg-cell-active" style={{ width, minWidth: width }}>
+            <td className="num-col seg-data-cell seg-cell-active" style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}>
                 <div className="segment-cell-edit">
                     <input
                         ref={inputRef}
@@ -1924,7 +1924,7 @@ function SegOverrideCell({
     return (
         <td
             className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""} ${isInRange ? "cell-in-range" : ""}`}
-            style={{ width, minWidth: width }}
+            style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
             onClick={handleCellClick}
             onMouseDown={(e) => { onRangeMouseDown?.(e); }}
             onMouseEnter={() => { onRangeMouseEnter?.(); }}
