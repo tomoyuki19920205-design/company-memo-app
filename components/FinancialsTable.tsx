@@ -1503,30 +1503,34 @@ export default function FinancialsTable({
                     <div className="pl-resize-handle" onMouseDown={handleResizeMouseDown} title="ドラッグで高さ調整">
                         <div className="pl-resize-grip">⋯</div>
                     </div>
-                    {/* PL最下部サマリ: 最新の売上・営業利益 */}
-                    {cumRows.length > 0 && (cumRows[0].sales !== null || cumRows[0].operatingProfit !== null) && (
-                        <div className="pl-summary-bar">
-                            <span className="pl-summary-period">�� 最新: {cumRows[0].period} {cumRows[0].quarter}</span>
-                            {cumRows[0].sales !== null && (
-                                <span className="pl-summary-item">
-                                    <span className="pl-summary-label">売上</span>
-                                    <span className="pl-summary-value">{formatMillions(cumRows[0].sales)}</span>
-                                </span>
-                            )}
-                            {cumRows[0].operatingProfit !== null && (
-                                <span className="pl-summary-item">
-                                    <span className="pl-summary-label">営業利益</span>
-                                    <span className="pl-summary-value">{formatMillions(cumRows[0].operatingProfit)}</span>
-                                </span>
-                            )}
-                            {cumRows[0].opMargin !== null && (
-                                <span className="pl-summary-item">
-                                    <span className="pl-summary-label">営利率</span>
-                                    <span className="pl-summary-value">{fmtMargin(cumRows[0].opMargin)}</span>
-                                </span>
-                            )}
-                        </div>
-                    )}
+                    {/* PL最下部サマリ: 最新FY予想の売上・営業利益 */}
+                    {(() => {
+                        const latestFY = [...cumRows].reverse().find(r => r.quarter === "FY");
+                        if (!latestFY || (latestFY.sales === null && latestFY.operatingProfit === null)) return null;
+                        return (
+                            <div className="pl-summary-bar">
+                                <span className="pl-summary-period">📌 最新FY予想: {latestFY.period} {latestFY.quarter}</span>
+                                {latestFY.sales !== null && (
+                                    <span className="pl-summary-item">
+                                        <span className="pl-summary-label">売上</span>
+                                        <span className="pl-summary-value">{formatMillions(latestFY.sales)}</span>
+                                    </span>
+                                )}
+                                {latestFY.operatingProfit !== null && (
+                                    <span className="pl-summary-item">
+                                        <span className="pl-summary-label">営業利益</span>
+                                        <span className="pl-summary-value">{formatMillions(latestFY.operatingProfit)}</span>
+                                    </span>
+                                )}
+                                {latestFY.opMargin !== null && (
+                                    <span className="pl-summary-item">
+                                        <span className="pl-summary-label">営利率</span>
+                                        <span className="pl-summary-value">{fmtMargin(latestFY.opMargin)}</span>
+                                    </span>
+                                )}
+                            </div>
+                        );
+                    })()}
                     {/* セグメント群テーブル */}
                     {segmentColumns.length > 0 && (
                         <div className="data-section seg-section" style={{ marginTop: 12 }}>
