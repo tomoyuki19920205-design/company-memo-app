@@ -6,7 +6,7 @@ import FinancialsTable from "@/components/FinancialsTable";
 import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
-import OrderKpiCard from "@/components/OrderKpiCard";
+import OrderKpiTable from "@/components/OrderKpiTable";
 import ValuationCard from "@/components/ValuationCard";
 import PerShareTable from "@/components/PerShareTable";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
@@ -764,13 +764,9 @@ export default function ViewerPage() {
 
                     <PerShareTable data={perShareData} loading={dataLoading} />
                     <KpiTable data={kpi} loading={dataLoading} />
-                    <OrderKpiCard
+                    <OrderKpiTable
                         data={orderKpis}
-                        rejectedData={rejectedKpis}
                         loading={dataLoading}
-                        onReviewAction={handleOrderKpiReview}
-                        onRestoreAction={handleRestoreOrderKpi}
-                        onEditValue={handleEditOrderKpiValue}
                     />
                 </div>
             )}
