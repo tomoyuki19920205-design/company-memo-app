@@ -84,7 +84,8 @@ export async function loadCompanyMaster(): Promise<SearchCandidate[]> {
         const { data, error } = await supabase
             .from("companies")
             .select("ticker_code, name_ja, name_en")
-            .order("ticker_code", { ascending: true });
+            .order("ticker_code", { ascending: true })
+            .limit(10000);
 
         if (error) {
             console.warn("[companies master] 取得スキップ:", error.message);
