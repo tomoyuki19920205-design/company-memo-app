@@ -38,7 +38,7 @@ export interface CompanyInfo {
 
 /**
  * 会社情報を取得する。
- * companies テーブルから ticker で会社名を取得。
+ * 既存 companies テーブルから ticker_code で name_ja を取得。
  * テーブル未存在・取得失敗時は companyName: null にフォールバック。
  */
 export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
@@ -48,8 +48,8 @@ export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
     try {
         const { data, error } = await supabase
             .from("companies")
-            .select("company_name")
-            .eq("ticker", t)
+            .select("name_ja")
+            .eq("ticker_code", t)
             .maybeSingle();
 
         if (error) {
@@ -60,7 +60,7 @@ export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
 
         return {
             ticker: t,
-            companyName: data?.company_name ?? null,
+            companyName: data?.name_ja ?? null,
         };
     } catch {
         // 失敗しても ticker だけ返す
