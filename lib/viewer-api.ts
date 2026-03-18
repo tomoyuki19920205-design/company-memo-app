@@ -69,6 +69,52 @@ export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
 }
 
 // ============================================================
+// 会社マスタ (検索用)
+// ============================================================
+
+import type { SearchCandidate } from "@/lib/company-search";
+
+/**
+ * companies テーブルから全件取得し SearchCandidate[] として返す。
+ * ticker_code 昇順、重複排除済み。
+ * テーブル未存在・エラー時は空配列。
+ */
+export async function loadCompanyMaster(): Promise<SearchCandidate[]> {
+    try {
+        const { data, error } = await supabase
+            .from("companies")
+            .select("ticker_code, name_ja, name_en")
+            .order("ticker_code", { ascending: true });
+
+        if (error) {
+            console.warn("[companies master] 取得スキップ:", error.message);
+            return [];
+        }
+
+        if (!data || data.length === 0) return [];
+
+        // ticker_code 単位で重複排除 + SearchCandidate にマッピング
+        const seen = new Set<string>();
+        const result: SearchCandidate[] = [];
+        for (const row of data) {
+            const t = row.ticker_code;
+            if (!t || seen.has(t)) continue;
+            seen.add(t);
+            result.push({
+                ticker: t,
+                company_name: row.name_ja ?? "",
+                company_name_en: row.name_en ?? null,
+            });
+        }
+
+        return result;
+    } catch (err) {
+        console.warn("[companies master] 取得例外:", err);
+        return [];
+    }
+}
+
+// ============================================================
 // PL (financials)
 // ============================================================
 

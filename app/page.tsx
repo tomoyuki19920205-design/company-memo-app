@@ -28,6 +28,7 @@ import {
 } from "@/lib/kpi-api";
 import {
     loadCompanyInfo,
+    loadCompanyMaster,
     loadFinancials,
     loadForecastRevision,
     loadMonthlyData,
@@ -46,6 +47,7 @@ import {
     calculateValuation,
     type CompanyInfo,
 } from "@/lib/viewer-api";
+import { preNormalizeCandidates, type SearchCandidate } from "@/lib/company-search";
 import {
     loadSegmentOverrides,
     saveSegmentOverride,
@@ -78,6 +80,9 @@ export default function ViewerPage() {
     const [user, setUser] = useState<User | null>(null);
     const [authLoading, setAuthLoading] = useState(true);
     const [tickerInput, setTickerInput] = useState("");
+    const [companyMaster, setCompanyMaster] = useState<SearchCandidate[]>([]);
+    const masterLoadedRef = useRef(false);
+    const masterLoadingRef = useRef(false);
     const [activeTicker, setActiveTicker] = useState("");
     const [companyInfo, setCompanyInfo] = useState<CompanyInfo | null>(null);
     const [selectedPeriod, setSelectedPeriod] = useState<string>("");
@@ -178,9 +183,9 @@ export default function ViewerPage() {
         return () => { subscription.unsubscribe(); clearTimeout(timeout); };
     }, []);
 
-    const handleLoad = useCallback(async () => {
+    const handleLoad = useCallback(async (targetTicker?: string) => {
         if (!user) return;
-        const ticker = normalizeTicker(tickerInput);
+        const ticker = normalizeTicker(targetTicker ?? tickerInput);
         if (!ticker) return;
 
         setStatus("loading");
@@ -306,6 +311,31 @@ export default function ViewerPage() {
             setSelectedQuarter(plData[0].quarter);
         }
     }, [tickerInput, user]);
+
+    // ---- 企業マスタ lazy load (多重ロード防止付き) ----
+    const handleRequestMaster = useCallback(async () => {
+        if (masterLoadedRef.current || masterLoadingRef.current) return;
+        masterLoadingRef.current = true;
+        try {
+            const raw = await loadCompanyMaster();
+            const normalized = preNormalizeCandidates(raw);
+            setCompanyMaster(normalized);
+            masterLoadedRef.current = true;
+        } catch (err) {
+            console.warn("[companies master] lazy load failed:", err);
+        } finally {
+            masterLoadingRef.current = false;
+        }
+    }, []);
+
+    // ---- 候補選択 (TickerHeader → page.tsx 一元管理) ----
+    const handleSelectCandidate = useCallback(
+        (ticker: string) => {
+            setTickerInput(ticker);
+            handleLoad(ticker);
+        },
+        [handleLoad],
+    );
 
     const handlePLRowClick = useCallback((period: string, quarter: string) => {
         setSelectedPeriod(period);
@@ -710,6 +740,7 @@ export default function ViewerPage() {
                 tickerInput={tickerInput}
                 onTickerChange={setTickerInput}
                 onLoad={handleLoad}
+                onSelectCandidate={handleSelectCandidate}
                 loading={status === "loading"}
                 activeTicker={activeTicker}
                 companyName={companyInfo?.companyName || null}
@@ -717,6 +748,8 @@ export default function ViewerPage() {
                 userEmail={user.email}
                 fontTheme={fontTheme}
                 onFontThemeChange={setFontTheme}
+                candidates={companyMaster}
+                onRequestMaster={handleRequestMaster}
             />
 
             {/* 同時閲覧ユーザー表示 */}

@@ -175,6 +175,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .ticker-badge {
@@ -195,6 +196,81 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* ============================================================
+   Autocomplete Search
+   ============================================================ */
+.search-wrapper {
+  position: relative;
+}
+
+.ticker-input.search-input {
+  width: 220px;
+  text-align: left;
+  font-family: var(--font);
+  font-size: 0.92rem;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin-top: 2px;
+  padding: 4px 0;
+  list-style: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  max-height: 320px;
+  overflow-y: auto;
+  min-width: 320px;
+}
+
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: background 0.1s;
+  font-size: 0.85rem;
+}
+
+.search-dropdown-item:hover,
+.search-dropdown-item-active {
+  background: var(--row-hover);
+}
+
+.search-item-ticker {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--primary);
+  min-width: 42px;
+  flex-shrink: 0;
+}
+
+.search-item-name {
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.search-item-name-en {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 /* ============================================================
