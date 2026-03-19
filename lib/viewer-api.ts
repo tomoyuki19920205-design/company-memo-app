@@ -513,30 +513,9 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
     const t = normalizeTicker(ticker);
     if (!t) return [];
 
-    // Try best view first
-    try {
-        const { data, error } = await supabase
-            .from("order_kpis_best")
-            .select(
-                "id,ticker,canonical_kpi_name,normalized_value,unit_normalized," +
-                "review_status,confidence_score,filing_date,fiscal_year,quarter,period_label,source_system," +
-                "source_type,raw_label,source_page,source_locator,extraction_method," +
-                "reviewed_at,reviewed_by,review_note,comparison_json"
-            )
-            .eq("ticker", t)
-            .order("canonical_kpi_name");
-
-        if (!error && data && data.length > 0) {
-            return data as unknown as OrderKpiItem[];
-        }
-
-        // View might not exist — fall through to direct table query
-        if (error) {
-            console.warn("[order_kpis_best] view not available:", error.message);
-        }
-    } catch (err) {
-        console.warn("[order_kpis_best] exception:", err);
-    }
+    // NOTE: order_kpis_best ビューは DISTINCT ON (canonical_kpi_name) で
+    // 同一KPIの過去期データを潰すため、ここでは使用しない。
+    // テーブル直接クエリ + (canonical_kpi_name, fiscal_year, quarter) dedup を使用。
 
     // Fallback: query order_kpis table directly
     try {
@@ -551,7 +530,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
             .eq("ticker", t)
             .order("canonical_kpi_name")
             .order("confidence_score", { ascending: false })
-            .limit(10);
+            .limit(200);
 
         if (error) {
             console.warn("[order_kpis] スキップ (テーブル未作成の可能性):", error.message);
@@ -560,12 +539,13 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
 
         if (!data || data.length === 0) return [];
 
-        // Deduplicate: keep highest confidence per canonical_kpi_name
+        // Deduplicate: keep highest confidence per (canonical_kpi_name, fiscal_year, quarter)
         const bestMap = new Map<string, OrderKpiItem>();
         for (const row of data as unknown as OrderKpiItem[]) {
-            const existing = bestMap.get(row.canonical_kpi_name);
+            const dedupKey = `${row.canonical_kpi_name}|${row.fiscal_year ?? ""}|${row.quarter ?? ""}`;
+            const existing = bestMap.get(dedupKey);
             if (!existing || (row.confidence_score ?? 0) > (existing.confidence_score ?? 0)) {
-                bestMap.set(row.canonical_kpi_name, row);
+                bestMap.set(dedupKey, row);
             }
         }
 
@@ -940,13 +920,16 @@ export async function loadPerShareData(
 
 // ============================================================
 // Valuation Metrics — API側で都度計算
+// 予想PER: market_data.close ÷ per_share_data.forecast_eps
+// 実績EPSへのフォールバックは行わない（表示意味の統一）
 // ============================================================
 
 /**
  * バリュエーション指標を計算する。
  *
  * ルール:
- * - PER: 予想EPS優先、なければ実績EPS。eps <= 0 なら null。
+ * - PER: 予想EPSのみ使用。forecast_eps <= 0 or null なら PER = null（"—" 表示）。
+ *         実績EPSへのフォールバックは行わない。
  * - PBR: 最新実績BPS。bps <= 0 なら null。
  * - 配当利回り: 予想配当優先、なければ実績配当。price <= 0 なら null。
  * - 時価総額: market_data の値を使用 (既に算出済み)。
@@ -990,16 +973,14 @@ export function calculateValuation(
         };
     }
 
-    // EPS: 予想 → 実績
+    // EPS: 予想EPSのみ使用（実績EPSへのフォールバック禁止）
     let epsUsed: number | null = null;
-    let epsBasis: "forecast" | "actual" | null = null;
+    let epsBasis: "forecast" | null = null;
     if (primary.forecast_eps !== null && primary.forecast_eps > 0) {
         epsUsed = primary.forecast_eps;
         epsBasis = "forecast";
-    } else if (primary.eps !== null && primary.eps > 0) {
-        epsUsed = primary.eps;
-        epsBasis = "actual";
     }
+    // forecast_eps が null/0以下の場合 → PER = null → UI は "—" 表示
 
     // BPS: 最新実績
     const bpsUsed = primary.bps;
