@@ -216,6 +216,15 @@ export function normalizeSegmentAliasKey(name: string): string {
     for (const [pattern, candidate] of PHRASE_MAP) {
         if (pattern.test(s)) return candidate;
     }
+
+    // 複合語 includes 判定（単純 regex で捕捉しにくい複数単語の組み合わせ）
+    if (s.includes("wiring")) return "配線器具";
+    if (
+        s.includes("electric") &&
+        (s.includes("material") || s.includes("facility") || s.includes("water"))
+    ) return "電材";
+    if (s.includes("other")) return "その他";
+
     return "";
 }
 
