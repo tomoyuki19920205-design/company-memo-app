@@ -117,6 +117,50 @@ export function normalizeSegmentDisplayKey(name: string | null | undefined): str
     // 不動産
     s = s.replace(/realestate|不動産/g, "realestate");
 
+    // 7b. 汎用日英語彙変換 — 意味が強く同義な語のみ
+    // 採用・リクルーティング
+    s = s.replace(/recruiting|recruitment|リクルーティング|採用/g, "recruiting");
+    // 人材・HR
+    s = s.replace(/humanresources|staffing|人材|ヒューマンリソース/g, "humanresources");
+    // ※ "hr" は単独一致のみ (hour等との衝突を避ける)
+    if (s === "hr") s = "humanresources";
+    // 小売
+    s = s.replace(/retail|小売/g, "retail");
+    // 卸売
+    s = s.replace(/wholesale|卸売/g, "wholesale");
+    // 金融・ファイナンス
+    s = s.replace(/financial|finance|金融|ファイナンス/g, "finance");
+    // 建設
+    s = s.replace(/construction|建設/g, "construction");
+    // 製造
+    s = s.replace(/manufacturing|製造/g, "manufacturing");
+    // システム
+    s = s.replace(/systems|system|システム/g, "system");
+    // ソフトウェア
+    s = s.replace(/software|ソフトウェア/g, "software");
+    // DX・デジタルトランスフォーメーション
+    s = s.replace(/digitaltransformation|デジタルトランスフォーメーション/g, "dx");
+    // クラウド
+    s = s.replace(/cloud|クラウド/g, "cloud");
+    // メディア
+    s = s.replace(/media|メディア/g, "media");
+    // 広告
+    s = s.replace(/advertising|advertisement|広告/g, "advertising");
+    // ※ "ad" は単独一致のみ
+    if (s === "ad") s = "advertising";
+    // 教育
+    s = s.replace(/education|教育/g, "education");
+    // 医療・ヘルスケア
+    s = s.replace(/healthcare|medical|医療|ヘルスケア/g, "healthcare");
+    // 介護
+    s = s.replace(/nursingcare|介護/g, "nursingcare");
+    // 飲食・フードサービス
+    s = s.replace(/foodservice|restaurant|飲食|フードサービス/g, "foodservice");
+    // エネルギー
+    s = s.replace(/energy|エネルギー/g, "energy");
+    // 環境
+    s = s.replace(/environmental|environment|環境/g, "environment");
+
     // 8. "mobility&telematics" 形式への統一 (and が残ったケース)
     s = s.replace(/mobility&telematics/g, "mobility&telematics"); // no-op 保証
     s = s.replace(/([a-z\u3040-\u30ff\u4e00-\u9fff])&([a-z\u3040-\u30ff\u4e00-\u9fff])/g, "$1&$2");
@@ -125,6 +169,54 @@ export function normalizeSegmentDisplayKey(name: string | null | undefined): str
     s = s.replace(/\s+/g, "");
 
     return s;
+}
+
+/**
+ * TDNET英語セグメント名を、EDINET日本語候補テキストへ変換する。
+ * FinancialsTable で日本語アンカーへの吸着に使用する。
+ * 変換できない場合は "" を返す（呼び出し側でフォールバック）。
+ *
+ * 変換例:
+ *   "HR Platform Business"              → "hrプラットフォーム"
+ *   "Local Information Service Business"→ "地域情報サービス"
+ *   "Recruiting Business"               → "リクルーティング"
+ *   "Human Resource Business"           → "人材サービス"
+ *   "Overseas Business"                 → "海外"
+ */
+export function normalizeSegmentAliasKey(name: string): string {
+    if (!name) return "";
+    // 全角→半角 + 小文字化 + trim
+    const s = name.normalize("NFKC").toLowerCase().trim();
+
+    // フレーズ照合（具体的・長いものを先に）
+    const PHRASE_MAP: [RegExp, string][] = [
+        [/hr\s*platform/,                  "hrプラットフォーム"],
+        [/local\s*information\s*service/,  "地域情報サービス"],
+        [/information\s*publishing/,       "情報出版"],
+        [/human\s*resources?\b/,           "人材サービス"],
+        [/\brecruit(?:ing|ment)?\b/,       "リクルーティング"],
+        [/\boverseas\b/,                   "海外"],
+        [/real\s*estate/,                  "不動産"],
+        [/\blogistics\b/,                  "物流"],
+        [/\bfinancial\b/,                  "金融"],
+        [/\bretail\b/,                     "小売"],
+        [/\bwholesale\b/,                  "卸売"],
+        [/\bconstruction\b/,               "建設"],
+        [/\bmanufacturing\b/,              "製造"],
+        [/\beducation\b/,                  "教育"],
+        [/\bhealthcare\b/,                 "医療"],
+        [/\bmedical\b/,                    "医療"],
+        [/\bmedia\b/,                      "メディア"],
+        [/\benergy\b/,                     "エネルギー"],
+        [/\benvironment/,                  "環境"],
+        [/\bpublishing\b/,                 "出版"],
+        [/\badvertis/,                     "広告"],
+    ];
+
+    for (const [pattern, candidate] of PHRASE_MAP) {
+        if (pattern.test(s)) return candidate;
+    }
+    return "";
 }
 
 const _JP_RE = /[\u3040-\u30ff\u4e00-\u9fff\uff01-\uffee]/;
