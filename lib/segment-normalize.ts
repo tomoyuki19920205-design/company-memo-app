@@ -112,6 +112,10 @@ export function normalizeSegmentDisplayKey(name: string | null | undefined): str
     s = s.replace(/security|セキュリティ/g, "security");
     // その他
     s = s.replace(/^other$|その他/g, "other");
+    // 物流・ロジスティクス
+    s = s.replace(/logistics|物流|ロジスティクス/g, "logistics");
+    // 不動産
+    s = s.replace(/realestate|不動産/g, "realestate");
 
     // 8. "mobility&telematics" 形式への統一 (and が残ったケース)
     s = s.replace(/mobility&telematics/g, "mobility&telematics"); // no-op 保証

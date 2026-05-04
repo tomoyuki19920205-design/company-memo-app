@@ -170,6 +170,23 @@ const SEG_PREV_QUARTER: Record<string, string | null> = {
 function buildSegmentInfo(segments: SegmentRecord[]) {
     // ダミーセグメント（「売上」「利益」等で sales=0, profit=0 のみ）を除外
     const DUMMY_NAMES = new Set(["売上", "利益", "#VALUE!", "0", "月次売上", "累計", "ＧＰ"]);
+    
+    // ダミー除外のみ。null値行も含め全期間の名前を収集することで
+    // 言語が期をまたぐケース（FY=英語、2Q=日本語）でも日本語優先ラベルになる
+    const allSegments = segments.filter(
+        (seg) =>
+            seg.segment_name &&
+            !DUMMY_NAMES.has(seg.segment_name) &&
+            !seg.segment_name.startsWith("UNKNOWN_"),
+    );
+    
+    const nameMap = new Map<string, string[]>();
+    for (const seg of allSegments) {
+        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+        if (!nameMap.has(dk)) nameMap.set(dk, []);
+        nameMap.get(dk)!.push(seg.segment_name);
+    }
+
     const filtered = segments.filter((seg) => {
         if (!seg.segment_name) return false;
         if (DUMMY_NAMES.has(seg.segment_name)) return false;
@@ -179,13 +196,6 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         return true;
     });
 
-    // display_key 単位で英日名を統合
-    const nameMap = new Map<string, string[]>();
-    for (const seg of filtered) {
-        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
-        if (!nameMap.has(dk)) nameMap.set(dk, []);
-        nameMap.get(dk)!.push(seg.segment_name);
-    }
 
     const segmentColumns: SegmentColumnDef[] = Array.from(nameMap.entries()).map(([dk, names]) => ({
         display_key: dk,
