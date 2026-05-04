@@ -10,6 +10,7 @@ import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
+import { normalizeSegmentDisplayKey, pickSegmentDisplayName } from "@/lib/segment-normalize";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -152,7 +153,8 @@ function parseNumericValue(text: string): number | null {
 // セグメント結合情報
 // ============================================================
 interface SegmentColumnDef {
-    segmentName: string;
+    display_key: string;  // 正規化キー (英日重複排除用)
+    segmentName: string;  // 表示名 (日本語優先)
     salesKey: string;
     profitKey: string;
 }
@@ -177,16 +179,19 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         return true;
     });
 
-    const nameSet = new Set<string>();
+    // display_key 単位で英日名を統合
+    const nameMap = new Map<string, string[]>();
     for (const seg of filtered) {
-        nameSet.add(seg.segment_name);
+        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+        if (!nameMap.has(dk)) nameMap.set(dk, []);
+        nameMap.get(dk)!.push(seg.segment_name);
     }
-    const segmentNames = Array.from(nameSet);
 
-    const segmentColumns: SegmentColumnDef[] = segmentNames.map((name) => ({
-        segmentName: name,
-        salesKey: `seg:${name}:sales`,
-        profitKey: `seg:${name}:profit`,
+    const segmentColumns: SegmentColumnDef[] = Array.from(nameMap.entries()).map(([dk, names]) => ({
+        display_key: dk,
+        segmentName: pickSegmentDisplayName(names),
+        salesKey: `seg:${dk}:sales`,
+        profitKey: `seg:${dk}:profit`,
     }));
 
     // 累計用 segmentMap: key = "period|quarter"
@@ -195,7 +200,8 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         const key = `${seg.period}|${seg.quarter}`;
         if (!segmentMap.has(key)) segmentMap.set(key, {});
         const row = segmentMap.get(key)!;
-        const col = segmentColumns.find((c) => c.segmentName === seg.segment_name);
+        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+        const col = segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
         if (col) {
             row[col.salesKey] = seg.segment_sales;
             row[col.profitKey] = seg.segment_profit;
@@ -245,7 +251,7 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
     // DEBUG: merge確認ログ (development のみ)
     if (process.env.NODE_ENV === "development" && segments.length > 0) {
         console.log("[SEG-DEBUG] input segments:", segments.length, "→ filtered:", filtered.length);
-        console.log("[SEG-DEBUG] segmentNames:", segmentNames);
+        console.log("[SEG-DEBUG] segmentColumns:", segmentColumns.map((c) => `${c.display_key}=${c.segmentName}`));
         console.log("[SEG-DEBUG] segmentMap keys:", [...segmentMap.keys()].slice(0, 5));
         console.log("[SEG-DEBUG] segmentQMap keys:", [...segmentQMap.keys()].slice(0, 5));
         const firstKey = [...segmentQMap.keys()][0];
@@ -257,10 +263,13 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
     const sourceMap = new Map<string, string>();
     for (const seg of segments) {
         const key = `${seg.period}|${seg.quarter}`;
-        const col = segmentColumns.find((c) => c.segmentName === seg.segment_name);
-        if (col) {
-            if (seg._salesSource) sourceMap.set(`${key}|${col.salesKey}`, seg._salesSource);
-            if (seg._profitSource) sourceMap.set(`${key}|${col.profitKey}`, seg._profitSource);
+        const col2 = (() => {
+            const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+            return segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
+        })();
+        if (col2) {
+            if (seg._salesSource) sourceMap.set(`${key}|${col2.salesKey}`, seg._salesSource);
+            if (seg._profitSource) sourceMap.set(`${key}|${col2.profitKey}`, seg._profitSource);
         }
     }
 

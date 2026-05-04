@@ -427,6 +427,8 @@ export function resolveSegmentsWithOverrides(
 // 1Q/3Q スタブ行生成 — 欠損クォーターの空行を補完
 // ============================================================
 
+import { normalizeSegmentDisplayKey } from "@/lib/segment-normalize";
+
 /**
  * 既存の FY/2Q データから、存在しない 1Q/3Q の空行を生成する。
  *
@@ -435,6 +437,7 @@ export function resolveSegmentsWithOverrides(
  * - 1Q が無い period には、その period のセグメント名一覧で 1Q 空行を生成
  * - 3Q が無い period には、同様に 3Q 空行を生成
  * - スタブ行の sales / profit は null、source は undefined
+ * - 表示統合キーでユニーク判定し、同一セグメントの重複スタブを排除
  */
 export function generateMissingQuarterStubs(
     baseSegments: SegmentRecord[],
@@ -447,7 +450,8 @@ export function generateMissingQuarterStubs(
         {
             ticker: string;
             quarters: Set<string>;
-            segmentNames: string[];
+            segmentNames: string[];     // 代表名 (display_key でユニーク)
+            seenDisplayKeys: Set<string>;
         }
     >();
 
@@ -457,17 +461,22 @@ export function generateMissingQuarterStubs(
                 ticker: seg.ticker,
                 quarters: new Set<string>(),
                 segmentNames: [],
+                seenDisplayKeys: new Set<string>(),
             });
         }
         const entry = periodMap.get(seg.period)!;
         entry.quarters.add(seg.quarter);
 
         // セグメント名をユニークに収集 (FY or 2Q のセグメント名を使用)
+        // display_key でユニーク判定して重複排除
         if (
-            (seg.quarter === "FY" || seg.quarter === "2Q") &&
-            !entry.segmentNames.includes(seg.segment_name)
+            (seg.quarter === "FY" || seg.quarter === "2Q")
         ) {
-            entry.segmentNames.push(seg.segment_name);
+            const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+            if (!entry.seenDisplayKeys.has(dk)) {
+                entry.seenDisplayKeys.add(dk);
+                entry.segmentNames.push(seg.segment_name);
+            }
         }
     }
 

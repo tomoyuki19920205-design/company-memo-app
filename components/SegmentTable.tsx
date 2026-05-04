@@ -4,7 +4,7 @@ import React, { useMemo, useState, useCallback, useRef } from "react";
 import type { SegmentRecord } from "@/types/segment";
 import type { SegmentCellOverride } from "@/types/segment-override";
 import { formatMillions } from "@/lib/format";
-import { buildOverrideKey } from "@/lib/segment-normalize";
+import { buildOverrideKey, normalizeSegmentDisplayKey, pickSegmentDisplayName } from "@/lib/segment-normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
 
 // ============================================================
@@ -43,7 +43,9 @@ interface SegmentGroup {
     quarter: string;
     fiscalYear: number;
     segments: {
-        name: string;
+        display_key: string;
+        display_name: string;   // 日本語優先の表示名
+        raw_name: string;       // override照合用の元segment_name
         sales: number | null;
         profit: number | null;
         profitRate: number | null;
@@ -68,6 +70,7 @@ function calcProfitRate(
 function isEditableQuarter(quarter: string): boolean {
     return quarter === "1Q" || quarter === "3Q";
 }
+
 
 // ============================================================
 // Component
@@ -99,43 +102,89 @@ export default function SegmentTable({
         return set;
     }, [overrides]);
 
-    // Group segments by period/quarter
+    // Group segments by period/quarter, then merge by display_key
     const groups = useMemo<SegmentGroup[]>(() => {
         if (!data || data.length === 0) return [];
 
-        const map = new Map<string, SegmentGroup>();
+        // period|quarter → { meta, segMap: display_key → { names, latest row } }
+        const map = new Map<string, {
+            period: string;
+            quarter: string;
+            fiscalYear: number;
+            segMap: Map<string, {
+                names: string[];
+                sales: number | null;
+                profit: number | null;
+                source?: string;
+                salesSource?: string;
+                profitSource?: string;
+            }>;
+        }>();
 
         for (const row of data) {
-            const key = `${row.period}|${row.quarter}`;
-            if (!map.has(key)) {
-                map.set(key, {
+            const groupKey = `${row.period}|${row.quarter}`;
+            if (!map.has(groupKey)) {
+                map.set(groupKey, {
                     period: row.period,
                     quarter: row.quarter,
                     fiscalYear: extractFiscalYear(row.period),
-                    segments: [],
+                    segMap: new Map(),
                 });
             }
-            map.get(key)!.segments.push({
-                name: row.segment_name,
-                sales: row.segment_sales,
-                profit: row.segment_profit,
-                profitRate: calcProfitRate(
-                    row.segment_profit,
-                    row.segment_sales,
-                ),
-                source: row.source,
-                salesSource: row._salesSource,
-                profitSource: row._profitSource,
-            });
+            const group = map.get(groupKey)!;
+
+            // 表示統合キーでグループ化
+            const dk = normalizeSegmentDisplayKey(row.segment_name) || row.segment_name;
+            // [DEBUG] キー確認 — 英日が同一 dk になるか目視確認用
+            console.log(`[seg-group] ${groupKey} | dk="${dk}" | raw="${row.segment_name}"`);
+            if (!group.segMap.has(dk)) {
+                group.segMap.set(dk, {
+                    names: [row.segment_name],
+                    sales: row.segment_sales,
+                    profit: row.segment_profit,
+                    source: row.source,
+                    salesSource: row._salesSource,
+                    profitSource: row._profitSource,
+                });
+            } else {
+                // 同一display_key: 名前候補追加 + 後勝ちで値更新
+                const existing = group.segMap.get(dk)!;
+                if (!existing.names.includes(row.segment_name)) {
+                    existing.names.push(row.segment_name);
+                }
+                // null でない値で上書き（後勝ち）
+                if (row.segment_sales !== null) existing.sales = row.segment_sales;
+                if (row.segment_profit !== null) existing.profit = row.segment_profit;
+                if (row.source) existing.source = row.source;
+                if (row._salesSource) existing.salesSource = row._salesSource;
+                if (row._profitSource) existing.profitSource = row._profitSource;
+            }
         }
 
-        return Array.from(map.values()).sort((a, b) => {
-            const periodCmp = b.period.localeCompare(a.period);
-            if (periodCmp !== 0) return periodCmp;
-            const qa = QUARTER_ORDER[a.quarter] ?? 9;
-            const qb = QUARTER_ORDER[b.quarter] ?? 9;
-            return qb - qa;
-        });
+        return Array.from(map.values())
+            .sort((a, b) => {
+                const periodCmp = b.period.localeCompare(a.period);
+                if (periodCmp !== 0) return periodCmp;
+                const qa = QUARTER_ORDER[a.quarter] ?? 9;
+                const qb = QUARTER_ORDER[b.quarter] ?? 9;
+                return qb - qa;
+            })
+            .map((g) => ({
+                period: g.period,
+                quarter: g.quarter,
+                fiscalYear: g.fiscalYear,
+                segments: Array.from(g.segMap.entries()).map(([dk, seg]) => ({
+                    display_key: dk,
+                    display_name: pickSegmentDisplayName(seg.names),
+                    raw_name: seg.names[0], // override照合は元名を使う
+                    sales: seg.sales,
+                    profit: seg.profit,
+                    profitRate: calcProfitRate(seg.profit, seg.sales),
+                    source: seg.source,
+                    salesSource: seg.salesSource,
+                    profitSource: seg.profitSource,
+                })),
+            }));
     }, [data]);
 
     if (loading) {
@@ -194,17 +243,29 @@ export default function SegmentTable({
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {group.segments.map((seg, idx) => (
-                                        <SegmentRow
-                                            key={`${seg.name}-${idx}`}
-                                            seg={seg}
-                                            group={group}
-                                            editMode={editMode}
-                                            overrideSet={overrideSet}
-                                            onSaveOverride={onSaveOverride}
-                                            onDeleteOverride={onDeleteOverride}
-                                        />
-                                    ))}
+                                    {(() => {
+                                        // 安全弁: display_key 単位で重複排除
+                                        // groups useMemo で既に dedupe 済みだが、
+                                        // 正規化ミスが残った場合のフォールバック
+                                        const seenDk = new Set<string>();
+                                        return group.segments
+                                            .filter((seg) => {
+                                                if (seenDk.has(seg.display_key)) return false;
+                                                seenDk.add(seg.display_key);
+                                                return true;
+                                            })
+                                            .map((seg) => (
+                                                <SegmentRow
+                                                    key={seg.display_key}
+                                                    seg={seg}
+                                                    group={group}
+                                                    editMode={editMode}
+                                                    overrideSet={overrideSet}
+                                                    onSaveOverride={onSaveOverride}
+                                                    onDeleteOverride={onDeleteOverride}
+                                                />
+                                            ));
+                                    })()}
                                 </tbody>
                             </table>
                         </div>
@@ -241,13 +302,13 @@ function SegmentRow({
 
     return (
         <tr>
-            <td className="segment-name-col">{seg.name}</td>
+            <td className="segment-name-col">{seg.display_name}</td>
             <td className="num-col">
                 <SegmentCell
                     value={seg.sales}
                     metric="sales"
                     metricSource={seg.salesSource}
-                    segmentName={seg.name}
+                    segmentName={seg.raw_name}
                     fiscalYear={group.fiscalYear}
                     quarter={group.quarter}
                     canEdit={canEdit}
@@ -261,7 +322,7 @@ function SegmentRow({
                     value={seg.profit}
                     metric="operating_profit"
                     metricSource={seg.profitSource}
-                    segmentName={seg.name}
+                    segmentName={seg.raw_name}
                     fiscalYear={group.fiscalYear}
                     quarter={group.quarter}
                     canEdit={canEdit}
