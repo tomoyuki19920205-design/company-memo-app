@@ -10,7 +10,7 @@ import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
-import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey } from "@/lib/segment-normalize";
+import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey } from "@/lib/segment-normalize";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -192,10 +192,30 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
             .filter(Boolean),
     );
 
+    // semantic key → Japanese display_dk マップ
+    // 日英共通の意味キーで照合し、英語名を日本語 display_dk へ解決する
+    const jpSemanticAnchorMap = new Map<string, string>();
+    for (const seg of segments) {
+        const name = seg.segment_name;
+        if (!name || !_JP_CHK.test(name)) continue;
+        const displayDk = normalizeSegmentDisplayKey(name);
+        const semanticDk = normalizeSegmentSemanticKey(name);
+        if (displayDk && semanticDk && !jpSemanticAnchorMap.has(semanticDk)) {
+            jpSemanticAnchorMap.set(semanticDk, displayDk);
+        }
+    }
+
     // TDNET英語名を日本語アンカーdkへ解決するヘルパー
-    // 1. 厳密一致 → 2. 部分一致（aliasDk.length>=3 かつ jpDk.length>=3 のみ）
+    // 0. semantic key → 1. alias完全一致 → 2. alias部分一致
     const resolveDk = (name: string): string => {
         const baseDk = normalizeSegmentDisplayKey(name) || name;
+
+        // 0. semantic key 判定（日英共通意味キーで JP displayDk へ解決）
+        const semanticKey = normalizeSegmentSemanticKey(name);
+        const jpFromSemantic = jpSemanticAnchorMap.get(semanticKey);
+        if (jpFromSemantic) return jpFromSemantic;
+
+        // 1 & 2. alias判定（完全一致 → 部分一致）
         const alias = normalizeSegmentAliasKey(name);
         if (alias) {
             const aliasDk = normalizeSegmentDisplayKey(alias);

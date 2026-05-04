@@ -228,6 +228,43 @@ export function normalizeSegmentAliasKey(name: string): string {
     return "";
 }
 
+/**
+ * 日英両方のセグメント名から共通の意味キーを返す。
+ * jpSemanticAnchorMap 構築と resolveDk での日英統合照合に使用する。
+ * 変換できない場合は normalizeSegmentDisplayKey(name) の結果をそのまま返す。
+ *
+ * 例:
+ *   "Wiring Devices"                                → "wiring_devices"
+ *   "配線器具"                                       → "wiring_devices"
+ *   "Electric Facility Materials And Water Supply"  → "electric_facility_materials_water_supply"
+ *   "電材及び管材"                                   → "electric_facility_materials_water_supply"
+ */
+export function normalizeSegmentSemanticKey(name: string): string {
+    const s = normalizeSegmentDisplayKey(name);
+
+    if (s.includes("wiring") || s.includes("配線器具")) {
+        return "wiring_devices";
+    }
+    if (
+        s.includes("electric") ||
+        s.includes("facility") ||
+        s.includes("material") ||
+        s.includes("water") ||
+        s.includes("supply") ||
+        s.includes("電材") ||
+        s.includes("管材") ||
+        s.includes("電設資材") ||
+        s.includes("電気設備資材")
+    ) {
+        return "electric_facility_materials_water_supply";
+    }
+    if (s.includes("other") || s.includes("その他")) {
+        return "other";
+    }
+
+    return s;
+}
+
 const _JP_RE = /[\u3040-\u30ff\u4e00-\u9fff\uff01-\uffee]/;
 
 /**
