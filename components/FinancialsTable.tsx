@@ -204,6 +204,10 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
             jpSemanticAnchorMap.set(semanticDk, displayDk);
         }
     }
+    // [DEBUG] semantic anchor map 内容確認 (7931確認後に削除)
+    if (process.env.NODE_ENV === "development") {
+        console.log("[SEG_SEMANTIC_MAP]", Array.from(jpSemanticAnchorMap.entries()));
+    }
 
     // TDNET英語名を日本語アンカーdkへ解決するヘルパー
     // 0. semantic key → 1. alias完全一致 → 2. alias部分一致
@@ -213,24 +217,26 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         // 0. semantic key 判定（日英共通意味キーで JP displayDk へ解決）
         const semanticKey = normalizeSegmentSemanticKey(name);
         const jpFromSemantic = jpSemanticAnchorMap.get(semanticKey);
+        const alias = normalizeSegmentAliasKey(name);
+        const aliasDk = alias ? (normalizeSegmentDisplayKey(alias) || "") : "";
+        // [DEBUG] resolve 追跡ログ (7931確認後に削除)
+        if (process.env.NODE_ENV === "development") {
+            console.log("[SEG_RESOLVE]", { raw: name, baseDk, semanticKey, semanticHit: jpFromSemantic, alias, aliasDk });
+        }
         if (jpFromSemantic) return jpFromSemantic;
 
         // 1 & 2. alias判定（完全一致 → 部分一致）
-        const alias = normalizeSegmentAliasKey(name);
-        if (alias) {
-            const aliasDk = normalizeSegmentDisplayKey(alias);
-            if (aliasDk) {
-                // 1. 完全一致
-                if (jpAnchorSet.has(aliasDk)) return aliasDk;
-                // 2. 部分一致フォールバック（短すぎるキーの誤統合を防ぐ）
-                if (aliasDk.length >= 3) {
-                    for (const jpDk of jpAnchorSet) {
-                        if (
-                            jpDk.length >= 3 &&
-                            (jpDk.includes(aliasDk) || aliasDk.includes(jpDk))
-                        ) {
-                            return jpDk;
-                        }
+        if (alias && aliasDk) {
+            // 1. 完全一致
+            if (jpAnchorSet.has(aliasDk)) return aliasDk;
+            // 2. 部分一致フォールバック（短すぎるキーの誤統合を防ぐ）
+            if (aliasDk.length >= 3) {
+                for (const jpDk of jpAnchorSet) {
+                    if (
+                        jpDk.length >= 3 &&
+                        (jpDk.includes(aliasDk) || aliasDk.includes(jpDk))
+                    ) {
+                        return jpDk;
                     }
                 }
             }
