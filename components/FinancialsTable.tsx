@@ -180,12 +180,14 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
             !seg.segment_name.startsWith("UNKNOWN_"),
     );
     
-    // 日本語アンカーSet: normalizeSegmentDisplayKey()を必ず通したキーで保持
+    // 日本語アンカーSet: 全period・全quarterの日本語セグメント名から構築
+    // segments（生の全行）を使うことで、ダミー除外や期間絞り込み前の
+    // EDINET日本語名もアンカーとして利用できる（名前のみ使用、数値は別途filteredから）
     const _JP_CHK = /[\u3040-\u30ff\u4e00-\u9fff]/;
     const jpAnchorSet = new Set<string>(
-        allSegments
+        segments
             .map((s) => s.segment_name)
-            .filter((name) => _JP_CHK.test(name))
+            .filter((name) => name && _JP_CHK.test(name))
             .map((name) => normalizeSegmentDisplayKey(name))
             .filter(Boolean),
     );
