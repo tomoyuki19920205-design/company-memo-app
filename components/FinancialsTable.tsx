@@ -10,7 +10,7 @@ import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
-import { normalizeSegmentDisplayKey, pickSegmentDisplayName } from "@/lib/segment-normalize";
+import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey } from "@/lib/segment-normalize";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -180,9 +180,45 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
             !seg.segment_name.startsWith("UNKNOWN_"),
     );
     
+    // 日本語アンカーSet: normalizeSegmentDisplayKey()を必ず通したキーで保持
+    const _JP_CHK = /[\u3040-\u30ff\u4e00-\u9fff]/;
+    const jpAnchorSet = new Set<string>(
+        allSegments
+            .map((s) => s.segment_name)
+            .filter((name) => _JP_CHK.test(name))
+            .map((name) => normalizeSegmentDisplayKey(name))
+            .filter(Boolean),
+    );
+
+    // TDNET英語名を日本語アンカーdkへ解決するヘルパー
+    // 1. 厳密一致 → 2. 部分一致（aliasDk.length>=3 かつ jpDk.length>=3 のみ）
+    const resolveDk = (name: string): string => {
+        const baseDk = normalizeSegmentDisplayKey(name) || name;
+        const alias = normalizeSegmentAliasKey(name);
+        if (alias) {
+            const aliasDk = normalizeSegmentDisplayKey(alias);
+            if (aliasDk) {
+                // 1. 完全一致
+                if (jpAnchorSet.has(aliasDk)) return aliasDk;
+                // 2. 部分一致フォールバック（短すぎるキーの誤統合を防ぐ）
+                if (aliasDk.length >= 3) {
+                    for (const jpDk of jpAnchorSet) {
+                        if (
+                            jpDk.length >= 3 &&
+                            (jpDk.includes(aliasDk) || aliasDk.includes(jpDk))
+                        ) {
+                            return jpDk;
+                        }
+                    }
+                }
+            }
+        }
+        return baseDk;
+    };
+
     const nameMap = new Map<string, string[]>();
     for (const seg of allSegments) {
-        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+        const dk = resolveDk(seg.segment_name);
         if (!nameMap.has(dk)) nameMap.set(dk, []);
         nameMap.get(dk)!.push(seg.segment_name);
     }
@@ -210,7 +246,7 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         const key = `${seg.period}|${seg.quarter}`;
         if (!segmentMap.has(key)) segmentMap.set(key, {});
         const row = segmentMap.get(key)!;
-        const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+        const dk = resolveDk(seg.segment_name);
         const col = segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
         if (col) {
             row[col.salesKey] = seg.segment_sales;
@@ -274,7 +310,7 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
     for (const seg of segments) {
         const key = `${seg.period}|${seg.quarter}`;
         const col2 = (() => {
-            const dk = normalizeSegmentDisplayKey(seg.segment_name) || seg.segment_name;
+            const dk = resolveDk(seg.segment_name);
             return segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
         })();
         if (col2) {
