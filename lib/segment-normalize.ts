@@ -262,27 +262,65 @@ export function normalizeSegmentSemanticKey(name: string): string {
         return "other";
     }
 
-    // ── 商社・重工系 semanticKey ──────────────────────────────────
+    // ── 商社・重工系・重工業 semanticKey ───────────────────────────
 
+    // 輸送機・建機（"Transportation And Constructi" 途中切れも対応）
+    if (s.includes("transportation") || s.includes("輸送機")) {
+        return "transportation_construction";
+    }
+    // 都市総合開発
+    if (s.includes("urban") || s.includes("都市総合開発")) {
+        return "urban_development";
+    }
+    // グリーンインフラ（infrastructure 単独より前に評価）
+    if (s.includes("greeninfrastructure") || s.includes("グリーンインフラ")) {
+        return "green_infrastructure";
+    }
+    // サプライチェーン
+    if (s.includes("supplychain") || s.includes("サプライチェーン")) {
+        return "supply_chain";
+    }
+    // メディア・デジタル複合（media単独より前に評価）
+    if (s.includes("media") && (s.includes("digital") || s.includes("デジタル"))) {
+        return "media_digital";
+    }
+    // デジタルソリューション
+    if (s.includes("digital") || s.includes("デジタル")) {
+        return "digital_solutions";
+    }
+    // サーキュラーエコノミー
+    if (s.includes("circular") || s.includes("サーキュラー")) {
+        return "circular_economy";
+    }
+    // アフリカ
+    if (s.includes("africa") || s.includes("アフリカ")) {
+        return "africa";
+    }
     // 鉄鋼製品
     if (s.includes("鉄鋼") || s.includes("steel") || s.includes("iron")) {
         return "iron_steel_products";
     }
-    // 機械・インフラ
+    // 機械・インフラ複合
     if (
-        s.includes("機械") || s.includes("インフラ") ||
-        s.includes("machinery") || s.includes("infrastructure")
+        s.includes("機械") || s.includes("machinery") ||
+        (s.includes("インフラ") && s.includes("機械")) ||
+        (s.includes("infrastructure") && s.includes("machinery"))
     ) {
         return "machinery_infrastructure";
     }
-    // 金属・資源
+    // インフラ単独
+    if (s.includes("インフラ") || s.includes("infrastructure")) {
+        return "infrastructure";
+    }
+    // 金属・資源（メタル含む）
     if (
-        s.includes("金属") || s.includes("鉱物") ||
+        s.includes("金属") || s.includes("メタル") || s.includes("鉱物") ||
+        s.includes("資源") ||
         s.includes("mineral") || s.includes("metal")
     ) {
         return "metals_minerals";
     }
-    // 化学品（"Energy And Chemicals" は energy 側に任せるため energy を含む場合は除外）
+    // 化学品（"Energy And Chemicals" は除外 → energy に任せる）
     if ((s.includes("化学") || s.includes("chemical")) && !s.includes("energy")) {
         return "chemicals";
     }
@@ -297,9 +335,9 @@ export function normalizeSegmentSemanticKey(name: string): string {
     ) {
         return "food";
     }
-    // 生活産業・住生活・General Products
+    // 生活産業・住生活・ライフスタイル・General Products
     if (
-        s.includes("住生活") || s.includes("生活産業") ||
+        s.includes("住生活") || s.includes("生活産業") || s.includes("ライフスタイル") ||
         s.includes("lifestyle") || s.includes("generalproducts")
     ) {
         return "lifestyle_general_products_realty";
@@ -317,6 +355,10 @@ export function normalizeSegmentSemanticKey(name: string): string {
         s.includes("第八") || s.includes("eighth")
     ) {
         return "eighth";
+    }
+    // エネルギートランスフォーメーション → energy に統合
+    if (s.includes("energy") && (s.includes("transformation") || s.includes("トランスフォーメーション"))) {
+        return "energy";
     }
 
     return s;
