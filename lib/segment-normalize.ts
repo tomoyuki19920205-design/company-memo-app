@@ -300,9 +300,10 @@ export function normalizeSegmentSemanticKey(name: string): string {
     if (s.includes("鉄鋼") || s.includes("steel") || s.includes("iron")) {
         return "iron_steel_products";
     }
-    // 機械・インフラ複合
+    // 機械・インフラ複合（プラントプロジェクト含む）
     if (
         s.includes("機械") || s.includes("machinery") ||
+        s.includes("プラント") || s.includes("plant") ||
         (s.includes("インフラ") && s.includes("機械")) ||
         (s.includes("infrastructure") && s.includes("machinery"))
     ) {
@@ -312,7 +313,14 @@ export function normalizeSegmentSemanticKey(name: string): string {
     if (s.includes("インフラ") || s.includes("infrastructure")) {
         return "infrastructure";
     }
-    // 金属・資源（メタル含む）
+    // エネルギー×化学品 / 資源×化学品 → energy に統合（metals/chemicals より前）
+    if (
+        (s.includes("energy") || s.includes("資源") || s.includes("resource")) &&
+        (s.includes("chemical") || s.includes("化学"))
+    ) {
+        return "energy";
+    }
+    // 金属・資源（メタル含む）—「資源」単独は化学複合除外後のみ
     if (
         s.includes("金属") || s.includes("メタル") || s.includes("鉱物") ||
         s.includes("資源") ||
@@ -328,16 +336,22 @@ export function normalizeSegmentSemanticKey(name: string): string {
     if (s.includes("繊維") || s.includes("textile")) {
         return "textile";
     }
-    // 食料・食品（foodservice は除外）
+    // 食料・食品（foodservice は除外、食料×生活産業複合は lifestyle に任せる）
     if (
-        s.includes("食料") || s.includes("食品") ||
+        (s.includes("食料") && !s.includes("生活産業")) ||
+        s.includes("食品") ||
         (s.includes("food") && !s.includes("foodservice"))
     ) {
         return "food";
     }
-    // 生活産業・住生活・ライフスタイル・General Products
+    // グローバル部品・ロジスティクス → mobility
+    if (s.includes("グローバル部品")) {
+        return "mobility";
+    }
+    // 生活産業・住生活・ライフスタイル・生活×不動産・General Products
     if (
         s.includes("住生活") || s.includes("生活産業") || s.includes("ライフスタイル") ||
+        (s.includes("生活") && s.includes("realestate")) ||
         s.includes("lifestyle") || s.includes("generalproducts")
     ) {
         return "lifestyle_general_products_realty";
