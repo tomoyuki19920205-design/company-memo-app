@@ -282,8 +282,8 @@ export function normalizeSegmentSemanticKey(name: string): string {
     ) {
         return "metals_minerals";
     }
-    // 化学品
-    if (s.includes("化学") || s.includes("chemical")) {
+    // 化学品（"Energy And Chemicals" は energy 側に任せるため energy を含む場合は除外）
+    if ((s.includes("化学") || s.includes("chemical")) && !s.includes("energy")) {
         return "chemicals";
     }
     // 繊維
