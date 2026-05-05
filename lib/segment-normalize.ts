@@ -262,6 +262,63 @@ export function normalizeSegmentSemanticKey(name: string): string {
         return "other";
     }
 
+    // ── 商社・重工系 semanticKey ──────────────────────────────────
+
+    // 鉄鋼製品
+    if (s.includes("鉄鋼") || s.includes("steel") || s.includes("iron")) {
+        return "iron_steel_products";
+    }
+    // 機械・インフラ
+    if (
+        s.includes("機械") || s.includes("インフラ") ||
+        s.includes("machinery") || s.includes("infrastructure")
+    ) {
+        return "machinery_infrastructure";
+    }
+    // 金属・資源
+    if (
+        s.includes("金属") || s.includes("鉱物") ||
+        s.includes("mineral") || s.includes("metal")
+    ) {
+        return "metals_minerals";
+    }
+    // 化学品
+    if (s.includes("化学") || s.includes("chemical")) {
+        return "chemicals";
+    }
+    // 繊維
+    if (s.includes("繊維") || s.includes("textile")) {
+        return "textile";
+    }
+    // 食料・食品（foodservice は除外）
+    if (
+        s.includes("食料") || s.includes("食品") ||
+        (s.includes("food") && !s.includes("foodservice"))
+    ) {
+        return "food";
+    }
+    // 生活産業・住生活・General Products
+    if (
+        s.includes("住生活") || s.includes("生活産業") ||
+        s.includes("lifestyle") || s.includes("generalproducts")
+    ) {
+        return "lifestyle_general_products_realty";
+    }
+    // 情報・金融（ICT / Information × Finance の複合）
+    if (
+        s.includes("ict") ||
+        ((s.includes("information") || s.includes("情報")) && s.includes("finance"))
+    ) {
+        return "information_finance";
+    }
+    // 第8・第八系
+    if (
+        s.includes("the8th") || s.includes("第8") ||
+        s.includes("第八") || s.includes("eighth")
+    ) {
+        return "eighth";
+    }
+
     return s;
 }
 
