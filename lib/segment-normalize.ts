@@ -262,7 +262,27 @@ export function normalizeSegmentSemanticKey(name: string): string {
         return "other";
     }
 
+    // ── 地域エリア系 semanticKey ─────────────────────────────────
+
+    // 東北エリア
+    if (s.includes("tohoku") || s.includes("東北")) {
+        return "area_tohoku";
+    }
+    // 北関東エリア
+    if (s.includes("northkanto") || s.includes("北関東")) {
+        return "area_north_kanto";
+    }
+    // 関西エリア
+    if (s.includes("kansai") || s.includes("関西")) {
+        return "area_kansai";
+    }
+    // 首都圏エリア
+    if (s.includes("metropolitan") || s.includes("首都圏")) {
+        return "area_metropolitan";
+    }
+
     // ── 商社・重工系・重工業 semanticKey ───────────────────────────
+
 
     // 輸送機・建機（"Transportation And Constructi" 途中切れも対応）
     if (s.includes("transportation") || s.includes("輸送機")) {
