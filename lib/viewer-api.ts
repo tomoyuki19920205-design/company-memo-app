@@ -297,6 +297,7 @@ import { buildOverrideKey } from "@/lib/segment-normalize";
  * セグメント業績データを取得する。
  * テーブルが存在しない場合は空配列を返す。
  * period / quarter は正規化してPL行とのjoinを保証する。
+ * ※ api_latest_segments は正規化済み英語セグメントのみを返すビュー。
  */
 export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> {
     const t = normalizeTicker(ticker);
@@ -304,15 +305,16 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
 
     try {
         const { data, error } = await supabase
-            .from("segment_canonical")
-            .select("ticker,period,quarter,segment_name,sales,profit")
+            .from("api_latest_segments")
+            .select("ticker,period,quarter,segment_name,sales,profit,source")
             .eq("ticker", t)
             .order("period", { ascending: false })
-            .order("quarter", { ascending: false })
+            .order("quarter", { ascending: true })
+            .order("segment_name", { ascending: true })
             .limit(500);
 
         if (error) {
-            console.warn("[segment_canonical] スキップ (テーブル未作成の可能性):", error.message);
+            console.warn("[api_latest_segments] スキップ (テーブル未作成の可能性):", error.message);
             return [];
         }
 
@@ -328,7 +330,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
             segment_profit: row.profit !== null ? Number(row.profit) : null,
         }));
     } catch (err) {
-        console.warn("[segment_canonical] 取得例外 (空配列で継続):", err);
+        console.warn("[api_latest_segments] 取得例外 (空配列で継続):", err);
         return [];
     }
 }
