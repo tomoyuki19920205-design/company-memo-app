@@ -313,9 +313,16 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
                     const prevSales = prevData?.[col.salesKey] ?? null;
                     const prevProfit = prevData?.[col.profitKey] ?? null;
 
-                    // 前四半期datが無い場合は null (-表示)
-                    qRow[col.salesKey] = (curSales !== null && prevSales !== null) ? curSales - prevSales : null;
-                    qRow[col.profitKey] = (curProfit !== null && prevProfit !== null) ? curProfit - prevProfit : null;
+                    if (prevData === undefined) {
+                        // 前四半期セグメントデータが存在しない（FYのみのケース等）:
+                        // 差分計算不能のため累計値をそのまま使用（表示上は累計値として扱う）
+                        qRow[col.salesKey] = curSales;
+                        qRow[col.profitKey] = curProfit;
+                    } else {
+                        // 前四半期データあり: 差分計算
+                        qRow[col.salesKey] = (curSales !== null && prevSales !== null) ? curSales - prevSales : null;
+                        qRow[col.profitKey] = (curProfit !== null && prevProfit !== null) ? curProfit - prevProfit : null;
+                    }
                 }
             }
             segmentQMap.set(curKey, qRow);

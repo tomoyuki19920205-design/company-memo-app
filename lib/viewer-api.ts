@@ -328,6 +328,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
             segment_name: row.segment_name,
             segment_sales: row.sales !== null ? Number(row.sales) : null,
             segment_profit: row.profit !== null ? Number(row.profit) : null,
+            source: row.source ?? undefined,
         }));
     } catch (err) {
         console.warn("[api_latest_segments] 取得例外 (空配列で継続):", err);
