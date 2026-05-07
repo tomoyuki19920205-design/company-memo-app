@@ -116,6 +116,12 @@ export function normalizeSegmentDisplayKey(name: string | null | undefined): str
     s = s.replace(/logistics|物流|ロジスティクス/g, "logistics");
     // 不動産
     s = s.replace(/realestate|不動産/g, "realestate");
+    // 電子デバイス（Electronic Devices / 電子デバイス）
+    s = s.replace(/electronicdevice|electronicsdevice|電子デバイス/g, "electronicdevices");
+    // 精密成形品（Precision Molding Products / 精密成形品）
+    s = s.replace(/精密成形/g, "precisionmolding");
+    // 住環境・生活資材（Housing And Living Materials / 住環境・生活資材）
+    s = s.replace(/住環境/g, "housingliving");
 
     // 7b. 汎用日英語彙変換 — 意味が強く同義な語のみ
     // 採用・リクルーティング
@@ -260,6 +266,18 @@ export function normalizeSegmentSemanticKey(name: string): string {
     }
     if (s.includes("other") || s.includes("その他")) {
         return "other";
+    }
+    // 電子デバイス（Electronic Devices / 電子デバイス）
+    if (s.includes("electronicdevices") || s.includes("電子デバイス")) {
+        return "electronic_devices";
+    }
+    // 精密成形品（Precision Molding Products / 精密成形品）
+    if (s.includes("precisionmolding") || s.includes("精密成形")) {
+        return "precision_molding_products";
+    }
+    // 住環境・生活資材（Housing And Living Materials / 住環境・生活資材）
+    if (s.includes("housingliving") || s.includes("住環境") || s.includes("housing&living")) {
+        return "housing_living_materials";
     }
 
     // ── 地域エリア系 semanticKey ─────────────────────────────────
