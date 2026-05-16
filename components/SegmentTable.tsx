@@ -4,7 +4,8 @@ import React, { useMemo, useState, useCallback, useRef } from "react";
 import type { SegmentRecord } from "@/types/segment";
 import type { SegmentCellOverride } from "@/types/segment-override";
 import { formatMillions } from "@/lib/format";
-import { buildOverrideKey, normalizeSegmentDisplayKey, pickSegmentDisplayName } from "@/lib/segment-normalize";
+import { buildOverrideKey, normalizeSegmentDisplayKey } from "@/lib/segment-normalize";
+
 import { extractFiscalYear } from "@/lib/viewer-api";
 
 // ============================================================
@@ -133,9 +134,10 @@ export default function SegmentTable({
             }
             const group = map.get(groupKey)!;
 
-            // 表示統合キーでグループ化
+            // display_key: segment_name を最小正規化したキー
+            // 日英統合なし方針により、英語名・日本語名は必ず異なるキーになる
             const dk = normalizeSegmentDisplayKey(row.segment_name) || row.segment_name;
-            // [DEBUG] キー確認 — 英日が同一 dk になるか目視確認用
+            // [DEBUG] キー確認 — 英日が別 dk になることを確認
             console.log(`[seg-group] ${groupKey} | dk="${dk}" | raw="${row.segment_name}"`);
             if (!group.segMap.has(dk)) {
                 group.segMap.set(dk, {
@@ -146,19 +148,10 @@ export default function SegmentTable({
                     salesSource: row._salesSource,
                     profitSource: row._profitSource,
                 });
-            } else {
-                // 同一display_key: 名前候補追加 + 後勝ちで値更新
-                const existing = group.segMap.get(dk)!;
-                if (!existing.names.includes(row.segment_name)) {
-                    existing.names.push(row.segment_name);
-                }
-                // null でない値で上書き（後勝ち）
-                if (row.segment_sales !== null) existing.sales = row.segment_sales;
-                if (row.segment_profit !== null) existing.profit = row.segment_profit;
-                if (row.source) existing.source = row.source;
-                if (row._salesSource) existing.salesSource = row._salesSource;
-                if (row._profitSource) existing.profitSource = row._profitSource;
             }
+            // 同一 display_key になる場合は最初に登録した行を優先（後勝ちなし）
+            // ※ 日英統合なし方針では同一 dk になることは想定しないが、
+            //   スペース差・表記ゆれによる意図しない衝突の安全弁として残す
         }
 
         return Array.from(map.values())
@@ -175,8 +168,9 @@ export default function SegmentTable({
                 fiscalYear: g.fiscalYear,
                 segments: Array.from(g.segMap.entries()).map(([dk, seg]) => ({
                     display_key: dk,
-                    display_name: pickSegmentDisplayName(seg.names),
-                    raw_name: seg.names[0], // override照合は元名を使う
+                    // 表示名は segment_name をそのまま使う（日本語優先・英語優先なし）
+                    display_name: seg.names[0],
+                    raw_name: seg.names[0], // override照合用の元segment_name
                     sales: seg.sales,
                     profit: seg.profit,
                     profitRate: calcProfitRate(seg.profit, seg.sales),
@@ -186,6 +180,7 @@ export default function SegmentTable({
                 })),
             }));
     }, [data]);
+
 
     if (loading) {
         return (
@@ -302,7 +297,13 @@ function SegmentRow({
 
     return (
         <tr>
-            <td className="segment-name-col">{seg.display_name}</td>
+            <td
+                className="segment-name-col"
+                title={seg.display_name}
+                data-fullname={seg.display_name}
+            >
+                <span className="seg-name-short">{seg.display_name}</span>
+            </td>
             <td className="num-col">
                 <SegmentCell
                     value={seg.sales}

@@ -892,6 +892,46 @@ body {
   letter-spacing: 0;
   text-transform: none !important;
   border-left: 2px solid #5b21b6;
+  position: relative;   /* tooltip 用 */
+  cursor: default;
+}
+
+/* ヘッダーラベル: 省略表示 */
+.seg-header-label {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* hover 時に data-fullname の完全名をバルーン表示 */
+.seg-header-cell:hover::after {
+  content: attr(data-fullname);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  z-index: 300;
+  background: #1e293b;
+  color: #f1f5f9;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: normal;
+  min-width: 160px;
+  max-width: 340px;
+  word-break: break-word;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  animation: seg-header-tooltip-in 0.1s ease-out;
+}
+
+@keyframes seg-header-tooltip-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .seg-data-cell {
@@ -1287,10 +1327,57 @@ body {
 
 .segment-name-col {
   font-weight: 500;
-  max-width: 200px;
+  max-width: 280px;
+  min-width: 160px;
+  white-space: normal;         /* 折り返し可能 */
+  word-break: break-word;
+  position: relative;           /* tooltip 用 */
+  cursor: default;
+}
+
+/* 1行省略 + hover tooltip 構成 */
+.seg-name-short {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 100%;
+}
+
+/* hover 時に full segment_name をバルーン表示 */
+.segment-name-col:hover::after {
+  content: attr(data-fullname);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 4px;
+  z-index: 200;
+  background: #1e293b;
+  color: #f1f5f9;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: normal;
+  max-width: 320px;
+  word-break: break-word;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  /* フェードイン */
+  animation: seg-tooltip-in 0.12s ease-out;
+}
+
+@keyframes seg-tooltip-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* segment-name-col が右端に近い場合のために right 方向にも対応 */
+.segment-name-col:last-child:hover::after,
+.segment-table tr:first-child .segment-name-col:hover::after {
+  left: auto;
+  right: 0;
 }
 
 /* ============================================================

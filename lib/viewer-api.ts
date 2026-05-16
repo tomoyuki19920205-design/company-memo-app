@@ -900,6 +900,10 @@ export async function loadPerShareData(
                 row.payout_ratio !== null ? Number(row.payout_ratio) : null,
             forecast_eps:
                 row.forecast_eps !== null ? Number(row.forecast_eps) : null,
+            initial_forecast_eps:
+                row.initial_forecast_eps !== null
+                    ? Number(row.initial_forecast_eps)
+                    : null,
             forecast_dividend_annual:
                 row.forecast_dividend_annual !== null
                     ? Number(row.forecast_dividend_annual)

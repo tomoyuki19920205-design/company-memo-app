@@ -38,21 +38,53 @@ export default function PerShareTable({ data, loading }: PerShareTableProps) {
         );
     }
 
-    // FY行だけ一覧表示 (年度ベース)
+    // FY行だけ年度ベースで表示
     const fyRows = data.filter((r) => r.quarter === "FY");
-    if (fyRows.length === 0) {
-        // FYが無ければ最新の行を表示
-        if (data.length === 0) {
-            return (
-                <div className="per-share-section">
-                    <h3 className="per-share-title">1株指標</h3>
-                    <div className="per-share-empty">データなし</div>
-                </div>
-            );
-        }
+
+    // 実績行 (eps あり) を period 降順で最大4件
+    const actualFyRows = fyRows
+        .filter((r) => r.eps !== null)
+        .sort((a, b) => b.period.localeCompare(a.period))
+        .slice(0, 4);
+
+    // 最新実績の period（予想行フィルタ用）
+    const latestActualPeriod =
+        actualFyRows.length > 0 ? actualFyRows[0].period : "";
+
+    // 予想専用行: eps=null かつ forecast_eps あり かつ period > 最新実績
+    // NxFEPS から生成した翌期予想行。実績が来たら自動的にフィルタ対象外になる。
+    const forecastOnlyRow = fyRows
+        .filter(
+            (r) =>
+                r.eps === null &&
+                r.forecast_eps !== null &&
+                r.period > latestActualPeriod,
+        )
+        .sort((a, b) => b.period.localeCompare(a.period))[0] ?? null;
+
+    if (fyRows.length === 0 && data.length === 0) {
+        return (
+            <div className="per-share-section">
+                <h3 className="per-share-title">1株指標</h3>
+                <div className="per-share-empty">データなし</div>
+            </div>
+        );
     }
 
-    const rows = fyRows.length > 0 ? fyRows : data.slice(0, 5);
+    // 表示行: [翌期予想専用行(最大1)] + [実績FY行(最大4)]
+    const rows: PerShareRecord[] = [
+        ...(forecastOnlyRow ? [forecastOnlyRow] : []),
+        ...actualFyRows,
+    ];
+
+    if (rows.length === 0) {
+        return (
+            <div className="per-share-section">
+                <h3 className="per-share-title">1株指標</h3>
+                <div className="per-share-empty">データなし</div>
+            </div>
+        );
+    }
 
     return (
         <div className="per-share-section" id="per-share-table">
@@ -77,7 +109,9 @@ export default function PerShareTable({ data, loading }: PerShareTableProps) {
                                 </td>
                                 <td className="per-share-num">{fmt(r.eps)}</td>
                                 <td className="per-share-num forecast-val">
-                                    {fmt(r.forecast_eps)}
+                                    {r.eps === null
+                                        ? fmt(r.forecast_eps ?? r.initial_forecast_eps)
+                                        : fmt(r.initial_forecast_eps)}
                                 </td>
                                 <td className="per-share-num">
                                     {fmt(r.dividend_annual)}

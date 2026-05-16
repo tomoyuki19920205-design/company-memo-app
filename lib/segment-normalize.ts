@@ -57,14 +57,19 @@ export function buildOverrideKey(
 /**
  * segment_name を表示統合用キーに正規化する。
  *
- * 同一セグメントが英語名・日本語名・スペース差で別列にならないよう、
- * 比較・グルーピング専用キーを生成する。
- * DB の segment_name は変更しない。
+ * 方針（2026-05以降）:
+ *   日英統合なし。segment_name のみを最小正規化してキーとする。
+ *   NFKC + lower + 空白除去のみ。
+ *   意味ベースのセマンティック置換（chemical|化学 → chemical 等）は廃止。
+ *   英語名と日本語名は異なる display_key になり、別列として表示される。
+ *
+ * NOTE: 旧ロジックの normalizeSegmentAliasKey / normalizeSegmentSemanticKey は
+ *       互換性のため関数定義を残すが、このキー生成では使用しない。
  */
 export function normalizeSegmentDisplayKey(name: string | null | undefined): string {
     if (!name) return "";
 
-    // 1. NFKC 正規化
+    // 1. NFKC 正規化（全角英数→半角）
     let s = name.normalize("NFKC");
 
     // 2. 小文字化
@@ -73,109 +78,15 @@ export function normalizeSegmentDisplayKey(name: string | null | undefined): str
     // 3. 全角スペース・空白・タブ・改行を削除
     s = s.replace(/[\s\u3000\t\r\n]+/g, "");
 
-    // 4. & 表記を統一 (全角・+ → &)
-    // NFKC により ＋→+ ＆→& は step1 で変換済みだが fallback も保持
-    s = s.replace(/＆/g, "&");
-    s = s.replace(/[+＋]/g, "&");
+    // 4. 不要記号除去（括弧・中黒等）
+    s = s.replace(/[（）()・\-_【】「」『』★☆●○◆◇■□。、．!！?？]+/g, "");
 
-    // 5. "and" → "&" (スペース除去後も残る "and" に対応)
-    s = s.replace(/and/g, "&");
-
-    // 5.5. 連続する & を1個に圧縮 (&& → &)
-    s = s.replace(/&{2,}/g, "&");
-
-    // 6. 不要語を除去（英語・日本語共通）
-    const stopWords = [
-        // 日本語
-        "事業活動", "サービス", "センター", "システム", "フィールド",
-        "分野", "事業", "セグメント", "セクター",
-        // 英語
-        "sector", "business", "division",
-        "services", "service",
-    ];
-    for (const w of stopWords) {
-        s = s.split(w).join("");
-    }
-
-    // 7. 表記揺れを統一語に置換
-    // モビリティ系
-    s = s.replace(/automotive|automobile|自動車|車載|モビリティ|mobility/g, "mobility");
-    // テレマティクス
-    s = s.replace(/telematics|テレマティクス/g, "telematics");
-    // エンタテインメント
-    s = s.replace(/entertainment|エンタテインメント|エンターテインメント/g, "entertainment");
-    // ソリューション
-    s = s.replace(/solutions|solution|ソリューションズ|ソリューション/g, "solutions");
-    // セーフティ
-    s = s.replace(/safety|セーフティ|安全/g, "safety");
-    // セキュリティ
-    s = s.replace(/security|セキュリティ/g, "security");
-    // その他
-    s = s.replace(/^other$|その他/g, "other");
-    // 物流・ロジスティクス
-    s = s.replace(/logistics|物流|ロジスティクス/g, "logistics");
-    // 不動産
-    s = s.replace(/realestate|不動産/g, "realestate");
-    // 電子デバイス（Electronic Devices / 電子デバイス）
-    s = s.replace(/electronicdevice|electronicsdevice|電子デバイス/g, "electronicdevices");
-    // 精密成形品（Precision Molding Products / 精密成形品）
-    s = s.replace(/精密成形/g, "precisionmolding");
-    // 住環境・生活資材（Housing And Living Materials / 住環境・生活資材）
-    s = s.replace(/住環境/g, "housingliving");
-
-    // 7b. 汎用日英語彙変換 — 意味が強く同義な語のみ
-    // 採用・リクルーティング
-    s = s.replace(/recruiting|recruitment|リクルーティング|採用/g, "recruiting");
-    // 人材・HR
-    s = s.replace(/humanresources|staffing|人材|ヒューマンリソース/g, "humanresources");
-    // ※ "hr" は単独一致のみ (hour等との衝突を避ける)
-    if (s === "hr") s = "humanresources";
-    // 小売
-    s = s.replace(/retail|小売/g, "retail");
-    // 卸売
-    s = s.replace(/wholesale|卸売/g, "wholesale");
-    // 金融・ファイナンス
-    s = s.replace(/financial|finance|金融|ファイナンス/g, "finance");
-    // 建設
-    s = s.replace(/construction|建設/g, "construction");
-    // 製造
-    s = s.replace(/manufacturing|製造/g, "manufacturing");
-    // システム
-    s = s.replace(/systems|system|システム/g, "system");
-    // ソフトウェア
-    s = s.replace(/software|ソフトウェア/g, "software");
-    // DX・デジタルトランスフォーメーション
-    s = s.replace(/digitaltransformation|デジタルトランスフォーメーション/g, "dx");
-    // クラウド
-    s = s.replace(/cloud|クラウド/g, "cloud");
-    // メディア
-    s = s.replace(/media|メディア/g, "media");
-    // 広告
-    s = s.replace(/advertising|advertisement|広告/g, "advertising");
-    // ※ "ad" は単独一致のみ
-    if (s === "ad") s = "advertising";
-    // 教育
-    s = s.replace(/education|教育/g, "education");
-    // 医療・ヘルスケア
-    s = s.replace(/healthcare|medical|医療|ヘルスケア/g, "healthcare");
-    // 介護
-    s = s.replace(/nursingcare|介護/g, "nursingcare");
-    // 飲食・フードサービス
-    s = s.replace(/foodservice|restaurant|飲食|フードサービス/g, "foodservice");
-    // エネルギー
-    s = s.replace(/energy|エネルギー/g, "energy");
-    // 環境
-    s = s.replace(/environmental|environment|環境/g, "environment");
-
-    // 8. "mobility&telematics" 形式への統一 (and が残ったケース)
-    s = s.replace(/mobility&telematics/g, "mobility&telematics"); // no-op 保証
-    s = s.replace(/([a-z\u3040-\u30ff\u4e00-\u9fff])&([a-z\u3040-\u30ff\u4e00-\u9fff])/g, "$1&$2");
-
-    // 9. 残った空白除去
+    // 5. 残った空白除去
     s = s.replace(/\s+/g, "");
 
     return s;
 }
+
 
 /**
  * TDNET英語セグメント名を、EDINET日本語候補テキストへ変換する。
@@ -366,10 +277,12 @@ export function normalizeSegmentSemanticKey(name: string): string {
     ) {
         return "metals_minerals";
     }
-    // 化学品（"Energy And Chemicals" は除外 → energy に任せる）
-    if ((s.includes("化学") || s.includes("chemical")) && !s.includes("energy")) {
-        return "chemicals";
-    }
+    // 注意: "化学" / "chemical" の semantic key 統合は削除済み (2026-05)
+    //   理由: 基礎化学品事業・精密化学品事業・Fine/Fundamental/Ferro Chemicals Division 等
+    //   "化学/chemical" を含む異なるセグメントが全て "chemicals" に統合されてしまい、
+    //   別々のセグメント列が1列に潰れる問題を引き起こすため。
+    //   各 segment_name は baseDk (normalize_display_key そのまま) で別列として扱う。
+
     // 繊維
     if (s.includes("繊維") || s.includes("textile")) {
         return "textile";
@@ -416,16 +329,16 @@ export function normalizeSegmentSemanticKey(name: string): string {
     return s;
 }
 
-const _JP_RE = /[\u3040-\u30ff\u4e00-\u9fff\uff01-\uffee]/;
-
 /**
- * 同じ display_key グループ内の segment_name 群から表示名を選ぶ。
- * 優先: 日本語含む → 長い → 先頭
+ * 表示名を返す。segment_name をそのまま返す。
+ *
+ * 方針（2026-05以降）:
+ *   日本語優先などの選択ロジックを廃止。
+ *   names[0]（最初に登録された segment_name）をそのまま返す。
+ *   DB の segment_name が表示名になる。
  */
 export function pickSegmentDisplayName(names: string[]): string {
     if (names.length === 0) return "";
-    if (names.length === 1) return names[0];
-    const jpNames = names.filter((n) => _JP_RE.test(n));
-    const pool = jpNames.length > 0 ? jpNames : names;
-    return pool.reduce((best, cur) => (cur.length >= best.length ? cur : best), pool[0]);
+    return names[0];
 }
+

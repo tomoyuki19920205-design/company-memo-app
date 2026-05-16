@@ -167,7 +167,10 @@ const SEG_PREV_QUARTER: Record<string, string | null> = {
     "FY": "3Q",
 };
 
-function buildSegmentInfo(segments: SegmentRecord[]) {
+function buildSegmentInfo(
+    segments: SegmentRecord[],
+    opts: { disableSemanticMerge?: boolean } = {}
+) {
     // ダミーセグメント（「売上」「利益」等で sales=0, profit=0 のみ）を除外
     const DUMMY_NAMES = new Set(["売上", "利益", "#VALUE!", "0", "月次売上", "累計", "ＧＰ"]);
     
@@ -179,34 +182,91 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
             !DUMMY_NAMES.has(seg.segment_name) &&
             !seg.segment_name.startsWith("UNKNOWN_"),
     );
-    
-    // 日本語アンカーSet: 全period・全quarterの日本語セグメント名から構築
-    // segments（生の全行）を使うことで、ダミー除外や期間絞り込み前の
-    // EDINET日本語名もアンカーとして利用できる（名前のみ使用、数値は別途filteredから）
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // segmentColumns の基準: source グループごとに最新 FY period を求め合算
+    //
+    // 変更理由:
+    //   全体の最新 FY を基準にすると、Allタブ等で複数 source が混在する場合に
+    //   他 source の最新 FY セグメントが列定義に入らなくなる。
+    //   例) TDNET 最新FY=2026-03-31 / EDINET 最新FY=2025-03-31 のとき、
+    //       全体最新FY=2026-03-31 を基準にすると 2025FY EDINET 日本語列が欠落する。
+    //   → source 別に最新FY を求め、各 source の最新FY セグメントを合算する。
+    //
+    // 単一 source (TDNET/EDINET タブ) の場合は従来と同一の動作になる。
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    const referenceSegments = (() => {
+        const uniqueSources = Array.from(
+            new Set(allSegments.map((s) => s.source).filter((src): src is string => Boolean(src)))
+        );
+        if (uniqueSources.length === 0) {
+            // source なし: 従来通り全体最新 FY period 基準
+            const latestFY = allSegments
+                .filter((s) => s.quarter === "FY")
+                .reduce((max, s) => (s.period > max ? s.period : max), "");
+            const refP = latestFY || allSegments.reduce((max, s) => (s.period > max ? s.period : max), "");
+            return allSegments.filter((s) => s.period === refP && (latestFY ? s.quarter === "FY" : true));
+        }
+        // source 別に最新 FY period を求め、各 source の最新 FY セグメントを収集して重複排除
+        const seenKeys = new Set<string>();
+        const result: SegmentRecord[] = [];
+        for (const src of uniqueSources) {
+            const srcSegs = allSegments.filter((s) => s.source === src);
+            const srcFY = srcSegs.filter((s) => s.quarter === "FY");
+            const latestFYForSrc = srcFY.reduce((max, s) => (s.period > max ? s.period : max), "");
+            const refPeriodForSrc = latestFYForSrc ||
+                srcSegs.reduce((max, s) => (s.period > max ? s.period : max), "");
+            for (const seg of srcSegs) {
+                if (
+                    seg.period === refPeriodForSrc &&
+                    (latestFYForSrc ? seg.quarter === "FY" : true)
+                ) {
+                    const dedupeKey = `${seg.period}|${seg.quarter}|${seg.segment_name}`;
+                    if (!seenKeys.has(dedupeKey)) {
+                        seenKeys.add(dedupeKey);
+                        result.push(seg);
+                    }
+                }
+            }
+        }
+        return result;
+    })();
+
+    // 日本語アンカー Set は referenceSegments のみから構築
+    // (他 period の EDINET 日本語名を列キーに混入させない)
     const _JP_CHK = /[\u3040-\u30ff\u4e00-\u9fff]/;
-    const jpAnchorSet = new Set<string>(
-        segments
-            .map((s) => s.segment_name)
-            .filter((name) => name && _JP_CHK.test(name))
-            .map((name) => normalizeSegmentDisplayKey(name))
-            .filter(Boolean),
-    );
+
+    // disableSemanticMerge=true (Allタブ) の場合: jpAnchorSet / jpSemanticAnchorMap を空にし
+    // resolveDk が semantic 統合を行わないようにする。
+    // これにより TDNET 英語名と EDINET 日本語名が同じ意味キーで1列に潰れるのを防ぐ。
+    const jpAnchorSet = opts.disableSemanticMerge
+        ? new Set<string>()
+        : new Set<string>(
+            referenceSegments
+                .map((s) => s.segment_name)
+                .filter((name) => name && _JP_CHK.test(name))
+                .map((name) => normalizeSegmentDisplayKey(name))
+                .filter(Boolean),
+        );
 
     // semantic key → Japanese display_dk マップ
     // 日英共通の意味キーで照合し、英語名を日本語 display_dk へ解決する
+    // disableSemanticMerge=true の場合は構築しない（空 Map のまま）
     const jpSemanticAnchorMap = new Map<string, string>();
-    for (const seg of segments) {
-        const name = seg.segment_name;
-        if (!name || !_JP_CHK.test(name)) continue;
-        const displayDk = normalizeSegmentDisplayKey(name);
-        const semanticDk = normalizeSegmentSemanticKey(name);
-        if (displayDk && semanticDk && !jpSemanticAnchorMap.has(semanticDk)) {
-            jpSemanticAnchorMap.set(semanticDk, displayDk);
+    if (!opts.disableSemanticMerge) {
+        for (const seg of referenceSegments) {
+            const name = seg.segment_name;
+            if (!name || !_JP_CHK.test(name)) continue;
+            const displayDk = normalizeSegmentDisplayKey(name);
+            const semanticDk = normalizeSegmentSemanticKey(name);
+            if (displayDk && semanticDk && !jpSemanticAnchorMap.has(semanticDk)) {
+                jpSemanticAnchorMap.set(semanticDk, displayDk);
+            }
         }
     }
     // [DEBUG] semantic anchor map 内容確認 (7931確認後に削除)
     if (process.env.NODE_ENV === "development") {
-        console.log("[SEG_SEMANTIC_MAP]", Array.from(jpSemanticAnchorMap.entries()));
+        console.log("[SEG_SEMANTIC_MAP]", Array.from(jpSemanticAnchorMap.entries()), opts);
     }
 
     // TDNET英語名を日本語アンカーdkへ解決するヘルパー
@@ -244,8 +304,10 @@ function buildSegmentInfo(segments: SegmentRecord[]) {
         return baseDk;
     };
 
+    // nameMap: referenceSegments のみから列定義を構築
+    // (全 period 横断にしないことで、過去期にしか存在しないセグメントを列化しない)
     const nameMap = new Map<string, string[]>();
-    for (const seg of allSegments) {
+    for (const seg of referenceSegments) {
         const dk = resolveDk(seg.segment_name);
         if (!nameMap.has(dk)) nameMap.set(dk, []);
         nameMap.get(dk)!.push(seg.segment_name);
@@ -400,7 +462,7 @@ function PLTableHeader({
     columns: ColumnDef[];
     widths: number[];
     onResizeStart: (colIndex: number, e: React.MouseEvent) => void;
-    segHeaders?: { label: string; className?: string }[];
+    segHeaders?: { label: string; fullName?: string; className?: string }[];
     segWidths?: number[];
     onSegResizeStart?: (colIndex: number, e: React.MouseEvent) => void;
     kpiSlots?: readonly number[];
@@ -440,9 +502,11 @@ function PLTableHeader({
                             key={`seg-${idx}`}
                             className={`seg-header-cell ${eh.className || "num-col"}`}
                             style={{ width: w, minWidth: 24 }}
+                            title={eh.fullName ?? eh.label}
+                            data-fullname={eh.fullName ?? eh.label}
                         >
                             <div className="th-content">
-                                <span>{eh.label}</span>
+                                <span className="seg-header-label">{eh.label}</span>
                                 {onSegResizeStart && (
                                     <div
                                         className="resize-handle"
@@ -521,14 +585,31 @@ export default function FinancialsTable({
     const cumRows = useMemo(() => buildCumulativeRows(sorted), [sorted]);
     const qRows = useMemo(() => buildQStandaloneRows(sorted), [sorted]);
 
-    // セグメント列
+    // ─── セグメント source 別タブ ─────────────────────────────
+    // 'tdnet' = backfill_xbrl / xbrl / attachment_xbrl
+    // 'edinet' = edinet_xbrl
+    // 'all'   = 上記すべて（whitelist source のみ。sourceなし・ゴみデータは除外）
+    const TDNET_SOURCES  = new Set(["backfill_xbrl", "xbrl", "attachment_xbrl"]);
+    const EDINET_SOURCES = new Set(["edinet_xbrl"]);
+    type SegSourceTab = "tdnet" | "edinet" | "all";
+    const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
+
+    const filteredBySource = useMemo(() => {
+        const segs = segments || [];
+        if (segSourceTab === "tdnet")  return segs.filter(s => TDNET_SOURCES.has(s.source ?? ""));
+        if (segSourceTab === "edinet") return segs.filter(s => EDINET_SOURCES.has(s.source ?? ""));
+        // "all": whitelist 全体（TDNET + EDINET）のみ。source なしは除外。
+        return segs.filter(s => TDNET_SOURCES.has(s.source ?? "") || EDINET_SOURCES.has(s.source ?? ""));
+    }, [segments, segSourceTab]);
+
+    // セグメント列 (filteredBySource を入力にすることでタブ切替えを実現)
     const { segmentColumns, segmentMap, segmentQMap, sourceMap } = useMemo(
-        () => buildSegmentInfo(segments || []),
-        [segments]
+        () => buildSegmentInfo(filteredBySource, { disableSemanticMerge: segSourceTab === "all" }),
+        [filteredBySource, segSourceTab]
     );
     // セグメント列ヘッダー（累計PL・Q単体PL共通）
     const segmentHeaders = useMemo(() => {
-        const headers: { label: string; className?: string }[] = [];
+        const headers: { label: string; fullName?: string; className?: string }[] = [];
         for (const sc of segmentColumns) {
             // "管工機材売上(円)" → "管工機材" のように末尾の単位表記を除去
             const cleanName = sc.segmentName
@@ -536,8 +617,17 @@ export default function FinancialsTable({
                 .replace(/売上$/, "")
                 .replace(/利益$/, "")
                 .trim();
-            headers.push({ label: `${cleanName} 売上（百万円）`, className: "num-col seg-sales-col" });
-            headers.push({ label: `${cleanName} 利益（百万円）`, className: "num-col seg-profit-col" });
+            // fullName: hover tooltip 用（省略前の元の segment 名）
+            headers.push({
+                label: `${cleanName} 売上`,
+                fullName: `${sc.segmentName} — 売上（百万円）`,
+                className: "num-col seg-sales-col",
+            });
+            headers.push({
+                label: `${cleanName} 利益`,
+                fullName: `${sc.segmentName} — 利益（百万円）`,
+                className: "num-col seg-profit-col",
+            });
         }
         return headers;
     }, [segmentColumns]);
@@ -1622,9 +1712,35 @@ export default function FinancialsTable({
                         );
                     })()}
                     {/* セグメント群テーブル */}
-                    {segmentColumns.length > 0 && (
+                    {(segments || []).some(s => s.source) && (
                         <div className="data-section seg-section" style={{ marginTop: 12 }}>
-                            <h3 className="section-title" style={{ fontSize: 14 }}>{"📊"} セグメント業績 — {segmentColumns.length}件</h3>
+                            {/* ─ source別タブ + タイトル行 ─ */}
+                            <div className="segment-header-row">
+                                <h3 className="section-title" style={{ fontSize: 14, margin: 0 }}>
+                                    {"📊"} セグメント業績
+                                    {segmentColumns.length > 0 && (
+                                        <span style={{ fontSize: 12, fontWeight: 400, color: "var(--text-muted)", marginLeft: 8 }}>
+                                            — {segmentColumns.length}件
+                                        </span>
+                                    )}
+                                </h3>
+                                <div style={{ display: "flex", gap: 4, padding: "4px 12px", alignItems: "center" }}>
+                                    {([
+                                        { key: "tdnet",  label: "TDNET/XBRL" },
+                                        { key: "edinet", label: "EDINET" },
+                                        { key: "all",    label: "All" },
+                                    ] as const).map(({ key, label }) => (
+                                        <button
+                                            key={key}
+                                            className={`segment-edit-toggle${segSourceTab === key ? " active" : ""}`}
+                                            style={{ padding: "3px 10px", fontSize: "0.75rem" }}
+                                            onClick={() => setSegSourceTab(key)}
+                                        >
+                                            {label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                             <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
                                 <div className="pl-dual-tables">
                                     <div className="pl-table-block">

@@ -33,7 +33,8 @@ export interface PerShareRecord {
     dividend_annual: number | null;
     payout_ratio: number | null;
     // 予想
-    forecast_eps: number | null;
+    forecast_eps: number | null;          // 最新予想EPS（期中修正で更新される）
+    initial_forecast_eps: number | null;  // 期初予想EPS（本決算発表時のNxFEPS。原則不変）
     forecast_dividend_annual: number | null;
     forecast_payout_ratio: number | null;
     // 株式数
