@@ -586,10 +586,17 @@ export default function FinancialsTable({
     const qRows = useMemo(() => buildQStandaloneRows(sorted), [sorted]);
 
     // ─── セグメント source 別タブ ─────────────────────────────
-    // 'tdnet' = backfill_xbrl / xbrl / attachment_xbrl
+    // 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
+    //           / backfill_xbrl / xbrl / attachment_xbrl
     // 'edinet' = edinet_xbrl
     // 'all'   = 上記すべて（whitelist source のみ。sourceなし・ゴみデータは除外）
-    const TDNET_SOURCES  = new Set(["backfill_xbrl", "xbrl", "attachment_xbrl"]);
+    const TDNET_SOURCES  = new Set([
+        "backfill_v4_pdf",   // XBRL partial fallback 採用済み PDF V4 (priority=0)
+        "v4_pdf",            // 同上 (短縮エイリアス)
+        "backfill_xbrl",
+        "xbrl",
+        "attachment_xbrl",
+    ]);
     const EDINET_SOURCES = new Set(["edinet_xbrl"]);
     type SegSourceTab = "tdnet" | "edinet" | "all";
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
@@ -602,10 +609,31 @@ export default function FinancialsTable({
         return segs.filter(s => TDNET_SOURCES.has(s.source ?? "") || EDINET_SOURCES.has(s.source ?? ""));
     }, [segments, segSourceTab]);
 
-    // セグメント列 (filteredBySource を入力にすることでタブ切替えを実現)
+    // ── source_priority 防御的フィルタ ──
+    // period + quarter 単位で最小 source_priority の行だけを残す。
+    // viewer-api.ts 側でも同様のフィルタを実施しているが、
+    // buildSegmentInfo / referenceSegments での混入を防ぐ二重防衛として追加。
+    // source_priority が null/undefined の場合は 99 扱い。
+    const filteredForSegBuild = useMemo(() => {
+        if (filteredBySource.length === 0) return filteredBySource;
+        const minMap = new Map<string, number>();
+        for (const s of filteredBySource) {
+            const key = `${s.period ?? ""}|${s.quarter ?? ""}`;
+            const pri = s.source_priority != null ? Number(s.source_priority) : 99;
+            const cur = minMap.get(key);
+            if (cur === undefined || pri < cur) minMap.set(key, pri);
+        }
+        return filteredBySource.filter((s) => {
+            const key = `${s.period ?? ""}|${s.quarter ?? ""}`;
+            const pri = s.source_priority != null ? Number(s.source_priority) : 99;
+            return pri === (minMap.get(key) ?? 99);
+        });
+    }, [filteredBySource]);
+
+    // セグメント列 (filteredForSegBuild を入力にすることでタブ切替え + priority フィルタを実現)
     const { segmentColumns, segmentMap, segmentQMap, sourceMap } = useMemo(
-        () => buildSegmentInfo(filteredBySource, { disableSemanticMerge: segSourceTab === "all" }),
-        [filteredBySource, segSourceTab]
+        () => buildSegmentInfo(filteredForSegBuild, { disableSemanticMerge: segSourceTab === "all" }),
+        [filteredForSegBuild, segSourceTab]
     );
     // セグメント列ヘッダー（累計PL・Q単体PL共通）
     const segmentHeaders = useMemo(() => {

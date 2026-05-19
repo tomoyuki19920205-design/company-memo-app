@@ -306,7 +306,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
     try {
         const { data, error } = await supabase
             .from("api_latest_segments")
-            .select("ticker,period,quarter,segment_name,sales,profit,source")
+            .select("ticker,period,quarter,segment_name,sales,profit,source,source_priority")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: true })
@@ -320,8 +320,29 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
 
         if (!data || data.length === 0) return [];
 
+        // ── source_priority による防御的フィルタ ──
+        // period + quarter 単位で最小 source_priority の行だけを残す。
+        // XBRL partial 判定で PDF V4 (priority=0) が採用された場合に
+        // 旧 XBRL (priority=1) 行が Viewer に混入するのを防ぐ。
+        // source_priority が null/undefined の場合は 99 扱い。
+        const minPriorityMap = new Map<string, number>();
+        for (const row of data) {
+            const key = `${row.period ?? ""}|${row.quarter ?? ""}`;
+            const pri = (row.source_priority != null) ? Number(row.source_priority) : 99;
+            const current = minPriorityMap.get(key);
+            if (current === undefined || pri < current) {
+                minPriorityMap.set(key, pri);
+            }
+        }
+
+        const filtered = data.filter((row) => {
+            const key = `${row.period ?? ""}|${row.quarter ?? ""}`;
+            const pri = (row.source_priority != null) ? Number(row.source_priority) : 99;
+            return pri === (minPriorityMap.get(key) ?? 99);
+        });
+
         // period / quarter を正規化、カラム名を内部型に合わせて返す
-        return data.map((row) => ({
+        return filtered.map((row) => ({
             ticker: row.ticker,
             period: normalizePeriod(row.period),
             quarter: normalizeQuarter(row.quarter),
@@ -329,6 +350,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
             segment_sales: row.sales !== null ? Number(row.sales) : null,
             segment_profit: row.profit !== null ? Number(row.profit) : null,
             source: row.source ?? undefined,
+            source_priority: row.source_priority != null ? Number(row.source_priority) : null,
         }));
     } catch (err) {
         console.warn("[api_latest_segments] 取得例外 (空配列で継続):", err);

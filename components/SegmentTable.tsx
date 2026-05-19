@@ -148,10 +148,37 @@ export default function SegmentTable({
                     salesSource: row._salesSource,
                     profitSource: row._profitSource,
                 });
+            } else {
+                // 同一 display_key に後続 row が来た場合の更新処理
+                // backfill_v4_pdf は XBRL partial fallback 採用済み（高信頼）なので
+                // 先着の XBRL 行より優先して値・表示名を上書きする。
+                const seg = group.segMap.get(dk)!;
+                const isHigherTrust = row.source === "backfill_v4_pdf" || row.source === "v4_pdf";
+
+                if (isHigherTrust) {
+                    // 高信頼ソース: 表示名・値を全面上書き
+                    seg.names[0] = row.segment_name;
+                    if (row.segment_sales !== null) {
+                        seg.sales = row.segment_sales;
+                        seg.salesSource = row._salesSource ?? row.source;
+                    }
+                    if (row.segment_profit !== null) {
+                        seg.profit = row.segment_profit;
+                        seg.profitSource = row._profitSource ?? row.source;
+                    }
+                    seg.source = row.source;
+                } else {
+                    // 通常ソース: null 補完のみ（既存非 null 値は維持）
+                    if (seg.sales === null && row.segment_sales !== null) {
+                        seg.sales = row.segment_sales;
+                        seg.salesSource = row._salesSource ?? row.source;
+                    }
+                    if (seg.profit === null && row.segment_profit !== null) {
+                        seg.profit = row.segment_profit;
+                        seg.profitSource = row._profitSource ?? row.source;
+                    }
+                }
             }
-            // 同一 display_key になる場合は最初に登録した行を優先（後勝ちなし）
-            // ※ 日英統合なし方針では同一 dk になることは想定しないが、
-            //   スペース差・表記ゆれによる意図しない衝突の安全弁として残す
         }
 
         return Array.from(map.values())
