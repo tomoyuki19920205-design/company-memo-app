@@ -637,11 +637,12 @@ body {
 }
 
 .pl-row-fy {
-  background: #2a2412 !important;
+  /* background 削除 — 通常行と統一 */
+  font-weight: 600;
 }
 
 .pl-row-fy:hover {
-  background: #332b14 !important;
+  /* hover は通常行の .pl-row:hover に委譲 */
 }
 
 .pl-row-fy.pl-row-selected {
@@ -2571,4 +2572,14 @@ textarea::placeholder {
   border-radius: 4px;
   margin-bottom: 6px;
   overflow: hidden;
+}
+
+/* ============================================================
+   セグメント縦枠 — 累計・Q単体セグメント共通
+   各セグメントの利益列右端に 2px 縦線
+   ============================================================ */
+
+/* セグメントグループ末尾列 (利益列) の右側に縦線 */
+.segment-group-end {
+  border-right: 2px solid #4a6fa5 !important;
 }

@@ -1791,7 +1791,7 @@ export default function FinancialsTable({
                                             <thead><tr>
                                                 <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
                                                 <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
-                                                {segmentHeaders.map((eh, si) => (<th key={`seg-cum-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>))}
+                                                {segmentHeaders.map((eh, si) => <th key={`seg-cum-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
                                             </tr></thead>
                                             <tbody>
                                                 {cumRows.map((row, idx) => (
@@ -1836,6 +1836,7 @@ export default function FinancialsTable({
                                                                         isSegEditing={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx}
                                                                         segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === pIdx ? segEditValue : undefined}
                                                                         onSegEditDone={finishSegEditing}
+                                                                        extraClassName="segment-group-end"
                                                                     />
                                                                 </React.Fragment>
                                                             );
@@ -1851,7 +1852,7 @@ export default function FinancialsTable({
                                             <thead><tr>
                                                 <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
                                                 <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
-                                                {segmentHeaders.map((eh, si) => (<th key={`seg-q-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>))}
+                                                {segmentHeaders.map((eh, si) => <th key={`seg-q-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
                                             </tr></thead>
                                             <tbody>
                                                 {qRows.map((row, idx) => (
@@ -1873,7 +1874,7 @@ export default function FinancialsTable({
                                                             return (
                                                                 <React.Fragment key={sc.segmentName}>
                                                                     <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : "–"}</td>
-                                                                    <td className="num-col seg-data-cell" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
+                                                                    <td className="num-col seg-data-cell segment-group-end" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
                                                                 </React.Fragment>
                                                             );
                                                         })}
@@ -2040,6 +2041,7 @@ function SegOverrideCell({
     isInRange,
     onRangeMouseDown,
     onRangeMouseEnter,
+    extraClassName = "",
 }: {
     value: number | null;
     source?: string;
@@ -2061,6 +2063,8 @@ function SegOverrideCell({
     isInRange?: boolean;
     onRangeMouseDown?: (e: React.MouseEvent) => void;
     onRangeMouseEnter?: () => void;
+    /** 追加 className (segment-group-end 等) */
+    extraClassName?: string;
 }) {
     const [editing, setEditing] = useState(false);
     const [inputVal, setInputVal] = useState("");
@@ -2189,7 +2193,7 @@ function SegOverrideCell({
 
     return (
         <td
-            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""} ${isInRange ? "cell-in-range" : ""}`}
+            className={`num-col seg-data-cell ${editable && !isManual ? "seg-editable" : ""} ${isManual ? "seg-manual-editable" : ""} ${saving ? "seg-saving" : ""} ${isSegActive ? "seg-cell-active" : ""} ${isInRange ? "cell-in-range" : ""} ${extraClassName}`}
             style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
             onClick={handleCellClick}
             onMouseDown={(e) => { onRangeMouseDown?.(e); }}
