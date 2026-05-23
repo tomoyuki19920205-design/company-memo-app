@@ -121,10 +121,10 @@ const CUM_COLUMNS: ColumnDef[] = [
     { key: "quarter", label: "Q", initialWidth: 45 },
     { key: "sales", label: "SALES", initialWidth: 90, className: "num-col" },
     { key: "gp", label: "GP", initialWidth: 85, className: "num-col" },
-    { key: "gm_rate", label: "粗利率", initialWidth: 75, className: "num-col" },
+    { key: "gm_rate", label: "粗利率", initialWidth: 75, className: "num-col gp-margin-col" },
     { key: "sga", label: "管理費", initialWidth: 85, className: "num-col" },
     { key: "op", label: "OP", initialWidth: 85, className: "num-col" },
-    { key: "op_margin", label: "営業利益率", initialWidth: 75, className: "num-col" },
+    { key: "op_margin", label: "営業利益率", initialWidth: 75, className: "num-col op-margin-col" },
     { key: "memo_a", label: "Memo A", initialWidth: 130 },
     { key: "memo_b", label: "Memo B", initialWidth: 130 },
 ];
@@ -1850,10 +1850,10 @@ export default function FinancialsTable({
                                                     <td style={{ width: cumResize.widths[1], minWidth: cumResize.widths[1] }} className={isCellInRange("cum", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 1)}>{displayValue(row.quarter)}</td>
                                                     <td style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className={`num-col ${isCellInRange("cum", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 2)}>{formatMillions(row.sales)}</td>
                                                     <td style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className={`num-col ${isCellInRange("cum", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 3)}>{formatMillions(row.grossProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
+                                                    <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
                                                     <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.sgAndA)}</td>
                                                     <td style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{fmtMargin(row.opMargin)}</td>
+                                                    <td style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{fmtMargin(row.opMargin)}</td>
                                                     <MemoCellExcel value={memoA} width={cumResize.widths[8]}
                                                         isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_a"}
                                                         isInRange={isCellInRange("cum", idx, 8)}
@@ -1941,10 +1941,10 @@ export default function FinancialsTable({
                                                 <td style={{ width: qResize.widths[1], minWidth: qResize.widths[1] }} className={isCellInRange("q", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 1)}>{displayValue(row.quarter)}</td>
                                                 <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
                                                 <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
-                                                <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
+                                                <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
                                                 <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.sgAndA)}</td>
                                                 <td style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
-                                                <td style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{fmtMargin(row.opMargin)}</td>
+                                                <td style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{fmtMargin(row.opMargin)}</td>
                                                 {KPI_SLOTS.map((slot) => {
                                                     const colKey = `kpi_${slot}`;
                                                     const kpiKey = `${row.period}|${row.quarter}`;
@@ -2565,7 +2565,9 @@ function ManualMemoRows({
                             && editingManualCell?.colIdx === colIdx;
                         const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
                         const isGroupEnd = segmentGroupEndIndices?.includes(colIdx) ?? false;
-                        const extraClass = `manual-memo-cell${isGroupEnd ? " segment-group-end" : ""}`;
+                        const isPLGpMargin = (tableType === "pl_cum" || tableType === "pl_q") && colIdx === 4;
+                        const isPLOpMargin = (tableType === "pl_cum" || tableType === "pl_q") && colIdx === 7;
+                        const extraClass = `manual-memo-cell${isPLGpMargin ? " gp-margin-col" : ""}${isPLOpMargin ? " op-margin-col" : ""}${isGroupEnd ? " segment-group-end" : ""}`;
 
                         return (
                             // MemoCellExcel を流用: MEMO A/B と完全同一の操作感

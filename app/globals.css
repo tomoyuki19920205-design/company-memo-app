@@ -2651,6 +2651,33 @@ textarea::placeholder {
 }
 
 /* 手入力行セパレータ (テーブル末尾の区切り線) */
+/* 粗利率列(colIdx=4) 左右縦区切り線 */
+.gp-margin-col {
+  border-left: 2px solid #4a6fa5 !important;
+  border-right: 2px solid #4a6fa5 !important;
+}
+
+/* hover/select 時も縦線を維持 */
+.gp-margin-col:hover,
+.gp-margin-col.cell-in-range,
+.gp-margin-col.memo-cell-active {
+  border-left: 2px solid #4a6fa5 !important;
+  border-right: 2px solid #4a6fa5 !important;
+}
+
+/* 営業利益率列 左右縦区切り線 */
+.op-margin-col {
+  border-left: 2px solid #4a6fa5 !important;
+  border-right: 2px solid #4a6fa5 !important;
+}
+
+.op-margin-col:hover,
+.op-margin-col.cell-in-range,
+.op-margin-col.memo-cell-active {
+  border-left: 2px solid #4a6fa5 !important;
+  border-right: 2px solid #4a6fa5 !important;
+}
+
 .manual-memo-row-1 td {
   border-top: 2px solid #3b4f6b !important;
 }
