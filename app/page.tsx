@@ -15,8 +15,11 @@ import {
     loadAllGridMemos,
     createEmptyGrid,
     normalizeTicker,
+    saveManualTableMemo,
+    loadManualTableMemos,
     type GridData,
     type GridMemoRecord,
+    type ManualTableType,
 } from "@/lib/memo-api";
 import {
     loadKpiDefinitions,
@@ -68,12 +71,43 @@ import type { User } from "@supabase/supabase-js";
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
 type MemoMapType = { [key: string]: GridData };
 
+/** 手入力メモ専用行 state 型 */
+type ManualTableMemos = {
+    pl_cum: string[][];
+    pl_q: string[][];
+    segment_cum: string[][];
+    segment_q: string[][];
+};
+
+const EMPTY_MANUAL_MEMOS: ManualTableMemos = {
+    pl_cum: [["MEMO 1", ""], ["MEMO 2", ""]],
+    pl_q: [["MEMO 1", ""], ["MEMO 2", ""]],
+    segment_cum: [["MEMO 1", ""], ["MEMO 2", ""]],
+    segment_q: [["MEMO 1", ""], ["MEMO 2", ""]],
+};
+
 function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
     const map: MemoMapType = {};
     memos.forEach((record, key) => {
         map[key] = record.grid_json;
     });
     return map;
+}
+
+/** loadManualTableMemos の結果を ManualTableMemos 型に変換 */
+function buildManualTableMemos(
+    raw: Record<ManualTableType, string[][] | null>
+): ManualTableMemos {
+    const fallback = (grid: string[][] | null, defaultLabel1: string, defaultLabel2: string): string[][] => {
+        if (grid && grid.length >= 2) return grid;
+        return [[defaultLabel1], [defaultLabel2]];
+    };
+    return {
+        pl_cum:      fallback(raw.pl_cum,      "MEMO 1", "MEMO 2"),
+        pl_q:        fallback(raw.pl_q,        "MEMO 1", "MEMO 2"),
+        segment_cum: fallback(raw.segment_cum, "MEMO 1", "MEMO 2"),
+        segment_q:   fallback(raw.segment_q,   "MEMO 1", "MEMO 2"),
+    };
 }
 
 export default function ViewerPage() {
@@ -102,6 +136,7 @@ export default function ViewerPage() {
     const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
+    const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
@@ -195,6 +230,7 @@ export default function ViewerPage() {
         setSelectedPeriod("");
         setSelectedQuarter("");
         setMemoMap({});
+        setManualTableMemos(EMPTY_MANUAL_MEMOS);
         setSegments([]);
         setSegmentOverrides([]);
         setResolvedSegments([]);
@@ -206,7 +242,7 @@ export default function ViewerPage() {
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult] =
+        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult] =
             await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
@@ -220,6 +256,7 @@ export default function ViewerPage() {
                 loadOrderKpis(ticker),
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
+                loadManualTableMemos(ticker),
             ]);
 
         setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
@@ -286,6 +323,11 @@ export default function ViewerPage() {
         }
         setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
 
+        // 手入力メモ専用行
+        if (manualMemosResult.status === "fulfilled") {
+            setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
+        }
+
         // Market data & per share data
         const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
         const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
@@ -311,6 +353,47 @@ export default function ViewerPage() {
             setSelectedQuarter(plData[0].quarter);
         }
     }, [tickerInput, user]);
+
+    // ============================================================
+    // 手入力メモ専用行 — 編集ハンドラ
+    // ============================================================
+    const handleManualTableMemoEdit = useCallback(
+        async (
+            tableType: ManualTableType,
+            rowIdx: number,
+            colIdx: number,
+            value: string,
+        ) => {
+            if (!activeTicker) return;
+            const prevGrid = manualTableMemos[tableType];
+            const prevGridCopy = prevGrid.map((r) => [...r]);
+
+            // グリッドをコピーして更新
+            const newGrid = prevGrid.map((r) => [...r]);
+            // 行が足りなければ拡張
+            while (newGrid.length <= rowIdx) newGrid.push([]);
+            while (newGrid[rowIdx].length <= colIdx) newGrid[rowIdx].push("");
+            newGrid[rowIdx][colIdx] = value;
+
+            // Undo エントリ
+            pushUndo(`手入力メモ ${tableType} r${rowIdx}c${colIdx}`, () => {
+                setManualTableMemos((prev) => ({ ...prev, [tableType]: prevGridCopy }));
+                saveManualTableMemo(activeTicker, tableType, prevGridCopy).catch(console.error);
+            });
+
+            // 楽観的更新
+            setManualTableMemos((prev) => ({ ...prev, [tableType]: newGrid }));
+
+            try {
+                await saveManualTableMemo(activeTicker, tableType, newGrid);
+            } catch (err) {
+                console.error("手入力メモ保存失敗:", err);
+                setManualTableMemos((prev) => ({ ...prev, [tableType]: prevGridCopy }));
+                setErrorMsg(`手入力メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
+            }
+        },
+        [activeTicker, manualTableMemos, pushUndo]
+    );
 
     // ---- 企業マスタ lazy load (多重ロード防止付き) ----
     const handleRequestMaster = useCallback(async () => {
@@ -791,6 +874,8 @@ export default function ViewerPage() {
                         onSegmentOverrideDelete={handleDeleteOverride}
                         onBulkSaveOverrides={handleBulkSaveOverrides}
                         onUndo={handleUndo}
+                        manualTableMemos={manualTableMemos}
+                        onManualMemoEdit={handleManualTableMemoEdit}
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />

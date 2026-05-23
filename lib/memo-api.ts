@@ -276,3 +276,92 @@ export async function loadAllGridMemos(
 
     return result;
 }
+
+// ============================================================
+// 手入力メモ専用行 API (PL/セグメント表下部2行)
+// ============================================================
+
+/** テーブル種別 */
+export type ManualTableType = "pl_cum" | "pl_q" | "segment_cum" | "segment_q";
+
+/** tableType → company_memo_grids の保存キー */
+const MANUAL_TABLE_KEYS: Record<ManualTableType, { period: string; quarter: string }> = {
+    pl_cum:       { period: "__manual_pl_cum__",       quarter: "MANUAL" },
+    pl_q:         { period: "__manual_pl_q__",         quarter: "MANUAL" },
+    segment_cum:  { period: "__manual_segment_cum__",  quarter: "MANUAL" },
+    segment_q:    { period: "__manual_segment_q__",    quarter: "MANUAL" },
+};
+
+/**
+ * 手入力メモ行を保存 (UPSERT)。
+ * 列数は自由 — resizeGrid の 20×2 固定を通さない。
+ */
+export async function saveManualTableMemo(
+    ticker: string,
+    tableType: ManualTableType,
+    gridJson: string[][],
+): Promise<void> {
+    const t = normalizeTicker(ticker);
+    if (!t) throw new Error("ticker が空です");
+    const { period, quarter } = MANUAL_TABLE_KEYS[tableType];
+
+    const { error } = await supabase
+        .from("company_memo_grids")
+        .upsert(
+            { ticker: t, period, quarter, grid_json: gridJson },
+            { onConflict: "ticker,period,quarter" }
+        );
+
+    if (error) {
+        console.error("saveManualTableMemo error:", error);
+        throw new Error(`手入力メモの保存に失敗しました: ${error.message}`);
+    }
+}
+
+/**
+ * ticker の手入力メモ行を全種別まとめて取得。
+ * 存在しないキーは null を返す。
+ */
+export async function loadManualTableMemos(
+    ticker: string,
+): Promise<Record<ManualTableType, string[][] | null>> {
+    const t = normalizeTicker(ticker);
+    const result: Record<ManualTableType, string[][] | null> = {
+        pl_cum: null,
+        pl_q: null,
+        segment_cum: null,
+        segment_q: null,
+    };
+    if (!t) return result;
+
+    // 特殊 period キーを IN で一括取得
+    const periods = Object.values(MANUAL_TABLE_KEYS).map((k) => k.period);
+    try {
+        const { data, error } = await supabase
+            .from("company_memo_grids")
+            .select("period, quarter, grid_json")
+            .eq("ticker", t)
+            .in("period", periods)
+            .eq("quarter", "MANUAL");
+
+        if (error) {
+            console.warn("[loadManualTableMemos] error:", error.message);
+            return result;
+        }
+
+        if (data) {
+            for (const row of data) {
+                // period → tableType を逆引き
+                const entry = (Object.entries(MANUAL_TABLE_KEYS) as [ManualTableType, { period: string; quarter: string }][])
+                    .find(([, v]) => v.period === row.period && v.quarter === row.quarter);
+                if (entry) {
+                    result[entry[0]] = row.grid_json as string[][];
+                }
+            }
+        }
+    } catch (err) {
+        console.warn("[loadManualTableMemos] exception:", err);
+    }
+
+    return result;
+}

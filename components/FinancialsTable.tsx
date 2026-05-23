@@ -6,6 +6,7 @@ import type { SegmentRecord } from "@/types/segment";
 import { formatMillions, formatNumber, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
+import type { ManualTableType } from "@/lib/memo-api";
 import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
@@ -94,6 +95,20 @@ interface FinancialsTableProps {
     ) => Promise<{ saved: number; failed: number }>;
     /** Undo (Ctrl+Z) */
     onUndo?: () => void;
+    /** 手入力メモ専用行データ */
+    manualTableMemos?: {
+        pl_cum: string[][];
+        pl_q: string[][];
+        segment_cum: string[][];
+        segment_q: string[][];
+    };
+    /** 手入力メモ専用行 編集コールバック */
+    onManualMemoEdit?: (
+        tableType: ManualTableType,
+        rowIdx: number,
+        colIdx: number,
+        value: string,
+    ) => void;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -579,6 +594,8 @@ export default function FinancialsTable({
     onSegmentOverrideDelete,
     onBulkSaveOverrides,
     onUndo,
+    manualTableMemos,
+    onManualMemoEdit,
 }: FinancialsTableProps) {
     const filtered = useMemo(() => filterLast5Years(data), [data]);
     const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
@@ -814,6 +831,15 @@ export default function FinancialsTable({
     const isDragging = useRef(false);
     const dragDidMove = useRef(false);  // ドラッグ中に別セルへ移動したか
 
+    // 手入力メモ専用行の編集 state
+    const [activeManualCell, setActiveManualCell] = useState<{ tableType: ManualTableType; rowIdx: number; colIdx: number } | null>(null);
+    const [editingManualCell, setEditingManualCell] = useState<{ tableType: ManualTableType; rowIdx: number; colIdx: number } | null>(null);
+    const [manualEditValue, setManualEditValue] = useState("");
+    const isCommittingManualRef = useRef(false);
+    // onManualMemoEdit の最新版を常に保持（逐次ペースト用）
+    const onManualMemoEditRef = useRef(onManualMemoEdit);
+    useEffect(() => { onManualMemoEditRef.current = onManualMemoEdit; }, [onManualMemoEdit]);
+
     // フォーミュラバー高さリサイズ
     const FB_HEIGHT_KEY = "formula-bar-height";
     const FB_DEFAULT_HEIGHT = 52;
@@ -937,6 +963,9 @@ export default function FinancialsTable({
         // セグメントセルの選択を解除
         setActiveSegCell(null);
         setEditingSegCell(null);
+        // 手入力メモ行の選択を解除（排他制御）
+        setActiveManualCell(null);
+        setEditingManualCell(null);
         // DOM focus をグリッドルートへ移動 (Ctrl+V 等のキーイベント受け取りのため)
         focusGrid();
     }, [focusGrid]);
@@ -952,6 +981,9 @@ export default function FinancialsTable({
         setEditingCell(null);
         setActiveSegCell(null);
         setEditingSegCell(null);
+        // 手入力メモ行の選択を解除（排他制御）
+        setActiveManualCell(null);
+        setEditingManualCell(null);
     }, []);
 
     // 範囲選択: mouseenter (ドラッグ中の拡張)
@@ -1125,6 +1157,99 @@ export default function FinancialsTable({
         focusGrid();
     }, [focusGrid]);
 
+    // ============================================================
+    // 手入力メモ専用行 — セル操作関数
+    // ============================================================
+
+    /** 手入力メモセルを選択（MEMO A/B の selectCell 相当） */
+    const selectManualCell = useCallback((coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }) => {
+        setActiveManualCell(coord);
+        setActiveCell(null);
+        setEditingCell(null);
+        setSelectionRange(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
+        focusGrid();
+    }, [focusGrid]);
+
+    /** アクティブな手入力セルの現在値を取得 */
+    const getActiveManualCellValue = useCallback((): string => {
+        if (!activeManualCell) return "";
+        const grid = manualTableMemos?.[activeManualCell.tableType];
+        return grid?.[activeManualCell.rowIdx]?.[activeManualCell.colIdx] ?? "";
+    }, [activeManualCell, manualTableMemos]);
+
+    /** 手入力メモセル編集開始（startEditing 相当） */
+    const startManualEditing = useCallback((
+        coord: { tableType: ManualTableType; rowIdx: number; colIdx: number },
+        initialValue: string,
+    ) => {
+        setEditingManualCell(coord);
+        setActiveManualCell(coord);
+        setManualEditValue(initialValue);
+        // MEMO A/B と同じ明示的 focus（autoFocus との二重保険）
+        setTimeout(() => editInputRef.current?.focus(), 0);
+    }, [editInputRef]);
+
+    /** 手入力メモセル編集確定（commitEdit 相当） */
+    const commitManualEdit = useCallback(() => {
+        if (isCommittingManualRef.current) return;
+        if (!editingManualCell) return;
+        isCommittingManualRef.current = true;
+        onManualMemoEdit?.(
+            editingManualCell.tableType,
+            editingManualCell.rowIdx,
+            editingManualCell.colIdx,
+            manualEditValue,
+        );
+        setEditingManualCell(null);
+        requestAnimationFrame(() => {
+            gridRef.current?.focus();
+            isCommittingManualRef.current = false;
+        });
+    }, [editingManualCell, manualEditValue, onManualMemoEdit]);
+
+    /** 手入力メモセル編集キャンセル（cancelEdit 相当） */
+    const cancelManualEdit = useCallback(() => {
+        setEditingManualCell(null);
+        focusGrid();
+    }, [focusGrid]);
+
+    /** 手入力メモセル Tab 移動 */
+    const moveManualActiveCell = useCallback((delta: number) => {
+        if (!activeManualCell) return;
+        const colCounts: Record<ManualTableType, number> = {
+            pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            segment_cum: 2 + segmentColumns.length * 2,
+            segment_q:   2 + segmentColumns.length * 2,
+        };
+        const colCount = colCounts[activeManualCell.tableType];
+        const totalCells = 2 * colCount;
+        const flat = activeManualCell.rowIdx * colCount + activeManualCell.colIdx + delta;
+        const clampedFlat = Math.max(0, Math.min(totalCells - 1, flat));
+        const newRowIdx = Math.floor(clampedFlat / colCount);
+        const newColIdx = clampedFlat % colCount;
+        setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
+        focusGrid();
+    }, [activeManualCell, segmentColumns.length, focusGrid]);
+
+    /** 手入力メモセル: Arrow Key 方向移動（素直クランプ、折り返しなし） */
+    const moveManualActiveCellDir = useCallback((dRow: number, dCol: number) => {
+        if (!activeManualCell) return;
+        const colCounts: Record<ManualTableType, number> = {
+            pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            segment_cum: 2 + segmentColumns.length * 2,
+            segment_q:   2 + segmentColumns.length * 2,
+        };
+        const colCount = colCounts[activeManualCell.tableType];
+        const newRowIdx = Math.max(0, Math.min(1, activeManualCell.rowIdx + dRow));
+        const newColIdx = Math.max(0, Math.min(colCount - 1, activeManualCell.colIdx + dCol));
+        setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
+        focusGrid();
+    }, [activeManualCell, segmentColumns.length, focusGrid]);
+
     // 隣セルへ移動 (memo + kpi 統合)
     const moveActiveCell = useCallback((dRow: number, dCol: number) => {
         if (!activeCell) return;
@@ -1226,6 +1351,58 @@ export default function FinancialsTable({
         // セグメント編集中はスキップ（input 側で処理）
         if (editingSegCell) return;
 
+        // --- 手入力メモ専用行がアクティブの場合（activeCell / editingCell がない場合のみ） ---
+        if (activeManualCell && !activeCell && !editingCell && !editingManualCell) {
+            // Ctrl+Z: Undo
+            if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
+                e.preventDefault(); onUndo?.(); return;
+            }
+            // Delete/Backspace: クリア
+            if (e.key === "Delete" || e.key === "Backspace") {
+                e.preventDefault();
+                onManualMemoEdit?.(activeManualCell.tableType, activeManualCell.rowIdx, activeManualCell.colIdx, "");
+                return;
+            }
+            // Tab: 次セルへ移動
+            if (e.key === "Tab") {
+                e.preventDefault();
+                moveManualActiveCell(e.shiftKey ? -1 : 1);
+                return;
+            }
+            // Enter / F2: 既存値を維持して編集開始
+            if (e.key === "Enter" || e.key === "F2") {
+                e.preventDefault();
+                startManualEditing(activeManualCell, getActiveManualCellValue());
+                return;
+            }
+            // Escape: 選択解除
+            if (e.key === "Escape") {
+                e.preventDefault();
+                setActiveManualCell(null);
+                focusGrid();
+                return;
+            }
+            // 印字可能文字: 押した1文字で編集開始（既存値を上書き）
+            if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                e.preventDefault();
+                startManualEditing(activeManualCell, e.key);
+                return;
+            }
+            // ArrowUp/Down/Left/Right: 方向移動（MEMO A/Bの moveActiveCell 相当）
+            if (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "ArrowUp" || e.key === "ArrowDown") {
+                e.preventDefault();
+                if (e.key === "ArrowLeft")  moveManualActiveCellDir(0, -1);
+                if (e.key === "ArrowRight") moveManualActiveCellDir(0,  1);
+                if (e.key === "ArrowUp")    moveManualActiveCellDir(-1, 0);
+                if (e.key === "ArrowDown")  moveManualActiveCellDir(1,  0);
+                return;
+            }
+            return;
+        }
+
+        // 手入力メモ編集中はスキップ（input 側で処理）
+        if (editingManualCell) return;
+
         // --- メモ / KPI セルがアクティブの場合 ---
         if (!activeCell) return;
 
@@ -1308,7 +1485,7 @@ export default function FinancialsTable({
             setSelectionRange(null);
             startEditing(activeCell, e.key);
         }
-    }, [activeCell, activeSegCell, editingCell, editingSegCell, moveActiveCell, moveActiveSegCell, startEditing, startSegEditing, getActiveCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, selectionRange, getRangeAsTsv, clearRange]);
+    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo]);
 
     // PL側 編集可能セル ペースト (memo + kpi 統合)
     const handleEditablePaste = useCallback(
@@ -1512,6 +1689,65 @@ export default function FinancialsTable({
             return;
         }
 
+        // 手入力メモ専用行がアクティブの場合 → 手入力メモペースト（activeCell がない場合のみ）
+        if (activeManualCell && !activeCell && !editingManualCell) {
+            e.preventDefault();
+            e.stopPropagation();
+            const manualText = e.clipboardData.getData("text/plain");
+            if (manualText) {
+                const manualParsed = parseTsvClipboard(manualText);
+                if (manualParsed.length > 0) {
+                    const manualColCounts: Record<ManualTableType, number> = {
+                        pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+                        pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
+                        segment_cum: 2 + segmentColumns.length * 2,
+                        segment_q:   2 + segmentColumns.length * 2,
+                    };
+                    const manualColCount = manualColCounts[activeManualCell.tableType];
+                    const maxRows = 2 - activeManualCell.rowIdx;
+                    // 更新セルリストを構築
+                    const pasteItems: {
+                        tableType: ManualTableType;
+                        rowIdx: number;
+                        colIdx: number;
+                        value: string;
+                    }[] = [];
+                    for (let r = 0; r < Math.min(manualParsed.length, maxRows); r++) {
+                        for (let c = 0; c < manualParsed[r].length; c++) {
+                            const col = activeManualCell.colIdx + c;
+                            if (col >= manualColCount) break;
+                            pasteItems.push({
+                                tableType: activeManualCell.tableType,
+                                rowIdx: activeManualCell.rowIdx + r,
+                                colIdx: col,
+                                value: manualParsed[r][c],
+                            });
+                        }
+                    }
+                    // React の re-render ごとに fresh な onManualMemoEdit を使うため
+                    // requestAnimationFrame で逐次適用する
+                    if (pasteItems.length > 0) {
+                        let pasteIdx = 0;
+                        const applyNextPasteItem = () => {
+                            if (pasteIdx >= pasteItems.length) return;
+                            const item = pasteItems[pasteIdx++];
+                            onManualMemoEditRef.current?.(
+                                item.tableType,
+                                item.rowIdx,
+                                item.colIdx,
+                                item.value,
+                            );
+                            if (pasteIdx < pasteItems.length) {
+                                requestAnimationFrame(applyNextPasteItem);
+                            }
+                        };
+                        applyNextPasteItem();
+                    }
+                }
+            }
+            return;
+        }
+
         // メモ / KPI セルがアクティブの場合 → 編集可能セル ペースト処理
         if (!activeCell) return;
         // 対象テーブルの編集可能列を判定
@@ -1519,7 +1755,7 @@ export default function FinancialsTable({
         if (!availableCols.includes(activeCell.colKey)) return;
         const startEditableIdx = availableCols.indexOf(activeCell.colKey);
         handleEditablePaste(activeCell.tableId, startEditableIdx, activeCell.rowIdx, e);
-    }, [activeCell, activeSegCell, handleEditablePaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast]);
+    }, [activeCell, activeManualCell, editingManualCell, activeSegCell, handleEditablePaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast]);
 
     if (loading) {
         return (
@@ -1663,6 +1899,21 @@ export default function FinancialsTable({
                                                 </tr>
                                             );
                                         })}
+                                        {/* 手入力メモ専用行 (PL累計) */}
+                                        <ManualMemoRows
+                                            tableType="pl_cum"
+                                            colCount={CUM_BASE_COL_COUNT + KPI_SLOTS.length}
+                                            gridData={manualTableMemos?.pl_cum ?? [["MEMO 1"], ["MEMO 2"]]}
+                                            activeManualCell={activeManualCell}
+                                            editingManualCell={editingManualCell}
+                                            editValue={manualEditValue}
+                                            onActivate={selectManualCell}
+                                            onStartEdit={startManualEditing}
+                                            onEditChange={setManualEditValue}
+                                            onCommit={commitManualEdit}
+                                            onCancel={cancelManualEdit}
+                                            editInputRef={editInputRef}
+                                        />
                                     </tbody>
                                 </table>
                             </div>
@@ -1716,6 +1967,21 @@ export default function FinancialsTable({
                                                 })}
                                             </tr>
                                         ))}
+                                        {/* 手入力メモ専用行 (PL Q単体) */}
+                                        <ManualMemoRows
+                                            tableType="pl_q"
+                                            colCount={Q_BASE_COL_COUNT + KPI_SLOTS.length}
+                                            gridData={manualTableMemos?.pl_q ?? [["MEMO 1"], ["MEMO 2"]]}
+                                            activeManualCell={activeManualCell}
+                                            editingManualCell={editingManualCell}
+                                            editValue={manualEditValue}
+                                            onActivate={selectManualCell}
+                                            onStartEdit={startManualEditing}
+                                            onEditChange={setManualEditValue}
+                                            onCommit={commitManualEdit}
+                                            onCancel={cancelManualEdit}
+                                            editInputRef={editInputRef}
+                                        />
                                     </tbody>
                                 </table>
                             </div>
@@ -1843,6 +2109,22 @@ export default function FinancialsTable({
                                                         })}
                                                     </tr>
                                                 ))}
+                                                {/* 手入力メモ専用行 (累計セグメント) */}
+                                                <ManualMemoRows
+                                                    tableType="segment_cum"
+                                                    colCount={2 + segmentColumns.length * 2}
+                                                    segmentGroupEndIndices={segmentColumns.map((_, i) => 2 + i * 2 + 1)}
+                                                    gridData={manualTableMemos?.segment_cum ?? [["MEMO 1"], ["MEMO 2"]]}
+                                                    activeManualCell={activeManualCell}
+                                                    editingManualCell={editingManualCell}
+                                                    editValue={manualEditValue}
+                                                    onActivate={selectManualCell}
+                                                    onStartEdit={startManualEditing}
+                                                    onEditChange={setManualEditValue}
+                                                    onCommit={commitManualEdit}
+                                                    onCancel={cancelManualEdit}
+                                                    editInputRef={editInputRef}
+                                                />
                                             </tbody>
                                         </table>
                                     </div>
@@ -1880,6 +2162,22 @@ export default function FinancialsTable({
                                                         })}
                                                     </tr>
                                                 ))}
+                                                {/* 手入力メモ専用行 (Q単体セグメント) */}
+                                                <ManualMemoRows
+                                                    tableType="segment_q"
+                                                    colCount={2 + segmentColumns.length * 2}
+                                                    segmentGroupEndIndices={segmentColumns.map((_, i) => 2 + i * 2 + 1)}
+                                                    gridData={manualTableMemos?.segment_q ?? [["MEMO 1"], ["MEMO 2"]]}
+                                                    activeManualCell={activeManualCell}
+                                                    editingManualCell={editingManualCell}
+                                                    editValue={manualEditValue}
+                                                    onActivate={selectManualCell}
+                                                    onStartEdit={startManualEditing}
+                                                    onEditChange={setManualEditValue}
+                                                    onCommit={commitManualEdit}
+                                                    onCancel={cancelManualEdit}
+                                                    editInputRef={editInputRef}
+                                                />
                                             </tbody>
                                         </table>
                                     </div>
@@ -1918,7 +2216,7 @@ function MemoCellExcel({
     onMouseEnter,
 }: {
     value: string;
-    width: number;
+    width?: number;
     isActive: boolean;
     isInRange?: boolean;
     isEditing: boolean;
@@ -2217,5 +2515,78 @@ function SegOverrideCell({
                 )}
             </div>
         </td>
+    );
+}
+
+// ============================================================
+// ManualMemoRows — 手入力メモ専用行 (2行)
+// MEMO A/B と同じ MemoCellExcel コンポーネントを使用
+// ============================================================
+function ManualMemoRows({
+    tableType,
+    colCount,
+    segmentGroupEndIndices,
+    gridData,
+    activeManualCell,
+    editingManualCell,
+    editValue,
+    onActivate,
+    onStartEdit,
+    onEditChange,
+    onCommit,
+    onCancel,
+    editInputRef,
+}: {
+    tableType: ManualTableType;
+    colCount: number;
+    segmentGroupEndIndices?: number[];
+    gridData: string[][];
+    activeManualCell: { tableType: ManualTableType; rowIdx: number; colIdx: number } | null;
+    editingManualCell: { tableType: ManualTableType; rowIdx: number; colIdx: number } | null;
+    editValue: string;
+    onActivate: (coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }) => void;
+    onStartEdit: (coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }, initVal: string) => void;
+    onEditChange: (val: string) => void;
+    onCommit: () => void;
+    onCancel: () => void;
+    /** MEMO A/B と同じ editInputRef を共有して明示的フォーカスを実現 */
+    editInputRef?: React.RefObject<HTMLElement | null>;
+}) {
+    return (
+        <>
+            {[0, 1].map((rowIdx) => (
+                <tr key={`manual-${tableType}-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
+                    {Array.from({ length: colCount }, (_, colIdx) => {
+                        const isActive = activeManualCell?.tableType === tableType
+                            && activeManualCell?.rowIdx === rowIdx
+                            && activeManualCell?.colIdx === colIdx;
+                        const isEditing = editingManualCell?.tableType === tableType
+                            && editingManualCell?.rowIdx === rowIdx
+                            && editingManualCell?.colIdx === colIdx;
+                        const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
+                        const isGroupEnd = segmentGroupEndIndices?.includes(colIdx) ?? false;
+                        const extraClass = `manual-memo-cell${isGroupEnd ? " segment-group-end" : ""}`;
+
+                        return (
+                            // MemoCellExcel を流用: MEMO A/B と完全同一の操作感
+                            <MemoCellExcel
+                                key={colIdx}
+                                value={cellValue}
+                                isActive={isActive}
+                                isEditing={isEditing}
+                                editValue={editValue}
+                                onSelect={() => onActivate({ tableType, rowIdx, colIdx })}
+                                onStartEdit={(val) => onStartEdit({ tableType, rowIdx, colIdx }, val)}
+                                onEditChange={onEditChange}
+                                onCommit={onCommit}
+                                onCancel={onCancel}
+                                inputRef={isEditing ? editInputRef : undefined}
+                                className={extraClass}
+                            />
+                        );
+                    })}
+                </tr>
+            ))}
+        </>
     );
 }
