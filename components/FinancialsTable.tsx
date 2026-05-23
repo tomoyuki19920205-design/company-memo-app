@@ -1602,7 +1602,14 @@ export default function FinancialsTable({
                                             const memoA = extractMemoValue(memoGrid, 0);
                                             const memoB = extractMemoValue(memoGrid, 1);
                                             return (
-                                                <tr key={`cum-${row.period}-${row.quarter}-${idx}`} className={`pl-row ${isSelected ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`} onClick={() => onRowClick?.(row.period, row.quarter)}>
+                                                <tr key={`cum-${row.period}-${row.quarter}-${idx}`} className={[
+                                                    "pl-row",
+                                                    isSelected ? "pl-row-selected" : "",
+                                                    row.quarter === "FY" ? "pl-row-fy" : "",
+                                                    "year-group-row",
+                                                    cumRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
+                                                    cumRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
+                                                ].filter(Boolean).join(" ")} onClick={() => onRowClick?.(row.period, row.quarter)}>
                                                     <td style={{ width: cumResize.widths[0], minWidth: cumResize.widths[0] }} className={isCellInRange("cum", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 0)}>{displayValue(row.period)}</td>
                                                     <td style={{ width: cumResize.widths[1], minWidth: cumResize.widths[1] }} className={isCellInRange("cum", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 1)}>{displayValue(row.quarter)}</td>
                                                     <td style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className={`num-col ${isCellInRange("cum", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 2)}>{formatMillions(row.sales)}</td>
@@ -1671,7 +1678,14 @@ export default function FinancialsTable({
                                     />
                                     <tbody>
                                         {qRows.map((row, idx) => (
-                                            <tr key={`q-${row.period}-${row.quarter}-${idx}`} className={`pl-row ${selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`} onClick={() => onRowClick?.(row.period, row.quarter)}>
+                                            <tr key={`q-${row.period}-${row.quarter}-${idx}`} className={[
+                                                "pl-row",
+                                                selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : "",
+                                                row.quarter === "FY" ? "pl-row-fy" : "",
+                                                "year-group-row",
+                                                qRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
+                                                qRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
+                                            ].filter(Boolean).join(" ")} onClick={() => onRowClick?.(row.period, row.quarter)}>
                                                 <td style={{ width: qResize.widths[0], minWidth: qResize.widths[0] }} className={isCellInRange("q", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 0)}>{displayValue(row.period)}</td>
                                                 <td style={{ width: qResize.widths[1], minWidth: qResize.widths[1] }} className={isCellInRange("q", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 1)}>{displayValue(row.quarter)}</td>
                                                 <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
@@ -1781,7 +1795,14 @@ export default function FinancialsTable({
                                             </tr></thead>
                                             <tbody>
                                                 {cumRows.map((row, idx) => (
-                                                    <tr key={`seg-cum-${row.period}-${row.quarter}-${idx}`} className={`pl-row ${selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`}>
+                                                    <tr key={`seg-cum-${row.period}-${row.quarter}-${idx}`} className={[
+                                                        "pl-row",
+                                                        selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : "",
+                                                        row.quarter === "FY" ? "pl-row-fy" : "",
+                                                        "year-group-row",
+                                                        cumRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
+                                                        cumRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
+                                                    ].filter(Boolean).join(" ")}>
                                                         <td style={{ width: 100, minWidth: 100 }}>{displayValue(row.period)}</td>
                                                         <td style={{ width: 45, minWidth: 45 }}>{displayValue(row.quarter)}</td>
                                                         {segmentColumns.map((sc, scIdx) => {
@@ -1834,7 +1855,14 @@ export default function FinancialsTable({
                                             </tr></thead>
                                             <tbody>
                                                 {qRows.map((row, idx) => (
-                                                    <tr key={`seg-q-${row.period}-${row.quarter}-${idx}`} className={`pl-row ${selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : ""} ${row.quarter === "FY" ? "pl-row-fy" : ""}`}>
+                                                    <tr key={`seg-q-${row.period}-${row.quarter}-${idx}`} className={[
+                                                        "pl-row",
+                                                        selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : "",
+                                                        row.quarter === "FY" ? "pl-row-fy" : "",
+                                                        "year-group-row",
+                                                        qRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
+                                                        qRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
+                                                    ].filter(Boolean).join(" ")}>
                                                         <td style={{ width: 100, minWidth: 100 }}>{displayValue(row.period)}</td>
                                                         <td style={{ width: 45, minWidth: 45 }}>{displayValue(row.quarter)}</td>
                                                         {segmentColumns.map((sc, scIdx) => {
