@@ -282,14 +282,15 @@ export async function loadAllGridMemos(
 // ============================================================
 
 /** テーブル種別 */
-export type ManualTableType = "pl_cum" | "pl_q" | "segment_cum" | "segment_q";
+export type ManualTableType = "pl_cum" | "pl_q" | "segment_cum" | "segment_q" | "segment_manual";
 
 /** tableType → company_memo_grids の保存キー */
 const MANUAL_TABLE_KEYS: Record<ManualTableType, { period: string; quarter: string }> = {
-    pl_cum:       { period: "__manual_pl_cum__",       quarter: "MANUAL" },
-    pl_q:         { period: "__manual_pl_q__",         quarter: "MANUAL" },
-    segment_cum:  { period: "__manual_segment_cum__",  quarter: "MANUAL" },
-    segment_q:    { period: "__manual_segment_q__",    quarter: "MANUAL" },
+    pl_cum:          { period: "__manual_pl_cum__",          quarter: "MANUAL" },
+    pl_q:            { period: "__manual_pl_q__",            quarter: "MANUAL" },
+    segment_cum:     { period: "__manual_segment_cum__",     quarter: "MANUAL" },
+    segment_q:       { period: "__manual_segment_q__",       quarter: "MANUAL" },
+    segment_manual:  { period: "__manual_segment_manual__",  quarter: "MANUAL" },
 };
 
 /**
@@ -331,6 +332,7 @@ export async function loadManualTableMemos(
         pl_q: null,
         segment_cum: null,
         segment_q: null,
+        segment_manual: null,
     };
     if (!t) return result;
 

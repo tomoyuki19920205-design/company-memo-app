@@ -77,15 +77,18 @@ type ManualTableMemos = {
     pl_q: string[][];
     segment_cum: string[][];
     segment_q: string[][];
+    segment_manual: string[][];
 };
 
-/** 手入力メモ初期値: 4行（全空） */
+/** 手入力メモ初期値 */
 const MANUAL_ROW_COUNT = 4;
+const SEGMENT_MANUAL_ROW_COUNT = 12;
 const EMPTY_MANUAL_MEMOS: ManualTableMemos = {
-    pl_cum:      Array.from({ length: MANUAL_ROW_COUNT }, () => []),
-    pl_q:        Array.from({ length: MANUAL_ROW_COUNT }, () => []),
-    segment_cum: Array.from({ length: MANUAL_ROW_COUNT }, () => []),
-    segment_q:   Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    pl_cum:         Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    pl_q:           Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    segment_cum:    Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    segment_q:      Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    segment_manual: Array.from({ length: SEGMENT_MANUAL_ROW_COUNT }, () => []),
 };
 
 function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
@@ -97,22 +100,22 @@ function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
 }
 
 /** loadManualTableMemos の結果を ManualTableMemos 型に変換
- *  既存 2行データを 4行へ自動拡張（後方互換）
+ *  既存データを自動拡張（後方互換）
  */
 function buildManualTableMemos(
     raw: Record<ManualTableType, string[][] | null>
 ): ManualTableMemos {
-    const ROWS = MANUAL_ROW_COUNT;
-    const pad = (grid: string[][] | null): string[][] => {
+    const pad = (grid: string[][] | null, rows: number): string[][] => {
         const base = (grid ?? []).map((r) => [...r]);
-        while (base.length < ROWS) base.push([]);
+        while (base.length < rows) base.push([]);
         return base;
     };
     return {
-        pl_cum:      pad(raw.pl_cum),
-        pl_q:        pad(raw.pl_q),
-        segment_cum: pad(raw.segment_cum),
-        segment_q:   pad(raw.segment_q),
+        pl_cum:         pad(raw.pl_cum,         MANUAL_ROW_COUNT),
+        pl_q:           pad(raw.pl_q,           MANUAL_ROW_COUNT),
+        segment_cum:    pad(raw.segment_cum,    MANUAL_ROW_COUNT),
+        segment_q:      pad(raw.segment_q,      MANUAL_ROW_COUNT),
+        segment_manual: pad(raw.segment_manual, SEGMENT_MANUAL_ROW_COUNT),
     };
 }
 

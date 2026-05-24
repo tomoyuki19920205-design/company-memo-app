@@ -101,6 +101,7 @@ interface FinancialsTableProps {
         pl_q: string[][];
         segment_cum: string[][];
         segment_q: string[][];
+        segment_manual: string[][];
     };
     /** 手入力メモ専用行 編集コールバック */
     onManualMemoEdit?: (
@@ -143,8 +144,15 @@ const Q_BASE_COLUMNS: ColumnDef[] = [
 // ============================================================
 // フォーマッタ
 // ============================================================
-/** 手入力メモ専用行の行数（全テーブル共通） */
+/** 手入力メモ専用行の行数（PL・セグメント累計/Q共通） */
 const MANUAL_MEMO_ROW_COUNT = 4 as const;
+/** 手入力セグメントメモ専用行の行数 */
+const SEGMENT_MANUAL_MEMO_ROW_COUNT = 12 as const;
+
+/** tableType ごとの行数を返す */
+function getManualRowCount(tableType: ManualTableType): number {
+    return tableType === "segment_manual" ? SEGMENT_MANUAL_MEMO_ROW_COUNT : MANUAL_MEMO_ROW_COUNT;
+}
 
 function fmtMargin(val: number | null): string {
     if (val === null || val === undefined) return "–";
@@ -655,6 +663,8 @@ export default function FinancialsTable({
         () => buildSegmentInfo(filteredForSegBuild, { disableSemanticMerge: segSourceTab === "all" }),
         [filteredForSegBuild, segSourceTab]
     );
+    // セグメント手入力メモ列数: セグメントあり → 同じ構造、なし → 最低10列
+    const segmentManualColCount = Math.max(10, 2 + segmentColumns.length * 2);
     // セグメント列ヘッダー（累計PL・Q単体PL共通）
     const segmentHeaders = useMemo(() => {
         const headers: { label: string; fullName?: string; className?: string }[] = [];
@@ -1222,13 +1232,14 @@ export default function FinancialsTable({
     const moveManualActiveCell = useCallback((delta: number) => {
         if (!activeManualCell) return;
         const colCounts: Record<ManualTableType, number> = {
-            pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-            pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
-            segment_cum: 2 + segmentColumns.length * 2,
-            segment_q:   2 + segmentColumns.length * 2,
+            pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            segment_cum:    2 + segmentColumns.length * 2,
+            segment_q:      2 + segmentColumns.length * 2,
+            segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const totalCells = MANUAL_MEMO_ROW_COUNT * colCount;
+        const totalCells = getManualRowCount(activeManualCell.tableType) * colCount;
         const flat = activeManualCell.rowIdx * colCount + activeManualCell.colIdx + delta;
         const clampedFlat = Math.max(0, Math.min(totalCells - 1, flat));
         const newRowIdx = Math.floor(clampedFlat / colCount);
@@ -1241,13 +1252,15 @@ export default function FinancialsTable({
     const moveManualActiveCellDir = useCallback((dRow: number, dCol: number) => {
         if (!activeManualCell) return;
         const colCounts: Record<ManualTableType, number> = {
-            pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-            pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
-            segment_cum: 2 + segmentColumns.length * 2,
-            segment_q:   2 + segmentColumns.length * 2,
+            pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            segment_cum:    2 + segmentColumns.length * 2,
+            segment_q:      2 + segmentColumns.length * 2,
+            segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const newRowIdx = Math.max(0, Math.min(MANUAL_MEMO_ROW_COUNT - 1, activeManualCell.rowIdx + dRow));
+        const maxRow = getManualRowCount(activeManualCell.tableType) - 1;
+        const newRowIdx = Math.max(0, Math.min(maxRow, activeManualCell.rowIdx + dRow));
         const newColIdx = Math.max(0, Math.min(colCount - 1, activeManualCell.colIdx + dCol));
         setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
         focusGrid();
@@ -1383,19 +1396,6 @@ export default function FinancialsTable({
                 e.preventDefault();
                 setActiveManualCell(null);
                 focusGrid();
-                return;
-            }
-            // 印字可能文字: 押した1文字で編集開始
-            // IME 対応: 初期値は空文字にして onChange に委ねる（「sあみしい」混入防止）
-            if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-                e.preventDefault();
-                startManualEditing(activeManualCell, "");  // ← e.key ではなく "" に変更
-                return;
-            }
-            // IME 変換開始キー (Chrome/Edge Windows: e.key="Process", keyCode=229)
-            // → 編集開始して input にフォーカスを移し、IME の compositionstart を input 上で受け取る
-            if (e.key === "Process" || e.keyCode === 229) {
-                startManualEditing(activeManualCell, "");
                 return;
             }
             // ArrowUp/Down/Left/Right: 方向移動（MEMO A/Bの moveActiveCell 相当）
@@ -1708,13 +1708,14 @@ export default function FinancialsTable({
                 const manualParsed = parseTsvClipboard(manualText);
                 if (manualParsed.length > 0) {
                     const manualColCounts: Record<ManualTableType, number> = {
-                        pl_cum:      CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-                        pl_q:        Q_BASE_COL_COUNT + KPI_SLOTS.length,
-                        segment_cum: 2 + segmentColumns.length * 2,
-                        segment_q:   2 + segmentColumns.length * 2,
+                        pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+                        pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+                        segment_cum:    2 + segmentColumns.length * 2,
+                        segment_q:      2 + segmentColumns.length * 2,
+                        segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
                     };
                     const manualColCount = manualColCounts[activeManualCell.tableType];
-                    const maxRows = MANUAL_MEMO_ROW_COUNT - activeManualCell.rowIdx;
+                    const maxRows = getManualRowCount(activeManualCell.tableType) - activeManualCell.rowIdx;
                     // 更新セルリストを構築
                     const pasteItems: {
                         tableType: ManualTableType;
@@ -2197,6 +2198,60 @@ export default function FinancialsTable({
                     )}
                 </>
             )}
+            {/* ─────────────────────────────────────────────────
+                セグメント手入力メモ — 常時表示（単一セグメント企業でも使用可）
+                ───────────────────────────────────────────────── */}
+            <div className="data-section seg-section" style={{ marginTop: 12 }}>
+                <div className="segment-header-row">
+                    <h3 className="section-title" style={{ fontSize: 14, margin: 0 }}>
+                        {"📝"} セグメント手入力メモ
+                        <span style={{ fontSize: 11, fontWeight: 400, color: "var(--text-muted)", marginLeft: 8 }}>
+                            — {SEGMENT_MANUAL_MEMO_ROW_COUNT}行 × {segmentManualColCount}列
+                        </span>
+                    </h3>
+                </div>
+                <div className="pl-scroll-area" style={{ maxHeight: 420, overflowY: "auto" }}>
+                    <div className="pl-dual-tables">
+                        <div className="pl-table-block">
+                            <table className="pl-table" style={{ minWidth: segmentManualColCount * 80 }}>
+                                <thead>
+                                    <tr>
+                                        {Array.from({ length: segmentManualColCount }, (_, i) => (
+                                            <th key={i} style={{
+                                                width: i === 0 ? 100 : i === 1 ? 45 : 80,
+                                                minWidth: i === 0 ? 100 : i === 1 ? 45 : 60,
+                                            }}>
+                                                <div className="th-content">
+                                                    <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
+                                                        {i === 0 ? "PERIOD" : i === 1 ? "Q" : `${i - 1}`}
+                                                    </span>
+                                                </div>
+                                            </th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ManualMemoRows
+                                        tableType="segment_manual"
+                                        colCount={segmentManualColCount}
+                                        rowCount={SEGMENT_MANUAL_MEMO_ROW_COUNT}
+                                        gridData={manualTableMemos?.segment_manual ?? Array.from({ length: SEGMENT_MANUAL_MEMO_ROW_COUNT }, () => [])}
+                                        activeManualCell={activeManualCell}
+                                        editingManualCell={editingManualCell}
+                                        editValue={manualEditValue}
+                                        onActivate={selectManualCell}
+                                        onStartEdit={startManualEditing}
+                                        onEditChange={setManualEditValue}
+                                        onCommit={commitManualEdit}
+                                        onCancel={cancelManualEdit}
+                                        editInputRef={editInputRef}
+                                    />
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {/* トースト通知 */}
             {toastMessage && (
                 <div className="seg-paste-toast">{toastMessage}</div>
@@ -2535,6 +2590,7 @@ function SegOverrideCell({
 function ManualMemoRows({
     tableType,
     colCount,
+    rowCount = MANUAL_MEMO_ROW_COUNT,
     segmentGroupEndIndices,
     gridData,
     activeManualCell,
@@ -2549,6 +2605,7 @@ function ManualMemoRows({
 }: {
     tableType: ManualTableType;
     colCount: number;
+    rowCount?: number;
     segmentGroupEndIndices?: number[];
     gridData: string[][];
     activeManualCell: { tableType: ManualTableType; rowIdx: number; colIdx: number } | null;
@@ -2564,7 +2621,7 @@ function ManualMemoRows({
 }) {
     return (
         <>
-            {Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) => rowIdx).map((rowIdx) => (
+            {Array.from({ length: rowCount }, (_, rowIdx) => rowIdx).map((rowIdx) => (
                 <tr key={`manual-${tableType}-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
                     {Array.from({ length: colCount }, (_, colIdx) => {
                         const isActive = activeManualCell?.tableType === tableType
@@ -2587,7 +2644,7 @@ function ManualMemoRows({
                                 isActive={isActive}
                                 isEditing={isEditing}
                                 editValue={editValue}
-                                onSelect={() => onActivate({ tableType, rowIdx, colIdx })}
+                                onSelect={() => onStartEdit({ tableType, rowIdx, colIdx }, cellValue)}
                                 onStartEdit={(val) => onStartEdit({ tableType, rowIdx, colIdx }, val)}
                                 onEditChange={onEditChange}
                                 onCommit={onCommit}
