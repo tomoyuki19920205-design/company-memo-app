@@ -868,6 +868,11 @@ export default function FinancialsTable({
     // manualTableMemos の最新版を常に保持（バッチペースト用）
     const manualTableMemosRef = useRef(manualTableMemos);
     useEffect(() => { manualTableMemosRef.current = manualTableMemos; }, [manualTableMemos]);
+    // activeManualCell / segManualSel の最新版を copy イベント内から参照するための ref
+    const activeManualCellRef = useRef(activeManualCell);
+    useEffect(() => { activeManualCellRef.current = activeManualCell; }, [activeManualCell]);
+    const segManualSelRef = useRef(segManualSel);
+    useEffect(() => { segManualSelRef.current = segManualSel; }, [segManualSel]);
 
     // フォーミュラバー高さリサイズ
     const FB_HEIGHT_KEY = "formula-bar-height";
@@ -1743,6 +1748,55 @@ export default function FinancialsTable({
     }, []);
 
     /**
+     * segment_manual 範囲コピー — copy イベント経由で clipboardData.setData を使用。
+     * navigator.clipboard.writeText では Excel の「貼り付け先に合わせる」形式にならないため、
+     * onCopy ハンドラで直接 clipboardData に TSV を書き込む。
+     * 空白セルも "" として TSV に含め、Excel 貼り付け時に行列位置が維持される。
+     */
+    const handleSegmentManualCopy = useCallback((e: React.ClipboardEvent) => {
+        // segment_manual がアクティブでない場合は通常コピーを許可
+        if (activeManualCellRef.current?.tableType !== "segment_manual") return;
+
+        const sel = segManualSelRef.current;
+        const grid = manualTableMemosRef.current?.segment_manual ?? [];
+
+        let text: string;
+        if (sel) {
+            // 範囲選択コピー
+            const r1 = Math.min(sel.startRow, sel.endRow);
+            const r2 = Math.max(sel.startRow, sel.endRow);
+            const c1 = Math.min(sel.startCol, sel.endCol);
+            const c2 = Math.max(sel.startCol, sel.endCol);
+            text = Array.from({ length: r2 - r1 + 1 }, (_, ri) => {
+                const r = r1 + ri;
+                return Array.from({ length: c2 - c1 + 1 }, (_, ci) => {
+                    const c = c1 + ci;
+                    // 空白セルも "" のまま（filter/trim 禁止）
+                    const val = grid[r]?.[c] ?? "";
+                    // タブ・改行・ダブルクォートを含むセルはクォート
+                    if (val.includes("\t") || val.includes("\n") || val.includes("\r") || val.includes('"')) {
+                        return '"' + val.replace(/"/g, '""') + '"';
+                    }
+                    return val;
+                }).join("\t");
+            }).join("\n");
+        } else {
+            // 単一セルコピー
+            const cell = activeManualCellRef.current;
+            if (!cell) return;
+            const val = grid[cell.rowIdx]?.[cell.colIdx] ?? "";
+            text = val.includes("\t") || val.includes("\n") || val.includes("\r") || val.includes('"')
+                ? '"' + val.replace(/"/g, '""') + '"'
+                : val;
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.clipboardData.setData("text/plain", text);
+        e.clipboardData.setData("text", text);
+    }, []);
+
+    /**
      * segment_manual 専用ペースト — グローバル activeManualCell に依存しない。
      * MemoCellExcel の onPaste から coord 付きで直接呼ばれる。
      * PL 側の activeManualCell が残っていても影響しない。
@@ -2364,6 +2418,7 @@ export default function FinancialsTable({
                                     segManualSel={segManualSel}
                                     onCellMouseDown={handleSegManualCellMouseDown}
                                     onCellMouseEnter={handleSegManualCellMouseEnter}
+                                    onCopy={handleSegmentManualCopy}
                                 />
                             ) : (
                                 <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
@@ -2859,6 +2914,7 @@ function SegmentManualMemoTable({
     segManualSel,
     onCellMouseDown,
     onCellMouseEnter,
+    onCopy,
 }: {
     rows: { period: string; quarter: string }[];
     gridData: string[][];
@@ -2878,6 +2934,8 @@ function SegmentManualMemoTable({
     onCellMouseDown?: (rowIdx: number, colIdx: number) => void;
     /** ドラッグ中の範囲拡張コールバック */
     onCellMouseEnter?: (rowIdx: number, colIdx: number) => void;
+    /** copy イベントハンドラ（範囲選択 → TSV → Excel 貼り付け） */
+    onCopy?: (e: React.ClipboardEvent) => void;
 }) {
     const COL = SEGMENT_MANUAL_COL_COUNT; // 12
 
@@ -2891,7 +2949,7 @@ function SegmentManualMemoTable({
         c: Math.max(segManualSel.startCol, segManualSel.endCol),
     } : null;
     return (
-        <div className="pl-scroll-area" style={{ maxHeight: 480 }}>
+        <div className="pl-scroll-area" style={{ maxHeight: 480 }} onCopy={onCopy}>
             <div className="pl-dual-tables">
                 <div className="pl-table-block">
                     <div className="pl-table-label">セグメント手入力メモ — {rows.length}行 × {COL}列</div>
