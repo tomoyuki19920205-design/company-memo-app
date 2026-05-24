@@ -412,6 +412,8 @@ export default function ViewerPage() {
     const handleManualTableMemoGridUpdate = useCallback(
         async (tableType: ManualTableType, newGrid: string[][]) => {
             if (!activeTicker) return;
+            console.log("[handleManualTableMemoGridUpdate] tableType", tableType);
+            console.log("[handleManualTableMemoGridUpdate] incoming grid", JSON.stringify(newGrid));
             const prevGrid = manualTableMemos[tableType] ?? [];
             const prevCopy = prevGrid.map((r) => [...r]);
             setManualTableMemos((prev) => ({ ...prev, [tableType]: newGrid }));

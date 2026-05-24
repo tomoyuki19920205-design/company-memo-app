@@ -306,6 +306,8 @@ export async function saveManualTableMemo(
     if (!t) throw new Error("ticker が空です");
     const { period, quarter } = MANUAL_TABLE_KEYS[tableType];
 
+    console.log("[saveManualTableMemo] tableType", tableType, "period", period, "quarter", quarter);
+    console.log("[saveManualTableMemo] persist grid", JSON.stringify(gridJson));
     const { error } = await supabase
         .from("company_memo_grids")
         .upsert(

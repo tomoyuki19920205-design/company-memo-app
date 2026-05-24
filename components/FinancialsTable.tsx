@@ -1755,11 +1755,13 @@ export default function FinancialsTable({
         e.stopPropagation();  // handleTablePaste への伝播を防ぐ
 
         const rawText = e.clipboardData?.getData("text/plain") ?? "";
+        console.log("[SEG-MANUAL-PASTE] rawText", JSON.stringify(rawText));
         // クリップボード全体が空なら何もしない（末尾空白のみの場合は空白として貼り付けたい）
         if (rawText === "") return;
 
         // TSV parse: parseTsvClipboard を使用（末尾空行だけ除去、途中空セルは "" として正確に扱う）
         const parsedRows = parseTsvClipboard(rawText);
+        console.log("[SEG-MANUAL-PASTE] parsedRows", parsedRows);
         if (parsedRows.length === 0) return;
 
         const rowCount = cumRows.length;
@@ -1784,6 +1786,8 @@ export default function FinancialsTable({
                 newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
             }
         }
+
+        console.log("[SEG-MANUAL-PASTE] newGrid before save", JSON.stringify(newGrid));
 
         // onBlur → commitManualEdit が paste 中に発火するのを抑制
         isCommittingManualRef.current = true;
@@ -1902,8 +1906,10 @@ export default function FinancialsTable({
             e.preventDefault();
             e.stopPropagation();
             const rawText = e.clipboardData?.getData("text/plain") ?? "";
+            console.log("[SEG-MANUAL-TABLE-PASTE] rawText", JSON.stringify(rawText));
             if (rawText === "") return;
             const parsedRows = parseTsvClipboard(rawText);
+            console.log("[SEG-MANUAL-TABLE-PASTE] parsedRows", parsedRows);
             if (parsedRows.length === 0) return;
 
             const rowCount = cumRows.length;
@@ -1924,9 +1930,12 @@ export default function FinancialsTable({
                 for (let cOff = 0; cOff < parsedRows[rOff].length; cOff++) {
                     const c = startCol + cOff;
                     if (c >= colCount) break;
+                    // 空白セル "" も必ず代入 → old value fallback 禁止
                     newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
                 }
             }
+
+            console.log("[SEG-MANUAL-TABLE-PASTE] newGrid before save", JSON.stringify(newGrid));
 
             // onBlur → commitManualEdit が paste 中に発火するのを抑制
             isCommittingManualRef.current = true;
@@ -1944,64 +1953,94 @@ export default function FinancialsTable({
         }
 
         // 手入力メモ専用行がアクティブの場合 → 手入力メモペースト（activeCell がない場合のみ）
+        // segment_manual は上の segManualTarget ブロックで処理済みのため、ここには到達しない
         if (activeManualCell && !activeCell && !editingManualCell) {
             e.preventDefault();
             e.stopPropagation();
             const manualText = e.clipboardData.getData("text/plain");
-            if (manualText) {
-                const manualParsed = parseTsvClipboard(manualText);
-                if (manualParsed.length > 0) {
-                    const manualColCounts: Record<ManualTableType, number> = {
-                        pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-                        pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
-                        segment_cum:    2 + segmentColumns.length * 2,
-                        segment_q:      2 + segmentColumns.length * 2,
-                        segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
-                    };
-                    const manualColCount = manualColCounts[activeManualCell.tableType];
-                    // segment_manual: 行数は cumRows に連動
-                    const segManualRowCount = activeManualCell.tableType === "segment_manual"
-                        ? cumRows.length
-                        : getManualRowCount(activeManualCell.tableType);
-                    const maxRows = segManualRowCount - activeManualCell.rowIdx;
-                    // 更新セルリストを構築
-                    const pasteItems: {
-                        tableType: ManualTableType;
-                        rowIdx: number;
-                        colIdx: number;
-                        value: string;
-                    }[] = [];
-                    for (let r = 0; r < Math.min(manualParsed.length, maxRows); r++) {
-                        for (let c = 0; c < manualParsed[r].length; c++) {
-                            const col = activeManualCell.colIdx + c;
-                            if (col >= manualColCount) break;
-                            pasteItems.push({
-                                tableType: activeManualCell.tableType,
-                                rowIdx: activeManualCell.rowIdx + r,
-                                colIdx: col,
-                                value: manualParsed[r][c],
-                            });
+            if (!manualText) return;
+
+            // segment_manual はここで再度処理（segManualTarget が null だった場合の安全弁）
+            // ── 一括保存でレース条件を排除 ──
+            if (activeManualCell.tableType === "segment_manual") {
+                const parsedRows = parseTsvClipboard(manualText);
+                console.log("[SEG-MANUAL-FALLBACK] rawText", JSON.stringify(manualText));
+                console.log("[SEG-MANUAL-FALLBACK] parsedRows", parsedRows);
+                if (parsedRows.length === 0) return;
+
+                const rowCount = cumRows.length;
+                const colCount = SEGMENT_MANUAL_COL_COUNT;
+                const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
+                const newGrid: string[][] = Array.from({ length: rowCount }, (_, r) =>
+                    Array.from({ length: colCount }, (_, c) => currentGrid[r]?.[c] ?? "")
+                );
+                for (let rOff = 0; rOff < parsedRows.length; rOff++) {
+                    const r = activeManualCell.rowIdx + rOff;
+                    if (r >= rowCount) break;
+                    for (let cOff = 0; cOff < parsedRows[rOff].length; cOff++) {
+                        const c = activeManualCell.colIdx + cOff;
+                        if (c >= colCount) break;
+                        newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
+                    }
+                }
+                console.log("[SEG-MANUAL-FALLBACK] newGrid before save", JSON.stringify(newGrid));
+                isCommittingManualRef.current = true;
+                setEditingManualCell(null);
+                setManualEditValue("");
+                onManualMemoGridUpdateRef.current?.("segment_manual", newGrid);
+                requestAnimationFrame(() => {
+                    isCommittingManualRef.current = false;
+                    gridRef.current?.focus();
+                });
+                return;
+            }
+
+            // pl_cum / pl_q / segment_cum / segment_q: 逐次 rAF（ステートが小さいため許容）
+            const manualParsed = parseTsvClipboard(manualText);
+            if (manualParsed.length > 0) {
+                const manualColCounts: Record<ManualTableType, number> = {
+                    pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
+                    pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+                    segment_cum:    2 + segmentColumns.length * 2,
+                    segment_q:      2 + segmentColumns.length * 2,
+                    segment_manual: SEGMENT_MANUAL_COL_COUNT,
+                };
+                const manualColCount = manualColCounts[activeManualCell.tableType];
+                const maxRows = getManualRowCount(activeManualCell.tableType) - activeManualCell.rowIdx;
+                const pasteItems: {
+                    tableType: ManualTableType;
+                    rowIdx: number;
+                    colIdx: number;
+                    value: string;
+                }[] = [];
+                for (let r = 0; r < Math.min(manualParsed.length, maxRows); r++) {
+                    for (let c = 0; c < manualParsed[r].length; c++) {
+                        const col = activeManualCell.colIdx + c;
+                        if (col >= manualColCount) break;
+                        pasteItems.push({
+                            tableType: activeManualCell.tableType,
+                            rowIdx: activeManualCell.rowIdx + r,
+                            colIdx: col,
+                            value: manualParsed[r][c],
+                        });
+                    }
+                }
+                if (pasteItems.length > 0) {
+                    let pasteIdx = 0;
+                    const applyNextPasteItem = () => {
+                        if (pasteIdx >= pasteItems.length) return;
+                        const item = pasteItems[pasteIdx++];
+                        onManualMemoEditRef.current?.(
+                            item.tableType,
+                            item.rowIdx,
+                            item.colIdx,
+                            item.value,
+                        );
+                        if (pasteIdx < pasteItems.length) {
+                            requestAnimationFrame(applyNextPasteItem);
                         }
-                    }
-                    // React の re-render ごとに fresh な onManualMemoEdit を使うため
-                    // requestAnimationFrame で逐次適用する
-                    if (pasteItems.length > 0) {
-                        let pasteIdx = 0;
-                        const applyNextPasteItem = () => {
-                            if (pasteIdx >= pasteItems.length) return;
-                            const item = pasteItems[pasteIdx++];
-                            onManualMemoEditRef.current?.(
-                                item.tableType,
-                                item.rowIdx,
-                                item.colIdx,
-                                item.value,
-                            );
-                            if (pasteIdx < pasteItems.length) {
-                                requestAnimationFrame(applyNextPasteItem);
-                            }
-                        };
-                        applyNextPasteItem();
-                    }
+                    };
+                    applyNextPasteItem();
                 }
             }
             return;
