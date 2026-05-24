@@ -1199,6 +1199,12 @@ export default function FinancialsTable({
         setEditingManualCell(coord);
         setActiveManualCell(coord);
         setManualEditValue(initialValue);
+        // 他テーブルの選択状態をクリア（PLセルが残ったままセグメントMEMOに切り替わる問題の修正）
+        setActiveCell(null);
+        setEditingCell(null);
+        setSelectionRange(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
         // MEMO A/B と同じ明示的 focus（autoFocus との二重保険）
         setTimeout(() => editInputRef.current?.focus(), 0);
     }, [editInputRef]);
@@ -1615,6 +1621,70 @@ export default function FinancialsTable({
     }, [plHeight]);
 
     // --- Ctrl+V on active cell ---
+    /**
+     * segment_manual 専用ペースト — グローバル activeManualCell に依存しない。
+     * MemoCellExcel の onPaste から coord 付きで直接呼ばれる。
+     * PL 側の activeManualCell が残っていても影響しない。
+     */
+    const handleSegmentManualPaste = useCallback((
+        e: React.ClipboardEvent,
+        coord: { tableType: ManualTableType; rowIdx: number; colIdx: number },
+    ) => {
+        e.preventDefault();
+        e.stopPropagation();  // handleTablePaste への伝播を防ぐ
+
+        const rawText = e.clipboardData?.getData("text/plain") ?? "";
+        if (!rawText.trim()) return;
+
+        // TSV parse（末尾空行除去）
+        const textRows = rawText.replace(/\r\n/g, "\n").replace(/\r/g, "\n").split("\n");
+        if (textRows.length > 0 && textRows[textRows.length - 1] === "") textRows.pop();
+        if (textRows.length === 0) return;
+
+        const rowCount = cumRows.length;
+        const colCount = SEGMENT_MANUAL_COL_COUNT;
+        const startRow = coord.rowIdx;
+        const startCol = coord.colIdx;
+
+        // 貼り付けアイテム構築（colIdx は保存 grid 座標 0..11、PERIOD/Q 不要）
+        const pasteItems: { tableType: ManualTableType; rowIdx: number; colIdx: number; value: string }[] = [];
+        for (let rOff = 0; rOff < textRows.length; rOff++) {
+            const r = startRow + rOff;
+            if (r >= rowCount) break;
+            const cells = textRows[rOff].split("\t");
+            for (let cOff = 0; cOff < cells.length; cOff++) {
+                const c = startCol + cOff;
+                if (c >= colCount) break;
+                pasteItems.push({ tableType: "segment_manual", rowIdx: r, colIdx: c, value: cells[cOff] });
+            }
+        }
+
+        // onBlur → commitManualEdit が paste 中に発火するのを抑制
+        isCommittingManualRef.current = true;
+        setEditingManualCell(null);
+        setActiveManualCell(coord);
+        setActiveCell(null);  // PL 側の activeCell を確実にクリア
+        setManualEditValue("");
+
+        if (pasteItems.length > 0) {
+            let idx = 0;
+            const applyNext = () => {
+                if (idx >= pasteItems.length) {
+                    isCommittingManualRef.current = false;
+                    gridRef.current?.focus();
+                    return;
+                }
+                const item = pasteItems[idx++];
+                onManualMemoEditRef.current?.(item.tableType, item.rowIdx, item.colIdx, item.value);
+                requestAnimationFrame(applyNext);
+            };
+            applyNext();
+        } else {
+            isCommittingManualRef.current = false;
+            gridRef.current?.focus();
+        }
+    }, [cumRows.length]);
+
     const handleTablePaste = useCallback((e: React.ClipboardEvent) => {
         // セグメントセルがアクティブの場合 → セグメントペースト処理
         if (activeSegCell && onBulkSaveOverrides) {
@@ -2142,6 +2212,7 @@ export default function FinancialsTable({
                                     onCommit={commitManualEdit}
                                     onCancel={cancelManualEdit}
                                     editInputRef={editInputRef}
+                                    onSegmentPaste={handleSegmentManualPaste}
                                 />
                             ) : (
                                 <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
@@ -2310,6 +2381,7 @@ function MemoCellExcel({
     className,
     onMouseDown,
     onMouseEnter,
+    onPaste,
 }: {
     value: string;
     width?: number;
@@ -2326,6 +2398,7 @@ function MemoCellExcel({
     className?: string;
     onMouseDown?: (e: React.MouseEvent) => void;
     onMouseEnter?: () => void;
+    onPaste?: (e: React.ClipboardEvent) => void;
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
@@ -2346,6 +2419,7 @@ function MemoCellExcel({
                         value={editValue}
                         onChange={(e) => onEditChange(e.target.value)}
                         onBlur={onCommit}
+                        onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
                             // Alt+Enter: セル内改行を挿入
@@ -2376,6 +2450,7 @@ function MemoCellExcel({
                         value={editValue}
                         onChange={(e) => onEditChange(e.target.value)}
                         onBlur={onCommit}
+                        onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
                             if (e.key === "Enter") { e.preventDefault(); onCommit(); }
@@ -2629,6 +2704,7 @@ function SegmentManualMemoTable({
     onCommit,
     onCancel,
     editInputRef,
+    onSegmentPaste,
 }: {
     rows: { period: string; quarter: string }[];
     gridData: string[][];
@@ -2640,6 +2716,8 @@ function SegmentManualMemoTable({
     onCommit: () => void;
     onCancel: () => void;
     editInputRef?: React.RefObject<HTMLElement | null>;
+    /** PL側のグローバル状態に依存しない専用ペーストハンドラ */
+    onSegmentPaste?: (e: React.ClipboardEvent, coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }) => void;
 }) {
     const COL = SEGMENT_MANUAL_COL_COUNT; // 12
     return (
@@ -2687,6 +2765,7 @@ function SegmentManualMemoTable({
                                             && editingManualCell?.rowIdx === rowIdx
                                             && editingManualCell?.colIdx === colIdx;
                                         const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
+                                        const coord = { tableType: "segment_manual" as ManualTableType, rowIdx, colIdx };
                                         return (
                                             <MemoCellExcel
                                                 key={colIdx}
@@ -2694,13 +2773,16 @@ function SegmentManualMemoTable({
                                                 isActive={isActive}
                                                 isEditing={isEditing}
                                                 editValue={editValue}
-                                                onSelect={() => onStartEdit({ tableType: "segment_manual", rowIdx, colIdx }, cellValue)}
-                                                onStartEdit={(val) => onStartEdit({ tableType: "segment_manual", rowIdx, colIdx }, val)}
+                                                onSelect={() => onStartEdit(coord, cellValue)}
+                                                onStartEdit={(val) => onStartEdit(coord, val)}
                                                 onEditChange={onEditChange}
                                                 onCommit={onCommit}
                                                 onCancel={onCancel}
                                                 inputRef={isEditing ? editInputRef : undefined}
                                                 className="manual-memo-cell"
+                                                onPaste={onSegmentPaste
+                                                    ? (e) => onSegmentPaste(e, coord)
+                                                    : undefined}
                                             />
                                         );
                                     })}
