@@ -143,6 +143,9 @@ const Q_BASE_COLUMNS: ColumnDef[] = [
 // ============================================================
 // フォーマッタ
 // ============================================================
+/** 手入力メモ専用行の行数（全テーブル共通） */
+const MANUAL_MEMO_ROW_COUNT = 4 as const;
+
 function fmtMargin(val: number | null): string {
     if (val === null || val === undefined) return "–";
     return `${val.toFixed(1)}%`;
@@ -1225,7 +1228,7 @@ export default function FinancialsTable({
             segment_q:   2 + segmentColumns.length * 2,
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const totalCells = 2 * colCount;
+        const totalCells = MANUAL_MEMO_ROW_COUNT * colCount;
         const flat = activeManualCell.rowIdx * colCount + activeManualCell.colIdx + delta;
         const clampedFlat = Math.max(0, Math.min(totalCells - 1, flat));
         const newRowIdx = Math.floor(clampedFlat / colCount);
@@ -1244,7 +1247,7 @@ export default function FinancialsTable({
             segment_q:   2 + segmentColumns.length * 2,
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const newRowIdx = Math.max(0, Math.min(1, activeManualCell.rowIdx + dRow));
+        const newRowIdx = Math.max(0, Math.min(MANUAL_MEMO_ROW_COUNT - 1, activeManualCell.rowIdx + dRow));
         const newColIdx = Math.max(0, Math.min(colCount - 1, activeManualCell.colIdx + dCol));
         setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
         focusGrid();
@@ -1704,7 +1707,7 @@ export default function FinancialsTable({
                         segment_q:   2 + segmentColumns.length * 2,
                     };
                     const manualColCount = manualColCounts[activeManualCell.tableType];
-                    const maxRows = 2 - activeManualCell.rowIdx;
+                    const maxRows = MANUAL_MEMO_ROW_COUNT - activeManualCell.rowIdx;
                     // 更新セルリストを構築
                     const pasteItems: {
                         tableType: ManualTableType;
@@ -1903,7 +1906,7 @@ export default function FinancialsTable({
                                         <ManualMemoRows
                                             tableType="pl_cum"
                                             colCount={CUM_BASE_COL_COUNT + KPI_SLOTS.length}
-                                            gridData={manualTableMemos?.pl_cum ?? [["MEMO 1"], ["MEMO 2"]]}
+                                            gridData={manualTableMemos?.pl_cum ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
                                             activeManualCell={activeManualCell}
                                             editingManualCell={editingManualCell}
                                             editValue={manualEditValue}
@@ -1971,7 +1974,7 @@ export default function FinancialsTable({
                                         <ManualMemoRows
                                             tableType="pl_q"
                                             colCount={Q_BASE_COL_COUNT + KPI_SLOTS.length}
-                                            gridData={manualTableMemos?.pl_q ?? [["MEMO 1"], ["MEMO 2"]]}
+                                            gridData={manualTableMemos?.pl_q ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
                                             activeManualCell={activeManualCell}
                                             editingManualCell={editingManualCell}
                                             editValue={manualEditValue}
@@ -2114,7 +2117,7 @@ export default function FinancialsTable({
                                                     tableType="segment_cum"
                                                     colCount={2 + segmentColumns.length * 2}
                                                     segmentGroupEndIndices={segmentColumns.map((_, i) => 2 + i * 2 + 1)}
-                                                    gridData={manualTableMemos?.segment_cum ?? [["MEMO 1"], ["MEMO 2"]]}
+                                                    gridData={manualTableMemos?.segment_cum ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
                                                     activeManualCell={activeManualCell}
                                                     editingManualCell={editingManualCell}
                                                     editValue={manualEditValue}
@@ -2167,7 +2170,7 @@ export default function FinancialsTable({
                                                     tableType="segment_q"
                                                     colCount={2 + segmentColumns.length * 2}
                                                     segmentGroupEndIndices={segmentColumns.map((_, i) => 2 + i * 2 + 1)}
-                                                    gridData={manualTableMemos?.segment_q ?? [["MEMO 1"], ["MEMO 2"]]}
+                                                    gridData={manualTableMemos?.segment_q ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
                                                     activeManualCell={activeManualCell}
                                                     editingManualCell={editingManualCell}
                                                     editValue={manualEditValue}
@@ -2554,7 +2557,7 @@ function ManualMemoRows({
 }) {
     return (
         <>
-            {[0, 1].map((rowIdx) => (
+            {Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) => rowIdx).map((rowIdx) => (
                 <tr key={`manual-${tableType}-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
                     {Array.from({ length: colCount }, (_, colIdx) => {
                         const isActive = activeManualCell?.tableType === tableType

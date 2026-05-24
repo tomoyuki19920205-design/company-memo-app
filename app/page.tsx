@@ -79,11 +79,13 @@ type ManualTableMemos = {
     segment_q: string[][];
 };
 
+/** 手入力メモ初期値: 4行（全空） */
+const MANUAL_ROW_COUNT = 4;
 const EMPTY_MANUAL_MEMOS: ManualTableMemos = {
-    pl_cum: [["MEMO 1", ""], ["MEMO 2", ""]],
-    pl_q: [["MEMO 1", ""], ["MEMO 2", ""]],
-    segment_cum: [["MEMO 1", ""], ["MEMO 2", ""]],
-    segment_q: [["MEMO 1", ""], ["MEMO 2", ""]],
+    pl_cum:      Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    pl_q:        Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    segment_cum: Array.from({ length: MANUAL_ROW_COUNT }, () => []),
+    segment_q:   Array.from({ length: MANUAL_ROW_COUNT }, () => []),
 };
 
 function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
@@ -94,19 +96,23 @@ function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
     return map;
 }
 
-/** loadManualTableMemos の結果を ManualTableMemos 型に変換 */
+/** loadManualTableMemos の結果を ManualTableMemos 型に変換
+ *  既存 2行データを 4行へ自動拡張（後方互換）
+ */
 function buildManualTableMemos(
     raw: Record<ManualTableType, string[][] | null>
 ): ManualTableMemos {
-    const fallback = (grid: string[][] | null, defaultLabel1: string, defaultLabel2: string): string[][] => {
-        if (grid && grid.length >= 2) return grid;
-        return [[defaultLabel1], [defaultLabel2]];
+    const ROWS = MANUAL_ROW_COUNT;
+    const pad = (grid: string[][] | null): string[][] => {
+        const base = (grid ?? []).map((r) => [...r]);
+        while (base.length < ROWS) base.push([]);
+        return base;
     };
     return {
-        pl_cum:      fallback(raw.pl_cum,      "MEMO 1", "MEMO 2"),
-        pl_q:        fallback(raw.pl_q,        "MEMO 1", "MEMO 2"),
-        segment_cum: fallback(raw.segment_cum, "MEMO 1", "MEMO 2"),
-        segment_q:   fallback(raw.segment_q,   "MEMO 1", "MEMO 2"),
+        pl_cum:      pad(raw.pl_cum),
+        pl_q:        pad(raw.pl_q),
+        segment_cum: pad(raw.segment_cum),
+        segment_q:   pad(raw.segment_q),
     };
 }
 
