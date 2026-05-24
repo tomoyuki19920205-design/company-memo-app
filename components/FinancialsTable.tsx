@@ -1705,6 +1705,65 @@ export default function FinancialsTable({
             return;
         }
 
+        // ── segment_manual 専用ペースト ──
+        // click = edit（IME fix）により editingManualCell 中でも多セル貼り付けを優先する。
+        // PERIOD/Q は保存 grid に含まず。colIdx は保存 grid 座標 0..11。
+        const segManualTarget =
+            activeManualCell?.tableType === "segment_manual" ? activeManualCell
+            : editingManualCell?.tableType === "segment_manual" ? editingManualCell
+            : null;
+        if (segManualTarget && !activeCell && !activeSegCell) {
+            e.preventDefault();
+            e.stopPropagation();
+            const rawText = e.clipboardData?.getData("text/plain") ?? "";
+            if (!rawText.trim()) return;
+            const parsedRows = parseTsvClipboard(rawText);
+            if (parsedRows.length === 0) return;
+
+            const rowCount = cumRows.length;
+            const colCount = SEGMENT_MANUAL_COL_COUNT;
+            const currentGrid = manualTableMemos?.segment_manual ?? [];
+            const startRow = segManualTarget.rowIdx;
+            const startCol = segManualTarget.colIdx;
+
+            // 変更セルリスト構築（PERIOD/Q オフセット +2 は不要。colIdx = 保存 grid 座標）
+            const pasteItems: { tableType: ManualTableType; rowIdx: number; colIdx: number; value: string }[] = [];
+            for (let rOff = 0; rOff < parsedRows.length; rOff++) {
+                const r = startRow + rOff;
+                if (r >= rowCount) break;
+                for (let cOff = 0; cOff < (parsedRows[rOff]?.length ?? 0); cOff++) {
+                    const c = startCol + cOff;
+                    if (c >= colCount) break;
+                    pasteItems.push({ tableType: "segment_manual", rowIdx: r, colIdx: c, value: parsedRows[rOff][cOff] });
+                }
+            }
+
+            // onBlur → commitManualEdit が paste 中に発火するのを抑制
+            isCommittingManualRef.current = true;
+            setEditingManualCell(null);
+            setActiveManualCell(segManualTarget);
+            setManualEditValue("");
+
+            if (pasteItems.length > 0) {
+                let pasteIdx = 0;
+                const applyNext = () => {
+                    if (pasteIdx >= pasteItems.length) {
+                        isCommittingManualRef.current = false;
+                        gridRef.current?.focus();
+                        return;
+                    }
+                    const item = pasteItems[pasteIdx++];
+                    onManualMemoEditRef.current?.(item.tableType, item.rowIdx, item.colIdx, item.value);
+                    requestAnimationFrame(applyNext);
+                };
+                applyNext();
+            } else {
+                isCommittingManualRef.current = false;
+                gridRef.current?.focus();
+            }
+            return;
+        }
+
         // 手入力メモ専用行がアクティブの場合 → 手入力メモペースト（activeCell がない場合のみ）
         if (activeManualCell && !activeCell && !editingManualCell) {
             e.preventDefault();
@@ -1776,7 +1835,7 @@ export default function FinancialsTable({
         if (!availableCols.includes(activeCell.colKey)) return;
         const startEditableIdx = availableCols.indexOf(activeCell.colKey);
         handleEditablePaste(activeCell.tableId, startEditableIdx, activeCell.rowIdx, e);
-    }, [activeCell, activeManualCell, editingManualCell, activeSegCell, handleEditablePaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast]);
+    }, [activeCell, activeManualCell, editingManualCell, activeSegCell, handleEditablePaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast, manualTableMemos]);
 
     if (loading) {
         return (
