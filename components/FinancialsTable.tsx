@@ -1385,10 +1385,17 @@ export default function FinancialsTable({
                 focusGrid();
                 return;
             }
-            // 印字可能文字: 押した1文字で編集開始（既存値を上書き）
+            // 印字可能文字: 押した1文字で編集開始
+            // IME 対応: 初期値は空文字にして onChange に委ねる（「sあみしい」混入防止）
             if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
                 e.preventDefault();
-                startManualEditing(activeManualCell, e.key);
+                startManualEditing(activeManualCell, "");  // ← e.key ではなく "" に変更
+                return;
+            }
+            // IME 変換開始キー (Chrome/Edge Windows: e.key="Process", keyCode=229)
+            // → 編集開始して input にフォーカスを移し、IME の compositionstart を input 上で受け取る
+            if (e.key === "Process" || e.keyCode === 229) {
+                startManualEditing(activeManualCell, "");
                 return;
             }
             // ArrowUp/Down/Left/Right: 方向移動（MEMO A/Bの moveActiveCell 相当）
@@ -2254,7 +2261,7 @@ function MemoCellExcel({
                         onChange={(e) => onEditChange(e.target.value)}
                         onBlur={onCommit}
                         onKeyDown={(e) => {
-                            if (e.nativeEvent.isComposing) return;
+                            if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
                             // Alt+Enter: セル内改行を挿入
                             if (e.key === "Enter" && e.altKey) {
                                 e.preventDefault();
@@ -2284,7 +2291,7 @@ function MemoCellExcel({
                         onChange={(e) => onEditChange(e.target.value)}
                         onBlur={onCommit}
                         onKeyDown={(e) => {
-                            if (e.nativeEvent.isComposing) return;
+                            if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
                             if (e.key === "Enter") { e.preventDefault(); onCommit(); }
                             if (e.key === "Escape") { e.preventDefault(); onCancel(); }
                             if (e.key === "Tab") { e.preventDefault(); onCommit(); }
