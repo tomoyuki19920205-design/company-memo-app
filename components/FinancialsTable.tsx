@@ -848,6 +848,12 @@ export default function FinancialsTable({
     const [editingManualCell, setEditingManualCell] = useState<{ tableType: ManualTableType; rowIdx: number; colIdx: number } | null>(null);
     const [manualEditValue, setManualEditValue] = useState("");
     const isCommittingManualRef = useRef(false);
+    // segment_manual 範囲選択 state とドラッグ追跡 ref
+    const [segManualSel, setSegManualSel] = useState<{
+        startRow: number; startCol: number; endRow: number; endCol: number;
+    } | null>(null);
+    const segManualIsDragging = useRef(false);
+    const segManualDragMoved = useRef(false);
     // onManualMemoEdit の最新版を常に保持（逐次ペースト用）
     const onManualMemoEditRef = useRef(onManualMemoEdit);
     useEffect(() => { onManualMemoEditRef.current = onManualMemoEdit; }, [onManualMemoEdit]);
@@ -918,6 +924,17 @@ export default function FinancialsTable({
 
     useEffect(() => {
         setPlHeight(loadSavedHeight());
+    }, []);
+
+    // segment_manual ドラッグ選択の終了検出（document レベルで mouseup を捕捉）
+    useEffect(() => {
+        const handleDocMouseUp = () => {
+            if (!segManualIsDragging.current) return;
+            segManualIsDragging.current = false;
+            segManualDragMoved.current = false;
+        };
+        document.addEventListener("mouseup", handleDocMouseUp);
+        return () => document.removeEventListener("mouseup", handleDocMouseUp);
     }, []);
 
     // フォーミュラバー用: 現在のセル値を取得
@@ -1347,6 +1364,32 @@ export default function FinancialsTable({
         }
     }, [activeCell, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
 
+    // segment_manual 範囲 or 単一セルを TSV 文字列に変換してコピー用に返す。
+    // 該当セルがなければ null を返す。
+    const getSegManualTsv = useCallback((): string | null => {
+        const grid = manualTableMemos?.segment_manual ?? [];
+        if (segManualSel) {
+            const minRow = Math.min(segManualSel.startRow, segManualSel.endRow);
+            const maxRow = Math.max(segManualSel.startRow, segManualSel.endRow);
+            const minCol = Math.min(segManualSel.startCol, segManualSel.endCol);
+            const maxCol = Math.max(segManualSel.startCol, segManualSel.endCol);
+            const lines: string[] = [];
+            for (let r = minRow; r <= maxRow; r++) {
+                const cells: string[] = [];
+                for (let c = minCol; c <= maxCol; c++) {
+                    cells.push(quoteTsvCell(grid[r]?.[c] ?? ""));
+                }
+                lines.push(cells.join("\t"));
+            }
+            return lines.join("\n");
+        }
+        if (activeManualCell?.tableType === "segment_manual") {
+            const val = grid[activeManualCell.rowIdx]?.[activeManualCell.colIdx] ?? "";
+            return quoteTsvCell(val);
+        }
+        return null;
+    }, [segManualSel, activeManualCell, manualTableMemos]);
+
     // キーボードイベント（テーブル全体）
     const handleTableKeyDown = useCallback((e: React.KeyboardEvent) => {
         // IME入力中は無視（日本語入力対応）
@@ -1385,34 +1428,75 @@ export default function FinancialsTable({
             if ((e.ctrlKey || e.metaKey) && e.key === "z" && !e.shiftKey) {
                 e.preventDefault(); onUndo?.(); return;
             }
-            // Delete/Backspace: クリア
-            if (e.key === "Delete" || e.key === "Backspace") {
+            // Ctrl+C: segment_manual 範囲コピー
+            if ((e.ctrlKey || e.metaKey) && e.key === "c" && !e.shiftKey
+                && activeManualCell.tableType === "segment_manual") {
                 e.preventDefault();
-                onManualMemoEdit?.(activeManualCell.tableType, activeManualCell.rowIdx, activeManualCell.colIdx, "");
+                const tsv = getSegManualTsv();
+                if (tsv !== null) navigator.clipboard.writeText(tsv).catch(console.error);
                 return;
             }
-            // Tab: 次セルへ移動
+            // Delete/Backspace: クリア（範囲選択中は全セルクリア）
+            if (e.key === "Delete" || e.key === "Backspace") {
+                e.preventDefault();
+                if (segManualSel && activeManualCell.tableType === "segment_manual") {
+                    const minRow = Math.min(segManualSel.startRow, segManualSel.endRow);
+                    const maxRow = Math.max(segManualSel.startRow, segManualSel.endRow);
+                    const minCol = Math.min(segManualSel.startCol, segManualSel.endCol);
+                    const maxCol = Math.max(segManualSel.startCol, segManualSel.endCol);
+                    for (let r = minRow; r <= maxRow; r++)
+                        for (let c = minCol; c <= maxCol; c++)
+                            onManualMemoEdit?.("segment_manual", r, c, "");
+                } else {
+                    onManualMemoEdit?.(activeManualCell.tableType, activeManualCell.rowIdx, activeManualCell.colIdx, "");
+                }
+                return;
+            }
+            // Tab: 次セルへ移動（選択解除）
             if (e.key === "Tab") {
                 e.preventDefault();
+                setSegManualSel(null);
                 moveManualActiveCell(e.shiftKey ? -1 : 1);
                 return;
             }
-            // Enter / F2: 既存値を維持して編集開始
+            // Enter / F2: 既存値を維持して編集開始（選択解除）
             if (e.key === "Enter" || e.key === "F2") {
                 e.preventDefault();
+                setSegManualSel(null);
                 startManualEditing(activeManualCell, getActiveManualCellValue());
                 return;
             }
-            // Escape: 選択解除
+            // Escape: 選択解除 + 範囲解除
             if (e.key === "Escape") {
                 e.preventDefault();
+                setSegManualSel(null);
                 setActiveManualCell(null);
                 focusGrid();
                 return;
             }
-            // ArrowUp/Down/Left/Right: 方向移動（MEMO A/Bの moveActiveCell 相当）
+            // Shift+Arrow: segment_manual 範囲拡張
+            if (e.shiftKey && activeManualCell.tableType === "segment_manual" &&
+                (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "ArrowUp" || e.key === "ArrowDown")) {
+                e.preventDefault();
+                const dr = e.key === "ArrowUp" ? -1 : e.key === "ArrowDown" ? 1 : 0;
+                const dc = e.key === "ArrowLeft" ? -1 : e.key === "ArrowRight" ? 1 : 0;
+                setSegManualSel(prev => {
+                    const base = prev ?? {
+                        startRow: activeManualCell.rowIdx, startCol: activeManualCell.colIdx,
+                        endRow: activeManualCell.rowIdx, endCol: activeManualCell.colIdx,
+                    };
+                    return {
+                        ...base,
+                        endRow: Math.max(0, Math.min(cumRows.length - 1, base.endRow + dr)),
+                        endCol: Math.max(0, Math.min(SEGMENT_MANUAL_COL_COUNT - 1, base.endCol + dc)),
+                    };
+                });
+                return;
+            }
+            // ArrowUp/Down/Left/Right: 方向移動（範囲解除）
             if (e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "ArrowUp" || e.key === "ArrowDown") {
                 e.preventDefault();
+                setSegManualSel(null);
                 if (e.key === "ArrowLeft")  moveManualActiveCellDir(0, -1);
                 if (e.key === "ArrowRight") moveManualActiveCellDir(0,  1);
                 if (e.key === "ArrowUp")    moveManualActiveCellDir(-1, 0);
@@ -1507,7 +1591,7 @@ export default function FinancialsTable({
             setSelectionRange(null);
             startEditing(activeCell, e.key);
         }
-    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo]);
+    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv]);
 
     // PL側 編集可能セル ペースト (memo + kpi 統合)
     const handleEditablePaste = useCallback(
@@ -1621,6 +1705,32 @@ export default function FinancialsTable({
     }, [plHeight]);
 
     // --- Ctrl+V on active cell ---
+
+    /** segment_manual セルのマウスダウン — ドラッグ範囲選択の開始 */
+    const handleSegManualCellMouseDown = useCallback((rowIdx: number, colIdx: number) => {
+        segManualIsDragging.current = true;
+        segManualDragMoved.current = false;
+        setSegManualSel({ startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx });
+        setActiveCell(null);
+        setSelectionRange(null);
+    }, []);
+
+    /** segment_manual セルのマウスエンター — ドラッグ中に範囲拡張＋編集キャンセル */
+    const handleSegManualCellMouseEnter = useCallback((rowIdx: number, colIdx: number) => {
+        if (!segManualIsDragging.current) return;
+        segManualDragMoved.current = true;
+        setSegManualSel(prev => prev
+            ? { ...prev, endRow: rowIdx, endCol: colIdx }
+            : { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx }
+        );
+        // ドラッグ開始時に起動した editing をキャンセル（commitしない）
+        if (isCommittingManualRef.current) return;
+        isCommittingManualRef.current = true;
+        setEditingManualCell(null);
+        setManualEditValue("");
+        requestAnimationFrame(() => { isCommittingManualRef.current = false; });
+    }, []);
+
     /**
      * segment_manual 専用ペースト — グローバル activeManualCell に依存しない。
      * MemoCellExcel の onPaste から coord 付きで直接呼ばれる。
@@ -2213,6 +2323,9 @@ export default function FinancialsTable({
                                     onCancel={cancelManualEdit}
                                     editInputRef={editInputRef}
                                     onSegmentPaste={handleSegmentManualPaste}
+                                    segManualSel={segManualSel}
+                                    onCellMouseDown={handleSegManualCellMouseDown}
+                                    onCellMouseEnter={handleSegManualCellMouseEnter}
                                 />
                             ) : (
                                 <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
@@ -2705,6 +2818,9 @@ function SegmentManualMemoTable({
     onCancel,
     editInputRef,
     onSegmentPaste,
+    segManualSel,
+    onCellMouseDown,
+    onCellMouseEnter,
 }: {
     rows: { period: string; quarter: string }[];
     gridData: string[][];
@@ -2718,8 +2834,24 @@ function SegmentManualMemoTable({
     editInputRef?: React.RefObject<HTMLElement | null>;
     /** PL側のグローバル状態に依存しない専用ペーストハンドラ */
     onSegmentPaste?: (e: React.ClipboardEvent, coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }) => void;
+    /** 現在の範囲選択 (drag or Shift+Arrow) */
+    segManualSel?: { startRow: number; startCol: number; endRow: number; endCol: number } | null;
+    /** ドラッグ開始コールバック */
+    onCellMouseDown?: (rowIdx: number, colIdx: number) => void;
+    /** ドラッグ中の範囲拡張コールバック */
+    onCellMouseEnter?: (rowIdx: number, colIdx: number) => void;
 }) {
     const COL = SEGMENT_MANUAL_COL_COUNT; // 12
+
+    // 範囲選択の正規化（start ≤ end を保証）
+    const selMin = segManualSel ? {
+        r: Math.min(segManualSel.startRow, segManualSel.endRow),
+        c: Math.min(segManualSel.startCol, segManualSel.endCol),
+    } : null;
+    const selMax = segManualSel ? {
+        r: Math.max(segManualSel.startRow, segManualSel.endRow),
+        c: Math.max(segManualSel.startCol, segManualSel.endCol),
+    } : null;
     return (
         <div className="pl-scroll-area" style={{ maxHeight: 480 }}>
             <div className="pl-dual-tables">
@@ -2764,6 +2896,9 @@ function SegmentManualMemoTable({
                                         const isEditing = editingManualCell?.tableType === "segment_manual"
                                             && editingManualCell?.rowIdx === rowIdx
                                             && editingManualCell?.colIdx === colIdx;
+                                        const isInRange = !!(selMin && selMax
+                                            && rowIdx >= selMin.r && rowIdx <= selMax.r
+                                            && colIdx >= selMin.c && colIdx <= selMax.c);
                                         const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
                                         const coord = { tableType: "segment_manual" as ManualTableType, rowIdx, colIdx };
                                         return (
@@ -2771,6 +2906,7 @@ function SegmentManualMemoTable({
                                                 key={colIdx}
                                                 value={cellValue}
                                                 isActive={isActive}
+                                                isInRange={isInRange}
                                                 isEditing={isEditing}
                                                 editValue={editValue}
                                                 onSelect={() => onStartEdit(coord, cellValue)}
@@ -2783,6 +2919,8 @@ function SegmentManualMemoTable({
                                                 onPaste={onSegmentPaste
                                                     ? (e) => onSegmentPaste(e, coord)
                                                     : undefined}
+                                                onMouseDown={() => onCellMouseDown?.(rowIdx, colIdx)}
+                                                onMouseEnter={() => onCellMouseEnter?.(rowIdx, colIdx)}
                                             />
                                         );
                                     })}
