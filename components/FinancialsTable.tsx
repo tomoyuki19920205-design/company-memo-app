@@ -146,12 +146,12 @@ const Q_BASE_COLUMNS: ColumnDef[] = [
 // ============================================================
 /** 手入力メモ専用行の行数（PL・セグメント累計/Q共通） */
 const MANUAL_MEMO_ROW_COUNT = 4 as const;
-/** 手入力セグメントメモ専用行の行数 */
-const SEGMENT_MANUAL_MEMO_ROW_COUNT = 12 as const;
+/** segment_manual の入力列数（PERIOD/Q を除く入力可能列） */
+const SEGMENT_MANUAL_COL_COUNT = 12 as const;
 
-/** tableType ごとの行数を返す */
+/** tableType ごとの行数を返す（segment_manual は計算不導—呼び出し元で cumRows.length を渡す） */
 function getManualRowCount(tableType: ManualTableType): number {
-    return tableType === "segment_manual" ? SEGMENT_MANUAL_MEMO_ROW_COUNT : MANUAL_MEMO_ROW_COUNT;
+    return MANUAL_MEMO_ROW_COUNT; // pl_cum / pl_q / segment_cum / segment_q 用
 }
 
 function fmtMargin(val: number | null): string {
@@ -626,13 +626,14 @@ export default function FinancialsTable({
         "attachment_xbrl",
     ]);
     const EDINET_SOURCES = new Set(["edinet_xbrl"]);
-    type SegSourceTab = "tdnet" | "edinet" | "all";
+    type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
 
     const filteredBySource = useMemo(() => {
         const segs = segments || [];
         if (segSourceTab === "tdnet")  return segs.filter(s => TDNET_SOURCES.has(s.source ?? ""));
         if (segSourceTab === "edinet") return segs.filter(s => EDINET_SOURCES.has(s.source ?? ""));
+        if (segSourceTab === "memo")   return segs; // memoモードでは全て返す（テーブル自体は非表示）
         // "all": whitelist 全体（TDNET + EDINET）のみ。source なしは除外。
         return segs.filter(s => TDNET_SOURCES.has(s.source ?? "") || EDINET_SOURCES.has(s.source ?? ""));
     }, [segments, segSourceTab]);
@@ -663,8 +664,6 @@ export default function FinancialsTable({
         () => buildSegmentInfo(filteredForSegBuild, { disableSemanticMerge: segSourceTab === "all" }),
         [filteredForSegBuild, segSourceTab]
     );
-    // セグメント手入力メモ列数: セグメントあり → 同じ構造、なし → 最低10列
-    const segmentManualColCount = Math.max(10, 2 + segmentColumns.length * 2);
     // セグメント列ヘッダー（累計PL・Q単体PL共通）
     const segmentHeaders = useMemo(() => {
         const headers: { label: string; fullName?: string; className?: string }[] = [];
@@ -1236,17 +1235,21 @@ export default function FinancialsTable({
             pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
             segment_cum:    2 + segmentColumns.length * 2,
             segment_q:      2 + segmentColumns.length * 2,
-            segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
+            segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const totalCells = getManualRowCount(activeManualCell.tableType) * colCount;
+        // segment_manual: 行数は cumRows に連動
+        const rowCount = activeManualCell.tableType === "segment_manual"
+            ? cumRows.length
+            : getManualRowCount(activeManualCell.tableType);
+        const totalCells = rowCount * colCount;
         const flat = activeManualCell.rowIdx * colCount + activeManualCell.colIdx + delta;
         const clampedFlat = Math.max(0, Math.min(totalCells - 1, flat));
         const newRowIdx = Math.floor(clampedFlat / colCount);
         const newColIdx = clampedFlat % colCount;
         setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
         focusGrid();
-    }, [activeManualCell, segmentColumns.length, focusGrid]);
+    }, [activeManualCell, segmentColumns.length, cumRows.length, focusGrid]);
 
     /** 手入力メモセル: Arrow Key 方向移動（素直クランプ、折り返しなし） */
     const moveManualActiveCellDir = useCallback((dRow: number, dCol: number) => {
@@ -1256,15 +1259,18 @@ export default function FinancialsTable({
             pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
             segment_cum:    2 + segmentColumns.length * 2,
             segment_q:      2 + segmentColumns.length * 2,
-            segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
+            segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
         };
         const colCount = colCounts[activeManualCell.tableType];
-        const maxRow = getManualRowCount(activeManualCell.tableType) - 1;
-        const newRowIdx = Math.max(0, Math.min(maxRow, activeManualCell.rowIdx + dRow));
+        // segment_manual: 行数は cumRows に連動
+        const rowCount = activeManualCell.tableType === "segment_manual"
+            ? cumRows.length
+            : getManualRowCount(activeManualCell.tableType);
+        const newRowIdx = Math.max(0, Math.min(rowCount - 1, activeManualCell.rowIdx + dRow));
         const newColIdx = Math.max(0, Math.min(colCount - 1, activeManualCell.colIdx + dCol));
         setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
         focusGrid();
-    }, [activeManualCell, segmentColumns.length, focusGrid]);
+    }, [activeManualCell, segmentColumns.length, cumRows.length, focusGrid]);
 
     // 隣セルへ移動 (memo + kpi 統合)
     const moveActiveCell = useCallback((dRow: number, dCol: number) => {
@@ -1712,10 +1718,14 @@ export default function FinancialsTable({
                         pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
                         segment_cum:    2 + segmentColumns.length * 2,
                         segment_q:      2 + segmentColumns.length * 2,
-                        segment_manual: Math.max(10, 2 + segmentColumns.length * 2),
+                        segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
                     };
                     const manualColCount = manualColCounts[activeManualCell.tableType];
-                    const maxRows = getManualRowCount(activeManualCell.tableType) - activeManualCell.rowIdx;
+                    // segment_manual: 行数は cumRows に連動
+                    const segManualRowCount = activeManualCell.tableType === "segment_manual"
+                        ? cumRows.length
+                        : getManualRowCount(activeManualCell.tableType);
+                    const maxRows = segManualRowCount - activeManualCell.rowIdx;
                     // 更新セルリストを構築
                     const pasteItems: {
                         tableType: ManualTableType;
@@ -2031,7 +2041,7 @@ export default function FinancialsTable({
                         );
                     })()}
                     {/* セグメント群テーブル */}
-                    {(segments || []).some(s => s.source) && (
+                    {cumRows.length > 0 && (
                         <div className="data-section seg-section" style={{ marginTop: 12 }}>
                             {/* ─ source別タブ + タイトル行 ─ */}
                             <div className="segment-header-row">
@@ -2047,7 +2057,8 @@ export default function FinancialsTable({
                                     {([
                                         { key: "tdnet",  label: "TDNET/XBRL" },
                                         { key: "edinet", label: "EDINET" },
-                                        { key: "all",    label: "All" },
+                                        { key: "all",    label: "ALL" },
+                                        { key: "memo",   label: "MEMO" },
                                     ] as const).map(({ key, label }) => (
                                         <button
                                             key={key}
@@ -2060,8 +2071,22 @@ export default function FinancialsTable({
                                     ))}
                                 </div>
                             </div>
-                            <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
-                                <div className="pl-dual-tables">
+                            {segSourceTab === "memo" ? (
+                                <SegmentManualMemoTable
+                                    rows={cumRows}
+                                    gridData={manualTableMemos?.segment_manual ?? []}
+                                    activeManualCell={activeManualCell}
+                                    editingManualCell={editingManualCell}
+                                    editValue={manualEditValue}
+                                    onStartEdit={startManualEditing}
+                                    onEditChange={setManualEditValue}
+                                    onCommit={commitManualEdit}
+                                    onCancel={cancelManualEdit}
+                                    editInputRef={editInputRef}
+                                />
+                            ) : (
+                                <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
+                                    <div className="pl-dual-tables">
                                     <div className="pl-table-block">
                                         <div className="pl-table-label">累計セグメント（百万円）</div>
                                         <table className="pl-table" style={{ minWidth: segCumTableWidth }}>
@@ -2194,64 +2219,11 @@ export default function FinancialsTable({
                                     </div>
                                 </div>
                             </div>
+                            )}
                         </div>
                     )}
                 </>
             )}
-            {/* ─────────────────────────────────────────────────
-                セグメント手入力メモ — 常時表示（単一セグメント企業でも使用可）
-                ───────────────────────────────────────────────── */}
-            <div className="data-section seg-section" style={{ marginTop: 12 }}>
-                <div className="segment-header-row">
-                    <h3 className="section-title" style={{ fontSize: 14, margin: 0 }}>
-                        {"📝"} セグメント手入力メモ
-                        <span style={{ fontSize: 11, fontWeight: 400, color: "var(--text-muted)", marginLeft: 8 }}>
-                            — {SEGMENT_MANUAL_MEMO_ROW_COUNT}行 × {segmentManualColCount}列
-                        </span>
-                    </h3>
-                </div>
-                <div className="pl-scroll-area" style={{ maxHeight: 420, overflowY: "auto" }}>
-                    <div className="pl-dual-tables">
-                        <div className="pl-table-block">
-                            <table className="pl-table" style={{ minWidth: segmentManualColCount * 80 }}>
-                                <thead>
-                                    <tr>
-                                        {Array.from({ length: segmentManualColCount }, (_, i) => (
-                                            <th key={i} style={{
-                                                width: i === 0 ? 100 : i === 1 ? 45 : 80,
-                                                minWidth: i === 0 ? 100 : i === 1 ? 45 : 60,
-                                            }}>
-                                                <div className="th-content">
-                                                    <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
-                                                        {i === 0 ? "PERIOD" : i === 1 ? "Q" : `${i - 1}`}
-                                                    </span>
-                                                </div>
-                                            </th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <ManualMemoRows
-                                        tableType="segment_manual"
-                                        colCount={segmentManualColCount}
-                                        rowCount={SEGMENT_MANUAL_MEMO_ROW_COUNT}
-                                        gridData={manualTableMemos?.segment_manual ?? Array.from({ length: SEGMENT_MANUAL_MEMO_ROW_COUNT }, () => [])}
-                                        activeManualCell={activeManualCell}
-                                        editingManualCell={editingManualCell}
-                                        editValue={manualEditValue}
-                                        onActivate={selectManualCell}
-                                        onStartEdit={startManualEditing}
-                                        onEditChange={setManualEditValue}
-                                        onCommit={commitManualEdit}
-                                        onCancel={cancelManualEdit}
-                                        editInputRef={editInputRef}
-                                    />
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
             {/* トースト通知 */}
             {toastMessage && (
                 <div className="seg-paste-toast">{toastMessage}</div>
@@ -2580,6 +2552,106 @@ function SegOverrideCell({
                 )}
             </div>
         </td>
+    );
+}
+
+// ============================================================
+// SegmentManualMemoTable — MEMO モード用テーブル
+// PERIOD/Q は cumRows から取得（読み取り専用）、右12列が自由入力
+// ============================================================
+function SegmentManualMemoTable({
+    rows,
+    gridData,
+    activeManualCell,
+    editingManualCell,
+    editValue,
+    onStartEdit,
+    onEditChange,
+    onCommit,
+    onCancel,
+    editInputRef,
+}: {
+    rows: { period: string; quarter: string }[];
+    gridData: string[][];
+    activeManualCell: { tableType: ManualTableType; rowIdx: number; colIdx: number } | null;
+    editingManualCell: { tableType: ManualTableType; rowIdx: number; colIdx: number } | null;
+    editValue: string;
+    onStartEdit: (coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }, initVal: string) => void;
+    onEditChange: (val: string) => void;
+    onCommit: () => void;
+    onCancel: () => void;
+    editInputRef?: React.RefObject<HTMLElement | null>;
+}) {
+    const COL = SEGMENT_MANUAL_COL_COUNT; // 12
+    return (
+        <div className="pl-scroll-area" style={{ maxHeight: 480 }}>
+            <div className="pl-dual-tables">
+                <div className="pl-table-block">
+                    <div className="pl-table-label">セグメント手入力メモ — {rows.length}行 × {COL}列</div>
+                    <table className="pl-table" style={{ minWidth: 100 + 45 + COL * 72 }}>
+                        <thead>
+                            <tr>
+                                <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
+                                <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
+                                {Array.from({ length: COL }, (_, i) => (
+                                    <th key={i} style={{ width: 72, minWidth: 50 }}>
+                                        <div className="th-content">
+                                            <span style={{ fontSize: 11, color: "var(--text-muted)" }}>{i + 1}</span>
+                                        </div>
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {rows.map((row, rowIdx) => (
+                                <tr
+                                    key={`seg-manual-${rowIdx}`}
+                                    className={[
+                                        "manual-memo-row",
+                                        row.quarter === "FY" ? "pl-row-fy" : "",
+                                    ].filter(Boolean).join(" ")}
+                                >
+                                    {/* PERIOD 列 — 読み取り専用 */}
+                                    <td style={{ width: 100, minWidth: 100, color: "var(--text-secondary)", userSelect: "none" }}>
+                                        {displayValue(row.period)}
+                                    </td>
+                                    {/* Q 列 — 読み取り専用 */}
+                                    <td style={{ width: 45, minWidth: 45, color: "var(--text-secondary)", userSelect: "none" }}>
+                                        {displayValue(row.quarter)}
+                                    </td>
+                                    {/* 自由入力列 1〜12 */}
+                                    {Array.from({ length: COL }, (_, colIdx) => {
+                                        const isActive = activeManualCell?.tableType === "segment_manual"
+                                            && activeManualCell?.rowIdx === rowIdx
+                                            && activeManualCell?.colIdx === colIdx;
+                                        const isEditing = editingManualCell?.tableType === "segment_manual"
+                                            && editingManualCell?.rowIdx === rowIdx
+                                            && editingManualCell?.colIdx === colIdx;
+                                        const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
+                                        return (
+                                            <MemoCellExcel
+                                                key={colIdx}
+                                                value={cellValue}
+                                                isActive={isActive}
+                                                isEditing={isEditing}
+                                                editValue={editValue}
+                                                onSelect={() => onStartEdit({ tableType: "segment_manual", rowIdx, colIdx }, cellValue)}
+                                                onStartEdit={(val) => onStartEdit({ tableType: "segment_manual", rowIdx, colIdx }, val)}
+                                                onEditChange={onEditChange}
+                                                onCommit={onCommit}
+                                                onCancel={onCancel}
+                                                inputRef={isEditing ? editInputRef : undefined}
+                                                className="manual-memo-cell"
+                                            />
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     );
 }
 

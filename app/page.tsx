@@ -82,13 +82,13 @@ type ManualTableMemos = {
 
 /** 手入力メモ初期値 */
 const MANUAL_ROW_COUNT = 4;
-const SEGMENT_MANUAL_ROW_COUNT = 12;
+const SEGMENT_MANUAL_ROW_COUNT = 12; // みたい定数（参照用）
 const EMPTY_MANUAL_MEMOS: ManualTableMemos = {
     pl_cum:         Array.from({ length: MANUAL_ROW_COUNT }, () => []),
     pl_q:           Array.from({ length: MANUAL_ROW_COUNT }, () => []),
     segment_cum:    Array.from({ length: MANUAL_ROW_COUNT }, () => []),
     segment_q:      Array.from({ length: MANUAL_ROW_COUNT }, () => []),
-    segment_manual: Array.from({ length: SEGMENT_MANUAL_ROW_COUNT }, () => []),
+    segment_manual: [],  // 行数は cumRows.length に連動（コンポーネント側で pad）
 };
 
 function buildMemoMap(memos: Map<string, GridMemoRecord>): MemoMapType {
@@ -115,7 +115,7 @@ function buildManualTableMemos(
         pl_q:           pad(raw.pl_q,           MANUAL_ROW_COUNT),
         segment_cum:    pad(raw.segment_cum,    MANUAL_ROW_COUNT),
         segment_q:      pad(raw.segment_q,      MANUAL_ROW_COUNT),
-        segment_manual: pad(raw.segment_manual, SEGMENT_MANUAL_ROW_COUNT),
+        segment_manual: (raw.segment_manual ?? []).map((r) => [...r]), // 行数は実際の period 行数に連動
     };
 }
 
