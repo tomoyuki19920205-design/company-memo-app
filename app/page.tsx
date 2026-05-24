@@ -404,6 +404,28 @@ export default function ViewerPage() {
         [activeTicker, manualTableMemos, pushUndo]
     );
 
+    /**
+     * segment_manual ペースト用バッチアップデート。
+     * ペースト全セルを一度にメモリ更新 + 1回保存。
+     * 複数回とに非同期保存しないので保存レースが起きない。
+     */
+    const handleManualTableMemoGridUpdate = useCallback(
+        async (tableType: ManualTableType, newGrid: string[][]) => {
+            if (!activeTicker) return;
+            const prevGrid = manualTableMemos[tableType] ?? [];
+            const prevCopy = prevGrid.map((r) => [...r]);
+            setManualTableMemos((prev) => ({ ...prev, [tableType]: newGrid }));
+            try {
+                await saveManualTableMemo(activeTicker, tableType, newGrid);
+            } catch (err) {
+                console.error("手入力メモ一括保存失敗:", err);
+                setManualTableMemos((prev) => ({ ...prev, [tableType]: prevCopy }));
+                setErrorMsg(`手入力メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
+            }
+        },
+        [activeTicker, manualTableMemos]
+    );
+
     // ---- 企業マスタ lazy load (多重ロード防止付き) ----
     const handleRequestMaster = useCallback(async () => {
         if (masterLoadedRef.current || masterLoadingRef.current) return;
@@ -885,6 +907,7 @@ export default function ViewerPage() {
                         onUndo={handleUndo}
                         manualTableMemos={manualTableMemos}
                         onManualMemoEdit={handleManualTableMemoEdit}
+                        onManualMemoGridUpdate={handleManualTableMemoGridUpdate}
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />

@@ -110,6 +110,11 @@ interface FinancialsTableProps {
         colIdx: number,
         value: string,
     ) => void;
+    /** 手入力メモペースト用バッチ保存コールバック (グリッド全体を一度に渡す) */
+    onManualMemoGridUpdate?: (
+        tableType: ManualTableType,
+        newGrid: string[][],
+    ) => void;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -607,6 +612,7 @@ export default function FinancialsTable({
     onUndo,
     manualTableMemos,
     onManualMemoEdit,
+    onManualMemoGridUpdate,
 }: FinancialsTableProps) {
     const filtered = useMemo(() => filterLast5Years(data), [data]);
     const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
@@ -854,9 +860,14 @@ export default function FinancialsTable({
     } | null>(null);
     const segManualIsDragging = useRef(false);
     const segManualDragMoved = useRef(false);
-    // onManualMemoEdit の最新版を常に保持（逐次ペースト用）
+    // onManualMemoEdit / onManualMemoGridUpdate の最新版を常に保持（ペースト用）
     const onManualMemoEditRef = useRef(onManualMemoEdit);
     useEffect(() => { onManualMemoEditRef.current = onManualMemoEdit; }, [onManualMemoEdit]);
+    const onManualMemoGridUpdateRef = useRef(onManualMemoGridUpdate);
+    useEffect(() => { onManualMemoGridUpdateRef.current = onManualMemoGridUpdate; }, [onManualMemoGridUpdate]);
+    // manualTableMemos の最新版を常に保持（バッチペースト用）
+    const manualTableMemosRef = useRef(manualTableMemos);
+    useEffect(() => { manualTableMemosRef.current = manualTableMemos; }, [manualTableMemos]);
 
     // フォーミュラバー高さリサイズ
     const FB_HEIGHT_KEY = "formula-bar-height";
@@ -1744,28 +1755,33 @@ export default function FinancialsTable({
         e.stopPropagation();  // handleTablePaste への伝播を防ぐ
 
         const rawText = e.clipboardData?.getData("text/plain") ?? "";
-        if (!rawText.trim()) return;
+        // クリップボード全体が空なら何もしない（末尾空白のみの場合は空白として貼り付けたい）
+        if (rawText === "") return;
 
-        // TSV parse（末尾空行除去）
-        const textRows = rawText.replace(/\r\n/g, "\n").replace(/\r/g, "\n").split("\n");
-        if (textRows.length > 0 && textRows[textRows.length - 1] === "") textRows.pop();
-        if (textRows.length === 0) return;
+        // TSV parse: parseTsvClipboard を使用（末尾空行だけ除去、途中空セルは "" として正確に扱う）
+        const parsedRows = parseTsvClipboard(rawText);
+        if (parsedRows.length === 0) return;
 
         const rowCount = cumRows.length;
         const colCount = SEGMENT_MANUAL_COL_COUNT;
         const startRow = coord.rowIdx;
         const startCol = coord.colIdx;
 
-        // 貼り付けアイテム構築（colIdx は保存 grid 座標 0..11、PERIOD/Q 不要）
-        const pasteItems: { tableType: ManualTableType; rowIdx: number; colIdx: number; value: string }[] = [];
-        for (let rOff = 0; rOff < textRows.length; rOff++) {
+        // 現在のグリッドを深コピーしてベースにする
+        const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
+        const newGrid: string[][] = Array.from({ length: rowCount }, (_, r) =>
+            Array.from({ length: colCount }, (_, c) => currentGrid[r]?.[c] ?? "")
+        );
+
+        // ペーストデータを newGrid に書き込む（空白セル "" も必ず書き込む）
+        for (let rOff = 0; rOff < parsedRows.length; rOff++) {
             const r = startRow + rOff;
             if (r >= rowCount) break;
-            const cells = textRows[rOff].split("\t");
-            for (let cOff = 0; cOff < cells.length; cOff++) {
+            for (let cOff = 0; cOff < parsedRows[rOff].length; cOff++) {
                 const c = startCol + cOff;
                 if (c >= colCount) break;
-                pasteItems.push({ tableType: "segment_manual", rowIdx: r, colIdx: c, value: cells[cOff] });
+                // undefined/null は "" に。空白文字列 "" はそのまま "" を代入して既存値を消す。
+                newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
             }
         }
 
@@ -1776,24 +1792,14 @@ export default function FinancialsTable({
         setActiveCell(null);  // PL 側の activeCell を確実にクリア
         setManualEditValue("");
 
-        if (pasteItems.length > 0) {
-            let idx = 0;
-            const applyNext = () => {
-                if (idx >= pasteItems.length) {
-                    isCommittingManualRef.current = false;
-                    gridRef.current?.focus();
-                    return;
-                }
-                const item = pasteItems[idx++];
-                onManualMemoEditRef.current?.(item.tableType, item.rowIdx, item.colIdx, item.value);
-                requestAnimationFrame(applyNext);
-            };
-            applyNext();
-        } else {
+        // グリッド全体を1回で保存（rAF ループ不使用 → レース条件なし）
+        onManualMemoGridUpdateRef.current?.("segment_manual", newGrid);
+        requestAnimationFrame(() => {
             isCommittingManualRef.current = false;
             gridRef.current?.focus();
-        }
+        });
     }, [cumRows.length]);
+
 
     const handleTablePaste = useCallback((e: React.ClipboardEvent) => {
         // セグメントセルがアクティブの場合 → セグメントペースト処理
@@ -1896,25 +1902,29 @@ export default function FinancialsTable({
             e.preventDefault();
             e.stopPropagation();
             const rawText = e.clipboardData?.getData("text/plain") ?? "";
-            if (!rawText.trim()) return;
+            if (rawText === "") return;
             const parsedRows = parseTsvClipboard(rawText);
             if (parsedRows.length === 0) return;
 
             const rowCount = cumRows.length;
             const colCount = SEGMENT_MANUAL_COL_COUNT;
-            const currentGrid = manualTableMemos?.segment_manual ?? [];
             const startRow = segManualTarget.rowIdx;
             const startCol = segManualTarget.colIdx;
 
-            // 変更セルリスト構築（PERIOD/Q オフセット +2 は不要。colIdx = 保存 grid 座標）
-            const pasteItems: { tableType: ManualTableType; rowIdx: number; colIdx: number; value: string }[] = [];
+            // 現在のグリッドを深コピーしてベースにする
+            const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
+            const newGrid: string[][] = Array.from({ length: rowCount }, (_, r) =>
+                Array.from({ length: colCount }, (_, c) => currentGrid[r]?.[c] ?? "")
+            );
+
+            // ペーストデータを newGrid に書き込む（空白セル "" も必ず書き込む）
             for (let rOff = 0; rOff < parsedRows.length; rOff++) {
                 const r = startRow + rOff;
                 if (r >= rowCount) break;
-                for (let cOff = 0; cOff < (parsedRows[rOff]?.length ?? 0); cOff++) {
+                for (let cOff = 0; cOff < parsedRows[rOff].length; cOff++) {
                     const c = startCol + cOff;
                     if (c >= colCount) break;
-                    pasteItems.push({ tableType: "segment_manual", rowIdx: r, colIdx: c, value: parsedRows[rOff][cOff] });
+                    newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
                 }
             }
 
@@ -1924,23 +1934,12 @@ export default function FinancialsTable({
             setActiveManualCell(segManualTarget);
             setManualEditValue("");
 
-            if (pasteItems.length > 0) {
-                let pasteIdx = 0;
-                const applyNext = () => {
-                    if (pasteIdx >= pasteItems.length) {
-                        isCommittingManualRef.current = false;
-                        gridRef.current?.focus();
-                        return;
-                    }
-                    const item = pasteItems[pasteIdx++];
-                    onManualMemoEditRef.current?.(item.tableType, item.rowIdx, item.colIdx, item.value);
-                    requestAnimationFrame(applyNext);
-                };
-                applyNext();
-            } else {
+            // グリッド全体を1回で保存（rAF ループ不使用 → レース条件なし）
+            onManualMemoGridUpdateRef.current?.("segment_manual", newGrid);
+            requestAnimationFrame(() => {
                 isCommittingManualRef.current = false;
                 gridRef.current?.focus();
-            }
+            });
             return;
         }
 
