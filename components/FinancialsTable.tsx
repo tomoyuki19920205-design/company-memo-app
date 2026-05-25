@@ -1910,6 +1910,19 @@ export default function FinancialsTable({
         });
     }, [cumRows.length]);
 
+    /**
+     * segment_manual 編集中の Arrow キー処理 — MemoCellExcel から onArrowKey 経由で呼ばれる。
+     * 現在セルを確定してから方向移動する。
+     * IME 判定は MemoCellExcel 側の onKeyDown で行っているためここでは不要。
+     */
+    const handleSegManualArrowKey = useCallback((dir: "up" | "down" | "left" | "right") => {
+        // 確定（onBlur と二重にならないよう isCommittingManualRef で保護）
+        commitManualEdit();
+        // 確定後に方向移動（moveManualActiveCellDir は activeManualCell を参照するため同期で OK）
+        const dRow = dir === "up" ? -1 : dir === "down" ? 1 : 0;
+        const dCol = dir === "left" ? -1 : dir === "right" ? 1 : 0;
+        moveManualActiveCellDir(dRow, dCol);
+    }, [commitManualEdit, moveManualActiveCellDir]);
 
     const handleTablePaste = useCallback((e: React.ClipboardEvent) => {
         // セグメントセルがアクティブの場合 → セグメントペースト処理
@@ -2471,6 +2484,7 @@ export default function FinancialsTable({
                                     onCellMouseDown={handleSegManualCellMouseDown}
                                     onCellMouseEnter={handleSegManualCellMouseEnter}
                                     onCopy={handleSegmentManualCopy}
+                                    onArrowKey={handleSegManualArrowKey}
                                 />
                             ) : (
                                 <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
@@ -2640,6 +2654,7 @@ function MemoCellExcel({
     onMouseDown,
     onMouseEnter,
     onPaste,
+    onArrowKey,
 }: {
     value: string;
     width?: number;
@@ -2657,6 +2672,8 @@ function MemoCellExcel({
     onMouseDown?: (e: React.MouseEvent) => void;
     onMouseEnter?: () => void;
     onPaste?: (e: React.ClipboardEvent) => void;
+    /** editing 中の Arrow キーでセル移動を行うコールバック（segment_manual 専用） */
+    onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
@@ -2680,6 +2697,14 @@ function MemoCellExcel({
                         onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
+                            // Arrow: onArrowKey が渡されていれば確定 + セル移動（segment_manual 専用）
+                            if (onArrowKey && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
+                                onArrowKey(dir);
+                                return;
+                            }
                             // Alt+Enter: セル内改行を挿入
                             if (e.key === "Enter" && e.altKey) {
                                 e.preventDefault();
@@ -2718,6 +2743,14 @@ function MemoCellExcel({
                         onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
+                            // Arrow: onArrowKey が渡されていれば確定 + セル移動（segment_manual 専用）
+                            if (onArrowKey && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
+                                onArrowKey(dir);
+                                return;
+                            }
                             if (e.key === "Enter") {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -2981,6 +3014,7 @@ function SegmentManualMemoTable({
     onCellMouseDown,
     onCellMouseEnter,
     onCopy,
+    onArrowKey,
 }: {
     rows: { period: string; quarter: string }[];
     gridData: string[][];
@@ -3002,6 +3036,8 @@ function SegmentManualMemoTable({
     onCellMouseEnter?: (rowIdx: number, colIdx: number) => void;
     /** copy イベントハンドラ（範囲選択 → TSV → Excel 貼り付け） */
     onCopy?: (e: React.ClipboardEvent) => void;
+    /** editing 中の Arrow キーでセル確定 + 移動を行うコールバック */
+    onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
 }) {
     const COL = SEGMENT_MANUAL_COL_COUNT; // 12
 
@@ -3094,6 +3130,7 @@ function SegmentManualMemoTable({
                                                     : undefined}
                                                 onMouseDown={() => onCellMouseDown?.(rowIdx, colIdx)}
                                                 onMouseEnter={() => onCellMouseEnter?.(rowIdx, colIdx)}
+                                                onArrowKey={onArrowKey ? (dir) => onArrowKey(dir) : undefined}
                                             />
                                         );
                                     })}
