@@ -860,6 +860,10 @@ export default function FinancialsTable({
     } | null>(null);
     const segManualIsDragging = useRef(false);
     const segManualDragMoved = useRef(false);
+    // ドラッグ開始セル（mouseup 時の単一クリック判定用）
+    const segManualDragStartRef = useRef<{ rowIdx: number; colIdx: number } | null>(null);
+    // startManualEditing の最新版を保持（useEffect 内で前方参照なく呼ぶため）
+    const startManualEditingRef = useRef<((coord: { tableType: ManualTableType; rowIdx: number; colIdx: number }, initialValue: string) => void) | null>(null);
     // onManualMemoEdit / onManualMemoGridUpdate の最新版を常に保持（ペースト用）
     const onManualMemoEditRef = useRef(onManualMemoEdit);
     useEffect(() => { onManualMemoEditRef.current = onManualMemoEdit; }, [onManualMemoEdit]);
@@ -943,11 +947,25 @@ export default function FinancialsTable({
     }, []);
 
     // segment_manual ドラッグ選択の終了検出（document レベルで mouseup を捕捉）
+    // mouseup 時に単一クリック（移動なし）なら startManualEditing を呼ぶ
     useEffect(() => {
-        const handleDocMouseUp = () => {
+        const handleDocMouseUp = (ev: MouseEvent) => {
             if (!segManualIsDragging.current) return;
+            const dragStart = segManualDragStartRef.current;
+            const didMove = segManualDragMoved.current;
             segManualIsDragging.current = false;
             segManualDragMoved.current = false;
+            segManualDragStartRef.current = null;
+            // 単一クリック: ドラッグ移動なし → 即編集開始
+            if (!didMove && dragStart) {
+                const coord = { tableType: "segment_manual" as ManualTableType, rowIdx: dragStart.rowIdx, colIdx: dragStart.colIdx };
+                const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
+                const currentValue = currentGrid[dragStart.rowIdx]?.[dragStart.colIdx] ?? "";
+                // setSegManualSel はシングルクリック時にクリア
+                setSegManualSel(null);
+                // startManualEditing は後で宣言されるため ref 経由で呼ぶ
+                startManualEditingRef.current?.(coord, currentValue);
+            }
         };
         document.addEventListener("mouseup", handleDocMouseUp);
         return () => document.removeEventListener("mouseup", handleDocMouseUp);
@@ -1241,6 +1259,8 @@ export default function FinancialsTable({
         // MEMO A/B と同じ明示的 focus（autoFocus との二重保険）
         setTimeout(() => editInputRef.current?.focus(), 0);
     }, [editInputRef]);
+    // ref を最新の startManualEditing で更新（mouseup ハンドラから ref 経由で呼ぶため）
+    useEffect(() => { startManualEditingRef.current = startManualEditing; }, [startManualEditing]);
 
     /** 手入力メモセル編集確定（commitEdit 相当） */
     const commitManualEdit = useCallback(() => {
@@ -1724,22 +1744,36 @@ export default function FinancialsTable({
 
     /** segment_manual セルのマウスダウン — ドラッグ範囲選択の開始 */
     const handleSegManualCellMouseDown = useCallback((rowIdx: number, colIdx: number) => {
+        console.log("[SEG-SEL] MOUSEDOWN", { rowIdx, colIdx });
         segManualIsDragging.current = true;
         segManualDragMoved.current = false;
-        setSegManualSel({ startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx });
+        segManualDragStartRef.current = { rowIdx, colIdx };
+        const coord = { tableType: "segment_manual" as ManualTableType, rowIdx, colIdx };
+        // アクティブセルとして登録（キーボードイベント受け取りのため）
+        setActiveManualCell(coord);
         setActiveCell(null);
         setSelectionRange(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
+        // 範囲選択の初期化（drag 開始点）
+        const next = { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx };
+        console.log("[SEG-SEL] setSegManualSel", next);
+        setSegManualSel(next);
     }, []);
 
-    /** segment_manual セルのマウスエンター — ドラッグ中に範囲拡張＋編集キャンセル */
+    /** segment_manual セルのマウスエンター — ドラッグ中に範囲拡張 */
     const handleSegManualCellMouseEnter = useCallback((rowIdx: number, colIdx: number) => {
         if (!segManualIsDragging.current) return;
+        console.log("[SEG-SEL] MOUSEENTER", { rowIdx, colIdx });
         segManualDragMoved.current = true;
-        setSegManualSel(prev => prev
-            ? { ...prev, endRow: rowIdx, endCol: colIdx }
-            : { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx }
-        );
-        // ドラッグ開始時に起動した editing をキャンセル（commitしない）
+        setSegManualSel(prev => {
+            const next = prev
+                ? { ...prev, endRow: rowIdx, endCol: colIdx }
+                : { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx };
+            console.log("[SEG-SEL] setSegManualSel (enter)", next);
+            return next;
+        });
+        // ドラッグで別セルへ移動した場合は editing をキャンセル（範囲選択モードへ）
         if (isCommittingManualRef.current) return;
         isCommittingManualRef.current = true;
         setEditingManualCell(null);
@@ -2992,9 +3026,16 @@ function SegmentManualMemoTable({
                                         const isEditing = editingManualCell?.tableType === "segment_manual"
                                             && editingManualCell?.rowIdx === rowIdx
                                             && editingManualCell?.colIdx === colIdx;
-                                        const isInRange = !!(selMin && selMax
-                                            && rowIdx >= selMin.r && rowIdx <= selMax.r
-                                            && colIdx >= selMin.c && colIdx <= selMax.c);
+                                        const isInRange = (() => {
+                                            if (!segManualSel) return false;
+                                            const r1 = Math.min(segManualSel.startRow, segManualSel.endRow);
+                                            const r2 = Math.max(segManualSel.startRow, segManualSel.endRow);
+                                            const c1 = Math.min(segManualSel.startCol, segManualSel.endCol);
+                                            const c2 = Math.max(segManualSel.startCol, segManualSel.endCol);
+                                            const result = rowIdx >= r1 && rowIdx <= r2 && colIdx >= c1 && colIdx <= c2;
+                                            if (rowIdx === 0) console.log("[SEG-SEL] CELL isInRange", { rowIdx, colIdx, c1, c2, result, segManualSel });
+                                            return result;
+                                        })();
                                         const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
                                         const coord = { tableType: "segment_manual" as ManualTableType, rowIdx, colIdx };
                                         return (
@@ -3005,7 +3046,11 @@ function SegmentManualMemoTable({
                                                 isInRange={isInRange}
                                                 isEditing={isEditing}
                                                 editValue={editValue}
-                                                onSelect={() => onStartEdit(coord, cellValue)}
+                                                onSelect={() => {
+                                                    // onSelect は onMouseDown → MemoCellExcel 内から呼ばれる
+                                                    // ここではアクティブ化のみ（編集開始は mouseup で行う）
+                                                    // 何もしない: handleSegManualCellMouseDown 内で setActiveManualCell 済み
+                                                }}
                                                 onStartEdit={(val) => onStartEdit(coord, val)}
                                                 onEditChange={onEditChange}
                                                 onCommit={onCommit}
