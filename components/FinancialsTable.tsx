@@ -1274,10 +1274,10 @@ export default function FinancialsTable({
             manualEditValue,
         );
         setEditingManualCell(null);
-        requestAnimationFrame(() => {
-            gridRef.current?.focus();
-            isCommittingManualRef.current = false;
-        });
+        // 同期的に grid へフォーカスを戻す（rAF 遅延を使わない）
+        // → Enter 直後の Arrow キーが確実に handleTableKeyDown に届くようにする
+        gridRef.current?.focus();
+        isCommittingManualRef.current = false;
     }, [editingManualCell, manualEditValue, onManualMemoEdit]);
 
     /** 手入力メモセル編集キャンセル（cancelEdit 相当） */
@@ -2694,7 +2694,14 @@ function MemoCellExcel({
                                 });
                                 return;
                             }
-                            if (e.key === "Enter") { e.preventDefault(); onCommit(); }
+                            if (e.key === "Enter") {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                // blur() 経由で onBlur→onCommit を起動し、フォーカスを即 grid へ戻す
+                                // これにより次の Arrow キーが grid の handleTableKeyDown に届く
+                                e.currentTarget.blur();
+                                return;
+                            }
                             if (e.key === "Escape") { e.preventDefault(); onCancel(); }
                             if (e.key === "Tab") { e.preventDefault(); onCommit(); }
                             e.stopPropagation();
@@ -2711,7 +2718,14 @@ function MemoCellExcel({
                         onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
-                            if (e.key === "Enter") { e.preventDefault(); onCommit(); }
+                            if (e.key === "Enter") {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                // blur() 経由で onBlur→onCommit を起動し、フォーカスを即 grid へ戻す
+                                // これにより次の Arrow キーが grid の handleTableKeyDown に届く
+                                e.currentTarget.blur();
+                                return;
+                            }
                             if (e.key === "Escape") { e.preventDefault(); onCancel(); }
                             if (e.key === "Tab") { e.preventDefault(); onCommit(); }
                             e.stopPropagation();
