@@ -1306,8 +1306,17 @@ export default function FinancialsTable({
         const clampedFlat = Math.max(0, Math.min(totalCells - 1, flat));
         const newRowIdx = Math.floor(clampedFlat / colCount);
         const newColIdx = clampedFlat % colCount;
-        setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
-        focusGrid();
+        const nextCoord = { tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx };
+        setActiveManualCell(nextCoord);
+        // segment_manual: Tab移動後も即編集状態にする（IME対策含む）
+        if (activeManualCell.tableType === "segment_manual") {
+            const currentValue = manualTableMemosRef.current?.segment_manual?.[newRowIdx]?.[newColIdx] ?? "";
+            requestAnimationFrame(() => {
+                startManualEditingRef.current?.(nextCoord, currentValue);
+            });
+        } else {
+            focusGrid();
+        }
     }, [activeManualCell, segmentColumns.length, cumRows.length, focusGrid]);
 
     /** 手入力メモセル: Arrow Key 方向移動（素直クランプ、折り返しなし） */
@@ -1327,8 +1336,17 @@ export default function FinancialsTable({
             : getManualRowCount(activeManualCell.tableType);
         const newRowIdx = Math.max(0, Math.min(rowCount - 1, activeManualCell.rowIdx + dRow));
         const newColIdx = Math.max(0, Math.min(colCount - 1, activeManualCell.colIdx + dCol));
-        setActiveManualCell({ tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx });
-        focusGrid();
+        const nextCoord = { tableType: activeManualCell.tableType, rowIdx: newRowIdx, colIdx: newColIdx };
+        setActiveManualCell(nextCoord);
+        // segment_manual: 移動先でも即編集状態にする（IME対策含む）
+        if (activeManualCell.tableType === "segment_manual") {
+            const currentValue = manualTableMemosRef.current?.segment_manual?.[newRowIdx]?.[newColIdx] ?? "";
+            requestAnimationFrame(() => {
+                startManualEditingRef.current?.(nextCoord, currentValue);
+            });
+        } else {
+            focusGrid();
+        }
     }, [activeManualCell, segmentColumns.length, cumRows.length, focusGrid]);
 
     // 隣セルへ移動 (memo + kpi 統合)
