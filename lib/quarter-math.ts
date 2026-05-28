@@ -93,13 +93,36 @@ function extractPeriodYear(period: string): string {
 }
 
 // ============================================================
+// 予想 source 定数 (実績と予想の区別に使用)
+// ============================================================
+/** J-Quants 予想系 source の集合。実績行と区別するために使用する。 */
+export const FORECAST_SOURCES = new Set<string>([
+    "jquants_nxf",            // 翌期予想 (NxFSales / NxFOP)
+    "jquants_forecast_fy",    // 当期予想 (FSales / FOP、FY実績前)
+    "jquants_forecast_next_fy",
+    "jquants_forecast",
+]);
+
+// ============================================================
 // 過去5年分フィルタ
 // ============================================================
+/**
+ * 実績行は過去5年分、予想行（FORECAST_SOURCES）は全件を返す。
+ * 予想行を period カウントから除外することで、来期予想が追加されても
+ * 過去の実績データが押し出されないようにする。
+ */
 export function filterLast5Years(records: FinancialRecord[]): FinancialRecord[] {
-    // period の unique な値を降順に並べて上位5件の year を取得
-    const uniquePeriods = [...new Set(records.map((r) => r.period))].sort().reverse();
+    const actualRecords   = records.filter(r => !FORECAST_SOURCES.has(r.source ?? ""));
+    const forecastRecords = records.filter(r =>  FORECAST_SOURCES.has(r.source ?? ""));
+
+    // 実績の period のみでウィンドウを計算
+    const uniquePeriods = [...new Set(actualRecords.map((r) => r.period))].sort().reverse();
     const last5Periods = new Set(uniquePeriods.slice(0, 5));
-    return records.filter((r) => last5Periods.has(r.period));
+
+    return [
+        ...actualRecords.filter(r => last5Periods.has(r.period)),
+        ...forecastRecords,   // 予想行は全件（period 制限なし）
+    ];
 }
 
 // ============================================================

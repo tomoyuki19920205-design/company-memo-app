@@ -18,6 +18,7 @@ import {
     buildCumulativeRows,
     buildQStandaloneRows,
     sortForDisplay,
+    FORECAST_SOURCES,
     type CumulativeRow,
     type QStandaloneRow,
 } from "@/lib/quarter-math";
@@ -614,10 +615,23 @@ export default function FinancialsTable({
     onManualMemoEdit,
     onManualMemoGridUpdate,
 }: FinancialsTableProps) {
-    const filtered = useMemo(() => filterLast5Years(data), [data]);
-    const sorted = useMemo(() => sortForDisplay(filtered), [filtered]);
+    // 実績 + 予想 全行（FORECAST_SOURCES が値を锻定）
+    const filteredAll    = useMemo(() => filterLast5Years(data), [data]);
+    // メイン PL テーブル用: 実績行のみ
+    const filteredActual = useMemo(
+        () => filteredAll.filter(r => !FORECAST_SOURCES.has(r.source ?? "")),
+        [filteredAll]
+    );
+    const sorted = useMemo(() => sortForDisplay(filteredActual), [filteredActual]);
     const cumRows = useMemo(() => buildCumulativeRows(sorted), [sorted]);
     const qRows = useMemo(() => buildQStandaloneRows(sorted), [sorted]);
+    // 最新FY予想バー用: FY 予想行のみ（period 降順）
+    const forecastFYRows = useMemo(
+        () => filteredAll
+            .filter(r => r.quarter === "FY" && FORECAST_SOURCES.has(r.source ?? ""))
+            .sort((a, b) => b.period.localeCompare(a.period)),
+        [filteredAll]
+    );
 
     // ─── セグメント source 別タブ ─────────────────────────────
     // 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
@@ -2410,27 +2424,50 @@ export default function FinancialsTable({
                     </div>
                     {/* PL最下部サマリ: 最新FY予想の売上・営業利益 */}
                     {(() => {
-                        const latestFY = [...cumRows].reverse().find(r => r.quarter === "FY");
-                        if (!latestFY || (latestFY.sales === null && latestFY.operatingProfit === null)) return null;
+                        // 実績 FY で最新の period
+                        const latestActualFYPeriod =
+                            [...cumRows].reverse().find(r => r.quarter === "FY")?.period ?? "";
+
+                        // 候補選定:
+                        // 1. latestActualFY より未来の予想（翌期予想）を優先
+                        // 2. 同 period の当期予想
+                        // 3. なければ null
+                        const latestForecast: typeof forecastFYRows[0] | undefined =
+                            forecastFYRows.find(r => r.period > latestActualFYPeriod) ??
+                            forecastFYRows.find(r => r.period === latestActualFYPeriod) ??
+                            (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
+
+                        if (!latestForecast) return null;
+                        if (latestForecast.sales === null && latestForecast.operating_profit === null) return null;
+
+                        const sales = latestForecast.sales;
+                        const op    = latestForecast.operating_profit;
+                        const opMargin =
+                            op !== null && sales !== null && sales !== 0
+                                ? (op / sales) * 100
+                                : null;
+
                         return (
                             <div className="pl-summary-bar">
-                                <span className="pl-summary-period">📌 最新FY予想: {latestFY.period} {latestFY.quarter}</span>
-                                {latestFY.sales !== null && (
+                                <span className="pl-summary-period">
+                                    📌 最新FY予想: {latestForecast.period} {latestForecast.quarter}
+                                </span>
+                                {sales !== null && sales !== 0 && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">売上</span>
-                                        <span className="pl-summary-value">{formatMillions(latestFY.sales)}</span>
+                                        <span className="pl-summary-value">{formatMillions(sales)}</span>
                                     </span>
                                 )}
-                                {latestFY.operatingProfit !== null && (
+                                {op !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">営業利益</span>
-                                        <span className="pl-summary-value">{formatMillions(latestFY.operatingProfit)}</span>
+                                        <span className="pl-summary-value">{formatMillions(op)}</span>
                                     </span>
                                 )}
-                                {latestFY.opMargin !== null && (
+                                {opMargin !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">営利率</span>
-                                        <span className="pl-summary-value">{fmtMargin(latestFY.opMargin)}</span>
+                                        <span className="pl-summary-value">{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}
                             </div>
