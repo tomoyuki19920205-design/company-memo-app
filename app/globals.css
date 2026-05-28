@@ -2664,6 +2664,10 @@ textarea::placeholder {
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  /* segment_manual セルはコンパクトな高さを維持 */
+  min-height: 28px !important;
+  height: 100% !important;
+  resize: none !important;
 }
 
 .manual-memo-input {
@@ -2719,4 +2723,38 @@ textarea::placeholder {
 
 .manual-memo-row-1 td {
   border-top: 2px solid #3b4f6b !important;
+}
+
+/* ============================================================
+   segment_manual 列ヘッダー入力欄
+   ============================================================ */
+.seg-manual-header-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #f8fafc !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font);
+  text-align: center;
+  padding: 3px 4px;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: pointer;
+}
+.seg-manual-header-input:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  background: rgba(96, 165, 250, 0.06);
+}
+.seg-manual-header-input:focus {
+  border-color: #3b82f6;
+  background: #0f172a;
+  cursor: text;
+}
+.seg-manual-header-input::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
 }

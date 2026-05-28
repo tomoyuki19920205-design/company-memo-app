@@ -74,7 +74,7 @@ interface FinancialsTableProps {
     kpiDefs?: KpiDefMap;
     kpiValues?: KpiValueMap;
     onKpiHeaderEdit?: (kpiSlot: number, newName: string) => void;
-    onKpiValueEdit?: (period: string, quarter: string, kpiSlot: number, value: string) => void;
+    onKpiValueEdit?: (period: string, quarter: string, kpiSlot: number, value: string, tableScope?: "cum" | "q") => void;
     /** Segment override: save a manual value for a segment cell */
     onSegmentOverrideSave?: (
         fiscalYear: number,
@@ -116,6 +116,10 @@ interface FinancialsTableProps {
         tableType: ManualTableType,
         newGrid: string[][],
     ) => void;
+    /** segment_manual の列ヘッダー文字列配列 (列 0-11 対応、デフォルト "1"-"12") */
+    segmentManualHeaders?: string[];
+    /** segment_manual ヘッダー編集コールバック (colIdx: 0-based) */
+    onSegmentManualHeaderEdit?: (colIdx: number, value: string) => void;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -614,6 +618,8 @@ export default function FinancialsTable({
     manualTableMemos,
     onManualMemoEdit,
     onManualMemoGridUpdate,
+    segmentManualHeaders,
+    onSegmentManualHeaderEdit,
 }: FinancialsTableProps) {
     // 実績 + 予想 全行（FORECAST_SOURCES が値を锻定）
     const filteredAll    = useMemo(() => filterLast5Years(data), [data]);
@@ -961,25 +967,13 @@ export default function FinancialsTable({
     }, []);
 
     // segment_manual ドラッグ選択の終了検出（document レベルで mouseup を捕捉）
-    // mouseup 時に単一クリック（移動なし）なら startManualEditing を呼ぶ
+    // mousedown で即編集開始済みのため、mouseup はドラッグフラグのリセットのみ担当
     useEffect(() => {
-        const handleDocMouseUp = (ev: MouseEvent) => {
+        const handleDocMouseUp = (_ev: MouseEvent) => {
             if (!segManualIsDragging.current) return;
-            const dragStart = segManualDragStartRef.current;
-            const didMove = segManualDragMoved.current;
             segManualIsDragging.current = false;
             segManualDragMoved.current = false;
             segManualDragStartRef.current = null;
-            // 単一クリック: ドラッグ移動なし → 即編集開始
-            if (!didMove && dragStart) {
-                const coord = { tableType: "segment_manual" as ManualTableType, rowIdx: dragStart.rowIdx, colIdx: dragStart.colIdx };
-                const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
-                const currentValue = currentGrid[dragStart.rowIdx]?.[dragStart.colIdx] ?? "";
-                // setSegManualSel はシングルクリック時にクリア
-                setSegManualSel(null);
-                // startManualEditing は後で宣言されるため ref 経由で呼ぶ
-                startManualEditingRef.current?.(coord, currentValue);
-            }
         };
         document.addEventListener("mouseup", handleDocMouseUp);
         return () => document.removeEventListener("mouseup", handleDocMouseUp);
@@ -1000,7 +994,7 @@ export default function FinancialsTable({
         }
         if (key.startsWith("kpi_")) {
             const slot = parseInt(key.split("_")[1]);
-            const kpiKey = `${row.period}|${row.quarter}`;
+            const kpiKey = `${activeCell.tableId}|${row.period}|${row.quarter}`;
             return kpiValues?.[kpiKey]?.[slot] ?? "";
         }
         return "";
@@ -1131,7 +1125,7 @@ export default function FinancialsTable({
         // KPI列
         if (colIdx >= kpiStart && colIdx < kpiStart + 3) {
             const slot = colIdx - kpiStart + 1;
-            const kpiKey = `${row.period}|${row.quarter}`;
+            const kpiKey = `${tableId}|${row.period}|${row.quarter}`;
             return kpiValues?.[kpiKey]?.[slot] ?? "";
         }
         return "";
@@ -1184,7 +1178,7 @@ export default function FinancialsTable({
                 // KPI列
                 if (c >= kpiStart && c < kpiStart + 3 && onKpiValueEdit) {
                     const slot = c - kpiStart + 1;
-                    onKpiValueEdit(row.period, row.quarter, slot, "");
+                    onKpiValueEdit(row.period, row.quarter, slot, "", selectionRange.tableId);
                 }
             }
         }
@@ -1218,7 +1212,7 @@ export default function FinancialsTable({
             onMemoEdit(row.period, row.quarter, colIdx, editValue);
         } else if (key.startsWith("kpi_") && onKpiValueEdit) {
             const slot = parseInt(key.split("_")[1]);
-            onKpiValueEdit(row.period, row.quarter, slot, editValue);
+            onKpiValueEdit(row.period, row.quarter, slot, editValue, editingCell.tableId);
         }
 
         setEditingCell(null);
@@ -1677,7 +1671,7 @@ export default function FinancialsTable({
             const availableCols = tableId === "cum" ? EDITABLE_COLS : [...KPI_COLS];
 
             const memoEdits: { period: string; quarter: string; colIdx: number; value: string }[] = [];
-            const kpiEdits: { period: string; quarter: string; slot: number; value: string }[] = [];
+            const kpiEdits: { period: string; quarter: string; slot: number; value: string; tableId: "cum" | "q" }[] = [];
 
             for (let r = 0; r < parsed.length; r++) {
                 const targetRowIdx = startRowIdx + r;
@@ -1698,7 +1692,7 @@ export default function FinancialsTable({
                         });
                     } else if (colKey.startsWith("kpi_")) {
                         const slot = parseInt(colKey.split("_")[1]);
-                        kpiEdits.push({ period: row.period, quarter: row.quarter, slot, value });
+                        kpiEdits.push({ period: row.period, quarter: row.quarter, slot, value, tableId });
                     }
                 }
             }
@@ -1710,7 +1704,7 @@ export default function FinancialsTable({
             // kpi列の保存 (1セルずつ)
             if (kpiEdits.length > 0 && onKpiValueEdit) {
                 for (const edit of kpiEdits) {
-                    onKpiValueEdit(edit.period, edit.quarter, edit.slot, edit.value);
+                    onKpiValueEdit(edit.period, edit.quarter, edit.slot, edit.value, edit.tableId as "cum" | "q");
                 }
             }
         },
@@ -1776,7 +1770,6 @@ export default function FinancialsTable({
 
     /** segment_manual セルのマウスダウン — ドラッグ範囲選択の開始 */
     const handleSegManualCellMouseDown = useCallback((rowIdx: number, colIdx: number) => {
-        console.log("[SEG-SEL] MOUSEDOWN", { rowIdx, colIdx });
         segManualIsDragging.current = true;
         segManualDragMoved.current = false;
         segManualDragStartRef.current = { rowIdx, colIdx };
@@ -1788,9 +1781,12 @@ export default function FinancialsTable({
         setActiveSegCell(null);
         setEditingSegCell(null);
         // 範囲選択の初期化（drag 開始点）
-        const next = { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx };
-        console.log("[SEG-SEL] setSegManualSel", next);
-        setSegManualSel(next);
+        setSegManualSel({ startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx });
+        // mousedown 時点で即編集開始（mouseup 連動なしで確実に編集導入）
+        // ドラッグ選択になった場合は handleSegManualCellMouseEnter で編集をキャンセルする
+        const currentGrid = manualTableMemosRef.current?.segment_manual ?? [];
+        const currentValue = currentGrid[rowIdx]?.[colIdx] ?? "";
+        startManualEditingRef.current?.(coord, currentValue);
     }, []);
 
     /** segment_manual セルのマウスエンター — ドラッグ中に範囲拡張 */
@@ -2309,7 +2305,7 @@ export default function FinancialsTable({
                                                     />
                                                     {KPI_SLOTS.map((slot) => {
                                                         const colKey = `kpi_${slot}`;
-                                                        const kpiKey = `${row.period}|${row.quarter}`;
+                                                        const kpiKey = `cum|${row.period}|${row.quarter}`;
                                                         const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
                                                         const kpiAbsCol = CUM_BASE_COL_COUNT + (slot - 1);
                                                         return (
@@ -2378,7 +2374,7 @@ export default function FinancialsTable({
                                                 <td style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{fmtMargin(row.opMargin)}</td>
                                                 {KPI_SLOTS.map((slot) => {
                                                     const colKey = `kpi_${slot}`;
-                                                    const kpiKey = `${row.period}|${row.quarter}`;
+                                                    const kpiKey = `q|${row.period}|${row.quarter}`;
                                                     const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
                                                     const kpiAbsCol = Q_BASE_COL_COUNT + (slot - 1);
                                                     return (
@@ -2522,6 +2518,8 @@ export default function FinancialsTable({
                                     onCellMouseEnter={handleSegManualCellMouseEnter}
                                     onCopy={handleSegmentManualCopy}
                                     onArrowKey={handleSegManualArrowKey}
+                                    columnHeaders={segmentManualHeaders}
+                                    onHeaderEdit={onSegmentManualHeaderEdit}
                                 />
                             ) : (
                                 <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
@@ -2630,8 +2628,8 @@ export default function FinancialsTable({
                                                             const pIdx = scIdx * 2 + 1;
                                                             return (
                                                                 <React.Fragment key={sc.segmentName}>
-                                                                    <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : "–"}</td>
-                                                                    <td className="num-col seg-data-cell segment-group-end" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : "–"}</td>
+                                                                    <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : ""}</td>
+                                                                    <td className="num-col seg-data-cell segment-group-end" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : ""}</td>
                                                                 </React.Fragment>
                                                             );
                                                         })}
@@ -2692,6 +2690,7 @@ function MemoCellExcel({
     onMouseEnter,
     onPaste,
     onArrowKey,
+    useTextarea,
 }: {
     value: string;
     width?: number;
@@ -2711,20 +2710,23 @@ function MemoCellExcel({
     onPaste?: (e: React.ClipboardEvent) => void;
     /** editing 中の Arrow キーでセル移動を行うコールバック（segment_manual 専用） */
     onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
+    /** true の場合 textarea を使用（未指定時は className=="memo-cell" の場合のみ） */
+    useTextarea?: boolean;
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
-    const isMemoCell = extraClass === "memo-cell";
+    // useTextarea prop で明示指定、または className=="memo-cell" の場合に textarea を使用
+    const renderAsTextarea = useTextarea === true || extraClass === "memo-cell";
 
     if (isEditing) {
-        // メモセル: textarea (セル内改行対応、Alt+Enter)
-        // KPIセル: input (従来通り)
+        // renderAsTextarea=true: textarea （セル内改行対応、Alt+Enter）
+        // false: input （従来通り）
         return (
             <td
                 style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
                 className={`${extraClass} memo-cell-editing`}
             >
-                {isMemoCell ? (
+                {renderAsTextarea ? (
                     <textarea
                         ref={inputRef as React.RefObject<HTMLTextAreaElement>}
                         className="memo-inline-input memo-inline-textarea"
@@ -2824,7 +2826,12 @@ function MemoCellExcel({
             onMouseEnter={() => { onMouseEnter?.(); }}
             title={preview}
         >
-            {preview || <span className="memo-empty">–</span>}
+            {preview
+                ? preview
+                : extraClass === "manual-memo-cell"
+                    ? ""  // segment_manual セル: 空欄は空文字（placeholder 廃止）
+                    : <span className="memo-empty">–</span>
+            }
         </td>
     );
 }
@@ -3052,6 +3059,8 @@ function SegmentManualMemoTable({
     onCellMouseEnter,
     onCopy,
     onArrowKey,
+    columnHeaders,
+    onHeaderEdit,
 }: {
     rows: { period: string; quarter: string }[];
     gridData: string[][];
@@ -3075,6 +3084,10 @@ function SegmentManualMemoTable({
     onCopy?: (e: React.ClipboardEvent) => void;
     /** editing 中の Arrow キーでセル確定 + 移動を行うコールバック */
     onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
+    /** 列ヘッダー文字列配列 (列 0-11、デフォルト "1"-"12") */
+    columnHeaders?: string[];
+    /** ヘッダー編集コールバック (colIdx: 0-based) */
+    onHeaderEdit?: (colIdx: number, value: string) => void;
 }) {
     const COL = SEGMENT_MANUAL_COL_COUNT; // 12
 
@@ -3097,13 +3110,35 @@ function SegmentManualMemoTable({
                             <tr>
                                 <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
                                 <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
-                                {Array.from({ length: COL }, (_, i) => (
-                                    <th key={i} style={{ width: 72, minWidth: 50 }}>
-                                        <div className="th-content">
-                                            <span style={{ fontSize: 11, color: "var(--text-muted)" }}>{i + 1}</span>
-                                        </div>
-                                    </th>
-                                ))}
+                                {Array.from({ length: COL }, (_, i) => {
+                                    const headerLabel = columnHeaders?.[i] ?? String(i + 1);
+                                    return (
+                                        <th key={i} style={{ width: 72, minWidth: 50, padding: 0 }}>
+                                            <div className="th-content" style={{ padding: 0 }}>
+                                                <input
+                                                    className="seg-manual-header-input"
+                                                    value={headerLabel}
+                                                    placeholder={String(i + 1)}
+                                                    onChange={(e) => {
+                                                        onHeaderEdit?.(i, e.target.value);
+                                                    }}
+                                                    onBlur={(e) => {
+                                                        // blur 時は確定済みなので何もしない
+                                                    }}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === "Enter" || e.key === "Escape") {
+                                                            e.preventDefault();
+                                                            (e.currentTarget as HTMLInputElement).blur();
+                                                        }
+                                                        e.stopPropagation();
+                                                    }}
+                                                    onMouseDown={(e) => e.stopPropagation()}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                />
+                                            </div>
+                                        </th>
+                                    );
+                                })}
                             </tr>
                         </thead>
                         <tbody>
@@ -3137,9 +3172,7 @@ function SegmentManualMemoTable({
                                             const r2 = Math.max(segManualSel.startRow, segManualSel.endRow);
                                             const c1 = Math.min(segManualSel.startCol, segManualSel.endCol);
                                             const c2 = Math.max(segManualSel.startCol, segManualSel.endCol);
-                                            const result = rowIdx >= r1 && rowIdx <= r2 && colIdx >= c1 && colIdx <= c2;
-                                            if (rowIdx === 0) console.log("[SEG-SEL] CELL isInRange", { rowIdx, colIdx, c1, c2, result, segManualSel });
-                                            return result;
+                                            return rowIdx >= r1 && rowIdx <= r2 && colIdx >= c1 && colIdx <= c2;
                                         })();
                                         const cellValue = gridData[rowIdx]?.[colIdx] ?? "";
                                         const coord = { tableType: "segment_manual" as ManualTableType, rowIdx, colIdx };
@@ -3151,10 +3184,9 @@ function SegmentManualMemoTable({
                                                 isInRange={isInRange}
                                                 isEditing={isEditing}
                                                 editValue={editValue}
+                                                useTextarea={true}
                                                 onSelect={() => {
-                                                    // onSelect は onMouseDown → MemoCellExcel 内から呼ばれる
-                                                    // ここではアクティブ化のみ（編集開始は mouseup で行う）
-                                                    // 何もしない: handleSegManualCellMouseDown 内で setActiveManualCell 済み
+                                                    // handleSegManualCellMouseDown 内で setActiveManualCell 済
                                                 }}
                                                 onStartEdit={(val) => onStartEdit(coord, val)}
                                                 onEditChange={onEditChange}

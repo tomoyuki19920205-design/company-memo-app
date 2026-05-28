@@ -369,3 +369,66 @@ export async function loadManualTableMemos(
 
     return result;
 }
+
+// ============================================================
+// segment_manual ヘッダー名 API (列 1〜12 の見出し)
+// ============================================================
+
+const SEGMENT_MANUAL_HEADER_PERIOD  = "__manual_segment_manual_headers__";
+const SEGMENT_MANUAL_HEADER_QUARTER = "MANUAL_HEADER";
+/** デフォルトヘッダー: ["1","2",...,"12"] */
+export const DEFAULT_SEGMENT_MANUAL_HEADERS: string[] = Array.from({ length: 12 }, (_, i) => String(i + 1));
+
+/**
+ * segment_manual のヘッダー文字列配列を保存する。
+ * grid_json = [headers] の形式（1行×12列）で保存。
+ */
+export async function saveSegmentManualHeaders(
+    ticker: string,
+    headers: string[],
+): Promise<void> {
+    const t = normalizeTicker(ticker);
+    if (!t) throw new Error("ticker が空です");
+    const { error } = await supabase
+        .from("company_memo_grids")
+        .upsert(
+            {
+                ticker: t,
+                period: SEGMENT_MANUAL_HEADER_PERIOD,
+                quarter: SEGMENT_MANUAL_HEADER_QUARTER,
+                grid_json: [headers],  // 1行×N列
+            },
+            { onConflict: "ticker,period,quarter" }
+        );
+    if (error) {
+        console.error("saveSegmentManualHeaders error:", error);
+        throw new Error(`ヘッダー保存失敗: ${error.message}`);
+    }
+}
+
+/**
+ * segment_manual のヘッダー文字列配列を読み込む。
+ * 保存データがなければ DEFAULT_SEGMENT_MANUAL_HEADERS を返す。
+ */
+export async function loadSegmentManualHeaders(
+    ticker: string,
+): Promise<string[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [...DEFAULT_SEGMENT_MANUAL_HEADERS];
+    try {
+        const { data, error } = await supabase
+            .from("company_memo_grids")
+            .select("grid_json")
+            .eq("ticker", t)
+            .eq("period", SEGMENT_MANUAL_HEADER_PERIOD)
+            .eq("quarter", SEGMENT_MANUAL_HEADER_QUARTER)
+            .maybeSingle();
+        if (error || !data) return [...DEFAULT_SEGMENT_MANUAL_HEADERS];
+        const row0 = (data.grid_json as string[][])?.[0];
+        if (!Array.isArray(row0) || row0.length === 0) return [...DEFAULT_SEGMENT_MANUAL_HEADERS];
+        // 12列に揃える（不足分はデフォルト値で補完）
+        return Array.from({ length: 12 }, (_, i) => row0[i] ?? String(i + 1));
+    } catch {
+        return [...DEFAULT_SEGMENT_MANUAL_HEADERS];
+    }
+}

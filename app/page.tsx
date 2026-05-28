@@ -17,6 +17,9 @@ import {
     normalizeTicker,
     saveManualTableMemo,
     loadManualTableMemos,
+    saveSegmentManualHeaders,
+    loadSegmentManualHeaders,
+    DEFAULT_SEGMENT_MANUAL_HEADERS,
     type GridData,
     type GridMemoRecord,
     type ManualTableType,
@@ -146,6 +149,7 @@ export default function ViewerPage() {
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
     const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
+    const [segmentManualHeaders, setSegmentManualHeaders] = useState<string[]>([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
@@ -251,7 +255,7 @@ export default function ViewerPage() {
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult] =
+        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult] =
             await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
@@ -266,6 +270,7 @@ export default function ViewerPage() {
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
                 loadManualTableMemos(ticker),
+                loadSegmentManualHeaders(ticker),
             ]);
 
         setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
@@ -336,6 +341,12 @@ export default function ViewerPage() {
         if (manualMemosResult.status === "fulfilled") {
             setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
         }
+        // segment_manual ヘッダー
+        if (segManualHeadersResult.status === "fulfilled") {
+            setSegmentManualHeaders(segManualHeadersResult.value);
+        } else {
+            setSegmentManualHeaders([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
+        }
 
         // Market data & per share data
         const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
@@ -402,6 +413,28 @@ export default function ViewerPage() {
             }
         },
         [activeTicker, manualTableMemos, pushUndo]
+    );
+
+    // ============================================================
+    // segment_manual ヘッダー編集
+    // ============================================================
+    const handleSegmentManualHeaderEdit = useCallback(
+        async (colIdx: number, value: string) => {
+            if (!activeTicker) return;
+            const prevHeaders = [...segmentManualHeaders];
+            const newHeaders = [...segmentManualHeaders];
+            newHeaders[colIdx] = value;
+            // 楽観的更新
+            setSegmentManualHeaders(newHeaders);
+            try {
+                await saveSegmentManualHeaders(activeTicker, newHeaders);
+            } catch (err) {
+                console.error("ヘッダー保存失敗:", err);
+                setSegmentManualHeaders(prevHeaders);
+                setErrorMsg(`ヘッダー保存失敗: ${err instanceof Error ? err.message : String(err)}`);
+            }
+        },
+        [activeTicker, segmentManualHeaders]
     );
 
     /**
@@ -483,9 +516,9 @@ export default function ViewerPage() {
 
     // KPI値変更
     const handleKpiValueEdit = useCallback(
-        async (period: string, quarter: string, kpiSlot: number, value: string) => {
+        async (period: string, quarter: string, kpiSlot: number, value: string, tableScope: "cum" | "q" = "cum") => {
             if (!activeTicker) return;
-            const key = `${period}|${quarter}`;
+            const key = `${tableScope}|${period}|${quarter}`;
             const prevValue = kpiValues[key]?.[kpiSlot] ?? "";
             // Undo エントリ
             pushUndo(`KPI値 ${key} slot${kpiSlot}`, () => {
@@ -493,7 +526,7 @@ export default function ViewerPage() {
                     ...prev,
                     [key]: { ...(prev[key] || {}), [kpiSlot]: prevValue },
                 }));
-                saveKpiValue(activeTicker, period, quarter, kpiSlot, prevValue).catch(console.error);
+                saveKpiValue(activeTicker, period, quarter, kpiSlot, prevValue, tableScope).catch(console.error);
             });
             // 楽観的更新
             setKpiValues((prev) => ({
@@ -501,7 +534,7 @@ export default function ViewerPage() {
                 [key]: { ...(prev[key] || {}), [kpiSlot]: value },
             }));
             try {
-                await saveKpiValue(activeTicker, period, quarter, kpiSlot, value);
+                await saveKpiValue(activeTicker, period, quarter, kpiSlot, value, tableScope);
             } catch (err) {
                 console.error("KPI値保存失敗:", err);
                 setKpiValues((prev) => ({
@@ -910,6 +943,8 @@ export default function ViewerPage() {
                         manualTableMemos={manualTableMemos}
                         onManualMemoEdit={handleManualTableMemoEdit}
                         onManualMemoGridUpdate={handleManualTableMemoGridUpdate}
+                        segmentManualHeaders={segmentManualHeaders}
+                        onSegmentManualHeaderEdit={handleSegmentManualHeaderEdit}
                     />
                     <ForecastTable data={forecasts} loading={dataLoading} />
                     <MonthlyTable data={monthly} loading={dataLoading} />

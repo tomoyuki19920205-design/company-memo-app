@@ -109,7 +109,13 @@ export async function loadKpiValues(ticker: string): Promise<KpiValueMap> {
 
         if (data) {
             for (const row of data) {
-                const key = `${row.period}|${row.quarter}`;
+                // period may be prefixed with "cum__" or "q__" for scope separation
+                const rawPeriod = row.period as string;
+                let scope = "cum";
+                let actualPeriod = rawPeriod;
+                if (rawPeriod.startsWith("cum__")) { scope = "cum"; actualPeriod = rawPeriod.slice(5); }
+                else if (rawPeriod.startsWith("q__")) { scope = "q"; actualPeriod = rawPeriod.slice(3); }
+                const key = `${scope}|${actualPeriod}|${row.quarter}`;
                 if (!result[key]) result[key] = {};
                 result[key][row.kpi_slot] = row.kpi_value;
             }
@@ -129,17 +135,21 @@ export async function saveKpiValue(
     period: string,
     quarter: string,
     kpiSlot: number,
-    kpiValue: string
+    kpiValue: string,
+    /** "cum" or "q" — scope to separate cumulative from quarterly KPI values */
+    tableScope: "cum" | "q" = "cum",
 ): Promise<void> {
     const t = ticker.trim().toUpperCase();
     if (!t) throw new Error("ticker が空です");
+    // Prefix period with scope to avoid key collision between cum and q tables
+    const scopedPeriod = tableScope === "cum" ? `cum__${period}` : `q__${period}`;
 
     const { error } = await supabase
         .from("company_kpi_values")
         .upsert(
             {
                 ticker: t,
-                period,
+                period: scopedPeriod,
                 quarter,
                 kpi_slot: kpiSlot,
                 kpi_value: kpiValue,
