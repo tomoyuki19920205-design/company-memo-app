@@ -1674,6 +1674,16 @@ export default function FinancialsTable({
 
     // キーボードイベント（テーブル全体）
     const handleTableKeyDown = useCallback((e: React.KeyboardEvent) => {
+        // --- 上部テキストバー（formula-bar）編集中は Arrow キーをセル移動に渡さない ---
+        const target = e.target as HTMLElement | null;
+        const isFormulaBarEditing =
+            target &&
+            (
+                target.classList.contains("formula-bar-input") ||
+                !!target.closest?.(".formula-bar")
+            );
+        if (isFormulaBarEditing) return;
+
         // IME変換中（文字確定中）は Arrow / Enter / Escape / Tab をグリッド操作に使わない
         const isComposing = e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229;
 
