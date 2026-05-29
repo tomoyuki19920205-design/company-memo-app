@@ -120,6 +120,8 @@ interface FinancialsTableProps {
     segmentManualHeaders?: string[];
     /** segment_manual ヘッダー編集コールバック (colIdx: 0-based) */
     onSegmentManualHeaderEdit?: (colIdx: number, value: string) => void;
+    /** 独自横スクロールバー用: pl-scroll-area DOM元素を渡すコールバック */
+    onPlScrollAreaReady?: (el: HTMLDivElement | null) => void;
 }
 
 const KPI_SLOTS = [1, 2, 3] as const;
@@ -620,6 +622,7 @@ export default function FinancialsTable({
     onManualMemoGridUpdate,
     segmentManualHeaders,
     onSegmentManualHeaderEdit,
+    onPlScrollAreaReady,
 }: FinancialsTableProps) {
     // 実績 + 予想 全行（FORECAST_SOURCES が値を锻定）
     const filteredAll    = useMemo(() => filterLast5Years(data), [data]);
@@ -2469,7 +2472,10 @@ export default function FinancialsTable({
                 <div className="no-data-message">該当なし</div>
             ) : (
                 <>
-                    <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
+                    <div
+                        className="pl-scroll-area"
+                        ref={(el) => { onPlScrollAreaReady?.(el); }}
+                    >
                         <div className="pl-dual-tables">
                             {/* === 累計PL === */}
                             <div className="pl-table-block">
@@ -2662,8 +2668,8 @@ export default function FinancialsTable({
                             </div>
                         </div>
                     </div>
-                    {/* リサイズハンドル */}
-                    <div className="pl-resize-handle" onMouseDown={handleResizeMouseDown} title="ドラッグで高さ調整">
+                    {/* リサイズハンドル（縦スクロール廃止のため非表示） */}
+                    <div className="pl-resize-handle" style={{ display: "none" }} onMouseDown={handleResizeMouseDown}>
                         <div className="pl-resize-grip">⋯</div>
                     </div>
                     {/* PL最下部サマリ: 最新FY予想の売上・営業利益 */}
@@ -2770,7 +2776,7 @@ export default function FinancialsTable({
                                     onHeaderEdit={onSegmentManualHeaderEdit}
                                 />
                             ) : (
-                                <div className="pl-scroll-area" style={{ maxHeight: plHeight }}>
+                                <div className="pl-scroll-area">
                                     <div className="pl-dual-tables">
                                     <div className="pl-table-block">
                                         <div className="pl-table-label">累計セグメント（百万円）</div>

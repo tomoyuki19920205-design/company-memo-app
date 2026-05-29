@@ -164,6 +164,39 @@ export default function ViewerPage() {
     const undoStackRef = useRef<UndoEntry[]>([]);
     const MAX_UNDO = 50;
 
+    // ============================================================
+    // カスタム固定横スクロール操作バー
+    // 実際のスクロール対象は document.scrollingElement (html/window)
+    // ============================================================
+    const [xScrollMax, setXScrollMax] = useState(0);
+    const [xScrollLeft, setXScrollLeft] = useState(0);
+
+    useEffect(() => {
+        const getPageScrollEl = (): HTMLElement =>
+            (document.scrollingElement as HTMLElement | null) ?? document.documentElement;
+
+        const update = () => {
+            const el = getPageScrollEl();
+            const max = Math.max(0, el.scrollWidth - el.clientWidth);
+            const scrollX = window.scrollX ?? el.scrollLeft ?? 0;
+            setXScrollMax(max);
+            setXScrollLeft(scrollX);
+        };
+
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        const ro = new ResizeObserver(update);
+        ro.observe(document.documentElement);
+        if (document.body) ro.observe(document.body);
+
+        return () => {
+            window.removeEventListener("scroll", update);
+            window.removeEventListener("resize", update);
+            ro.disconnect();
+        };
+    }, []);
+
     const pushUndo = useCallback((label: string, restore: () => void) => {
         undoStackRef.current.push({ label, restore });
         if (undoStackRef.current.length > MAX_UNDO) {
@@ -921,39 +954,65 @@ export default function ViewerPage() {
             )}
 
             {activeTicker && (
-                <div className="viewer-main">
-                    <FinancialsTable
-                        data={financials}
-                        loading={dataLoading}
-                        selectedPeriod={selectedPeriod}
-                        selectedQuarter={selectedQuarter}
-                        onRowClick={handlePLRowClick}
-                        memoMap={memoMap}
-                        onMemoEdit={handlePLMemoEdit}
-                        onMemoPaste={handlePLMemoPaste}
-                        segments={resolvedSegments}
-                        kpiDefs={kpiDefs}
-                        kpiValues={kpiValues}
-                        onKpiHeaderEdit={handleKpiHeaderEdit}
-                        onKpiValueEdit={handleKpiValueEdit}
-                        onSegmentOverrideSave={handleSaveOverride}
-                        onSegmentOverrideDelete={handleDeleteOverride}
-                        onBulkSaveOverrides={handleBulkSaveOverrides}
-                        onUndo={handleUndo}
-                        manualTableMemos={manualTableMemos}
-                        onManualMemoEdit={handleManualTableMemoEdit}
-                        onManualMemoGridUpdate={handleManualTableMemoGridUpdate}
-                        segmentManualHeaders={segmentManualHeaders}
-                        onSegmentManualHeaderEdit={handleSegmentManualHeaderEdit}
-                    />
-                    <ForecastTable data={forecasts} loading={dataLoading} />
-                    <MonthlyTable data={monthly} loading={dataLoading} />
+                <div className="company-page-x-scroll">
+                    <div className="company-page-wide-content">
+                        <div className="viewer-main">
+                            <FinancialsTable
+                                data={financials}
+                                loading={dataLoading}
+                                selectedPeriod={selectedPeriod}
+                                selectedQuarter={selectedQuarter}
+                                onRowClick={handlePLRowClick}
+                                memoMap={memoMap}
+                                onMemoEdit={handlePLMemoEdit}
+                                onMemoPaste={handlePLMemoPaste}
+                                segments={resolvedSegments}
+                                kpiDefs={kpiDefs}
+                                kpiValues={kpiValues}
+                                onKpiHeaderEdit={handleKpiHeaderEdit}
+                                onKpiValueEdit={handleKpiValueEdit}
+                                onSegmentOverrideSave={handleSaveOverride}
+                                onSegmentOverrideDelete={handleDeleteOverride}
+                                onBulkSaveOverrides={handleBulkSaveOverrides}
+                                onUndo={handleUndo}
+                                manualTableMemos={manualTableMemos}
+                                onManualMemoEdit={handleManualTableMemoEdit}
+                                onManualMemoGridUpdate={handleManualTableMemoGridUpdate}
+                                segmentManualHeaders={segmentManualHeaders}
+                                onSegmentManualHeaderEdit={handleSegmentManualHeaderEdit}
+                            />
+                            <ForecastTable data={forecasts} loading={dataLoading} />
+                            <MonthlyTable data={monthly} loading={dataLoading} />
 
-                    <PerShareTable data={perShareData} loading={dataLoading} />
-                    <KpiTable data={kpi} loading={dataLoading} />
-                    <OrderKpiTable
-                        data={orderKpis}
-                        loading={dataLoading}
+                            <PerShareTable data={perShareData} loading={dataLoading} />
+                            <KpiTable data={kpi} loading={dataLoading} />
+                            <OrderKpiTable
+                                data={orderKpis}
+                                loading={dataLoading}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {xScrollMax > 0 && (
+                <div className="custom-fixed-x-scroll">
+                    <input
+                        type="range"
+                        min={0}
+                        max={xScrollMax}
+                        value={xScrollLeft}
+                        onChange={(e) => {
+                            const next = Number(e.target.value);
+                            setXScrollLeft(next);
+                            window.scrollTo({
+                                left: next,
+                                top: window.scrollY,
+                                behavior: "auto",
+                            });
+                        }}
+                        className="custom-fixed-x-scroll-range"
+                        aria-label="横スクロール"
                     />
                 </div>
             )}

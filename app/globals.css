@@ -38,12 +38,17 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
+html {
+  overflow-x: auto;
+}
+
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
+  padding-bottom: 46px; /* カスタム固定横スクロールバー分の余白 */
 }
 
 /* ============================================================
@@ -380,13 +385,28 @@ body {
 }
 
 /* ============================================================
+   ページ全体横スクロールラッパー
+   PL表・セグメント表など横長コンテンツをページ下部でスクロール可能にする
+   ============================================================ */
+.company-page-x-scroll {
+  width: 100%;
+  overflow-x: visible; /* html/body で横スクロールするためここは visible */
+  overflow-y: visible;
+}
+
+.company-page-wide-content {
+  min-width: max-content;
+}
+
+/* ============================================================
    Data Section
    ============================================================ */
 .data-section {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow-x: visible; /* ページ全体横スクロールを通すため hidden を解除 */
+  overflow-y: hidden;
   box-shadow: var(--shadow-sm);
   outline: none;
 }
@@ -739,7 +759,7 @@ body {
 
 .pl-scroll-area {
   overflow-x: auto;
-  overflow-y: auto;
+  overflow-y: visible; /*縦スクロール廃止: 全行表示 */
   border: 1px solid var(--border-light);
   border-radius: 0 0 6px 6px;
 }
@@ -822,30 +842,14 @@ body {
    PL郢晢ｽｪ郢ｧ?ｿｽE?ｿｽ郢ｧ?ｿｽE?ｿｽ郢ｧ?ｿｽE?ｿｽ郢昜ｸ莞ｦ郢晏ｳｨﾎ・
    ============================================================ */
 .pl-resize-handle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10px;
-  cursor: row-resize;
-  background: linear-gradient(to bottom, #1e2d3d, #152232);
-  border-radius: 0 0 6px 6px;
-  user-select: none;
-  transition: background 0.15s;
+  display: none; /* 縦スクロール廃止のため非表示 */
 }
 
-.pl-resize-handle:hover {
-  background: linear-gradient(to bottom, #253041, #1e2d3d);
-}
-
-.pl-resize-handle:active {
-  background: linear-gradient(to bottom, #2d3f53, #253041);
-}
+.pl-resize-handle:hover {}
+.pl-resize-handle:active {}
 
 .pl-resize-grip {
-  font-size: 0.7rem;
-  color: #94a3b8;
-  letter-spacing: 2px;
-  line-height: 1;
+  display: none;
 }
 
 /* PL譛荳矩Κ繧ｵ繝槭Μ */
@@ -2757,4 +2761,71 @@ textarea::placeholder {
 .seg-manual-header-input::placeholder {
   color: #6b7280 !important;
   opacity: 1 !important;
+}
+
+/* ============================================================
+   カスタム固定横スクロール操作バー (input[type=range])
+   native scrollbar の代替として画面下部に常時表示
+   ============================================================ */
+.custom-fixed-x-scroll {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  height: 34px;
+  z-index: 10000;
+  background: rgba(26, 37, 53, 0.92);
+  border-radius: 12px;
+  padding: 6px 12px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+.custom-fixed-x-scroll-range {
+  width: 100%;
+  height: 22px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  outline: none;
+}
+
+.custom-fixed-x-scroll-range::-webkit-slider-runnable-track {
+  height: 14px;
+  background: #2d3a4f;
+  border-radius: 999px;
+}
+
+.custom-fixed-x-scroll-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 42px;
+  height: 22px;
+  margin-top: -4px;
+  background: #7a8799;
+  border: 2px solid #d8dee9;
+  border-radius: 999px;
+  cursor: grab;
+}
+
+.custom-fixed-x-scroll-range:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  background: #94a3b8;
+}
+
+/* Firefox */
+.custom-fixed-x-scroll-range::-moz-range-track {
+  height: 14px;
+  background: #2d3a4f;
+  border-radius: 999px;
+}
+
+.custom-fixed-x-scroll-range::-moz-range-thumb {
+  width: 42px;
+  height: 22px;
+  background: #7a8799;
+  border: 2px solid #d8dee9;
+  border-radius: 999px;
+  cursor: grab;
 }
