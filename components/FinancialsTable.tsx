@@ -864,6 +864,13 @@ export default function FinancialsTable({
     const formulaBarRef = useRef<HTMLTextAreaElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
 
+    // PL メモ / KPI 専用編集 state（セグメントメモの editingManualCell と完全同構造）
+    // editingCell / commitEdit / gridRef.focus の既存経路とは独立
+    const [editingPlMemoCell, setEditingPlMemoCell] = useState<CellCoord | null>(null);
+    const [plMemoEditValue, setPlMemoEditValue] = useState("");
+    const plMemoInputRef = useRef<HTMLElement>(null);
+    const isCommittingPlMemoRef = useRef(false);
+
     // 範囲選択
     const [selectionRange, setSelectionRange] = useState<SelectionRange | null>(null);
     const isDragging = useRef(false);
@@ -940,6 +947,15 @@ export default function FinancialsTable({
         document.body.style.cursor = "row-resize";
         document.body.style.userSelect = "none";
     }, [formulaBarHeight]);
+
+    // 編集開始直後フラグ: startEditing/startManualEditing 後の requestAnimationFrame 内で
+    // gridRef.focus() がtextareaのfocusを奔うのを防ぐ
+    const justStartedEditingRef = useRef(false);
+    // PL メモ編集中フラグ: editingPlMemoCell の最新値を ref で常に保持（useCallback deps に含めず参照できる）
+    const editingPlMemoCellRef = useRef<CellCoord | null>(null);
+    // PL メモ編集開始時刻: startPlMemoEditing 実行時に Date.now() を保存
+    // textarea onBlur で編集開始直後の多照 blur を無視するために使用
+    const plMemoEditStartedAtRef = useRef<number>(0);
 
     // セグメントセルのアクティブ管理
     const [activeSegCell, setActiveSegCell] = useState<SegCellCoord | null>(null);
@@ -1019,15 +1035,26 @@ export default function FinancialsTable({
     }, [activeCell, cumRows, qRows, kpiDefs]);
 
 
-    // grid wrapperにfocusを戻すヘルパー
+    // grid wrapperにfocusを戻すヘルパー（編集中は focus を奪わない）
     const focusGrid = useCallback(() => {
         requestAnimationFrame(() => {
+            if (justStartedEditingRef.current) {
+                console.log('[focusGrid] 編集開始直後のため gridRef.focus() をスキップ');
+                return; // 編集中なら focus を奪わない
+            }
+            // PL メモ編集中は gridRef に focus を戻さない
+            if (editingPlMemoCellRef.current) {
+                console.log('[focusGrid] PL\u30e1\u30e2\u7de8\u96c6\u4e2d\u306e\u305f\u3081 gridRef.focus() \u3092\u30b9\u30ad\u30c3\u30d7');
+                return;
+            }
             gridRef.current?.focus();
         });
     }, []);
 
     // セル選択
     const selectCell = useCallback((coord: CellCoord) => {
+        // PL メモ編集中は selectCell を実行しない（gridRef.focus に被るのを防ぐ）
+        if (editingPlMemoCellRef.current) return;
         setActiveCell(coord);
         setEditingCell(null);
         setSelectionRange(null);
@@ -1043,6 +1070,8 @@ export default function FinancialsTable({
 
     // 範囲選択: mousedown (ドラッグ開始)
     const handleCellMouseDown = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number, e: React.MouseEvent) => {
+        // PL メモ編集中は PL データセルの mousedown を無視する
+        if (editingPlMemoCellRef.current) return;
         // 左クリックのみ
         if (e.button !== 0) return;
         e.preventDefault(); // ブラウザのテキスト選択(灰色ハイライト)を防止
@@ -1184,14 +1213,36 @@ export default function FinancialsTable({
         }
     }, [selectionRange, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
 
-    // 編集開始
+    // 編集開始（startManualEditing と同方式）
     const startEditing = useCallback((coord: CellCoord, initialValue?: string) => {
+        console.log('[PL startEditing] coord=', coord, 'val=', initialValue);
+        // justStartedEditingRef を立てる: focusGrid() が textarea の focus を奪うのを防ぐ
+        justStartedEditingRef.current = true;
+        setTimeout(() => { justStartedEditingRef.current = false; }, 100);
         setEditingCell(coord);
         setActiveCell(coord);
         const val = initialValue !== undefined ? initialValue : "";
         setEditValue(val);
+        // 他テーブルの選択状態をクリア（startManualEditing と同方式）
+        setActiveManualCell(null);
+        setEditingManualCell(null);
+        setSelectionRange(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
         setTimeout(() => editInputRef.current?.focus(), 0);
-    }, []);
+    }, [editInputRef]);
+
+    // memo/kpi セル専用 mousedown ハンドラ（セグメントメモの handleSegManualCellMouseDown と同方式）
+    // handleCellMouseDown と違い e.preventDefault() と setEditingCell(null) を呼ばない
+    const handleMemoCellMouseDown = useCallback((
+        tableId: "cum" | "q",
+        rowIdx: number,
+        colKey: string,
+        currentValue: string,
+    ) => {
+        const coord: CellCoord = { tableId, rowIdx, colKey };
+        startEditing(coord, currentValue);
+    }, [startEditing]);
 
 
     // commitEdit reentrancy guard（blur + keydownでの二重発火防止）
@@ -1201,6 +1252,18 @@ export default function FinancialsTable({
     const commitEdit = useCallback(() => {
         if (isCommittingRef.current) return;
         if (!editingCell) return;
+        // PL メモ編集中は旧 editingCell の commit を実行しない
+        if (editingPlMemoCellRef.current) {
+            console.log('[commitEdit] PLメモ編集中のため skip');
+            return;
+        }
+        // 編集開始直後（justStartedEditingRef）なら commit しない
+        // mousedown で startEditing → blur 発火 → commit の誤動作防止
+        if (justStartedEditingRef.current) {
+            console.log('[commitEdit] justStartedEditing=true のため skip');
+            return;
+        }
+        console.log('[commitEdit] 実行 editingCell=', editingCell?.colKey);
         isCommittingRef.current = true;
         const rows = editingCell.tableId === "cum" ? cumRows : qRows;
         const row = rows[editingCell.rowIdx];
@@ -1216,10 +1279,9 @@ export default function FinancialsTable({
         }
 
         setEditingCell(null);
-        requestAnimationFrame(() => {
-            gridRef.current?.focus();
-            isCommittingRef.current = false;
-        });
+        // 同期的に grid へフォーカスを戻す（commitManualEdit と同方式）
+        gridRef.current?.focus();
+        isCommittingRef.current = false;
     }, [editingCell, editValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
 
     // 編集キャンセル
@@ -1227,6 +1289,7 @@ export default function FinancialsTable({
         setEditingCell(null);
         focusGrid();
     }, [focusGrid]);
+
 
     // ============================================================
     // 手入力メモ専用行 — セル操作関数
@@ -1269,6 +1332,131 @@ export default function FinancialsTable({
     }, [editInputRef]);
     // ref を最新の startManualEditing で更新（mouseup ハンドラから ref 経由で呼ぶため）
     useEffect(() => { startManualEditingRef.current = startManualEditing; }, [startManualEditing]);
+
+    // ============================================================
+    // PL メモ / KPI 専用編集関数
+    // セグメントメモ（startManualEditing / commitManualEdit）と完全同構造
+    // editingCell / commitEdit / gridRef.focus の既存経路を使わない
+    // ============================================================
+
+    /** PL メモ / KPI セル編集開始（startManualEditing と完全同構造） */
+    const startPlMemoEditing = useCallback((coord: CellCoord, initialValue: string) => {
+        // PL メモ編集中フラグを立てる: focusGrid() が gridRef に focus を奔わないようにする
+        editingPlMemoCellRef.current = coord;
+        justStartedEditingRef.current = true;
+        // blurガード用に編集開始時刻を記録
+        plMemoEditStartedAtRef.current = Date.now();
+        setEditingPlMemoCell(coord);
+        setPlMemoEditValue(initialValue);
+        // 他テーブルの選択状態をクリア（startManualEditing と同様）
+        setActiveCell(coord);
+        setEditingCell(null);
+        setSelectionRange(null);
+        setActiveManualCell(null);
+        setEditingManualCell(null);
+        setActiveSegCell(null);
+        setEditingSegCell(null);
+        // textarea がフォーカスされた後にフラグをリセット（それまでは gridRef.focus() をブロック）
+        setTimeout(() => {
+            (plMemoInputRef.current as HTMLTextAreaElement | null)?.focus();
+            justStartedEditingRef.current = false;
+        }, 50);
+    }, [plMemoInputRef]);
+
+    /**
+     * activeCell が PL メモ / KPI 列へ移動した瞬間に自動で textarea 編集を開始する。
+     * 方向キーで移動→ すぐ textarea 表示→ IME でそのまま入力可能（Excel 風）
+     * editingPlMemoCell 編集中は再呼びしない。
+     */
+    useEffect(() => {
+        if (!activeCell) return;
+        const colKey = activeCell.colKey;
+        const isPlMemoCol = colKey === "memo_a" || colKey === "memo_b" || colKey.startsWith("kpi_");
+        if (!isPlMemoCol) return;
+        // すでに編集中なら再起動しない
+        if (editingPlMemoCell) return;
+        // 現在値を取得して編集開始
+        const rows = activeCell.tableId === "cum" ? cumRows : qRows;
+        const row = rows[activeCell.rowIdx];
+        let currentValue = "";
+        if (row) {
+            if (colKey === "memo_a" || colKey === "memo_b") {
+                const memoKey = `${row.period}|${row.quarter}`;
+                const colIdx = colKey === "memo_a" ? 0 : 1;
+                currentValue = extractMemoValue(memoMap?.[memoKey], colIdx);
+            } else if (colKey.startsWith("kpi_")) {
+                const slot = parseInt(colKey.split("_")[1]);
+                const kpiKey = `${activeCell.tableId}|${row.period}|${row.quarter}`;
+                currentValue = kpiValues?.[kpiKey]?.[slot] ?? "";
+            }
+        }
+        startPlMemoEditing(activeCell, currentValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeCell]);
+
+    /** PL メモ / KPI セル編集確定（commitManualEdit と完全同構造） */
+    const commitPlMemoEdit = useCallback(() => {
+        if (isCommittingPlMemoRef.current) return;
+        if (!editingPlMemoCell) return;
+        isCommittingPlMemoRef.current = true;
+        const rows = editingPlMemoCell.tableId === "cum" ? cumRows : qRows;
+        const row = rows[editingPlMemoCell.rowIdx];
+        if (row) {
+            const key = editingPlMemoCell.colKey;
+            if ((key === "memo_a" || key === "memo_b") && onMemoEdit) {
+                const colIdx = key === "memo_a" ? 0 : 1;
+                onMemoEdit(row.period, row.quarter, colIdx, plMemoEditValue);
+            } else if (key.startsWith("kpi_") && onKpiValueEdit) {
+                const slot = parseInt(key.split("_")[1]);
+                onKpiValueEdit(row.period, row.quarter, slot, plMemoEditValue, editingPlMemoCell.tableId);
+            }
+        }
+        editingPlMemoCellRef.current = null;  // PL メモ編集中フラグをリセット
+        setEditingPlMemoCell(null);
+        // commitManualEdit と同じ: 同期的に gridRef へ focus を戻す
+        gridRef.current?.focus();
+        isCommittingPlMemoRef.current = false;
+    }, [editingPlMemoCell, plMemoEditValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
+
+    /** PL メモ / KPI セル編集キャンセル（cancelManualEdit と同構造） */
+    const cancelPlMemoEdit = useCallback(() => {
+        editingPlMemoCellRef.current = null;  // PL メモ編集中フラグをリセット
+        setEditingPlMemoCell(null);
+        focusGrid();
+    }, [focusGrid]);
+
+    /**
+     * PL メモ textarea の onBlur ガード。
+     * 編集開始から 200ms 以内 かつ relatedTarget=null（フォーカス競合 or spurious blur）の場合は
+     * commitPlMemoEdit を呼ばずに return する。
+     * Enter / Escape / 別セルクリックによる commit は影響しない。
+     */
+    const plMemoBlurShouldSkip = useCallback(
+        (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+            const elapsed = Date.now() - plMemoEditStartedAtRef.current;
+            if (elapsed < 200 && e.relatedTarget == null) {
+                return true;
+            }
+            return false;
+        },
+        []
+    );
+
+    /**
+     * PL メモ / KPI セル mousedown ハンドラ（handleSegManualCellMouseDown と同構造）
+     * handleCellMouseDown を通さないため e.preventDefault / setEditingCell(null) が走らない
+     */
+    const handlePlMemoCellMouseDown = useCallback((
+        tableId: "cum" | "q",
+        rowIdx: number,
+        colKey: string,
+        currentValue: string,
+    ) => {
+        const coord: CellCoord = { tableId, rowIdx, colKey };
+        startPlMemoEditing(coord, currentValue);
+    }, [startPlMemoEditing]);
+
+
 
     /** 手入力メモセル編集確定（commitEdit 相当） */
     const commitManualEdit = useCallback(() => {
@@ -1380,6 +1568,35 @@ export default function FinancialsTable({
             colKey: editableCols[newCol],
         });
     }, [activeCell, cumRows, qRows, selectCell]);
+    // PLメモ / KPIメモ 編集中 Arrow キー: 保存して方向セルへ移動
+    const handlePLCellArrowKey = useCallback((dir: "up" | "down" | "left" | "right") => {
+        commitEdit();
+        const dr = dir === "up" ? -1 : dir === "down" ? 1 : 0;
+        const dc = dir === "left" ? -1 : dir === "right" ? 1 : 0;
+        requestAnimationFrame(() => moveActiveCell(dr, dc));
+    }, [commitEdit, moveActiveCell]);
+    /** PL メモ / KPI 編集中 Arrow キー（handleSegManualArrowKey と同構造、moveActiveCell の後に定義） */
+    const handlePlMemoArrowKey = useCallback((dir: "up" | "down" | "left" | "right") => {
+        // 編集開始直後 120ms 以内 かつ activeElement が textarea/input の場合は誤発火とみなし skip
+        // 120ms 以降の Arrow は「Enter 確定して隔セル移動」の正常処理として通す
+        const elapsed = Date.now() - plMemoEditStartedAtRef.current;
+        if (elapsed < 120 && editingPlMemoCellRef.current) {
+            const activeEl = document.activeElement as HTMLElement | null;
+            const isTextEditingTarget =
+                activeEl != null && (
+                    activeEl.tagName === 'TEXTAREA' ||
+                    activeEl.tagName === 'INPUT' ||
+                    activeEl.isContentEditable
+                );
+            if (isTextEditingTarget) {
+                return;
+            }
+        }
+        commitPlMemoEdit();
+        const dr = dir === "up" ? -1 : dir === "down" ? 1 : 0;
+        const dc = dir === "left" ? -1 : dir === "right" ? 1 : 0;
+        requestAnimationFrame(() => moveActiveCell(dr, dc));
+    }, [commitPlMemoEdit, moveActiveCell]);
 
     // セグメントセル移動
     const moveActiveSegCell = useCallback((dRow: number, dCol: number) => {
@@ -1454,8 +1671,11 @@ export default function FinancialsTable({
 
     // キーボードイベント（テーブル全体）
     const handleTableKeyDown = useCallback((e: React.KeyboardEvent) => {
-        // IME入力中は無視（日本語入力対応）
-        if (e.nativeEvent.isComposing) return;
+        // IME変換中（文字確定中）は Arrow / Enter / Escape / Tab をグリッド操作に使わない
+        const isComposing = e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229;
+
+        // IME変換中（候補選択中）: グリッド操作キーを全て無視
+        if (isComposing) return;
 
         // --- セグメントセルがアクティブの場合 ---
         if (activeSegCell && !editingSegCell) {
@@ -1634,26 +1854,30 @@ export default function FinancialsTable({
             e.preventDefault();
             setSelectionRange(null);
             const val = getActiveCellValue();
-            startEditing(activeCell, val);
+            // PL メモ / KPI セルは startPlMemoEditing、その他は startEditing
+            if (activeCell && (activeCell.colKey === "memo_a" || activeCell.colKey === "memo_b" || activeCell.colKey?.startsWith("kpi_"))) {
+                startPlMemoEditing(activeCell, val);
+            } else {
+                startEditing(activeCell, val);
+            }
         }
         else if (e.key === "F2") {
             e.preventDefault();
             setSelectionRange(null);
             const val = getActiveCellValue();
-            startEditing(activeCell, val);
+            if (activeCell && (activeCell.colKey === "memo_a" || activeCell.colKey === "memo_b" || activeCell.colKey?.startsWith("kpi_"))) {
+                startPlMemoEditing(activeCell, val);
+            } else {
+                startEditing(activeCell, val);
+            }
         }
         // Escape: 範囲解除
         else if (e.key === "Escape") {
             e.preventDefault();
             setSelectionRange(null);
         }
-        // 印字可能文字 → 新しい値で編集開始（既存値を上書き）
-        else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-            e.preventDefault();
-            setSelectionRange(null);
-            startEditing(activeCell, e.key);
-        }
-    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv]);
+        // 印字可能文字: PL メモ / KPI セルは方向キー移動の瞬間に useEffect で自動編集開始するため、ここでは何もしない
+    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startPlMemoEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv, handlePLCellArrowKey]);
 
     // PL側 編集可能セル ペースト (memo + kpi 統合)
     const handleEditablePaste = useCallback(
@@ -2284,24 +2508,36 @@ export default function FinancialsTable({
                                                     <MemoCellExcel value={memoA} width={cumResize.widths[8]}
                                                         isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_a"}
                                                         isInRange={isCellInRange("cum", idx, 8)}
-                                                        isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_a"}
-                                                        editValue={editValue}
-                                                        onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey: "memo_a" })}
-                                                        onStartEdit={(val) => startEditing({ tableId: "cum", rowIdx: idx, colKey: "memo_a" }, val)}
-                                                        onEditChange={setEditValue} onCommit={commitEdit} onCancel={cancelEdit}
-                                                        inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_a" ? editInputRef : undefined}
-                                                        onMouseDown={(e) => handleCellMouseDown("cum", idx, 8, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 8)}
+                                                        isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a"}
+                                                        editValue={plMemoEditValue}
+                                                        onSelect={() => {}}
+                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_a", val)}
+                                                        onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA)}
+                                                        onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA)}
+                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                        onEditChange={setPlMemoEditValue}
+                                                        onCommit={commitPlMemoEdit}
+                                                        onCancel={cancelPlMemoEdit}
+                                                        inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a" ? plMemoInputRef : undefined}
+                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 8)}
+                                                        onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     <MemoCellExcel value={memoB} width={cumResize.widths[9]}
                                                         isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_b"}
                                                         isInRange={isCellInRange("cum", idx, 9)}
-                                                        isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_b"}
-                                                        editValue={editValue}
-                                                        onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey: "memo_b" })}
-                                                        onStartEdit={(val) => startEditing({ tableId: "cum", rowIdx: idx, colKey: "memo_b" }, val)}
-                                                        onEditChange={setEditValue} onCommit={commitEdit} onCancel={cancelEdit}
-                                                        inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === "memo_b" ? editInputRef : undefined}
-                                                        onMouseDown={(e) => handleCellMouseDown("cum", idx, 9, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 9)}
+                                                        isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b"}
+                                                        editValue={plMemoEditValue}
+                                                        onSelect={() => {}}
+                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_b", val)}
+                                                        onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB)}
+                                                        onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB)}
+                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                        onEditChange={setPlMemoEditValue}
+                                                        onCommit={commitPlMemoEdit}
+                                                        onCancel={cancelPlMemoEdit}
+                                                        inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b" ? plMemoInputRef : undefined}
+                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 9)}
+                                                        onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     {KPI_SLOTS.map((slot) => {
                                                         const colKey = `kpi_${slot}`;
@@ -2309,17 +2545,23 @@ export default function FinancialsTable({
                                                         const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
                                                         const kpiAbsCol = CUM_BASE_COL_COUNT + (slot - 1);
                                                         return (
-                                                            <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
+                                                    <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
                                                                 isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
                                                                 isInRange={isCellInRange("cum", idx, kpiAbsCol)}
-                                                                isEditing={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey}
-                                                                editValue={editValue}
-                                                                onSelect={() => selectCell({ tableId: "cum", rowIdx: idx, colKey })}
-                                                                onStartEdit={(val) => startEditing({ tableId: "cum", rowIdx: idx, colKey }, val)}
-                                                                onEditChange={setEditValue} onCommit={commitEdit} onCancel={cancelEdit}
-                                                                inputRef={editingCell?.tableId === "cum" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey ? editInputRef : undefined}
+                                                                isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
+                                                                editValue={plMemoEditValue}
+                                                                onSelect={() => {}}
+                                                                onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, colKey, val)}
+                                                                onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal)}
+                                                                onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal)}
+                                                                onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                                onEditChange={setPlMemoEditValue}
+                                                                onCommit={commitPlMemoEdit}
+                                                                onCancel={cancelPlMemoEdit}
+                                                                inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
                                                                 className="kpi-cell"
-                                                                onMouseDown={(e) => handleCellMouseDown("cum", idx, kpiAbsCol, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
+                                                                onMouseEnter={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
+                                                                onArrowKey={handlePlMemoArrowKey}
                                                             />
                                                         );
                                                     })}
@@ -2381,14 +2623,20 @@ export default function FinancialsTable({
                                                         <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
                                                             isActive={activeCell?.tableId === "q" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
                                                             isInRange={isCellInRange("q", idx, kpiAbsCol)}
-                                                            isEditing={editingCell?.tableId === "q" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey}
-                                                            editValue={editValue}
-                                                            onSelect={() => selectCell({ tableId: "q", rowIdx: idx, colKey })}
-                                                            onStartEdit={(val) => startEditing({ tableId: "q", rowIdx: idx, colKey }, val)}
-                                                            onEditChange={setEditValue} onCommit={commitEdit} onCancel={cancelEdit}
-                                                            inputRef={editingCell?.tableId === "q" && editingCell?.rowIdx === idx && editingCell?.colKey === colKey ? editInputRef : undefined}
+                                                            isEditing={editingPlMemoCell?.tableId === "q" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
+                                                            editValue={plMemoEditValue}
+                                                            onSelect={() => {}}
+                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("q", idx, colKey, val)}
+                                                            onMouseDown={() => handlePlMemoCellMouseDown("q", idx, colKey, cellVal)}
+                                                            onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("q", idx, colKey, cellVal)}
+                                                            onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                            onEditChange={setPlMemoEditValue}
+                                                            onCommit={commitPlMemoEdit}
+                                                            onCancel={cancelPlMemoEdit}
+                                                            inputRef={editingPlMemoCell?.tableId === "q" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
                                                             className="kpi-data-cell"
-                                                            onMouseDown={(e) => handleCellMouseDown("q", idx, kpiAbsCol, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
+                                                            onMouseEnter={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
+                                                            onArrowKey={handlePlMemoArrowKey}
                                                         />
                                                     );
                                                 })}
@@ -2691,6 +2939,8 @@ function MemoCellExcel({
     onPaste,
     onArrowKey,
     useTextarea,
+    onMouseDownCaptureEdit,
+    onBlurShouldSkip,
 }: {
     value: string;
     width?: number;
@@ -2712,15 +2962,28 @@ function MemoCellExcel({
     onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
     /** true の場合 textarea を使用（未指定時は className=="memo-cell" の場合のみ） */
     useTextarea?: boolean;
+    /**
+     * キャプチャフェーズの mousedown コールバック。
+     * 親の onMouseDown / focusGrid / selectCell より先に発火されるため、
+     * PL メモセルでブラウザ native focus を完全遺断して編集開始するために使用。
+     */
+    onMouseDownCaptureEdit?: (e: React.MouseEvent) => void;
+    /**
+     * onBlur ガード: この関数が true を返した場合、onCommit を呼ばずに return する。
+     * PL メモ編集開始直後の spurious blur（relatedTarget=null）による即編集終了を防ぐために使用。
+     */
+    onBlurShouldSkip?: (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>) => boolean;
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
     // useTextarea prop で明示指定、または className=="memo-cell" の場合に textarea を使用
     const renderAsTextarea = useTextarea === true || extraClass === "memo-cell";
 
+    // isActive（選択中）または isEditing（編集中）のとき textarea/input を常に描画する。
+    // クリック直後から IME を使えるよう、textarea を autoFocus で確実にフォーカスする。
     if (isEditing) {
-        // renderAsTextarea=true: textarea （セル内改行対応、Alt+Enter）
-        // false: input （従来通り）
+        // renderAsTextarea=true: textarea (ALt+Enterで改行)
+        // false: input (従来通り)
         return (
             <td
                 style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
@@ -2728,46 +2991,54 @@ function MemoCellExcel({
             >
                 {renderAsTextarea ? (
                     <textarea
-                        ref={inputRef as React.RefObject<HTMLTextAreaElement>}
+                        ref={(el) => {
+                            // external inputRef に attach
+                            if (inputRef) (inputRef as React.MutableRefObject<HTMLElement | null>).current = el;
+                            if (el) {
+                                // マウント直後に強制 focus（autoFocus だけでは focus が奪われる場合の対策）
+                                el.focus();
+                                setTimeout(() => {
+                                }, 0);
+                            }
+                        }}
                         className="memo-inline-input memo-inline-textarea"
                         value={editValue}
                         onChange={(e) => onEditChange(e.target.value)}
-                        onBlur={onCommit}
-                        onPaste={onPaste}
-                        onKeyDown={(e) => {
-                            if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
-                            // Arrow: onArrowKey が渡されていれば確定 + セル移動（segment_manual 専用）
-                            if (onArrowKey && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
-                                onArrowKey(dir);
+                        onCompositionEnd={(e) => onEditChange(e.currentTarget.value)}
+                        onBlur={(e) => {
+                            // 編集開始直後の spurious blur は無視（PL メモ専用ガード）
+                            if (onBlurShouldSkip?.(e)) {
                                 return;
                             }
-                            // Alt+Enter: セル内改行を挿入
+                            onCommit();
+                        }}
+                        onPaste={onPaste}
+                        onKeyDown={(e) => {
+                            // IME変換中はセル移動キーを無視
+                            if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
+                            if (onArrowKey && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+                                e.preventDefault(); e.stopPropagation();
+                                const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
+                                onArrowKey(dir); return;
+                            }
+                            if (e.key === "Tab") {
+                                e.preventDefault();
+                                if (onArrowKey) { onArrowKey(e.shiftKey ? "left" : "right"); }
+                                else { onCommit(); }
+                                return;
+                            }
                             if (e.key === "Enter" && e.altKey) {
                                 e.preventDefault();
                                 const ta = e.currentTarget;
-                                const start = ta.selectionStart;
-                                const end = ta.selectionEnd;
+                                const start = ta.selectionStart ?? 0;
+                                const end = ta.selectionEnd ?? 0;
                                 const newVal = editValue.substring(0, start) + "\n" + editValue.substring(end);
                                 onEditChange(newVal);
-                                // キャレット位置を改行の後ろに移動
-                                requestAnimationFrame(() => {
-                                    ta.selectionStart = ta.selectionEnd = start + 1;
-                                });
+                                requestAnimationFrame(() => { ta.selectionStart = ta.selectionEnd = start + 1; });
                                 return;
                             }
-                            if (e.key === "Enter") {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                // blur() 経由で onBlur→onCommit を起動し、フォーカスを即 grid へ戻す
-                                // これにより次の Arrow キーが grid の handleTableKeyDown に届く
-                                e.currentTarget.blur();
-                                return;
-                            }
-                            if (e.key === "Escape") { e.preventDefault(); onCancel(); }
-                            if (e.key === "Tab") { e.preventDefault(); onCommit(); }
+                            if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); e.currentTarget.blur(); return; }
+                            if (e.key === "Escape") { e.preventDefault(); onCancel(); return; }
                             e.stopPropagation();
                         }}
                         autoFocus
@@ -2778,28 +3049,27 @@ function MemoCellExcel({
                         className="memo-inline-input"
                         value={editValue}
                         onChange={(e) => onEditChange(e.target.value)}
-                        onBlur={onCommit}
+                        onCompositionEnd={(e) => onEditChange(e.currentTarget.value)}
+                        onBlur={(e) => {
+                            if (onBlurShouldSkip?.(e)) return;
+                            onCommit();
+                        }}
                         onPaste={onPaste}
                         onKeyDown={(e) => {
                             if (e.nativeEvent.isComposing || e.key === "Process" || e.keyCode === 229) return;
-                            // Arrow: onArrowKey が渡されていれば確定 + セル移動（segment_manual 専用）
                             if (onArrowKey && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-                                e.preventDefault();
-                                e.stopPropagation();
+                                e.preventDefault(); e.stopPropagation();
                                 const dir = e.key === "ArrowUp" ? "up" : e.key === "ArrowDown" ? "down" : e.key === "ArrowLeft" ? "left" : "right";
-                                onArrowKey(dir);
-                                return;
+                                onArrowKey(dir); return;
                             }
-                            if (e.key === "Enter") {
+                            if (e.key === "Tab") {
                                 e.preventDefault();
-                                e.stopPropagation();
-                                // blur() 経由で onBlur→onCommit を起動し、フォーカスを即 grid へ戻す
-                                // これにより次の Arrow キーが grid の handleTableKeyDown に届く
-                                e.currentTarget.blur();
+                                if (onArrowKey) { onArrowKey(e.shiftKey ? "left" : "right"); }
+                                else { onCommit(); }
                                 return;
                             }
-                            if (e.key === "Escape") { e.preventDefault(); onCancel(); }
-                            if (e.key === "Tab") { e.preventDefault(); onCommit(); }
+                            if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); e.currentTarget.blur(); return; }
+                            if (e.key === "Escape") { e.preventDefault(); onCancel(); return; }
                             e.stopPropagation();
                         }}
                         autoFocus
@@ -2813,15 +3083,25 @@ function MemoCellExcel({
         <td
             style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
             className={`${extraClass} memo-cell-selectable ${isActive ? "memo-cell-active" : ""} ${isInRange ? "memo-cell-in-range" : ""}`}
-            onClick={(e) => {
-                e.stopPropagation();
-                // mousedown で既に選択処理済み。ドラッグ後の click では何もしない
-            }}
+            onClick={(e) => { e.stopPropagation(); }}
             onDoubleClick={(e) => { e.stopPropagation(); onStartEdit(value); }}
             onMouseDown={(e) => {
+                e.preventDefault(); // ブラウザ native focus（tabindex=0 の祖先 div へのフォーカス）を防止
                 e.stopPropagation();
-                onSelect();  // 単一セル選択 (selectionRange はここではクリアされるが mouseDown で再設定)
+                console.log('[MemoCellExcel display td] onMouseDown, extraClass=', extraClass);
+                // セグメントメモ（handleSegManualCellMouseDown）と同じ方式:
+                // onSelect() が startEditing/startManualEditing に繋がるよう呼び出し元で設定する
+                onSelect();
                 onMouseDown?.(e);
+            }}
+            onMouseDownCapture={(e) => {
+                // キャプチャフェーズで親の全ハンドラを遺断して編集開始（PL メモ専用）
+                if (onMouseDownCaptureEdit) {
+                    e.preventDefault(); // ブラウザ native focus 完全遺断
+                    e.stopPropagation(); // 親の onMouseDown / focusGrid / selectCell 遺断
+                    console.log('[MemoCellExcel] onMouseDownCapture 発火 extraClass=', extraClass);
+                    onMouseDownCaptureEdit(e);
+                }
             }}
             onMouseEnter={() => { onMouseEnter?.(); }}
             title={preview}
