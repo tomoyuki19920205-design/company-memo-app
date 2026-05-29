@@ -878,6 +878,8 @@ export default function FinancialsTable({
     const [selectionRange, setSelectionRange] = useState<SelectionRange | null>(null);
     const isDragging = useRef(false);
     const dragDidMove = useRef(false);  // ドラッグ中に別セルへ移動したか
+    // mousedown 時にセットし、mouseup で dragDidMove===false のときだけ実行する編集開始関数
+    const pendingPlMemoClick = useRef<(() => void) | null>(null);
 
     // 手入力メモ専用行の編集 state
     const [activeManualCell, setActiveManualCell] = useState<{ tableType: ManualTableType; rowIdx: number; colIdx: number } | null>(null);
@@ -1105,10 +1107,15 @@ export default function FinancialsTable({
         const handleMouseUp = () => {
             if (isDragging.current) {
                 isDragging.current = false;
-                // 単一セルだけの場合(ドラッグしていない)は範囲クリア
                 if (!dragDidMove.current) {
+                    // 単一セルクリック: 範囲クリア
                     setSelectionRange(null);
+                    // PLメモ/KPIセルのクリック編集開始（ドラッグしていない場合のみ）
+                    if (pendingPlMemoClick.current) {
+                        pendingPlMemoClick.current();
+                    }
                 }
+                pendingPlMemoClick.current = null;
                 // dragDidMove は click イベント後にリセット (少し遅延)
                 setTimeout(() => { dragDidMove.current = false; }, 0);
             }
@@ -2528,14 +2535,17 @@ export default function FinancialsTable({
                                                         editValue={plMemoEditValue}
                                                         onSelect={() => {}}
                                                         onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_a", val)}
-                                                        onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA)}
-                                                        onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA)}
+                                                        onMouseDownCaptureEdit={(e) => {
+                                                            handleCellMouseDown("cum", idx, 8, e);
+                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA);
+                                                        }}
                                                         onBlurShouldSkip={plMemoBlurShouldSkip}
                                                         onEditChange={setPlMemoEditValue}
                                                         onCommit={commitPlMemoEdit}
                                                         onCancel={cancelPlMemoEdit}
                                                         inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a" ? plMemoInputRef : undefined}
                                                         onMouseEnter={() => handleCellMouseEnter("cum", idx, 8)}
+                                                        onMouseEnterRange={() => handleCellMouseEnter("cum", idx, 8)}
                                                         onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     <MemoCellExcel value={memoB} width={cumResize.widths[9]}
@@ -2545,14 +2555,17 @@ export default function FinancialsTable({
                                                         editValue={plMemoEditValue}
                                                         onSelect={() => {}}
                                                         onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_b", val)}
-                                                        onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB)}
-                                                        onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB)}
+                                                        onMouseDownCaptureEdit={(e) => {
+                                                            handleCellMouseDown("cum", idx, 9, e);
+                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB);
+                                                        }}
                                                         onBlurShouldSkip={plMemoBlurShouldSkip}
                                                         onEditChange={setPlMemoEditValue}
                                                         onCommit={commitPlMemoEdit}
                                                         onCancel={cancelPlMemoEdit}
                                                         inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b" ? plMemoInputRef : undefined}
                                                         onMouseEnter={() => handleCellMouseEnter("cum", idx, 9)}
+                                                        onMouseEnterRange={() => handleCellMouseEnter("cum", idx, 9)}
                                                         onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     {KPI_SLOTS.map((slot) => {
@@ -2568,8 +2581,10 @@ export default function FinancialsTable({
                                                                 editValue={plMemoEditValue}
                                                                 onSelect={() => {}}
                                                                 onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, colKey, val)}
-                                                                onMouseDown={() => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal)}
-                                                                onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal)}
+                                                                onMouseDownCaptureEdit={(e) => {
+                                                                    handleCellMouseDown("cum", idx, kpiAbsCol, e);
+                                                                    pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal);
+                                                                }}
                                                                 onBlurShouldSkip={plMemoBlurShouldSkip}
                                                                 onEditChange={setPlMemoEditValue}
                                                                 onCommit={commitPlMemoEdit}
@@ -2577,6 +2592,7 @@ export default function FinancialsTable({
                                                                 inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
                                                                 className="kpi-cell"
                                                                 onMouseEnter={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
+                                                                onMouseEnterRange={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
                                                                 onArrowKey={handlePlMemoArrowKey}
                                                             />
                                                         );
@@ -2643,8 +2659,10 @@ export default function FinancialsTable({
                                                             editValue={plMemoEditValue}
                                                             onSelect={() => {}}
                                                             onStartEdit={(val) => handlePlMemoCellMouseDown("q", idx, colKey, val)}
-                                                            onMouseDown={() => handlePlMemoCellMouseDown("q", idx, colKey, cellVal)}
-                                                            onMouseDownCaptureEdit={() => handlePlMemoCellMouseDown("q", idx, colKey, cellVal)}
+                                                            onMouseDownCaptureEdit={(e) => {
+                                                                handleCellMouseDown("q", idx, kpiAbsCol, e);
+                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("q", idx, colKey, cellVal);
+                                                            }}
                                                             onBlurShouldSkip={plMemoBlurShouldSkip}
                                                             onEditChange={setPlMemoEditValue}
                                                             onCommit={commitPlMemoEdit}
@@ -2652,6 +2670,7 @@ export default function FinancialsTable({
                                                             inputRef={editingPlMemoCell?.tableId === "q" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
                                                             className="kpi-data-cell"
                                                             onMouseEnter={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
+                                                            onMouseEnterRange={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
                                                             onArrowKey={handlePlMemoArrowKey}
                                                         />
                                                     );
@@ -2952,6 +2971,7 @@ function MemoCellExcel({
     className,
     onMouseDown,
     onMouseEnter,
+    onMouseEnterRange,
     onPaste,
     onArrowKey,
     useTextarea,
@@ -2973,6 +2993,8 @@ function MemoCellExcel({
     className?: string;
     onMouseDown?: (e: React.MouseEvent) => void;
     onMouseEnter?: () => void;
+    /** ドラッグ範囲選択用: handleCellMouseEnter を専用に担当するコールバック */
+    onMouseEnterRange?: () => void;
     onPaste?: (e: React.ClipboardEvent) => void;
     /** editing 中の Arrow キーでセル移動を行うコールバック（segment_manual 専用） */
     onArrowKey?: (dir: "up" | "down" | "left" | "right") => void;
@@ -3119,7 +3141,7 @@ function MemoCellExcel({
                     onMouseDownCaptureEdit(e);
                 }
             }}
-            onMouseEnter={() => { onMouseEnter?.(); }}
+            onMouseEnter={() => { onMouseEnter?.(); onMouseEnterRange?.(); }}
             title={preview}
         >
             {preview
