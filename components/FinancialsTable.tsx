@@ -1829,14 +1829,14 @@ export default function FinancialsTable({
             if (selectionRange) {
                 e.preventDefault();
                 const tsv = getRangeAsTsv();
-                if (tsv) navigator.clipboard.writeText(tsv).catch(console.error);
+                if (tsv != null) navigator.clipboard.writeText(tsv).catch(console.error);
                 return;
             }
             // 単一セルの場合も value をコピー
             if (activeCell) {
                 e.preventDefault();
                 const val = getActiveCellValue();
-                if (val) navigator.clipboard.writeText(quoteTsvCell(val)).catch(console.error);
+                if (val != null) navigator.clipboard.writeText(quoteTsvCell(val)).catch(console.error);
                 return;
             }
         }
@@ -1905,9 +1905,20 @@ export default function FinancialsTable({
             e.preventDefault();
             e.stopPropagation();
             const text = e.clipboardData.getData("text/plain");
-            if (!text) return;
-            const parsed = parseTsvClipboard(text);
-            if (parsed.length === 0) return;
+            if (text == null) return;
+
+            let parsed = parseTsvClipboard(text);
+            console.log("[PL paste]", JSON.stringify(text), parsed);
+
+            // Excel等の空白セル1個コピー対策:
+            // text が "" または改行のみの場合も空白1セルとして扱う
+            if (parsed.length === 0) {
+                if (text === "" || /^[\r\n]+$/.test(text)) {
+                    parsed = [[""]];
+                } else {
+                    return;
+                }
+            }
 
             const rows = tableId === "cum" ? cumRows : qRows;
             // cumテーブルの編集可能列: memo_a, memo_b, kpi_1, kpi_2, kpi_3

@@ -19,7 +19,7 @@
  * - \r\n, \n, \r を行境界として扱う（ただしクォート内は除く）
  */
 export function parseTsvClipboard(text: string): string[][] {
-    if (!text) return [];
+    if (text == null) return [];
 
     const rows: string[][] = [];
     let currentRow: string[] = [];
@@ -84,12 +84,17 @@ export function parseTsvClipboard(text: string): string[][] {
     }
 
     // 末尾の空行を除去 (Excel は末尾に \r\n を付けることがある)
-    while (rows.length > 0) {
+    // ただし全行が空白のみの場合は除去しない（空白セル範囲コピーの形状を維持するため）
+    if (rows.length > 0) {
         const lastRow = rows[rows.length - 1];
         if (lastRow.length === 1 && lastRow[0] === "") {
-            rows.pop();
-        } else {
-            break;
+            // 末尾以外に「非空白セル or 複数列行」が1行以上ある場合のみ除去
+            const hasNonEmptyRow = rows.slice(0, -1).some(
+                r => r.length > 1 || r[0] !== ""
+            );
+            if (hasNonEmptyRow) {
+                rows.pop();
+            }
         }
     }
 
