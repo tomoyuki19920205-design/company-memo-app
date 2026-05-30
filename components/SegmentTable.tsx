@@ -77,7 +77,7 @@ function isEditableQuarter(quarter: string): boolean {
 // Component
 // ============================================================
 
-export default function SegmentTable({
+function SegmentTable({
     data,
     loading,
     overrides,
@@ -533,3 +533,5 @@ function SegmentCell({
         </div>
     );
 }
+
+export default React.memo(SegmentTable);

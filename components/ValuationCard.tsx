@@ -37,7 +37,7 @@ function BasisBadge({ basis }: { basis: "forecast" | "actual" | null }) {
     return <span className={cls}>{label}</span>;
 }
 
-export default function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
+function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
     const rootClass = compact ? "valuation-card valuation-card-compact" : "valuation-card";
 
     if (loading) {
@@ -140,3 +140,4 @@ export default function ValuationCard({ valuation, loading, compact }: Valuation
     );
 }
 
+export default React.memo(ValuationCard);

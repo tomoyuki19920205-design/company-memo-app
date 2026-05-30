@@ -20,7 +20,7 @@ const COLUMNS: ColumnDef[] = [
     { key: "source", label: "Source", initialWidth: 60 },
 ];
 
-export default function MonthlyTable({ data, loading }: MonthlyTableProps) {
+function MonthlyTable({ data, loading }: MonthlyTableProps) {
     if (loading) {
         return (
             <div className="data-section">
@@ -57,3 +57,5 @@ export default function MonthlyTable({ data, loading }: MonthlyTableProps) {
         </div>
     );
 }
+
+export default React.memo(MonthlyTable);

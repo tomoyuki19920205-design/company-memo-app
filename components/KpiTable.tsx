@@ -22,7 +22,7 @@ const COLUMNS: ColumnDef[] = [
     { key: "source", label: "Source", initialWidth: 60 },
 ];
 
-export default function KpiTable({ data, loading }: KpiTableProps) {
+function KpiTable({ data, loading }: KpiTableProps) {
     if (loading) {
         return (
             <div className="data-section">
@@ -61,3 +61,5 @@ export default function KpiTable({ data, loading }: KpiTableProps) {
         </div>
     );
 }
+
+export default React.memo(KpiTable);

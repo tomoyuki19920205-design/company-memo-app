@@ -24,7 +24,7 @@ function shortPeriod(period: string): string {
     return `${m[1]}.${parseInt(m[2])}`;
 }
 
-export default function PerShareTable({ data, loading }: PerShareTableProps) {
+function PerShareTable({ data, loading }: PerShareTableProps) {
     if (loading) {
         return (
             <div className="per-share-section">
@@ -124,3 +124,5 @@ export default function PerShareTable({ data, loading }: PerShareTableProps) {
         </div>
     );
 }
+
+export default React.memo(PerShareTable);

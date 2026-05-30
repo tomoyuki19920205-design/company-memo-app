@@ -20,7 +20,7 @@ interface TickerHeaderProps {
     onRequestMaster: () => void;
 }
 
-export default function TickerHeader({
+function TickerHeader({
     tickerInput,
     onTickerChange,
     onLoad,
@@ -261,3 +261,5 @@ export default function TickerHeader({
         </div>
     );
 }
+
+export default React.memo(TickerHeader);

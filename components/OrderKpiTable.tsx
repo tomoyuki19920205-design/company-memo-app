@@ -59,7 +59,7 @@ interface Props {
     loading: boolean;
 }
 
-export default function OrderKpiTable({ data, loading }: Props) {
+function OrderKpiTable({ data, loading }: Props) {
     const { rows, kpiColumns } = useMemo(() => {
         if (!data || data.length === 0) return { rows: [] as PivotRow[], kpiColumns: [] as string[] };
 
@@ -155,3 +155,5 @@ export default function OrderKpiTable({ data, loading }: Props) {
         </div>
     );
 }
+
+export default React.memo(OrderKpiTable);

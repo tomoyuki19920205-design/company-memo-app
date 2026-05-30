@@ -23,7 +23,7 @@ const COLUMNS: ColumnDef[] = [
     { key: "source", label: "Source", initialWidth: 60 },
 ];
 
-export default function ForecastTable({ data, loading }: ForecastTableProps) {
+function ForecastTable({ data, loading }: ForecastTableProps) {
     if (loading) {
         return (
             <div className="data-section">
@@ -63,3 +63,6 @@ export default function ForecastTable({ data, loading }: ForecastTableProps) {
         </div>
     );
 }
+
+export default React.memo(ForecastTable);
+

@@ -21,6 +21,21 @@ import {
     FORECAST_SOURCES,
 } from "@/lib/quarter-math";
 
+// ─── セグメント source 別タブ ─────────────────────────────
+// 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
+//           / backfill_xbrl / xbrl / attachment_xbrl
+// 'edinet' = edinet_xbrl
+// 'all'   = 上記すべて（whitelist source のみ。sourceなし・ゴみデータは除外）
+const TDNET_SOURCES  = new Set([
+    "backfill_v4_pdf",   // XBRL partial fallback 採用済み PDF V4 (priority=0)
+    "v4_pdf",            // 同上 (短縮エイリアス)
+    "backfill_xbrl",
+    "xbrl",
+    "attachment_xbrl",
+]);
+const EDINET_SOURCES = new Set(["edinet_xbrl"]);
+type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
+
 interface MemoMap {
     [key: string]: GridData;
 }
@@ -629,20 +644,6 @@ export default function FinancialsTable({
         [filteredAll]
     );
 
-    // ─── セグメント source 別タブ ─────────────────────────────
-    // 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
-    //           / backfill_xbrl / xbrl / attachment_xbrl
-    // 'edinet' = edinet_xbrl
-    // 'all'   = 上記すべて（whitelist source のみ。sourceなし・ゴみデータは除外）
-    const TDNET_SOURCES  = new Set([
-        "backfill_v4_pdf",   // XBRL partial fallback 採用済み PDF V4 (priority=0)
-        "v4_pdf",            // 同上 (短縮エイリアス)
-        "backfill_xbrl",
-        "xbrl",
-        "attachment_xbrl",
-    ]);
-    const EDINET_SOURCES = new Set(["edinet_xbrl"]);
-    type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
 
     const filteredBySource = useMemo(() => {
