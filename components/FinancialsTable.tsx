@@ -29,9 +29,9 @@ interface MemoMap {
 
 /** アクティブセル座標 */
 interface CellCoord {
-    tableId: "cum" | "q";
+    tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual";
     rowIdx: number;
-    colKey: string; // "memo_a" | "memo_b" | "kpi_1" | "kpi_2" | "kpi_3"
+    colKey: string; // "memo_a" | "memo_b" | "kpi_1" | "kpi_2" | "kpi_3" | "col_0"..."col_7"
 }
 
 /** セグメントセルのアクティブ座標 */
@@ -42,7 +42,7 @@ interface SegCellCoord {
 
 /** 範囲選択 */
 interface SelectionRange {
-    tableId: "cum" | "q";
+    tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual";
     startRow: number;
     startColIdx: number;  // 絶対列インデックス (0-based)
     endRow: number;
@@ -51,7 +51,7 @@ interface SelectionRange {
 
 // CUM: [period, quarter, sales, gp, gm_rate, sga, op, margin, memo_a, memo_b, ...kpis]
 // Q:   [period, quarter, sales, gp, gm_rate, sga, op, margin, ...kpis]
-const CUM_BASE_COL_COUNT = 10;
+const CUM_BASE_COL_COUNT = 8;
 const Q_BASE_COL_COUNT = 8;
 
 // 編集可能列の共通定数
@@ -138,6 +138,12 @@ const CUM_COLUMNS: ColumnDef[] = [
     { key: "sga", label: "管理費", initialWidth: 85, className: "num-col" },
     { key: "op", label: "OP", initialWidth: 85, className: "num-col" },
     { key: "op_margin", label: "営業利益率", initialWidth: 75, className: "num-col op-margin-col" },
+];
+
+/** メモ欄・KPI欄テーブルのベース列定義 */
+const MEMO_KPI_BASE_COLUMNS: ColumnDef[] = [
+    { key: "period", label: "PERIOD", initialWidth: 100 },
+    { key: "quarter", label: "Q", initialWidth: 45 },
     { key: "memo_a", label: "Memo A", initialWidth: 130 },
     { key: "memo_b", label: "Memo B", initialWidth: 130 },
 ];
@@ -302,10 +308,6 @@ function buildSegmentInfo(
             }
         }
     }
-    // [DEBUG] semantic anchor map 内容確認 (7931確認後に削除)
-    if (process.env.NODE_ENV === "development") {
-        console.log("[SEG_SEMANTIC_MAP]", Array.from(jpSemanticAnchorMap.entries()), opts);
-    }
 
     // TDNET英語名を日本語アンカーdkへ解決するヘルパー
     // 0. semantic key → 1. alias完全一致 → 2. alias部分一致
@@ -317,10 +319,6 @@ function buildSegmentInfo(
         const jpFromSemantic = jpSemanticAnchorMap.get(semanticKey);
         const alias = normalizeSegmentAliasKey(name);
         const aliasDk = alias ? (normalizeSegmentDisplayKey(alias) || "") : "";
-        // [DEBUG] resolve 追跡ログ (7931確認後に削除)
-        if (process.env.NODE_ENV === "development") {
-            console.log("[SEG_RESOLVE]", { raw: name, baseDk, semanticKey, semanticHit: jpFromSemantic, alias, aliasDk });
-        }
         if (jpFromSemantic) return jpFromSemantic;
 
         // 1 & 2. alias判定（完全一致 → 部分一致）
@@ -429,15 +427,6 @@ function buildSegmentInfo(
         }
     }
 
-    // DEBUG: merge確認ログ (development のみ)
-    if (process.env.NODE_ENV === "development" && segments.length > 0) {
-        console.log("[SEG-DEBUG] input segments:", segments.length, "→ filtered:", filtered.length);
-        console.log("[SEG-DEBUG] segmentColumns:", segmentColumns.map((c) => `${c.display_key}=${c.segmentName}`));
-        console.log("[SEG-DEBUG] segmentMap keys:", [...segmentMap.keys()].slice(0, 5));
-        console.log("[SEG-DEBUG] segmentQMap keys:", [...segmentQMap.keys()].slice(0, 5));
-        const firstKey = [...segmentQMap.keys()][0];
-        if (firstKey) console.log("[SEG-DEBUG] segmentQMap sample:", firstKey, segmentQMap.get(firstKey));
-    }
 
     // Per-cell source tracking: build from SegmentRecord._salesSource / _profitSource
     // Key: "period|quarter|seg:name:sales" or "period|quarter|seg:name:profit"
@@ -719,8 +708,9 @@ export default function FinancialsTable({
     }, [segmentColumns]);
 
     // 列幅管理
-    const cumResize = useColumnResize({ storageKey: "pl-cum-v3", columns: CUM_COLUMNS });
-    const qResize = useColumnResize({ storageKey: "pl-q-v3", columns: Q_BASE_COLUMNS });
+    const cumResize = useColumnResize({ storageKey: "pl-cum-v5", columns: CUM_COLUMNS });
+    const qResize = useColumnResize({ storageKey: "pl-q-v5", columns: Q_BASE_COLUMNS });
+    const memoKpiResize = useColumnResize({ storageKey: "pl-memo-kpi-v2", columns: MEMO_KPI_BASE_COLUMNS });
 
     // セグメント列幅管理 (動的列数に対応)
     const segColCount = segmentHeaders.length; // 各セグメント×(売上+利益)
@@ -850,9 +840,11 @@ export default function FinancialsTable({
     const kpiExtraWidth = kpiWidths.reduce((s, w) => s + w, 0);
     const segExtraWidth = segWidths.reduce((s, w) => s + w, 0);
     // PLテーブル幅（セグメント列なし）
-    const cumTableWidth = cumResize.widths.reduce((s, w) => s + w, 0) + kpiExtraWidth;
-    const qBaseWidth = qResize.widths.reduce((s, w) => s + w, 0);
-    const qTableWidth = qBaseWidth + kpiExtraWidth;
+    // 累計PL: 表示8列分のみ (period/q/sales/gp/gm_rate/sga/op/op_margin)
+    const cumTableWidth = cumResize.widths.slice(0, 8).reduce((s, w) => s + w, 0);
+    // Q/memo_kpi は period/q (先頭2列) を非表示にするため、幅計算から除外
+    const qTableWidth = qResize.widths.slice(2).reduce((s, w) => s + w, 0);
+    const memoKpiTableWidth = memoKpiResize.widths.slice(2).reduce((s, w) => s + w, 0) + kpiExtraWidth;
     // セグメントテーブル幅
     const segCumTableWidth = 100 + 45 + segExtraWidth;
     const segQTableWidth = 100 + 45 + segExtraWidth;
@@ -1003,6 +995,15 @@ export default function FinancialsTable({
     // フォーミュラバー用: 現在のセル値を取得
     const getActiveCellValue = useCallback((): string => {
         if (!activeCell) return "";
+        // pl_cum_manual / pl_q_manual は manualTableMemos から取得
+        if (activeCell.tableId === "pl_cum_manual") {
+            const colIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            return manualTableMemos?.pl_cum?.[activeCell.rowIdx]?.[colIdx] ?? "";
+        }
+        if (activeCell.tableId === "pl_q_manual") {
+            const colIdx = parseInt(activeCell.colKey.replace("col_", "")) + 2;
+            return manualTableMemos?.pl_q?.[activeCell.rowIdx]?.[colIdx] ?? "";
+        }
         const rows = activeCell.tableId === "cum" ? cumRows : qRows;
         const row = rows[activeCell.rowIdx];
         if (!row) return "";
@@ -1024,6 +1025,14 @@ export default function FinancialsTable({
     // フォーミュラバーの表示ラベル
     const activeCellLabel = useMemo((): string => {
         if (!activeCell) return "";
+        if (activeCell.tableId === "pl_cum_manual") {
+            const colIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            return `下メモ(累計) / 行${activeCell.rowIdx + 1} / 列${colIdx + 1}`;
+        }
+        if (activeCell.tableId === "pl_q_manual") {
+            const colIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            return `下メモ(Q単体) / 行${activeCell.rowIdx + 1} / 列${colIdx + 1}`;
+        }
         const rows = activeCell.tableId === "cum" ? cumRows : qRows;
         const row = rows[activeCell.rowIdx];
         if (!row) return "";
@@ -1044,12 +1053,10 @@ export default function FinancialsTable({
     const focusGrid = useCallback(() => {
         requestAnimationFrame(() => {
             if (justStartedEditingRef.current) {
-                console.log('[focusGrid] 編集開始直後のため gridRef.focus() をスキップ');
                 return; // 編集中なら focus を奪わない
             }
             // PL メモ編集中は gridRef に focus を戻さない
             if (editingPlMemoCellRef.current) {
-                console.log('[focusGrid] PL\u30e1\u30e2\u7de8\u96c6\u4e2d\u306e\u305f\u3081 gridRef.focus() \u3092\u30b9\u30ad\u30c3\u30d7');
                 return;
             }
             gridRef.current?.focus();
@@ -1074,7 +1081,7 @@ export default function FinancialsTable({
     }, [focusGrid]);
 
     // 範囲選択: mousedown (ドラッグ開始)
-    const handleCellMouseDown = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number, e: React.MouseEvent) => {
+    const handleCellMouseDown = useCallback((tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual", rowIdx: number, colIdx: number, e: React.MouseEvent) => {
         // PL メモ編集中は PL データセルの mousedown を無視する
         if (editingPlMemoCellRef.current) return;
         // 左クリックのみ
@@ -1092,7 +1099,7 @@ export default function FinancialsTable({
     }, []);
 
     // 範囲選択: mouseenter (ドラッグ中の拡張)
-    const handleCellMouseEnter = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number) => {
+    const handleCellMouseEnter = useCallback((tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual", rowIdx: number, colIdx: number) => {
         if (!isDragging.current || !selectionRange) return;
         if (selectionRange.tableId !== tableId) return;
         // 別セルに入ったらドラッグ移動とみなす
@@ -1125,7 +1132,7 @@ export default function FinancialsTable({
     }, []);
 
     // セルが範囲内か判定
-    const isCellInRange = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number): boolean => {
+    const isCellInRange = useCallback((tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual", rowIdx: number, colIdx: number): boolean => {
         if (!selectionRange || selectionRange.tableId !== tableId) return false;
         const minRow = Math.min(selectionRange.startRow, selectionRange.endRow);
         const maxRow = Math.max(selectionRange.startRow, selectionRange.endRow);
@@ -1135,7 +1142,34 @@ export default function FinancialsTable({
     }, [selectionRange]);
 
     // セル表示値を取得 (全列対応)
-    const getCellDisplayValue = useCallback((tableId: "cum" | "q", rowIdx: number, colIdx: number): string => {
+    const getCellDisplayValue = useCallback((tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual", rowIdx: number, colIdx: number): string => {
+        // pl_cum_manual / pl_q_manual: manualTableMemos から直接取得
+        if (tableId === "pl_cum_manual") {
+            return manualTableMemos?.pl_cum?.[rowIdx]?.[colIdx] ?? "";
+        }
+        if (tableId === "pl_q_manual") {
+            // colOffset=2 なので実インデックスは colIdx + 2
+            return manualTableMemos?.pl_q?.[rowIdx]?.[colIdx + 2] ?? "";
+        }
+        // memo_kpi テーブル: cumRows を使い独自列マッピング
+        // 0=period, 1=quarter, 2=memo_a, 3=memo_b, 4=kpi_1, 5=kpi_2, 6=kpi_3
+        if (tableId === "memo_kpi") {
+            const row = cumRows[rowIdx];
+            if (!row) return "";
+            if (colIdx === 0) return displayValue(row.period);
+            if (colIdx === 1) return displayValue(row.quarter);
+            const memoKey = `${row.period}|${row.quarter}`;
+            const memoGrid = memoMap?.[memoKey];
+            if (colIdx === 2) return extractMemoValue(memoGrid, 0);
+            if (colIdx === 3) return extractMemoValue(memoGrid, 1);
+            // colIdx 4=kpi_1, 5=kpi_2, 6=kpi_3
+            if (colIdx >= 4 && colIdx <= 6) {
+                const slot = colIdx - 3;
+                const kpiKey = `cum|${row.period}|${row.quarter}`;
+                return kpiValues?.[kpiKey]?.[slot] ?? "";
+            }
+            return "";
+        }
         const rows = tableId === "cum" ? cumRows : qRows;
         const row = rows[rowIdx];
         if (!row) return "";
@@ -1168,7 +1202,7 @@ export default function FinancialsTable({
             return kpiValues?.[kpiKey]?.[slot] ?? "";
         }
         return "";
-    }, [cumRows, qRows, memoMap, kpiValues]);
+    }, [cumRows, qRows, memoMap, kpiValues, manualTableMemos]);
 
     // TSVクォーティング (改行/タブを含むセルをダブルクォートで囲む)
     const quoteTsvCell = (val: string): string => {
@@ -1196,36 +1230,68 @@ export default function FinancialsTable({
         return lines.join("\n");
     }, [selectionRange, getCellDisplayValue]);
 
-    // 範囲クリア (Delete/Backspace) — 編集可能列のみ
+    /**
+     * 編集可能グリッド (memo_kpi / pl_cum_manual / pl_q_manual) の 1 セル保存を共通化。
+     * clearRange / Delete 単一クリア / handleEditablePaste から呼ばれる。
+     */
+    const saveEditableCell = useCallback((
+        tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual",
+        rowIdx: number,
+        colIdx: number,
+        value: string,
+    ) => {
+        // pl_cum_manual: manualTableMemos.pl_cum[rowIdx][colIdx]
+        if (tableId === "pl_cum_manual") {
+            onManualMemoEdit?.("pl_cum", rowIdx, colIdx, value);
+            return;
+        }
+        // pl_q_manual: 表示列 colIdx に +2 のオフセット
+        if (tableId === "pl_q_manual") {
+            onManualMemoEdit?.("pl_q", rowIdx, colIdx + 2, value);
+            return;
+        }
+        // memo_kpi: colIdx 2,3 → memo_a/b、colIdx 4,5,6 → kpi_1/2/3
+        if (tableId === "memo_kpi") {
+            const row = cumRows[rowIdx];
+            if (!row) return;
+            if (colIdx === 2 || colIdx === 3) {
+                onMemoEdit?.(row.period, row.quarter, colIdx - 2, value);
+            } else if (colIdx >= 4 && colIdx <= 6) {
+                onKpiValueEdit?.(row.period, row.quarter, colIdx - 3, value, "cum");
+            }
+            return;
+        }
+        // cum / q テーブルの KPI 列
+        const rows = tableId === "q" ? qRows : cumRows;
+        const row = rows[rowIdx];
+        if (!row) return;
+        const baseCount = tableId === "q" ? Q_BASE_COL_COUNT : CUM_BASE_COL_COUNT;
+        if (colIdx >= baseCount && colIdx < baseCount + 3) {
+            const slot = colIdx - baseCount + 1;
+            const saveTableId: "cum" | "q" = tableId === "q" ? "q" : "cum";
+            onKpiValueEdit?.(row.period, row.quarter, slot, value, saveTableId);
+        }
+        // memo_a / memo_b (cum テーブルのみ)
+        if (tableId === "cum") {
+            if (colIdx === 8) onMemoEdit?.(row.period, row.quarter, 0, value);
+            if (colIdx === 9) onMemoEdit?.(row.period, row.quarter, 1, value);
+        }
+    }, [cumRows, qRows, onManualMemoEdit, onMemoEdit, onKpiValueEdit]);
+
+    // 範囲クリア (Delete/Backspace) — saveEditableCell で統一
     const clearRange = useCallback(() => {
         if (!selectionRange) return;
-        const rows = selectionRange.tableId === "cum" ? cumRows : qRows;
-        const baseCount = selectionRange.tableId === "cum" ? CUM_BASE_COL_COUNT : Q_BASE_COL_COUNT;
-        const kpiStart = baseCount;
         const minRow = Math.min(selectionRange.startRow, selectionRange.endRow);
         const maxRow = Math.max(selectionRange.startRow, selectionRange.endRow);
         const minCol = Math.min(selectionRange.startColIdx, selectionRange.endColIdx);
         const maxCol = Math.max(selectionRange.startColIdx, selectionRange.endColIdx);
-        for (let r = minRow; r <= maxRow; r++) {
-            const row = rows[r];
-            if (!row) continue;
-            for (let c = minCol; c <= maxCol; c++) {
-                // メモ列 (cumのみ: col 8=memo_a, 9=memo_b)
-                if (selectionRange.tableId === "cum" && (c === 8 || c === 9) && onMemoEdit) {
-                    onMemoEdit(row.period, row.quarter, c === 8 ? 0 : 1, "");
-                }
-                // KPI列
-                if (c >= kpiStart && c < kpiStart + 3 && onKpiValueEdit) {
-                    const slot = c - kpiStart + 1;
-                    onKpiValueEdit(row.period, row.quarter, slot, "", selectionRange.tableId);
-                }
-            }
-        }
-    }, [selectionRange, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
+        for (let r = minRow; r <= maxRow; r++)
+            for (let c = minCol; c <= maxCol; c++)
+                saveEditableCell(selectionRange.tableId, r, c, "");
+    }, [selectionRange, saveEditableCell]);
 
     // 編集開始（startManualEditing と同方式）
     const startEditing = useCallback((coord: CellCoord, initialValue?: string) => {
-        console.log('[PL startEditing] coord=', coord, 'val=', initialValue);
         // justStartedEditingRef を立てる: focusGrid() が textarea の focus を奪うのを防ぐ
         justStartedEditingRef.current = true;
         setTimeout(() => { justStartedEditingRef.current = false; }, 100);
@@ -1245,7 +1311,7 @@ export default function FinancialsTable({
     // memo/kpi セル専用 mousedown ハンドラ（セグメントメモの handleSegManualCellMouseDown と同方式）
     // handleCellMouseDown と違い e.preventDefault() と setEditingCell(null) を呼ばない
     const handleMemoCellMouseDown = useCallback((
-        tableId: "cum" | "q",
+        tableId: "cum" | "q" | "memo_kpi",
         rowIdx: number,
         colKey: string,
         currentValue: string,
@@ -1264,18 +1330,15 @@ export default function FinancialsTable({
         if (!editingCell) return;
         // PL メモ編集中は旧 editingCell の commit を実行しない
         if (editingPlMemoCellRef.current) {
-            console.log('[commitEdit] PLメモ編集中のため skip');
             return;
         }
         // 編集開始直後（justStartedEditingRef）なら commit しない
         // mousedown で startEditing → blur 発火 → commit の誤動作防止
         if (justStartedEditingRef.current) {
-            console.log('[commitEdit] justStartedEditing=true のため skip');
             return;
         }
-        console.log('[commitEdit] 実行 editingCell=', editingCell?.colKey);
         isCommittingRef.current = true;
-        const rows = editingCell.tableId === "cum" ? cumRows : qRows;
+        const rows = editingCell.tableId === "q" ? qRows : cumRows; // memo_kpi も cumRows
         const row = rows[editingCell.rowIdx];
         if (!row) { isCommittingRef.current = false; return; }
 
@@ -1285,7 +1348,8 @@ export default function FinancialsTable({
             onMemoEdit(row.period, row.quarter, colIdx, editValue);
         } else if (key.startsWith("kpi_") && onKpiValueEdit) {
             const slot = parseInt(key.split("_")[1]);
-            onKpiValueEdit(row.period, row.quarter, slot, editValue, editingCell.tableId);
+            const saveTableId: "cum" | "q" = editingCell.tableId === "q" ? "q" : "cum";
+            onKpiValueEdit(row.period, row.quarter, slot, editValue, saveTableId);
         }
 
         setEditingCell(null);
@@ -1374,59 +1438,96 @@ export default function FinancialsTable({
     }, [plMemoInputRef]);
 
     /**
-     * activeCell が PL メモ / KPI 列へ移動した瞬間に自動で textarea 編集を開始する。
+     * PLメモ・KPI・下メモ欄（pl_cum_manual / pl_q_manual）の編集対象かどうかを判定するヘルパー。
+     * この関数が true を返すセルは startPlMemoEditing / commitPlMemoEdit で編集・保存される。
+     */
+    const isPlMemoEditableCell = useCallback((cell: CellCoord | null): boolean => {
+        if (!cell) return false;
+        // 下メモ欄テーブルは全列が編集対象
+        if (cell.tableId === "pl_cum_manual" || cell.tableId === "pl_q_manual") return true;
+        // memo_kpi テーブルは全列が編集対象
+        if (cell.tableId === "memo_kpi") return true;
+        // cum / q テーブルは memo_a / memo_b / kpi_ 列のみ
+        return cell.colKey === "memo_a" || cell.colKey === "memo_b" || cell.colKey.startsWith("kpi_");
+    }, []);
+
+    /**
+     * activeCell が PL メモ / KPI 列 / 下メモ欄へ移動した瞬間に自動で textarea 編集を開始する。
      * 方向キーで移動→ すぐ textarea 表示→ IME でそのまま入力可能（Excel 風）
      * editingPlMemoCell 編集中は再呼びしない。
      */
     useEffect(() => {
         if (!activeCell) return;
-        const colKey = activeCell.colKey;
-        const isPlMemoCol = colKey === "memo_a" || colKey === "memo_b" || colKey.startsWith("kpi_");
-        if (!isPlMemoCol) return;
+        if (!isPlMemoEditableCell(activeCell)) return;
         // すでに編集中なら再起動しない
         if (editingPlMemoCell) return;
         // 現在値を取得して編集開始
-        const rows = activeCell.tableId === "cum" ? cumRows : qRows;
-        const row = rows[activeCell.rowIdx];
+        // pl_cum_manual / pl_q_manual は getCellDisplayValue 経由で manualTableMemos から取得
+        const colKey = activeCell.colKey;
         let currentValue = "";
-        if (row) {
-            if (colKey === "memo_a" || colKey === "memo_b") {
-                const memoKey = `${row.period}|${row.quarter}`;
-                const colIdx = colKey === "memo_a" ? 0 : 1;
-                currentValue = extractMemoValue(memoMap?.[memoKey], colIdx);
-            } else if (colKey.startsWith("kpi_")) {
-                const slot = parseInt(colKey.split("_")[1]);
-                const kpiKey = `${activeCell.tableId}|${row.period}|${row.quarter}`;
-                currentValue = kpiValues?.[kpiKey]?.[slot] ?? "";
+        if (activeCell.tableId === "pl_cum_manual") {
+            const colIdx = parseInt(colKey.replace("col_", ""));
+            currentValue = manualTableMemos?.pl_cum?.[activeCell.rowIdx]?.[colIdx] ?? "";
+        } else if (activeCell.tableId === "pl_q_manual") {
+            const colIdx = parseInt(colKey.replace("col_", "")) + 2;
+            currentValue = manualTableMemos?.pl_q?.[activeCell.rowIdx]?.[colIdx] ?? "";
+        } else {
+            const rows = activeCell.tableId === "cum" ? cumRows : qRows;
+            const row = rows[activeCell.rowIdx];
+            if (row) {
+                if (colKey === "memo_a" || colKey === "memo_b") {
+                    const memoKey = `${row.period}|${row.quarter}`;
+                    const memoColIdx = colKey === "memo_a" ? 0 : 1;
+                    currentValue = extractMemoValue(memoMap?.[memoKey], memoColIdx);
+                } else if (colKey.startsWith("kpi_")) {
+                    const slot = parseInt(colKey.split("_")[1]);
+                    const kpiKey = `${activeCell.tableId}|${row.period}|${row.quarter}`;
+                    currentValue = kpiValues?.[kpiKey]?.[slot] ?? "";
+                }
             }
         }
         startPlMemoEditing(activeCell, currentValue);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeCell]);
 
-    /** PL メモ / KPI セル編集確定（commitManualEdit と完全同構造） */
+    /** PL メモ / KPI セル編集確定 — saveEditableCell で統一 */
     const commitPlMemoEdit = useCallback(() => {
         if (isCommittingPlMemoRef.current) return;
         if (!editingPlMemoCell) return;
         isCommittingPlMemoRef.current = true;
-        const rows = editingPlMemoCell.tableId === "cum" ? cumRows : qRows;
-        const row = rows[editingPlMemoCell.rowIdx];
-        if (row) {
-            const key = editingPlMemoCell.colKey;
-            if ((key === "memo_a" || key === "memo_b") && onMemoEdit) {
-                const colIdx = key === "memo_a" ? 0 : 1;
-                onMemoEdit(row.period, row.quarter, colIdx, plMemoEditValue);
-            } else if (key.startsWith("kpi_") && onKpiValueEdit) {
-                const slot = parseInt(key.split("_")[1]);
-                onKpiValueEdit(row.period, row.quarter, slot, plMemoEditValue, editingPlMemoCell.tableId);
+        const key = editingPlMemoCell.colKey;
+        const tid = editingPlMemoCell.tableId;
+        // colKey → colIdx 変換
+        if (tid === "pl_cum_manual" || tid === "pl_q_manual") {
+            const colIdx = parseInt(key.replace("col_", ""));
+            saveEditableCell(tid, editingPlMemoCell.rowIdx, colIdx, plMemoEditValue);
+        } else if (tid === "memo_kpi") {
+            // memo_kpi: colKey "memo_a"→2, "memo_b"→3, "kpi_N"→3+N
+            let absCol = 0;
+            if (key === "memo_a") absCol = 2;
+            else if (key === "memo_b") absCol = 3;
+            else if (key.startsWith("kpi_")) absCol = 3 + parseInt(key.split("_")[1]);
+            saveEditableCell("memo_kpi", editingPlMemoCell.rowIdx, absCol, plMemoEditValue);
+        } else {
+            // cum / q テーブルの memo_a / memo_b / kpi_
+            const rows = tid === "q" ? qRows : cumRows;
+            const row = rows[editingPlMemoCell.rowIdx];
+            if (row) {
+                if ((key === "memo_a" || key === "memo_b") && onMemoEdit) {
+                    const colIdx = key === "memo_a" ? 0 : 1;
+                    onMemoEdit(row.period, row.quarter, colIdx, plMemoEditValue);
+                } else if (key.startsWith("kpi_") && onKpiValueEdit) {
+                    const slot = parseInt(key.split("_")[1]);
+                    const saveTableId = tid === "q" ? "q" : "cum";
+                    onKpiValueEdit(row.period, row.quarter, slot, plMemoEditValue, saveTableId);
+                }
             }
         }
-        editingPlMemoCellRef.current = null;  // PL メモ編集中フラグをリセット
+        editingPlMemoCellRef.current = null;
         setEditingPlMemoCell(null);
-        // commitManualEdit と同じ: 同期的に gridRef へ focus を戻す
         gridRef.current?.focus();
         isCommittingPlMemoRef.current = false;
-    }, [editingPlMemoCell, plMemoEditValue, cumRows, qRows, onMemoEdit, onKpiValueEdit]);
+    }, [editingPlMemoCell, plMemoEditValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, saveEditableCell]);
 
     /** PL メモ / KPI セル編集キャンセル（cancelManualEdit と同構造） */
     const cancelPlMemoEdit = useCallback(() => {
@@ -1457,7 +1558,7 @@ export default function FinancialsTable({
      * handleCellMouseDown を通さないため e.preventDefault / setEditingCell(null) が走らない
      */
     const handlePlMemoCellMouseDown = useCallback((
-        tableId: "cum" | "q",
+        tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual",
         rowIdx: number,
         colKey: string,
         currentValue: string,
@@ -1496,8 +1597,8 @@ export default function FinancialsTable({
     const moveManualActiveCell = useCallback((delta: number) => {
         if (!activeManualCell) return;
         const colCounts: Record<ManualTableType, number> = {
-            pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-            pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_cum:         CUM_BASE_COL_COUNT,
+            pl_q:           Q_BASE_COL_COUNT - 2,
             segment_cum:    2 + segmentColumns.length * 2,
             segment_q:      2 + segmentColumns.length * 2,
             segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
@@ -1529,8 +1630,8 @@ export default function FinancialsTable({
     const moveManualActiveCellDir = useCallback((dRow: number, dCol: number) => {
         if (!activeManualCell) return;
         const colCounts: Record<ManualTableType, number> = {
-            pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-            pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+            pl_cum:         CUM_BASE_COL_COUNT,
+            pl_q:           Q_BASE_COL_COUNT - 2,
             segment_cum:    2 + segmentColumns.length * 2,
             segment_q:      2 + segmentColumns.length * 2,
             segment_manual: SEGMENT_MANUAL_COL_COUNT,  // 固定12列
@@ -1558,6 +1659,24 @@ export default function FinancialsTable({
     // 隣セルへ移動 (memo + kpi 統合)
     const moveActiveCell = useCallback((dRow: number, dCol: number) => {
         if (!activeCell) return;
+        // pl_cum_manual: 8列 × MANUAL_MEMO_ROW_COUNT行
+        if (activeCell.tableId === "pl_cum_manual") {
+            const curColIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            const newRow = Math.max(0, Math.min(MANUAL_MEMO_ROW_COUNT - 1, activeCell.rowIdx + dRow));
+            const newCol = Math.max(0, Math.min(CUM_BASE_COL_COUNT - 1, curColIdx + dCol));
+            setActiveCell({ tableId: "pl_cum_manual", rowIdx: newRow, colKey: `col_${newCol}` });
+            setSelectionRange(null);
+            return;
+        }
+        // pl_q_manual: 6列(colOffset=2で実際は2〜7) × MANUAL_MEMO_ROW_COUNT行
+        if (activeCell.tableId === "pl_q_manual") {
+            const curColIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            const newRow = Math.max(0, Math.min(MANUAL_MEMO_ROW_COUNT - 1, activeCell.rowIdx + dRow));
+            const newCol = Math.max(0, Math.min((Q_BASE_COL_COUNT - 2) - 1, curColIdx + dCol));
+            setActiveCell({ tableId: "pl_q_manual", rowIdx: newRow, colKey: `col_${newCol}` });
+            setSelectionRange(null);
+            return;
+        }
         const rows = activeCell.tableId === "cum" ? cumRows : qRows;
         const editableCols = EDITABLE_COLS;
         const curColIdx = editableCols.indexOf(activeCell.colKey);
@@ -1640,7 +1759,7 @@ export default function FinancialsTable({
     // フォーミュラバーからの編集
     const handleFormulaBarChange = useCallback((value: string) => {
         if (!activeCell) return;
-        const rows = activeCell.tableId === "cum" ? cumRows : qRows;
+        const rows = activeCell.tableId === "q" ? qRows : cumRows; // memo_kpi も cumRows
         const row = rows[activeCell.rowIdx];
         if (!row) return;
         const key = activeCell.colKey;
@@ -1812,7 +1931,25 @@ export default function FinancialsTable({
         if (editingManualCell) return;
 
         // --- メモ / KPI セルがアクティブの場合 ---
-        if (!activeCell) return;
+        // selectionRange がある場合は activeCell なしでも Ctrl+C / Delete を処理
+        if (!activeCell) {
+            if (selectionRange) {
+                // Ctrl+C: 範囲コピー
+                if ((e.ctrlKey || e.metaKey) && e.key === "c" && !e.shiftKey) {
+                    e.preventDefault();
+                    const tsv = getRangeAsTsv();
+                    if (tsv != null) navigator.clipboard.writeText(tsv).catch(console.error);
+                    return;
+                }
+                // Delete/Backspace: 範囲クリア
+                if (e.key === "Delete" || e.key === "Backspace") {
+                    e.preventDefault();
+                    clearRange();
+                    return;
+                }
+            }
+            return;
+        }
 
         // 編集中の処理は input 側の onKeyDown で処理するため、ここではスキップ
         if (editingCell) return;
@@ -1841,24 +1978,42 @@ export default function FinancialsTable({
             }
         }
 
-        // Delete/Backspace: 範囲クリア or 単一セルクリア
+        // Delete/Backspace: 範囲クリア or 単一セルクリア（saveEditableCell で統一）
         if (e.key === "Delete" || e.key === "Backspace") {
             e.preventDefault();
             if (selectionRange) {
                 clearRange();
                 return;
             }
-            // 単一セルクリア
-            const rows = activeCell.tableId === "cum" ? cumRows : qRows;
-            const row = rows[activeCell.rowIdx];
-            if (row) {
+            // 単一セルクリア: colKey → colIdx に変換して saveEditableCell に委譲
+            if (activeCell.tableId === "pl_cum_manual" || activeCell.tableId === "pl_q_manual") {
+                const colIdx = parseInt(activeCell.colKey.replace("col_", ""));
+                saveEditableCell(activeCell.tableId, activeCell.rowIdx, colIdx, "");
+            } else if (activeCell.tableId === "memo_kpi") {
+                // memo_kpi の colKey は "memo_a" / "memo_b" / "kpi_N" — 絶対列番号に変換
                 const key = activeCell.colKey;
-                if ((key === "memo_a" || key === "memo_b") && onMemoEdit) {
-                    const colIdx = key === "memo_a" ? 0 : 1;
-                    onMemoEdit(row.period, row.quarter, colIdx, "");
+                let absCol = 0;
+                if (key === "memo_a") absCol = 2;
+                else if (key === "memo_b") absCol = 3;
+                else if (key.startsWith("kpi_")) absCol = 3 + parseInt(key.split("_")[1]);
+                saveEditableCell("memo_kpi", activeCell.rowIdx, absCol, "");
+            } else {
+                // cum / q テーブル
+                const key = activeCell.colKey;
+                if (key === "memo_a" || key === "memo_b") {
+                    const rows = activeCell.tableId === "cum" ? cumRows : qRows;
+                    const row = rows[activeCell.rowIdx];
+                    if (row && onMemoEdit) {
+                        const colIdx = key === "memo_a" ? 0 : 1;
+                        onMemoEdit(row.period, row.quarter, colIdx, "");
+                    }
                 } else if (key.startsWith("kpi_") && onKpiValueEdit) {
-                    const slot = parseInt(key.split("_")[1]);
-                    onKpiValueEdit(row.period, row.quarter, slot, "");
+                    const rows = activeCell.tableId === "cum" ? cumRows : qRows;
+                    const row = rows[activeCell.rowIdx];
+                    if (row) {
+                        const slot = parseInt(key.split("_")[1]);
+                        onKpiValueEdit(row.period, row.quarter, slot, "");
+                    }
                 }
             }
             return;
@@ -1874,8 +2029,8 @@ export default function FinancialsTable({
             e.preventDefault();
             setSelectionRange(null);
             const val = getActiveCellValue();
-            // PL メモ / KPI セルは startPlMemoEditing、その他は startEditing
-            if (activeCell && (activeCell.colKey === "memo_a" || activeCell.colKey === "memo_b" || activeCell.colKey?.startsWith("kpi_"))) {
+            // pl_cum_manual / pl_q_manual / memo_kpi / memo_a / memo_b / kpi_ は startPlMemoEditing
+            if (isPlMemoEditableCell(activeCell)) {
                 startPlMemoEditing(activeCell, val);
             } else {
                 startEditing(activeCell, val);
@@ -1885,7 +2040,7 @@ export default function FinancialsTable({
             e.preventDefault();
             setSelectionRange(null);
             const val = getActiveCellValue();
-            if (activeCell && (activeCell.colKey === "memo_a" || activeCell.colKey === "memo_b" || activeCell.colKey?.startsWith("kpi_"))) {
+            if (isPlMemoEditableCell(activeCell)) {
                 startPlMemoEditing(activeCell, val);
             } else {
                 startEditing(activeCell, val);
@@ -1896,19 +2051,18 @@ export default function FinancialsTable({
             e.preventDefault();
             setSelectionRange(null);
         }
-        // 印字可能文字: PL メモ / KPI セルは方向キー移動の瞬間に useEffect で自動編集開始するため、ここでは何もしない
-    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startPlMemoEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv, handlePLCellArrowKey]);
+        // 印字可能文字: PL メモ / KPI / 下メモ欄セルは方向キー移動の瞬間に useEffect で自動編集開始するため、ここでは何もしない
+    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, isPlMemoEditableCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startPlMemoEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, saveEditableCell, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv, handlePLCellArrowKey]);
 
-    // PL側 編集可能セル ペースト (memo + kpi 統合)
+    // 編集可能グリッド統合ペースト (memo_kpi / pl_cum_manual / pl_q_manual / cum / q 全対応)
     const handleEditablePaste = useCallback(
-        (tableId: "cum" | "q", startEditableIdx: number, startRowIdx: number, e: React.ClipboardEvent) => {
+        (tableId: "cum" | "q" | "memo_kpi" | "pl_cum_manual" | "pl_q_manual", startColIdx: number, startRowIdx: number, e: React.ClipboardEvent) => {
             e.preventDefault();
             e.stopPropagation();
             const text = e.clipboardData.getData("text/plain");
             if (text == null) return;
 
             let parsed = parseTsvClipboard(text);
-            console.log("[PL paste]", JSON.stringify(text), parsed);
 
             // Excel等の空白セル1個コピー対策:
             // text が "" または改行のみの場合も空白1セルとして扱う
@@ -1920,10 +2074,25 @@ export default function FinancialsTable({
                 }
             }
 
-            const rows = tableId === "cum" ? cumRows : qRows;
-            // cumテーブルの編集可能列: memo_a, memo_b, kpi_1, kpi_2, kpi_3
-            // qテーブルの編集可能列: kpi_1, kpi_2, kpi_3 (memo列なし)
-            const availableCols = tableId === "cum" ? EDITABLE_COLS : [...KPI_COLS];
+            // --- pl_cum_manual / pl_q_manual: saveEditableCell で保存 ---
+            if (tableId === "pl_cum_manual" || tableId === "pl_q_manual") {
+                const maxCols = tableId === "pl_cum_manual" ? CUM_BASE_COL_COUNT : (Q_BASE_COL_COUNT - 2);
+                for (let r = 0; r < parsed.length; r++) {
+                    const targetRow = startRowIdx + r;
+                    if (targetRow >= MANUAL_MEMO_ROW_COUNT) break;
+                    for (let c = 0; c < parsed[r].length; c++) {
+                        const displayCol = startColIdx + c;
+                        if (displayCol >= maxCols) break;
+                        saveEditableCell(tableId, targetRow, displayCol, parsed[r][c]);
+                    }
+                }
+                return;
+            }
+
+            // --- memo_kpi / cum / q: 既存の memo + kpi 列ベースのペースト ---
+            const rows = tableId === "q" ? qRows : cumRows;
+            const availableCols = tableId === "q" ? [...KPI_COLS] : EDITABLE_COLS;
+            const kpiSaveTableId: "cum" | "q" = tableId === "q" ? "q" : "cum";
 
             const memoEdits: { period: string; quarter: string; colIdx: number; value: string }[] = [];
             const kpiEdits: { period: string; quarter: string; slot: number; value: string; tableId: "cum" | "q" }[] = [];
@@ -1933,7 +2102,7 @@ export default function FinancialsTable({
                 if (targetRowIdx >= rows.length) break;
                 const row = rows[targetRowIdx];
                 for (let c = 0; c < parsed[r].length; c++) {
-                    const colPos = startEditableIdx + c;
+                    const colPos = startColIdx + c;
                     if (colPos >= availableCols.length) break;
                     const colKey = availableCols[colPos];
                     const value = parsed[r][c];
@@ -1947,7 +2116,7 @@ export default function FinancialsTable({
                         });
                     } else if (colKey.startsWith("kpi_")) {
                         const slot = parseInt(colKey.split("_")[1]);
-                        kpiEdits.push({ period: row.period, quarter: row.quarter, slot, value, tableId });
+                        kpiEdits.push({ period: row.period, quarter: row.quarter, slot, value, tableId: kpiSaveTableId });
                     }
                 }
             }
@@ -1963,7 +2132,7 @@ export default function FinancialsTable({
                 }
             }
         },
-        [cumRows, qRows, onMemoPaste, onKpiValueEdit]
+        [cumRows, qRows, onMemoPaste, onKpiValueEdit, saveEditableCell]
     );
 
     // セグメント値取得
@@ -2047,13 +2216,11 @@ export default function FinancialsTable({
     /** segment_manual セルのマウスエンター — ドラッグ中に範囲拡張 */
     const handleSegManualCellMouseEnter = useCallback((rowIdx: number, colIdx: number) => {
         if (!segManualIsDragging.current) return;
-        console.log("[SEG-SEL] MOUSEENTER", { rowIdx, colIdx });
         segManualDragMoved.current = true;
         setSegManualSel(prev => {
             const next = prev
                 ? { ...prev, endRow: rowIdx, endCol: colIdx }
                 : { startRow: rowIdx, startCol: colIdx, endRow: rowIdx, endCol: colIdx };
-            console.log("[SEG-SEL] setSegManualSel (enter)", next);
             return next;
         });
         // ドラッグで別セルへ移動した場合は editing をキャンセル（範囲選択モードへ）
@@ -2126,13 +2293,11 @@ export default function FinancialsTable({
         e.stopPropagation();  // handleTablePaste への伝播を防ぐ
 
         const rawText = e.clipboardData?.getData("text/plain") ?? "";
-        console.log("[SEG-MANUAL-PASTE] rawText", JSON.stringify(rawText));
         // クリップボード全体が空なら何もしない（末尾空白のみの場合は空白として貼り付けたい）
         if (rawText === "") return;
 
         // TSV parse: parseTsvClipboard を使用（末尾空行だけ除去、途中空セルは "" として正確に扱う）
         const parsedRows = parseTsvClipboard(rawText);
-        console.log("[SEG-MANUAL-PASTE] parsedRows", parsedRows);
         if (parsedRows.length === 0) return;
 
         const rowCount = cumRows.length;
@@ -2158,7 +2323,6 @@ export default function FinancialsTable({
             }
         }
 
-        console.log("[SEG-MANUAL-PASTE] newGrid before save", JSON.stringify(newGrid));
 
         // onBlur → commitManualEdit が paste 中に発火するのを抑制
         isCommittingManualRef.current = true;
@@ -2197,9 +2361,7 @@ export default function FinancialsTable({
             const rawText = e.clipboardData.getData("text/plain");
             if (!rawText) return;
 
-            console.log("[SEG-PASTE] clipboard raw:", JSON.stringify(rawText));
             const parsed = parseTsvClipboard(rawText);
-            console.log("[SEG-PASTE] parsed 2D:", parsed);
 
             if (parsed.length === 0) return;
 
@@ -2245,7 +2407,6 @@ export default function FinancialsTable({
                     // 数値パース（セル単位）
                     const cellText = parsed[r][c];
                     const numVal = parseNumericValue(cellText);
-                    console.log(`[SEG-PASTE] cell[${r}][${c}] = "${cellText}" → ${numVal}`);
                     if (numVal === null) { invalid++; continue; }
 
                     items.push({
@@ -2259,8 +2420,6 @@ export default function FinancialsTable({
                 }
             }
 
-            console.log("[SEG-PASTE] items to save:", items);
-            console.log(`[SEG-PASTE] skipped: ${skipped}, invalid: ${invalid}`);
 
             if (items.length === 0) {
                 showToast(`0件保存 / ${skipped}件スキップ / ${invalid}件不正値`);
@@ -2290,10 +2449,8 @@ export default function FinancialsTable({
             e.preventDefault();
             e.stopPropagation();
             const rawText = e.clipboardData?.getData("text/plain") ?? "";
-            console.log("[SEG-MANUAL-TABLE-PASTE] rawText", JSON.stringify(rawText));
             if (rawText === "") return;
             const parsedRows = parseTsvClipboard(rawText);
-            console.log("[SEG-MANUAL-TABLE-PASTE] parsedRows", parsedRows);
             if (parsedRows.length === 0) return;
 
             const rowCount = cumRows.length;
@@ -2319,7 +2476,6 @@ export default function FinancialsTable({
                 }
             }
 
-            console.log("[SEG-MANUAL-TABLE-PASTE] newGrid before save", JSON.stringify(newGrid));
 
             // onBlur → commitManualEdit が paste 中に発火するのを抑制
             isCommittingManualRef.current = true;
@@ -2348,8 +2504,6 @@ export default function FinancialsTable({
             // ── 一括保存でレース条件を排除 ──
             if (activeManualCell.tableType === "segment_manual") {
                 const parsedRows = parseTsvClipboard(manualText);
-                console.log("[SEG-MANUAL-FALLBACK] rawText", JSON.stringify(manualText));
-                console.log("[SEG-MANUAL-FALLBACK] parsedRows", parsedRows);
                 if (parsedRows.length === 0) return;
 
                 const rowCount = cumRows.length;
@@ -2367,7 +2521,6 @@ export default function FinancialsTable({
                         newGrid[r][c] = parsedRows[rOff][cOff] ?? "";
                     }
                 }
-                console.log("[SEG-MANUAL-FALLBACK] newGrid before save", JSON.stringify(newGrid));
                 isCommittingManualRef.current = true;
                 setEditingManualCell(null);
                 setManualEditValue("");
@@ -2383,8 +2536,8 @@ export default function FinancialsTable({
             const manualParsed = parseTsvClipboard(manualText);
             if (manualParsed.length > 0) {
                 const manualColCounts: Record<ManualTableType, number> = {
-                    pl_cum:         CUM_BASE_COL_COUNT + KPI_SLOTS.length,
-                    pl_q:           Q_BASE_COL_COUNT + KPI_SLOTS.length,
+                    pl_cum:         CUM_BASE_COL_COUNT,
+                    pl_q:           Q_BASE_COL_COUNT - 2,
                     segment_cum:    2 + segmentColumns.length * 2,
                     segment_q:      2 + segmentColumns.length * 2,
                     segment_manual: SEGMENT_MANUAL_COL_COUNT,
@@ -2430,10 +2583,16 @@ export default function FinancialsTable({
             return;
         }
 
-        // メモ / KPI セルがアクティブの場合 → 編集可能セル ペースト処理
+        // メモ / KPI セルがアクティブの場合 → 統合 handleEditablePaste にルーティング
         if (!activeCell) return;
-        // 対象テーブルの編集可能列を判定
-        const availableCols = activeCell.tableId === "cum" ? EDITABLE_COLS : [...KPI_COLS] as string[];
+        // pl_*_manual: colKey ("col_N") → colIdx
+        if (activeCell.tableId === "pl_cum_manual" || activeCell.tableId === "pl_q_manual") {
+            const colIdx = parseInt(activeCell.colKey.replace("col_", ""));
+            handleEditablePaste(activeCell.tableId, colIdx, activeCell.rowIdx, e);
+            return;
+        }
+        // memo_kpi / cum / q: 対象テーブルの編集可能列を判定
+        const availableCols = activeCell.tableId === "q" ? [...KPI_COLS] as string[] : EDITABLE_COLS;
         if (!availableCols.includes(activeCell.colKey)) return;
         const startEditableIdx = availableCols.indexOf(activeCell.colKey);
         handleEditablePaste(activeCell.tableId, startEditableIdx, activeCell.rowIdx, e);
@@ -2509,19 +2668,15 @@ export default function FinancialsTable({
                             <div className="pl-table-block">
                                 <div className="pl-table-label">累計PL（百万円）</div>
                                 <table className="pl-table" style={{ minWidth: cumTableWidth }}>
-                                    <PLTableHeader columns={CUM_COLUMNS} widths={cumResize.widths} onResizeStart={cumResize.handleMouseDown}
-                                        kpiSlots={KPI_SLOTS} kpiDefs={kpiDefs} kpiWidths={kpiWidths} onKpiResizeStart={handleKpiResizeStart}
-                                        editingKpiHeader={editingKpiHeader} editingKpiHeaderValue={editingKpiHeaderValue} kpiHeaderInputRef={kpiHeaderInputRef}
-                                        onStartKpiHeaderEdit={startKpiHeaderEdit} onEditingKpiHeaderValueChange={setEditingKpiHeaderValue}
-                                        onCommitKpiHeaderEdit={commitKpiHeaderEdit} onCancelKpiHeaderEdit={cancelKpiHeaderEdit}
+                                    <PLTableHeader columns={CUM_COLUMNS} widths={cumResize.widths.slice(0, 8)} onResizeStart={cumResize.handleMouseDown}
+                                        kpiSlots={[]} kpiDefs={[]} kpiWidths={[]} onKpiResizeStart={() => {}}
+                                        editingKpiHeader={null} editingKpiHeaderValue="" kpiHeaderInputRef={{ current: null }}
+                                        onStartKpiHeaderEdit={() => {}} onEditingKpiHeaderValueChange={() => {}}
+                                        onCommitKpiHeaderEdit={() => {}} onCancelKpiHeaderEdit={() => {}}
                                     />
                                     <tbody>
                                         {cumRows.map((row, idx) => {
                                             const isSelected = selectedPeriod === row.period && selectedQuarter === row.quarter;
-                                            const memoKey = `${row.period}|${row.quarter}`;
-                                            const memoGrid = memoMap?.[memoKey];
-                                            const memoA = extractMemoValue(memoGrid, 0);
-                                            const memoB = extractMemoValue(memoGrid, 1);
                                             return (
                                                 <tr key={`cum-${row.period}-${row.quarter}-${idx}`} className={[
                                                     "pl-row",
@@ -2539,93 +2694,52 @@ export default function FinancialsTable({
                                                     <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.sgAndA)}</td>
                                                     <td style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
                                                     <td style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{fmtMargin(row.opMargin)}</td>
-                                                    <MemoCellExcel value={memoA} width={cumResize.widths[8]}
-                                                        isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_a"}
-                                                        isInRange={isCellInRange("cum", idx, 8)}
-                                                        isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a"}
-                                                        editValue={plMemoEditValue}
-                                                        onSelect={() => {}}
-                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_a", val)}
-                                                        onMouseDownCaptureEdit={(e) => {
-                                                            handleCellMouseDown("cum", idx, 8, e);
-                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, "memo_a", memoA);
-                                                        }}
-                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                        onEditChange={setPlMemoEditValue}
-                                                        onCommit={commitPlMemoEdit}
-                                                        onCancel={cancelPlMemoEdit}
-                                                        inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a" ? plMemoInputRef : undefined}
-                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 8)}
-                                                        onMouseEnterRange={() => handleCellMouseEnter("cum", idx, 8)}
-                                                        onArrowKey={handlePlMemoArrowKey}
-                                                    />
-                                                    <MemoCellExcel value={memoB} width={cumResize.widths[9]}
-                                                        isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_b"}
-                                                        isInRange={isCellInRange("cum", idx, 9)}
-                                                        isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b"}
-                                                        editValue={plMemoEditValue}
-                                                        onSelect={() => {}}
-                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, "memo_b", val)}
-                                                        onMouseDownCaptureEdit={(e) => {
-                                                            handleCellMouseDown("cum", idx, 9, e);
-                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, "memo_b", memoB);
-                                                        }}
-                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                        onEditChange={setPlMemoEditValue}
-                                                        onCommit={commitPlMemoEdit}
-                                                        onCancel={cancelPlMemoEdit}
-                                                        inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b" ? plMemoInputRef : undefined}
-                                                        onMouseEnter={() => handleCellMouseEnter("cum", idx, 9)}
-                                                        onMouseEnterRange={() => handleCellMouseEnter("cum", idx, 9)}
-                                                        onArrowKey={handlePlMemoArrowKey}
-                                                    />
-                                                    {KPI_SLOTS.map((slot) => {
-                                                        const colKey = `kpi_${slot}`;
-                                                        const kpiKey = `cum|${row.period}|${row.quarter}`;
-                                                        const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
-                                                        const kpiAbsCol = CUM_BASE_COL_COUNT + (slot - 1);
-                                                        return (
-                                                    <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
-                                                                isActive={activeCell?.tableId === "cum" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
-                                                                isInRange={isCellInRange("cum", idx, kpiAbsCol)}
-                                                                isEditing={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
-                                                                editValue={plMemoEditValue}
-                                                                onSelect={() => {}}
-                                                                onStartEdit={(val) => handlePlMemoCellMouseDown("cum", idx, colKey, val)}
-                                                                onMouseDownCaptureEdit={(e) => {
-                                                                    handleCellMouseDown("cum", idx, kpiAbsCol, e);
-                                                                    pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("cum", idx, colKey, cellVal);
-                                                                }}
-                                                                onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                                onEditChange={setPlMemoEditValue}
-                                                                onCommit={commitPlMemoEdit}
-                                                                onCancel={cancelPlMemoEdit}
-                                                                inputRef={editingPlMemoCell?.tableId === "cum" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
-                                                                className="kpi-cell"
-                                                                onMouseEnter={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
-                                                                onMouseEnterRange={() => handleCellMouseEnter("cum", idx, kpiAbsCol)}
-                                                                onArrowKey={handlePlMemoArrowKey}
-                                                            />
-                                                        );
-                                                    })}
                                                 </tr>
                                             );
                                         })}
-                                        {/* 手入力メモ専用行 (PL累計) */}
-                                        <ManualMemoRows
-                                            tableType="pl_cum"
-                                            colCount={CUM_BASE_COL_COUNT + KPI_SLOTS.length}
-                                            gridData={manualTableMemos?.pl_cum ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
-                                            activeManualCell={activeManualCell}
-                                            editingManualCell={editingManualCell}
-                                            editValue={manualEditValue}
-                                            onActivate={selectManualCell}
-                                            onStartEdit={startManualEditing}
-                                            onEditChange={setManualEditValue}
-                                            onCommit={commitManualEdit}
-                                            onCancel={cancelManualEdit}
-                                            editInputRef={editInputRef}
-                                        />
+                                        {/* 手入力メモ専用行 (PL累計) — memo_kpi と同じロジック */}
+                                        {Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) => (
+                                            <tr key={`manual-cum-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
+                                                {Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) => {
+                                                    const colKey = `col_${colIdx}`;
+                                                    const cellValue = manualTableMemos?.pl_cum?.[rowIdx]?.[colIdx] ?? "";
+                                                    const isActive = activeCell?.tableId === "pl_cum_manual" && activeCell?.rowIdx === rowIdx && activeCell?.colKey === colKey;
+                                                    const isEditing = editingPlMemoCell?.tableId === "pl_cum_manual" && editingPlMemoCell?.rowIdx === rowIdx && editingPlMemoCell?.colKey === colKey;
+                                                    const isInRange = isCellInRange("pl_cum_manual", rowIdx, colIdx);
+                                                    const isPLGpMargin = colIdx === 4;
+                                                    const isPLOpMargin = colIdx === 7;
+                                                    const extraClass = `manual-memo-cell${isPLGpMargin ? " gp-margin-col" : ""}${isPLOpMargin ? " op-margin-col" : ""}`;
+                                                    return (
+                                                        <MemoCellExcel
+                                                            key={colIdx}
+                                                            value={cellValue}
+                                                            isActive={isActive}
+                                                            isInRange={isInRange}
+                                                            isEditing={isEditing}
+                                                            editValue={plMemoEditValue}
+                                                            onSelect={() => {}}
+                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, val)}
+                                                            onMouseDownCaptureEdit={(e) => {
+                                                                handleCellMouseDown("pl_cum_manual", rowIdx, colIdx, e);
+                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, cellValue);
+                                                            }}
+                                                            onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                            onEditChange={setPlMemoEditValue}
+                                                            onCommit={commitPlMemoEdit}
+                                                            onCancel={cancelPlMemoEdit}
+                                                            inputRef={isEditing ? plMemoInputRef : undefined}
+                                                            onMouseEnter={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
+                                                            onMouseEnterRange={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
+                                                            onArrowKey={handlePlMemoArrowKey}
+                                                            onPaste={(e) => handleEditablePaste("pl_cum_manual", colIdx, rowIdx, e)}
+                                                            className={extraClass}
+                                                            width={cumResize.widths[colIdx]}
+                                                        />
+                                                    );
+                                                })}
+                                            </tr>
+                                        ))}
+
                                     </tbody>
                                 </table>
                             </div>
@@ -2633,11 +2747,14 @@ export default function FinancialsTable({
                             <div className="pl-table-block">
                                 <div className="pl-table-label">Q単体PL（百万円）</div>
                                 <table className="pl-table" style={{ minWidth: qTableWidth }}>
-                                    <PLTableHeader columns={Q_BASE_COLUMNS} widths={qResize.widths} onResizeStart={qResize.handleMouseDown}
-                                        kpiSlots={KPI_SLOTS} kpiDefs={kpiDefs} kpiWidths={kpiWidths} onKpiResizeStart={handleKpiResizeStart}
-                                        editingKpiHeader={editingKpiHeader} editingKpiHeaderValue={editingKpiHeaderValue} kpiHeaderInputRef={kpiHeaderInputRef}
-                                        onStartKpiHeaderEdit={startKpiHeaderEdit} onEditingKpiHeaderValueChange={setEditingKpiHeaderValue}
-                                        onCommitKpiHeaderEdit={commitKpiHeaderEdit} onCancelKpiHeaderEdit={cancelKpiHeaderEdit}
+                                    <PLTableHeader
+                                        columns={Q_BASE_COLUMNS.slice(2)}
+                                        widths={qResize.widths.slice(2)}
+                                        onResizeStart={(idx, e) => qResize.handleMouseDown(idx + 2, e)}
+                                        kpiSlots={[]} kpiDefs={[]} kpiWidths={[]} onKpiResizeStart={() => {}}
+                                        editingKpiHeader={null} editingKpiHeaderValue="" kpiHeaderInputRef={{ current: null }}
+                                        onStartKpiHeaderEdit={() => {}} onEditingKpiHeaderValueChange={() => {}}
+                                        onCommitKpiHeaderEdit={() => {}} onCancelKpiHeaderEdit={() => {}}
                                     />
                                     <tbody>
                                         {qRows.map((row, idx) => (
@@ -2649,65 +2766,168 @@ export default function FinancialsTable({
                                                 qRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
                                                 qRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
                                             ].filter(Boolean).join(" ")} onClick={() => onRowClick?.(row.period, row.quarter)}>
-                                                <td style={{ width: qResize.widths[0], minWidth: qResize.widths[0] }} className={isCellInRange("q", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 0)}>{displayValue(row.period)}</td>
-                                                <td style={{ width: qResize.widths[1], minWidth: qResize.widths[1] }} className={isCellInRange("q", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("q", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 1)}>{displayValue(row.quarter)}</td>
                                                 <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
                                                 <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
                                                 <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
                                                 <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.sgAndA)}</td>
                                                 <td style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
                                                 <td style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{fmtMargin(row.opMargin)}</td>
-                                                {KPI_SLOTS.map((slot) => {
-                                                    const colKey = `kpi_${slot}`;
-                                                    const kpiKey = `q|${row.period}|${row.quarter}`;
-                                                    const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
-                                                    const kpiAbsCol = Q_BASE_COL_COUNT + (slot - 1);
+                                            </tr>
+                                        ))}
+                                        {/* 手入力メモ専用行 (PL Q単体) — memo_kpi と同じロジック */}
+                                        {Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) => (
+                                            <tr key={`manual-q-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
+                                                {Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) => {
+                                                    const saveColIdx = displayCol + 2; // colOffset=2
+                                                    const colKey = `col_${displayCol}`; // 表示列キー
+                                                    const cellValue = manualTableMemos?.pl_q?.[rowIdx]?.[saveColIdx] ?? "";
+                                                    const isActive = activeCell?.tableId === "pl_q_manual" && activeCell?.rowIdx === rowIdx && activeCell?.colKey === colKey;
+                                                    const isEditing = editingPlMemoCell?.tableId === "pl_q_manual" && editingPlMemoCell?.rowIdx === rowIdx && editingPlMemoCell?.colKey === colKey;
+                                                    const isInRange = isCellInRange("pl_q_manual", rowIdx, displayCol);
+                                                    const isPLGpMargin = saveColIdx === 4;
+                                                    const isPLOpMargin = saveColIdx === 7;
+                                                    const extraClass = `manual-memo-cell${isPLGpMargin ? " gp-margin-col" : ""}${isPLOpMargin ? " op-margin-col" : ""}`;
                                                     return (
-                                                        <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
-                                                            isActive={activeCell?.tableId === "q" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
-                                                            isInRange={isCellInRange("q", idx, kpiAbsCol)}
-                                                            isEditing={editingPlMemoCell?.tableId === "q" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
+                                                        <MemoCellExcel
+                                                            key={displayCol}
+                                                            value={cellValue}
+                                                            isActive={isActive}
+                                                            isInRange={isInRange}
+                                                            isEditing={isEditing}
                                                             editValue={plMemoEditValue}
                                                             onSelect={() => {}}
-                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("q", idx, colKey, val)}
+                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, val)}
                                                             onMouseDownCaptureEdit={(e) => {
-                                                                handleCellMouseDown("q", idx, kpiAbsCol, e);
-                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("q", idx, colKey, cellVal);
+                                                                handleCellMouseDown("pl_q_manual", rowIdx, displayCol, e);
+                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, cellValue);
                                                             }}
                                                             onBlurShouldSkip={plMemoBlurShouldSkip}
                                                             onEditChange={setPlMemoEditValue}
                                                             onCommit={commitPlMemoEdit}
                                                             onCancel={cancelPlMemoEdit}
-                                                            inputRef={editingPlMemoCell?.tableId === "q" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
-                                                            className="kpi-data-cell"
-                                                            onMouseEnter={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
-                                                            onMouseEnterRange={() => handleCellMouseEnter("q", idx, kpiAbsCol)}
+                                                            inputRef={isEditing ? plMemoInputRef : undefined}
+                                                            onMouseEnter={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
+                                                            onMouseEnterRange={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
                                                             onArrowKey={handlePlMemoArrowKey}
+                                                            onPaste={(e) => handleEditablePaste("pl_q_manual", displayCol, rowIdx, e)}
+                                                            className={extraClass}
+                                                            width={qResize.widths[saveColIdx]}
                                                         />
                                                     );
                                                 })}
                                             </tr>
                                         ))}
-                                        {/* 手入力メモ専用行 (PL Q単体) */}
-                                        <ManualMemoRows
-                                            tableType="pl_q"
-                                            colCount={Q_BASE_COL_COUNT + KPI_SLOTS.length}
-                                            gridData={manualTableMemos?.pl_q ?? Array.from({ length: MANUAL_MEMO_ROW_COUNT }, () => [])}
-                                            activeManualCell={activeManualCell}
-                                            editingManualCell={editingManualCell}
-                                            editValue={manualEditValue}
-                                            onActivate={selectManualCell}
-                                            onStartEdit={startManualEditing}
-                                            onEditChange={setManualEditValue}
-                                            onCommit={commitManualEdit}
-                                            onCancel={cancelManualEdit}
-                                            editInputRef={editInputRef}
-                                        />
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
+                            {/* === メモ欄・KPI欄 (右側) === */}
+                            <div className="pl-table-block">
+                                <div className="pl-table-label">メモ欄・KPI欄</div>
+                                <table className="pl-table" style={{ minWidth: memoKpiTableWidth }}>
+                                    <PLTableHeader
+                                        columns={MEMO_KPI_BASE_COLUMNS.slice(2)}
+                                        widths={memoKpiResize.widths.slice(2)}
+                                        onResizeStart={(idx, e) => memoKpiResize.handleMouseDown(idx + 2, e)}
+                                        kpiSlots={KPI_SLOTS} kpiDefs={kpiDefs} kpiWidths={kpiWidths} onKpiResizeStart={handleKpiResizeStart}
+                                        editingKpiHeader={editingKpiHeader} editingKpiHeaderValue={editingKpiHeaderValue} kpiHeaderInputRef={kpiHeaderInputRef}
+                                        onStartKpiHeaderEdit={startKpiHeaderEdit} onEditingKpiHeaderValueChange={setEditingKpiHeaderValue}
+                                        onCommitKpiHeaderEdit={commitKpiHeaderEdit} onCancelKpiHeaderEdit={cancelKpiHeaderEdit}
+                                    />
+                                    <tbody>
+                                        {cumRows.map((row, idx) => {
+                                            const memoKey = `${row.period}|${row.quarter}`;
+                                            const memoGrid = memoMap?.[memoKey];
+                                            const memoA = extractMemoValue(memoGrid, 0);
+                                            const memoB = extractMemoValue(memoGrid, 1);
+                                            return (
+                                                <tr key={`mk-${row.period}-${row.quarter}-${idx}`} className={[
+                                                    "pl-row",
+                                                    selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : "",
+                                                    row.quarter === "FY" ? "pl-row-fy" : "",
+                                                    "year-group-row",
+                                                    cumRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
+                                                    cumRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
+                                                ].filter(Boolean).join(" ")}>
+                                                    {/* memo_a (colIdx=2) */}
+                                                    <MemoCellExcel value={memoA} width={memoKpiResize.widths[2]}
+                                                        isActive={activeCell?.tableId === "memo_kpi" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_a"}
+                                                        isInRange={isCellInRange("memo_kpi", idx, 2)}
+                                                        isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a"}
+                                                        editValue={plMemoEditValue}
+                                                        onSelect={() => {}}
+                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", val)}
+                                                        onMouseDownCaptureEdit={(e) => {
+                                                            handleCellMouseDown("memo_kpi", idx, 2, e);
+                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", memoA);
+                                                        }}
+                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                        onEditChange={setPlMemoEditValue}
+                                                        onCommit={commitPlMemoEdit}
+                                                        onCancel={cancelPlMemoEdit}
+                                                        inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a" ? plMemoInputRef : undefined}
+                                                        onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, 2)}
+                                                        onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, 2)}
+                                                        onArrowKey={handlePlMemoArrowKey}
+                                                    />
+                                                    {/* memo_b (colIdx=3) */}
+                                                    <MemoCellExcel value={memoB} width={memoKpiResize.widths[3]}
+                                                        isActive={activeCell?.tableId === "memo_kpi" && activeCell?.rowIdx === idx && activeCell?.colKey === "memo_b"}
+                                                        isInRange={isCellInRange("memo_kpi", idx, 3)}
+                                                        isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b"}
+                                                        editValue={plMemoEditValue}
+                                                        onSelect={() => {}}
+                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", val)}
+                                                        onMouseDownCaptureEdit={(e) => {
+                                                            handleCellMouseDown("memo_kpi", idx, 3, e);
+                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", memoB);
+                                                        }}
+                                                        onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                        onEditChange={setPlMemoEditValue}
+                                                        onCommit={commitPlMemoEdit}
+                                                        onCancel={cancelPlMemoEdit}
+                                                        inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b" ? plMemoInputRef : undefined}
+                                                        onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, 3)}
+                                                        onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, 3)}
+                                                        onArrowKey={handlePlMemoArrowKey}
+                                                    />
+                                                    {/* kpi_1/2/3 (colIdx=4/5/6) */}
+                                                    {KPI_SLOTS.map((slot) => {
+                                                        const colKey = `kpi_${slot}`;
+                                                        const kpiKey = `cum|${row.period}|${row.quarter}`;
+                                                        const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
+                                                        const kpiAbsCol = 3 + slot; // 4=kpi_1, 5=kpi_2, 6=kpi_3
+                                                        return (
+                                                            <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
+                                                                isActive={activeCell?.tableId === "memo_kpi" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
+                                                                isInRange={isCellInRange("memo_kpi", idx, kpiAbsCol)}
+                                                                isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
+                                                                editValue={plMemoEditValue}
+                                                                onSelect={() => {}}
+                                                                onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, val)}
+                                                                onMouseDownCaptureEdit={(e) => {
+                                                                    handleCellMouseDown("memo_kpi", idx, kpiAbsCol, e);
+                                                                    pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, cellVal);
+                                                                }}
+                                                                onBlurShouldSkip={plMemoBlurShouldSkip}
+                                                                onEditChange={setPlMemoEditValue}
+                                                                onCommit={commitPlMemoEdit}
+                                                                onCancel={cancelPlMemoEdit}
+                                                                inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
+                                                                className="kpi-cell"
+                                                                onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, kpiAbsCol)}
+                                                                onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, kpiAbsCol)}
+                                                                onArrowKey={handlePlMemoArrowKey}
+                                                            />
+                                                        );
+                                                    })}
+                                                </tr>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>{/* pl-dual-tables */}
+                    </div>{/* pl-scroll-area */}
                     {/* リサイズハンドル（縦スクロール廃止のため非表示） */}
                     <div className="pl-resize-handle" style={{ display: "none" }} onMouseDown={handleResizeMouseDown}>
                         <div className="pl-resize-grip">⋯</div>
@@ -3137,7 +3357,6 @@ function MemoCellExcel({
             onMouseDown={(e) => {
                 e.preventDefault(); // ブラウザ native focus（tabindex=0 の祖先 div へのフォーカス）を防止
                 e.stopPropagation();
-                console.log('[MemoCellExcel display td] onMouseDown, extraClass=', extraClass);
                 // セグメントメモ（handleSegManualCellMouseDown）と同じ方式:
                 // onSelect() が startEditing/startManualEditing に繋がるよう呼び出し元で設定する
                 onSelect();
@@ -3148,7 +3367,6 @@ function MemoCellExcel({
                 if (onMouseDownCaptureEdit) {
                     e.preventDefault(); // ブラウザ native focus 完全遺断
                     e.stopPropagation(); // 親の onMouseDown / focusGrid / selectCell 遺断
-                    console.log('[MemoCellExcel] onMouseDownCapture 発火 extraClass=', extraClass);
                     onMouseDownCaptureEdit(e);
                 }
             }}
@@ -3549,6 +3767,8 @@ function SegmentManualMemoTable({
 function ManualMemoRows({
     tableType,
     colCount,
+    colOffset = 0,
+    widths,
     rowCount = MANUAL_MEMO_ROW_COUNT,
     segmentGroupEndIndices,
     gridData,
@@ -3564,6 +3784,8 @@ function ManualMemoRows({
 }: {
     tableType: ManualTableType;
     colCount: number;
+    colOffset?: number; // 先頭何列をスキップするか (0=スキップなし, 2=period/q を除外)
+    widths?: number[]; // 各表示列の幅 (colOffset 適用後の表示列順)
     rowCount?: number;
     segmentGroupEndIndices?: number[];
     gridData: string[][];
@@ -3582,7 +3804,8 @@ function ManualMemoRows({
         <>
             {Array.from({ length: rowCount }, (_, rowIdx) => rowIdx).map((rowIdx) => (
                 <tr key={`manual-${tableType}-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
-                    {Array.from({ length: colCount }, (_, colIdx) => {
+                    {Array.from({ length: colCount }, (_, i) => {
+                        const colIdx = i + colOffset; // gridData / activeCell の実インデックス
                         const isActive = activeManualCell?.tableType === tableType
                             && activeManualCell?.rowIdx === rowIdx
                             && activeManualCell?.colIdx === colIdx;
@@ -3598,7 +3821,7 @@ function ManualMemoRows({
                         return (
                             // MemoCellExcel を流用: MEMO A/B と完全同一の操作感
                             <MemoCellExcel
-                                key={colIdx}
+                                key={i}
                                 value={cellValue}
                                 isActive={isActive}
                                 isEditing={isEditing}
@@ -3610,6 +3833,7 @@ function ManualMemoRows({
                                 onCancel={onCancel}
                                 inputRef={isEditing ? editInputRef : undefined}
                                 className={extraClass}
+                                width={widths?.[i]}
                             />
                         );
                     })}
