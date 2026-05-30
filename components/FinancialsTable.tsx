@@ -3,7 +3,7 @@
 import React, { useMemo, useCallback, useRef, useState, useEffect } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
-import { formatMillions, formatNumber, displayValue } from "@/lib/format";
+import { formatMillions, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
 import type { ManualTableType } from "@/lib/memo-api";
@@ -19,8 +19,6 @@ import {
     buildQStandaloneRows,
     sortForDisplay,
     FORECAST_SOURCES,
-    type CumulativeRow,
-    type QStandaloneRow,
 } from "@/lib/quarter-math";
 
 interface MemoMap {
@@ -1308,18 +1306,6 @@ export default function FinancialsTable({
         setTimeout(() => editInputRef.current?.focus(), 0);
     }, [editInputRef]);
 
-    // memo/kpi セル専用 mousedown ハンドラ（セグメントメモの handleSegManualCellMouseDown と同方式）
-    // handleCellMouseDown と違い e.preventDefault() と setEditingCell(null) を呼ばない
-    const handleMemoCellMouseDown = useCallback((
-        tableId: "cum" | "q" | "memo_kpi",
-        rowIdx: number,
-        colKey: string,
-        currentValue: string,
-    ) => {
-        const coord: CellCoord = { tableId, rowIdx, colKey };
-        startEditing(coord, currentValue);
-    }, [startEditing]);
-
 
     // commitEdit reentrancy guard（blur + keydownでの二重発火防止）
     const isCommittingRef = useRef(false);
@@ -1697,13 +1683,7 @@ export default function FinancialsTable({
             colKey: editableCols[newCol],
         });
     }, [activeCell, cumRows, qRows, selectCell]);
-    // PLメモ / KPIメモ 編集中 Arrow キー: 保存して方向セルへ移動
-    const handlePLCellArrowKey = useCallback((dir: "up" | "down" | "left" | "right") => {
-        commitEdit();
-        const dr = dir === "up" ? -1 : dir === "down" ? 1 : 0;
-        const dc = dir === "left" ? -1 : dir === "right" ? 1 : 0;
-        requestAnimationFrame(() => moveActiveCell(dr, dc));
-    }, [commitEdit, moveActiveCell]);
+
     /** PL メモ / KPI 編集中 Arrow キー（handleSegManualArrowKey と同構造、moveActiveCell の後に定義） */
     const handlePlMemoArrowKey = useCallback((dir: "up" | "down" | "left" | "right") => {
         // 編集開始直後 120ms 以内 かつ activeElement が textarea/input の場合は誤発火とみなし skip
@@ -2052,7 +2032,7 @@ export default function FinancialsTable({
             setSelectionRange(null);
         }
         // 印字可能文字: PL メモ / KPI / 下メモ欄セルは方向キー移動の瞬間に useEffect で自動編集開始するため、ここでは何もしない
-    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, isPlMemoEditableCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startPlMemoEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, saveEditableCell, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv, handlePLCellArrowKey]);
+    }, [activeCell, activeManualCell, activeSegCell, editingCell, editingManualCell, editingSegCell, isPlMemoEditableCell, moveActiveCell, moveActiveSegCell, moveManualActiveCell, moveManualActiveCellDir, startEditing, startPlMemoEditing, startManualEditing, startSegEditing, getActiveCellValue, getActiveManualCellValue, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit, saveEditableCell, selectionRange, getRangeAsTsv, clearRange, focusGrid, onUndo, segManualSel, getSegManualTsv]);
 
     // 編集可能グリッド統合ペースト (memo_kpi / pl_cum_manual / pl_q_manual / cum / q 全対応)
     const handleEditablePaste = useCallback(

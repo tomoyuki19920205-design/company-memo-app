@@ -16,10 +16,6 @@ function fmt(val: number | null): string {
     });
 }
 
-function fmtInt(val: number | null): string {
-    if (val === null) return "—";
-    return val.toLocaleString("ja-JP");
-}
 
 /** period "2025-03-31" → "2025.3" */
 function shortPeriod(period: string): string {

@@ -199,7 +199,6 @@ export async function saveGridMemo(
         grid_json: normalized,
     };
 
-    console.log("saveGridMemo payload:", JSON.stringify(payload));
 
     const { data, error } = await supabase
         .from("company_memo_grids")
@@ -215,27 +214,6 @@ export async function saveGridMemo(
     return data;
 }
 
-/** 会社名を取得 (失敗しても null を返す) */
-export async function fetchCompanyName(
-    ticker: string
-): Promise<string | null> {
-    const t = normalizeTicker(ticker);
-    if (!t) return null;
-
-    try {
-        const { data } = await supabase
-            .from("api_latest_financials")
-            .select("ticker")
-            .eq("ticker", t)
-            .limit(1)
-            .maybeSingle();
-
-        if (data) return null;
-        return null;
-    } catch {
-        return null;
-    }
-}
 
 // ============================================================
 // 一括メモ取得 (PL一覧表示用、N+1回避)
@@ -306,8 +284,6 @@ export async function saveManualTableMemo(
     if (!t) throw new Error("ticker が空です");
     const { period, quarter } = MANUAL_TABLE_KEYS[tableType];
 
-    console.log("[saveManualTableMemo] tableType", tableType, "period", period, "quarter", quarter);
-    console.log("[saveManualTableMemo] persist grid", JSON.stringify(gridJson));
     const { error } = await supabase
         .from("company_memo_grids")
         .upsert(

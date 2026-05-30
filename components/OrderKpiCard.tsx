@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import type { OrderKpiItem, ComparisonData } from "@/types/order-kpi";
 import {
     formatOrderKpiLabel,

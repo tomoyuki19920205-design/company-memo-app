@@ -137,8 +137,6 @@ export default function SegmentTable({
             // display_key: segment_name を最小正規化したキー
             // 日英統合なし方針により、英語名・日本語名は必ず異なるキーになる
             const dk = normalizeSegmentDisplayKey(row.segment_name) || row.segment_name;
-            // [DEBUG] キー確認 — 英日が別 dk になることを確認
-            console.log(`[seg-group] ${groupKey} | dk="${dk}" | raw="${row.segment_name}"`);
             if (!group.segMap.has(dk)) {
                 group.segMap.set(dk, {
                     names: [row.segment_name],

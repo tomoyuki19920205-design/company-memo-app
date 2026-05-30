@@ -85,7 +85,7 @@ type ManualTableMemos = {
 
 /** 手入力メモ初期値 */
 const MANUAL_ROW_COUNT = 4;
-const SEGMENT_MANUAL_ROW_COUNT = 12; // みたい定数（参照用）
+
 const EMPTY_MANUAL_MEMOS: ManualTableMemos = {
     pl_cum:         Array.from({ length: MANUAL_ROW_COUNT }, () => []),
     pl_q:           Array.from({ length: MANUAL_ROW_COUNT }, () => []),
@@ -207,7 +207,7 @@ export default function ViewerPage() {
     const handleUndo = useCallback(() => {
         const entry = undoStackRef.current.pop();
         if (!entry) return;
-        console.log(`[undo] ${entry.label}`);
+
         entry.restore();
     }, []);
 
@@ -342,22 +342,7 @@ export default function ViewerPage() {
         const resolved = resolveSegmentsWithOverrides(withStubs, overridesData);
         setResolvedSegments(resolved);
 
-        // DEBUG: PL/segment結合キー確認
-        if (plData.length > 0) {
-            console.log("[DEBUG] PL rows sample:", plData.slice(0, 3).map(r => ({ period: r.period, quarter: r.quarter })));
-        }
-        if (segData.length > 0) {
-            console.log("[DEBUG] Segment rows:", segData.length, "件");
-            console.log("[DEBUG] Segment sample:", segData.slice(0, 3).map(r => ({ period: r.period, quarter: r.quarter, seg: r.segment_name })));
-            const segKeys = new Set(segData.map(r => `${r.period}|${r.quarter}`));
-            const plKeys = new Set(plData.map(r => `${r.period}|${r.quarter}`));
-            const matching = [...segKeys].filter(k => plKeys.has(k));
-            console.log("[DEBUG] PL keys:", [...plKeys].slice(0, 5));
-            console.log("[DEBUG] Seg keys:", [...segKeys].slice(0, 5));
-            console.log("[DEBUG] Matching keys:", matching.length, matching.slice(0, 5));
-        } else {
-            console.log("[DEBUG] Segment data: 0件 (empty)");
-        }
+
 
         if (memosResult.status === "fulfilled") {
             setMemoMap(buildMemoMap(memosResult.value));
@@ -478,8 +463,7 @@ export default function ViewerPage() {
     const handleManualTableMemoGridUpdate = useCallback(
         async (tableType: ManualTableType, newGrid: string[][]) => {
             if (!activeTicker) return;
-            console.log("[handleManualTableMemoGridUpdate] tableType", tableType);
-            console.log("[handleManualTableMemoGridUpdate] incoming grid", JSON.stringify(newGrid));
+
             const prevGrid = manualTableMemos[tableType] ?? [];
             const prevCopy = prevGrid.map((r) => [...r]);
             setManualTableMemos((prev) => ({ ...prev, [tableType]: newGrid }));

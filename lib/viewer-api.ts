@@ -628,7 +628,6 @@ export async function updateOrderKpiReviewStatus(
 
         // auto_accepted / rejected は no-op
         if (oldStatus === "auto_accepted" || oldStatus === "rejected") {
-            console.log(`[order_kpi review] id=${id} already ${oldStatus}, no-op`);
             return { success: true };
         }
 
@@ -650,7 +649,6 @@ export async function updateOrderKpiReviewStatus(
             return { success: false, error: updateErr.message };
         }
 
-        console.log(`[order_kpi review] id=${id} ${oldStatus} → ${nextStatus} by=${reviewerEmail ?? 'unknown'}`);
         return { success: true };
     } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -718,7 +716,6 @@ export async function restoreOrderKpi(
         }
 
         if (current.review_status !== "rejected") {
-            console.log(`[order_kpi restore] id=${id} is ${current.review_status}, not rejected`);
             return { success: true };
         }
 
@@ -736,7 +733,6 @@ export async function restoreOrderKpi(
             return { success: false, error: updateErr.message };
         }
 
-        console.log(`[order_kpi restore] id=${id} rejected → needs_review by=${reviewerEmail ?? 'unknown'}`);
         return { success: true };
     } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -792,7 +788,6 @@ export async function updateOrderKpiValue(
             return { success: false, error: updateErr.message };
         }
 
-        console.log(`[order_kpi edit] id=${id} value ${oldValue} → ${newValue}, status ${oldStatus} → manual_corrected`);
         return { success: true };
     } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);

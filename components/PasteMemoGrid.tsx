@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState, useEffect } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import type { PasteGridData } from "@/lib/paste-memo-api";
 import { parseTsvClipboard } from "@/lib/tsv-parser";
 
