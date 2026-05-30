@@ -134,6 +134,8 @@ export default function ViewerPage() {
     const [selectedPeriod, setSelectedPeriod] = useState<string>("");
     const [selectedQuarter, setSelectedQuarter] = useState<string>("");
     const [memoMap, setMemoMap] = useState<MemoMapType>({});
+    const memoMapRef = useRef<MemoMapType>(memoMap);
+    useEffect(() => { memoMapRef.current = memoMap; }, [memoMap]);
     const [financials, setFinancials] = useState<FinancialRecord[]>([]);
     const [forecasts, setForecasts] = useState<ForecastRevision[]>([]);
     const [monthly, setMonthly] = useState<MonthlyRecord[]>([]);
@@ -567,14 +569,15 @@ export default function ViewerPage() {
     const handlePLMemoEdit = useCallback(
         async (period: string, quarter: string, colIdx: number, value: string) => {
             if (!activeTicker) return;
+            const curMemoMap = memoMapRef.current;
             const memoKey = `${period}|${quarter}`;
-            const existingGrid = memoMap[memoKey]
-                ? memoMap[memoKey].map((row) => [...row])
+            const existingGrid = curMemoMap[memoKey]
+                ? curMemoMap[memoKey].map((row) => [...row])
                 : createEmptyGrid();
             existingGrid[0][colIdx] = value;
 
             // Undo エントリ
-            const prevGrid = memoMap[memoKey];
+            const prevGrid = curMemoMap[memoKey];
             const prevGridCopy = prevGrid ? prevGrid.map((row) => [...row]) : undefined;
             pushUndo(`メモ ${memoKey} col${colIdx}`, () => {
                 if (prevGridCopy) {
@@ -605,12 +608,13 @@ export default function ViewerPage() {
                 setErrorMsg(`メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, memoMap, user, pushUndo]
+        [activeTicker, user, pushUndo]
     );
 
     const handlePLMemoPaste = useCallback(
         async (edits: { period: string; quarter: string; colIdx: number; value: string }[]) => {
             if (!activeTicker || edits.length === 0) return;
+            const curMemoMap = memoMapRef.current;
 
             const byRow = new Map<string, { period: string; quarter: string; updates: { colIdx: number; value: string }[] }>();
             for (const edit of edits) {
@@ -621,8 +625,8 @@ export default function ViewerPage() {
 
             // Undo エントリ (ペースト前の全体スナップショット)
             const prevMemoMapCopy: MemoMapType = {};
-            for (const key of Object.keys(memoMap)) {
-                prevMemoMapCopy[key] = memoMap[key].map((row) => [...row]);
+            for (const key of Object.keys(curMemoMap)) {
+                prevMemoMapCopy[key] = curMemoMap[key].map((row) => [...row]);
             }
             pushUndo(`メモペースト ${edits.length}セル`, () => {
                 setMemoMap(prevMemoMapCopy);
@@ -634,8 +638,8 @@ export default function ViewerPage() {
             });
 
             // 楽観的更新: 即座にUIに反映
-            const newMemoMap = { ...memoMap };
-            const prevMemoMap = { ...memoMap };
+            const newMemoMap = { ...curMemoMap };
+            const prevMemoMap = { ...curMemoMap };
             for (const [key, { updates }] of byRow) {
                 const grid = newMemoMap[key] ? newMemoMap[key].map((row) => [...row]) : createEmptyGrid();
                 for (const { colIdx, value } of updates) grid[0][colIdx] = value;
@@ -658,7 +662,7 @@ export default function ViewerPage() {
                 setErrorMsg("一部メモの保存に失敗しました。allowed_usersの登録を確認してください。");
             }
         },
-        [activeTicker, memoMap, user, pushUndo]
+        [activeTicker, user, pushUndo]
     );
 
     // ============================================================
