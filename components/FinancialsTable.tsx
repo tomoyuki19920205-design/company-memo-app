@@ -601,7 +601,7 @@ function PLTableHeader({
 // ============================================================
 // メインコンポーネント
 // ============================================================
-export default function FinancialsTable({
+function FinancialsTable({
     data,
     loading,
     selectedPeriod,
@@ -3823,3 +3823,6 @@ function ManualMemoRows({
         </>
     );
 }
+
+export default React.memo(FinancialsTable);
+
