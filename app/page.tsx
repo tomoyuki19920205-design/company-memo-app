@@ -150,6 +150,8 @@ export default function ViewerPage() {
     const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
+    const kpiValuesRef = useRef<KpiValueMap>(kpiValues);
+    useEffect(() => { kpiValuesRef.current = kpiValues; }, [kpiValues]);
     const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
     const [segmentManualHeaders, setSegmentManualHeaders] = useState<string[]>([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
     const [status, setStatus] = useState<AppStatus>("idle");
@@ -537,8 +539,9 @@ export default function ViewerPage() {
     const handleKpiValueEdit = useCallback(
         async (period: string, quarter: string, kpiSlot: number, value: string, tableScope: "cum" | "q" = "cum") => {
             if (!activeTicker) return;
+            const curKpiValues = kpiValuesRef.current;
             const key = `${tableScope}|${period}|${quarter}`;
-            const prevValue = kpiValues[key]?.[kpiSlot] ?? "";
+            const prevValue = curKpiValues[key]?.[kpiSlot] ?? "";
             // Undo エントリ
             pushUndo(`KPI値 ${key} slot${kpiSlot}`, () => {
                 setKpiValues((prev) => ({
@@ -563,7 +566,7 @@ export default function ViewerPage() {
                 setErrorMsg(`KPI値保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, kpiValues, pushUndo]
+        [activeTicker, pushUndo]
     );
 
     const handlePLMemoEdit = useCallback(
