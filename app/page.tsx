@@ -153,6 +153,8 @@ export default function ViewerPage() {
     const kpiValuesRef = useRef<KpiValueMap>(kpiValues);
     useEffect(() => { kpiValuesRef.current = kpiValues; }, [kpiValues]);
     const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
+    const manualTableMemosRef = useRef<ManualTableMemos>(manualTableMemos);
+    useEffect(() => { manualTableMemosRef.current = manualTableMemos; }, [manualTableMemos]);
     const [segmentManualHeaders, setSegmentManualHeaders] = useState<string[]>([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
@@ -407,7 +409,8 @@ export default function ViewerPage() {
             value: string,
         ) => {
             if (!activeTicker) return;
-            const prevGrid = manualTableMemos[tableType];
+            const curMemos = manualTableMemosRef.current;
+            const prevGrid = curMemos[tableType];
             const prevGridCopy = prevGrid.map((r) => [...r]);
 
             // グリッドをコピーして更新
@@ -434,7 +437,7 @@ export default function ViewerPage() {
                 setErrorMsg(`手入力メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, manualTableMemos, pushUndo]
+        [activeTicker, pushUndo]
     );
 
     // ============================================================
@@ -468,7 +471,8 @@ export default function ViewerPage() {
         async (tableType: ManualTableType, newGrid: string[][]) => {
             if (!activeTicker) return;
 
-            const prevGrid = manualTableMemos[tableType] ?? [];
+            const curMemos = manualTableMemosRef.current;
+            const prevGrid = curMemos[tableType] ?? [];
             const prevCopy = prevGrid.map((r) => [...r]);
             setManualTableMemos((prev) => ({ ...prev, [tableType]: newGrid }));
             try {
@@ -479,7 +483,7 @@ export default function ViewerPage() {
                 setErrorMsg(`手入力メモ保存失敗: ${err instanceof Error ? err.message : String(err)}`);
             }
         },
-        [activeTicker, manualTableMemos]
+        [activeTicker]
     );
 
     // ---- 企業マスタ lazy load (多重ロード防止付き) ----
