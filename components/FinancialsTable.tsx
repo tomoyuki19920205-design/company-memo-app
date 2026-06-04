@@ -3394,7 +3394,7 @@ function FinancialsTable({
 // ============================================================
 // Excel-like メモセル
 // ============================================================
-function MemoCellExcel({
+function MemoCellExcelBase({
     value,
     width,
     isActive,
@@ -3967,6 +3967,38 @@ function SegmentManualMemoTable({
         </div>
     );
 }
+
+/**
+ * React.memo ラッパー。
+ * onMouseDownCaptureEdit は「(e) => stableHandler(e, cellValue)」という
+ * 薄いラッパーが毎レンダーで生成されるため比較対象から除外する。
+ * 実体（stableHandler）は安定参照なので、除外しても挙動に差異はない。
+ */
+const MemoCellExcel = React.memo(
+    MemoCellExcelBase,
+    (prev, next) =>
+        prev.value === next.value &&
+        prev.width === next.width &&
+        prev.isActive === next.isActive &&
+        prev.isInRange === next.isInRange &&
+        prev.isEditing === next.isEditing &&
+        prev.editValue === next.editValue &&
+        prev.className === next.className &&
+        prev.useTextarea === next.useTextarea &&
+        prev.inputRef === next.inputRef &&
+        prev.onSelect === next.onSelect &&
+        prev.onStartEdit === next.onStartEdit &&
+        prev.onEditChange === next.onEditChange &&
+        prev.onCommit === next.onCommit &&
+        prev.onCancel === next.onCancel &&
+        prev.onMouseDown === next.onMouseDown &&
+        prev.onMouseEnter === next.onMouseEnter &&
+        prev.onMouseEnterRange === next.onMouseEnterRange &&
+        prev.onPaste === next.onPaste &&
+        prev.onArrowKey === next.onArrowKey &&
+        prev.onBlurShouldSkip === next.onBlurShouldSkip
+        // onMouseDownCaptureEdit は比較しない
+);
 
 // ============================================================
 // ManualMemoRows — 手入力メモ専用行 (2行)
