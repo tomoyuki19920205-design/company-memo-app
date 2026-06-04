@@ -2119,6 +2119,35 @@ function FinancialsTable({
         [cumRows, qRows, onMemoPaste, onKpiValueEdit, saveEditableCell]
     );
 
+    /**
+     * pl_cum_manual ペーストハンドラを事前生成。
+     * [rowIdx][colIdx] → (e: ClipboardEvent) => void のマップ。
+     * handleEditablePaste が安定参照のため、マウント時に1回だけ生成される。
+     */
+    const plCumManualPasteHandlers = useMemo<((e: React.ClipboardEvent) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) =>
+                    (e: React.ClipboardEvent) => handleEditablePaste("pl_cum_manual", colIdx, rowIdx, e)
+                )
+            ),
+        [handleEditablePaste]
+    );
+
+    /**
+     * pl_q_manual ペーストハンドラを事前生成。
+     * [rowIdx][displayCol] → (e: ClipboardEvent) => void のマップ。
+     */
+    const plQManualPasteHandlers = useMemo<((e: React.ClipboardEvent) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) =>
+                    (e: React.ClipboardEvent) => handleEditablePaste("pl_q_manual", displayCol, rowIdx, e)
+                )
+            ),
+        [handleEditablePaste]
+    );
+
     // セグメント値取得
     const getSegValue = useCallback(
         (period: string, quarter: string, key: string): number | null => {
@@ -2715,7 +2744,7 @@ function FinancialsTable({
                                                             onMouseEnter={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
                                                             onMouseEnterRange={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
                                                             onArrowKey={handlePlMemoArrowKey}
-                                                            onPaste={(e) => handleEditablePaste("pl_cum_manual", colIdx, rowIdx, e)}
+                                                            onPaste={plCumManualPasteHandlers[rowIdx]?.[colIdx]}
                                                             className={extraClass}
                                                             width={cumResize.widths[colIdx]}
                                                         />
@@ -2793,7 +2822,7 @@ function FinancialsTable({
                                                             onMouseEnter={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
                                                             onMouseEnterRange={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
                                                             onArrowKey={handlePlMemoArrowKey}
-                                                            onPaste={(e) => handleEditablePaste("pl_q_manual", displayCol, rowIdx, e)}
+                                                            onPaste={plQManualPasteHandlers[rowIdx]?.[displayCol]}
                                                             className={extraClass}
                                                             width={qResize.widths[saveColIdx]}
                                                         />
