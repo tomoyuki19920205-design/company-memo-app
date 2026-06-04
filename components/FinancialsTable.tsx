@@ -2148,6 +2148,34 @@ function FinancialsTable({
         [handleEditablePaste]
     );
 
+    /**
+     * pl_cum_manual onMouseEnter / onMouseEnterRange ハンドラを事前生成。
+     * [rowIdx][colIdx] → () => void のマップ。両 props が同じ関数を参照する。
+     */
+    const plCumManualMouseEnterHandlers = useMemo<(() => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) =>
+                    () => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)
+                )
+            ),
+        [handleCellMouseEnter]
+    );
+
+    /**
+     * pl_q_manual onMouseEnter / onMouseEnterRange ハンドラを事前生成。
+     * [rowIdx][displayCol] → () => void のマップ。
+     */
+    const plQManualMouseEnterHandlers = useMemo<(() => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) =>
+                    () => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)
+                )
+            ),
+        [handleCellMouseEnter]
+    );
+
     // セグメント値取得
     const getSegValue = useCallback(
         (period: string, quarter: string, key: string): number | null => {
@@ -2741,8 +2769,8 @@ function FinancialsTable({
                                                             onCommit={commitPlMemoEdit}
                                                             onCancel={cancelPlMemoEdit}
                                                             inputRef={isEditing ? plMemoInputRef : undefined}
-                                                            onMouseEnter={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
-                                                            onMouseEnterRange={() => handleCellMouseEnter("pl_cum_manual", rowIdx, colIdx)}
+                                                            onMouseEnter={plCumManualMouseEnterHandlers[rowIdx]?.[colIdx]}
+                                                            onMouseEnterRange={plCumManualMouseEnterHandlers[rowIdx]?.[colIdx]}
                                                             onArrowKey={handlePlMemoArrowKey}
                                                             onPaste={plCumManualPasteHandlers[rowIdx]?.[colIdx]}
                                                             className={extraClass}
@@ -2819,8 +2847,8 @@ function FinancialsTable({
                                                             onCommit={commitPlMemoEdit}
                                                             onCancel={cancelPlMemoEdit}
                                                             inputRef={isEditing ? plMemoInputRef : undefined}
-                                                            onMouseEnter={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
-                                                            onMouseEnterRange={() => handleCellMouseEnter("pl_q_manual", rowIdx, displayCol)}
+                                                            onMouseEnter={plQManualMouseEnterHandlers[rowIdx]?.[displayCol]}
+                                                            onMouseEnterRange={plQManualMouseEnterHandlers[rowIdx]?.[displayCol]}
                                                             onArrowKey={handlePlMemoArrowKey}
                                                             onPaste={plQManualPasteHandlers[rowIdx]?.[displayCol]}
                                                             className={extraClass}
