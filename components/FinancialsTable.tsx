@@ -2246,6 +2246,118 @@ function FinancialsTable({
         [handleCellMouseDown, handlePlMemoCellMouseDown]
     );
 
+    // ── memo_kpi テーブル (memo_a / memo_b / kpi_x) ──────────────────────────
+    // cumRows は銘柄切替で長さが変わるため deps に含める
+
+    /** memo_a onMouseEnter / onMouseEnterRange [idx] → () => void */
+    const memoAMouseEnterHandlers = useMemo<(() => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                () => handleCellMouseEnter("memo_kpi", idx, 2)
+            ),
+        [cumRows.length, handleCellMouseEnter]
+    );
+
+    /** memo_b onMouseEnter / onMouseEnterRange [idx] → () => void */
+    const memoBMouseEnterHandlers = useMemo<(() => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                () => handleCellMouseEnter("memo_kpi", idx, 3)
+            ),
+        [cumRows.length, handleCellMouseEnter]
+    );
+
+    /** kpi_x onMouseEnter / onMouseEnterRange [idx][slot] → () => void (slot=1/2/3) */
+    const kpiMouseEnterHandlers = useMemo<(() => void)[][]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                KPI_SLOTS.map((slot) =>
+                    () => handleCellMouseEnter("memo_kpi", idx, 3 + slot)
+                )
+            ),
+        [cumRows.length, handleCellMouseEnter]
+    );
+
+    /** memo_a onStartEdit [idx] → (val: string) => void */
+    const memoAStartEditHandlers = useMemo<((val: string) => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                (val: string) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", val)
+            ),
+        [cumRows.length, handlePlMemoCellMouseDown]
+    );
+
+    /** memo_b onStartEdit [idx] → (val: string) => void */
+    const memoBStartEditHandlers = useMemo<((val: string) => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                (val: string) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", val)
+            ),
+        [cumRows.length, handlePlMemoCellMouseDown]
+    );
+
+    /** kpi_x onStartEdit [idx][slotIndex(0-2)] → (val: string) => void */
+    const kpiStartEditHandlers = useMemo<((val: string) => void)[][]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                KPI_SLOTS.map((slot) => {
+                    const colKey = `kpi_${slot}`;
+                    return (val: string) => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, val);
+                })
+            ),
+        [cumRows.length, handlePlMemoCellMouseDown]
+    );
+
+    /**
+     * memo_a onMouseDownCaptureEdit [idx] → (e, cellValue) => void。
+     * cellValue = memoA はレンダー時確定のため JSX 側でバインド。
+     */
+    const memoACaptureHandlers = useMemo<((e: React.MouseEvent, cellValue: string) => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                (e: React.MouseEvent, cellValue: string) => {
+                    handleCellMouseDown("memo_kpi", idx, 2, e);
+                    pendingPlMemoClick.current = () =>
+                        handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", cellValue);
+                }
+            ),
+        [cumRows.length, handleCellMouseDown, handlePlMemoCellMouseDown]
+    );
+
+    /**
+     * memo_b onMouseDownCaptureEdit [idx] → (e, cellValue) => void。
+     */
+    const memoBCaptureHandlers = useMemo<((e: React.MouseEvent, cellValue: string) => void)[]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                (e: React.MouseEvent, cellValue: string) => {
+                    handleCellMouseDown("memo_kpi", idx, 3, e);
+                    pendingPlMemoClick.current = () =>
+                        handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", cellValue);
+                }
+            ),
+        [cumRows.length, handleCellMouseDown, handlePlMemoCellMouseDown]
+    );
+
+    /**
+     * kpi_x onMouseDownCaptureEdit [idx][slotIndex(0-2)] → (e, cellValue) => void。
+     */
+    const kpiCaptureHandlers = useMemo<((e: React.MouseEvent, cellValue: string) => void)[][]>(
+        () =>
+            Array.from({ length: cumRows.length }, (_, idx) =>
+                KPI_SLOTS.map((slot) => {
+                    const colKey = `kpi_${slot}`;
+                    const kpiAbsCol = 3 + slot;
+                    return (e: React.MouseEvent, cellValue: string) => {
+                        handleCellMouseDown("memo_kpi", idx, kpiAbsCol, e);
+                        pendingPlMemoClick.current = () =>
+                            handlePlMemoCellMouseDown("memo_kpi", idx, colKey, cellValue);
+                    };
+                })
+            ),
+        [cumRows.length, handleCellMouseDown, handlePlMemoCellMouseDown]
+    );
+
     // セグメント値取得
     const getSegValue = useCallback(
         (period: string, quarter: string, key: string): number | null => {
@@ -2960,18 +3072,15 @@ function FinancialsTable({
                                                         isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a"}
                                                         editValue={plMemoEditValue}
                                                         onSelect={NOOP}
-                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", val)}
-                                                        onMouseDownCaptureEdit={(e) => {
-                                                            handleCellMouseDown("memo_kpi", idx, 2, e);
-                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", memoA);
-                                                        }}
+                                                        onStartEdit={memoAStartEditHandlers[idx]}
+                                                        onMouseDownCaptureEdit={(e) => memoACaptureHandlers[idx]?.(e, memoA)}
                                                         onBlurShouldSkip={plMemoBlurShouldSkip}
                                                         onEditChange={setPlMemoEditValue}
                                                         onCommit={commitPlMemoEdit}
                                                         onCancel={cancelPlMemoEdit}
                                                         inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a" ? plMemoInputRef : undefined}
-                                                        onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, 2)}
-                                                        onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, 2)}
+                                                        onMouseEnter={memoAMouseEnterHandlers[idx]}
+                                                        onMouseEnterRange={memoAMouseEnterHandlers[idx]}
                                                         onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     {/* memo_b (colIdx=3) */}
@@ -2981,18 +3090,15 @@ function FinancialsTable({
                                                         isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b"}
                                                         editValue={plMemoEditValue}
                                                         onSelect={NOOP}
-                                                        onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", val)}
-                                                        onMouseDownCaptureEdit={(e) => {
-                                                            handleCellMouseDown("memo_kpi", idx, 3, e);
-                                                            pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", memoB);
-                                                        }}
+                                                        onStartEdit={memoBStartEditHandlers[idx]}
+                                                        onMouseDownCaptureEdit={(e) => memoBCaptureHandlers[idx]?.(e, memoB)}
                                                         onBlurShouldSkip={plMemoBlurShouldSkip}
                                                         onEditChange={setPlMemoEditValue}
                                                         onCommit={commitPlMemoEdit}
                                                         onCancel={cancelPlMemoEdit}
                                                         inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b" ? plMemoInputRef : undefined}
-                                                        onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, 3)}
-                                                        onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, 3)}
+                                                        onMouseEnter={memoBMouseEnterHandlers[idx]}
+                                                        onMouseEnterRange={memoBMouseEnterHandlers[idx]}
                                                         onArrowKey={handlePlMemoArrowKey}
                                                     />
                                                     {/* kpi_1/2/3 (colIdx=4/5/6) */}
@@ -3008,19 +3114,16 @@ function FinancialsTable({
                                                                 isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
                                                                 editValue={plMemoEditValue}
                                                                 onSelect={NOOP}
-                                                                onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, val)}
-                                                                onMouseDownCaptureEdit={(e) => {
-                                                                    handleCellMouseDown("memo_kpi", idx, kpiAbsCol, e);
-                                                                    pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, cellVal);
-                                                                }}
+                                                                onStartEdit={kpiStartEditHandlers[idx]?.[slot - 1]}
+                                                                onMouseDownCaptureEdit={(e) => kpiCaptureHandlers[idx]?.[slot - 1]?.(e, cellVal)}
                                                                 onBlurShouldSkip={plMemoBlurShouldSkip}
                                                                 onEditChange={setPlMemoEditValue}
                                                                 onCommit={commitPlMemoEdit}
                                                                 onCancel={cancelPlMemoEdit}
                                                                 inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
                                                                 className="kpi-cell"
-                                                                onMouseEnter={() => handleCellMouseEnter("memo_kpi", idx, kpiAbsCol)}
-                                                                onMouseEnterRange={() => handleCellMouseEnter("memo_kpi", idx, kpiAbsCol)}
+                                                                onMouseEnter={kpiMouseEnterHandlers[idx]?.[slot - 1]}
+                                                                onMouseEnterRange={kpiMouseEnterHandlers[idx]?.[slot - 1]}
                                                                 onArrowKey={handlePlMemoArrowKey}
                                                             />
                                                         );
