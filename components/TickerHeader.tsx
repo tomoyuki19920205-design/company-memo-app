@@ -153,9 +153,12 @@ function TickerHeader({
         window.location.href = "/login";
     };
 
+    const tdnetUrl = process.env.NEXT_PUBLIC_TDNET_URL ?? "http://localhost:3001/tdnet-alerts";
+
     return (
         <div className="viewer-header">
             <div className="viewer-header-top">
+                <a href={tdnetUrl} className="site-link">📡 TDNET通知</a>
                 <h1 className="viewer-title">Company Viewer</h1>
                 <div className="ticker-input-group">
                     <label className="ticker-label" htmlFor="ticker-input">
