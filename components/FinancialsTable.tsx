@@ -21,6 +21,9 @@ import {
     FORECAST_SOURCES,
 } from "@/lib/quarter-math";
 
+/** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
+const NOOP = () => {};
+
 // ─── セグメント source 別タブ ─────────────────────────────
 // 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
 //           / backfill_xbrl / xbrl / attachment_xbrl
@@ -2698,7 +2701,7 @@ function FinancialsTable({
                                                             isInRange={isInRange}
                                                             isEditing={isEditing}
                                                             editValue={plMemoEditValue}
-                                                            onSelect={() => {}}
+                                                            onSelect={NOOP}
                                                             onStartEdit={(val) => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, val)}
                                                             onMouseDownCaptureEdit={(e) => {
                                                                 handleCellMouseDown("pl_cum_manual", rowIdx, colIdx, e);
@@ -2776,7 +2779,7 @@ function FinancialsTable({
                                                             isInRange={isInRange}
                                                             isEditing={isEditing}
                                                             editValue={plMemoEditValue}
-                                                            onSelect={() => {}}
+                                                            onSelect={NOOP}
                                                             onStartEdit={(val) => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, val)}
                                                             onMouseDownCaptureEdit={(e) => {
                                                                 handleCellMouseDown("pl_q_manual", rowIdx, displayCol, e);
@@ -2835,7 +2838,7 @@ function FinancialsTable({
                                                         isInRange={isCellInRange("memo_kpi", idx, 2)}
                                                         isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_a"}
                                                         editValue={plMemoEditValue}
-                                                        onSelect={() => {}}
+                                                        onSelect={NOOP}
                                                         onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_a", val)}
                                                         onMouseDownCaptureEdit={(e) => {
                                                             handleCellMouseDown("memo_kpi", idx, 2, e);
@@ -2856,7 +2859,7 @@ function FinancialsTable({
                                                         isInRange={isCellInRange("memo_kpi", idx, 3)}
                                                         isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === "memo_b"}
                                                         editValue={plMemoEditValue}
-                                                        onSelect={() => {}}
+                                                        onSelect={NOOP}
                                                         onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, "memo_b", val)}
                                                         onMouseDownCaptureEdit={(e) => {
                                                             handleCellMouseDown("memo_kpi", idx, 3, e);
@@ -2883,7 +2886,7 @@ function FinancialsTable({
                                                                 isInRange={isCellInRange("memo_kpi", idx, kpiAbsCol)}
                                                                 isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
                                                                 editValue={plMemoEditValue}
-                                                                onSelect={() => {}}
+                                                                onSelect={NOOP}
                                                                 onStartEdit={(val) => handlePlMemoCellMouseDown("memo_kpi", idx, colKey, val)}
                                                                 onMouseDownCaptureEdit={(e) => {
                                                                     handleCellMouseDown("memo_kpi", idx, kpiAbsCol, e);
