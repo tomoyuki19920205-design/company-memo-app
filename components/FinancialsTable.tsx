@@ -2207,6 +2207,45 @@ function FinancialsTable({
         [handlePlMemoCellMouseDown]
     );
 
+    /**
+     * pl_cum_manual onMouseDownCaptureEdit ハンドラを事前生成。
+     * [rowIdx][colIdx] → (e: MouseEvent, cellValue: string) => void のマップ。
+     * cellValue はレンダー時に確定するため JSX 側でバインドする。
+     */
+    const plCumManualCaptureHandlers = useMemo<((e: React.MouseEvent, cellValue: string) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) => {
+                    const colKey = `col_${colIdx}`;
+                    return (e: React.MouseEvent, cellValue: string) => {
+                        handleCellMouseDown("pl_cum_manual", rowIdx, colIdx, e);
+                        pendingPlMemoClick.current = () =>
+                            handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, cellValue);
+                    };
+                })
+            ),
+        [handleCellMouseDown, handlePlMemoCellMouseDown]
+    );
+
+    /**
+     * pl_q_manual onMouseDownCaptureEdit ハンドラを事前生成。
+     * [rowIdx][displayCol] → (e: MouseEvent, cellValue: string) => void のマップ。
+     */
+    const plQManualCaptureHandlers = useMemo<((e: React.MouseEvent, cellValue: string) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) => {
+                    const colKey = `col_${displayCol}`;
+                    return (e: React.MouseEvent, cellValue: string) => {
+                        handleCellMouseDown("pl_q_manual", rowIdx, displayCol, e);
+                        pendingPlMemoClick.current = () =>
+                            handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, cellValue);
+                    };
+                })
+            ),
+        [handleCellMouseDown, handlePlMemoCellMouseDown]
+    );
+
     // セグメント値取得
     const getSegValue = useCallback(
         (period: string, quarter: string, key: string): number | null => {
@@ -2791,10 +2830,7 @@ function FinancialsTable({
                                                             editValue={plMemoEditValue}
                                                             onSelect={NOOP}
                                                             onStartEdit={plCumManualStartEditHandlers[rowIdx]?.[colIdx]}
-                                                            onMouseDownCaptureEdit={(e) => {
-                                                                handleCellMouseDown("pl_cum_manual", rowIdx, colIdx, e);
-                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, cellValue);
-                                                            }}
+                                                            onMouseDownCaptureEdit={(e) => plCumManualCaptureHandlers[rowIdx]?.[colIdx]?.(e, cellValue)}
                                                             onBlurShouldSkip={plMemoBlurShouldSkip}
                                                             onEditChange={setPlMemoEditValue}
                                                             onCommit={commitPlMemoEdit}
@@ -2869,10 +2905,7 @@ function FinancialsTable({
                                                             editValue={plMemoEditValue}
                                                             onSelect={NOOP}
                                                             onStartEdit={plQManualStartEditHandlers[rowIdx]?.[displayCol]}
-                                                            onMouseDownCaptureEdit={(e) => {
-                                                                handleCellMouseDown("pl_q_manual", rowIdx, displayCol, e);
-                                                                pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, cellValue);
-                                                            }}
+                                                            onMouseDownCaptureEdit={(e) => plQManualCaptureHandlers[rowIdx]?.[displayCol]?.(e, cellValue)}
                                                             onBlurShouldSkip={plMemoBlurShouldSkip}
                                                             onEditChange={setPlMemoEditValue}
                                                             onCommit={commitPlMemoEdit}
