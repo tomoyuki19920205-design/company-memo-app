@@ -2176,6 +2176,37 @@ function FinancialsTable({
         [handleCellMouseEnter]
     );
 
+    /**
+     * pl_cum_manual onStartEdit ハンドラを事前生成。
+     * [rowIdx][colIdx] → (val: string) => void のマップ。
+     * colKey = `col_${colIdx}` で固定のため、マップ内で計算済み。
+     */
+    const plCumManualStartEditHandlers = useMemo<((val: string) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) => {
+                    const colKey = `col_${colIdx}`;
+                    return (val: string) => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, val);
+                })
+            ),
+        [handlePlMemoCellMouseDown]
+    );
+
+    /**
+     * pl_q_manual onStartEdit ハンドラを事前生成。
+     * [rowIdx][displayCol] → (val: string) => void のマップ。
+     */
+    const plQManualStartEditHandlers = useMemo<((val: string) => void)[][]>(
+        () =>
+            Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) =>
+                Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) => {
+                    const colKey = `col_${displayCol}`;
+                    return (val: string) => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, val);
+                })
+            ),
+        [handlePlMemoCellMouseDown]
+    );
+
     // セグメント値取得
     const getSegValue = useCallback(
         (period: string, quarter: string, key: string): number | null => {
@@ -2759,7 +2790,7 @@ function FinancialsTable({
                                                             isEditing={isEditing}
                                                             editValue={plMemoEditValue}
                                                             onSelect={NOOP}
-                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, val)}
+                                                            onStartEdit={plCumManualStartEditHandlers[rowIdx]?.[colIdx]}
                                                             onMouseDownCaptureEdit={(e) => {
                                                                 handleCellMouseDown("pl_cum_manual", rowIdx, colIdx, e);
                                                                 pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_cum_manual", rowIdx, colKey, cellValue);
@@ -2837,7 +2868,7 @@ function FinancialsTable({
                                                             isEditing={isEditing}
                                                             editValue={plMemoEditValue}
                                                             onSelect={NOOP}
-                                                            onStartEdit={(val) => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, val)}
+                                                            onStartEdit={plQManualStartEditHandlers[rowIdx]?.[displayCol]}
                                                             onMouseDownCaptureEdit={(e) => {
                                                                 handleCellMouseDown("pl_q_manual", rowIdx, displayCol, e);
                                                                 pendingPlMemoClick.current = () => handlePlMemoCellMouseDown("pl_q_manual", rowIdx, colKey, cellValue);
