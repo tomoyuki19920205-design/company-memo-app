@@ -282,8 +282,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     return "";
   };
 
-  // Discord対象タブ専用フォーマッタ
-  const formatDiscordStyleBody = (event: EnrichedEvent): string => {
+  // 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
+  // 長い headline / formatted_message は使わない
+  const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boolean } => {
     const rawVal = event.raw_payload;
     const rp: Record<string, unknown> | null =
       typeof rawVal === "string"
@@ -327,8 +328,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     };
 
     const lines: string[] = [];
-
-    // ticker + company_name はカードヘッダーに専用表示するためここには含めない
 
     if (event.event_type === "forecast") {
       const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
@@ -420,17 +419,16 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       if (event.event_subtype) lines.push(event.event_subtype);
     }
 
-    if (event.discord_sent_at) {
-      const d = new Date(event.discord_sent_at);
-      const mm  = String(d.getMonth() + 1).padStart(2, "0");
-      const dd  = String(d.getDate()).padStart(2, "0");
-      const hh  = String(d.getHours()).padStart(2, "0");
-      const min = String(d.getMinutes()).padStart(2, "0");
-      lines.push(`🔔 Discord送信済み: ${d.getFullYear()}-${mm}-${dd} ${hh}:${min}`);
-    }
+    // Discord 送信時刻 (Discord タブのみ表示するため isDiscordTab を確認)
+    // ここでは isDiscordTab スコープ外なので discord_sent_at は省略
+    // → Discord タブ判定はカード描画時に別途追加
 
-    return lines.filter((s) => s.trim()).join("\n") || event.headline || "";
+    const text = lines.filter((s) => s.trim()).join("\n");
+    if (text) return { text, isFallback: false };
+    // fallback: headline を1行だけ (muted, clamp)
+    return { text: (event.headline || "").trim(), isFallback: true };
   };
+
 
   const filters: { key: FilterType; label: string }[] = [
     { key: "all", label: `全件 (${events.length})` },
@@ -609,27 +607,19 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype)
                 : "";
 
-              let cardBody: string;
-              if (isDiscordTab) {
-                cardBody = formatDiscordStyleBody(event);
-              } else {
-                const fm = event.formatted_message?.trim() || "";
-                let mainText = fm
-                  || [event.display_title, event.display_summary]
-                      .filter((s) => s?.trim())
-                      .join("\n")
-                  || event.headline
-                  || "";
-                const isShort = !mainText.includes("\n");
-                if (
-                  isShort &&
-                  event.headline?.trim() &&
-                  !mainText.includes(event.headline.trim())
-                ) {
-                  mainText = mainText + "\n" + event.headline;
-                }
-                cardBody = mainText;
+              // 全タブ共通: raw_payload の数値要約を表示。長い headline は使わない。
+              const { text: cardBody, isFallback } = formatCardBody(event);
+              // Discord タブのみ: 送信時刻を末尾に追加
+              let discordExtra = "";
+              if (isDiscordTab && event.discord_sent_at) {
+                const d = new Date(event.discord_sent_at);
+                const mm  = String(d.getMonth() + 1).padStart(2, "0");
+                const dd  = String(d.getDate()).padStart(2, "0");
+                const hh  = String(d.getHours()).padStart(2, "0");
+                const min = String(d.getMinutes()).padStart(2, "0");
+                discordExtra = `\n🔔 ${d.getFullYear()}-${mm}-${dd} ${hh}:${min}`;
               }
+              const bodyText = cardBody + discordExtra;
 
               return (
                 <div
@@ -678,8 +668,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     )}
                   </div>
 
-                  {/* Row 3: Main content */}
-                  <div className="alert-card-body">{cardBody}</div>
+                  {/* Row 3: 数値要約 (fallback時はheadlineを1行muted) */}
+                  <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
+                    {bodyText}
+                  </div>
                 </div>
               );
             });

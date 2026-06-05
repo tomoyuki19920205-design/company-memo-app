@@ -69,9 +69,12 @@ export async function fetchEvents(
     query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
   }
 
-  // 「訂正・数値データ訂正」を含む開示を除外（数値データ訂正はノイズのため非表示）
-  // DBからは削除しない。headline のみで判定（表示・検索ともに headline が主カラム）
-  query = query.not("headline", "ilike", "%訂正・数値データ訂正%");
+  // 全タブ共通除外: ノイズ・訂正系開示を表示しない（DBからは削除しない）
+  query = query
+    .not("headline", "ilike", "%訂正・数値データ訂正%")  // 既存
+    .not("headline", "ilike", "%一部訂正%")              // 新規
+    .not("headline", "ilike", "%一部変更%")              // 新規
+    .not("headline", "ilike", "%再訂正%");               // 新規
 
   // 日付フィルタ (JST日付 → UTC範囲変換)
   // JST の YYYY-MM-DD を UTC に変換: JST 00:00 = UTC -09:00 (前日 15:00)

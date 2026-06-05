@@ -3335,13 +3335,24 @@ textarea::placeholder {
 
 /* カード本文 */
 .alert-card-body {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.4;
   white-space: pre-wrap;
   word-break: break-all;
-  max-height: 5em;
+  max-height: 4.5em;   /* 数値要約は3行程度 */
   overflow: hidden;
+}
+
+/* fallback: headline を1行のみ・さらに薄く */
+.alert-card-body.fallback {
+  font-size: 0.72rem;
+  color: var(--text-dim, #6b7280);
+  opacity: 0.7;
+  max-height: 1.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ティッカー + 企業名行 */
