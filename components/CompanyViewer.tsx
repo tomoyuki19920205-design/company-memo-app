@@ -901,12 +901,10 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         }
     }, [status]);
 
-    // suppress unused vars from original page.tsx
-    void rejectedKpis;
-    void marketData;
-    void handleOrderKpiReview;
-    void handleRestoreOrderKpi;
-    void handleEditOrderKpiValue;
+    // NOTE: 以下のコールバック・state は OrderKpiTable の将来の拡張用に定義済み。
+    // 現在は OrderKpiTable の Props が { data, loading } のみのため未使用。
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    void [rejectedKpis, marketData, handleOrderKpiReview, handleRestoreOrderKpi, handleEditOrderKpiValue];
 
     if (authLoading) return <div className="viewer-container"><div className="placeholder">認証確認中...</div></div>;
     if (!user) return <div className="viewer-container"><div className="placeholder">ログインが必要です</div></div>;

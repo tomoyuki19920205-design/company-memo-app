@@ -49,6 +49,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const supabaseRef = useRef(createSupabaseBrowser());
   const viewerRef = useRef<CompanyViewerHandle>(null);
+  const searchRef = useRef("");
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dateInputRef = useRef<HTMLInputElement | null>(null);
   const isDraggingRef = useRef(false);
@@ -91,7 +92,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "today") opts.selectedDate = "today";
 
       if (selectedDate) opts.selectedDate = selectedDate;
-      if (search.trim()) opts.search = search.trim();
+      if (searchRef.current.trim()) opts.search = searchRef.current.trim();
 
       const data = await fetchEvents(supabaseRef.current, opts);
       setEvents(data);
@@ -100,7 +101,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     } finally {
       setLoading(false);
     }
-  }, [userId, filter, search, selectedDate]);
+  }, [userId, filter, selectedDate]);
 
   useEffect(() => {
     loadEvents();
@@ -184,8 +185,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
+    searchRef.current = value;
     if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
-    searchDebounceRef.current = setTimeout(() => {}, 300);
+    // 300ms debounce: 高速タイピング時の過剰クエリを抑制
+    searchDebounceRef.current = setTimeout(() => loadEvents(), 300);
   };
 
   const handleSelectEvent = async (event: EnrichedEvent) => {
