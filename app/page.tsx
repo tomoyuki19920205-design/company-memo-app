@@ -399,6 +399,26 @@ export default function ViewerPage() {
     }, [tickerInput, user]);
 
     // ============================================================
+    // URL クエリ ?ticker=xxxx からの初期ロード
+    // 例: https://company-memo-app.vercel.app/?ticker=9824
+    // user が確定してから一度だけ実行する
+    // ============================================================
+    const urlTickerLoadedRef = useRef(false);
+    useEffect(() => {
+        // 認証完了前 / ロード済み は何もしない
+        if (authLoading || !user || urlTickerLoadedRef.current) return;
+        const params = new URLSearchParams(window.location.search);
+        const t = params.get("ticker")?.trim();
+        // URL に ticker がなければフラグだけ立てて終了
+        if (!t) { urlTickerLoadedRef.current = true; return; }
+        urlTickerLoadedRef.current = true;
+        // 既存の手入力検索と同じ経路でロード
+        setTickerInput(t);
+        handleLoad(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user, authLoading]);
+
+    // ============================================================
     // 手入力メモ専用行 — 編集ハンドラ
     // ============================================================
     const handleManualTableMemoEdit = useCallback(
