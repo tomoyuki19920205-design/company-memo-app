@@ -326,10 +326,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
     const lines: string[] = [];
 
-    const companyLabel = event.company_name
-      ? `${event.ticker} ${event.company_name}`
-      : event.ticker;
-    lines.push(companyLabel);
+    // ticker + company_name はカードヘッダーに専用表示するためここには含めない
 
     if (event.event_type === "forecast") {
       const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
@@ -670,7 +667,15 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     </span>
                   </div>
 
-                  {/* Main content */}
+                  {/* Row 2: Ticker + Company Name */}
+                  <div className="alert-card-company">
+                    <span className="alert-ticker">{event.ticker}</span>
+                    {event.company_name && (
+                      <span className="alert-company-name">{event.company_name}</span>
+                    )}
+                  </div>
+
+                  {/* Row 3: Main content */}
                   <div className="alert-card-body">{cardBody}</div>
                 </div>
               );

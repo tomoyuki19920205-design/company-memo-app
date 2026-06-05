@@ -3344,6 +3344,38 @@ textarea::placeholder {
   overflow: hidden;
 }
 
+/* ティッカー + 企業名行 */
+.alert-card-company {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.alert-ticker {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: var(--mono);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.alert-company-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-all;
+}
+
+/* 既読カードはやや薄く */
+.alert-card.selected .alert-ticker,
+.alert-card.selected .alert-company-name {
+  color: var(--text-muted);
+}
+
 /* ============================================================
    イベント詳細パネル (AlertDetailPanel.tsx)
    ============================================================ */
