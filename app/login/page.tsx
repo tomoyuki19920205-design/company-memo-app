@@ -8,8 +8,22 @@ export default function LoginPage() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [isInIframe, setIsInIframe] = useState(false);
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
+
+    // iframe内か検出（third-party Cookie制限でログイン不可の場合に警告表示）
+    useEffect(() => {
+        try {
+            const inFrame = window.self !== window.top;
+            setIsInIframe(inFrame);
+            console.log("[login] isInIframe:", inFrame);
+        } catch {
+            // cross-origin iframeで window.top へのアクセスがブロックされた → iframe内確定
+            setIsInIframe(true);
+            console.log("[login] isInIframe: true (cross-origin blocked)");
+        }
+    }, []);
 
     // --- ブラウザ autofill 対策 ---
     // autofill は onChange を発火しないことがある。
@@ -44,12 +58,15 @@ export default function LoginPage() {
 
         try {
             const supabase = createSupabaseBrowser();
-            const { error: authError } = await supabase.auth.signInWithPassword({
+            console.log("[login] signInWithPassword start, email:", finalEmail, "inIframe:", isInIframe);
+            const { data, error: authError } = await supabase.auth.signInWithPassword({
                 email: finalEmail,
                 password: finalPassword,
             });
+            console.log("[login] signInWithPassword result:", { session: data.session?.access_token?.slice(0, 20), authError });
 
             if (authError) {
+                console.error("[login] authError:", authError);
                 if (authError.message.includes("Invalid login")) {
                     setError("メールアドレスまたはパスワードが正しくありません");
                 } else {
@@ -60,8 +77,10 @@ export default function LoginPage() {
             }
 
             // ログイン成功 → viewer へ
+            console.log("[login] success, redirecting to /");
             window.location.href = "/";
-        } catch {
+        } catch (err) {
+            console.error("[login] exception:", err);
             setError("ログイン処理中にエラーが発生しました");
             setLoading(false);
         }
@@ -77,6 +96,45 @@ export default function LoginPage() {
             <div className="login-card">
                 <h1 className="login-title">Company Viewer</h1>
                 <p className="login-subtitle">企業詳細 Web Viewer — ログイン</p>
+
+                {/* iframe内警告バナー */}
+                {isInIframe && (
+                    <div style={{
+                        margin: "0 0 16px 0",
+                        padding: "12px 14px",
+                        background: "#fef3c7",
+                        border: "1px solid #f59e0b",
+                        borderRadius: 8,
+                        fontSize: "0.82rem",
+                        color: "#92400e",
+                        lineHeight: 1.6,
+                    }}>
+                        <div style={{ fontWeight: 700, marginBottom: 6 }}>
+                            ⚠️ 埋め込み表示中はログインできません
+                        </div>
+                        <div style={{ marginBottom: 10 }}>
+                            ブラウザのセキュリティ設定により、iframe内での認証情報の保存が制限されています。<br />
+                            新しいタブで開いてログインしてください。
+                        </div>
+                        <a
+                            href={window.location.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: "inline-block",
+                                padding: "7px 14px",
+                                background: "#f59e0b",
+                                color: "white",
+                                borderRadius: 6,
+                                fontWeight: 700,
+                                textDecoration: "none",
+                                fontSize: "0.85rem",
+                            }}
+                        >
+                            🔗 新しいタブでログインする
+                        </a>
+                    </div>
+                )}
 
                 <form onSubmit={handleLogin} className="login-form">
                     <div className="form-group">
