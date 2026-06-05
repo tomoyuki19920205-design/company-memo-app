@@ -8,7 +8,7 @@ import { audioManager } from "@/lib/tdnet-alerts/audio";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
-import CompanyViewerSidePanel from "./CompanyViewerSidePanel";
+import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
 
 interface AlertsPageProps {
   userId: string;
@@ -48,6 +48,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [rightPaneTab, setRightPaneTab] = useState<"detail" | "company">("company");
 
   const supabaseRef = useRef(createSupabaseBrowser());
+  const viewerRef = useRef<CompanyViewerHandle>(null);
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dateInputRef = useRef<HTMLInputElement | null>(null);
   const isDraggingRef = useRef(false);
@@ -190,6 +191,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const handleSelectEvent = async (event: EnrichedEvent) => {
     setSelectedId(event.id);
     setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
+    // 右ペイン CompanyViewer にティッカーを渡す
+    viewerRef.current?.loadTicker(event.ticker);
     if (!event.is_read) {
       try {
         await markAsRead(supabaseRef.current, event.id, userId);
@@ -710,10 +713,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               {/* タブコンテンツ */}
               {rightPaneTab === "company" ? (
-                <CompanyViewerSidePanel
-                  ticker={selectedEvent.ticker}
-                  baseUrl="/"
-                />
+                <div className="cvs-body" style={{ flex: 1, overflow: "auto", minHeight: 0 }}>
+                  <CompanyViewer ref={viewerRef} />
+                </div>
               ) : (
                 <AlertDetailPanel
                   event={selectedEvent}
