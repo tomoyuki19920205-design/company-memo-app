@@ -90,6 +90,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "earnings") opts.eventType = "earnings";
       else if (filter === "discord") opts.discordOnly = true;
       else if (filter === "today") opts.selectedDate = "today";
+      // 全件タブ: DBソート (disclosed_at DESC, detected_at DESC) をそのまま使用
+      else if (filter === "all") opts.skipClientSort = true;
 
       if (selectedDate) opts.selectedDate = selectedDate;
       if (searchRef.current.trim()) opts.search = searchRef.current.trim();

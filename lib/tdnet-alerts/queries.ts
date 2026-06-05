@@ -17,6 +17,10 @@ export async function fetchEvents(
     todayOnly?: boolean;
     selectedDate?: string | null; // YYYY-MM-DD (JST)
     showArchived?: boolean;
+    /** true のときはクライアントサイドの is_read/priority_rank ソートをスキップ。
+     *  DB取得順 (disclosed_at DESC NULLS LAST -> detected_at DESC) をそのまま維持する。
+     *  「全件」タブ向け。 */
+    skipClientSort?: boolean;
   }
 ): Promise<EnrichedEvent[]> {
   const limit = opts.limit ?? 1000;
@@ -153,11 +157,14 @@ export async function fetchEvents(
   }
 
   // ソート: 未読優先 → priority_rank asc → detected_at desc
-  enriched.sort((a, b) => {
-    if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
-    if (a.priority_rank !== b.priority_rank) return a.priority_rank - b.priority_rank;
-    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-  });
+  // skipClientSort=true の場合は DB 取得順 (disclosed_at DESC, detected_at DESC) を維持
+  if (!opts.skipClientSort) {
+    enriched.sort((a, b) => {
+      if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+      if (a.priority_rank !== b.priority_rank) return a.priority_rank - b.priority_rank;
+      return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+    });
+  }
 
   console.log("[TDNET fetchEvents] フィルター後件数:", enriched.length, "|",
     opts.unreadOnly ? "unreadOnly" : "",
