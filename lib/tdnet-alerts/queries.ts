@@ -50,6 +50,15 @@ export async function fetchEvents(
       query = query.eq("event_type", "forecast");
     } else if (opts.eventType === "dividend") {
       query = query.eq("event_type", "dividend");
+    } else if (opts.eventType === "earnings") {
+      // 決算タブ専用: event_type = earnings のうち以下を除外
+      // 副作用の少ない4条件のみ。見込み・補足説明は除外しない。
+      query = query
+        .eq("event_type", "earnings")
+        .not("headline", "ilike", "%一部訂正%")       // 1. 「一部訂正」を含む
+        .not("headline", "ilike", "%定時株主総会%")    // 2. 「定時株主総会」を含む
+        .not("headline", "ilike", "%継続開催%")        // 3. 「継続開催」を含む
+        .not("headline", "ilike", "%決算短信%訂正%"); // 4. 「決算短信」＋「訂正」を含む
     } else {
       query = query.eq("event_type", opts.eventType);
     }
