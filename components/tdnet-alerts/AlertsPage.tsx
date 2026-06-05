@@ -580,7 +580,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             const isDiscordTab = filter === "discord";
             const displayEvents = isDiscordTab
               ? [...events].sort((a, b) => {
-                  if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+                  // is_read は並び順に影響させない:
+                  // 既読化しても位置が変わらないようにする（視覚的な既読状態はCSSで表現）
                   if (discordSortMode === "timeline") {
                     const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
                     const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
