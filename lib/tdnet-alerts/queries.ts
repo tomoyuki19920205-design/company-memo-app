@@ -60,6 +60,10 @@ export async function fetchEvents(
     query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
   }
 
+  // 「訂正・数値データ訂正」を含む開示を除外（数値データ訂正はノイズのため非表示）
+  // DBからは削除しない。headline のみで判定（表示・検索ともに headline が主カラム）
+  query = query.not("headline", "ilike", "%訂正・数値データ訂正%");
+
   // 日付フィルタ (JST日付 → UTC範囲変換)
   // JST の YYYY-MM-DD を UTC に変換: JST 00:00 = UTC -09:00 (前日 15:00)
   const _jstDateToUtcRange = (dateStr: string): { gte: string; lt: string } => {
