@@ -415,8 +415,35 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       const period = ext.fiscal_period;
       if (period) lines.push(String(period));
 
-    } else {
+    } else if (event.event_type === "earnings") {
+      // 決算: サブタイプ(FY/Q1...) + 売上 + 営業利益等
       if (event.event_subtype) lines.push(event.event_subtype);
+
+      // primary_metric = 売上高など（トップレベルフィールド）
+      if (event.primary_metric_name && event.primary_metric_value) {
+        const yoy = event.primary_metric_yoy
+          ? `（YOY ${event.primary_metric_yoy}）`
+          : "";
+        lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
+      }
+
+      // display_summary = 営業利益・経常利益・純利益など追加指標（複数行）
+      if (event.display_summary?.trim()) {
+        lines.push(event.display_summary.trim());
+      }
+
+    } else {
+      // その他カテゴリ: サブタイプ + primary_metric + display_summary
+      if (event.event_subtype) lines.push(event.event_subtype);
+      if (event.primary_metric_name && event.primary_metric_value) {
+        const yoy = event.primary_metric_yoy
+          ? `（YOY ${event.primary_metric_yoy}）`
+          : "";
+        lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
+      }
+      if (event.display_summary?.trim()) {
+        lines.push(event.display_summary.trim());
+      }
     }
 
     // Discord 送信時刻 (Discord タブのみ表示するため isDiscordTab を確認)
