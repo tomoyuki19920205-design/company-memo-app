@@ -672,6 +672,19 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       >
                         {event.is_starred ? "⭐" : "☆"}
                       </button>
+                      {event.pdf_url && (
+                        <a
+                          href={event.pdf_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="action-btn pdf-link"
+                          onClick={(e) => e.stopPropagation()}
+                          title="PDFを開く"
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          📄PDF
+                        </a>
+                      )}
                       <button
                         className={`action-btn ${!event.is_read ? "active" : ""}`}
                         onClick={(e) => handleToggleRead(event, e)}
