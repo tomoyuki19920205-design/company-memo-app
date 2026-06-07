@@ -3277,9 +3277,11 @@ textarea::placeholder {
 
 .alert-card-summary-line1 {
   display: grid;
-  grid-template-columns: 2.6rem 2.6rem 2.8rem 11rem 3rem;
-  gap: 0.4rem;
+  grid-template-columns: 56px 48px 52px minmax(0, 1fr) 44px;
+  column-gap: 8px;
   align-items: center;
+  white-space: nowrap;
+  min-width: 0;
   font-size: 0.85rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
@@ -3287,15 +3289,20 @@ textarea::placeholder {
 
 .summary-date, .summary-time {
   color: var(--text-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .summary-ticker {
   font-weight: 600;
   font-family: var(--mono);
   font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .summary-name {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3305,6 +3312,8 @@ textarea::placeholder {
   font-weight: 700;
   color: var(--primary);
   text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .alert-card-summary-line2 {
@@ -3316,7 +3325,7 @@ textarea::placeholder {
 }
 
 .align-line2 {
-  padding-left: 9rem;
+  padding-left: 172px;
 }
 
 .alert-card.priority-high {
