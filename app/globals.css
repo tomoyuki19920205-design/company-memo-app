@@ -3618,3 +3618,6 @@ body:has(.alerts-layout) {
   padding-bottom: 0;
 }
 
+
+/* TDNET Alerts YOY Highlight */
+.yoy-highlight { color: var(--accent-red); font-weight: 600; }

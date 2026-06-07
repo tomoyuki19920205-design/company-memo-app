@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-alerts/queries";
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
@@ -9,6 +9,46 @@ import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/t
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
+
+const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%)/gi;
+
+const renderHighlightedCardBody = (text: string, eventType: string) => {
+  if (!text) return null;
+  if (eventType !== "earnings" && eventType !== "forecast") {
+    return text.split("\n").map((line, j, arr) => (
+      <React.Fragment key={j}>
+        {line}
+        {j < arr.length - 1 && <br />}
+      </React.Fragment>
+    ));
+  }
+  
+  const parts = text.split(YOY_REGEX);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.match(YOY_REGEX)) {
+          return (
+            <span key={i} className="yoy-highlight">
+              {part}
+            </span>
+          );
+        }
+        return (
+          <span key={i}>
+            {part.split("\n").map((line, j, arr) => (
+              <React.Fragment key={j}>
+                {line}
+                {j < arr.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </span>
+        );
+      })}
+    </>
+  );
+};
+
 
 interface AlertsPageProps {
   userId: string;
@@ -710,7 +750,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
                   {/* Row 3: 数値要約 (fallback時はheadlineを1行muted) */}
                   <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
-                    {bodyText}
+                    {renderHighlightedCardBody(bodyText, event.event_type)}
                   </div>
                 </div>
               );
