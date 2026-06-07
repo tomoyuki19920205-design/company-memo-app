@@ -99,9 +99,9 @@ export async function fetchEvents(
       resolvedDateStr: dateStr,
       utcGte: gte,
       utcLt: lt,
-      filterColumn: "detected_at",
+      filterColumn: "disclosed_at",
     });
-    query = query.gte("detected_at", gte).lt("detected_at", lt);
+    query = query.gte("disclosed_at", gte).lt("disclosed_at", lt);
   } else if (opts.todayOnly) {
     // 後方互換
     const todayJst = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" }))
