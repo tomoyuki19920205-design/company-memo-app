@@ -251,7 +251,7 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
     }
 
     // 第二行の比較情報
-    const comp = event.raw_payload?.notification_compare_json as any;
+    const comp = rp?.notification_compare_json as any;
     if (comp) {
       const cur = comp.current;
       const cmp = comp.compare;
