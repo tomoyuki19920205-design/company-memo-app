@@ -3276,44 +3276,12 @@ textarea::placeholder {
 }
 
 .alert-card-summary-line1 {
-  display: grid;
-  grid-template-columns: 56px 48px 52px minmax(0, 1fr) 44px;
-  column-gap: 8px;
-  align-items: center;
-  white-space: nowrap;
-  min-width: 0;
   font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.2rem;
-}
-
-.summary-date, .summary-time {
-  color: var(--text-dim);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.summary-ticker {
-  font-weight: 600;
-  font-family: var(--mono);
-  font-size: 0.9rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.summary-name {
-  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.summary-type {
-  font-weight: 700;
-  color: var(--primary);
-  text-align: right;
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin-bottom: 0.2rem;
 }
 
 .alert-card-summary-line2 {
@@ -3322,10 +3290,6 @@ textarea::placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.align-line2 {
-  padding-left: 172px;
 }
 
 .alert-card.priority-high {

@@ -533,14 +533,19 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
     };
 
-    const time = formatTime(event.detected_at);
-    const tickerName = `${event.ticker} ${event.company_name || ""}`.trim();
+    const d = new Date(event.detected_at);
+    const dateStr = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
+    const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
     
+    const ticker = event.ticker;
+    const name = event.company_name || "";
+    
+    let typeLabel = subtypeLabel;
     let line1 = "";
     let line2 = "";
 
     if (event.event_type === "earnings") {
-      line1 = `${time} ${tickerName} ${subtypeLabel} ${ext.period_label || ""}`.trim();
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
       const metrics: string[] = [];
       if (ext.sales_current != null && ext.sales_yoy != null) {
         metrics.push(`売上 (YOY ${fmtPct(Number(ext.sales_yoy) * 100)})`);
@@ -557,7 +562,13 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       }
       line2 = metrics.join(" ");
     } else if (event.event_type === "forecast") {
-      line1 = `${time} ${tickerName}`;
+      if (event.event_subtype === "upward") typeLabel = "上方";
+      else if (event.event_subtype === "downward") typeLabel = "下方";
+      else if (event.event_subtype === "difference") typeLabel = "差異";
+      else typeLabel = "修正";
+      
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
+
       const epsPrev = ext.previous_eps;
       const epsRev  = ext.revised_eps;
       if (epsPrev != null && epsRev != null) {
@@ -572,13 +583,16 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
         else if (ext.change_ordinary_pct != null) line2 = `経常利益 ${fmtPct(ext.change_ordinary_pct)}`;
         else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
-        else line2 = subtypeLabel || "業績修正";
       }
     } else if (event.event_type === "buyback") {
+      typeLabel = "BB";
       const ratio = ext.ratio_to_outstanding;
-      const ratioStr = ratio != null ? `BB ${Number(ratio).toFixed(2)}%` : "BB";
-      line1 = `${time} ${tickerName} ${ratioStr}`;
+      const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
     } else if (event.event_type === "dividend") {
+      if (event.event_subtype === "increase") typeLabel = "増配";
+      else typeLabel = "配当";
+      
       const prev = ext.previous_dividend_per_share;
       const rev  = ext.revised_dividend_per_share;
       let divStr = "";
@@ -587,9 +601,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       } else if (rev != null) {
          divStr = `${fmtDiv(rev)}`;
       }
-      line1 = `${time} ${tickerName} ${subtypeLabel} ${divStr}`.trim();
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
     } else {
-      line1 = `${time} ${tickerName} ${badge.emoji} ${subtypeLabel}`.trim();
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
       if (event.primary_metric_name) {
          line2 = `${event.primary_metric_name} ${event.primary_metric_value || ""}`;
       }
