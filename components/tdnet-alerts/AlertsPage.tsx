@@ -465,7 +465,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "dividend") opts.eventType = "dividend";
       else if (filter === "earnings") opts.eventType = "earnings";
       else if (filter === "discord") opts.discordOnly = true;
-      else if (filter === "today") opts.selectedDate = "today";
       // 全件タブ: DBソート (disclosed_at DESC, detected_at DESC) をそのまま使用
       else if (filter === "all") opts.skipClientSort = true;
 
@@ -524,13 +523,16 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleFilterChange = (f: FilterType) => {
     setFilter(f);
-    if (f !== "today") setSelectedDate(null);
   };
 
   const handleTodayClick = () => {
-    if (filter !== "today") {
-      setFilter("today");
-      setSelectedDate(null);
+    if (!selectedDate) {
+      const dt = new Date();
+      dt.setMinutes(dt.getMinutes() + dt.getTimezoneOffset() + 9 * 60);
+      const yyyy = dt.getFullYear();
+      const mm = String(dt.getMonth() + 1).padStart(2, "0");
+      const dd = String(dt.getDate()).padStart(2, "0");
+      setSelectedDate(`${yyyy}-${mm}-${dd}`);
     }
     setTimeout(() => {
       const input = dateInputRef.current;
@@ -549,7 +551,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     const val = e.target.value;
     if (val) {
       setSelectedDate(val);
-      setFilter("today");
     } else {
       setSelectedDate(null);
     }
@@ -557,7 +558,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleClearDate = () => {
     setSelectedDate(null);
-    setFilter("all");
     if (dateInputRef.current) dateInputRef.current.value = "";
   };
 
@@ -701,7 +701,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         {filters.map((f) => (
           <button
             key={f.key}
-            className={`filter-chip ${filter === f.key && !selectedDate ? "active" : ""}`}
+            className={`filter-chip ${filter === f.key ? "active" : ""}`}
             onClick={() => handleFilterChange(f.key)}
           >
             {f.label}
@@ -711,7 +711,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         {/* 日付ピッカー付き「今日」ボタン */}
         <div className="date-filter-wrap">
           <button
-            className={`filter-chip ${filter === "today" ? "active" : ""}`}
+            className={`filter-chip ${selectedDate ? "active" : ""}`}
             onClick={handleTodayClick}
             title="クリックで日付を選択"
           >
