@@ -250,17 +250,21 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
       lines.push(event.display_summary.trim());
     }
 
+    console.log("[compare-debug]", {
+      code: event.ticker,
+      company_name: event.company_name,
+      event_type: event.event_type,
+      raw_payload_type: typeof event.raw_payload,
+      raw_payload: event.raw_payload,
+      rp,
+      notification_compare_json: rp?.notification_compare_json,
+    });
+
     // 第二行の比較情報
     const comp = rp?.notification_compare_json as any;
-    if (comp) {
-      const cur = comp.current;
+    if (comp?.compare) {
       const cmp = comp.compare;
-
-      const curSales = cur?.sales_yoy != null ? fmtPct(cur.sales_yoy * 100) : "-";
-      const curOp = cur?.op_yoy != null ? fmtPct(cur.op_yoy * 100) : "-";
-      lines.push(`${cur?.label || ""} 売上(YOY${curSales}) 営利(YOY${curOp})`);
-
-      if (cmp) {
+      if (cmp.sales_yoy != null || cmp.op_yoy != null) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
         const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
         lines.push(`${cmp.label || ""} 売上(YOY${cmpSales}) 営利(YOY${cmpOp})`);
