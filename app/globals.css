@@ -3276,12 +3276,35 @@ textarea::placeholder {
 }
 
 .alert-card-summary-line1 {
+  display: grid;
+  grid-template-columns: 2.6rem 2.6rem 2.8rem 11rem 3rem;
+  gap: 0.4rem;
+  align-items: center;
   font-size: 0.85rem;
   font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.summary-date, .summary-time {
+  color: var(--text-dim);
+}
+
+.summary-ticker {
+  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+
+.summary-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0.2rem;
+}
+
+.summary-type {
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
 }
 
 .alert-card-summary-line2 {
@@ -3290,6 +3313,10 @@ textarea::placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.align-line2 {
+  padding-left: 9rem;
 }
 
 .alert-card.priority-high {
