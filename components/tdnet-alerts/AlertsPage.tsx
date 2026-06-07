@@ -25,8 +25,12 @@ const getYoyClass = (text: string) => {
 
 const renderHighlightedCardBody = (text: string, eventType: string) => {
   if (!text) return null;
+  const cacheKey = `${eventType}:${text}`;
+  if (highlightCache.has(cacheKey)) return highlightCache.get(cacheKey);
+
+  let result: React.ReactNode = null;
   if (eventType !== "earnings" && eventType !== "forecast") {
-    return text.split("\n").map((line, j, arr) => (
+    result = text.split("\n").map((line, j, arr) => (
       <React.Fragment key={j}>
         {line}
         {j < arr.length - 1 && <br />}
@@ -35,7 +39,7 @@ const renderHighlightedCardBody = (text: string, eventType: string) => {
   }
   
   const parts = text.split(YOY_REGEX);
-  return (
+  result = (
     <>
       {parts.map((part, i) => {
         if (part.match(YOY_REGEX)) {
@@ -58,6 +62,8 @@ const renderHighlightedCardBody = (text: string, eventType: string) => {
       })}
     </>
   );
+  highlightCache.set(cacheKey, result);
+  return result;
 };
 
 
@@ -65,6 +71,318 @@ interface AlertsPageProps {
   userId: string;
   userEmail: string;
 }
+
+const getBadgeConfig = (eventType: string, headline?: string) => {
+  const cat = getDisplayCategory(eventType, headline);
+  const config = EVENT_TYPE_CONFIG[cat] || { label: "その他", emoji: "📄", color: "#94a3b8" };
+  return { ...config, category: cat };
+};
+
+const getStrengthDisplay = (event: EnrichedEvent) => {
+  if (event.primary_metric_value) {
+    const yoy = event.primary_metric_yoy || "";
+    return { value: event.primary_metric_value, yoy };
+  }
+  if (event.strength_score != null) {
+    return { value: `${event.strength_score.toFixed(0)}`, yoy: "" };
+  }
+  return { value: "", yoy: "" };
+};
+
+const getPriorityClass = (rank: number) => {
+  if (rank <= 10) return "priority-high";
+  if (rank <= 30) return "priority-medium";
+  return "";
+};
+
+const summaryCache = new Map<string, { line1: string; line2: string }>();
+const bodyCache = new Map<string, { text: string; isFallback: boolean }>();
+const highlightCache = new Map<string, React.ReactNode>();
+
+// 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
+// 長い headline / formatted_message は使わない
+const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boolean } => {
+  if (bodyCache.has(event.id)) return bodyCache.get(event.id)!;
+  const rawVal = event.raw_payload;
+  const rp: Record<string, unknown> | null =
+    typeof rawVal === "string"
+      ? (() => {
+          try {
+            return JSON.parse(rawVal) as Record<string, unknown>;
+          } catch {
+            return null;
+          }
+        })()
+      : (rawVal as Record<string, unknown> | null) ?? null;
+
+  const ext = (
+    rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object"
+      ? rp.extracted
+      : {}
+  ) as Record<string, unknown>;
+
+  const fmtPct = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "?%";
+    const sign = n > 0 ? "+" : "";
+    return `${sign}${n.toFixed(1)}%`;
+  };
+  const fmtBillion = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "---";
+    if (Math.abs(n) >= 100) return `${(n / 100).toFixed(1)}億円`;
+    return `${n.toFixed(0)}百万円`;
+  };
+  const fmtShares = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "---";
+    if (n >= 10000) return `${(n / 10000).toFixed(1)}万株`;
+    return `${n.toLocaleString()}株`;
+  };
+  const fmtDiv = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "---";
+    return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
+  };
+
+  const lines: string[] = [];
+
+  if (event.event_type === "forecast") {
+    const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
+      : event.event_subtype === "difference" ? "📋 差異開示"
+      : event.event_subtype === "downward" ? "🔻 下方修正"
+      : "📊 業績修正";
+    const opPct  = ext.change_op_pct;
+    const ordPct = ext.change_ordinary_pct;
+    const netPct = ext.change_net_income_pct;
+    const summaryPct = opPct ?? ordPct ?? netPct;
+    const summaryPctLabel = opPct != null ? "営業利益"
+      : ordPct != null ? "経常利益"
+      : netPct != null ? "純利益"
+      : null;
+    const summaryStr = summaryPctLabel != null
+      ? `${summaryPctLabel} ${fmtPct(summaryPct)}`
+      : "";
+    lines.push(summaryStr ? `${typeEmoji}  ${summaryStr}` : typeEmoji);
+
+    const metrics: string[] = [];
+    if (opPct  != null) metrics.push(`営業利益 ${fmtPct(opPct)}`);
+    if (ordPct != null) metrics.push(`経常利益 ${fmtPct(ordPct)}`);
+    if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
+    if (metrics.length > 1) lines.push(metrics.join("  "));
+    const epsPrev = ext.previous_eps;
+    const epsRev  = ext.revised_eps;
+    if (epsPrev != null && epsRev != null) {
+      const p = Number(epsPrev), r = Number(epsRev);
+      if (!isNaN(p) && !isNaN(r) && Math.abs(p) <= 10000 && Math.abs(r) <= 10000) {
+        const ePct = p !== 0 ? (r - p) / Math.abs(p) * 100 : null;
+        lines.push(`EPS: ${fmtDiv(p)}→${fmtDiv(r)}${ePct !== null ? `(${fmtPct(ePct)})` : ""}`);
+      }
+    }
+    const periodLabel = ext.period_label;
+    if (periodLabel) lines.push(String(periodLabel));
+
+  } else if (event.event_type === "buyback") {
+    const typeLabel = event.event_subtype === "tostnet"
+      ? "📊 自社株買い（ToSTNeT）"
+      : "📊 自社株買い（取得枠決議）";
+    const ratio = ext.ratio_to_outstanding;
+    const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
+    lines.push(ratioStr ? `${typeLabel}  ${ratioStr}` : typeLabel);
+
+    const shares = ext.shares_limit;
+    const amount = ext.amount_limit_million_yen;
+    const specs: string[] = [];
+    if (ratio  != null) specs.push(`割合 ${Number(ratio).toFixed(2)}%`);
+    if (shares != null) specs.push(`株数 ${fmtShares(shares)}`);
+    if (amount != null) specs.push(`金額 ${fmtBillion(amount)}`);
+    if (specs.length > 0) lines.push(specs.join("  "));
+    const start = ext.start_date;
+    const end   = ext.end_date;
+    if (event.event_subtype === "tostnet" && start) {
+      lines.push(`買付日: ${String(start)}`);
+    } else if (start && end) {
+      lines.push(`取得期間: ${String(start)}〜${String(end)}`);
+    } else if (start) {
+      lines.push(`取得開始: ${String(start)}`);
+    }
+
+  } else if (event.event_type === "dividend") {
+    const typeLabel = event.event_subtype === "increase" ? "💰 増配"
+      : event.event_subtype === "decrease" ? "📉 減配"
+      : "💰 配当修正";
+    const prev = ext.previous_dividend_per_share;
+    const rev  = ext.revised_dividend_per_share;
+    let pctStr = "";
+    let pv: number | null = null, rv: number | null = null;
+    if (prev != null && rev != null) {
+      pv = Number(prev); rv = Number(rev);
+      if (!isNaN(pv) && !isNaN(rv) && pv !== 0) {
+        pctStr = fmtPct((rv - pv) / Math.abs(pv) * 100);
+      }
+    }
+    lines.push(pctStr ? `${typeLabel}  ${pctStr}` : typeLabel);
+
+    if (rv != null && !isNaN(rv)) {
+      if (pv !== null && !isNaN(pv) && pv !== 0) {
+        lines.push(`配当: ${fmtDiv(pv)}→${fmtDiv(rv)}(${fmtPct((rv - pv) / Math.abs(pv) * 100)})`);
+      } else {
+        lines.push(`配当: ${fmtDiv(rv)}`);
+      }
+    }
+    const period = ext.fiscal_period;
+    if (period) lines.push(String(period));
+
+  } else if (event.event_type === "earnings") {
+    // 決算: サブタイプ(FY/Q1...) + 売上 + 営業利益等
+    if (event.event_subtype) lines.push(event.event_subtype);
+
+    // primary_metric = 売上高など（トップレベルフィールド）
+    if (event.primary_metric_name && event.primary_metric_value) {
+      const yoy = event.primary_metric_yoy
+        ? `（YOY ${event.primary_metric_yoy}）`
+        : "";
+      lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
+    }
+
+    // display_summary = 営業利益・経常利益・純利益など追加指標（複数行）
+    if (event.display_summary?.trim()) {
+      lines.push(event.display_summary.trim());
+    }
+
+  } else {
+    // その他カテゴリ: サブタイプ + primary_metric + display_summary
+    if (event.event_subtype) lines.push(event.event_subtype);
+    if (event.primary_metric_name && event.primary_metric_value) {
+      const yoy = event.primary_metric_yoy
+        ? `（YOY ${event.primary_metric_yoy}）`
+        : "";
+      lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
+    }
+    if (event.display_summary?.trim()) {
+      lines.push(event.display_summary.trim());
+    }
+  }
+
+  // Discord 送信時刻 (Discord タブのみ表示するため isDiscordTab を確認)
+  // ここでは isDiscordTab スコープ外なので discord_sent_at は省略
+  // → Discord タブ判定はカード描画時に別途追加
+
+  const text = lines.filter((s) => s.trim()).join("\n");
+  if (text) {
+    const res = { text, isFallback: false };
+    bodyCache.set(event.id, res);
+    return res;
+  }
+  // fallback: headline を1行だけ (muted, clamp)
+  const fallbackRes = { text: (event.headline || "").trim(), isFallback: true };
+  bodyCache.set(event.id, fallbackRes);
+  return fallbackRes;
+};
+
+const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
+  if (summaryCache.has(event.id)) return summaryCache.get(event.id)!;
+  const rawVal = event.raw_payload;
+  const rp: Record<string, unknown> | null =
+    typeof rawVal === "string"
+      ? (() => {
+          try { return JSON.parse(rawVal) as Record<string, unknown>; } catch { return null; }
+        })()
+      : (rawVal as Record<string, unknown> | null) ?? null;
+  const ext = (rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object" ? rp.extracted : {}) as Record<string, unknown>;
+  
+  const fmtPct = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "?%";
+    const sign = n > 0 ? "+" : "";
+    return `${sign}${n.toFixed(1)}%`;
+  };
+  const fmtDiv = (v: unknown): string => {
+    const n = Number(v);
+    if (isNaN(n)) return "---";
+    return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
+  };
+
+  const d = new Date(event.detected_at);
+  const dateStr = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
+  const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+  
+  const ticker = event.ticker;
+  const name = event.company_name || "";
+  
+  let typeLabel = subtypeLabel;
+  let line1 = "";
+  let line2 = "";
+
+  if (event.event_type === "earnings") {
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
+    const metrics: string[] = [];
+    if (ext.sales_current != null && ext.sales_yoy != null) {
+      metrics.push(`売上 (YOY ${fmtPct(Number(ext.sales_yoy) * 100)})`);
+    }
+    if (ext.op_current != null && ext.op_yoy != null) {
+      metrics.push(`営利 (YOY ${fmtPct(Number(ext.op_yoy) * 100)})`);
+    } else if (ext.ordinary_profit_current != null && ext.ordinary_profit_yoy != null) {
+      metrics.push(`経常 (YOY ${fmtPct(Number(ext.ordinary_profit_yoy) * 100)})`);
+    } else if (ext.net_income_current != null && ext.net_income_yoy != null) {
+      metrics.push(`純利 (YOY ${fmtPct(Number(ext.net_income_yoy) * 100)})`);
+    }
+    if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_yoy) {
+       metrics.push(`${event.primary_metric_name} (YOY ${event.primary_metric_yoy})`);
+    }
+    line2 = metrics.join(" ");
+  } else if (event.event_type === "forecast") {
+    if (event.event_subtype === "upward") typeLabel = "上方";
+    else if (event.event_subtype === "downward") typeLabel = "下方";
+    else if (event.event_subtype === "difference") typeLabel = "差異";
+    else typeLabel = "修正";
+    
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
+
+    const epsPrev = ext.previous_eps;
+    const epsRev  = ext.revised_eps;
+    if (epsPrev != null && epsRev != null) {
+      const p = Number(epsPrev), r = Number(epsRev);
+      if (!isNaN(p) && !isNaN(r) && p !== 0) {
+        const ePct = (r - p) / Math.abs(p) * 100;
+        line2 = `EPS ${fmtDiv(p)}→${fmtDiv(r)}(${fmtPct(ePct)})`;
+      }
+    }
+    if (!line2) {
+      const opPct = ext.change_op_pct;
+      if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
+      else if (ext.change_ordinary_pct != null) line2 = `経常利益 ${fmtPct(ext.change_ordinary_pct)}`;
+      else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
+    }
+  } else if (event.event_type === "buyback") {
+    typeLabel = "BB";
+    const ratio = ext.ratio_to_outstanding;
+    const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
+  } else if (event.event_type === "dividend") {
+    if (event.event_subtype === "increase") typeLabel = "増配";
+    else typeLabel = "配当";
+    
+    const prev = ext.previous_dividend_per_share;
+    const rev  = ext.revised_dividend_per_share;
+    let divStr = "";
+    if (prev != null && rev != null) {
+       divStr = `${fmtDiv(prev)}→${fmtDiv(rev)}`;
+    } else if (rev != null) {
+       divStr = `${fmtDiv(rev)}`;
+    }
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
+  } else {
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
+    if (event.primary_metric_name) {
+       line2 = `${event.primary_metric_name} ${event.primary_metric_value || ""}`;
+    }
+  }
+
+  const res = { line1, line2 };
+  summaryCache.set(event.id, res);
+  return res;
+};
 
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
@@ -314,303 +632,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     return `${MM}/${DD} ${hh}:${mm}`;
   };
 
-  const getBadgeConfig = (eventType: string, headline?: string) => {
-    const cat = getDisplayCategory(eventType, headline);
-    const config = EVENT_TYPE_CONFIG[cat] || { label: "その他", emoji: "📄", color: "#94a3b8" };
-    return { ...config, category: cat };
-  };
 
-  const getStrengthDisplay = (event: EnrichedEvent) => {
-    if (event.primary_metric_value) {
-      const yoy = event.primary_metric_yoy || "";
-      return { value: event.primary_metric_value, yoy };
-    }
-    if (event.strength_score != null) {
-      return { value: `${event.strength_score.toFixed(0)}`, yoy: "" };
-    }
-    return { value: "", yoy: "" };
-  };
-
-  const getPriorityClass = (rank: number) => {
-    if (rank <= 10) return "priority-high";
-    if (rank <= 30) return "priority-medium";
-    return "";
-  };
-
-  // 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
-  // 長い headline / formatted_message は使わない
-  const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boolean } => {
-    const rawVal = event.raw_payload;
-    const rp: Record<string, unknown> | null =
-      typeof rawVal === "string"
-        ? (() => {
-            try {
-              return JSON.parse(rawVal) as Record<string, unknown>;
-            } catch {
-              return null;
-            }
-          })()
-        : (rawVal as Record<string, unknown> | null) ?? null;
-
-    const ext = (
-      rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object"
-        ? rp.extracted
-        : {}
-    ) as Record<string, unknown>;
-
-    const fmtPct = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "?%";
-      const sign = n > 0 ? "+" : "";
-      return `${sign}${n.toFixed(1)}%`;
-    };
-    const fmtBillion = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "---";
-      if (Math.abs(n) >= 100) return `${(n / 100).toFixed(1)}億円`;
-      return `${n.toFixed(0)}百万円`;
-    };
-    const fmtShares = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "---";
-      if (n >= 10000) return `${(n / 10000).toFixed(1)}万株`;
-      return `${n.toLocaleString()}株`;
-    };
-    const fmtDiv = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "---";
-      return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
-    };
-
-    const lines: string[] = [];
-
-    if (event.event_type === "forecast") {
-      const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
-        : event.event_subtype === "difference" ? "📋 差異開示"
-        : event.event_subtype === "downward" ? "🔻 下方修正"
-        : "📊 業績修正";
-      const opPct  = ext.change_op_pct;
-      const ordPct = ext.change_ordinary_pct;
-      const netPct = ext.change_net_income_pct;
-      const summaryPct = opPct ?? ordPct ?? netPct;
-      const summaryPctLabel = opPct != null ? "営業利益"
-        : ordPct != null ? "経常利益"
-        : netPct != null ? "純利益"
-        : null;
-      const summaryStr = summaryPctLabel != null
-        ? `${summaryPctLabel} ${fmtPct(summaryPct)}`
-        : "";
-      lines.push(summaryStr ? `${typeEmoji}  ${summaryStr}` : typeEmoji);
-
-      const metrics: string[] = [];
-      if (opPct  != null) metrics.push(`営業利益 ${fmtPct(opPct)}`);
-      if (ordPct != null) metrics.push(`経常利益 ${fmtPct(ordPct)}`);
-      if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
-      if (metrics.length > 1) lines.push(metrics.join("  "));
-      const epsPrev = ext.previous_eps;
-      const epsRev  = ext.revised_eps;
-      if (epsPrev != null && epsRev != null) {
-        const p = Number(epsPrev), r = Number(epsRev);
-        if (!isNaN(p) && !isNaN(r) && Math.abs(p) <= 10000 && Math.abs(r) <= 10000) {
-          const ePct = p !== 0 ? (r - p) / Math.abs(p) * 100 : null;
-          lines.push(`EPS: ${fmtDiv(p)}→${fmtDiv(r)}${ePct !== null ? `(${fmtPct(ePct)})` : ""}`);
-        }
-      }
-      const periodLabel = ext.period_label;
-      if (periodLabel) lines.push(String(periodLabel));
-
-    } else if (event.event_type === "buyback") {
-      const typeLabel = event.event_subtype === "tostnet"
-        ? "📊 自社株買い（ToSTNeT）"
-        : "📊 自社株買い（取得枠決議）";
-      const ratio = ext.ratio_to_outstanding;
-      const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
-      lines.push(ratioStr ? `${typeLabel}  ${ratioStr}` : typeLabel);
-
-      const shares = ext.shares_limit;
-      const amount = ext.amount_limit_million_yen;
-      const specs: string[] = [];
-      if (ratio  != null) specs.push(`割合 ${Number(ratio).toFixed(2)}%`);
-      if (shares != null) specs.push(`株数 ${fmtShares(shares)}`);
-      if (amount != null) specs.push(`金額 ${fmtBillion(amount)}`);
-      if (specs.length > 0) lines.push(specs.join("  "));
-      const start = ext.start_date;
-      const end   = ext.end_date;
-      if (event.event_subtype === "tostnet" && start) {
-        lines.push(`買付日: ${String(start)}`);
-      } else if (start && end) {
-        lines.push(`取得期間: ${String(start)}〜${String(end)}`);
-      } else if (start) {
-        lines.push(`取得開始: ${String(start)}`);
-      }
-
-    } else if (event.event_type === "dividend") {
-      const typeLabel = event.event_subtype === "increase" ? "💰 増配"
-        : event.event_subtype === "decrease" ? "📉 減配"
-        : "💰 配当修正";
-      const prev = ext.previous_dividend_per_share;
-      const rev  = ext.revised_dividend_per_share;
-      let pctStr = "";
-      let pv: number | null = null, rv: number | null = null;
-      if (prev != null && rev != null) {
-        pv = Number(prev); rv = Number(rev);
-        if (!isNaN(pv) && !isNaN(rv) && pv !== 0) {
-          pctStr = fmtPct((rv - pv) / Math.abs(pv) * 100);
-        }
-      }
-      lines.push(pctStr ? `${typeLabel}  ${pctStr}` : typeLabel);
-
-      if (rv != null && !isNaN(rv)) {
-        if (pv !== null && !isNaN(pv) && pv !== 0) {
-          lines.push(`配当: ${fmtDiv(pv)}→${fmtDiv(rv)}(${fmtPct((rv - pv) / Math.abs(pv) * 100)})`);
-        } else {
-          lines.push(`配当: ${fmtDiv(rv)}`);
-        }
-      }
-      const period = ext.fiscal_period;
-      if (period) lines.push(String(period));
-
-    } else if (event.event_type === "earnings") {
-      // 決算: サブタイプ(FY/Q1...) + 売上 + 営業利益等
-      if (event.event_subtype) lines.push(event.event_subtype);
-
-      // primary_metric = 売上高など（トップレベルフィールド）
-      if (event.primary_metric_name && event.primary_metric_value) {
-        const yoy = event.primary_metric_yoy
-          ? `（YOY ${event.primary_metric_yoy}）`
-          : "";
-        lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
-      }
-
-      // display_summary = 営業利益・経常利益・純利益など追加指標（複数行）
-      if (event.display_summary?.trim()) {
-        lines.push(event.display_summary.trim());
-      }
-
-    } else {
-      // その他カテゴリ: サブタイプ + primary_metric + display_summary
-      if (event.event_subtype) lines.push(event.event_subtype);
-      if (event.primary_metric_name && event.primary_metric_value) {
-        const yoy = event.primary_metric_yoy
-          ? `（YOY ${event.primary_metric_yoy}）`
-          : "";
-        lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
-      }
-      if (event.display_summary?.trim()) {
-        lines.push(event.display_summary.trim());
-      }
-    }
-
-    // Discord 送信時刻 (Discord タブのみ表示するため isDiscordTab を確認)
-    // ここでは isDiscordTab スコープ外なので discord_sent_at は省略
-    // → Discord タブ判定はカード描画時に別途追加
-
-    const text = lines.filter((s) => s.trim()).join("\n");
-    if (text) return { text, isFallback: false };
-    // fallback: headline を1行だけ (muted, clamp)
-    return { text: (event.headline || "").trim(), isFallback: true };
-  };
-
-  const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
-    const rawVal = event.raw_payload;
-    const rp: Record<string, unknown> | null =
-      typeof rawVal === "string"
-        ? (() => {
-            try { return JSON.parse(rawVal) as Record<string, unknown>; } catch { return null; }
-          })()
-        : (rawVal as Record<string, unknown> | null) ?? null;
-    const ext = (rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object" ? rp.extracted : {}) as Record<string, unknown>;
-    
-    const fmtPct = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "?%";
-      const sign = n > 0 ? "+" : "";
-      return `${sign}${n.toFixed(1)}%`;
-    };
-    const fmtDiv = (v: unknown): string => {
-      const n = Number(v);
-      if (isNaN(n)) return "---";
-      return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
-    };
-
-    const d = new Date(event.detected_at);
-    const dateStr = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
-    const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
-    
-    const ticker = event.ticker;
-    const name = event.company_name || "";
-    
-    let typeLabel = subtypeLabel;
-    let line1 = "";
-    let line2 = "";
-
-    if (event.event_type === "earnings") {
-      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
-      const metrics: string[] = [];
-      if (ext.sales_current != null && ext.sales_yoy != null) {
-        metrics.push(`売上 (YOY ${fmtPct(Number(ext.sales_yoy) * 100)})`);
-      }
-      if (ext.op_current != null && ext.op_yoy != null) {
-        metrics.push(`営利 (YOY ${fmtPct(Number(ext.op_yoy) * 100)})`);
-      } else if (ext.ordinary_profit_current != null && ext.ordinary_profit_yoy != null) {
-        metrics.push(`経常 (YOY ${fmtPct(Number(ext.ordinary_profit_yoy) * 100)})`);
-      } else if (ext.net_income_current != null && ext.net_income_yoy != null) {
-        metrics.push(`純利 (YOY ${fmtPct(Number(ext.net_income_yoy) * 100)})`);
-      }
-      if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_yoy) {
-         metrics.push(`${event.primary_metric_name} (YOY ${event.primary_metric_yoy})`);
-      }
-      line2 = metrics.join(" ");
-    } else if (event.event_type === "forecast") {
-      if (event.event_subtype === "upward") typeLabel = "上方";
-      else if (event.event_subtype === "downward") typeLabel = "下方";
-      else if (event.event_subtype === "difference") typeLabel = "差異";
-      else typeLabel = "修正";
-      
-      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
-
-      const epsPrev = ext.previous_eps;
-      const epsRev  = ext.revised_eps;
-      if (epsPrev != null && epsRev != null) {
-        const p = Number(epsPrev), r = Number(epsRev);
-        if (!isNaN(p) && !isNaN(r) && p !== 0) {
-          const ePct = (r - p) / Math.abs(p) * 100;
-          line2 = `EPS ${fmtDiv(p)}→${fmtDiv(r)}(${fmtPct(ePct)})`;
-        }
-      }
-      if (!line2) {
-        const opPct = ext.change_op_pct;
-        if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
-        else if (ext.change_ordinary_pct != null) line2 = `経常利益 ${fmtPct(ext.change_ordinary_pct)}`;
-        else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
-      }
-    } else if (event.event_type === "buyback") {
-      typeLabel = "BB";
-      const ratio = ext.ratio_to_outstanding;
-      const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
-      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
-    } else if (event.event_type === "dividend") {
-      if (event.event_subtype === "increase") typeLabel = "増配";
-      else typeLabel = "配当";
-      
-      const prev = ext.previous_dividend_per_share;
-      const rev  = ext.revised_dividend_per_share;
-      let divStr = "";
-      if (prev != null && rev != null) {
-         divStr = `${fmtDiv(prev)}→${fmtDiv(rev)}`;
-      } else if (rev != null) {
-         divStr = `${fmtDiv(rev)}`;
-      }
-      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
-    } else {
-      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
-      if (event.primary_metric_name) {
-         line2 = `${event.primary_metric_name} ${event.primary_metric_value || ""}`;
-      }
-    }
-
-    return { line1, line2 };
-  };
 
 
   const filters: { key: FilterType; label: string }[] = [
@@ -783,7 +805,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 })
               : events;
 
-            return displayEvents.map((event) => {
+            console.time("renderEvents");
+            const nodes = displayEvents.map((event) => {
               const badge = getBadgeConfig(event.event_type, event.headline);
               const priorityClass = !event.is_read ? getPriorityClass(event.priority_rank) : "";
               const subtypeLabel = event.event_subtype
@@ -891,6 +914,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 </div>
               );
             });
+            console.timeEnd("renderEvents");
+            return nodes;
             })()
           )}
         </div>
