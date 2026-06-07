@@ -250,6 +250,23 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
       lines.push(event.display_summary.trim());
     }
 
+    // 第二行の比較情報
+    const comp = event.raw_payload?.notification_compare_json as any;
+    if (comp) {
+      const cur = comp.current;
+      const cmp = comp.compare;
+
+      const curSales = cur?.sales_yoy != null ? fmtPct(cur.sales_yoy * 100) : "-";
+      const curOp = cur?.op_yoy != null ? fmtPct(cur.op_yoy * 100) : "-";
+      lines.push(`${cur?.label || ""} 売上(YOY${curSales}) 営利(YOY${curOp})`);
+
+      if (cmp) {
+        const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
+        const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
+        lines.push(`${cmp.label || ""} 売上(YOY${cmpSales}) 営利(YOY${cmpOp})`);
+      }
+    }
+
   } else {
     // その他カテゴリ: サブタイプ + primary_metric + display_summary
     if (event.event_subtype) lines.push(event.event_subtype);
@@ -469,6 +486,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "all") opts.skipClientSort = true;
 
       if (selectedDate) opts.selectedDate = selectedDate;
+
+      console.log("[tdnet-alerts] loadEvents params", {
+        filter,
+        selectedDate,
+        eventType: opts.eventType,
+        selectedDateParam: opts.selectedDate,
+      });
+
       if (searchRef.current.trim()) opts.search = searchRef.current.trim();
 
       const data = await fetchEvents(supabaseRef.current, opts);

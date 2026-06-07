@@ -1,5 +1,18 @@
 // TypeScript types for TDNET Alerts
 
+export interface NotificationCompare {
+  current: {
+    label: string;
+    sales_yoy: number | null;
+    op_yoy: number | null;
+  };
+  compare: {
+    label: string;
+    sales_yoy: number | null;
+    op_yoy: number | null;
+  } | null;
+}
+
 export interface TdnetEvent {
   id: string;
   created_at: string;
