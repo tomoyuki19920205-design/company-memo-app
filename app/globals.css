@@ -3620,4 +3620,6 @@ body:has(.alerts-layout) {
 
 
 /* TDNET Alerts YOY Highlight */
-.yoy-highlight { color: #ef4444 !important; font-weight: 700; }
+.yoy-negative { color: #ef4444 !important; font-weight: 700; }
+.yoy-positive { color: #22c55e !important; font-weight: 700; }
+.yoy-positive-strong { color: #00ff66 !important; font-weight: 700; }

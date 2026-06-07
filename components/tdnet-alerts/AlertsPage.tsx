@@ -12,6 +12,17 @@ import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyVie
 
 const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%)/gi;
 
+const getYoyClass = (text: string) => {
+  const match = text.match(/([+-]?[\d.]+)%/);
+  if (match) {
+    const val = parseFloat(match[1]);
+    if (val < 0) return "yoy-negative";
+    if (val >= 30) return "yoy-positive-strong";
+    return "yoy-positive";
+  }
+  return "yoy-negative"; // fallback
+};
+
 const renderHighlightedCardBody = (text: string, eventType: string) => {
   if (!text) return null;
   if (eventType !== "earnings" && eventType !== "forecast") {
@@ -29,7 +40,7 @@ const renderHighlightedCardBody = (text: string, eventType: string) => {
       {parts.map((part, i) => {
         if (part.match(YOY_REGEX)) {
           return (
-            <span key={i} className="yoy-highlight">
+            <span key={i} className={getYoyClass(part)}>
               {part}
             </span>
           );
