@@ -388,7 +388,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [filter, setFilter] = useState<FilterType>("all");
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState<string | null>(() => {
+    const dt = new Date();
+    dt.setMinutes(dt.getMinutes() + dt.getTimezoneOffset() + 9 * 60);
+    const yyyy = dt.getFullYear();
+    const mm = String(dt.getMonth() + 1).padStart(2, "0");
+    const dd = String(dt.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  });
   const [search, setSearch] = useState("");
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -636,8 +643,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
 
   const filters: { key: FilterType; label: string }[] = [
-    { key: "all", label: `全件 (${events.length})` },
-    { key: "unread", label: `未読 (${unreadCount})` },
     { key: "starred", label: "⭐ スター" },
     { key: "buyback", label: "📊 自社株買" },
     { key: "forecast_up", label: "📈 上方修正" },
@@ -668,7 +673,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           </a>
           <h1 className="alerts-header-title">TDNET Alerts</h1>
           <span className="stat-badge unread">未読 {unreadCount}</span>
-          <span className="stat-badge total">全 {events.length}件</span>
+          <span className="stat-badge total">表示件数 {events.length}件</span>
         </div>
         <div className="alerts-header-right">
           <span className="stat-badge" title={`接続: ${connectionStatus}`}>
