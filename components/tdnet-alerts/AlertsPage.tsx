@@ -245,6 +245,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const handleSelectEvent = async (event: EnrichedEvent) => {
+    if (selectedId === event.id) {
+      setSelectedId(null);
+      return;
+    }
     setSelectedId(event.id);
     setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
     // 右ペイン CompanyViewer にティッカーを渡す
@@ -507,6 +511,93 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     return { text: (event.headline || "").trim(), isFallback: true };
   };
 
+  const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
+    const rawVal = event.raw_payload;
+    const rp: Record<string, unknown> | null =
+      typeof rawVal === "string"
+        ? (() => {
+            try { return JSON.parse(rawVal) as Record<string, unknown>; } catch { return null; }
+          })()
+        : (rawVal as Record<string, unknown> | null) ?? null;
+    const ext = (rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object" ? rp.extracted : {}) as Record<string, unknown>;
+    
+    const fmtPct = (v: unknown): string => {
+      const n = Number(v);
+      if (isNaN(n)) return "?%";
+      const sign = n > 0 ? "+" : "";
+      return `${sign}${n.toFixed(1)}%`;
+    };
+    const fmtDiv = (v: unknown): string => {
+      const n = Number(v);
+      if (isNaN(n)) return "---";
+      return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
+    };
+
+    const time = formatTime(event.detected_at);
+    const tickerName = `${event.ticker} ${event.company_name || ""}`.trim();
+    
+    let line1 = "";
+    let line2 = "";
+
+    if (event.event_type === "earnings") {
+      line1 = `${time} ${tickerName} ${subtypeLabel} ${ext.period_label || ""}`.trim();
+      const metrics: string[] = [];
+      if (ext.sales_current != null && ext.sales_yoy != null) {
+        metrics.push(`売上 (YOY ${fmtPct(Number(ext.sales_yoy) * 100)})`);
+      }
+      if (ext.op_current != null && ext.op_yoy != null) {
+        metrics.push(`営利 (YOY ${fmtPct(Number(ext.op_yoy) * 100)})`);
+      } else if (ext.ordinary_profit_current != null && ext.ordinary_profit_yoy != null) {
+        metrics.push(`経常 (YOY ${fmtPct(Number(ext.ordinary_profit_yoy) * 100)})`);
+      } else if (ext.net_income_current != null && ext.net_income_yoy != null) {
+        metrics.push(`純利 (YOY ${fmtPct(Number(ext.net_income_yoy) * 100)})`);
+      }
+      if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_yoy) {
+         metrics.push(`${event.primary_metric_name} (YOY ${event.primary_metric_yoy})`);
+      }
+      line2 = metrics.join(" ");
+    } else if (event.event_type === "forecast") {
+      line1 = `${time} ${tickerName}`;
+      const epsPrev = ext.previous_eps;
+      const epsRev  = ext.revised_eps;
+      if (epsPrev != null && epsRev != null) {
+        const p = Number(epsPrev), r = Number(epsRev);
+        if (!isNaN(p) && !isNaN(r) && p !== 0) {
+          const ePct = (r - p) / Math.abs(p) * 100;
+          line2 = `EPS ${fmtDiv(p)}→${fmtDiv(r)}(${fmtPct(ePct)})`;
+        }
+      }
+      if (!line2) {
+        const opPct = ext.change_op_pct;
+        if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
+        else if (ext.change_ordinary_pct != null) line2 = `経常利益 ${fmtPct(ext.change_ordinary_pct)}`;
+        else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
+        else line2 = subtypeLabel || "業績修正";
+      }
+    } else if (event.event_type === "buyback") {
+      const ratio = ext.ratio_to_outstanding;
+      const ratioStr = ratio != null ? `BB ${Number(ratio).toFixed(2)}%` : "BB";
+      line1 = `${time} ${tickerName} ${ratioStr}`;
+    } else if (event.event_type === "dividend") {
+      const prev = ext.previous_dividend_per_share;
+      const rev  = ext.revised_dividend_per_share;
+      let divStr = "";
+      if (prev != null && rev != null) {
+         divStr = `${fmtDiv(prev)}→${fmtDiv(rev)}`;
+      } else if (rev != null) {
+         divStr = `${fmtDiv(rev)}`;
+      }
+      line1 = `${time} ${tickerName} ${subtypeLabel} ${divStr}`.trim();
+    } else {
+      line1 = `${time} ${tickerName} ${badge.emoji} ${subtypeLabel}`.trim();
+      if (event.primary_metric_name) {
+         line2 = `${event.primary_metric_name} ${event.primary_metric_value || ""}`;
+      }
+    }
+
+    return { line1, line2 };
+  };
+
 
   const filters: { key: FilterType; label: string }[] = [
     { key: "all", label: `全件 (${events.length})` },
@@ -699,12 +790,32 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               }
               const bodyText = cardBody + discordExtra;
 
+              const isSelected = selectedId === event.id;
+
+              if (!isSelected) {
+                const { line1, line2 } = formatCardSummary(event, badge, subtypeLabel);
+                return (
+                  <div
+                    key={event.id}
+                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${priorityClass}`}
+                    onClick={() => handleSelectEvent(event)}
+                  >
+                    <div className="alert-card-summary-line1">
+                       {line1}
+                    </div>
+                    {line2 && (
+                       <div className="alert-card-summary-line2">
+                          {renderHighlightedCardBody(line2, event.event_type)}
+                       </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <div
                   key={event.id}
-                  className={`alert-card ${!event.is_read ? "unread" : ""} ${
-                    selectedId === event.id ? "selected" : ""
-                  } ${priorityClass}`}
+                  className={`alert-card expanded ${!event.is_read ? "unread" : ""} selected ${priorityClass}`}
                   onClick={() => handleSelectEvent(event)}
                 >
                   {/* Row 1: Time + Badge + Actions */}

@@ -3271,6 +3271,27 @@ textarea::placeholder {
   padding-left: calc(0.9rem - 3px);
 }
 
+.alert-card.collapsed {
+  padding: 0.5rem 0.9rem;
+}
+
+.alert-card-summary-line1 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+}
+
+.alert-card-summary-line2 {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .alert-card.priority-high {
   border-left-color: #fbbf24;
 }
