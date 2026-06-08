@@ -351,8 +351,9 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     } else if (ext.net_income_current != null && ext.net_income_yoy != null) {
       metrics.push(`純利 (YOY ${fmtPct(Number(ext.net_income_yoy) * 100)})`);
     }
-    if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_yoy) {
-       metrics.push(`${event.primary_metric_name} (YOY ${event.primary_metric_yoy})`);
+    if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_value) {
+       const yoy = event.primary_metric_yoy ? ` (YOY ${event.primary_metric_yoy})` : "";
+       metrics.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
     }
     line2 = metrics.join(" ");
   } else if (event.event_type === "forecast") {
