@@ -95,7 +95,7 @@ const getPriorityClass = (rank: number) => {
   return "";
 };
 
-const summaryCache = new Map<string, { line1: string; line2: string }>();
+const summaryCache = new Map<string, { line1: string; line2: string; line3?: string }>();
 const bodyCache = new Map<string, { text: string; isFallback: boolean }>();
 const highlightCache = new Map<string, React.ReactNode>();
 
@@ -337,25 +337,43 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
   let typeLabel = subtypeLabel;
   let line1 = "";
   let line2 = "";
+  let line3: string | undefined = undefined;
 
   if (event.event_type === "earnings") {
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
-    const metrics: string[] = [];
-    if (ext.sales_current != null && ext.sales_yoy != null) {
-      metrics.push(`売上 (YOY ${fmtPct(Number(ext.sales_yoy) * 100)})`);
+    
+    let metric1 = "";
+    let metric2 = "";
+    
+    const currSales = ext.sales_yoy != null ? fmtPct(Number(ext.sales_yoy) * 100) : "-";
+    metric1 = `売上（YOY${currSales}）`;
+    
+    if (ext.op_current != null || ext.op_yoy != null) {
+      const currOp = ext.op_yoy != null ? fmtPct(Number(ext.op_yoy) * 100) : "-";
+      metric2 = `営利（YOY${currOp}）`;
+    } else if (ext.ordinary_profit_current != null || ext.ordinary_profit_yoy != null) {
+      const currOrd = ext.ordinary_profit_yoy != null ? fmtPct(Number(ext.ordinary_profit_yoy) * 100) : "-";
+      metric2 = `経常（YOY${currOrd}）`;
+    } else if (ext.net_income_current != null || ext.net_income_yoy != null) {
+      const currNet = ext.net_income_yoy != null ? fmtPct(Number(ext.net_income_yoy) * 100) : "-";
+      metric2 = `純利（YOY${currNet}）`;
+    } else {
+      metric2 = `営利（YOY-）`;
     }
-    if (ext.op_current != null && ext.op_yoy != null) {
-      metrics.push(`営利 (YOY ${fmtPct(Number(ext.op_yoy) * 100)})`);
-    } else if (ext.ordinary_profit_current != null && ext.ordinary_profit_yoy != null) {
-      metrics.push(`経常 (YOY ${fmtPct(Number(ext.ordinary_profit_yoy) * 100)})`);
-    } else if (ext.net_income_current != null && ext.net_income_yoy != null) {
-      metrics.push(`純利 (YOY ${fmtPct(Number(ext.net_income_yoy) * 100)})`);
+
+    const currentLabel = event.event_subtype || (ext.quarter as string) || "";
+    line2 = `${metric1} ${metric2} ${currentLabel}`.trim();
+
+    const comp = rp?.notification_compare_json as any;
+    if (comp?.compare) {
+      const cmp = comp.compare;
+      if (cmp.sales_yoy != null || cmp.op_yoy != null) {
+        const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
+        const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
+        const compLabel = cmp.label === "FY予" ? "FY予" : (cmp.label || "前Q");
+        line3 = `売上（YOY${cmpSales}） 営利（YOY${cmpOp}） ${compLabel}`.trim();
+      }
     }
-    if (metrics.length === 0 && event.primary_metric_name && event.primary_metric_value) {
-       const yoy = event.primary_metric_yoy ? ` (YOY ${event.primary_metric_yoy})` : "";
-       metrics.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
-    }
-    line2 = metrics.join(" ");
   } else if (event.event_type === "forecast") {
     if (event.event_subtype === "upward") typeLabel = "上方";
     else if (event.event_subtype === "downward") typeLabel = "下方";
@@ -404,7 +422,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     }
   }
 
-  const res = { line1, line2 };
+  const res = { line1, line2, line3 };
   summaryCache.set(event.id, res);
   return res;
 };
@@ -868,7 +886,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const isSelected = selectedId === event.id;
 
               if (!isSelected) {
-                const { line1, line2 } = formatCardSummary(event, badge, subtypeLabel);
+                const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
                 return (
                   <div
                     key={event.id}
@@ -881,6 +899,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     {line2 && (
                        <div className="alert-card-summary-line2">
                           {renderHighlightedCardBody(line2, event.event_type)}
+                       </div>
+                    )}
+                    {line3 && (
+                       <div className="alert-card-summary-line3" style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
+                          {renderHighlightedCardBody(line3, event.event_type)}
                        </div>
                     )}
                   </div>
