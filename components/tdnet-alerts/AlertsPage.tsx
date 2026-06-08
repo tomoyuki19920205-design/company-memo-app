@@ -370,7 +370,14 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       if (cmp.sales_yoy != null || cmp.op_yoy != null) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
         const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
-        const compLabel = cmp.label === "FY予" ? "FY予" : (cmp.label || "前Q");
+        
+        let compLabel = cmp.label || "";
+        const q = ext.quarter as string;
+        if (q === "1Q") compLabel = "FY予想";
+        else if (q === "FY" || q === "4Q") compLabel = "来期FY予想";
+        else if (q === "2Q" || q === "3Q") compLabel = "前Q";
+        else compLabel = cmp.label || "前Q";
+        
         line3 = `売上（YOY${cmpSales}） 営利（YOY${cmpOp}） ${compLabel}`.trim();
       }
     }
