@@ -101,8 +101,14 @@ const highlightCache = new Map<string, React.ReactNode>();
 
 // 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
 // 長い headline / formatted_message は使わない
-const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boolean } => {
-  if (bodyCache.has(event.id)) return bodyCache.get(event.id)!;
+const formatCardBody = (event: EnrichedEvent): { 
+  text: string; 
+  isFallback: boolean;
+  primaryText?: string;
+  summaryText?: string;
+  compareText?: string;
+} => {
+  if (bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -146,6 +152,9 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
   };
 
   const lines: string[] = [];
+  let primaryText: string | undefined;
+  let summaryText: string | undefined;
+  let compareText: string | undefined;
 
   if (event.event_type === "forecast") {
     const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
@@ -234,45 +243,44 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
     if (period) lines.push(String(period));
 
   } else if (event.event_type === "earnings") {
-    // 決算: サブタイプ(FY/Q1...) + 売上 + 営業利益等
-    if (event.event_subtype) lines.push(event.event_subtype);
-
-    // primary_metric = 売上高など（トップレベルフィールド）
+    const primaryLines: string[] = [];
+    if (event.event_subtype) primaryLines.push(event.event_subtype);
+    
     if (event.primary_metric_name && event.primary_metric_value) {
       const yoy = event.primary_metric_yoy
         ? `（YOY ${event.primary_metric_yoy}）`
         : "";
-      lines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
+      primaryLines.push(`${event.primary_metric_name} ${event.primary_metric_value}${yoy}`);
     }
+    primaryText = primaryLines.filter(s => s.trim()).join("\n");
 
-    // display_summary = 営業利益・経常利益・純利益など追加指標（複数行）
-    if (event.display_summary?.trim()) {
-      lines.push(event.display_summary.trim());
-    }
-
-    console.log("[compare-debug]", {
-      code: event.ticker,
-      company_name: event.company_name,
-      event_type: event.event_type,
-      raw_payload_type: typeof event.raw_payload,
-      raw_payload: event.raw_payload,
-      rp,
-      notification_compare_json: rp?.notification_compare_json,
-    });
-
-    // 第二行の比較情報
     const comp = rp?.notification_compare_json as any;
     if (comp?.compare) {
       const cmp = comp.compare;
       if (cmp.sales_yoy != null || cmp.op_yoy != null) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
         const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
-        lines.push(`${cmp.label || ""} 売上(YOY${cmpSales}) 営利(YOY${cmpOp})`);
+        compareText = `${cmp.label || ""} 売上(YOY${cmpSales}) 営利(YOY${cmpOp})`;
       }
     }
 
+    if (event.display_summary?.trim()) {
+      summaryText = event.display_summary.trim();
+    }
+    
+    console.log("[AlertsPage Debug 3816]", {
+      ticker: event.ticker,
+      primaryText,
+      compareText,
+      summaryText
+    });
+
+    // For text output fallback
+    if (primaryText) lines.push(primaryText);
+    if (compareText) lines.push(compareText);
+    if (summaryText) lines.push(summaryText);
+
   } else {
-    // その他カテゴリ: サブタイプ + primary_metric + display_summary
     if (event.event_subtype) lines.push(event.event_subtype);
     if (event.primary_metric_name && event.primary_metric_value) {
       const yoy = event.primary_metric_yoy
@@ -285,17 +293,12 @@ const formatCardBody = (event: EnrichedEvent): { text: string; isFallback: boole
     }
   }
 
-  // Discord 送信時刻 (Discord タブのみ表示するため isDiscordTab を確認)
-  // ここでは isDiscordTab スコープ外なので discord_sent_at は省略
-  // → Discord タブ判定はカード描画時に別途追加
-
   const text = lines.filter((s) => s.trim()).join("\n");
   if (text) {
-    const res = { text, isFallback: false };
-    bodyCache.set(event.id, res);
+    const res = { text, isFallback: false, primaryText, summaryText, compareText };
+    bodyCache.set(event.id, res as any);
     return res;
   }
-  // fallback: headline を1行だけ (muted, clamp)
   const fallbackRes = { text: (event.headline || "").trim(), isFallback: true };
   bodyCache.set(event.id, fallbackRes);
   return fallbackRes;
@@ -848,7 +851,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 : "";
 
               // 全タブ共通: raw_payload の数値要約を表示。長い headline は使わない。
-              const { text: cardBody, isFallback } = formatCardBody(event);
+              const { text: cardBody, isFallback, primaryText, compareText, summaryText } = formatCardBody(event);
               // Discord タブのみ: 送信時刻を末尾に追加
               let discordExtra = "";
               if (isDiscordTab && event.discord_sent_at) {
@@ -943,7 +946,31 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
                   {/* Row 3: 数値要約 (fallback時はheadlineを1行muted) */}
                   <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
-                    {renderHighlightedCardBody(bodyText, event.event_type)}
+                    {event.event_type === "earnings" && !isFallback ? (
+                      <>
+                        {primaryText && renderHighlightedCardBody(primaryText, event.event_type)}
+                        {compareText && (
+                          <div 
+                            className="notification-compare" 
+                            style={{ 
+                              marginTop: "4px", 
+                              marginBottom: "8px",
+                              padding: "4px 8px", 
+                              backgroundColor: "var(--bg-secondary, #f3f4f6)", 
+                              borderRadius: "4px",
+                              fontSize: "0.9em",
+                              color: "var(--text-secondary, #4b5563)",
+                              borderLeft: "3px solid #8b5cf6"
+                            }}
+                          >
+                            {compareText}
+                          </div>
+                        )}
+                        {summaryText && renderHighlightedCardBody(summaryText + discordExtra, event.event_type)}
+                      </>
+                    ) : (
+                      renderHighlightedCardBody(bodyText, event.event_type)
+                    )}
                   </div>
                 </div>
               );
