@@ -65,9 +65,28 @@ export async function fetchEvents(
     }
   }
 
+  const debugLogs: any = {
+    allPeriodTickerSearch: opts.allPeriodTickerSearch,
+    search: opts.search,
+    selectedDate: opts.selectedDate,
+    appliedDateFilter: false,
+    tickerFilter: null,
+    eventTypeFilter: opts.eventType,
+  };
+
   if (opts.search) {
     const s = opts.search.trim();
-    query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
+    if (opts.allPeriodTickerSearch && /^\d{4}$/.test(s)) {
+      // 全期間ティッカー検索ONかつ数値の場合はティッカー完全一致のみにする（limit落ち防止と精度向上）
+      query = query.eq("ticker", s);
+      debugLogs.tickerFilter = `exact ticker ${s} (allPeriodTickerSearch)`;
+    } else if (/^\d{4}$/.test(s)) {
+      query = query.or(`ticker.eq.${s},company_name.ilike.%${s}%,headline.ilike.%${s}%`);
+      debugLogs.tickerFilter = `exact or ilike ${s}`;
+    } else {
+      query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
+      debugLogs.tickerFilter = `ilike ${s}`;
+    }
   }
 
   // 全タブ共通除外: ノイズ・訂正系開示を表示しない（DBからは削除しない）
@@ -78,10 +97,8 @@ export async function fetchEvents(
     .not("headline", "ilike", "%再訂正%");               // 新規
 
   // 日付フィルタ (JST日付 → UTC範囲変換)
-  // JST の YYYY-MM-DD を UTC に変換: JST 00:00 = UTC -09:00 (前日 15:00)
   const _jstDateToUtcRange = (dateStr: string): { gte: string; lt: string } => {
     const [y, m, d] = dateStr.split("-").map(Number);
-    // JST 00:00:00 → UTC: Date.UTC() でタイムゾーン非依存に計算
     const startUtc = new Date(Date.UTC(y, m - 1, d, 0, 0, 0) - 9 * 60 * 60 * 1000);
     const endUtc   = new Date(startUtc.getTime() + 24 * 60 * 60 * 1000);
     return { gte: startUtc.toISOString(), lt: endUtc.toISOString() };
@@ -97,42 +114,43 @@ export async function fetchEvents(
             .toLocaleDateString("sv") // "YYYY-MM-DD" (sv locale)
         : opts.selectedDate;
     const { gte, lt } = _jstDateToUtcRange(dateStr);
-    console.log("[TDNET fetchEvents]", {
-      selectedDate: opts.selectedDate,
-      resolvedDateStr: dateStr,
-      utcGte: gte,
-      utcLt: lt,
-      filterColumn: "disclosed_at",
-      skipDateFilter,
-    });
     if (!skipDateFilter) {
       query = query.gte("disclosed_at", gte).lt("disclosed_at", lt);
+      debugLogs.appliedDateFilter = `disclosed_at ${gte} - ${lt}`;
+    } else {
+      debugLogs.appliedDateFilter = "SKIPPED due to allPeriodTickerSearch";
     }
   } else if (opts.todayOnly) {
     // 後方互換
     const todayJst = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" }))
       .toLocaleDateString("sv");
     const { gte, lt } = _jstDateToUtcRange(todayJst);
-    console.log("[TDNET fetchEvents] todayOnly", { utcGte: gte, utcLt: lt, filterColumn: "detected_at", skipDateFilter });
     if (!skipDateFilter) {
       query = query.gte("detected_at", gte).lt("detected_at", lt);
+      debugLogs.appliedDateFilter = `detected_at ${gte} - ${lt}`;
+    } else {
+      debugLogs.appliedDateFilter = "SKIPPED due to allPeriodTickerSearch";
     }
   } else if (!opts.search) {
     // 通常モード: 直近30日のみ取得（全期間だと古いデータが大量混入するため）
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     thirtyDaysAgo.setHours(0, 0, 0, 0);
-    console.log("[TDNET fetchEvents] 30-day window", { utcGte: thirtyDaysAgo.toISOString(), filterColumn: "detected_at" });
     query = query.gte("detected_at", thirtyDaysAgo.toISOString());
+    debugLogs.appliedDateFilter = `detected_at >= ${thirtyDaysAgo.toISOString()}`;
+  } else {
+    debugLogs.appliedDateFilter = "NO DATE FILTER APPLIED";
   }
 
   const { data: events, error } = await query;
+  
+  debugLogs.returnedCount = events ? events.length : 0;
+  console.log("[TDNET fetchEvents DEBUG LOGS]:", JSON.stringify(debugLogs, null, 2));
+
   if (error) throw error;
   if (!events || events.length === 0) {
-    console.log("[TDNET fetchEvents] DB取得: 0件");
     return [];
   }
-  console.log("[TDNET fetchEvents] DB取得件数:", events.length, "| limit:", limit);
 
   // 既読情報を一括取得
   const eventIds = events.map((e: TdnetEvent) => e.id);
