@@ -586,6 +586,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const handleTodayClick = () => {
+    setAllPeriodTickerSearch(false);
     if (!selectedDate) {
       const dt = new Date();
       dt.setMinutes(dt.getMinutes() + dt.getTimezoneOffset() + 9 * 60);
@@ -609,6 +610,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
+    setAllPeriodTickerSearch(false);
     if (val) {
       setSelectedDate(val);
     } else {
@@ -617,6 +619,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const handleClearDate = () => {
+    setAllPeriodTickerSearch(false);
     setSelectedDate(null);
     if (dateInputRef.current) dateInputRef.current.value = "";
   };
@@ -805,7 +808,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             title="ティッカー検索時に日付指定を無視して全期間から検索します"
             style={{ padding: "0.25rem 0.5rem", fontSize: "0.85rem", height: "30px" }}
           >
-            全期間
+            {allPeriodTickerSearch ? "全期間ON" : "全期間OFF"}
           </button>
           <input
             type="text"
