@@ -25,6 +25,9 @@ export async function fetchEvents(
   }
 ): Promise<EnrichedEvent[]> {
   const limit = opts.limit ?? 1000;
+  // limit 調整: 全期間ONかつ検索入力がある場合は 100 に制限
+  const isAllPeriodSearchActive = opts.allPeriodTickerSearch && Boolean(opts.search?.trim());
+  const actualLimit = isAllPeriodSearchActive ? 100 : limit;
 
   // イベント取得
   // ソート: disclosed_at DESC NULLS LAST（実開示日時優先）→ detected_at DESC → created_at DESC
@@ -34,7 +37,7 @@ export async function fetchEvents(
     .order("disclosed_at", { ascending: false, nullsFirst: false })
     .order("detected_at", { ascending: false })
     .order("created_at", { ascending: false })
-    .limit(limit);
+    .limit(actualLimit);
 
   if (!opts.showArchived) {
     query = query.eq("status", "active");
@@ -65,27 +68,15 @@ export async function fetchEvents(
     }
   }
 
-  const debugLogs: any = {
-    allPeriodTickerSearch: opts.allPeriodTickerSearch,
-    search: opts.search,
-    selectedDate: opts.selectedDate,
-    appliedDateFilter: false,
-    tickerFilter: null,
-    eventTypeFilter: opts.eventType,
-  };
-
   if (opts.search) {
     const s = opts.search.trim();
     if (opts.allPeriodTickerSearch && /^\d{4}$/.test(s)) {
       // 全期間ティッカー検索ONかつ数値の場合はティッカー完全一致のみにする（limit落ち防止と精度向上）
       query = query.eq("ticker", s);
-      debugLogs.tickerFilter = `exact ticker ${s} (allPeriodTickerSearch)`;
     } else if (/^\d{4}$/.test(s)) {
       query = query.or(`ticker.eq.${s},company_name.ilike.%${s}%,headline.ilike.%${s}%`);
-      debugLogs.tickerFilter = `exact or ilike ${s}`;
     } else {
       query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
-      debugLogs.tickerFilter = `ilike ${s}`;
     }
   }
 
@@ -104,7 +95,7 @@ export async function fetchEvents(
     return { gte: startUtc.toISOString(), lt: endUtc.toISOString() };
   };
 
-  const skipDateFilter = opts.allPeriodTickerSearch && Boolean(opts.search?.trim());
+  const skipDateFilter = isAllPeriodSearchActive;
 
   if (opts.selectedDate) {
     // 特定日付フィルタ (selectedDate = "today" or "YYYY-MM-DD")
@@ -116,9 +107,6 @@ export async function fetchEvents(
     const { gte, lt } = _jstDateToUtcRange(dateStr);
     if (!skipDateFilter) {
       query = query.gte("disclosed_at", gte).lt("disclosed_at", lt);
-      debugLogs.appliedDateFilter = `disclosed_at ${gte} - ${lt}`;
-    } else {
-      debugLogs.appliedDateFilter = "SKIPPED due to allPeriodTickerSearch";
     }
   } else if (opts.todayOnly) {
     // 後方互換
@@ -127,9 +115,6 @@ export async function fetchEvents(
     const { gte, lt } = _jstDateToUtcRange(todayJst);
     if (!skipDateFilter) {
       query = query.gte("detected_at", gte).lt("detected_at", lt);
-      debugLogs.appliedDateFilter = `detected_at ${gte} - ${lt}`;
-    } else {
-      debugLogs.appliedDateFilter = "SKIPPED due to allPeriodTickerSearch";
     }
   } else if (!opts.search) {
     // 通常モード: 直近30日のみ取得（全期間だと古いデータが大量混入するため）
@@ -137,16 +122,9 @@ export async function fetchEvents(
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     thirtyDaysAgo.setHours(0, 0, 0, 0);
     query = query.gte("detected_at", thirtyDaysAgo.toISOString());
-    debugLogs.appliedDateFilter = `detected_at >= ${thirtyDaysAgo.toISOString()}`;
-  } else {
-    debugLogs.appliedDateFilter = "NO DATE FILTER APPLIED";
   }
 
   const { data: events, error } = await query;
-  
-  debugLogs.returnedCount = events ? events.length : 0;
-  console.log("[TDNET fetchEvents DEBUG LOGS]:", JSON.stringify(debugLogs, null, 2));
-
   if (error) throw error;
   if (!events || events.length === 0) {
     return [];
