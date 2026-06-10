@@ -101,6 +101,7 @@ export const FORECAST_SOURCES = new Set<string>([
     "jquants_forecast_fy",    // 当期予想 (FSales / FOP、FY実績前)
     "jquants_forecast_next_fy",
     "jquants_forecast",
+    "tdnet_forecast",
 ]);
 
 // ============================================================
