@@ -164,8 +164,16 @@ export async function fetchEvents(
   let enriched: EnrichedEvent[] = events.map((e: any) => {
     // raw_payload の復元 (一覧取得の軽量化対応)
     const reconstructedPayload: Record<string, unknown> = {};
-    if (e.extracted !== undefined) reconstructedPayload.extracted = e.extracted;
-    if (e.notification_compare_json !== undefined) reconstructedPayload.notification_compare_json = e.notification_compare_json;
+    
+    // JSの実行環境やSupabaseのバージョンによっては JSON -> string で返る可能性があるため安全にparseする
+    const parseIfString = (val: any) => typeof val === "string" ? (() => { try { return JSON.parse(val); } catch { return val; } })() : val;
+
+    if (e.extracted !== undefined) {
+      reconstructedPayload.extracted = parseIfString(e.extracted);
+    }
+    if (e.notification_compare_json !== undefined) {
+      reconstructedPayload.notification_compare_json = parseIfString(e.notification_compare_json);
+    }
     
     // 不要な別名フィールドを削除
     delete e.extracted;
