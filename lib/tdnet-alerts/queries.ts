@@ -33,7 +33,7 @@ export async function fetchEvents(
   // ソート: disclosed_at DESC NULLS LAST（実開示日時優先）→ detected_at DESC → created_at DESC
   let query = supabase
     .from("tdnet_events")
-    .select("*")
+    .select("id, created_at, detected_at, disclosed_at, ticker, company_name, market, event_type, event_subtype, headline, source_title, source_url, pdf_url, strength_score, priority_rank, primary_metric_name, primary_metric_value, primary_metric_yoy, display_title, display_summary, sort_key, dedupe_key, notify_to_discord, discord_sent_at, archived_at, status, schema_version, extracted:raw_payload->extracted, notification_compare_json:raw_payload->notification_compare_json")
     .order("disclosed_at", { ascending: false, nullsFirst: false })
     .order("detected_at", { ascending: false })
     .order("created_at", { ascending: false })
@@ -131,7 +131,7 @@ export async function fetchEvents(
   }
 
   // 既読情報を一括取得
-  const eventIds = events.map((e: TdnetEvent) => e.id);
+  const eventIds = events.map((e: any) => e.id);
   const { data: reads } = await supabase
     .from("tdnet_event_reads")
     .select("event_id")
@@ -161,12 +161,24 @@ export async function fetchEvents(
   });
 
   // Enriched events を作成
-  let enriched: EnrichedEvent[] = events.map((e: TdnetEvent) => ({
-    ...e,
-    is_read: readSet.has(e.id),
-    is_starred: starSet.has(e.id),
-    comments_count: commentCountMap.get(e.id) || 0,
-  }));
+  let enriched: EnrichedEvent[] = events.map((e: any) => {
+    // raw_payload の復元 (一覧取得の軽量化対応)
+    const reconstructedPayload: Record<string, unknown> = {};
+    if (e.extracted !== undefined) reconstructedPayload.extracted = e.extracted;
+    if (e.notification_compare_json !== undefined) reconstructedPayload.notification_compare_json = e.notification_compare_json;
+    
+    // 不要な別名フィールドを削除
+    delete e.extracted;
+    delete e.notification_compare_json;
+    
+    return {
+      ...e,
+      raw_payload: reconstructedPayload,
+      is_read: readSet.has(e.id),
+      is_starred: starSet.has(e.id),
+      comments_count: commentCountMap.get(e.id) || 0,
+    };
+  });
 
   // フィルタ
   if (opts.unreadOnly) {

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
@@ -22,10 +22,11 @@ interface AlertDetailPanelProps {
 }
 
 export default function AlertDetailPanel({
-  event,
+  event: initialEvent,
   userId,
   onUpdate,
 }: AlertDetailPanelProps) {
+  const [event, setEvent] = useState<EnrichedEvent>(initialEvent);
   const [comments, setComments] = useState<TdnetEventComment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -47,6 +48,22 @@ export default function AlertDetailPanel({
   }, [event.id]);
 
   useEffect(() => {
+    setEvent(initialEvent);
+    
+    // 足りないフィールド（一覧の軽量化で省略されたもの）があれば取得
+    if (initialEvent.summary === undefined || initialEvent.formatted_message === undefined) {
+      supabaseRef.current
+        .from("tdnet_events")
+        .select("summary, formatted_message, raw_payload")
+        .eq("id", initialEvent.id)
+        .single()
+        .then(({ data, error }) => {
+          if (!error && data) {
+            setEvent(prev => ({ ...prev, ...data }));
+          }
+        });
+    }
+    
     loadComments();
     setShowRaw(false);
     setRawSegments([]);
@@ -63,7 +80,7 @@ export default function AlertDetailPanel({
         .catch(() => setRawSegments([]))
         .finally(() => setSegLoading(false));
     }
-  }, [loadComments, event.id, event.ticker, event.event_type, event.headline, event.raw_payload]);
+  }, [loadComments, initialEvent.id, initialEvent.ticker, initialEvent.event_type, initialEvent.headline, initialEvent.raw_payload]);
 
   const handleToggleRead = async () => {
     try {
