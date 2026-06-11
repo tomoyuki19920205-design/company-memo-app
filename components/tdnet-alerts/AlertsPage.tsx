@@ -342,14 +342,18 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
   if (event.event_type === "earnings") {
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
     
+    const comp = rp?.notification_compare_json as any;
+
     let metric1 = "";
     let metric2 = "";
     
-    const currSales = ext.sales_yoy != null ? fmtPct(Number(ext.sales_yoy) * 100) : "-";
+    const currSalesVal = comp?.current?.sales_yoy ?? ext.sales_yoy;
+    const currSales = currSalesVal != null ? fmtPct(Number(currSalesVal) * 100) : "-";
     metric1 = `売上（YOY${currSales}）`;
     
-    if (ext.op_current != null || ext.op_yoy != null) {
-      const currOp = ext.op_yoy != null ? fmtPct(Number(ext.op_yoy) * 100) : "-";
+    const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
+    if (currOpVal != null || ext.op_current != null || ext.op_yoy != null) {
+      const currOp = currOpVal != null ? fmtPct(Number(currOpVal) * 100) : "-";
       metric2 = `営利（YOY${currOp}）`;
     } else if (ext.ordinary_profit_current != null || ext.ordinary_profit_yoy != null) {
       const currOrd = ext.ordinary_profit_yoy != null ? fmtPct(Number(ext.ordinary_profit_yoy) * 100) : "-";
@@ -364,7 +368,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const currentLabel = event.event_subtype || (ext.quarter as string) || "";
     line2 = `${metric1} ${metric2} ${currentLabel}`.trim();
 
-    const comp = rp?.notification_compare_json as any;
+
     if (comp?.compare) {
       const cmp = comp.compare;
       if (cmp.sales_yoy != null || cmp.op_yoy != null) {
@@ -373,7 +377,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
         
         let compLabel = cmp.label || "";
         const q = ext.quarter as string;
-        if (q === "1Q") compLabel = "FY予想";
+        if (q === "1Q") compLabel = "通期予想";
         else if (q === "FY" || q === "4Q") compLabel = "来期FY予想";
         else if (q === "2Q" || q === "3Q") compLabel = "前Q";
         else compLabel = cmp.label || "前Q";
