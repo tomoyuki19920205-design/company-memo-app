@@ -257,10 +257,24 @@ const formatCardBody = (event: EnrichedEvent): {
     const comp = rp?.notification_compare_json as any;
     if (comp?.compare) {
       const cmp = comp.compare;
-      if (cmp.sales_yoy != null || cmp.op_yoy != null) {
+      const cmpOpStatus = cmp.op_yoy_status;
+      if (cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
-        const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
-        compareText = `${cmp.label || ""} 売上(YOY${cmpSales}) 営利(YOY${cmpOp})`;
+        
+        let cmpOpStr = "YOY-";
+        if (cmp.op_yoy != null) {
+          cmpOpStr = `YOY${fmtPct(cmp.op_yoy * 100)}`;
+        } else if (cmpOpStatus) {
+          const statusMap: Record<string, string> = {
+            "turnaround_to_profit": "黒字転換",
+            "fall_into_red": "赤字転落",
+            "loss_reduction": "赤字縮小",
+            "loss_expansion": "赤字拡大"
+          };
+          if (statusMap[cmpOpStatus]) cmpOpStr = statusMap[cmpOpStatus];
+        }
+        
+        compareText = `${cmp.label || ""} 売上(YOY${cmpSales}) 営利(${cmpOpStr})`;
       }
     }
 
@@ -352,9 +366,21 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     metric1 = `売上（YOY${currSales}）`;
     
     const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
-    if (currOpVal != null || ext.op_current != null || ext.op_yoy != null) {
-      const currOp = currOpVal != null ? fmtPct(Number(currOpVal) * 100) : "-";
+    const opStatus = comp?.current?.op_yoy_status ?? ext.op_yoy_status;
+    const statusMap: Record<string, string> = {
+      "turnaround_to_profit": "黒字転換",
+      "fall_into_red": "赤字転落",
+      "loss_reduction": "赤字縮小",
+      "loss_expansion": "赤字拡大"
+    };
+
+    if (currOpVal != null) {
+      const currOp = fmtPct(Number(currOpVal) * 100);
       metric2 = `営利（YOY${currOp}）`;
+    } else if (opStatus && statusMap[opStatus]) {
+      metric2 = `営利（${statusMap[opStatus]}）`;
+    } else if (ext.op_current != null || ext.op_yoy != null) {
+      metric2 = `営利（YOY-）`;
     } else if (ext.ordinary_profit_current != null || ext.ordinary_profit_yoy != null) {
       const currOrd = ext.ordinary_profit_yoy != null ? fmtPct(Number(ext.ordinary_profit_yoy) * 100) : "-";
       metric2 = `経常（YOY${currOrd}）`;
@@ -371,10 +397,18 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
 
     if (comp?.compare) {
       const cmp = comp.compare;
-      if (cmp.sales_yoy != null || cmp.op_yoy != null) {
+      const cmpOpStatus = cmp.op_yoy_status;
+      
+      if (cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
-        const cmpOp = cmp.op_yoy != null ? fmtPct(cmp.op_yoy * 100) : "-";
         
+        let cmpOpStr = "YOY-";
+        if (cmp.op_yoy != null) {
+          cmpOpStr = `YOY${fmtPct(cmp.op_yoy * 100)}`;
+        } else if (cmpOpStatus && statusMap[cmpOpStatus]) {
+          cmpOpStr = statusMap[cmpOpStatus];
+        }
+
         let compLabel = cmp.label || "";
         const q = ext.quarter as string;
         if (q === "1Q") compLabel = "通期予想";
@@ -382,7 +416,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
         else if (q === "2Q" || q === "3Q") compLabel = "前Q";
         else compLabel = cmp.label || "前Q";
         
-        line3 = `売上（YOY${cmpSales}） 営利（YOY${cmpOp}） ${compLabel}`.trim();
+        line3 = `売上（YOY${cmpSales}） 営利（${cmpOpStr}） ${compLabel}`.trim();
       }
     }
   } else if (event.event_type === "forecast") {
