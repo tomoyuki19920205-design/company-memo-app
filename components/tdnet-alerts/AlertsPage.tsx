@@ -361,9 +361,24 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     let metric1 = "";
     let metric2 = "";
     
+    const fm = event.formatted_message || event.display_summary || "";
+    let fallbackSalesYoy: string | null = null;
+    let fallbackOpYoy: string | null = null;
+    if (fm) {
+      const sMatch = fm.match(/売上.*?YOY\s*([+-]?[\d.]+%)/i);
+      if (sMatch) fallbackSalesYoy = sMatch[1];
+      const oMatch = fm.match(/(?:営業利益|営利).*?YOY\s*([+-]?[\d.]+%)/i);
+      if (oMatch) fallbackOpYoy = oMatch[1];
+    }
+    
     const currSalesVal = comp?.current?.sales_yoy ?? ext.sales_yoy;
-    const currSales = currSalesVal != null ? fmtPct(Number(currSalesVal) * 100) : "-";
-    metric1 = `売上（YOY${currSales}）`;
+    let currSalesStr = "-";
+    if (currSalesVal != null) {
+      currSalesStr = fmtPct(Number(currSalesVal) * 100);
+    } else if (fallbackSalesYoy) {
+      currSalesStr = fallbackSalesYoy;
+    }
+    metric1 = `売上（YOY${currSalesStr}）`;
     
     const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
     const opStatus = comp?.current?.op_yoy_status ?? ext.op_yoy_status;
@@ -377,6 +392,8 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     if (currOpVal != null) {
       const currOp = fmtPct(Number(currOpVal) * 100);
       metric2 = `営利（YOY${currOp}）`;
+    } else if (fallbackOpYoy) {
+      metric2 = `営利（YOY${fallbackOpYoy}）`;
     } else if (opStatus && statusMap[opStatus]) {
       metric2 = `営利（${statusMap[opStatus]}）`;
     } else if (ext.op_current != null || ext.op_yoy != null) {
