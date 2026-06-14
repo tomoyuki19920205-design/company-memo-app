@@ -33,7 +33,7 @@ export async function fetchEvents(
   // ソート: disclosed_at DESC NULLS LAST（実開示日時優先）→ detected_at DESC → created_at DESC
   let query = supabase
     .from("tdnet_events")
-    .select("id, created_at, detected_at, disclosed_at, ticker, company_name, market, event_type, event_subtype, headline, source_title, source_url, pdf_url, strength_score, priority_rank, primary_metric_name, primary_metric_value, primary_metric_yoy, display_title, display_summary, sort_key, dedupe_key, notify_to_discord, discord_sent_at, archived_at, status, schema_version, extracted:raw_payload->extracted, notification_compare_json:raw_payload->notification_compare_json")
+    .select("id, created_at, detected_at, disclosed_at, ticker, company_name, market, event_type, event_subtype, headline, source_title, source_url, pdf_url, strength_score, priority_rank, primary_metric_name, primary_metric_value, primary_metric_yoy, display_title, display_summary, sort_key, dedupe_key, notify_to_discord, discord_sent_at, archived_at, status, schema_version, raw_payload")
     .order("disclosed_at", { ascending: false, nullsFirst: false })
     .order("detected_at", { ascending: false })
     .order("created_at", { ascending: false })
@@ -168,16 +168,15 @@ export async function fetchEvents(
     // JSの実行環境やSupabaseのバージョンによっては JSON -> string で返る可能性があるため安全にparseする
     const parseIfString = (val: any) => typeof val === "string" ? (() => { try { return JSON.parse(val); } catch { return val; } })() : val;
 
-    if (e.extracted !== undefined) {
-      reconstructedPayload.extracted = parseIfString(e.extracted);
+    if (e.raw_payload !== undefined) {
+      const parsedRaw = parseIfString(e.raw_payload) || {};
+      if (parsedRaw.extracted !== undefined) {
+        reconstructedPayload.extracted = parsedRaw.extracted;
+      }
+      if (parsedRaw.notification_compare_json !== undefined) {
+        reconstructedPayload.notification_compare_json = parsedRaw.notification_compare_json;
+      }
     }
-    if (e.notification_compare_json !== undefined) {
-      reconstructedPayload.notification_compare_json = parseIfString(e.notification_compare_json);
-    }
-    
-    // 不要な別名フィールドを削除
-    delete e.extracted;
-    delete e.notification_compare_json;
     
     return {
       ...e,
