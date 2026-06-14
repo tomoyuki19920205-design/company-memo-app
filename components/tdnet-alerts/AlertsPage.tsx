@@ -416,7 +416,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       const cmp = comp.compare;
       const cmpOpStatus = cmp.op_yoy_status;
       
-      if (cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
+      if (cmp.label || cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
         
         let cmpOpStr = "YOY-";
