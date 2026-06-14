@@ -1135,8 +1135,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               )}
             </>
           ) : (
-            <div className="detail-empty">
-              開示をクリックすると右側に Company Viewer が表示されます
+            <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
+              <CompanyViewer ref={viewerRef} />
             </div>
           )}
         </div>
