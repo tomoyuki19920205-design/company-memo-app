@@ -910,7 +910,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     if (!user) return <div className="viewer-container"><div className="placeholder">ログインが必要です</div></div>;
 
     return (
-        <div className={`viewer-container font-${fontTheme}`}>
+        <div className={`viewer-container company-viewer-panel font-${fontTheme}`}>
+            <div className="company-viewer-sticky-header">
             <TickerHeader
                 tickerInput={tickerInput}
                 onTickerChange={setTickerInput}
@@ -941,7 +942,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             {activeTicker && (
                 <ValuationCard valuation={valuation} loading={dataLoading} compact />
             )}
+            </div>
 
+            <div className="company-viewer-scroll-body">
             {!activeTicker && status === "idle" && (
                 <div className="placeholder">企業コードを入力して「読込」を押してください</div>
             )}
@@ -987,6 +990,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                     </div>
                 </div>
             )}
+            </div>
 
             {xScrollMax > 0 && (
                 <div className="custom-fixed-x-scroll">

@@ -3644,3 +3644,28 @@ body:has(.alerts-layout) {
 .yoy-negative { color: #ef4444 !important; font-weight: 700; }
 .yoy-positive { color: #22c55e !important; font-weight: 700; }
 .yoy-positive-strong { color: #FFD700 !important; font-weight: 700; }
+
+/* Company Viewer Sticky Header */
+.company-viewer-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.company-viewer-sticky-header {
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg, #0b0f14);
+  border-bottom: 1px solid var(--border, #1f2937);
+  padding-bottom: 8px; /* space between header and table */
+}
+
+.company-viewer-scroll-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: auto;
+}

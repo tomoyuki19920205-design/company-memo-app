@@ -1119,7 +1119,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               {/* タブコンテンツ */}
               {rightPaneTab === "company" ? (
-                <div className="cvs-body" style={{ flex: 1, overflow: "auto", minHeight: 0 }}>
+                <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
                   <CompanyViewer ref={viewerRef} />
                 </div>
               ) : (
