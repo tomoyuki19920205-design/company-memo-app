@@ -1,25 +1,23 @@
 -- ============================================================
--- draft_009_create_edinet_order_data.sql
--- EDINET受注系データ テーブル作成案
+-- 009_create_edinet_order_data.sql
+-- EDINET受注系データ テーブル作成
 --
--- !! DRAFT ONLY — 実行禁止 !!
--- !! 本番 Supabase には絶対に実行しないこと !!
--- !! 設計レビュー用ファイルです !!
+-- !! 実行前に Supabase SQL Editor で内容を確認すること !!
+-- !! 一度実行するとロールバックは DROP TABLE が必要になる !!
 --
 -- 設計詳細: docs/edinet-order-backlog-db-design.md 参照
--- 実行前確認: PostgreSQL バージョン / NULLS NOT DISTINCT 対応可否
+-- ドラフト経緯: migrations/draft_009_create_edinet_order_data.sql 参照
 -- ============================================================
 
 -- ============================================================
--- [前提] PostgreSQL バージョン
--- 本プロジェクトの Supabase は PostgreSQL 14.4 であることが確認済み。
+-- [前提] PostgreSQL バージョン: 14.4 確認済み（2026-06-15）
 --
--- 確認方法: /rest/v1/ の OpenAPIレスポンス info.version で、14.4」を確認。
+-- 確認方法: /rest/v1/ の OpenAPIレスポンス info.version で「14.4」を確認。
 -- → NULLS NOT DISTINCT (PG15+) は使用不可。
 --
--- 代替案: generated column + COALESCE で UNIQUE 制約を実現 (PG12+ 対応)
+-- 対応策: generated column + COALESCE で UNIQUE 制約を実現 (PG12+ 対応)
 --   segment_name_key = COALESCE(segment_name, '__ALL__')
--- → segment_name は引き続き NULL を許可 (NULL = 連結全体)
+--   segment_name は引き続き NULL を許可 (NULL = 連結全体)
 -- ============================================================
 
 
@@ -44,7 +42,6 @@ CREATE TABLE edinet_order_data (
     company_name            text        NULL,
         -- 表示用社名。companies テーブルを JOIN して取得することも可。
         -- 冗長になる場合は NULL のみで運用し、カラム自体を削除してよい。
-        -- 未決事項 #5 参照。
 
     -- ----------------------------------------------------------
     -- EDINET書類識別
@@ -58,7 +55,7 @@ CREATE TABLE edinet_order_data (
     -- ----------------------------------------------------------
     period                  text        NOT NULL,
         -- 決算年度文字列。他テーブルの period 形式に統一すること。
-        -- 未決事項 #3: '2024' か '2024/03' か。形式が決まったら更新。
+        -- 例: '2024' または '2024/03'（形式は既存テーブルに合わせる）
 
     fiscal_year             integer     NOT NULL,
         -- 決算年度（整数）。クエリ・ソート用。
@@ -66,7 +63,8 @@ CREATE TABLE edinet_order_data (
 
     -- ----------------------------------------------------------
     -- 受注系指標（百万円統一）
-    -- DB格納値は変換後の百万円。変換前の元単位は source_unit カラムに記録。変換前の元値は raw_* カラムに記録。
+    -- DB格納値は変換後の百万円。変換前の元単位は source_unit カラムに記録。
+    -- 変換前の元値は raw_* カラムに記録。
     -- ----------------------------------------------------------
     orders_received         numeric     NULL,
         -- 受注高 (百万円)
@@ -266,7 +264,6 @@ CREATE TRIGGER set_updated_at_edinet_order
 --     USING (auth.jwt() ->> 'email' IN (SELECT email FROM allowed_users));
 --
 -- -- INSERT / UPDATE / DELETE: service_role_key 経由のみ許可
--- -- Viewer からの直接書き込みは不要なため、Viewer 側ポリシーは不要。
 -- -- 抽出スクリプトは service_role_key で接続し、RLS をバイパスして書き込む。
 
 
@@ -291,7 +288,7 @@ CREATE TRIGGER set_updated_at_edinet_order
 --   FROM pg_tables
 --   WHERE schemaname = 'public' AND tablename = 'edinet_order_data';
 --
--- カラム確認:
+-- カラム確認（26カラム確認）:
 --   SELECT column_name, data_type, is_nullable, column_default
 --   FROM information_schema.columns
 --   WHERE table_name = 'edinet_order_data'
@@ -306,9 +303,12 @@ CREATE TRIGGER set_updated_at_edinet_order
 --   SELECT indexname, indexdef
 --   FROM pg_indexes
 --   WHERE tablename = 'edinet_order_data';
-
+--
+-- UNIQUE 制約の動作確認（segment_name_key）:
+--   SELECT ticker, period, segment_name, segment_name_key
+--   FROM edinet_order_data
+--   LIMIT 5;
 
 -- ============================================================
--- END OF DRAFT — !! 実行禁止 !!
--- 設計レビュー・未決事項解消後に 009_edinet_order_data.sql として正式化
+-- END OF MIGRATION
 -- ============================================================
