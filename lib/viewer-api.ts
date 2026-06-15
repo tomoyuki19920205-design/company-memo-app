@@ -1117,12 +1117,20 @@ export async function loadEdinetOrders(ticker: string): Promise<EdinetOrderRecor
 
         if (error) {
             console.warn("[edinet_order_data] skip:", error.message);
+            console.log("DEBUG edinet_order_data error:", { ticker: t, error: error.message });
             return [];
         }
+
+        console.log("DEBUG edinet_order_data success:", { 
+            ticker: t, 
+            length: data?.length, 
+            first: data?.[0] 
+        });
 
         return (data ?? []) as unknown as EdinetOrderRecord[];
     } catch (err) {
         console.warn("[edinet_order_data] exception:", err);
+        console.log("DEBUG edinet_order_data exception:", { ticker: t, err });
         return [];
     }
 }
