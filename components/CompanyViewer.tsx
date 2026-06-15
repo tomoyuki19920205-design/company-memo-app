@@ -985,11 +985,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                 segmentManualHeaders={segmentManualHeaders}
                                 onSegmentManualHeaderEdit={handleSegmentManualHeaderEdit}
                             />
-                            <ForecastTable data={forecasts} loading={dataLoading} />
-                            <MonthlyTable data={monthly} loading={dataLoading} />
-
                             <PerShareTable data={perShareData} loading={dataLoading} />
-                            <KpiTable data={kpi} loading={dataLoading} />
                             {/* 受注KPIセクション: ORDER KPI / EDINET受注 切替 */}
                             <div className="order-kpi-section">
                                 <div className="order-kpi-section-header">
@@ -1021,6 +1017,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                     />
                                 )}
                             </div>
+                            <ForecastTable data={forecasts} loading={dataLoading} />
+                            <MonthlyTable data={monthly} loading={dataLoading} />
+                            <KpiTable data={kpi} loading={dataLoading} />
                         </div>
                     </div>
                 </div>
