@@ -11,12 +11,15 @@
 -- ============================================================
 
 -- ============================================================
--- [前提] PostgreSQL バージョン確認
--- 本 SQL は NULLS NOT DISTINCT (PostgreSQL 15+) を使用する。
--- 実行前に必ず以下で確認すること:
---   SELECT version();
--- PG14 以下の場合は NULLS NOT DISTINCT を削除し、
--- segment_name の代替処理（未決事項 #2 参照）を設計すること。
+-- [前提] PostgreSQL バージョン
+-- 本プロジェクトの Supabase は PostgreSQL 14.4 であることが確認済み。
+--
+-- 確認方法: /rest/v1/ の OpenAPIレスポンス info.version で、14.4」を確認。
+-- → NULLS NOT DISTINCT (PG15+) は使用不可。
+--
+-- 代替案: generated column + COALESCE で UNIQUE 制約を実現 (PG12+ 対応)
+--   segment_name_key = COALESCE(segment_name, '__ALL__')
+-- → segment_name は引き続き NULL を許可 (NULL = 連結全体)
 -- ============================================================
 
 
@@ -129,6 +132,13 @@ CREATE TABLE edinet_order_data (
         -- 例: '建設', '設備', 'Civil Engineering'
         -- 正規化は将来対応。初期は原文のまま。
 
+    segment_name_key        text        NOT NULL
+        GENERATED ALWAYS AS (COALESCE(segment_name, '__ALL__')) STORED,
+        -- UNIQUE 制約用の内部キーカラム（PG12+ 対応）。
+        -- segment_name が NULL (連結全体) の場合 = '__ALL__' となる。
+        -- アプリコードからは直接使用しない。
+        -- Viewer でのクエリは segment_name IS NULL で行う。
+
     -- ----------------------------------------------------------
     -- データソース・信頼性
     -- ----------------------------------------------------------
@@ -178,26 +188,25 @@ CREATE TABLE edinet_order_data (
 
 
 -- ============================================================
--- B. UNIQUE 制約
+-- B. UNIQUE 制約（PG14 対応版）
 -- ============================================================
 
--- 前提: PostgreSQL 15+ の NULLS NOT DISTINCT が必要。
--- segment_name が NULL の行（連結全体）と非NULL（セグメント別）を
--- 同一テーブルで共存させるために必要。
+-- Supabase の PostgreSQL バージョンが 14.4 であるため、
+-- NULLS NOT DISTINCT (PG15+) は使用不可。
 --
--- PG14 以下の場合の代替案（未決事項 #2）:
---   segment_name を NOT NULL にして連結全体を '__ALL__' などの
---   sentinel 値で表現する。または generated column で対応。
+-- 代わりに segment_name_key（generated column）を使って UNIQUE 制約を実現。
+-- segment_name_key = COALESCE(segment_name, '__ALL__')
+--   segment_name IS NULL  (連結全体) → segment_name_key = '__ALL__'
+--   segment_name = '建設'              → segment_name_key = '建設'
+--
+-- アプリコードでの影響:
+--   連結全体の取得: WHERE segment_name IS NULL  (変更なし)
+--   セグメント別:   WHERE segment_name = '建設'  (変更なし)
+--   segment_name_key をクエリで直接使用する必要はない。
 
 ALTER TABLE edinet_order_data
     ADD CONSTRAINT edinet_order_data_uniq
-    UNIQUE NULLS NOT DISTINCT (
-        ticker,
-        period,
-        fiscal_year,
-        segment_name,   -- NULL = 連結全体として一意
-        source_type
-    );
+    UNIQUE (ticker, period, fiscal_year, segment_name_key, source_type);
 
 
 -- ============================================================

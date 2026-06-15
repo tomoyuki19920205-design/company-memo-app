@@ -16,7 +16,7 @@
 | 単位 | DB保存値は**百万円統一**（変換後）、元単位は `source_unit`・変換前の元値は `raw_*` カラムに記録 |
 | セグメント別 | **同テーブルで `segment_name` NULL = 連結全体**として対応 |
 | NULL / low confidence | `confidence` カラム + `null_reason` カラムで保持 |
-| unique制約 | `(ticker, period, fiscal_year, segment_name, source_type)` |
+| unique制約 | `(ticker, period, fiscal_year, segment_name_key, source_type)` — generated columnによるPG14対応版 |
 
 ---
 
@@ -89,6 +89,9 @@ CREATE TABLE IF NOT EXISTS edinet_order_data (
 
     -- セグメント
     segment_name            text        NULL,       -- NULL = 連結全体, 非NULL = セグメント名
+    segment_name_key        text        NOT NULL    -- UNIQUE制約用内部キー（generated column, PG12+）
+        GENERATED ALWAYS AS (COALESCE(segment_name, '__ALL__')) STORED,
+        --   segment_name IS NULL → '__ALL__'、セグメント別 → セグメント名
 
     -- データソース・信頼性
     source_type             text        NOT NULL DEFAULT 'edinet_yuho',
@@ -107,19 +110,24 @@ CREATE TABLE IF NOT EXISTS edinet_order_data (
 );
 ```
 
-### 3-2. UNIQUE 制約
+### 3-2. UNIQUE 制約（PG14 対応版）
+
+> **PostgreSQL バージョン確認済み**: 本プロジェクトの Supabase は **PG 14.4**。  
+> `NULLS NOT DISTINCT`（PG15+）は使用不可のため、generated column で代替する。
 
 ```sql
--- 連結全体 (segment_name IS NULL) とセグメント別を同一テーブルで共存させるため
--- NULL は通常の UNIQUE で等値比較されない → NULLS NOT DISTINCT が必要（PG15+）
+-- PG14 対応: segment_name_key (generated column) で UNIQUE 制約を実現
+-- segment_name_key = COALESCE(segment_name, '__ALL__')
+--   segment_name IS NULL (連結全体) → '__ALL__' として一意化
+--   segment_name = '建設'          → '建設' として一意化
 
 ALTER TABLE edinet_order_data
     ADD CONSTRAINT edinet_order_data_uniq
-    UNIQUE NULLS NOT DISTINCT (ticker, period, fiscal_year, segment_name, source_type);
+    UNIQUE (ticker, period, fiscal_year, segment_name_key, source_type);
 
--- PG14 以下の代替案（未決事項 #1 参照）:
--- UNIQUE (ticker, period, fiscal_year, COALESCE(segment_name, '__ALL__'), source_type)
--- → 計算列または generated column で対応
+-- アプリコードでのクエリは引き続き segment_name を利用（segment_name_key は不要）:
+--   連結全体: WHERE segment_name IS NULL
+--   セグメント別: WHERE segment_name = '建設'
 ```
 
 ### 3-3. インデックス
@@ -222,7 +230,7 @@ DB保存
 
 ## 8. カラム一覧（最終版）
 
-**合計: 25カラム**（draft_009 に raw_* 5本・source_unit 統合済み）
+**合計: 26カラム**（draft_009: raw_* 5本・source_unit・segment_name_key 統合済み）
 
 | # | カラム | 型 | NOT NULL | デフォルト | 説明 |
 |---|---|---|---|---|---|
@@ -244,13 +252,14 @@ DB保存
 | 16 | `raw_rpo` | numeric | — | NULL | **RPO の変換前元値** |
 | 17 | `source_unit` | text | ✅ | `'million_yen'` | 変換前の元単位（raw_* の単位でもある） |
 | 18 | `segment_name` | text | — | NULL | NULL=連結全体、非NULL=セグメント名 |
-| 19 | `source_type` | text | ✅ | `'edinet_yuho'` | データソース種別 |
-| 20 | `source_tag` | text | — | NULL | 有報内の参照箇所タグ |
-| 21 | `confidence` | text | ✅ | `'high'` | 抽出信頼度（high/medium/low） |
-| 22 | `null_reason` | text | — | NULL | NULL値・low confidenceの理由 |
-| 23 | `snippet` | text | — | NULL | 抽出元の原文スニペット（検証用） |
-| 24 | `created_at` | timestamptz | ✅ | now() | 作成日時 |
-| 25 | `updated_at` | timestamptz | ✅ | now() | 更新日時 |
+| 19 | `segment_name_key` | text | ✅ | generated | **UNIQUE制約用**：`COALESCE(segment_name, '__ALL__')` |
+| 20 | `source_type` | text | ✅ | `'edinet_yuho'` | データソース種別 |
+| 21 | `source_tag` | text | — | NULL | 有報内の参照箇所タグ |
+| 22 | `confidence` | text | ✅ | `'high'` | 抽出信頼度（high/medium/low） |
+| 23 | `null_reason` | text | — | NULL | NULL値・low confidenceの理由 |
+| 24 | `snippet` | text | — | NULL | 抽出元の原文スニペット（検証用） |
+| 25 | `created_at` | timestamptz | ✅ | now() | 作成日時 |
+| 26 | `updated_at` | timestamptz | ✅ | now() | 更新日時 |
 
 ---
 

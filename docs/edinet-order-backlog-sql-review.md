@@ -10,7 +10,7 @@
 
 | # | 確認項目 | 判定 | 対応要否 |
 |---|---|---|---|
-| 1 | NULLS NOT DISTINCT の PG バージョン対応 | ⚠️ 要確認 | 実行前に `SELECT version()` 必須 |
+| 1 | NULLS NOT DISTINCT の PG バージョン対応 | ✅ **解消済み** | PG14.4 確認済み。generated column（segment_name_key）で代替完了 |
 | 2 | segment_name NULL の扱い | ✅ OK | — |
 | 3 | source_type を UNIQUE に含める設計 | ✅ OK（注意点あり） | — |
 | 4 | confidence / null_reason の CHECK 制約 | ✅ OK（改善案あり） | オプション |
@@ -25,40 +25,35 @@
 
 ## 1. NULLS NOT DISTINCT の PostgreSQL バージョン対応
 
-**判定: ⚠️ 要確認**
+**判定: ✅ 解消済み（PG14.4 確認済み・generated column 対応完了）**
 
-`NULLS NOT DISTINCT` は **PostgreSQL 15.0 以上**で追加された構文。
+### 確認結果
 
-### 確認方法
+| 項目 | 内容 |
+|---|---|
+| PostgreSQL バージョン | **14.4** |
+| 確認方法 | `/rest/v1/` OpenAPI レスポンスの `info.version` フィールド |
+| NULLS NOT DISTINCT | **使用不可**（PG15+ のみ） |
 
-```sql
-SELECT version();
--- 例: PostgreSQL 15.3 on x86_64-pc-linux-gnu ...
-```
-
-### Supabase の現状
-
-- Supabase は 2023年後半から PG 15 を標準提供
-- 古いプロジェクト（2023年以前作成）は PG 14 の場合がある
-- **プロジェクト作成時期によって異なるため、必ず確認すること**
-
-### PG14 以下の場合の代替案（推奨: 案B）
+### 適用した代替案: generated column
 
 ```sql
--- 案A: sentinel 値 '__ALL__' で NULL を代替（segment_name を NOT NULL にする）
-ALTER TABLE edinet_order_data ALTER COLUMN segment_name SET NOT NULL;
-ALTER TABLE edinet_order_data ALTER COLUMN segment_name SET DEFAULT '__ALL__';
--- → アプリ側で '__ALL__' 判定が必要になり煩雑
+-- segment_name_key = COALESCE(segment_name, '__ALL__')
+-- → segment_name IS NULL (連結全体) → '__ALL__' として一意化
+-- → segment_name = '建設'          → '建設' として一意化
 
--- 案B: generated column で COALESCE を使う（PG 12+ 対応）
-ALTER TABLE edinet_order_data
-    ADD COLUMN segment_name_key text
-    GENERATED ALWAYS AS (COALESCE(segment_name, '__ALL__')) STORED;
+-- CREATE TABLE 内に追加済み（PG12+ 対応）
+segment_name_key  text  NOT NULL
+    GENERATED ALWAYS AS (COALESCE(segment_name, '__ALL__')) STORED,
+
+-- UNIQUE 制約（segment_name_key を使用）
 ALTER TABLE edinet_order_data
     ADD CONSTRAINT edinet_order_data_uniq
     UNIQUE (ticker, period, fiscal_year, segment_name_key, source_type);
--- → 案Bが透過的で推奨
 ```
+
+**アプリコードへの影響なし**: クエリは引き続き `segment_name IS NULL` / `segment_name = '建設'` で実行できる。
+`segment_name_key` をアプリ側で直接使用する必要はない。
 
 ---
 
