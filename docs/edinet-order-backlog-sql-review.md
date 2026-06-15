@@ -1,4 +1,4 @@
-﻿# EDINET受注系データ SQLレビュー
+# EDINET受注系データ SQLレビュー
 
 > **レビュー対象**: `migrations/draft_009_create_edinet_order_data.sql`
 > **設計参照**: `docs/edinet-order-backlog-db-design.md`
@@ -14,8 +14,8 @@
 | 2 | segment_name NULL の扱い | ✅ OK | — |
 | 3 | source_type を UNIQUE に含める設計 | ✅ OK（注意点あり） | — |
 | 4 | confidence / null_reason の CHECK 制約 | ✅ OK（改善案あり） | オプション |
-| 5 | unit_raw と unit_normalized の分離要否 | ⚠️ 要検討 | カラム名リネーム推奨 |
-| 6 | 百万円統一保存で元単位・元値を残せているか | ❌ 要修正 | 元値カラム追加を推奨 |
+| 5 | unit_raw と unit_normalized の分離要否 | ✅ **解消済み** | `source_unit` にリネーム完了（draft_009 反映済み） |
+| 6 | 百万円統一保存で元単位・元値を残せているか | ✅ **解消済み** | `raw_*` 5カラムを draft_009 に統合済み（migration 010 不要） |
 | 7 | RPO と order_backlog の混同防止 | ✅ OK | — |
 | 8 | updated_at トリガーの既存関数依存 | ✅ OK（注意点あり） | — |
 | 9 | インデックスの過剰・不足 | ✅ おおむね適切（微修正案あり） | オプション |
@@ -123,51 +123,42 @@ CONSTRAINT edinet_order_data_null_reason_check
 
 ## 5. unit_raw と unit_normalized の分離要否
 
-**判定: ⚠️ 要検討（リネーム推奨）**
+**判定: ✅ 解消済み（draft_009 に反映済み）**
 
-現状の `unit` カラムは「変換前の元単位」を記録しているが、名前が `unit` だけでは
-「格納値の単位」なのか「変換前の単位」なのかが不明瞭。
-
-**推奨修正: カラム名を `source_unit` にリネーム**
+`unit` カラムを `source_unit` にリネーム済み。  
+名称が「変換前の元単位」であることを明示しており、曖昧さは解消された。
 
 ```sql
--- Before
-unit  text NOT NULL DEFAULT 'million_yen'
-
--- After（推奨）
-source_unit  text NOT NULL DEFAULT 'million_yen'
-    -- 変換前の元単位。DB格納値は常に百万円（million_yen）。
-    CHECK (source_unit IN ('million_yen', 'billion_yen', 'thousand_yen', 'yen', 'unknown')),
+-- 変更済み
+source_unit  text  NOT NULL  DEFAULT 'million_yen'
+    CONSTRAINT edinet_order_data_source_unit_check
+        CHECK (source_unit IN ('million_yen', 'billion_yen', 'thousand_yen', 'yen', 'unknown')),
 ```
+
+`raw_*` カラムの単位参照先でもある（`raw_orders_received` の単位 = `source_unit`）。
 
 ---
 
 ## 6. 百万円統一保存で元単位・元値を残せているか
 
-**判定: ❌ 要修正**
+**判定: ✅ 解消済み（draft_009 に raw_* 5カラム統合済み）**
 
-`unit` カラムに「変換前の単位」は記録されるが、**変換前の元の数値が記録されない**。
+`raw_orders_received` / `raw_order_backlog` / `raw_construction_carryover` /  
+`raw_completed_construction` / `raw_rpo` の 5カラムを draft_009 に直接追加済み。  
+migration 010 で後追い追加する必要はなくなった。
+
+**解消後のデータ保存例（千円単位の場合）:**
 
 ```
-抽出値: "5,340億円" → 534,000 百万円 として格納
-source_unit = 'billion_yen'
-→ 元値 5,340 は消える（snippet に文字列のみ残る）
+有報の記載: 「完成工事高 98,765,432千円」
+
+格納値:
+  completed_construction     = 98765    (百万円変換後)
+  raw_completed_construction = 98765432 (千円のまま)
+  source_unit                = 'thousand_yen'
+
+→ 変換ロジックの検証・再計算が可能
 ```
-
-変換ロジックのバグを後から数値で検証できない。
-
-**推奨: `raw_value` カラムを追加（後続 migration で対応可）**
-
-```sql
--- 010_add_raw_values.sql（将来追加）
-ALTER TABLE edinet_order_data
-    ADD COLUMN raw_orders_received  numeric NULL,  -- 変換前の元値
-    ADD COLUMN raw_order_backlog    numeric NULL,
-    ADD COLUMN raw_rpo              numeric NULL;
-```
-
-**初期対応**: `snippet` に元の文字列を残しつつ、変換ロジックのテストで補完。  
-`raw_value` カラムは将来 migration として追加する。
 
 ---
 
@@ -255,25 +246,27 @@ CREATE INDEX edinet_order_data_ticker_year_seg_idx
 
 | 優先度 | 項目 | 対応内容 |
 |---|---|---|
-| **高** | PostgreSQL バージョン確認 | `SELECT version()` で PG15+ を確認。PG14 以下なら代替 UNIQUE 構文に変更 |
-| **中** | `unit` カラム名が不明瞭 | `source_unit` にリネームを推奨 |
+| **高** | PostgreSQL バージョン確認 | `SELECT version()` で PG15+ を確認。PG14 以下なら UNIQUE 構文を変更 |
+| ~~**中**~~ | ~~`unit` カラム名が不明瞭~~ | ✅ `source_unit` にリネーム済み |
+| ~~**低**~~ | ~~元値の数値保存~~ | ✅ `raw_*` 5カラムを draft_009 に統合済み |
 
 ### オプション対応（初期運用後に検討）
 
 | 優先度 | 項目 | 対応内容 |
 |---|---|---|
-| **低** | 元値の数値保存 | `raw_value_*` カラムを後続 migration (010) で追加 |
 | **低** | `null_reason` の CHECK 制約 | 推奨値が固まったら追加 |
 | **低** | covering index の追加 | データ量が増えたら検討 |
 | **低** | トリガー関数の存在確認ガード | migration 冒頭に `DO $$ ... $$` を追加 |
+| ~~**低**~~ | ~~元値保存 (raw_value_* 追加)~~ | ✅ draft_009 に統合済み |
+| ~~**低**~~ | ~~`source_unit` リネーム~~ | ✅ draft_009 に反映済み |
 
 ---
 
 ## 正式化への手順（実行禁止は継続中）
 
 1. Supabase で `SELECT version()` を実行して PG バージョン確認
-2. `unit` → `source_unit` のリネームを決定
-3. 未決事項（`period` 形式 / `company_name` 要否）を決定
-4. 上記を反映して `draft_009` を更新
+2. ~~`unit` → `source_unit` のリネーム~~ ✅ 完了済み
+3. ~~raw_* カラムの統合~~ ✅ 完了済み
+4. 未決事項（`period` 形式 / `company_name` 要否）を決定
 5. レビュー承認後、`migrations/009_edinet_order_data.sql` として正式ファイル作成
 6. Supabase SQL Editor で実行
