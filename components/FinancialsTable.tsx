@@ -3204,7 +3204,7 @@ function FinancialsTable({
                                         </span>
                                     )}
                                 </h3>
-                                <div style={{ display: "flex", gap: 4, padding: "4px 12px", alignItems: "center" }}>
+                                <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
                                     {([
                                         { key: "tdnet",  label: "TDNET/XBRL" },
                                         { key: "edinet", label: "EDINET" },

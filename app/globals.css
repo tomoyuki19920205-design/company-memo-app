@@ -1281,7 +1281,8 @@ body {
 .segment-header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12px;
   padding: 0;
   background: #0f141b;
   border-bottom: 1px solid var(--border-light);
@@ -1542,7 +1543,7 @@ body {
   opacity: 0.5;
 }
 
-/* Manual override 雋ょ現竏ｩ郢ｧ?ｿｽE?ｿｽ郢晢ｽｫ 遯ｶ繝ｻ陷蜥ｲ?ｿｽE?ｿｽ?ｿｽE?ｿｽ鬮ｮ繝ｻ蠎・?ｿｽ?ｿｽ?ｿｽE?ｿｽ */
+/* Manual override 雋ょ現竏ｩ郢ｧ?ｿｽE?ｿｽ郢晢ｽｫ 遯ｶ繝ｻ陷€蜥ｲ?ｿｽE?ｿｽ?ｿｽE?ｿｽ鬮ｮ繝ｻ蠎・?ｿｽ?ｿｽ?ｿｽE?ｿｽ */
 .seg-manual-editable {
   cursor: pointer !important;
   background: #1a0f30 !important;
@@ -1730,6 +1731,7 @@ body {
 .order-kpi-actions {
   grid-column: 1 / -1;
   display: flex;
+  justify-content: flex-start;
   gap: 6px;
   padding-left: 100px;
   padding-top: 2px;
@@ -2039,9 +2041,11 @@ body {
 }
 
 .order-kpi-tbl {
-  width: 100%;
+  width: auto;
+  min-width: 0;
   border-collapse: collapse;
   font-size: 0.83rem;
+  table-layout: auto;
 }
 
 .order-kpi-tbl thead th {
@@ -3680,7 +3684,8 @@ body:has(.alerts-layout) {
 .order-kpi-section-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12px;
   padding: 8px 12px;
   background: #0f141b;
   border: 1px solid var(--border);
