@@ -1079,3 +1079,50 @@ export function calculateValuation(
     };
 }
 
+// ============================================================
+// EDINET受注データ
+// ============================================================
+
+import type { EdinetOrderRecord } from "@/types/edinet-order";
+
+/**
+ * EDINET有価証券報告書から抽出した受注データを取得する。
+ *
+ * - テーブル: edinet_order_data（SELECT のみ。INSERT/UPDATE/DELETE なし）
+ * - RLS: allowed_users の email に含まれるユーザーのみ SELECT 可
+ * - 取得単位: ticker 単位・segment_name IS NULL（連結全体）・source_type = edinet_yuho
+ * - 順序: period DESC
+ *
+ * @param ticker 4桁銘柄コード
+ * @returns EdinetOrderRecord[]（エラー・未存在時は空配列）
+ */
+export async function loadEdinetOrders(ticker: string): Promise<EdinetOrderRecord[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    try {
+        const { data, error } = await supabase
+            .from("edinet_order_data")
+            .select(
+                "ticker,period,fiscal_year," +
+                "orders_received,order_backlog,construction_carryover," +
+                "completed_construction,rpo," +
+                "source_unit,confidence,null_reason"
+            )
+            .eq("ticker", t)
+            .is("segment_name", null)
+            .eq("source_type", "edinet_yuho")
+            .order("period", { ascending: false })
+            .limit(20);
+
+        if (error) {
+            console.warn("[edinet_order_data] skip:", error.message);
+            return [];
+        }
+
+        return (data ?? []) as unknown as EdinetOrderRecord[];
+    } catch (err) {
+        console.warn("[edinet_order_data] exception:", err);
+        return [];
+    }
+}

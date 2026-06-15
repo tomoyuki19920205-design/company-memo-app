@@ -10,6 +10,7 @@ import ForecastTable from "@/components/ForecastTable";
 import MonthlyTable from "@/components/MonthlyTable";
 import KpiTable from "@/components/KpiTable";
 import OrderKpiTable from "@/components/OrderKpiTable";
+import EdinetOrderTable from "@/components/EdinetOrderTable";
 import ValuationCard from "@/components/ValuationCard";
 import PerShareTable from "@/components/PerShareTable";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
@@ -54,8 +55,10 @@ import {
     loadLatestMarketData,
     loadPerShareData,
     calculateValuation,
+    loadEdinetOrders,
     type CompanyInfo,
 } from "@/lib/viewer-api";
+import type { EdinetOrderRecord } from "@/types/edinet-order";
 import { preNormalizeCandidates, type SearchCandidate } from "@/lib/company-search";
 import {
     loadSegmentOverrides,
@@ -152,6 +155,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [resolvedSegments, setResolvedSegments] = useState<SegmentRecord[]>([]);
     const [orderKpis, setOrderKpis] = useState<OrderKpiItem[]>([]);
     const [rejectedKpis, setRejectedKpis] = useState<OrderKpiItem[]>([]);
+    const [edinetOrders, setEdinetOrders] = useState<EdinetOrderRecord[]>([]);
+    const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("order");
     const [marketData, setMarketData] = useState<MarketDataRecord | null>(null);
     const [perShareData, setPerShareData] = useState<PerShareRecord[]>([]);
     const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
@@ -291,6 +296,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setResolvedSegments([]);
         setOrderKpis([]);
         setRejectedKpis([]);
+        setEdinetOrders([]);
         setMarketData(null);
         setPerShareData([]);
         setValuation(null);
@@ -382,6 +388,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
         // 却下レコードは別途取得
         loadRejectedOrderKpis(ticker).then(setRejectedKpis).catch(() => setRejectedKpis([]));
+        // EDINET受注データ（SELECT のみ）
+        loadEdinetOrders(ticker).then(setEdinetOrders).catch(() => setEdinetOrders([]));
 
         if (financialsResult.status === "rejected") {
             const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
@@ -982,10 +990,37 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
                             <PerShareTable data={perShareData} loading={dataLoading} />
                             <KpiTable data={kpi} loading={dataLoading} />
-                            <OrderKpiTable
-                                data={orderKpis}
-                                loading={dataLoading}
-                            />
+                            {/* 受注KPIセクション: ORDER KPI / EDINET受注 切替 */}
+                            <div className="order-kpi-section">
+                                <div className="order-kpi-section-header">
+                                    <span className="order-kpi-section-title">受注KPI</span>
+                                    <div className="order-kpi-tab-buttons">
+                                        <button
+                                            className={`order-kpi-tab-btn${orderKpiTab === "order" ? " active" : ""}`}
+                                            onClick={() => setOrderKpiTab("order")}
+                                        >
+                                            ORDER KPI
+                                        </button>
+                                        <button
+                                            className={`order-kpi-tab-btn${orderKpiTab === "edinet" ? " active" : ""}`}
+                                            onClick={() => setOrderKpiTab("edinet")}
+                                        >
+                                            EDINET受注
+                                        </button>
+                                    </div>
+                                </div>
+                                {orderKpiTab === "order" ? (
+                                    <OrderKpiTable
+                                        data={orderKpis}
+                                        loading={dataLoading}
+                                    />
+                                ) : (
+                                    <EdinetOrderTable
+                                        data={edinetOrders}
+                                        loading={dataLoading}
+                                    />
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
