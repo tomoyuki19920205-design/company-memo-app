@@ -63,7 +63,7 @@ CREATE TABLE edinet_order_data (
 
     -- ----------------------------------------------------------
     -- 受注系指標（百万円統一）
-    -- DB格納値は変換後の百万円。変換前の元単位は unit カラムに記録。
+    -- DB格納値は変換後の百万円。変換前の元単位は source_unit カラムに記録。変換前の元値は raw_* カラムに記録。
     -- ----------------------------------------------------------
     orders_received         numeric     NULL,
         -- 受注高 (百万円)
@@ -84,19 +84,41 @@ CREATE TABLE edinet_order_data (
         -- order_backlog とは会計基準・概念が異なるため別カラム。
 
     -- ----------------------------------------------------------
+    -- 変換前の元値（source_unit の単位のまま）
+    -- DB格納値（orders_received 等）は常に百万円統一。
+    -- 元値は千円・円単位の場合に端数が失われるため別カラムで保持する。
+    -- ----------------------------------------------------------
+    raw_orders_received         numeric     NULL,
+        -- 受注高の変換前元値（source_unit の単位）
+        -- 例: source_unit='billion_yen' の場合 5340 (億円) が格納される
+
+    raw_order_backlog           numeric     NULL,
+        -- 受注残高の変換前元値
+
+    raw_construction_carryover  numeric     NULL,
+        -- 繰越工事高の変換前元値
+
+    raw_completed_construction  numeric     NULL,
+        -- 完成工事高の変換前元値
+
+    raw_rpo                     numeric     NULL,
+        -- RPO の変換前元値
+
+    -- ----------------------------------------------------------
     -- 単位
     -- ----------------------------------------------------------
-    unit                    text        NOT NULL DEFAULT 'million_yen',
+    source_unit             text        NOT NULL DEFAULT 'million_yen',
         -- 変換前の元の単位を記録する。DB格納値は常に百万円。
+        -- raw_* カラムの値の単位でもある。
         -- 変換ルール:
-        --   'million_yen'  → そのまま格納
-        --   'billion_yen'  → × 100 して格納
-        --   'thousand_yen' → ÷ 1,000 して格納
-        --   'yen'          → ÷ 1,000,000 して格納
+        --   'million_yen'  → そのまま格納（raw = 変換後と同値）
+        --   'billion_yen'  → × 100 して格納（端数なし）
+        --   'thousand_yen' → ÷ 1,000 で格納（千円以下の端数が失われる）
+        --   'yen'          → ÷ 1,000,000 で格納（百万円以下の端数が失われる）
         --   'unknown'      → 単位不明、値は NULL で保存
 
-    CONSTRAINT edinet_order_data_unit_check
-        CHECK (unit IN ('million_yen', 'billion_yen', 'thousand_yen', 'yen', 'unknown')),
+    CONSTRAINT edinet_order_data_source_unit_check
+        CHECK (source_unit IN ('million_yen', 'billion_yen', 'thousand_yen', 'yen', 'unknown')),
 
     -- ----------------------------------------------------------
     -- セグメント
