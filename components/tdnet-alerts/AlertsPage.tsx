@@ -23,45 +23,97 @@ const getYoyClass = (text: string) => {
   return "yoy-negative"; // fallback
 };
 
-const renderHighlightedCardBody = (text: string, eventType: string) => {
+const processLines = (str: string) => str.split("\n").map((line, j, arr) => (
+  <React.Fragment key={j}>
+    {line}
+    {j < arr.length - 1 && <br />}
+  </React.Fragment>
+));
+
+const renderHighlightedCardBody = (text: string, event: EnrichedEvent) => {
   if (!text) return null;
-  const cacheKey = `${eventType}:${text}`;
+  const cacheKey = `${event.id}:${text}:v2`;
   if (highlightCache.has(cacheKey)) return highlightCache.get(cacheKey);
 
-  let result: React.ReactNode = null;
-  if (eventType !== "earnings" && eventType !== "forecast") {
-    result = text.split("\n").map((line, j, arr) => (
-      <React.Fragment key={j}>
-        {line}
-        {j < arr.length - 1 && <br />}
-      </React.Fragment>
-    ));
+  const applyRegex = (
+    nodes: React.ReactNode[],
+    regex: RegExp,
+    mapper: (matchStr: string) => React.ReactNode
+  ): React.ReactNode[] => {
+    const nextNodes: React.ReactNode[] = [];
+    nodes.forEach((node) => {
+      if (typeof node === "string") {
+        const parts = node.split(regex);
+        parts.forEach((part) => {
+          if (part.match(regex)) {
+            nextNodes.push(mapper(part));
+          } else if (part) {
+            nextNodes.push(part);
+          }
+        });
+      } else {
+        nextNodes.push(node);
+      }
+    });
+    return nextNodes;
+  };
+
+  let nodes: React.ReactNode[] = [text];
+
+  const EPS_REGEX = /(EPS\s*[:：]?\s*[\d,.]+(?:円|銭)\s*[→＞]\s*[\d,.]+(?:円|銭)(?:\([+-][\d.]+\%\))?)/i;
+  nodes = applyRegex(nodes, EPS_REGEX, (part) => {
+    const match = part.match(/EPS\s*[:：]?\s*([\d,.]+)(?:円|銭)\s*[→＞]\s*([\d,.]+)(?:円|銭)/i);
+    if (match) {
+      const prev = parseFloat(match[1].replace(/,/g, ""));
+      const rev = parseFloat(match[2].replace(/,/g, ""));
+      if (!isNaN(prev) && !isNaN(rev) && prev > 0 && rev > prev && (rev - prev) / prev >= 0.1) {
+        return <span className="yoy-positive">{processLines(part)}</span>;
+      }
+    }
+    return part;
+  });
+
+  const DIV_REGEX = /((?:増配|配当|DPS|期末配当|中間配当|記念配当|特別配当)\s*[:：]?\s*[\d,.]+(?:円|銭)\s*[→＞]\s*[\d,.]+(?:円|銭)(?:\([+-][\d.]+\%\))?)/i;
+  nodes = applyRegex(nodes, DIV_REGEX, (part) => {
+    const match = part.match(/(?:増配|配当|DPS|期末配当|中間配当|記念配当|特別配当)\s*[:：]?\s*([\d,.]+)(?:円|銭)\s*[→＞]\s*([\d,.]+)(?:円|銭)/i);
+    if (match) {
+      const prev = parseFloat(match[1].replace(/,/g, ""));
+      const rev = parseFloat(match[2].replace(/,/g, ""));
+      if (!isNaN(prev) && !isNaN(rev) && prev > 0 && rev > prev && (rev - prev) / prev >= 0.2) {
+        return <span className="yoy-positive">{processLines(part)}</span>;
+      }
+    }
+    return part;
+  });
+
+  nodes = applyRegex(nodes, YOY_REGEX, (part) => {
+    return <span className={getYoyClass(part)}>{processLines(part)}</span>;
+  });
+
+  const BB_KEYWORD_REGEX = /(?:自社株買い|自己株式|取得枠|取得決議|BB|割合)/i;
+  if (BB_KEYWORD_REGEX.test(text)) {
+    const BB_PCT_REGEX = /([\d.]+%)/;
+    nodes = applyRegex(nodes, BB_PCT_REGEX, (part) => {
+      const val = parseFloat(part);
+      if (!isNaN(val) && val >= 4) {
+        const className = val >= 6 ? "yoy-positive-strong" : "yoy-positive";
+        return <span className={className}>{processLines(part)}</span>;
+      }
+      return part;
+    });
   }
-  
-  const parts = text.split(YOY_REGEX);
-  result = (
+
+  const result = (
     <>
-      {parts.map((part, i) => {
-        if (part.match(YOY_REGEX)) {
-          return (
-            <span key={i} className={getYoyClass(part)}>
-              {part}
-            </span>
-          );
+      {nodes.map((node, i) => {
+        if (typeof node === "string") {
+          return <React.Fragment key={i}>{processLines(node)}</React.Fragment>;
         }
-        return (
-          <span key={i}>
-            {part.split("\n").map((line, j, arr) => (
-              <React.Fragment key={j}>
-                {line}
-                {j < arr.length - 1 && <br />}
-              </React.Fragment>
-            ))}
-          </span>
-        );
+        return <React.Fragment key={i}>{node}</React.Fragment>;
       })}
     </>
   );
+
   highlightCache.set(cacheKey, result);
   return result;
 };
@@ -971,16 +1023,16 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     onClick={() => handleSelectEvent(event)}
                   >
                     <div className="alert-card-summary-line1">
-                       {line1}
+                       {renderHighlightedCardBody(line1, event)}
                     </div>
                     {line2 && (
                        <div className="alert-card-summary-line2">
-                          {renderHighlightedCardBody(line2, event.event_type)}
+                          {renderHighlightedCardBody(line2, event)}
                        </div>
                     )}
                     {line3 && (
                        <div className="alert-card-summary-line3" style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
-                          {renderHighlightedCardBody(line3, event.event_type)}
+                          {renderHighlightedCardBody(line3, event)}
                        </div>
                     )}
                   </div>
@@ -1049,7 +1101,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                   <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
                     {event.event_type === "earnings" && !isFallback ? (
                       <>
-                        {primaryText && renderHighlightedCardBody(primaryText, event.event_type)}
+                        {primaryText && renderHighlightedCardBody(primaryText, event)}
                         {compareText && (
                           <div 
                             className="notification-compare" 
@@ -1067,10 +1119,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                             {compareText}
                           </div>
                         )}
-                        {summaryText && renderHighlightedCardBody(summaryText + discordExtra, event.event_type)}
+                        {summaryText && renderHighlightedCardBody(summaryText + discordExtra, event)}
                       </>
                     ) : (
-                      renderHighlightedCardBody(bodyText, event.event_type)
+                      renderHighlightedCardBody(bodyText, event)
                     )}
                   </div>
                 </div>
