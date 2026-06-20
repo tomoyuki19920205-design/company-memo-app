@@ -477,6 +477,8 @@ body {
   top: 0;
   z-index: 50;
   border-bottom: 2px solid var(--primary);
+  border-top-left-radius: var(--radius, 6px);
+  border-top-right-radius: var(--radius, 6px);
 }
 
 .formula-bar-label {
@@ -780,7 +782,7 @@ body {
    PL 郢ｧ?ｿｽE?ｿｽ郢ｧ?ｿｽE?ｿｽ郢ｧ?ｿｽE?ｿｽ郢晢ｽｧ郢晢ｽｳ
    ============================================================ */
 .pl-section {
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 .pl-scroll-area {
