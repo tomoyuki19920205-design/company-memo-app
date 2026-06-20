@@ -1476,7 +1476,8 @@ function FinancialsTable({
                     currentValue = extractMemoValue(memoMap?.[memoKey], memoColIdx);
                 } else if (colKey.startsWith("kpi_")) {
                     const slot = parseInt(colKey.split("_")[1]);
-                    const kpiKey = `${activeCell.tableId}|${row.period}|${row.quarter}`;
+                    // KPIはcum行にのみレンダリングされるため、kpiValuesのキーは'cum'固定にする
+                    const kpiKey = `cum|${row.period}|${row.quarter}`;
                     currentValue = kpiValues?.[kpiKey]?.[slot] ?? "";
                 }
             }
@@ -1932,6 +1933,7 @@ function FinancialsTable({
 
         // 手入力メモ編集中はスキップ（input 側で処理）
         if (editingManualCell) return;
+        if (editingPlMemoCellRef.current) return;
 
         // --- メモ / KPI セルがアクティブの場合 ---
         // selectionRange がある場合は activeCell なしでも Ctrl+C / Delete を処理
@@ -3543,6 +3545,7 @@ function MemoCellExcelBase({
                             }
                             if (e.key === "Enter" && (e.shiftKey || e.altKey)) {
                                 e.preventDefault();
+                                e.stopPropagation();
                                 const ta = e.currentTarget;
                                 const start = ta.selectionStart ?? 0;
                                 const end = ta.selectionEnd ?? 0;
