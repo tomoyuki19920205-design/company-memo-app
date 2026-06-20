@@ -39,6 +39,8 @@ const TDNET_SOURCES  = new Set([
 const EDINET_SOURCES = new Set(["edinet_xbrl"]);
 type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
 
+const FORMULA_BAR_MANUAL_TABLE_TYPES = new Set(["segment_manual", "segment_cum", "segment_q"]);
+
 interface MemoMap {
     [key: string]: GridData;
 }
@@ -1746,6 +1748,16 @@ function FinancialsTable({
     // フォーミュラバーからの編集
     const handleFormulaBarChange = useCallback((value: string) => {
         if (activeCell) {
+            if (activeCell.tableId === "pl_cum_manual") {
+                const colIdx = parseInt(activeCell.colKey.replace("col_", ""), 10);
+                onManualMemoEdit?.("pl_cum", activeCell.rowIdx, colIdx, value);
+                return;
+            } else if (activeCell.tableId === "pl_q_manual") {
+                const colIdx = parseInt(activeCell.colKey.replace("col_", ""), 10) + 2;
+                onManualMemoEdit?.("pl_q", activeCell.rowIdx, colIdx, value);
+                return;
+            }
+
             const rows = activeCell.tableId === "q" ? qRows : cumRows;
             const row = rows[activeCell.rowIdx];
             if (!row) return;
@@ -1757,8 +1769,9 @@ function FinancialsTable({
                 const slot = parseInt(key.split("_")[1]);
                 onKpiValueEdit(row.period, row.quarter, slot, value);
             }
-        } else if (activeManualCell?.tableType === "segment_manual") {
-            onManualMemoEdit?.("segment_manual", activeManualCell.rowIdx, activeManualCell.colIdx, value);
+        } else if (activeManualCell && FORMULA_BAR_MANUAL_TABLE_TYPES.has(activeManualCell.tableType)) {
+            onManualMemoEdit?.(activeManualCell.tableType, activeManualCell.rowIdx, activeManualCell.colIdx, value);
+            return;
         }
     }, [activeCell, activeManualCell, cumRows, qRows, onMemoEdit, onKpiValueEdit, onManualMemoEdit]);
 
@@ -2835,6 +2848,13 @@ function FinancialsTable({
             </div>
         );
     }
+    const isFormulaBarManualCell = activeManualCell && FORMULA_BAR_MANUAL_TABLE_TYPES.has(activeManualCell.tableType);
+    const getFormulaBarValue = () => {
+        if (activeSegCell) return "";
+        if (activeCell) return getActiveCellValue();
+        if (isFormulaBarManualCell) return getActiveManualCellValue();
+        return "";
+    };
 
     return (
         <div
@@ -2859,7 +2879,7 @@ function FinancialsTable({
                     ref={formulaBarRef}
                     className="formula-bar-input"
                     placeholder="セルを選択してください"
-                    value={activeCell ? getActiveCellValue() : (activeManualCell?.tableType === "segment_manual" ? getActiveManualCellValue() : "")}
+                    value={getFormulaBarValue()}
                     onChange={(e) => handleFormulaBarChange(e.target.value)}
                     onKeyDown={(e) => {
                         if (e.key === "Escape") {
@@ -2870,7 +2890,7 @@ function FinancialsTable({
                     onBlur={() => {
                     }}
                     style={{ height: formulaBarHeight }}
-                    disabled={!activeCell && activeManualCell?.tableType !== "segment_manual"}
+                    disabled={!!activeSegCell || (!activeCell && !isFormulaBarManualCell)}
                 />
             </div>
             {/* フォーミュラバー リサイズハンドル */}
