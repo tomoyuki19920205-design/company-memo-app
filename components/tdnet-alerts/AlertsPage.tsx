@@ -541,6 +541,67 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
   return res;
 };
 
+const getEarningsScore = (text: string): number | null => {
+  const match = text.match(/(?:営利|営業利益|営業益|OP)\s*[（(](?:YOY|前年比)\s*([+-]?[\d.]+)%[）)]/i);
+  if (match) return parseFloat(match[1]);
+  return null;
+};
+const getBuybackScore = (text: string): number | null => {
+  const match = text.match(/(?:BB|割合|自社株買い|取得枠)\s*[:：]?\s*([\d.]+)%/i);
+  if (match) return parseFloat(match[1]);
+  return null;
+};
+const getForecastUpScore = (text: string): number | null => {
+  const matchPctParen = text.match(/(?:EPS|上方\s*EPS)[^()]*\(\s*([+-]?[\d.]+)%\s*\)/i);
+  if (matchPctParen) return parseFloat(matchPctParen[1]);
+  const matchPct = text.match(/(?:EPS|上方\s*EPS)\s*([+-]?[\d.]+)%/i);
+  if (matchPct) return parseFloat(matchPct[1]);
+  const matchVal = text.match(/(?:EPS|上方\s*EPS)[^()→＞]*([\d,.]+)(?:円|銭)?\s*[→＞]\s*([\d,.]+)(?:円|銭)?/i);
+  if (matchVal) {
+    const prev = parseFloat(matchVal[1].replace(/,/g, ""));
+    const rev = parseFloat(matchVal[2].replace(/,/g, ""));
+    if (prev > 0) return ((rev - prev) / prev) * 100;
+  }
+  return null;
+};
+const getForecastScore = (text: string): number | null => {
+  const opPct = text.match(/(?:営利|営業利益|営業益|OP)\s*([+-]?[\d.]+)%/i);
+  if (opPct) return parseFloat(opPct[1]);
+  const opVal = text.match(/(?:営利|営業利益|営業益|OP)[^()→＞]*([\d,.]+)(?:円|銭)?\s*[→＞]\s*([\d,.]+)(?:円|銭)?/i);
+  if (opVal) {
+    const prev = parseFloat(opVal[1].replace(/,/g, ""));
+    const rev = parseFloat(opVal[2].replace(/,/g, ""));
+    if (prev > 0) return ((rev - prev) / prev) * 100;
+  }
+  return getForecastUpScore(text);
+};
+const getDividendScore = (text: string): number | null => {
+  const matchVal = text.match(/(?:増配|配当|DPS|期末配当|中間配当|年配|記念配当|特別配当)\s*([\d,.]+)(?:円|銭)?\s*[→＞]\s*([\d,.]+)(?:円|銭)?/i);
+  if (matchVal) {
+    const prev = parseFloat(matchVal[1].replace(/,/g, ""));
+    const rev = parseFloat(matchVal[2].replace(/,/g, ""));
+    if (prev > 0) return ((rev - prev) / prev) * 100;
+  }
+  return null;
+};
+
+const getCategoryScore = (event: EnrichedEvent, category: string): number | null => {
+  const badge = getBadgeConfig(event.event_type, event.headline);
+  const subtypeLabel = event.event_subtype ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype) : "";
+  const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
+  
+  const text = `${line1 || ""} ${line2 || ""} ${line3 || ""} ${event.formatted_message || ""} ${JSON.stringify(event.raw_payload || {})}`;
+  
+  switch (category) {
+    case "earnings": return getEarningsScore(text);
+    case "buyback": return getBuybackScore(text);
+    case "forecast_up": return getForecastUpScore(text);
+    case "forecast": return getForecastScore(text);
+    case "dividend": return getDividendScore(text);
+    default: return null;
+  }
+};
+
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -968,27 +1029,39 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           ) : (
             (() => {
             const isDiscordTab = filter === "discord";
-            const displayEvents = isDiscordTab
-              ? [...events].sort((a, b) => {
-                  // is_read は並び順に影響させない:
-                  // 既読化しても位置が変わらないようにする（視覚的な既読状態はCSSで表現）
-                  if (discordSortMode === "timeline") {
-                    const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
-                    const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
-                    if (da !== db) return db - da;
-                    const dda = new Date(a.detected_at).getTime();
-                    const ddb = new Date(b.detected_at).getTime();
-                    if (dda !== ddb) return ddb - dda;
-                    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-                  } else {
-                    if (a.priority_rank !== b.priority_rank) return a.priority_rank - b.priority_rank;
-                    const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
-                    const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
-                    if (da !== db) return db - da;
-                    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                  }
-                })
-              : events;
+            const isScorableCategory = ["earnings", "buyback", "forecast_up", "forecast", "dividend"].includes(filter);
+
+            let displayEvents = events;
+            if (isDiscordTab) {
+              displayEvents = [...events].sort((a, b) => {
+                // is_read は並び順に影響させない:
+                // 既読化しても位置が変わらないようにする（視覚的な既読状態はCSSで表現）
+                if (discordSortMode === "timeline") {
+                  const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
+                  const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
+                  if (da !== db) return db - da;
+                  const dda = new Date(a.detected_at).getTime();
+                  const ddb = new Date(b.detected_at).getTime();
+                  if (dda !== ddb) return ddb - dda;
+                  return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+                } else {
+                  if (a.priority_rank !== b.priority_rank) return a.priority_rank - b.priority_rank;
+                  const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
+                  const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
+                  if (da !== db) return db - da;
+                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+                }
+              });
+            } else if (isScorableCategory) {
+              displayEvents = [...events].sort((a, b) => {
+                const scoreA = getCategoryScore(a, filter);
+                const scoreB = getCategoryScore(b, filter);
+                if (scoreA !== null && scoreB !== null) return scoreB - scoreA;
+                if (scoreA !== null) return -1;
+                if (scoreB !== null) return 1;
+                return 0;
+              });
+            }
 
             console.time("renderEvents");
             const nodes = displayEvents.map((event) => {
