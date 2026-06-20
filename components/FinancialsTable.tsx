@@ -2851,6 +2851,20 @@ function FinancialsTable({
     const isFormulaBarManualCell = activeManualCell && FORMULA_BAR_MANUAL_TABLE_TYPES.has(activeManualCell.tableType);
     const getFormulaBarValue = () => {
         if (activeSegCell) return "";
+
+        if (editingPlMemoCell && activeCell &&
+            editingPlMemoCell.tableId === activeCell.tableId &&
+            editingPlMemoCell.rowIdx === activeCell.rowIdx &&
+            editingPlMemoCell.colKey === activeCell.colKey) {
+            return plMemoEditValue;
+        }
+        if (editingManualCell && activeManualCell &&
+            editingManualCell.tableType === activeManualCell.tableType &&
+            editingManualCell.rowIdx === activeManualCell.rowIdx &&
+            editingManualCell.colIdx === activeManualCell.colIdx) {
+            return manualEditValue;
+        }
+
         if (activeCell) return getActiveCellValue();
         if (isFormulaBarManualCell) return getActiveManualCellValue();
         return "";
@@ -2890,7 +2904,7 @@ function FinancialsTable({
                     onBlur={() => {
                     }}
                     style={{ height: formulaBarHeight }}
-                    disabled={!!activeSegCell || (!activeCell && !isFormulaBarManualCell)}
+                    disabled={!!activeSegCell || (!isPlMemoEditableCell(activeCell) && !isFormulaBarManualCell)}
                 />
             </div>
             {/* フォーミュラバー リサイズハンドル */}
@@ -3476,14 +3490,12 @@ function MemoCellExcelBase({
 }) {
     const preview = value ? value.replace(/[\r\n]+/g, " ").trim() : "";
     const extraClass = className || "memo-cell";
-    // useTextarea prop で明示指定、または className=="memo-cell" の場合に textarea を使用
-    const renderAsTextarea = useTextarea === true || extraClass === "memo-cell";
+    // 全入力セルで textarea を使用し Shift+Enter 改行をサポートする
+    const renderAsTextarea = true;
 
     // isActive（選択中）または isEditing（編集中）のとき textarea/input を常に描画する。
     // クリック直後から IME を使えるよう、textarea を autoFocus で確実にフォーカスする。
     if (isEditing) {
-        // renderAsTextarea=true: textarea (ALt+Enterで改行)
-        // false: input (従来通り)
         return (
             <td
                 style={{ width, minWidth: width, maxWidth: width, overflow: "hidden" }}
@@ -3492,12 +3504,14 @@ function MemoCellExcelBase({
                 {renderAsTextarea ? (
                     <textarea
                         ref={(el) => {
-                            // external inputRef に attach
                             if (inputRef) (inputRef as React.MutableRefObject<HTMLElement | null>).current = el;
                             if (el) {
-                                // マウント直後に強制 focus（autoFocus だけでは focus が奪われる場合の対策）
                                 el.focus();
                                 setTimeout(() => {
+                                    if (el.value) {
+                                        el.selectionStart = el.value.length;
+                                        el.selectionEnd = el.value.length;
+                                    }
                                 }, 0);
                             }
                         }}
@@ -3527,7 +3541,7 @@ function MemoCellExcelBase({
                                 else { onCommit(); }
                                 return;
                             }
-                            if (e.key === "Enter" && e.altKey) {
+                            if (e.key === "Enter" && (e.shiftKey || e.altKey)) {
                                 e.preventDefault();
                                 const ta = e.currentTarget;
                                 const start = ta.selectionStart ?? 0;
