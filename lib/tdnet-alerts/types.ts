@@ -106,6 +106,7 @@ export const EVENT_TYPE_CONFIG: Record<
   earnings: { label: "決算", emoji: "📋", color: "#3b82f6" },
   shareholder: { label: "大量保有", emoji: "👥", color: "#8b5cf6" },
   other: { label: "その他", emoji: "📄", color: "#94a3b8" },
+  edinet_order: { label: "受注/有報", emoji: "📑", color: "#64748b" },
   // 後方互換 (旧キー)
   forecast_revision: { label: "業績予想修正", emoji: "📈", color: "#f59e0b" },
   dividend_revision: { label: "配当修正", emoji: "💰", color: "#10b981" },
@@ -129,6 +130,7 @@ const _EVENT_TYPE_ALIAS: Record<string, string> = {
   earnings: "earnings",
   shareholder: "shareholder",
   other: "other",
+  edinet_order: "edinet_order",
   // 旧パイプライン名
   forecast_revision: "forecast",
   dividend_revision: "dividend",

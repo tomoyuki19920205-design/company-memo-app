@@ -529,6 +529,27 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
        divStr = `${fmtDiv(rev)}`;
     }
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
+  } else if (event.event_type === "edinet_order") {
+    typeLabel = "受注/有報";
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.quarter || ext.fiscal_year || ""}`.trim();
+    
+    let metrics = [];
+    if (ext.orders_received != null) {
+      const yoy = ext.orders_received_yoy;
+      const yoyStr = yoy != null ? fmtPct(Number(yoy) * 100) : "-";
+      metrics.push(`受注高 YOY${yoyStr}`);
+    }
+    if (ext.order_backlog != null) {
+      const yoy = ext.order_backlog_yoy;
+      const yoyStr = yoy != null ? fmtPct(Number(yoy) * 100) : "-";
+      metrics.push(`受注残 YOY${yoyStr}`);
+    }
+    
+    if (metrics.length > 0) {
+      line2 = metrics.join(" ");
+    } else {
+      line2 = "EDINET受注データ";
+    }
   } else {
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
     if (event.primary_metric_name) {
