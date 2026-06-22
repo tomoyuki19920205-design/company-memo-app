@@ -80,6 +80,16 @@ import type { User } from "@supabase/supabase-js";
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
 type MemoMapType = { [key: string]: GridData };
 
+interface CachedViewerData {
+    companyInfo: CompanyInfo | null;
+    financials: FinancialRecord[];
+    forecasts: ForecastRevision[];
+    monthly: MonthlyRecord[];
+    marketData: MarketDataRecord | null;
+    perShareData: PerShareRecord[];
+    edinetOrders: EdinetOrderRecord[];
+}
+
 /** 手入力メモ専用行 state 型 */
 type ManualTableMemos = {
     pl_cum: string[][];
@@ -171,6 +181,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
+
+    const tickerCacheRef = useRef<Map<string, CachedViewerData>>(new Map());
+    const loadRequestIdRef = useRef<number>(0);
 
     // ============================================================
     // Undo スタック (Ctrl+Z)
@@ -283,6 +296,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         const ticker = normalizeTicker(targetTicker ?? tickerInput);
         if (!ticker) return;
 
+        const currentRequestId = ++loadRequestIdRef.current;
+
         setStatus("loading");
         setDataLoading(true);
         setErrorMsg("");
@@ -303,8 +318,86 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult] =
-            await Promise.allSettled([
+        const cached = tickerCacheRef.current.get(ticker);
+        if (cached) {
+            // --- CACHE HIT ---
+            // 1. 読み取り専用データを即時復元
+            setCompanyInfo(cached.companyInfo);
+            setFinancials(cached.financials);
+            setForecasts(cached.forecasts);
+            setMonthly(cached.monthly);
+            setMarketData(cached.marketData);
+            setPerShareData(cached.perShareData);
+            setValuation(calculateValuation(cached.marketData, cached.perShareData));
+            setEdinetOrders(cached.edinetOrders);
+
+            setStatus("loaded");
+            setDataLoading(false);
+
+            if (cached.financials.length > 0) {
+                setSelectedPeriod(cached.financials[0].period);
+                setSelectedQuarter(cached.financials[0].quarter);
+            }
+
+            // 2. 編集可能データのみバックグラウンドで fresh fetch
+            const [
+                kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, manualMemosResult, segManualHeadersResult
+            ] = await Promise.allSettled([
+                loadKpiData(ticker),
+                loadAllGridMemos(ticker),
+                loadSegmentData(ticker),
+                loadKpiDefinitions(ticker),
+                loadKpiValues(ticker),
+                loadOrderKpis(ticker),
+                loadManualTableMemos(ticker),
+                loadSegmentManualHeaders(ticker),
+            ]);
+
+            if (loadRequestIdRef.current !== currentRequestId) return;
+
+            setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);
+            
+            const segData = segmentResult.status === "fulfilled" ? segmentResult.value : [];
+            setSegments(segData);
+
+            let overridesData: SegmentCellOverride[] = [];
+            if (segData.length > 0) {
+                const fiscalYears = extractFiscalYears(segData);
+                try {
+                    overridesData = await loadSegmentOverrides(ticker, fiscalYears);
+                } catch (err) {
+                    console.warn("[segment_cell_overrides] load failed:", err);
+                }
+            }
+            if (loadRequestIdRef.current !== currentRequestId) return;
+            setSegmentOverrides(overridesData);
+
+            const stubs = generateMissingQuarterStubs(segData);
+            const withStubs = [...segData, ...stubs];
+            const resolved = resolveSegmentsWithOverrides(withStubs, overridesData);
+            setResolvedSegments(resolved);
+
+            if (memosResult.status === "fulfilled") setMemoMap(buildMemoMap(memosResult.value));
+            if (kpiDefsResult.status === "fulfilled") setKpiDefs(kpiDefsResult.value);
+            if (kpiValsResult.status === "fulfilled") setKpiValues(kpiValsResult.value);
+            setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
+            
+            if (manualMemosResult.status === "fulfilled") setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
+            if (segManualHeadersResult.status === "fulfilled") {
+                setSegmentManualHeaders(segManualHeadersResult.value);
+            } else {
+                setSegmentManualHeaders([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
+            }
+
+            loadRejectedOrderKpis(ticker)
+                .then(res => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis(res); })
+                .catch(() => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis([]); });
+
+        } else {
+            // --- CACHE MISS ---
+            const [
+                companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult, edinetOrdersResult
+            ] = await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
                 loadForecastRevision(ticker),
@@ -319,91 +412,99 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 loadPerShareData(ticker),
                 loadManualTableMemos(ticker),
                 loadSegmentManualHeaders(ticker),
+                loadEdinetOrders(ticker),
             ]);
 
-        setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
+            if (loadRequestIdRef.current !== currentRequestId) return;
 
-        let plData: FinancialRecord[] = [];
-        if (financialsResult.status === "fulfilled") {
-            plData = financialsResult.value;
-            setFinancials(plData);
-        } else {
-            setFinancials([]);
-        }
+            const newCompanyInfo = companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null };
+            setCompanyInfo(newCompanyInfo);
 
-        setForecasts(forecastResult.status === "fulfilled" ? forecastResult.value : []);
-        setMonthly(monthlyResult.status === "fulfilled" ? monthlyResult.value : []);
-        setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);
-        const segData = segmentResult.status === "fulfilled" ? segmentResult.value : [];
-        setSegments(segData);
-
-        // Load overrides for displayed fiscal years
-        let overridesData: SegmentCellOverride[] = [];
-        if (segData.length > 0) {
-            const fiscalYears = extractFiscalYears(segData);
-            try {
-                overridesData = await loadSegmentOverrides(ticker, fiscalYears);
-            } catch (err) {
-                console.warn("[segment_cell_overrides] load failed:", err);
+            let plData: FinancialRecord[] = [];
+            if (financialsResult.status === "fulfilled") {
+                plData = financialsResult.value;
+                setFinancials(plData);
+            } else {
+                setFinancials([]);
             }
-        }
-        setSegmentOverrides(overridesData);
 
-        // Generate 1Q/3Q stub rows from existing FY/2Q segment names
-        const stubs = generateMissingQuarterStubs(segData);
-        const withStubs = [...segData, ...stubs];
+            const newForecasts = forecastResult.status === "fulfilled" ? forecastResult.value : [];
+            setForecasts(newForecasts);
 
-        // Resolve with overrides (stubs + base → overlay)
-        const resolved = resolveSegmentsWithOverrides(withStubs, overridesData);
-        setResolvedSegments(resolved);
+            const newMonthly = monthlyResult.status === "fulfilled" ? monthlyResult.value : [];
+            setMonthly(newMonthly);
 
-        if (memosResult.status === "fulfilled") {
-            setMemoMap(buildMemoMap(memosResult.value));
-        }
-        if (kpiDefsResult.status === "fulfilled") {
-            setKpiDefs(kpiDefsResult.value);
-        }
-        if (kpiValsResult.status === "fulfilled") {
-            setKpiValues(kpiValsResult.value);
-        }
-        setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
+            setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);
+            
+            const segData = segmentResult.status === "fulfilled" ? segmentResult.value : [];
+            setSegments(segData);
 
-        // 手入力メモ専用行
-        if (manualMemosResult.status === "fulfilled") {
-            setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
-        }
-        // segment_manual ヘッダー
-        if (segManualHeadersResult.status === "fulfilled") {
-            setSegmentManualHeaders(segManualHeadersResult.value);
-        } else {
-            setSegmentManualHeaders([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
-        }
+            let overridesData: SegmentCellOverride[] = [];
+            if (segData.length > 0) {
+                const fiscalYears = extractFiscalYears(segData);
+                try {
+                    overridesData = await loadSegmentOverrides(ticker, fiscalYears);
+                } catch (err) {
+                    console.warn("[segment_cell_overrides] load failed:", err);
+                }
+            }
+            if (loadRequestIdRef.current !== currentRequestId) return;
+            setSegmentOverrides(overridesData);
 
-        // Market data & per share data
-        const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
-        const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
-        setMarketData(mktData);
-        setPerShareData(psData);
-        setValuation(calculateValuation(mktData, psData));
+            const stubs = generateMissingQuarterStubs(segData);
+            const withStubs = [...segData, ...stubs];
+            const resolved = resolveSegmentsWithOverrides(withStubs, overridesData);
+            setResolvedSegments(resolved);
 
-        // 却下レコードは別途取得
-        loadRejectedOrderKpis(ticker).then(setRejectedKpis).catch(() => setRejectedKpis([]));
-        // EDINET受注データ（SELECT のみ）
-        loadEdinetOrders(ticker).then(setEdinetOrders).catch(() => setEdinetOrders([]));
+            if (memosResult.status === "fulfilled") setMemoMap(buildMemoMap(memosResult.value));
+            if (kpiDefsResult.status === "fulfilled") setKpiDefs(kpiDefsResult.value);
+            if (kpiValsResult.status === "fulfilled") setKpiValues(kpiValsResult.value);
+            setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
+            
+            if (manualMemosResult.status === "fulfilled") setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
+            if (segManualHeadersResult.status === "fulfilled") {
+                setSegmentManualHeaders(segManualHeadersResult.value);
+            } else {
+                setSegmentManualHeaders([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
+            }
 
-        if (financialsResult.status === "rejected") {
-            const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
-            setErrorMsg(msg);
-            setStatus("error");
-        } else {
-            setStatus("loaded");
-        }
+            const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
+            const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+            setMarketData(mktData);
+            setPerShareData(psData);
+            setValuation(calculateValuation(mktData, psData));
 
-        setDataLoading(false);
+            const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
+            setEdinetOrders(newEdinetOrders);
 
-        if (plData.length > 0) {
-            setSelectedPeriod(plData[0].period);
-            setSelectedQuarter(plData[0].quarter);
+            loadRejectedOrderKpis(ticker)
+                .then(res => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis(res); })
+                .catch(() => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis([]); });
+
+            if (financialsResult.status === "rejected") {
+                const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
+                setErrorMsg(msg);
+                setStatus("error");
+            } else {
+                setStatus("loaded");
+            }
+
+            setDataLoading(false);
+
+            if (plData.length > 0) {
+                setSelectedPeriod(plData[0].period);
+                setSelectedQuarter(plData[0].quarter);
+            }
+
+            tickerCacheRef.current.set(ticker, {
+                companyInfo: newCompanyInfo,
+                financials: plData,
+                forecasts: newForecasts,
+                monthly: newMonthly,
+                marketData: mktData,
+                perShareData: psData,
+                edinetOrders: newEdinetOrders,
+            });
         }
     }, [tickerInput, user]);
 
