@@ -852,30 +852,45 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     searchDebounceRef.current = setTimeout(() => loadEvents(), 300);
   };
 
-  const handleSelectEvent = async (event: EnrichedEvent) => {
+  const handleSelectEvent = (event: EnrichedEvent) => {
     if (selectedId === event.id) {
       setSelectedId(null);
       return;
     }
     setSelectedId(event.id);
     setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
-    // 右ペイン CompanyViewer にティッカーを渡す
-    viewerRef.current?.loadTicker(event.ticker);
+    
+    // UIの反映(左カードの展開)を優先するため、右Viewerの読み込みを非同期で開始する
+    setTimeout(() => {
+      viewerRef.current?.loadTicker(event.ticker);
+    }, 0);
+
     if (!event.is_read) {
-      try {
-        await markAsRead(supabaseRef.current, event.id, userId);
-        alertsCacheRef.current.clear();
-        setEvents((prev) =>
-          prev.map((e) => (e.id === event.id ? { ...e, is_read: true } : e))
-        );
-      } catch (err) {
-        console.error("Failed to mark as read:", err);
-      }
+      // 既読化処理もUIをブロックしないように非同期で後追い実行
+      (async () => {
+        try {
+          await markAsRead(supabaseRef.current, event.id, userId);
+          alertsCacheRef.current.clear();
+          setEvents((prev) =>
+            prev.map((e) => (e.id === event.id ? { ...e, is_read: true } : e))
+          );
+        } catch (err) {
+          console.error("Failed to mark as read:", err);
+        }
+      })();
     }
   };
 
   const handleToggleRead = async (event: EnrichedEvent, e: React.MouseEvent) => {
     e.stopPropagation();
+    
+    // オプティミスティック・アップデート (即時UI反映)
+    setEvents((prev) =>
+      prev.map((ev) =>
+        ev.id === event.id ? { ...ev, is_read: !ev.is_read } : ev
+      )
+    );
+
     try {
       if (event.is_read) {
         await markAsUnread(supabaseRef.current, event.id, userId);
@@ -883,28 +898,38 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         await markAsRead(supabaseRef.current, event.id, userId);
       }
       alertsCacheRef.current.clear();
-      setEvents((prev) =>
-        prev.map((ev) =>
-          ev.id === event.id ? { ...ev, is_read: !ev.is_read } : ev
-        )
-      );
     } catch (err) {
       console.error("Failed to toggle read:", err);
+      // エラー時は元に戻す
+      setEvents((prev) =>
+        prev.map((ev) =>
+          ev.id === event.id ? { ...ev, is_read: event.is_read } : ev
+        )
+      );
     }
   };
 
   const handleToggleStar = async (event: EnrichedEvent, e: React.MouseEvent) => {
     e.stopPropagation();
+    
+    // オプティミスティック・アップデート (即時UI反映)
+    setEvents((prev) =>
+      prev.map((ev) =>
+        ev.id === event.id ? { ...ev, is_starred: !ev.is_starred } : ev
+      )
+    );
+
     try {
       await toggleStar(supabaseRef.current, event.id, userId, event.is_starred);
       alertsCacheRef.current.clear();
-      setEvents((prev) =>
-        prev.map((ev) =>
-          ev.id === event.id ? { ...ev, is_starred: !ev.is_starred } : ev
-        )
-      );
     } catch (err) {
       console.error("Failed to toggle star:", err);
+      // エラー時は元に戻す
+      setEvents((prev) =>
+        prev.map((ev) =>
+          ev.id === event.id ? { ...ev, is_starred: event.is_starred } : ev
+        )
+      );
     }
   };
 
@@ -1186,6 +1211,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     <span className="alert-card-actions">
                       <button
                         className={`action-btn ${event.is_starred ? "active" : ""}`}
+                        onPointerDown={(e) => e.stopPropagation()}
                         onClick={(e) => handleToggleStar(event, e)}
                         title="スター"
                       >
@@ -1199,7 +1225,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            style={{ display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0px 1px 1px rgba(0,0,0,0.5))" }}
+                            style={{ display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0px 1px 1px rgba(0,0,0,0.5))", pointerEvents: "none" }}
                           >
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                           </svg>
@@ -1211,6 +1237,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="action-btn pdf-link"
+                          onPointerDown={(e) => e.stopPropagation()}
                           onClick={(e) => e.stopPropagation()}
                           title="PDFを開く"
                           style={{ textDecoration: "none", color: "inherit" }}
@@ -1220,6 +1247,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       )}
                       <button
                         className={`action-btn ${!event.is_read ? "active" : ""}`}
+                        onPointerDown={(e) => e.stopPropagation()}
                         onClick={(e) => handleToggleRead(event, e)}
                         title={event.is_read ? "未読に戻す" : "既読にする"}
                       >
