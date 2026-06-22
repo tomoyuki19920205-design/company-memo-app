@@ -396,22 +396,14 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         } else {
             // --- CACHE MISS ---
             const [
-                companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult, edinetOrdersResult
+                companyResult, financialsResult, forecastResult, monthlyResult, marketResult, perShareResult, edinetOrdersResult
             ] = await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
                 loadForecastRevision(ticker),
                 loadMonthlyData(ticker),
-                loadKpiData(ticker),
-                loadAllGridMemos(ticker),
-                loadSegmentData(ticker),
-                loadKpiDefinitions(ticker),
-                loadKpiValues(ticker),
-                loadOrderKpis(ticker),
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
-                loadManualTableMemos(ticker),
-                loadSegmentManualHeaders(ticker),
                 loadEdinetOrders(ticker),
             ]);
 
@@ -433,6 +425,56 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             const newMonthly = monthlyResult.status === "fulfilled" ? monthlyResult.value : [];
             setMonthly(newMonthly);
+
+            const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
+            const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+            setMarketData(mktData);
+            setPerShareData(psData);
+            setValuation(calculateValuation(mktData, psData));
+
+            const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
+            setEdinetOrders(newEdinetOrders);
+
+            if (financialsResult.status === "rejected") {
+                const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
+                setErrorMsg(msg);
+                setStatus("error");
+            } else {
+                setStatus("loaded");
+            }
+
+            setDataLoading(false);
+
+            if (plData.length > 0) {
+                setSelectedPeriod(plData[0].period);
+                setSelectedQuarter(plData[0].quarter);
+            }
+
+            tickerCacheRef.current.set(ticker, {
+                companyInfo: newCompanyInfo,
+                financials: plData,
+                forecasts: newForecasts,
+                monthly: newMonthly,
+                marketData: mktData,
+                perShareData: psData,
+                edinetOrders: newEdinetOrders,
+            });
+
+            // --- 後追い fresh fetch ---
+            const [
+                kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, manualMemosResult, segManualHeadersResult
+            ] = await Promise.allSettled([
+                loadKpiData(ticker),
+                loadAllGridMemos(ticker),
+                loadSegmentData(ticker),
+                loadKpiDefinitions(ticker),
+                loadKpiValues(ticker),
+                loadOrderKpis(ticker),
+                loadManualTableMemos(ticker),
+                loadSegmentManualHeaders(ticker),
+            ]);
+
+            if (loadRequestIdRef.current !== currentRequestId) return;
 
             setKpi(kpiResult.status === "fulfilled" ? kpiResult.value : []);
             
@@ -468,43 +510,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 setSegmentManualHeaders([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
             }
 
-            const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
-            const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
-            setMarketData(mktData);
-            setPerShareData(psData);
-            setValuation(calculateValuation(mktData, psData));
-
-            const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
-            setEdinetOrders(newEdinetOrders);
-
             loadRejectedOrderKpis(ticker)
                 .then(res => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis(res); })
                 .catch(() => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis([]); });
-
-            if (financialsResult.status === "rejected") {
-                const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
-                setErrorMsg(msg);
-                setStatus("error");
-            } else {
-                setStatus("loaded");
-            }
-
-            setDataLoading(false);
-
-            if (plData.length > 0) {
-                setSelectedPeriod(plData[0].period);
-                setSelectedQuarter(plData[0].quarter);
-            }
-
-            tickerCacheRef.current.set(ticker, {
-                companyInfo: newCompanyInfo,
-                financials: plData,
-                forecasts: newForecasts,
-                monthly: newMonthly,
-                marketData: mktData,
-                perShareData: psData,
-                edinetOrders: newEdinetOrders,
-            });
         }
     }, [tickerInput, user]);
 
