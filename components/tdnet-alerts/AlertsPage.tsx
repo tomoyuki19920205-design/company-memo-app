@@ -10,6 +10,12 @@ import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/l
 import AlertDetailPanel from "./AlertDetailPanel";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
 
+type AlertsCacheEntry = {
+  timestamp: number;
+  events: EnrichedEvent[];
+};
+const ALERTS_CACHE_TTL_MS = 30_000;
+
 const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%)/gi;
 
 const getYoyClass = (text: string) => {
@@ -671,6 +677,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const isDraggingRef = useRef(false);
   const dragStartXRef = useRef(0);
   const dragStartWidthRef = useRef(0);
+  const alertsCacheRef = useRef<Map<string, AlertsCacheEntry>>(new Map());
 
   // Realtime 接続
   const { status: connectionStatus } = useRealtimeAlerts({
@@ -712,6 +719,30 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
       if (selectedDate) opts.selectedDate = selectedDate;
 
+      const currentSearch = searchRef.current.trim();
+      if (currentSearch) opts.search = currentSearch;
+
+      const cacheKey = JSON.stringify({
+        userId,
+        limit: opts.limit,
+        allPeriod: opts.allPeriodTickerSearch,
+        filter,
+        date: opts.selectedDate || null,
+        search: currentSearch || null,
+        eventType: opts.eventType || null,
+        discordOnly: opts.discordOnly || false,
+        skipClientSort: opts.skipClientSort || false,
+        unreadOnly: opts.unreadOnly || false,
+        starredOnly: opts.starredOnly || false,
+      });
+
+      const cached = alertsCacheRef.current.get(cacheKey);
+      if (cached && Date.now() - cached.timestamp < ALERTS_CACHE_TTL_MS) {
+        setEvents(cached.events);
+        setLoading(false);
+        return;
+      }
+
       console.log("[tdnet-alerts] loadEvents params", {
         filter,
         selectedDate,
@@ -719,9 +750,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         selectedDateParam: opts.selectedDate,
       });
 
-      if (searchRef.current.trim()) opts.search = searchRef.current.trim();
-
       const data = await fetchEvents(supabaseRef.current, opts);
+      alertsCacheRef.current.set(cacheKey, { timestamp: Date.now(), events: data });
       setEvents(data);
     } catch (err) {
       console.error("Failed to load events:", err);
@@ -834,6 +864,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     if (!event.is_read) {
       try {
         await markAsRead(supabaseRef.current, event.id, userId);
+        alertsCacheRef.current.clear();
         setEvents((prev) =>
           prev.map((e) => (e.id === event.id ? { ...e, is_read: true } : e))
         );
@@ -851,6 +882,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       } else {
         await markAsRead(supabaseRef.current, event.id, userId);
       }
+      alertsCacheRef.current.clear();
       setEvents((prev) =>
         prev.map((ev) =>
           ev.id === event.id ? { ...ev, is_read: !ev.is_read } : ev
@@ -865,6 +897,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     e.stopPropagation();
     try {
       await toggleStar(supabaseRef.current, event.id, userId, event.is_starred);
+      alertsCacheRef.current.clear();
       setEvents((prev) =>
         prev.map((ev) =>
           ev.id === event.id ? { ...ev, is_starred: !ev.is_starred } : ev
@@ -1275,6 +1308,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                   event={selectedEvent}
                   userId={userId}
                   onUpdate={(updated) => {
+                    alertsCacheRef.current.clear();
                     setEvents((prev) =>
                       prev.map((e) => (e.id === updated.id ? updated : e))
                     );
