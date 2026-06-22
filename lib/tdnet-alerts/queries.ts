@@ -111,7 +111,7 @@ export async function fetchEvents(
     query = query.in("id", starredIds);
   }
 
-  const skipDateFilter = isAllPeriodSearchActive || opts.starredOnly;
+  const skipDateFilter = isAllPeriodSearchActive;
 
   if (opts.selectedDate) {
     // 特定日付フィルタ (selectedDate = "today" or "YYYY-MM-DD")
@@ -132,7 +132,7 @@ export async function fetchEvents(
     if (!skipDateFilter) {
       query = query.gte("detected_at", gte).lt("detected_at", lt);
     }
-  } else if (!opts.search) {
+  } else if (!opts.search && !opts.starredOnly) {
     // 通常モード: 直近30日のみ取得（全期間だと古いデータが大量混入するため）
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
