@@ -95,7 +95,23 @@ export async function fetchEvents(
     return { gte: startUtc.toISOString(), lt: endUtc.toISOString() };
   };
 
-  const skipDateFilter = isAllPeriodSearchActive;
+  if (opts.starredOnly) {
+    // スター済みのイベントIDを先に取得（limitや期間で漏れるのを防ぐため）
+    const { data: starsData, error: starsErr } = await supabase
+      .from("tdnet_event_stars")
+      .select("event_id")
+      .eq("user_id", opts.userId)
+      .order("starred_at", { ascending: false })
+      .limit(actualLimit);
+    
+    if (starsErr) throw starsErr;
+    if (!starsData || starsData.length === 0) return [];
+    
+    const starredIds = starsData.map((s: any) => s.event_id);
+    query = query.in("id", starredIds);
+  }
+
+  const skipDateFilter = isAllPeriodSearchActive || opts.starredOnly;
 
   if (opts.selectedDate) {
     // 特定日付フィルタ (selectedDate = "today" or "YYYY-MM-DD")
@@ -191,9 +207,7 @@ export async function fetchEvents(
   if (opts.unreadOnly) {
     enriched = enriched.filter((e) => !e.is_read);
   }
-  if (opts.starredOnly) {
-    enriched = enriched.filter((e) => e.is_starred);
-  }
+  // starredOnly のフィルタは事前のIN句で担保されるためここでは不要
 
   // ソート: 未読優先 → priority_rank asc → detected_at desc
   // skipClientSort=true の場合は DB 取得順 (disclosed_at DESC, detected_at DESC) を維持
@@ -237,9 +251,11 @@ export async function markAsUnread(supabase: SupabaseClient, eventId: string, us
 // ============================================================
 export async function toggleStar(supabase: SupabaseClient, eventId: string, userId: string, isStarred: boolean) {
   if (isStarred) {
-    await supabase.from("tdnet_event_stars").delete().eq("event_id", eventId).eq("user_id", userId);
+    const { error } = await supabase.from("tdnet_event_stars").delete().eq("event_id", eventId).eq("user_id", userId);
+    if (error) throw error;
   } else {
-    await supabase.from("tdnet_event_stars").upsert({ event_id: eventId, user_id: userId }, { onConflict: "event_id,user_id" });
+    const { error } = await supabase.from("tdnet_event_stars").upsert({ event_id: eventId, user_id: userId }, { onConflict: "event_id,user_id" });
+    if (error) throw error;
   }
 }
 
