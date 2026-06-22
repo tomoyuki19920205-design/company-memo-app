@@ -705,6 +705,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "forecast") opts.eventType = "forecast";
       else if (filter === "dividend") opts.eventType = "dividend";
       else if (filter === "earnings") opts.eventType = "earnings";
+      else if (filter === "edinet_order") opts.eventType = "edinet_order";
       else if (filter === "discord") opts.discordOnly = true;
       // 全件タブ: DBソート (disclosed_at DESC, detected_at DESC) をそのまま使用
       else if (filter === "all") opts.skipClientSort = true;
@@ -895,12 +896,13 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
 
   const filters: { key: FilterType; label: string }[] = [
-    { key: "starred", label: "⭐ スター" },
+    { key: "all", label: "全体" },
     { key: "buyback", label: "📊 自社株買" },
     { key: "forecast_up", label: "📈 上方修正" },
     { key: "forecast", label: "📉 業績修正" },
     { key: "dividend", label: "💰 配当" },
     { key: "earnings", label: "📋 決算" },
+    { key: "edinet_order", label: "📦 受注・受注残" },
     { key: "discord", label: "🔔 Discord対象" },
   ];
 

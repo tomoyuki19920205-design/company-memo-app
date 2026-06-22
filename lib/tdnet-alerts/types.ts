@@ -86,7 +86,8 @@ export type FilterType =
   | "dividend"
   | "earnings"
   | "discord"
-  | "today";
+  | "today"
+  | "edinet_order";
 
 export interface AlertsFilter {
   type: FilterType;
