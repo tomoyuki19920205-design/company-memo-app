@@ -131,6 +131,31 @@ export interface CompanyViewerHandle {
     loadTicker: (ticker: string) => void;
 }
 
+/** キャッシュ用型 */
+type CachedViewerData = {
+    companyInfo: CompanyInfo | null;
+    selectedPeriod: string;
+    selectedQuarter: string;
+    memoMap: MemoMapType;
+    financials: FinancialRecord[];
+    forecasts: ForecastRevision[];
+    monthly: MonthlyRecord[];
+    kpi: KpiRecord[];
+    segments: SegmentRecord[];
+    segmentOverrides: SegmentCellOverride[];
+    resolvedSegments: SegmentRecord[];
+    orderKpis: OrderKpiItem[];
+    rejectedKpis: OrderKpiItem[];
+    edinetOrders: EdinetOrderRecord[];
+    marketData: MarketDataRecord | null;
+    perShareData: PerShareRecord[];
+    valuation: ValuationMetrics | null;
+    kpiDefs: KpiDefMap;
+    kpiValues: KpiValueMap;
+    manualTableMemos: ManualTableMemos;
+    segmentManualHeaders: string[];
+};
+
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [user, setUser] = useState<User | null>(null);
@@ -171,6 +196,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [status, setStatus] = useState<AppStatus>("idle");
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
+
+    // ============================================================
+    // ticker キャッシュ
+    // ============================================================
+    const tickerCacheRef = useRef<Map<string, CachedViewerData>>(new Map());
 
     // ============================================================
     // Undo スタック (Ctrl+Z)
@@ -283,10 +313,42 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         const ticker = normalizeTicker(targetTicker ?? tickerInput);
         if (!ticker) return;
 
+        setActiveTicker(ticker);
+
+        // キャッシュの確認と復元
+        const cached = tickerCacheRef.current.get(ticker);
+        if (cached) {
+            setCompanyInfo(cached.companyInfo);
+            setSelectedPeriod(cached.selectedPeriod);
+            setSelectedQuarter(cached.selectedQuarter);
+            setMemoMap(cached.memoMap);
+            setFinancials(cached.financials);
+            setForecasts(cached.forecasts);
+            setMonthly(cached.monthly);
+            setKpi(cached.kpi);
+            setSegments(cached.segments);
+            setSegmentOverrides(cached.segmentOverrides);
+            setResolvedSegments(cached.resolvedSegments);
+            setOrderKpis(cached.orderKpis);
+            setRejectedKpis(cached.rejectedKpis);
+            setEdinetOrders(cached.edinetOrders);
+            setMarketData(cached.marketData);
+            setPerShareData(cached.perShareData);
+            setValuation(cached.valuation);
+            setKpiDefs(cached.kpiDefs);
+            setKpiValues(cached.kpiValues);
+            setManualTableMemos(cached.manualTableMemos);
+            setSegmentManualHeaders(cached.segmentManualHeaders);
+
+            setStatus("loaded");
+            setDataLoading(false);
+            setErrorMsg("");
+            return;
+        }
+
         setStatus("loading");
         setDataLoading(true);
         setErrorMsg("");
-        setActiveTicker(ticker);
         setSelectedPeriod("");
         setSelectedQuarter("");
         setMemoMap({});
@@ -303,8 +365,10 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setKpiDefs({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
         setKpiValues({});
 
-        const [companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult] =
-            await Promise.allSettled([
+        const [
+            companyResult, financialsResult, forecastResult, monthlyResult, kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, marketResult, perShareResult, manualMemosResult, segManualHeadersResult,
+            rejectedKpisResult, edinetOrdersResult
+        ] = await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
                 loadForecastRevision(ticker),
@@ -319,6 +383,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 loadPerShareData(ticker),
                 loadManualTableMemos(ticker),
                 loadSegmentManualHeaders(ticker),
+                loadRejectedOrderKpis(ticker),
+                loadEdinetOrders(ticker)
             ]);
 
         setCompanyInfo(companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null });
@@ -387,9 +453,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setValuation(calculateValuation(mktData, psData));
 
         // 却下レコードは別途取得
-        loadRejectedOrderKpis(ticker).then(setRejectedKpis).catch(() => setRejectedKpis([]));
+        const rKpis = rejectedKpisResult.status === "fulfilled" ? rejectedKpisResult.value : [];
+        setRejectedKpis(rKpis);
         // EDINET受注データ（SELECT のみ）
-        loadEdinetOrders(ticker).then(setEdinetOrders).catch(() => setEdinetOrders([]));
+        const eOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
+        setEdinetOrders(eOrders);
 
         if (financialsResult.status === "rejected") {
             const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
@@ -397,6 +465,34 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             setStatus("error");
         } else {
             setStatus("loaded");
+
+            const periodToSet = plData.length > 0 ? plData[0].period : "";
+            const quarterToSet = plData.length > 0 ? plData[0].quarter : "";
+
+            // キャッシュ保存
+            tickerCacheRef.current.set(ticker, {
+                companyInfo: companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null },
+                selectedPeriod: periodToSet,
+                selectedQuarter: quarterToSet,
+                memoMap: memosResult.status === "fulfilled" ? buildMemoMap(memosResult.value) : {},
+                financials: plData,
+                forecasts: forecastResult.status === "fulfilled" ? forecastResult.value : [],
+                monthly: monthlyResult.status === "fulfilled" ? monthlyResult.value : [],
+                kpi: kpiResult.status === "fulfilled" ? kpiResult.value : [],
+                segments: segData,
+                segmentOverrides: overridesData,
+                resolvedSegments: resolved,
+                orderKpis: orderKpisResult.status === "fulfilled" ? orderKpisResult.value : [],
+                rejectedKpis: rKpis,
+                edinetOrders: eOrders,
+                marketData: mktData,
+                perShareData: psData,
+                valuation: calculateValuation(mktData, psData),
+                kpiDefs: kpiDefsResult.status === "fulfilled" ? kpiDefsResult.value : { 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" },
+                kpiValues: kpiValsResult.status === "fulfilled" ? kpiValsResult.value : {},
+                manualTableMemos: manualMemosResult.status === "fulfilled" ? buildManualTableMemos(manualMemosResult.value) : EMPTY_MANUAL_MEMOS,
+                segmentManualHeaders: segManualHeadersResult.status === "fulfilled" ? segManualHeadersResult.value : [...DEFAULT_SEGMENT_MANUAL_HEADERS]
+            });
         }
 
         setDataLoading(false);
