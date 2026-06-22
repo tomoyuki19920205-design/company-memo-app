@@ -930,6 +930,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const filters: { key: FilterType; label: string }[] = [
     { key: "all", label: "全体" },
+    { key: "starred", label: "⭐ スター" },
     { key: "buyback", label: "📊 自社株買" },
     { key: "forecast_up", label: "📈 上方修正" },
     { key: "forecast", label: "📉 業績修正" },
@@ -1188,7 +1189,21 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                         onClick={(e) => handleToggleStar(event, e)}
                         title="スター"
                       >
-                        {event.is_starred ? "⭐" : "☆"}
+                        {event.is_starred ? "⭐" : (
+                          <svg
+                            viewBox="0 0 24 24"
+                            width="16"
+                            height="16"
+                            fill="rgba(0,0,0,0.4)"
+                            stroke="#ffffff"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{ display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0px 1px 1px rgba(0,0,0,0.5))" }}
+                          >
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
+                        )}
                       </button>
                       {event.pdf_url && (
                         <a
