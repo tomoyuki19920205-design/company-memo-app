@@ -629,6 +629,25 @@ const getCategoryScore = (event: EnrichedEvent, category: string): number | null
   }
 };
 
+/**
+ * 受注高 YOY を raw_payload.extracted.orders_received_yoy から取得する。
+ * 値は小数（例: 1.049 → 104.9%）で格納されているため、100倍してパーセントに変換する。
+ * 取得できない場合は null を返す（末尾扱い）。
+ */
+const getOrderReceivedYoy = (event: EnrichedEvent): number | null => {
+  const rp = event.raw_payload;
+  if (!rp || typeof rp !== "object") return null;
+  const rpObj = rp as Record<string, unknown>;
+  const ext = (rpObj.extracted && typeof rpObj.extracted === "object"
+    ? rpObj.extracted
+    : {}) as Record<string, unknown>;
+  const raw = ext.orders_received_yoy;
+  if (raw == null) return null;
+  const n = Number(raw);
+  if (isNaN(n)) return null;
+  return n * 100; // 小数→パーセント変換
+};
+
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -1143,6 +1162,17 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 if (scoreB !== null) return 1;
                 return 0;
               });
+            } else if (filter === "edinet_order") {
+              // 受注高YOY降順ソート（「受注・受注残」カテゴリ選択時のみ）
+              // 受注高YOYが大きいものを上、null/parse不能は末尾、同値は既存順を維持
+              displayEvents = events.map((ev, idx) => ({ ev, idx })).sort(({ ev: a, idx: ai }, { ev: b, idx: bi }) => {
+                const yoyA = getOrderReceivedYoy(a);
+                const yoyB = getOrderReceivedYoy(b);
+                if (yoyA !== null && yoyB !== null) return yoyB - yoyA; // 降順
+                if (yoyA !== null) return -1;  // A有値・B null → Aを上
+                if (yoyB !== null) return 1;   // A null・B有値 → Bを上
+                return ai - bi; // 両方null → 既存順を維持
+              }).map(({ ev }) => ev);
             }
 
             console.time("renderEvents");
