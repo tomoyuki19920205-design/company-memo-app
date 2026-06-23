@@ -1110,7 +1110,7 @@ export async function loadEdinetOrders(ticker: string): Promise<EdinetOrderRecor
                 "source_unit,confidence,null_reason"
             )
             .eq("ticker", t)
-            .is("segment_name", null)
+            .or("segment_name.is.null,segment_name.eq.全社")
             .eq("source_type", "edinet_yuho")
             .order("period", { ascending: false })
             .limit(20);
