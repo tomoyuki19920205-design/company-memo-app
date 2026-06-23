@@ -167,6 +167,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [rejectedKpis, setRejectedKpis] = useState<OrderKpiItem[]>([]);
     const [edinetOrders, setEdinetOrders] = useState<EdinetOrderRecord[]>([]);
     const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("order");
+    // EDINET受注タブ自動切替: ユーザーが手動でタブを選んだかを追跡する
+    // useRef でクロージャ内から安全に参照できる
+    const orderKpiTabManuallySetRef = useRef(false);
     const [marketData, setMarketData] = useState<MarketDataRecord | null>(null);
     const [perShareData, setPerShareData] = useState<PerShareRecord[]>([]);
     const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
@@ -312,6 +315,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setOrderKpis([]);
         setRejectedKpis([]);
         setEdinetOrders([]);
+        // 銘柄切替時: 手動フラグをリセットし、初期タブを ORDER KPI へ戻す
+        orderKpiTabManuallySetRef.current = false;
+        setOrderKpiTab("order");
         setMarketData(null);
         setPerShareData([]);
         setValuation(null);
@@ -330,6 +336,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             setPerShareData(cached.perShareData);
             setValuation(calculateValuation(cached.marketData, cached.perShareData));
             setEdinetOrders(cached.edinetOrders);
+            if (!orderKpiTabManuallySetRef.current) {
+                setOrderKpiTab(cached.edinetOrders.length > 0 ? "edinet" : "order");
+            }
 
             setStatus("loaded");
             setDataLoading(false);
@@ -434,6 +443,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
             setEdinetOrders(newEdinetOrders);
+            if (!orderKpiTabManuallySetRef.current) {
+                setOrderKpiTab(newEdinetOrders.length > 0 ? "edinet" : "order");
+            }
 
             if (financialsResult.status === "rejected") {
                 const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
@@ -1102,13 +1114,13 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                     <div className="order-kpi-tab-buttons">
                                         <button
                                             className={`order-kpi-tab-btn${orderKpiTab === "order" ? " active" : ""}`}
-                                            onClick={() => setOrderKpiTab("order")}
+                                            onClick={() => { orderKpiTabManuallySetRef.current = true; setOrderKpiTab("order"); }}
                                         >
                                             ORDER KPI
                                         </button>
                                         <button
                                             className={`order-kpi-tab-btn${orderKpiTab === "edinet" ? " active" : ""}`}
-                                            onClick={() => setOrderKpiTab("edinet")}
+                                            onClick={() => { orderKpiTabManuallySetRef.current = true; setOrderKpiTab("edinet"); }}
                                         >
                                             EDINET受注
                                         </button>
