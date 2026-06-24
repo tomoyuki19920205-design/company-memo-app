@@ -219,12 +219,197 @@ export async function fetchEvents(
     });
   }
 
+  // ── YOY 補完 ──────────────────────────────────────────────────────────────
+  // earnings イベントで sales_yoy / op_yoy が null の銘柄に対し、
+  // financials テーブルから前年同期値をバッチ取得して補完する。
+  // DB write は一切行わない。extracted の内容を in-memory で上書きするだけ。
+  try {
+    const earningsWithMissingYoy = enriched.filter(
+      (e) =>
+        e.event_type === "earnings" &&
+        (() => {
+          const rp = e.raw_payload as Record<string, unknown>;
+          const ext = (rp?.extracted ?? {}) as Record<string, unknown>;
+          return ext.sales_yoy == null || ext.op_yoy == null;
+        })()
+    );
+    if (earningsWithMissingYoy.length > 0) {
+      const tickers = [...new Set(earningsWithMissingYoy.map((e) => e.ticker))];
+      // financials テーブルから対象 tickers をチャンク並列取得
+      // 5/15 等の大量決算日は ticker 数が 300件超・行数が 9,000件超になるため、
+      // 20件チャンクに分割し Promise.all で並列取得する。
+      // 直列だと 18チャンク×平均191ms=3,400ms かかるが、並列化で ~400ms に改善。
+      // （ticker あたり最大約46行の履歴データがあるため、50件×limit=1000では切れる）
+      const CHUNK_SIZE = 20;
+      const chunks: string[][] = [];
+      for (let i = 0; i < tickers.length; i += CHUNK_SIZE) {
+        chunks.push(tickers.slice(i, i + CHUNK_SIZE));
+      }
+      const chunkResults = await Promise.all(
+        chunks.map((chunk) =>
+          supabase
+            .from("financials")
+            .select("ticker,period,quarter,sales,operating_profit,unit")
+            .in("ticker", chunk)
+            .order("period", { ascending: false })
+            .limit(2000)
+        )
+      );
+      const allFinRows: FinancialsRow[] = chunkResults.flatMap(
+        ({ data }) => (data as FinancialsRow[] | null) ?? []
+      );
+      const finRows = allFinRows;
+
+      if (finRows && finRows.length > 0) {
+        // ticker -> period -> quarter -> row の Map を構築
+        const finMap: Record<string, Record<string, Record<string, FinancialsRow>>> = {};
+        for (const row of finRows as FinancialsRow[]) {
+          if (!finMap[row.ticker]) finMap[row.ticker] = {};
+          if (!finMap[row.ticker][row.period]) finMap[row.ticker][row.period] = {};
+          // 同 period/quarter が複数ある場合、jquants ソース優先（order済みなので先勝ち）
+          if (!finMap[row.ticker][row.period][row.quarter]) {
+            finMap[row.ticker][row.period][row.quarter] = row;
+          }
+        }
+
+        // 各イベントに YOY を補完
+        for (const ev of earningsWithMissingYoy) {
+          const rp = ev.raw_payload as Record<string, unknown>;
+          const ext = (rp?.extracted ?? {}) as Record<string, unknown>;
+          const ncj = rp?.notification_compare_json as any;
+
+          const quarter = String(ext.quarter ?? "");
+          if (!quarter) continue;
+
+          // extracted.op_current (円単位) → 百万円に変換して financials と照合
+          const opCurrRaw = ext.op_current;
+          const salesCurrRaw = ext.sales_current;
+          const opCurrM = opCurrRaw != null ? Number(opCurrRaw) / 1_000_000 : null;
+          const salesCurrM = salesCurrRaw != null ? Number(salesCurrRaw) / 1_000_000 : null;
+
+          // 当期 period を financials から特定: op_current が近い行を探す
+          const tickerPeriods = Object.keys(finMap[ev.ticker] ?? {}).sort().reverse();
+          let currPeriod: string | null = null;
+          for (const period of tickerPeriods) {
+            const row = finMap[ev.ticker][period]?.[quarter];
+            if (!row) continue;
+            // op_current が null でも sales_current で照合
+            const opMatch =
+              opCurrM != null &&
+              row.operating_profit != null &&
+              Math.round(row.operating_profit) === Math.round(opCurrM);
+            const salesMatch =
+              salesCurrM != null &&
+              row.sales != null &&
+              Math.round(row.sales) === Math.round(salesCurrM);
+            if (opMatch || salesMatch) {
+              currPeriod = period;
+              break;
+            }
+          }
+          // 照合できなかった場合は最新の該当 quarter の period を使う
+          if (!currPeriod) {
+            for (const period of tickerPeriods) {
+              if (finMap[ev.ticker][period]?.[quarter]) {
+                currPeriod = period;
+                break;
+              }
+            }
+          }
+          if (!currPeriod) continue;
+
+          const currRow = finMap[ev.ticker][currPeriod][quarter];
+          if (!currRow) continue;
+
+          // 前年 period: 同じ月日で年を1つ下げる
+          const prevPeriod = prevFiscalYearPeriod(currPeriod);
+          const prevRow = finMap[ev.ticker][prevPeriod]?.[quarter];
+          if (!prevRow) continue;
+
+          // sales_yoy 補完 (null のときのみ)
+          if (ext.sales_yoy == null && currRow.sales != null && prevRow.sales != null && prevRow.sales !== 0) {
+            const yoy = (currRow.sales - prevRow.sales) / Math.abs(prevRow.sales);
+            if (isFinite(yoy) && !isNaN(yoy)) {
+              (rp.extracted as Record<string, unknown>).sales_yoy = yoy;
+              // notification_compare_json.current.sales_yoy も補完
+              if (ncj?.current && ncj.current.sales_yoy == null) {
+                ncj.current.sales_yoy = yoy;
+              }
+            }
+          }
+
+          // op_yoy 補完 (null のときのみ、両方の値が有効な場合)
+          if (
+            ext.op_yoy == null &&
+            currRow.operating_profit != null &&
+            prevRow.operating_profit != null &&
+            prevRow.operating_profit !== 0
+          ) {
+            const yoy =
+              (currRow.operating_profit - prevRow.operating_profit) /
+              Math.abs(prevRow.operating_profit);
+            if (isFinite(yoy) && !isNaN(yoy)) {
+              (rp.extracted as Record<string, unknown>).op_yoy = yoy;
+              // notification_compare_json.current.op_yoy も補完
+              if (ncj?.current && ncj.current.op_yoy == null) {
+                ncj.current.op_yoy = yoy;
+              }
+            }
+          }
+
+          // op_current が null だが financials にある場合は補完 (赤字判定に必要)
+          if (ext.op_current == null && currRow.operating_profit != null) {
+            (rp.extracted as Record<string, unknown>).op_current = currRow.operating_profit * 1_000_000;
+          }
+        }
+      }
+    }
+  } catch (err) {
+    // financials 補完エラーは無視して通常表示を維持する
+    console.warn("[TDNET fetchEvents] financials YOY補完エラー (無視):", err);
+  }
+  // ── YOY 補完ここまで ────────────────────────────────────────────────────
+
   console.log("[TDNET fetchEvents] フィルター後件数:", enriched.length, "|",
     opts.unreadOnly ? "unreadOnly" : "",
     opts.starredOnly ? "starredOnly" : "",
     "(DB:", events.length, "-> 表示:", enriched.length, ")"
   );
   return enriched;
+}
+
+// ============================================================
+// financials YOY 補完ヘルパー
+// ============================================================
+
+/** financials テーブルの行型 (SELECT 結果) */
+interface FinancialsRow {
+  ticker: string;
+  period: string;
+  quarter: string;
+  sales: number | null;
+  operating_profit: number | null;
+  unit: string | null;
+}
+
+/**
+ * 会計期末日 (YYYY-MM-DD) から前年の同じ期末日を返す。
+ * 例: "2026-09-30" → "2025-09-30"
+ * うるう年 (2/29) の場合は 2/28 にフォールバック。
+ */
+function prevFiscalYearPeriod(period: string): string {
+  const [y, m, d] = period.split("-").map(Number);
+  // 前年同月末日: 年を1つ引いた後、同じ月末日を使う
+  const prevYear = y - 1;
+  // 月末日は元のdをそのまま使う（うるう年2/29→前年は2/28を試みる）
+  const candidate = `${prevYear}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  // バリデーション: Date で確認
+  const dt = new Date(candidate);
+  if (isNaN(dt.getTime())) {
+    // うるう年2/29 → 2/28 にフォールバック
+    return `${prevYear}-${String(m).padStart(2, "0")}-28`;
+  }
+  return candidate;
 }
 
 // ============================================================
