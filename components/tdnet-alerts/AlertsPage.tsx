@@ -16,9 +16,13 @@ type AlertsCacheEntry = {
 };
 const ALERTS_CACHE_TTL_MS = 30_000;
 
-const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%)/gi;
+const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%|赤字継続|黒転|赤転)/gi;
 
 const getYoyClass = (text: string) => {
+  // 営業利益ターンアラウンドラベルの色分け
+  if (text === "赤字継続") return "yoy-negative";
+  if (text === "黒転")   return "yoy-positive";
+  if (text === "赤転")   return "yoy-negative";
   const match = text.match(/([+-]?[\d.]+)%/);
   if (match) {
     const val = parseFloat(match[1]);
@@ -376,6 +380,27 @@ const formatCardBody = (event: EnrichedEvent): {
   return fallbackRes;
 };
 
+/**
+ * 営業利益のターンアラウンドラベルを返す。
+ * 赤字が絡む場合は「赤字継続」「黒転」「赤転」を返す。
+ * 両方とも黒字の場合は null を返し、呼び出し元で従来のYOY表示を使う。
+ * @param profitBase  比較元の営業利益実数 (前年実績 or 当年実績)
+ * @param profitTarget 比較先の営業利益実数 (当年実績 or 来期予想)
+ */
+const getOpTurnaroundLabel = (
+  profitBase: number | null | undefined,
+  profitTarget: number | null | undefined
+): "赤字継続" | "黒転" | "赤転" | null => {
+  if (profitBase == null || isNaN(Number(profitBase))) return null;
+  if (profitTarget == null || isNaN(Number(profitTarget))) return null;
+  const base   = Number(profitBase);
+  const target = Number(profitTarget);
+  if (base < 0 && target < 0)  return "赤字継続";
+  if (base < 0 && target >= 0) return "黒転";
+  if (base >= 0 && target < 0) return "赤転";
+  return null; // 両方黒字: 通常YOY表示
+};
+
 const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
   if (summaryCache.has(event.id)) return summaryCache.get(event.id)!;
   const rawVal = event.raw_payload;
@@ -447,7 +472,24 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       "loss_expansion": "赤字拡大"
     };
 
-    if (currOpVal != null) {
+    // 営業利益 2行目表示 (前年実績 vs 当年実績)
+    // op_current: 当年実績の実数。op_previous は DB にないため op_yoy と op_current から逆算する。
+    // 逆算式: op_previous_est = op_current / (1 + op_yoy)  (op_yoy == -1 の場合は前年0=黒字扱い)
+    if (currOpVal != null && ext.op_current != null) {
+      const opCurrentNum = Number(ext.op_current);
+      const opYoyNum = Number(currOpVal);
+      let opPrevEst: number | null = null;
+      if (!isNaN(opCurrentNum) && !isNaN(opYoyNum) && opYoyNum !== -1) {
+        opPrevEst = opCurrentNum / (1 + opYoyNum);
+      }
+      const turnaround = getOpTurnaroundLabel(opPrevEst, opCurrentNum);
+      if (turnaround !== null) {
+        metric2 = `営利（${turnaround}）`;
+      } else {
+        const currOp = fmtPct(Number(currOpVal) * 100);
+        metric2 = `営利（YOY${currOp}）`;
+      }
+    } else if (currOpVal != null) {
       const currOp = fmtPct(Number(currOpVal) * 100);
       metric2 = `営利（YOY${currOp}）`;
     } else if (fallbackOpYoy) {
@@ -478,14 +520,31 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
         
         let cmpOpStr = "YOY-";
-        if (cmp.op_yoy != null) {
+
+        // 3行目表示: 当年実績 vs 来期予想 (FY/4Q の場合のみ特別判定)
+        // guidance.op_forecast がある場合、op_current との符号比較でターンアラウンドを判定する。
+        const q = ext.quarter as string;
+        const isForecastRow = (q === "FY" || q === "4Q");
+        const opForecast = (ext as any).guidance?.op_forecast;
+        const opCurrentForCmp = ext.op_current;
+
+        if (isForecastRow && opForecast != null && opCurrentForCmp != null) {
+          // 3行目: 当年実績 vs 来期予想 でターンアラウンド判定
+          const turnaroundCmp = getOpTurnaroundLabel(Number(opCurrentForCmp), Number(opForecast));
+          if (turnaroundCmp !== null) {
+            cmpOpStr = turnaroundCmp;
+          } else if (cmp.op_yoy != null) {
+            cmpOpStr = `YOY${fmtPct(cmp.op_yoy * 100)}`;
+          } else if (cmpOpStatus && statusMap[cmpOpStatus]) {
+            cmpOpStr = statusMap[cmpOpStatus];
+          }
+        } else if (cmp.op_yoy != null) {
           cmpOpStr = `YOY${fmtPct(cmp.op_yoy * 100)}`;
         } else if (cmpOpStatus && statusMap[cmpOpStatus]) {
           cmpOpStr = statusMap[cmpOpStatus];
         }
 
         let compLabel = cmp.label || "";
-        const q = ext.quarter as string;
         if (q === "1Q") compLabel = "通期予想";
         else if (q === "FY" || q === "4Q") compLabel = "来期FY予想";
         else if (q === "2Q" || q === "3Q") compLabel = "前Q";
