@@ -671,6 +671,61 @@ const getDividendScore = (text: string): number | null => {
   return null;
 };
 
+/**
+ * 決算カテゴリ専用のソートキー取得処理。
+ * 当期営業利益(2行目)の状態をもとに bucket と yoyValue を返す。
+ * bucket:
+ *   0: 黒転
+ *   1: 通常YOY％
+ *   2: 赤字継続
+ *   3: 赤転
+ *   4: YOY- / 判定不能
+ */
+const getEarningsOpSortKey = (event: EnrichedEvent): { bucket: number, yoyValue: number } => {
+  const rp: Record<string, unknown> | null =
+    typeof event.raw_payload === "string"
+      ? (() => { try { return JSON.parse(event.raw_payload) as Record<string, unknown>; } catch { return null; } })()
+      : (event.raw_payload as Record<string, unknown> | null) ?? null;
+  const ext = (rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object" ? rp.extracted : {}) as Record<string, unknown>;
+  const comp = rp?.notification_compare_json as any;
+  const fm = event.formatted_message || event.display_summary || "";
+
+  const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
+  const opCurrentNum = Number(ext.op_current);
+  const opYoyNum = Number(currOpVal);
+
+  if (currOpVal != null && ext.op_current != null) {
+    let opPrevEst: number | null = null;
+    if (!isNaN(opCurrentNum) && !isNaN(opYoyNum) && opYoyNum !== -1) {
+      opPrevEst = opCurrentNum / (1 + opYoyNum);
+    }
+    const turnaround = getOpTurnaroundLabel(opPrevEst, opCurrentNum);
+    if (turnaround === "黒転") return { bucket: 0, yoyValue: 0 };
+    if (turnaround === "赤字継続") return { bucket: 2, yoyValue: 0 };
+    if (turnaround === "赤転") return { bucket: 3, yoyValue: 0 };
+    
+    // 通常YOY
+    if (!isNaN(opYoyNum)) return { bucket: 1, yoyValue: opYoyNum };
+  } else if (currOpVal != null && !isNaN(opYoyNum)) {
+    // op_currentが欠損だがop_yoyはある場合
+    return { bucket: 1, yoyValue: opYoyNum };
+  } else {
+    // fallbackOpYoy (正規表現) を試す
+    let fallbackOpYoy: string | null = null;
+    if (fm) {
+      const oMatch = fm.match(/(?:営業利益|営利).*?YOY\s*([+-]?[\d.]+%)/i);
+      if (oMatch) fallbackOpYoy = oMatch[1];
+    }
+    if (fallbackOpYoy) {
+      const val = parseFloat(fallbackOpYoy);
+      if (!isNaN(val)) return { bucket: 1, yoyValue: val / 100 };
+    }
+  }
+
+  // 判定不能
+  return { bucket: 4, yoyValue: 0 };
+};
+
 const getCategoryScore = (event: EnrichedEvent, category: string): number | null => {
   const badge = getBadgeConfig(event.event_type, event.headline);
   const subtypeLabel = event.event_subtype ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype) : "";
@@ -1213,14 +1268,26 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 }
               });
             } else if (isScorableCategory) {
-              displayEvents = [...events].sort((a, b) => {
-                const scoreA = getCategoryScore(a, filter);
-                const scoreB = getCategoryScore(b, filter);
-                if (scoreA !== null && scoreB !== null) return scoreB - scoreA;
-                if (scoreA !== null) return -1;
-                if (scoreB !== null) return 1;
-                return 0;
-              });
+              displayEvents = events.map((ev, idx) => ({ ev, idx })).sort(({ ev: a, idx: ai }, { ev: b, idx: bi }) => {
+                if (filter === "earnings") {
+                  const keyA = getEarningsOpSortKey(a);
+                  const keyB = getEarningsOpSortKey(b);
+                  if (keyA.bucket !== keyB.bucket) {
+                    return keyA.bucket - keyB.bucket;
+                  }
+                  if (keyA.bucket === 1) {
+                    return keyB.yoyValue - keyA.yoyValue;
+                  }
+                  return ai - bi;
+                } else {
+                  const scoreA = getCategoryScore(a, filter);
+                  const scoreB = getCategoryScore(b, filter);
+                  if (scoreA !== null && scoreB !== null) return scoreB - scoreA;
+                  if (scoreA !== null) return -1;
+                  if (scoreB !== null) return 1;
+                  return ai - bi;
+                }
+              }).map(({ ev }) => ev);
             } else if (filter === "edinet_order") {
               // 受注高YOY降順ソート（「受注・受注残」カテゴリ選択時のみ）
               // 受注高YOYが大きいものを上、null/parse不能は末尾、同値は既存順を維持
