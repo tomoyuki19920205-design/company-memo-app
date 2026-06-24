@@ -370,6 +370,118 @@ export async function fetchEvents(
   }
   // ── YOY 補完ここまで ────────────────────────────────────────────────────
 
+  // ── EDINET受注 YOY補完 ───────────────────────────────────────────────────
+  try {
+    const ordersWithMissingYoy = enriched.filter(
+      (e) =>
+        e.event_type === "edinet_order" &&
+        (() => {
+          const rp = e.raw_payload as Record<string, unknown>;
+          const ext = (rp?.extracted ?? {}) as Record<string, unknown>;
+          return ext.orders_received_yoy == null || ext.order_backlog_yoy == null;
+        })()
+    );
+
+    if (ordersWithMissingYoy.length > 0) {
+      const tickers = [...new Set(ordersWithMissingYoy.map((e) => e.ticker))];
+      const CHUNK_SIZE = 50;
+      const chunks: string[][] = [];
+      for (let i = 0; i < tickers.length; i += CHUNK_SIZE) {
+        chunks.push(tickers.slice(i, i + CHUNK_SIZE));
+      }
+      const chunkResults = await Promise.all(
+        chunks.map((chunk) =>
+          supabase
+            .from("edinet_order_data")
+            .select("ticker,period,orders_received,order_backlog,source_unit,segment_name")
+            .in("ticker", chunk)
+            .order("period", { ascending: false })
+            .limit(1000)
+        )
+      );
+
+      const allOrderRows = chunkResults.flatMap(({ data }) => (data as any[]) || []);
+
+      if (allOrderRows.length > 0) {
+        // ticker -> period -> row
+        const orderMap: Record<string, Record<string, any>> = {};
+        for (const row of allOrderRows) {
+          if (!orderMap[row.ticker]) orderMap[row.ticker] = {};
+          const current = orderMap[row.ticker][row.period];
+          // __ALL__ または 全社 を優先。なければ最初に見つかったものを保持。
+          if (!current || row.segment_name === "__ALL__" || row.segment_name === "全社") {
+            orderMap[row.ticker][row.period] = row;
+          }
+        }
+
+        for (const ev of ordersWithMissingYoy) {
+          const rp = ev.raw_payload as Record<string, unknown>;
+          const ext = (rp?.extracted ?? {}) as Record<string, unknown>;
+          
+          let currPeriod = String(ext.period || ext.fiscal_period || "");
+          if (!currPeriod || !currPeriod.includes("-")) {
+            // yyyy-mm-dd形式が見つからない場合はDBから最新periodを推測
+            const tickerPeriods = Object.keys(orderMap[ev.ticker] ?? {}).sort().reverse();
+            currPeriod = tickerPeriods[0];
+          }
+          if (!currPeriod) continue;
+
+          const currRow = orderMap[ev.ticker]?.[currPeriod];
+          if (!currRow) continue;
+
+          const prevPeriod = prevFiscalYearPeriod(currPeriod);
+          const prevRow = orderMap[ev.ticker]?.[prevPeriod];
+          if (!prevRow) continue;
+
+          // unit normalization helper
+          const normalizeToThousands = (val: number | null | undefined, unit: string | null | undefined): number | null => {
+            if (val == null || typeof val !== "number" || isNaN(val) || !unit) return null;
+            if (unit === "thousand_yen") return val;
+            if (unit === "million_yen") return val * 1000;
+            if (unit === "yen") return val / 1000;
+            return null; // unknown / null
+          };
+
+          const isAnomaly = (curr: number, prev: number, yoy: number): boolean => {
+            if (yoy <= -0.9 || yoy >= 9.0) return true;
+            if (curr !== 0 && Math.abs(prev / curr) >= 300) return true;
+            if (prev !== 0 && Math.abs(curr / prev) >= 300) return true;
+            return false;
+          };
+
+          const currOr = normalizeToThousands(currRow.orders_received, currRow.source_unit);
+          const prevOr = normalizeToThousands(prevRow.orders_received, prevRow.source_unit);
+          if (ext.orders_received_yoy == null && currOr != null && prevOr != null && prevOr !== 0) {
+            const yoy = (currOr - prevOr) / Math.abs(prevOr);
+            if (isFinite(yoy) && !isNaN(yoy)) {
+              if (!isAnomaly(currOr, prevOr, yoy)) {
+                ext.orders_received_yoy = yoy;
+              } else {
+                console.warn(`[TDNET fetchEvents] YOY Anomaly Guard: ${ev.ticker} orders_received_yoy skip, yoy=${yoy}, curr=${currOr}, prev=${prevOr}`);
+              }
+            }
+          }
+
+          const currOb = normalizeToThousands(currRow.order_backlog, currRow.source_unit);
+          const prevOb = normalizeToThousands(prevRow.order_backlog, prevRow.source_unit);
+          if (ext.order_backlog_yoy == null && currOb != null && prevOb != null && prevOb !== 0) {
+            const yoy = (currOb - prevOb) / Math.abs(prevOb);
+            if (isFinite(yoy) && !isNaN(yoy)) {
+              if (!isAnomaly(currOb, prevOb, yoy)) {
+                ext.order_backlog_yoy = yoy;
+              } else {
+                console.warn(`[TDNET fetchEvents] YOY Anomaly Guard: ${ev.ticker} order_backlog_yoy skip, yoy=${yoy}, curr=${currOb}, prev=${prevOb}`);
+              }
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("[TDNET fetchEvents] EDINET order YOY補完エラー (無視):", err);
+  }
+  // ── EDINET受注 YOY補完ここまで ────────────────────────────────────────────────
+
   console.log("[TDNET fetchEvents] フィルター後件数:", enriched.length, "|",
     opts.unreadOnly ? "unreadOnly" : "",
     opts.starredOnly ? "starredOnly" : "",
