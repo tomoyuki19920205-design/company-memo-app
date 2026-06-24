@@ -433,77 +433,36 @@ export async function fetchEvents(
           const prevRow = orderMap[ev.ticker]?.[prevPeriod];
           if (!prevRow) continue;
 
-          // unit normalization helper
-          const normalizeToThousands = (val: number | null | undefined, unit: string | null | undefined): number | null => {
-            if (val == null || typeof val !== "number" || isNaN(val) || !unit) return null;
-            if (unit === "thousand_yen") return val;
-            if (unit === "million_yen") return val * 1000;
-            if (unit === "yen") return val / 1000;
-            return null; // unknown / null
-          };
+          const calculateYoy = (currVal: number | null | undefined, prevVal: number | null | undefined): number | null => {
+            if (
+              currVal == null || prevVal == null || 
+              typeof currVal !== "number" || typeof prevVal !== "number" || 
+              isNaN(currVal) || isNaN(prevVal) || prevVal === 0
+            ) {
+              return null;
+            }
 
-          const isAnomaly = (curr: number, prev: number, yoy: number): boolean => {
-            if (yoy <= -0.9 || yoy >= 9.0) return true;
-            if (curr !== 0 && Math.abs(prev / curr) >= 300) return true;
-            if (prev !== 0 && Math.abs(curr / prev) >= 300) return true;
-            return false;
-          };
-
-          const calculateYoyWithScaleCorrection = (
-            ticker: string,
-            metricName: string,
-            currVal: number | null,
-            prevVal: number | null
-          ): number | null => {
-            if (currVal == null || prevVal == null || prevVal === 0) return null;
-
-            const calc = (c: number, p: number) => (c - p) / Math.abs(p);
-            
-            const yoy = calc(currVal, prevVal);
+            const yoy = (currVal - prevVal) / Math.abs(prevVal);
             if (!isFinite(yoy) || isNaN(yoy)) return null;
 
-            if (!isAnomaly(currVal, prevVal, yoy)) {
-              return yoy;
+            // 異常値ガード: -90%以下、または +900%以上は補完しない
+            if (yoy <= -0.9 || yoy >= 9.0) {
+              console.warn(`[TDNET fetchEvents] YOY Anomaly Guard skip: yoy=${yoy}, curr=${currVal}, prev=${prevVal}`);
+              return null;
             }
 
-            // Anomaly detected, try scale correction
-            let adjustedCurr = currVal;
-            let adjustedPrev = prevVal;
-            let scaleAdjustment = "";
-
-            if (currVal !== 0 && Math.abs(prevVal / currVal) >= 300 && Math.abs(prevVal / currVal) <= 3000) {
-              adjustedCurr = currVal * 1000;
-              scaleAdjustment = "scale_adjusted_current_x1000";
-            } else if (prevVal !== 0 && Math.abs(currVal / prevVal) >= 300 && Math.abs(currVal / prevVal) <= 3000) {
-              adjustedPrev = prevVal * 1000;
-              scaleAdjustment = "scale_adjusted_previous_x1000";
-            }
-
-            if (scaleAdjustment) {
-              const adjustedYoy = calc(adjustedCurr, adjustedPrev);
-              if (isFinite(adjustedYoy) && !isNaN(adjustedYoy) && adjustedYoy > -0.9 && adjustedYoy < 9.0) {
-                console.info(`[TDNET fetchEvents] YOY Scale Correction: ${ticker} ${metricName} ${scaleAdjustment}, originalYoy=${yoy}, newYoy=${adjustedYoy}`);
-                return adjustedYoy;
-              }
-            }
-
-            console.warn(`[TDNET fetchEvents] YOY Anomaly Guard: ${ticker} ${metricName} skip, yoy=${yoy}, curr=${currVal}, prev=${prevVal}`);
-            return null;
+            return yoy;
           };
 
-          const currOr = normalizeToThousands(currRow.orders_received, currRow.source_unit);
-          const prevOr = normalizeToThousands(prevRow.orders_received, prevRow.source_unit);
           if (ext.orders_received_yoy == null) {
-            const yoy = calculateYoyWithScaleCorrection(ev.ticker, "orders_received_yoy", currOr, prevOr);
+            const yoy = calculateYoy(currRow.orders_received, prevRow.orders_received);
             if (yoy != null) {
               ext.orders_received_yoy = yoy;
             }
           }
 
-          const currOb = normalizeToThousands(currRow.order_backlog, currRow.source_unit);
-          const prevOb = normalizeToThousands(prevRow.order_backlog, prevRow.source_unit);
           if (ext.order_backlog_yoy == null) {
-            const yoy = calculateYoyWithScaleCorrection(ev.ticker, "order_backlog_yoy", currOb, prevOb);
+            const yoy = calculateYoy(currRow.order_backlog, prevRow.order_backlog);
             if (yoy != null) {
               ext.order_backlog_yoy = yoy;
             }
