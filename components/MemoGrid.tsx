@@ -78,6 +78,11 @@ export default function MemoGrid({
     // --- ペーストハンドラー (Grid用): ダブルクォート対応TSVパーサ使用 ---
     const handleGridPaste = useCallback(
         (e: React.ClipboardEvent) => {
+            const target = e.target as HTMLElement;
+            if (target.tagName.toLowerCase() === 'input' || target.tagName.toLowerCase() === 'textarea' || target.isContentEditable) {
+                return;
+            }
+
             e.preventDefault();
             e.stopPropagation();
 
@@ -199,6 +204,16 @@ export default function MemoGrid({
                                     handleCellChange(rowIdx, colIdx, e.target.value)
                                 }
                                 onFocus={() => onFocusCellChange([rowIdx, colIdx])}
+                                onPaste={(e) => {
+                                    e.stopPropagation();
+                                    e.preventDefault();
+                                    const text = e.clipboardData.getData("text/plain").replace(/\r\n|\r/g, "\n");
+                                    const input = e.currentTarget;
+                                    const start = input.selectionStart ?? 0;
+                                    const end = input.selectionEnd ?? 0;
+                                    const newVal = cell.substring(0, start) + text + cell.substring(end);
+                                    handleCellChange(rowIdx, colIdx, newVal);
+                                }}
                                 onKeyDown={(e) => {
                                     if (e.key === "Tab") {
                                         e.preventDefault();

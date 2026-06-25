@@ -2598,6 +2598,11 @@ function FinancialsTable({
     }, [commitManualEdit, moveManualActiveCellDir]);
 
     const handleTablePaste = useCallback((e: React.ClipboardEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.tagName.toLowerCase() === 'input' || target.tagName.toLowerCase() === 'textarea' || target.isContentEditable) {
+            return;
+        }
+
         // セグメントセルがアクティブの場合 → セグメントペースト処理
         if (activeSegCell && onBulkSaveOverrides) {
             e.preventDefault();
@@ -3747,21 +3752,8 @@ function SegOverrideCell({
 
     // 編集中の input で paste イベントを横取りし、テーブルレベルのハンドラへ伝搬させる
     const handleInputPaste = useCallback((e: React.ClipboardEvent<HTMLInputElement>) => {
-        const text = e.clipboardData.getData("text/plain");
-        if (text && (text.includes("\t") || text.includes("\n"))) {
-            e.preventDefault();
-            setEditing(false);
-            onSegEditDone?.();
-            const tableDiv = (e.target as HTMLElement).closest(".pl-section");
-            if (tableDiv) {
-                const newEvent = new ClipboardEvent("paste", {
-                    clipboardData: e.clipboardData as unknown as DataTransfer,
-                    bubbles: true,
-                    cancelable: true,
-                });
-                tableDiv.dispatchEvent(newEvent);
-            }
-        }
+        // セル編集中は改行を含むテキストでも1セル内ペーストとして扱うため、バブリングを行わず通常ペーストに任せる
+        return;
     }, [onSegEditDone]);
 
     const displayVal = value !== null ? formatMillions(value) : "–";
