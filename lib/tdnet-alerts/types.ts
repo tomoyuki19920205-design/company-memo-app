@@ -133,7 +133,7 @@ const _EVENT_TYPE_ALIAS: Record<string, string> = {
   shareholder: "shareholder",
   other: "other",
   edinet_order: "edinet_order",
-  edinet_order_partial: "edinet_order_partial",
+  edinet_order_partial: "edinet_order",
   // 旧パイプライン名
   forecast_revision: "forecast",
   dividend_revision: "dividend",
