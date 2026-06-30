@@ -1,0 +1,52 @@
+import { createClient } from '@supabase/supabase-js';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.local' });
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+async function loadEdinetOrders(ticker: string) {
+    const t = ticker;
+    const { data, error } = await supabase
+        .from("edinet_order_data")
+        .select(
+            "ticker,period,fiscal_year," +
+            "orders_received,order_backlog,construction_carryover," +
+            "completed_construction,rpo," +
+            "source_unit,confidence,null_reason"
+        )
+        .eq("ticker", t)
+        .is("segment_name", null)
+        .eq("source_type", "edinet_yuho")
+        .order("period", { ascending: false })
+        .limit(20);
+
+    if (error) {
+        console.warn(`[edinet_order_data] skip ${ticker}:`, error.message);
+        return [];
+    }
+
+    return data ?? [];
+}
+
+async function main() {
+  const targetTickers = ['1812', '1802', '6594', '5985', '6101', '7735'];
+  
+  console.log("=== CHECKING EDINET ORDERS API ===");
+  for (const ticker of targetTickers) {
+    const data = await loadEdinetOrders(ticker);
+    console.log(`\n--- Ticker: ${ticker} ---`);
+    if (data.length === 0) {
+        console.log(`No EDINET data found for ${ticker}`);
+    } else {
+        for (const row of data) {
+            console.log(`period=${row.period}, orders_received=${row.orders_received}, backlog=${row.order_backlog}, rpo=${row.rpo}, conf=${row.confidence}, null_reason=${row.null_reason}`);
+        }
+    }
+  }
+}
+
+main().catch(console.error);

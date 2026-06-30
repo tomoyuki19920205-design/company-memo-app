@@ -1,0 +1,155 @@
+import { createClient } from "@supabase/supabase-js";
+import { fetchEvents } from "../lib/tdnet-alerts/queries";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: ".env.local" });
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+const getOpTurnaroundLabel = (
+  profitBase: number | null | undefined,
+  profitTarget: number | null | undefined
+): "黒転" | "赤字継続" | "赤転" | null => {
+  if (profitBase == null || isNaN(Number(profitBase))) return null;
+  if (profitTarget == null || isNaN(Number(profitTarget))) return null;
+  const base   = Number(profitBase);
+  const target = Number(profitTarget);
+  if (base < 0 && target < 0)  return "赤字継続";
+  if (base < 0 && target >= 0) return "黒転";
+  if (base >= 0 && target < 0) return "赤転";
+  return null;
+};
+
+const getEarningsOpSortKey = (event: any): { bucket: number, yoyValue: number } => {
+  const rp = typeof event.raw_payload === "string" ? JSON.parse(event.raw_payload) : (event.raw_payload ?? {});
+  const ext = (rp && rp.extracted ? rp.extracted : {}) as any;
+  const comp = rp?.notification_compare_json as any;
+  const fm = event.formatted_message || event.display_summary || "";
+
+  const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
+  const opCurrentNum = Number(ext.op_current);
+  const opYoyNum = Number(currOpVal);
+
+  if (currOpVal != null && ext.op_current != null) {
+    let opPrevEst: number | null = null;
+    if (!isNaN(opCurrentNum) && !isNaN(opYoyNum) && opYoyNum !== -1) {
+      opPrevEst = opCurrentNum / (1 + opYoyNum);
+    }
+    const turnaround = getOpTurnaroundLabel(opPrevEst, opCurrentNum);
+    if (turnaround === "黒転") return { bucket: 0, yoyValue: 0 };
+    if (turnaround === "赤字継続") return { bucket: 2, yoyValue: 0 };
+    if (turnaround === "赤転") return { bucket: 3, yoyValue: 0 };
+    if (!isNaN(opYoyNum)) return { bucket: 1, yoyValue: opYoyNum };
+  } else if (currOpVal != null && !isNaN(opYoyNum)) {
+    return { bucket: 1, yoyValue: opYoyNum };
+  } else {
+    let fallbackOpYoy: string | null = null;
+    if (fm) {
+      const oMatch = fm.match(/(?:営業利益|営利).*?YOY\s*([+-]?[\d.]+%)/i);
+      if (oMatch) fallbackOpYoy = oMatch[1];
+    }
+    if (fallbackOpYoy) {
+      const val = parseFloat(fallbackOpYoy);
+      if (!isNaN(val)) return { bucket: 1, yoyValue: val / 100 };
+    }
+  }
+  return { bucket: 4, yoyValue: 0 };
+};
+
+const getEarningsScore = (text: string): number | null => {
+  const match = text.match(/(?:営利|営業利益|営業益|OP)\s*[（(](?:YOY|前年比)\s*([+-]?[\d.]+)%[）)]/i);
+  if (match) return parseFloat(match[1]);
+  return null;
+};
+
+const fmtPct = (v: any) => {
+  const n = Number(v);
+  if (isNaN(n)) return "?%";
+  const sign = n > 0 ? "+" : "";
+  return `${sign}${n.toFixed(1)}%`;
+};
+
+function getLine2Metric(event: any): string {
+  const rp = typeof event.raw_payload === "string" ? JSON.parse(event.raw_payload) : (event.raw_payload ?? {});
+  const ext = rp?.extracted ?? {};
+  const comp = rp?.notification_compare_json ?? {};
+  const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
+  if (currOpVal != null && ext.op_current != null) {
+    const opCurrentNum = Number(ext.op_current);
+    const opYoyNum = Number(currOpVal);
+    let opPrevEst = null;
+    if (!isNaN(opCurrentNum) && !isNaN(opYoyNum) && opYoyNum !== -1) opPrevEst = opCurrentNum / (1 + opYoyNum);
+    const turnaround = getOpTurnaroundLabel(opPrevEst, opCurrentNum);
+    if (turnaround) return `営利（${turnaround}）`;
+  }
+  if (currOpVal != null) return `営利（YOY${fmtPct(Number(currOpVal)*100)}）`;
+  let fallbackOpYoy = null;
+  const fm = event.formatted_message || event.display_summary || "";
+  if (fm) {
+    const oMatch = fm.match(/(?:営業利益|営利).*?YOY\s*([+-]?[\d.]+%)/i);
+    if (oMatch) fallbackOpYoy = oMatch[1];
+  }
+  if (fallbackOpYoy) return `営利（YOY${fallbackOpYoy}）`;
+  return `営利（YOY-）`;
+}
+
+async function run() {
+  const events = await fetchEvents(supabase, {
+    userId: "test",
+    selectedDate: "2026-05-15",
+    limit: 1000
+  });
+
+  const earnings = events.filter(e => e.event_type === "earnings");
+
+  const beforeEvents = earnings.map((ev, idx) => {
+    const line2 = getLine2Metric(ev);
+    let line3 = "";
+    if (ev.formatted_message?.includes("予：営利")) line3 = ev.formatted_message;
+    const text = `${line2} ${line3} ${ev.formatted_message} ${JSON.stringify(ev.raw_payload)}`;
+    const score = getEarningsScore(text);
+    return { ev, idx, score, line2 };
+  }).sort((a, b) => {
+    if (a.score !== null && b.score !== null) return b.score - a.score;
+    if (a.score !== null) return -1;
+    if (b.score !== null) return 1;
+    return a.idx - b.idx;
+  });
+
+  const afterEvents = earnings.map((ev, idx) => {
+    const key = getEarningsOpSortKey(ev);
+    const line2 = getLine2Metric(ev);
+    return { ev, idx, key, line2 };
+  }).sort((a, b) => {
+    if (a.key.bucket !== b.key.bucket) return a.key.bucket - b.key.bucket;
+    if (a.key.bucket === 1) return b.key.yoyValue - a.key.yoyValue;
+    return a.idx - b.idx;
+  });
+
+  console.log("BEFORE TOP 20:");
+  beforeEvents.slice(0, 20).forEach((item, i) => {
+    let cat = "YOY-";
+    if (item.score !== null) cat = `YOY (${item.score}%)`;
+    let catName = item.line2;
+    if (catName.includes("黒転")) catName = "黒転";
+    else if (catName.includes("赤字継続")) catName = "赤字継続";
+    else if (catName.includes("赤転")) catName = "赤転";
+    else if (catName.includes("YOY-")) catName = "YOY-";
+    else catName = "通常YOY";
+    console.log(`${String(i+1).padStart(2, ' ')}. ${item.ev.ticker} ${item.ev.company_name.padEnd(10, ' ')} | ${item.line2} | before分類: ${catName} | score: ${item.score}`);
+  });
+
+  console.log("\nAFTER TOP 20:");
+  afterEvents.slice(0, 20).forEach((item, i) => {
+    const buckets = ["黒転", "通常YOY", "赤字継続", "赤転", "YOY-"];
+    console.log(`${String(i+1).padStart(2, ' ')}. ${item.ev.ticker} ${item.ev.company_name.padEnd(10, ' ')} | ${item.line2} | after分類: ${buckets[item.key.bucket]} (${(item.key.yoyValue*100).toFixed(1)}%)`);
+  });
+
+  const hirakiBefore = beforeEvents.findIndex(e => e.ev.ticker === "3059");
+  const hirakiAfter = afterEvents.findIndex(e => e.ev.ticker === "3059");
+  console.log(`\nHiraki (3059) BEFORE rank: ${hirakiBefore+1}, AFTER rank: ${hirakiAfter+1}`);
+}
+run().catch(console.error);

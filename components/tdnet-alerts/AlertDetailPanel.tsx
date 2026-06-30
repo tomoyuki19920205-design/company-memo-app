@@ -14,6 +14,7 @@ import type { EnrichedEvent, TdnetEventComment } from "@/lib/tdnet-alerts/types"
 import type { SegmentRow } from "@/lib/tdnet-alerts/queries";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
+import { isEdinetOrderEvent } from "./AlertsPage";
 
 interface AlertDetailPanelProps {
   event: EnrichedEvent;
@@ -289,7 +290,7 @@ export default function AlertDetailPanel({
 
       {/* Order Data */}
       {(() => {
-        const isOrderEvent = event.event_type === "edinet_order" || event.event_type === "edinet_order_partial";
+        const isOrderEvent = isEdinetOrderEvent(event.event_type);
         if (!isOrderEvent) return null;
         
         const ext = (event.raw_payload as Record<string, unknown>)?.extracted as Record<string, unknown> | undefined;

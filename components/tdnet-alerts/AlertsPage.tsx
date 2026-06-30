@@ -134,7 +134,14 @@ interface AlertsPageProps {
   userEmail: string;
 }
 
+export const isEdinetOrderEvent = (eventType: string) => {
+  return eventType === "edinet_order" || eventType === "edinet_order_partial";
+};
+
 const getBadgeConfig = (eventType: string, headline?: string) => {
+  if (isEdinetOrderEvent(eventType)) {
+    return { ...(EVENT_TYPE_CONFIG["edinet_order"] || { label: "受注・受注残", emoji: "📦", color: "#14b8a6" }), category: "edinet_order" };
+  }
   const cat = getDisplayCategory(eventType, headline);
   const config = EVENT_TYPE_CONFIG[cat] || { label: "その他", emoji: "📄", color: "#94a3b8" };
   return { ...config, category: cat };
@@ -594,7 +601,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
        divStr = `${fmtDiv(rev)}`;
     }
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
-  } else if (event.event_type === "edinet_order" || event.event_type === "edinet_order_partial") {
+  } else if (isEdinetOrderEvent(event.event_type)) {
     typeLabel = "受注/有報";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.quarter || ext.fiscal_year || ""}`.trim();
     
@@ -1259,7 +1266,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             // ====================
             const filteredEvents = events.filter(e => {
               // 受注タブの場合はフロントエンドでフィルタ
-              if (filter === "edinet_order" && e.event_type !== "edinet_order" && e.event_type !== "edinet_order_partial") {
+              if (filter === "edinet_order" && !isEdinetOrderEvent(e.event_type)) {
                 return false;
               }
 

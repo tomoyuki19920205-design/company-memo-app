@@ -1,0 +1,29 @@
+import { createClient } from "@supabase/supabase-js";
+import { fetchEvents } from "../lib/tdnet-alerts/queries";
+import * as dotenv from "dotenv";
+dotenv.config({ path: ".env.local" });
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+
+const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+async function test() {
+  const dummyUserId = "00000000-0000-0000-0000-000000000000";
+  const events = await fetchEvents(supabase, {
+    userId: dummyUserId,
+    todayOnly: false
+  });
+
+  const targetTickers = ["9366", "5449", "6859", "9820", "6157"];
+  
+  const edinetEvents = events.filter(e => e.event_type === "edinet_order" && targetTickers.includes(e.ticker));
+  
+  for (const e of edinetEvents) {
+    const ext = (e.raw_payload as any).extracted;
+    console.log(`[${e.ticker} ${e.company_name}] period: ${ext.period || ext.fiscal_period}`);
+    console.log(`  orders_received_yoy: ${ext.orders_received_yoy} | order_backlog_yoy: ${ext.order_backlog_yoy}`);
+  }
+}
+
+test().catch(console.error);
