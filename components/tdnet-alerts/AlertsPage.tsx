@@ -845,7 +845,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "forecast") opts.eventType = "forecast";
       else if (filter === "dividend") opts.eventType = "dividend";
       else if (filter === "earnings") opts.eventType = "earnings";
-      else if (filter === "edinet_order") opts.eventType = "edinet_order";
+      else if (filter === "edinet_order") {
+        // partialも取得するためクエリパラメータから外し、フロントエンド側でフィルタする
+      }
       else if (filter === "discord") opts.discordOnly = true;
       // 全件タブ: DBソート (disclosed_at DESC, detected_at DESC) をそのまま使用
       else if (filter === "all") opts.skipClientSort = true;
@@ -1244,64 +1246,49 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           ) : (
             (() => {
             const isDiscordTab = filter === "discord";
-            const isScorableCategory = ["earnings", "buyback", "forecast_up", "forecast", "dividend"].includes(filter);
+            
+            // ====================
+            // Full 優先フィルタの実装
+            // ====================
+            const filteredEvents = events.filter(e => {
+              // 受注タブの場合はフロントエンドでフィルタ
+              if (filter === "edinet_order" && e.event_type !== "edinet_order" && e.event_type !== "edinet_order_partial") {
+                return false;
+              }
 
-            let displayEvents = events;
-            if (isDiscordTab) {
-              displayEvents = [...events].sort((a, b) => {
-                // is_read は並び順に影響させない:
-                // 既読化しても位置が変わらないようにする（視覚的な既読状態はCSSで表現）
-                if (discordSortMode === "timeline") {
-                  const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
-                  const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
-                  if (da !== db) return db - da;
-                  const dda = new Date(a.detected_at).getTime();
-                  const ddb = new Date(b.detected_at).getTime();
-                  if (dda !== ddb) return ddb - dda;
-                  return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-                } else {
-                  if (a.priority_rank !== b.priority_rank) return a.priority_rank - b.priority_rank;
-                  const da = a.disclosed_at ? new Date(a.disclosed_at).getTime() : 0;
-                  const db = b.disclosed_at ? new Date(b.disclosed_at).getTime() : 0;
-                  if (da !== db) return db - da;
-                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                }
-              });
-            } else if (isScorableCategory) {
-              displayEvents = events.map((ev, idx) => ({ ev, idx })).sort(({ ev: a, idx: ai }, { ev: b, idx: bi }) => {
-                if (filter === "earnings") {
-                  const keyA = getEarningsOpSortKey(a);
-                  const keyB = getEarningsOpSortKey(b);
-                  if (keyA.bucket !== keyB.bucket) {
-                    return keyA.bucket - keyB.bucket;
-                  }
-                  if (keyA.bucket === 1) {
-                    return keyB.yoyValue - keyA.yoyValue;
-                  }
-                  return ai - bi;
-                } else {
-                  const scoreA = getCategoryScore(a, filter);
-                  const scoreB = getCategoryScore(b, filter);
-                  if (scoreA !== null && scoreB !== null) return scoreB - scoreA;
-                  if (scoreA !== null) return -1;
-                  if (scoreB !== null) return 1;
-                  return ai - bi;
-                }
-              }).map(({ ev }) => ev);
-            } else if (filter === "edinet_order") {
-              // 受注高YOY降順ソート（「受注・受注残」カテゴリ選択時のみ）
-              // 受注高YOYが大きいものを上、null/parse不能は末尾、同値は既存順を維持
-              displayEvents = events.map((ev, idx) => ({ ev, idx })).sort(({ ev: a, idx: ai }, { ev: b, idx: bi }) => {
-                const yoyA = getOrderReceivedYoy(a);
-                const yoyB = getOrderReceivedYoy(b);
-                if (yoyA !== null && yoyB !== null) return yoyB - yoyA; // 降順
-                if (yoyA !== null) return -1;  // A有値・B null → Aを上
-                if (yoyB !== null) return 1;   // A null・B有値 → Bを上
-                return ai - bi; // 両方null → 既存順を維持
-              }).map(({ ev }) => ev);
-            }
+              if (e.event_type !== "edinet_order_partial") return true;
+              const eExt = (e.raw_payload && typeof e.raw_payload === "object") ? (e.raw_payload as Record<string, any>).extracted : null;
+              const ePeriod = eExt?.period;
+              if (!ePeriod) return true;
+              
+              const hasFull = events.some(f => 
+                f.event_type === "edinet_order" &&
+                f.ticker === e.ticker &&
+                ((f.raw_payload && typeof f.raw_payload === "object" ? (f.raw_payload as Record<string, any>).extracted : null)?.period === ePeriod)
+              );
+              return !hasFull;
+            });
 
-            console.time("renderEvents");
+            // Discordタブ: ソート順をクライアントサイドで切り替え
+            const displayEvents = isDiscordTab
+              ? [...filteredEvents].sort((a, b) => {
+                  // 未読を常に上
+                  if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+                  if (discordSortMode === "timeline") {
+                    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+                  } else {
+                    const getScore = (ev: typeof a) => {
+                      const baseCat = getDisplayCategory(ev.event_type, ev.headline);
+                      return getCategoryScore(ev, baseCat) ?? 0;
+                    };
+                    const aScore = getScore(a);
+                    const bScore = getScore(b);
+                    if (aScore !== bScore) return bScore - aScore; // スコア降順
+                    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+                  }
+                })
+              : filteredEvents;
+
             const nodes = displayEvents.map((event) => {
               const badge = getBadgeConfig(event.event_type, event.headline);
               const priorityClass = !event.is_read ? getPriorityClass(event.priority_rank) : "";
@@ -1364,6 +1351,21 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     <span className={`alert-badge ${badge.category}`}>
                       {badge.emoji} {subtypeLabel || badge.label}
                     </span>
+                    {event.event_type === "edinet_order_partial" && (
+                      <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
+                        片側のみ
+                      </span>
+                    )}
+                    {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.review_label : null)) && (
+                      <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
+                        {((event.raw_payload as Record<string, any>).extracted?.review_label)}
+                      </span>
+                    )}
+                    {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.classification === "PARTIAL_METRIC_REVIEW_CAUTION" : false)) && (
+                      <span className="alert-badge" style={{ backgroundColor: "#fecaca", color: "#991b1b", marginLeft: "4px" }}>
+                        要確認
+                      </span>
+                    )}
                     <span className="alert-card-actions">
                       <button
                         className={`action-btn ${event.is_starred ? "active" : ""}`}
