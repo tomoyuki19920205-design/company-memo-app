@@ -39,6 +39,15 @@ const TDNET_SOURCES  = new Set([
 const EDINET_SOURCES = new Set(["edinet_xbrl"]);
 type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
 
+function isTdnetSegmentSource(s: SegmentRecord): boolean {
+    const src = s.source ?? "";
+    const dbasis = (s as any).data_basis ?? "";
+    return TDNET_SOURCES.has(src)
+        || src === "tdnet"
+        || src.includes("prior_comparative")
+        || dbasis === "prior_comparative";
+}
+
 const FORMULA_BAR_MANUAL_TABLE_TYPES = new Set(["segment_manual", "segment_cum", "segment_q"]);
 
 interface MemoMap {
@@ -653,11 +662,11 @@ function FinancialsTable({
 
     const filteredBySource = useMemo(() => {
         const segs = segments || [];
-        if (segSourceTab === "tdnet")  return segs.filter(s => TDNET_SOURCES.has(s.source ?? ""));
+        if (segSourceTab === "tdnet")  return segs.filter(isTdnetSegmentSource);
         if (segSourceTab === "edinet") return segs.filter(s => EDINET_SOURCES.has(s.source ?? ""));
         if (segSourceTab === "memo")   return segs; // memoモードでは全て返す（テーブル自体は非表示）
         // "all": whitelist 全体（TDNET + EDINET）のみ。source なしは除外。
-        return segs.filter(s => TDNET_SOURCES.has(s.source ?? "") || EDINET_SOURCES.has(s.source ?? ""));
+        return segs.filter(s => isTdnetSegmentSource(s) || EDINET_SOURCES.has(s.source ?? ""));
     }, [segments, segSourceTab]);
 
     // ── source_priority 防御的フィルタ ──
