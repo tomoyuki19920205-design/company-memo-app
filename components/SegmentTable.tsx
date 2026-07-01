@@ -151,7 +151,15 @@ function SegmentTable({
                 // backfill_v4_pdf は XBRL partial fallback 採用済み（高信頼）なので
                 // 先着の XBRL 行より優先して値・表示名を上書きする。
                 const seg = group.segMap.get(dk)!;
-                const isHigherTrust = row.source === "backfill_v4_pdf" || row.source === "v4_pdf";
+
+                const getTrustLevel = (src?: string) => {
+                    if (!src) return 0;
+                    if (src === "backfill_v4_pdf" || src === "v4_pdf") return 100;
+                    if (src.includes("prior_comparative")) return 50;
+                    return 10;
+                };
+
+                const isHigherTrust = getTrustLevel(row.source) > getTrustLevel(seg.source);
 
                 if (isHigherTrust) {
                     // 高信頼ソース: 表示名・値を全面上書き
