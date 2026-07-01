@@ -70,13 +70,15 @@ export async function fetchEvents(
 
   if (opts.search) {
     const s = opts.search.trim();
-    if (opts.allPeriodTickerSearch && /^\d{4}$/.test(s)) {
+    const tickerMatch = s.match(/^(\d{4})(?:\s|　|$)/);
+    if (opts.allPeriodTickerSearch && tickerMatch) {
       // 全期間ティッカー検索ONかつ数値の場合はティッカー完全一致のみにする（limit落ち防止と精度向上）
-      query = query.eq("ticker", s);
-    } else if (/^\d{4}$/.test(s)) {
-      query = query.or(`ticker.eq.${s},company_name.ilike.%${s}%,headline.ilike.%${s}%`);
+      query = query.eq("ticker", tickerMatch[1]);
+    } else if (tickerMatch) {
+      // 通常時も先頭4桁があればティッカー OR その他
+      query = query.or(`ticker.eq.${tickerMatch[1]},company_name.ilike.%${s}%,headline.ilike.%${s}%`);
     } else {
-      query = query.or(`ticker.ilike.%${s}%,company_name.ilike.%${s}%,headline.ilike.%${s}%`);
+      query = query.or(`company_name.ilike.%${s}%,headline.ilike.%${s}%`);
     }
   }
 

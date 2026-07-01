@@ -609,16 +609,19 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const isPartial = event.event_type === "edinet_order_partial";
 
     if (ext.orders_received != null) {
-      const yoy = ext.orders_received_yoy;
-      const yoyStr = yoy != null ? fmtPct(Number(yoy) * 100) : "-";
+      // 念のため単数形のキーもフォールバックとしてチェック
+      const rawYoy = ext.orders_received_yoy ?? (ext as any).order_received_yoy;
+      const yoy = typeof rawYoy === "string" ? parseFloat(rawYoy) : typeof rawYoy === "number" ? rawYoy : null;
+      const yoyStr = yoy != null && !isNaN(yoy) ? fmtPct(yoy * 100) : "-";
       metrics.push(`受注高 YOY${yoyStr}`);
     } else if (isPartial) {
       metrics.push("受注高 未開示");
     }
 
     if (ext.order_backlog != null) {
-      const yoy = ext.order_backlog_yoy;
-      const yoyStr = yoy != null ? fmtPct(Number(yoy) * 100) : "-";
+      const rawYoy = ext.order_backlog_yoy;
+      const yoy = typeof rawYoy === "string" ? parseFloat(rawYoy) : typeof rawYoy === "number" ? rawYoy : null;
+      const yoyStr = yoy != null && !isNaN(yoy) ? fmtPct(yoy * 100) : "-";
       metrics.push(`受注残 YOY${yoyStr}`);
     } else if (isPartial) {
       metrics.push("受注残 未開示");
