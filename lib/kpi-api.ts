@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { createSupabaseBrowser } from "./supabase-browser";
 
 // ============================================================
 // KPI定義・値の型
@@ -37,6 +37,7 @@ export async function loadKpiDefinitions(ticker: string): Promise<KpiDefMap> {
     if (!t) return { ...DEFAULT_KPI_NAMES };
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_kpi_definitions")
             .select("kpi_slot, kpi_name")
@@ -71,6 +72,7 @@ export async function saveKpiDefinition(
     const t = ticker.trim().toUpperCase();
     if (!t) throw new Error("ticker が空です");
 
+    const supabase = createSupabaseBrowser();
     const { error } = await supabase
         .from("company_kpi_definitions")
         .upsert(
@@ -97,6 +99,7 @@ export async function loadKpiValues(ticker: string): Promise<KpiValueMap> {
     if (!t) return result;
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_kpi_values")
             .select("period, quarter, kpi_slot, kpi_value")
@@ -144,6 +147,7 @@ export async function saveKpiValue(
     // Prefix period with scope to avoid key collision between cum and q tables
     const scopedPeriod = tableScope === "cum" ? `cum__${period}` : `q__${period}`;
 
+    const supabase = createSupabaseBrowser();
     const { error } = await supabase
         .from("company_kpi_values")
         .upsert(

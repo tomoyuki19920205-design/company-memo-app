@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { createSupabaseBrowser } from "./supabase-browser";
 import { normalizeTicker } from "./memo-api";
 import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
@@ -46,6 +46,7 @@ export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
     if (!t) return { ticker: ticker, companyName: null };
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("companies")
             .select("name_ja")
@@ -88,6 +89,7 @@ export async function loadCompanyMaster(): Promise<SearchCandidate[]> {
         let from = 0;
         let hasMore = true;
 
+        const supabase = createSupabaseBrowser();
         while (hasMore) {
             const { data, error } = await supabase
                 .from("companies")
@@ -143,6 +145,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("api_latest_financials_canonical")
             .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
@@ -199,6 +202,7 @@ export async function loadForecastRevision(ticker: string): Promise<ForecastRevi
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("forecast_revision")
             .select("*")
@@ -233,6 +237,7 @@ export async function loadMonthlyData(ticker: string): Promise<MonthlyRecord[]> 
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("monthly_data")
             .select("*")
@@ -265,6 +270,7 @@ export async function loadKpiData(ticker: string): Promise<KpiRecord[]> {
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("kpi_data")
             .select("*")
@@ -304,6 +310,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("api_latest_segments")
             .select("ticker,period,quarter,segment_name,sales,profit,source,source_priority")
@@ -553,6 +560,7 @@ export async function loadOrderKpis(ticker: string): Promise<OrderKpiItem[]> {
 
     // Fallback: query order_kpis table directly
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("order_kpis")
             .select(
@@ -612,6 +620,7 @@ export async function updateOrderKpiReviewStatus(
     }
 
     try {
+        const supabase = createSupabaseBrowser();
         // まず現在のレコードを確認
         const { data: current, error: fetchErr } = await supabase
             .from("order_kpis")
@@ -669,6 +678,7 @@ export async function loadRejectedOrderKpis(ticker: string): Promise<OrderKpiIte
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("order_kpis")
             .select(
@@ -705,6 +715,7 @@ export async function restoreOrderKpi(
     reviewerEmail?: string,
 ): Promise<{ success: boolean; error?: string }> {
     try {
+        const supabase = createSupabaseBrowser();
         const { data: current, error: fetchErr } = await supabase
             .from("order_kpis")
             .select("id,review_status")
@@ -755,6 +766,7 @@ export async function updateOrderKpiValue(
     reviewNote?: string,
 ): Promise<{ success: boolean; error?: string }> {
     try {
+        const supabase = createSupabaseBrowser();
         const { data: current, error: fetchErr } = await supabase
             .from("order_kpis")
             .select("id,normalized_value,review_status")
@@ -817,6 +829,7 @@ export async function loadLatestMarketData(
     if (!t) return null;
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("market_data")
             .select(
@@ -871,6 +884,7 @@ export async function loadPerShareData(
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("per_share_data")
             .select("*")
@@ -1101,6 +1115,7 @@ export async function loadEdinetOrders(ticker: string): Promise<EdinetOrderRecor
     if (!t) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("edinet_order_data")
             .select(

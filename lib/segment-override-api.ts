@@ -6,7 +6,7 @@
  * - deleteSegmentOverride(...) — 論理削除 (is_deleted=true)
  */
 
-import { supabase } from "./supabase";
+import { createSupabaseBrowser } from "./supabase-browser";
 import type {
     SegmentCellOverride,
     SegmentOverrideSaveRequest,
@@ -27,6 +27,7 @@ export async function loadSegmentOverrides(
     if (!ticker || fiscalYears.length === 0) return [];
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("segment_cell_overrides")
             .select("*")
@@ -88,6 +89,7 @@ export async function saveSegmentOverride(
     }
 
     try {
+        const supabase = createSupabaseBrowser();
         // まず既存レコードを取得 (論理削除済み含む)
         const { data: existing } = await supabase
             .from("segment_cell_overrides")
@@ -198,6 +200,7 @@ export async function deleteSegmentOverride(
     userEmail: string,
 ): Promise<boolean> {
     try {
+        const supabase = createSupabaseBrowser();
         const { error } = await supabase
             .from("segment_cell_overrides")
             .update({

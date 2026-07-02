@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { createSupabaseBrowser } from "./supabase-browser";
 
 // ============================================================
 // 定数
@@ -79,6 +79,7 @@ export async function loadMemo(
     const t = normalizeTicker(ticker);
     if (!t) return null;
 
+    const supabase = createSupabaseBrowser();
     const { data, error } = await supabase
         .from("company_memos")
         .select("*")
@@ -111,6 +112,7 @@ export async function saveMemo(
     const t = normalizeTicker(ticker);
     if (!t) throw new Error("ticker が空です");
 
+    const supabase = createSupabaseBrowser();
     const { data, error } = await supabase
         .from("company_memos")
         .upsert(
@@ -147,6 +149,7 @@ export async function loadGridMemo(
     if (!t || !period || !quarter) return null;
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_memo_grids")
             .select("*")
@@ -200,6 +203,7 @@ export async function saveGridMemo(
     };
 
 
+    const supabase = createSupabaseBrowser();
     const { data, error } = await supabase
         .from("company_memo_grids")
         .upsert(payload, { onConflict: "ticker,period,quarter" })
@@ -228,6 +232,7 @@ export async function loadAllGridMemos(
     if (!t) return result;
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_memo_grids")
             .select("*")
@@ -284,6 +289,7 @@ export async function saveManualTableMemo(
     if (!t) throw new Error("ticker が空です");
     const { period, quarter } = MANUAL_TABLE_KEYS[tableType];
 
+    const supabase = createSupabaseBrowser();
     const { error } = await supabase
         .from("company_memo_grids")
         .upsert(
@@ -317,6 +323,7 @@ export async function loadManualTableMemos(
     // 特殊 period キーを IN で一括取得
     const periods = Object.values(MANUAL_TABLE_KEYS).map((k) => k.period);
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_memo_grids")
             .select("period, quarter, grid_json")
@@ -365,6 +372,7 @@ export async function saveSegmentManualHeaders(
 ): Promise<void> {
     const t = normalizeTicker(ticker);
     if (!t) throw new Error("ticker が空です");
+    const supabase = createSupabaseBrowser();
     const { error } = await supabase
         .from("company_memo_grids")
         .upsert(
@@ -392,6 +400,7 @@ export async function loadSegmentManualHeaders(
     const t = normalizeTicker(ticker);
     if (!t) return [...DEFAULT_SEGMENT_MANUAL_HEADERS];
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_memo_grids")
             .select("grid_json")

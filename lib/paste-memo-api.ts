@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { createSupabaseBrowser } from "./supabase-browser";
 import { normalizeTicker } from "./memo-api";
 
 // ============================================================
@@ -68,6 +68,7 @@ export async function loadPasteMemo(
     if (!t) return null;
 
     try {
+        const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("company_paste_memos")
             .select("*")
@@ -132,6 +133,7 @@ export async function savePasteMemo(
 
     console.log("savePasteMemo payload:", JSON.stringify(payload));
 
+    const supabase = createSupabaseBrowser();
     const { data, error } = await supabase
         .from("company_paste_memos")
         .upsert(payload, { onConflict: "ticker,view_type" })
