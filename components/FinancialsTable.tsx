@@ -660,14 +660,37 @@ function FinancialsTable({
 
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
 
-    const filteredBySource = useMemo(() => {
+    // prior_comparative のようなXBRL由来の period（四半期末日等）を PLの period（決算期末日）に揃える
+    const alignedSegments = useMemo(() => {
         const segs = segments || [];
+        if (segs.length === 0 || data.length === 0) return segs;
+
+        const fyToPeriod = new Map<number, string>();
+        for (const row of data) {
+            const fy = extractFiscalYear(row.period);
+            if (fy > 0 && !fyToPeriod.has(fy)) {
+                fyToPeriod.set(fy, row.period);
+            }
+        }
+
+        return segs.map(seg => {
+            const fy = extractFiscalYear(seg.period);
+            const plPeriod = fyToPeriod.get(fy);
+            if (plPeriod && seg.period !== plPeriod) {
+                return { ...seg, period: plPeriod };
+            }
+            return seg;
+        });
+    }, [segments, data]);
+
+    const filteredBySource = useMemo(() => {
+        const segs = alignedSegments;
         if (segSourceTab === "tdnet")  return segs.filter(isTdnetSegmentSource);
         if (segSourceTab === "edinet") return segs.filter(s => EDINET_SOURCES.has(s.source ?? ""));
         if (segSourceTab === "memo")   return segs; // memoモードでは全て返す（テーブル自体は非表示）
         // "all": whitelist 全体（TDNET + EDINET）のみ。source なしは除外。
         return segs.filter(s => isTdnetSegmentSource(s) || EDINET_SOURCES.has(s.source ?? ""));
-    }, [segments, segSourceTab]);
+    }, [alignedSegments, segSourceTab]);
 
     // ── source_priority 防御的フィルタ ──
     // period + quarter 単位で最小 source_priority の行だけを残す。
