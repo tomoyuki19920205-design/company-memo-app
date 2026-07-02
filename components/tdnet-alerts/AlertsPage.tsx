@@ -431,7 +431,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     return n === Math.floor(n) ? `${Math.floor(n)}円` : `${n}円`;
   };
 
-  const d = new Date(event.detected_at);
+  const d = new Date(event.disclosed_at || event.detected_at);
   const dateStr = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
   const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
   
@@ -1363,7 +1363,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                   {/* Row 1: Time + Badge + Actions */}
                   <div className="alert-card-header">
                     <span className="alert-time">
-                      {formatTime(event.detected_at)}
+                      {formatTime(event.disclosed_at || event.detected_at)}
                     </span>
                     <span className={`alert-badge ${badge.category}`}>
                       {badge.emoji} {subtypeLabel || badge.label}
