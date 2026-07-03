@@ -6,7 +6,7 @@ import type { EdinetOrderRecord } from "@/types/edinet-order";
 /** 数値（百万円）をカンマ区切りで表示。null は「—」 */
 function fmtNum(v: number | null | undefined): string {
     if (v == null) return "—";
-    return v.toLocaleString("ja-JP", { maximumFractionDigits: 0 });
+    return v.toLocaleString("ja-JP", { maximumFractionDigits: 0 }) + "百万円";
 }
 
 /** YYYY-MM-DD → YYYY/MM/DD */
@@ -58,7 +58,6 @@ function EdinetOrderTable({ data, loading }: Props) {
     return (
         <div className="edinet-order-table-card">
             <div className="edinet-order-table-meta">
-                <span className="edinet-order-table-unit">単位: 百万円</span>
                 <span className="edinet-order-table-source">出典: EDINET有報（年次）</span>
             </div>
             <div className="edinet-order-table-wrap">
