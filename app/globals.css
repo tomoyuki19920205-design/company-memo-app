@@ -475,6 +475,9 @@ body {
   background: var(--pl-bg-manual);
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100cqw;
+  box-sizing: border-box;
   z-index: 50;
   border-bottom: 2px solid var(--primary);
   border-top-left-radius: var(--radius, 6px);
@@ -544,6 +547,10 @@ body {
   border-bottom: 1px solid var(--border-light);
   user-select: none;
   transition: background 0.15s;
+  position: sticky;
+  left: 0;
+  width: 100cqw;
+  box-sizing: border-box;
 }
 
 .formula-bar-resize-handle:hover {
@@ -3678,6 +3685,7 @@ body:has(.alerts-layout) {
   min-height: 0;
   overflow-y: auto;
   overflow-x: auto;
+  container-type: inline-size;
 }
 
 /* ============================================================
