@@ -779,6 +779,44 @@ const getOrderReceivedYoy = (event: EnrichedEvent): number | null => {
   return n * 100; // 小数→パーセント変換
 };
 
+const toFiniteNumber = (value: unknown): number | null => {
+  if (typeof value === "number") return isFinite(value) ? value : null;
+  if (typeof value !== "string") return null;
+  const cleaned = value.replace(/[,+\s%]/g, "");
+  if (cleaned === "" || cleaned === "-") return null;
+  const n = Number(cleaned);
+  return isFinite(n) ? n : null;
+};
+
+const getEarningsImpactKey = (event: EnrichedEvent): { bucket: number; score: number } | null => {
+  const { bucket, yoyValue } = getEarningsOpSortKey(event);
+  if (bucket === 4) return null;
+  if (bucket === 0) return { bucket: 2, score: 0 };
+  if (bucket === 3) return { bucket: 4, score: 0 };
+  if (yoyValue > 0) return { bucket: 1, score: yoyValue };
+  return { bucket: 3, score: yoyValue };
+};
+
+const getBuybackImpactKey = (event: EnrichedEvent): { bucket: number; score: number } | null => {
+  const rp = event.raw_payload as any;
+  const ext = rp?.extracted || {};
+  const ratio = toFiniteNumber(ext.ratio_to_outstanding);
+  if (ratio == null) return null;
+  return { bucket: 1, score: ratio };
+};
+
+const getImpactSortKey = (event: EnrichedEvent, activeCategory: string): { bucket: number; score: number } | null => {
+  if (activeCategory === "edinet_order") {
+    const yoy = getOrderReceivedYoy(event);
+    if (yoy == null) return null;
+    return { bucket: 1, score: yoy };
+  }
+  if (activeCategory === "earnings") return getEarningsImpactKey(event);
+  if (activeCategory === "buyback") return getBuybackImpactKey(event);
+  return null;
+};
+
+
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -1286,25 +1324,41 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               return !hasFull;
             });
 
-            // Discordタブ: ソート順をクライアントサイドで切り替え
-            const displayEvents = isDiscordTab
-              ? [...filteredEvents].sort((a, b) => {
-                  // 未読を常に上
-                  if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
-                  if (discordSortMode === "timeline") {
-                    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                  } else {
-                    const getScore = (ev: typeof a) => {
-                      const baseCat = getDisplayCategory(ev.event_type, ev.headline);
-                      return getCategoryScore(ev, baseCat) ?? 0;
-                    };
-                    const aScore = getScore(a);
-                    const bScore = getScore(b);
-                    if (aScore !== bScore) return bScore - aScore; // スコア降順
-                    return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                  }
-                })
-              : filteredEvents;
+            // ソート処理
+            const isImpactCategory = filter === "edinet_order" || filter === "earnings" || filter === "buyback";
+            let displayEvents = filteredEvents;
+
+            if (isImpactCategory) {
+              displayEvents = [...filteredEvents].sort((a, b) => {
+                if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+                const keyA = getImpactSortKey(a, filter);
+                const keyB = getImpactSortKey(b, filter);
+                if (keyA && keyB) {
+                  if (keyA.bucket !== keyB.bucket) return keyA.bucket - keyB.bucket;
+                  if (keyA.score !== keyB.score) return keyB.score - keyA.score;
+                }
+                if (keyA && !keyB) return -1;
+                if (!keyA && keyB) return 1;
+                return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+              });
+            } else if (isDiscordTab) {
+              displayEvents = [...filteredEvents].sort((a, b) => {
+                // 未読を常に上
+                if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+                if (discordSortMode === "timeline") {
+                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+                } else {
+                  const getScore = (ev: typeof a) => {
+                    const baseCat = getDisplayCategory(ev.event_type, ev.headline);
+                    return getCategoryScore(ev, baseCat) ?? 0;
+                  };
+                  const aScore = getScore(a);
+                  const bScore = getScore(b);
+                  if (aScore !== bScore) return bScore - aScore; // スコア降順
+                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+                }
+              });
+            }
 
             const nodes = displayEvents.map((event) => {
               const badge = getBadgeConfig(event.event_type, event.headline);
