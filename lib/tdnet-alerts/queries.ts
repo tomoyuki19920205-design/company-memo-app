@@ -289,35 +289,35 @@ export async function fetchEvents(
           const opCurrM = opCurrRaw != null ? Number(opCurrRaw) / 1_000_000 : null;
           const salesCurrM = salesCurrRaw != null ? Number(salesCurrRaw) / 1_000_000 : null;
 
-          // 当期 period を financials から特定: op_current が近い行を探す
+          // 当期 period を financials から特定
           const tickerPeriods = Object.keys(finMap[ev.ticker] ?? {}).sort().reverse();
           let currPeriod: string | null = null;
-          for (const period of tickerPeriods) {
-            const row = finMap[ev.ticker][period]?.[quarter];
-            if (!row) continue;
-            // op_current が null でも sales_current で照合
-            const opMatch =
-              opCurrM != null &&
-              row.operating_profit != null &&
-              Math.round(row.operating_profit) === Math.round(opCurrM);
-            const salesMatch =
-              salesCurrM != null &&
-              row.sales != null &&
-              Math.round(row.sales) === Math.round(salesCurrM);
-            if (opMatch || salesMatch) {
-              currPeriod = period;
-              break;
-            }
-          }
-          // 照合できなかった場合は最新の該当 quarter の period を使う
-          if (!currPeriod) {
+
+          // exactPeriod をイベントから取得できれば最優先で使用
+          const exactPeriod = String(ext.period || ext.fiscal_period || "");
+          if (exactPeriod && exactPeriod.includes("-") && finMap[ev.ticker][exactPeriod]?.[quarter]) {
+            currPeriod = exactPeriod;
+          } else {
+            // 取得できない場合は、op_current / sales_current の値で照合する
             for (const period of tickerPeriods) {
-              if (finMap[ev.ticker][period]?.[quarter]) {
+              const row = finMap[ev.ticker][period]?.[quarter];
+              if (!row) continue;
+              const opMatch =
+                opCurrM != null &&
+                row.operating_profit != null &&
+                Math.round(row.operating_profit) === Math.round(opCurrM);
+              const salesMatch =
+                salesCurrM != null &&
+                row.sales != null &&
+                Math.round(row.sales) === Math.round(salesCurrM);
+              if (opMatch || salesMatch) {
                 currPeriod = period;
                 break;
               }
             }
           }
+
+          // 照合できなかった場合は補完をスキップする (危険な過去periodのフォールバックを削除)
           if (!currPeriod) continue;
 
           const currRow = finMap[ev.ticker][currPeriod][quarter];
@@ -422,9 +422,8 @@ export async function fetchEvents(
           
           let currPeriod = String(ext.period || ext.fiscal_period || "");
           if (!currPeriod || !currPeriod.includes("-")) {
-            // yyyy-mm-dd形式が見つからない場合はDBから最新periodを推測
-            const tickerPeriods = Object.keys(orderMap[ev.ticker] ?? {}).sort().reverse();
-            currPeriod = tickerPeriods[0];
+            // 危険なフォールバックを削除: yyyy-mm-dd形式が見つからない場合は補完をスキップする
+            currPeriod = "";
           }
           if (!currPeriod) continue;
 
