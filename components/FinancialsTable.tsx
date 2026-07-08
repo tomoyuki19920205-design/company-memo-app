@@ -665,22 +665,177 @@ function FinancialsTable({
         const segs = segments || [];
         if (segs.length === 0 || data.length === 0) return segs;
 
-        const fyToPeriod = new Map<number, string>();
-        for (const row of data) {
-            const fy = extractFiscalYear(row.period);
-            if (fy > 0 && !fyToPeriod.has(fy)) {
-                fyToPeriod.set(fy, row.period);
+        const mappedSales = new Set<string>();
+        const mappedProfits = new Set<string>();
+        const result: SegmentRecord[] = [];
+
+        // 日付・月の加減算と月末丸めヘルパー (UTCベースでタイムゾーン依存を完全排除)
+        const addMonthsAndRoundToMonthEnd = (dateStr: string, months: number): string => {
+            const parts = dateStr.split("-");
+            if (parts.length !== 3) return dateStr;
+            const year = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const day = parseInt(parts[2], 10);
+
+            if (isNaN(year) || isNaN(month) || isNaN(day)) return dateStr;
+
+            const d = new Date(Date.UTC(year, month + months, 1));
+            const nextMonth = d.getUTCMonth() + 1;
+            const finalDate = new Date(Date.UTC(d.getUTCFullYear(), nextMonth, 0));
+
+            const yyyy = finalDate.getUTCFullYear();
+            const mm = String(finalDate.getUTCMonth() + 1).padStart(2, "0");
+            const dd = String(finalDate.getUTCDate()).padStart(2, "0");
+
+            return `${yyyy}-${mm}-${dd}`;
+        };
+
+        // 1. まず完全一致するセグメントを優先的に処理する
+        const plSet = new Set(data.map(d => `${d.period}|${d.quarter}`));
+        const unmatchedSegs: SegmentRecord[] = [];
+
+        for (const seg of segs) {
+            const key = `${seg.period}|${seg.quarter}`;
+            if (plSet.has(key)) {
+                let added = false;
+                const newSeg = { ...seg };
+
+                if (seg.segment_sales !== null) {
+                    const salesKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|sales`;
+                    if (!mappedSales.has(salesKey)) {
+                        mappedSales.add(salesKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_sales = null;
+                    }
+                }
+
+                if (seg.segment_profit !== null) {
+                    const profitKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|profit`;
+                    if (!mappedProfits.has(profitKey)) {
+                        mappedProfits.add(profitKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_profit = null;
+                    }
+                }
+
+                if (added) {
+                    result.push(newSeg);
+                }
+            } else {
+                unmatchedSegs.push(seg);
             }
         }
 
-        return segs.map(seg => {
-            const fy = extractFiscalYear(seg.period);
-            const plPeriod = fyToPeriod.get(fy);
-            if (plPeriod && seg.period !== plPeriod) {
-                return { ...seg, period: plPeriod };
+        // 2. 完全一致しなかったセグメントについて、quarter ごとの変換候補一致を判定する
+        for (const seg of unmatchedSegs) {
+            let months = 0;
+            if (seg.quarter === "1Q") months = 9;
+            else if (seg.quarter === "2Q") months = 6;
+            else if (seg.quarter === "3Q") months = 3;
+
+            if (months === 0) {
+                // FY などの変換不可の場合は、そのまま (重複排除あり)
+                let added = false;
+                const newSeg = { ...seg };
+
+                if (seg.segment_sales !== null) {
+                    const salesKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|sales`;
+                    if (!mappedSales.has(salesKey)) {
+                        mappedSales.add(salesKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_sales = null;
+                    }
+                }
+
+                if (seg.segment_profit !== null) {
+                    const profitKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|profit`;
+                    if (!mappedProfits.has(profitKey)) {
+                        mappedProfits.add(profitKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_profit = null;
+                    }
+                }
+
+                if (added) {
+                    result.push(newSeg);
+                }
+                continue;
             }
-            return seg;
-        });
+
+            // 変換候補を生成
+            const plusPeriod = addMonthsAndRoundToMonthEnd(seg.period, months);
+            const minusPeriod = addMonthsAndRoundToMonthEnd(seg.period, -months);
+
+            // 同じ quarter の PL レコード群から、このどちらかの期間に一致するものがあるか探索
+            const matchedPl = data.find(d => 
+                d.quarter === seg.quarter && 
+                (d.period === plusPeriod || d.period === minusPeriod)
+            );
+
+            if (matchedPl) {
+                const targetPeriod = matchedPl.period;
+                let added = false;
+                const newSeg = { ...seg, period: targetPeriod };
+
+                if (seg.segment_sales !== null) {
+                    const salesKey = `${targetPeriod}|${seg.quarter}|${seg.segment_name}|sales`;
+                    if (!mappedSales.has(salesKey)) {
+                        mappedSales.add(salesKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_sales = null;
+                    }
+                }
+
+                if (seg.segment_profit !== null) {
+                    const profitKey = `${targetPeriod}|${seg.quarter}|${seg.segment_name}|profit`;
+                    if (!mappedProfits.has(profitKey)) {
+                        mappedProfits.add(profitKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_profit = null;
+                    }
+                }
+
+                if (added) {
+                    result.push(newSeg);
+                }
+            } else {
+                // 一致する候補がなければそのまま (重複排除あり)
+                let added = false;
+                const newSeg = { ...seg };
+
+                if (seg.segment_sales !== null) {
+                    const salesKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|sales`;
+                    if (!mappedSales.has(salesKey)) {
+                        mappedSales.add(salesKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_sales = null;
+                    }
+                }
+
+                if (seg.segment_profit !== null) {
+                    const profitKey = `${seg.period}|${seg.quarter}|${seg.segment_name}|profit`;
+                    if (!mappedProfits.has(profitKey)) {
+                        mappedProfits.add(profitKey);
+                        added = true;
+                    } else {
+                        newSeg.segment_profit = null;
+                    }
+                }
+
+                if (added) {
+                    result.push(newSeg);
+                }
+            }
+        }
+
+        return result;
     }, [segments, data]);
 
     const filteredBySource = useMemo(() => {
