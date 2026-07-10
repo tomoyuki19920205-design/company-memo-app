@@ -153,7 +153,7 @@ function TickerHeader({
         window.location.href = "/login";
     };
 
-    const tdnetUrl = process.env.NEXT_PUBLIC_TDNET_URL ?? "http://localhost:3001/tdnet-alerts";
+    const tdnetUrl = "/tdnet-alerts";
 
     return (
         <div className="viewer-header">

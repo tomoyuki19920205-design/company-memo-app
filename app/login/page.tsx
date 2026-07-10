@@ -77,8 +77,8 @@ export default function LoginPage() {
             }
 
             // ログイン成功 → viewer へ
-            console.log("[login] success, redirecting to /");
-            window.location.href = "/";
+            console.log("[login] success, redirecting to /tdnet-alerts");
+            window.location.href = "/tdnet-alerts";
         } catch (err) {
             console.error("[login] exception:", err);
             setError("ログイン処理中にエラーが発生しました");

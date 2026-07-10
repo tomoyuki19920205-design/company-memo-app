@@ -54,10 +54,10 @@ export async function middleware(request: NextRequest) {
         return NextResponse.redirect(url);
     }
 
-    // 認証済みで /login にアクセス → / へリダイレクト
+    // 認証済みで /login にアクセス → /tdnet-alerts へリダイレクト
     if (user && request.nextUrl.pathname.startsWith("/login")) {
         const url = request.nextUrl.clone();
-        url.pathname = "/";
+        url.pathname = "/tdnet-alerts";
         return NextResponse.redirect(url);
     }
 
