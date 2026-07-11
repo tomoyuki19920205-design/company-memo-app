@@ -11,7 +11,7 @@ import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
-import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey } from "@/lib/segment-normalize";
+import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -29,24 +29,7 @@ const NOOP = () => {};
 //           / backfill_xbrl / xbrl / attachment_xbrl
 // 'edinet' = edinet_xbrl
 // 'all'   = 上記すべて（whitelist source のみ。sourceなし・ゴみデータは除外）
-const TDNET_SOURCES  = new Set([
-    "backfill_v4_pdf",   // XBRL partial fallback 採用済み PDF V4 (priority=0)
-    "v4_pdf",            // 同上 (短縮エイリアス)
-    "backfill_xbrl",
-    "xbrl",
-    "attachment_xbrl",
-]);
-const EDINET_SOURCES = new Set(["edinet_xbrl"]);
 type SegSourceTab = "tdnet" | "edinet" | "all" | "memo";
-
-function isTdnetSegmentSource(s: SegmentRecord): boolean {
-    const src = s.source ?? "";
-    const dbasis = (s as any).data_basis ?? "";
-    return TDNET_SOURCES.has(src)
-        || src === "tdnet"
-        || src.includes("prior_comparative")
-        || dbasis === "prior_comparative";
-}
 
 const FORMULA_BAR_MANUAL_TABLE_TYPES = new Set(["segment_manual", "segment_cum", "segment_q"]);
 

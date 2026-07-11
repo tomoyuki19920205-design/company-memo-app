@@ -342,3 +342,26 @@ export function pickSegmentDisplayName(names: string[]): string {
     return names[0];
 }
 
+// ============================================================
+// Source filter logic (Phase 9E)
+// ============================================================
+
+export const TDNET_SOURCES = new Set([
+    "backfill_v4_pdf",   // XBRL partial fallback 採用済み PDF V4 (priority=0)
+    "v4_pdf",            // 同上 (短縮エイリアス)
+    "backfill_xbrl",
+    "xbrl",
+    "attachment_xbrl",
+    "jquants",           // J-Quants API 由来実績値 (9982等)
+]);
+export const EDINET_SOURCES = new Set(["edinet_xbrl"]);
+
+export function isTdnetSegmentSource(s: { source?: string; data_basis?: string }): boolean {
+    const src = s.source ?? "";
+    const dbasis = (s as any).data_basis ?? "";
+    return TDNET_SOURCES.has(src)
+        || src === "tdnet"
+        || src.includes("prior_comparative")
+        || dbasis === "prior_comparative";
+}
+
