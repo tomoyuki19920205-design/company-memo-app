@@ -3463,11 +3463,6 @@ function FinancialsTable({
                                     <div className="pl-table-block">
                                         <div className="pl-table-label">累計セグメント（百万円）</div>
                                         <table className="pl-table" style={{ minWidth: segCumTableWidth }}>
-                                            <thead><tr>
-                                                <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
-                                                <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
-                                                {segmentHeaders.map((eh, si) => <th key={`seg-cum-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
-                                            </tr></thead>
                                             <tbody>
                                                 {cumRows.map((row, idx) => (
                                                     <tr key={`seg-cum-${row.period}-${row.quarter}-${idx}`} className={[
@@ -3518,6 +3513,11 @@ function FinancialsTable({
                                                         })}
                                                     </tr>
                                                 ))}
+                                                <tr>
+                                                    <th scope="col" className="seg-header-cell" style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
+                                                    <th scope="col" className="seg-header-cell" style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
+                                                    {segmentHeaders.map((eh, si) => <th scope="col" key={`seg-cum-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
+                                                </tr>
                                                 {/* 手入力メモ専用行 (累計セグメント) */}
                                                 <ManualMemoRows
                                                     tableType="segment_cum"
@@ -3540,11 +3540,6 @@ function FinancialsTable({
                                     <div className="pl-table-block">
                                         <div className="pl-table-label">Q単体セグメント（百万円）</div>
                                         <table className="pl-table" style={{ minWidth: segQTableWidth }}>
-                                            <thead><tr>
-                                                <th style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
-                                                <th style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
-                                                {segmentHeaders.map((eh, si) => <th key={`seg-q-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
-                                            </tr></thead>
                                             <tbody>
                                                 {qRows.map((row, idx) => (
                                                     <tr key={`seg-q-${row.period}-${row.quarter}-${idx}`} className={[
@@ -3571,6 +3566,11 @@ function FinancialsTable({
                                                         })}
                                                     </tr>
                                                 ))}
+                                                <tr>
+                                                    <th scope="col" className="seg-header-cell" style={{ width: 100, minWidth: 100 }}><div className="th-content"><span>PERIOD</span></div></th>
+                                                    <th scope="col" className="seg-header-cell" style={{ width: 45, minWidth: 45 }}><div className="th-content"><span>Q</span></div></th>
+                                                    {segmentHeaders.map((eh, si) => <th scope="col" key={`seg-q-h-${si}`} className={`seg-header-cell ${eh.className || "num-col"} ${si % 2 === 1 ? "segment-group-end" : ""}`} style={{ width: segWidths[si] ?? 90, minWidth: 24 }}><div className="th-content"><span>{eh.label}</span><div className="resize-handle" onMouseDown={(e) => handleSegResizeStart(si, e)} /></div></th>)}
+                                                </tr>
                                                 {/* 手入力メモ専用行 (Q単体セグメント) */}
                                                 <ManualMemoRows
                                                     tableType="segment_q"
