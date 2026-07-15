@@ -69,8 +69,8 @@ export async function fetchEvents(
   }
 
   if (opts.search) {
-    const s = opts.search.trim();
-    const tickerMatch = s.match(/^(\d{4})(?:\s|　|$)/);
+    const s = opts.search.trim().toUpperCase();
+    const tickerMatch = s.match(/^([0-9]{4}|[0-9]{3}[A-Z])(?:\s|　|$)/);
     if (opts.allPeriodTickerSearch && tickerMatch) {
       // 全期間ティッカー検索ONかつ数値の場合はティッカー完全一致のみにする（limit落ち防止と精度向上）
       query = query.eq("ticker", tickerMatch[1]);
