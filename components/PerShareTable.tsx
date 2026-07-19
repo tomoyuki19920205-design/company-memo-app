@@ -12,7 +12,12 @@ export function epsResultClass(
     actual: number | null,
     initialForecast: number | null,
 ): "per-share-eps-beat" | "per-share-eps-miss" | null {
-    if (!Number.isFinite(actual) || !Number.isFinite(initialForecast)) return null;
+    if (
+        actual === null ||
+        initialForecast === null ||
+        !Number.isFinite(actual) ||
+        !Number.isFinite(initialForecast)
+    ) return null;
     const round = (value: number) => Math.round((value + Number.EPSILON) * 100) / 100;
     const actualRounded = round(actual);
     const forecastRounded = round(initialForecast);
