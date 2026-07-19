@@ -8,6 +8,19 @@ interface PerShareTableProps {
     loading: boolean;
 }
 
+export function epsResultClass(
+    actual: number | null,
+    initialForecast: number | null,
+): "per-share-eps-beat" | "per-share-eps-miss" | null {
+    if (!Number.isFinite(actual) || !Number.isFinite(initialForecast)) return null;
+    const round = (value: number) => Math.round((value + Number.EPSILON) * 100) / 100;
+    const actualRounded = round(actual);
+    const forecastRounded = round(initialForecast);
+    if (actualRounded > forecastRounded) return "per-share-eps-beat";
+    if (actualRounded < forecastRounded) return "per-share-eps-miss";
+    return null;
+}
+
 function fmt(val: number | null): string {
     if (val === null) return "—";
     return val.toLocaleString("ja-JP", {
@@ -103,7 +116,7 @@ function PerShareTable({ data, loading }: PerShareTableProps) {
                                 <td className="per-share-period">
                                     {shortPeriod(r.period)}
                                 </td>
-                                <td className="per-share-num">{fmt(r.eps)}</td>
+                                <td className={["per-share-num", epsResultClass(r.eps, r.initial_forecast_eps)].filter(Boolean).join(" ")}>{fmt(r.eps)}</td>
                                 <td className="per-share-num forecast-val">
                                     {r.eps === null
                                         ? fmt(r.forecast_eps ?? r.initial_forecast_eps)
