@@ -3188,8 +3188,9 @@ textarea::placeholder {
 /* 左ペイン（一覧） */
 .alerts-list-pane {
   flex-shrink: 0;
+  overflow-x: hidden;
   overflow-y: auto;
-  min-width: 360px;
+  min-width: 0;
   border-right: 1px solid var(--border);
 }
 

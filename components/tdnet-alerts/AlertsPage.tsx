@@ -15,6 +15,8 @@ type AlertsCacheEntry = {
   events: EnrichedEvent[];
 };
 const ALERTS_CACHE_TTL_MS = 30_000;
+const LEFT_PANE_DEFAULT_WIDTH = 400;
+const LEFT_PANE_MIN_WIDTH = 0;
 
 const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%|赤字継続|黒転|赤転)/gi;
 
@@ -849,10 +851,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [leftPaneWidth, setLeftPaneWidthState] = useState<number>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("tdnet_left_pane_width");
-      const n = saved ? parseInt(saved, 10) : 0;
-      if (n >= 360) return n;
+      if (saved !== null && saved.trim() !== "") {
+        const n = Number(saved);
+        if (Number.isFinite(n) && n >= LEFT_PANE_MIN_WIDTH) return n;
+      }
     }
-    return 400;
+    return LEFT_PANE_DEFAULT_WIDTH;
   });
   // 右ペインタブ（"detail" | "company"）
   const [rightPaneTab, setRightPaneTab] = useState<"detail" | "company">("company");
@@ -965,14 +969,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDraggingRef.current) return;
       const delta = e.clientX - dragStartXRef.current;
-      const newW = Math.max(360, dragStartWidthRef.current + delta);
+      const newW = Math.max(LEFT_PANE_MIN_WIDTH, dragStartWidthRef.current + delta);
       setLeftPaneWidthState(newW);
     };
     const handleMouseUp = (e: MouseEvent) => {
       if (!isDraggingRef.current) return;
       isDraggingRef.current = false;
       const delta = e.clientX - dragStartXRef.current;
-      const newW = Math.max(360, dragStartWidthRef.current + delta);
+      const newW = Math.max(LEFT_PANE_MIN_WIDTH, dragStartWidthRef.current + delta);
       setLeftPaneWidthState(newW);
       localStorage.setItem("tdnet_left_pane_width", String(newW));
       document.body.style.cursor = "";
