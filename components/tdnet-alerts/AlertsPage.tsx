@@ -5,6 +5,7 @@ import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-alerts/queries";
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
+import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -1329,38 +1330,20 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             });
 
             // ソート処理
-            const isImpactCategory = filter === "edinet_order" || filter === "earnings" || filter === "buyback";
-            let displayEvents = filteredEvents;
+            let displayEvents = sortAlertsByDisclosureTimeAndTicker(filteredEvents);
 
-            if (isImpactCategory) {
-              displayEvents = [...filteredEvents].sort((a, b) => {
-                if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
-                const keyA = getImpactSortKey(a, filter);
-                const keyB = getImpactSortKey(b, filter);
-                if (keyA && keyB) {
-                  if (keyA.bucket !== keyB.bucket) return keyA.bucket - keyB.bucket;
-                  if (keyA.score !== keyB.score) return keyB.score - keyA.score;
-                }
-                if (keyA && !keyB) return -1;
-                if (!keyA && keyB) return 1;
-                return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-              });
-            } else if (isDiscordTab) {
+            if (isDiscordTab && discordSortMode === "category") {
               displayEvents = [...filteredEvents].sort((a, b) => {
                 // 未読を常に上
                 if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
-                if (discordSortMode === "timeline") {
-                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                } else {
-                  const getScore = (ev: typeof a) => {
-                    const baseCat = getDisplayCategory(ev.event_type, ev.headline);
-                    return getCategoryScore(ev, baseCat) ?? 0;
-                  };
-                  const aScore = getScore(a);
-                  const bScore = getScore(b);
-                  if (aScore !== bScore) return bScore - aScore; // スコア降順
-                  return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-                }
+                const getScore = (ev: typeof a) => {
+                  const baseCat = getDisplayCategory(ev.event_type, ev.headline);
+                  return getCategoryScore(ev, baseCat) ?? 0;
+                };
+                const aScore = getScore(a);
+                const bScore = getScore(b);
+                if (aScore !== bScore) return bScore - aScore; // スコア降順
+                return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
               });
             }
 
