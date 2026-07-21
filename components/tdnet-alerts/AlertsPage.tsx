@@ -6,6 +6,7 @@ import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-a
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
+import { getPdfOnlyMaterialLabel, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -1369,6 +1370,37 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const bodyText = cardBody + discordExtra;
 
               const isSelected = selectedId === event.id;
+
+              if (isPdfOnlyMaterialEvent(event.event_type)) {
+                const materialLabel = getPdfOnlyMaterialLabel(event);
+                return (
+                  <div
+                    key={event.id}
+                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
+                    onClick={() => handleSelectEvent(event)}
+                  >
+                    <div className="alert-card-summary-line1" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
+                      <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
+                        {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} {materialLabel}
+                      </span>
+                      {event.pdf_url && (
+                        <a
+                          href={event.pdf_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="action-btn pdf-link"
+                          onPointerDown={(e) => e.stopPropagation()}
+                          onClick={(e) => e.stopPropagation()}
+                          title="PDFを開く"
+                          style={{ flexShrink: 0, textDecoration: "none", color: "inherit" }}
+                        >
+                          📄PDF
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
 
               if (!isSelected) {
                 const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);

@@ -130,6 +130,8 @@ const _EVENT_TYPE_ALIAS: Record<string, string> = {
   forecast: "forecast",
   dividend: "dividend",
   earnings: "earnings",
+  earnings_material: "earnings",
+  monthly_update: "other",
   shareholder: "shareholder",
   other: "other",
   edinet_order: "edinet_order",

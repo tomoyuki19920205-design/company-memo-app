@@ -4,6 +4,7 @@ import { fetchEvents } from "./queries.ts";
 
 type RecordedCall =
   | { method: "eq"; column: string; value: unknown }
+  | { method: "in"; column: string; values: unknown[] }
   | { method: "or"; condition: string };
 
 class FakeQuery {
@@ -15,7 +16,10 @@ class FakeQuery {
   not() { return this; }
   gte() { return this; }
   lt() { return this; }
-  in() { return this; }
+  in(column: string, values: unknown[]) {
+    this.calls.push({ method: "in", column, values });
+    return this;
+  }
 
   eq(column: string, value: unknown) {
     this.calls.push({ method: "eq", column, value });
@@ -84,4 +88,14 @@ test("keeps company-name search on the general search fallback", async () => {
   const calls = await captureSearchCalls("Ｇ－ＧＯ");
   assert.equal(hasTickerCondition(calls, "Ｇ－ＧＯ"), false);
   assert.match(searchCondition(calls) ?? "", /company_name\.ilike\.\%Ｇ－ＧＯ\%/);
+});
+
+test("includes viewer-only earnings materials in the earnings filter", async () => {
+  const query = new FakeQuery();
+  const supabase = { from: () => query };
+  await fetchEvents(supabase as never, { userId: "test-user", eventType: "earnings" });
+  assert.deepEqual(
+    query.calls.find((call) => call.method === "in" && call.column === "event_type"),
+    { method: "in", column: "event_type", values: ["earnings", "earnings_material"] },
+  );
 });
