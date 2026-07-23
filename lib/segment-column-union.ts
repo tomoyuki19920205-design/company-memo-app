@@ -153,3 +153,10 @@ export function buildSegmentValueMap(
 
     return values;
 }
+
+export function hasDisplayableSegmentValue(
+    sales: number | null,
+    profit: number | null,
+): boolean {
+    return sales !== null || profit !== null;
+}

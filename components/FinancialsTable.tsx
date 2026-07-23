@@ -12,7 +12,7 @@ import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
 import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
-import { buildSegmentColumnUnion, buildSegmentValueMap } from "@/lib/segment-column-union";
+import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -364,8 +364,7 @@ function buildSegmentInfo(
         if (!seg.segment_name) return false;
         if (DUMMY_NAMES.has(seg.segment_name)) return false;
         if (seg.segment_name.startsWith("UNKNOWN_")) return false;
-        if ((seg.segment_sales === null || seg.segment_sales === 0) &&
-            (seg.segment_profit === null || seg.segment_profit === 0)) return false;
+        if (!hasDisplayableSegmentValue(seg.segment_sales, seg.segment_profit)) return false;
         return true;
     });
 

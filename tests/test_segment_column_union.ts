@@ -4,6 +4,7 @@ import test from "node:test";
 import {
     buildSegmentColumnUnion,
     buildSegmentValueMap,
+    hasDisplayableSegmentValue,
     type SegmentColumnIdentityInput,
 } from "../lib/segment-column-union";
 
@@ -181,6 +182,10 @@ test("zero and missing remain distinct in cell assignment", () => {
     );
     assert.equal(values.get("2025-03-31|FY")?.["seg:segment:sales"], 0);
     assert.equal(values.get("2025-03-31|FY")?.["seg:segment:profit"], null);
+    assert.equal(hasDisplayableSegmentValue(0, 0), true);
+    assert.equal(hasDisplayableSegmentValue(0, null), true);
+    assert.equal(hasDisplayableSegmentValue(null, 0), true);
+    assert.equal(hasDisplayableSegmentValue(null, null), false);
 });
 
 test("stale repair representatives remain in the union", () => {
