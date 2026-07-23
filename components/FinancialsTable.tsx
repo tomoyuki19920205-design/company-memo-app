@@ -12,6 +12,7 @@ import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
 import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
+import { buildSegmentColumnUnion, buildSegmentValueMap } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import {
     filterLast5Years,
@@ -350,14 +351,14 @@ function buildSegmentInfo(
         return baseDk;
     };
 
-    // nameMap: referenceSegments のみから列定義を構築
-    // (全 period 横断にしないことで、過去期にしか存在しないセグメントを列化しない)
-    const nameMap = new Map<string, string[]>();
-    for (const seg of referenceSegments) {
-        const dk = resolveDk(seg.segment_name);
-        if (!nameMap.has(dk)) nameMap.set(dk, []);
-        nameMap.get(dk)!.push(seg.segment_name);
-    }
+    // 最新FYの既存列順を維持しつつ、正式API winnerに存在する過年度segmentを
+    // 決定論的に右側へ追加する。identity解決はresolveDkへ集約し、同一identityの
+    // aliasは1列、別identityは名前の近さだけで統合しない。
+    const columnGroups = buildSegmentColumnUnion(
+        allSegments,
+        referenceSegments,
+        resolveDk,
+    );
 
     const filtered = segments.filter((seg) => {
         if (!seg.segment_name) return false;
@@ -369,26 +370,19 @@ function buildSegmentInfo(
     });
 
 
-    const segmentColumns: SegmentColumnDef[] = Array.from(nameMap.entries()).map(([dk, names]) => ({
-        display_key: dk,
+    const segmentColumns: SegmentColumnDef[] = columnGroups.map(({ displayKey, names }) => ({
+        display_key: displayKey,
         segmentName: pickSegmentDisplayName(names),
-        salesKey: `seg:${dk}:sales`,
-        profitKey: `seg:${dk}:profit`,
+        salesKey: `seg:${displayKey}:sales`,
+        profitKey: `seg:${displayKey}:profit`,
     }));
 
     // 累計用 segmentMap: key = "period|quarter"
-    const segmentMap = new Map<string, Record<string, number | null>>();
-    for (const seg of filtered) {
-        const key = `${seg.period}|${seg.quarter}`;
-        if (!segmentMap.has(key)) segmentMap.set(key, {});
-        const row = segmentMap.get(key)!;
-        const dk = resolveDk(seg.segment_name);
-        const col = segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
-        if (col) {
-            row[col.salesKey] = seg.segment_sales;
-            row[col.profitKey] = seg.segment_profit;
-        }
-    }
+    const segmentMap = buildSegmentValueMap(
+        filtered,
+        segmentColumns,
+        resolveDk,
+    );
 
     // Q単体用 segmentQMap: key = "period|quarter"
     // 1Q: 累計そのまま, 2Q: 2Q累計-1Q累計, 3Q: 3Q累計-2Q累計, FY: FY累計-3Q累計
