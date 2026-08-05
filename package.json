@@ -7,7 +7,8 @@
         "build": "next build",
         "start": "next start",
         "check:deploy": "node scripts/check-deploy.mjs",
-        "deploy:prod": "node scripts/check-deploy.mjs && vercel --prod"
+        "deploy:prod": "node scripts/check-deploy.mjs && vercel --prod",
+        "test:quarterly": "tsx --test tests/test_quarter_math.ts tests/test_viewer_financial_path.tsx"
     },
     "dependencies": {
         "@supabase/ssr": "^0.9.0",
@@ -23,6 +24,7 @@
         "@types/node": "^22.0.0",
         "@types/react": "^19.0.0",
         "@types/react-dom": "^19.0.0",
+        "tsx": "^4.23.7",
         "typescript": "^5.7.0"
     }
 }

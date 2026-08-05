@@ -4,29 +4,10 @@ import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
-
-// ============================================================
-// Quarter ソート順 (1Q → 2Q → 3Q → FY の順を保証)
-// ============================================================
-const QUARTER_ORDER: Record<string, number> = {
-    "1Q": 0,
-    "2Q": 1,
-    "3Q": 2,
-    "4Q": 3,
-    "FY": 4,
-};
-
-function sortFinancials(rows: FinancialRecord[]): FinancialRecord[] {
-    return [...rows].sort((a, b) => {
-        // period DESC
-        const periodCmp = (b.period || "").localeCompare(a.period || "");
-        if (periodCmp !== 0) return periodCmp;
-        // quarter: FY → 3Q → 2Q → 1Q (大きい順)
-        const qa = QUARTER_ORDER[a.quarter] ?? 9;
-        const qb = QUARTER_ORDER[b.quarter] ?? 9;
-        return qb - qa;
-    });
-}
+import {
+    transformFinancialRows,
+    type ViewerFinancialRow,
+} from "./financial-transform";
 
 // ============================================================
 // 会社情報
@@ -164,24 +145,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
         if (!data || data.length === 0) return [];
 
-        // 全データ million_yen 統一済み — DB値をそのまま返す
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const records: FinancialRecord[] = data.map((row: any) => ({
-            ticker: row.ticker,
-            period: row.period,
-            quarter: row.quarter,
-            sales: row.sales,
-            gross_profit: row.gross_profit,
-            operating_profit: row.operating_profit,
-            ordinary_profit: null,
-            net_income: null,
-            eps: null,
-            source: row.source ?? "",
-            updated_at: row.updated_at || "",
-        }));
-
-        // 明示的にソート: period DESC → quarter DESC (FY → 3Q → 2Q → 1Q)
-        return sortFinancials(records);
+        return transformFinancialRows(data as ViewerFinancialRow[]);
     } catch (err) {
         console.error("loadFinancials error:", err);
         throw err;

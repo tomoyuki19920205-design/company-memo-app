@@ -14,13 +14,7 @@ import { extractFiscalYear } from "@/lib/viewer-api";
 import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
 import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
-import {
-    filterLast5Years,
-    buildCumulativeRows,
-    buildQStandaloneRows,
-    sortForDisplay,
-    FORECAST_SOURCES,
-} from "@/lib/quarter-math";
+import { buildFinancialTableModel } from "@/lib/financial-table-model";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
@@ -616,23 +610,11 @@ function FinancialsTable({
     onSegmentManualHeaderEdit,
     onPlScrollAreaReady,
 }: FinancialsTableProps) {
-    // 実績 + 予想 全行（FORECAST_SOURCES が値を锻定）
-    const filteredAll    = useMemo(() => filterLast5Years(data), [data]);
-    // メイン PL テーブル用: 実績行のみ
-    const filteredActual = useMemo(
-        () => filteredAll.filter(r => !FORECAST_SOURCES.has(r.source ?? "")),
-        [filteredAll]
-    );
-    const sorted = useMemo(() => sortForDisplay(filteredActual), [filteredActual]);
-    const cumRows = useMemo(() => buildCumulativeRows(sorted), [sorted]);
-    const qRows = useMemo(() => buildQStandaloneRows(sorted), [sorted]);
-    // 最新FY予想バー用: FY 予想行のみ（period 降順）
-    const forecastFYRows = useMemo(
-        () => filteredAll
-            .filter(r => r.quarter === "FY" && FORECAST_SOURCES.has(r.source ?? ""))
-            .sort((a, b) => b.period.localeCompare(a.period)),
-        [filteredAll]
-    );
+    const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
+        useMemo(
+            () => buildFinancialTableModel(data),
+            [data],
+        );
 
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
 
@@ -3108,7 +3090,7 @@ function FinancialsTable({
                                         {cumRows.map((row, idx) => {
                                             const isSelected = selectedPeriod === row.period && selectedQuarter === row.quarter;
                                             return (
-                                                <tr key={`cum-${row.period}-${row.quarter}-${idx}`} className={[
+                                                <tr key={`cum-${row.period}-${row.quarter}-${idx}`} data-table="cumulative" data-period={row.period} data-quarter={row.quarter} className={[
                                                     "pl-row",
                                                     isSelected ? "pl-row-selected" : "",
                                                     row.quarter === "FY" ? "pl-row-fy" : "",
@@ -3185,7 +3167,7 @@ function FinancialsTable({
                                     />
                                     <tbody>
                                         {qRows.map((row, idx) => (
-                                            <tr key={`q-${row.period}-${row.quarter}-${idx}`} className={[
+                                            <tr key={`q-${row.period}-${row.quarter}-${idx}`} data-table="standalone" data-period={row.period} data-quarter={row.quarter} className={[
                                                 "pl-row",
                                                 selectedPeriod === row.period && selectedQuarter === row.quarter ? "pl-row-selected" : "",
                                                 row.quarter === "FY" ? "pl-row-fy" : "",
