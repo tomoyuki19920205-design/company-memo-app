@@ -141,7 +141,7 @@ const CUM_COLUMNS: ColumnDef[] = [
     { key: "gp", label: "GP", initialWidth: 85, className: "num-col" },
     { key: "gm_rate", label: "粗利率", initialWidth: 75, className: "num-col gp-margin-col" },
     { key: "sga", label: "管理費", initialWidth: 85, className: "num-col" },
-    { key: "op", label: "OP", initialWidth: 85, className: "num-col" },
+    { key: "op", label: "営業利益", initialWidth: 85, className: "num-col" },
     { key: "op_margin", label: "営業利益率", initialWidth: 75, className: "num-col op-margin-col" },
 ];
 
@@ -160,7 +160,7 @@ const Q_BASE_COLUMNS: ColumnDef[] = [
     { key: "gp", label: "GP", initialWidth: 85, className: "num-col" },
     { key: "gm_rate", label: "粗利率", initialWidth: 75, className: "num-col" },
     { key: "sga", label: "管理費", initialWidth: 85, className: "num-col" },
-    { key: "op", label: "OP", initialWidth: 85, className: "num-col" },
+    { key: "op", label: "営業利益", initialWidth: 85, className: "num-col" },
     { key: "op_margin", label: "営業利益率", initialWidth: 75, className: "num-col" },
 ];
 
@@ -610,6 +610,25 @@ function FinancialsTable({
     onSegmentManualHeaderEdit,
     onPlScrollAreaReady,
 }: FinancialsTableProps) {
+    const showsProfitBeforeTax = data.length > 0 && data.every((row) => row.ticker === "5713");
+    const cumulativeColumns = useMemo(
+        () => CUM_COLUMNS.map((column) => {
+            if (!showsProfitBeforeTax) return column;
+            if (column.key === "op") return { ...column, label: "税引前利益" };
+            if (column.key === "op_margin") return { ...column, label: "税引前利益率" };
+            return column;
+        }),
+        [showsProfitBeforeTax],
+    );
+    const standaloneColumns = useMemo(
+        () => Q_BASE_COLUMNS.map((column) => {
+            if (!showsProfitBeforeTax) return column;
+            if (column.key === "op") return { ...column, label: "税引前利益" };
+            if (column.key === "op_margin") return { ...column, label: "税引前利益率" };
+            return column;
+        }),
+        [showsProfitBeforeTax],
+    );
     const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
         useMemo(
             () => buildFinancialTableModel(data),
@@ -857,8 +876,8 @@ function FinancialsTable({
     }, [segmentColumns]);
 
     // 列幅管理
-    const cumResize = useColumnResize({ storageKey: "pl-cum-v5", columns: CUM_COLUMNS });
-    const qResize = useColumnResize({ storageKey: "pl-q-v5", columns: Q_BASE_COLUMNS });
+    const cumResize = useColumnResize({ storageKey: "pl-cum-v5", columns: cumulativeColumns });
+    const qResize = useColumnResize({ storageKey: "pl-q-v5", columns: standaloneColumns });
     const memoKpiResize = useColumnResize({ storageKey: "pl-memo-kpi-v2", columns: MEMO_KPI_BASE_COLUMNS });
 
     // セグメント列幅管理 (動的列数に対応)
@@ -3080,7 +3099,7 @@ function FinancialsTable({
                             <div className="pl-table-block">
                                 <div className="pl-table-label">累計PL（百万円）</div>
                                 <table className="pl-table" style={{ minWidth: cumTableWidth }}>
-                                    <PLTableHeader columns={CUM_COLUMNS} widths={cumResize.widths.slice(0, 8)} onResizeStart={cumResize.handleMouseDown}
+                                    <PLTableHeader columns={cumulativeColumns} widths={cumResize.widths.slice(0, 8)} onResizeStart={cumResize.handleMouseDown}
                                         kpiSlots={[]} kpiDefs={[]} kpiWidths={[]} onKpiResizeStart={() => {}}
                                         editingKpiHeader={null} editingKpiHeaderValue="" kpiHeaderInputRef={{ current: null }}
                                         onStartKpiHeaderEdit={() => {}} onEditingKpiHeaderValueChange={() => {}}
@@ -3157,7 +3176,7 @@ function FinancialsTable({
                                 <div className="pl-table-label">Q単体PL（百万円）</div>
                                 <table className="pl-table" style={{ minWidth: qTableWidth }}>
                                     <PLTableHeader
-                                        columns={Q_BASE_COLUMNS.slice(2)}
+                                        columns={standaloneColumns.slice(2)}
                                         widths={qResize.widths.slice(2)}
                                         onResizeStart={(idx, e) => qResize.handleMouseDown(idx + 2, e)}
                                         kpiSlots={[]} kpiDefs={[]} kpiWidths={[]} onKpiResizeStart={() => {}}
@@ -3345,10 +3364,13 @@ function FinancialsTable({
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
 
                         if (!latestForecast) return null;
-                        if (latestForecast.sales === null && latestForecast.operating_profit === null) return null;
+                        const forecastProfit = showsProfitBeforeTax
+                            ? latestForecast.profit_before_tax
+                            : latestForecast.operating_profit;
+                        if (latestForecast.sales === null && forecastProfit === null) return null;
 
                         const sales = latestForecast.sales;
-                        const op    = latestForecast.operating_profit;
+                        const op    = forecastProfit;
                         const opMargin =
                             op !== null && sales !== null && sales !== 0
                                 ? (op / sales) * 100
@@ -3367,13 +3389,13 @@ function FinancialsTable({
                                 )}
                                 {op !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">営業利益</span>
+                                        <span className="pl-summary-label">{showsProfitBeforeTax ? "税引前利益" : "営業利益"}</span>
                                         <span className="pl-summary-value">{formatMillions(op)}</span>
                                     </span>
                                 )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">営利率</span>
+                                        <span className="pl-summary-label">{showsProfitBeforeTax ? "税引前利益率" : "営利率"}</span>
                                         <span className="pl-summary-value">{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}

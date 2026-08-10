@@ -104,6 +104,22 @@ export const FORECAST_SOURCES = new Set<string>([
     "tdnet_forecast",
 ]);
 
+/** Only 5713 presents official PBT in the operating-profit table position. */
+export const PBT_PRESENTATION_TICKER = "5713";
+
+export function displayedProfit(record: FinancialRecord): number | null {
+    return record.ticker === PBT_PRESENTATION_TICKER
+        ? record.profit_before_tax
+        : record.operating_profit;
+}
+
+function displayedSgAndA(record: FinancialRecord): number | null {
+    // GP - PBT is not SG&A. Do not manufacture an SG&A value for 5713.
+    return record.ticker === PBT_PRESENTATION_TICKER
+        ? null
+        : calcSgAndA(record.gross_profit, record.operating_profit);
+}
+
 // ============================================================
 // 過去5年分フィルタ
 // ============================================================
@@ -130,17 +146,20 @@ export function filterLast5Years(records: FinancialRecord[]): FinancialRecord[] 
 // 累計PLデータ生成
 // ============================================================
 export function buildCumulativeRows(records: FinancialRecord[]): CumulativeRow[] {
-    return records.map((r) => ({
-        period: r.period,
-        quarter: r.quarter,
-        sales: r.sales,
-        grossProfit: r.gross_profit,
-        grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
-        sgAndA: calcSgAndA(r.gross_profit, r.operating_profit),
-        operatingProfit: r.operating_profit,
-        opMargin: calcOpMargin(r.operating_profit, r.sales),
-        source: r.source,
-    }));
+    return records.map((r) => {
+        const profit = displayedProfit(r);
+        return {
+            period: r.period,
+            quarter: r.quarter,
+            sales: r.sales,
+            grossProfit: r.gross_profit,
+            grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
+            sgAndA: displayedSgAndA(r),
+            operatingProfit: profit,
+            opMargin: calcOpMargin(profit, r.sales),
+            source: r.source,
+        };
+    });
 }
 
 // ============================================================
@@ -169,15 +188,16 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
 
         if (prevQ === null) {
             // 1Q: 単体 = 累計
+            const profit = displayedProfit(r);
             result.push({
                 period: r.period,
                 quarter: r.quarter,
                 sales: r.sales,
                 grossProfit: r.gross_profit,
                 grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
-                sgAndA: calcSgAndA(r.gross_profit, r.operating_profit),
-                operatingProfit: r.operating_profit,
-                opMargin: calcOpMargin(r.operating_profit, r.sales),
+                sgAndA: displayedSgAndA(r),
+                operatingProfit: profit,
+                opMargin: calcOpMargin(profit, r.sales),
             });
         } else if (prevQ === undefined) {
             // 不明な quarter
@@ -191,9 +211,9 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
             } else {
                 const sales = safeSub(r.sales, prevRecord.sales);
                 const gp = safeSub(r.gross_profit, prevRecord.gross_profit);
-                const op = safeSub(r.operating_profit, prevRecord.operating_profit);
+                const op = safeSub(displayedProfit(r), displayedProfit(prevRecord));
                 const grossMarginRate = calcGrossMarginRate(gp, sales);
-                const sgAndA = calcSgAndA(gp, op);
+                const sgAndA = r.ticker === PBT_PRESENTATION_TICKER ? null : calcSgAndA(gp, op);
                 const opMargin = calcOpMargin(op, sales);
 
                 result.push({

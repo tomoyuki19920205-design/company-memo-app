@@ -128,7 +128,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
     try {
         const supabase = createSupabaseBrowser();
         const columns =
-            "ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at";
+            "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,source,updated_at";
         const [actualResult, forecastResult] = await Promise.all([
             supabase
                 .from("api_latest_financials_canonical")

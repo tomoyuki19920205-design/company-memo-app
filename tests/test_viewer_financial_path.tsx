@@ -88,6 +88,28 @@ test("FinancialsTable SSR renders correct cumulative and standalone rows for 418
     assert.match(q2, />116</);
     assert.match(q2, />–</);
     assert.doesNotMatch(html, /2025-12-31/);
+    assert.match(html, /営業利益/);
+    assert.doesNotMatch(html, /税引前利益/);
+});
+
+test("FinancialsTable presents official PBT only for exact ticker 5713", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "5713", period: "2026-03-31", quarter: "1Q", sales: 379_600, gross_profit: null, operating_profit: null, profit_before_tax: 37_901, source: "tdnet_xbrl", updated_at: "" },
+        { ticker: "5713", period: "2026-03-31", quarter: "2Q", sales: 783_361, gross_profit: null, operating_profit: null, profit_before_tax: 77_815, source: "tdnet_xbrl", updated_at: "" },
+        { ticker: "5713", period: "2026-03-31", quarter: "3Q", sales: 1_250_721, gross_profit: null, operating_profit: null, profit_before_tax: 148_258, source: "tdnet_xbrl", updated_at: "" },
+        { ticker: "5713", period: "2026-03-31", quarter: "FY", sales: 1_741_586, gross_profit: null, operating_profit: null, profit_before_tax: 255_680, source: "tdnet_xbrl", updated_at: "" },
+    ];
+    const records = transformFinancialRows(rows);
+    const html = renderToStaticMarkup(
+        <FinancialsTable data={records} loading={false} segments={[]} />,
+    );
+
+    assert.ok(records.every((item) => item.operating_profit === null));
+    assert.match(html, /税引前利益/);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "FY"), />255,680</);
+    assert.match(rowMarkup(html, "standalone", "2026-03-31", "2Q"), />39,914</);
+    assert.match(rowMarkup(html, "standalone", "2026-03-31", "3Q"), />70,443</);
+    assert.match(rowMarkup(html, "standalone", "2026-03-31", "FY"), />107,422</);
 });
 
 test("FinancialsTable SSR keeps 472A FY cumulative but renders no fabricated Q4", () => {
@@ -157,5 +179,21 @@ test("actual/forecast view migration prevents metric-level scope mixing", () => 
     assert.match(migration, /CREATE OR REPLACE VIEW public\.api_latest_financials_canonical AS/);
     assert.match(migration, /source NOT IN \([\s\S]*'jquants_nxf'/);
     assert.match(migration, /CREATE OR REPLACE VIEW public\.api_latest_financials_canonical_forecast AS/);
+    assert.match(migration, /source IN \([\s\S]*'jquants_nxf'/);
+});
+
+test("PBT view migration exposes the metric while preserving scope separation", () => {
+    const migration = readFileSync(
+        fileURLToPath(
+            new URL(
+                "../migrations/011_add_profit_before_tax_to_financial_views.sql",
+                import.meta.url,
+            ),
+        ),
+        "utf8",
+    );
+
+    assert.match(migration, /metric = 'profit_before_tax'/);
+    assert.match(migration, /source NOT IN \([\s\S]*'jquants_nxf'/);
     assert.match(migration, /source IN \([\s\S]*'jquants_nxf'/);
 });
