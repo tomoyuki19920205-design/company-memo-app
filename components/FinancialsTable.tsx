@@ -15,6 +15,7 @@ import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAli
 import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
+import { getCompanyProfitDisplay } from "@/lib/company-profit-display";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
@@ -610,24 +611,28 @@ function FinancialsTable({
     onSegmentManualHeaderEdit,
     onPlScrollAreaReady,
 }: FinancialsTableProps) {
-    const showsProfitBeforeTax = data.length > 0 && data.every((row) => row.ticker === "5713");
+    const displayTicker = data.length > 0 && data.every((row) => row.ticker === data[0].ticker)
+        ? data[0].ticker
+        : null;
+    const profitDisplay = getCompanyProfitDisplay(displayTicker);
+    const showsProfitBeforeTax = profitDisplay.metric === "profit_before_tax";
     const cumulativeColumns = useMemo(
         () => CUM_COLUMNS.map((column) => {
             if (!showsProfitBeforeTax) return column;
-            if (column.key === "op") return { ...column, label: "税引前利益" };
-            if (column.key === "op_margin") return { ...column, label: "税引前利益率" };
+            if (column.key === "op") return { ...column, label: profitDisplay.label };
+            if (column.key === "op_margin") return { ...column, label: profitDisplay.marginLabel };
             return column;
         }),
-        [showsProfitBeforeTax],
+        [profitDisplay, showsProfitBeforeTax],
     );
     const standaloneColumns = useMemo(
         () => Q_BASE_COLUMNS.map((column) => {
             if (!showsProfitBeforeTax) return column;
-            if (column.key === "op") return { ...column, label: "税引前利益" };
-            if (column.key === "op_margin") return { ...column, label: "税引前利益率" };
+            if (column.key === "op") return { ...column, label: profitDisplay.label };
+            if (column.key === "op_margin") return { ...column, label: profitDisplay.marginLabel };
             return column;
         }),
-        [showsProfitBeforeTax],
+        [profitDisplay, showsProfitBeforeTax],
     );
     const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
         useMemo(
@@ -3389,13 +3394,13 @@ function FinancialsTable({
                                 )}
                                 {op !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{showsProfitBeforeTax ? "税引前利益" : "営業利益"}</span>
+                                        <span className="pl-summary-label">{profitDisplay.label}</span>
                                         <span className="pl-summary-value">{formatMillions(op)}</span>
                                     </span>
                                 )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{showsProfitBeforeTax ? "税引前利益率" : "営利率"}</span>
+                                        <span className="pl-summary-label">{showsProfitBeforeTax ? profitDisplay.marginLabel : "営利率"}</span>
                                         <span className="pl-summary-value">{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}
