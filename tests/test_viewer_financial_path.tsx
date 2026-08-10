@@ -92,7 +92,7 @@ test("FinancialsTable SSR renders correct cumulative and standalone rows for 418
     assert.doesNotMatch(html, /税引前利益/);
 });
 
-test("FinancialsTable presents official PBT only for exact ticker 5713", () => {
+test("FinancialsTable preserves the approved 5713 PBT presentation", () => {
     const rows: ViewerFinancialRow[] = [
         { ticker: "5713", period: "2026-03-31", quarter: "1Q", sales: 379_600, gross_profit: null, operating_profit: null, profit_before_tax: 37_901, source: "tdnet_xbrl", updated_at: "" },
         { ticker: "5713", period: "2026-03-31", quarter: "2Q", sales: 783_361, gross_profit: null, operating_profit: null, profit_before_tax: 77_815, source: "tdnet_xbrl", updated_at: "" },
@@ -110,6 +110,57 @@ test("FinancialsTable presents official PBT only for exact ticker 5713", () => {
     assert.match(rowMarkup(html, "standalone", "2026-03-31", "2Q"), />39,914</);
     assert.match(rowMarkup(html, "standalone", "2026-03-31", "3Q"), />70,443</);
     assert.match(rowMarkup(html, "standalone", "2026-03-31", "FY"), />107,422</);
+});
+
+test("FinancialsTable presents PBT for the four newly configured exact tickers", () => {
+    for (const ticker of ["2282", "8031", "8058", "4819"]) {
+        const rows: ViewerFinancialRow[] = [
+            { ticker, period: "2027-03-31", quarter: "1Q", sales: 100, gross_profit: null, operating_profit: null, profit_before_tax: 30, source: "jquants", updated_at: "" },
+            { ticker, period: "2027-03-31", quarter: "2Q", sales: 250, gross_profit: null, operating_profit: null, profit_before_tax: 75, source: "jquants", updated_at: "" },
+        ];
+        const records = transformFinancialRows(rows);
+        const html = renderToStaticMarkup(
+            <FinancialsTable data={records} loading={false} segments={[]} />,
+        );
+
+        assert.ok(records.every((item) => item.operating_profit === null));
+        assert.match(html, /税引前利益/);
+        assert.match(rowMarkup(html, "cumulative", "2027-03-31", "2Q"), />75</);
+        assert.match(rowMarkup(html, "standalone", "2027-03-31", "2Q"), />45</);
+    }
+});
+
+test("7203, 7741, and excluded 8053 retain operating-profit presentation", () => {
+    const controls = [
+        { ticker: "7203", operatingProfit: 100 },
+        { ticker: "7741", operatingProfit: 82_626 },
+        { ticker: "8053", operatingProfit: 200 },
+    ];
+    for (const { ticker, operatingProfit } of controls) {
+        const rows: ViewerFinancialRow[] = [{
+            ticker,
+            period: "2027-03-31",
+            quarter: "1Q",
+            sales: 1_000,
+            gross_profit: null,
+            operating_profit: operatingProfit,
+            profit_before_tax: 999_999,
+            source: "tdnet_xbrl",
+            updated_at: "",
+        }];
+        const records = transformFinancialRows(rows);
+        const html = renderToStaticMarkup(
+            <FinancialsTable data={records} loading={false} segments={[]} />,
+        );
+
+        assert.match(html, /営業利益/);
+        assert.doesNotMatch(html, /税引前利益/);
+        assert.match(
+            rowMarkup(html, "cumulative", "2027-03-31", "1Q"),
+            new RegExp(operatingProfit.toLocaleString("en-US")),
+        );
+        assert.doesNotMatch(html, /999,999/);
+    }
 });
 
 test("FinancialsTable SSR keeps 472A FY cumulative but renders no fabricated Q4", () => {

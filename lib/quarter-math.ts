@@ -8,6 +8,7 @@
  */
 
 import type { FinancialRecord } from "@/types/financial";
+import { getCompanyProfitDisplay, presentsProfitBeforeTax } from "@/lib/company-profit-display";
 
 // ============================================================
 // Quarter 順序定義
@@ -141,18 +142,15 @@ export const FORECAST_SOURCES = new Set<string>([
     "tdnet_forecast",
 ]);
 
-/** Only 5713 presents official PBT in the operating-profit table position. */
-export const PBT_PRESENTATION_TICKER = "5713";
-
 export function displayedProfit(record: FinancialRecord): number | null {
-    return record.ticker === PBT_PRESENTATION_TICKER
+    return getCompanyProfitDisplay(record.ticker).metric === "profit_before_tax"
         ? record.profit_before_tax
         : record.operating_profit;
 }
 
 function displayedSgAndA(record: FinancialRecord): number | null {
-    // GP - PBT is not SG&A. Do not manufacture an SG&A value for 5713.
-    return record.ticker === PBT_PRESENTATION_TICKER
+    // GP - PBT is not SG&A. Do not manufacture SG&A for configured PBT issuers.
+    return presentsProfitBeforeTax(record.ticker)
         ? null
         : calcSgAndA(record.gross_profit, record.operating_profit);
 }
@@ -250,7 +248,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
                 const gp = safeSub(r.gross_profit, prevRecord.gross_profit);
                 const op = safeSub(displayedProfit(r), displayedProfit(prevRecord));
                 const grossMarginRate = calcGrossMarginRate(gp, sales);
-                const sgAndA = r.ticker === PBT_PRESENTATION_TICKER ? null : calcSgAndA(gp, op);
+                const sgAndA = presentsProfitBeforeTax(r.ticker) ? null : calcSgAndA(gp, op);
                 const opMargin = calcOpMargin(op, sales);
 
                 result.push({

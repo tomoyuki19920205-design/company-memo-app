@@ -5,6 +5,10 @@ import {
     buildQStandaloneRows,
     sortForDisplay,
 } from "../lib/quarter-math";
+import {
+    COMPANY_PROFIT_DISPLAY_CONFIG,
+    getCompanyProfitDisplay,
+} from "../lib/company-profit-display";
 import type { FinancialRecord } from "../types/financial";
 
 const row = (
@@ -182,4 +186,33 @@ test("5713 uses official cumulative PBT for standalone quarter math", () => {
     );
     assert.ok([...result.values()].every((item) => item.sgAndA === null));
     assert.ok(records.every((item) => item.operating_profit === null));
+});
+
+test("explicit company profit display configuration contains only the five verified PBT issuers", () => {
+    assert.deepEqual(
+        Object.keys(COMPANY_PROFIT_DISPLAY_CONFIG).sort(),
+        ["5713", "2282", "8031", "8058", "4819"].sort(),
+    );
+    for (const ticker of ["5713", "2282", "8031", "8058", "4819"]) {
+        assert.equal(getCompanyProfitDisplay(ticker).metric, "profit_before_tax");
+        assert.equal(getCompanyProfitDisplay(ticker).label, "税引前利益");
+    }
+    for (const ticker of ["7203", "7741", "8053", "4151", "7011", "7012"]) {
+        assert.equal(getCompanyProfitDisplay(ticker).metric, "operating_profit");
+        assert.equal(getCompanyProfitDisplay(ticker).label, "営業利益");
+    }
+});
+
+test("the four added issuers reuse the existing cumulative-to-standalone PBT math", () => {
+    for (const ticker of ["2282", "8031", "8058", "4819"]) {
+        const records = [
+            row("2027-03-31", "1Q", 100, null, null, ticker, 30),
+            row("2027-03-31", "2Q", 250, null, null, ticker, 75),
+        ];
+        const result = byQuarter(records);
+        assert.equal(result.get("1Q")!.operatingProfit, 30);
+        assert.equal(result.get("2Q")!.operatingProfit, 45);
+        assert.equal(result.get("2Q")!.sgAndA, null);
+        assert.ok(records.every((item) => item.operating_profit === null));
+    }
 });
