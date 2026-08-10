@@ -14,6 +14,7 @@ const row = (
     grossProfit: number | null,
     operatingProfit: number | null,
     ticker = "TEST",
+    profitBeforeTax: number | null = null,
 ): FinancialRecord => ({
     ticker,
     period,
@@ -21,6 +22,7 @@ const row = (
     sales,
     gross_profit: grossProfit,
     operating_profit: operatingProfit,
+    profit_before_tax: profitBeforeTax,
     ordinary_profit: null,
     net_income: null,
     eps: null,
@@ -164,4 +166,20 @@ test("missing 3Q in a normal twelve-month FY remains null", () => {
     assert.equal(fy.sales, null);
     assert.equal(fy.grossProfit, null);
     assert.equal(fy.operatingProfit, null);
+});
+
+test("5713 uses official cumulative PBT for standalone quarter math", () => {
+    const records = [
+        row("2026-03-31", "1Q", 379_600, null, null, "5713", 37_901),
+        row("2026-03-31", "2Q", 783_361, null, null, "5713", 77_815),
+        row("2026-03-31", "3Q", 1_250_721, null, null, "5713", 148_258),
+        row("2026-03-31", "FY", 1_741_586, null, null, "5713", 255_680),
+    ];
+    const result = byQuarter(records);
+    assert.deepEqual(
+        ["1Q", "2Q", "3Q", "FY"].map((q) => result.get(q)!.operatingProfit),
+        [37_901, 39_914, 70_443, 107_422],
+    );
+    assert.ok([...result.values()].every((item) => item.sgAndA === null));
+    assert.ok(records.every((item) => item.operating_profit === null));
 });

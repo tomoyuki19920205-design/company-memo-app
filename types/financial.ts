@@ -5,6 +5,7 @@ export interface FinancialRecord {
     sales: number | null;
     gross_profit: number | null;
     operating_profit: number | null;
+    profit_before_tax: number | null;
     ordinary_profit: number | null;
     net_income: number | null;
     eps: number | null;
