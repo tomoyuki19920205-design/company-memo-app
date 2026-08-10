@@ -127,25 +127,54 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
 
     try {
         const supabase = createSupabaseBrowser();
-        const { data, error } = await supabase
-            .from("api_latest_financials_canonical")
-            .select("ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at")
-            .eq("ticker", t)
-            .order("period", { ascending: false })
-            .order("quarter", { ascending: false })
-            .limit(100);
+        const columns =
+            "ticker,period,quarter,sales,gross_profit,operating_profit,source,updated_at";
+        const [actualResult, forecastResult] = await Promise.all([
+            supabase
+                .from("api_latest_financials_canonical")
+                .select(columns)
+                .eq("ticker", t)
+                .order("period", { ascending: false })
+                .order("quarter", { ascending: false })
+                .limit(100),
+            supabase
+                .from("api_latest_financials_canonical_forecast")
+                .select(columns)
+                .eq("ticker", t)
+                .order("period", { ascending: false })
+                .order("quarter", { ascending: false })
+                .limit(100),
+        ]);
 
-        if (error) {
-            if (error.code === "PGRST200" || error.message?.includes("not find")) {
+        if (actualResult.error) {
+            if (
+                actualResult.error.code === "PGRST200" ||
+                actualResult.error.message?.includes("not find")
+            ) {
                 console.warn("api_latest_financials view が未作成です");
                 return [];
             }
-            throw new Error(`PL取得に失敗しました: ${error.message}`);
+            throw new Error(`PL取得に失敗しました: ${actualResult.error.message}`);
         }
 
-        if (!data || data.length === 0) return [];
+        if (forecastResult.error) {
+            if (
+                forecastResult.error.code === "PGRST200" ||
+                forecastResult.error.message?.includes("not find")
+            ) {
+                console.warn("forecast financials view が未作成です");
+            } else {
+                throw new Error(`予想PL取得に失敗しました: ${forecastResult.error.message}`);
+            }
+        }
 
-        return transformFinancialRows(data as ViewerFinancialRow[]);
+        const rows = [
+            ...(actualResult.data ?? []),
+            ...(forecastResult.error ? [] : (forecastResult.data ?? [])),
+        ];
+        if (rows.length === 0) return [];
+
+        return transformFinancialRows(rows as ViewerFinancialRow[]);
     } catch (err) {
         console.error("loadFinancials error:", err);
         throw err;

@@ -109,3 +109,53 @@ test("FinancialsTable SSR keeps 472A FY cumulative but renders no fabricated Q4"
     assert.match(standaloneQ1, />257</);
     assert.doesNotMatch(html, /2026-03-31/);
 });
+
+test("8113 forecast remains available but never enters the actual PL model", () => {
+    const rows: ViewerFinancialRow[] = [
+        {
+            ticker: "8113",
+            period: "2025-12-31",
+            quarter: "FY",
+            sales: 989_000,
+            gross_profit: null,
+            operating_profit: null,
+            source: "jquants",
+            updated_at: "2026-02-13T15:00:00+09:00",
+        },
+        {
+            ticker: "8113",
+            period: "2025-12-31",
+            quarter: "FY",
+            sales: null,
+            gross_profit: null,
+            operating_profit: 146_000,
+            source: "jquants_nxf",
+            updated_at: "2025-02-14T15:00:00+09:00",
+        },
+    ];
+
+    const model = buildFinancialTableModel(transformFinancialRows(rows));
+
+    assert.equal(model.cumulativeRows.length, 1);
+    assert.equal(model.cumulativeRows[0].operatingProfit, null);
+    assert.equal(model.forecastFYRows.length, 1);
+    assert.equal(model.forecastFYRows[0].operating_profit, 146_000);
+    assert.equal(model.forecastFYRows[0].source, "jquants_nxf");
+});
+
+test("actual/forecast view migration prevents metric-level scope mixing", () => {
+    const migration = readFileSync(
+        fileURLToPath(
+            new URL(
+                "../migrations/010_split_actual_and_forecast_financial_views.sql",
+                import.meta.url,
+            ),
+        ),
+        "utf8",
+    );
+
+    assert.match(migration, /CREATE OR REPLACE VIEW public\.api_latest_financials_canonical AS/);
+    assert.match(migration, /source NOT IN \([\s\S]*'jquants_nxf'/);
+    assert.match(migration, /CREATE OR REPLACE VIEW public\.api_latest_financials_canonical_forecast AS/);
+    assert.match(migration, /source IN \([\s\S]*'jquants_nxf'/);
+});
