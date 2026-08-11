@@ -2,7 +2,9 @@
  * Q単体計算ユーティリティ
  *
  * financials の累計行から Q単体値を計算する。
- * 累計値: 1Q=1Q累計, 2Q=2Q累計-1Q累計, 3Q=3Q累計-2Q累計, FY=FY累計-3Q累計
+ * 累計値: 1Q=1Q累計, 2Q=2Q累計-1Q累計, 3Q=3Q累計-2Q累計。
+ * FY は通常 FY累計-3Q累計。12か月未満の決算期変更年度では、
+ * 前FY末からの月数に対応する最後の累計四半期との差分を使う。
  */
 
 import type { FinancialRecord } from "@/types/financial";
@@ -24,6 +26,41 @@ const PREV_QUARTER: Record<string, string | null> = {
     "3Q": "2Q",
     "FY": "3Q",
 };
+
+function monthDistance(fromPeriod: string, toPeriod: string): number | null {
+    const from = /^(\d{4})-(\d{2})-(\d{2})$/.exec(fromPeriod);
+    const to = /^(\d{4})-(\d{2})-(\d{2})$/.exec(toPeriod);
+    if (!from || !to) return null;
+    return (Number(to[1]) - Number(from[1])) * 12 + Number(to[2]) - Number(from[2]);
+}
+
+function previousQuarterFor(
+    record: FinancialRecord,
+    periodMap: Map<string, FinancialRecord>,
+    byPeriod: Map<string, Map<string, FinancialRecord>>,
+): string | null | undefined {
+    if (record.quarter !== "FY" || periodMap.has("3Q")) {
+        return PREV_QUARTER[record.quarter];
+    }
+
+    const priorFYPeriod = [...byPeriod.entries()]
+        .filter(([period, rows]) => period < record.period && rows.has("FY"))
+        .map(([period]) => period)
+        .sort()
+        .at(-1);
+    if (!priorFYPeriod) return PREV_QUARTER.FY;
+
+    const fiscalMonths = monthDistance(priorFYPeriod, record.period);
+    if (fiscalMonths === null || fiscalMonths <= 3 || fiscalMonths >= 12) {
+        return PREV_QUARTER.FY;
+    }
+
+    // 9か月FY -> 2Q、6か月FY -> 1Q。期待する累計行が無ければ安全にNULL。
+    const priorQuarterNumber = Math.ceil(fiscalMonths / 3) - 1;
+    return priorQuarterNumber >= 1 && priorQuarterNumber <= 3
+        ? `${priorQuarterNumber}Q`
+        : PREV_QUARTER.FY;
+}
 
 // ============================================================
 // Q単体データ型
@@ -165,7 +202,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
             continue;
         }
 
-        const prevQ = PREV_QUARTER[r.quarter];
+        const prevQ = previousQuarterFor(r, periodMap, byPeriod);
 
         if (prevQ === null) {
             // 1Q: 単体 = 累計

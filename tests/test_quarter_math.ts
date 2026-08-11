@@ -127,3 +127,41 @@ test("472A FY without 3Q stays null while next-year 1Q is standalone", () => {
     assert.equal(q1.grossProfit, 719.999);
     assert.ok(records.every((item) => item.period.endsWith("-12-31") && item.ticker === "472A"));
 });
+
+test("nine-month transition FY subtracts 2Q and never fabricates 3Q", () => {
+    const records = [
+        row("2025-03-31", "FY", 47_668, 31_829, 4_104, "4331"),
+        row("2025-12-31", "1Q", 11_100, 7_504, 12, "4331"),
+        row("2025-12-31", "2Q", 21_306, 14_443, -465, "4331"),
+        row("2025-12-31", "FY", 35_709, 24_169, 1_622, "4331"),
+        row("2026-12-31", "1Q", 11_763, 7_963, 339, "4331"),
+    ];
+    const result = buildQStandaloneRows(sortForDisplay(records));
+    const transitionFY = result.find(
+        (item) => item.period === "2025-12-31" && item.quarter === "FY",
+    )!;
+
+    assert.equal(transitionFY.sales, 14_403);
+    assert.equal(transitionFY.grossProfit, 9_726);
+    assert.equal(transitionFY.operatingProfit, 2_087);
+    assert.ok(!result.some(
+        (item) => item.period === "2025-12-31" && item.quarter === "3Q",
+    ));
+    assert.equal(
+        result.find((item) => item.period === "2026-12-31" && item.quarter === "1Q")!.sales,
+        11_763,
+    );
+});
+
+test("missing 3Q in a normal twelve-month FY remains null", () => {
+    const records = [
+        row("2025-03-31", "FY", 1_000, 400, 100),
+        row("2026-03-31", "2Q", 600, 240, 60),
+        row("2026-03-31", "FY", 1_200, 480, 120),
+    ];
+    const result = buildQStandaloneRows(sortForDisplay(records));
+    const fy = result.find((item) => item.period === "2026-03-31" && item.quarter === "FY")!;
+    assert.equal(fy.sales, null);
+    assert.equal(fy.grossProfit, null);
+    assert.equal(fy.operatingProfit, null);
+});
