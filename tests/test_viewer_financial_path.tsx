@@ -130,6 +130,62 @@ test("FinancialsTable presents PBT for the four newly configured exact tickers",
     }
 });
 
+test("FinancialsTable presents PBT for the six financial IFRS issuers", () => {
+    for (const ticker of ["7198", "8473", "8698", "8253", "7157", "8630"]) {
+        const rows: ViewerFinancialRow[] = [
+            { ticker, period: "2026-03-31", quarter: "1Q", sales: 100, gross_profit: null, operating_profit: null, profit_before_tax: 30, source: "jquants", updated_at: "" },
+            { ticker, period: "2026-03-31", quarter: "2Q", sales: 250, gross_profit: null, operating_profit: null, profit_before_tax: 75, source: "jquants", updated_at: "" },
+        ];
+        const records = transformFinancialRows(rows);
+        const html = renderToStaticMarkup(
+            <FinancialsTable data={records} loading={false} segments={[]} />,
+        );
+
+        assert.ok(records.every((item) => item.operating_profit === null));
+        assert.match(html, /税引前利益/);
+        assert.match(rowMarkup(html, "cumulative", "2026-03-31", "2Q"), />75</);
+        assert.match(rowMarkup(html, "standalone", "2026-03-31", "2Q"), />45</);
+    }
+});
+
+test("8630 legacy JGAAP rows never consume PBT while IFRS rows do", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "8630", period: "2025-03-31", quarter: "3Q", sales: 900, gross_profit: null, operating_profit: 80, profit_before_tax: 999, source: "jquants", updated_at: "" },
+        { ticker: "8630", period: "2025-03-31", quarter: "FY", sales: 1_200, gross_profit: null, operating_profit: null, profit_before_tax: 120, source: "jquants", updated_at: "" },
+        { ticker: "8630", period: "2026-03-31", quarter: "1Q", sales: 300, gross_profit: null, operating_profit: null, profit_before_tax: 25, source: "jquants", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(
+        <FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />,
+    );
+
+    assert.match(rowMarkup(html, "cumulative", "2025-03-31", "3Q"), />80</);
+    assert.doesNotMatch(rowMarkup(html, "cumulative", "2025-03-31", "3Q"), />999</);
+    assert.match(rowMarkup(html, "cumulative", "2025-03-31", "FY"), />120</);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "1Q"), />25</);
+    assert.doesNotMatch(rowMarkup(html, "standalone", "2025-03-31", "FY"), />40</);
+});
+
+test("8253 FY2026 never revives nonconsolidated operating income 55,536", () => {
+    const rows: ViewerFinancialRow[] = [{
+        ticker: "8253",
+        period: "2026-03-31",
+        quarter: "FY",
+        sales: 420_000,
+        gross_profit: null,
+        operating_profit: null,
+        profit_before_tax: 88_000,
+        source: "jquants",
+        updated_at: "",
+    }];
+    const html = renderToStaticMarkup(
+        <FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />,
+    );
+
+    assert.match(html, /税引前利益/);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "FY"), />88,000</);
+    assert.doesNotMatch(html, /55,536/);
+});
+
 test("7203, 7741, and excluded 8053 retain operating-profit presentation", () => {
     const controls = [
         { ticker: "7203", operatingProfit: 100 },
