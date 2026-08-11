@@ -1,6 +1,7 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { assertProductionRequiredAncestry } from './required-production-ancestry.mjs';
 
 console.log('--- Vercel Deployment Guard ---');
 
@@ -67,5 +68,14 @@ if (vercelConfig.projectName !== REQUIRED_PROJECT_NAME) {
     process.exit(1);
 }
 console.log('✅ Vercel projectName is correct');
+
+// 4. Refuse production deploys from a tree missing known-good Viewer lineage.
+try {
+    const { head, requirements } = assertProductionRequiredAncestry();
+    console.log(`✅ Required production ancestry is present (${requirements.length} commits, HEAD ${head})`);
+} catch (e) {
+    console.error(e.message);
+    process.exit(1);
+}
 
 console.log('--- ALL CHECKS PASSED. DEPLOYMENT ALLOWED ---');

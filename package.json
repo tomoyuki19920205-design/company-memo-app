@@ -8,7 +8,8 @@
         "start": "next start",
         "check:deploy": "node scripts/check-deploy.mjs",
         "deploy:prod": "node scripts/check-deploy.mjs && vercel --prod",
-        "test:quarterly": "tsx --test tests/test_quarter_math.ts tests/test_viewer_financial_path.tsx"
+        "test:quarterly": "tsx --test tests/test_quarter_math.ts tests/test_viewer_financial_path.tsx",
+        "test:deploy-guard": "node --test tests/test_required_production_ancestry.mjs"
     },
     "dependencies": {
         "@supabase/ssr": "^0.9.0",
