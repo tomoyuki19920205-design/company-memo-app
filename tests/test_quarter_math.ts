@@ -150,10 +150,10 @@ test("5713 uses official cumulative PBT for standalone quarter math", () => {
     assert.ok(records.every((item) => item.operating_profit === null));
 });
 
-test("explicit company profit display configuration contains only the five verified PBT issuers", () => {
+test("explicit company profit display configuration contains only verified PBT issuers", () => {
     assert.deepEqual(
         Object.keys(COMPANY_PROFIT_DISPLAY_CONFIG).sort(),
-        ["5713", "2282", "8031", "8058", "4819"].sort(),
+        ["5713", "2282", "8031", "8058", "4819", "7198", "8473", "8698", "8253", "7157", "8630"].sort(),
     );
     for (const ticker of ["5713", "2282", "8031", "8058", "4819"]) {
         assert.equal(getCompanyProfitDisplay(ticker).metric, "profit_before_tax");
@@ -163,6 +163,24 @@ test("explicit company profit display configuration contains only the five verif
         assert.equal(getCompanyProfitDisplay(ticker).metric, "operating_profit");
         assert.equal(getCompanyProfitDisplay(ticker).label, "営業利益");
     }
+});
+
+test("financial issuers use PBT only from their explicit IFRS period boundary", () => {
+    const boundaries = [
+        ["7198", "2019-03-31", "FY"],
+        ["8473", "2019-03-31", "FY"],
+        ["8698", "2021-03-31", "1Q"],
+        ["8253", "2019-03-31", "FY"],
+        ["7157", "2024-03-31", "1Q"],
+        ["8630", "2025-03-31", "FY"],
+    ] as const;
+    for (const [ticker, period, quarter] of boundaries) {
+        assert.equal(getCompanyProfitDisplay(ticker, period, quarter).metric, "profit_before_tax");
+    }
+    assert.equal(getCompanyProfitDisplay("8630", "2025-03-31", "1Q").metric, "operating_profit");
+    assert.equal(getCompanyProfitDisplay("8630", "2025-03-31", "2Q").metric, "operating_profit");
+    assert.equal(getCompanyProfitDisplay("8630", "2025-03-31", "3Q").metric, "operating_profit");
+    assert.equal(getCompanyProfitDisplay("8630", "2026-03-31", "1Q").metric, "profit_before_tax");
 });
 
 test("the four added issuers reuse the existing cumulative-to-standalone PBT math", () => {
@@ -177,4 +195,19 @@ test("the four added issuers reuse the existing cumulative-to-standalone PBT mat
         assert.equal(result.get("2Q")!.sgAndA, null);
         assert.ok(records.every((item) => item.operating_profit === null));
     }
+});
+
+test("8630 preserves legacy JGAAP OP and switches to PBT at FY2025 FY", () => {
+    const records = [
+        row("2025-03-31", "3Q", 900, null, 80, "8630", 999),
+        row("2025-03-31", "FY", 1_200, null, null, "8630", 120),
+        row("2026-03-31", "1Q", 300, null, null, "8630", 25),
+    ];
+    const cumulative = buildQStandaloneRows(sortForDisplay(records));
+    assert.equal(cumulative.find((item) => item.period === "2025-03-31" && item.quarter === "3Q")!.operatingProfit, null);
+    assert.equal(cumulative.find((item) => item.period === "2026-03-31" && item.quarter === "1Q")!.operatingProfit, 25);
+    const fy2025 = buildQStandaloneRows(sortForDisplay(records)).find(
+        (item) => item.period === "2025-03-31" && item.quarter === "FY",
+    )!;
+    assert.equal(fy2025.operatingProfit, null);
 });

@@ -3369,7 +3369,12 @@ function FinancialsTable({
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
 
                         if (!latestForecast) return null;
-                        const forecastProfit = showsProfitBeforeTax
+                        const forecastUsesPbt = getCompanyProfitDisplay(
+                            displayTicker,
+                            latestForecast.period,
+                            latestForecast.quarter,
+                        ).metric === "profit_before_tax";
+                        const forecastProfit = forecastUsesPbt
                             ? latestForecast.profit_before_tax
                             : latestForecast.operating_profit;
                         if (latestForecast.sales === null && forecastProfit === null) return null;

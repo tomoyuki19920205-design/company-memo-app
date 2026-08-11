@@ -106,14 +106,14 @@ export const FORECAST_SOURCES = new Set<string>([
 ]);
 
 export function displayedProfit(record: FinancialRecord): number | null {
-    return getCompanyProfitDisplay(record.ticker).metric === "profit_before_tax"
+    return getCompanyProfitDisplay(record.ticker, record.period, record.quarter).metric === "profit_before_tax"
         ? record.profit_before_tax
         : record.operating_profit;
 }
 
 function displayedSgAndA(record: FinancialRecord): number | null {
     // GP - PBT is not SG&A. Do not manufacture SG&A for configured PBT issuers.
-    return presentsProfitBeforeTax(record.ticker)
+    return presentsProfitBeforeTax(record.ticker, record.period, record.quarter)
         ? null
         : calcSgAndA(record.gross_profit, record.operating_profit);
 }
@@ -209,9 +209,17 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
             } else {
                 const sales = safeSub(r.sales, prevRecord.sales);
                 const gp = safeSub(r.gross_profit, prevRecord.gross_profit);
-                const op = safeSub(displayedProfit(r), displayedProfit(prevRecord));
+                const currentProfitMetric = getCompanyProfitDisplay(
+                    r.ticker, r.period, r.quarter,
+                ).metric;
+                const previousProfitMetric = getCompanyProfitDisplay(
+                    prevRecord.ticker, prevRecord.period, prevRecord.quarter,
+                ).metric;
+                const op = currentProfitMetric === previousProfitMetric
+                    ? safeSub(displayedProfit(r), displayedProfit(prevRecord))
+                    : null;
                 const grossMarginRate = calcGrossMarginRate(gp, sales);
-                const sgAndA = presentsProfitBeforeTax(r.ticker) ? null : calcSgAndA(gp, op);
+                const sgAndA = presentsProfitBeforeTax(r.ticker, r.period, r.quarter) ? null : calcSgAndA(gp, op);
                 const opMargin = calcOpMargin(op, sales);
 
                 result.push({

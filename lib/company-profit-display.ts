@@ -6,6 +6,16 @@ export interface CompanyProfitDisplayConfig {
     marginLabel: "営業利益率" | "税引前利益率";
 }
 
+interface FiscalPeriodPoint {
+    period: string;
+    quarter: "1Q" | "2Q" | "3Q" | "FY";
+}
+
+interface CompanyProfitDisplayRule {
+    display: CompanyProfitDisplayConfig;
+    ifrsFrom?: FiscalPeriodPoint;
+}
+
 const DEFAULT_PROFIT_DISPLAY: CompanyProfitDisplayConfig = {
     metric: "operating_profit",
     label: "営業利益",
@@ -18,19 +28,53 @@ const PBT_PROFIT_DISPLAY: CompanyProfitDisplayConfig = {
     marginLabel: "税引前利益率",
 };
 
-/** Companies whose verified consolidated PL structure has no operating-profit subtotal. */
-export const COMPANY_PROFIT_DISPLAY_CONFIG: Readonly<Record<string, CompanyProfitDisplayConfig>> = {
-    "5713": PBT_PROFIT_DISPLAY,
-    "2282": PBT_PROFIT_DISPLAY,
-    "8031": PBT_PROFIT_DISPLAY,
-    "8058": PBT_PROFIT_DISPLAY,
-    "4819": PBT_PROFIT_DISPLAY,
+const QUARTER_ORDER: Readonly<Record<string, number>> = {
+    "1Q": 0,
+    "2Q": 1,
+    "3Q": 2,
+    "FY": 3,
 };
 
-export function getCompanyProfitDisplay(ticker: string | null | undefined): CompanyProfitDisplayConfig {
-    return ticker ? COMPANY_PROFIT_DISPLAY_CONFIG[ticker] ?? DEFAULT_PROFIT_DISPLAY : DEFAULT_PROFIT_DISPLAY;
+/** Explicit verified rules only. There is no NULL-based automatic fallback. */
+export const COMPANY_PROFIT_DISPLAY_CONFIG: Readonly<Record<string, CompanyProfitDisplayRule>> = {
+    "5713": { display: PBT_PROFIT_DISPLAY },
+    "2282": { display: PBT_PROFIT_DISPLAY },
+    "8031": { display: PBT_PROFIT_DISPLAY },
+    "8058": { display: PBT_PROFIT_DISPLAY },
+    "4819": { display: PBT_PROFIT_DISPLAY },
+    "7198": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2019-03-31", quarter: "FY" } },
+    "8473": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2019-03-31", quarter: "FY" } },
+    "8698": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2021-03-31", quarter: "1Q" } },
+    "8253": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2019-03-31", quarter: "FY" } },
+    "7157": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2024-03-31", quarter: "1Q" } },
+    "8630": { display: PBT_PROFIT_DISPLAY, ifrsFrom: { period: "2025-03-31", quarter: "FY" } },
+};
+
+function isAtOrAfter(point: FiscalPeriodPoint, boundary: FiscalPeriodPoint): boolean {
+    const periodComparison = point.period.localeCompare(boundary.period);
+    if (periodComparison !== 0) return periodComparison > 0;
+    return (QUARTER_ORDER[point.quarter] ?? -1) >= (QUARTER_ORDER[boundary.quarter] ?? 99);
 }
 
-export function presentsProfitBeforeTax(ticker: string | null | undefined): boolean {
-    return getCompanyProfitDisplay(ticker).metric === "profit_before_tax";
+export function getCompanyProfitDisplay(
+    ticker: string | null | undefined,
+    period?: string,
+    quarter?: string,
+): CompanyProfitDisplayConfig {
+    const rule = ticker ? COMPANY_PROFIT_DISPLAY_CONFIG[ticker] : undefined;
+    if (!rule) return DEFAULT_PROFIT_DISPLAY;
+    if (!rule.ifrsFrom || period === undefined || quarter === undefined) return rule.display;
+    if (!(quarter in QUARTER_ORDER)) return DEFAULT_PROFIT_DISPLAY;
+    return isAtOrAfter(
+        { period, quarter: quarter as FiscalPeriodPoint["quarter"] },
+        rule.ifrsFrom,
+    ) ? rule.display : DEFAULT_PROFIT_DISPLAY;
+}
+
+export function presentsProfitBeforeTax(
+    ticker: string | null | undefined,
+    period?: string,
+    quarter?: string,
+): boolean {
+    return getCompanyProfitDisplay(ticker, period, quarter).metric === "profit_before_tax";
 }
