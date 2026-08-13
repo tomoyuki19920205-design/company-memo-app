@@ -972,8 +972,9 @@ export async function loadPerShareData(
  *         実績EPSへのフォールバックは行わない。
  * - PBR: 最新実績BPS。bps <= 0 なら null。
  * - 配当利回り: 予想配当優先、なければ実績配当。price <= 0 なら null。
- * - 時価総額: market_data の値を使用 (既に算出済み)。
- *   fallback: close * (shares_outstanding - treasury_stock)
+ * - 時価総額: market_data の値のみを使用 (price-date basisで算出済み)。
+ *   shares の corporate-action basis をブラウザでは再現できないため、
+ *   market_cap が null の場合に不正確な fallback 計算は行わない。
  */
 export function calculateValuation(
     market: MarketDataRecord | null,
@@ -1060,20 +1061,9 @@ export function calculateValuation(
             ? Math.round((dividendUsed / price) * 100 * 100) / 100
             : null;
 
-    // 時価総額 fallback
-    let marketCap = market.market_cap;
-    if (
-        marketCap === null &&
-        price > 0 &&
-        primary.shares_outstanding !== null
-    ) {
-        const treasuryStock = primary.treasury_stock ?? 0;
-        marketCap = price * (primary.shares_outstanding - treasuryStock);
-    }
-
     return {
         stock_price: price,
-        market_cap: marketCap,
+        market_cap: market.market_cap,
         per,
         pbr,
         div_yield: divYield,

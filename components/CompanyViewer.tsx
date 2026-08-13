@@ -327,28 +327,43 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         const cached = tickerCacheRef.current.get(ticker);
         if (cached) {
             // --- CACHE HIT ---
-            // 1. 読み取り専用データを即時復元
+            // 1. 財務系の読み取り専用データを即時復元する。
+            // market data は Nightly 後の stale 値を残さないため再利用しない。
             setCompanyInfo(cached.companyInfo);
             setFinancials(cached.financials);
             setForecasts(cached.forecasts);
             setMonthly(cached.monthly);
-            setMarketData(cached.marketData);
-            setPerShareData(cached.perShareData);
-            setValuation(calculateValuation(cached.marketData, cached.perShareData));
             setEdinetOrders(cached.edinetOrders);
             if (!orderKpiTabManuallySetRef.current) {
                 setOrderKpiTab(cached.edinetOrders.length > 0 ? "edinet" : "order");
             }
-
-            setStatus("loaded");
-            setDataLoading(false);
 
             if (cached.financials.length > 0) {
                 setSelectedPeriod(cached.financials[0].period);
                 setSelectedQuarter(cached.financials[0].quarter);
             }
 
-            // 2. 編集可能データのみバックグラウンドで fresh fetch
+            // market data はキャッシュヒット時も必ず Supabase から再取得する。
+            const [marketResult, perShareResult] = await Promise.allSettled([
+                loadLatestMarketData(ticker),
+                loadPerShareData(ticker),
+            ]);
+            if (loadRequestIdRef.current !== currentRequestId) return;
+
+            const freshMarket = marketResult.status === "fulfilled" ? marketResult.value : null;
+            const freshPerShare = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+            setMarketData(freshMarket);
+            setPerShareData(freshPerShare);
+            setValuation(calculateValuation(freshMarket, freshPerShare));
+            tickerCacheRef.current.set(ticker, {
+                ...cached,
+                marketData: freshMarket,
+                perShareData: freshPerShare,
+            });
+            setStatus("loaded");
+            setDataLoading(false);
+
+            // 2. 編集可能データをバックグラウンドで fresh fetch
             const [
                 kpiResult, memosResult, segmentResult, kpiDefsResult, kpiValsResult, orderKpisResult, manualMemosResult, segManualHeadersResult
             ] = await Promise.allSettled([
