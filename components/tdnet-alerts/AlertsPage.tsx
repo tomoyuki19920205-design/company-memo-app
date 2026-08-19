@@ -6,7 +6,7 @@ import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-a
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
-import { getPdfOnlyMaterialLabel, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -1370,6 +1370,35 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const bodyText = cardBody + discordExtra;
 
               const isSelected = selectedId === event.id;
+
+              if (isCompanyIrEvent(event.event_type)) {
+                const directUrl = event.source_url || event.pdf_url || "";
+                return (
+                  <div
+                    key={event.id}
+                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
+                    onClick={() => handleSelectEvent(event)}
+                  >
+                    <div className="alert-card-summary-line1">
+                      {event.ticker} {event.company_name}
+                    </div>
+                    <div className="alert-card-summary-line2">{event.headline}</div>
+                    {directUrl && (
+                      <a
+                        href={directUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onPointerDown={(e) => e.stopPropagation()}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ display: "block", fontSize: "0.82em", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+                        title={directUrl}
+                      >
+                        {directUrl}
+                      </a>
+                    )}
+                  </div>
+                );
+              }
 
               if (isPdfOnlyMaterialEvent(event.event_type)) {
                 const materialLabel = getPdfOnlyMaterialLabel(event);

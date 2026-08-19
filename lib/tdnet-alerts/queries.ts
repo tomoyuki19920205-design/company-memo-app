@@ -58,7 +58,7 @@ export async function fetchEvents(
       // 決算タブ専用: 数値決算 + viewer-only決算説明資料
       // 副作用の少ない4条件のみ。見込み・補足説明は除外しない。
       query = query
-        .in("event_type", ["earnings", "earnings_material"])
+        .in("event_type", ["earnings", "earnings_material", "company_ir_material", "company_ir_video"])
         .not("headline", "ilike", "%一部訂正%")       // 1. 「一部訂正」を含む
         .not("headline", "ilike", "%定時株主総会%")    // 2. 「定時株主総会」を含む
         .not("headline", "ilike", "%継続開催%")        // 3. 「継続開催」を含む

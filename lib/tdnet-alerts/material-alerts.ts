@@ -1,10 +1,17 @@
 import type { TdnetEvent } from "./types";
 
 export const PDF_ONLY_MATERIAL_EVENT_TYPES = ["earnings_material", "monthly_update"] as const;
+export const COMPANY_IR_EVENT_TYPES = ["company_ir_material", "company_ir_video"] as const;
 
 export function isPdfOnlyMaterialEvent(eventType: string): boolean {
   return PDF_ONLY_MATERIAL_EVENT_TYPES.includes(
     String(eventType ?? "").trim().toLowerCase() as (typeof PDF_ONLY_MATERIAL_EVENT_TYPES)[number],
+  );
+}
+
+export function isCompanyIrEvent(eventType: string): boolean {
+  return COMPANY_IR_EVENT_TYPES.includes(
+    String(eventType ?? "").trim().toLowerCase() as (typeof COMPANY_IR_EVENT_TYPES)[number],
   );
 }
 

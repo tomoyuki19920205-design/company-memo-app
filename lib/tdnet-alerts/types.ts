@@ -105,6 +105,8 @@ export const EVENT_TYPE_CONFIG: Record<
   forecast: { label: "業績予想修正", emoji: "📈", color: "#f59e0b" },
   dividend: { label: "配当修正", emoji: "💰", color: "#10b981" },
   earnings: { label: "決算", emoji: "📋", color: "#3b82f6" },
+  company_ir_material: { label: "会社IR資料", emoji: "📄", color: "#2563eb" },
+  company_ir_video: { label: "会社IR動画", emoji: "🎥", color: "#7c3aed" },
   shareholder: { label: "大量保有", emoji: "👥", color: "#8b5cf6" },
   other: { label: "その他", emoji: "📄", color: "#94a3b8" },
   edinet_order: { label: "受注・受注残", emoji: "🏢", color: "#14b8a6" },

@@ -1,11 +1,17 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getPdfOnlyMaterialLabel, isPdfOnlyMaterialEvent } from "./material-alerts.ts";
+import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "./material-alerts.ts";
 
 test("recognizes only the two viewer-only material types", () => {
   assert.equal(isPdfOnlyMaterialEvent("earnings_material"), true);
   assert.equal(isPdfOnlyMaterialEvent("monthly_update"), true);
   assert.equal(isPdfOnlyMaterialEvent("earnings"), false);
+});
+
+test("recognizes only company IR material and video events", () => {
+  assert.equal(isCompanyIrEvent("company_ir_material"), true);
+  assert.equal(isCompanyIrEvent("company_ir_video"), true);
+  assert.equal(isCompanyIrEvent("earnings_material"), false);
 });
 
 test("uses the backend display label from raw payload", () => {
