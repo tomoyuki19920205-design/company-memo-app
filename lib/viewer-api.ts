@@ -806,6 +806,7 @@ export async function updateOrderKpiValue(
 // ============================================================
 
 import type {
+    CorporateActionRecord,
     MarketDataRecord,
     PerShareRecord,
     ValuationMetrics,
@@ -951,9 +952,41 @@ export async function loadPerShareData(
             equity: row.equity !== null ? Number(row.equity) : null,
             equity_ratio:
                 row.equity_ratio !== null ? Number(row.equity_ratio) : null,
+            source: row.source ?? null,
+            updated_at: row.updated_at ?? null,
         })) as PerShareRecord[];
     } catch (err) {
         console.warn("[per_share_data] 取得例外:", err);
+        return [];
+    }
+}
+
+/** Load non-unit adjustment factors used after a per-share disclosure. */
+export async function loadCorporateActions(
+    ticker: string,
+): Promise<CorporateActionRecord[]> {
+    const t = normalizeTicker(ticker);
+    if (!t) return [];
+
+    try {
+        const supabase = createSupabaseBrowser();
+        const { data, error } = await supabase
+            .from("market_data")
+            .select("date,adj_factor")
+            .eq("ticker", t)
+            .not("adj_factor", "is", null)
+            .neq("adj_factor", 1)
+            .order("date", { ascending: true });
+
+        if (error) {
+            console.warn("[market_data actions] 取得失敗:", error.message);
+            return [];
+        }
+        return (data ?? [])
+            .map((row) => ({ date: row.date, adj_factor: Number(row.adj_factor) }))
+            .filter((row) => Number.isFinite(row.adj_factor) && row.adj_factor > 0);
+    } catch (err) {
+        console.warn("[market_data actions] 取得例外:", err);
         return [];
     }
 }
@@ -970,8 +1003,10 @@ export async function loadPerShareData(
  * ルール:
  * - PER: 予想EPSのみ使用。forecast_eps <= 0 or null なら PER = null（"—" 表示）。
  *         実績EPSへのフォールバックは行わない。
- * - PBR: 最新実績BPS。bps <= 0 なら null。
- * - 配当利回り: 予想配当優先、なければ実績配当。price <= 0 なら null。
+ * - PER/配当利回り: 最新年度の最新開示を使用し、古い期初FY予想へ戻らない。
+ * - PBR: 最新の非null実績BPS。bps <= 0 なら null。
+ * - 株式分割等: 開示日の翌日から株価基準日までの adj_factor を累積し、
+ *   raw close と EPS/BPS/DPS の株式基準を揃える。
  * - 時価総額: market_data の値のみを使用 (price-date basisで算出済み)。
  *   shares の corporate-action basis をブラウザでは再現できないため、
  *   market_cap が null の場合に不正確な fallback 計算は行わない。
@@ -979,6 +1014,7 @@ export async function loadPerShareData(
 export function calculateValuation(
     market: MarketDataRecord | null,
     perShareRows: PerShareRecord[],
+    corporateActions: CorporateActionRecord[] = [],
 ): ValuationMetrics {
     const empty: ValuationMetrics = {
         stock_price: null,
@@ -992,6 +1028,9 @@ export function calculateValuation(
         bps_used: null,
         dividend_used: null,
         dividend_basis: null,
+        forecast_period: null,
+        forecast_disclosed_date: null,
+        bps_period: null,
     };
 
     if (!market || market.close === null) return empty;
@@ -999,11 +1038,20 @@ export function calculateValuation(
     const price = market.close;
     const priceDate = market.date;
 
-    // 最新の FY 行、または最新行から per_share 指標を選択
-    // FY行がなければ最新行で代替
-    const latestFY = perShareRows.find((r) => r.quarter === "FY");
-    const latest = perShareRows.length > 0 ? perShareRows[0] : null;
-    const primary = latestFY || latest;
+    const rowDate = (row: PerShareRecord) => row.disclosed_date ?? "";
+    const newestFirst = (a: PerShareRecord, b: PerShareRecord) =>
+        rowDate(b).localeCompare(rowDate(a)) || b.period.localeCompare(a.period);
+    const latestPeriod = perShareRows.reduce<string | null>(
+        (latest, row) => latest === null || row.period > latest ? row.period : latest,
+        null,
+    );
+    // Forecasts are point-in-time facts.  A generated FY row is the initial
+    // forecast, not a reason to ignore a newer 1Q/2Q/3Q revision.
+    const primary = latestPeriod === null
+        ? null
+        : [...perShareRows]
+            .filter((row) => row.period === latestPeriod)
+            .sort(newestFirst)[0] ?? null;
 
     if (!primary) {
         return {
@@ -1014,32 +1062,47 @@ export function calculateValuation(
         };
     }
 
-    // EPS: 予想EPSのみ使用（実績EPSへのフォールバック禁止）
+    const adjustmentFor = (disclosedDate: string | null): number => {
+        if (!disclosedDate) return 1;
+        return corporateActions.reduce((factor, action) => {
+            if (action.date > disclosedDate && action.date <= priceDate) {
+                return factor * action.adj_factor;
+            }
+            return factor;
+        }, 1);
+    };
+
+    // EPS: 最新年度・最新開示の会社予想のみ（実績へのフォールバック禁止）
     let epsUsed: number | null = null;
     let epsBasis: "forecast" | null = null;
     if (primary.forecast_eps !== null && primary.forecast_eps > 0) {
-        epsUsed = primary.forecast_eps;
+        epsUsed = primary.forecast_eps * adjustmentFor(primary.disclosed_date);
         epsBasis = "forecast";
     }
     // forecast_eps が null/0以下の場合 → PER = null → UI は "—" 表示
 
-    // BPS: 最新実績
-    const bpsUsed = primary.bps;
+    // BPS: 最新の利用可能な実績。予想専用FY行の null は使わない。
+    const bpsRow = [...perShareRows]
+        .filter((row) => row.bps !== null && row.bps > 0)
+        .sort(newestFirst)[0] ?? null;
+    const bpsUsed = bpsRow?.bps !== null && bpsRow?.bps !== undefined
+        ? bpsRow.bps * adjustmentFor(bpsRow.disclosed_date)
+        : null;
 
     // 配当: 予想 → 実績
     let dividendUsed: number | null = null;
     let dividendBasis: "forecast" | "actual" | null = null;
     if (
         primary.forecast_dividend_annual !== null &&
-        primary.forecast_dividend_annual > 0
+        primary.forecast_dividend_annual >= 0
     ) {
-        dividendUsed = primary.forecast_dividend_annual;
+        dividendUsed = primary.forecast_dividend_annual * adjustmentFor(primary.disclosed_date);
         dividendBasis = "forecast";
     } else if (
         primary.dividend_annual !== null &&
-        primary.dividend_annual > 0
+        primary.dividend_annual >= 0
     ) {
-        dividendUsed = primary.dividend_annual;
+        dividendUsed = primary.dividend_annual * adjustmentFor(primary.disclosed_date);
         dividendBasis = "actual";
     }
 
@@ -1057,7 +1120,7 @@ export function calculateValuation(
 
     // 配当利回り
     const divYield =
-        price > 0 && dividendUsed !== null && dividendUsed > 0
+        price > 0 && dividendUsed !== null && dividendUsed >= 0
             ? Math.round((dividendUsed / price) * 100 * 100) / 100
             : null;
 
@@ -1073,6 +1136,9 @@ export function calculateValuation(
         bps_used: bpsUsed,
         dividend_used: dividendUsed,
         dividend_basis: dividendBasis,
+        forecast_period: primary.period,
+        forecast_disclosed_date: primary.disclosed_date,
+        bps_period: bpsRow?.period ?? null,
     };
 }
 

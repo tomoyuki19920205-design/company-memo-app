@@ -54,6 +54,7 @@ import {
     updateOrderKpiValue,
     loadLatestMarketData,
     loadPerShareData,
+    loadCorporateActions,
     calculateValuation,
     loadEdinetOrders,
     type CompanyInfo,
@@ -344,17 +345,19 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             }
 
             // market data はキャッシュヒット時も必ず Supabase から再取得する。
-            const [marketResult, perShareResult] = await Promise.allSettled([
+            const [marketResult, perShareResult, actionResult] = await Promise.allSettled([
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
+                loadCorporateActions(ticker),
             ]);
             if (loadRequestIdRef.current !== currentRequestId) return;
 
             const freshMarket = marketResult.status === "fulfilled" ? marketResult.value : null;
             const freshPerShare = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+            const freshActions = actionResult.status === "fulfilled" ? actionResult.value : [];
             setMarketData(freshMarket);
             setPerShareData(freshPerShare);
-            setValuation(calculateValuation(freshMarket, freshPerShare));
+            setValuation(calculateValuation(freshMarket, freshPerShare, freshActions));
             tickerCacheRef.current.set(ticker, {
                 ...cached,
                 marketData: freshMarket,
@@ -420,7 +423,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         } else {
             // --- CACHE MISS ---
             const [
-                companyResult, financialsResult, forecastResult, monthlyResult, marketResult, perShareResult, edinetOrdersResult
+                companyResult, financialsResult, forecastResult, monthlyResult, marketResult, perShareResult, actionResult, edinetOrdersResult
             ] = await Promise.allSettled([
                 loadCompanyInfo(ticker),
                 loadFinancials(ticker),
@@ -428,6 +431,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 loadMonthlyData(ticker),
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
+                loadCorporateActions(ticker),
                 loadEdinetOrders(ticker),
             ]);
 
@@ -452,9 +456,10 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             const mktData = marketResult.status === "fulfilled" ? marketResult.value : null;
             const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
+            const actionData = actionResult.status === "fulfilled" ? actionResult.value : [];
             setMarketData(mktData);
             setPerShareData(psData);
-            setValuation(calculateValuation(mktData, psData));
+            setValuation(calculateValuation(mktData, psData, actionData));
 
             const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
             setEdinetOrders(newEdinetOrders);

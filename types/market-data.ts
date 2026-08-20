@@ -45,6 +45,14 @@ export interface PerShareRecord {
     total_assets: number | null;
     equity: number | null;
     equity_ratio: number | null;
+    source: string | null;
+    updated_at: string | null;
+}
+
+/** J-Quants corporate-action factor effective on a market date. */
+export interface CorporateActionRecord {
+    date: string;
+    adj_factor: number;
 }
 
 /** API計算後のバリュエーション指標 */
@@ -61,4 +69,7 @@ export interface ValuationMetrics {
     bps_used: number | null;
     dividend_used: number | null;
     dividend_basis: "forecast" | "actual" | null;
+    forecast_period: string | null;
+    forecast_disclosed_date: string | null;
+    bps_period: string | null;
 }
