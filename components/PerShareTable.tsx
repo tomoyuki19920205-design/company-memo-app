@@ -42,6 +42,30 @@ function shortPeriod(period: string): string {
     return `${m[1]}.${parseInt(m[2])}`;
 }
 
+export function selectPerShareDisplayRows(data: PerShareRecord[]): PerShareRecord[] {
+    const actualFyRows = data
+        .filter((row) => row.quarter === "FY" && row.eps !== null)
+        .sort((a, b) => b.period.localeCompare(a.period))
+        .slice(0, 4);
+    const latestActualPeriod = actualFyRows[0]?.period ?? "";
+    const forecastPeriods = data
+        .filter((row) =>
+            row.period > latestActualPeriod &&
+            (row.forecast_eps !== null || row.forecast_dividend_annual !== null),
+        )
+        .map((row) => row.period);
+    const latestForecastPeriod = forecastPeriods.sort((a, b) => b.localeCompare(a))[0];
+    const forecastRow = latestForecastPeriod
+        ? data
+            .filter((row) => row.period === latestForecastPeriod)
+            .sort((a, b) =>
+                (b.disclosed_date ?? "").localeCompare(a.disclosed_date ?? ""),
+            )[0] ?? null
+        : null;
+
+    return [...(forecastRow ? [forecastRow] : []), ...actualFyRows];
+}
+
 function PerShareTable({ data, loading }: PerShareTableProps) {
     if (loading) {
         return (
@@ -52,31 +76,7 @@ function PerShareTable({ data, loading }: PerShareTableProps) {
         );
     }
 
-    // FY行だけ年度ベースで表示
-    const fyRows = data.filter((r) => r.quarter === "FY");
-
-    // 実績行 (eps あり) を period 降順で最大4件
-    const actualFyRows = fyRows
-        .filter((r) => r.eps !== null)
-        .sort((a, b) => b.period.localeCompare(a.period))
-        .slice(0, 4);
-
-    // 最新実績の period（予想行フィルタ用）
-    const latestActualPeriod =
-        actualFyRows.length > 0 ? actualFyRows[0].period : "";
-
-    // 予想専用行: eps=null かつ forecast_eps あり かつ period > 最新実績
-    // NxFEPS から生成した翌期予想行。実績が来たら自動的にフィルタ対象外になる。
-    const forecastOnlyRow = fyRows
-        .filter(
-            (r) =>
-                r.eps === null &&
-                r.forecast_eps !== null &&
-                r.period > latestActualPeriod,
-        )
-        .sort((a, b) => b.period.localeCompare(a.period))[0] ?? null;
-
-    if (fyRows.length === 0 && data.length === 0) {
+    if (data.length === 0) {
         return (
             <div className="per-share-section">
                 <h3 className="per-share-title">1株指標</h3>
@@ -85,11 +85,8 @@ function PerShareTable({ data, loading }: PerShareTableProps) {
         );
     }
 
-    // 表示行: [翌期予想専用行(最大1)] + [実績FY行(最大4)]
-    const rows: PerShareRecord[] = [
-        ...(forecastOnlyRow ? [forecastOnlyRow] : []),
-        ...actualFyRows,
-    ];
+    // 最新年度はFY固定ではなく最新開示を表示し、過年度はFY実績を表示する。
+    const rows = selectPerShareDisplayRows(data);
 
     if (rows.length === 0) {
         return (
@@ -121,14 +118,14 @@ function PerShareTable({ data, loading }: PerShareTableProps) {
                                 <td className="per-share-period">
                                     {shortPeriod(r.period)}
                                 </td>
-                                <td className={["per-share-num", epsResultClass(r.eps, r.initial_forecast_eps)].filter(Boolean).join(" ")}>{fmt(r.eps)}</td>
+                                <td className={["per-share-num", epsResultClass(r.quarter === "FY" ? r.eps : null, r.initial_forecast_eps)].filter(Boolean).join(" ")}>{fmt(r.quarter === "FY" ? r.eps : null)}</td>
                                 <td className="per-share-num forecast-val">
-                                    {r.eps === null
-                                        ? fmt(r.forecast_eps ?? r.initial_forecast_eps)
-                                        : fmt(r.initial_forecast_eps)}
+                                    {r.quarter === "FY" && r.eps !== null
+                                        ? fmt(r.initial_forecast_eps)
+                                        : fmt(r.forecast_eps ?? r.initial_forecast_eps)}
                                 </td>
                                 <td className="per-share-num">
-                                    {fmt(r.dividend_annual)}
+                                    {fmt(r.quarter === "FY" ? r.dividend_annual : null)}
                                 </td>
                                 <td className="per-share-num forecast-val">
                                     {fmt(r.forecast_dividend_annual)}

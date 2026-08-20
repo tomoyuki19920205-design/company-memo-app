@@ -4,6 +4,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 import { calculateValuation } from "../lib/viewer-api";
+import { selectPerShareDisplayRows } from "../components/PerShareTable";
 import type { MarketDataRecord, PerShareRecord } from "../types/market-data";
 
 
@@ -205,4 +206,38 @@ test("an explicit zero dividend forecast displays a zero yield", () => {
     assert.equal(valuation.dividend_used, 0);
     assert.equal(valuation.div_yield, 0);
     assert.equal(valuation.dividend_basis, "forecast");
+});
+
+
+test("per-share table uses the same latest fiscal disclosure as valuation", () => {
+    const initial = {
+        ...perShare,
+        period: "2027-03-31",
+        quarter: "FY",
+        disclosed_date: "2026-05-07",
+        eps: null,
+        forecast_eps: 130.32,
+        forecast_dividend_annual: 105,
+    };
+    const revised = {
+        ...perShare,
+        period: "2027-03-31",
+        quarter: "1Q",
+        disclosed_date: "2026-08-03",
+        forecast_eps: 219.24,
+        forecast_dividend_annual: 176,
+        bps: 1305.72,
+    };
+    const actual = {
+        ...perShare,
+        period: "2026-03-31",
+        quarter: "FY",
+        disclosed_date: "2026-05-07",
+        eps: 129.04,
+    };
+
+    const rows = selectPerShareDisplayRows([initial, revised, actual]);
+
+    assert.equal(rows[0], revised);
+    assert.equal(rows[1], actual);
 });
