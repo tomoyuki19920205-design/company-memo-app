@@ -906,6 +906,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "forecast") opts.eventType = "forecast";
       else if (filter === "dividend") opts.eventType = "dividend";
       else if (filter === "earnings") opts.eventType = "earnings";
+      else if (filter === "management_strategy") opts.eventType = "management_strategy";
       else if (filter === "edinet_order") {
         // partialも取得するためクエリパラメータから外し、フロントエンド側でフィルタする
       }
@@ -1157,6 +1158,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     { key: "forecast", label: "📉 業績修正" },
     { key: "dividend", label: "💰 配当" },
     { key: "earnings", label: "📋 決算" },
+    { key: "management_strategy", label: "🧭 中期経営・戦略" },
     { key: "edinet_order", label: "📦 受注・受注残" },
     { key: "discord", label: "🔔 Discord対象" },
   ];

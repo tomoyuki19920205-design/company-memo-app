@@ -85,6 +85,7 @@ export type FilterType =
   | "forecast"
   | "dividend"
   | "earnings"
+  | "management_strategy"
   | "discord"
   | "today"
   | "edinet_order";
@@ -105,6 +106,7 @@ export const EVENT_TYPE_CONFIG: Record<
   forecast: { label: "業績予想修正", emoji: "📈", color: "#f59e0b" },
   dividend: { label: "配当修正", emoji: "💰", color: "#10b981" },
   earnings: { label: "決算", emoji: "📋", color: "#3b82f6" },
+  management_strategy: { label: "中期経営・戦略", emoji: "🧭", color: "#0f766e" },
   company_ir_material: { label: "会社IR資料", emoji: "📄", color: "#2563eb" },
   company_ir_video: { label: "会社IR動画", emoji: "🎥", color: "#7c3aed" },
   shareholder: { label: "大量保有", emoji: "👥", color: "#8b5cf6" },
@@ -133,6 +135,7 @@ const _EVENT_TYPE_ALIAS: Record<string, string> = {
   dividend: "dividend",
   earnings: "earnings",
   earnings_material: "earnings",
+  management_strategy: "management_strategy",
   monthly_update: "other",
   shareholder: "shareholder",
   other: "other",

@@ -1,6 +1,6 @@
 import type { TdnetEvent } from "./types";
 
-export const PDF_ONLY_MATERIAL_EVENT_TYPES = ["earnings_material", "monthly_update"] as const;
+export const PDF_ONLY_MATERIAL_EVENT_TYPES = ["earnings_material", "monthly_update", "management_strategy"] as const;
 export const COMPANY_IR_EVENT_TYPES = ["company_ir_material", "company_ir_video"] as const;
 
 export function isPdfOnlyMaterialEvent(eventType: string): boolean {
@@ -32,5 +32,7 @@ export function getPdfOnlyMaterialLabel(event: MaterialLabelEvent): string {
   const payloadLabel = typeof extracted.display_label === "string" ? extracted.display_label.trim() : "";
   if (payloadLabel) return payloadLabel;
   if (event.display_summary?.trim()) return event.display_summary.trim();
-  return event.event_type === "earnings_material" ? "決算説明資料" : "月次";
+  if (event.event_type === "earnings_material") return "決算説明資料";
+  if (event.event_type === "management_strategy") return "中期経営・戦略";
+  return "月次";
 }

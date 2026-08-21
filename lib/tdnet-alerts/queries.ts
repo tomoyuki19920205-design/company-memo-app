@@ -63,6 +63,8 @@ export async function fetchEvents(
         .not("headline", "ilike", "%定時株主総会%")    // 2. 「定時株主総会」を含む
         .not("headline", "ilike", "%継続開催%")        // 3. 「継続開催」を含む
         .not("headline", "ilike", "%決算短信%訂正%"); // 4. 「決算短信」＋「訂正」を含む
+    } else if (opts.eventType === "management_strategy") {
+      query = query.eq("event_type", "management_strategy");
     } else {
       query = query.eq("event_type", opts.eventType);
     }

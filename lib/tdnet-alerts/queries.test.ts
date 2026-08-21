@@ -96,6 +96,16 @@ test("includes viewer-only earnings materials in the earnings filter", async () 
   await fetchEvents(supabase as never, { userId: "test-user", eventType: "earnings" });
   assert.deepEqual(
     query.calls.find((call) => call.method === "in" && call.column === "event_type"),
-    { method: "in", column: "event_type", values: ["earnings", "earnings_material"] },
+    { method: "in", column: "event_type", values: ["earnings", "earnings_material", "company_ir_material", "company_ir_video"] },
+  );
+});
+
+test("filters management strategy independently", async () => {
+  const query = new FakeQuery();
+  const supabase = { from: () => query };
+  await fetchEvents(supabase as never, { userId: "test-user", eventType: "management_strategy" });
+  assert.deepEqual(
+    query.calls.find((call) => call.method === "eq" && call.column === "event_type" && call.value === "management_strategy"),
+    { method: "eq", column: "event_type", value: "management_strategy" },
   );
 });
