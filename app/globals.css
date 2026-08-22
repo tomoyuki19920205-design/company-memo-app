@@ -3335,6 +3335,19 @@ textarea::placeholder {
   text-overflow: ellipsis;
 }
 
+.alert-card-financial-summary {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 0.65em;
+  row-gap: 0.15em;
+  white-space: normal;
+}
+
+.alert-card-financial-summary-part {
+  white-space: nowrap;
+}
+
 .alert-card.priority-high {
   border-left-color: #fbbf24;
 }
