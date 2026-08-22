@@ -10,7 +10,8 @@
         "deploy:prod": "node scripts/check-deploy.mjs && vercel --prod",
         "test:quarterly": "tsx --test tests/test_quarter_math.ts tests/test_viewer_financial_path.tsx",
         "test:market": "tsx --test tests/test_market_valuation.ts",
-        "test:deploy-guard": "node --test tests/test_required_production_ancestry.mjs"
+        "test:deploy-guard": "node --test tests/test_required_production_ancestry.mjs",
+        "test:screener": "tsx --test tests/test_screener_options.ts"
     },
     "dependencies": {
         "@supabase/ssr": "^0.9.0",
