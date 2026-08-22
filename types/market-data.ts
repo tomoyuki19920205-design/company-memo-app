@@ -47,6 +47,23 @@ export interface PerShareRecord {
     equity_ratio: number | null;
     source: string | null;
     updated_at: string | null;
+    adjustment_audit?: Partial<Record<PerShareAdjustmentField, PerShareAdjustmentAudit>>;
+}
+
+export type PerShareAdjustmentField =
+    | "eps"
+    | "forecast_eps"
+    | "initial_forecast_eps"
+    | "dividend_annual"
+    | "forecast_dividend_annual"
+    | "bps";
+
+export interface PerShareAdjustmentAudit {
+    raw_value: number | null;
+    adjusted_value: number | null;
+    cumulative_factor: number;
+    basis_date: string | null;
+    method: string;
 }
 
 /** J-Quants corporate-action factor effective on a market date. */
