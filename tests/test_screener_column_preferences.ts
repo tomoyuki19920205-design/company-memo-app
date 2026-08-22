@@ -79,3 +79,16 @@ test("malformed localStorage falls back safely", () => {
         widths: normalizeColumnWidths(null),
     });
 });
+
+test("legacy sales-growth valuation preferences migrate to the inverse metric key", () => {
+    const legacyKey = "forecast_sales_growth_per_forward_per";
+    const currentKey = "forward_per_per_forecast_sales_growth";
+    const storage = new MemoryStorage();
+    storage.setItem(SCREENER_COLUMN_ORDER_KEY, JSON.stringify(["ticker", legacyKey, "company_name"]));
+    storage.setItem(SCREENER_COLUMN_WIDTHS_KEY, JSON.stringify({ [legacyKey]: 210 }));
+
+    const restored = loadScreenerColumnPreferences(storage);
+    assert.equal(restored.order[1], currentKey);
+    assert.equal(restored.order.includes(legacyKey), false);
+    assert.equal(restored.widths[currentKey], 210);
+});

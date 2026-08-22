@@ -3,6 +3,11 @@ import { SCREENER_METRICS } from "./screener";
 export const SCREENER_COLUMN_ORDER_KEY = "screener_column_order";
 export const SCREENER_COLUMN_WIDTHS_KEY = "screener_column_widths";
 
+// UI preference compatibility only. The legacy metric is not used by the screener runtime.
+const LEGACY_COLUMN_KEY_ALIASES: Record<string, string> = {
+    forecast_sales_growth_per_forward_per: "forward_per_per_forecast_sales_growth",
+};
+
 export type ScreenerColumnDefinition = {
     key: string;
     label: string;
@@ -42,12 +47,18 @@ export type ColumnWidths = Record<string, number>;
 
 type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem">;
 
+function migrateColumnKey(key: string): string {
+    return LEGACY_COLUMN_KEY_ALIASES[key] ?? key;
+}
+
 export function normalizeColumnOrder(saved: unknown, defaultOrder = DEFAULT_SCREENER_COLUMN_ORDER): string[] {
     const valid = new Set(defaultOrder);
     const normalized: string[] = [];
     if (Array.isArray(saved)) {
         for (const key of saved) {
-            if (typeof key === "string" && valid.has(key) && !normalized.includes(key)) normalized.push(key);
+            if (typeof key !== "string") continue;
+            const migratedKey = migrateColumnKey(key);
+            if (valid.has(migratedKey) && !normalized.includes(migratedKey)) normalized.push(migratedKey);
         }
     }
 
@@ -89,7 +100,9 @@ export function normalizeColumnWidths(
         ? saved as Record<string, unknown>
         : {};
     return Object.fromEntries(definitions.map((column) => {
-        const candidate = source[column.key];
+        const legacyKey = Object.keys(LEGACY_COLUMN_KEY_ALIASES)
+            .find((key) => LEGACY_COLUMN_KEY_ALIASES[key] === column.key);
+        const candidate = source[column.key] ?? (legacyKey ? source[legacyKey] : undefined);
         const width = typeof candidate === "number" && Number.isFinite(candidate) ? candidate : column.defaultWidth;
         return [column.key, clampColumnWidth(column, width)];
     }));
