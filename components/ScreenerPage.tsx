@@ -132,13 +132,17 @@ export default function ScreenerPage() {
         () => automaticMetricColumnKeys(ranges, METRIC_ORDER, sort, sortWasExplicitlySelected),
         [ranges, sort, sortWasExplicitlySelected],
     );
+    const requestedColumns = useMemo(
+        () => resolveMetricColumns(automaticColumns, columnOverrides, METRIC_ORDER),
+        [automaticColumns, columnOverrides],
+    );
 
     useEffect(() => {
         setColumns((current) => {
-            const next = resolveMetricColumns(automaticColumns, columnOverrides, METRIC_ORDER);
+            const next = requestedColumns;
             return current.length === next.length && current.every((key, index) => key === next[index]) ? current : next;
         });
-    }, [automaticColumns, columnOverrides]);
+    }, [requestedColumns]);
 
     useEffect(() => () => {
         resizeCleanupRef.current?.();
@@ -152,7 +156,7 @@ export default function ScreenerPage() {
     }, []);
 
     const queryString = useCallback((targetPage: number) => {
-        const params = new URLSearchParams({ page: String(targetPage), page_size: "50", columns: columns.join(","), sort, direction });
+        const params = new URLSearchParams({ page: String(targetPage), page_size: "50", columns: requestedColumns.join(","), sort, direction });
         for (const [key, range] of Object.entries(ranges)) {
             if (range.min !== "") params.set(`${key}_min`, range.min);
             if (range.max !== "") params.set(`${key}_max`, range.max);
@@ -160,7 +164,7 @@ export default function ScreenerPage() {
         appendCategorySelections(params, { markets, sectors17, sectors33 });
         for (const [key, enabled] of Object.entries(flags)) if (enabled) params.set(key, "true");
         return params.toString();
-    }, [columns, direction, flags, markets, ranges, sectors17, sectors33, sort]);
+    }, [direction, flags, markets, ranges, requestedColumns, sectors17, sectors33, sort]);
 
     const search = useCallback(async (targetPage = 1) => {
         setLoading(true); setError("");
