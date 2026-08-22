@@ -19,6 +19,7 @@ test("resize owns boundary pointer events while reorder remains on the header bo
     assert.match(component, /const startResize[\s\S]*?event\.preventDefault\(\);[\s\S]*?event\.stopPropagation\(\);/);
     assert.match(component, /className={`screener-resize-handle[\s\S]*?onMouseDown=\{\(event\) => startResize/);
     assert.match(component, /<th[\s\S]*?onMouseDown=\{\(event\) => startReorder/);
+    assert.match(component, /style=\{\{ zIndex: visibleColumnDefinitions\.length - columnIndex \+ 2 \}\}/);
     assert.match(component, /Math\.hypot\(moveEvent\.clientX - state\.startX, moveEvent\.clientY - state\.startY\) < 5/);
     assert.match(component, /window\.addEventListener\("mousemove", handleMove\)/);
 });

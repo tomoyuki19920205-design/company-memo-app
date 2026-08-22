@@ -248,13 +248,14 @@ export default function ScreenerPage() {
         <div className="screener-results" data-testid="screener-results-scroll">
             <table style={{ width: `${totalTableWidth}px` }}>
                 <colgroup>{visibleColumnDefinitions.map((column) => <col key={column.key} style={{ width: `${columnWidths[column.key]}px` }} />)}</colgroup>
-                <thead><tr>{visibleColumnDefinitions.map((column) => {
+                <thead><tr>{visibleColumnDefinitions.map((column, columnIndex) => {
                     const dropClass = dropTarget?.key === column.key ? ` screener-drop-${dropTarget.edge}` : "";
                     return <th
                         key={column.key}
                         data-column-key={column.key}
                         aria-grabbed={draggedColumn === column.key}
                         className={`${column.numeric ? "screener-column-numeric" : "screener-column-text"}${draggedColumn === column.key ? " screener-column-dragging" : ""}${dropClass}`}
+                        style={{ zIndex: visibleColumnDefinitions.length - columnIndex + 2 }}
                         onMouseDown={(event) => startReorder(event, column.key)}
                     ><span className="screener-header-label">{column.label}</span><span
                         role="separator"
