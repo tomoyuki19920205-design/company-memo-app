@@ -4,6 +4,12 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SCREENER_METRICS, type ScreenerRow } from "@/lib/screener";
 import {
+    appendCategorySelections,
+    selectionStatus,
+    updateAllSelections,
+    updateCodeSelection,
+} from "@/lib/screener-category-filters";
+import {
     DEFAULT_SCREENER_COLUMN_ORDER,
     SCREENER_COLUMN_DEFINITIONS,
     clearScreenerColumnPreferences,
@@ -27,8 +33,52 @@ const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
 const METRIC_BY_KEY = new Map(SCREENER_METRICS.map((metric) => [metric.key, metric]));
 const COLUMN_BY_KEY = new Map(SCREENER_COLUMN_DEFINITIONS.map((column) => [column.key, column]));
 
-function selectedValues(event: React.ChangeEvent<HTMLSelectElement>) {
-    return Array.from(event.target.selectedOptions, (option) => option.value);
+type CheckboxFilterGroupProps = {
+    filterKey: "markets" | "sectors17" | "sectors33";
+    label: string;
+    options: Option[];
+    selected: string[];
+    setSelected: React.Dispatch<React.SetStateAction<string[]>>;
+    includeSelectAll?: boolean;
+};
+
+function CheckboxFilterGroup({ filterKey, label, options, selected, setSelected, includeSelectAll = false }: CheckboxFilterGroupProps) {
+    const selectAllRef = useRef<HTMLInputElement>(null);
+    const optionCodes = useMemo(() => options.map((option) => option.code), [options]);
+    const status = selectionStatus(selected, optionCodes);
+
+    useEffect(() => {
+        if (selectAllRef.current) selectAllRef.current.indeterminate = status.indeterminate;
+    }, [status.indeterminate]);
+
+    return <fieldset className="checkbox-filter-group" data-filter-group={filterKey}>
+        <legend>{label}</legend>
+        <div className="checkbox-filter-list">
+            {includeSelectAll && <label className="checkbox-filter-option checkbox-filter-select-all">
+                <input
+                    ref={selectAllRef}
+                    type="checkbox"
+                    aria-label={`${label} 全選択`}
+                    checked={status.all}
+                    onChange={(event) => setSelected(updateAllSelections(optionCodes, event.target.checked))}
+                />
+                <span>全選択</span>
+            </label>}
+            {options.map((option) => {
+                const id = `screener-${filterKey}-${option.code}`;
+                return <label className="checkbox-filter-option" htmlFor={id} key={option.code}>
+                    <input
+                        id={id}
+                        type="checkbox"
+                        value={option.code}
+                        checked={selected.includes(option.code)}
+                        onChange={(event) => setSelected((current) => updateCodeSelection(current, option.code, event.target.checked))}
+                    />
+                    <span>{option.name}</span>
+                </label>;
+            })}
+        </div>
+    </fieldset>;
 }
 
 export default function ScreenerPage() {
@@ -88,9 +138,7 @@ export default function ScreenerPage() {
             if (range.min !== "") params.set(`${key}_min`, range.min);
             if (range.max !== "") params.set(`${key}_max`, range.max);
         }
-        if (markets.length) params.set("markets", markets.join(","));
-        if (sectors17.length) params.set("sectors17", sectors17.join(","));
-        if (sectors33.length) params.set("sectors33", sectors33.join(","));
+        appendCategorySelections(params, { markets, sectors17, sectors33 });
         for (const [key, enabled] of Object.entries(flags)) if (enabled) params.set(key, "true");
         return params.toString();
     }, [columns, direction, flags, markets, ranges, sectors17, sectors33, sort]);
@@ -228,11 +276,9 @@ export default function ScreenerPage() {
         </section>
 
         <section className="screener-panel filter-grid">
-            {(["markets", "sectors17", "sectors33"] as const).map((key) => {
-                const labels = { markets: "上場市場", sectors17: "17業種", sectors33: "33業種" };
-                const setters = { markets: setMarkets, sectors17: setSectors17, sectors33: setSectors33 };
-                return <label key={key}>{labels[key]}（複数選択）<select multiple value={{ markets, sectors17, sectors33 }[key]} onChange={(e) => setters[key](selectedValues(e))}>{options[key].map((option) => <option key={option.code} value={option.code}>{option.code} {option.name}</option>)}</select></label>;
-            })}
+            <CheckboxFilterGroup filterKey="markets" label="上場市場" options={options.markets} selected={markets} setSelected={setMarkets} />
+            <CheckboxFilterGroup filterKey="sectors17" label="17業種" options={options.sectors17} selected={sectors17} setSelected={setSectors17} includeSelectAll />
+            <CheckboxFilterGroup filterKey="sectors33" label="33業種" options={options.sectors33} selected={sectors33} setSelected={setSectors33} includeSelectAll />
             <div className="flag-list"><span>条件</span>
                 {([ ["new_ytd_high_last_5d", "年初来高値更新"], ["turnaround", "黒字転換"], ["loss_expansion", "赤字拡大"], ["profit_to_loss", "黒字→赤字"], ["exclude_stale", "stale price除外"] ] as const).map(([key, label]) => <label key={key}><input type="checkbox" checked={!!flags[key]} onChange={(e) => setFlags((old) => ({ ...old, [key]: e.target.checked }))} />{label}</label>)}
             </div>
