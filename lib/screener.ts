@@ -22,7 +22,7 @@ export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "market_cap", label: "時価総額", digits: 0 },
     { key: "psychological_line_5d_pct", label: "心理線5日(%)", digits: 1 },
     { key: "psychological_line_10d_pct", label: "心理線10日(%)", digits: 1 },
-    { key: "forecast_sales_growth_per_forward_per", label: "予想売上成長率/PER", digits: 3 },
+    { key: "forward_per_per_forecast_sales_growth", label: "PER/予想売上成長率", digits: 3 },
     { key: "forecast_eps_growth_yoy_pct", label: "EPS予想成長率(%)", digits: 2 },
     { key: "forward_peg", label: "予想PEG", digits: 3 },
 ];
@@ -30,4 +30,3 @@ export const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key))
 export const BOOLEAN_FILTERS = new Set(["new_ytd_high_last_5d", "turnaround", "loss_expansion", "profit_to_loss"]);
 export const BASE_COLUMNS = ["ticker", "company_name", "market_code", "market_name", "sector17_code", "sector17_name", "sector33_code", "sector33_name", "latest_valid_price", "price_as_of", "price_status", "price_stale_sessions", "market_cap"];
 export type ScreenerRow = Record<string, string | number | boolean | null>;
-

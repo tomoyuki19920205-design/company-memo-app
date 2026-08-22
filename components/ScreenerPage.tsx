@@ -7,7 +7,7 @@ import { SCREENER_METRICS, type ScreenerRow } from "@/lib/screener";
 type Option = { code: string; name: string };
 type Options = { markets: Option[]; sectors17: Option[]; sectors33: Option[] };
 type Range = { min: string; max: string };
-const DEFAULT_COLUMNS = ["forward_per", "forecast_sales_growth_yoy_pct", "forecast_sales_growth_per_forward_per", "forward_peg", "return_20d_pct", "market_cap"];
+const DEFAULT_COLUMNS = ["forward_per", "forecast_sales_growth_yoy_pct", "forward_per_per_forecast_sales_growth", "forward_peg", "return_20d_pct", "market_cap"];
 
 function selectedValues(event: React.ChangeEvent<HTMLSelectElement>) {
     return Array.from(event.target.selectedOptions, (option) => option.value);
@@ -94,7 +94,7 @@ export default function ScreenerPage() {
 
         <section className="screener-panel">
             <h2>表示列</h2><div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(e) => setColumns((old) => e.target.checked ? [...old, metric.key] : old.filter((key) => key !== metric.key))} />{metric.label}</label>)}</div>
-            <div className="search-actions"><label>並び順<select value={sort} onChange={(e) => setSort(e.target.value)}>{SCREENER_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}</select></label><select aria-label="昇順降順" value={direction} onChange={(e) => setDirection(e.target.value)}><option value="desc">降順</option><option value="asc">昇順</option></select><button onClick={() => void search(1)} disabled={loading}>{loading ? "検索中…" : "検索"}</button></div>
+            <div className="search-actions"><label>並び順<select value={sort} onChange={(e) => { const next = e.target.value; setSort(next); if (next === "forward_per_per_forecast_sales_growth") setDirection("asc"); }}>{SCREENER_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}</select></label><select aria-label="昇順降順" value={direction} onChange={(e) => setDirection(e.target.value)}><option value="desc">降順</option><option value="asc">昇順</option></select><button onClick={() => void search(1)} disabled={loading}>{loading ? "検索中…" : "検索"}</button></div>
         </section>
 
         {error && <p className="screener-error">{error}</p>}
@@ -104,4 +104,3 @@ export default function ScreenerPage() {
         <nav className="pagination"><button disabled={page <= 1 || loading} onClick={() => void search(page - 1)}>前へ</button><span>{page} / {Math.max(1, Math.ceil(count / 50))}</span><button disabled={page * 50 >= count || loading} onClick={() => void search(page + 1)}>次へ</button></nav>
     </main>;
 }
-
