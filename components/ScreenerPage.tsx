@@ -21,6 +21,11 @@ import {
     type ColumnWidths,
     type ScreenerColumnDefinition,
 } from "@/lib/screener-column-preferences";
+import {
+    automaticMetricColumnKeys,
+    resolveMetricColumns,
+    type ColumnOverrides,
+} from "@/lib/screener-display-columns";
 
 type Option = { code: string; name: string };
 type Options = { markets: Option[]; sectors17: Option[]; sectors33: Option[] };
@@ -28,8 +33,8 @@ type Range = { min: string; max: string };
 type DropTarget = { key: string; edge: "before" | "after" } | null;
 type ReorderDragState = { sourceKey: string; startX: number; startY: number; active: boolean; target: DropTarget };
 
-const DEFAULT_COLUMNS = ["forward_per", "forecast_sales_growth_yoy_pct", "forward_per_per_forecast_sales_growth", "forward_peg", "return_20d_pct", "market_cap"];
 const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
+const METRIC_ORDER = SCREENER_METRICS.map((metric) => metric.key);
 const METRIC_BY_KEY = new Map(SCREENER_METRICS.map((metric) => [metric.key, metric]));
 const COLUMN_BY_KEY = new Map(SCREENER_COLUMN_DEFINITIONS.map((column) => [column.key, column]));
 
@@ -84,7 +89,8 @@ function CheckboxFilterGroup({ filterKey, label, options, selected, setSelected,
 export default function ScreenerPage() {
     const [options, setOptions] = useState<Options>({ markets: [], sectors17: [], sectors33: [] });
     const [ranges, setRanges] = useState<Record<string, Range>>({});
-    const [columns, setColumns] = useState(DEFAULT_COLUMNS);
+    const [columns, setColumns] = useState<string[]>([]);
+    const [columnOverrides, setColumnOverrides] = useState<ColumnOverrides>({});
     const [columnOrder, setColumnOrder] = useState(DEFAULT_SCREENER_COLUMN_ORDER);
     const [columnWidths, setColumnWidths] = useState<ColumnWidths>(() => normalizeColumnWidths(null));
     const [preferencesReady, setPreferencesReady] = useState(false);
@@ -96,6 +102,7 @@ export default function ScreenerPage() {
     const [sectors33, setSectors33] = useState<string[]>([]);
     const [flags, setFlags] = useState<Record<string, boolean>>({ exclude_stale: true });
     const [sort, setSort] = useState("market_cap");
+    const [sortWasExplicitlySelected, setSortWasExplicitlySelected] = useState(false);
     const [direction, setDirection] = useState("desc");
     const [rows, setRows] = useState<ScreenerRow[]>([]);
     const [count, setCount] = useState(0);
@@ -120,6 +127,18 @@ export default function ScreenerPage() {
             // Storage can be unavailable in privacy mode; table interaction still works in memory.
         }
     }, [columnOrder, columnWidths, preferencesReady]);
+
+    const automaticColumns = useMemo(
+        () => automaticMetricColumnKeys(ranges, METRIC_ORDER, sort, sortWasExplicitlySelected),
+        [ranges, sort, sortWasExplicitlySelected],
+    );
+
+    useEffect(() => {
+        setColumns((current) => {
+            const next = resolveMetricColumns(automaticColumns, columnOverrides, METRIC_ORDER);
+            return current.length === next.length && current.every((key, index) => key === next[index]) ? current : next;
+        });
+    }, [automaticColumns, columnOverrides]);
 
     useEffect(() => () => {
         resizeCleanupRef.current?.();
@@ -239,8 +258,17 @@ export default function ScreenerPage() {
         clearScreenerColumnPreferences(window.localStorage);
         setColumnOrder(DEFAULT_SCREENER_COLUMN_ORDER);
         setColumnWidths(normalizeColumnWidths(null));
+        setColumnOverrides({});
+        setColumns(automaticColumns);
         setDraggedColumn(null);
         setDropTarget(null);
+    };
+
+    const setMetricColumnVisible = (key: string, visible: boolean) => {
+        setColumnOverrides((current) => ({ ...current, [key]: visible }));
+        setColumns((current) => visible
+            ? (current.includes(key) ? current : METRIC_ORDER.filter((metricKey) => current.includes(metricKey) || metricKey === key))
+            : current.filter((metricKey) => metricKey !== key));
     };
 
     const renderCell = (columnKey: string, row: ScreenerRow) => {
@@ -286,8 +314,8 @@ export default function ScreenerPage() {
 
         <section className="screener-panel">
             <div className="screener-column-title"><h2>表示列</h2><button type="button" className="column-reset-button" onClick={resetColumnSettings}>列設定をリセット</button></div>
-            <div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(e) => setColumns((old) => e.target.checked ? (old.includes(metric.key) ? old : [...old, metric.key]) : old.filter((key) => key !== metric.key))} />{metric.label}</label>)}</div>
-            <div className="search-actions"><label>並び順<select value={sort} onChange={(e) => { const next = e.target.value; setSort(next); if (next === "forward_per_per_forecast_sales_growth") setDirection("asc"); }}>{SCREENER_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}</select></label><select aria-label="昇順降順" value={direction} onChange={(e) => setDirection(e.target.value)}><option value="desc">降順</option><option value="asc">昇順</option></select><button onClick={() => void search(1)} disabled={loading}>{loading ? "検索中…" : "検索"}</button></div>
+            <div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(e) => setMetricColumnVisible(metric.key, e.target.checked)} />{metric.label}</label>)}</div>
+            <div className="search-actions"><label>並び順<select value={sort} onChange={(e) => { const next = e.target.value; setSort(next); setSortWasExplicitlySelected(true); if (next === "forward_per_per_forecast_sales_growth") setDirection("asc"); }}>{SCREENER_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}</select></label><select aria-label="昇順降順" value={direction} onChange={(e) => setDirection(e.target.value)}><option value="desc">降順</option><option value="asc">昇順</option></select><button onClick={() => void search(1)} disabled={loading}>{loading ? "検索中…" : "検索"}</button></div>
         </section>
 
         {error && <p className="screener-error">{error}</p>}

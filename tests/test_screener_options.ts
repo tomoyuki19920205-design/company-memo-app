@@ -22,3 +22,10 @@ test("inverse sales valuation metric replaces the old API/UI identity", () => {
         "PER/予想売上成長率",
     );
 });
+
+test("formal three-day candle ratios are exposed to filters, sort, and columns", () => {
+    assert.equal(METRIC_KEYS.has("bullish_candle_ratio_3d_pct"), true);
+    assert.equal(METRIC_KEYS.has("bearish_candle_ratio_3d_pct"), true);
+    assert.equal(SCREENER_METRICS.find((metric) => metric.key === "bullish_candle_ratio_3d_pct")?.label, "陽線率3日(%)");
+    assert.equal(SCREENER_METRICS.find((metric) => metric.key === "bearish_candle_ratio_3d_pct")?.label, "陰線率3日(%)");
+});
