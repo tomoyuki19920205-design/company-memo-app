@@ -20,6 +20,7 @@ type Option = { code: string; name: string };
 type Options = { markets: Option[]; sectors17: Option[]; sectors33: Option[] };
 type Range = { min: string; max: string };
 type DropTarget = { key: string; edge: "before" | "after" } | null;
+type ReorderDragState = { sourceKey: string; startX: number; startY: number; active: boolean; target: DropTarget };
 
 const DEFAULT_COLUMNS = ["forward_per", "forecast_sales_growth_yoy_pct", "forward_per_per_forecast_sales_growth", "forward_peg", "return_20d_pct", "market_cap"];
 const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
@@ -52,6 +53,7 @@ export default function ScreenerPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const resizeCleanupRef = useRef<(() => void) | null>(null);
+    const reorderCleanupRef = useRef<(() => void) | null>(null);
 
     useEffect(() => {
         const saved = loadScreenerColumnPreferences(window.localStorage);
@@ -69,7 +71,10 @@ export default function ScreenerPage() {
         }
     }, [columnOrder, columnWidths, preferencesReady]);
 
-    useEffect(() => () => resizeCleanupRef.current?.(), []);
+    useEffect(() => () => {
+        resizeCleanupRef.current?.();
+        reorderCleanupRef.current?.();
+    }, []);
 
     useEffect(() => {
         fetch("/api/screener?mode=options").then((response) => response.json()).then((data) => {
@@ -110,7 +115,7 @@ export default function ScreenerPage() {
     const totalTableWidth = useMemo(() => visibleColumnDefinitions.reduce((sum, column) => sum + columnWidths[column.key], 0), [columnWidths, visibleColumnDefinitions]);
     const format = (value: unknown, digits = 2) => value === null || value === undefined ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: digits });
 
-    const startResize = (event: React.PointerEvent<HTMLSpanElement>, column: ScreenerColumnDefinition) => {
+    const startResize = (event: React.MouseEvent<HTMLSpanElement>, column: ScreenerColumnDefinition) => {
         event.preventDefault();
         event.stopPropagation();
         resizeCleanupRef.current?.();
@@ -120,13 +125,12 @@ export default function ScreenerPage() {
         document.body.style.cursor = "col-resize";
         document.body.style.userSelect = "none";
 
-        const handleMove = (moveEvent: PointerEvent) => {
+        const handleMove = (moveEvent: MouseEvent) => {
             setColumnWidths((current) => updateColumnWidth(current, column.key, startWidth + moveEvent.clientX - startX));
         };
         const cleanup = () => {
-            window.removeEventListener("pointermove", handleMove);
-            window.removeEventListener("pointerup", handleEnd);
-            window.removeEventListener("pointercancel", handleEnd);
+            window.removeEventListener("mousemove", handleMove);
+            window.removeEventListener("mouseup", handleEnd);
             document.body.style.cursor = "";
             document.body.style.userSelect = "";
             setResizingColumn(null);
@@ -134,9 +138,53 @@ export default function ScreenerPage() {
         };
         const handleEnd = () => cleanup();
         resizeCleanupRef.current = cleanup;
-        window.addEventListener("pointermove", handleMove);
-        window.addEventListener("pointerup", handleEnd);
-        window.addEventListener("pointercancel", handleEnd);
+        window.addEventListener("mousemove", handleMove);
+        window.addEventListener("mouseup", handleEnd);
+    };
+
+    const startReorder = (event: React.MouseEvent<HTMLTableCellElement>, sourceKey: string) => {
+        if (event.button !== 0 || resizingColumn) return;
+        event.preventDefault();
+        reorderCleanupRef.current?.();
+        const state: ReorderDragState = { sourceKey, startX: event.clientX, startY: event.clientY, active: false, target: null };
+        document.body.style.userSelect = "none";
+
+        const handleMove = (moveEvent: MouseEvent) => {
+            if (!state.active && Math.hypot(moveEvent.clientX - state.startX, moveEvent.clientY - state.startY) < 5) return;
+            if (!state.active) {
+                state.active = true;
+                setDraggedColumn(sourceKey);
+                document.body.style.cursor = "grabbing";
+            }
+            const targetHeader = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY)?.closest<HTMLElement>("th[data-column-key]");
+            const targetKey = targetHeader?.dataset.columnKey;
+            if (!targetHeader || !targetKey || targetKey === sourceKey) {
+                state.target = null;
+                setDropTarget(null);
+                return;
+            }
+            const bounds = targetHeader.getBoundingClientRect();
+            state.target = { key: targetKey, edge: moveEvent.clientX < bounds.left + bounds.width / 2 ? "before" : "after" };
+            setDropTarget(state.target);
+        };
+        const cleanup = () => {
+            window.removeEventListener("mousemove", handleMove);
+            window.removeEventListener("mouseup", handleEnd);
+            document.body.style.cursor = "";
+            document.body.style.userSelect = "";
+            setDraggedColumn(null);
+            setDropTarget(null);
+            reorderCleanupRef.current = null;
+        };
+        const handleEnd = () => {
+            if (state.active && state.target) {
+                setColumnOrder((current) => moveColumn(current, sourceKey, state.target!.key, state.target!.edge));
+            }
+            cleanup();
+        };
+        reorderCleanupRef.current = cleanup;
+        window.addEventListener("mousemove", handleMove);
+        window.addEventListener("mouseup", handleEnd);
     };
 
     const resetColumnSettings = () => {
@@ -205,41 +253,16 @@ export default function ScreenerPage() {
                     return <th
                         key={column.key}
                         data-column-key={column.key}
-                        draggable={resizingColumn === null}
                         aria-grabbed={draggedColumn === column.key}
                         className={`${column.numeric ? "screener-column-numeric" : "screener-column-text"}${draggedColumn === column.key ? " screener-column-dragging" : ""}${dropClass}`}
-                        onDragStart={(event) => {
-                            if (resizingColumn) { event.preventDefault(); return; }
-                            setDraggedColumn(column.key);
-                            event.dataTransfer.effectAllowed = "move";
-                            event.dataTransfer.setData("text/plain", column.key);
-                        }}
-                        onDragOver={(event) => {
-                            if (!draggedColumn || draggedColumn === column.key) return;
-                            event.preventDefault();
-                            const bounds = event.currentTarget.getBoundingClientRect();
-                            setDropTarget({ key: column.key, edge: event.clientX < bounds.left + bounds.width / 2 ? "before" : "after" });
-                        }}
-                        onDrop={(event) => {
-                            event.preventDefault();
-                            if (draggedColumn) {
-                                const bounds = event.currentTarget.getBoundingClientRect();
-                                const edge = event.clientX < bounds.left + bounds.width / 2 ? "before" : "after";
-                                setColumnOrder((current) => moveColumn(current, draggedColumn, column.key, edge));
-                            }
-                            setDraggedColumn(null);
-                            setDropTarget(null);
-                        }}
-                        onDragEnd={() => { setDraggedColumn(null); setDropTarget(null); }}
+                        onMouseDown={(event) => startReorder(event, column.key)}
                     ><span className="screener-header-label">{column.label}</span><span
                         role="separator"
                         aria-orientation="vertical"
                         aria-label={`${column.label} 列幅変更`}
                         data-resize-key={column.key}
                         className={`screener-resize-handle${resizingColumn === column.key ? " is-resizing" : ""}`}
-                        draggable={false}
-                        onDragStart={(event) => { event.preventDefault(); event.stopPropagation(); }}
-                        onPointerDown={(event) => startResize(event, column)}
+                        onMouseDown={(event) => startResize(event, column)}
                     /></th>;
                 })}</tr></thead>
                 <tbody>{rows.map((row) => <tr key={String(row.ticker)}>{visibleColumnDefinitions.map((column) => <td
