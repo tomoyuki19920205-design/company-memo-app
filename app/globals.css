@@ -100,6 +100,7 @@ body {
   align-items: center;
   gap: 4px;
   font-size: 0.78rem;
+  flex-shrink: 0;
 }
 
 .font-selector-label {
@@ -146,8 +147,9 @@ body {
 .viewer-header-top {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .viewer-title {
@@ -162,6 +164,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .ticker-label {
@@ -194,6 +197,7 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  flex-shrink: 1;
 }
 
 .ticker-badge {
@@ -204,6 +208,7 @@ body {
   background: var(--primary-light);
   padding: 4px 12px;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .company-name {
@@ -211,6 +216,7 @@ body {
   font-weight: 600;
   color: var(--text);
   max-width: 280px;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1012,6 +1018,7 @@ body {
   align-items: center;
   gap: 8px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .user-email {
