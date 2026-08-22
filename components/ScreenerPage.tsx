@@ -1,13 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SCREENER_METRICS, type ScreenerRow } from "@/lib/screener";
+import {
+    DEFAULT_SCREENER_COLUMN_ORDER,
+    SCREENER_COLUMN_DEFINITIONS,
+    clearScreenerColumnPreferences,
+    loadScreenerColumnPreferences,
+    moveColumn,
+    normalizeColumnWidths,
+    saveScreenerColumnPreferences,
+    updateColumnWidth,
+    type ColumnWidths,
+    type ScreenerColumnDefinition,
+} from "@/lib/screener-column-preferences";
 
 type Option = { code: string; name: string };
 type Options = { markets: Option[]; sectors17: Option[]; sectors33: Option[] };
 type Range = { min: string; max: string };
+type DropTarget = { key: string; edge: "before" | "after" } | null;
+
 const DEFAULT_COLUMNS = ["forward_per", "forecast_sales_growth_yoy_pct", "forward_per_per_forecast_sales_growth", "forward_peg", "return_20d_pct", "market_cap"];
+const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
+const METRIC_BY_KEY = new Map(SCREENER_METRICS.map((metric) => [metric.key, metric]));
+const COLUMN_BY_KEY = new Map(SCREENER_COLUMN_DEFINITIONS.map((column) => [column.key, column]));
 
 function selectedValues(event: React.ChangeEvent<HTMLSelectElement>) {
     return Array.from(event.target.selectedOptions, (option) => option.value);
@@ -17,6 +34,12 @@ export default function ScreenerPage() {
     const [options, setOptions] = useState<Options>({ markets: [], sectors17: [], sectors33: [] });
     const [ranges, setRanges] = useState<Record<string, Range>>({});
     const [columns, setColumns] = useState(DEFAULT_COLUMNS);
+    const [columnOrder, setColumnOrder] = useState(DEFAULT_SCREENER_COLUMN_ORDER);
+    const [columnWidths, setColumnWidths] = useState<ColumnWidths>(() => normalizeColumnWidths(null));
+    const [preferencesReady, setPreferencesReady] = useState(false);
+    const [draggedColumn, setDraggedColumn] = useState<string | null>(null);
+    const [dropTarget, setDropTarget] = useState<DropTarget>(null);
+    const [resizingColumn, setResizingColumn] = useState<string | null>(null);
     const [markets, setMarkets] = useState<string[]>([]);
     const [sectors17, setSectors17] = useState<string[]>([]);
     const [sectors33, setSectors33] = useState<string[]>([]);
@@ -28,6 +51,25 @@ export default function ScreenerPage() {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const resizeCleanupRef = useRef<(() => void) | null>(null);
+
+    useEffect(() => {
+        const saved = loadScreenerColumnPreferences(window.localStorage);
+        setColumnOrder(saved.order);
+        setColumnWidths(saved.widths);
+        setPreferencesReady(true);
+    }, []);
+
+    useEffect(() => {
+        if (!preferencesReady) return;
+        try {
+            saveScreenerColumnPreferences(window.localStorage, columnOrder, columnWidths);
+        } catch {
+            // Storage can be unavailable in privacy mode; table interaction still works in memory.
+        }
+    }, [columnOrder, columnWidths, preferencesReady]);
+
+    useEffect(() => () => resizeCleanupRef.current?.(), []);
 
     useEffect(() => {
         fetch("/api/screener?mode=options").then((response) => response.json()).then((data) => {
@@ -61,8 +103,64 @@ export default function ScreenerPage() {
     }, [queryString]);
 
     useEffect(() => { void search(1); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-    const visibleMetrics = useMemo(() => SCREENER_METRICS.filter((metric) => columns.includes(metric.key)), [columns]);
+
+    const visibleColumnDefinitions = useMemo(() => columnOrder
+        .map((key) => COLUMN_BY_KEY.get(key))
+        .filter((column): column is ScreenerColumnDefinition => !!column && (!METRIC_KEYS.has(column.key) || columns.includes(column.key))), [columnOrder, columns]);
+    const totalTableWidth = useMemo(() => visibleColumnDefinitions.reduce((sum, column) => sum + columnWidths[column.key], 0), [columnWidths, visibleColumnDefinitions]);
     const format = (value: unknown, digits = 2) => value === null || value === undefined ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: digits });
+
+    const startResize = (event: React.PointerEvent<HTMLSpanElement>, column: ScreenerColumnDefinition) => {
+        event.preventDefault();
+        event.stopPropagation();
+        resizeCleanupRef.current?.();
+        const startX = event.clientX;
+        const startWidth = columnWidths[column.key];
+        setResizingColumn(column.key);
+        document.body.style.cursor = "col-resize";
+        document.body.style.userSelect = "none";
+
+        const handleMove = (moveEvent: PointerEvent) => {
+            setColumnWidths((current) => updateColumnWidth(current, column.key, startWidth + moveEvent.clientX - startX));
+        };
+        const cleanup = () => {
+            window.removeEventListener("pointermove", handleMove);
+            window.removeEventListener("pointerup", handleEnd);
+            window.removeEventListener("pointercancel", handleEnd);
+            document.body.style.cursor = "";
+            document.body.style.userSelect = "";
+            setResizingColumn(null);
+            resizeCleanupRef.current = null;
+        };
+        const handleEnd = () => cleanup();
+        resizeCleanupRef.current = cleanup;
+        window.addEventListener("pointermove", handleMove);
+        window.addEventListener("pointerup", handleEnd);
+        window.addEventListener("pointercancel", handleEnd);
+    };
+
+    const resetColumnSettings = () => {
+        clearScreenerColumnPreferences(window.localStorage);
+        setColumnOrder(DEFAULT_SCREENER_COLUMN_ORDER);
+        setColumnWidths(normalizeColumnWidths(null));
+        setDraggedColumn(null);
+        setDropTarget(null);
+    };
+
+    const renderCell = (columnKey: string, row: ScreenerRow) => {
+        switch (columnKey) {
+            case "ticker": return <Link href={`/?ticker=${row.ticker}`}>{row.ticker}</Link>;
+            case "company_name": return <Link href={`/?ticker=${row.ticker}`}>{row.company_name}</Link>;
+            case "market": return row.market_name ?? row.market_code;
+            case "sector33": return row.sector33_name ?? row.sector33_code;
+            case "price": return format(row.latest_valid_price, 2);
+            case "price_status": return <>{row.price_as_of}<br/><small>{row.price_status}{Number(row.price_stale_sessions) > 0 ? ` (${row.price_stale_sessions}営業日)` : ""}</small></>;
+            default: {
+                const metric = METRIC_BY_KEY.get(columnKey);
+                return format(row[columnKey], metric?.digits);
+            }
+        }
+    };
 
     return <main className="screener-page">
         <header className="screener-titlebar">
@@ -93,14 +191,65 @@ export default function ScreenerPage() {
         </section>
 
         <section className="screener-panel">
-            <h2>表示列</h2><div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(e) => setColumns((old) => e.target.checked ? [...old, metric.key] : old.filter((key) => key !== metric.key))} />{metric.label}</label>)}</div>
+            <div className="screener-column-title"><h2>表示列</h2><button type="button" className="column-reset-button" onClick={resetColumnSettings}>列設定をリセット</button></div>
+            <div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(e) => setColumns((old) => e.target.checked ? (old.includes(metric.key) ? old : [...old, metric.key]) : old.filter((key) => key !== metric.key))} />{metric.label}</label>)}</div>
             <div className="search-actions"><label>並び順<select value={sort} onChange={(e) => { const next = e.target.value; setSort(next); if (next === "forward_per_per_forecast_sales_growth") setDirection("asc"); }}>{SCREENER_METRICS.map((metric) => <option key={metric.key} value={metric.key}>{metric.label}</option>)}</select></label><select aria-label="昇順降順" value={direction} onChange={(e) => setDirection(e.target.value)}><option value="desc">降順</option><option value="asc">昇順</option></select><button onClick={() => void search(1)} disabled={loading}>{loading ? "検索中…" : "検索"}</button></div>
         </section>
 
         {error && <p className="screener-error">{error}</p>}
-        <div className="screener-results"><table><thead><tr><th>銘柄</th><th>会社名</th><th>市場</th><th>33業種</th><th>価格</th><th>価格日/status</th>{visibleMetrics.map((metric) => <th key={metric.key}>{metric.label}</th>)}</tr></thead>
-            <tbody>{rows.map((row) => <tr key={String(row.ticker)}><td><Link href={`/?ticker=${row.ticker}`}>{row.ticker}</Link></td><td><Link href={`/?ticker=${row.ticker}`}>{row.company_name}</Link></td><td>{row.market_name ?? row.market_code}</td><td>{row.sector33_name ?? row.sector33_code}</td><td>{format(row.latest_valid_price, 2)}</td><td>{row.price_as_of}<br/><small>{row.price_status}{Number(row.price_stale_sessions) > 0 ? ` (${row.price_stale_sessions}営業日)` : ""}</small></td>{visibleMetrics.map((metric) => <td key={metric.key}>{format(row[metric.key], metric.digits)}</td>)}</tr>)}</tbody>
-        </table></div>
+        <div className="screener-results" data-testid="screener-results-scroll">
+            <table style={{ width: `${totalTableWidth}px` }}>
+                <colgroup>{visibleColumnDefinitions.map((column) => <col key={column.key} style={{ width: `${columnWidths[column.key]}px` }} />)}</colgroup>
+                <thead><tr>{visibleColumnDefinitions.map((column) => {
+                    const dropClass = dropTarget?.key === column.key ? ` screener-drop-${dropTarget.edge}` : "";
+                    return <th
+                        key={column.key}
+                        data-column-key={column.key}
+                        draggable={resizingColumn === null}
+                        aria-grabbed={draggedColumn === column.key}
+                        className={`${column.numeric ? "screener-column-numeric" : "screener-column-text"}${draggedColumn === column.key ? " screener-column-dragging" : ""}${dropClass}`}
+                        onDragStart={(event) => {
+                            if (resizingColumn) { event.preventDefault(); return; }
+                            setDraggedColumn(column.key);
+                            event.dataTransfer.effectAllowed = "move";
+                            event.dataTransfer.setData("text/plain", column.key);
+                        }}
+                        onDragOver={(event) => {
+                            if (!draggedColumn || draggedColumn === column.key) return;
+                            event.preventDefault();
+                            const bounds = event.currentTarget.getBoundingClientRect();
+                            setDropTarget({ key: column.key, edge: event.clientX < bounds.left + bounds.width / 2 ? "before" : "after" });
+                        }}
+                        onDrop={(event) => {
+                            event.preventDefault();
+                            if (draggedColumn) {
+                                const bounds = event.currentTarget.getBoundingClientRect();
+                                const edge = event.clientX < bounds.left + bounds.width / 2 ? "before" : "after";
+                                setColumnOrder((current) => moveColumn(current, draggedColumn, column.key, edge));
+                            }
+                            setDraggedColumn(null);
+                            setDropTarget(null);
+                        }}
+                        onDragEnd={() => { setDraggedColumn(null); setDropTarget(null); }}
+                    ><span className="screener-header-label">{column.label}</span><span
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label={`${column.label} 列幅変更`}
+                        data-resize-key={column.key}
+                        className={`screener-resize-handle${resizingColumn === column.key ? " is-resizing" : ""}`}
+                        draggable={false}
+                        onDragStart={(event) => { event.preventDefault(); event.stopPropagation(); }}
+                        onPointerDown={(event) => startResize(event, column)}
+                    /></th>;
+                })}</tr></thead>
+                <tbody>{rows.map((row) => <tr key={String(row.ticker)}>{visibleColumnDefinitions.map((column) => <td
+                    key={column.key}
+                    data-column-key={column.key}
+                    className={column.numeric ? "screener-column-numeric" : "screener-column-text"}
+                    title={String(row[column.key] ?? "")}
+                >{renderCell(column.key, row)}</td>)}</tr>)}</tbody>
+            </table>
+        </div>
         <nav className="pagination"><button disabled={page <= 1 || loading} onClick={() => void search(page - 1)}>前へ</button><span>{page} / {Math.max(1, Math.ceil(count / 50))}</span><button disabled={page * 50 >= count || loading} onClick={() => void search(page + 1)}>次へ</button></nav>
     </main>;
 }
