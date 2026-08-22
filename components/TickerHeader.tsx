@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useCallback, useMemo } from "react";
+import Link from "next/link";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { searchCompanies, type SearchCandidate } from "@/lib/company-search";
 
@@ -222,6 +223,9 @@ function TickerHeader({
                     </button>
                 </div>
                 {/* フォント切替 */}
+                <Link href="/screening" className="btn btn-load">
+                    スクリーニング
+                </Link>
                 <div className="font-selector">
                     <span className="font-selector-label">🔤</span>
                     <select
