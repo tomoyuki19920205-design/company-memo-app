@@ -153,13 +153,17 @@ function TickerHeader({
         window.location.href = "/login";
     };
 
-    const tdnetUrl = "/tdnet-alerts";
-
     return (
         <div className="viewer-header">
             <div className="viewer-header-top">
-                <a href={tdnetUrl} className="site-link">📡 TDNET通知</a>
-                <h1 className="viewer-title">Company Viewer</h1>
+                {activeTicker && (
+                    <div className="ticker-info">
+                        <span className="ticker-badge">{activeTicker}</span>
+                        {companyName && (
+                            <span className="company-name">{companyName}</span>
+                        )}
+                    </div>
+                )}
                 <div className="ticker-input-group">
                     <label className="ticker-label" htmlFor="ticker-input">
                         企業検索
@@ -217,14 +221,6 @@ function TickerHeader({
                         {loading ? "読込中..." : "読込"}
                     </button>
                 </div>
-                {activeTicker && (
-                    <div className="ticker-info">
-                        <span className="ticker-badge">{activeTicker}</span>
-                        {companyName && (
-                            <span className="company-name">{companyName}</span>
-                        )}
-                    </div>
-                )}
                 {/* フォント切替 */}
                 <div className="font-selector">
                     <span className="font-selector-label">🔤</span>
