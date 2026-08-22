@@ -475,17 +475,22 @@ body {
 /* ============================================================
    郢晁ｼ斐°郢晢ｽｼ郢晄ｺ佩礼ｹ晢ｽｩ郢晢ｿｽE繝ｻ (Excel隰ｨ?ｿｽE?ｿｽ陟台ｸ翫Σ郢晢ｽｼ鬯夲ｽｨ)
    ============================================================ */
-.formula-bar {
-  display: flex;
-  align-items: stretch;
-  border-bottom: 1px solid var(--border-light);
-  background: var(--pl-bg-manual);
+.formula-bar-sticky {
   position: sticky;
   top: 0;
   left: 0;
   width: 100cqw;
   box-sizing: border-box;
   z-index: 50;
+}
+
+.formula-bar {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--pl-bg-manual);
+  width: 100%;
+  box-sizing: border-box;
   border-bottom: 2px solid var(--primary);
   border-top-left-radius: var(--radius, 6px);
   border-top-right-radius: var(--radius, 6px);
@@ -554,9 +559,7 @@ body {
   border-bottom: 1px solid var(--border-light);
   user-select: none;
   transition: background 0.15s;
-  position: sticky;
-  left: 0;
-  width: 100cqw;
+  width: 100%;
   box-sizing: border-box;
 }
 
