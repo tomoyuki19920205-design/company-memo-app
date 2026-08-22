@@ -7,6 +7,7 @@ import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
 import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { formatCompactEarningsCardLine } from "@/lib/tdnet-alerts/card-summary-presentation";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -20,14 +21,13 @@ const ALERTS_CACHE_TTL_MS = 30_000;
 const LEFT_PANE_DEFAULT_WIDTH = 400;
 const LEFT_PANE_MIN_WIDTH = 0;
 
-const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%|赤字継続|黒転|赤転)/gi;
+const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+[%％]|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+[%％]|赤字継続|黒転|赤転|Y(?:[+-]?[\d.]+[%％]|赤継|赤転|黒転|黒継|赤縮|赤拡))/gi;
 
 const getYoyClass = (text: string) => {
   // 営業利益ターンアラウンドラベルの色分け
-  if (text === "赤字継続") return "yoy-negative";
-  if (text === "黒転")   return "yoy-positive";
-  if (text === "赤転")   return "yoy-negative";
-  const match = text.match(/([+-]?[\d.]+)%/);
+  if (["赤字継続", "赤字転落", "赤転", "Y赤継", "Y赤転", "Y赤縮", "Y赤拡"].includes(text)) return "yoy-negative";
+  if (["黒字転換", "黒字継続", "黒転", "Y黒転", "Y黒継"].includes(text)) return "yoy-positive";
+  const match = text.match(/([+-]?[\d.]+)[%％]/);
   if (match) {
     const val = parseFloat(match[1]);
     if (val < 0) return "yoy-negative";
@@ -1435,6 +1435,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               if (!isSelected) {
                 const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
+                const displayLine2 = event.event_type === "earnings" ? formatCompactEarningsCardLine(line2) : line2;
+                const displayLine3 = event.event_type === "earnings" && line3 ? formatCompactEarningsCardLine(line3) : line3;
                 return (
                   <div
                     key={event.id}
@@ -1444,14 +1446,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     <div className="alert-card-summary-line1">
                        {renderHighlightedCardBody(line1, event)}
                     </div>
-                    {line2 && (
+                    {displayLine2 && (
                        <div className="alert-card-summary-line2">
-                          {renderHighlightedCardBody(line2, event)}
+                          {renderHighlightedCardBody(displayLine2, event)}
                        </div>
                     )}
-                    {line3 && (
+                    {displayLine3 && (
                        <div className="alert-card-summary-line3" style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
-                          {renderHighlightedCardBody(line3, event)}
+                          {renderHighlightedCardBody(displayLine3, event)}
                        </div>
                     )}
                   </div>
