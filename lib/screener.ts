@@ -1,4 +1,5 @@
 export type MetricDefinition = { key: string; label: string; digits?: number };
+export type BooleanFilterDefinition = { key: string; label: string };
 
 export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "forward_per", label: "予想PER", digits: 2 },
@@ -29,6 +30,12 @@ export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "forward_peg", label: "予想PEG", digits: 3 },
 ];
 export const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
-export const BOOLEAN_FILTERS = new Set(["new_ytd_high_last_5d", "turnaround", "loss_expansion", "profit_to_loss"]);
+export const BOOLEAN_FILTER_DEFINITIONS: BooleanFilterDefinition[] = [
+    { key: "new_ytd_high_last_5d", label: "年初来高値更新5日" },
+    { key: "turnaround", label: "黒字転換" },
+    { key: "loss_expansion", label: "赤字拡大" },
+    { key: "profit_to_loss", label: "黒字→赤字" },
+];
+export const BOOLEAN_FILTERS = new Set(BOOLEAN_FILTER_DEFINITIONS.map((filter) => filter.key));
 export const BASE_COLUMNS = ["ticker", "company_name", "market_code", "market_name", "sector17_code", "sector17_name", "sector33_code", "sector33_name", "latest_valid_price", "price_as_of", "price_status", "price_stale_sessions", "market_cap"];
 export type ScreenerRow = Record<string, string | number | boolean | null>;
