@@ -34,6 +34,7 @@ export interface PerShareRecord {
     payout_ratio: number | null;
     // 予想
     forecast_eps: number | null;          // 最新予想EPS（期中修正で更新される）
+    forecast_eps_basis_factor: number;    // raw FEPSを開示日時点basisへ戻す係数
     initial_forecast_eps: number | null;  // 期初予想EPS（本決算発表時のNxFEPS。原則不変）
     forecast_dividend_annual: number | null;
     forecast_payout_ratio: number | null;
@@ -66,6 +67,9 @@ export interface ValuationMetrics {
     // 内訳（デバッグ・表示用）
     eps_used: number | null;         // PER計算に使用したEPS
     eps_basis: "forecast" | "actual" | null;  // どちらのEPSを使用したか
+    raw_forecast_eps: number | null;
+    forecast_eps_basis_factor: number | null;
+    split_factor_applied: number | null;
     bps_used: number | null;
     dividend_used: number | null;
     dividend_basis: "forecast" | "actual" | null;
