@@ -121,7 +121,7 @@ function ChartCard({ row, history, period, metricKeys, booleanKeys, loading, err
             const metric = METRIC_BY_KEY.get(key);
             if (!metric) return null;
             return <div key={key}><dt>{metric.label}</dt><dd>{number(row[key], metric.digits)}</dd></div>;
-        })}{booleanKeys.map((key) => <div key={key}><dt>{DETAILED_FILTER_BY_KEY.get(key)?.label ?? key}</dt><dd>該当</dd></div>)}</dl>}
+        })}{booleanKeys.map((key) => <div key={key}><dt>{METRIC_BY_KEY.get(key)?.label ?? DETAILED_FILTER_BY_KEY.get(key)?.label ?? key}</dt><dd>該当</dd></div>)}</dl>}
         {loading && !history ? <div className="chart-placeholder">チャート読み込み中...</div>
             : error && !history ? <div className="chart-placeholder chart-error">チャート取得失敗</div>
             : points.length ? <LazyCandlestickChart points={points} />

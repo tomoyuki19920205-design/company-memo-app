@@ -43,6 +43,17 @@ import {
     type FilterRange,
     type ScreenerFilterState,
 } from "@/lib/screener-filter-workflow";
+import {
+    TECHNICAL_FAMILY_BY_KEY,
+    activeTechnicalMetricKeys,
+    addTechnicalFilter,
+    periodLabel,
+    resolvedTechnicalRanges,
+    technicalFilterLabel,
+    updateTechnicalPeriod,
+    type TechnicalMetricFamily,
+    type TechnicalPeriod,
+} from "@/lib/screener-technical-filters";
 
 type Option = { code: string; name: string };
 type Options = { markets: Option[]; sectors17: Option[]; sectors33: Option[] };
@@ -56,6 +67,14 @@ const COLUMN_BY_KEY = new Map(SCREENER_COLUMN_DEFINITIONS.map((column) => [colum
 const CHART_VIEW_MODE_KEY = "screener_result_view_mode";
 const CHART_PERIOD_KEY = "screener_chart_period";
 const CHART_VIEW_MODES: ChartViewMode[] = ["table", "chart"];
+
+function automaticColumnRanges(filters: ScreenerFilterState): Record<string, FilterRange> {
+    const ranges = { ...filters.ranges, ...resolvedTechnicalRanges(filters.technicalFilters) };
+    for (const key of activeTechnicalMetricKeys(filters.technicalFilters)) {
+        if (!(key in ranges)) ranges[key] = { min: "active", max: "" };
+    }
+    return ranges;
+}
 
 type CheckboxFilterGroupProps = {
     filterKey: "markets" | "sectors17" | "sectors33";
@@ -105,8 +124,9 @@ function CheckboxFilterGroup({ filterKey, label, options, selected, setSelected,
     </fieldset>;
 }
 
-function MetricPicker({ selectedKeys, onSelect, onClose }: {
+function MetricPicker({ selectedKeys, technicalFilters, onSelect, onClose }: {
     selectedKeys: string[];
+    technicalFilters: ScreenerFilterState["technicalFilters"];
     onSelect: (key: string) => void;
     onClose: () => void;
 }) {
@@ -139,7 +159,11 @@ function MetricPicker({ selectedKeys, onSelect, onClose }: {
                     return <section className="metric-picker-group" key={group}>
                         <h3>{group}</h3>
                         <div>{definitions.map((definition) => {
-                            const added = selectedKeys.includes(definition.key);
+                            const technicalFamily = definition.key.startsWith("technical:") ? definition.key.slice(10) as TechnicalMetricFamily : null;
+                            const technicalDefinition = technicalFamily ? TECHNICAL_FAMILY_BY_KEY.get(technicalFamily) : null;
+                            const added = technicalDefinition
+                                ? technicalDefinition.periods.every((period) => technicalFilters.some((filter) => filter.family === technicalFamily && filter.period === period))
+                                : selectedKeys.includes(definition.key);
                             return <button type="button" key={definition.key} disabled={added} onClick={() => { onSelect(definition.key); onClose(); }}>
                                 <span>{definition.label}</span>{added && <small>✓ 追加済み</small>}
                             </button>;
@@ -222,9 +246,10 @@ export default function ScreenerPage() {
         }
     }, [chartPeriod, preferencesReady, viewMode]);
 
+    const appliedRanges = useMemo(() => automaticColumnRanges(appliedFilters), [appliedFilters]);
     const automaticColumns = useMemo(
-        () => automaticMetricColumnKeys(appliedFilters.ranges, METRIC_ORDER, sort, sortWasExplicitlySelected),
-        [appliedFilters.ranges, sort, sortWasExplicitlySelected],
+        () => automaticMetricColumnKeys(appliedRanges, METRIC_ORDER, sort, sortWasExplicitlySelected),
+        [appliedRanges, sort, sortWasExplicitlySelected],
     );
     const requestedColumns = useMemo(
         () => resolveMetricColumns(automaticColumns, columnOverrides, METRIC_ORDER),
@@ -251,7 +276,7 @@ export default function ScreenerPage() {
     }, []);
 
     const columnsForRequest = useCallback((filters: ScreenerFilterState, sortMetric: string, sortExplicit: boolean) => {
-        const automatic = automaticMetricColumnKeys(filters.ranges, METRIC_ORDER, sortMetric, sortExplicit);
+        const automatic = automaticMetricColumnKeys(automaticColumnRanges(filters), METRIC_ORDER, sortMetric, sortExplicit);
         return resolveMetricColumns(automatic, columnOverrides, METRIC_ORDER);
     }, [columnOverrides]);
 
@@ -352,7 +377,24 @@ export default function ScreenerPage() {
     };
 
     const addFilter = (key: string) => {
+        if (key.startsWith("technical:")) {
+            const family = key.slice(10) as TechnicalMetricFamily;
+            setDraftFilters((current) => ({ ...current, technicalFilters: addTechnicalFilter(current.technicalFilters, family) }));
+            return;
+        }
         setDraftFilters((current) => ({ ...current, detailedKeys: addDetailedFilter(current.detailedKeys, key) }));
+    };
+
+    const updateTechnicalFilter = (id: string, patch: Partial<{ min: string; max: string; enabled: boolean }>) => {
+        setDraftFilters((current) => ({ ...current, technicalFilters: current.technicalFilters.map((filter) => filter.id === id ? { ...filter, ...patch } : filter) }));
+    };
+
+    const changeTechnicalPeriod = (id: string, period: TechnicalPeriod) => {
+        setDraftFilters((current) => ({ ...current, technicalFilters: updateTechnicalPeriod(current.technicalFilters, id, period) }));
+    };
+
+    const removeTechnicalFilter = (id: string) => {
+        setDraftFilters((current) => ({ ...current, technicalFilters: current.technicalFilters.filter((filter) => filter.id !== id) }));
     };
 
     const removeFilter = (key: string) => {
@@ -378,6 +420,16 @@ export default function ScreenerPage() {
             if (range?.min.trim()) summary.push(`${definition.label} ≥ ${range.min}`);
             if (range?.max.trim()) summary.push(`${definition.label} ≤ ${range.max}`);
         }
+        for (const filter of appliedFilters.technicalFilters) {
+            const label = technicalFilterLabel(filter);
+            const definition = TECHNICAL_FAMILY_BY_KEY.get(filter.family);
+            if (definition?.kind === "boolean") {
+                if (filter.enabled) summary.push(label);
+            } else {
+                if (filter.min.trim()) summary.push(`${label} ≥ ${filter.min}%`);
+                if (filter.max.trim()) summary.push(`${label} ≤ ${filter.max}%`);
+            }
+        }
         summary.push(...appliedFilters.markets.map((code) => optionName(options.markets, code)));
         summary.push(...appliedFilters.sectors17.map((code) => optionName(options.sectors17, code)));
         summary.push(...appliedFilters.sectors33.map((code) => optionName(options.sectors33, code)));
@@ -389,9 +441,12 @@ export default function ScreenerPage() {
         .map((key) => COLUMN_BY_KEY.get(key))
         .filter((column): column is ScreenerColumnDefinition => !!column && (!METRIC_KEYS.has(column.key) || columns.includes(column.key))), [columnOrder, columns]);
     const totalTableWidth = useMemo(() => visibleColumnDefinitions.reduce((sum, column) => sum + columnWidths[column.key], 0), [columnWidths, visibleColumnDefinitions]);
-    const chartMetricKeys = useMemo(() => chartCardMetricKeys(appliedFilters, METRIC_ORDER, sort, sortWasExplicitlySelected), [appliedFilters, sort, sortWasExplicitlySelected]);
-    const chartBooleanKeys = useMemo(() => appliedFilters.detailedKeys.filter((key) => !!appliedFilters.flags[key] && !METRIC_KEYS.has(key)), [appliedFilters]);
-    const format = (value: unknown, digits = 2) => value === null || value === undefined ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: digits });
+    const chartMetricKeys = useMemo(() => chartCardMetricKeys(appliedFilters, METRIC_ORDER, sort, sortWasExplicitlySelected).filter((key) => !key.startsWith("new_ytd_high_last_")), [appliedFilters, sort, sortWasExplicitlySelected]);
+    const chartBooleanKeys = useMemo(() => [
+        ...appliedFilters.detailedKeys.filter((key) => !!appliedFilters.flags[key] && !METRIC_KEYS.has(key)),
+        ...activeTechnicalMetricKeys(appliedFilters.technicalFilters).filter((key) => key.startsWith("new_ytd_high_last_")),
+    ], [appliedFilters]);
+    const format = (value: unknown, digits = 2) => value === null || value === undefined ? "—" : typeof value === "boolean" ? (value ? "該当" : "—") : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: digits });
 
     const startResize = (event: React.MouseEvent<HTMLSpanElement>, column: ScreenerColumnDefinition) => {
         event.preventDefault();
@@ -533,7 +588,7 @@ export default function ScreenerPage() {
                 </details>
 
                 <details className="condition-accordion" open>
-                    <summary><span>詳細検索項目</span><small>{draftFilters.detailedKeys.length ? `${draftFilters.detailedKeys.length}件` : "未追加"}</small></summary>
+                    <summary><span>詳細検索項目</span><small>{draftFilters.detailedKeys.length + draftFilters.technicalFilters.length ? `${draftFilters.detailedKeys.length + draftFilters.technicalFilters.length}件` : "未追加"}</small></summary>
                     <div className="condition-accordion-body detailed-filter-stack">
                         {draftFilters.detailedKeys.map((key) => {
                             const definition = DETAILED_FILTER_BY_KEY.get(key);
@@ -548,7 +603,22 @@ export default function ScreenerPage() {
                                 </div> : <label className="condition-boolean-input"><input type="checkbox" checked={!!draftFilters.flags[key]} onChange={(event) => setDraftFilters((current) => ({ ...current, flags: { ...current.flags, [key]: event.target.checked } }))} />条件を有効にする</label>}
                             </section>;
                         })}
-                        {draftFilters.detailedKeys.length < DETAILED_FILTER_DEFINITIONS.length && <button type="button" className="add-filter-button" onClick={() => setPickerOpen(true)}>＋ 検索条件を追加</button>}
+                        {draftFilters.technicalFilters.map((filter) => {
+                            const definition = TECHNICAL_FAMILY_BY_KEY.get(filter.family);
+                            if (!definition) return null;
+                            return <section className="filter-condition-card technical-filter-card" key={filter.id} data-filter-family={filter.family} data-filter-period={filter.period}>
+                                <header><h3>{definition.label}</h3><button type="button" aria-label={`${definition.label}を削除`} onClick={() => removeTechnicalFilter(filter.id)}>×</button></header>
+                                <label className="technical-period-select">期間<select aria-label={`${definition.label} 期間`} value={filter.period} onChange={(event) => changeTechnicalPeriod(filter.id, event.target.value as TechnicalPeriod)}>
+                                    {definition.periods.map((period) => <option key={period} value={period} disabled={draftFilters.technicalFilters.some((other) => other.id !== filter.id && other.family === filter.family && other.period === period)}>{periodLabel(period)}</option>)}
+                                </select></label>
+                                {definition.kind === "range" ? <div className="condition-range-inputs">
+                                    <label>以上<input aria-label={`${definition.label} ${periodLabel(filter.period)} 下限`} type="number" step="any" value={filter.min} onChange={(event) => updateTechnicalFilter(filter.id, { min: event.target.value })} /></label>
+                                    <span>～</span>
+                                    <label>以下<input aria-label={`${definition.label} ${periodLabel(filter.period)} 上限`} type="number" step="any" value={filter.max} onChange={(event) => updateTechnicalFilter(filter.id, { max: event.target.value })} /></label>
+                                </div> : <label className="condition-boolean-input"><input type="checkbox" checked={filter.enabled} onChange={(event) => updateTechnicalFilter(filter.id, { enabled: event.target.checked })} />条件を有効にする</label>}
+                            </section>;
+                        })}
+                        <button type="button" className="add-filter-button" onClick={() => setPickerOpen(true)}>＋ 検索条件を追加</button>
                     </div>
                 </details>
 
@@ -602,6 +672,6 @@ export default function ScreenerPage() {
             </section>
         </div>
 
-        {pickerOpen && <MetricPicker selectedKeys={draftFilters.detailedKeys} onSelect={addFilter} onClose={() => setPickerOpen(false)} />}
+        {pickerOpen && <MetricPicker selectedKeys={draftFilters.detailedKeys} technicalFilters={draftFilters.technicalFilters} onSelect={addFilter} onClose={() => setPickerOpen(false)} />}
     </main>;
 }

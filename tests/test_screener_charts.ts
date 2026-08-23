@@ -78,6 +78,12 @@ test("chart cards use applied range metrics plus explicit sort without duplicate
     assert.deepEqual(chartCardMetricKeys(filters, ["forward_per", "forward_per_per_forecast_sales_growth", "forward_peg"], "forward_peg", true), ["forward_per", "forward_per_per_forecast_sales_growth", "forward_peg"]);
 });
 
+test("chart cards include only the resolved active technical period", () => {
+    const filters = createInitialFilterState();
+    filters.technicalFilters = [{ id: "rise", family: "rise_rate", period: "20d", min: "15", max: "", enabled: false }];
+    assert.deepEqual(chartCardMetricKeys(filters, ["rise_rate_5d_pct", "rise_rate_20d_pct", "rise_rate_60d_pct"], "rise_rate_5d_pct", false), ["rise_rate_20d_pct"]);
+});
+
 test("latest return and view preferences handle valid and stale values", () => {
     assert.equal(latestChartReturn([{ close: 100 }, { close: 105 }]), 5.000000000000004);
     assert.equal(latestChartReturn([{ close: 100 }]), null);

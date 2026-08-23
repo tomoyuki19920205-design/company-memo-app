@@ -1,4 +1,5 @@
 import type { ScreenerFilterState } from "./screener-filter-workflow";
+import { activeTechnicalMetricKeys } from "./screener-technical-filters";
 
 export type ChartViewMode = "table" | "chart";
 
@@ -13,6 +14,7 @@ export function chartCardMetricKeys(
         const range = filters.ranges[key];
         if ((range?.min.trim() ?? "") !== "" || (range?.max.trim() ?? "") !== "" || filters.flags[key]) selected.add(key);
     }
+    for (const key of activeTechnicalMetricKeys(filters.technicalFilters)) selected.add(key);
     if (sortWasExplicitlySelected) selected.add(sortMetric);
     return metricOrder.filter((key) => selected.has(key));
 }

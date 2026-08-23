@@ -1,10 +1,12 @@
 import { appendCategorySelections, type CategorySelections } from "./screener-category-filters";
+import { resolveTechnicalMetric, TECHNICAL_FAMILY_BY_KEY, type TechnicalFilter } from "./screener-technical-filters";
 
 export type FilterRange = { min: string; max: string };
 export type ScreenerFilterState = CategorySelections & {
     ranges: Record<string, FilterRange>;
     flags: Record<string, boolean>;
     detailedKeys: string[];
+    technicalFilters: TechnicalFilter[];
 };
 
 export function createInitialFilterState(): ScreenerFilterState {
@@ -15,6 +17,7 @@ export function createInitialFilterState(): ScreenerFilterState {
         sectors17: [],
         sectors33: [],
         detailedKeys: [],
+        technicalFilters: [],
     };
 }
 
@@ -26,6 +29,7 @@ export function snapshotFilterState(filters: ScreenerFilterState): ScreenerFilte
         sectors17: [...filters.sectors17],
         sectors33: [...filters.sectors33],
         detailedKeys: [...filters.detailedKeys],
+        technicalFilters: filters.technicalFilters.map((filter) => ({ ...filter })),
     };
 }
 
@@ -50,6 +54,15 @@ export function buildScreenerQuery(args: {
     appendCategorySelections(params, args.filters);
     for (const [key, enabled] of Object.entries(args.filters.flags)) {
         if (enabled) params.set(key, "true");
+    }
+    for (const filter of args.filters.technicalFilters) {
+        const key = resolveTechnicalMetric(filter.family, filter.period);
+        if (TECHNICAL_FAMILY_BY_KEY.get(filter.family)?.kind === "boolean") {
+            if (filter.enabled) params.set(key, "true");
+        } else {
+            if (filter.min.trim() !== "") params.set(`${key}_min`, filter.min);
+            if (filter.max.trim() !== "") params.set(`${key}_max`, filter.max);
+        }
     }
     return params.toString();
 }
