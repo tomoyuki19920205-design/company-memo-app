@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import ScreenerChartGrid from "@/components/ScreenerChartGrid";
 import { SCREENER_METRICS, type ScreenerRow } from "@/lib/screener";
+import { CHART_PERIODS, type ChartPeriod, type ChartPricePoint } from "@/lib/screener-chart-data";
+import { chartCardMetricKeys, loadChartPreference, type ChartViewMode } from "@/lib/screener-chart-ui";
 import {
     selectionStatus,
     updateAllSelections,
@@ -50,6 +53,9 @@ const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
 const METRIC_ORDER = SCREENER_METRICS.map((metric) => metric.key);
 const METRIC_BY_KEY = new Map(SCREENER_METRICS.map((metric) => [metric.key, metric]));
 const COLUMN_BY_KEY = new Map(SCREENER_COLUMN_DEFINITIONS.map((column) => [column.key, column]));
+const CHART_VIEW_MODE_KEY = "screener_result_view_mode";
+const CHART_PERIOD_KEY = "screener_chart_period";
+const CHART_VIEW_MODES: ChartViewMode[] = ["table", "chart"];
 
 type CheckboxFilterGroupProps = {
     filterKey: "markets" | "sectors17" | "sectors33";
@@ -177,6 +183,14 @@ export default function ScreenerPage() {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [viewMode, setViewMode] = useState<ChartViewMode>("table");
+    const [chartPeriod, setChartPeriod] = useState<ChartPeriod>("6m");
+    const [chartSeries, setChartSeries] = useState<Record<string, ChartPricePoint[]>>({});
+    const [chartLoading, setChartLoading] = useState(false);
+    const [chartError, setChartError] = useState("");
+    const chartCacheRef = useRef(new Map<string, ChartPricePoint[]>());
+    const chartAbortRef = useRef<AbortController | null>(null);
+    const chartRequestRef = useRef(0);
     const resizeCleanupRef = useRef<(() => void) | null>(null);
     const reorderCleanupRef = useRef<(() => void) | null>(null);
 
@@ -184,6 +198,8 @@ export default function ScreenerPage() {
         const saved = loadScreenerColumnPreferences(window.localStorage);
         setColumnOrder(saved.order);
         setColumnWidths(saved.widths);
+        setViewMode(loadChartPreference(window.localStorage, CHART_VIEW_MODE_KEY, CHART_VIEW_MODES, "table"));
+        setChartPeriod(loadChartPreference(window.localStorage, CHART_PERIOD_KEY, CHART_PERIODS, "6m"));
         setPreferencesReady(true);
     }, []);
 
@@ -195,6 +211,16 @@ export default function ScreenerPage() {
             // Storage can be unavailable in privacy mode; table interaction still works in memory.
         }
     }, [columnOrder, columnWidths, preferencesReady]);
+
+    useEffect(() => {
+        if (!preferencesReady) return;
+        try {
+            window.localStorage.setItem(CHART_VIEW_MODE_KEY, viewMode);
+            window.localStorage.setItem(CHART_PERIOD_KEY, chartPeriod);
+        } catch {
+            // Preferences remain usable for this session when storage is unavailable.
+        }
+    }, [chartPeriod, preferencesReady, viewMode]);
 
     const automaticColumns = useMemo(
         () => automaticMetricColumnKeys(appliedFilters.ranges, METRIC_ORDER, sort, sortWasExplicitlySelected),
@@ -215,6 +241,7 @@ export default function ScreenerPage() {
     useEffect(() => () => {
         resizeCleanupRef.current?.();
         reorderCleanupRef.current?.();
+        chartAbortRef.current?.abort();
     }, []);
 
     useEffect(() => {
@@ -257,6 +284,39 @@ export default function ScreenerPage() {
     useEffect(() => {
         void executeSearch(1, createInitialFilterState(), "market_cap", "desc", false);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        if (viewMode !== "chart") return;
+        const tickers = rows.map((row) => String(row.ticker)).filter(Boolean);
+        const currentSeries = Object.fromEntries(tickers.filter((ticker) => chartCacheRef.current.has(ticker)).map((ticker) => [ticker, chartCacheRef.current.get(ticker)!]));
+        setChartSeries(currentSeries);
+        const missing = tickers.filter((ticker) => !chartCacheRef.current.has(ticker));
+        chartAbortRef.current?.abort();
+        if (!missing.length) { setChartLoading(false); setChartError(""); return; }
+        const controller = new AbortController();
+        const requestId = ++chartRequestRef.current;
+        chartAbortRef.current = controller;
+        setChartLoading(true);
+        setChartError("");
+        fetch(`/api/screener/charts?tickers=${encodeURIComponent(missing.join(","))}&period=1y`, { cache: "no-store", signal: controller.signal })
+            .then(async (response) => {
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || "チャート取得に失敗しました");
+                if (requestId !== chartRequestRef.current) return;
+                const failedTickers = new Set<string>(data.failedTickers ?? []);
+                for (const ticker of missing) if (!failedTickers.has(ticker)) chartCacheRef.current.set(ticker, data.series?.[ticker] ?? []);
+                setChartSeries(Object.fromEntries(tickers.filter((ticker) => chartCacheRef.current.has(ticker)).map((ticker) => [ticker, chartCacheRef.current.get(ticker)!])));
+                if (failedTickers.size) setChartError(`${failedTickers.size}銘柄のチャート取得に失敗しました`);
+            })
+            .catch((reason) => {
+                if (reason instanceof DOMException && reason.name === "AbortError") return;
+                if (requestId === chartRequestRef.current) setChartError(reason instanceof Error ? reason.message : "チャート取得に失敗しました");
+            })
+            .finally(() => {
+                if (requestId === chartRequestRef.current) setChartLoading(false);
+            });
+        return () => controller.abort();
+    }, [rows, viewMode]);
 
     const applyDraftAndSearch = () => {
         const next = snapshotFilterState(draftFiltersRef.current);
@@ -329,6 +389,8 @@ export default function ScreenerPage() {
         .map((key) => COLUMN_BY_KEY.get(key))
         .filter((column): column is ScreenerColumnDefinition => !!column && (!METRIC_KEYS.has(column.key) || columns.includes(column.key))), [columnOrder, columns]);
     const totalTableWidth = useMemo(() => visibleColumnDefinitions.reduce((sum, column) => sum + columnWidths[column.key], 0), [columnWidths, visibleColumnDefinitions]);
+    const chartMetricKeys = useMemo(() => chartCardMetricKeys(appliedFilters, METRIC_ORDER, sort, sortWasExplicitlySelected), [appliedFilters, sort, sortWasExplicitlySelected]);
+    const chartBooleanKeys = useMemo(() => appliedFilters.detailedKeys.filter((key) => !!appliedFilters.flags[key] && !METRIC_KEYS.has(key)), [appliedFilters]);
     const format = (value: unknown, digits = 2) => value === null || value === undefined ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: digits });
 
     const startResize = (event: React.MouseEvent<HTMLSpanElement>, column: ScreenerColumnDefinition) => {
@@ -502,18 +564,28 @@ export default function ScreenerPage() {
                     </div>
                 </header>
 
+                <div className="result-view-toolbar">
+                    <div className="result-view-toggle" role="group" aria-label="表示形式">
+                        <button type="button" aria-pressed={viewMode === "table"} className={viewMode === "table" ? "is-active" : ""} onClick={() => setViewMode("table")}>表</button>
+                        <button type="button" aria-pressed={viewMode === "chart"} className={viewMode === "chart" ? "is-active" : ""} onClick={() => setViewMode("chart")}>チャート</button>
+                    </div>
+                    {viewMode === "chart" && <div className="chart-period-selector" role="group" aria-label="チャート期間">
+                        <span>期間</span>{CHART_PERIODS.map((period) => <button type="button" key={period} aria-pressed={chartPeriod === period} className={chartPeriod === period ? "is-active" : ""} onClick={() => setChartPeriod(period)}>{period.toUpperCase()}</button>)}
+                    </div>}
+                </div>
+
                 <div className="applied-filter-summary" aria-label="適用中の条件">
                     {appliedSummary.length ? appliedSummary.map((item, index) => <span key={`${item}-${index}`}>{item}</span>) : <small>詳細条件なし</small>}
                 </div>
 
-                <details className="result-column-settings">
+                {viewMode === "table" && <details className="result-column-settings">
                     <summary>表示列</summary>
                     <div className="screener-column-title"><p>任意の列を追加・削除できます</p><button type="button" className="column-reset-button" onClick={resetColumnSettings}>列設定をリセット</button></div>
                     <div className="column-selector">{SCREENER_METRICS.map((metric) => <label key={metric.key}><input type="checkbox" checked={columns.includes(metric.key)} onChange={(event) => setMetricColumnVisible(metric.key, event.target.checked)} />{metric.label}</label>)}</div>
-                </details>
+                </details>}
 
                 {error && <p className="screener-error">{error}</p>}
-                <div className="screener-results" data-testid="screener-results-scroll">
+                {viewMode === "table" ? <div className="screener-results" data-testid="screener-results-scroll">
                     <table style={{ width: `${totalTableWidth}px` }}>
                         <colgroup>{visibleColumnDefinitions.map((column) => <col key={column.key} style={{ width: `${columnWidths[column.key]}px` }} />)}</colgroup>
                         <thead><tr>{visibleColumnDefinitions.map((column, columnIndex) => {
@@ -524,7 +596,8 @@ export default function ScreenerPage() {
                         })}</tr></thead>
                         <tbody>{rows.map((row) => <tr key={String(row.ticker)}>{visibleColumnDefinitions.map((column) => <td key={column.key} data-column-key={column.key} className={column.numeric ? "screener-column-numeric" : "screener-column-text"} title={String(row[column.key] ?? "")}>{renderCell(column.key, row)}</td>)}</tr>)}</tbody>
                     </table>
-                </div>
+                </div> : <ScreenerChartGrid rows={rows} series={chartSeries} period={chartPeriod} metricKeys={chartMetricKeys} booleanKeys={chartBooleanKeys} loading={chartLoading} error={chartError} />}
+                {viewMode === "chart" && chartError && <p className="screener-error">{chartError}</p>}
                 <nav className="pagination"><button disabled={page <= 1 || loading} onClick={() => void executeSearch(page - 1)}>前へ</button><span>{page} / {Math.max(1, Math.ceil(count / 50))}</span><button disabled={page * 50 >= count || loading} onClick={() => void executeSearch(page + 1)}>次へ</button></nav>
             </section>
         </div>
