@@ -66,8 +66,8 @@ test("component uses two panes, modal picker, and explicit draft-to-applied sear
     assert.match(component, /className="screener-condition-pane"/);
     assert.match(component, /className="screener-result-pane"/);
     assert.match(component, /role="dialog" aria-modal="true"/);
-    assert.match(component, /const \[draftFilters, setDraftFilters\]/);
+    assert.match(component, /const \[draftFilters, setDraftFiltersState\]/);
+    assert.match(component, /snapshotFilterState\(draftFiltersRef\.current\)/);
     assert.match(component, /const \[appliedFilters, setAppliedFilters\]/);
-    assert.match(component, /const next = snapshotFilterState\(draftFilters\)/);
     assert.doesNotMatch(component, /className="range-grid"/);
 });

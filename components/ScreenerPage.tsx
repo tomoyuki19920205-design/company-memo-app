@@ -152,7 +152,13 @@ function optionName(options: Option[], code: string) {
 
 export default function ScreenerPage() {
     const [options, setOptions] = useState<Options>({ markets: [], sectors17: [], sectors33: [] });
-    const [draftFilters, setDraftFilters] = useState<ScreenerFilterState>(() => createInitialFilterState());
+    const [draftFilters, setDraftFiltersState] = useState<ScreenerFilterState>(() => createInitialFilterState());
+    const draftFiltersRef = useRef(draftFilters);
+    const setDraftFilters = useCallback((update: React.SetStateAction<ScreenerFilterState>) => {
+        const next = typeof update === "function" ? update(draftFiltersRef.current) : update;
+        draftFiltersRef.current = next;
+        setDraftFiltersState(next);
+    }, []);
     const [appliedFilters, setAppliedFilters] = useState<ScreenerFilterState>(() => createInitialFilterState());
     const [pickerOpen, setPickerOpen] = useState(false);
     const [columns, setColumns] = useState<string[]>([]);
@@ -253,7 +259,7 @@ export default function ScreenerPage() {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const applyDraftAndSearch = () => {
-        const next = snapshotFilterState(draftFilters);
+        const next = snapshotFilterState(draftFiltersRef.current);
         setAppliedFilters(next);
         void executeSearch(1, next);
     };
