@@ -7,6 +7,7 @@ import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
 import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -290,9 +291,9 @@ const formatCardBody = (event: EnrichedEvent): {
     }
 
   } else if (event.event_type === "dividend") {
-    const typeLabel = event.event_subtype === "increase" ? "💰 増配"
-      : event.event_subtype === "decrease" ? "📉 減配"
-      : "💰 配当修正";
+    const policy = getDividendPolicyDisplay(event);
+    const typeEmoji = event.event_subtype === "decrease" ? "📉" : "💰";
+    const typeLabel = `${typeEmoji} ${getDividendCompositeBodyLabel(event)}`;
     const prev = ext.previous_dividend_per_share;
     const rev  = ext.revised_dividend_per_share;
     let pctStr = "";
@@ -312,6 +313,7 @@ const formatCardBody = (event: EnrichedEvent): {
         lines.push(`配当: ${fmtDiv(rv)}`);
       }
     }
+    if (policy.summary && policy.summary !== policy.label) lines.push(policy.summary);
     const period = ext.fiscal_period;
     if (period) lines.push(String(period));
 
@@ -593,8 +595,8 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
   } else if (event.event_type === "dividend") {
-    if (event.event_subtype === "increase") typeLabel = "増配";
-    else typeLabel = "配当";
+    const policy = getDividendPolicyDisplay(event);
+    typeLabel = getDividendCompositeLabel(event);
     
     const prev = ext.previous_dividend_per_share;
     const rev  = ext.revised_dividend_per_share;
@@ -605,6 +607,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
        divStr = `${fmtDiv(rev)}`;
     }
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
+    if (policy.summary && policy.summary !== policy.label) line2 = policy.summary;
   } else if (isEdinetOrderEvent(event.event_type)) {
     typeLabel = "受注/有報";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.quarter || ext.fiscal_year || ""}`.trim();
@@ -1470,7 +1473,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       {formatTime(event.disclosed_at || event.detected_at)}
                     </span>
                     <span className={`alert-badge ${badge.category}`}>
-                      {badge.emoji} {subtypeLabel || badge.label}
+                      {badge.emoji} {event.event_type === "dividend" ? getDividendCompositeLabel(event) : (subtypeLabel || badge.label)}
                     </span>
                     {event.event_type === "edinet_order_partial" && (
                       <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>

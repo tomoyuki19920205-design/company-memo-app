@@ -14,6 +14,7 @@ import type { EnrichedEvent, TdnetEventComment } from "@/lib/tdnet-alerts/types"
 import type { SegmentRow } from "@/lib/tdnet-alerts/queries";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
+import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
 import { isEdinetOrderEvent } from "./AlertsPage";
 
 interface AlertDetailPanelProps {
@@ -179,8 +180,8 @@ export default function AlertDetailPanel({
       <div className="detail-meta">
         <span className="detail-meta-label">種別</span>
         <span className="detail-meta-value">
-          {badge.emoji} {badge.label}
-          {subtypeLabel && ` (${subtypeLabel})`}
+          {badge.emoji} {event.event_type === "dividend" ? getDividendCompositeLabel(event) : badge.label}
+          {event.event_type !== "dividend" && subtypeLabel && ` (${subtypeLabel})`}
         </span>
 
         <span className="detail-meta-label">ティッカー</span>
