@@ -6,7 +6,7 @@ import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-a
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
-import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
@@ -1377,7 +1377,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const isSelected = selectedId === event.id;
 
               if (isCompanyIrEvent(event.event_type)) {
-                const directUrl = event.source_url || event.pdf_url || "";
+                const directUrl = getValidatedMaterialUrl(event);
                 return (
                   <div
                     key={event.id}
@@ -1407,6 +1407,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               if (isPdfOnlyMaterialEvent(event.event_type)) {
                 const materialLabel = getPdfOnlyMaterialLabel(event);
+                const materialUrl = getValidatedMaterialUrl(event);
                 return (
                   <div
                     key={event.id}
@@ -1417,9 +1418,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
                         {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} {materialLabel}
                       </span>
-                      {event.pdf_url && (
+                      {materialUrl && (
                         <a
-                          href={event.pdf_url}
+                          href={materialUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="action-btn pdf-link"

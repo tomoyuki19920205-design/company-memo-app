@@ -15,6 +15,7 @@ import type { SegmentRow } from "@/lib/tdnet-alerts/queries";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
 import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
+import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { isEdinetOrderEvent } from "./AlertsPage";
 
 interface AlertDetailPanelProps {
@@ -36,6 +37,10 @@ export default function AlertDetailPanel({
   const [rawSegments, setRawSegments] = useState<SegmentRow[]>([]);
   const [segLoading, setSegLoading] = useState(false);
   const supabaseRef = useRef(createSupabaseBrowser());
+  const isMaterial = isPdfOnlyMaterialEvent(event.event_type) || isCompanyIrEvent(event.event_type);
+  const materialUrl = isMaterial ? getValidatedMaterialUrl(event) : "";
+  const sourceLink = isMaterial ? materialUrl : (event.source_url || "");
+  const pdfLink = isMaterial ? materialUrl : (event.pdf_url || "");
 
   // rawSegments が変わった時だけ統合キー計算を実行（再描画のたびには走らない）
   const segmentViewData = useMemo(() => buildSegmentViewData(rawSegments), [rawSegments]);
@@ -221,11 +226,11 @@ export default function AlertDetailPanel({
       </div>
 
       {/* Source links */}
-      {(event.source_url || event.pdf_url) && (
+      {(sourceLink || pdfLink) && (
         <div className="detail-links">
-          {event.source_url && (
+          {sourceLink && (
             <a
-              href={event.source_url}
+              href={sourceLink}
               target="_blank"
               rel="noopener noreferrer"
               className="detail-link"
@@ -233,9 +238,9 @@ export default function AlertDetailPanel({
               🔗 原文
             </a>
           )}
-          {event.pdf_url && (
+          {pdfLink && (
             <a
-              href={event.pdf_url}
+              href={pdfLink}
               target="_blank"
               rel="noopener noreferrer"
               className="detail-link"

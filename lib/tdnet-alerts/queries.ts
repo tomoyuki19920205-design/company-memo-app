@@ -1,5 +1,6 @@
 import { SupabaseClient } from "@supabase/supabase-js";
 import type { TdnetEvent, TdnetEventComment, EnrichedEvent } from "./types";
+import { isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 
 // ============================================================
 // 一覧取得
@@ -205,6 +206,13 @@ export async function fetchEvents(
       is_starred: starSet.has(e.id),
       comments_count: commentCountMap.get(e.id) || 0,
     };
+  });
+
+  // Reachability is verified upstream. The Viewer performs a cheap, local
+  // defense using the persisted flag and strict URL construction rules.
+  enriched = enriched.filter((event) => {
+    if (!isPdfOnlyMaterialEvent(event.event_type) && !isCompanyIrEvent(event.event_type)) return true;
+    return isLinkableMaterialEvent(event);
   });
 
   // フィルタ
