@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { fetchEvents } from "./queries.ts";
+import { fetchEvents } from "./queries";
 
 type RecordedCall =
   | { method: "eq"; column: string; value: unknown }

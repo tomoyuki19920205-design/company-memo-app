@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts.ts";
+import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 
 test("recognizes all viewer-only material types", () => {
   assert.equal(isPdfOnlyMaterialEvent("earnings_material"), true);

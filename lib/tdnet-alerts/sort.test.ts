@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { sortAlertsByDisclosureTimeAndTicker } from "./sort.ts";
+import { sortAlertsByDisclosureTimeAndTicker } from "./sort";
 
 type Alert = {
   id: string;
