@@ -7,6 +7,7 @@ import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
 import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
@@ -879,6 +880,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   // Realtime 接続
   const { status: connectionStatus } = useRealtimeAlerts({
     onNewEvent: (newEvent: TdnetEvent) => {
+      if (!isNotificationEventVisible(newEvent)) return;
       setEvents((prev) => {
         if (prev.some((e) => e.id === newEvent.id)) return prev;
         const enriched: EnrichedEvent = {

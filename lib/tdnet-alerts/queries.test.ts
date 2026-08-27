@@ -5,6 +5,7 @@ import { fetchEvents } from "./queries.ts";
 type RecordedCall =
   | { method: "eq"; column: string; value: unknown }
   | { method: "in"; column: string; values: unknown[] }
+  | { method: "not"; column: string; operator: string; value: string }
   | { method: "or"; condition: string };
 
 class FakeQuery {
@@ -13,7 +14,10 @@ class FakeQuery {
   select() { return this; }
   order() { return this; }
   limit() { return this; }
-  not() { return this; }
+  not(column: string, operator: string, value: string) {
+    this.calls.push({ method: "not", column, operator, value });
+    return this;
+  }
   gte() { return this; }
   lt() { return this; }
   in(column: string, values: unknown[]) {
@@ -108,4 +112,25 @@ test("filters management strategy independently", async () => {
     query.calls.find((call) => call.method === "eq" && call.column === "event_type" && call.value === "management_strategy"),
     { method: "eq", column: "event_type", value: "management_strategy" },
   );
+});
+
+test("applies correction exclusions server-side for every list route", async () => {
+  const scenarios = [
+    {},
+    { search: "3538" },
+    { eventType: "earnings" },
+    { eventType: "forecast" },
+    { unreadOnly: true },
+    { selectedDate: "2026-08-27" },
+  ];
+
+  for (const scenario of scenarios) {
+    const query = new FakeQuery();
+    const supabase = { from: () => query };
+    await fetchEvents(supabase as never, { userId: "test-user", ...scenario });
+    const exclusions = query.calls.filter((call) => call.method === "not");
+    assert.ok(exclusions.some((call) => call.value === "%訂正%"));
+    assert.ok(exclusions.some((call) => call.value === "%一部変更%"));
+    assert.ok(!exclusions.some((call) => call.value.includes("修正")));
+  }
 });
