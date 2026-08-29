@@ -1099,6 +1099,27 @@ body {
   background: var(--row-hover);
 }
 
+.top-navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.top-navigation .site-link {
+  color: var(--text-muted);
+}
+
+.top-navigation .site-link:hover,
+.top-navigation .site-link.active {
+  color: var(--text);
+  background: var(--row-hover);
+}
+
+.top-navigation .site-link.active {
+  border-color: var(--primary);
+}
+
 .shared-notice {
   font-size: 0.78rem;
   color: #8b5cf6;
