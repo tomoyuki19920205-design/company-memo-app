@@ -1188,6 +1188,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             🏢 Company Viewer
           </a>
           <h1 className="alerts-header-title">TDNET Alerts</h1>
+          <a href="/news" className="site-link">
+            📰 News Monitor
+          </a>
           <span className="stat-badge unread">未読 {unreadCount}</span>
           <span className="stat-badge total">表示件数 {events.length}件</span>
         </div>
