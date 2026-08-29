@@ -103,6 +103,35 @@ body {
   flex-shrink: 0;
 }
 
+/* Qualitative News Monitor */
+.news-monitor { max-width: 1500px; margin: 0 auto; padding: 18px; }
+.news-monitor-header { display:flex; justify-content:space-between; align-items:end; margin-bottom:14px; }
+.news-monitor-header h1 { color:var(--primary); font-size:1.7rem; }
+.news-monitor a, .company-news-section a { color:#7db2ff; }
+.news-filters { position:sticky; top:0; z-index:5; display:flex; flex-wrap:wrap; gap:8px; padding:10px; background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); }
+.news-filters label { display:flex; flex-direction:column; gap:3px; color:var(--text-muted); font-size:.72rem; }
+.news-filters input,.news-filters select { min-width:120px; padding:6px 8px; color:var(--text); background:#0b1118; border:1px solid var(--border); border-radius:5px; }
+.news-monitor-layout { display:grid; grid-template-columns:minmax(0, 1fr) minmax(320px, 38%); gap:12px; margin-top:12px; align-items:start; }
+.news-feed { display:flex; flex-direction:column; gap:7px; }
+.news-card { width:100%; text-align:left; padding:12px; color:var(--text); background:var(--card-bg); border:1px solid var(--border); border-radius:7px; cursor:pointer; }
+.news-card:hover { background:var(--row-hover); border-color:#3b5270; }
+.news-card h2 { margin:4px 0; font-size:1rem; }
+.news-card p { color:var(--text-muted); font-size:.84rem; }
+.news-card-meta,.news-badges { display:flex; flex-wrap:wrap; align-items:center; gap:7px; font-size:.72rem; color:var(--text-dim); }
+.news-badges span,.news-tags span { padding:2px 6px; border:1px solid var(--border); border-radius:999px; }
+.news-badge { font-weight:700; }
+.direction-positive { color:#6ee7b7; background:#08372d; }.direction-negative { color:#fca5a5; background:#421515; }.direction-mixed { color:#fde68a; background:#493910; }.direction-neutral,.direction-unknown { color:#cbd5e1; background:#26303d; }
+.importance-high { border-color:#f59e0b!important; }.importance-medium { border-color:#60a5fa!important; }.importance-low { opacity:.8; }
+.new-badge { color:#052e20; background:#6ee7b7; padding:1px 5px; border-radius:3px; }
+.temporal-expired,.temporal-historical { opacity:.62; border-style:dashed; }
+.news-detail { position:sticky; top:82px; padding:16px; background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); max-height:calc(100vh - 100px); overflow:auto; }
+.news-detail h2 { font-size:1.15rem; margin-right:24px; }.news-detail h3 { margin-top:14px; font-size:.86rem; color:#93c5fd; }.news-detail p,.news-detail blockquote { margin-top:5px; color:var(--text-muted); white-space:pre-wrap; }.news-detail dl { display:grid; grid-template-columns:76px 1fr; gap:4px 8px; margin-top:12px; font-size:.8rem; }.news-detail dt { color:var(--text-dim); }.news-detail-close { float:right; color:var(--text); background:none; border:0; font-size:1.3rem; cursor:pointer; }.news-tags { display:flex; flex-wrap:wrap; gap:4px; margin:12px 0; }
+.news-empty { padding:24px; text-align:center; color:var(--text-dim); }
+.company-news-section { min-width:760px; padding:10px; border:1px solid var(--border); border-radius:var(--radius); background:var(--card-bg); }
+.company-news-heading { display:flex; justify-content:space-between; align-items:center; }.company-news-heading h2 { display:inline; font-size:1rem; }.news-last-checked { margin-left:12px; color:var(--text-dim); font-size:.72rem; }
+.company-news-list { display:grid; gap:5px; margin-top:8px; }.company-news-row { display:grid; grid-template-columns:130px 68px 58px minmax(250px,1fr); gap:7px; align-items:center; padding:6px; border-top:1px solid var(--border-light); font-size:.76rem; }.company-news-row p { grid-column:4; color:var(--text-muted); }.company-news-row .news-badge { padding:1px 4px; border:1px solid var(--border); border-radius:3px; }
+@media (max-width:900px){.news-monitor-layout{grid-template-columns:1fr}.news-detail{position:static;max-height:none}.company-news-section{min-width:600px}}
+
 .font-selector-label {
   color: var(--text-muted);
   white-space: nowrap;

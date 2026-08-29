@@ -8,6 +8,8 @@ import {
     transformFinancialRows,
     type ViewerFinancialRow,
 } from "./financial-transform";
+import type { LatestNewsScanRun, NewsEvent, NewsQuery } from "@/types/news";
+import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 
 // ============================================================
 // 会社情報
@@ -963,6 +965,62 @@ export async function loadPerShareData(
         console.warn("[per_share_data] 取得例外:", err);
         return [];
     }
+}
+
+// ============================================================
+// Qualitative news monitor (Supabase read models only)
+// ============================================================
+
+export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent[]> {
+    const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
+    const offset = Math.max(options.offset ?? 0, 0);
+    const supabase = createSupabaseBrowser();
+    let query = supabase
+        .from("api_latest_news_events")
+        .select("event_id,ticker,company_name,headline,published_at,checked_at,source_type,source_name,source_url,category,direction,importance,importance_rank,earnings_relevance,summary,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,created_at")
+        .range(offset, offset + limit - 1);
+
+    const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
+    if (ticker) query = query.eq("ticker", ticker);
+    if (options.search?.trim()) {
+        const safe = options.search.trim().replace(/[(),.*%]/g, " ").slice(0, 100);
+        query = query.or(`ticker.ilike.%${safe}%,company_name.ilike.%${safe}%,headline.ilike.%${safe}%`);
+    }
+    if (options.since) query = query.gte("published_at", options.since);
+    if (options.direction) query = query.eq("direction", options.direction);
+    if (options.importance) query = query.eq("importance", options.importance);
+    if (options.category) query = query.eq("category", options.category);
+    if (options.earningsRelevance) query = query.eq("earnings_relevance", options.earningsRelevance);
+
+    if (options.sort === "importance") {
+        query = query.order("importance_rank", { ascending: true }).order("published_at", { ascending: false });
+    } else if (options.sort === "newest") {
+        query = query.order("created_at", { ascending: false });
+    } else {
+        query = query.order("published_at", { ascending: false });
+    }
+    const { data, error } = await query;
+    if (error) {
+        if (error.code === "PGRST200" || error.message?.includes("not find")) return [];
+        throw new Error(`ニュース取得に失敗しました: ${error.message}`);
+    }
+    return (data ?? []) as NewsEvent[];
+}
+
+export function loadCompanyNews(ticker: string, limit = 15): Promise<NewsEvent[]> {
+    return loadNewsEvents({ ticker, limit, sort: "published" });
+}
+
+export async function loadLatestNewsScan(ticker: string): Promise<LatestNewsScanRun | null> {
+    const normalized = normalizeNewsTicker(ticker);
+    if (!normalized) return null;
+    const { data, error } = await createSupabaseBrowser()
+        .from("api_latest_news_scan_runs")
+        .select("scan_run_id,ticker,checked_at,status,items_found,sources_checked_count")
+        .eq("ticker", normalized)
+        .maybeSingle();
+    if (error) return null;
+    return data as LatestNewsScanRun | null;
 }
 
 /** Load non-unit adjustment factors used after a per-share disclosure. */
