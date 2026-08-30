@@ -22,6 +22,7 @@ const row = (overrides: Partial<PerShareRecord> = {}): PerShareRecord => ({
     dividend_annual: null,
     payout_ratio: null,
     forecast_eps: null,
+    forecast_eps_basis_factor: 1,
     initial_forecast_eps: null,
     forecast_dividend_annual: null,
     forecast_payout_ratio: null,
