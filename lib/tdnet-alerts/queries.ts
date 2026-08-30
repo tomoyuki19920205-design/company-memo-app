@@ -1,5 +1,7 @@
 import { SupabaseClient } from "@supabase/supabase-js";
 import type { TdnetEvent, TdnetEventComment, EnrichedEvent } from "./types";
+import { isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
+import { applyNotificationTitleExclusions, isNotificationEventVisible } from "./notification-policy";
 
 // ============================================================
 // 一覧取得
@@ -43,6 +45,10 @@ export async function fetchEvents(
     query = query.eq("status", "active");
   }
 
+  // Notification policy is applied server-side before limit/search/date
+  // pagination. Raw disclosures and canonical financial data are untouched.
+  query = applyNotificationTitleExclusions(query);
+
   if (opts.discordOnly) {
     query = query.eq("notify_to_discord", true);
   }
@@ -59,10 +65,8 @@ export async function fetchEvents(
       // 副作用の少ない4条件のみ。見込み・補足説明は除外しない。
       query = query
         .in("event_type", ["earnings", "earnings_material", "company_ir_material", "company_ir_video"])
-        .not("headline", "ilike", "%一部訂正%")       // 1. 「一部訂正」を含む
         .not("headline", "ilike", "%定時株主総会%")    // 2. 「定時株主総会」を含む
-        .not("headline", "ilike", "%継続開催%")        // 3. 「継続開催」を含む
-        .not("headline", "ilike", "%決算短信%訂正%"); // 4. 「決算短信」＋「訂正」を含む
+        .not("headline", "ilike", "%継続開催%");       // 3. 「継続開催」を含む
     } else if (opts.eventType === "management_strategy") {
       query = query.eq("event_type", "management_strategy");
     } else {
@@ -83,13 +87,6 @@ export async function fetchEvents(
       query = query.or(`company_name.ilike.%${s}%,headline.ilike.%${s}%`);
     }
   }
-
-  // 全タブ共通除外: ノイズ・訂正系開示を表示しない（DBからは削除しない）
-  query = query
-    .not("headline", "ilike", "%訂正・数値データ訂正%")  // 既存
-    .not("headline", "ilike", "%一部訂正%")              // 新規
-    .not("headline", "ilike", "%一部変更%")              // 新規
-    .not("headline", "ilike", "%再訂正%");               // 新規
 
   // 日付フィルタ (JST日付 → UTC範囲変換)
   const _jstDateToUtcRange = (dateStr: string): { gte: string; lt: string } => {
@@ -151,7 +148,11 @@ export async function fetchEvents(
   }
 
   // 既読情報を一括取得
-  const eventIds = events.map((e: any) => e.id);
+  // Defense in depth for cached responses or any PostgREST behavior change.
+  const visibleEvents = events.filter((event: any) => isNotificationEventVisible(event));
+  if (visibleEvents.length === 0) return [];
+
+  const eventIds = visibleEvents.map((e: any) => e.id);
   const { data: reads } = await supabase
     .from("tdnet_event_reads")
     .select("event_id")
@@ -181,7 +182,7 @@ export async function fetchEvents(
   });
 
   // Enriched events を作成
-  let enriched: EnrichedEvent[] = events.map((e: any) => {
+  let enriched: EnrichedEvent[] = visibleEvents.map((e: any) => {
     // raw_payload の復元 (一覧取得の軽量化対応)
     const reconstructedPayload: Record<string, unknown> = {};
     
@@ -205,6 +206,13 @@ export async function fetchEvents(
       is_starred: starSet.has(e.id),
       comments_count: commentCountMap.get(e.id) || 0,
     };
+  });
+
+  // Reachability is verified upstream. The Viewer performs a cheap, local
+  // defense using the persisted flag and strict URL construction rules.
+  enriched = enriched.filter((event) => {
+    if (!isPdfOnlyMaterialEvent(event.event_type) && !isCompanyIrEvent(event.event_type)) return true;
+    return isLinkableMaterialEvent(event);
   });
 
   // フィルタ

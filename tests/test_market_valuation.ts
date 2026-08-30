@@ -36,6 +36,7 @@ const perShare: PerShareRecord = {
     dividend_annual: null,
     payout_ratio: null,
     forecast_eps: 1,
+    forecast_eps_basis_factor: 1,
     initial_forecast_eps: null,
     forecast_dividend_annual: null,
     forecast_payout_ratio: null,
@@ -172,6 +173,103 @@ test("same-day action is not applied twice to a same-day disclosure", () => {
 
     assert.equal(valuation.eps_used, 50);
     assert.equal(valuation.dividend_used, 10);
+});
+
+
+test("future split FEPS is normalized to the pre-effective-date price basis", () => {
+    const valuation = calculateValuation(
+        { ...market(null), ticker: "8084", date: "2026-08-21", close: 4805 },
+        [{
+            ...perShare,
+            ticker: "8084",
+            period: "2027-03-31",
+            disclosed_date: "2026-07-31",
+            forecast_eps: 139.3,
+            forecast_eps_basis_factor: 2,
+        }],
+        [{ date: "2026-10-01", adj_factor: 0.5 }],
+    );
+
+    assert.equal(valuation.raw_forecast_eps, 139.3);
+    assert.equal(valuation.eps_used, 278.6);
+    assert.equal(valuation.split_factor_applied, 2);
+    assert.equal(valuation.per, 17.25);
+});
+
+
+test("future split factor is unwound on its effective date", () => {
+    const valuation = calculateValuation(
+        { ...market(null), ticker: "8084", date: "2026-10-01", close: 2402.5 },
+        [{
+            ...perShare,
+            ticker: "8084",
+            period: "2027-03-31",
+            disclosed_date: "2026-07-31",
+            forecast_eps: 139.3,
+            forecast_eps_basis_factor: 2,
+        }],
+        [{ date: "2026-10-01", adj_factor: 0.5 }],
+    );
+
+    assert.equal(valuation.eps_used, 139.3);
+    assert.equal(valuation.split_factor_applied, 1);
+    assert.equal(valuation.per, 17.25);
+});
+
+
+test("6264 already-effective split is not adjusted twice", () => {
+    const valuation = calculateValuation(
+        { ...market(null), ticker: "6264", date: "2026-03-30", close: 1511 },
+        [{
+            ...perShare,
+            ticker: "6264",
+            period: "2026-08-31",
+            disclosed_date: "2025-12-26",
+            forecast_eps: 134.26,
+            forecast_eps_basis_factor: 1,
+        }],
+        [{ date: "2026-03-30", adj_factor: 0.5 }],
+    );
+
+    assert.equal(valuation.eps_used, 67.13);
+    assert.equal(valuation.split_factor_applied, 0.5);
+    assert.equal(valuation.per, 22.51);
+});
+
+
+test("multiple effective splits unwind the inferred basis factor as a product", () => {
+    const row = {
+        ...perShare,
+        disclosed_date: "2026-01-01",
+        forecast_eps: 25,
+        forecast_eps_basis_factor: 4,
+    };
+    const actions = [
+        { date: "2026-04-01", adj_factor: 0.5 },
+        { date: "2026-07-01", adj_factor: 0.5 },
+    ];
+
+    assert.equal(calculateValuation(
+        { ...market(null), date: "2026-03-01", close: 1000 }, [row], actions,
+    ).eps_used, 100);
+    assert.equal(calculateValuation(
+        { ...market(null), date: "2026-05-01", close: 500 }, [row], actions,
+    ).eps_used, 50);
+    assert.equal(calculateValuation(
+        { ...market(null), date: "2026-07-01", close: 250 }, [row], actions,
+    ).eps_used, 25);
+});
+
+
+test("null, zero, and negative forecast EPS still produce no PER", () => {
+    for (const forecast_eps of [null, 0, -1]) {
+        const valuation = calculateValuation(
+            market(null),
+            [{ ...perShare, forecast_eps, forecast_eps_basis_factor: 2 }],
+        );
+        assert.equal(valuation.eps_used, null);
+        assert.equal(valuation.per, null);
+    }
 });
 
 

@@ -15,6 +15,42 @@ export function isCompanyIrEvent(eventType: string): boolean {
   );
 }
 
+type LinkableMaterialEvent = Pick<TdnetEvent, "event_type" | "source_url" | "pdf_url" | "raw_payload">;
+
+function parsedPayload(event: Pick<TdnetEvent, "raw_payload">): Record<string, unknown> {
+  if (typeof event.raw_payload !== "string") return event.raw_payload ?? {};
+  try { return JSON.parse(event.raw_payload) as Record<string, unknown>; }
+  catch { return {}; }
+}
+
+export function getValidatedMaterialUrl(event: LinkableMaterialEvent): string {
+  if (!isPdfOnlyMaterialEvent(event.event_type) && !isCompanyIrEvent(event.event_type)) return "";
+  const raw = parsedPayload(event);
+  const extracted = raw.extracted && typeof raw.extracted === "object"
+    ? raw.extracted as Record<string, unknown>
+    : {};
+  if (extracted.url_validated === false) return "";
+
+  const candidate = String(event.pdf_url || event.source_url || "").trim();
+  if (!candidate) return "";
+  try {
+    const url = new URL(candidate);
+    if (!(["http:", "https:"].includes(url.protocol))) return "";
+    if (["localhost", "127.0.0.1", "::1"].includes(url.hostname.toLowerCase())) return "";
+    if (event.event_type === "company_ir_video") return url.toString();
+    const decoded = decodeURIComponent(`${url.pathname}${url.search}`).toLowerCase();
+    const verifiedOfficialPage = extracted.url_validated === true && extracted.url_kind === "official_page";
+    if (!/\.pdf(?:$|[?&#])/.test(decoded) && !verifiedOfficialPage) return "";
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
+export function isLinkableMaterialEvent(event: LinkableMaterialEvent): boolean {
+  return Boolean(getValidatedMaterialUrl(event));
+}
+
 type MaterialLabelEvent = Pick<TdnetEvent, "event_type" | "display_summary" | "raw_payload">;
 
 export function getPdfOnlyMaterialLabel(event: MaterialLabelEvent): string {

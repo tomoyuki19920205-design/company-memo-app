@@ -11,10 +11,14 @@ import {
   formatCompactEarningsCardLine,
   getCompactEarningsCardParts,
 } from "@/lib/tdnet-alerts/card-summary-presentation";
+import { getValidatedMaterialUrl } from "@/lib/tdnet-alerts/material-alerts";
+import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
+import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
+import TopNavigation from "@/components/TopNavigation";
 
 type AlertsCacheEntry = {
   timestamp: number;
@@ -310,9 +314,9 @@ const formatCardBody = (event: EnrichedEvent): {
     }
 
   } else if (event.event_type === "dividend") {
-    const typeLabel = event.event_subtype === "increase" ? "💰 増配"
-      : event.event_subtype === "decrease" ? "📉 減配"
-      : "💰 配当修正";
+    const policy = getDividendPolicyDisplay(event);
+    const typeEmoji = event.event_subtype === "decrease" ? "📉" : "💰";
+    const typeLabel = `${typeEmoji} ${getDividendCompositeBodyLabel(event)}`;
     const prev = ext.previous_dividend_per_share;
     const rev  = ext.revised_dividend_per_share;
     let pctStr = "";
@@ -332,6 +336,7 @@ const formatCardBody = (event: EnrichedEvent): {
         lines.push(`配当: ${fmtDiv(rv)}`);
       }
     }
+    if (policy.summary && policy.summary !== policy.label) lines.push(policy.summary);
     const period = ext.fiscal_period;
     if (period) lines.push(String(period));
 
@@ -613,8 +618,8 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
   } else if (event.event_type === "dividend") {
-    if (event.event_subtype === "increase") typeLabel = "増配";
-    else typeLabel = "配当";
+    const policy = getDividendPolicyDisplay(event);
+    typeLabel = getDividendCompositeLabel(event);
     
     const prev = ext.previous_dividend_per_share;
     const rev  = ext.revised_dividend_per_share;
@@ -625,6 +630,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
        divStr = `${fmtDiv(rev)}`;
     }
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${divStr}`.trim();
+    if (policy.summary && policy.summary !== policy.label) line2 = policy.summary;
   } else if (isEdinetOrderEvent(event.event_type)) {
     typeLabel = "受注/有報";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.quarter || ext.fiscal_year || ""}`.trim();
@@ -896,6 +902,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   // Realtime 接続
   const { status: connectionStatus } = useRealtimeAlerts({
     onNewEvent: (newEvent: TdnetEvent) => {
+      if (!isNotificationEventVisible(newEvent)) return;
       setEvents((prev) => {
         if (prev.some((e) => e.id === newEvent.id)) return prev;
         const enriched: EnrichedEvent = {
@@ -1199,10 +1206,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       {/* Header */}
       <header className="alerts-header">
         <div className="alerts-header-left">
-          <a href="/" className="site-link">
-            🏢 Company Viewer
-          </a>
-          <h1 className="alerts-header-title">TDNET Alerts</h1>
+          <TopNavigation active="company" />
           <span className="stat-badge unread">未読 {unreadCount}</span>
           <span className="stat-badge total">表示件数 {events.length}件</span>
         </div>
@@ -1394,7 +1398,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const isSelected = selectedId === event.id;
 
               if (isCompanyIrEvent(event.event_type)) {
-                const directUrl = event.source_url || event.pdf_url || "";
+                const directUrl = getValidatedMaterialUrl(event);
                 return (
                   <div
                     key={event.id}
@@ -1424,6 +1428,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               if (isPdfOnlyMaterialEvent(event.event_type)) {
                 const materialLabel = getPdfOnlyMaterialLabel(event);
+                const materialUrl = getValidatedMaterialUrl(event);
                 return (
                   <div
                     key={event.id}
@@ -1434,9 +1439,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
                         {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} {materialLabel}
                       </span>
-                      {event.pdf_url && (
+                      {materialUrl && (
                         <a
-                          href={event.pdf_url}
+                          href={materialUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="action-btn pdf-link"
@@ -1496,7 +1501,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       {formatTime(event.disclosed_at || event.detected_at)}
                     </span>
                     <span className={`alert-badge ${badge.category}`}>
-                      {badge.emoji} {subtypeLabel || badge.label}
+                      {badge.emoji} {event.event_type === "dividend" ? getDividendCompositeLabel(event) : (subtypeLabel || badge.label)}
                     </span>
                     {event.event_type === "edinet_order_partial" && (
                       <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>

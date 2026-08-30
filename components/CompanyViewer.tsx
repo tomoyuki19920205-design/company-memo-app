@@ -14,6 +14,7 @@ import EdinetOrderTable from "@/components/EdinetOrderTable";
 import ValuationCard from "@/components/ValuationCard";
 import PerShareTable from "@/components/PerShareTable";
 import { normalizePerShareRowsForDisplay } from "@/lib/per-share-adjustment";
+import CompanyNewsSection from "@/components/CompanyNewsSection";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
     saveGridMemo,
@@ -58,6 +59,8 @@ import {
     loadCorporateActions,
     calculateValuation,
     loadEdinetOrders,
+    loadCompanyNews,
+    loadLatestNewsScan,
     type CompanyInfo,
 } from "@/lib/viewer-api";
 import type { EdinetOrderRecord } from "@/types/edinet-order";
@@ -78,6 +81,7 @@ import type { SegmentCellOverride, SegmentOverrideSaveRequest } from "@/types/se
 import type { OrderKpiItem } from "@/types/order-kpi";
 import type { MarketDataRecord, PerShareRecord, ValuationMetrics } from "@/types/market-data";
 import type { User } from "@supabase/supabase-js";
+import type { LatestNewsScanRun, NewsEvent } from "@/types/news";
 
 type AppStatus = "idle" | "loading" | "loaded" | "saving" | "saved" | "error";
 type MemoMapType = { [key: string]: GridData };
@@ -168,6 +172,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [orderKpis, setOrderKpis] = useState<OrderKpiItem[]>([]);
     const [rejectedKpis, setRejectedKpis] = useState<OrderKpiItem[]>([]);
     const [edinetOrders, setEdinetOrders] = useState<EdinetOrderRecord[]>([]);
+    const [companyNews, setCompanyNews] = useState<NewsEvent[]>([]);
+    const [newsScan, setNewsScan] = useState<LatestNewsScanRun | null>(null);
+    const [newsLoading, setNewsLoading] = useState(false);
     const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("order");
     // EDINET受注タブ自動切替: ユーザーが手動でタブを選んだかを追跡する
     // useRef でクロージャ内から安全に参照できる
@@ -272,6 +279,17 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
     // 同時閲覧ユーザー
     const { viewers } = useTickerPresence(activeTicker, user?.email, user?.id);
+
+    useEffect(() => {
+        if (!activeTicker || !user) { setCompanyNews([]); setNewsScan(null); return; }
+        let cancelled = false;
+        setNewsLoading(true);
+        Promise.all([loadCompanyNews(activeTicker, 15), loadLatestNewsScan(activeTicker)])
+            .then(([events, scan]) => { if (!cancelled) { setCompanyNews(events); setNewsScan(scan); } })
+            .catch((err) => console.warn("[company news] load failed:", err))
+            .finally(() => { if (!cancelled) setNewsLoading(false); });
+        return () => { cancelled = true; };
+    }, [activeTicker, user]);
 
     useEffect(() => {
         const supabase = createSupabaseBrowser();
@@ -1138,6 +1156,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                 onSegmentManualHeaderEdit={handleSegmentManualHeaderEdit}
                             />
                             <PerShareTable data={perShareData} loading={dataLoading} />
+                            <CompanyNewsSection ticker={activeTicker} rows={companyNews} scan={newsScan} loading={newsLoading} />
                             {/* 受注KPIセクション: ORDER KPI / EDINET受注 切替 */}
                             <div className="order-kpi-section">
                                 <div className="order-kpi-section-header">

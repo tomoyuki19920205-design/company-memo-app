@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import type { TdnetEvent } from "./types";
 import { audioManager } from "./audio";
+import { isNotificationEventVisible } from "./notification-policy";
 import type { RealtimeChannel } from "@supabase/supabase-js";
 
 export type ConnectionStatus = "connecting" | "connected" | "disconnected";
@@ -33,6 +34,7 @@ export function useRealtimeAlerts(opts: UseRealtimeAlertsOptions = {}) {
         },
         (payload) => {
           const newEvent = payload.new as TdnetEvent;
+          if (!isNotificationEventVisible(newEvent)) return;
           onNewEventRef.current?.(newEvent);
           // 音通知
           audioManager.playNotification(newEvent.id);

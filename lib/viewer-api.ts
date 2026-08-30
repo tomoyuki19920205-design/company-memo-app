@@ -8,6 +8,8 @@ import {
     transformFinancialRows,
     type ViewerFinancialRow,
 } from "./financial-transform";
+import type { LatestNewsScanRun, NewsEvent, NewsQuery } from "@/types/news";
+import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 
 // ============================================================
 // 会社情報
@@ -925,6 +927,10 @@ export async function loadPerShareData(
                 row.payout_ratio !== null ? Number(row.payout_ratio) : null,
             forecast_eps:
                 row.forecast_eps !== null ? Number(row.forecast_eps) : null,
+            forecast_eps_basis_factor:
+                row.forecast_eps_basis_factor !== null
+                    ? Number(row.forecast_eps_basis_factor)
+                    : 1,
             initial_forecast_eps:
                 row.initial_forecast_eps !== null
                     ? Number(row.initial_forecast_eps)
@@ -961,6 +967,62 @@ export async function loadPerShareData(
     }
 }
 
+// ============================================================
+// Qualitative news monitor (Supabase read models only)
+// ============================================================
+
+export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent[]> {
+    const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
+    const offset = Math.max(options.offset ?? 0, 0);
+    const supabase = createSupabaseBrowser();
+    let query = supabase
+        .from("api_latest_news_events")
+        .select("event_id,ticker,company_name,headline,published_at,checked_at,source_type,source_name,source_url,category,direction,importance,importance_rank,earnings_relevance,summary,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,created_at")
+        .range(offset, offset + limit - 1);
+
+    const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
+    if (ticker) query = query.eq("ticker", ticker);
+    if (options.search?.trim()) {
+        const safe = options.search.trim().replace(/[(),.*%]/g, " ").slice(0, 100);
+        query = query.or(`ticker.ilike.%${safe}%,company_name.ilike.%${safe}%,headline.ilike.%${safe}%`);
+    }
+    if (options.since) query = query.gte("published_at", options.since);
+    if (options.direction) query = query.eq("direction", options.direction);
+    if (options.importance) query = query.eq("importance", options.importance);
+    if (options.category) query = query.eq("category", options.category);
+    if (options.earningsRelevance) query = query.eq("earnings_relevance", options.earningsRelevance);
+
+    if (options.sort === "importance") {
+        query = query.order("importance_rank", { ascending: true }).order("published_at", { ascending: false });
+    } else if (options.sort === "newest") {
+        query = query.order("created_at", { ascending: false });
+    } else {
+        query = query.order("published_at", { ascending: false });
+    }
+    const { data, error } = await query;
+    if (error) {
+        if (error.code === "PGRST200" || error.message?.includes("not find")) return [];
+        throw new Error(`ニュース取得に失敗しました: ${error.message}`);
+    }
+    return (data ?? []) as NewsEvent[];
+}
+
+export function loadCompanyNews(ticker: string, limit = 15): Promise<NewsEvent[]> {
+    return loadNewsEvents({ ticker, limit, sort: "published" });
+}
+
+export async function loadLatestNewsScan(ticker: string): Promise<LatestNewsScanRun | null> {
+    const normalized = normalizeNewsTicker(ticker);
+    if (!normalized) return null;
+    const { data, error } = await createSupabaseBrowser()
+        .from("api_latest_news_scan_runs")
+        .select("scan_run_id,ticker,checked_at,status,items_found,sources_checked_count")
+        .eq("ticker", normalized)
+        .maybeSingle();
+    if (error) return null;
+    return data as LatestNewsScanRun | null;
+}
+
 /** Load non-unit adjustment factors used after a per-share disclosure. */
 export async function loadCorporateActions(
     ticker: string,
@@ -993,7 +1055,7 @@ export async function loadCorporateActions(
 
 // ============================================================
 // Valuation Metrics — API側で都度計算
-// 予想PER: market_data.close ÷ per_share_data.forecast_eps
+// 予想PER: market_data.close ÷ price-date basisへ正規化したforecast_eps
 // 実績EPSへのフォールバックは行わない（表示意味の統一）
 // ============================================================
 
@@ -1005,8 +1067,8 @@ export async function loadCorporateActions(
  *         実績EPSへのフォールバックは行わない。
  * - PER/配当利回り: 最新年度の最新開示を使用し、古い期初FY予想へ戻らない。
  * - PBR: 最新の非null実績BPS。bps <= 0 なら null。
- * - 株式分割等: 開示日の翌日から株価基準日までの adj_factor を累積し、
- *   raw close と EPS/BPS/DPS の株式基準を揃える。
+ * - 株式分割等: 予想EPSが将来basisを先取りした係数と、開示日の翌日から
+ *   株価基準日までの adj_factor を累積し、raw close と株式基準を揃える。
  * - 時価総額: market_data の値のみを使用 (price-date basisで算出済み)。
  *   shares の corporate-action basis をブラウザでは再現できないため、
  *   market_cap が null の場合に不正確な fallback 計算は行わない。
@@ -1025,6 +1087,9 @@ export function calculateValuation(
         price_date: null,
         eps_used: null,
         eps_basis: null,
+        raw_forecast_eps: null,
+        forecast_eps_basis_factor: null,
+        split_factor_applied: null,
         bps_used: null,
         dividend_used: null,
         dividend_basis: null,
@@ -1075,8 +1140,16 @@ export function calculateValuation(
     // EPS: 最新年度・最新開示の会社予想のみ（実績へのフォールバック禁止）
     let epsUsed: number | null = null;
     let epsBasis: "forecast" | null = null;
+    let epsNormalizationFactor: number | null = null;
     if (primary.forecast_eps !== null && primary.forecast_eps > 0) {
-        epsUsed = primary.forecast_eps * adjustmentFor(primary.disclosed_date);
+        const disclosedBasisFactor =
+            Number.isFinite(primary.forecast_eps_basis_factor) &&
+            primary.forecast_eps_basis_factor > 0
+                ? primary.forecast_eps_basis_factor
+                : 1;
+        epsNormalizationFactor =
+            disclosedBasisFactor * adjustmentFor(primary.disclosed_date);
+        epsUsed = primary.forecast_eps * epsNormalizationFactor;
         epsBasis = "forecast";
     }
     // forecast_eps が null/0以下の場合 → PER = null → UI は "—" 表示
@@ -1133,6 +1206,9 @@ export function calculateValuation(
         price_date: priceDate,
         eps_used: epsUsed,
         eps_basis: epsBasis,
+        raw_forecast_eps: primary.forecast_eps,
+        forecast_eps_basis_factor: primary.forecast_eps_basis_factor,
+        split_factor_applied: epsNormalizationFactor,
         bps_used: bpsUsed,
         dividend_used: dividendUsed,
         dividend_basis: dividendBasis,

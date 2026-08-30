@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getPdfOnlyMaterialLabel, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "./material-alerts.ts";
+import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 
 test("recognizes all viewer-only material types", () => {
   assert.equal(isPdfOnlyMaterialEvent("earnings_material"), true);
@@ -28,4 +28,22 @@ test("falls back to display summary and then a deterministic type label", () => 
   assert.equal(getPdfOnlyMaterialLabel({ event_type: "earnings_material", display_summary: "1Q決算説明資料", raw_payload: {} }), "1Q決算説明資料");
   assert.equal(getPdfOnlyMaterialLabel({ event_type: "monthly_update", display_summary: "", raw_payload: {} }), "月次");
   assert.equal(getPdfOnlyMaterialLabel({ event_type: "management_strategy", display_summary: "", raw_payload: {} }), "中期経営・戦略");
+});
+
+test("keeps only externally linkable material URLs", () => {
+  const valid = {
+    event_type: "earnings_material",
+    source_url: null,
+    pdf_url: "https://www.release.tdnet.info/inbs/140120260825525465.pdf",
+    raw_payload: { extracted: { url_validated: true } },
+  } as any;
+  assert.match(getValidatedMaterialUrl(valid), /^https:\/\//);
+  assert.equal(isLinkableMaterialEvent(valid), true);
+  assert.equal(isLinkableMaterialEvent({ ...valid, pdf_url: null }), false);
+  assert.equal(isLinkableMaterialEvent({ ...valid, pdf_url: "/documents/guessed.pdf" }), false);
+  assert.equal(isLinkableMaterialEvent({ ...valid, pdf_url: "https://example.com/not-found" }), false);
+  assert.equal(isLinkableMaterialEvent({
+    ...valid,
+    raw_payload: { extracted: { url_validated: false } },
+  }), false);
 });
