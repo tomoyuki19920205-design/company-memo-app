@@ -1,4 +1,4 @@
-import type { NewsEvent, NewsQuery } from "@/types/news";
+import type { NewsEvent, NewsQuery, NewsStreamItem, SectorReportStreamItem } from "@/types/news";
 
 const IMPORTANCE_RANK = { high: 0, medium: 1, low: 2 } as const;
 
@@ -31,4 +31,8 @@ export function isSafeSourceUrl(url: string): boolean {
     } catch {
         return false;
     }
+}
+
+export function isSectorReport(row: NewsStreamItem): row is SectorReportStreamItem {
+    return row.report_type === "sector_weekly";
 }

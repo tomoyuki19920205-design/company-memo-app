@@ -8,7 +8,7 @@ import {
     transformFinancialRows,
     type ViewerFinancialRow,
 } from "./financial-transform";
-import type { LatestNewsScanRun, NewsEvent, NewsQuery } from "@/types/news";
+import type { CompanyNewsStreamItem, LatestNewsScanRun, NewsEvent, NewsQuery, NewsStreamItem } from "@/types/news";
 import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 
 // ============================================================
@@ -970,6 +970,65 @@ export async function loadPerShareData(
 // ============================================================
 // Qualitative news monitor (Supabase read models only)
 // ============================================================
+
+function companyEventToStream(row: NewsEvent): CompanyNewsStreamItem {
+    return {
+        ...row,
+        report_type: "company_news",
+        stream_id: row.event_id,
+        title: row.headline,
+        sort_at: row.created_at,
+        sector_code: null,
+        sector_name: null,
+        summary_bullets: null,
+        period_start: null,
+        period_end: null,
+        full_report_md: null,
+        watchlist_companies: null,
+        next_week_watchpoints: null,
+        missed_candidates: null,
+        sources: null,
+    };
+}
+
+export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStreamItem[]> {
+    const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
+    const offset = Math.max(options.offset ?? 0, 0);
+    const supabase = createSupabaseBrowser();
+    let query = supabase
+        .from("api_latest_news_stream")
+        .select("stream_id,report_type,title,sort_at,published_at,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at")
+        .range(offset, offset + limit - 1);
+
+    const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
+    if (ticker) query = query.eq("ticker", ticker);
+    if (options.search?.trim()) {
+        const safe = options.search.trim().replace(/[(),.*%]/g, " ").slice(0, 100);
+        query = query.or(`ticker.ilike.%${safe}%,company_name.ilike.%${safe}%,title.ilike.%${safe}%,sector_name.ilike.%${safe}%`);
+    }
+    if (options.since) query = query.gte("sort_at", options.since);
+    if (options.reportType) query = query.eq("report_type", options.reportType);
+    if (options.direction) query = query.eq("direction", options.direction);
+    if (options.importance) query = query.eq("importance", options.importance);
+    if (options.category) query = query.eq("category", options.category);
+    if (options.earningsRelevance) query = query.eq("earnings_relevance", options.earningsRelevance);
+    if (options.sort === "importance") {
+        query = query.order("importance_rank", { ascending: true }).order("sort_at", { ascending: false });
+    } else if (options.sort === "published") {
+        query = query.order("published_at", { ascending: false });
+    } else {
+        query = query.order("sort_at", { ascending: false });
+    }
+    const { data, error } = await query;
+    if (error) {
+        // Additive deploy safety: company news remains visible if the new view is not live yet.
+        if (error.code === "PGRST200" || error.code === "PGRST205" || error.message?.includes("not find")) {
+            return (await loadNewsEvents(options)).map(companyEventToStream);
+        }
+        throw new Error(`ニュース取得に失敗しました: ${error.message}`);
+    }
+    return (data ?? []) as NewsStreamItem[];
+}
 
 export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent[]> {
     const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
