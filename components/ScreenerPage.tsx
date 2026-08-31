@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ScreenerChartGrid from "@/components/ScreenerChartGrid";
+import TopNavigation from "@/components/TopNavigation";
 import { SCREENER_METRICS, type ScreenerRow } from "@/lib/screener";
 import { CHART_PERIODS, type ChartPeriod, type ChartPricePoint } from "@/lib/screener-chart-data";
 import { chartCardMetricKeys, loadChartPreference, type ChartViewMode } from "@/lib/screener-chart-ui";
@@ -554,8 +555,7 @@ export default function ScreenerPage() {
 
     return <main className="screener-page">
         <header className="screener-titlebar">
-            <div><h1>株式スクリーニング</h1><p>最新nightly snapshot</p></div>
-            <Link href="/" className="screener-nav">Company Viewerへ</Link>
+            <div><TopNavigation active="screening" /><h1>株式スクリーニング</h1><p>最新nightly snapshot</p></div>
         </header>
 
         <div className="screener-workspace">

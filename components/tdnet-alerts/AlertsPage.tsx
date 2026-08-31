@@ -13,6 +13,7 @@ import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/t
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
+import TopNavigation from "@/components/TopNavigation";
 
 type AlertsCacheEntry = {
   timestamp: number;
@@ -1184,10 +1185,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       {/* Header */}
       <header className="alerts-header">
         <div className="alerts-header-left">
-          <a href="/" className="site-link">
-            🏢 Company Viewer
-          </a>
-          <h1 className="alerts-header-title">TDNET Alerts</h1>
+          <TopNavigation active="company" />
           <span className="stat-badge unread">未読 {unreadCount}</span>
           <span className="stat-badge total">表示件数 {events.length}件</span>
         </div>

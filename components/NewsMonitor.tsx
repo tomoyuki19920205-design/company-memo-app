@@ -6,6 +6,7 @@ import SectorReportMarkdown from "@/components/SectorReportMarkdown";
 import { loadCompanyMaster, loadNewsStream } from "@/lib/viewer-api";
 import { isSafeSourceUrl, isSectorReport } from "@/lib/news-filter";
 import type { EarningsRelevance, NewsDirection, NewsQuery, NewsStreamItem } from "@/types/news";
+import TopNavigation from "@/components/TopNavigation";
 
 const LAST_SEEN_KEY = "last_seen_news_timestamp";
 const dateTime = (value: string) => new Intl.DateTimeFormat("ja-JP", { dateStyle: "short", timeStyle: "short", timeZone: "Asia/Tokyo" }).format(new Date(value));
@@ -46,7 +47,7 @@ export default function NewsMonitor() {
     useEffect(() => { loadCompanyMaster().then((items) => setNames(new Map(items.map((item) => [item.ticker, item.company_name])))); const previous = localStorage.getItem(LAST_SEEN_KEY) ?? ""; setLastSeen(previous); localStorage.setItem(LAST_SEEN_KEY, new Date().toISOString()); }, []);
 
     return <main className="news-monitor">
-        <header className="news-monitor-header"><div><Link href="/">← Company Viewer</Link><h1>News Monitor</h1><p>企業ニュースと東証33業種週次レポートを新着順で確認</p></div></header>
+        <header className="news-monitor-header"><div><TopNavigation active="news" /><h1>News Monitor</h1><p>企業ニュースと東証33業種週次レポートを新着順で確認</p></div></header>
         <div className="news-filters">
             <label>期間<select value={period} onChange={(e) => setPeriod(e.target.value as keyof typeof periods)}><option value="today">今日</option><option value="3d">3日</option><option value="7d">7日</option><option value="30d">30日</option><option value="all">全期間</option></select></label>
             <label>銘柄 / 企業 / 業種<input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="7203 / 会社名 / 鉄鋼" /></label>
