@@ -10,6 +10,7 @@ type RecordedCall =
 
 class FakeQuery {
   readonly calls: RecordedCall[] = [];
+  constructor(private readonly rows: unknown[] = []) {}
 
   select() { return this; }
   order() { return this; }
@@ -39,7 +40,7 @@ class FakeQuery {
     onfulfilled?: ((value: { data: unknown[]; error: null }) => TResult1 | PromiseLike<TResult1>) | null,
     onrejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null,
   ) {
-    return Promise.resolve({ data: [], error: null }).then(onfulfilled, onrejected);
+    return Promise.resolve({ data: this.rows, error: null }).then(onfulfilled, onrejected);
   }
 }
 
@@ -102,6 +103,46 @@ test("includes viewer-only earnings materials in the earnings filter", async () 
     query.calls.find((call) => call.method === "in" && call.column === "event_type"),
     { method: "in", column: "event_type", values: ["earnings", "earnings_material", "company_ir_material", "company_ir_video"] },
   );
+});
+
+test("returns a metadata-only material even when text extraction is empty", async () => {
+  const material = {
+    id: "material-1",
+    created_at: "2026-08-31T04:00:00Z",
+    detected_at: "2026-08-31T04:00:00Z",
+    disclosed_at: "2026-08-31T04:00:00Z",
+    ticker: "3928",
+    company_name: "マイネット",
+    market: null,
+    event_type: "earnings_material",
+    event_subtype: "pdf_only",
+    headline: "2026年12月期 第２四半期 決算説明会 エグゼクティブサマリー",
+    source_title: null,
+    source_url: "https://www.release.tdnet.info/inbs/140120260831528661.pdf",
+    pdf_url: "https://www.release.tdnet.info/inbs/140120260831528661.pdf",
+    strength_score: null,
+    priority_rank: 40,
+    primary_metric_name: null,
+    primary_metric_value: null,
+    primary_metric_yoy: null,
+    display_title: "2026年12月期 第２四半期 決算説明会 エグゼクティブサマリー",
+    display_summary: "2Q決算説明会 要約",
+    sort_key: null,
+    dedupe_key: "doc-specific",
+    notify_to_discord: false,
+    discord_sent_at: null,
+    archived_at: null,
+    status: "active",
+    schema_version: 1,
+    raw_payload: { text_extract_status: "empty", extracted: { url_validated: true } },
+  };
+  const supabase = {
+    from: (table: string) => new FakeQuery(table === "tdnet_events" ? [material] : []),
+  };
+  const result = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-08-31" });
+  assert.equal(result.length, 1);
+  assert.equal(result[0].headline, material.headline);
+  assert.equal(result[0].pdf_url, material.pdf_url);
 });
 
 test("filters management strategy independently", async () => {

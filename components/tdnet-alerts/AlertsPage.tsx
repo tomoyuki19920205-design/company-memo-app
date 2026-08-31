@@ -6,7 +6,7 @@ import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-a
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
-import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { getPdfOnlyMaterialCardContent, getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
@@ -1408,8 +1408,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               }
 
               if (isPdfOnlyMaterialEvent(event.event_type)) {
-                const materialLabel = getPdfOnlyMaterialLabel(event);
-                const materialUrl = getValidatedMaterialUrl(event);
+                const material = getPdfOnlyMaterialCardContent(event);
                 return (
                   <div
                     key={event.id}
@@ -1418,11 +1417,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                   >
                     <div className="alert-card-summary-line1" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
                       <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
-                        {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} {materialLabel}
+                        {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} [{material.label}]
                       </span>
-                      {materialUrl && (
+                      {material.url && (
                         <a
-                          href={materialUrl}
+                          href={material.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="action-btn pdf-link"
@@ -1434,6 +1433,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                           📄PDF
                         </a>
                       )}
+                    </div>
+                    <div className="alert-card-summary-line2" title={material.title}>
+                      {material.title}
                     </div>
                   </div>
                 );
