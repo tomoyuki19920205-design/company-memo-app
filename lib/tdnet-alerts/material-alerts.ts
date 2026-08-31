@@ -72,3 +72,21 @@ export function getPdfOnlyMaterialLabel(event: MaterialLabelEvent): string {
   if (event.event_type === "management_strategy") return "中期経営・戦略";
   return "月次";
 }
+
+type MaterialCardEvent = Pick<
+  TdnetEvent,
+  "event_type" | "headline" | "display_summary" | "source_url" | "pdf_url" | "raw_payload"
+>;
+
+/** Keep metadata-only cards useful even when extraction produced no body. */
+export function getPdfOnlyMaterialCardContent(event: MaterialCardEvent): {
+  label: string;
+  title: string;
+  url: string;
+} {
+  return {
+    label: getPdfOnlyMaterialLabel(event),
+    title: String(event.headline || "").trim(),
+    url: getValidatedMaterialUrl(event),
+  };
+}

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
+import { getPdfOnlyMaterialCardContent, getPdfOnlyMaterialLabel, getValidatedMaterialUrl, isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 
 test("recognizes all viewer-only material types", () => {
   assert.equal(isPdfOnlyMaterialEvent("earnings_material"), true);
@@ -46,4 +46,23 @@ test("keeps only externally linkable material URLs", () => {
     ...valid,
     raw_payload: { extracted: { url_validated: false } },
   }), false);
+});
+
+test("metadata-only card keeps the complete title, label, and PDF URL", () => {
+  const event = {
+    event_type: "earnings_material",
+    headline: "2026年12月期 第２四半期 決算説明会 書き起こし要約",
+    display_summary: "2Q決算説明会 書き起こし",
+    source_url: "https://www.release.tdnet.info/inbs/140120260831528656.pdf",
+    pdf_url: "https://www.release.tdnet.info/inbs/140120260831528656.pdf",
+    raw_payload: {
+      text_extract_status: "empty",
+      extracted: { display_label: "2Q決算説明会 書き起こし", url_validated: true },
+    },
+  } as any;
+  assert.deepEqual(getPdfOnlyMaterialCardContent(event), {
+    label: "2Q決算説明会 書き起こし",
+    title: event.headline,
+    url: event.pdf_url,
+  });
 });
