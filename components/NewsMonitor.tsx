@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SectorReportMarkdown from "@/components/SectorReportMarkdown";
 import { loadCompanyMaster, loadNewsStream } from "@/lib/viewer-api";
 import { isNYMarketReport, isSafeSourceUrl, isSectorReport } from "@/lib/news-filter";
+import { DEFAULT_NEWS_SPLIT_RATIO, NEWS_SPLIT_STORAGE_KEY, clampNewsSplitRatio, getNewsSplitBounds, newsSplitRatioFromPointer, parseStoredNewsSplitRatio, resizeNewsSplitWithKeyboard } from "@/lib/news-pane-layout";
 import type { EarningsRelevance, NewsDirection, NewsQuery, NewsStreamItem } from "@/types/news";
 import TopNavigation from "@/components/TopNavigation";
 
@@ -30,6 +31,13 @@ export default function NewsMonitor() {
     const [error, setError] = useState("");
     const [offset, setOffset] = useState(0);
     const [lastSeen, setLastSeen] = useState("");
+    const [splitRatio, setSplitRatio] = useState(DEFAULT_NEWS_SPLIT_RATIO);
+    const [layoutWidth, setLayoutWidth] = useState(0);
+    const [isResizing, setIsResizing] = useState(false);
+    const layoutRef = useRef<HTMLDivElement>(null);
+    const splitterRef = useRef<HTMLDivElement>(null);
+    const activePointerRef = useRef<number | null>(null);
+    const splitRatioRef = useRef(DEFAULT_NEWS_SPLIT_RATIO);
 
     const since = useMemo(() => periods[period] ? new Date(Date.now() - periods[period] * 86400000).toISOString() : undefined, [period]);
     const fetchRows = useCallback(async (append = false) => {
@@ -45,6 +53,65 @@ export default function NewsMonitor() {
 
     useEffect(() => { const timer = setTimeout(() => { void fetchRows(false); }, 200); return () => clearTimeout(timer); }, [search, since, reportType, direction, importance, category, relevance, sort]);
     useEffect(() => { loadCompanyMaster().then((items) => setNames(new Map(items.map((item) => [item.ticker, item.company_name])))); const previous = localStorage.getItem(LAST_SEEN_KEY) ?? ""; setLastSeen(previous); localStorage.setItem(LAST_SEEN_KEY, new Date().toISOString()); }, []);
+    useEffect(() => {
+        let restoredRatio = DEFAULT_NEWS_SPLIT_RATIO;
+        try { restoredRatio = parseStoredNewsSplitRatio(window.localStorage.getItem(NEWS_SPLIT_STORAGE_KEY)); } catch { /* storage can be unavailable */ }
+        splitRatioRef.current = restoredRatio;
+        setSplitRatio(restoredRatio);
+
+        const layout = layoutRef.current;
+        if (!layout) return;
+        const measure = () => setLayoutWidth(layout.getBoundingClientRect().width);
+        measure();
+        const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(measure);
+        observer?.observe(layout);
+        if (!observer) window.addEventListener("resize", measure);
+        return () => {
+            observer?.disconnect();
+            if (!observer) window.removeEventListener("resize", measure);
+            const splitter = splitterRef.current;
+            const pointerId = activePointerRef.current;
+            if (splitter && pointerId !== null && splitter.hasPointerCapture(pointerId)) splitter.releasePointerCapture(pointerId);
+        };
+    }, []);
+
+    const effectiveSplitRatio = layoutWidth > 0 ? clampNewsSplitRatio(splitRatio, layoutWidth) : splitRatio;
+    const splitBounds = getNewsSplitBounds(layoutWidth);
+    const layoutStyle = layoutWidth > 0 ? { "--news-left-width": `${effectiveSplitRatio * splitBounds.availableWidth}px` } as React.CSSProperties : undefined;
+    const saveSplitRatio = useCallback((ratio: number) => {
+        splitRatioRef.current = ratio;
+        setSplitRatio(ratio);
+        try { window.localStorage.setItem(NEWS_SPLIT_STORAGE_KEY, String(ratio)); } catch { /* storage can be unavailable */ }
+    }, []);
+    const updateSplitRatio = (ratio: number) => { splitRatioRef.current = ratio; setSplitRatio(ratio); };
+    const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+        if (!event.isPrimary || event.button !== 0) return;
+        event.preventDefault();
+        activePointerRef.current = event.pointerId;
+        event.currentTarget.setPointerCapture(event.pointerId);
+        setIsResizing(true);
+    };
+    const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+        if (activePointerRef.current !== event.pointerId) return;
+        const layout = layoutRef.current;
+        if (!layout) return;
+        event.preventDefault();
+        const rect = layout.getBoundingClientRect();
+        updateSplitRatio(newsSplitRatioFromPointer(event.clientX, rect.left, rect.width));
+    };
+    const finishPointerResize = (event: React.PointerEvent<HTMLDivElement>) => {
+        if (activePointerRef.current !== event.pointerId) return;
+        activePointerRef.current = null;
+        setIsResizing(false);
+        saveSplitRatio(splitRatioRef.current);
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    };
+    const handleSplitterKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        saveSplitRatio(resizeNewsSplitWithKeyboard(effectiveSplitRatio, event.key, event.shiftKey, layoutWidth));
+    };
+    const resetSplitRatio = () => saveSplitRatio(DEFAULT_NEWS_SPLIT_RATIO);
 
     return <main className="news-monitor">
         <header className="news-monitor-header"><div><TopNavigation active="news" /><h1>News Monitor</h1><p>企業ニュース、東証33業種週次、NY市場モーニングレポートを新着順で確認</p></div></header>
@@ -59,7 +126,7 @@ export default function NewsMonitor() {
             <label>並び順<select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}><option value="newest">Newest</option><option value="importance">Importance</option><option value="published">Published date</option></select></label>
         </div>
         {error && <div className="error-bar">{error}</div>}
-        <div className="news-monitor-layout"><section className="news-feed" aria-live="polite">
+        <div ref={layoutRef} className={`news-monitor-layout${isResizing ? " is-resizing" : ""}`} style={layoutStyle}><section id="news-feed" className="news-feed" aria-live="polite">
             {!loading && rows.length === 0 && <p className="news-empty">条件に一致するニュースはありません</p>}
             {rows.map((row) => {
                 const sector = isSectorReport(row);
@@ -75,7 +142,8 @@ export default function NewsMonitor() {
             {loading && <p className="news-empty">読み込み中...</p>}
             {!loading && rows.length > 0 && rows.length % 50 === 0 && <button className="btn btn-load" onClick={() => void fetchRows(true)}>さらに読み込む</button>}
         </section>
-        <aside className="news-detail">{selected ? <><button className="news-detail-close" onClick={() => setSelected(null)}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
+        <div ref={splitterRef} className={`news-pane-splitter${isResizing ? " is-resizing" : ""}`} role="separator" aria-label="ニュース一覧と詳細の幅を変更" aria-orientation="vertical" aria-controls="news-feed news-detail" aria-valuemin={Math.round(splitBounds.minRatio * 100)} aria-valuemax={Math.round(splitBounds.maxRatio * 100)} aria-valuenow={Math.round(effectiveSplitRatio * 100)} tabIndex={0} data-testid="news-pane-splitter" onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={finishPointerResize} onPointerCancel={finishPointerResize} onKeyDown={handleSplitterKeyDown} onDoubleClick={resetSplitRatio} />
+        <aside id="news-detail" className="news-detail">{selected ? <><button className="news-detail-close" onClick={() => setSelected(null)}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
     </main>;
 }
 
