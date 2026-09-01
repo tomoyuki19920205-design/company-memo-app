@@ -142,6 +142,7 @@ body {
 .sector-report-detail li { margin:4px 0; }
 .sector-markdown { margin-top:6px; padding-top:2px; border-top:1px solid var(--border); }
 .sector-markdown h2 { margin-top:16px; font-size:1.08rem; }.sector-markdown h3 { margin-top:14px; font-size:.96rem; }.sector-markdown h4 { margin-top:12px; color:#bfdbfe; }
+.sector-markdown h4.sector-material-heading--continued { margin-top:calc(1.65rem * 3); }
 .sector-markdown ul,.sector-markdown ol { margin:6px 0 8px 20px; }.sector-markdown p { line-height:1.65; }
 .sector-source-list { list-style:none; margin-left:0!important; }.sector-source-list li { padding:7px 0; border-bottom:1px solid var(--border); }.sector-source-list small { display:block; color:var(--text-dim); margin-top:2px; }
 .news-empty { padding:24px; text-align:center; color:var(--text-dim); }

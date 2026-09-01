@@ -9,29 +9,87 @@ function render(markdown: string) {
     return renderToStaticMarkup(<SectorReportMarkdown markdown={markdown} />);
 }
 
-test("renders the production sector labels as strong without consuming an asterisk", () => {
+test("renders the Japanese reader labels as separate strong paragraphs", () => {
     const markdown = [
-        "## 1. AI需要の利益波及",
+        "### 材料1：AI需要の利益波及",
         "",
-        "**Fact**：対象週の事実。",
+        "**確認できた事実**",
         "",
-        "**Transmission**：日本企業への波及。",
+        "対象週の事実。",
         "",
-        "**Magnitude（Estimate/Hypothesis）**：利益感応度。",
+        "**日本企業への波及**",
         "",
-        "**Pricing-in**：織り込み評価。",
+        "日本企業への波及。",
         "",
-        "**Counterevidence**：反証条件。",
+        "**利益への影響**",
         "",
-        "**Estimate** と **Hypothesis** を分離する。",
+        "利益感応度。",
+        "",
+        "**株価への織り込み**",
+        "",
+        "織り込み評価。",
+        "",
+        "**反対材料・注意点**",
+        "",
+        "反証条件。",
+        "",
+        "**試算**",
+        "",
+        "10〜20億円。",
+        "",
+        "**仮説**",
+        "",
+        "需給変化が続く。",
     ].join("\n");
 
     const html = render(markdown);
-    for (const label of ["Fact", "Transmission", "Magnitude（Estimate/Hypothesis）", "Pricing-in", "Counterevidence", "Estimate", "Hypothesis"]) {
-        assert.match(html, new RegExp(`<strong>${label.replace(/[()]/g, "\\$&")}</strong>`));
+    for (const label of ["確認できた事実", "日本企業への波及", "利益への影響", "株価への織り込み", "反対材料・注意点", "試算", "仮説"]) {
+        assert.match(html, new RegExp(`<p><strong>${label}</strong></p>`));
     }
+    assert.match(html, /<p><strong>確認できた事実<\/strong><\/p>\n<p>対象週の事実。<\/p>/);
     assert.doesNotMatch(html, /\*Fact\*\*/);
-    assert.match(html, /<h3>1\. AI需要の利益波及<\/h3>/);
+    assert.match(html, /<h4 class="sector-material-heading">材料1：AI需要の利益波及<\/h4>/);
+});
+
+test("marks only material 2 and later headings for the three-line visual gap", () => {
+    const html = render([
+        "### 材料1：一つ目",
+        "",
+        "本文。",
+        "",
+        "",
+        "",
+        "### 材料2: 二つ目",
+        "",
+        "本文。",
+        "",
+        "",
+        "",
+        "### 材料3：三つ目",
+    ].join("\n"));
+    assert.match(html, /<h4 class="sector-material-heading">材料1：一つ目<\/h4>/);
+    assert.match(html, /<h4 class="sector-material-heading sector-material-heading--continued">材料2: 二つ目<\/h4>/);
+    assert.match(html, /<h4 class="sector-material-heading sector-material-heading--continued">材料3：三つ目<\/h4>/);
+    assert.equal((html.match(/sector-material-heading--continued/g) ?? []).length, 2);
+    const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+    assert.match(css, /h4\.sector-material-heading--continued\s*\{\s*margin-top:calc\(1\.65rem \* 3\)/);
+});
+
+test("renders a short overseas-company note and multi-market numbers as readable blocks", () => {
+    const html = render([
+        "※Glencore（グレンコア）：スイスに本拠を置く資源会社・資源商社。銅やコバルト市場に関係する。",
+        "",
+        "7月末の輸出価格は次のとおり。",
+        "",
+        "- 中国：1トン486ドル",
+        "- インド・CIS：同515ドル",
+        "- トルコ：同575ドル",
+        "",
+        "中国材の安さが日本企業の採算へ与える意味。",
+    ].join("\n"));
+    assert.match(html, /<p>※Glencore（グレンコア）：/);
+    assert.equal((html.match(/<li>/g) ?? []).length, 3);
+    assert.match(html, /<p>中国材の安さが日本企業の採算へ与える意味。<\/p>/);
 });
 
 test("handles bold at line starts, in list items, beside Japanese text and after headings", () => {
