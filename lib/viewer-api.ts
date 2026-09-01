@@ -988,6 +988,19 @@ function companyEventToStream(row: NewsEvent): CompanyNewsStreamItem {
         next_week_watchpoints: null,
         missed_candidates: null,
         sources: null,
+        report_date_jst: null,
+        market_session_date: null,
+        market_status: null,
+        report_markdown: null,
+        index_moves: null,
+        sector_moves: null,
+        notable_gainers: null,
+        notable_losers: null,
+        top_gainers_20: null,
+        earnings: null,
+        after_hours_earnings: null,
+        major_news: null,
+        commodities: null,
     };
 }
 
@@ -997,7 +1010,7 @@ export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStrea
     const supabase = createSupabaseBrowser();
     let query = supabase
         .from("api_latest_news_stream")
-        .select("stream_id,report_type,title,sort_at,published_at,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at")
+        .select("stream_id,report_type,title,sort_at,published_at,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at,report_date_jst,market_session_date,market_status,report_markdown,index_moves,sector_moves,notable_gainers,notable_losers,top_gainers_20,earnings,after_hours_earnings,major_news,commodities")
         .range(offset, offset + limit - 1);
 
     const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
