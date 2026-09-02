@@ -13,6 +13,7 @@ import {
 } from "@/lib/tdnet-alerts/card-summary-presentation";
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
+import { formatCapitalActionCard } from "@/lib/tdnet-alerts/capital-actions";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -252,7 +253,10 @@ const formatCardBody = (event: EnrichedEvent): {
   let summaryText: string | undefined;
   let compareText: string | undefined;
 
-  if (event.event_type === "forecast") {
+  if (event.event_type === "capital_action") {
+    const capitalBody = formatCapitalActionCard(event);
+    if (capitalBody) lines.push(capitalBody);
+  } else if (event.event_type === "forecast") {
     const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
       : event.event_subtype === "difference" ? "📋 差異開示"
       : event.event_subtype === "downward" ? "🔻 下方修正"

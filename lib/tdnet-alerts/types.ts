@@ -103,6 +103,7 @@ export const EVENT_TYPE_CONFIG: Record<
 > = {
   // 正規化後の6カテゴリ
   buyback: { label: "自社株買い", emoji: "📊", color: "#6366f1" },
+  capital_action: { label: "資本・株式需給", emoji: "🏦", color: "#dc2626" },
   forecast: { label: "業績予想修正", emoji: "📈", color: "#f59e0b" },
   dividend: { label: "配当修正", emoji: "💰", color: "#10b981" },
   earnings: { label: "決算", emoji: "📋", color: "#3b82f6" },
@@ -121,6 +122,7 @@ export const EVENT_TYPE_CONFIG: Record<
 // headline ベースの軽い再判定キーワード (保険用)
 const _HEADLINE_CATEGORY_RULES: [string, string[]][] = [
   ["buyback", ["自己株式", "自社株買", "自己株取得"]],
+  ["capital_action", ["株式の売出し", "立会外分売", "公募増資", "第三者割当増資", "新株式発行"]],
   ["forecast", ["業績予想", "予想修正", "上方修正", "下方修正"]],
   ["dividend", ["配当", "増配", "減配"]],
   ["earnings", ["決算短信", "決算"]],
@@ -131,6 +133,7 @@ const _HEADLINE_CATEGORY_RULES: [string, string[]][] = [
 const _EVENT_TYPE_ALIAS: Record<string, string> = {
   // 正規化後 (小文字)
   buyback: "buyback",
+  capital_action: "capital_action",
   forecast: "forecast",
   dividend: "dividend",
   earnings: "earnings",
@@ -189,4 +192,10 @@ export const EVENT_SUBTYPE_LABELS: Record<string, string> = {
   commemorative_dividend: "記念配当",
   maintain: "据え置き",
   undecided: "",  // サブタイプ未定の場合は親カテゴリラベルを表示
+  announced: "発表",
+  conditions_decided: "更新",
+  implemented: "実施",
+  completed: "終了",
+  corrected: "訂正",
+  cancelled: "中止",
 };
