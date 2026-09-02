@@ -5,8 +5,8 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import SectorReportMarkdown from "../components/SectorReportMarkdown";
 
-function render(markdown: string) {
-    return renderToStaticMarkup(<SectorReportMarkdown markdown={markdown} />);
+function render(markdown: string, reportType: "sector_weekly" | "ny_market_daily" = "sector_weekly") {
+    return renderToStaticMarkup(<SectorReportMarkdown markdown={markdown} reportType={reportType} />);
 }
 
 test("renders the Japanese reader labels as separate strong paragraphs", () => {
@@ -33,9 +33,17 @@ test("renders the Japanese reader labels as separate strong paragraphs", () => {
         "",
         "反証条件。",
         "",
+        "**業績方向**",
+        "",
+        "mixed。",
+        "",
         "**試算**",
         "",
         "10〜20億円。",
+        "",
+        "**推計**",
+        "",
+        "20〜30億円。",
         "",
         "**仮説**",
         "",
@@ -43,15 +51,16 @@ test("renders the Japanese reader labels as separate strong paragraphs", () => {
     ].join("\n");
 
     const html = render(markdown);
-    for (const label of ["確認できた事実", "日本企業への波及", "利益への影響", "株価への織り込み", "反対材料・注意点", "試算", "仮説"]) {
-        assert.match(html, new RegExp(`<p><strong>${label}</strong></p>`));
+    for (const label of ["確認できた事実", "日本企業への波及", "利益への影響", "株価への織り込み", "反対材料・注意点", "業績方向", "試算", "推計", "仮説"]) {
+        assert.match(html, new RegExp(`<p class="sector-material-label"><strong>${label}</strong></p>`));
     }
-    assert.match(html, /<p><strong>確認できた事実<\/strong><\/p>\n<p>対象週の事実。<\/p>/);
+    assert.match(html, /<p class="sector-material-label"><strong>確認できた事実<\/strong><\/p>\n<p>対象週の事実。<\/p>/);
     assert.doesNotMatch(html, /\*Fact\*\*/);
     assert.match(html, /<h4 class="sector-material-heading">材料1：AI需要の利益波及<\/h4>/);
+    assert.match(html, /data-report-type="sector_weekly"/);
 });
 
-test("marks only material 2 and later headings for the three-line visual gap", () => {
+test("marks every material heading including material 1 and multiple digits", () => {
     const html = render([
         "### 材料1：一つ目",
         "",
@@ -59,20 +68,35 @@ test("marks only material 2 and later headings for the three-line visual gap", (
         "",
         "",
         "",
-        "### 材料2: 二つ目",
+        "### 材料12: 十二個目",
         "",
         "本文。",
         "",
         "",
         "",
-        "### 材料3：三つ目",
+        "### 市況：材料ではない見出し",
     ].join("\n"));
     assert.match(html, /<h4 class="sector-material-heading">材料1：一つ目<\/h4>/);
-    assert.match(html, /<h4 class="sector-material-heading sector-material-heading--continued">材料2: 二つ目<\/h4>/);
-    assert.match(html, /<h4 class="sector-material-heading sector-material-heading--continued">材料3：三つ目<\/h4>/);
-    assert.equal((html.match(/sector-material-heading--continued/g) ?? []).length, 2);
+    assert.match(html, /<h4 class="sector-material-heading">材料12: 十二個目<\/h4>/);
+    assert.match(html, /<h4>市況：材料ではない見出し<\/h4>/);
+    assert.equal((html.match(/sector-material-heading/g) ?? []).length, 2);
     const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
-    assert.match(css, /h4\.sector-material-heading--continued\s*\{\s*margin-top:calc\(1\.65rem \* 3\)/);
+    assert.match(css, /\.sector-markdown h4\.sector-material-heading\s*\{\s*margin-block-start:3\.5rem;\s*margin-block-end:1\.125rem;/);
+    assert.match(css, /\.sector-markdown p\.sector-material-label\s*\{\s*margin-block-start:2rem;\s*margin-block-end:\.625rem;/);
+    assert.doesNotMatch(css, /sector-material-heading--continued/);
+});
+
+test("does not apply sector spacing markers to other report markdown", () => {
+    const markdown = [
+        "### 材料12：同じ文字列を含む別レポート",
+        "",
+        "**確認できた事実**",
+    ].join("\n");
+    const html = render(markdown, "ny_market_daily");
+
+    assert.match(html, /data-report-type="ny_market_daily"/);
+    assert.doesNotMatch(html, /sector-material-heading/);
+    assert.doesNotMatch(html, /sector-material-label/);
 });
 
 test("renders a short overseas-company note and multi-market numbers as readable blocks", () => {
@@ -106,6 +130,7 @@ test("handles bold at line starts, in list items, beside Japanese text and after
     ].join("\n"));
 
     assert.match(html, /<p><strong>Fact<\/strong><\/p>/);
+    assert.doesNotMatch(html, /sector-material-label[^>]*><strong>Fact/);
     assert.match(html, /<li><strong>Fact<\/strong> 内容<\/li>/);
     assert.match(html, /<li><strong>Transmission<\/strong> 内容<\/li>/);
     assert.match(html, /<h3>見出し<\/h3>/);
@@ -150,8 +175,8 @@ test("does not turn raw HTML, scripts or unsafe links into executable markup", (
 test("keeps company news separate and passes sector full_report_md directly to the renderer", () => {
     const source = readFileSync(new URL("../components/NewsMonitor.tsx", import.meta.url), "utf8");
 
-    assert.match(source, /<SectorReportMarkdown markdown=\{row\.full_report_md\} \/>/);
-    assert.match(source, /<SectorReportMarkdown markdown=\{row\.report_markdown\} \/>/);
+    assert.match(source, /<SectorReportMarkdown markdown=\{row\.full_report_md\} reportType="sector_weekly" \/>/);
+    assert.match(source, /<SectorReportMarkdown markdown=\{row\.report_markdown\} reportType="ny_market_daily" \/>/);
     assert.match(source, /function CompanyDetail[\s\S]*?<h3>Summary<\/h3><p>\{row\.summary\}<\/p>/);
     assert.equal((source.match(/<SectorReportMarkdown/g) ?? []).length, 2);
     assert.doesNotMatch(readFileSync(new URL("../components/SectorReportMarkdown.tsx", import.meta.url), "utf8"), /dangerouslySetInnerHTML/);
