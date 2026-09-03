@@ -161,6 +161,32 @@ test("preserves standard markdown constructs, links, citations, line breaks and 
     assert.match(html, /<br\/?>(?:\n)?next line/);
 });
 
+test("keeps every notable-gainer paragraph inside one ordered-list item", () => {
+    const blocks = Array.from({ length: 10 }, (_, offset) => {
+        const rank = offset + 1;
+        return [
+            `${rank}. **会社${rank}（T${rank}）　+${rank}.00%** — 事業内容${rank}。`,
+            "",
+            `    **上昇理由・材料：** 材料${rank}。`,
+            "",
+            `    **材料確認結果：** 確認済み（[IR](https://example.com/${rank})）。`,
+        ].join("\n");
+    }).join("\n\n");
+
+    const html = render(`## 話題の値上がり10社\n\n${blocks}`, "ny_market_daily");
+    assert.equal((html.match(/<ol>/g) ?? []).length, 1);
+    assert.equal((html.match(/<li>/g) ?? []).length, 10);
+    assert.equal((html.match(/<li>\s*<p>/g) ?? []).length, 10);
+    assert.equal((html.match(/<strong>上昇理由・材料：<\/strong>/g) ?? []).length, 10);
+    assert.equal((html.match(/<strong>材料確認結果：<\/strong>/g) ?? []).length, 10);
+    const items = [...html.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((match) => match[0]);
+    for (const rank of [1, 9, 10]) {
+        const item = items.find((value) => value.includes(`会社${rank}（T${rank}）`));
+        assert.ok(item);
+        assert.equal((item.match(/<p>/g) ?? []).length, 3);
+    }
+});
+
 test("does not turn raw HTML, scripts or unsafe links into executable markup", () => {
     const html = render("<script>alert(1)</script>\n<img src=x onerror=alert(2)>\n[unsafe](javascript:alert(3))");
 
