@@ -3431,6 +3431,21 @@ function FinancialsTable({
                                         <span className="pl-summary-value">{formatMillions(op)}</span>
                                     </span>
                                 )}
+                                {([
+                                    ["経常利益", latestForecast.ordinary_profit],
+                                    ["親会社株主帰属純利益", latestForecast.net_income],
+                                ] as const).map(([label, value]) => value !== null && (
+                                    <span className="pl-summary-item" key={label}>
+                                        <span className="pl-summary-label">{label}</span>
+                                        <span className="pl-summary-value">{formatMillions(value)}</span>
+                                    </span>
+                                ))}
+                                {latestForecast.eps !== null && (
+                                    <span className="pl-summary-item">
+                                        <span className="pl-summary-label">EPS</span>
+                                        <span className="pl-summary-value">{latestForecast.eps.toFixed(2)}円</span>
+                                    </span>
+                                )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">{showsProfitBeforeTax ? profitDisplay.marginLabel : "営利率"}</span>
