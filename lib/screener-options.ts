@@ -9,4 +9,3 @@ export async function collectAllPages<T>(
         if (chunk.length < pageSize) return rows;
     }
 }
-

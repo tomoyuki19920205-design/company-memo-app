@@ -7,6 +7,10 @@ import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
 import { audioManager } from "@/lib/tdnet-alerts/audio";
 import { sortAlertsByDisclosureTimeAndTicker } from "@/lib/tdnet-alerts/sort";
 import { getPdfOnlyMaterialCardContent, getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import {
+  formatCompactEarningsCardLine,
+  getCompactEarningsCardParts,
+} from "@/lib/tdnet-alerts/card-summary-presentation";
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard } from "@/lib/tdnet-alerts/capital-actions";
@@ -14,6 +18,7 @@ import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/t
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
+import TopNavigation from "@/components/TopNavigation";
 
 type AlertsCacheEntry = {
   timestamp: number;
@@ -23,14 +28,13 @@ const ALERTS_CACHE_TTL_MS = 30_000;
 const LEFT_PANE_DEFAULT_WIDTH = 400;
 const LEFT_PANE_MIN_WIDTH = 0;
 
-const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+%|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+%|赤字継続|黒転|赤転)/gi;
+const YOY_REGEX = /((?:YOY|前年比|sales_yoy|operating_profit_yoy)\s*:?\s*[+-]?[\d.]+[%％]|(?:営業利益|経常利益|純利益)\s*[+-]?[\d.]+[%％]|赤字継続|黒転|赤転)/gi;
 
 const getYoyClass = (text: string) => {
   // 営業利益ターンアラウンドラベルの色分け
-  if (text === "赤字継続") return "yoy-negative";
-  if (text === "黒転")   return "yoy-positive";
-  if (text === "赤転")   return "yoy-negative";
-  const match = text.match(/([+-]?[\d.]+)%/);
+  if (["赤字継続", "赤字転落", "赤継", "赤転", "赤縮", "赤拡"].includes(text)) return "yoy-negative";
+  if (["黒字転換", "黒字継続", "黒転", "黒継"].includes(text)) return "yoy-positive";
+  const match = text.match(/([+-]?[\d.]+)[%％]/);
   if (match) {
     const val = parseFloat(match[1]);
     if (val < 0) return "yoy-negative";
@@ -39,6 +43,23 @@ const getYoyClass = (text: string) => {
   }
   return "yoy-negative"; // fallback
 };
+
+const renderCompactEarningsCardLine = (text: string) => (
+  <>
+    {getCompactEarningsCardParts(text).map((part, index) => (
+      <span className="alert-card-financial-summary-part" key={`${part.value}:${index}`}>
+        {part.kind === "metric" ? (
+          <>
+            <span>{part.label}</span>{" "}
+            <span className={part.value === "-" ? undefined : getYoyClass(part.value)}>{part.value}</span>
+          </>
+        ) : (
+          part.value
+        )}
+      </span>
+    ))}
+  </>
+);
 
 const processLines = (str: string) => str.split("\n").map((line, j, arr) => (
   <React.Fragment key={j}>
@@ -1188,10 +1209,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       {/* Header */}
       <header className="alerts-header">
         <div className="alerts-header-left">
-          <a href="/" className="site-link">
-            🏢 Company Viewer
-          </a>
-          <h1 className="alerts-header-title">TDNET Alerts</h1>
+          <TopNavigation active="company" />
           <span className="stat-badge unread">未読 {unreadCount}</span>
           <span className="stat-badge total">表示件数 {events.length}件</span>
         </div>
@@ -1447,6 +1465,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
               if (!isSelected) {
                 const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
+                const displayLine2 = event.event_type === "earnings" ? formatCompactEarningsCardLine(line2) : line2;
+                const displayLine3 = event.event_type === "earnings" && line3 ? formatCompactEarningsCardLine(line3) : line3;
                 return (
                   <div
                     key={event.id}
@@ -1456,14 +1476,18 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     <div className="alert-card-summary-line1">
                        {renderHighlightedCardBody(line1, event)}
                     </div>
-                    {line2 && (
-                       <div className="alert-card-summary-line2">
-                          {renderHighlightedCardBody(line2, event)}
+                    {displayLine2 && (
+                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""}`}>
+                          {event.event_type === "earnings"
+                            ? renderCompactEarningsCardLine(displayLine2)
+                            : renderHighlightedCardBody(displayLine2, event)}
                        </div>
                     )}
-                    {line3 && (
-                       <div className="alert-card-summary-line3" style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
-                          {renderHighlightedCardBody(line3, event)}
+                    {displayLine3 && (
+                       <div className={`alert-card-summary-line3 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""}`} style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
+                          {event.event_type === "earnings"
+                            ? renderCompactEarningsCardLine(displayLine3)
+                            : renderHighlightedCardBody(displayLine3, event)}
                        </div>
                     )}
                   </div>

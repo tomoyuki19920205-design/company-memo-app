@@ -13,6 +13,7 @@ import OrderKpiTable from "@/components/OrderKpiTable";
 import EdinetOrderTable from "@/components/EdinetOrderTable";
 import ValuationCard from "@/components/ValuationCard";
 import PerShareTable from "@/components/PerShareTable";
+import { normalizePerShareRowsForDisplay } from "@/lib/per-share-adjustment";
 import CompanyNewsSection from "@/components/CompanyNewsSection";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
@@ -374,12 +375,17 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             const freshPerShare = perShareResult.status === "fulfilled" ? perShareResult.value : [];
             const freshActions = actionResult.status === "fulfilled" ? actionResult.value : [];
             setMarketData(freshMarket);
-            setPerShareData(freshPerShare);
+            const displayPerShare = normalizePerShareRowsForDisplay(
+                freshPerShare,
+                freshActions,
+                freshMarket?.date ?? null,
+            );
+            setPerShareData(displayPerShare);
             setValuation(calculateValuation(freshMarket, freshPerShare, freshActions));
             tickerCacheRef.current.set(ticker, {
                 ...cached,
                 marketData: freshMarket,
-                perShareData: freshPerShare,
+                perShareData: displayPerShare,
             });
             setStatus("loaded");
             setDataLoading(false);
@@ -476,7 +482,12 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             const psData = perShareResult.status === "fulfilled" ? perShareResult.value : [];
             const actionData = actionResult.status === "fulfilled" ? actionResult.value : [];
             setMarketData(mktData);
-            setPerShareData(psData);
+            const displayPerShare = normalizePerShareRowsForDisplay(
+                psData,
+                actionData,
+                mktData?.date ?? null,
+            );
+            setPerShareData(displayPerShare);
             setValuation(calculateValuation(mktData, psData, actionData));
 
             const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
@@ -506,7 +517,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 forecasts: newForecasts,
                 monthly: newMonthly,
                 marketData: mktData,
-                perShareData: psData,
+                perShareData: displayPerShare,
                 edinetOrders: newEdinetOrders,
             });
 

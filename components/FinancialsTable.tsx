@@ -1099,6 +1099,28 @@ function FinancialsTable({
         fbResizing.current = true;
         fbResizeStartY.current = e.clientY;
         fbResizeStartH.current = formulaBarHeight;
+
+        // When the formula bar starts above the viewport, browser scroll anchoring
+        // otherwise offsets every height change and leaves the visible resize handle
+        // stationary. Disable anchoring only for the duration of this drag, including
+        // both the document scroller and any overflow ancestor used by embedded layouts.
+        const anchorTargets = new Set<HTMLElement>([document.documentElement, document.body]);
+        let ancestor = e.currentTarget.parentElement;
+        while (ancestor) {
+            const { overflowY } = window.getComputedStyle(ancestor);
+            if (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") {
+                anchorTargets.add(ancestor);
+            }
+            ancestor = ancestor.parentElement;
+        }
+        const previousOverflowAnchor = Array.from(anchorTargets, (element) => ({
+            element,
+            value: element.style.overflowAnchor,
+        }));
+        previousOverflowAnchor.forEach(({ element }) => {
+            element.style.overflowAnchor = "none";
+        });
+
         const onMove = (ev: MouseEvent) => {
             if (!fbResizing.current) return;
             const diff = ev.clientY - fbResizeStartY.current;
@@ -1111,6 +1133,10 @@ function FinancialsTable({
             document.removeEventListener("mouseup", onUp);
             document.body.style.cursor = "";
             document.body.style.userSelect = "";
+            previousOverflowAnchor.forEach(({ element, value }) => {
+                if (value) element.style.overflowAnchor = value;
+                else element.style.removeProperty("overflow-anchor");
+            });
         };
         document.addEventListener("mousemove", onMove);
         document.addEventListener("mouseup", onUp);
@@ -3057,38 +3083,40 @@ function FinancialsTable({
             <h2 className="section-title">📊 PL（四半期業績推移） — 過去5年</h2>
 
             {/* ============ フォーミュラバー ============ */}
-            <div className="formula-bar">
-                <div className="formula-bar-label">
-                    {activeCellLabel ? (
-                        <span className="cell-ref">{activeCellLabel}</span>
-                    ) : (
-                        <span className="cell-ref cell-ref-empty">セル未選択</span>
-                    )}
+            <div className="formula-bar-sticky">
+                <div className="formula-bar">
+                    <div className="formula-bar-label">
+                        {activeCellLabel ? (
+                            <span className="cell-ref">{activeCellLabel}</span>
+                        ) : (
+                            <span className="cell-ref cell-ref-empty">セル未選択</span>
+                        )}
+                    </div>
+                    <textarea
+                        ref={formulaBarRef}
+                        className="formula-bar-input"
+                        placeholder="セルを選択してください"
+                        value={getFormulaBarValue()}
+                        onChange={(e) => handleFormulaBarChange(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                                e.preventDefault();
+                                focusGrid();
+                            }
+                        }}
+                        onBlur={() => {
+                        }}
+                        style={{ height: formulaBarHeight }}
+                        disabled={!!activeSegCell || (!isPlMemoEditableCell(activeCell) && !isFormulaBarManualCell)}
+                    />
                 </div>
-                <textarea
-                    ref={formulaBarRef}
-                    className="formula-bar-input"
-                    placeholder="セルを選択してください"
-                    value={getFormulaBarValue()}
-                    onChange={(e) => handleFormulaBarChange(e.target.value)}
-                    onKeyDown={(e) => {
-                        if (e.key === "Escape") {
-                            e.preventDefault();
-                            focusGrid();
-                        }
-                    }}
-                    onBlur={() => {
-                    }}
-                    style={{ height: formulaBarHeight }}
-                    disabled={!!activeSegCell || (!isPlMemoEditableCell(activeCell) && !isFormulaBarManualCell)}
-                />
-            </div>
-            {/* フォーミュラバー リサイズハンドル */}
-            <div
-                className="formula-bar-resize-handle"
-                onMouseDown={handleFbResizeStart}
-            >
-                <span className="formula-bar-resize-grip">⋯</span>
+                {/* フォーミュラバー リサイズハンドル */}
+                <div
+                    className="formula-bar-resize-handle"
+                    onMouseDown={handleFbResizeStart}
+                >
+                    <span className="formula-bar-resize-grip">⋯</span>
+                </div>
             </div>
 
             {data.length === 0 ? (
