@@ -8,6 +8,9 @@ export interface ViewerFinancialRow {
     gross_profit: number | null;
     operating_profit: number | null;
     profit_before_tax?: number | null;
+    ordinary_profit?: number | null;
+    net_income?: number | null;
+    eps?: number | null;
     source: string | null;
     updated_at: string | null;
 }
@@ -29,9 +32,9 @@ export function transformFinancialRows(rows: ViewerFinancialRow[]): FinancialRec
         gross_profit: row.gross_profit,
         operating_profit: row.operating_profit,
         profit_before_tax: row.profit_before_tax ?? null,
-        ordinary_profit: null,
-        net_income: null,
-        eps: null,
+        ordinary_profit: row.ordinary_profit ?? null,
+        net_income: row.net_income ?? null,
+        eps: row.eps ?? null,
         source: row.source ?? "",
         updated_at: row.updated_at ?? "",
     }));
