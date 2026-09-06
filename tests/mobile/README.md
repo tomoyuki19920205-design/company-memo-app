@@ -11,6 +11,7 @@ Coverage:
 - PL and segment tables, per-share metrics, order KPIs, EDINET orders, monthly, forecast, other KPI tables and screening results: bounded viewport, native overflow ownership and rightmost scroll position.
 - Chromium additionally sends native touch input to each table viewport. WebKit checks layout and scrolling, but is not a physical iPhone Safari gesture test.
 - 1440×900: NEWS and TDNET retain both panes and resizing. 900/901px: breakpoint switching.
+- Delayed viewer authentication: selecting a notification queues the ticker until authentication completes; event-detail tab round trips retain the loaded viewer.
 - Screenshots and failure traces are saved in ignored `test-results/`.
 
 ## DOM audit

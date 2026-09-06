@@ -1643,9 +1643,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         {/* Detail Pane */}
         <div className="alerts-detail-pane">
           <button className="mobile-pane-button" onClick={() => setMobilePane("list")}>← 通知一覧</button>
-          {selectedEvent ? (
-            <>
-              {/* 右ペインタブ */}
+          {selectedEvent && (
               <div className="right-pane-tabs">
                 <button
                   id="right-tab-company"
@@ -1663,12 +1661,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 </button>
               </div>
 
-              {/* タブコンテンツ */}
-              {rightPaneTab === "company" ? (
-                <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
-                  <CompanyViewer ref={viewerRef} />
-                </div>
-              ) : (
+          )}
+          {/* Keep one viewer mounted across selection and detail-tab changes. */}
+          <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: selectedEvent && rightPaneTab === "detail" ? "none" : "flex", flexDirection: "column" }}>
+            <CompanyViewer ref={viewerRef} />
+          </div>
+          {selectedEvent && rightPaneTab === "detail" && (
                 <AlertDetailPanel
                   event={selectedEvent}
                   userId={userId}
@@ -1679,12 +1677,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     );
                   }}
                 />
-              )}
-            </>
-          ) : (
-            <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
-              <CompanyViewer ref={viewerRef} />
-            </div>
           )}
         </div>
       </div>

@@ -143,3 +143,16 @@ test('900px breakpoint switches panes without losing selection', async ({ page }
   await expect(page.locator('.alerts-detail-pane')).toBeVisible();
   await expect(page.locator('.alerts-list-pane')).toBeHidden();
 });
+
+test('notification selection waits for slow viewer auth and detail tabs preserve loaded data', async ({ page }) => {
+  await page.goto('/?screen=tdnet&delayAuth=1500');
+  await page.locator('.alert-card').first().tap();
+  await expect(page.locator('.alerts-list-pane')).toBeHidden();
+  await expect(page.locator('.pl-scroll-area').first()).toBeVisible();
+  await expect(page.locator('#ticker-input')).toHaveValue('418A');
+  await page.locator('#right-tab-detail').tap();
+  await expect(page.locator('.detail-panel')).toBeVisible();
+  await page.locator('#right-tab-company').tap();
+  await expect(page.locator('.pl-scroll-area').first()).toBeVisible();
+  await fits(page);
+});

@@ -24,5 +24,9 @@ function query(table) {
   return proxy;
 }
 const channel = { on() { return this; }, subscribe() { return this; }, track: async () => {}, untrack: async () => {}, unsubscribe() {}, presenceState: () => ({}) };
-const client = { from: query, rpc: () => query('empty'), channel: () => channel, removeChannel() {}, auth: { getUser: async () => ({ data: { user } }), onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }), getSession: async () => ({ data: { session: { user } } }) } };
+const client = { from: query, rpc: () => query('empty'), channel: () => channel, removeChannel() {}, auth: { getUser: async () => {
+  const delay = Number(new URLSearchParams(location.search).get('delayAuth') || 0);
+  if (delay) await new Promise(resolve => setTimeout(resolve, delay));
+  return { data: { user } };
+}, onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }), getSession: async () => ({ data: { session: { user } } }) } };
 export const createSupabaseBrowser = () => client;
