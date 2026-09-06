@@ -1,9 +1,15 @@
 // Deterministic browser fixtures. No live credentials or backend writes are used.
 import financials from '../fixtures/alphanumeric-pl-viewer.json';
+import { fullMemo, longCompanyName } from './focus-fixtures.mjs';
+const params = new URLSearchParams(location.search);
+const ticker = params.get('fixtureTicker') || '418A';
+const companyName = params.has('longName') ? longCompanyName : ticker === '7203' ? 'トヨタ自動車' : 'モバイル検証株式会社';
 const date = '2026-09-06T01:00:00Z';
 const user = { id: 'mobile-test', email: 'mobile@example.test' };
 const tables = {
-  companies: [{ ticker_code: '418A', name_ja: 'モバイル検証株式会社' }],
+  companies: [{ ticker_code: ticker, name_ja: companyName }],
+  company_memo_grids: [{ ticker, period: '__manual_pl_cum__', quarter: 'MANUAL', grid_json: [[fullMemo]], updated_at: date }],
+  market_data: [{ ticker, date: '2026-09-04', close: 3000, market_cap: 40000000000000, shares_outstanding: 13000000000 }],
   api_latest_financials_canonical: financials['418A'],
   api_latest_segments: Array.from({ length: 8 }, (_, i) => ({ ticker: '418A', period: '2026-11-30', quarter: '2Q', segment_name: `Business ${i}`, sales: 12345, profit: 1234, source: 'xbrl', source_priority: 0 })),
   per_share_data: [{ ticker: '418A', period: '2025-11-30', quarter: 'FY', eps: 12, bps: 100, dividend_annual: 5 }],

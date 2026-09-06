@@ -185,6 +185,8 @@ body {
    Header
    ============================================================ */
 .viewer-header {
+  container: viewer-header / inline-size;
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -264,12 +266,27 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  max-width: 320px;
   min-width: 0;
   flex-shrink: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
   white-space: nowrap;
+}
+
+.viewer-controls { display: contents; }
+.viewer-controls-toggle { display: none; margin-left: auto; flex-shrink: 0; }
+
+/* Keep the company name intact; put controls in a panel when the pane is narrow. */
+@container viewer-header (max-width: 1100px) {
+  .ticker-info { flex: 1 1 auto; overflow-x: auto; scrollbar-width: thin; }
+  .viewer-header[data-loaded="true"] .viewer-controls-toggle { display: block; }
+  .viewer-header[data-loaded="true"] .viewer-controls { display: none; }
+  .viewer-header[data-loaded="true"][data-controls-open="true"] .viewer-controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 100;
+    padding: 12px; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    max-height: 50dvh; overflow-y: auto;
+  }
 }
 
 /* ============================================================
@@ -4216,7 +4233,36 @@ body:has(.alerts-layout) {
   .ticker-input-group { width: 100%; gap: 6px; flex-shrink: 1; }
   .search-wrapper { flex: 1 1 120px; min-width: 0; }
   .ticker-input.search-input, .search-dropdown { width: 100%; min-width: 0; }
-  .company-viewer-sticky-header { position: static; max-height: 45dvh; overflow-y: auto; }
+  .company-viewer-sticky-header { position: relative; z-index: 60; padding-bottom: 0; }
+  .company-viewer-scroll-body { flex: 1 1 auto; min-height: 0; overflow-x: hidden; }
+  .alerts-layout[data-mobile-pane="company"] > .alerts-header,
+  .alerts-layout[data-mobile-pane="company"] > .mobile-pane-switch { display: none; }
+  .alerts-detail-pane > .mobile-pane-button {
+    height: 44px; min-height: 44px; margin: 0; align-self: stretch;
+    text-align: left; border-radius: 0;
+  }
+  .viewer-header { margin-bottom: 4px; }
+  .viewer-header[data-loaded="true"] { padding: 6px 8px; }
+  .viewer-header[data-loaded="true"] .viewer-header-top { flex-wrap: nowrap; min-height: 44px; gap: 8px; }
+  .viewer-header .ticker-info { flex: 1 1 auto; gap: 6px; overflow: visible; }
+  .viewer-header .ticker-badge { font-size: 14px; padding: 4px; }
+  .viewer-header .company-name { white-space: normal; overflow-wrap: anywhere; flex-shrink: 1; font-size: 14px; }
+  .viewer-controls-toggle { min-height: 44px; padding: 6px 8px; font-size: 13px; }
+  .viewer-header .viewer-controls { flex-wrap: wrap; min-width: 0; }
+  .viewer-header .user-info { flex-wrap: wrap; }
+  .valuation-card-compact {
+    height: 52px; flex-wrap: nowrap; white-space: nowrap; margin-bottom: 4px;
+    padding: 6px 8px; overflow-x: auto; min-width: 0; max-width: 100%;
+    -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y;
+  }
+  .valuation-card-compact .valuation-card-items { flex: 0 0 auto; flex-wrap: nowrap; }
+  .formula-bar { flex-direction: column; }
+  .formula-bar-label { height: 30px; min-height: 30px; min-width: 0; max-width: none; width: 100%; border-right: 0; }
+  .formula-bar-input {
+    flex: none; width: 100%; height: 96px !important; min-height: 96px;
+    white-space: pre-wrap; overflow-wrap: anywhere; overflow-y: auto;
+  }
+  .formula-bar-resize-handle { display: none; }
   .viewer-container, .company-viewer-panel, .cvs-body,
   .company-viewer-scroll-body, .company-page-x-scroll, .company-page-wide-content,
   .viewer-main, .data-section, .order-kpi-section, .segment-scroll-area,

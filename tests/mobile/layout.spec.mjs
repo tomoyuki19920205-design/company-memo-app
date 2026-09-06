@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import { fullMemo, longCompanyName } from './focus-fixtures.mjs';
+import { writeFile } from 'node:fs/promises';
 
 test.beforeEach(async ({ page }) => {
   page.on('pageerror', error => { throw error; });
@@ -83,7 +85,7 @@ test('TDNET opens viewer without selection, selects and reselects cards, preserv
   const listScroll = await list.evaluate(el => el.scrollTop);
   await cards.nth(5).tap();
   await expect(list).toBeHidden();
-  await expect(page.locator('#ticker-input')).toBeVisible();
+  await expect(page.locator('.ticker-badge')).toHaveText('418A');
   await page.getByRole('button', { name: '← 通知一覧' }).tap();
   await expect.poll(() => list.evaluate(el => el.scrollTop)).toBeCloseTo(listScroll, 0);
   await cards.nth(5).tap();
@@ -155,4 +157,138 @@ test('notification selection waits for slow viewer auth and detail tabs preserve
   await page.locator('#right-tab-company').tap();
   await expect(page.locator('.pl-scroll-area').first()).toBeVisible();
   await fits(page);
+});
+
+async function loadFocusViewer(page, extra = '') {
+  await page.goto('/?screen=tdnet&fixtureTicker=7203' + extra);
+  await page.getByRole('button', { name: 'Company Viewer', exact: true }).tap();
+  await expect(page.locator('#ticker-input')).toBeVisible();
+  await page.locator('#ticker-input').fill('7203');
+  await page.getByRole('button', { name: '読込', exact: true }).tap();
+  await expect(page.locator('.pl-row').first()).toBeVisible();
+  await expect(page.locator('#ticker-input')).toBeHidden();
+}
+
+async function assertFocusGeometry(page) {
+  const metrics = await page.evaluate(() => {
+    const box = selector => {
+      const r = document.querySelector(selector).getBoundingClientRect();
+      return { x: r.x, y: r.y, width: r.width, height: r.height, bottom: r.bottom };
+    };
+    return { viewport: innerHeight, body: box('.company-viewer-scroll-body'), header: box('.viewer-header'), market: box('.valuation-card'),
+      label: box('.formula-bar-label'), input: box('.formula-bar-input'),
+      visible: ['.pl-section > .section-title', '.formula-bar', '.pl-row .num-col'].map(box),
+      pageWidth: document.documentElement.scrollWidth, viewportWidth: innerWidth };
+  });
+  expect(metrics.body.height).toBeGreaterThanOrEqual(metrics.viewport * .6);
+  expect(metrics.body.bottom).toBeLessThanOrEqual(metrics.viewport);
+  expect(metrics.header.height).toBeGreaterThanOrEqual(54);
+  expect(metrics.header.height).toBeLessThanOrEqual(60);
+  expect(metrics.market.height).toBeGreaterThanOrEqual(48);
+  expect(metrics.market.height).toBeLessThanOrEqual(54);
+  expect(metrics.label.height).toBeGreaterThanOrEqual(28);
+  expect(metrics.label.height).toBeLessThanOrEqual(32);
+  expect(metrics.input.y).toBeGreaterThanOrEqual(metrics.label.bottom);
+  expect(metrics.input.width).toBeCloseTo(metrics.label.width, 0);
+  for (const box of metrics.visible) {
+    expect(box.y).toBeGreaterThanOrEqual(metrics.body.y);
+    expect(box.bottom).toBeLessThanOrEqual(metrics.viewport);
+  }
+  expect(metrics.pageWidth).toBeLessThanOrEqual(metrics.viewportWidth);
+  await test.info().attach('focus-geometry', { body: JSON.stringify(metrics, null, 2), contentType: 'application/json' });
+  await writeFile(test.info().outputPath('focus-geometry.json'), JSON.stringify(metrics, null, 2));
+}
+
+test('focus gives PL and full memos priority and preserves ticker, search and scroll across panes', async ({ page }) => {
+  await loadFocusViewer(page);
+  await expect(page.locator('.company-name')).toHaveText('トヨタ自動車');
+  await assertFocusGeometry(page);
+  await expect(page.locator('.alerts-header')).toBeHidden();
+  await expect(page.locator('.mobile-pane-switch')).toBeHidden();
+  await expect(page.getByRole('button', { name: '← 通知一覧' })).toHaveCount(1);
+  await expect(page.locator('.formula-bar-resize-handle')).toBeHidden();
+  await page.screenshot({ path: test.info().outputPath('focus-initial.png') });
+  await scrollToEnd(page.locator('.valuation-card'));
+  await scrollToEnd(page.locator('.pl-scroll-area').first());
+  const memo = page.locator('.manual-memo-cell').filter({ hasText: fullMemo }).first();
+  await memo.tap();
+  const formula = page.locator('.formula-bar-input');
+  await expect(formula).toHaveValue(fullMemo);
+  const style = await formula.evaluate(el => ({ size: parseFloat(getComputedStyle(el).fontSize), wrap: getComputedStyle(el).whiteSpace, overflow: getComputedStyle(el).overflowY, height: el.clientHeight, total: el.scrollHeight }));
+  expect(style.size).toBeGreaterThanOrEqual(14);
+  expect(style.wrap).toBe('pre-wrap');
+  expect(style.overflow).toBe('auto');
+  expect(style.total).toBeGreaterThan(style.height);
+  await formula.evaluate(el => { el.scrollTop = el.scrollHeight; });
+  await page.screenshot({ path: test.info().outputPath('focus-memo.png') });
+  const toggle = page.getByRole('button', { name: '検索・設定' });
+  await toggle.tap();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('#ticker-input')).toBeVisible();
+  await expect(page.locator('#viewer-controls').getByText('スクリーニング', { exact: true })).toBeVisible();
+  await expect(page.locator('#viewer-controls').getByRole('button', { name: 'ログアウト' })).toBeVisible();
+  await page.locator('#ticker-input').fill('検索途中');
+  await toggle.tap();
+  await expect(page.locator('#ticker-input')).toBeHidden();
+  const body = page.locator('.company-viewer-scroll-body');
+  const before = await body.evaluate(el => el.scrollTop);
+  await page.getByRole('button', { name: '← 通知一覧' }).tap();
+  await expect(page.locator('.alerts-header')).toBeVisible();
+  await expect(page.locator('.mobile-pane-switch')).toBeVisible();
+  await expect(page.getByRole('button', { name: '← 通知一覧' })).toBeHidden();
+  await page.getByRole('button', { name: 'Company Viewer', exact: true }).tap();
+  await expect(page.locator('.ticker-badge')).toHaveText('7203');
+  await expect(page.locator('#ticker-input')).toHaveValue('検索途中');
+  await expect.poll(() => body.evaluate(el => el.scrollTop)).toBeCloseTo(before, 0);
+  await expect(formula).toHaveValue(fullMemo);
+  // Selecting a notification adds detail tabs; the height budget must still hold.
+  await page.getByRole('button', { name: '← 通知一覧' }).tap();
+  await page.locator('.alert-card').first().tap();
+  await expect(page.locator('#right-tab-company')).toBeVisible();
+  await assertFocusGeometry(page);
+});
+
+test('wide desktop retains the single-row header and direct search controls', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 844 });
+  await page.goto('/?ticker=7203&fixtureTicker=7203');
+  await expect(page.locator('.company-name')).toHaveText('トヨタ自動車');
+  await expect(page.locator('#ticker-input')).toBeVisible();
+  await expect(page.locator('.viewer-controls-toggle')).toBeHidden();
+  const header = await page.locator('.viewer-header').boundingBox();
+  expect(header.height).toBeLessThanOrEqual(60);
+  await page.screenshot({ path: test.info().outputPath('desktop-header.png') });
+});
+
+test('full company names and focus breakpoint at 390, 900, 901 and 1440', async ({ page }) => {
+  await loadFocusViewer(page, '&longName=1');
+  const name = page.locator('.company-name');
+  await expect(name).toHaveText(longCompanyName);
+  for (const width of [390, 900, 901, 1440]) {
+    await page.setViewportSize({ width, height: 844 });
+    const geometry = await name.evaluate(el => {
+      const r = el.getBoundingClientRect(); const s = getComputedStyle(el);
+      return { x: r.x, right: r.right, total: el.scrollWidth, width: el.clientWidth, height: el.clientHeight, textOverflow: s.textOverflow, whiteSpace: s.whiteSpace };
+    });
+    expect(geometry.textOverflow).not.toBe('ellipsis');
+    expect(geometry.total).toBeLessThanOrEqual(geometry.width + 1);
+    if (width <= 900) {
+      expect(geometry.right).toBeLessThanOrEqual(width);
+      await expect(page.locator('.alerts-header')).toBeHidden();
+      expect((await page.locator('.company-viewer-scroll-body').boundingBox()).height).toBeGreaterThanOrEqual(844 * .6);
+    } else {
+      await expect(page.locator('.alerts-header')).toBeVisible();
+      await expect(page.locator('.alerts-list-pane')).toBeVisible();
+      await expect(page.locator('.pane-divider')).toBeVisible();
+      await expect(page.getByRole('button', { name: '← 通知一覧' })).toBeHidden();
+      expect(geometry.whiteSpace).toBe('nowrap');
+      // A very long desktop name remains one line and can be read in full.
+      const title = await page.locator('.ticker-info').evaluate(el => {
+        el.scrollLeft = el.scrollWidth;
+        return { left: el.scrollLeft, width: el.clientWidth, total: el.scrollWidth };
+      });
+      expect(title.left + title.width).toBeGreaterThanOrEqual(title.total - 1);
+      expect((await page.locator('.viewer-header').boundingBox()).height).toBeLessThanOrEqual(60);
+    }
+    await page.screenshot({ path: test.info().outputPath(`focus-long-name-${width}.png`) });
+  }
 });
