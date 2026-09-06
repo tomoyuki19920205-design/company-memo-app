@@ -105,7 +105,7 @@ export default function ResizableTable({
 
     return (
         <div className="table-wrapper">
-            <table className="data-table resizable-table">
+            <table className="data-table resizable-table" style={{ "--table-width": `${widths.reduce((sum, width) => sum + width, 0)}px` } as React.CSSProperties}>
                 <thead>
                     <tr>
                         {columns.map((col, idx) => (

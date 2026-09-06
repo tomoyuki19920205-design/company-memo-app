@@ -27,6 +27,24 @@ export default function NewsMonitor() {
     const [rows, setRows] = useState<NewsStreamItem[]>([]);
     const [names, setNames] = useState(new Map<string, string>());
     const [selected, setSelected] = useState<NewsStreamItem | null>(null);
+    const listScrollRef = useRef(0);
+    const detailRef = useRef<HTMLElement>(null);
+    const openNews = (row: NewsStreamItem) => {
+        listScrollRef.current = window.scrollY;
+        setSelected(row);
+        if (window.matchMedia("(max-width: 900px)").matches) {
+            requestAnimationFrame(() => {
+                window.scrollTo(0, 0);
+                detailRef.current?.focus({ preventScroll: true });
+            });
+        }
+    };
+    const returnToNews = () => {
+        setSelected(null);
+        if (window.matchMedia("(max-width: 900px)").matches) {
+            requestAnimationFrame(() => window.scrollTo(0, listScrollRef.current));
+        }
+    };
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [offset, setOffset] = useState(0);
@@ -113,7 +131,7 @@ export default function NewsMonitor() {
     };
     const resetSplitRatio = () => saveSplitRatio(DEFAULT_NEWS_SPLIT_RATIO);
 
-    return <main className="news-monitor">
+    return <main className={`news-monitor${selected ? " mobile-news-detail" : ""}`}>
         <header className="news-monitor-header"><div><TopNavigation active="news" /><h1>News Monitor</h1><p>企業ニュース、東証33業種週次、NY市場モーニングレポートを新着順で確認</p></div></header>
         <div className="news-filters">
             <label>期間<select value={period} onChange={(e) => setPeriod(e.target.value as keyof typeof periods)}><option value="today">今日</option><option value="3d">3日</option><option value="7d">7日</option><option value="30d">30日</option><option value="all">全期間</option></select></label>
@@ -132,7 +150,7 @@ export default function NewsMonitor() {
                 const sector = isSectorReport(row);
                 const nyMarket = isNYMarketReport(row);
                 const cardClass = sector ? "sector-report-card" : nyMarket ? "ny-market-report-card" : `temporal-${row.temporal_status}`;
-                return <article className={`news-card ${cardClass}`} key={row.stream_id} onClick={() => setSelected(row)} onKeyDown={(e) => { if (e.key === "Enter") setSelected(row); }} role="button" tabIndex={0}>
+                return <article className={`news-card ${cardClass}`} key={row.stream_id} onClick={() => openNews(row)} onKeyDown={(e) => { if (e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openNews(row); } }} role="button" tabIndex={0}>
                     <div className="news-card-meta"><time>{dateTime(row.sort_at)}</time>{sector ? <span>東証33業種</span> : nyMarket ? <span>NY市場</span> : <Link href={`/?ticker=${encodeURIComponent(row.ticker)}`} onClick={(e) => e.stopPropagation()}>{row.ticker} {names.get(row.ticker) ?? row.company_name ?? ""}</Link>}{lastSeen && row.created_at > lastSeen && <b className="new-badge">NEW</b>}</div>
                     <h2>{row.title}</h2><div className="news-badges"><span>{row.category}</span><span className={`news-badge direction-${row.direction}`}>{row.direction}</span><span className={`news-badge importance-${row.importance.replace("+", "-plus")}`}>{row.importance}</span>{!sector && !nyMarket && <span>{row.earnings_relevance}</span>}</div>
                     {nyMarket ? <NYMarketCardSummary row={row} /> : sector ? <ul className="sector-summary-bullets">{row.summary_bullets.map((bullet, index) => <li key={index}>{bullet}</li>)}</ul> : <p>{row.summary}</p>}
@@ -143,7 +161,7 @@ export default function NewsMonitor() {
             {!loading && rows.length > 0 && rows.length % 50 === 0 && <button className="btn btn-load" onClick={() => void fetchRows(true)}>さらに読み込む</button>}
         </section>
         <div ref={splitterRef} className={`news-pane-splitter${isResizing ? " is-resizing" : ""}`} role="separator" aria-label="ニュース一覧と詳細の幅を変更" aria-orientation="vertical" aria-controls="news-feed news-detail" aria-valuemin={Math.round(splitBounds.minRatio * 100)} aria-valuemax={Math.round(splitBounds.maxRatio * 100)} aria-valuenow={Math.round(effectiveSplitRatio * 100)} tabIndex={0} data-testid="news-pane-splitter" onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={finishPointerResize} onPointerCancel={finishPointerResize} onKeyDown={handleSplitterKeyDown} onDoubleClick={resetSplitRatio} />
-        <aside id="news-detail" className="news-detail">{selected ? <><button className="news-detail-close" onClick={() => setSelected(null)}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
+        <aside ref={detailRef} tabIndex={-1} id="news-detail" className="news-detail">{selected ? <><button className="mobile-pane-button" onClick={returnToNews}>← ニュース一覧</button><button className="news-detail-close" aria-label="ニュース詳細を閉じる" onClick={returnToNews}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
     </main>;
 }
 

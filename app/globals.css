@@ -4175,6 +4175,72 @@ body:has(.alerts-layout) {
 .metric-picker-group button small { flex: 0 0 auto; color: #7dd3fc; font-size: .62rem; }
 .metric-picker-empty { grid-column: 1 / -1; color: var(--text-muted); }
 
+/* Mobile panes stay mounted so list scroll and viewer search survive navigation. */
+.mobile-pane-switch, .mobile-pane-button { display: none; }
+
+@media (max-width: 900px) {
+  body { padding-bottom: 0; }
+  .news-monitor, .screener-page { width: 100%; min-width: 0; padding: 12px; }
+  .news-monitor-layout, .screener-workspace { grid-template-columns: minmax(0, 1fr); }
+  .news-monitor:not(.mobile-news-detail) .news-detail,
+  .mobile-news-detail .news-feed,
+  .mobile-news-detail .news-filters,
+  .news-pane-splitter, .pane-divider, .custom-fixed-x-scroll { display: none; }
+  .news-detail { position: static; max-height: none; width: 100%; }
+  .mobile-news-detail .news-detail-close { display: none; }
+  .news-card { overflow-wrap: anywhere; }
+  .news-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news-filters label, .news-filters input, .news-filters select { min-width: 0; width: 100%; }
+  .mobile-pane-switch { display: flex; flex: 0 0 auto; gap: 8px; padding: 8px; }
+  .mobile-pane-button, .mobile-pane-switch button {
+    display: block; min-height: 44px; padding: 8px 12px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--card-bg); color: var(--text); cursor: pointer;
+  }
+  .mobile-pane-button { flex: 0 0 auto; align-self: flex-start; margin-bottom: 8px; }
+  .mobile-pane-switch button[aria-pressed="true"] { background: var(--primary); color: white; }
+  .alerts-layout { height: 100dvh; width: 100%; min-width: 0; }
+  .alerts-content { min-width: 0; }
+  .alerts-list-pane { width: 100% !important; flex: 1 1 auto !important; }
+  .alerts-detail-pane { width: 100%; min-width: 0; }
+  .alerts-layout[data-mobile-pane="list"] .alerts-detail-pane,
+  .alerts-layout[data-mobile-pane="company"] .alerts-list-pane,
+  .alerts-layout[data-mobile-pane="company"] > .filter-bar { display: none; }
+  .alerts-layout > .filter-bar { max-height: 30dvh; overflow-y: auto; }
+  .alerts-header, .alerts-header-left, .alerts-header-right,
+  .viewer-header-top, .top-navigation, .ticker-input-group,
+  .order-kpi-section-header, .order-kpi-tab-buttons, .section-header, .segment-header-row,
+  .search-actions, .screener-titlebar { flex-wrap: wrap; min-width: 0; }
+  .alerts-header { padding: 8px; gap: 6px; }
+  .alerts-header-right { overflow-wrap: anywhere; }
+  .viewer-header { padding: 8px; }
+  .ticker-input-group { width: 100%; gap: 6px; flex-shrink: 1; }
+  .search-wrapper { flex: 1 1 120px; min-width: 0; }
+  .ticker-input.search-input, .search-dropdown { width: 100%; min-width: 0; }
+  .company-viewer-sticky-header { position: static; max-height: 45dvh; overflow-y: auto; }
+  .viewer-container, .company-viewer-panel, .cvs-body,
+  .company-viewer-scroll-body, .company-page-x-scroll, .company-page-wide-content,
+  .viewer-main, .data-section, .order-kpi-section, .segment-scroll-area,
+  .order-kpi-table-card, .edinet-order-table-card, .per-share-section {
+    min-width: 0; max-width: 100%;
+  }
+  .company-page-wide-content { width: 100%; }
+  .company-page-x-scroll { overflow: visible; }
+  /* Constrain ancestors; only each table viewport owns horizontal scrolling. */
+  .table-wrapper, .pl-scroll-area, .segment-group, .per-share-table-wrap,
+  .order-kpi-table-wrap, .edinet-order-table-wrap, .screener-results {
+    min-width: 0; max-width: 100%; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y;
+  }
+  .table-wrapper .data-table { width: max-content; min-width: var(--table-width, 100%); }
+  .segment-group .segment-table { width: max-content; min-width: 100%; }
+  .segment-group-header, .edinet-order-table-meta { flex-wrap: wrap; }
+  .segment-header-row .section-title { flex: 1 0 100%; }
+  .company-news-section { min-width: 0; width: 100%; overflow-wrap: anywhere; }
+  .screener-resize-handle { display: none; }
+  /* Specificity intentionally beats component font sizes, including inline editors. */
+  body input, body select, body textarea { font-size: 16px !important; max-width: 100%; }
+}
+
 @media (max-width: 1000px) {
   .screener-workspace { grid-template-columns: 1fr; }
   .screener-condition-pane { position: static; max-height: none; }
