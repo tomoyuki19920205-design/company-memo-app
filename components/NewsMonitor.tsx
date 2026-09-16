@@ -173,16 +173,21 @@ function indexMove(row: Extract<NewsStreamItem, { report_type: "ny_market_daily"
     const normalized = new Map(Object.entries(row.index_moves).map(([key, value]) => [key.toLocaleLowerCase().replace(/[^a-z0-9]/g, ""), value]));
     const value = aliases.map((alias) => normalized.get(alias)).find((item) => item !== undefined);
     const change = typeof value === "number" ? value : value && typeof value === "object" && "change_pct" in value ? (value as { change_pct?: unknown }).change_pct : null;
-    return typeof change === "number" ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : null;
+    return typeof change === "number" && Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : null;
 }
 
+const NY_MARKET_CARD_INDEXES = [
+    ["S&P", ["sp500", "sandp500"]],
+    ["SOX", ["sox"]],
+    ["Dow", ["dow", "dowjones"]],
+    ["Nasdaq", ["nasdaq", "nasdaqcomposite", "ixic"]],
+    ["Russell", ["russell2000"]],
+] as const;
+
 export function NYMarketCardSummary({ row }: { row: Extract<NewsStreamItem, { report_type: "ny_market_daily" }> }) {
-    const indexes = [
-        ["S&P", indexMove(row, ["sp500", "sandp500"])],
-        ["SOX", indexMove(row, ["sox"])],
-        ["Dow", indexMove(row, ["dow", "dowjones"])],
-        ["Russell", indexMove(row, ["russell2000"])],
-    ].filter((item): item is [string, string] => item[1] !== null);
+    const indexes = NY_MARKET_CARD_INDEXES
+        .map(([name, aliases]) => [name, indexMove(row, [...aliases])] as const)
+        .filter((item): item is readonly [(typeof NY_MARKET_CARD_INDEXES)[number][0], string] => item[1] !== null);
     return <><div className="ny-market-indexes">{indexes.map(([name, value]) => <span key={name}>{name} {value}</span>)}</div><ul className="sector-summary-bullets">{row.summary_bullets.slice(0, 6).map((bullet, index) => <li key={index}>{bullet}</li>)}</ul></>;
 }
 
