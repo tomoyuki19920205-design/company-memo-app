@@ -1,6 +1,14 @@
 import type { TdnetEvent } from "./types";
 
-type CapitalEvent = Pick<TdnetEvent, "event_type" | "event_subtype" | "raw_payload">;
+type CapitalEvent = Pick<TdnetEvent, "event_type" | "event_subtype" | "headline" | "raw_payload">;
+
+const IPO_LISTING_CARD_TITLE = /^新規上場\s+[0-9A-Z]{4}\s+\S/u;
+
+export function getIpoListingCardTitle(event: CapitalEvent): string | null {
+  if (event.event_type !== "capital_action") return null;
+  const headline = String(event.headline || "").normalize("NFKC").replace(/\s+/gu, " ").trim();
+  return IPO_LISTING_CARD_TITLE.test(headline) ? headline : null;
+}
 
 function payload(event: CapitalEvent): Record<string, unknown> {
   const raw = typeof event.raw_payload === "string"

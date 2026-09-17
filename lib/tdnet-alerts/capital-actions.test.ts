@@ -1,9 +1,22 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { formatCapitalActionCard } from "./capital-actions";
+import { formatCapitalActionCard, getIpoListingCardTitle } from "./capital-actions";
 
-const event = (extracted: Record<string, unknown>, subtype = "announced") => ({
-  event_type: "capital_action", event_subtype: subtype, raw_payload: { extracted },
+const event = (extracted: Record<string, unknown>, subtype = "announced", headline = "") => ({
+  event_type: "capital_action", event_subtype: subtype, headline, raw_payload: { extracted },
+});
+
+test("keeps the requested IPO listing headline on the collapsed card", () => {
+  const title = getIpoListingCardTitle(event(
+    {},
+    "announced",
+    "新規上場　625A　Skyfall",
+  ));
+  assert.equal(title, "新規上場 625A Skyfall");
+});
+
+test("does not override ordinary capital-action card titles", () => {
+  assert.equal(getIpoListingCardTitle(event({}, "announced", "第三者割当による新株式発行")), null);
 });
 
 test("formats a combined capital increase and OA offering", () => {

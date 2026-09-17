@@ -13,7 +13,7 @@ import {
 } from "@/lib/tdnet-alerts/card-summary-presentation";
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
-import { formatCapitalActionCard } from "@/lib/tdnet-alerts/capital-actions";
+import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -620,6 +620,11 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const ratio = ext.ratio_to_outstanding;
     const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
+  } else if (event.event_type === "capital_action") {
+    const ipoTitle = getIpoListingCardTitle(event);
+    line1 = ipoTitle
+      ? `${dateStr} ${timeStr} ${ipoTitle}`
+      : `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
   } else if (event.event_type === "dividend") {
     const policy = getDividendPolicyDisplay(event);
     typeLabel = getDividendCompositeLabel(event);
