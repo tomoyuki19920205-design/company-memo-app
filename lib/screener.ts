@@ -4,6 +4,7 @@ export type BooleanFilterDefinition = { key: string; label: string };
 export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "forward_per", label: "予想PER", digits: 2 },
     { key: "actual_per", label: "前期実績PER", digits: 2 },
+    { key: "pbr", label: "PBR（倍）", digits: 2 },
     { key: "actual_dividend_yield_pct", label: "実績配当利回り(%)", digits: 2 },
     { key: "forecast_dividend_yield_pct", label: "予想配当利回り(%)", digits: 2 },
     { key: "actual_sales_growth_yoy_pct", label: "実績売上成長率(%)", digits: 2 },
@@ -47,6 +48,9 @@ export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "forward_peg", label: "予想PEG", digits: 3 },
 ];
 export const METRIC_KEYS = new Set(SCREENER_METRICS.map((metric) => metric.key));
+export const SNAPSHOT_METRIC_KEYS = new Set(
+    SCREENER_METRICS.map((metric) => metric.key).filter((key) => key !== "pbr"),
+);
 export const BOOLEAN_FILTER_DEFINITIONS: BooleanFilterDefinition[] = [
     { key: "new_ytd_high_last_1d", label: "年初来高値更新当日" },
     { key: "new_ytd_high_last_3d", label: "年初来高値更新3日" },

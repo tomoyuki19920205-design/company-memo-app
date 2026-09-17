@@ -11,7 +11,7 @@ export type DetailedFilterDefinition = {
 };
 
 const VALUATION_KEYS = new Set([
-    "forward_per", "actual_per", "actual_dividend_yield_pct", "forecast_dividend_yield_pct",
+    "forward_per", "actual_per", "pbr", "actual_dividend_yield_pct", "forecast_dividend_yield_pct",
     "market_cap", "forward_per_per_forecast_sales_growth", "forward_peg",
 ]);
 const PRICE_KEYS = new Set([
