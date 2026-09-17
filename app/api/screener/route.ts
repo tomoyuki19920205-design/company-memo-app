@@ -14,7 +14,7 @@ import { BASE_COLUMNS, BOOLEAN_FILTERS, METRIC_KEYS, SNAPSHOT_METRIC_KEYS, type 
 import { collectAllPages } from "@/lib/screener-options";
 
 const PBR_SOURCE_BATCH_SIZE = 200;
-const PBR_SOURCE_CONCURRENCY = 20;
+const PBR_SOURCE_CONCURRENCY = 6;
 const PBR_CACHE_TTL_MS = 5 * 60 * 1000;
 
 type PbrCacheEntry = { sourceKey: string; pbr: number | null; expiresAt: number };
