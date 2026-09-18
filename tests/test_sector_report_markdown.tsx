@@ -136,6 +136,22 @@ test("preserves standard markdown constructs, links, citations, line breaks and 
     assert.match(html, /<br\/?>(?:\n)?next line/);
 });
 
+test("renders GFM financial tables as responsive HTML with right-aligned numbers", () => {
+    const markdown = [
+        "|期間|区分|売上高|営業利益|純利益|EPS|",
+        "|---|---|---:|---:|---:|---:|",
+        "|2025/12期|通期実績|3,828|201|223|54.22|",
+    ].join("\n");
+    const html = render(markdown);
+    assert.match(html, /<div class="sector-table-scroll"><table>/);
+    assert.match(html, /<th style="text-align:right">売上高<\/th>/);
+    assert.match(html, /<td style="text-align:right">3,828<\/td>/);
+    assert.doesNotMatch(html, /\|期間\|区分\|/);
+    const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+    assert.match(css, /\.sector-table-scroll\s*\{[^}]*overflow-x:auto/);
+    assert.match(css, /\.sector-markdown a\s*\{[^}]*overflow-wrap:anywhere/);
+});
+
 test("does not turn raw HTML, scripts or unsafe links into executable markup", () => {
     const html = render("<script>alert(1)</script>\n<img src=x onerror=alert(2)>\n[unsafe](javascript:alert(3))");
 

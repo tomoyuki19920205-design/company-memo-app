@@ -1,6 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
 import { isSafeSourceUrl } from "@/lib/news-filter";
 
 function materialHeadingClass(children: React.ReactNode): string | undefined {
@@ -20,7 +21,7 @@ export default function SectorReportMarkdown({ markdown }: { markdown: string })
 
     return <div className="sector-markdown">
         <ReactMarkdown
-            remarkPlugins={[remarkBreaks]}
+            remarkPlugins={[remarkGfm, remarkBreaks]}
             components={{
                 h1: ({ children }) => <h2>{children}</h2>,
                 h2: ({ children }) => <h3>{children}</h3>,
@@ -28,6 +29,7 @@ export default function SectorReportMarkdown({ markdown }: { markdown: string })
                 a: ({ href, children }) => href && isSafeSourceUrl(href)
                     ? <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
                     : <span>{children}</span>,
+                table: ({ children }) => <div className="sector-table-scroll"><table>{children}</table></div>,
             }}
         >
             {normalized}

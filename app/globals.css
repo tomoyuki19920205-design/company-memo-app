@@ -152,7 +152,13 @@ body {
 .ipo-analysis-status.completed { background:#14532d; color:#dcfce7; }.ipo-analysis-status.partial { background:#713f12; color:#fef3c7; }.ipo-analysis-status.failed { background:#7f1d1d; color:#fee2e2; }
 .ipo-analysis-actions { display:flex; gap:6px; }.ipo-analysis-actions button { border:1px solid var(--border); border-radius:6px; padding:5px 9px; background:var(--bg); color:var(--text); cursor:pointer; }
 .ipo-analysis-meta { display:grid; grid-template-columns:72px 1fr; gap:4px 10px; margin:12px 0; font-size:.82rem; }.ipo-analysis-meta dt { color:var(--text-muted); }.ipo-analysis-meta dd { margin:0; }
-.ipo-analysis-section .sector-markdown { max-height:70vh; overflow:auto; padding-right:8px; }.ipo-analysis-section .sector-markdown table { width:100%; border-collapse:collapse; font-size:.8rem; }.ipo-analysis-section .sector-markdown th,.ipo-analysis-section .sector-markdown td { border:1px solid var(--border); padding:5px 7px; vertical-align:top; }.ipo-analysis-section .sector-markdown th { background:var(--bg); position:sticky; top:0; }
+.ipo-analysis-section .sector-markdown { max-height:70vh; overflow-y:auto; overflow-x:hidden; padding-right:8px; }
+.sector-table-scroll { width:100%; max-width:100%; overflow-x:auto; overscroll-behavior-inline:contain; }
+.ipo-analysis-section .sector-markdown table { width:100%; min-width:34rem; border-collapse:collapse; font-size:.8rem; }
+.ipo-analysis-section .sector-markdown th,.ipo-analysis-section .sector-markdown td { border:1px solid var(--border); padding:5px 7px; vertical-align:top; }
+.ipo-analysis-section .sector-markdown th { background:var(--bg); position:sticky; top:0; }
+.ipo-analysis-section .sector-markdown th[style*="text-align: right"],.ipo-analysis-section .sector-markdown td[style*="text-align: right"] { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.ipo-analysis-section .sector-markdown a { overflow-wrap:anywhere; word-break:break-word; }
 .ipo-analysis-empty { color:var(--text-muted); margin:12px 0 0; }
 .sector-source-list { list-style:none; margin-left:0!important; }.sector-source-list li { padding:7px 0; border-bottom:1px solid var(--border); }.sector-source-list small { display:block; color:var(--text-dim); margin-top:2px; }
 .news-empty { padding:24px; text-align:center; color:var(--text-dim); }

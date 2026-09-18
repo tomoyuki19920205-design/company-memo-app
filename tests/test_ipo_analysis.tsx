@@ -20,14 +20,14 @@ test("IPO cards alone mount the analysis panel", () => {
   assert.match(source, /isIpoListing && <IpoAnalysisPanel/);
 });
 
-test("viewer supports the five report states, copy, and markdown download", () => {
+test("viewer hides completed-report operational metadata and supports copy/download", () => {
   const source = readFileSync(new URL("../components/tdnet-alerts/IpoAnalysisPanel.tsx", import.meta.url), "utf8");
-  for (const status of ["pending", "collecting", "completed", "partial", "failed"]) {
-    assert.match(source, new RegExp(`${status}:`));
-  }
   assert.match(source, /全文コピー/);
   assert.match(source, /Markdown/);
   assert.match(source, /SectorReportMarkdown/);
+  assert.doesNotMatch(source, /STATUS_LABELS/);
+  assert.doesNotMatch(source, /ipo-analysis-meta/);
+  assert.doesNotMatch(source, /最終更新|使用資料/);
 });
 
 test("report query reads only the report table and never read-state tables", () => {
