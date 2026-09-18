@@ -17,6 +17,7 @@ import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
 import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
 import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { isEdinetOrderEvent } from "./AlertsPage";
+import IpoAnalysisPanel from "./IpoAnalysisPanel";
 
 interface AlertDetailPanelProps {
   event: EnrichedEvent;
@@ -41,6 +42,7 @@ export default function AlertDetailPanel({
   const materialUrl = isMaterial ? getValidatedMaterialUrl(event) : "";
   const sourceLink = isMaterial ? materialUrl : (event.source_url || "");
   const pdfLink = isMaterial ? materialUrl : (event.pdf_url || "");
+  const isIpoListing = /^新規上場\s+[0-9A-Z]{4}\s+/u.test(event.display_title || event.headline || "");
 
   // rawSegments が変わった時だけ統合キー計算を実行（再描画のたびには走らない）
   const segmentViewData = useMemo(() => buildSegmentViewData(rawSegments), [rawSegments]);
@@ -250,6 +252,8 @@ export default function AlertDetailPanel({
           )}
         </div>
       )}
+
+      {isIpoListing && <IpoAnalysisPanel eventId={event.id} supabase={supabaseRef.current} />}
 
       {/* Segment financials */}
       {(() => {

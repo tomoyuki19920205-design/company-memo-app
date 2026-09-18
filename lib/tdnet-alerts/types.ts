@@ -68,6 +68,38 @@ export interface TdnetEventComment {
   comment: string;
 }
 
+export type IpoAnalysisStatus = "pending" | "collecting" | "completed" | "partial" | "failed";
+
+export interface IpoAnalysisSource {
+  source_id: string;
+  title: string;
+  published_at: string | null;
+  issuer: string;
+  url: string;
+  document_id: string;
+  version_relation: string;
+  fetch_status: "success" | "failed";
+  sha256: string | null;
+  page_count: number | null;
+  used_pages: number[];
+}
+
+export interface IpoAnalysisReport {
+  id: string;
+  event_id: string;
+  ticker: string;
+  company_name: string;
+  listing_date: string;
+  market: string | null;
+  status: IpoAnalysisStatus;
+  source_manifest: IpoAnalysisSource[];
+  validation_result: Record<string, unknown>;
+  report_markdown: string;
+  generation_model: string | null;
+  generated_at: string | null;
+  updated_at: string;
+}
+
 // Enriched event with user-specific states
 export interface EnrichedEvent extends TdnetEvent {
   is_read: boolean;

@@ -858,6 +858,7 @@ const getImpactSortKey = (event: EnrichedEvent, activeCategory: string): { bucke
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const deepLinkHandledRef = useRef(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedDate, setSelectedDate] = useState<string | null>(() => {
     const dt = new Date();
@@ -1171,6 +1172,21 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const selectedEvent = events.find((e) => e.id === selectedId) || null;
+
+  useEffect(() => {
+    if (deepLinkHandledRef.current || events.length === 0 || typeof window === "undefined") return;
+    const eventId = new URLSearchParams(window.location.search).get("event");
+    if (!eventId) {
+      deepLinkHandledRef.current = true;
+      return;
+    }
+    const event = events.find(item => item.id === eventId);
+    if (!event) return;
+    deepLinkHandledRef.current = true;
+    setSelectedId(event.id);
+    setRightPaneTab("company");
+    window.setTimeout(() => viewerRef.current?.loadTicker(event.ticker), 0);
+  }, [events]);
   const unreadCount = events.filter((e) => !e.is_read).length;
 
   const formatTime = (dt: string) => {

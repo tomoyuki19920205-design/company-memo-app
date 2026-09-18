@@ -1,5 +1,5 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import type { TdnetEvent, TdnetEventComment, EnrichedEvent } from "./types";
+import type { TdnetEvent, TdnetEventComment, EnrichedEvent, IpoAnalysisReport } from "./types";
 import { isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 import { applyNotificationTitleExclusions, isNotificationEventVisible } from "./notification-policy";
 
@@ -558,6 +558,19 @@ export async function toggleStar(supabase: SupabaseClient, eventId: string, user
     const { error } = await supabase.from("tdnet_event_stars").upsert({ event_id: eventId, user_id: userId }, { onConflict: "event_id,user_id" });
     if (error) throw error;
   }
+}
+
+export async function fetchIpoAnalysisReport(
+  supabase: SupabaseClient,
+  eventId: string,
+): Promise<IpoAnalysisReport | null> {
+  const { data, error } = await supabase
+    .from("ipo_analysis_reports")
+    .select("id,event_id,ticker,company_name,listing_date,market,status,source_manifest,validation_result,report_markdown,generation_model,generated_at,updated_at")
+    .eq("event_id", eventId)
+    .maybeSingle();
+  if (error) throw error;
+  return data as IpoAnalysisReport | null;
 }
 
 // ============================================================
