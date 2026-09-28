@@ -39,11 +39,16 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
     : "今回の取得株数";
   const ratio = Number(ext.ratio_to_outstanding);
   const numerator = count(ext.ratio_numerator_shares);
+  const ratioSnippet = ext.extracted_json && typeof ext.extracted_json === "object"
+    ? String((ext.extracted_json as Record<string, unknown>).raw_ratio_text || "") : "";
   // A legacy ratio can be paired with the sole stated limit. Otherwise require
   // the saved numerator to prove that the percentage describes these shares.
   const matching = shares != null && (numerator === shares ||
     (numerator == null && limit === shares && acquired == null));
-  const hasRatio = matching && ext.ratio_to_outstanding != null && Number.isFinite(ratio) && ratio >= 0;
+  const shareRatioEvidence = ext.ratio_source === "calculated" || ext.ratio_source === "disclosed"
+    || ratioSnippet.includes("発行済株式");
+  const hasRatio = matching && shareRatioEvidence && ext.ratio_to_outstanding != null
+    && Number.isFinite(ratio) && ratio >= 0;
   const calculated = ext.ratio_source === "calculated";
   const ratioLabel = hasRatio ? `${calculated ? "約" : ""}${ratio.toFixed(2)}%` : "";
   const sharesLine = shares == null ? "取得株数：開示から確認できません" :

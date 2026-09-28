@@ -44,3 +44,16 @@ test("unknown denominator retains only count", () => {
   const card = getBuybackCard(event({ shares_limit: 560_000, ratio_scope: "transaction_limit" }));
   assert.equal(card!.sharesLine, "今回の買付上限株数：56万株");
 });
+
+test("legacy percentage needs evidence that it is a share ratio", () => {
+  const marketCap = getBuybackCard(event({
+    shares_limit: 200_000, ratio_to_outstanding: 0.98,
+    extracted_json: { raw_ratio_text: "取得金額の時価総額比 0.98%" },
+  }, "new_program"));
+  assert.equal(marketCap!.ratioLabel, "");
+  const issuedShares = getBuybackCard(event({
+    shares_limit: 200_000, ratio_to_outstanding: 0.98,
+    extracted_json: { raw_ratio_text: "発行済株式総数（自己株式を除く）に対する割合 0.98%" },
+  }, "new_program"));
+  assert.equal(issuedShares!.ratioLabel, "0.98%");
+});
