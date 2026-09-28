@@ -616,6 +616,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     const card = getBuybackCard(event);
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
     line2 = card?.sharesLine || "";
+    line3 = card?.provenance || "";
   } else if (event.event_type === "capital_action") {
     const ipoTitle = getIpoListingCardTitle(event);
     line1 = ipoTitle
