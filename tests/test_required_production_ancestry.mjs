@@ -18,6 +18,7 @@ test("required production lineage names every protected Viewer feature", () => {
             "5713 PBT display",
             "structural-no-OP PBT display",
             "financial IFRS PBT display",
+            "live refresh of updated Viewer notifications",
         ],
     );
     assert.ok(REQUIRED_PRODUCTION_ANCESTORS.every(({ commit }) => /^[0-9a-f]{40}$/.test(commit)));

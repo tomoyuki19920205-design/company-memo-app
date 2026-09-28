@@ -5,6 +5,14 @@
 - **Production URL:** https://company-memo-app.vercel.app
 
 ## デプロイ手順
+正式なソースは `tomoyuki19920205-design/company-memo-app` の `main` です。
+作業開始時に `git fetch origin` で更新し、本番に先行反映されたコミットと
+`origin/main` の並行変更を両方取り込んで検証してください。force push や
+他の作業ツリーのリセットで差分を消さず、通常の push で `main` へ反映します。
+
+通知 UPDATE の再取得修正 `5dab741747ae020a4c1c2bf21643baacdf062032` は
+必須 ancestor に含まれます。以後の本番デプロイでも、この修正を含む履歴を使用してください。
+
 本リポジトリでは誤デプロイを防ぐため、Vercel へのデプロイ前に厳格なガードが設けられています。
 
 以下のコマンドを実行して本番へデプロイしてください：

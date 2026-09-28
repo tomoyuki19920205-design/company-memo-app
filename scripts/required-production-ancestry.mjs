@@ -21,6 +21,10 @@ export const REQUIRED_PRODUCTION_ANCESTORS = Object.freeze([
         feature: "financial IFRS PBT display",
         commit: "676b6e7e4fe4b7ed83380280dd5f365d0f291f5a",
     },
+    {
+        feature: "live refresh of updated Viewer notifications",
+        commit: "5dab741747ae020a4c1c2bf21643baacdf062032",
+    },
 ]);
 
 function runGit(args) {

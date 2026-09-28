@@ -27,6 +27,24 @@ export default function NewsMonitor() {
     const [rows, setRows] = useState<NewsStreamItem[]>([]);
     const [names, setNames] = useState(new Map<string, string>());
     const [selected, setSelected] = useState<NewsStreamItem | null>(null);
+    const listScrollRef = useRef(0);
+    const detailRef = useRef<HTMLElement>(null);
+    const openNews = (row: NewsStreamItem) => {
+        listScrollRef.current = window.scrollY;
+        setSelected(row);
+        if (window.matchMedia("(max-width: 900px)").matches) {
+            requestAnimationFrame(() => {
+                window.scrollTo(0, 0);
+                detailRef.current?.focus({ preventScroll: true });
+            });
+        }
+    };
+    const returnToNews = () => {
+        setSelected(null);
+        if (window.matchMedia("(max-width: 900px)").matches) {
+            requestAnimationFrame(() => window.scrollTo(0, listScrollRef.current));
+        }
+    };
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [offset, setOffset] = useState(0);
@@ -113,7 +131,7 @@ export default function NewsMonitor() {
     };
     const resetSplitRatio = () => saveSplitRatio(DEFAULT_NEWS_SPLIT_RATIO);
 
-    return <main className="news-monitor">
+    return <main className={`news-monitor${selected ? " mobile-news-detail" : ""}`}>
         <header className="news-monitor-header"><div><TopNavigation active="news" /><h1>News Monitor</h1><p>企業ニュース、東証33業種週次、NY市場モーニングレポートを新着順で確認</p></div></header>
         <div className="news-filters">
             <label>期間<select value={period} onChange={(e) => setPeriod(e.target.value as keyof typeof periods)}><option value="today">今日</option><option value="3d">3日</option><option value="7d">7日</option><option value="30d">30日</option><option value="all">全期間</option></select></label>
@@ -132,7 +150,7 @@ export default function NewsMonitor() {
                 const sector = isSectorReport(row);
                 const nyMarket = isNYMarketReport(row);
                 const cardClass = sector ? "sector-report-card" : nyMarket ? "ny-market-report-card" : `temporal-${row.temporal_status}`;
-                return <article className={`news-card ${cardClass}`} key={row.stream_id} onClick={() => setSelected(row)} onKeyDown={(e) => { if (e.key === "Enter") setSelected(row); }} role="button" tabIndex={0}>
+                return <article className={`news-card ${cardClass}`} key={row.stream_id} onClick={() => openNews(row)} onKeyDown={(e) => { if (e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openNews(row); } }} role="button" tabIndex={0}>
                     <div className="news-card-meta"><time>{dateTime(row.sort_at)}</time>{sector ? <span>東証33業種</span> : nyMarket ? <span>NY市場</span> : <Link href={`/?ticker=${encodeURIComponent(row.ticker)}`} onClick={(e) => e.stopPropagation()}>{row.ticker} {names.get(row.ticker) ?? row.company_name ?? ""}</Link>}{lastSeen && row.created_at > lastSeen && <b className="new-badge">NEW</b>}</div>
                     <h2>{row.title}</h2><div className="news-badges"><span>{row.category}</span><span className={`news-badge direction-${row.direction}`}>{row.direction}</span><span className={`news-badge importance-${row.importance.replace("+", "-plus")}`}>{row.importance}</span>{!sector && !nyMarket && <span>{row.earnings_relevance}</span>}</div>
                     {nyMarket ? <NYMarketCardSummary row={row} /> : sector ? <ul className="sector-summary-bullets">{row.summary_bullets.map((bullet, index) => <li key={index}>{bullet}</li>)}</ul> : <p>{row.summary}</p>}
@@ -143,7 +161,7 @@ export default function NewsMonitor() {
             {!loading && rows.length > 0 && rows.length % 50 === 0 && <button className="btn btn-load" onClick={() => void fetchRows(true)}>さらに読み込む</button>}
         </section>
         <div ref={splitterRef} className={`news-pane-splitter${isResizing ? " is-resizing" : ""}`} role="separator" aria-label="ニュース一覧と詳細の幅を変更" aria-orientation="vertical" aria-controls="news-feed news-detail" aria-valuemin={Math.round(splitBounds.minRatio * 100)} aria-valuemax={Math.round(splitBounds.maxRatio * 100)} aria-valuenow={Math.round(effectiveSplitRatio * 100)} tabIndex={0} data-testid="news-pane-splitter" onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={finishPointerResize} onPointerCancel={finishPointerResize} onKeyDown={handleSplitterKeyDown} onDoubleClick={resetSplitRatio} />
-        <aside id="news-detail" className="news-detail">{selected ? <><button className="news-detail-close" onClick={() => setSelected(null)}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
+        <aside ref={detailRef} tabIndex={-1} id="news-detail" className="news-detail">{selected ? <><button className="mobile-pane-button" onClick={returnToNews}>← ニュース一覧</button><button className="news-detail-close" aria-label="ニュース詳細を閉じる" onClick={returnToNews}>×</button>{isNYMarketReport(selected) ? <NYMarketDetail row={selected} /> : isSectorReport(selected) ? <SectorDetail row={selected} /> : <CompanyDetail row={selected} names={names} />}</> : <p className="news-empty">ニュースを選択すると詳細を表示します</p>}</aside></div>
     </main>;
 }
 
@@ -155,25 +173,30 @@ function indexMove(row: Extract<NewsStreamItem, { report_type: "ny_market_daily"
     const normalized = new Map(Object.entries(row.index_moves).map(([key, value]) => [key.toLocaleLowerCase().replace(/[^a-z0-9]/g, ""), value]));
     const value = aliases.map((alias) => normalized.get(alias)).find((item) => item !== undefined);
     const change = typeof value === "number" ? value : value && typeof value === "object" && "change_pct" in value ? (value as { change_pct?: unknown }).change_pct : null;
-    return typeof change === "number" ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : null;
+    return typeof change === "number" && Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : null;
 }
 
+const NY_MARKET_CARD_INDEXES = [
+    ["S&P", ["sp500", "sandp500"]],
+    ["SOX", ["sox"]],
+    ["Dow", ["dow", "dowjones"]],
+    ["Nasdaq", ["nasdaq", "nasdaqcomposite", "ixic"]],
+    ["Russell", ["russell2000"]],
+] as const;
+
 export function NYMarketCardSummary({ row }: { row: Extract<NewsStreamItem, { report_type: "ny_market_daily" }> }) {
-    const indexes = [
-        ["S&P", indexMove(row, ["sp500", "sandp500"])],
-        ["SOX", indexMove(row, ["sox"])],
-        ["Dow", indexMove(row, ["dow", "dowjones"])],
-        ["Russell", indexMove(row, ["russell2000"])],
-    ].filter((item): item is [string, string] => item[1] !== null);
+    const indexes = NY_MARKET_CARD_INDEXES
+        .map(([name, aliases]) => [name, indexMove(row, [...aliases])] as const)
+        .filter((item): item is readonly [(typeof NY_MARKET_CARD_INDEXES)[number][0], string] => item[1] !== null);
     return <><div className="ny-market-indexes">{indexes.map(([name, value]) => <span key={name}>{name} {value}</span>)}</div><ul className="sector-summary-bullets">{row.summary_bullets.slice(0, 6).map((bullet, index) => <li key={index}>{bullet}</li>)}</ul></>;
 }
 
 export function NYMarketDetail({ row }: { row: Extract<NewsStreamItem, { report_type: "ny_market_daily" }> }) {
-    return <div className="sector-report-detail ny-market-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>レポート日 JST</dt><dd>{row.report_date_jst.replaceAll("-", "/")}</dd><dt>対象NY市場営業日</dt><dd>{row.market_session_date.replaceAll("-", "/")}</dd><dt>市場状態</dt><dd>{row.market_status}</dd></dl><h3>Full Report</h3><SectorReportMarkdown markdown={row.report_markdown} /><h3>Sources</h3><ul className="sector-source-list">{row.sources.map((source, index) => <li key={`${source.url}-${index}`}>{isSafeSourceUrl(source.url) ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : source.title}<small>{source.publisher}{source.published_at ? ` / ${sourceDate(source.published_at)}` : ""}</small></li>)}</ul></div>;
+    return <div className="sector-report-detail ny-market-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>レポート日 JST</dt><dd>{row.report_date_jst.replaceAll("-", "/")}</dd><dt>対象NY市場営業日</dt><dd>{row.market_session_date.replaceAll("-", "/")}</dd><dt>市場状態</dt><dd>{row.market_status}</dd></dl><h3>Full Report</h3><SectorReportMarkdown markdown={row.report_markdown} reportType="ny_market_daily" /><h3>Sources</h3><ul className="sector-source-list">{row.sources.map((source, index) => <li key={`${source.url}-${index}`}>{isSafeSourceUrl(source.url) ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : source.title}<small>{source.publisher}{source.published_at ? ` / ${sourceDate(source.published_at)}` : ""}</small></li>)}</ul></div>;
 }
 
 function SectorDetail({ row }: { row: Extract<NewsStreamItem, { report_type: "sector_weekly" }> }) {
-    return <div className="sector-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>対象期間</dt><dd>{dateTime(row.period_start)} ～ {dateTime(row.period_end)}</dd><dt>業種</dt><dd>{String(row.sector_code).padStart(2, "0")} {row.sector_name}</dd><dt>重要度</dt><dd>{row.importance}</dd><dt>総合方向</dt><dd>{row.direction}</dd><dt>Source</dt><dd>{row.sources.length}件</dd></dl><h3>Summary</h3><ul className="sector-summary-bullets">{row.summary_bullets.map((bullet, index) => <li key={index}>{bullet}</li>)}</ul><h3>Full Report</h3><SectorReportMarkdown markdown={row.full_report_md} />
+    return <div className="sector-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>対象期間</dt><dd>{dateTime(row.period_start)} ～ {dateTime(row.period_end)}</dd><dt>業種</dt><dd>{String(row.sector_code).padStart(2, "0")} {row.sector_name}</dd><dt>重要度</dt><dd>{row.importance}</dd><dt>総合方向</dt><dd>{row.direction}</dd><dt>Source</dt><dd>{row.sources.length}件</dd></dl><h3>Summary</h3><ul className="sector-summary-bullets">{row.summary_bullets.map((bullet, index) => <li key={index}>{bullet}</li>)}</ul><h3>Full Report</h3><SectorReportMarkdown markdown={row.full_report_md} reportType="sector_weekly" />
         <h3>注目銘柄</h3>{row.watchlist_companies.length ? <ol>{row.watchlist_companies.map((company) => <li key={company.code}><Link href={`/?ticker=${company.code}`}>{company.code} {company.name}</Link> <span className={`news-badge direction-${company.direction}`}>{company.direction}</span></li>)}</ol> : <p>該当なし</p>}
         <h3>翌週以降の監視ポイント</h3>{row.next_week_watchpoints.length ? <ul>{row.next_week_watchpoints.map((item, i) => <li key={i}>{item}</li>)}</ul> : <p>該当なし</p>}
         <h3>見落とし候補</h3>{row.missed_candidates.length ? <ul>{row.missed_candidates.map((item, i) => <li key={i}>{item}</li>)}</ul> : <p>該当なし</p>}

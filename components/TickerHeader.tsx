@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useCallback, useMemo } from "react";
+import React, { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { searchCompanies, type SearchCandidate } from "@/lib/company-search";
@@ -37,6 +37,10 @@ function TickerHeader({
     onRequestMaster,
 }: TickerHeaderProps) {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [controlsOpen, setControlsOpen] = useState(false);
+    useEffect(() => {
+        if (activeTicker && !loading) setControlsOpen(false);
+    }, [activeTicker, loading]);
     const [highlightIdx, setHighlightIdx] = useState(-1);
     const blurTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const composingRef = useRef(false);
@@ -155,7 +159,7 @@ function TickerHeader({
     };
 
     return (
-        <div className="viewer-header">
+        <div className="viewer-header" data-loaded={!!activeTicker} data-controls-open={controlsOpen}>
             <div className="viewer-header-top">
                 {activeTicker && (
                     <div className="ticker-info">
@@ -165,6 +169,14 @@ function TickerHeader({
                         )}
                     </div>
                 )}
+                {activeTicker && (
+                    <button className="btn btn-load viewer-controls-toggle"
+                        aria-expanded={controlsOpen} aria-controls="viewer-controls"
+                        onClick={() => setControlsOpen(open => !open)}>
+                        検索・設定
+                    </button>
+                )}
+                <div id="viewer-controls" className="viewer-controls">
                 <div className="ticker-input-group">
                     <label className="ticker-label" htmlFor="ticker-input">
                         企業検索
@@ -254,6 +266,7 @@ function TickerHeader({
                             </button>
                         </>
                     )}
+                </div>
                 </div>
             </div>
             {errorMsg && (

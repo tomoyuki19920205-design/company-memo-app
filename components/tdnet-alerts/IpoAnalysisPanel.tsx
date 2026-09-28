@@ -58,7 +58,7 @@ export default function IpoAnalysisPanel({ eventId, supabase }: { eventId: strin
     </div>
     {report ? <>
       {report.report_markdown
-        ? <SectorReportMarkdown markdown={report.report_markdown} />
+        ? <SectorReportMarkdown markdown={report.report_markdown} reportType="ipo_analysis" />
         : <p className="ipo-analysis-empty">レポート本文を準備しています。</p>}
     </> : !loading && !error ? <p className="ipo-analysis-empty">IPO分析を作成待ちです。</p> : null}
   </section>;

@@ -580,6 +580,12 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     // handleLoad の最新参照を ref で保持（外部呼び出し用）
     const handleLoadRef = useRef(handleLoad);
     useEffect(() => { handleLoadRef.current = handleLoad; }, [handleLoad]);
+    const [requestedTicker, setRequestedTicker] = useState<string | null>(null);
+    useEffect(() => {
+        if (!requestedTicker || authLoading || !user) return;
+        void handleLoadRef.current(requestedTicker);
+        setRequestedTicker(null);
+    }, [requestedTicker, authLoading, user]);
 
     // ============================================================
     // URL クエリ ?ticker=xxxx からの初期ロード
@@ -604,8 +610,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             const t = normalizeTicker(ticker);
             if (!t) return;
             setTickerInput(t);
-            // handleLoadRef.current を呼ぶことで stale closure を回避
-            handleLoadRef.current(t);
+            // A notification may arrive before this viewer's auth check completes.
+            setRequestedTicker(t);
         },
     }));
 

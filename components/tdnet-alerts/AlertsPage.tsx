@@ -897,6 +897,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   });
   // 右ペインタブ（"detail" | "company"）
   const [rightPaneTab, setRightPaneTab] = useState<"detail" | "company">("company");
+  const [mobilePane, setMobilePane] = useState<"list" | "company">("list");
 
   const supabaseRef = useRef(createSupabaseBrowser());
   const viewerRef = useRef<CompanyViewerHandle>(null);
@@ -1091,7 +1092,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const handleSelectEvent = (event: EnrichedEvent) => {
-    if (selectedId === event.id) {
+    setMobilePane("company");
+    if (selectedId === event.id && !window.matchMedia("(max-width: 900px)").matches) {
       setSelectedId(null);
       return;
     }
@@ -1231,7 +1233,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   void getStrengthDisplay;
 
   return (
-    <div className="alerts-layout">
+    <div className="alerts-layout" data-mobile-pane={mobilePane}>
       {/* Header */}
       <header className="alerts-header">
         <div className="alerts-header-left">
@@ -1260,6 +1262,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         </div>
       </header>
 
+      <nav className="mobile-pane-switch" aria-label="TDNET表示切り替え">
+        <button aria-pressed={mobilePane === "list"} onClick={() => setMobilePane("list")}>通知一覧</button>
+        <button aria-pressed={mobilePane === "company"} onClick={() => { setRightPaneTab("company"); setMobilePane("company"); }}>Company Viewer</button>
+      </nav>
       {/* Filter Bar */}
       <div className="filter-bar">
         {filters.map((f) => (
@@ -1662,9 +1668,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
         {/* Detail Pane */}
         <div className="alerts-detail-pane">
-          {selectedEvent ? (
-            <>
-              {/* 右ペインタブ */}
+          <button className="mobile-pane-button" onClick={() => setMobilePane("list")}>← 通知一覧</button>
+          {selectedEvent && (
               <div className="right-pane-tabs">
                 <button
                   id="right-tab-company"
@@ -1682,12 +1687,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 </button>
               </div>
 
-              {/* タブコンテンツ */}
-              {rightPaneTab === "company" ? (
-                <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
-                  <CompanyViewer ref={viewerRef} />
-                </div>
-              ) : (
+          )}
+          {/* Keep one viewer mounted across selection and detail-tab changes. */}
+          <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: selectedEvent && rightPaneTab === "detail" ? "none" : "flex", flexDirection: "column" }}>
+            <CompanyViewer ref={viewerRef} />
+          </div>
+          {selectedEvent && rightPaneTab === "detail" && (
                 <AlertDetailPanel
                   event={selectedEvent}
                   userId={userId}
@@ -1698,12 +1703,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     );
                   }}
                 />
-              )}
-            </>
-          ) : (
-            <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
-              <CompanyViewer ref={viewerRef} />
-            </div>
           )}
         </div>
       </div>

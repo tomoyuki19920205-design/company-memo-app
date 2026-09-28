@@ -10,6 +10,7 @@ import {
     getCompanyProfitDisplay,
 } from "../lib/company-profit-display";
 import type { FinancialRecord } from "../types/financial";
+import { formatMillions } from "../lib/format";
 
 const row = (
     period: string,
@@ -64,6 +65,17 @@ test("2Q, 3Q, and FY use only the immediately preceding cumulative quarter", () 
         [result.get("2Q")!.operatingProfit, result.get("3Q")!.operatingProfit, result.get("FY")!.operatingProfit],
         [25, 30, 45],
     );
+});
+
+test("6577 subtracts precise cumulative GP before the final display rounding", () => {
+    const result = byQuarter([
+        row("2026-07-31", "1Q", 1_995, 112.291, -22, "6577"),
+        row("2026-07-31", "2Q", 5_825, 232.660, -38, "6577"),
+    ]);
+
+    assert.equal(result.get("1Q")!.grossProfit, 112.291);
+    assert.ok(Math.abs(result.get("2Q")!.grossProfit! - 120.369) < 1e-9);
+    assert.equal(formatMillions(result.get("2Q")!.grossProfit), "120");
 });
 
 test("missing required preceding quarters produce null standalone values", () => {

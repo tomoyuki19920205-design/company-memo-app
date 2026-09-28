@@ -71,7 +71,7 @@ test("splitter uses pointer capture, persists only on the client, and double cli
     assert.match(component, /useEffect\(\(\) => \{[\s\S]*?window\.localStorage\.getItem\(NEWS_SPLIT_STORAGE_KEY\)/);
     assert.match(component, /onDoubleClick=\{resetSplitRatio\}/);
     assert.match(component, /const resetSplitRatio = \(\) => saveSplitRatio\(DEFAULT_NEWS_SPLIT_RATIO\)/);
-    assert.match(component, /onClick=\{\(\) => setSelected\(row\)\}/);
+    assert.match(component, /onClick=\{\(\) => openNews\(row\)\}/);
 });
 
 test("desktop grid uses only the 10px splitter gap and mobile restores one column", () => {

@@ -124,8 +124,8 @@ body {
 .news-card p { color:var(--text-muted); font-size:.84rem; }
 .sector-report-card { border-left:3px solid #8b5cf6; }
 .ny-market-report-card { border-left:3px solid #38bdf8; }
-.ny-market-indexes { display:flex; flex-wrap:wrap; gap:6px 12px; margin:8px 0; font-size:.82rem; font-variant-numeric:tabular-nums; }
-.ny-market-indexes span { color:var(--text); font-weight:600; }
+.ny-market-indexes { display:flex; max-width:100%; flex-wrap:wrap; gap:6px 12px; margin:8px 0; font-size:.82rem; font-variant-numeric:tabular-nums; }
+.ny-market-indexes span { color:var(--text); font-weight:600; white-space:nowrap; }
 .sector-summary-bullets { margin:8px 0 8px 18px; color:var(--text-muted); font-size:.84rem; }
 .sector-summary-bullets li { margin:3px 0; }
 .news-card-meta,.news-badges { display:flex; flex-wrap:wrap; align-items:center; gap:7px; font-size:.72rem; color:var(--text-dim); }
@@ -142,7 +142,8 @@ body {
 .sector-report-detail li { margin:4px 0; }
 .sector-markdown { margin-top:6px; padding-top:2px; border-top:1px solid var(--border); }
 .sector-markdown h2 { margin-top:16px; font-size:1.08rem; }.sector-markdown h3 { margin-top:14px; font-size:.96rem; }.sector-markdown h4 { margin-top:12px; color:#bfdbfe; }
-.sector-markdown h4.sector-material-heading--continued { margin-top:calc(1.65rem * 3); }
+.sector-markdown h4.sector-material-heading { margin-block-start:3.5rem; margin-block-end:1.125rem; }
+.sector-markdown p.sector-material-label { margin-block-start:2rem; margin-block-end:.625rem; }
 .sector-markdown ul,.sector-markdown ol { margin:6px 0 8px 20px; }.sector-markdown p { line-height:1.65; }
 
 .ipo-analysis-section { margin-top:18px; padding:16px; border:1px solid var(--border); border-radius:10px; background:color-mix(in srgb,var(--bg-secondary) 88%,#1d4ed8 12%); }
@@ -200,6 +201,8 @@ body {
    Header
    ============================================================ */
 .viewer-header {
+  container: viewer-header / inline-size;
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -279,12 +282,27 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  max-width: 320px;
   min-width: 0;
   flex-shrink: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
   white-space: nowrap;
+}
+
+.viewer-controls { display: contents; }
+.viewer-controls-toggle { display: none; margin-left: auto; flex-shrink: 0; }
+
+/* Keep the company name intact; put controls in a panel when the pane is narrow. */
+@container viewer-header (max-width: 1100px) {
+  .ticker-info { flex: 1 1 auto; overflow-x: auto; scrollbar-width: thin; }
+  .viewer-header[data-loaded="true"] .viewer-controls-toggle { display: block; }
+  .viewer-header[data-loaded="true"] .viewer-controls { display: none; }
+  .viewer-header[data-loaded="true"][data-controls-open="true"] .viewer-controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 100;
+    padding: 12px; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    max-height: 50dvh; overflow-y: auto;
+  }
 }
 
 /* ============================================================
@@ -4189,6 +4207,101 @@ body:has(.alerts-layout) {
 .metric-picker-group button:disabled { opacity: .55; cursor: default; }
 .metric-picker-group button small { flex: 0 0 auto; color: #7dd3fc; font-size: .62rem; }
 .metric-picker-empty { grid-column: 1 / -1; color: var(--text-muted); }
+
+/* Mobile panes stay mounted so list scroll and viewer search survive navigation. */
+.mobile-pane-switch, .mobile-pane-button { display: none; }
+
+@media (max-width: 900px) {
+  body { padding-bottom: 0; }
+  .news-monitor, .screener-page { width: 100%; min-width: 0; padding: 12px; }
+  .news-monitor-layout, .screener-workspace { grid-template-columns: minmax(0, 1fr); }
+  .news-monitor:not(.mobile-news-detail) .news-detail,
+  .mobile-news-detail .news-feed,
+  .mobile-news-detail .news-filters,
+  .news-pane-splitter, .pane-divider, .custom-fixed-x-scroll { display: none; }
+  .news-detail { position: static; max-height: none; width: 100%; }
+  .mobile-news-detail .news-detail-close { display: none; }
+  .news-card { overflow-wrap: anywhere; }
+  .news-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news-filters label, .news-filters input, .news-filters select { min-width: 0; width: 100%; }
+  .mobile-pane-switch { display: flex; flex: 0 0 auto; gap: 8px; padding: 8px; }
+  .mobile-pane-button, .mobile-pane-switch button {
+    display: block; min-height: 44px; padding: 8px 12px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--card-bg); color: var(--text); cursor: pointer;
+  }
+  .mobile-pane-button { flex: 0 0 auto; align-self: flex-start; margin-bottom: 8px; }
+  .mobile-pane-switch button[aria-pressed="true"] { background: var(--primary); color: white; }
+  .alerts-layout { height: 100dvh; width: 100%; min-width: 0; }
+  .alerts-content { min-width: 0; }
+  .alerts-list-pane { width: 100% !important; flex: 1 1 auto !important; }
+  .alerts-detail-pane { width: 100%; min-width: 0; }
+  .alerts-layout[data-mobile-pane="list"] .alerts-detail-pane,
+  .alerts-layout[data-mobile-pane="company"] .alerts-list-pane,
+  .alerts-layout[data-mobile-pane="company"] > .filter-bar { display: none; }
+  .alerts-layout > .filter-bar { max-height: 30dvh; overflow-y: auto; }
+  .alerts-header, .alerts-header-left, .alerts-header-right,
+  .viewer-header-top, .top-navigation, .ticker-input-group,
+  .order-kpi-section-header, .order-kpi-tab-buttons, .section-header, .segment-header-row,
+  .search-actions, .screener-titlebar { flex-wrap: wrap; min-width: 0; }
+  .alerts-header { padding: 8px; gap: 6px; }
+  .alerts-header-right { overflow-wrap: anywhere; }
+  .viewer-header { padding: 8px; }
+  .ticker-input-group { width: 100%; gap: 6px; flex-shrink: 1; }
+  .search-wrapper { flex: 1 1 120px; min-width: 0; }
+  .ticker-input.search-input, .search-dropdown { width: 100%; min-width: 0; }
+  .company-viewer-sticky-header { position: relative; z-index: 60; padding-bottom: 0; }
+  .company-viewer-scroll-body { flex: 1 1 auto; min-height: 0; overflow-x: hidden; }
+  .alerts-layout[data-mobile-pane="company"] > .alerts-header,
+  .alerts-layout[data-mobile-pane="company"] > .mobile-pane-switch { display: none; }
+  .alerts-detail-pane > .mobile-pane-button {
+    height: 44px; min-height: 44px; margin: 0; align-self: stretch;
+    text-align: left; border-radius: 0;
+  }
+  .viewer-header { margin-bottom: 4px; }
+  .viewer-header[data-loaded="true"] { padding: 6px 8px; }
+  .viewer-header[data-loaded="true"] .viewer-header-top { flex-wrap: nowrap; min-height: 44px; gap: 8px; }
+  .viewer-header .ticker-info { flex: 1 1 auto; gap: 6px; overflow: visible; }
+  .viewer-header .ticker-badge { font-size: 14px; padding: 4px; }
+  .viewer-header .company-name { white-space: normal; overflow-wrap: anywhere; flex-shrink: 1; font-size: 14px; }
+  .viewer-controls-toggle { min-height: 44px; padding: 6px 8px; font-size: 13px; }
+  .viewer-header .viewer-controls { flex-wrap: wrap; min-width: 0; }
+  .viewer-header .user-info { flex-wrap: wrap; }
+  .valuation-card-compact {
+    height: 52px; flex-wrap: nowrap; white-space: nowrap; margin-bottom: 4px;
+    padding: 6px 8px; overflow-x: auto; min-width: 0; max-width: 100%;
+    -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y;
+  }
+  .valuation-card-compact .valuation-card-items { flex: 0 0 auto; flex-wrap: nowrap; }
+  .formula-bar { flex-direction: column; }
+  .formula-bar-label { height: 30px; min-height: 30px; min-width: 0; max-width: none; width: 100%; border-right: 0; }
+  .formula-bar-input {
+    flex: none; width: 100%; height: 96px !important; min-height: 96px;
+    white-space: pre-wrap; overflow-wrap: anywhere; overflow-y: auto;
+  }
+  .formula-bar-resize-handle { display: none; }
+  .viewer-container, .company-viewer-panel, .cvs-body,
+  .company-viewer-scroll-body, .company-page-x-scroll, .company-page-wide-content,
+  .viewer-main, .data-section, .order-kpi-section, .segment-scroll-area,
+  .order-kpi-table-card, .edinet-order-table-card, .per-share-section {
+    min-width: 0; max-width: 100%;
+  }
+  .company-page-wide-content { width: 100%; }
+  .company-page-x-scroll { overflow: visible; }
+  /* Constrain ancestors; only each table viewport owns horizontal scrolling. */
+  .table-wrapper, .pl-scroll-area, .segment-group, .per-share-table-wrap,
+  .order-kpi-table-wrap, .edinet-order-table-wrap, .screener-results {
+    min-width: 0; max-width: 100%; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y;
+  }
+  .table-wrapper .data-table { width: max-content; min-width: var(--table-width, 100%); }
+  .segment-group .segment-table { width: max-content; min-width: 100%; }
+  .segment-group-header, .edinet-order-table-meta { flex-wrap: wrap; }
+  .segment-header-row .section-title { flex: 1 0 100%; }
+  .company-news-section { min-width: 0; width: 100%; overflow-wrap: anywhere; }
+  .screener-resize-handle { display: none; }
+  /* Specificity intentionally beats component font sizes, including inline editors. */
+  body input, body select, body textarea { font-size: 16px !important; max-width: 100%; }
+}
 
 @media (max-width: 1000px) {
   .screener-workspace { grid-template-columns: 1fr; }
