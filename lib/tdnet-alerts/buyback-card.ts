@@ -57,9 +57,11 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
   const asOf = String(ext.ratio_denominator_as_of || "");
   const baseAsOf = String(ext.ratio_denominator_base_as_of || asOf);
   const adjustment = count(ext.ratio_denominator_adjustment_shares);
+  const adjustmentAsOf = String(ext.ratio_denominator_adjustment_as_of || asOf);
+  const beforeAcquisition = ext.ratio_denominator_timing === "before_acquisition";
   const baseShares = denominator && adjustment ? denominator + adjustment : denominator;
   const provenance = hasRatio && calculated && denominator && asOf
-    ? `分母：${denominator.toLocaleString("ja-JP")}株（${asOf}時点、自己株式を除く発行済株式数。${baseAsOf}公表値${baseShares?.toLocaleString("ja-JP")}株${adjustment ? `から${asOf}までの累計取得${adjustment.toLocaleString("ja-JP")}株を控除` : ""}）`
+    ? `分母：${denominator.toLocaleString("ja-JP")}株（${asOf}${beforeAcquisition ? "の今回の取得前" : "時点"}、自己株式を除く発行済株式数。${baseAsOf}公表値${baseShares?.toLocaleString("ja-JP")}株${adjustment ? `から${adjustmentAsOf}までの累計取得${adjustment.toLocaleString("ja-JP")}株を控除` : ""}）`
     : "";
   return {
     sharesLine, ratioLabel, provenance,

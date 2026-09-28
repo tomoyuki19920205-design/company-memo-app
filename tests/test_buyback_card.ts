@@ -30,6 +30,22 @@ test("disclosed program percentage remains disclosed", () => {
   assert.match(card!.sharesLine, /取得枠の上限株数：400万株.*8\.50%、開示値/);
 });
 
+test("result ratio and provenance use shares before this acquisition", () => {
+  const card = getBuybackCard(event({
+    shares_acquired: 403_400, shares_acquired_cumulative: 2_110_400,
+    ratio_numerator_shares: 403_400, ratio_scope: "transaction_acquired",
+    ratio_to_outstanding: 0.88858, ratio_source: "calculated",
+    ratio_denominator_shares: 45_398_105,
+    ratio_denominator_as_of: "2026-09-18",
+    ratio_denominator_base_as_of: "2026-06-30",
+    ratio_denominator_adjustment_shares: 1_707_000,
+    ratio_denominator_adjustment_as_of: "2026-09-17",
+    ratio_denominator_timing: "before_acquisition",
+  }));
+  assert.match(card!.sharesLine, /今回の取得株数：403,400株.*約0\.89%、算出値/);
+  assert.match(card!.provenance, /45,398,105株.*2026-09-18の今回の取得前.*2026-06-30公表値47,105,105株.*2026-09-17までの累計取得1,707,000株/);
+});
+
 test("old program ratio cannot attach to this purchase", () => {
   const card = getBuybackCard(event({
     shares_limit: 560_000, shares_acquired_cumulative: 2_110_400,
