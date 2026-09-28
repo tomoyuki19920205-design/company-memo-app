@@ -3438,6 +3438,12 @@ textarea::placeholder {
   text-overflow: ellipsis;
 }
 
+.alert-card-summary-line2.buyback-card-metric {
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
 .alert-card-financial-summary {
   display: flex;
   align-items: baseline;

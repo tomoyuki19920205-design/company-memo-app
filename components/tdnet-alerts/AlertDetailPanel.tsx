@@ -15,6 +15,7 @@ import type { SegmentRow } from "@/lib/tdnet-alerts/queries";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
 import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
+import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { isEdinetOrderEvent } from "./AlertsPage";
 import IpoAnalysisPanel from "./IpoAnalysisPanel";
@@ -42,6 +43,7 @@ export default function AlertDetailPanel({
   const materialUrl = isMaterial ? getValidatedMaterialUrl(event) : "";
   const sourceLink = isMaterial ? materialUrl : (event.source_url || "");
   const pdfLink = isMaterial ? materialUrl : (event.pdf_url || "");
+  const buybackCard = getBuybackCard(event);
   const isIpoListing = /^新規上場\s+[0-9A-Z]{4}\s+/u.test(event.display_title || event.headline || "");
 
   // rawSegments が変わった時だけ統合キー計算を実行（再描画のたびには走らない）
@@ -167,6 +169,9 @@ export default function AlertDetailPanel({
         .join("\n")
       || event.headline
       || "";
+  if (buybackCard) {
+    mainMessage = [event.headline, buybackCard.sharesLine, buybackCard.provenance].filter(Boolean).join("\n");
+  }
 
   // 指標行なし(改行なし) → headline をメイン本文に統合
   const isShort = !mainMessage.includes("\n");
@@ -250,6 +255,12 @@ export default function AlertDetailPanel({
               📄 PDF
             </a>
           )}
+        </div>
+      )}
+      {buybackCard?.sourceUrl && (
+        <div className="detail-links">
+          <a href={buybackCard.sourceUrl} target="_blank" rel="noopener noreferrer" className="detail-link">📄 分母の会社公表値</a>
+          {buybackCard.adjustmentUrl && <a href={buybackCard.adjustmentUrl} target="_blank" rel="noopener noreferrer" className="detail-link">📄 累計取得株数の開示</a>}
         </div>
       )}
 

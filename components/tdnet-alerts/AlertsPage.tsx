@@ -14,6 +14,7 @@ import {
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
+import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -205,7 +206,7 @@ const formatCardBody = (event: EnrichedEvent): {
   summaryText?: string;
   compareText?: string;
 } => {
-  if (bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
+  if (event.event_type !== "buyback" && bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -292,20 +293,15 @@ const formatCardBody = (event: EnrichedEvent): {
     if (periodLabel) lines.push(String(periodLabel));
 
   } else if (event.event_type === "buyback") {
+    const card = getBuybackCard(event);
     const typeLabel = event.event_subtype === "tostnet"
       ? "📊 自社株買い（ToSTNeT）"
       : "📊 自社株買い（取得枠決議）";
-    const ratio = ext.ratio_to_outstanding;
-    const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
-    lines.push(ratioStr ? `${typeLabel}  ${ratioStr}` : typeLabel);
-
-    const shares = ext.shares_limit;
+    lines.push(card?.ratioLabel ? `${typeLabel}  ${card.ratioLabel}` : typeLabel);
+    if (card) lines.push(card.sharesLine);
+    if (card?.provenance) lines.push(card.provenance);
     const amount = ext.amount_limit_million_yen;
-    const specs: string[] = [];
-    if (ratio  != null) specs.push(`割合 ${Number(ratio).toFixed(2)}%`);
-    if (shares != null) specs.push(`株数 ${fmtShares(shares)}`);
-    if (amount != null) specs.push(`金額 ${fmtBillion(amount)}`);
-    if (specs.length > 0) lines.push(specs.join("  "));
+    if (amount != null) lines.push(`取得金額の上限：${fmtBillion(amount)}`);
     const start = ext.start_date;
     const end   = ext.end_date;
     if (event.event_subtype === "tostnet" && start) {
@@ -441,7 +437,7 @@ const getOpTurnaroundLabel = (
 };
 
 const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
-  if (summaryCache.has(event.id)) return summaryCache.get(event.id)!;
+  if (event.event_type !== "buyback" && summaryCache.has(event.id)) return summaryCache.get(event.id)!;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -617,9 +613,9 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     }
   } else if (event.event_type === "buyback") {
     typeLabel = "BB";
-    const ratio = ext.ratio_to_outstanding;
-    const ratioStr = ratio != null ? `${Number(ratio).toFixed(2)}%` : "";
-    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ratioStr}`.trim();
+    const card = getBuybackCard(event);
+    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
+    line2 = card?.sharesLine || "";
   } else if (event.event_type === "capital_action") {
     const ipoTitle = getIpoListingCardTitle(event);
     line1 = ipoTitle
@@ -1509,7 +1505,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                        {renderHighlightedCardBody(line1, event)}
                     </div>
                     {displayLine2 && (
-                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""}`}>
+                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "buyback" ? "buyback-card-metric" : ""}`}>
                           {event.event_type === "earnings"
                             ? renderCompactEarningsCardLine(displayLine2)
                             : renderHighlightedCardBody(displayLine2, event)}
