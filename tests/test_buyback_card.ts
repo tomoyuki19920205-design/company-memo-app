@@ -18,7 +18,7 @@ test("current purchase limit and derived ratio stay paired", () => {
     ratio_denominator_adjustment_shares: 2_110_400,
   }));
   assert.match(card!.sharesLine, /今回の買付上限株数：56万株.*約1\.24%、算出値/);
-  assert.match(card!.provenance, /44,994,705株.*2026-06-30.*2,110,400株/);
+  assert.match(card!.provenance, /44,994,705株.*2026-06-30公表値47,105,105株.*2,110,400株/);
 });
 
 test("disclosed program percentage remains disclosed", () => {
