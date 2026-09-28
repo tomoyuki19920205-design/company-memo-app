@@ -4,13 +4,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import type { TdnetEvent } from "./types";
 import { audioManager } from "./audio";
-import { isNotificationEventVisible } from "./notification-policy";
+import { subscribeToAlertChanges } from "./realtime-subscription";
 import type { RealtimeChannel } from "@supabase/supabase-js";
 
 export type ConnectionStatus = "connecting" | "connected" | "disconnected";
 
 interface UseRealtimeAlertsOptions {
   onNewEvent?: (event: TdnetEvent) => void;
+  onUpdatedEvent?: () => void;
 }
 
 export function useRealtimeAlerts(opts: UseRealtimeAlertsOptions = {}) {
@@ -18,28 +19,24 @@ export function useRealtimeAlerts(opts: UseRealtimeAlertsOptions = {}) {
   const channelRef = useRef<RealtimeChannel | null>(null);
   const onNewEventRef = useRef(opts.onNewEvent);
   onNewEventRef.current = opts.onNewEvent;
+  const onUpdatedEventRef = useRef(opts.onUpdatedEvent);
+  onUpdatedEventRef.current = opts.onUpdatedEvent;
 
   const subscribe = useCallback(() => {
     const supabase = createSupabaseBrowser();
     setStatus("connecting");
 
-    const channel = supabase
-      .channel("tdnet_events_realtime")
-      .on(
-        "postgres_changes",
-        {
-          event: "INSERT",
-          schema: "public",
-          table: "tdnet_events",
-        },
-        (payload) => {
-          const newEvent = payload.new as TdnetEvent;
-          if (!isNotificationEventVisible(newEvent)) return;
+    const channel = subscribeToAlertChanges(
+      supabase.channel("tdnet_events_realtime"),
+      {
+        onInsert: (newEvent) => {
           onNewEventRef.current?.(newEvent);
           // 音通知
           audioManager.playNotification(newEvent.id);
-        }
-      )
+        },
+        onUpdate: () => onUpdatedEventRef.current?.(),
+      }
+    )
       .subscribe((status) => {
         if (status === "SUBSCRIBED") {
           setStatus("connected");

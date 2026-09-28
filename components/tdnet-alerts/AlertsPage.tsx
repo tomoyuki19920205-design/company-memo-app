@@ -912,6 +912,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const { status: connectionStatus } = useRealtimeAlerts({
     onNewEvent: (newEvent: TdnetEvent) => {
       if (!isNotificationEventVisible(newEvent)) return;
+      alertsCacheRef.current.clear();
       setEvents((prev) => {
         if (prev.some((e) => e.id === newEvent.id)) return prev;
         const enriched: EnrichedEvent = {
@@ -922,6 +923,10 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         };
         return [enriched, ...prev];
       });
+    },
+    onUpdatedEvent: () => {
+      alertsCacheRef.current.clear();
+      void loadEvents();
     },
   });
 
