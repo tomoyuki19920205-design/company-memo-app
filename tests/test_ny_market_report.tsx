@@ -3,6 +3,7 @@ import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NYMarketCardSummary, NYMarketDetail } from "../components/NewsMonitor";
+import { formatNyIndexPercent, normalizeNyIndexMarkdown } from "../lib/ny-index-display";
 import type { NYMarketReportStreamItem } from "../types/news";
 
 function row(): NYMarketReportStreamItem {
@@ -47,4 +48,33 @@ test("NY detail renders required metadata, full long markdown, and sources", () 
     for (const label of ["作成日時", "レポート日 JST", "対象NY市場営業日", "市場状態", "2026/09/15", "Publisher"]) assert.match(html, new RegExp(label));
     assert.match(html, /Section 249/);
     assert.match(html, /href="https:\/\/example.com\/source"/);
+});
+
+test("NY index chips and report body share signed-zero formatting without changing raw values", () => {
+    const report = row();
+    const cases = [
+        ["SOX", -0.004, "0.00%"],
+        ["S&P500", 0.004, "0.00%"],
+        ["Dow", 0, "0.00%"],
+        ["Nasdaq", -1.23, "-1.23%"],
+        ["Russell 2000", 1.23, "+1.23%"],
+    ] as const;
+    for (const [key, raw, expected] of cases) {
+        report.index_moves[key] = { change_pct: raw };
+        assert.equal(formatNyIndexPercent(raw), expected);
+    }
+    report.report_markdown = "# NY市場モーニング\n\n## 5指数\n"
+        + "SOX　+0.00%\nS&P 500　+0.00%\nDow　+0.00%\nNasdaq　-1.23%\nRussell 2000　+1.23%\n"
+        + "\n## 注記\n保存された未丸め値を変更しない。";
+    const originalMarkdown = report.report_markdown;
+    const originalIndexMoves = structuredClone(report.index_moves);
+    const card = renderToStaticMarkup(<NYMarketCardSummary row={report} />);
+    const detail = renderToStaticMarkup(<NYMarketDetail row={report} />);
+    for (const chip of ["S&amp;P 0.00%", "SOX 0.00%", "Dow 0.00%", "Nasdaq -1.23%", "Russell +1.23%"])
+        assert.ok(card.includes(chip), chip);
+    for (const body of ["SOX　0.00%", "S&amp;P 500　0.00%", "Dow　0.00%", "Nasdaq　-1.23%", "Russell 2000　+1.23%"])
+        assert.ok(detail.includes(body), body);
+    assert.ok(normalizeNyIndexMarkdown(originalMarkdown).includes("## 注記\n保存された未丸め値を変更しない。"));
+    assert.equal(report.report_markdown, originalMarkdown);
+    assert.deepEqual(report.index_moves, originalIndexMoves);
 });

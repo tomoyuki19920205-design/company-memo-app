@@ -218,7 +218,7 @@ test("keeps company news separate and passes sector full_report_md directly to t
     const source = readFileSync(new URL("../components/NewsMonitor.tsx", import.meta.url), "utf8");
 
     assert.match(source, /<SectorReportMarkdown markdown=\{row\.full_report_md\} reportType="sector_weekly" \/>/);
-    assert.match(source, /<SectorReportMarkdown markdown=\{row\.report_markdown\} reportType="ny_market_daily" \/>/);
+    assert.match(source, /<SectorReportMarkdown markdown=\{normalizeNyIndexMarkdown\(row\.report_markdown\)\} reportType="ny_market_daily" \/>/);
     assert.match(source, /function CompanyDetail[\s\S]*?<h3>Summary<\/h3><p>\{row\.summary\}<\/p>/);
     assert.equal((source.match(/<SectorReportMarkdown/g) ?? []).length, 2);
     assert.doesNotMatch(readFileSync(new URL("../components/SectorReportMarkdown.tsx", import.meta.url), "utf8"), /dangerouslySetInnerHTML/);

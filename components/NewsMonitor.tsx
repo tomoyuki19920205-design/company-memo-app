@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import SectorReportMarkdown from "@/components/SectorReportMarkdown";
 import { loadCompanyMaster, loadNewsStream } from "@/lib/viewer-api";
 import { isNYMarketReport, isSafeSourceUrl, isSectorReport } from "@/lib/news-filter";
+import { formatNyIndexPercent, normalizeNyIndexMarkdown } from "@/lib/ny-index-display";
 import { DEFAULT_NEWS_SPLIT_RATIO, NEWS_SPLIT_STORAGE_KEY, clampNewsSplitRatio, getNewsSplitBounds, newsSplitRatioFromPointer, parseStoredNewsSplitRatio, resizeNewsSplitWithKeyboard } from "@/lib/news-pane-layout";
 import type { EarningsRelevance, NewsDirection, NewsQuery, NewsStreamItem } from "@/types/news";
 import TopNavigation from "@/components/TopNavigation";
@@ -173,7 +174,7 @@ function indexMove(row: Extract<NewsStreamItem, { report_type: "ny_market_daily"
     const normalized = new Map(Object.entries(row.index_moves).map(([key, value]) => [key.toLocaleLowerCase().replace(/[^a-z0-9]/g, ""), value]));
     const value = aliases.map((alias) => normalized.get(alias)).find((item) => item !== undefined);
     const change = typeof value === "number" ? value : value && typeof value === "object" && "change_pct" in value ? (value as { change_pct?: unknown }).change_pct : null;
-    return typeof change === "number" && Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : null;
+    return typeof change === "number" && Number.isFinite(change) ? formatNyIndexPercent(change) : null;
 }
 
 const NY_MARKET_CARD_INDEXES = [
@@ -192,7 +193,7 @@ export function NYMarketCardSummary({ row }: { row: Extract<NewsStreamItem, { re
 }
 
 export function NYMarketDetail({ row }: { row: Extract<NewsStreamItem, { report_type: "ny_market_daily" }> }) {
-    return <div className="sector-report-detail ny-market-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>レポート日 JST</dt><dd>{row.report_date_jst.replaceAll("-", "/")}</dd><dt>対象NY市場営業日</dt><dd>{row.market_session_date.replaceAll("-", "/")}</dd><dt>市場状態</dt><dd>{row.market_status}</dd></dl><h3>Full Report</h3><SectorReportMarkdown markdown={row.report_markdown} reportType="ny_market_daily" /><h3>Sources</h3><ul className="sector-source-list">{row.sources.map((source, index) => <li key={`${source.url}-${index}`}>{isSafeSourceUrl(source.url) ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : source.title}<small>{source.publisher}{source.published_at ? ` / ${sourceDate(source.published_at)}` : ""}</small></li>)}</ul></div>;
+    return <div className="sector-report-detail ny-market-report-detail"><h2>{row.title}</h2><dl><dt>作成日時</dt><dd>{dateTime(row.sort_at)}</dd><dt>レポート日 JST</dt><dd>{row.report_date_jst.replaceAll("-", "/")}</dd><dt>対象NY市場営業日</dt><dd>{row.market_session_date.replaceAll("-", "/")}</dd><dt>市場状態</dt><dd>{row.market_status}</dd></dl><h3>Full Report</h3><SectorReportMarkdown markdown={normalizeNyIndexMarkdown(row.report_markdown)} reportType="ny_market_daily" /><h3>Sources</h3><ul className="sector-source-list">{row.sources.map((source, index) => <li key={`${source.url}-${index}`}>{isSafeSourceUrl(source.url) ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : source.title}<small>{source.publisher}{source.published_at ? ` / ${sourceDate(source.published_at)}` : ""}</small></li>)}</ul></div>;
 }
 
 function SectorDetail({ row }: { row: Extract<NewsStreamItem, { report_type: "sector_weekly" }> }) {
