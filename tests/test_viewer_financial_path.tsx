@@ -272,6 +272,38 @@ test("8113 forecast remains available but never enters the actual PL model", () 
     assert.equal(model.forecastFYRows[0].source, "jquants_nxf");
 });
 
+test("JGAAP bank displays source ordinary profit and matching period labels", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "8316", period: "2026-03-31", quarter: "1Q", sales: 2_444_404, gross_profit: null, operating_profit: null, ordinary_profit: 483_337, source: "jquants", updated_at: "" },
+        { ticker: "8316", period: "2026-03-31", quarter: "2Q", sales: 5_205_887, gross_profit: null, operating_profit: null, ordinary_profit: 1_278_123, source: "jquants", updated_at: "" },
+    ];
+    const records = transformFinancialRows(rows);
+    const html = renderToStaticMarkup(
+        <FinancialsTable data={records} industry="銀行業" loading={false} segments={[]} />,
+    );
+    assert.ok(records.every((item) => item.operating_profit === null));
+    assert.match(html, /経常利益率/);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "2Q"),
+        /data-profit-metric="ordinary_profit"[^>]*>1,278,123/);
+    assert.match(rowMarkup(html, "standalone", "2026-03-31", "2Q"), />794,786</);
+    assert.doesNotMatch(html, /営業利益率/);
+});
+
+test("mixed financial subjects appear on their own rows and missing profit is an em dash", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "8410", period: "2026-03-31", quarter: "1Q", sales: 100, gross_profit: null, operating_profit: 0, ordinary_profit: 10, source: "jquants", updated_at: "" },
+        { ticker: "8410", period: "2026-03-31", quarter: "2Q", sales: 250, gross_profit: null, operating_profit: null, ordinary_profit: -20, source: "jquants", updated_at: "" },
+        { ticker: "8410", period: "2026-03-31", quarter: "3Q", sales: 350, gross_profit: null, operating_profit: null, ordinary_profit: null, source: "jquants", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(
+        <FinancialsTable data={transformFinancialRows(rows)} industry="銀行業" loading={false} segments={[]} />,
+    );
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "1Q"), /営業利益<\/span>0/);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "2Q"), /経常利益<\/span>-20/);
+    assert.match(rowMarkup(html, "cumulative", "2026-03-31", "3Q"), /data-profit-metric="missing"[^>]*>—/);
+    assert.match(rowMarkup(html, "standalone", "2026-03-31", "2Q"), /data-profit-metric="ordinary_profit"[^>]*><span[^>]*>経常利益<\/span>—/);
+});
+
 test("actual/forecast view migration prevents metric-level scope mixing", () => {
     const migration = readFileSync(
         fileURLToPath(

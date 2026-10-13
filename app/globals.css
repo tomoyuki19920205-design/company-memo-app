@@ -2913,6 +2913,13 @@ textarea::placeholder {
 }
 
 /* 営業利益率列 左右縦区切り線 */
+.pl-profit-subject {
+  display: block;
+  font-size: 0.64rem;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+
 .op-margin-col {
   border-left: 2px solid rgba(255,255,255,0.28) !important;
   border-right: 2px solid rgba(255,255,255,0.28) !important;

@@ -8,7 +8,7 @@
  */
 
 import type { FinancialRecord } from "@/types/financial";
-import { getCompanyProfitDisplay, presentsProfitBeforeTax } from "@/lib/company-profit-display";
+import { selectProfitDisplay, type SelectedProfit } from "@/lib/company-profit-display";
 
 // ============================================================
 // Quarter 順序定義
@@ -75,6 +75,7 @@ export interface QStandaloneRow {
     sgAndA: number | null;       // 管理費 = GP - OP
     operatingProfit: number | null;
     opMargin: number | null;     // 営業利益率 = OP / SALES (%)
+    profitDisplay: SelectedProfit;
 }
 
 // ============================================================
@@ -89,6 +90,7 @@ export interface CumulativeRow {
     sgAndA: number | null;       // 管理費 = GP - OP
     operatingProfit: number | null;
     opMargin: number | null;     // 営業利益率 = OP / SALES (%)
+    profitDisplay: SelectedProfit;
     source: string;
 }
 
@@ -142,15 +144,13 @@ export const FORECAST_SOURCES = new Set<string>([
     "tdnet_forecast",
 ]);
 
-export function displayedProfit(record: FinancialRecord): number | null {
-    return getCompanyProfitDisplay(record.ticker, record.period, record.quarter).metric === "profit_before_tax"
-        ? record.profit_before_tax
-        : record.operating_profit;
+export function displayedProfit(record: FinancialRecord, industry?: string | null): number | null {
+    return selectProfitDisplay(record, industry).value;
 }
 
-function displayedSgAndA(record: FinancialRecord): number | null {
-    // GP - PBT is not SG&A. Do not manufacture SG&A for configured PBT issuers.
-    return presentsProfitBeforeTax(record.ticker, record.period, record.quarter)
+function displayedSgAndA(record: FinancialRecord, profit: SelectedProfit): number | null {
+    // GP minus ordinary profit or PBT is not SG&A.
+    return profit.metric !== "operating_profit"
         ? null
         : calcSgAndA(record.gross_profit, record.operating_profit);
 }
@@ -180,18 +180,19 @@ export function filterLast5Years(records: FinancialRecord[]): FinancialRecord[] 
 // ============================================================
 // 累計PLデータ生成
 // ============================================================
-export function buildCumulativeRows(records: FinancialRecord[]): CumulativeRow[] {
+export function buildCumulativeRows(records: FinancialRecord[], industry?: string | null): CumulativeRow[] {
     return records.map((r) => {
-        const profit = displayedProfit(r);
+        const profit = selectProfitDisplay(r, industry);
         return {
             period: r.period,
             quarter: r.quarter,
             sales: r.sales,
             grossProfit: r.gross_profit,
             grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
-            sgAndA: displayedSgAndA(r),
-            operatingProfit: profit,
-            opMargin: calcOpMargin(profit, r.sales),
+            sgAndA: displayedSgAndA(r, profit),
+            operatingProfit: profit.value,
+            opMargin: calcOpMargin(profit.value, r.sales),
+            profitDisplay: profit,
             source: r.source,
         };
     });
@@ -200,7 +201,7 @@ export function buildCumulativeRows(records: FinancialRecord[]): CumulativeRow[]
 // ============================================================
 // Q単体計算
 // ============================================================
-export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow[] {
+export function buildQStandaloneRows(records: FinancialRecord[], industry?: string | null): QStandaloneRow[] {
     // 年度ごとにグルーピング
     const byPeriod = new Map<string, Map<string, FinancialRecord>>();
     for (const r of records) {
@@ -215,7 +216,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
     for (const r of records) {
         const periodMap = byPeriod.get(extractPeriodYear(r.period));
         if (!periodMap) {
-            result.push(emptyQRow(r.period, r.quarter));
+            result.push(emptyQRow(r, industry));
             continue;
         }
 
@@ -223,40 +224,42 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
 
         if (prevQ === null) {
             // 1Q: 単体 = 累計
-            const profit = displayedProfit(r);
+            const profit = selectProfitDisplay(r, industry);
             result.push({
                 period: r.period,
                 quarter: r.quarter,
                 sales: r.sales,
                 grossProfit: r.gross_profit,
                 grossMarginRate: calcGrossMarginRate(r.gross_profit, r.sales),
-                sgAndA: displayedSgAndA(r),
-                operatingProfit: profit,
-                opMargin: calcOpMargin(profit, r.sales),
+                sgAndA: displayedSgAndA(r, profit),
+                operatingProfit: profit.value,
+                opMargin: calcOpMargin(profit.value, r.sales),
+                profitDisplay: profit,
             });
         } else if (prevQ === undefined) {
             // 不明な quarter
-            result.push(emptyQRow(r.period, r.quarter));
+            result.push(emptyQRow(r, industry));
         } else {
             // 2Q/3Q/FY: 前四半期との差分
             const prevRecord = periodMap.get(prevQ);
             if (!prevRecord) {
                 // 前四半期データなし → 安全に空表示
-                result.push(emptyQRow(r.period, r.quarter));
+                result.push(emptyQRow(r, industry));
             } else {
+                if (r.consolidation_scope !== prevRecord.consolidation_scope ||
+                    FORECAST_SOURCES.has(r.source) !== FORECAST_SOURCES.has(prevRecord.source)) {
+                    result.push(emptyQRow(r, industry));
+                    continue;
+                }
                 const sales = safeSub(r.sales, prevRecord.sales);
                 const gp = safeSub(r.gross_profit, prevRecord.gross_profit);
-                const currentProfitMetric = getCompanyProfitDisplay(
-                    r.ticker, r.period, r.quarter,
-                ).metric;
-                const previousProfitMetric = getCompanyProfitDisplay(
-                    prevRecord.ticker, prevRecord.period, prevRecord.quarter,
-                ).metric;
-                const op = currentProfitMetric === previousProfitMetric
-                    ? safeSub(displayedProfit(r), displayedProfit(prevRecord))
+                const currentProfit = selectProfitDisplay(r, industry);
+                const previousProfit = selectProfitDisplay(prevRecord, industry);
+                const op = currentProfit.metric === previousProfit.metric
+                    ? safeSub(currentProfit.value, previousProfit.value)
                     : null;
                 const grossMarginRate = calcGrossMarginRate(gp, sales);
-                const sgAndA = presentsProfitBeforeTax(r.ticker, r.period, r.quarter) ? null : calcSgAndA(gp, op);
+                const sgAndA = currentProfit.metric === "operating_profit" ? calcSgAndA(gp, op) : null;
                 const opMargin = calcOpMargin(op, sales);
 
                 result.push({
@@ -268,6 +271,7 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
                     sgAndA,
                     operatingProfit: op,
                     opMargin,
+                    profitDisplay: currentProfit,
                 });
             }
         }
@@ -276,16 +280,17 @@ export function buildQStandaloneRows(records: FinancialRecord[]): QStandaloneRow
     return result;
 }
 
-function emptyQRow(period: string, quarter: string): QStandaloneRow {
+function emptyQRow(record: FinancialRecord, industry?: string | null): QStandaloneRow {
     return {
-        period,
-        quarter,
+        period: record.period,
+        quarter: record.quarter,
         sales: null,
         grossProfit: null,
         grossMarginRate: null,
         sgAndA: null,
         operatingProfit: null,
         opMargin: null,
+        profitDisplay: selectProfitDisplay(record, industry),
     };
 }
 

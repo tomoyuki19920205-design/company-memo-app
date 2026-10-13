@@ -461,7 +461,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             if (loadRequestIdRef.current !== currentRequestId) return;
 
-            const newCompanyInfo = companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null };
+            const newCompanyInfo = companyResult.status === "fulfilled" ? companyResult.value : { ticker, companyName: null, industry: null };
             setCompanyInfo(newCompanyInfo);
 
             let plData: FinancialRecord[] = [];
@@ -1139,6 +1139,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                         <div className="viewer-main">
                             <FinancialsTable
                                 data={financials}
+                                industry={companyInfo?.industry}
                                 loading={dataLoading}
                                 selectedPeriod={selectedPeriod}
                                 selectedQuarter={selectedQuarter}

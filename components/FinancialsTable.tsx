@@ -15,7 +15,7 @@ import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAli
 import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
-import { getCompanyProfitDisplay } from "@/lib/company-profit-display";
+import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } from "@/lib/company-profit-display";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
@@ -67,6 +67,7 @@ const EDITABLE_COLS: string[] = [...MEMO_COLS, ...KPI_COLS];
 
 interface FinancialsTableProps {
     data: FinancialRecord[];
+    industry?: string | null;
     loading: boolean;
     selectedPeriod?: string;
     selectedQuarter?: string;
@@ -588,6 +589,7 @@ function PLTableHeader({
 // ============================================================
 function FinancialsTable({
     data,
+    industry,
     loading,
     selectedPeriod,
     selectedQuarter,
@@ -614,31 +616,37 @@ function FinancialsTable({
     const displayTicker = data.length > 0 && data.every((row) => row.ticker === data[0].ticker)
         ? data[0].ticker
         : null;
-    const profitDisplay = getCompanyProfitDisplay(displayTicker);
-    const showsProfitBeforeTax = profitDisplay.metric === "profit_before_tax";
+    const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
+        useMemo(
+            () => buildFinancialTableModel(data, industry),
+            [data, industry],
+        );
+    const availableProfitDisplays = cumRows
+        .filter((row) => row.profitDisplay.value !== null)
+        .map((row) => row.profitDisplay);
+    const profitMetrics = new Set(availableProfitDisplays.map((item) => item.metric));
+    const mixedProfitSubjects = profitMetrics.size > 1;
+    const fallbackDisplay = getCompanyProfitDisplay(displayTicker);
+    const headerDisplay = mixedProfitSubjects
+        ? { label: "利益", marginLabel: "利益率" }
+        : availableProfitDisplays[0] ??
+            (isFinancialIndustry(industry) ? { label: "利益", marginLabel: "利益率" } : fallbackDisplay);
     const cumulativeColumns = useMemo(
         () => CUM_COLUMNS.map((column) => {
-            if (!showsProfitBeforeTax) return column;
-            if (column.key === "op") return { ...column, label: profitDisplay.label };
-            if (column.key === "op_margin") return { ...column, label: profitDisplay.marginLabel };
+            if (column.key === "op") return { ...column, label: headerDisplay.label };
+            if (column.key === "op_margin") return { ...column, label: headerDisplay.marginLabel };
             return column;
         }),
-        [profitDisplay, showsProfitBeforeTax],
+        [headerDisplay.label, headerDisplay.marginLabel],
     );
     const standaloneColumns = useMemo(
         () => Q_BASE_COLUMNS.map((column) => {
-            if (!showsProfitBeforeTax) return column;
-            if (column.key === "op") return { ...column, label: profitDisplay.label };
-            if (column.key === "op_margin") return { ...column, label: profitDisplay.marginLabel };
+            if (column.key === "op") return { ...column, label: headerDisplay.label };
+            if (column.key === "op_margin") return { ...column, label: headerDisplay.marginLabel };
             return column;
         }),
-        [profitDisplay, showsProfitBeforeTax],
+        [headerDisplay.label, headerDisplay.marginLabel],
     );
-    const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
-        useMemo(
-            () => buildFinancialTableModel(data),
-            [data],
-        );
 
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
 
@@ -3156,8 +3164,8 @@ function FinancialsTable({
                                                     <td style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className={`num-col ${isCellInRange("cum", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 3)}>{formatMillions(row.grossProfit)}</td>
                                                     <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
                                                     <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.sgAndA)}</td>
-                                                    <td style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{fmtMargin(row.opMargin)}</td>
+                                                    <td title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
+                                                    <td title={row.profitDisplay.marginLabel} style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
                                                 </tr>
                                             );
                                         })}
@@ -3231,8 +3239,8 @@ function FinancialsTable({
                                                 <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
                                                 <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
                                                 <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.sgAndA)}</td>
-                                                <td style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{formatMillions(row.operatingProfit)}</td>
-                                                <td style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{fmtMargin(row.opMargin)}</td>
+                                                <td title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
+                                                <td title={row.profitDisplay.marginLabel} style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
                                             </tr>
                                         ))}
                                         {/* 手入力メモ専用行 (PL Q単体) — memo_kpi と同じロジック */}
@@ -3397,14 +3405,8 @@ function FinancialsTable({
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
 
                         if (!latestForecast) return null;
-                        const forecastUsesPbt = getCompanyProfitDisplay(
-                            displayTicker,
-                            latestForecast.period,
-                            latestForecast.quarter,
-                        ).metric === "profit_before_tax";
-                        const forecastProfit = forecastUsesPbt
-                            ? latestForecast.profit_before_tax
-                            : latestForecast.operating_profit;
+                        const selectedForecastProfit = selectProfitDisplay(latestForecast, industry);
+                        const forecastProfit = selectedForecastProfit.value;
                         if (latestForecast.sales === null && forecastProfit === null) return null;
 
                         const sales = latestForecast.sales;
@@ -3427,12 +3429,12 @@ function FinancialsTable({
                                 )}
                                 {op !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{profitDisplay.label}</span>
+                                        <span className="pl-summary-label">{selectedForecastProfit.label}</span>
                                         <span className="pl-summary-value">{formatMillions(op)}</span>
                                     </span>
                                 )}
                                 {([
-                                    ["経常利益", latestForecast.ordinary_profit],
+                                    ["経常利益", selectedForecastProfit.metric === "ordinary_profit" ? null : latestForecast.ordinary_profit],
                                     ["親会社株主帰属純利益", latestForecast.net_income],
                                 ] as const).map(([label, value]) => value !== null && (
                                     <span className="pl-summary-item" key={label}>
@@ -3448,7 +3450,7 @@ function FinancialsTable({
                                 )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{showsProfitBeforeTax ? profitDisplay.marginLabel : "営利率"}</span>
+                                        <span className="pl-summary-label">{selectedForecastProfit.marginLabel}</span>
                                         <span className="pl-summary-value">{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}

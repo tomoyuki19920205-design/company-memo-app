@@ -3,13 +3,16 @@ import test from "node:test";
 
 import {
     buildQStandaloneRows,
+    buildCumulativeRows,
     sortForDisplay,
 } from "../lib/quarter-math";
 import {
     COMPANY_PROFIT_DISPLAY_CONFIG,
     getCompanyProfitDisplay,
+    isFinancialIndustry,
 } from "../lib/company-profit-display";
 import type { FinancialRecord } from "../types/financial";
+import { selectProfitDisplay } from "../lib/company-profit-display";
 import { formatMillions } from "../lib/format";
 
 const row = (
@@ -260,4 +263,65 @@ test("8630 preserves legacy JGAAP OP and switches to PBT at FY2025 FY", () => {
         (item) => item.period === "2025-03-31" && item.quarter === "FY",
     )!;
     assert.equal(fy2025.operatingProfit, null);
+});
+
+test("8316 consolidated OdP remains ordinary profit across FY2026 cumulative and standalone rows", () => {
+    const values = [
+        ["1Q", 2_444_404, 483_337],
+        ["2Q", 5_205_887, 1_278_123],
+        ["3Q", 7_934_366, 1_899_055],
+        ["FY", 10_790_853, 2_303_350],
+    ] as const;
+    const records = values.map(([quarter, sales, ordinary]) => ({
+        ...row("2026-03-31", quarter, sales, null, null, "8316"),
+        ordinary_profit: ordinary,
+    }));
+    const cumulative = buildCumulativeRows(records, "銀行業");
+    const standalone = buildQStandaloneRows(records, "銀行業");
+    assert.deepEqual(cumulative.map((item) => item.operatingProfit),
+        [483_337, 1_278_123, 1_899_055, 2_303_350]);
+    assert.deepEqual(standalone.map((item) => item.operatingProfit),
+        [483_337, 794_786, 620_932, 404_295]);
+    assert.ok(cumulative.every((item) =>
+        item.profitDisplay.label === "経常利益" && item.sgAndA === null));
+    assert.ok(records.every((item) => item.operating_profit === null));
+});
+
+test("8750 insurance and 8591 financial OP use their own verified subjects", () => {
+    const first = { ...row("2026-03-31", "1Q", 2_294_076, null, null, "8750"), ordinary_profit: 96_056 };
+    const second = { ...row("2026-03-31", "2Q", 5_119_595, null, null, "8750"), ordinary_profit: 343_351 };
+    const insuranceQ2 = buildQStandaloneRows([first, second], "保険業")[1];
+    assert.equal(insuranceQ2.operatingProfit, 247_295);
+    assert.equal(insuranceQ2.profitDisplay.label, "経常利益");
+    const orix = row("2026-03-31", "FY", 3_330_831, null, 456_248, "8591", 691_431);
+    assert.deepEqual(selectProfitDisplay(orix, "その他金融業"),
+        { metric: "operating_profit", value: 456_248, label: "営業利益", marginLabel: "営業利益率" });
+});
+
+test("financial fallback preserves zero, losses, missing values and nonfinancial behavior", () => {
+    const base = row("2026-03-31", "1Q", 100, null, null, "8410", 9);
+    assert.equal(selectProfitDisplay({ ...base, operating_profit: 0, ordinary_profit: -2 }, "銀行業").value, 0);
+    assert.equal(selectProfitDisplay({ ...base, ordinary_profit: 0 }, "銀行業").metric, "ordinary_profit");
+    assert.equal(selectProfitDisplay({ ...base, ordinary_profit: -2 }, "銀行業").value, -2);
+    assert.equal(selectProfitDisplay(base, "銀行業").metric, "profit_before_tax");
+    assert.equal(selectProfitDisplay({ ...base, profit_before_tax: null }, "銀行業").value, null);
+    assert.equal(selectProfitDisplay({ ...base, ticker: "7203", ordinary_profit: 5 }, "輸送用機器").value, null);
+});
+
+test("production securities industry spelling is recognized", () => {
+    assert.equal(isFinancialIndustry("証券･商品先物取引業"), true);
+    assert.equal(isFinancialIndustry("輸送用機器"), false);
+});
+
+test("quarter subtraction rejects a change of profit subject or consolidation scope", () => {
+    const ord = { ...row("2026-03-31", "1Q", 100, null, null, "8410"), ordinary_profit: 10 };
+    const pbt = row("2026-03-31", "2Q", 250, null, null, "8410", 35);
+    assert.equal(buildQStandaloneRows([ord, pbt], "銀行業")[1].operatingProfit, null);
+    const mismatchedScope = [
+        { ...ord, consolidation_scope: "consolidated" as const },
+        { ...ord, quarter: "2Q", ordinary_profit: 30, consolidation_scope: "non_consolidated" as const },
+    ];
+    const q2 = buildQStandaloneRows(mismatchedScope, "銀行業")[1];
+    assert.equal(q2.sales, null);
+    assert.equal(q2.operatingProfit, null);
 });

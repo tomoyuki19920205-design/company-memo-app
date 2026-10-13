@@ -17,6 +17,7 @@ import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 export interface CompanyInfo {
     ticker: string;
     companyName: string | null;
+    industry: string | null;
 }
 
 /**
@@ -26,29 +27,30 @@ export interface CompanyInfo {
  */
 export async function loadCompanyInfo(ticker: string): Promise<CompanyInfo> {
     const t = normalizeTicker(ticker);
-    if (!t) return { ticker: ticker, companyName: null };
+    if (!t) return { ticker: ticker, companyName: null, industry: null };
 
     try {
         const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("companies")
-            .select("name_ja")
+            .select("name_ja,industry")
             .eq("ticker_code", t)
             .maybeSingle();
 
         if (error) {
             // テーブル未存在 / RLS エラーなど → null フォールバック
             console.warn("[companies] 取得スキップ:", error.message);
-            return { ticker: t, companyName: null };
+            return { ticker: t, companyName: null, industry: null };
         }
 
         return {
             ticker: t,
             companyName: data?.name_ja ?? null,
+            industry: data?.industry ?? null,
         };
     } catch {
         // 失敗しても ticker だけ返す
-        return { ticker: t, companyName: null };
+        return { ticker: t, companyName: null, industry: null };
     }
 }
 

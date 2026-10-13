@@ -1,9 +1,11 @@
-export type ProfitDisplayMetric = "operating_profit" | "profit_before_tax";
+import type { FinancialRecord } from "@/types/financial";
+
+export type ProfitDisplayMetric = "operating_profit" | "ordinary_profit" | "profit_before_tax";
 
 export interface CompanyProfitDisplayConfig {
     metric: ProfitDisplayMetric;
-    label: "営業利益" | "税引前利益";
-    marginLabel: "営業利益率" | "税引前利益率";
+    label: "営業利益" | "経常利益" | "税引前利益";
+    marginLabel: "営業利益率" | "経常利益率" | "税引前利益率";
 }
 
 interface FiscalPeriodPoint {
@@ -27,6 +29,49 @@ const PBT_PROFIT_DISPLAY: CompanyProfitDisplayConfig = {
     label: "税引前利益",
     marginLabel: "税引前利益率",
 };
+
+const ORDINARY_PROFIT_DISPLAY: CompanyProfitDisplayConfig = {
+    metric: "ordinary_profit",
+    label: "経常利益",
+    marginLabel: "経常利益率",
+};
+
+export function isFinancialIndustry(industry: string | null | undefined): boolean {
+    return industry === "銀行業" || industry === "保険業" ||
+        industry === "証券･商品先物取引業" || industry === "その他金融業";
+}
+
+export interface SelectedProfit {
+    metric: ProfitDisplayMetric | null;
+    value: number | null;
+    label: CompanyProfitDisplayConfig["label"] | "利益";
+    marginLabel: CompanyProfitDisplayConfig["marginLabel"] | "利益率";
+}
+
+/** Select a displayed metric without changing the stored accounting columns. */
+export function selectProfitDisplay(
+    record: FinancialRecord,
+    industry?: string | null,
+): SelectedProfit {
+    const configured = getCompanyProfitDisplay(record.ticker, record.period, record.quarter);
+    // The verified IFRS rules also exclude legacy non-consolidated OP facts.
+    if (configured.metric === "profit_before_tax") {
+        return { ...configured, value: record.profit_before_tax };
+    }
+    if (!isFinancialIndustry(industry)) {
+        return { ...DEFAULT_PROFIT_DISPLAY, value: record.operating_profit };
+    }
+    if (record.operating_profit !== null) {
+        return { ...DEFAULT_PROFIT_DISPLAY, value: record.operating_profit };
+    }
+    if (record.ordinary_profit !== null) {
+        return { ...ORDINARY_PROFIT_DISPLAY, value: record.ordinary_profit };
+    }
+    if (record.profit_before_tax !== null) {
+        return { ...PBT_PROFIT_DISPLAY, value: record.profit_before_tax };
+    }
+    return { metric: null, value: null, label: "利益", marginLabel: "利益率" };
+}
 
 const QUARTER_ORDER: Readonly<Record<string, number>> = {
     "1Q": 0,

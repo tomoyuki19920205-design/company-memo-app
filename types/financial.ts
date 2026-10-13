@@ -11,4 +11,6 @@ export interface FinancialRecord {
     eps: number | null;
     source: string;
     updated_at: string;
+    /** Optional provenance when a data source exposes statement scope. */
+    consolidation_scope?: "consolidated" | "non_consolidated";
 }

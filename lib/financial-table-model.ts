@@ -7,7 +7,7 @@ import {
     sortForDisplay,
 } from "./quarter-math";
 
-export function buildFinancialTableModel(data: FinancialRecord[]) {
+export function buildFinancialTableModel(data: FinancialRecord[], industry?: string | null) {
     const filteredAll = filterLast5Years(data);
     const actual = filteredAll.filter(
         (row) => !FORECAST_SOURCES.has(row.source ?? ""),
@@ -15,8 +15,8 @@ export function buildFinancialTableModel(data: FinancialRecord[]) {
     const sorted = sortForDisplay(actual);
 
     return {
-        cumulativeRows: buildCumulativeRows(sorted),
-        standaloneRows: buildQStandaloneRows(sorted),
+        cumulativeRows: buildCumulativeRows(sorted, industry),
+        standaloneRows: buildQStandaloneRows(sorted, industry),
         forecastFYRows: filteredAll
             .filter(
                 (row) =>
