@@ -1,5 +1,6 @@
 // Deterministic browser fixtures. No live credentials or backend writes are used.
 import financials from '../fixtures/alphanumeric-pl-viewer.json';
+import reasonEvents from '../fixtures/forecast_reason_events.json';
 import { fullMemo, longCompanyName } from './focus-fixtures.mjs';
 const params = new URLSearchParams(location.search);
 const ticker = params.get('fixtureTicker') || '418A';
@@ -22,6 +23,12 @@ const tables = {
   tdnet_events: Array.from({ length: 20 }, (_, i) => ({ id: `event-${i}`, ticker: '418A', company_name: 'モバイル検証株式会社', event_type: 'dividend', event_subtype: 'increase', headline: `増配のお知らせ ${i}`, detected_at: date, disclosed_at: date, created_at: date, priority_rank: 10, status: 'active', notify_to_discord: true, raw_payload: { extracted: { previous_dividend_per_share: 5, revised_dividend_per_share: 10 } } })),
 };
 const pinFixture = params.has('pinFixture');
+if (params.has('reasonFixture')) {
+  tables.tdnet_events = reasonEvents;
+  tables.companies = reasonEvents.map(row => ({ ticker_code: row.ticker, name_ja: row.company_name }));
+  tables.tdnet_event_reads = [];
+  tables.tdnet_event_stars = [];
+}
 const pinListeners = [];
 if (pinFixture) {
   tables.tdnet_events = ['418A', '7203', '7512'].map((code, i) => ({

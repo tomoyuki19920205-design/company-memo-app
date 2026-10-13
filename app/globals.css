@@ -3559,6 +3559,24 @@ textarea::placeholder {
 }
 
 /* fallback: さらに薄く表示するが全文表示する */
+.forecast-reason {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  line-height: 1.65;
+  user-select: text;
+  cursor: text;
+}
+.forecast-reason h4, .forecast-reason h5 { margin: 0 0 0.4rem; }
+.forecast-reason-section + .forecast-reason-section { margin-top: 1rem; }
+.forecast-reason-text, .forecast-reason-context {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.forecast-reason-context { color: var(--text-dim); margin-bottom: 0.3rem; }
+.forecast-reason a { display: inline-block; margin-top: 0.4rem; color: var(--primary); }
+
 .alert-card-body.fallback {
   font-size: 0.72rem;
   color: var(--text-dim, #6b7280);

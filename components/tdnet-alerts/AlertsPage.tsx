@@ -19,6 +19,7 @@ import { cardExpansionReducer, createCardExpansionState, isCardClosing } from "@
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
+import ForecastReason from "./ForecastReason";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
 import TopNavigation from "@/components/TopNavigation";
 
@@ -1659,6 +1660,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       renderHighlightedCardBody(bodyText, event)
                     )}
                   </div>
+                  {getDisplayCategory(event.event_type, event.headline) === "forecast" && <ForecastReason event={event} />}
                 </div>
               );
             });

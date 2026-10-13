@@ -1,0 +1,23 @@
+"use client";
+import React from "react";
+import type { TdnetEvent } from "@/lib/tdnet-alerts/types";
+import { getForecastReason } from "@/lib/tdnet-alerts/forecast-reason";
+
+export default function ForecastReason({ event }: { event: TdnetEvent }) {
+  const { url, sections } = getForecastReason(event);
+  return <section className="forecast-reason" aria-label="業績修正の理由"
+    onPointerDown={e => e.stopPropagation()} onClick={e => e.stopPropagation()}>
+    <h4>業績修正の理由</h4>
+    {sections.length ? sections.map((section, index) => <div className="forecast-reason-section" key={index}>
+      {section.context.length > 0 && <div className="forecast-reason-context">{section.context.join("\n")}</div>}
+      <h5>{section.heading}</h5>
+      <div className="forecast-reason-text">{section.text}</div>
+      <a href={`${url}#page=${section.page_start}`} target="_blank" rel="noopener noreferrer">
+        原本PDF（{section.page_start === section.page_end ? `${section.page_start}ページ` : `${section.page_start}–${section.page_end}ページ`}）
+      </a>
+    </div>) : <>
+      <p>修正理由を取得できませんでした</p>
+      {url && <a href={url} target="_blank" rel="noopener noreferrer">原本PDF</a>}
+    </>}
+  </section>;
+}
