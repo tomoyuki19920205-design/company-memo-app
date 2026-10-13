@@ -49,3 +49,21 @@ test("inserts still apply the existing correction policy", () => {
   assert.deepEqual(f.inserted.map((e) => e.id), ["forecast"]);
   assert.equal(f.refreshes(), 0);
 });
+
+test("result inserts never enter the live notification list", () => {
+  const f = fixture();
+  f.emit("INSERT", {
+    id: "7ced180f-0ace-4018-a972-458c51c00dc9",
+    event_type: "buyback",
+    event_subtype: "tostnet",
+    headline: "自己株式立会外買付取引（ToSTNeT-3）による自己株式の取得結果に関するお知らせ",
+    raw_payload: { extracted: { event_type: "buyback_result" } },
+  });
+  f.emit("INSERT", {
+    id: "new-decision",
+    event_type: "buyback",
+    event_subtype: "new_program",
+    headline: "自己株式の取得及び取得結果の公表に関するお知らせ",
+  });
+  assert.deepEqual(f.inserted.map((event) => event.id), ["new-decision"]);
+});

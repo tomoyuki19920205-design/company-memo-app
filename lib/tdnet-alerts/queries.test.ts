@@ -175,3 +175,24 @@ test("applies correction exclusions server-side for every list route", async () 
     assert.ok(!exclusions.some((call) => call.value.includes("修正")));
   }
 });
+
+test("omits stored result cards while preserving a decision card and its read lookup", async () => {
+  const title = "自己株式立会外買付取引（ToSTNeT-3）による自己株式の取得結果に関するお知らせ";
+  const rows = [
+    { id: "7ced180f-0ace-4018-a972-458c51c00dc9", event_type: "buyback", event_subtype: "tostnet", headline: title, raw_payload: { extracted: { event_type: "buyback_result" } } },
+    { id: "17bcf838-7a87-4200-9557-81b35f258937", event_type: "buyback", event_subtype: "tostnet", headline: title, raw_payload: { extracted: { event_type: "buyback_result" } } },
+    { id: "decision", event_type: "buyback", event_subtype: "new_program", headline: "自己株式の取得及び取得結果の公表に関するお知らせ", raw_payload: { extracted: { event_type: "buyback_decision" } } },
+  ];
+  const queries = new Map<string, FakeQuery>();
+  const supabase = { from: (table: string) => {
+    const query = new FakeQuery(table === "tdnet_events" ? rows : []);
+    queries.set(table, query);
+    return query;
+  } };
+  const result = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-10-13", skipClientSort: true });
+  assert.deepEqual(result.map((event) => event.id), ["decision"]);
+  assert.deepEqual(
+    queries.get("tdnet_event_reads")?.calls.find((call) => call.method === "in" && call.column === "event_id"),
+    { method: "in", column: "event_id", values: ["decision"] },
+  );
+});
