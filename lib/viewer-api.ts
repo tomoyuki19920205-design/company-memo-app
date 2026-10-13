@@ -8,7 +8,7 @@ import {
     transformFinancialRows,
     type ViewerFinancialRow,
 } from "./financial-transform";
-import type { CompanyNewsStreamItem, LatestNewsScanRun, NewsEvent, NewsQuery, NewsStreamItem } from "@/types/news";
+import type { LatestNewsScanRun, NewsEvent, NewsQuery, NewsStreamItem } from "@/types/news";
 import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 
 // ============================================================
@@ -973,45 +973,12 @@ export async function loadPerShareData(
 // Qualitative news monitor (Supabase read models only)
 // ============================================================
 
-function companyEventToStream(row: NewsEvent): CompanyNewsStreamItem {
-    return {
-        ...row,
-        report_type: "company_news",
-        stream_id: row.event_id,
-        title: row.headline,
-        sort_at: row.created_at,
-        sector_code: null,
-        sector_name: null,
-        summary_bullets: null,
-        period_start: null,
-        period_end: null,
-        full_report_md: null,
-        watchlist_companies: null,
-        next_week_watchpoints: null,
-        missed_candidates: null,
-        sources: null,
-        report_date_jst: null,
-        market_session_date: null,
-        market_status: null,
-        report_markdown: null,
-        index_moves: null,
-        sector_moves: null,
-        notable_gainers: null,
-        notable_losers: null,
-        top_gainers_20: null,
-        earnings: null,
-        after_hours_earnings: null,
-        major_news: null,
-        commodities: null,
-    };
-}
-
 export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStreamItem[]> {
     const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
     const offset = Math.max(options.offset ?? 0, 0);
     const supabase = createSupabaseBrowser();
     let query = supabase
-        .from("api_latest_news_stream")
+        .from("api_authorized_news_stream")
         .select("stream_id,report_type,title,sort_at,published_at,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at,report_date_jst,market_session_date,market_status,report_markdown,index_moves,sector_moves,notable_gainers,notable_losers,top_gainers_20,earnings,after_hours_earnings,major_news,commodities")
         .range(offset, offset + limit - 1);
 
@@ -1035,13 +1002,7 @@ export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStrea
         query = query.order("sort_at", { ascending: false });
     }
     const { data, error } = await query;
-    if (error) {
-        // Additive deploy safety: company news remains visible if the new view is not live yet.
-        if (error.code === "PGRST200" || error.code === "PGRST205" || error.message?.includes("not find")) {
-            return (await loadNewsEvents(options)).map(companyEventToStream);
-        }
-        throw new Error(`ニュース取得に失敗しました: ${error.message}`);
-    }
+    if (error) throw new Error(`ニュース取得に失敗しました: ${error.message}`);
     return (data ?? []) as NewsStreamItem[];
 }
 
@@ -1050,7 +1011,7 @@ export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent
     const offset = Math.max(options.offset ?? 0, 0);
     const supabase = createSupabaseBrowser();
     let query = supabase
-        .from("api_latest_news_events")
+        .from("api_authorized_news_events")
         .select("event_id,ticker,company_name,headline,published_at,checked_at,source_type,source_name,source_url,category,direction,importance,importance_rank,earnings_relevance,summary,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,created_at")
         .range(offset, offset + limit - 1);
 
@@ -1075,7 +1036,6 @@ export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent
     }
     const { data, error } = await query;
     if (error) {
-        if (error.code === "PGRST200" || error.message?.includes("not find")) return [];
         throw new Error(`ニュース取得に失敗しました: ${error.message}`);
     }
     return (data ?? []) as NewsEvent[];
@@ -1089,7 +1049,7 @@ export async function loadLatestNewsScan(ticker: string): Promise<LatestNewsScan
     const normalized = normalizeNewsTicker(ticker);
     if (!normalized) return null;
     const { data, error } = await createSupabaseBrowser()
-        .from("api_latest_news_scan_runs")
+        .from("api_authorized_news_scan_runs")
         .select("scan_run_id,ticker,checked_at,status,items_found,sources_checked_count")
         .eq("ticker", normalized)
         .maybeSingle();
