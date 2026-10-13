@@ -42,6 +42,6 @@ test("event deep links open details without calling the read mutation", () => {
   const source = readFileSync(new URL("../components/tdnet-alerts/AlertsPage.tsx", import.meta.url), "utf8");
   const start = source.indexOf("const eventId = new URLSearchParams");
   const body = source.slice(start, source.indexOf("}, [events]);", start));
-  assert.match(body, /setSelectedId\(event\.id\)/);
+  assert.match(body, /dispatchCardExpansion\(\{ type: "open", id: event\.id \}\)/);
   assert.doesNotMatch(body, /markAsRead/);
 });

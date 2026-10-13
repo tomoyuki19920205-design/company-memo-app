@@ -3526,6 +3526,29 @@ textarea::placeholder {
 .action-btn:hover { opacity: 1; }
 .action-btn.active { opacity: 1; }
 
+.card-pin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  opacity: 1;
+}
+.card-pin-btn[aria-pressed="true"] {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--row-selected);
+  font-weight: 600;
+}
+.card-pin-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* カード本文 */
 .alert-card-body {
   font-size: 0.75rem;

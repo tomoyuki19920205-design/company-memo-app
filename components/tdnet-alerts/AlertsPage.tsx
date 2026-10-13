@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, useReducer } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-alerts/queries";
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
@@ -15,6 +15,7 @@ import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-poli
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
+import { cardExpansionReducer, createCardExpansionState, isCardClosing } from "@/lib/tdnet-alerts/card-expansion";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -854,7 +855,8 @@ const getImpactSortKey = (event: EnrichedEvent, activeCategory: string): { bucke
 
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [cardExpansion, dispatchCardExpansion] = useReducer(cardExpansionReducer, undefined, createCardExpansionState);
+  const { selectedId, expandedId, pinnedIds } = cardExpansion;
   const deepLinkHandledRef = useRef(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedDate, setSelectedDate] = useState<string | null>(() => {
@@ -1090,11 +1092,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleSelectEvent = (event: EnrichedEvent) => {
     setMobilePane("company");
-    if (selectedId === event.id && !window.matchMedia("(max-width: 900px)").matches) {
-      setSelectedId(null);
-      return;
-    }
-    setSelectedId(event.id);
+    const allowCollapse = !window.matchMedia("(max-width: 900px)").matches;
+    dispatchCardExpansion({ type: "select", id: event.id, allowCollapse });
+    if (isCardClosing(cardExpansion, event.id, allowCollapse)) return;
     setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
     
     // UIの反映(左カードの展開)を優先するため、右Viewerの読み込みを非同期で開始する
@@ -1187,7 +1187,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     const event = events.find(item => item.id === eventId);
     if (!event) return;
     deepLinkHandledRef.current = true;
-    setSelectedId(event.id);
+    dispatchCardExpansion({ type: "open", id: event.id });
     setRightPaneTab("company");
     window.setTimeout(() => viewerRef.current?.loadTicker(event.ticker), 0);
   }, [events]);
@@ -1428,6 +1428,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const bodyText = cardBody + discordExtra;
 
               const isSelected = selectedId === event.id;
+              const isPinned = pinnedIds.has(event.id);
+              const isExpanded = expandedId === event.id || isPinned;
 
               if (isCompanyIrEvent(event.event_type)) {
                 const directUrl = getValidatedMaterialUrl(event);
@@ -1492,7 +1494,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                 );
               }
 
-              if (!isSelected) {
+              if (!isExpanded) {
                 const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
                 const displayLine2 = event.event_type === "earnings" ? formatCompactEarningsCardLine(line2) : line2;
                 const displayLine3 = event.event_type === "earnings" && line3 ? formatCompactEarningsCardLine(line3) : line3;
@@ -1526,7 +1528,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               return (
                 <div
                   key={event.id}
-                  className={`alert-card expanded ${!event.is_read ? "unread" : ""} selected ${priorityClass}`}
+                  className={`alert-card expanded ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""} ${priorityClass}`}
                   onClick={() => handleSelectEvent(event)}
                 >
                   {/* Row 1: Time + Badge + Actions */}
@@ -1553,6 +1555,22 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                       </span>
                     )}
                     <span className="alert-card-actions">
+                      <button
+                        type="button"
+                        className="action-btn card-pin-btn"
+                        aria-pressed={isPinned}
+                        onPointerDown={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          dispatchCardExpansion({ type: "togglePin", id: event.id });
+                        }}
+                        title={isPinned ? "固定を解除して閉じる" : "カードを開いたまま固定する"}
+                      >
+                        <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M16 3 21 8l-4 1-3 5-4 1-1 4-4-4 4-1 1-4 5-3zM9 15l-6 6" />
+                        </svg>
+                        {isPinned ? "固定中" : "固定"}
+                      </button>
                       <button
                         className={`action-btn ${event.is_starred ? "active" : ""}`}
                         onPointerDown={(e) => e.stopPropagation()}
