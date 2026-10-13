@@ -35,9 +35,11 @@ import {
     loadKpiValues,
     saveKpiDefinition,
     saveKpiValue,
+    saveKpiValuesBatch,
     type KpiDefMap,
     type KpiValueMap,
 } from "@/lib/kpi-api";
+import type { KpiEdit } from "@/lib/kpi-editor-store";
 import {
     loadCompanyInfo,
     loadCompanyMaster,
@@ -185,6 +187,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [kpiDefs, setKpiDefs] = useState<KpiDefMap>({ 1: "KPI 1", 2: "KPI 2", 3: "KPI 3" });
     const [kpiValues, setKpiValues] = useState<KpiValueMap>({});
     const kpiValuesRef = useRef<KpiValueMap>(kpiValues);
+    const kpiTickerRef = useRef(activeTicker);
+    kpiTickerRef.current = activeTicker;
     useEffect(() => { kpiValuesRef.current = kpiValues; }, [kpiValues]);
     const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
     const manualTableMemosRef = useRef<ManualTableMemos>(manualTableMemos);
@@ -777,6 +781,22 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         [activeTicker, pushUndo]
     );
 
+    const handleKpiBatchEdit = useCallback(async (edits: KpiEdit[]) => {
+        const ticker = activeTicker;
+        if (!ticker) throw new Error("銘柄が選択されていません");
+        await saveKpiValuesBatch(ticker, edits);
+        const apply = (previous: KpiValueMap): KpiValueMap => {
+            const next = { ...previous };
+            for (const edit of edits) {
+                const key = `${edit.tableScope}|${edit.period}|${edit.quarter}`;
+                next[key] = { ...(next[key] ?? {}), [edit.kpiSlot]: edit.value };
+            }
+            return next;
+        };
+        // A completed save for the previous ticker must not mutate the new viewer.
+        if (kpiTickerRef.current === ticker) setKpiValues(previous => apply(previous));
+    }, [activeTicker]);
+
     const handlePLMemoEdit = useCallback(
         async (period: string, quarter: string, colIdx: number, value: string) => {
             if (!activeTicker) return;
@@ -1152,6 +1172,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                 kpiValues={kpiValues}
                                 onKpiHeaderEdit={handleKpiHeaderEdit}
                                 onKpiValueEdit={handleKpiValueEdit}
+                                onKpiBatchEdit={handleKpiBatchEdit}
+                                ticker={activeTicker}
                                 onSegmentOverrideSave={handleSaveOverride}
                                 onSegmentOverrideDelete={handleDeleteOverride}
                                 onBulkSaveOverrides={handleBulkSaveOverrides}

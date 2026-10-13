@@ -1,4 +1,5 @@
 import { createSupabaseBrowser } from "./supabase-browser";
+import type { KpiEdit } from "./kpi-editor-store";
 
 // ============================================================
 // KPI定義・値の型
@@ -165,4 +166,24 @@ export async function saveKpiValue(
         console.error("[KPI] value save error:", error);
         throw new Error(`KPI値の保存に失敗: ${error.message}`);
     }
+}
+
+/** One request per committed batch; values may be legacy text or a versioned formula envelope. */
+export async function saveKpiValuesBatch(ticker: string, edits: KpiEdit[]): Promise<void> {
+    const t = ticker.trim().toUpperCase();
+    if (!t) throw new Error("ticker が空です");
+    if (!edits.length) return;
+    const supabase = createSupabaseBrowser();
+    // Keep the original primary key of legacy, unprefixed cumulative records.
+    const { data: existing, error: readError } = await supabase.from("company_kpi_values")
+        .select("period,quarter,kpi_slot").eq("ticker", t);
+    if (readError) throw new Error(`KPI保存先の確認に失敗: ${readError.message}`);
+    const records = edits.map(edit => {
+        const scoped = `${edit.tableScope}__${edit.period}`;
+        const match = existing?.find(row => row.period === scoped && row.quarter === edit.quarter && row.kpi_slot === edit.kpiSlot) ??
+            (edit.tableScope === "cum" ? existing?.find(row => row.period === edit.period && row.quarter === edit.quarter && row.kpi_slot === edit.kpiSlot) : undefined);
+        return { ticker: t, period: match?.period ?? scoped, quarter: edit.quarter, kpi_slot: edit.kpiSlot, kpi_value: edit.value };
+    });
+    const { error } = await supabase.from("company_kpi_values").upsert(records, { onConflict: "ticker,period,quarter,kpi_slot" });
+    if (error) throw new Error(`KPIの保存に失敗: ${error.message}`);
 }
