@@ -16,6 +16,10 @@ import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentVal
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
 import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } from "@/lib/company-profit-display";
+import { KpiFormulaBar, KpiFormulaCell } from "@/components/KpiFormulaEditor";
+import { KpiEditorStore, type KpiEdit } from "@/lib/kpi-editor-store";
+import { buildKpiBook } from "@/lib/kpi-reference-book";
+import { targetKey, type Sheet } from "@/lib/kpi-formula";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
@@ -67,6 +71,7 @@ const EDITABLE_COLS: string[] = [...MEMO_COLS, ...KPI_COLS];
 
 interface FinancialsTableProps {
     data: FinancialRecord[];
+    ticker?: string;
     industry?: string | null;
     loading: boolean;
     selectedPeriod?: string;
@@ -82,6 +87,7 @@ interface FinancialsTableProps {
     kpiValues?: KpiValueMap;
     onKpiHeaderEdit?: (kpiSlot: number, newName: string) => void;
     onKpiValueEdit?: (period: string, quarter: string, kpiSlot: number, value: string, tableScope?: "cum" | "q") => void;
+    onKpiBatchEdit?: (edits: KpiEdit[]) => Promise<void>;
     /** Segment override: save a manual value for a segment cell */
     onSegmentOverrideSave?: (
         fiscalYear: number,
@@ -589,6 +595,7 @@ function PLTableHeader({
 // ============================================================
 function FinancialsTable({
     data,
+    ticker,
     industry,
     loading,
     selectedPeriod,
@@ -601,7 +608,8 @@ function FinancialsTable({
     kpiDefs,
     kpiValues,
     onKpiHeaderEdit,
-    onKpiValueEdit,
+    onKpiValueEdit: legacyKpiValueEdit,
+    onKpiBatchEdit,
     onSegmentOverrideSave,
     onSegmentOverrideDelete,
     onBulkSaveOverrides,
@@ -621,6 +629,24 @@ function FinancialsTable({
             () => buildFinancialTableModel(data, industry),
             [data, industry],
         );
+    const editorTicker = ticker ?? displayTicker ?? "";
+    const mismatchedTicker = !!ticker && data.length > 0 && displayTicker !== ticker;
+    const kpiBook = useMemo(() => buildKpiBook(editorTicker, mismatchedTicker ? [] : data, kpiValues ?? {}, industry), [editorTicker, mismatchedTicker, data, kpiValues, industry]);
+    const kpiEditor = useMemo(() => {
+        const store = new KpiEditorStore();
+        store.configure(kpiBook, onKpiBatchEdit);
+        return store;
+        // A ticker switch starts an independent editor/history; writes keep their original ticker.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [editorTicker]);
+    useEffect(() => kpiEditor.configure(kpiBook, onKpiBatchEdit), [kpiEditor, kpiBook, onKpiBatchEdit]);
+    useEffect(() => () => kpiEditor.commit(), [kpiEditor]);
+    const legacyKpiQueue = useRef<KpiEdit[]>([]);
+    const onKpiValueEdit = useCallback((period: string, quarter: string, kpiSlot: number, value: string, tableScope: "cum" | "q" = "cum") => {
+        if (!onKpiBatchEdit) { legacyKpiValueEdit?.(period, quarter, kpiSlot, value, tableScope); return; }
+        legacyKpiQueue.current.push({ period, quarter, kpiSlot, value, tableScope });
+        if (legacyKpiQueue.current.length === 1) queueMicrotask(() => { const edits = legacyKpiQueue.current; legacyKpiQueue.current = []; kpiEditor.edit(edits); });
+    }, [kpiEditor, onKpiBatchEdit, legacyKpiValueEdit]);
     const availableProfitDisplays = cumRows
         .filter((row) => row.profitDisplay.value !== null)
         .map((row) => row.profitDisplay);
@@ -1375,8 +1401,8 @@ function FinancialsTable({
             // colIdx 4=kpi_1, 5=kpi_2, 6=kpi_3
             if (colIdx >= 4 && colIdx <= 6) {
                 const slot = colIdx - 3;
-                const kpiKey = `cum|${row.period}|${row.quarter}`;
-                return kpiValues?.[kpiKey]?.[slot] ?? "";
+                const target = kpiEditor.book.sheets.KPI[rowIdx]?.[slot - 1]?.target;
+                return target ? kpiEditor.formulaText(targetKey(target)) : "";
             }
             return "";
         }
@@ -1657,6 +1683,15 @@ function FinancialsTable({
     useEffect(() => {
         if (!activeCell) return;
         if (!isPlMemoEditableCell(activeCell)) return;
+        if (activeCell.tableId === "memo_kpi" && activeCell.colKey.startsWith("kpi_")) {
+            const slot = Number(activeCell.colKey.slice(4));
+            const target = kpiEditor.book.sheets.KPI[activeCell.rowIdx]?.[slot - 1]?.target;
+            if (target) kpiEditor.select(targetKey(target));
+            const row = activeCell.rowIdx;
+            setActiveCell(null); setEditingPlMemoCell(null);
+            requestAnimationFrame(() => gridRef.current?.querySelector<HTMLElement>(`[data-kpi-row="${row}"][data-kpi-slot="${slot}"]`)?.focus());
+            return;
+        }
         // すでに編集中なら再起動しない
         if (editingPlMemoCell) return;
         // 現在値を取得して編集開始
@@ -3050,7 +3085,7 @@ function FinancialsTable({
         handleEditablePaste(activeCell.tableId, startEditableIdx, activeCell.rowIdx, e);
     }, [activeCell, activeManualCell, editingManualCell, activeSegCell, handleEditablePaste, onBulkSaveOverrides, cumRows, segmentColumns, segmentMap, sourceMap, showToast, manualTableMemos]);
 
-    if (loading) {
+    if (loading || mismatchedTicker) {
         return (
             <div className="data-section">
                 <h2 className="section-title">📊 PL（四半期業績推移）</h2>
@@ -3087,8 +3122,30 @@ function FinancialsTable({
             tabIndex={0}
             onKeyDown={handleTableKeyDown}
             onPaste={handleTablePaste}
+            onMouseDownCapture={(e) => {
+                const element = e.target as HTMLElement;
+                const reference = element.closest<HTMLElement>("[data-formula-ref]")?.dataset.formulaRef;
+                if (reference) {
+                    const [sheet, row, col] = reference.split("|");
+                    if (kpiEditor.insertReference(sheet as Sheet, Number(row), Number(col), e.shiftKey)) {
+                        e.preventDefault(); e.stopPropagation(); return;
+                    }
+                }
+                if (!element.closest("[data-kpi-editor]")) kpiEditor.deselect();
+                else if (element.closest('[data-kpi-editor="cell"]')) {
+                    commitPlMemoEdit();
+                    setActiveCell(null); setEditingCell(null); setSelectionRange(null);
+                    setActiveManualCell(null); setActiveSegCell(null);
+                }
+            }}
+            onClickCapture={(e) => {
+                if (kpiEditor.getEditor().editing && kpiEditor.getEditor().draft.startsWith("=") && (e.target as HTMLElement).closest("[data-formula-ref]")) {
+                    e.preventDefault(); e.stopPropagation();
+                }
+            }}
         >
             <h2 className="section-title">📊 PL（四半期業績推移） — 過去5年</h2>
+            <KpiFormulaBar store={kpiEditor} />
 
             {/* ============ フォーミュラバー ============ */}
             <div className="formula-bar-sticky">
@@ -3160,12 +3217,12 @@ function FinancialsTable({
                                                 ].filter(Boolean).join(" ")} onClick={() => onRowClick?.(row.period, row.quarter)}>
                                                     <td style={{ width: cumResize.widths[0], minWidth: cumResize.widths[0] }} className={isCellInRange("cum", idx, 0) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 0, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 0)}>{displayValue(row.period)}</td>
                                                     <td style={{ width: cumResize.widths[1], minWidth: cumResize.widths[1] }} className={isCellInRange("cum", idx, 1) ? "cell-in-range" : ""} onMouseDown={(e) => handleCellMouseDown("cum", idx, 1, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 1)}>{displayValue(row.quarter)}</td>
-                                                    <td style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className={`num-col ${isCellInRange("cum", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 2)}>{formatMillions(row.sales)}</td>
-                                                    <td style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className={`num-col ${isCellInRange("cum", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 3)}>{formatMillions(row.grossProfit)}</td>
-                                                    <td style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
-                                                    <td style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.sgAndA)}</td>
-                                                    <td title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
-                                                    <td title={row.profitDisplay.marginLabel} style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|0`} style={{ width: cumResize.widths[2], minWidth: cumResize.widths[2] }} className={`num-col ${isCellInRange("cum", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 2)}>{formatMillions(row.sales)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|1`} style={{ width: cumResize.widths[3], minWidth: cumResize.widths[3] }} className={`num-col ${isCellInRange("cum", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 3)}>{formatMillions(row.grossProfit)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|2`} style={{ width: cumResize.widths[4], minWidth: cumResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("cum", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|3`} style={{ width: cumResize.widths[5], minWidth: cumResize.widths[5] }} className={`num-col ${isCellInRange("cum", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 5)}>{formatMillions(row.sgAndA)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|4`} title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: cumResize.widths[6], minWidth: cumResize.widths[6] }} className={`num-col ${isCellInRange("cum", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
+                                                    <td data-formula-ref={`CUM|${idx}|5`} title={row.profitDisplay.marginLabel} style={{ width: cumResize.widths[7], minWidth: cumResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("cum", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("cum", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("cum", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
                                                 </tr>
                                             );
                                         })}
@@ -3235,12 +3292,12 @@ function FinancialsTable({
                                                 qRows[idx - 1]?.period !== row.period ? "year-group-start" : "",
                                                 qRows[idx + 1]?.period !== row.period ? "year-group-end" : "",
                                             ].filter(Boolean).join(" ")} onClick={() => onRowClick?.(row.period, row.quarter)}>
-                                                <td style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
-                                                <td style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
-                                                <td style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
-                                                <td style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.sgAndA)}</td>
-                                                <td title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
-                                                <td title={row.profitDisplay.marginLabel} style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
+                                                <td data-formula-ref={`Q|${idx}|0`} style={{ width: qResize.widths[2], minWidth: qResize.widths[2] }} className={`num-col ${isCellInRange("q", idx, 2) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 2, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 2)}>{formatMillions(row.sales)}</td>
+                                                <td data-formula-ref={`Q|${idx}|1`} style={{ width: qResize.widths[3], minWidth: qResize.widths[3] }} className={`num-col ${isCellInRange("q", idx, 3) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 3, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 3)}>{formatMillions(row.grossProfit)}</td>
+                                                <td data-formula-ref={`Q|${idx}|2`} style={{ width: qResize.widths[4], minWidth: qResize.widths[4] }} className={`num-col gp-margin-col ${isCellInRange("q", idx, 4) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 4, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 4)}>{fmtMargin(row.grossMarginRate)}</td>
+                                                <td data-formula-ref={`Q|${idx}|3`} style={{ width: qResize.widths[5], minWidth: qResize.widths[5] }} className={`num-col ${isCellInRange("q", idx, 5) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 5, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 5)}>{formatMillions(row.sgAndA)}</td>
+                                                <td data-formula-ref={`Q|${idx}|4`} title={row.profitDisplay.label} data-profit-metric={row.profitDisplay.metric ?? "missing"} style={{ width: qResize.widths[6], minWidth: qResize.widths[6] }} className={`num-col ${isCellInRange("q", idx, 6) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 6, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 6)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.label}</span>}{row.operatingProfit === null && isFinancialIndustry(industry) ? "—" : formatMillions(row.operatingProfit)}</td>
+                                                <td data-formula-ref={`Q|${idx}|5`} title={row.profitDisplay.marginLabel} style={{ width: qResize.widths[7], minWidth: qResize.widths[7] }} className={`num-col op-margin-col ${isCellInRange("q", idx, 7) ? "cell-in-range" : ""}`} onMouseDown={(e) => handleCellMouseDown("q", idx, 7, e)} onMouseEnter={() => handleCellMouseEnter("q", idx, 7)}>{mixedProfitSubjects && row.profitDisplay.metric && <span className="pl-profit-subject">{row.profitDisplay.marginLabel}</span>}{fmtMargin(row.opMargin)}</td>
                                             </tr>
                                         ))}
                                         {/* 手入力メモ専用行 (PL Q単体) — memo_kpi と同じロジック */}
@@ -3352,29 +3409,8 @@ function FinancialsTable({
                                                     />
                                                     {/* kpi_1/2/3 (colIdx=4/5/6) */}
                                                     {KPI_SLOTS.map((slot) => {
-                                                        const colKey = `kpi_${slot}`;
-                                                        const kpiKey = `cum|${row.period}|${row.quarter}`;
-                                                        const cellVal = kpiValues?.[kpiKey]?.[slot] ?? "";
-                                                        const kpiAbsCol = 3 + slot; // 4=kpi_1, 5=kpi_2, 6=kpi_3
                                                         return (
-                                                            <MemoCellExcel key={colKey} value={cellVal} width={kpiWidths[slot - 1]}
-                                                                isActive={activeCell?.tableId === "memo_kpi" && activeCell?.rowIdx === idx && activeCell?.colKey === colKey}
-                                                                isInRange={isCellInRange("memo_kpi", idx, kpiAbsCol)}
-                                                                isEditing={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey}
-                                                                editValue={plMemoEditValue}
-                                                                onSelect={NOOP}
-                                                                onStartEdit={kpiStartEditHandlers[idx]?.[slot - 1]}
-                                                                onMouseDownCaptureEdit={(e) => kpiCaptureHandlers[idx]?.[slot - 1]?.(e, cellVal)}
-                                                                onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                                onEditChange={setPlMemoEditValue}
-                                                                onCommit={commitPlMemoEdit}
-                                                                onCancel={cancelPlMemoEdit}
-                                                                inputRef={editingPlMemoCell?.tableId === "memo_kpi" && editingPlMemoCell?.rowIdx === idx && editingPlMemoCell?.colKey === colKey ? plMemoInputRef : undefined}
-                                                                className="kpi-cell"
-                                                                onMouseEnter={kpiMouseEnterHandlers[idx]?.[slot - 1]}
-                                                                onMouseEnterRange={kpiMouseEnterHandlers[idx]?.[slot - 1]}
-                                                                onArrowKey={handlePlMemoArrowKey}
-                                                            />
+                                                            <KpiFormulaCell key={slot} store={kpiEditor} row={idx} slot={slot} width={kpiWidths[slot - 1]} cellKey={targetKey(kpiBook.sheets.KPI[idx][slot - 1].target)} />
                                                         );
                                                     })}
                                                 </tr>
@@ -3406,6 +3442,7 @@ function FinancialsTable({
 
                         if (!latestForecast) return null;
                         const selectedForecastProfit = selectProfitDisplay(latestForecast, industry);
+                        const forecastRefRow = forecastFYRows.indexOf(latestForecast);
                         const forecastProfit = selectedForecastProfit.value;
                         if (latestForecast.sales === null && forecastProfit === null) return null;
 
@@ -3424,13 +3461,13 @@ function FinancialsTable({
                                 {sales !== null && sales !== 0 && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">売上</span>
-                                        <span className="pl-summary-value">{formatMillions(sales)}</span>
+                                        <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|0`}>{formatMillions(sales)}</span>
                                     </span>
                                 )}
                                 {op !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">{selectedForecastProfit.label}</span>
-                                        <span className="pl-summary-value">{formatMillions(op)}</span>
+                                        <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|4`}>{formatMillions(op)}</span>
                                     </span>
                                 )}
                                 {([
@@ -3439,19 +3476,19 @@ function FinancialsTable({
                                 ] as const).map(([label, value]) => value !== null && (
                                     <span className="pl-summary-item" key={label}>
                                         <span className="pl-summary-label">{label}</span>
-                                        <span className="pl-summary-value">{formatMillions(value)}</span>
+                                        <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|${label === "経常利益" ? 8 : 6}`}>{formatMillions(value)}</span>
                                     </span>
                                 ))}
                                 {latestForecast.eps !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">EPS</span>
-                                        <span className="pl-summary-value">{latestForecast.eps.toFixed(2)}円</span>
+                                        <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|7`}>{latestForecast.eps.toFixed(2)}円</span>
                                     </span>
                                 )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
                                         <span className="pl-summary-label">{selectedForecastProfit.marginLabel}</span>
-                                        <span className="pl-summary-value">{fmtMargin(opMargin)}</span>
+                                        <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|5`}>{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}
                             </div>

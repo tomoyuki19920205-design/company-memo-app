@@ -4370,3 +4370,13 @@ body:has(.alerts-layout) {
   .metric-picker-groups, .industry-filter-sections { grid-template-columns: 1fr; }
   .metric-picker-group > div { grid-template-columns: 1fr; }
 }
+/* Formula editing is deliberately limited to the existing KPI1–3 cells. */
+.kpi-formula-bar { position: sticky; left: 0; max-width: 100%; margin-bottom: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 5px; background: var(--card-bg); color: var(--text); }
+.kpi-formula-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12px; }
+.kpi-formula-address { flex: 1; min-width: 180px; }
+.kpi-formula-controls button { min-width: 28px; padding: 2px 6px; cursor: pointer; background: var(--primary-light); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
+.kpi-formula-input { width: 100%; min-height: 30px; resize: vertical; font-family: ui-monospace, monospace; color: var(--text); background: var(--card-bg); border: 1px solid var(--border); }
+.kpi-formula-help, .kpi-formula-references { font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+.kpi-formula-help p { margin: 4px 0; }
+.kpi-formula-error { color: #b91c1c; background: #fef2f2; }
+.kpi-cell:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }
