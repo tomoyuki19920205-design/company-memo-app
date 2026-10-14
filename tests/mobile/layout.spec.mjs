@@ -298,6 +298,10 @@ test('long company name keeps direct search beside it through continuous resizin
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   await input.fill('日本グローバル');
   await expect(page.locator('.search-dropdown-item').first()).toContainText('418A');
+  const dropdown = await page.locator('.search-dropdown').boundingBox();
+  expect(dropdown.width).toBeGreaterThanOrEqual(300);
+  expect(dropdown.x).toBeGreaterThanOrEqual(0);
+  expect(dropdown.x + dropdown.width).toBeLessThanOrEqual(390);
   await page.locator('.search-dropdown-item').first().tap();
   await expect(input).toHaveValue('418A');
   await expect(page.locator('.ticker-badge')).toHaveText('418A');

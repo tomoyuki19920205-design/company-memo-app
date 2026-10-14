@@ -329,6 +329,8 @@ body {
 @container viewer-header (max-width: 600px) {
   .viewer-controls-toggle-label { display: none; }
   .viewer-header[data-loaded="true"] .viewer-controls-toggle { width: 36px; min-width: 36px; padding-inline: 4px; }
+  .viewer-header .search-wrapper { position: static; }
+  .viewer-header .search-dropdown { top: 100%; left: 8px; right: 8px; width: auto; min-width: 0; }
 }
 
 /* ============================================================
