@@ -3202,24 +3202,35 @@ textarea::placeholder {
   color: var(--danger);
 }
 
-/* ============================================================
-   フィルターバー
-   ============================================================ */
+/* 通知操作欄は左ペイン内に固定し、一覧だけを下でスクロールする。 */
+.alerts-list-controls {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--card-bg);
+}
+
 .filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.filter-primary-row {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .filter-category-select {
-  flex: 0 0 190px;
+  flex: 0 1 160px;
   min-width: 0;
-  max-width: 100%;
+  max-width: 160px;
   height: 30px;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--border);
@@ -3255,8 +3266,9 @@ textarea::placeholder {
 }
 
 .filter-search {
-  flex: 1 1 220px;
-  min-width: min(220px, 100%);
+  display: block;
+  flex: none;
+  min-width: 0;
   background: var(--pl-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -3264,7 +3276,8 @@ textarea::placeholder {
   font-size: 0.82rem;
   color: var(--text);
   outline: none;
-  width: auto;
+  width: 100%;
+  box-sizing: border-box;
   transition: border-color 0.2s;
   font-family: var(--font);
 }
@@ -3327,7 +3340,8 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.3rem 1rem;
+  flex-wrap: wrap;
+  padding: 0.3rem 0.6rem;
   background: rgba(99, 102, 241, 0.06);
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
@@ -4344,9 +4358,7 @@ body:has(.alerts-layout) {
   .alerts-list-pane { width: 100% !important; flex: 1 1 auto !important; }
   .alerts-detail-pane { width: 100%; min-width: 0; }
   .alerts-layout[data-mobile-pane="list"] .alerts-detail-pane,
-  .alerts-layout[data-mobile-pane="company"] .alerts-list-pane,
-  .alerts-layout[data-mobile-pane="company"] > .filter-bar { display: none; }
-  .alerts-layout > .filter-bar { max-height: 30dvh; overflow-y: auto; }
+  .alerts-layout[data-mobile-pane="company"] .alerts-list-pane { display: none; }
   .alerts-header, .alerts-header-left, .alerts-header-right,
   .top-navigation,
   .order-kpi-section-header, .order-kpi-tab-buttons, .section-header, .segment-header-row,

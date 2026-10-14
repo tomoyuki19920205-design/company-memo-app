@@ -1264,85 +1264,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         <button aria-pressed={mobilePane === "list"} onClick={() => setMobilePane("list")}>通知一覧</button>
         <button aria-pressed={mobilePane === "company"} onClick={() => { setRightPaneTab("company"); setMobilePane("company"); }}>Company Viewer</button>
       </nav>
-      {/* Filter Bar */}
-      <div className="filter-bar">
-        <select
-          className="filter-category-select"
-          aria-label="通知の分類"
-          value={filter}
-          onChange={(e) => handleFilterChange(e.target.value as FilterType)}
-        >
-          {filters.map((f) => <option key={f.key} value={f.key}>{f.label}</option>)}
-        </select>
-
-        {/* 日付ピッカー付き「今日」ボタン */}
-        <div className="date-filter-wrap">
-          <button
-            className={`filter-chip ${selectedDate ? "active" : ""}`}
-            onClick={handleTodayClick}
-            title="クリックで日付を選択"
-          >
-            {todayBtnLabel}
-          </button>
-          {selectedDate && (
-            <button
-              className="date-clear-btn"
-              onClick={handleClearDate}
-              title="日付フィルタを解除"
-              aria-label="日付フィルタを解除"
-            >
-              ×
-            </button>
-          )}
-          <input
-            ref={dateInputRef}
-            type="date"
-            className="date-picker-hidden"
-            value={selectedDate ?? ""}
-            onChange={handleDateChange}
-            tabIndex={-1}
-            aria-hidden="true"
-          />
-        </div>
-
-        <button
-          className={`filter-chip filter-period-toggle ${allPeriodTickerSearch ? "active" : ""}`}
-          onClick={() => setAllPeriodTickerSearch(!allPeriodTickerSearch)}
-          title="ティッカー検索時に日付指定を無視して全期間から検索します"
-        >
-          {allPeriodTickerSearch ? "全期間ON" : "全期間OFF"}
-        </button>
-        <input
-          type="text"
-          className="filter-search"
-          aria-label="通知の企業検索"
-          placeholder="🔍 ティッカー / 会社名 / ヘッドライン"
-          value={search}
-          onChange={(e) => handleSearchChange(e.target.value)}
-        />
-      </div>
-
-      {/* Discord対象タブのソートボタン */}
-      {filter === "discord" && (
-        <div className="discord-sort-bar">
-          <span className="discord-sort-label">⇅ 並び順:</span>
-          <button
-            id="discord-sort-timeline"
-            className={`discord-sort-btn ${discordSortMode === "timeline" ? "active" : ""}`}
-            onClick={() => setDiscordSortMode("timeline")}
-          >
-            時系列
-          </button>
-          <button
-            id="discord-sort-category"
-            className={`discord-sort-btn ${discordSortMode === "category" ? "active" : ""}`}
-            onClick={() => setDiscordSortMode("category")}
-          >
-            カテゴリー別
-          </button>
-        </div>
-      )}
-
       {/* Main Content */}
       <div className="alerts-content">
         {/* List Pane */}
@@ -1350,6 +1271,87 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           className="alerts-list-pane"
           style={{ width: leftPaneWidth, flexShrink: 0 }}
         >
+          <div className="alerts-list-controls">
+            <div className="filter-bar">
+              <div className="filter-primary-row">
+                <select
+                  className="filter-category-select"
+                  aria-label="通知の分類"
+                  value={filter}
+                  onChange={(e) => handleFilterChange(e.target.value as FilterType)}
+                >
+                  {filters.map((f) => <option key={f.key} value={f.key}>{f.label}</option>)}
+                </select>
+
+                {/* 日付ピッカー付き「今日」ボタン */}
+                <div className="date-filter-wrap">
+                  <button
+                    className={`filter-chip ${selectedDate ? "active" : ""}`}
+                    onClick={handleTodayClick}
+                    title="クリックで日付を選択"
+                  >
+                    {todayBtnLabel}
+                  </button>
+                  {selectedDate && (
+                    <button
+                      className="date-clear-btn"
+                      onClick={handleClearDate}
+                      title="日付フィルタを解除"
+                      aria-label="日付フィルタを解除"
+                    >
+                      ×
+                    </button>
+                  )}
+                  <input
+                    ref={dateInputRef}
+                    type="date"
+                    className="date-picker-hidden"
+                    value={selectedDate ?? ""}
+                    onChange={handleDateChange}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <button
+                  className={`filter-chip filter-period-toggle ${allPeriodTickerSearch ? "active" : ""}`}
+                  onClick={() => setAllPeriodTickerSearch(!allPeriodTickerSearch)}
+                  title="ティッカー検索時に日付指定を無視して全期間から検索します"
+                >
+                  {allPeriodTickerSearch ? "全期間ON" : "全期間OFF"}
+                </button>
+              </div>
+              <input
+                type="text"
+                className="filter-search"
+                aria-label="通知の企業検索"
+                placeholder="🔍 ティッカー / 会社名 / ヘッドライン"
+                value={search}
+                onChange={(e) => handleSearchChange(e.target.value)}
+              />
+            </div>
+
+            {/* Discord対象タブのソートボタン */}
+            {filter === "discord" && (
+              <div className="discord-sort-bar">
+                <span className="discord-sort-label">⇅ 並び順:</span>
+                <button
+                  id="discord-sort-timeline"
+                  className={`discord-sort-btn ${discordSortMode === "timeline" ? "active" : ""}`}
+                  onClick={() => setDiscordSortMode("timeline")}
+                >
+                  時系列
+                </button>
+                <button
+                  id="discord-sort-category"
+                  className={`discord-sort-btn ${discordSortMode === "category" ? "active" : ""}`}
+                  onClick={() => setDiscordSortMode("category")}
+                >
+                  カテゴリー別
+                </button>
+              </div>
+            )}
+          </div>
           {loading ? (
             <div className="loading-message">読み込み中...</div>
           ) : events.length === 0 ? (

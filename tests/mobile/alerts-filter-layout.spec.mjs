@@ -13,28 +13,44 @@ const options = [
   ['discord', '🔔 Discord対象'],
 ];
 
-async function checkControlsFit(page, sameLine) {
-  const geometry = await page.locator('.filter-bar').evaluate(bar => {
-    const bounds = [...bar.children].filter(child => !child.classList.contains('date-picker-hidden'))
-      .map(child => child.getBoundingClientRect().toJSON());
-    return { bar: bar.getBoundingClientRect().toJSON(), bounds, pageWidth: document.documentElement.scrollWidth };
+async function checkControlsFit(page, desktop) {
+  const geometry = await page.locator('.alerts-list-pane').evaluate(pane => {
+    const rect = node => node.getBoundingClientRect().toJSON();
+    const controls = pane.querySelector('.alerts-list-controls');
+    const primary = controls.querySelector('.filter-primary-row');
+    return {
+      header: rect(document.querySelector('.alerts-header')),
+      pane: rect(pane),
+      right: rect(document.querySelector('.alerts-detail-pane')),
+      controls: rect(controls),
+      primary: rect(primary),
+      category: rect(primary.querySelector('select')),
+      date: rect(primary.querySelector('.date-filter-wrap')),
+      period: rect(primary.querySelector('.filter-period-toggle')),
+      search: rect(controls.querySelector('.filter-search')),
+      firstCard: pane.querySelector('.alert-card') ? rect(pane.querySelector('.alert-card')) : null,
+      pageWidth: document.documentElement.scrollWidth,
+    };
   });
-  const [category, date, period, search] = geometry.bounds;
-  expect(geometry.bounds).toHaveLength(4);
-  expect(search.width).toBeGreaterThanOrEqual(200);
-  for (const box of geometry.bounds) {
-    expect(box.left).toBeGreaterThanOrEqual(geometry.bar.left - 1);
-    expect(box.right).toBeLessThanOrEqual(geometry.bar.right + 1);
+  const { header, pane, right, controls, primary, category, date, period, search, firstCard } = geometry;
+  expect(controls.left).toBeGreaterThanOrEqual(pane.left - 1);
+  expect(controls.right).toBeLessThanOrEqual(pane.right + 1);
+  expect(controls.top).toBeCloseTo(pane.top, 0);
+  expect(search.top).toBeGreaterThanOrEqual(primary.bottom);
+  expect(search.width).toBeGreaterThan(pane.width - 40);
+  for (const box of [category, date, period, search]) {
+    expect(box.left).toBeGreaterThanOrEqual(pane.left - 1);
+    expect(box.right).toBeLessThanOrEqual(pane.right + 1);
   }
-  for (let i = 1; i < geometry.bounds.length; i++) {
-    const previous = geometry.bounds[i - 1], current = geometry.bounds[i];
-    expect(current.top > previous.top || current.left >= previous.right - 1).toBeTruthy();
-  }
-  if (sameLine) {
+  expect(category.top).toBeLessThanOrEqual(date.top);
+  expect(date.top).toBeLessThanOrEqual(period.top + 4);
+  if (firstCard) expect(firstCard.top).toBeGreaterThanOrEqual(controls.bottom - 1);
+  if (desktop) {
+    expect(pane.top).toBeCloseTo(header.bottom, 0);
+    expect(right.top).toBeCloseTo(header.bottom, 0);
     const center = box => box.top + box.height / 2;
-    expect(center(category)).toBeCloseTo(center(date), 0);
-    expect(center(date)).toBeCloseTo(center(period), 0);
-    expect(center(period)).toBeCloseTo(center(search), 0);
+    expect(Math.abs(center(date) - center(category))).toBeLessThanOrEqual(2);
+    expect(Math.abs(center(period) - center(category))).toBeLessThanOrEqual(2);
   }
   expect(geometry.pageWidth).toBeLessThanOrEqual(page.viewportSize().width + 1);
 }
@@ -48,11 +64,17 @@ test('notification category select keeps all filters and ordered responsive cont
   expect(await select.locator('option').evaluateAll(nodes => nodes.map(node => [node.value, node.textContent]))).toEqual(options);
   await expect(select).toHaveValue('all');
   await checkControlsFit(page, true);
+  expect(await page.locator('.alerts-layout > .filter-bar').count()).toBe(0);
 
   for (const [key, label] of options) {
     await select.selectOption(key);
     await expect(select).toHaveValue(key);
     await expect(select.locator('option:checked')).toHaveText(label);
+    if (key === 'discord') {
+      await expect(page.locator('.alerts-list-pane .discord-sort-bar')).toBeVisible();
+      await expect(page.locator('.alerts-layout > .discord-sort-bar')).toHaveCount(0);
+      await checkControlsFit(page, true);
+    }
   }
   await select.selectOption('dividend');
   await expect(page.locator('.alert-card')).toHaveCount(3);
@@ -81,6 +103,29 @@ test('notification category select keeps all filters and ordered responsive cont
   await page.getByRole('button', { name: '日付フィルタを解除' }).click();
   await expect(page.locator('.date-filter-wrap .date-clear-btn')).toHaveCount(0);
   await expect(page.locator('.alert-card')).toHaveCount(1);
+
+  // Narrowing only the left pane may wrap its controls, without lowering the PL pane.
+  await search.fill('');
+  const divider = await page.locator('.pane-divider').boundingBox();
+  const rightTop = (await page.locator('.alerts-detail-pane').boundingBox()).y;
+  await page.mouse.move(divider.x + divider.width / 2, divider.y + 50);
+  await page.mouse.down();
+  await page.mouse.move(divider.x - 110, divider.y + 50, { steps: 5 });
+  await page.mouse.up();
+  await checkControlsFit(page, false);
+  const wrapped = await page.locator('.filter-primary-row').evaluate(row =>
+    row.querySelector('.filter-period-toggle').getBoundingClientRect().top >
+    row.querySelector('select').getBoundingClientRect().top + 10);
+  expect(wrapped).toBe(true);
+  expect((await page.locator('.alerts-detail-pane').boundingBox()).y).toBeCloseTo(rightTop, 0);
+
+  // The controls remain available while only the notification list scrolls.
+  await page.setViewportSize({ width: 1440, height: 200 });
+  await page.locator('.alerts-list-pane').evaluate(pane => { pane.scrollTop = pane.scrollHeight; });
+  await expect.poll(() => page.locator('.alerts-list-pane').evaluate(pane => pane.scrollTop)).toBeGreaterThan(0);
+  await expect(page.getByRole('combobox', { name: '通知の分類' })).toBeVisible();
+  await expect(page.getByRole('textbox', { name: '通知の企業検索' })).toBeVisible();
+  await page.setViewportSize({ width: 1440, height: 900 });
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole('button', { name: '← 通知一覧' }).click();
