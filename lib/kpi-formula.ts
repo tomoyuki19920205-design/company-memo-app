@@ -10,6 +10,9 @@ export const targetKey = (target: Target) => JSON.stringify(target);
 export interface Binding { text: string; targets: Target[] }
 export interface Formula { version: 1; formula: string; bindings: Binding[] }
 const PREFIX = "\u001ecompany-kpi-formula-v1:";
+/** Japanese IME can enter a fullwidth equals sign at the start of a formula. */
+export const isFormulaInput = (input: string) => input.startsWith("=") || input.startsWith("＝");
+const normalizeFormulaInput = (input: string) => input.startsWith("＝") ? `=${input.slice(1)}` : input;
 export const encodeFormula = (formula: Formula) => PREFIX + JSON.stringify(formula);
 export function decodeFormula(value: string): Formula | null {
     if (!value.startsWith(PREFIX)) return null;
@@ -127,7 +130,8 @@ function bind(text: string, book: Book): Target[] {
 }
 /** Invalid formulas are still saved, and produce a local cell error until edited. */
 export function compileFormula(input: string, book: Book, previous?: Formula | null): string {
-    if (!input.startsWith("=")) return input;
+    if (!isFormulaInput(input)) return input;
+    input = normalizeFormulaInput(input);
     let references: string[] = [];
     try { references = parseFormula(input).references; } catch { /* error displayed by evaluator */ }
     const prior = previous ? projectFormula(previous, book) : null;

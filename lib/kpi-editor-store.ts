@@ -1,4 +1,4 @@
-import { addressText, compileFormula, copyFormula, decodeFormula, formatResult, FormulaEngine, indexBook, projectFormula, targetKey, type Book, type ReferenceCell, type Sheet, type Target } from "./kpi-formula";
+import { addressText, compileFormula, copyFormula, decodeFormula, formatResult, FormulaEngine, indexBook, isFormulaInput, projectFormula, targetKey, type Book, type ReferenceCell, type Sheet, type Target } from "./kpi-formula";
 
 export interface KpiEdit { period: string; quarter: string; kpiSlot: number; value: string; tableScope: "cum" | "q" }
 interface History { before: Map<string, string>; after: Map<string, string> }
@@ -80,7 +80,7 @@ export class KpiEditorStore {
     draft(value: string, source: "cell" | "bar" = this.snapshot.source) { if (!this.snapshot.editing) this.draftBook = this.book; this.draftDirty = true; this.draftChanges++; this.emitEditor({ draft: value, editing: true, source }); this.initialReference = null; }
     setCursor(start: number, end: number) { this.cursor = { start, end }; }
     insertReference(sheet: Sheet, row: number, col: number, extend = false): boolean {
-        if (!this.snapshot.editing || !this.snapshot.draft.startsWith("=")) return false;
+        if (!this.snapshot.editing || !isFormulaInput(this.snapshot.draft)) return false;
         const clicked = this.book.sheets[sheet][row]?.[col]; if (!clicked) return false;
         let draftBook = this.draftBook ?? this.book;
         let location = indexBook(draftBook).addresses.get(targetKey(clicked.target));

@@ -24,6 +24,22 @@ test("legacy text, including =1+2, is not reinterpreted; new ordinary numbers/te
     assert.equal(engine.read(targetKey(base.sheets.KPI[0][2].target)), "赤字メモ");
     assert.equal(decodeFormula("=1+2"), null);
 });
+test("fullwidth IME equals compiles reference-free formulas without reinterpreting untouched legacy text", async () => {
+    const base = book(), key = targetKey(base.sheets.KPI[0][0].target);
+    const raw = compileFormula("＝1/2", base);
+    assert.equal(decodeFormula(raw)?.formula, "=1/2");
+    assert.deepEqual(decodeFormula(raw)?.bindings, []);
+    const engine = new FormulaEngine(); engine.update(formulaBook(base, [raw]));
+    assert.equal(engine.read(key), 0.5);
+
+    const legacy = formulaBook(base, ["＝2/1"]), store = new KpiEditorStore();
+    let saves = 0; store.configure(legacy, async () => { saves++; });
+    store.select(key); store.begin(key, undefined, "bar"); store.commit(); await store.settled();
+    assert.equal(store.raw(key), "＝2/1"); assert.equal(saves, 0);
+    store.begin(key, undefined, "bar"); store.draft("＝2/1", "bar"); store.commit(); await store.settled();
+    assert.equal(store.raw(key).startsWith("＝"), false);
+    assert.equal(store.formulaText(key), "=2/1"); assert.equal(store.getValue(key), "2"); assert.equal(saves, 1);
+});
 test("0, negatives, missing fields and error recovery remain distinct", () => {
     const base = buildKpiBook("TEST", [record("2026-03-31", "1Q", { sales: 0, operating_profit: -1, gross_profit: null })], {});
     assert.equal(result("=CUM!A1", base), 0); assert.equal(result("=CUM!E1", base), -1);

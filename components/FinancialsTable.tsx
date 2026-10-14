@@ -19,7 +19,7 @@ import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } fro
 import { KpiFormulaControls, KpiFormulaInput, KpiFormulaCell } from "@/components/KpiFormulaEditor";
 import { KpiEditorStore, type KpiEdit } from "@/lib/kpi-editor-store";
 import { buildKpiBook } from "@/lib/kpi-reference-book";
-import { targetKey, type Sheet } from "@/lib/kpi-formula";
+import { isFormulaInput, targetKey, type Sheet } from "@/lib/kpi-formula";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
@@ -3140,7 +3140,7 @@ function FinancialsTable({
                 }
             }}
             onClickCapture={(e) => {
-                if (kpiEditor.getEditor().editing && kpiEditor.getEditor().draft.startsWith("=") && !(e.target as HTMLElement).closest('[data-kpi-editor="input"]') && (e.target as HTMLElement).closest("[data-formula-ref]")) {
+                if (kpiEditor.getEditor().editing && isFormulaInput(kpiEditor.getEditor().draft) && !(e.target as HTMLElement).closest('[data-kpi-editor="input"]') && (e.target as HTMLElement).closest("[data-formula-ref]")) {
                     e.preventDefault(); e.stopPropagation();
                 }
             }}

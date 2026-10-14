@@ -10,9 +10,12 @@ function initialValues(ticker, rows) {
   if (saved) return JSON.parse(saved);
   const book = buildKpiBook(ticker, rows, {});
   const first = book.sheets.KPI[0][0].target;
+  const second = book.sheets.KPI[1][0].target;
+  const third = book.sheets.KPI[2][0].target;
   return { [`${first.scope}|${first.period}|${first.quarter}`]: {
     1: compileFormula('=CUM!A1+1', book), 2: '通常の文字列',
-  } };
+  }, [`${second.scope}|${second.period}|${second.quarter}`]: { 1: '＝2/1' },
+  [`${third.scope}|${third.period}|${third.quarter}`]: { 1: '＝1/2' } };
 }
 function Grid({ ticker }) {
   const rows = useMemo(() => baseRows.map(row => ({ ...row, ticker })), [ticker]);

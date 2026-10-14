@@ -57,6 +57,67 @@ test('cell editing and text bar continue one draft and save once', async ({ page
   expect(await page.evaluate(() => window.__kpiSaveCount)).toBe(1);
 });
 
+test('a fullwidth equals stored as legacy text is converted only when the user edits that cell', async ({ page }) => {
+  await page.goto('/?screen=kpi');
+  const cell = row => page.locator(`[data-kpi-row="${row}"][data-kpi-slot="1"]`);
+  const bar = page.locator('.pl-section .formula-bar-input');
+  for (const [row, input, result] of [[1, '＝2/1', '2'], [2, '＝1/2', '0.5']]) {
+    await cell(row).click();
+    await expect(cell(row)).toHaveText(input);
+    await expect(bar).toHaveValue(input);
+    await bar.fill('');
+    await bar.fill(input);
+    await bar.press('Enter');
+    await expect(cell(row)).toHaveText(result);
+  }
+  await page.reload();
+  for (const [row, formula, result] of [[1, '=2/1', '2'], [2, '=1/2', '0.5']]) {
+    await cell(row).click();
+    await expect(cell(row)).toHaveText(result);
+    await expect(bar).toHaveValue(formula);
+  }
+});
+
+test('user input evaluates reference-free formulas from both the bar and inline cells after navigation and reload', async ({ page }) => {
+  await page.goto('/?screen=kpi');
+  const cell = (row, slot) => page.locator(`[data-kpi-row="${row}"][data-kpi-slot="${slot}"]`);
+  const bar = page.locator('.pl-section .formula-bar-input');
+  const formulas = [
+    { input: '＝1/2', displayed: '=1/2', result: '0.5' },
+    { input: '＝2/1', displayed: '=2/1', result: '2' },
+    { input: '=1+2*3', displayed: '=1+2*3', result: '7' },
+    { input: '=SUM(1,2)', displayed: '=SUM(1,2)', result: '3' },
+  ];
+  for (const [row, formula] of formulas.entries()) {
+    await cell(row, 3).click();
+    await bar.fill(formula.input);
+    await bar.press('Enter');
+    await expect(cell(row, 3)).toHaveText(formula.result);
+    await cell(0, 1).click();
+    await cell(row, 3).click();
+    await expect(bar).toHaveValue(formula.displayed);
+  }
+  for (const [row, formula] of formulas.entries()) {
+    await cell(row, 2).dblclick();
+    const inline = cell(row, 2).locator('textarea');
+    await inline.fill(formula.input);
+    await inline.press('Enter');
+    await expect(cell(row, 2)).toHaveText(formula.result);
+    await cell(0, 1).click();
+    await cell(row, 2).click();
+    await expect(bar).toHaveValue(formula.displayed);
+  }
+  await page.reload();
+  for (const [row, formula] of formulas.entries()) for (const slot of [2, 3]) {
+    await cell(row, slot).click();
+    await expect(cell(row, slot)).toHaveText(formula.result);
+    await expect(bar).toHaveValue(formula.displayed);
+  }
+  await cell(0, 1).click();
+  await expect(cell(0, 1)).toHaveText('1068');
+  await expect(bar).toHaveValue('=CUM!A1+1');
+});
+
 test('KPI copy and paste preserve relative references in the unified editor', async ({ page }) => {
   await page.goto('/?screen=kpi');
   const source = page.locator('[data-kpi-row="0"][data-kpi-slot="1"]');
@@ -84,11 +145,12 @@ test('reference insertion, undo/redo and IME confirmation share the KPI editor',
   const cell = slot => page.locator(`[data-kpi-row="0"][data-kpi-slot="${slot}"]`);
   const bar = page.locator('.pl-section .formula-bar-input');
   await cell(3).click();
-  await bar.fill('=');
+  await bar.fill('＝');
   await page.locator('[data-formula-ref="CUM|0|0"]').first().click();
-  await expect(bar).toHaveValue('=CUM!A1');
+  await expect(bar).toHaveValue('＝CUM!A1');
   await bar.press('Enter');
   await expect(cell(3)).toContainText('1067');
+  await expect(bar).toHaveValue('=CUM!A1');
   await cell(3).press('ControlOrMeta+z');
   await expect(cell(3)).toHaveText('');
   await cell(3).press('ControlOrMeta+y');
