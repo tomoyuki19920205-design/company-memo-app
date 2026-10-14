@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useCallback, useRef, useState, useEffect } from "react";
+import React, { useMemo, useCallback, useRef, useState, useEffect, useSyncExternalStore } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
 import { formatMillions, displayValue } from "@/lib/format";
@@ -16,7 +16,7 @@ import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentVal
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
 import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } from "@/lib/company-profit-display";
-import { KpiFormulaBar, KpiFormulaCell } from "@/components/KpiFormulaEditor";
+import { KpiFormulaControls, KpiFormulaInput, KpiFormulaCell } from "@/components/KpiFormulaEditor";
 import { KpiEditorStore, type KpiEdit } from "@/lib/kpi-editor-store";
 import { buildKpiBook } from "@/lib/kpi-reference-book";
 import { targetKey, type Sheet } from "@/lib/kpi-formula";
@@ -639,6 +639,7 @@ function FinancialsTable({
         // A ticker switch starts an independent editor/history; writes keep their original ticker.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editorTicker]);
+    const selectedKpiKey = useSyncExternalStore(kpiEditor.subscribeEditor, () => kpiEditor.getEditor().selected, () => null);
     useEffect(() => kpiEditor.configure(kpiBook, onKpiBatchEdit), [kpiEditor, kpiBook, onKpiBatchEdit]);
     useEffect(() => () => kpiEditor.commit(), [kpiEditor]);
     const legacyKpiQueue = useRef<KpiEdit[]>([]);
@@ -3145,19 +3146,17 @@ function FinancialsTable({
             }}
         >
             <h2 className="section-title">📊 PL（四半期業績推移） — 過去5年</h2>
-            <KpiFormulaBar store={kpiEditor} />
-
             {/* ============ フォーミュラバー ============ */}
             <div className="formula-bar-sticky">
                 <div className="formula-bar">
-                    <div className="formula-bar-label">
-                        {activeCellLabel ? (
+                    <div className={`formula-bar-label${selectedKpiKey ? " formula-bar-label-kpi" : ""}`}>
+                        {selectedKpiKey ? <KpiFormulaControls store={kpiEditor} /> : activeCellLabel ? (
                             <span className="cell-ref">{activeCellLabel}</span>
                         ) : (
                             <span className="cell-ref cell-ref-empty">セル未選択</span>
                         )}
                     </div>
-                    <textarea
+                    {selectedKpiKey ? <KpiFormulaInput store={kpiEditor} cellKey={selectedKpiKey} height={formulaBarHeight} /> : <textarea
                         ref={formulaBarRef}
                         className="formula-bar-input"
                         placeholder="セルを選択してください"
@@ -3173,7 +3172,7 @@ function FinancialsTable({
                         }}
                         style={{ height: formulaBarHeight }}
                         disabled={!!activeSegCell || (!isPlMemoEditableCell(activeCell) && !isFormulaBarManualCell)}
-                    />
+                    />}
                 </div>
                 {/* フォーミュラバー リサイズハンドル */}
                 <div

@@ -4,6 +4,7 @@ import NewsMonitor from '../../components/NewsMonitor';
 import AlertsPage from '../../components/tdnet-alerts/AlertsPage';
 import CompanyViewer from '../../components/CompanyViewer';
 import ScreenerPage from '../../components/ScreenerPage';
+import KpiFixture from './kpi-fixture';
 import { emitPinFixtureUpdate, emitPinFixtureInsert } from './supabase';
 const screen = new URLSearchParams(location.search).get('screen');
 const pinFixture = new URLSearchParams(location.search).has('pinFixture');
@@ -12,5 +13,5 @@ createRoot(document.getElementById('root')).render(<>
     <button onClick={emitPinFixtureUpdate}>UPDATE受信・再取得・並べ替え</button>
     <button onClick={emitPinFixtureInsert}>INSERT受信</button>
   </aside>}
-  {screen === 'news' ? <NewsMonitor /> : screen === 'tdnet' ? <AlertsPage userId="mobile-test" userEmail="mobile@example.test" /> : screen === 'screening' ? <ScreenerPage /> : <CompanyViewer />}
+  {screen === 'news' ? <NewsMonitor /> : screen === 'tdnet' ? <AlertsPage userId="mobile-test" userEmail="mobile@example.test" /> : screen === 'screening' ? <ScreenerPage /> : screen === 'kpi' ? <KpiFixture /> : <CompanyViewer />}
 </>);

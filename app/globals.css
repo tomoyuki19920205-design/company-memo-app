@@ -616,6 +616,7 @@ body {
   min-width: 220px;
   max-width: 300px;
 }
+.formula-bar-label-kpi { width: 360px; max-width: 40%; min-width: 260px; }
 
 .cell-ref {
   font-family: var(--mono);
@@ -4356,6 +4357,7 @@ body:has(.alerts-layout) {
   .valuation-card-compact .valuation-card-items { flex: 0 0 auto; flex-wrap: nowrap; }
   .formula-bar { flex-direction: column; }
   .formula-bar-label { height: 30px; min-height: 30px; min-width: 0; max-width: none; width: 100%; border-right: 0; }
+  .formula-bar-label-kpi { max-width: none; }
   .formula-bar-input {
     flex: none; width: 100%; height: 96px !important; min-height: 96px;
     white-space: pre-wrap; overflow-wrap: anywhere; overflow-y: auto;
@@ -4398,13 +4400,17 @@ body:has(.alerts-layout) {
   .metric-picker-groups, .industry-filter-sections { grid-template-columns: 1fr; }
   .metric-picker-group > div { grid-template-columns: 1fr; }
 }
-/* Formula editing is deliberately limited to the existing KPI1–3 cells. */
-.kpi-formula-bar { position: sticky; left: 0; max-width: 100%; margin-bottom: 8px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 5px; background: var(--card-bg); color: var(--text); }
-.kpi-formula-controls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12px; }
-.kpi-formula-address { flex: 1; min-width: 180px; }
+/* KPI1–3 use the existing PL text bar; help opens over the table when requested. */
+.kpi-formula-controls { display: flex; align-items: center; gap: 4px; width: 100%; min-width: 0; font-size: 12px; }
+.kpi-formula-address { flex: 1; min-width: 0; }
 .kpi-formula-controls button { min-width: 28px; padding: 2px 6px; cursor: pointer; background: var(--primary-light); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
 .kpi-formula-input { width: 100%; min-height: 30px; resize: vertical; font-family: ui-monospace, monospace; color: var(--text); background: var(--card-bg); border: 1px solid var(--border); }
-.kpi-formula-help, .kpi-formula-references { font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+.kpi-formula-help { position: relative; flex: none; font-size: 11px; line-height: 1.5; }
+.kpi-formula-help > summary { display: grid; place-items: center; min-width: 28px; min-height: 24px; cursor: pointer; list-style: none; border: 1px solid var(--border); border-radius: 4px; background: var(--primary-light); }
+.kpi-formula-help > summary::-webkit-details-marker { display: none; }
+.kpi-formula-popover { position: absolute; top: calc(100% + 8px); right: 0; z-index: 80; width: min(380px, calc(100vw - 24px)); max-height: 60vh; overflow: auto; padding: 10px; border: 1px solid var(--border); border-radius: 5px; background: var(--card-bg); color: var(--text); box-shadow: 0 8px 24px #0003; overflow-wrap: anywhere; }
+.kpi-formula-status { flex: none; max-width: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kpi-formula-references { font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
 .kpi-formula-help p { margin: 4px 0; }
 .kpi-formula-error { color: #b91c1c; background: #fef2f2; }
 .kpi-cell:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }

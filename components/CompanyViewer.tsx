@@ -1158,6 +1158,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                     <div className="company-page-wide-content">
                         <div className="viewer-main">
                             <FinancialsTable
+                                key={activeTicker}
                                 data={financials}
                                 industry={companyInfo?.industry}
                                 loading={dataLoading}
