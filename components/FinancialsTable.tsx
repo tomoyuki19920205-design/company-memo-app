@@ -3089,7 +3089,6 @@ function FinancialsTable({
     if (loading || mismatchedTicker) {
         return (
             <div className="data-section">
-                <h2 className="section-title">📊 PL（四半期業績推移）</h2>
                 <div className="loading-message">読込中...</div>
             </div>
         );
@@ -3145,7 +3144,6 @@ function FinancialsTable({
                 }
             }}
         >
-            <h2 className="section-title">📊 PL（四半期業績推移） — 過去5年</h2>
             {/* ============ フォーミュラバー ============ */}
             <div className="formula-bar-sticky">
                 <div className="formula-bar">

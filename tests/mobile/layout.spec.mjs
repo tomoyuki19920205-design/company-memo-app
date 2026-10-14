@@ -177,7 +177,7 @@ async function assertFocusGeometry(page) {
     };
     return { viewport: innerHeight, body: box('.company-viewer-scroll-body'), header: box('.viewer-header'), market: box('.valuation-card'),
       label: box('.formula-bar-label'), input: box('.formula-bar-input'),
-      visible: ['.pl-section > .section-title', '.formula-bar', '.pl-row .num-col'].map(box),
+      visible: ['.formula-bar', '.pl-row .num-col'].map(box),
       pageWidth: document.documentElement.scrollWidth, viewportWidth: innerWidth };
   });
   expect(metrics.body.height).toBeGreaterThanOrEqual(metrics.viewport * .6);
@@ -202,6 +202,7 @@ async function assertFocusGeometry(page) {
 test('focus gives PL and full memos priority and preserves ticker, search and scroll across panes', async ({ page }) => {
   await loadFocusViewer(page);
   await expect(page.locator('.company-name')).toHaveText('モバイル検証株式会社');
+  await expect(page.locator('.pl-section > .section-title')).toHaveCount(0);
   await assertFocusGeometry(page);
   await expect(page.locator('.alerts-header')).toBeHidden();
   await expect(page.locator('.mobile-pane-switch')).toBeHidden();

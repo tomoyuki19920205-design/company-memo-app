@@ -1266,15 +1266,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       </nav>
       {/* Filter Bar */}
       <div className="filter-bar">
-        {filters.map((f) => (
-          <button
-            key={f.key}
-            className={`filter-chip ${filter === f.key ? "active" : ""}`}
-            onClick={() => handleFilterChange(f.key)}
-          >
-            {f.label}
-          </button>
-        ))}
+        <select
+          className="filter-category-select"
+          aria-label="通知の分類"
+          value={filter}
+          onChange={(e) => handleFilterChange(e.target.value as FilterType)}
+        >
+          {filters.map((f) => <option key={f.key} value={f.key}>{f.label}</option>)}
+        </select>
 
         {/* 日付ピッカー付き「今日」ボタン */}
         <div className="date-filter-wrap">
@@ -1306,23 +1305,21 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           />
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "4px", marginLeft: "auto" }}>
-          <button
-            className={`filter-chip ${allPeriodTickerSearch ? "active" : ""}`}
-            onClick={() => setAllPeriodTickerSearch(!allPeriodTickerSearch)}
-            title="ティッカー検索時に日付指定を無視して全期間から検索します"
-            style={{ padding: "0.25rem 0.5rem", fontSize: "0.85rem", height: "30px" }}
-          >
-            {allPeriodTickerSearch ? "全期間ON" : "全期間OFF"}
-          </button>
-          <input
-            type="text"
-            className="filter-search"
-            placeholder="🔍 ティッカー / 会社名 / ヘッドライン"
-            value={search}
-            onChange={(e) => handleSearchChange(e.target.value)}
-          />
-        </div>
+        <button
+          className={`filter-chip filter-period-toggle ${allPeriodTickerSearch ? "active" : ""}`}
+          onClick={() => setAllPeriodTickerSearch(!allPeriodTickerSearch)}
+          title="ティッカー検索時に日付指定を無視して全期間から検索します"
+        >
+          {allPeriodTickerSearch ? "全期間ON" : "全期間OFF"}
+        </button>
+        <input
+          type="text"
+          className="filter-search"
+          aria-label="通知の企業検索"
+          placeholder="🔍 ティッカー / 会社名 / ヘッドライン"
+          value={search}
+          onChange={(e) => handleSearchChange(e.target.value)}
+        />
       </div>
 
       {/* Discord対象タブのソートボタン */}
