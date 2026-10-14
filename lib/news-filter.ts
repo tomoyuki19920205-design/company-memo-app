@@ -1,3 +1,4 @@
+import {withinPublicationWindow,publicationBounds} from "./news-publication";
 import type { NewsEvent, NewsQuery, NewsStreamItem, NYMarketReportStreamItem, SectorReportStreamItem } from "@/types/news";
 
 const IMPORTANCE_RANK = { high: 0, medium: 1, low: 2 } as const;
@@ -6,7 +7,7 @@ export function filterNewsEvents(rows: NewsEvent[], query: NewsQuery): NewsEvent
     const search = query.search?.trim().toLocaleLowerCase();
     const filtered = rows.filter((row) => {
         if (query.ticker && row.ticker !== query.ticker) return false;
-        if (query.since && new Date(row.published_at) < new Date(query.since)) return false;
+        if (!withinPublicationWindow(row, query)) return false;
         if (query.direction && row.direction !== query.direction) return false;
         if (query.importance && row.importance !== query.importance) return false;
         if (query.category && row.category !== query.category) return false;
@@ -20,7 +21,7 @@ export function filterNewsEvents(rows: NewsEvent[], query: NewsQuery): NewsEvent
             if (delta) return delta;
         }
         const key = query.sort === "newest" ? "created_at" : "published_at";
-        return new Date(b[key]).getTime() - new Date(a[key]).getTime();
+        return key === "created_at" ? Date.parse(b.created_at)-Date.parse(a.created_at) : (publicationBounds(b)?.start ?? -Infinity)-(publicationBounds(a)?.start ?? -Infinity);
     });
 }
 

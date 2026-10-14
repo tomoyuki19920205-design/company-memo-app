@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { publicationLabel, isDateOnlyNews } from "@/lib/news-publication";
+const isContentPolicy = (row: { tags: string[] }) => row.tags.includes("CN-CONTENT-FIRST-v1");
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import SectorReportMarkdown from "@/components/SectorReportMarkdown";
 import { loadCompanyMaster, loadNewsStream } from "@/lib/viewer-api";
@@ -152,8 +154,8 @@ export default function NewsMonitor() {
                 const nyMarket = isNYMarketReport(row);
                 const cardClass = sector ? "sector-report-card" : nyMarket ? "ny-market-report-card" : `temporal-${row.temporal_status}`;
                 return <article className={`news-card ${cardClass}`} key={row.stream_id} onClick={() => openNews(row)} onKeyDown={(e) => { if (e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openNews(row); } }} role="button" tabIndex={0}>
-                    <div className="news-card-meta"><time>{dateTime(row.sort_at)}</time>{sector ? <span>東証33業種</span> : nyMarket ? <span>NY市場</span> : <Link href={`/?ticker=${encodeURIComponent(row.ticker)}`} onClick={(e) => e.stopPropagation()}>{row.ticker} {names.get(row.ticker) ?? row.company_name ?? ""}</Link>}{lastSeen && row.created_at > lastSeen && <b className="new-badge">NEW</b>}</div>
-                    <h2>{row.title}</h2><div className="news-badges"><span>{row.category}</span><span className={`news-badge direction-${row.direction}`}>{row.direction}</span><span className={`news-badge importance-${row.importance.replace("+", "-plus")}`}>{row.importance}</span>{!sector && !nyMarket && <span>{row.earnings_relevance}</span>}</div>
+                    <div className="news-card-meta"><time>{!sector && !nyMarket ? publicationLabel(row) : dateTime(row.sort_at)}</time>{sector ? <span>東証33業種</span> : nyMarket ? <span>NY市場</span> : <Link href={`/?ticker=${encodeURIComponent(row.ticker)}`} onClick={(e) => e.stopPropagation()}>{row.ticker} {names.get(row.ticker) ?? row.company_name ?? ""}</Link>}{lastSeen && row.created_at > lastSeen && <b className="new-badge">NEW</b>}</div>
+                    <h2>{row.title}</h2><div className="news-badges">{isContentPolicy(row) ? <><span>事業ニュース</span><span>内容方針による利用候補／TDnet未照合</span></> : <><span>{row.category}</span><span className={`news-badge direction-${row.direction}`}>{row.direction}</span><span className={`news-badge importance-${row.importance.replace("+", "-plus")}`}>{row.importance}</span>{!sector && !nyMarket && <span>{row.earnings_relevance}</span>}</>}</div>
                     {nyMarket ? <NYMarketCardSummary row={row} /> : sector ? <ul className="sector-summary-bullets">{row.summary_bullets.map((bullet, index) => <li key={index}>{bullet}</li>)}</ul> : <p>{row.summary}</p>}
                     <small>{nyMarket ? "NY市場モーニングレポート" : sector ? "東証33業種週次レポート" : row.source_name}</small>
                 </article>;
@@ -167,7 +169,7 @@ export default function NewsMonitor() {
 }
 
 function CompanyDetail({ row, names }: { row: Extract<NewsStreamItem, { report_type: "company_news" }>; names: Map<string, string> }) {
-    return <><h2>{row.title}</h2><p><Link href={`/?ticker=${row.ticker}`}>{row.ticker} {names.get(row.ticker) ?? row.company_name}</Link></p><dl><dt>公開</dt><dd>{dateTime(row.published_at)}</dd><dt>確認</dt><dd>{dateTime(row.checked_at)}</dd><dt>Source</dt><dd>{row.source_name}</dd><dt>分類</dt><dd>{row.category} / {row.direction} / {row.importance}</dd><dt>決算関連</dt><dd>{row.earnings_relevance}</dd><dt>Temporal</dt><dd>{row.temporal_status}{row.valid_until ? ` (until ${dateTime(row.valid_until)})` : ""}</dd></dl><h3>Summary</h3><p>{row.summary}</p><h3>Why it matters</h3><p>{row.why_it_matters}</p>{row.evidence_excerpt && <><h3>Evidence excerpt</h3><blockquote>{row.evidence_excerpt}</blockquote></>}<div className="news-tags">{row.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>{row.source_url && isSafeSourceUrl(row.source_url) && <a className="btn btn-load" href={row.source_url} target="_blank" rel="noopener noreferrer">原文を開く</a>}</>;
+    return <><h2>{row.title}</h2><p><Link href={`/?ticker=${row.ticker}`}>{row.ticker} {names.get(row.ticker) ?? row.company_name}</Link></p><dl><dt>公表</dt><dd>{publicationLabel(row)}</dd><dt>確認</dt><dd>{dateTime(row.checked_at)}</dd><dt>Source</dt><dd>{row.source_name}</dd><dt>分類</dt><dd>{isContentPolicy(row) ? "内容方針による利用候補／TDnet未照合（投資上の重要度は未付与）" : `${row.category} / ${row.direction} / ${row.importance}`}</dd><dt>決算関連</dt><dd>{row.earnings_relevance}</dd><dt>Temporal</dt><dd>{row.temporal_status}{row.valid_until ? ` (until ${dateTime(row.valid_until)})` : ""}</dd></dl><h3>Summary</h3><p>{row.summary}</p><h3>{isContentPolicy(row) ? "本文に基づく候補理由" : "Why it matters"}</h3><p>{row.why_it_matters}</p>{row.evidence_excerpt && <><h3>Evidence excerpt</h3><blockquote>{row.evidence_excerpt}</blockquote></>}<div className="news-tags">{row.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>{row.source_url && isSafeSourceUrl(row.source_url) && <a className="btn btn-load" href={row.source_url} target="_blank" rel="noopener noreferrer">原文を開く</a>}</>;
 }
 
 function indexMove(row: Extract<NewsStreamItem, { report_type: "ny_market_daily" }>, aliases: string[]): string | null {

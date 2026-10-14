@@ -1,4 +1,5 @@
 "use client";
+import { publicationLabel } from "@/lib/news-publication";
 
 import Link from "next/link";
 import type { LatestNewsScanRun, NewsEvent } from "@/types/news";
@@ -19,9 +20,8 @@ export default function CompanyNewsSection({ ticker, rows, scan, loading }: { ti
             {loading ? <p className="news-empty">読み込み中...</p> : rows.length === 0 ? <p className="news-empty">ニュースはまだありません</p> : (
                 <div className="company-news-list">
                     {rows.map((row) => <article className={`company-news-row temporal-${row.temporal_status}`} key={row.event_id}>
-                        <time>{dateTime(row.published_at)}</time>
-                        <span className={`news-badge direction-${row.direction}`}>{row.direction}</span>
-                        <span className={`news-badge importance-${row.importance}`}>{row.importance}</span>
+                        <time>{publicationLabel(row)}</time>
+                        {row.tags.includes("CN-CONTENT-FIRST-v1") ? <span>内容方針による利用候補／TDnet未照合</span> : <><span className={`news-badge direction-${row.direction}`}>{row.direction}</span><span className={`news-badge importance-${row.importance}`}>{row.importance}</span></>}
                         {isSafeSourceUrl(row.source_url) ? <a href={row.source_url} target="_blank" rel="noopener noreferrer">{row.headline}</a> : <span>{row.headline}</span>}
                         <p>{row.summary}</p>
                     </article>)}

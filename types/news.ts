@@ -9,7 +9,9 @@ export interface NewsEvent {
     company_name?: string | null;
     importance_rank?: number;
     headline: string;
-    published_at: string;
+    published_at: string | null;
+    published_date?: string | null;
+    published_precision?: "date" | "datetime" | null;
     checked_at: string;
     source_type: string;
     source_name: string;
@@ -191,6 +193,7 @@ export interface NewsQuery {
     ticker?: string;
     search?: string;
     since?: string;
+    until?: string;
     direction?: NewsDirection;
     importance?: NewsImportance | "A+" | "A" | "B" | "C";
     category?: string;

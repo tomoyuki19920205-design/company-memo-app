@@ -1,3 +1,4 @@
+import { applyPublicationWindow } from "./news-publication";
 import { createSupabaseBrowser } from "./supabase-browser";
 import { normalizeTicker } from "./memo-api";
 import type { FinancialRecord } from "@/types/financial";
@@ -978,8 +979,8 @@ export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStrea
     const offset = Math.max(options.offset ?? 0, 0);
     const supabase = createSupabaseBrowser();
     let query = supabase
-        .from("api_authorized_news_stream")
-        .select("stream_id,report_type,title,sort_at,published_at,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at,report_date_jst,market_session_date,market_status,report_markdown,index_moves,sector_moves,notable_gainers,notable_losers,top_gainers_20,earnings,after_hours_earnings,major_news,commodities")
+        .from("api_authorized_news_stream_with_precision")
+        .select("stream_id,report_type,title,sort_at,published_at,published_date,published_precision,checked_at,ticker,company_name,sector_code,sector_name,category,direction,importance,importance_rank,earnings_relevance,summary,summary_bullets,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,source_type,source_name,source_url,period_start,period_end,full_report_md,watchlist_companies,next_week_watchpoints,missed_candidates,sources,created_at,report_date_jst,market_session_date,market_status,report_markdown,index_moves,sector_moves,notable_gainers,notable_losers,top_gainers_20,earnings,after_hours_earnings,major_news,commodities")
         .range(offset, offset + limit - 1);
 
     const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
@@ -988,7 +989,7 @@ export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStrea
         const safe = options.search.trim().replace(/[(),.*%]/g, " ").slice(0, 100);
         query = query.or(`ticker.ilike.%${safe}%,company_name.ilike.%${safe}%,title.ilike.%${safe}%,sector_name.ilike.%${safe}%`);
     }
-    if (options.since) query = query.gte("sort_at", options.since);
+    query = applyPublicationWindow(query, options);
     if (options.reportType) query = query.eq("report_type", options.reportType);
     if (options.direction) query = query.eq("direction", options.direction);
     if (options.importance) query = query.eq("importance", options.importance);
@@ -997,7 +998,7 @@ export async function loadNewsStream(options: NewsQuery = {}): Promise<NewsStrea
     if (options.sort === "importance") {
         query = query.order("importance_rank", { ascending: true }).order("sort_at", { ascending: false });
     } else if (options.sort === "published") {
-        query = query.order("published_at", { ascending: false });
+        query = query.order("publication_sort_day", { ascending: false }).order("published_at", { ascending: false, nullsFirst: false });
     } else {
         query = query.order("sort_at", { ascending: false });
     }
@@ -1011,8 +1012,8 @@ export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent
     const offset = Math.max(options.offset ?? 0, 0);
     const supabase = createSupabaseBrowser();
     let query = supabase
-        .from("api_authorized_news_events")
-        .select("event_id,ticker,company_name,headline,published_at,checked_at,source_type,source_name,source_url,category,direction,importance,importance_rank,earnings_relevance,summary,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,created_at")
+        .from("api_authorized_news_events_with_precision")
+        .select("event_id,ticker,company_name,headline,published_at,published_date,published_precision,checked_at,source_type,source_name,source_url,category,direction,importance,importance_rank,earnings_relevance,summary,why_it_matters,evidence_excerpt,temporal_status,valid_until,tags,created_at")
         .range(offset, offset + limit - 1);
 
     const ticker = options.ticker ? normalizeNewsTicker(options.ticker) : "";
@@ -1021,7 +1022,7 @@ export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent
         const safe = options.search.trim().replace(/[(),.*%]/g, " ").slice(0, 100);
         query = query.or(`ticker.ilike.%${safe}%,company_name.ilike.%${safe}%,headline.ilike.%${safe}%`);
     }
-    if (options.since) query = query.gte("published_at", options.since);
+    query = applyPublicationWindow(query, options);
     if (options.direction) query = query.eq("direction", options.direction);
     if (options.importance) query = query.eq("importance", options.importance);
     if (options.category) query = query.eq("category", options.category);
@@ -1032,7 +1033,7 @@ export async function loadNewsEvents(options: NewsQuery = {}): Promise<NewsEvent
     } else if (options.sort === "newest") {
         query = query.order("created_at", { ascending: false });
     } else {
-        query = query.order("published_at", { ascending: false });
+        query = query.order("publication_sort_day", { ascending: false }).order("published_at", { ascending: false, nullsFirst: false });
     }
     const { data, error } = await query;
     if (error) {
