@@ -160,13 +160,13 @@ test('notification selection waits for slow viewer auth and detail tabs preserve
 });
 
 async function loadFocusViewer(page, extra = '') {
-  await page.goto('/?screen=tdnet&fixtureTicker=7203' + extra);
+  await page.goto('/?screen=tdnet&fixtureTicker=418A' + extra);
   await page.getByRole('button', { name: 'Company Viewer', exact: true }).tap();
   await expect(page.locator('#ticker-input')).toBeVisible();
-  await page.locator('#ticker-input').fill('7203');
+  await page.locator('#ticker-input').fill('418A');
   await page.getByRole('button', { name: '読込', exact: true }).tap();
   await expect(page.locator('.pl-row').first()).toBeVisible();
-  await expect(page.locator('#ticker-input')).toBeHidden();
+  await expect(page.locator('#ticker-input')).toBeVisible();
 }
 
 async function assertFocusGeometry(page) {
@@ -201,7 +201,7 @@ async function assertFocusGeometry(page) {
 
 test('focus gives PL and full memos priority and preserves ticker, search and scroll across panes', async ({ page }) => {
   await loadFocusViewer(page);
-  await expect(page.locator('.company-name')).toHaveText('トヨタ自動車');
+  await expect(page.locator('.company-name')).toHaveText('モバイル検証株式会社');
   await assertFocusGeometry(page);
   await expect(page.locator('.alerts-header')).toBeHidden();
   await expect(page.locator('.mobile-pane-switch')).toBeHidden();
@@ -229,7 +229,8 @@ test('focus gives PL and full memos priority and preserves ticker, search and sc
   await expect(page.locator('#viewer-controls').getByRole('button', { name: 'ログアウト' })).toBeVisible();
   await page.locator('#ticker-input').fill('検索途中');
   await toggle.tap();
-  await expect(page.locator('#ticker-input')).toBeHidden();
+  await expect(page.locator('#ticker-input')).toBeVisible();
+  await expect(page.locator('#viewer-controls')).toBeHidden();
   const body = page.locator('.company-viewer-scroll-body');
   const before = await body.evaluate(el => el.scrollTop);
   await page.getByRole('button', { name: '← 通知一覧' }).tap();
@@ -237,7 +238,7 @@ test('focus gives PL and full memos priority and preserves ticker, search and sc
   await expect(page.locator('.mobile-pane-switch')).toBeVisible();
   await expect(page.getByRole('button', { name: '← 通知一覧' })).toBeHidden();
   await page.getByRole('button', { name: 'Company Viewer', exact: true }).tap();
-  await expect(page.locator('.ticker-badge')).toHaveText('7203');
+  await expect(page.locator('.ticker-badge')).toHaveText('418A');
   await expect(page.locator('#ticker-input')).toHaveValue('検索途中');
   await expect.poll(() => body.evaluate(el => el.scrollTop)).toBeCloseTo(before, 0);
   await expect(formula).toHaveValue(fullMemo);
@@ -259,36 +260,54 @@ test('wide desktop retains the single-row header and direct search controls', as
   await page.screenshot({ path: test.info().outputPath('desktop-header.png') });
 });
 
-test('full company names and focus breakpoint at 390, 900, 901 and 1440', async ({ page }) => {
-  await loadFocusViewer(page, '&longName=1');
-  const name = page.locator('.company-name');
-  await expect(name).toHaveText(longCompanyName);
-  for (const width of [390, 900, 901, 1440]) {
+test('long company name keeps direct search beside it through continuous resizing', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 844 });
+  await page.goto('/?ticker=418A&longName=1');
+  await expect(page.locator('.company-name')).toHaveText(longCompanyName);
+  await expect(page.locator('#ticker-input')).toBeVisible();
+
+  for (const width of [...Array.from({ length: 57 }, (_, i) => 1440 - i * 20), 1101, 1099, 901, 899].sort((a, b) => b - a)) {
     await page.setViewportSize({ width, height: 844 });
-    const geometry = await name.evaluate(el => {
-      const r = el.getBoundingClientRect(); const s = getComputedStyle(el);
-      return { x: r.x, right: r.right, total: el.scrollWidth, width: el.clientWidth, height: el.clientHeight, textOverflow: s.textOverflow, whiteSpace: s.whiteSpace };
+    const geometry = await page.evaluate(() => {
+      const box = selector => {
+        const r = document.querySelector(selector).getBoundingClientRect();
+        return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, width: r.width };
+      };
+      const name = document.querySelector('.company-name');
+      return { badge: box('.ticker-badge'), name: box('.company-name'), input: box('#ticker-input'),
+        load: box('.ticker-input-group .btn-load'), header: box('.viewer-header'),
+        textOverflow: getComputedStyle(name).textOverflow, pageWidth: document.documentElement.scrollWidth };
     });
-    expect(geometry.textOverflow).not.toBe('ellipsis');
-    expect(geometry.total).toBeLessThanOrEqual(geometry.width + 1);
-    if (width <= 900) {
-      expect(geometry.right).toBeLessThanOrEqual(width);
-      await expect(page.locator('.alerts-header')).toBeHidden();
-      expect((await page.locator('.company-viewer-scroll-body').boundingBox()).height).toBeGreaterThanOrEqual(844 * .6);
-    } else {
-      await expect(page.locator('.alerts-header')).toBeVisible();
-      await expect(page.locator('.alerts-list-pane')).toBeVisible();
-      await expect(page.locator('.pane-divider')).toBeVisible();
-      await expect(page.getByRole('button', { name: '← 通知一覧' })).toBeHidden();
-      expect(geometry.whiteSpace).toBe('nowrap');
-      // A very long desktop name remains one line and can be read in full.
-      const title = await page.locator('.ticker-info').evaluate(el => {
-        el.scrollLeft = el.scrollWidth;
-        return { left: el.scrollLeft, width: el.clientWidth, total: el.scrollWidth };
-      });
-      expect(title.left + title.width).toBeGreaterThanOrEqual(title.total - 1);
-      expect((await page.locator('.viewer-header').boundingBox()).height).toBeLessThanOrEqual(60);
+    expect(geometry.textOverflow, `width ${width}`).toBe('ellipsis');
+    expect(geometry.badge.right, `width ${width}`).toBeLessThanOrEqual(geometry.name.left + 1);
+    expect(geometry.name.right, `width ${width}`).toBeLessThanOrEqual(geometry.input.left + 1);
+    expect(geometry.input.right, `width ${width}`).toBeLessThanOrEqual(geometry.load.left + 1);
+    expect(geometry.name.top, `width ${width}`).toBeLessThan(geometry.input.bottom);
+    expect(geometry.input.top, `width ${width}`).toBeLessThan(geometry.name.bottom);
+    expect(geometry.input.width, `width ${width}`).toBeGreaterThanOrEqual(80);
+    expect(geometry.load.right, `width ${width}`).toBeLessThanOrEqual(geometry.header.right + 1);
+    expect(geometry.pageWidth, `width ${width}`).toBeLessThanOrEqual(width + 1);
+    if (width === 1440 || width === 380) {
+      await page.screenshot({ path: test.info().outputPath(`company-search-${width}.png`) });
     }
-    await page.screenshot({ path: test.info().outputPath(`focus-long-name-${width}.png`) });
   }
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  const input = page.locator('#ticker-input');
+  const toggle = page.getByRole('button', { name: '検索・設定' });
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await input.fill('日本グローバル');
+  await expect(page.locator('.search-dropdown-item').first()).toContainText('418A');
+  await page.locator('.search-dropdown-item').first().tap();
+  await expect(input).toHaveValue('418A');
+  await expect(page.locator('.ticker-badge')).toHaveText('418A');
+  await input.fill('');
+  await input.fill('418A');
+  await expect(page.locator('.search-dropdown-item').first()).toContainText(longCompanyName);
+  await input.press('ArrowDown');
+  await input.press('Enter');
+  await expect(input).toHaveValue('418A');
+  await page.getByRole('button', { name: '読込', exact: true }).tap();
+  await expect(page.locator('.pl-row').first()).toBeVisible();
+  await expect(input).toBeVisible();
 });

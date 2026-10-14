@@ -161,22 +161,15 @@ function TickerHeader({
     return (
         <div className="viewer-header" data-loaded={!!activeTicker} data-controls-open={controlsOpen}>
             <div className="viewer-header-top">
+                <div className="viewer-primary">
                 {activeTicker && (
                     <div className="ticker-info">
                         <span className="ticker-badge">{activeTicker}</span>
                         {companyName && (
-                            <span className="company-name">{companyName}</span>
+                            <span className="company-name" title={companyName}>{companyName}</span>
                         )}
                     </div>
                 )}
-                {activeTicker && (
-                    <button className="btn btn-load viewer-controls-toggle"
-                        aria-expanded={controlsOpen} aria-controls="viewer-controls"
-                        onClick={() => setControlsOpen(open => !open)}>
-                        検索・設定
-                    </button>
-                )}
-                <div id="viewer-controls" className="viewer-controls">
                 <div className="ticker-input-group">
                     <label className="ticker-label" htmlFor="ticker-input">
                         企業検索
@@ -186,6 +179,7 @@ function TickerHeader({
                             id="ticker-input"
                             className="ticker-input search-input"
                             type="text"
+                            aria-label="企業検索"
                             value={tickerInput}
                             onChange={handleChange}
                             onKeyDown={handleKeyDown}
@@ -234,6 +228,17 @@ function TickerHeader({
                         {loading ? "読込中..." : "読込"}
                     </button>
                 </div>
+                </div>
+                {activeTicker && (
+                    <button className="btn btn-load viewer-controls-toggle"
+                        aria-label="検索・設定"
+                        aria-expanded={controlsOpen} aria-controls="viewer-controls"
+                        onClick={() => setControlsOpen(open => !open)}>
+                        <span aria-hidden="true">⚙</span>
+                        <span className="viewer-controls-toggle-label">検索・設定</span>
+                    </button>
+                )}
+                <div id="viewer-controls" className="viewer-controls">
                 {/* フォント切替 */}
                 <Link href="/screening" className="btn btn-load">
                     スクリーニング
