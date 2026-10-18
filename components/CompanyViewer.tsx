@@ -212,6 +212,19 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [orderNavigationSpace, setOrderNavigationSpace] = useState(false);
     const scrollBodyRef = useRef<HTMLDivElement>(null);
 
+    const requestViewerNavigation = useCallback((ticker: string, destination: ViewerNavigation["destination"] = "pl") => {
+        const normalized = normalizeTicker(ticker);
+        if (!normalized) return;
+        // Invalidate any in-flight load before React processes the new request.
+        ++loadRequestIdRef.current;
+        const navigation = { id: ++navigationIdRef.current, ticker: normalized, destination };
+        navigationRef.current = navigation;
+        setNavigationReadyId(null);
+        setOrderNavigationSpace(destination !== "pl");
+        setTickerInput(normalized);
+        setRequestedNavigation(navigation);
+    }, []);
+
     // ============================================================
     // Undo スタック (Ctrl+Z)
     // ============================================================
@@ -627,8 +640,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         const t = params.get("ticker")?.trim();
         if (!t) { urlTickerLoadedRef.current = true; return; }
         urlTickerLoadedRef.current = true;
-        setTickerInput(t);
-        handleLoad(t);
+        requestViewerNavigation(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, authLoading]);
 
@@ -637,19 +649,9 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     // ============================================================
     useImperativeHandle(ref, () => ({
         loadTicker: (ticker: string, destination = "pl") => {
-            const t = normalizeTicker(ticker);
-            if (!t) return;
-            // Invalidating here also covers a new click before the next React effect runs.
-            ++loadRequestIdRef.current;
-            const navigation = { id: ++navigationIdRef.current, ticker: t, destination };
-            navigationRef.current = navigation;
-            setNavigationReadyId(null);
-            setOrderNavigationSpace(destination !== "pl");
-            setTickerInput(t);
-            // A notification may arrive before this viewer's auth check completes.
-            setRequestedNavigation(navigation);
+            requestViewerNavigation(ticker, destination);
         },
-    }));
+    }), [requestViewerNavigation]);
 
     useLayoutEffect(() => {
         const navigation = navigationRef.current;
@@ -790,11 +792,14 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     // ---- 候補選択 ----
     const handleSelectCandidate = useCallback(
         (ticker: string) => {
-            setTickerInput(ticker);
-            handleLoad(ticker);
+            requestViewerNavigation(ticker);
         },
-        [handleLoad],
+        [requestViewerNavigation],
     );
+
+    const handleSearchLoad = useCallback((ticker?: string) => {
+        requestViewerNavigation(ticker ?? tickerInput);
+    }, [requestViewerNavigation, tickerInput]);
 
     const handlePLRowClick = useCallback((period: string, quarter: string) => {
         setSelectedPeriod(period);
@@ -1192,7 +1197,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             <TickerHeader
                 tickerInput={tickerInput}
                 onTickerChange={setTickerInput}
-                onLoad={handleLoad}
+                onLoad={handleSearchLoad}
                 onSelectCandidate={handleSelectCandidate}
                 loading={status === "loading"}
                 activeTicker={activeTicker}
