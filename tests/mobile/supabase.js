@@ -59,6 +59,7 @@ function query(table) {
   const proxy = new Proxy({}, { get(_, key) {
     if (key === 'then') return (resolve) => {
       let rows = tables[table] ?? [];
+      if (table === 'edinet_order_data') rows = rows.filter(row => predicates.every(predicate => predicate(row)));
       if (pinFixture) {
         if (operation === 'upsert') tables[table] = rows = [...rows.filter(row => row.event_id !== payload.event_id), payload];
         if (operation === 'delete') tables[table] = rows = rows.filter(row => !predicates.every(predicate => predicate(row)));
@@ -68,6 +69,9 @@ function query(table) {
     };
     return (...args) => {
       if (key === 'maybeSingle' || key === 'single') single = true;
+      if (table === 'edinet_order_data' && key === 'eq' && args[0] === 'ticker') {
+        predicates.push(row => row.ticker === args[1]);
+      }
       if (pinFixture && ['tdnet_events', 'tdnet_event_reads', 'tdnet_event_stars', 'companies'].includes(table)) {
         if (key === 'eq') predicates.push(row => row[args[0]] === args[1]);
         if (key === 'in') predicates.push(row => args[1].includes(row[args[0]]));

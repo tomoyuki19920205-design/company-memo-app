@@ -181,10 +181,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [newsScan, setNewsScan] = useState<LatestNewsScanRun | null>(null);
     const [newsLoading, setNewsLoading] = useState(false);
     const [newsReadyTicker, setNewsReadyTicker] = useState<string | null>(null);
-    const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("order");
-    // EDINET受注タブ自動切替: ユーザーが手動でタブを選んだかを追跡する
-    // useRef でクロージャ内から安全に参照できる
-    const orderKpiTabManuallySetRef = useRef(false);
+    const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("edinet");
     const [marketData, setMarketData] = useState<MarketDataRecord | null>(null);
     const [perShareData, setPerShareData] = useState<PerShareRecord[]>([]);
     const [valuation, setValuation] = useState<ValuationMetrics | null>(null);
@@ -376,9 +373,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setOrderKpis([]);
         setRejectedKpis([]);
         setEdinetOrders([]);
-        // 銘柄切替時: 手動フラグをリセットし、初期タブを ORDER KPI へ戻す
-        orderKpiTabManuallySetRef.current = false;
-        setOrderKpiTab(navigation?.destination === "edinet" ? "edinet" : "order");
+        // 通知からの明示的な ORDER KPI 遷移以外は EDINET受注を初期表示する。
+        setOrderKpiTab(navigation?.destination === "order" ? "order" : "edinet");
         setMarketData(null);
         setPerShareData([]);
         setValuation(null);
@@ -395,9 +391,6 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             setForecasts(cached.forecasts);
             setMonthly(cached.monthly);
             setEdinetOrders(cached.edinetOrders);
-            if (!navigation && !orderKpiTabManuallySetRef.current) {
-                setOrderKpiTab(cached.edinetOrders.length > 0 ? "edinet" : "order");
-            }
 
             if (cached.financials.length > 0) {
                 setSelectedPeriod(cached.financials[0].period);
@@ -539,9 +532,6 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
             setEdinetOrders(newEdinetOrders);
-            if (!navigation && !orderKpiTabManuallySetRef.current) {
-                setOrderKpiTab(newEdinetOrders.length > 0 ? "edinet" : "order");
-            }
 
             if (financialsResult.status === "rejected") {
                 const msg = financialsResult.reason instanceof Error ? financialsResult.reason.message : String(financialsResult.reason);
@@ -1304,13 +1294,13 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                     <div className="order-kpi-tab-buttons">
                                         <button
                                             className={`order-kpi-tab-btn${orderKpiTab === "order" ? " active" : ""}`}
-                                            onClick={() => { orderKpiTabManuallySetRef.current = true; setOrderKpiTab("order"); }}
+                                            onClick={() => setOrderKpiTab("order")}
                                         >
                                             ORDER KPI
                                         </button>
                                         <button
                                             className={`order-kpi-tab-btn${orderKpiTab === "edinet" ? " active" : ""}`}
-                                            onClick={() => { orderKpiTabManuallySetRef.current = true; setOrderKpiTab("edinet"); }}
+                                            onClick={() => setOrderKpiTab("edinet")}
                                         >
                                             EDINET受注
                                         </button>
