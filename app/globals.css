@@ -3393,6 +3393,7 @@ textarea::placeholder {
   flex-shrink: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  overflow-anchor: none;
   min-width: 0;
   border-right: 1px solid var(--border);
 }
