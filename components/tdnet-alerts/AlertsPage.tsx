@@ -917,6 +917,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const dragStartXRef = useRef(0);
   const dragStartWidthRef = useRef(0);
   const alertsCacheRef = useRef<Map<string, AlertsCacheEntry>>(new Map());
+  const eventsRequestIdRef = useRef(0);
 
   // Realtime 接続
   const { status: connectionStatus } = useRealtimeAlerts({
@@ -942,6 +943,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   // イベント読み込み
   const loadEvents = useCallback(async () => {
+    const requestId = ++eventsRequestIdRef.current;
     setLoading(true);
     try {
       const opts: Parameters<typeof fetchEvents>[1] = {
@@ -986,6 +988,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
       const cached = alertsCacheRef.current.get(cacheKey);
       if (cached && Date.now() - cached.timestamp < ALERTS_CACHE_TTL_MS) {
+        if (requestId !== eventsRequestIdRef.current) return;
         setEvents(cached.events);
         setLoading(false);
         return;
@@ -999,12 +1002,13 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       });
 
       const data = await fetchEvents(supabaseRef.current, opts);
+      if (requestId !== eventsRequestIdRef.current) return;
       alertsCacheRef.current.set(cacheKey, { timestamp: Date.now(), events: data });
       setEvents(data);
     } catch (err) {
-      console.error("Failed to load events:", err);
+      if (requestId === eventsRequestIdRef.current) console.error("Failed to load events:", err);
     } finally {
-      setLoading(false);
+      if (requestId === eventsRequestIdRef.current) setLoading(false);
     }
   }, [userId, filter, selectedDate, allPeriodTickerSearch]);
 
