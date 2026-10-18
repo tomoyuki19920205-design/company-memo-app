@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef, useReducer } from "react";
+import React, { useState, useEffect, useLayoutEffect, useCallback, useRef, useReducer } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-alerts/queries";
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
@@ -907,6 +907,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const supabaseRef = useRef(createSupabaseBrowser());
   const viewerRef = useRef<CompanyViewerHandle>(null);
+  const listPaneRef = useRef<HTMLDivElement>(null);
+  const listScrollTargetRef = useRef<number | null>(null);
+  const [listBottomSpace, setListBottomSpace] = useState(0);
   const searchRef = useRef("");
   const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dateInputRef = useRef<HTMLInputElement | null>(null);
@@ -1098,6 +1101,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   };
 
   const handleSelectEvent = (event: EnrichedEvent) => {
+    listScrollTargetRef.current = listPaneRef.current?.scrollTop ?? null;
     setMobilePane("company");
     const allowCollapse = !window.matchMedia("(max-width: 900px)").matches;
     dispatchCardExpansion(selectedId === event.id && expandedId === event.id
@@ -1121,6 +1125,25 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       })();
     }
   };
+
+  useLayoutEffect(() => {
+    const pane = listPaneRef.current;
+    const target = listScrollTargetRef.current;
+    if (!pane || target === null) return;
+    const naturalHeight = pane.scrollHeight - listBottomSpace;
+    const neededSpace = Math.max(0, Math.ceil(target + pane.clientHeight - naturalHeight));
+    if (neededSpace !== listBottomSpace) {
+      setListBottomSpace(neededSpace);
+      return;
+    }
+    pane.scrollTop = target;
+    listScrollTargetRef.current = null;
+  }, [cardExpansion, listBottomSpace]);
+
+  useEffect(() => {
+    listScrollTargetRef.current = null;
+    setListBottomSpace(0);
+  }, [filter, selectedDate, search, allPeriodTickerSearch]);
 
   const handleToggleRead = async (event: EnrichedEvent, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -1272,6 +1295,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         {/* List Pane */}
         <div
           className="alerts-list-pane"
+          ref={listPaneRef}
           style={{ width: leftPaneWidth, flexShrink: 0 }}
         >
           <div className="alerts-list-controls">
@@ -1670,6 +1694,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
             return nodes;
             })()
           )}
+          {listBottomSpace > 0 && <div style={{ height: listBottomSpace }} aria-hidden="true" />}
         </div>
 
         {/* リサイズドラッガー */}
