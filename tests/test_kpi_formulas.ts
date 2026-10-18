@@ -96,7 +96,7 @@ test("KPI dependency changes are incremental; a 500-formula sibling set is not r
     raw[1] = "10"; engine.update(formulaBook(base, raw));
     assert.equal(engine.evaluated, 2); assert.equal(engine.read(targetKey(base.sheets.KPI[1][0].target)), 21);
     engine.update(formulaBook(base, raw)); assert.equal(engine.evaluated, 0);
-    const large: Book = { sheets: { CUM: [], Q: [], FY: [], KPI: Array.from({ length: 167 }, (_, r) => base.sheets.KPI[0].map((cell, c) => ({ ...cell, target: { ...cell.target, period: `period-${r}` }, value: c === 0 && r === 0 ? "1" : compileFormula("=1+2", base) }))) } };
+    const large: Book = { sheets: { CUM: [], Q: [], FY: [], PCUM: [], PQ: [], KPI: Array.from({ length: 167 }, (_, r) => base.sheets.KPI[0].map((cell, c) => ({ ...cell, target: { ...cell.target, period: `period-${r}` }, value: c === 0 && r === 0 ? "1" : compileFormula("=1+2", base) }))) } };
     engine.update(large); assert.equal(engine.evaluated, 500);
     engine.update({ sheets: { ...large.sheets, KPI: large.sheets.KPI.map((row, r) => row.map((cell, c) => r === 0 && c === 0 ? { ...cell, value: "2" } : cell)) } }); assert.equal(engine.evaluated, 0);
 });
@@ -178,6 +178,71 @@ test("an untouched editor opened before async KPI loading cannot clear the arriv
     store.configure(formulaBook(book(), ["17243"]), saver);
     assert.equal(store.getEditor().draft, "17243"); store.commit(); await store.settled();
     assert.equal(saves, 0); assert.equal(store.raw(key), "17243");
+});
+
+test("both PL bottom memo grids evaluate formulas, keep legacy strings, and use the saved Q column offset", async () => {
+    const base = buildKpiBook("TEST", [record()], { "cum|2026-03-31|1Q": { 1: "7" } }, undefined,
+        { pl_cum: [["=100+200"]], pl_q: [["", "", "既存メモ"]] });
+    const edits: unknown[] = []; const store = new KpiEditorStore();
+    store.configure(base, undefined, async batch => { edits.push(batch); });
+    const cum = (row: number, col: number) => targetKey(store.book.sheets.PCUM[row][col].target);
+    const q = (row: number, col: number) => targetKey(store.book.sheets.PQ[row][col].target);
+    assert.equal(store.getValue(cum(0, 0)), "=100+200");
+    assert.equal(store.getValue(q(0, 0)), "既存メモ");
+    for (const [key, input, expected] of [
+        [cum(0, 1), "=100+200", "300"], [q(0, 1), "＝2/1", "2"],
+        [cum(0, 2), "=65820*1.1", "72402"], [q(0, 2), "=CUM!A1+KPI!A1", "130.456789"],
+        [cum(0, 3), "=PCUM!B1*2", "600"], [q(0, 3), "=PCUM!B1+PQ!B1", "302"],
+    ] as [string, string, string][]) {
+        store.select(key); store.begin(key, undefined, "bar"); store.draft(input, "bar"); store.commit();
+        assert.equal(store.getValue(key), expected);
+    }
+    await store.settled();
+    assert.equal(store.formulaText(q(0, 1)), "=2/1");
+    assert.deepEqual((edits[1] as { colIdx: number }[])[0].colIdx, 3);
+    assert.equal(decodeFormula(store.raw(cum(0, 1)))?.formula, "=100+200");
+    store.undo(); assert.equal(store.getValue(q(0, 3)), "");
+    store.redo(); assert.equal(store.getValue(q(0, 3)), "302");
+    await store.settled();
+});
+
+test("PL memo ranges and fixed references copy like KPI and Escape leaves persisted raw text intact", () => {
+    const base = buildKpiBook("TEST", [record()], {}, undefined, { pl_cum: [["2", "3"], ["4", "5"]], pl_q: [[]] });
+    const store = new KpiEditorStore(); store.configure(base);
+    const source = targetKey(base.sheets.PCUM[0][2].target);
+    store.select(source); store.begin(source); store.draft("=SUM(PCUM!$A$1:PCUM!B1)"); store.commit();
+    assert.equal(store.getValue(source), "5");
+    const pasted = copyFormula(store.raw(source), store.book, 1, 0);
+    assert.equal(decodeFormula(pasted)?.formula, "=SUM(PCUM!$A$1:PCUM!B2)");
+    const clipboard = store.clipboard()!;
+    const destination = targetKey(base.sheets.PCUM[1][2].target);
+    store.select(destination); store.paste([["ignored"]], clipboard.custom);
+    assert.equal(store.formulaText(destination), "=SUM(PCUM!$A$1:PCUM!B2)");
+    assert.equal(store.getValue(destination), "14");
+    store.begin(source); store.draft("=1/0"); store.cancel();
+    assert.equal(store.getValue(source), "5");
+    assert.equal(decodeFormula(store.raw(source))?.formula, "=SUM(PCUM!$A$1:PCUM!B1)");
+});
+
+test("saved PL memo bindings survive new fiscal rows, reload, actual updates and broken/cyclic references", () => {
+    const old = buildKpiBook("TEST", [record()], {}, undefined, { pl_cum: [[]], pl_q: [[]] });
+    const saved = compileFormula("=CUM!A1+PCUM!B1", old);
+    const memo = compileFormula("=10", old);
+    const next = buildKpiBook("TEST", [record("2025-03-31", "1Q", { sales: 999 }), record("2026-03-31", "1Q", { sales: 200 })], {}, undefined,
+        { pl_cum: [[saved, memo]], pl_q: [[]] });
+    const engine = new FormulaEngine(); engine.update(next);
+    const key = targetKey(next.sheets.PCUM[0][0].target);
+    assert.equal(engine.read(key), 210);
+    assert.equal(projectFormula(decodeFormula(saved)!, next).formula, "=CUM!A2+PCUM!B1");
+    const updated = buildKpiBook("TEST", [record("2025-03-31", "1Q", { sales: 999 }), record("2026-03-31", "1Q", { sales: 250 })], {}, undefined,
+        { pl_cum: [[saved, memo]], pl_q: [[]] });
+    engine.update(updated); assert.equal(engine.read(key), 260);
+    const broken = buildKpiBook("TEST", [record("2025-03-31", "1Q", { sales: 999 })], {}, undefined,
+        { pl_cum: [[saved, memo]], pl_q: [[]] });
+    engine.update(broken); assert.equal(engine.read(key), "#REF!");
+    const cycle = buildKpiBook("TEST", [record()], {}, undefined,
+        { pl_cum: [[compileFormula("=PCUM!B1", old), compileFormula("=PCUM!A1", old)]], pl_q: [[]] });
+    engine.update(cycle); assert.equal(engine.read(key), "#CYCLE!");
 });
 test("explicitly retyping a legacy equals string converts only that edited cell to a formula", async () => {
     const store = new KpiEditorStore(); store.configure(formulaBook(book(), ["=1+2", "=legacy"]));

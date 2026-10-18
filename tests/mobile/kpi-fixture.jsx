@@ -17,9 +17,23 @@ function initialValues(ticker, rows) {
   }, [`${second.scope}|${second.period}|${second.quarter}`]: { 1: '＝2/1' },
   [`${third.scope}|${third.period}|${third.quarter}`]: { 1: '＝1/2' } };
 }
+function initialMemos(ticker) {
+  const saved = localStorage.getItem(`pl-memo-fixture-${ticker}`);
+  if (saved) return JSON.parse(saved);
+  return { pl_cum: [[], [], [], ['', '', '', '', '', '', '', '=従来メモ']],
+    pl_q: [[], [], [], ['', '', '', '', '', '', '', '通常メモ']],
+    segment_cum: [], segment_q: [], segment_manual: [] };
+}
 function Grid({ ticker }) {
-  const rows = useMemo(() => baseRows.map(row => ({ ...row, ticker })), [ticker]);
+  const [extraYear, setExtraYear] = useState(false);
+  const [salesDelta, setSalesDelta] = useState(0);
+  const rows = useMemo(() => {
+    const result = baseRows.map(row => ({ ...row, ticker, sales: row.sales + (row.period === '2025-11-30' && row.quarter === '3Q' ? salesDelta : 0) }));
+    if (extraYear) result.push({ ...result[0], period: '2024-11-30', quarter: '1Q', sales: 999 });
+    return result;
+  }, [ticker, extraYear, salesDelta]);
   const [values, setValues] = useState(() => initialValues(ticker, rows));
+  const [memos, setMemos] = useState(() => initialMemos(ticker));
   const save = async edits => {
     window.__kpiSaveCount = (window.__kpiSaveCount ?? 0) + 1;
     setValues(previous => {
@@ -32,10 +46,27 @@ function Grid({ ticker }) {
       return next;
     });
   };
-  return <FinancialsTable ticker={ticker} data={rows} loading={false} kpiValues={values}
+  const savePl = async edits => {
+    window.__plMemoSaveCount = (window.__plMemoSaveCount ?? 0) + 1;
+    setMemos(previous => {
+      const next = { ...previous };
+      for (const edit of edits) {
+        const grid = next[edit.tableType] === previous[edit.tableType] ? previous[edit.tableType].map(row => [...row]) : next[edit.tableType];
+        while (grid.length <= edit.rowIdx) grid.push([]);
+        while (grid[edit.rowIdx].length <= edit.colIdx) grid[edit.rowIdx].push('');
+        grid[edit.rowIdx][edit.colIdx] = edit.value;
+        next[edit.tableType] = grid;
+      }
+      localStorage.setItem(`pl-memo-fixture-${ticker}`, JSON.stringify(next));
+      return next;
+    });
+  };
+  return <><button onClick={() => setExtraYear(value => !value)}>決算行を追加</button>
+    <button onClick={() => setSalesDelta(value => value + 10)}>売上を変更</button>
+    <FinancialsTable ticker={ticker} data={rows} loading={false} kpiValues={values}
     kpiDefs={{ 1: '利益計算', 2: '説明', 3: '空欄' }}
     memoMap={{ [`${rows[0].period}|${rows[0].quarter}`]: [['=MEMOは文字列', '既存メモ']] }}
-    onKpiBatchEdit={save} />;
+    manualTableMemos={memos} onPlMemoBatchEdit={savePl} onKpiBatchEdit={save} /></>;
 }
 export default function KpiFixture() {
   const [ticker, setTicker] = useState('418A');

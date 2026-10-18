@@ -39,7 +39,7 @@ import {
     type KpiDefMap,
     type KpiValueMap,
 } from "@/lib/kpi-api";
-import type { KpiEdit } from "@/lib/kpi-editor-store";
+import type { KpiEdit, PlMemoEdit } from "@/lib/kpi-editor-store";
 import {
     loadCompanyInfo,
     loadCompanyMaster,
@@ -196,6 +196,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     useEffect(() => { kpiValuesRef.current = kpiValues; }, [kpiValues]);
     const [manualTableMemos, setManualTableMemos] = useState<ManualTableMemos>(EMPTY_MANUAL_MEMOS);
     const manualTableMemosRef = useRef<ManualTableMemos>(manualTableMemos);
+    const plMemoSaveCacheRef = useRef<Map<string, ManualTableMemos>>(new Map());
     useEffect(() => { manualTableMemosRef.current = manualTableMemos; }, [manualTableMemos]);
     const [segmentManualHeaders, setSegmentManualHeaders] = useState<string[]>([...DEFAULT_SEGMENT_MANUAL_HEADERS]);
     const [status, setStatus] = useState<AppStatus>("idle");
@@ -473,7 +474,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             if (kpiValsResult.status === "fulfilled") setKpiValues(kpiValsResult.value);
             setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
             
-            if (manualMemosResult.status === "fulfilled") setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
+            if (manualMemosResult.status === "fulfilled") {
+                const loaded = buildManualTableMemos(manualMemosResult.value);
+                plMemoSaveCacheRef.current.set(ticker, loaded);
+                setManualTableMemos(loaded);
+            }
             if (segManualHeadersResult.status === "fulfilled") {
                 setSegmentManualHeaders(segManualHeadersResult.value);
             } else {
@@ -606,7 +611,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             if (kpiValsResult.status === "fulfilled") setKpiValues(kpiValsResult.value);
             setOrderKpis(orderKpisResult.status === "fulfilled" ? orderKpisResult.value : []);
             
-            if (manualMemosResult.status === "fulfilled") setManualTableMemos(buildManualTableMemos(manualMemosResult.value));
+            if (manualMemosResult.status === "fulfilled") {
+                const loaded = buildManualTableMemos(manualMemosResult.value);
+                plMemoSaveCacheRef.current.set(ticker, loaded);
+                setManualTableMemos(loaded);
+            }
             if (segManualHeadersResult.status === "fulfilled") {
                 setSegmentManualHeaders(segManualHeadersResult.value);
             } else {
@@ -873,6 +882,28 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         };
         // A completed save for the previous ticker must not mutate the new viewer.
         if (kpiTickerRef.current === ticker) setKpiValues(previous => apply(previous));
+    }, [activeTicker]);
+
+    const handlePlMemoBatchEdit = useCallback(async (edits: PlMemoEdit[]) => {
+        const ticker = activeTicker;
+        if (!ticker) throw new Error("銘柄が選択されていません");
+        for (const tableType of ["pl_cum", "pl_q"] as const) {
+            const subset = edits.filter(edit => edit.tableType === tableType);
+            if (!subset.length) continue;
+            const base = plMemoSaveCacheRef.current.get(ticker) ?? (kpiTickerRef.current === ticker ? manualTableMemosRef.current : EMPTY_MANUAL_MEMOS);
+            const grid = base[tableType].map(row => [...row]);
+            for (const edit of subset) {
+                while (grid.length <= edit.rowIdx) grid.push([]);
+                while (grid[edit.rowIdx].length <= edit.colIdx) grid[edit.rowIdx].push("");
+                grid[edit.rowIdx][edit.colIdx] = edit.value;
+            }
+            await saveManualTableMemo(ticker, tableType, grid);
+            plMemoSaveCacheRef.current.set(ticker, { ...base, [tableType]: grid });
+            if (kpiTickerRef.current === ticker) {
+                manualTableMemosRef.current = { ...manualTableMemosRef.current, [tableType]: grid };
+                setManualTableMemos(previous => ({ ...previous, [tableType]: grid }));
+            }
+        }
     }, [activeTicker]);
 
     const handlePLMemoEdit = useCallback(
@@ -1252,6 +1283,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                                 onKpiHeaderEdit={handleKpiHeaderEdit}
                                 onKpiValueEdit={handleKpiValueEdit}
                                 onKpiBatchEdit={handleKpiBatchEdit}
+                                onPlMemoBatchEdit={handlePlMemoBatchEdit}
                                 ticker={activeTicker}
                                 onSegmentOverrideSave={handleSaveOverride}
                                 onSegmentOverrideDelete={handleDeleteOverride}

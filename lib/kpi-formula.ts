@@ -1,5 +1,5 @@
 /** Deliberately small spreadsheet language. Stored strings are never executable code. */
-export type Sheet = "CUM" | "Q" | "FY" | "KPI";
+export type Sheet = "CUM" | "Q" | "FY" | "KPI" | "PCUM" | "PQ";
 export interface Target {
     ticker: string; period: string; quarter: string; scope: "cum" | "q";
     kind: "actual" | "forecast"; basis: string; metric: string;
@@ -37,7 +37,7 @@ export class FormulaError extends Error { constructor(public code: ErrorCode) { 
 const fail = (code: ErrorCode): never => { throw new FormulaError(code); };
 interface Address { sheet: Sheet; col: number; row: number; fixedCol: boolean; fixedRow: boolean }
 export function parseAddress(text: string): Address | null {
-    const match = /^(?:(CUM|Q|FY|KPI)!)?(\$?)([A-Z]{1,2})(\$?)([1-9]\d{0,5})$/i.exec(text);
+    const match = /^(?:(CUM|Q|FY|KPI|PCUM|PQ)!)?(\$?)([A-Z]{1,2})(\$?)([1-9]\d{0,5})$/i.exec(text);
     if (!match) return null;
     let col = 0;
     for (const letter of match[3].toUpperCase()) col = col * 26 + letter.charCodeAt(0) - 64;
@@ -66,7 +66,7 @@ function tokenize(input: string): Token[] {
     const tokens: Token[] = []; let rest = input.slice(1);
     while (rest.length) {
         const space = /^\s+/.exec(rest); if (space) { rest = rest.slice(space[0].length); continue; }
-        const ref = /^(?:(?:CUM|Q|FY|KPI|MISSING)!)?\$?[A-Z]{1,2}\$?[1-9]\d{0,5}(?::(?:(?:CUM|Q|FY|KPI|MISSING)!)?\$?[A-Z]{1,2}\$?[1-9]\d{0,5})?(?![\w.])/i.exec(rest);
+        const ref = /^(?:(?:CUM|Q|FY|KPI|PCUM|PQ|MISSING)!)?\$?[A-Z]{1,2}\$?[1-9]\d{0,5}(?::(?:(?:CUM|Q|FY|KPI|PCUM|PQ|MISSING)!)?\$?[A-Z]{1,2}\$?[1-9]\d{0,5})?(?![\w.])/i.exec(rest);
         const number = /^(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?/.exec(rest);
         const string = /^"(?:[^"]|"")*"/.exec(rest);
         const word = /^[A-Za-z_][A-Za-z_\d.]*/.exec(rest);
@@ -240,7 +240,7 @@ export class FormulaEngine {
     private cache = new Map<string, Result>();
     public evaluated = 0;
     public lastCalculationMs = 0;
-    public book: Book = { sheets: { CUM: [], Q: [], FY: [], KPI: [] } };
+    public book: Book = { sheets: { CUM: [], Q: [], FY: [], KPI: [], PCUM: [], PQ: [] } };
     update(book: Book): Set<string> {
         this.book = book; const next = indexBook(book).cells; const changed = new Set<string>();
         for (const [key, cell] of next) if (cell.value !== this.cells.get(key)?.value) changed.add(key);

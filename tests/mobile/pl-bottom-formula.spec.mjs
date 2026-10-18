@@ -1,0 +1,86 @@
+import { test, expect } from '@playwright/test';
+
+test('cumulative and standalone PL bottom cells share KPI formulas, text bar and persistence', async ({ page }) => {
+  await page.goto('/?screen=kpi');
+  const cell = (sheet, row, col) => page.locator(`[data-formula-sheet="${sheet}"][data-formula-row="${row}"][data-formula-col="${col}"]`);
+  const bar = page.locator('.pl-section .formula-bar-input');
+  const enter = async (sheet, row, col, formula, value) => {
+    await cell(sheet, row, col).click();
+    await bar.fill(formula);
+    await bar.press('Enter');
+    await expect(cell(sheet, row, col)).toHaveText(value);
+  };
+  await expect(page.locator('.pl-section .formula-bar')).toHaveCount(1);
+  for (const sheet of ['PCUM', 'PQ']) {
+    await enter(sheet, 0, 0, '=100+200', '300');
+    await enter(sheet, 0, 1, '＝2/1', '2');
+    await enter(sheet, 0, 2, '=65820*1.1', '72402');
+    const salesSheet = sheet === 'PCUM' ? 'CUM' : 'Q';
+    const salesRow = sheet === 'PCUM' ? 1 : 2;
+    await enter(sheet, 0, 3, `=${salesSheet}!A${salesRow}+1`, sheet === 'PCUM' ? '1068' : '453');
+    await enter(sheet, 0, 4, `=${sheet}!A1+${sheet}!B1`, '302');
+    await cell(sheet, 0, 3).click();
+    await expect(bar).toHaveValue(`=${salesSheet}!A${salesRow}+1`);
+    await bar.fill(`=${salesSheet}!A${salesRow}+2`);
+    await bar.press('Enter');
+    await expect(cell(sheet, 0, 3)).toHaveText(sheet === 'PCUM' ? '1069' : '454');
+    await cell(sheet, 0, 3).press('ControlOrMeta+z');
+    await expect(cell(sheet, 0, 3)).toHaveText(sheet === 'PCUM' ? '1068' : '453');
+    await cell(sheet, 0, 3).press('ControlOrMeta+y');
+    await expect(cell(sheet, 0, 3)).toHaveText(sheet === 'PCUM' ? '1069' : '454');
+  }
+  const source = cell('PCUM', 0, 3), destination = cell('PCUM', 1, 3);
+  await source.click();
+  const copied = await source.evaluate(el => {
+    const data = new DataTransfer();
+    el.dispatchEvent(new ClipboardEvent('copy', { bubbles: true, cancelable: true, clipboardData: data }));
+    return { text: data.getData('text/plain'), custom: data.getData('application/x-company-kpi') };
+  });
+  await destination.click();
+  await destination.evaluate((el, value) => {
+    const data = new DataTransfer(); data.setData('text/plain', value.text);
+    data.setData('application/x-company-kpi', value.custom);
+    el.dispatchEvent(new ClipboardEvent('paste', { bubbles: true, cancelable: true, clipboardData: data }));
+  }, copied);
+  await expect(destination).toHaveText('1521');
+  await destination.click();
+  await expect(bar).toHaveValue('=CUM!A2+2');
+  await page.getByRole('button', { name: '決算行を追加' }).click();
+  await source.click();
+  await expect(bar).toHaveValue('=CUM!A2+2');
+  await expect(source).toHaveText('1069');
+  await cell('PQ', 0, 3).click();
+  await expect(bar).toHaveValue('=Q!A3+2');
+  await expect(cell('PQ', 0, 3)).toHaveText('454');
+  await page.getByRole('button', { name: '決算行を追加' }).click();
+  await page.getByRole('button', { name: '売上を変更' }).click();
+  await expect(source).toHaveText('1079');
+  await expect(cell('PQ', 0, 3)).toHaveText('444');
+  await page.reload();
+  await expect(cell('PCUM', 0, 0)).toHaveText('300');
+  await expect(cell('PQ', 0, 1)).toHaveText('2');
+  await expect(cell('PCUM', 3, 7)).toHaveText('=従来メモ');
+  await expect(cell('PQ', 3, 5)).toHaveText('通常メモ');
+  await page.locator('[data-kpi-row="0"][data-kpi-slot="1"]').click();
+  await expect(bar).toHaveValue('=CUM!A1+1');
+  await page.getByRole('button', { name: '7203' }).click();
+  await expect(cell('PCUM', 0, 0)).toHaveText('');
+  await page.getByRole('button', { name: '418A' }).click();
+  await expect(cell('PCUM', 0, 0)).toHaveText('300');
+  await expect(cell('PQ', 0, 0)).toHaveText('300');
+  const inlineCell = cell('PQ', 1, 0);
+  await inlineCell.dblclick();
+  await inlineCell.locator('textarea').fill('=1/0');
+  await inlineCell.locator('textarea').press('Escape');
+  await expect(inlineCell).toHaveText('');
+  await inlineCell.dblclick();
+  await inlineCell.locator('textarea').fill('=1/0');
+  await inlineCell.locator('textarea').press('Enter');
+  await expect(inlineCell).toHaveText('#DIV/0!');
+  await inlineCell.click();
+  await bar.fill('=ROUND(1.234,2)');
+  await bar.press('Enter');
+  await expect(inlineCell).toHaveText('1.23');
+  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.screenshot({ path: test.info().outputPath('pl-bottom-formulas.png') });
+});

@@ -7,7 +7,8 @@ import type { Book, ReferenceCell, Target } from "./kpi-formula";
 
 export const kpiMapKey = (target: Target) => `${target.scope}|${target.period}|${target.quarter}`;
 export const kpiSlot = (target: Target) => Number(target.metric.slice(4));
-export function buildKpiBook(ticker: string, data: FinancialRecord[], values: KpiValueMap, industry?: string | null): Book {
+export function buildKpiBook(ticker: string, data: FinancialRecord[], values: KpiValueMap, industry?: string | null,
+    plMemos?: { pl_cum: string[][]; pl_q: string[][] }): Book {
     const model = buildFinancialTableModel(data, industry);
     // Append still-loaded history outside the five-period display window. Existing
     // formulas keep reading that period when a new FY pushes it off the screen.
@@ -57,5 +58,13 @@ export function buildKpiBook(ticker: string, data: FinancialRecord[], values: Kp
         value: values[`cum|${row.period}|${row.quarter}`]?.[slot] ?? "",
         label: `${row.period} ${row.quarter} 累計 / KPI${slot}`, unit: "入力値",
     })));
-    return { sheets: { CUM: cumulative, Q: standalone, FY: forecast, KPI: kpi }, visibleKpiRows: model.cumulativeRows.length };
+    const manual = (scope: "cum" | "q", grid: string[][] | undefined, columns: number, offset: number) =>
+        Array.from({ length: Math.max(4, grid?.length ?? 0) }, (_, row) => Array.from({ length: columns }, (_, col): ReferenceCell => ({
+            target: { ticker, period: scope === "cum" ? "__manual_pl_cum__" : "__manual_pl_q__", quarter: "MANUAL", scope,
+                kind: "actual", basis: "user", metric: `pl_memo_${row}_${col + offset}` },
+            value: grid?.[row]?.[col + offset] ?? "",
+            label: `${scope === "cum" ? "累計PL" : "Q単体PL"} 下部メモ ${row + 1}行 ${col + 1}列`, unit: "入力値",
+        })));
+    return { sheets: { CUM: cumulative, Q: standalone, FY: forecast, KPI: kpi,
+        PCUM: manual("cum", plMemos?.pl_cum, 8, 0), PQ: manual("q", plMemos?.pl_q, 6, 2) }, visibleKpiRows: model.cumulativeRows.length };
 }

@@ -17,7 +17,7 @@ import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
 import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } from "@/lib/company-profit-display";
 import { KpiFormulaControls, KpiFormulaInput, KpiFormulaCell } from "@/components/KpiFormulaEditor";
-import { KpiEditorStore, type KpiEdit } from "@/lib/kpi-editor-store";
+import { KpiEditorStore, type KpiEdit, type PlMemoEdit } from "@/lib/kpi-editor-store";
 import { buildKpiBook } from "@/lib/kpi-reference-book";
 import { isFormulaInput, targetKey, type Sheet } from "@/lib/kpi-formula";
 
@@ -88,6 +88,7 @@ interface FinancialsTableProps {
     onKpiHeaderEdit?: (kpiSlot: number, newName: string) => void;
     onKpiValueEdit?: (period: string, quarter: string, kpiSlot: number, value: string, tableScope?: "cum" | "q") => void;
     onKpiBatchEdit?: (edits: KpiEdit[]) => Promise<void>;
+    onPlMemoBatchEdit?: (edits: PlMemoEdit[]) => Promise<void>;
     /** Segment override: save a manual value for a segment cell */
     onSegmentOverrideSave?: (
         fiscalYear: number,
@@ -610,6 +611,7 @@ function FinancialsTable({
     onKpiHeaderEdit,
     onKpiValueEdit: legacyKpiValueEdit,
     onKpiBatchEdit,
+    onPlMemoBatchEdit,
     onSegmentOverrideSave,
     onSegmentOverrideDelete,
     onBulkSaveOverrides,
@@ -631,16 +633,16 @@ function FinancialsTable({
         );
     const editorTicker = ticker ?? displayTicker ?? "";
     const mismatchedTicker = !!ticker && data.length > 0 && displayTicker !== ticker;
-    const kpiBook = useMemo(() => buildKpiBook(editorTicker, mismatchedTicker ? [] : data, kpiValues ?? {}, industry), [editorTicker, mismatchedTicker, data, kpiValues, industry]);
+    const kpiBook = useMemo(() => buildKpiBook(editorTicker, mismatchedTicker ? [] : data, kpiValues ?? {}, industry, manualTableMemos), [editorTicker, mismatchedTicker, data, kpiValues, industry, manualTableMemos]);
     const kpiEditor = useMemo(() => {
         const store = new KpiEditorStore();
-        store.configure(kpiBook, onKpiBatchEdit);
+        store.configure(kpiBook, onKpiBatchEdit, onPlMemoBatchEdit);
         return store;
         // A ticker switch starts an independent editor/history; writes keep their original ticker.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editorTicker]);
     const selectedKpiKey = useSyncExternalStore(kpiEditor.subscribeEditor, () => kpiEditor.getEditor().selected, () => null);
-    useEffect(() => kpiEditor.configure(kpiBook, onKpiBatchEdit), [kpiEditor, kpiBook, onKpiBatchEdit]);
+    useEffect(() => kpiEditor.configure(kpiBook, onKpiBatchEdit, onPlMemoBatchEdit), [kpiEditor, kpiBook, onKpiBatchEdit, onPlMemoBatchEdit]);
     useEffect(() => () => kpiEditor.commit(), [kpiEditor]);
     const legacyKpiQueue = useRef<KpiEdit[]>([]);
     const onKpiValueEdit = useCallback((period: string, quarter: string, kpiSlot: number, value: string, tableScope: "cum" | "q" = "cum") => {
@@ -3239,35 +3241,18 @@ function FinancialsTable({
                                         {Array.from({ length: MANUAL_MEMO_ROW_COUNT }, (_, rowIdx) => (
                                             <tr key={`manual-cum-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
                                                 {Array.from({ length: CUM_BASE_COL_COUNT }, (_, colIdx) => {
-                                                    const colKey = `col_${colIdx}`;
-                                                    const cellValue = manualTableMemos?.pl_cum?.[rowIdx]?.[colIdx] ?? "";
-                                                    const isActive = activeCell?.tableId === "pl_cum_manual" && activeCell?.rowIdx === rowIdx && activeCell?.colKey === colKey;
-                                                    const isEditing = editingPlMemoCell?.tableId === "pl_cum_manual" && editingPlMemoCell?.rowIdx === rowIdx && editingPlMemoCell?.colKey === colKey;
-                                                    const isInRange = isCellInRange("pl_cum_manual", rowIdx, colIdx);
                                                     const isPLGpMargin = colIdx === 4;
                                                     const isPLOpMargin = colIdx === 7;
                                                     const extraClass = `manual-memo-cell${isPLGpMargin ? " gp-margin-col" : ""}${isPLOpMargin ? " op-margin-col" : ""}`;
                                                     return (
-                                                        <MemoCellExcel
+                                                        <KpiFormulaCell
                                                             key={colIdx}
-                                                            value={cellValue}
-                                                            isActive={isActive}
-                                                            isInRange={isInRange}
-                                                            isEditing={isEditing}
-                                                            editValue={plMemoEditValue}
-                                                            onSelect={NOOP}
-                                                            onStartEdit={plCumManualStartEditHandlers[rowIdx]?.[colIdx]}
-                                                            onMouseDownCaptureEdit={(e) => plCumManualCaptureHandlers[rowIdx]?.[colIdx]?.(e, cellValue)}
-                                                            onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                            onEditChange={setPlMemoEditValue}
-                                                            onCommit={commitPlMemoEdit}
-                                                            onCancel={cancelPlMemoEdit}
-                                                            inputRef={isEditing ? plMemoInputRef : undefined}
-                                                            onMouseEnter={plCumManualMouseEnterHandlers[rowIdx]?.[colIdx]}
-                                                            onMouseEnterRange={plCumManualMouseEnterHandlers[rowIdx]?.[colIdx]}
-                                                            onArrowKey={handlePlMemoArrowKey}
-                                                            onPaste={plCumManualPasteHandlers[rowIdx]?.[colIdx]}
                                                             className={extraClass}
+                                                            store={kpiEditor}
+                                                            sheet="PCUM"
+                                                            row={rowIdx}
+                                                            col={colIdx}
+                                                            cellKey={targetKey(kpiBook.sheets.PCUM[rowIdx][colIdx].target)}
                                                             width={cumResize.widths[colIdx]}
                                                         />
                                                     );
@@ -3314,35 +3299,18 @@ function FinancialsTable({
                                             <tr key={`manual-q-${rowIdx}`} className={`manual-memo-row manual-memo-row-${rowIdx + 1}`}>
                                                 {Array.from({ length: Q_BASE_COL_COUNT - 2 }, (_, displayCol) => {
                                                     const saveColIdx = displayCol + 2; // colOffset=2
-                                                    const colKey = `col_${displayCol}`; // 表示列キー
-                                                    const cellValue = manualTableMemos?.pl_q?.[rowIdx]?.[saveColIdx] ?? "";
-                                                    const isActive = activeCell?.tableId === "pl_q_manual" && activeCell?.rowIdx === rowIdx && activeCell?.colKey === colKey;
-                                                    const isEditing = editingPlMemoCell?.tableId === "pl_q_manual" && editingPlMemoCell?.rowIdx === rowIdx && editingPlMemoCell?.colKey === colKey;
-                                                    const isInRange = isCellInRange("pl_q_manual", rowIdx, displayCol);
                                                     const isPLGpMargin = saveColIdx === 4;
                                                     const isPLOpMargin = saveColIdx === 7;
                                                     const extraClass = `manual-memo-cell${isPLGpMargin ? " gp-margin-col" : ""}${isPLOpMargin ? " op-margin-col" : ""}`;
                                                     return (
-                                                        <MemoCellExcel
+                                                        <KpiFormulaCell
                                                             key={displayCol}
-                                                            value={cellValue}
-                                                            isActive={isActive}
-                                                            isInRange={isInRange}
-                                                            isEditing={isEditing}
-                                                            editValue={plMemoEditValue}
-                                                            onSelect={NOOP}
-                                                            onStartEdit={plQManualStartEditHandlers[rowIdx]?.[displayCol]}
-                                                            onMouseDownCaptureEdit={(e) => plQManualCaptureHandlers[rowIdx]?.[displayCol]?.(e, cellValue)}
-                                                            onBlurShouldSkip={plMemoBlurShouldSkip}
-                                                            onEditChange={setPlMemoEditValue}
-                                                            onCommit={commitPlMemoEdit}
-                                                            onCancel={cancelPlMemoEdit}
-                                                            inputRef={isEditing ? plMemoInputRef : undefined}
-                                                            onMouseEnter={plQManualMouseEnterHandlers[rowIdx]?.[displayCol]}
-                                                            onMouseEnterRange={plQManualMouseEnterHandlers[rowIdx]?.[displayCol]}
-                                                            onArrowKey={handlePlMemoArrowKey}
-                                                            onPaste={plQManualPasteHandlers[rowIdx]?.[displayCol]}
                                                             className={extraClass}
+                                                            store={kpiEditor}
+                                                            sheet="PQ"
+                                                            row={rowIdx}
+                                                            col={displayCol}
+                                                            cellKey={targetKey(kpiBook.sheets.PQ[rowIdx][displayCol].target)}
                                                             width={qResize.widths[saveColIdx]}
                                                         />
                                                     );

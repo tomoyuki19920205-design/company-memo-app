@@ -1,6 +1,13 @@
 import { addressText, compileFormula, copyFormula, decodeFormula, formatResult, FormulaEngine, indexBook, isFormulaInput, projectFormula, targetKey, type Book, type ReferenceCell, type Sheet, type Target } from "./kpi-formula";
 
 export interface KpiEdit { period: string; quarter: string; kpiSlot: number; value: string; tableScope: "cum" | "q" }
+export interface PlMemoEdit { tableType: "pl_cum" | "pl_q"; rowIdx: number; colIdx: number; value: string }
+const editableSheet = (sheet: Sheet) => sheet === "KPI" || sheet === "PCUM" || sheet === "PQ";
+const manualEdit = (target: Target, value: string): PlMemoEdit => {
+    const match = /^pl_memo_(\d+)_(\d+)$/.exec(target.metric);
+    if (!match) throw new Error("Invalid PL memo target");
+    return { tableType: target.scope === "cum" ? "pl_cum" : "pl_q", rowIdx: Number(match[1]), colIdx: Number(match[2]), value };
+};
 interface History { before: Map<string, string>; after: Map<string, string> }
 export interface EditorSnapshot { selected: string | null; editing: boolean; source: "cell" | "bar"; draft: string; revision: number; insertVersion: number; anchor: string | null; rangeEnd: string | null; saving: boolean; error: string }
 /** Draft changes only notify the editor, never the entire FinancialsTable. */
@@ -23,6 +30,7 @@ export class KpiEditorStore {
     private addressIndex = indexBook(this.engine.book).addresses;
     private formulaTextCache = new Map<string, { raw: string; layout: number; text: string }>();
     private saver?: (edits: KpiEdit[]) => Promise<void>;
+    private plSaver?: (edits: PlMemoEdit[]) => Promise<void>;
     public draftChanges = 0;
     public committed = 0;
     subscribe = (key: string, listener: () => void) => {
@@ -36,9 +44,12 @@ export class KpiEditorStore {
     raw(key: string) { const value = this.cells.get(key)?.value; return typeof value === "string" ? value : ""; }
     label(key: string) { return this.cells.get(key)?.label ?? "参照先がありません"; }
     get book() { return this.engine.book; }
-    configure(book: Book, saver?: (edits: KpiEdit[]) => Promise<void>) {
-        this.saver = saver;
-        const overlaid: Book = { ...book, sheets: { ...book.sheets, KPI: book.sheets.KPI.map(row => row.map(cell => this.pending.has(targetKey(cell.target)) ? { ...cell, value: this.pending.get(targetKey(cell.target))! } : cell)) } };
+    configure(book: Book, saver?: (edits: KpiEdit[]) => Promise<void>, plSaver?: (edits: PlMemoEdit[]) => Promise<void>) {
+        this.saver = saver; this.plSaver = plSaver;
+        const sheets = { ...book.sheets };
+        for (const sheet of ["KPI", "PCUM", "PQ"] as const)
+            sheets[sheet] = book.sheets[sheet].map(row => row.map(cell => this.pending.has(targetKey(cell.target)) ? { ...cell, value: this.pending.get(targetKey(cell.target))! } : cell));
+        const overlaid: Book = { ...book, sheets };
         const nextIndex = indexBook(overlaid);
         if (nextIndex.addresses.size !== this.addressIndex.size || [...nextIndex.addresses].some(([key, location]) => {
             const previous = this.addressIndex.get(key); return !previous || previous.sheet !== location.sheet || previous.row !== location.row || previous.col !== location.col;
@@ -105,7 +116,7 @@ export class KpiEditorStore {
         const key = this.snapshot.selected; if (!key || !this.snapshot.editing) return;
         // Merely focusing/confirming legacy '=...' text is not a new formula input.
         if (!this.draftDirty) { this.cancel(); return; }
-        if (this.snapshot.draft.length > 65536) { this.emitEditor({ error: "KPI入力は65536文字までです。入力内容は編集中のまま保持しています。" }); return; }
+        if (this.snapshot.draft.length > 65536) { this.emitEditor({ error: "セル入力は65536文字までです。入力内容は編集中のまま保持しています。" }); return; }
         const value = compileFormula(this.snapshot.draft, this.draftBook ?? this.book, decodeFormula(this.raw(key)));
         this.draftBook = null;
         this.draftDirty = false;
@@ -113,25 +124,40 @@ export class KpiEditorStore {
     }
     private change(values: Map<string, string>, record = true) {
         const before = new Map<string, string>();
-        for (const [key, value] of values) { if (this.raw(key) === value) continue; if (this.cells.get(key)?.target.metric.startsWith("kpi_")) before.set(key, this.raw(key)); }
+        for (const [key, value] of values) { if (this.raw(key) === value) continue; const location = this.location(key); if (location && editableSheet(location.sheet)) before.set(key, this.raw(key)); }
         const after = new Map([...values].filter(([key]) => before.has(key))); if (!after.size) return;
         if (record) { this.undoStack.push({ before, after }); if (this.undoStack.length > 50) this.undoStack.shift(); this.redoStack = []; }
         for (const [key, value] of after) this.pending.set(key, value);
-        const book = { ...this.book, sheets: { ...this.book.sheets, KPI: this.book.sheets.KPI.map(row => row.map(cell => after.has(targetKey(cell.target)) ? { ...cell, value: after.get(targetKey(cell.target))! } : cell)) } };
-        const saver = this.saver;
-        this.configure(book, saver); this.committed++;
-        const edits: KpiEdit[] = [...after].map(([key, value]) => { const target = this.cells.get(key)!.target; return { period: target.period, quarter: target.quarter, tableScope: target.scope, kpiSlot: Number(target.metric.slice(4)), value }; });
+        const sheets = { ...this.book.sheets };
+        for (const sheet of ["KPI", "PCUM", "PQ"] as const)
+            sheets[sheet] = this.book.sheets[sheet].map(row => row.map(cell => after.has(targetKey(cell.target)) ? { ...cell, value: after.get(targetKey(cell.target))! } : cell));
+        const book = { ...this.book, sheets };
+        const saver = this.saver, plSaver = this.plSaver;
+        this.configure(book, saver, plSaver); this.committed++;
+        const kpiEdits: KpiEdit[] = [], plEdits: PlMemoEdit[] = [];
+        for (const [key, value] of after) { const target = this.cells.get(key)!.target;
+            if (target.metric.startsWith("kpi_")) kpiEdits.push({ period: target.period, quarter: target.quarter, tableScope: target.scope, kpiSlot: Number(target.metric.slice(4)), value });
+            else plEdits.push(manualEdit(target, value));
+        }
         this.emitEditor({ saving: true, error: "" });
         // Serialize writes: an earlier request cannot overwrite an undo or newer edit.
         this.queue = this.queue.then(async () => {
-            try { await saver?.(edits); for (const [key, value] of after) if (this.pending.get(key) === value) this.pending.delete(key); }
-            catch { this.emitEditor({ error: "KPIを保存できませんでした。再試行してください。" }); }
+            try { if (kpiEdits.length) await saver?.(kpiEdits); if (plEdits.length) await plSaver?.(plEdits);
+                for (const [key, value] of after) if (this.pending.get(key) === value) this.pending.delete(key); }
+            catch { this.emitEditor({ error: "セルを保存できませんでした。再試行してください。" }); }
         }).then(() => this.emitEditor({ saving: this.pending.size > 0 }));
     }
     retry() {
-        const edits = [...this.pending].map(([key, value]) => { const target = this.cells.get(key)?.target; return target ? { period: target.period, quarter: target.quarter, tableScope: target.scope, kpiSlot: Number(target.metric.slice(4)), value } : null; }).filter((edit): edit is KpiEdit => edit !== null);
-        const saver = this.saver;
-        this.queue = this.queue.then(async () => { try { await saver?.(edits); for (const edit of edits) for (const [key, value] of this.pending) if (this.cells.get(key)?.target.period === edit.period && this.cells.get(key)?.target.quarter === edit.quarter && this.cells.get(key)?.target.metric === `kpi_${edit.kpiSlot}` && value === edit.value) this.pending.delete(key); this.emitEditor({ error: "", saving: false }); } catch { /* keep recoverable pending values */ } });
+        const kpiEdits: KpiEdit[] = [], plEdits: PlMemoEdit[] = [];
+        const retrying = new Map(this.pending);
+        for (const [key, value] of retrying) { const target = this.cells.get(key)?.target; if (!target) continue;
+            if (target.metric.startsWith("kpi_")) kpiEdits.push({ period: target.period, quarter: target.quarter, tableScope: target.scope, kpiSlot: Number(target.metric.slice(4)), value });
+            else plEdits.push(manualEdit(target, value));
+        }
+        const saver = this.saver, plSaver = this.plSaver;
+        this.queue = this.queue.then(async () => { try { if (kpiEdits.length) await saver?.(kpiEdits); if (plEdits.length) await plSaver?.(plEdits);
+            for (const [key, value] of retrying) if (this.pending.get(key) === value) this.pending.delete(key);
+            this.emitEditor({ error: "", saving: this.pending.size > 0 }); } catch { /* keep recoverable pending values */ } });
     }
     undo() { this.cancel(); const entry = this.undoStack.pop(); if (entry) { this.redoStack.push(entry); this.change(entry.before, false); } }
     redo() { this.cancel(); const entry = this.redoStack.pop(); if (entry) { this.undoStack.push(entry); this.change(entry.after, false); } }
@@ -146,25 +172,28 @@ export class KpiEditorStore {
     }
     move(deltaRow: number, deltaCol: number, extend = false) {
         if (!this.snapshot.selected) return; this.commit(); const location = this.location(this.snapshot.selected); if (!location) return;
+        const sheet = location.sheet, width = this.book.sheets[sheet][0]?.length ?? 0;
         let col = location.col + deltaCol, row = location.row + deltaRow;
-        if (col > 2) { col = 0; row++; } else if (col < 0) { col = 2; row--; }
-        const cell = row < (this.book.visibleKpiRows ?? this.book.sheets.KPI.length) ? this.book.sheets.KPI[row]?.[col] : undefined; if (cell) this.select(targetKey(cell.target), extend);
+        if (col >= width) { col = 0; row++; } else if (col < 0) { col = width - 1; row--; }
+        const limit = sheet === "KPI" ? this.book.visibleKpiRows ?? this.book.sheets.KPI.length : this.book.sheets[sheet].length;
+        const cell = row >= 0 && row < limit ? this.book.sheets[sheet][row]?.[col] : undefined; if (cell) this.select(targetKey(cell.target), extend);
     }
     private bounds() {
         const start = this.snapshot.anchor && this.location(this.snapshot.anchor), end = this.snapshot.rangeEnd && this.location(this.snapshot.rangeEnd);
         if (!start || !end) return null;
-        return { r0: Math.min(start.row, end.row), r1: Math.max(start.row, end.row), c0: Math.min(start.col, end.col), c1: Math.max(start.col, end.col) };
+        if (start.sheet !== end.sheet || !editableSheet(start.sheet)) return null;
+        return { sheet: start.sheet, r0: Math.min(start.row, end.row), r1: Math.max(start.row, end.row), c0: Math.min(start.col, end.col), c1: Math.max(start.col, end.col) };
     }
-    inRange(key: string) { const bounds = this.bounds(), location = this.location(key); return !!bounds && !!location && location.sheet === "KPI" && location.row >= bounds.r0 && location.row <= bounds.r1 && location.col >= bounds.c0 && location.col <= bounds.c1; }
+    inRange(key: string) { const bounds = this.bounds(), location = this.location(key); return !!bounds && !!location && location.sheet === bounds.sheet && location.row >= bounds.r0 && location.row <= bounds.r1 && location.col >= bounds.c0 && location.col <= bounds.c1; }
     clipboard() {
         const bounds = this.bounds(); if (!bounds) return null;
         const rows: string[][] = []; const text: string[][] = [];
         for (let r = bounds.r0; r <= bounds.r1; r++) {
             rows.push([]); text.push([]);
-            for (let c = bounds.c0; c <= bounds.c1; c++) { const key = targetKey(this.book.sheets.KPI[r][c].target); rows[rows.length - 1].push(this.raw(key)); text[text.length - 1].push(this.formulaText(key)); }
+            for (let c = bounds.c0; c <= bounds.c1; c++) { const key = targetKey(this.book.sheets[bounds.sheet][r][c].target); rows[rows.length - 1].push(this.raw(key)); text[text.length - 1].push(this.formulaText(key)); }
         }
         const escape = (value: string) => /[\t\n"]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
-        return { text: text.map(row => row.map(escape).join("\t")).join("\n"), custom: JSON.stringify({ version: 1, ticker: this.book.sheets.KPI[0]?.[0]?.target.ticker, anchor: this.book.sheets.KPI[bounds.r0][bounds.c0].target, row: bounds.r0, col: bounds.c0, rows }) };
+        return { text: text.map(row => row.map(escape).join("\t")).join("\n"), custom: JSON.stringify({ version: 1, ticker: this.book.sheets[bounds.sheet][0]?.[0]?.target.ticker, anchor: this.book.sheets[bounds.sheet][bounds.r0][bounds.c0].target, row: bounds.r0, col: bounds.c0, rows }) };
     }
     paste(rows: string[][], custom?: string) {
         if (!this.snapshot.selected) return;
@@ -179,8 +208,9 @@ export class KpiEditorStore {
         const input = source?.rows ?? rows;
         if (input.length * Math.max(0, ...input.map(row => row.length)) > 2048) { this.emitEditor({ error: "貼り付けは一度に2048セルまでです。" }); return; }
         input.forEach((row, r) => row.forEach((value, c) => {
-            if (location.row + r >= (this.book.visibleKpiRows ?? this.book.sheets.KPI.length)) return;
-            const cell = this.book.sheets.KPI[location.row + r]?.[location.col + c]; if (!cell) return;
+            const limit = location.sheet === "KPI" ? this.book.visibleKpiRows ?? this.book.sheets.KPI.length : this.book.sheets[location.sheet].length;
+            if (location.row + r >= limit) return;
+            const cell = this.book.sheets[location.sheet][location.row + r]?.[location.col + c]; if (!cell) return;
             const copied = source ? copyFormula(value, this.book, location.row - (sourceLocation?.row ?? source.row), location.col - (sourceLocation?.col ?? source.col)) : compileFormula(value, this.book);
             edits.set(targetKey(cell.target), copied);
         }));
@@ -189,7 +219,7 @@ export class KpiEditorStore {
     clear() {
         const bounds = this.bounds(); if (!bounds) return;
         const edits = new Map<string, string>();
-        for (let r = bounds.r0; r <= bounds.r1; r++) for (let c = bounds.c0; c <= bounds.c1; c++) edits.set(targetKey(this.book.sheets.KPI[r][c].target), "");
+        for (let r = bounds.r0; r <= bounds.r1; r++) for (let c = bounds.c0; c <= bounds.c1; c++) edits.set(targetKey(this.book.sheets[bounds.sheet][r][c].target), "");
         this.change(edits);
     }
     referenceLabels() {
