@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useCallback, useRef, useState, useEffect, useSyncExternalStore } from "react";
+import React, { useMemo, useCallback, useRef, useState, useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
 import { formatMillions, displayValue } from "@/lib/format";
@@ -1128,6 +1128,18 @@ function FinancialsTable({
     useEffect(() => {
         localStorage.setItem(FB_HEIGHT_KEY, String(formulaBarHeight));
     }, [formulaBarHeight]);
+
+    useLayoutEffect(() => {
+        if (loading || !gridRef.current) return;
+        const section = gridRef.current;
+        const bar = section.querySelector<HTMLElement>(".formula-bar-sticky");
+        if (!bar) return;
+        const update = () => section.style.setProperty("--pl-formula-offset", `${bar.getBoundingClientRect().height}px`);
+        update();
+        const observer = new ResizeObserver(update);
+        observer.observe(bar);
+        return () => observer.disconnect();
+    }, [loading, formulaBarHeight]);
 
     const handleFbResizeStart = useCallback((e: React.MouseEvent) => {
         e.preventDefault();

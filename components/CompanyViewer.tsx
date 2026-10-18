@@ -1,7 +1,7 @@
 "use client";
 
 import React, {
-    useState, useCallback, useEffect, useRef,
+    useState, useCallback, useEffect, useLayoutEffect, useRef,
     forwardRef, useImperativeHandle,
 } from "react";
 import TickerHeader from "@/components/TickerHeader";
@@ -75,6 +75,7 @@ import {
 } from "@/lib/segment-override-api";
 import { useTickerPresence } from "@/hooks/useTickerPresence";
 import type { FinancialRecord } from "@/types/financial";
+import { buildFinancialTableModel } from "@/lib/financial-table-model";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
@@ -146,8 +147,10 @@ function buildManualTableMemos(
 
 /** CompanyViewer の外部制御インターフェース */
 export interface CompanyViewerHandle {
-    loadTicker: (ticker: string) => void;
+    loadTicker: (ticker: string, destination?: "pl" | "order" | "edinet") => void;
 }
+
+type ViewerNavigation = { id: number; ticker: string; destination: "pl" | "order" | "edinet" };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
@@ -177,6 +180,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [companyNews, setCompanyNews] = useState<NewsEvent[]>([]);
     const [newsScan, setNewsScan] = useState<LatestNewsScanRun | null>(null);
     const [newsLoading, setNewsLoading] = useState(false);
+    const [newsReadyTicker, setNewsReadyTicker] = useState<string | null>(null);
     const [orderKpiTab, setOrderKpiTab] = useState<"order" | "edinet">("order");
     // EDINET受注タブ自動切替: ユーザーが手動でタブを選んだかを追跡する
     // useRef でクロージャ内から安全に参照できる
@@ -200,6 +204,13 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
     const tickerCacheRef = useRef<Map<string, CachedViewerData>>(new Map());
     const loadRequestIdRef = useRef<number>(0);
+    const requestedTickerRef = useRef("");
+    const navigationIdRef = useRef(0);
+    const navigationRef = useRef<ViewerNavigation | null>(null);
+    const [requestedNavigation, setRequestedNavigation] = useState<ViewerNavigation | null>(null);
+    const [navigationReadyId, setNavigationReadyId] = useState<number | null>(null);
+    const [orderNavigationSpace, setOrderNavigationSpace] = useState(false);
+    const scrollBodyRef = useRef<HTMLDivElement>(null);
 
     // ============================================================
     // Undo スタック (Ctrl+Z)
@@ -285,13 +296,16 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const { viewers } = useTickerPresence(activeTicker, user?.email, user?.id);
 
     useEffect(() => {
-        if (!activeTicker || !user) { setCompanyNews([]); setNewsScan(null); return; }
+        if (!activeTicker || !user) { setCompanyNews([]); setNewsScan(null); setNewsReadyTicker(null); return; }
         let cancelled = false;
         setNewsLoading(true);
+        setNewsReadyTicker(null);
+        setCompanyNews([]);
+        setNewsScan(null);
         Promise.all([loadCompanyNews(activeTicker, 15), loadLatestNewsScan(activeTicker)])
             .then(([events, scan]) => { if (!cancelled) { setCompanyNews(events); setNewsScan(scan); } })
             .catch((err) => console.warn("[company news] load failed:", err))
-            .finally(() => { if (!cancelled) setNewsLoading(false); });
+            .finally(() => { if (!cancelled) { setNewsLoading(false); setNewsReadyTicker(activeTicker); } });
         return () => { cancelled = true; };
     }, [activeTicker, user]);
 
@@ -318,10 +332,19 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         return () => { subscription.unsubscribe(); clearTimeout(timeout); };
     }, []);
 
-    const handleLoad = useCallback(async (targetTicker?: string) => {
+    const handleLoad = useCallback(async (targetTicker?: string, navigation?: ViewerNavigation) => {
         if (!user) return;
         const ticker = normalizeTicker(targetTicker ?? tickerInput);
         if (!ticker) return;
+
+        if (requestedTickerRef.current !== ticker) setNewsReadyTicker(null);
+        requestedTickerRef.current = ticker;
+
+        if (navigation && navigationRef.current?.id !== navigation.id) return;
+        if (!navigation) {
+            navigationRef.current = null;
+            setOrderNavigationSpace(false);
+        }
 
         const currentRequestId = ++loadRequestIdRef.current;
 
@@ -341,7 +364,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         setEdinetOrders([]);
         // 銘柄切替時: 手動フラグをリセットし、初期タブを ORDER KPI へ戻す
         orderKpiTabManuallySetRef.current = false;
-        setOrderKpiTab("order");
+        setOrderKpiTab(navigation?.destination === "edinet" ? "edinet" : "order");
         setMarketData(null);
         setPerShareData([]);
         setValuation(null);
@@ -358,7 +381,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             setForecasts(cached.forecasts);
             setMonthly(cached.monthly);
             setEdinetOrders(cached.edinetOrders);
-            if (!orderKpiTabManuallySetRef.current) {
+            if (!navigation && !orderKpiTabManuallySetRef.current) {
                 setOrderKpiTab(cached.edinetOrders.length > 0 ? "edinet" : "order");
             }
 
@@ -448,6 +471,8 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                 .then(res => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis(res); })
                 .catch(() => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis([]); });
 
+            if (navigation && navigationRef.current?.id === navigation.id) setNavigationReadyId(navigation.id);
+
         } else {
             // --- CACHE MISS ---
             const [
@@ -496,7 +521,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
 
             const newEdinetOrders = edinetOrdersResult.status === "fulfilled" ? edinetOrdersResult.value : [];
             setEdinetOrders(newEdinetOrders);
-            if (!orderKpiTabManuallySetRef.current) {
+            if (!navigation && !orderKpiTabManuallySetRef.current) {
                 setOrderKpiTab(newEdinetOrders.length > 0 ? "edinet" : "order");
             }
 
@@ -578,18 +603,19 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             loadRejectedOrderKpis(ticker)
                 .then(res => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis(res); })
                 .catch(() => { if (loadRequestIdRef.current === currentRequestId) setRejectedKpis([]); });
+
+            if (navigation && navigationRef.current?.id === navigation.id) setNavigationReadyId(navigation.id);
         }
     }, [tickerInput, user]);
 
     // handleLoad の最新参照を ref で保持（外部呼び出し用）
     const handleLoadRef = useRef(handleLoad);
     useEffect(() => { handleLoadRef.current = handleLoad; }, [handleLoad]);
-    const [requestedTicker, setRequestedTicker] = useState<string | null>(null);
     useEffect(() => {
-        if (!requestedTicker || authLoading || !user) return;
-        void handleLoadRef.current(requestedTicker);
-        setRequestedTicker(null);
-    }, [requestedTicker, authLoading, user]);
+        if (!requestedNavigation || authLoading || !user) return;
+        void handleLoadRef.current(requestedNavigation.ticker, requestedNavigation);
+        setRequestedNavigation(null);
+    }, [requestedNavigation, authLoading, user]);
 
     // ============================================================
     // URL クエリ ?ticker=xxxx からの初期ロード
@@ -610,14 +636,61 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     // 外部制御: forwardRef で loadTicker を公開
     // ============================================================
     useImperativeHandle(ref, () => ({
-        loadTicker: (ticker: string) => {
+        loadTicker: (ticker: string, destination = "pl") => {
             const t = normalizeTicker(ticker);
             if (!t) return;
+            // Invalidating here also covers a new click before the next React effect runs.
+            ++loadRequestIdRef.current;
+            const navigation = { id: ++navigationIdRef.current, ticker: t, destination };
+            navigationRef.current = navigation;
+            setNavigationReadyId(null);
+            setOrderNavigationSpace(destination !== "pl");
             setTickerInput(t);
             // A notification may arrive before this viewer's auth check completes.
-            setRequestedTicker(t);
+            setRequestedNavigation(navigation);
         },
     }));
+
+    useLayoutEffect(() => {
+        const navigation = navigationRef.current;
+        const scroller = scrollBodyRef.current;
+        if (!navigation || navigation.id !== navigationReadyId || !scroller ||
+            activeTicker !== navigation.ticker || dataLoading ||
+            (navigation.destination !== "pl" && (newsLoading || newsReadyTicker !== navigation.ticker))) return;
+
+        const place = () => {
+            if (navigationRef.current?.id !== navigation.id) return;
+            scroller.scrollLeft = 0;
+            if (navigation.destination === "pl") {
+                const actualRows = buildFinancialTableModel(financials).cumulativeRows
+                    .filter(row => ["1Q", "2Q", "3Q", "FY"].includes(row.quarter) &&
+                        [row.sales, row.grossProfit, row.operatingProfit].some(value => value !== null));
+                const latest = actualRows.at(-1);
+                const row = latest && Array.from(scroller.querySelectorAll<HTMLTableRowElement>('tr[data-table="cumulative"]'))
+                    .find(el => el.dataset.period === latest.period && el.dataset.quarter === latest.quarter);
+                if (row) {
+                    const viewport = scroller.getBoundingClientRect();
+                    const bottomGap = Math.min(48, scroller.clientHeight * 0.08);
+                    scroller.scrollTop += row.getBoundingClientRect().bottom - viewport.bottom + bottomGap;
+                } else {
+                    const section = scroller.querySelector<HTMLElement>(".pl-section");
+                    if (section) scroller.scrollTop += section.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
+                }
+            } else {
+                const section = scroller.querySelector<HTMLElement>(".order-kpi-section");
+                if (section) scroller.scrollTop += section.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 8;
+            }
+        };
+
+        place();
+        // React has committed the rows here. One paint pass accounts for sticky header
+        // layout and browser scroll anchoring without retaining an auto-scroll effect.
+        const frame = requestAnimationFrame(() => {
+            place();
+            if (navigationRef.current?.id === navigation.id) navigationRef.current = null;
+        });
+        return () => cancelAnimationFrame(frame);
+    }, [navigationReadyId, activeTicker, dataLoading, newsLoading, newsReadyTicker, financials]);
 
     // ============================================================
     // 手入力メモ専用行 — 編集ハンドラ
@@ -1148,7 +1221,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             )}
             </div>
 
-            <div className="company-viewer-scroll-body">
+            <div className="company-viewer-scroll-body" ref={scrollBodyRef}>
             {!activeTicker && status === "idle" && (
                 <div className="placeholder">企業コードを入力して「読込」を押してください</div>
             )}
@@ -1221,6 +1294,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
                             <ForecastTable data={forecasts} loading={dataLoading} />
                             <MonthlyTable data={monthly} loading={dataLoading} />
                             <KpiTable data={kpi} loading={dataLoading} />
+                            {orderNavigationSpace && <div className="order-navigation-spacer" aria-hidden="true" />}
                         </div>
                     </div>
                 </div>

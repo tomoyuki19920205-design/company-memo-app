@@ -916,7 +916,7 @@ body {
 
 .pl-scroll-area {
   overflow-x: auto;
-  overflow-y: visible; /*縦スクロール廃止: 全行表示 */
+  overflow-y: visible;
   border: 1px solid var(--border-light);
   border-radius: 0 0 6px 6px;
 }
@@ -968,7 +968,7 @@ body {
 
 .pl-table thead {
   position: sticky;
-  top: 27px; /* pl-table-label 邵ｺ?ｿｽE?ｿｽ鬯ｮ蛟･?ｿｽE?ｿｽE?ｿｽ?ｿｽ繝ｻ?ｿｽE?ｿｽ荵晢ｿｽE郢ｧ?ｿｽE?ｿｽ郢晁ｼ斐◎郢晢ｿｽE繝ｨ */
+  top: 27px;
   z-index: 3;
 }
 
@@ -3950,6 +3950,20 @@ body:has(.alerts-layout) {
   overflow-y: auto;
   overflow-x: auto;
   container-type: inline-size;
+  overflow-anchor: none;
+}
+
+/* デスクトップの通知右ペインだけがPLの縦横スクロールを受け持つ。 */
+@media (min-width: 901px) {
+  .alerts-layout .company-viewer-scroll-body .pl-scroll-area {
+    overflow: visible;
+  }
+  .alerts-layout .company-viewer-scroll-body .pl-table-label {
+    top: var(--pl-formula-offset, 0px);
+  }
+  .alerts-layout .company-viewer-scroll-body .pl-table thead {
+    top: calc(var(--pl-formula-offset, 0px) + 28px);
+  }
 }
 
 /* ============================================================
@@ -3957,6 +3971,12 @@ body:has(.alerts-layout) {
    ============================================================ */
 .order-kpi-section {
   margin-top: 4px;
+}
+
+.order-navigation-spacer {
+  height: 100dvh;
+  flex: none;
+  pointer-events: none;
 }
 
 .order-kpi-section-header {

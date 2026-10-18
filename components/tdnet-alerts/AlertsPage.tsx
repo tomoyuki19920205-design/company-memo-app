@@ -15,7 +15,7 @@ import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-poli
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
-import { cardExpansionReducer, createCardExpansionState, isCardClosing } from "@/lib/tdnet-alerts/card-expansion";
+import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-alerts/card-expansion";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
@@ -167,6 +167,12 @@ interface AlertsPageProps {
 
 export const isEdinetOrderEvent = (eventType: string) => {
   return eventType === "edinet_order" || eventType === "edinet_order_partial";
+};
+
+const viewerDestinationForEvent = (eventType: string): "pl" | "order" | "edinet" => {
+  if (isEdinetOrderEvent(eventType)) return "edinet";
+  if (["order_kpi", "order_backlog", "tdnet_order"].includes(eventType)) return "order";
+  return "pl";
 };
 
 const getBadgeConfig = (eventType: string, headline?: string) => {
@@ -1094,14 +1100,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const handleSelectEvent = (event: EnrichedEvent) => {
     setMobilePane("company");
     const allowCollapse = !window.matchMedia("(max-width: 900px)").matches;
-    dispatchCardExpansion({ type: "select", id: event.id, allowCollapse });
-    if (isCardClosing(cardExpansion, event.id, allowCollapse)) return;
+    dispatchCardExpansion(selectedId === event.id && expandedId === event.id
+      ? { type: "open", id: event.id }
+      : { type: "select", id: event.id, allowCollapse });
     setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
-    
-    // UIの反映(左カードの展開)を優先するため、右Viewerの読み込みを非同期で開始する
-    setTimeout(() => {
-      viewerRef.current?.loadTicker(event.ticker);
-    }, 0);
+    viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
 
     if (!event.is_read) {
       // 既読化処理もUIをブロックしないように非同期で後追い実行
@@ -1190,7 +1193,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     deepLinkHandledRef.current = true;
     dispatchCardExpansion({ type: "open", id: event.id });
     setRightPaneTab("company");
-    window.setTimeout(() => viewerRef.current?.loadTicker(event.ticker), 0);
+    viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
   }, [events]);
   const unreadCount = events.filter((e) => !e.is_read).length;
 

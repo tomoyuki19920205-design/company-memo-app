@@ -116,7 +116,7 @@ function OrderKpiTable({ data, loading }: Props) {
         );
     }
 
-    if (rows.length === 0) return null;
+    if (rows.length === 0) return <div className="order-kpi-table-card"><div className="order-kpi-table-loading">該当データなし</div></div>;
 
     return (
         <div className="order-kpi-table-card">
