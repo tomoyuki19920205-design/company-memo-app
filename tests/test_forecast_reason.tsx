@@ -27,6 +27,14 @@ test("keeps the separate period and basis headings from the disclosure", () => {
   const html=renderToStaticMarkup(<ForecastReason event={event({...reason,sections:[section,second]})} />);
   assert.match(html,/通期 連結/); assert.match(html,/中間期 個別/); assert.match(html,/別の対象期間の原文。/);
 });
+test("links a verified sibling notice's exact reason to that notice's page", () => {
+  const original="https://www.release.tdnet.info/inbs/140120260710591497.pdf";
+  const linked={...section,source_url:original,page_start:2,page_end:2};
+  const html=renderToStaticMarkup(<ForecastReason event={event({...reason,sections:[linked]})} />);
+  assert.ok(html.includes(original+"#page=2"));
+  assert.ok(!html.includes(source+"#page=2"));
+  assert.equal(getForecastReason(event({...reason,sections:[{...linked,source_url:"javascript:bad"}]})).sections.length,0);
+});
 test("missing, malformed or foreign disclosure data shows the PDF fallback", () => {
   for (const input of [null,{...reason,source_url:"https://example.com/foreign.pdf"},{...reason,sections:[{...section,text:null}]}]) {
     const html=renderToStaticMarkup(<ForecastReason event={event(input)} />);

@@ -21,7 +21,7 @@ export default function ForecastReason({ event }: { event: TdnetEvent }) {
       {section.context.length > 0 && <div className="forecast-reason-context">{section.context.join("\n")}</div>}
       <h5>{section.heading}</h5>
       <div className="forecast-reason-text">{section.text}</div>
-      <a href={`${url}#page=${section.page_start}`} target="_blank" rel="noopener noreferrer">
+      <a href={`${section.source_url || url}#page=${section.page_start}`} target="_blank" rel="noopener noreferrer">
         原本PDF（{section.page_start === section.page_end ? `${section.page_start}ページ` : `${section.page_start}–${section.page_end}ページ`}）
       </a>
     </div>) : <>
