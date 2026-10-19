@@ -1107,12 +1107,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const handleSelectEvent = (event: EnrichedEvent) => {
     listScrollTargetRef.current = listPaneRef.current?.scrollTop ?? null;
     setMobilePane("company");
-    const allowCollapse = !window.matchMedia("(max-width: 900px)").matches;
+    const mobile = window.matchMedia("(max-width: 900px)").matches;
+    const allowCollapse = !mobile;
     dispatchCardExpansion(selectedId === event.id && expandedId === event.id
       ? { type: "open", id: event.id }
       : { type: "select", id: event.id, allowCollapse });
-    setRightPaneTab("company"); // クリック時は Company Viewer をデフォルト表示
-    viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
+    const showForecastDetail = mobile && getDisplayCategory(event.event_type, event.headline) === "forecast";
+    setRightPaneTab(showForecastDetail ? "detail" : "company");
+    if (!showForecastDetail) viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
 
     if (!event.is_read) {
       // 既読化処理もUIをブロックしないように非同期で後追い実行

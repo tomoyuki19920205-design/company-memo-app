@@ -4,7 +4,7 @@ import type { TdnetEvent } from "@/lib/tdnet-alerts/types";
 import { getForecastReason } from "@/lib/tdnet-alerts/forecast-reason";
 
 export default function ForecastReason({ event }: { event: TdnetEvent }) {
-  const { url, sections } = getForecastReason(event);
+  const { url, sections, status } = getForecastReason(event);
   return <section className="forecast-reason" aria-label="業績修正の理由"
     onPointerDown={e => e.stopPropagation()} onClick={e => e.stopPropagation()}>
     <h4>業績修正の理由</h4>
@@ -16,7 +16,7 @@ export default function ForecastReason({ event }: { event: TdnetEvent }) {
         原本PDF（{section.page_start === section.page_end ? `${section.page_start}ページ` : `${section.page_start}–${section.page_end}ページ`}）
       </a>
     </div>) : <>
-      <p>修正理由を取得できませんでした</p>
+      <p>{status === "not_present" ? "原本PDFに修正理由の記載はありません" : "修正理由を取得できませんでした"}</p>
       {url && <a href={url} target="_blank" rel="noopener noreferrer">原本PDF</a>}
     </>}
   </section>;

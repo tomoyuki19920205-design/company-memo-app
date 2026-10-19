@@ -34,6 +34,14 @@ test("missing, malformed or foreign disclosure data shows the PDF fallback", () 
     assert.ok(!html.includes("原文の末尾。"));
   }
 });
+
+test("a verified absence is distinct from extraction failure", () => {
+  const notPresent = renderToStaticMarkup(<ForecastReason event={event({version:1,status:"not_present",source_url:source,sections:[]})} />);
+  assert.match(notPresent,/原本PDFに修正理由の記載はありません/);
+  assert.ok(notPresent.includes(source));
+  const failed = renderToStaticMarkup(<ForecastReason event={event({version:1,status:"unavailable",source_url:source,sections:[]})} />);
+  assert.match(failed,/修正理由を取得できませんでした/);
+});
 test("legacy string payloads work and arbitrary summaries are never used", () => {
   const e=event(reason); e.raw_payload=JSON.stringify(e.raw_payload) as never;
   assert.equal(getForecastReason(e).sections[0].text,text);
@@ -45,6 +53,8 @@ test("reason clicks and selection stay inside the expanded region", () => {
   assert.match(component,/onPointerDown=.*stopPropagation/);
   assert.match(component,/onClick=.*stopPropagation/);
   assert.ok(page.indexOf("<ForecastReason")>page.indexOf('className={`alert-card expanded'));
+  const detail=readFileSync("components/tdnet-alerts/AlertDetailPanel.tsx","utf8");
+  assert.match(detail,/<ForecastReason event=\{event\}/);
   assert.ok(!component.includes("fetch("));
 });
 

@@ -19,6 +19,7 @@ import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { isEdinetOrderEvent } from "./AlertsPage";
 import IpoAnalysisPanel from "./IpoAnalysisPanel";
+import ForecastReason from "./ForecastReason";
 
 interface AlertDetailPanelProps {
   event: EnrichedEvent;
@@ -265,6 +266,8 @@ export default function AlertDetailPanel({
       )}
 
       {isIpoListing && <IpoAnalysisPanel eventId={event.id} supabase={supabaseRef.current} />}
+
+      {getDisplayCategory(event.event_type, event.headline) === "forecast" && <ForecastReason event={event} />}
 
       {/* Segment financials */}
       {(() => {
