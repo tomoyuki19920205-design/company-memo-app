@@ -8,7 +8,9 @@ export type ForecastReasonSection = {
   page_end: number;
 };
 
-export function getForecastReason(event: TdnetEvent): { url: string | null; sections: ForecastReasonSection[]; status: "available" | "not_present" | "unavailable" } {
+export type ForecastReasonStatus = "available" | "not_present" | "source_unavailable" | "extraction_failed" | "scope_unverified" | "environment_error" | "unavailable";
+
+export function getForecastReason(event: TdnetEvent): { url: string | null; sections: ForecastReasonSection[]; status: ForecastReasonStatus } {
   const url = [event.pdf_url, event.source_url].find(value => {
     try { return value && new URL(value).protocol === "https:"; } catch { return false; }
   }) || null;
@@ -18,8 +20,10 @@ export function getForecastReason(event: TdnetEvent): { url: string | null; sect
   }
   const extracted = (payload as { extracted?: Record<string, unknown> } | null)?.extracted;
   const reason = extracted?.revision_reason as { version?: number; status?: string; source_url?: string; sections?: unknown } | undefined;
-  if (url && reason?.version === 1 && reason.source_url === url && reason.status === "not_present") {
-    return { url, sections: [], status: "not_present" };
+  const failureStatuses: ForecastReasonStatus[] = ["not_present", "source_unavailable", "extraction_failed", "scope_unverified", "environment_error"];
+  if (reason?.version === 1 && (reason.source_url || null) === url &&
+      failureStatuses.includes(reason.status as ForecastReasonStatus)) {
+    return { url, sections: [], status: reason.status as ForecastReasonStatus };
   }
   // Only render native text tied to this exact disclosure, never generic summaries.
   if (!url || reason?.version !== 1 || reason.status !== "available" || reason.source_url !== url || !Array.isArray(reason.sections)) {

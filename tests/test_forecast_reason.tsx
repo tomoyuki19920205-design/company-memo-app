@@ -37,10 +37,26 @@ test("missing, malformed or foreign disclosure data shows the PDF fallback", () 
 
 test("a verified absence is distinct from extraction failure", () => {
   const notPresent = renderToStaticMarkup(<ForecastReason event={event({version:1,status:"not_present",source_url:source,sections:[]})} />);
-  assert.match(notPresent,/原本PDFに修正理由の記載はありません/);
+  assert.match(notPresent,/原本PDFに業績修正理由の記載はありません/);
   assert.ok(notPresent.includes(source));
   const failed = renderToStaticMarkup(<ForecastReason event={event({version:1,status:"unavailable",source_url:source,sections:[]})} />);
   assert.match(failed,/修正理由を取得できませんでした/);
+});
+test("distinguishes missing source, failed extraction and unverified bounds", () => {
+  for (const [status, wording] of [
+    ["source_unavailable", "原本PDFを取得できていません"],
+    ["extraction_failed", "原本PDFから修正理由を抽出できませんでした"],
+    ["scope_unverified", "原本PDFの修正理由の範囲を確認中です"],
+    ["environment_error", "PDF読み取り環境に異常があります"],
+  ]) {
+    const html=renderToStaticMarkup(<ForecastReason event={event({version:1,status,source_url:source,sections:[]})} />);
+    assert.ok(html.includes(wording));
+    assert.ok(html.includes(source));
+  }
+  const noUrl={...event(null),pdf_url:null,source_url:null,
+    raw_payload:{extracted:{revision_reason:{version:1,status:"source_unavailable",source_url:"",sections:[]}}}} as unknown as TdnetEvent;
+  const html=renderToStaticMarkup(<ForecastReason event={noUrl} />);
+  assert.match(html,/原本PDFを特定・取得できていません/);
 });
 test("legacy string payloads work and arbitrary summaries are never used", () => {
   const e=event(reason); e.raw_payload=JSON.stringify(e.raw_payload) as never;
