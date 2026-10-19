@@ -19,6 +19,7 @@ import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-aler
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
+import { requiredListBottomSpace } from "@/lib/tdnet-alerts/list-scroll";
 import ForecastReason from "./ForecastReason";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
 import TopNavigation from "@/components/TopNavigation";
@@ -1136,15 +1137,18 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     const pane = listPaneRef.current;
     const target = listScrollTargetRef.current;
     if (!pane || target === null) return;
-    const naturalHeight = pane.scrollHeight - listBottomSpace;
-    const neededSpace = Math.max(0, Math.ceil(target + pane.clientHeight - naturalHeight));
+    // The mobile list is hidden while its detail pane is open. Its zero
+    // scrollHeight cannot be used to calculate bottom padding: doing so makes
+    // the padding grow on every render and crashes React with update depth 185.
+    const neededSpace = requiredListBottomSpace(target, pane.clientHeight, pane.scrollHeight, listBottomSpace);
+    if (neededSpace === null) return;
     if (neededSpace !== listBottomSpace) {
       setListBottomSpace(neededSpace);
       return;
     }
     pane.scrollTop = target;
     listScrollTargetRef.current = null;
-  }, [cardExpansion, listBottomSpace]);
+  }, [cardExpansion, listBottomSpace, mobilePane]);
 
   useEffect(() => {
     listScrollTargetRef.current = null;
