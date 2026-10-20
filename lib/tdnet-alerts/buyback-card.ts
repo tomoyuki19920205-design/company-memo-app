@@ -25,9 +25,16 @@ function extracted(raw: Record<string, unknown>): Record<string, unknown> {
     ? raw.extracted as Record<string, unknown> : {};
 }
 
-const sharesText = (n: number): string => n % 10_000 === 0
-  ? `${(n / 10_000).toLocaleString("ja-JP")}万株`
-  : `${n.toLocaleString("ja-JP")}株`;
+const sharesText = (n: number): string => {
+  if (n >= 100_000_000 && n % 10_000 === 0) {
+    const oku = Math.floor(n / 100_000_000);
+    const man = (n % 100_000_000) / 10_000;
+    return `${oku.toLocaleString("ja-JP")}億${man ? `${man.toLocaleString("ja-JP")}万` : ""}株`;
+  }
+  return n % 10_000 === 0
+    ? `${(n / 10_000).toLocaleString("ja-JP")}万株`
+    : `${n.toLocaleString("ja-JP")}株`;
+};
 
 export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
   if (event.event_type !== "buyback") return null;

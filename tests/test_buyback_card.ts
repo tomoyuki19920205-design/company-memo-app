@@ -97,3 +97,8 @@ test("reviewed progress or supplementary notices do not show a missing limit", (
   }, "new_program"));
   assert.equal(card, null);
 });
+
+test("hundred-million share limits use the readable 億 unit", () => {
+  const card = getBuybackCard(event({ shares_limit: 200_000_000 }, "new_program"));
+  assert.equal(card!.sharesLine, "取得枠の上限株数：2億株");
+});
