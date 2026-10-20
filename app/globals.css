@@ -3515,6 +3515,12 @@ textarea::placeholder {
   margin-bottom: 0.2rem;
 }
 
+.alert-card-summary-line1.buyback-card-title {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
 .alert-card-summary-line2 {
   font-size: 0.82rem;
   color: var(--text-dim);

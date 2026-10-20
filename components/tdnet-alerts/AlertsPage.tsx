@@ -1541,7 +1541,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                     className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${priorityClass}`}
                     onClick={() => handleSelectEvent(event)}
                   >
-                    <div className="alert-card-summary-line1">
+                    <div className={`alert-card-summary-line1 ${event.event_type === "buyback" ? "buyback-card-title" : ""}`}>
                        {renderHighlightedCardBody(line1, event)}
                     </div>
                     {displayLine2 && (
