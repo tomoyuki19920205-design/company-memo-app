@@ -1,6 +1,7 @@
 import type { EnrichedEvent } from "./types";
 
 type BuybackCard = {
+  eventLabel: string;
   sharesLine: string;
   ratioLabel: string;
   provenance: string;
@@ -41,13 +42,17 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
   const raw = payload(event);
   const ext = extracted(raw);
   if (ext.disclosure_role === "related_non_decision") return null;
+  const plannedSelfTender = event.event_subtype === "conditional_self_tender_plan"
+    || /自己株式.*公開買付け.*予定/u.test(String(event.headline || ""));
   const scope = String(ext.ratio_scope || "");
   const limit = count(ext.shares_limit);
   const acquired = count(ext.shares_acquired);
   const isTostnet = event.event_subtype === "tostnet" || scope === "transaction_limit";
   const shares = scope === "transaction_acquired" || scope === "period_acquired"
     ? acquired : (limit ?? acquired);
-  const label = shares === limit
+  const label = plannedSelfTender && shares === limit
+    ? "自己株式公開買付け予定数（条件付き）"
+    : shares === limit
     ? (isTostnet ? "今回の買付上限株数" : "取得枠の上限株数")
     : "今回の取得株数";
   const ratio = Number(ext.ratio_to_outstanding);
@@ -60,7 +65,7 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
     (numerator == null && limit === shares && acquired == null));
   const shareRatioEvidence = ext.ratio_source === "calculated" || ext.ratio_source === "disclosed"
     || ratioSnippet.includes("発行済株式");
-  const hasRatio = matching && shareRatioEvidence && ext.ratio_to_outstanding != null
+  const hasRatio = !plannedSelfTender && matching && shareRatioEvidence && ext.ratio_to_outstanding != null
     && Number.isFinite(ratio) && ratio >= 0;
   const calculated = ext.ratio_source === "calculated";
   const ratioLabel = hasRatio ? `${calculated ? "約" : ""}${ratio.toFixed(2)}%` : "";
@@ -84,6 +89,7 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
     ? `分母：${denominator.toLocaleString("ja-JP")}株（${asOf}${beforeAcquisition ? "の今回の取得前" : "時点"}、自己株式を除く発行済株式数。${baseAsOf}公表値${baseShares?.toLocaleString("ja-JP")}株${adjustment ? `から${adjustmentAsOf}までの累計取得${adjustment.toLocaleString("ja-JP")}株を控除` : ""}）`
     : "";
   return {
+    eventLabel: plannedSelfTender ? "自社株買い（公開買付け予定・条件付き）" : "",
     sharesLine, ratioLabel, provenance,
     sourceUrl: typeof ext.ratio_denominator_source_url === "string" ? ext.ratio_denominator_source_url : "",
     adjustmentUrl: typeof ext.ratio_denominator_adjustment_source_url === "string" ? ext.ratio_denominator_adjustment_source_url : "",

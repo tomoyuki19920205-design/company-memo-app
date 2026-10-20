@@ -210,6 +210,8 @@ export function getDisplayCategory(eventType: string, headline?: string): string
 }
 
 export const EVENT_SUBTYPE_LABELS: Record<string, string> = {
+  conditional_self_tender_plan: "公開買付け予定・条件付き",
+  other_company_buyback_sale: "他社の自己株式取得への売付け",
   resolution: "決議",
   status: "状況",
   result: "結果",

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getBuybackCard } from "../lib/tdnet-alerts/buyback-card";
-import type { EnrichedEvent } from "../lib/tdnet-alerts/types";
+import { EVENT_SUBTYPE_LABELS, getDisplayCategory, type EnrichedEvent } from "../lib/tdnet-alerts/types";
 
 const event = (extracted: Record<string, unknown>, subtype = "tostnet") => ({
   event_type: "buyback", event_subtype: subtype, raw_payload: { extracted },
@@ -101,4 +101,29 @@ test("reviewed progress or supplementary notices do not show a missing limit", (
 test("hundred-million share limits use the readable 億 unit", () => {
   const card = getBuybackCard(event({ shares_limit: 200_000_000 }, "new_program"));
   assert.equal(card!.sharesLine, "取得枠の上限株数：2億株");
+});
+
+test("conditional self-tender remains a planned acquisition without a misleading ratio", () => {
+  const planned = {
+    ...event({
+      shares_limit: 711_621, ratio_scope: "transaction_limit",
+      ratio_to_outstanding: 9.58, ratio_numerator_shares: 711_621,
+      ratio_source: "disclosed",
+    }, "conditional_self_tender_plan"),
+    headline: "自己株式の取得及び自己株式の公開買付けの予定に関するお知らせ",
+  } as EnrichedEvent;
+  const card = getBuybackCard(planned);
+  assert.equal(card!.eventLabel, "自社株買い（公開買付け予定・条件付き）");
+  assert.equal(card!.sharesLine, "自己株式公開買付け予定数（条件付き）：711,621株");
+  assert.equal(card!.ratioLabel, "");
+});
+
+test("selling into another issuer's buyback is outside own buyback category", () => {
+  const seller = {
+    ...event({ disclosure_role: "related_non_decision" }, "other_company_buyback_sale"),
+    event_type: "other",
+  } as EnrichedEvent;
+  assert.equal(getDisplayCategory(seller.event_type, "自己株式立会外買付取引への売付け"), "other");
+  assert.equal(EVENT_SUBTYPE_LABELS[seller.event_subtype!], "他社の自己株式取得への売付け");
+  assert.equal(getBuybackCard(seller), null);
 });

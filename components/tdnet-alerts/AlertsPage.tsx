@@ -307,9 +307,9 @@ const formatCardBody = (event: EnrichedEvent): {
       if (typeof ext.disclosure_note === "string") lines.push(ext.disclosure_note);
     } else {
       const card = getBuybackCard(event);
-      const typeLabel = event.event_subtype === "tostnet"
+      const typeLabel = card?.eventLabel || (event.event_subtype === "tostnet"
         ? "📊 自社株買い（ToSTNeT）"
-        : "📊 自社株買い（取得枠決議）";
+        : "📊 自社株買い（取得枠決議）");
       lines.push(card?.ratioLabel ? `${typeLabel}  ${card.ratioLabel}` : typeLabel);
       if (card) lines.push(card.sharesLine);
       if (card?.provenance) lines.push(card.provenance);
@@ -406,7 +406,7 @@ const formatCardBody = (event: EnrichedEvent): {
     if (summaryText) lines.push(summaryText);
 
   } else {
-    if (event.event_subtype) lines.push(event.event_subtype);
+    if (event.event_subtype) lines.push(EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype);
     if (event.primary_metric_name && event.primary_metric_value) {
       const yoy = event.primary_metric_yoy
         ? `（YOY ${event.primary_metric_yoy}）`
@@ -630,8 +630,8 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       line1 = `${dateStr} ${timeStr} ${ticker} ${name} 自社株買い関連開示`.trim();
       line2 = typeof ext.disclosure_note === "string" ? ext.disclosure_note : "";
     } else {
-      typeLabel = event.event_subtype === "tostnet" ? "自社株買い（ToSTNeT-3）" : "自社株買い";
       const card = getBuybackCard(event);
+      typeLabel = card?.eventLabel || (event.event_subtype === "tostnet" ? "自社株買い（ToSTNeT-3）" : "自社株買い");
       line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
       line2 = card?.sharesLine || "";
       line3 = card?.provenance || "";
@@ -688,6 +688,9 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     }
   } else {
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
+    if (event.event_subtype === "other_company_buyback_sale") {
+      line2 = event.display_summary || "";
+    }
     if (event.primary_metric_name) {
        line2 = `${event.primary_metric_name} ${event.primary_metric_value || ""}`;
     }
