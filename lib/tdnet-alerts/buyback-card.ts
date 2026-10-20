@@ -13,11 +13,15 @@ function count(value: unknown): number | null {
   return value == null || !Number.isSafeInteger(n) || n <= 0 ? null : n;
 }
 
-function extracted(event: EnrichedEvent): Record<string, unknown> {
+function payload(event: EnrichedEvent): Record<string, unknown> {
   const raw = typeof event.raw_payload === "string"
     ? (() => { try { return JSON.parse(event.raw_payload); } catch { return {}; } })()
     : event.raw_payload;
-  return raw && typeof raw === "object" && "extracted" in raw && raw.extracted && typeof raw.extracted === "object"
+  return raw && typeof raw === "object" ? raw as Record<string, unknown> : {};
+}
+
+function extracted(raw: Record<string, unknown>): Record<string, unknown> {
+  return raw.extracted && typeof raw.extracted === "object"
     ? raw.extracted as Record<string, unknown> : {};
 }
 
@@ -27,7 +31,8 @@ const sharesText = (n: number): string => n % 10_000 === 0
 
 export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
   if (event.event_type !== "buyback") return null;
-  const ext = extracted(event);
+  const raw = payload(event);
+  const ext = extracted(raw);
   const scope = String(ext.ratio_scope || "");
   const limit = count(ext.shares_limit);
   const acquired = count(ext.shares_acquired);
@@ -51,7 +56,14 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
     && Number.isFinite(ratio) && ratio >= 0;
   const calculated = ext.ratio_source === "calculated";
   const ratioLabel = hasRatio ? `${calculated ? "約" : ""}${ratio.toFixed(2)}%` : "";
-  const sharesLine = shares == null ? "取得株数：開示から確認できません" :
+  const sourceText = ext.extracted_json && typeof ext.extracted_json === "object"
+    ? String((ext.extracted_json as Record<string, unknown>).body_head_used || "") : "";
+  const sourceHash = String(ext.raw_text_hash || "");
+  const textWasRead = Boolean(sourceText || (sourceHash && sourceHash !== "e3b0c44298fc1c14"));
+  const missingMessage = textWasRead
+    ? "取得株数：自動抽出で特定できませんでした（原本を確認）"
+    : "取得株数：PDF本文を取得できませんでした（原本を確認）";
+  const sharesLine = shares == null ? missingMessage :
     `${label}：${sharesText(shares)}${hasRatio ? `（自己株式を除く発行済株式数の${ratioLabel}、${calculated ? "算出値" : "開示値"}）` : ""}`;
   const denominator = count(ext.ratio_denominator_shares);
   const asOf = String(ext.ratio_denominator_as_of || "");

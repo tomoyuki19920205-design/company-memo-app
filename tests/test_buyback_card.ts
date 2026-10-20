@@ -73,3 +73,18 @@ test("legacy percentage needs evidence that it is a share ratio", () => {
   }, "new_program"));
   assert.equal(issuedShares!.ratioLabel, "0.98%");
 });
+
+test("a failed share extraction does not claim the disclosure omitted shares", () => {
+  const card = getBuybackCard(event({
+    shares_limit: null, ratio_to_outstanding: 1.46,
+    ratio_scope: "transaction_limit", raw_text_hash: "ba5c7f00160a1f7f",
+    extracted_json: { body_head_used: "取得の内容" },
+  }));
+  assert.equal(card!.ratioLabel, "");
+  assert.equal(card!.sharesLine, "取得株数：自動抽出で特定できませんでした（原本を確認）");
+});
+
+test("a missing PDF body has a distinct message", () => {
+  const card = getBuybackCard(event({ raw_text_hash: "e3b0c44298fc1c14" }));
+  assert.equal(card!.sharesLine, "取得株数：PDF本文を取得できませんでした（原本を確認）");
+});

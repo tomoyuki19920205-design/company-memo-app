@@ -621,7 +621,7 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
     }
   } else if (event.event_type === "buyback") {
-    typeLabel = "BB";
+    typeLabel = event.event_subtype === "tostnet" ? "自社株買い（ToSTNeT-3）" : "自社株買い";
     const card = getBuybackCard(event);
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
     line2 = card?.sharesLine || "";
