@@ -302,23 +302,28 @@ const formatCardBody = (event: EnrichedEvent): {
     if (periodLabel) lines.push(String(periodLabel));
 
   } else if (event.event_type === "buyback") {
-    const card = getBuybackCard(event);
-    const typeLabel = event.event_subtype === "tostnet"
-      ? "📊 自社株買い（ToSTNeT）"
-      : "📊 自社株買い（取得枠決議）";
-    lines.push(card?.ratioLabel ? `${typeLabel}  ${card.ratioLabel}` : typeLabel);
-    if (card) lines.push(card.sharesLine);
-    if (card?.provenance) lines.push(card.provenance);
-    const amount = ext.amount_limit_million_yen;
-    if (amount != null) lines.push(`取得金額の上限：${fmtBillion(amount)}`);
-    const start = ext.start_date;
-    const end   = ext.end_date;
-    if (event.event_subtype === "tostnet" && start) {
-      lines.push(`買付日: ${String(start)}`);
-    } else if (start && end) {
-      lines.push(`取得期間: ${String(start)}〜${String(end)}`);
-    } else if (start) {
-      lines.push(`取得開始: ${String(start)}`);
+    if (ext.disclosure_role === "related_non_decision") {
+      lines.push("📊 自社株買い関連開示");
+      if (typeof ext.disclosure_note === "string") lines.push(ext.disclosure_note);
+    } else {
+      const card = getBuybackCard(event);
+      const typeLabel = event.event_subtype === "tostnet"
+        ? "📊 自社株買い（ToSTNeT）"
+        : "📊 自社株買い（取得枠決議）";
+      lines.push(card?.ratioLabel ? `${typeLabel}  ${card.ratioLabel}` : typeLabel);
+      if (card) lines.push(card.sharesLine);
+      if (card?.provenance) lines.push(card.provenance);
+      const amount = ext.amount_limit_million_yen;
+      if (amount != null) lines.push(`取得金額の上限：${fmtBillion(amount)}`);
+      const start = ext.start_date;
+      const end   = ext.end_date;
+      if (event.event_subtype === "tostnet" && start) {
+        lines.push(`買付日: ${String(start)}`);
+      } else if (start && end) {
+        lines.push(`取得期間: ${String(start)}〜${String(end)}`);
+      } else if (start) {
+        lines.push(`取得開始: ${String(start)}`);
+      }
     }
 
   } else if (event.event_type === "dividend") {
@@ -621,11 +626,16 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
       else if (ext.change_net_income_pct != null) line2 = `純利益 ${fmtPct(ext.change_net_income_pct)}`;
     }
   } else if (event.event_type === "buyback") {
-    typeLabel = event.event_subtype === "tostnet" ? "自社株買い（ToSTNeT-3）" : "自社株買い";
-    const card = getBuybackCard(event);
-    line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
-    line2 = card?.sharesLine || "";
-    line3 = card?.provenance || "";
+    if (ext.disclosure_role === "related_non_decision") {
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} 自社株買い関連開示`.trim();
+      line2 = typeof ext.disclosure_note === "string" ? ext.disclosure_note : "";
+    } else {
+      typeLabel = event.event_subtype === "tostnet" ? "自社株買い（ToSTNeT-3）" : "自社株買い";
+      const card = getBuybackCard(event);
+      line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${card?.ratioLabel || ""}`.trim();
+      line2 = card?.sharesLine || "";
+      line3 = card?.provenance || "";
+    }
   } else if (event.event_type === "capital_action") {
     const ipoTitle = getIpoListingCardTitle(event);
     line1 = ipoTitle

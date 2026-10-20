@@ -88,3 +88,12 @@ test("a missing PDF body has a distinct message", () => {
   const card = getBuybackCard(event({ raw_text_hash: "e3b0c44298fc1c14" }));
   assert.equal(card!.sharesLine, "取得株数：PDF本文を取得できませんでした（原本を確認）");
 });
+
+test("reviewed progress or supplementary notices do not show a missing limit", () => {
+  const card = getBuybackCard(event({
+    disclosure_role: "related_non_decision",
+    disclosure_note: "取得期間の確定。今回の新規取得枠ではありません。",
+    shares_limit: null, raw_text_hash: "bc013478c8c0d3e5",
+  }, "new_program"));
+  assert.equal(card, null);
+});

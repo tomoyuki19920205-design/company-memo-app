@@ -33,6 +33,7 @@ export function getBuybackCard(event: EnrichedEvent): BuybackCard | null {
   if (event.event_type !== "buyback") return null;
   const raw = payload(event);
   const ext = extracted(raw);
+  if (ext.disclosure_role === "related_non_decision") return null;
   const scope = String(ext.ratio_scope || "");
   const limit = count(ext.shares_limit);
   const acquired = count(ext.shares_acquired);
