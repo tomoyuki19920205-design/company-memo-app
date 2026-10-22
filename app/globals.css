@@ -4521,8 +4521,8 @@ body:has(.alerts-layout) {
 .margin-ratio-table thead tr:first-child .margin-date-heading { min-width:152px; }
 .margin-ratio-table .margin-ratio-value { min-width:154px; }
 .margin-arrow { display:inline-block; margin-left:6px; font-size:1rem; font-weight:800; line-height:1; }
-.margin-arrow.up { color:#4ade80; }
-.margin-arrow.down { color:#fb7185; }
+.margin-ratio-table td.margin-ratio-value > span.margin-arrow.up { color:#4ADE80 !important; }
+.margin-ratio-table td.margin-ratio-value > span.margin-arrow.down { color:#FF4D4F !important; }
 .margin-week-status { display:inline-block; margin-left:5px; padding:1px 3px; border-radius:3px; font-size:.66rem; }
 .margin-week-status.provisional { color:#fde68a; background:#713f12; }
 .margin-week-status.missing { color:#fecaca; background:#7f1d1d; }
