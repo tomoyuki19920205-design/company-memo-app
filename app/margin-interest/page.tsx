@@ -107,7 +107,7 @@ export default function MarginInterestPage() {
             <td>{formatIndexClose(row.nikkei_close)}</td>
             <td>{formatMarginOku(row.short_value_yen)}</td>
             <td>{formatMarginOku(row.long_value_yen)}</td>
-            {MARGIN_SECTORS.map(({ code }) => <td key={code}>{formatMarginOku(row.sector_long_yen?.[code] ?? "0")}</td>)}
+            {MARGIN_SECTORS.map(({ code }) => <td key={code}>{formatMarginOku(row.sector_long_yen?.[code])}</td>)}
           </tr>)}
         </tbody>
       </table>
