@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { MARGIN_SECTORS, formatIndexClose, formatMarginOku, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "../lib/margin-interest";
+import { MARGIN_SECTORS, formatIndexClose, formatMarginOku, formatMarginRatio, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "../lib/margin-interest";
 
 test("33 formal sectors are unique and ordered by code", () => {
   assert.equal(MARGIN_SECTORS.length, 33);
@@ -8,6 +8,19 @@ test("33 formal sectors are unique and ordered by code", () => {
   assert.deepEqual(codes, [...codes].sort());
   assert.equal(new Set(codes).size, 33);
   assert.equal(MARGIN_SECTORS.find(({ code }) => code === "2050")?.name, "建設業");
+  assert.equal(MARGIN_SECTORS[0].indexCode, "0040");
+  assert.equal(MARGIN_SECTORS[32].indexCode, "0060");
+  assert.equal(new Set(MARGIN_SECTORS.map(({ indexCode }) => indexCode)).size, 33);
+});
+
+test("ratio uses exact yen, exact same-date close, four decimal places, and keeps zero distinct", () => {
+  assert.equal(formatMarginRatio("1234567890123", "1234.56"), "10.0001");
+  assert.equal(formatMarginRatio("0", "1234.56"), "0.0000");
+  assert.equal(formatMarginRatio(null, "1234.56"), "—");
+  assert.equal(formatMarginRatio("100000000", null), "—");
+  assert.equal(formatMarginRatio("100000000", "0"), "—");
+  assert.equal(formatMarginRatio("100000000", "-1"), "—");
+  assert.equal(formatMarginRatio("100000000", "2"), "0.5000");
 });
 
 test("missing values remain distinct from actual zero and yen remain precise until rendering", () => {

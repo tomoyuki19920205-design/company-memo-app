@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import TopNavigation from "@/components/TopNavigation";
-import { MARGIN_SECTORS, formatMarginOku, formatIndexClose, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "@/lib/margin-interest";
+import { MARGIN_SECTORS, formatMarginOku, formatMarginRatio, formatIndexClose, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "@/lib/margin-interest";
 
 type Result = { rows: MarginRow[]; latest: { date: string; updated_at: string } | null };
 
@@ -18,6 +18,7 @@ export default function MarginInterestPage() {
   const [result, setResult] = useState<Result>({ rows: [], latest: null });
   const [selected, setSelected] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [ratioMode, setRatioMode] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -82,14 +83,21 @@ export default function MarginInterestPage() {
       <label>開始日 <input type="date" value={from} max={to} onChange={(event) => setFrom(event.target.value)} /></label>
       <label>終了日 <input type="date" value={to} min={from} onChange={(event) => setTo(event.target.value)} /></label>
       <button type="submit" disabled={loading}>{loading ? "読み込み中..." : "表示"}</button>
-      <span>金額単位：億円</span>
+      <button type="button" className={`margin-ratio-button${ratioMode ? " active" : ""}`}
+        aria-pressed={ratioMode} onClick={() => setRatioMode((current) => !current)}>レシオ</button>
+      <span>{ratioMode ? "単位：億円／pt" : "金額単位：億円"}</span>
     </form>
+    {ratioMode && <p className="margin-ratio-explanation">レシオ＝保存済みの信用買い残金額（円）÷同じ残高基準日の指数終値（pt）÷1億。市場全体はTOPIX、各業種は対応する東証33業種別株価指数で計算し、億円／ptで小数点以下4桁まで表示します。指数・金額が欠損、または指数が0以下の場合は「—」を表示します。</p>}
     {error && <p role="alert" className="margin-error">{error}</p>}
     {!loading && !error && result.rows.length === 0 && <p className="margin-empty">指定期間の確定済みデータはありません。</p>}
 
     <div className="margin-table-scroll" role="region" aria-label="信用買い残一覧" tabIndex={0}>
-      <table className="margin-table">
-        <thead>
+      <table className={`margin-table${ratioMode ? " margin-ratio-table" : ""}`}>
+        {ratioMode ? <thead><tr>
+          <th scope="col" className="margin-date-heading">日付</th>
+          <th scope="col">市場全体<br />買い残金額／TOPIX</th>
+          {MARGIN_SECTORS.map((sector) => <th key={sector.code} scope="col">{sector.name}<br />買い残金額／同業種指数</th>)}
+        </tr></thead> : <thead>
           <tr>
             <th rowSpan={2} className="margin-date-heading">日付</th>
             <th rowSpan={2}>TOPIX<br />終値</th>
@@ -99,8 +107,14 @@ export default function MarginInterestPage() {
             <th colSpan={MARGIN_SECTORS.length} className="margin-group-heading">各業種の信用買い残（金額）</th>
           </tr>
           <tr>{MARGIN_SECTORS.map((sector) => <th key={sector.code} scope="col">{sector.name}</th>)}</tr>
-        </thead>
-        <tbody>
+        </thead>}
+        {ratioMode ? <tbody>
+          {result.rows.map((row) => <tr key={row.date} className={selected === row.date ? "selected" : ""}>
+            <th scope="row"><button type="button" title="分類内訳を表示" onClick={() => setSelected(row.date)}>{row.date}{jpxCorrectionDifference(row) ? " ⚠" : ""}</button></th>
+            <td>{formatMarginRatio(row.long_value_yen, row.topix_close)}</td>
+            {MARGIN_SECTORS.map(({ code, indexCode }) => <td key={code}>{formatMarginRatio(row.sector_long_yen?.[code], row.sector_index_close?.[indexCode])}</td>)}
+          </tr>)}
+        </tbody> : <tbody>
           {result.rows.map((row) => <tr key={row.date} className={selected === row.date ? "selected" : ""}>
             <th scope="row"><button type="button" title="分類内訳を表示" onClick={() => setSelected(row.date)}>{row.date}{jpxCorrectionDifference(row) ? " ⚠" : ""}</button></th>
             <td>{formatIndexClose(row.topix_close)}</td>
@@ -109,7 +123,7 @@ export default function MarginInterestPage() {
             <td>{formatMarginOku(row.long_value_yen)}</td>
             {MARGIN_SECTORS.map(({ code }) => <td key={code}>{formatMarginOku(row.sector_long_yen?.[code])}</td>)}
           </tr>)}
-        </tbody>
+        </tbody>}
       </table>
     </div>
     {detail && <p className="margin-note">

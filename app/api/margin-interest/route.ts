@@ -35,6 +35,19 @@ export async function GET(request: NextRequest) {
     rows.push(...(data ?? []));
     if (!data || data.length < 500) break;
   }
+  const closesByDate: Record<string, Record<string, string | number>> = {};
+  for (let offset = 0; ; offset += 500) {
+    const { data, error } = await supabase.from("margin_index_daily")
+      .select("date,code,close").gte("date", from).lte("date", to)
+      .order("date", { ascending: false }).order("code", { ascending: true })
+      .range(offset, offset + 499);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    for (const item of data ?? []) {
+      (closesByDate[item.date] ??= {})[item.code] = item.close;
+    }
+    if (!data || data.length < 500) break;
+  }
+  for (const row of rows) row.sector_index_close = closesByDate[row.date as string] ?? {};
   return NextResponse.json({ rows, latest: newest?.[0] ?? null }, {
     headers: { "Cache-Control": "private, no-store" },
   });
