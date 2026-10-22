@@ -4520,6 +4520,11 @@ body:has(.alerts-layout) {
 .margin-ratio-table thead tr:first-child th { height:78px; min-width:158px; max-width:192px; white-space:normal; line-height:1.35; overflow-wrap:anywhere; }
 .margin-ratio-table thead tr:first-child .margin-date-heading { min-width:152px; }
 .margin-ratio-table .margin-ratio-value { min-width:154px; }
+/* The sticky date column owns the first divider; each later pair owns its left edge. */
+.margin-ratio-table tr > :first-child { border-right:2px solid #7DD3FC; }
+.margin-ratio-table tr > :nth-child(2n+3):not(:last-child) { border-right:0; }
+.margin-ratio-table tr > :nth-child(2n+4) { border-left:2px solid #7DD3FC; }
+.margin-ratio-table tr > :last-child { border-right:2px solid #7DD3FC; }
 .margin-arrow { display:inline-block; margin-left:6px; font-size:1rem; font-weight:800; line-height:1; }
 .margin-ratio-table td.margin-ratio-value > span.margin-arrow.up { color:#4ADE80 !important; }
 .margin-ratio-table td.margin-ratio-value > span.margin-arrow.down { color:#FF4D4F !important; }
