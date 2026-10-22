@@ -8,9 +8,10 @@ const expectedLinks = [
   { label: "COMPANY VIEWER", href: "/tdnet-alerts" },
   { label: "SCREENING", href: "/screening" },
   { label: "NEWS", href: "/news" },
+  { label: "信用買い残", href: "/margin-interest" },
 ] as const;
 
-test("renders the three shared navigation links in the original order", () => {
+test("renders the four shared navigation links in the original order", () => {
   const markup = renderToStaticMarkup(<TopNavigation active="company" />);
   let previousIndex = -1;
 
@@ -22,14 +23,13 @@ test("renders the three shared navigation links in the original order", () => {
   }
 });
 
-for (const active of ["company", "screening", "news"] as const) {
+for (const active of ["company", "screening", "news", "margin"] as const) {
   test(`marks only ${active} as the active page`, () => {
     const markup = renderToStaticMarkup(<TopNavigation active={active} />);
     assert.equal((markup.match(/aria-current="page"/g) ?? []).length, 1);
     assert.equal((markup.match(/class="site-link active"/g) ?? []).length, 1);
-    const activeLink = expectedLinks.find((link) =>
-      active === "company" ? link.href === "/tdnet-alerts" : link.href === `/${active}`,
-    );
+    const activeHref = active === "company" ? "/tdnet-alerts" : active === "margin" ? "/margin-interest" : `/${active}`;
+    const activeLink = expectedLinks.find((link) => link.href === activeHref);
     assert.ok(activeLink);
     const activeAnchor = markup.match(new RegExp(`<a[^>]*href="${activeLink.href}"[^>]*>[^<]+</a>`))?.[0];
     assert.ok(activeAnchor);

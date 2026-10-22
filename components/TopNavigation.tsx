@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-type TopNavigationPage = "company" | "screening" | "news";
+type TopNavigationPage = "company" | "screening" | "news" | "margin";
 
 const navigationItems: Array<{
   key: TopNavigationPage;
@@ -11,6 +11,7 @@ const navigationItems: Array<{
   { key: "company", href: "/tdnet-alerts", label: "COMPANY VIEWER" },
   { key: "screening", href: "/screening", label: "SCREENING" },
   { key: "news", href: "/news", label: "NEWS" },
+  { key: "margin", href: "/margin-interest", label: "信用買い残" },
 ];
 
 export default function TopNavigation({ active }: { active: TopNavigationPage }) {
