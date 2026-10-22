@@ -108,6 +108,28 @@ test("weekly candle combines provider days through provisional balance date and 
   assert.equal(buildMarginChartPoints(view, days, bars, "0050", "0040", "weekly")[0].open, null);
 });
 
+test("old weekly volume rows stay out of daily mode while saved weekly candles remain visible", () => {
+  const days = ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17",
+    "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"];
+  const prior: MarginRow = { ...dated("2026-07-17"), source_frequency: "weekly",
+    long_value_yen: null, sector_long_yen: {}, sector_long_volume: { "0050": "100" },
+    sector_index_close: { "0040": "490" } };
+  const current: MarginRow = { ...prior, date: "2026-07-24", sector_long_volume: { "0050": "120" },
+    sector_index_close: { "0040": "500" } };
+  assert.equal(buildMarginViewRows([prior, current], days, "2026-07-22", "2026-07-24",
+    "daily", "2026-10-21").length, 0);
+  const view = buildMarginViewRows([prior, current], days, "2026-07-22", "2026-07-24",
+    "weekly", "2026-10-21");
+  assert.deepEqual(view.map(({ date, comparisonDate, comparisonRow }) =>
+    [date, comparisonDate, comparisonRow?.date]), [["2026-07-24", "2026-07-17", "2026-07-17"]]);
+  const weeklyBars = { "2026-07-24": { "0040": { open: "480", high: "510", low: "470", close: "500" } } };
+  const [point] = buildMarginChartPoints(view, days, {}, "0050", "0040", "weekly", weeklyBars);
+  assert.deepEqual([point.open, point.high, point.low, point.close, point.marginOku],
+    [480, 510, 470, 500, null]);
+  assert.equal(formatMarginRatio(current.sector_long_yen["0050"], current.sector_index_close["0040"]), "—");
+  assert.equal(indexDirection(current.sector_index_close["0040"], prior.sector_index_close["0040"]), "up");
+});
+
 test("missing values remain distinct from actual zero and yen remain precise until rendering", () => {
   assert.equal(formatMarginOku(null), "—");
   assert.equal(formatMarginOku(0), "0.00");

@@ -34,6 +34,17 @@ export type MarginRow = {
   outside_count: number;
   unknown_long_yen: string | number | null;
   unknown_count: number;
+  source_frequency?: "weekly";
+  long_volume?: string | number;
+  sector_long_volume?: Record<string, string | number>;
+  outside_long_volume?: string | number;
+  unknown_long_volume?: string | number;
+  money_reason?: string | null;
+  money_source?: string | null;
+  market_scope?: string;
+  market_source_jpx_url?: string | null;
+  market_source_nse_url?: string | null;
+  market_source_unit_yen?: number | null;
 };
 
 export type MarginFrequency = "daily" | "weekly";
@@ -81,11 +92,13 @@ export function buildMarginViewRows(
   rows: MarginRow[], calendarDays: string[], from: string, to: string,
   frequency: MarginFrequency, latestDate: string | null,
 ): MarginViewRow[] {
+  // The API sends saved weekly aggregates first, then daily rows. Daily values
+  // take priority on overlapping dates; old weeks remain available to weekly mode.
   const byDate = new Map(rows.map((row) => [row.date, row]));
   const days = [...new Set(calendarDays)].sort();
   if (frequency === "daily") {
     const previous = new Map(days.map((day, index) => [day, days[index - 1] ?? null]));
-    return rows.filter((row) => from <= row.date && row.date <= to)
+    return rows.filter((row) => row.source_frequency !== "weekly" && from <= row.date && row.date <= to)
       .sort((a, b) => b.date.localeCompare(a.date))
       .map((row) => {
         const comparisonDate = previous.get(row.date) ?? null;
@@ -150,16 +163,19 @@ function completeChartBar(value: MarginIndexBar | undefined) {
 export function buildMarginChartPoints(
   viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
   sectorCode: string, indexCode: string, frequency: MarginFrequency,
+  weeklyBars: MarginIndexBars = {},
 ): MarginChartPoint[] {
   const days = [...new Set(calendarDays)].sort();
   return [...viewRows].reverse().map((item) => {
     const indexDays = frequency === "daily" ? [item.date] : days.filter((day) =>
       marginWeekStart(day) === marginWeekStart(item.date) && day <= item.date);
     const complete = indexDays.map((day) => completeChartBar(bars[day]?.[indexCode]));
-    const ohlc = indexDays.length && complete.every((bar) => bar !== null)
+    const savedWeekly = frequency === "weekly" ? completeChartBar(weeklyBars[item.date]?.[indexCode]) : null;
+    const derived = indexDays.length && complete.every((bar) => bar !== null)
       ? { open: complete[0]!.open, high: Math.max(...complete.map((bar) => bar!.high)),
           low: Math.min(...complete.map((bar) => bar!.low)), close: complete[complete.length - 1]!.close }
       : null;
+    const ohlc = savedWeekly ?? derived;
     const money = item.row?.sector_long_yen?.[sectorCode];
     const marginOku = money === null || money === undefined || money === "" ||
       !Number.isFinite(Number(money)) || Number(money) < 0 ? null : Number(money) / 100_000_000;

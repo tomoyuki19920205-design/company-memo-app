@@ -53,6 +53,39 @@ export async function GET(request: NextRequest) {
   }
 
   const rows: Record<string, unknown>[] = [];
+  const weeklyRows: Record<string, unknown>[] = [];
+  const weeklyBars: Record<string, Record<string, { open: string | number | null; high: string | number | null;
+    low: string | number | null; close: string | number | null }>> = {};
+  for (let offset = 0; ; offset += 500) {
+    const { data, error } = await supabase.from("margin_index_weekly")
+      .select("date,code,open,high,low,close").gte("date", fetchFrom).lte("date", to)
+      .order("date", { ascending: false }).order("code", { ascending: true })
+      .range(offset, offset + 499);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    for (const item of data ?? []) {
+      (weeklyBars[item.date] ??= {})[item.code] = {
+        open: item.open, high: item.high, low: item.low, close: item.close,
+      };
+    }
+    if (!data || data.length < 500) break;
+  }
+  for (let offset = 0; ; offset += 500) {
+    const { data, error } = await supabase.from("margin_weekly_aggregate")
+      .select("date,updated_at,row_count,long_volume,long_value_yen,sector_long_yen,sector_long_volume,outside_long_yen,unknown_long_yen,outside_long_volume,unknown_long_volume,outside_count,unknown_count,money_reason,money_source,market_scope,market_source_jpx_url,market_source_nse_url,market_source_unit_yen")
+      .gte("date", fetchFrom).lte("date", to)
+      .order("date", { ascending: false }).range(offset, offset + 499);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    for (const item of data ?? []) {
+      const bars = weeklyBars[item.date] ?? {};
+      weeklyRows.push({ ...item, source_frequency: "weekly", published_date: null,
+        fetched_at: item.updated_at, short_value_yen: null, nikkei_close: null,
+        topix_close: bars.TOPIX?.close ?? null,
+        sector_index_close: Object.fromEntries(Object.entries(bars)
+          .filter(([code]) => code !== "TOPIX").map(([code, bar]) => [code, bar.close])),
+      });
+    }
+    if (!data || data.length < 500) break;
+  }
   for (let offset = 0; ; offset += 500) {
     const { data, error } = await supabase.from("margin_daily")
       .select("date,published_date,fetched_at,updated_at,row_count,long_value_yen,short_value_yen,sector_long_yen,outside_long_yen,outside_count,unknown_long_yen,unknown_count,topix_close,nikkei_close")
@@ -61,6 +94,16 @@ export async function GET(request: NextRequest) {
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     rows.push(...(data ?? []));
     if (!data || data.length < 500) break;
+  }
+  const volumesByDate = new Map(weeklyRows.map((row) => [row.date as string, row]));
+  for (const row of rows) {
+    const weekly = volumesByDate.get(row.date as string);
+    if (weekly) {
+      row.long_volume = weekly.long_volume;
+      row.sector_long_volume = weekly.sector_long_volume;
+      row.outside_long_volume = weekly.outside_long_volume;
+      row.unknown_long_volume = weekly.unknown_long_volume;
+    }
   }
   const closesByDate: Record<string, Record<string, string | number>> = {};
   const indexBars: Record<string, Record<string, { open: string | number | null; high: string | number | null;
@@ -80,7 +123,8 @@ export async function GET(request: NextRequest) {
     if (!data || data.length < 500) break;
   }
   for (const row of rows) row.sector_index_close = closesByDate[row.date as string] ?? {};
-  return NextResponse.json({ rows, indexBars, calendarDays, latest: newest?.[0] ?? null }, {
+  return NextResponse.json({ rows: [...weeklyRows, ...rows], indexBars, weeklyBars,
+    calendarDays, latest: newest?.[0] ?? null }, {
     headers: { "Cache-Control": "private, no-store" },
   });
 }

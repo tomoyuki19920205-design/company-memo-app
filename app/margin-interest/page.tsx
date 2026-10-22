@@ -9,7 +9,7 @@ import { MARGIN_SECTORS, buildMarginViewRows, formatMarginOku, formatMarginRatio
   indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection,
   type MarginDirection, type MarginFrequency, type MarginIndexBars, type MarginRow, type MarginViewRow } from "@/lib/margin-interest";
 
-type Result = { rows: MarginRow[]; indexBars: MarginIndexBars; calendarDays: string[];
+type Result = { rows: MarginRow[]; indexBars: MarginIndexBars; weeklyBars: MarginIndexBars; calendarDays: string[];
   latest: { date: string; updated_at: string } | null };
 
 function RatioCell({ value, direction, comparisonDate }: {
@@ -42,7 +42,7 @@ export default function MarginInterestPage() {
   const [from, setFrom] = useState(initial.from);
   const [to, setTo] = useState(initial.to);
   const [applied, setApplied] = useState(initial);
-  const [result, setResult] = useState<Result>({ rows: [], indexBars: {}, calendarDays: [], latest: null });
+  const [result, setResult] = useState<Result>({ rows: [], indexBars: {}, weeklyBars: {}, calendarDays: [], latest: null });
   const [selected, setSelected] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [ratioMode, setRatioMode] = useState(false);
@@ -133,13 +133,15 @@ export default function MarginInterestPage() {
         : ratioMode ? "単位：億円／pt" : "金額単位：億円"}</span>
     </form>
     {frequency === "weekly" && <p className="margin-week-explanation">週次は月曜〜日曜の最終営業日の残高基準日を表示します。最新の未確定週は取得済みの最新日を「暫定」、過去週の最終営業日が未保存なら「欠損」と表示します。週内の合計・平均は行いません。</p>}
+    {frequency === "weekly" && viewRows.some((item) => item.row?.money_reason) &&
+      <p className="margin-week-explanation">2026年9月25日より前のJ-Quants銘柄別信用残には金額がありません。業種別の金額・レシオは「—」、市場全体の金額はJPXの東京・名古屋合計から名証の名古屋分を引いた東京市場分（百万円単位）です。保存済みの業種別株数は下の週次株数表に表示します。指数の週足は週内の日足四本値から作成しています。</p>}
     {ratioMode && !chartMode && <p className="margin-ratio-explanation">レシオ＝保存済みの信用買い残金額（円）÷同じ残高基準日の指数終値（pt）÷1億。市場全体はTOPIX、各業種は対応する東証33業種別株価指数で計算し、億円／ptで小数点以下4桁まで表示します。指数・金額が欠損、または指数が0以下の場合は「—」を表示します。</p>}
     {chartMode && <p className="margin-chart-explanation">東証33業種の株価指数（始値・高値・安値・終値）と、同じ残高基準日の信用買い残金額を重ねて表示します。週足は週内の最初の始値・最高値・最安値・最後の終値、買い残は週末時点の残高です。欠損は補完しません。</p>}
     {error && <p role="alert" className="margin-error">{error}</p>}
     {!loading && !error && viewRows.length === 0 && <p className="margin-empty">指定期間の保存済みデータはありません。</p>}
 
     {chartMode ? <MarginSectorCharts viewRows={viewRows} calendarDays={result.calendarDays}
-      indexBars={result.indexBars} frequency={frequency} /> : <div className="margin-table-scroll" role="region" aria-label="信用買い残一覧" tabIndex={0}>
+      indexBars={result.indexBars} weeklyBars={result.weeklyBars} frequency={frequency} /> : <div className="margin-table-scroll" role="region" aria-label="信用買い残一覧" tabIndex={0}>
       <table className={`margin-table${ratioMode ? " margin-ratio-table" : ""}`}>
         {ratioMode ? <thead><tr>
           <th scope="col" className="margin-date-heading">日付</th>
@@ -193,10 +195,28 @@ export default function MarginInterestPage() {
         </tbody>}
       </table>
     </div>}
+    {frequency === "weekly" && !chartMode && viewRows.some((item) => item.row?.sector_long_volume) && <section className="margin-weekly-volume">
+      <h2>週次の買い残株数</h2>
+      <p>各週の最終営業日時点の残高です。金額には換算していません。単位：株</p>
+      <div className="margin-table-scroll" role="region" aria-label="週次の業種別買い残株数" tabIndex={0}>
+        <table className="margin-table"><thead><tr><th scope="col" className="margin-date-heading">日付</th>
+          <th scope="col">市場全体</th>{MARGIN_SECTORS.map((sector) =>
+            <th scope="col" key={sector.code}>{sector.name}</th>)}</tr></thead>
+          <tbody>{viewRows.map((item) => <tr key={item.date}><th scope="row">{item.date}{item.provisional ? " 暫定" : ""}</th>
+            <td>{item.row?.long_volume === undefined ? "—" : Number(item.row.long_volume).toLocaleString("ja-JP")}</td>
+            {MARGIN_SECTORS.map(({ code }) => <td key={code}>{item.row?.sector_long_volume?.[code] === undefined ? "—" : Number(item.row.sector_long_volume[code]).toLocaleString("ja-JP")}</td>)}
+          </tr>)}</tbody></table>
+      </div>
+    </section>}
     {detail && <p className="margin-note">
       {detail.date} の分類：33業種以外 {formatMarginOku(detail.outside_long_yen)} 億円（{detail.outside_count.toLocaleString("ja-JP")}件）、
       業種未判明 {formatMarginOku(detail.unknown_long_yen)} 億円（{detail.unknown_count.toLocaleString("ja-JP")}件）。
       集計銘柄 {detail.row_count.toLocaleString("ja-JP")}件。欠損値は「—」で表示。
+      {detail.money_reason && ` ${detail.money_reason}。`}
+      {detail.market_source_jpx_url && detail.market_source_nse_url && <> 市場全体金額の出典：
+        <a href={detail.market_source_jpx_url} target="_blank" rel="noopener noreferrer">JPX二市場合計</a>・
+        <a href={detail.market_source_nse_url} target="_blank" rel="noopener noreferrer">名証名古屋分</a>。
+        東京市場分は百万円単位の公表値の差から計算。</>}
     </p>}
     {detail && jpxCorrectionDifference(detail) && <p className="margin-warning" role="note">
       {detail.date} はJPX訂正版の総合計と差があります。差額（JPX訂正版 − J-Quants）：

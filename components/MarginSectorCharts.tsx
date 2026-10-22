@@ -102,13 +102,13 @@ function SectorChart({ name, points, frequency }: {
   </article>;
 }
 
-export default function MarginSectorCharts({ viewRows, calendarDays, indexBars, frequency }: {
-  viewRows: MarginViewRow[]; calendarDays: string[]; indexBars: MarginIndexBars;
+export default function MarginSectorCharts({ viewRows, calendarDays, indexBars, weeklyBars, frequency }: {
+  viewRows: MarginViewRow[]; calendarDays: string[]; indexBars: MarginIndexBars; weeklyBars: MarginIndexBars;
   frequency: MarginFrequency;
 }) {
   return <div className="margin-chart-grid" aria-label="東証33業種の複合チャート">
     {MARGIN_SECTORS.map((sector) => <SectorChart key={sector.code} name={sector.name}
       frequency={frequency} points={buildMarginChartPoints(
-        viewRows, calendarDays, indexBars, sector.code, sector.indexCode, frequency)} />)}
+        viewRows, calendarDays, indexBars, sector.code, sector.indexCode, frequency, weeklyBars)} />)}
   </div>;
 }
