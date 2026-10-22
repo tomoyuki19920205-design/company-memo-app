@@ -1,6 +1,16 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { MARGIN_SECTORS, formatIndexClose, formatMarginOku, formatMarginRatio, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "../lib/margin-interest";
+import { MARGIN_SECTORS, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
+  indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection, marginWeekStart,
+  type MarginRow } from "../lib/margin-interest";
+
+const dated = (day: string, yen = "100000000"): MarginRow => ({
+  date: day, published_date: null, fetched_at: "2026-10-22T00:00:00Z",
+  updated_at: "2026-10-22T00:00:00Z", row_count: 1,
+  long_value_yen: yen, short_value_yen: "0", topix_close: "1000", nikkei_close: "10000",
+  sector_long_yen: { "0050": yen }, sector_index_close: { "0040": "500" },
+  outside_long_yen: "0", outside_count: 0, unknown_long_yen: "0", unknown_count: 0,
+});
 
 test("33 formal sectors are unique and ordered by code", () => {
   assert.equal(MARGIN_SECTORS.length, 33);
@@ -21,6 +31,50 @@ test("ratio uses exact yen, exact same-date close, four decimal places, and keep
   assert.equal(formatMarginRatio("100000000", "0"), "—");
   assert.equal(formatMarginRatio("100000000", "-1"), "—");
   assert.equal(formatMarginRatio("100000000", "2"), "0.5000");
+});
+
+test("arrows compare unrounded values and each ratio independently from its index", () => {
+  assert.equal(formatMarginRatio("100000001", "1000"), formatMarginRatio("100000000", "1000"));
+  assert.equal(marginRatioDirection("100000001", "1000", "100000000", "1000"), "up");
+  assert.equal(marginRatioDirection("900", "2", "1000", "1"), "down");
+  assert.equal(indexDirection("2", "1"), "up");
+  assert.equal(indexDirection("1000.00", "1000"), null);
+  assert.equal(marginRatioDirection("0", "1000", "0", "1000"), null);
+  assert.equal(marginRatioDirection("100", "1000", null, "1000"), null);
+  assert.equal(indexDirection("1000", null), null);
+  assert.equal(indexDirection("0", "1000"), null);
+});
+
+test("daily comparisons use the immediate trading date including one before the requested range", () => {
+  const rows = [dated("2026-10-19"), dated("2026-10-21")];
+  const calendar = ["2026-10-19", "2026-10-20", "2026-10-21"];
+  const view = buildMarginViewRows(rows, calendar, "2026-10-21", "2026-10-21", "daily", "2026-10-21");
+  assert.deepEqual(view.map(({ date, comparisonDate, comparisonRow }) =>
+    [date, comparisonDate, comparisonRow?.date ?? null]),
+  [["2026-10-21", "2026-10-20", null]]);
+  const complete = buildMarginViewRows([...rows, dated("2026-10-20")], calendar,
+    "2026-10-21", "2026-10-21", "daily", "2026-10-21");
+  assert.equal(complete[0].comparisonRow?.date, "2026-10-20");
+});
+
+test("weekly uses holiday-adjusted final day, flags missing finals and the latest provisional week", () => {
+  assert.equal(marginWeekStart("2026-10-04"), "2026-09-28");
+  const calendar = ["2026-09-28", "2026-09-29", "2026-09-30", "2026-10-01",
+    "2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09",
+    "2026-10-13", "2026-10-14", "2026-10-15", "2026-10-16",
+    "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23"];
+  const rows = [dated("2026-10-01"), dated("2026-10-08"), dated("2026-10-16"), dated("2026-10-21")];
+  const weekly = buildMarginViewRows(rows, calendar, "2026-09-28", "2026-10-22", "weekly", "2026-10-21");
+  assert.deepEqual(weekly.map(({ date, provisional, missing, comparisonDate, comparisonRow }) =>
+    [date, provisional, missing, comparisonDate, comparisonRow?.date ?? null]), [
+    ["2026-10-21", true, false, "2026-10-16", "2026-10-16"],
+    ["2026-10-16", false, false, "2026-10-09", null],
+    ["2026-10-09", false, true, "2026-10-01", "2026-10-01"],
+    ["2026-10-01", false, false, null, null],
+  ]);
+  const narrow = buildMarginViewRows(rows, calendar, "2026-10-20", "2026-10-21", "weekly", "2026-10-21");
+  assert.deepEqual(narrow.map(({ date, comparisonDate }) => [date, comparisonDate]),
+    [["2026-10-21", "2026-10-16"]]);
 });
 
 test("missing values remain distinct from actual zero and yen remain precise until rendering", () => {

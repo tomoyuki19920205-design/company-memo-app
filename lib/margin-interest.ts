@@ -36,6 +36,83 @@ export type MarginRow = {
   unknown_count: number;
 };
 
+export type MarginFrequency = "daily" | "weekly";
+export type MarginViewRow = {
+  date: string;
+  row: MarginRow | null;
+  comparisonDate: string | null;
+  comparisonRow: MarginRow | null;
+  provisional: boolean;
+  missing: boolean;
+};
+
+function shiftDate(day: string, offset: number): string {
+  const value = new Date(`${day}T00:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + offset);
+  return value.toISOString().slice(0, 10);
+}
+
+/** ISO calendar week, independent of the browser's time zone. */
+export function marginWeekStart(day: string): string {
+  const weekday = new Date(`${day}T00:00:00Z`).getUTCDay();
+  return shiftDate(day, -(weekday === 0 ? 6 : weekday - 1));
+}
+
+/** Use the official trading calendar so missing dates never fall back silently. */
+export function buildMarginViewRows(
+  rows: MarginRow[], calendarDays: string[], from: string, to: string,
+  frequency: MarginFrequency, latestDate: string | null,
+): MarginViewRow[] {
+  const byDate = new Map(rows.map((row) => [row.date, row]));
+  const days = [...new Set(calendarDays)].sort();
+  if (frequency === "daily") {
+    const previous = new Map(days.map((day, index) => [day, days[index - 1] ?? null]));
+    return rows.filter((row) => from <= row.date && row.date <= to)
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map((row) => {
+        const comparisonDate = previous.get(row.date) ?? null;
+        return { date: row.date, row, comparisonDate,
+          comparisonRow: comparisonDate ? byDate.get(comparisonDate) ?? null : null,
+          provisional: false, missing: false };
+      });
+  }
+
+  const finalByWeek = new Map<string, string>();
+  for (const day of days) finalByWeek.set(marginWeekStart(day), day);
+  const latestWeek = latestDate ? marginWeekStart(latestDate) : null;
+  const weekly: MarginViewRow[] = [];
+  for (const [weekStart, expectedFinal] of finalByWeek) {
+    if (weekStart < marginWeekStart(from) || weekStart > marginWeekStart(to)) continue;
+    const finalRow = byDate.get(expectedFinal) ?? null;
+    const provisionalRow = weekStart === latestWeek && latestDate && latestDate <= to
+      ? byDate.get(latestDate) ?? null : null;
+    let date: string;
+    let row: MarginRow | null;
+    let provisional = false;
+    let missing = false;
+    if (finalRow) {
+      date = expectedFinal;
+      row = finalRow;
+    } else if (provisionalRow && latestDate && latestDate < expectedFinal) {
+      date = latestDate;
+      row = provisionalRow;
+      provisional = true;
+    } else if (latestWeek && weekStart < latestWeek) {
+      date = expectedFinal;
+      row = null;
+      missing = true;
+    } else {
+      continue;
+    }
+    if (date < from || date > to) continue;
+    const comparisonDate = finalByWeek.get(shiftDate(weekStart, -7)) ?? null;
+    weekly.push({ date, row, comparisonDate,
+      comparisonRow: comparisonDate ? byDate.get(comparisonDate) ?? null : null,
+      provisional, missing });
+  }
+  return weekly.sort((a, b) => b.date.localeCompare(a.date));
+}
+
 // JPX corrected its 19/20 October issue-level PDFs after their first release.
 // The current J-Quants values match the original PDFs. Keep this reference
 // visible until a J-Quants refresh agrees with the corrected official totals.
@@ -70,17 +147,53 @@ export function formatIndexClose(value: string | number | null | undefined): str
   return Number.isFinite(points) ? twoDecimals.format(points) : "—";
 }
 
+type ExactDecimal = { integer: bigint; places: number };
+function positiveClose(value: string | number | null | undefined): ExactDecimal | null {
+  if (value === null || value === undefined || value === "") return null;
+  const raw = String(value);
+  if (!/^\d+(?:\.\d+)?$/.test(raw)) return null;
+  const [whole, fraction = ""] = raw.split(".");
+  const integer = BigInt(whole + fraction);
+  return integer > BigInt(0) ? { integer, places: fraction.length } : null;
+}
+
+function nonnegativeYen(value: string | number | null | undefined): bigint | null {
+  if (value === null || value === undefined || value === "" || !/^\d+$/.test(String(value))) return null;
+  return BigInt(String(value));
+}
+
+export type MarginDirection = "up" | "down" | null;
+function direction(left: bigint, right: bigint): MarginDirection {
+  return left > right ? "up" : left < right ? "down" : null;
+}
+
+export function indexDirection(current: string | number | null | undefined,
+                               previous: string | number | null | undefined): MarginDirection {
+  const a = positiveClose(current), b = positiveClose(previous);
+  if (!a || !b) return null;
+  return direction(a.integer * BigInt(10) ** BigInt(b.places),
+                   b.integer * BigInt(10) ** BigInt(a.places));
+}
+
+/** Compare raw yen/points fractions; display rounding cannot change the arrow. */
+export function marginRatioDirection(currentYen: string | number | null | undefined,
+                                     currentClose: string | number | null | undefined,
+                                     previousYen: string | number | null | undefined,
+                                     previousClose: string | number | null | undefined): MarginDirection {
+  const aYen = nonnegativeYen(currentYen), bYen = nonnegativeYen(previousYen);
+  const aClose = positiveClose(currentClose), bClose = positiveClose(previousClose);
+  if (aYen === null || bYen === null || !aClose || !bClose) return null;
+  return direction(aYen * BigInt(10) ** BigInt(aClose.places) * bClose.integer,
+                   bYen * BigInt(10) ** BigInt(bClose.places) * aClose.integer);
+}
+
 /** Rounded only at display, from integer yen and the saved exact decimal close. */
 export function formatMarginRatio(yen: string | number | null | undefined,
                                   close: string | number | null | undefined): string {
-  if (yen === null || yen === undefined || yen === "" || close === null || close === undefined || close === "") return "—";
-  const money = String(yen), points = String(close);
-  if (!/^\d+$/.test(money) || !/^\d+(?:\.\d+)?$/.test(points)) return "—";
-  const [whole, fraction = ""] = points.split(".");
-  const scaledClose = BigInt(whole + fraction);
-  if (scaledClose <= BigInt(0)) return "—";
-  const denominator = BigInt(100_000_000) * scaledClose;
-  const numerator = BigInt(money) * BigInt(10_000) * BigInt(10) ** BigInt(fraction.length);
+  const money = nonnegativeYen(yen), points = positiveClose(close);
+  if (money === null || !points) return "—";
+  const denominator = BigInt(100_000_000) * points.integer;
+  const numerator = money * BigInt(10_000) * BigInt(10) ** BigInt(points.places);
   const rounded = (numerator * BigInt(2) + denominator) / (denominator * BigInt(2));
   const integerPart = (rounded / BigInt(10_000)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return `${integerPart}.${(rounded % BigInt(10_000)).toString().padStart(4, "0")}`;

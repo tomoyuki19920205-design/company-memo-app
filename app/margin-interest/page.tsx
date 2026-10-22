@@ -1,12 +1,36 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import TopNavigation from "@/components/TopNavigation";
-import { MARGIN_SECTORS, formatMarginOku, formatMarginRatio, formatIndexClose, initialMarginPeriod, jpxCorrectionDifference, type MarginRow } from "@/lib/margin-interest";
+import { MARGIN_SECTORS, buildMarginViewRows, formatMarginOku, formatMarginRatio, formatIndexClose,
+  indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection,
+  type MarginDirection, type MarginFrequency, type MarginRow, type MarginViewRow } from "@/lib/margin-interest";
 
-type Result = { rows: MarginRow[]; latest: { date: string; updated_at: string } | null };
+type Result = { rows: MarginRow[]; calendarDays: string[]; latest: { date: string; updated_at: string } | null };
+
+function RatioCell({ value, direction, comparisonDate }: {
+  value: string; direction: MarginDirection; comparisonDate: string | null;
+}) {
+  return <td className="margin-ratio-value">{value}{direction && comparisonDate && <span
+    className={`margin-arrow ${direction}`} title={`比較対象：${comparisonDate}`}
+    aria-label={`${direction === "up" ? "上昇" : "下落"}。比較対象：${comparisonDate}`}>
+    {direction === "up" ? "↑" : "↓"}
+  </span>}</td>;
+}
+
+function DateCell({ item, selected, select }: {
+  item: MarginViewRow; selected: string | null; select: (date: string) => void;
+}) {
+  return <th scope="row">{item.row ? <button type="button" title="分類内訳を表示"
+    aria-current={selected === item.date ? "date" : undefined}
+    onClick={() => select(item.date)}>{item.date}{jpxCorrectionDifference(item.row) ? " ⚠" : ""}</button>
+    : item.date}
+    {item.provisional && <span className="margin-week-status provisional">暫定</span>}
+    {item.missing && <span className="margin-week-status missing" title="その週の最終営業日の信用残データが欠損しています">欠損</span>}
+  </th>;
+}
 
 export default function MarginInterestPage() {
   const router = useRouter();
@@ -15,10 +39,12 @@ export default function MarginInterestPage() {
   const [initial] = useState(initialMarginPeriod);
   const [from, setFrom] = useState(initial.from);
   const [to, setTo] = useState(initial.to);
-  const [result, setResult] = useState<Result>({ rows: [], latest: null });
+  const [applied, setApplied] = useState(initial);
+  const [result, setResult] = useState<Result>({ rows: [], calendarDays: [], latest: null });
   const [selected, setSelected] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [ratioMode, setRatioMode] = useState(false);
+  const [frequency, setFrequency] = useState<MarginFrequency>("daily");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -51,6 +77,7 @@ export default function MarginInterestPage() {
       const body = await response.json();
       if (!response.ok) throw new Error(body.error || "取得に失敗しました");
       setResult(body as Result);
+      setApplied({ from: start, to: end });
       setSelected(null);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "取得に失敗しました");
@@ -63,9 +90,14 @@ export default function MarginInterestPage() {
     if (authenticated) void load(initial.from, initial.to);
   }, [authenticated, initial, load]);
 
+  const viewRows = useMemo(() => buildMarginViewRows(
+    result.rows, result.calendarDays, applied.from, applied.to, frequency, result.latest?.date ?? null,
+  ), [result, applied, frequency]);
+
   if (!authChecked) return <div className="margin-auth">認証中...</div>;
   if (!authenticated) return null;
-  const detail = result.rows.find((row) => row.date === selected) ?? result.rows[0];
+  const detail = viewRows.find((item) => item.date === selected && item.row)?.row
+    ?? viewRows.find((item) => item.row)?.row;
   const updated = result.latest?.updated_at
     ? new Intl.DateTimeFormat("ja-JP", { dateStyle: "short", timeStyle: "short", timeZone: "Asia/Tokyo" }).format(new Date(result.latest.updated_at))
     : "—";
@@ -74,7 +106,7 @@ export default function MarginInterestPage() {
     <header className="margin-page-header">
       <TopNavigation active="margin" />
       <div className="margin-heading">
-        <div><h1>信用買い残</h1><p>東証全体・33業種の申込日別残高</p></div>
+        <div><h1>信用買い残</h1><p>東証全体・33業種の残高基準日別データ</p></div>
         <div className="margin-latest">最新の残高基準日 <strong>{result.latest?.date ?? "—"}</strong><span>更新 {updated} JST</span></div>
       </div>
     </header>
@@ -83,20 +115,29 @@ export default function MarginInterestPage() {
       <label>開始日 <input type="date" value={from} max={to} onChange={(event) => setFrom(event.target.value)} /></label>
       <label>終了日 <input type="date" value={to} min={from} onChange={(event) => setTo(event.target.value)} /></label>
       <button type="submit" disabled={loading}>{loading ? "読み込み中..." : "表示"}</button>
+      <button type="button" className={`margin-frequency-button${frequency === "daily" ? " active" : ""}`}
+        aria-pressed={frequency === "daily"} onClick={() => setFrequency("daily")}>日次</button>
+      <button type="button" className={`margin-frequency-button${frequency === "weekly" ? " active" : ""}`}
+        aria-pressed={frequency === "weekly"} onClick={() => setFrequency("weekly")}>週次</button>
       <button type="button" className={`margin-ratio-button${ratioMode ? " active" : ""}`}
         aria-pressed={ratioMode} onClick={() => setRatioMode((current) => !current)}>レシオ</button>
       <span>{ratioMode ? "単位：億円／pt" : "金額単位：億円"}</span>
     </form>
+    {frequency === "weekly" && <p className="margin-week-explanation">週次は月曜〜日曜の最終営業日の残高基準日を表示します。最新の未確定週は取得済みの最新日を「暫定」、過去週の最終営業日が未保存なら「欠損」と表示します。週内の合計・平均は行いません。</p>}
     {ratioMode && <p className="margin-ratio-explanation">レシオ＝保存済みの信用買い残金額（円）÷同じ残高基準日の指数終値（pt）÷1億。市場全体はTOPIX、各業種は対応する東証33業種別株価指数で計算し、億円／ptで小数点以下4桁まで表示します。指数・金額が欠損、または指数が0以下の場合は「—」を表示します。</p>}
     {error && <p role="alert" className="margin-error">{error}</p>}
-    {!loading && !error && result.rows.length === 0 && <p className="margin-empty">指定期間の確定済みデータはありません。</p>}
+    {!loading && !error && viewRows.length === 0 && <p className="margin-empty">指定期間の保存済みデータはありません。</p>}
 
     <div className="margin-table-scroll" role="region" aria-label="信用買い残一覧" tabIndex={0}>
       <table className={`margin-table${ratioMode ? " margin-ratio-table" : ""}`}>
         {ratioMode ? <thead><tr>
           <th scope="col" className="margin-date-heading">日付</th>
-          <th scope="col">市場全体<br />買い残金額／TOPIX</th>
-          {MARGIN_SECTORS.map((sector) => <th key={sector.code} scope="col">{sector.name}<br />買い残金額／同業種指数</th>)}
+          <th scope="col">市場全体<br />買い残金額／TOPIX<br />（億円／pt）</th>
+          <th scope="col">TOPIX終値<br />（pt）</th>
+          {MARGIN_SECTORS.flatMap((sector) => [
+            <th key={`${sector.code}-ratio`} scope="col">{sector.name}<br />買い残金額／同業種指数<br />（億円／pt）</th>,
+            <th key={`${sector.code}-index`} scope="col">{sector.name}<br />指数終値（pt）</th>,
+          ])}
         </tr></thead> : <thead>
           <tr>
             <th rowSpan={2} className="margin-date-heading">日付</th>
@@ -109,19 +150,34 @@ export default function MarginInterestPage() {
           <tr>{MARGIN_SECTORS.map((sector) => <th key={sector.code} scope="col">{sector.name}</th>)}</tr>
         </thead>}
         {ratioMode ? <tbody>
-          {result.rows.map((row) => <tr key={row.date} className={selected === row.date ? "selected" : ""}>
-            <th scope="row"><button type="button" title="分類内訳を表示" onClick={() => setSelected(row.date)}>{row.date}{jpxCorrectionDifference(row) ? " ⚠" : ""}</button></th>
-            <td>{formatMarginRatio(row.long_value_yen, row.topix_close)}</td>
-            {MARGIN_SECTORS.map(({ code, indexCode }) => <td key={code}>{formatMarginRatio(row.sector_long_yen?.[code], row.sector_index_close?.[indexCode])}</td>)}
+          {viewRows.map((item) => <tr key={item.date} className={selected === item.date ? "selected" : ""}>
+            <DateCell item={item} selected={selected} select={setSelected} />
+            <RatioCell value={formatMarginRatio(item.row?.long_value_yen, item.row?.topix_close)}
+              direction={marginRatioDirection(item.row?.long_value_yen, item.row?.topix_close,
+                item.comparisonRow?.long_value_yen, item.comparisonRow?.topix_close)}
+              comparisonDate={item.comparisonDate} />
+            <RatioCell value={formatIndexClose(item.row?.topix_close)}
+              direction={indexDirection(item.row?.topix_close, item.comparisonRow?.topix_close)}
+              comparisonDate={item.comparisonDate} />
+            {MARGIN_SECTORS.flatMap(({ code, indexCode }) => [
+              <RatioCell key={`${code}-ratio`}
+                value={formatMarginRatio(item.row?.sector_long_yen?.[code], item.row?.sector_index_close?.[indexCode])}
+                direction={marginRatioDirection(item.row?.sector_long_yen?.[code], item.row?.sector_index_close?.[indexCode],
+                  item.comparisonRow?.sector_long_yen?.[code], item.comparisonRow?.sector_index_close?.[indexCode])}
+                comparisonDate={item.comparisonDate} />,
+              <RatioCell key={`${code}-index`} value={formatIndexClose(item.row?.sector_index_close?.[indexCode])}
+                direction={indexDirection(item.row?.sector_index_close?.[indexCode], item.comparisonRow?.sector_index_close?.[indexCode])}
+                comparisonDate={item.comparisonDate} />,
+            ])}
           </tr>)}
         </tbody> : <tbody>
-          {result.rows.map((row) => <tr key={row.date} className={selected === row.date ? "selected" : ""}>
-            <th scope="row"><button type="button" title="分類内訳を表示" onClick={() => setSelected(row.date)}>{row.date}{jpxCorrectionDifference(row) ? " ⚠" : ""}</button></th>
-            <td>{formatIndexClose(row.topix_close)}</td>
-            <td>{formatIndexClose(row.nikkei_close)}</td>
-            <td>{formatMarginOku(row.short_value_yen)}</td>
-            <td>{formatMarginOku(row.long_value_yen)}</td>
-            {MARGIN_SECTORS.map(({ code }) => <td key={code}>{formatMarginOku(row.sector_long_yen?.[code])}</td>)}
+          {viewRows.map((item) => <tr key={item.date} className={selected === item.date ? "selected" : ""}>
+            <DateCell item={item} selected={selected} select={setSelected} />
+            <td>{formatIndexClose(item.row?.topix_close)}</td>
+            <td>{formatIndexClose(item.row?.nikkei_close)}</td>
+            <td>{formatMarginOku(item.row?.short_value_yen)}</td>
+            <td>{formatMarginOku(item.row?.long_value_yen)}</td>
+            {MARGIN_SECTORS.map(({ code }) => <td key={code}>{formatMarginOku(item.row?.sector_long_yen?.[code])}</td>)}
           </tr>)}
         </tbody>}
       </table>
