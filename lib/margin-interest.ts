@@ -46,6 +46,24 @@ export type MarginViewRow = {
   missing: boolean;
 };
 
+export type MarginIndexBar = {
+  open: string | number | null;
+  high: string | number | null;
+  low: string | number | null;
+  close: string | number | null;
+};
+export type MarginIndexBars = Record<string, Record<string, MarginIndexBar>>;
+export type MarginChartPoint = {
+  date: string;
+  open: number | null;
+  high: number | null;
+  low: number | null;
+  close: number | null;
+  marginOku: number | null;
+  provisional: boolean;
+  missing: boolean;
+};
+
 function shiftDate(day: string, offset: number): string {
   const value = new Date(`${day}T00:00:00Z`);
   value.setUTCDate(value.getUTCDate() + offset);
@@ -111,6 +129,44 @@ export function buildMarginViewRows(
       provisional, missing });
   }
   return weekly.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function chartNumber(value: string | number | null | undefined): number | null {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? number : null;
+}
+
+function completeChartBar(value: MarginIndexBar | undefined) {
+  if (!value) return null;
+  const open = chartNumber(value.open), high = chartNumber(value.high);
+  const low = chartNumber(value.low), close = chartNumber(value.close);
+  if (open === null || high === null || low === null || close === null ||
+      high < Math.max(open, close) || low > Math.min(open, close) || low > high) return null;
+  return { open, high, low, close };
+}
+
+/** Index days and credit balances join on the actual balance date. No close-only candles. */
+export function buildMarginChartPoints(
+  viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
+  sectorCode: string, indexCode: string, frequency: MarginFrequency,
+): MarginChartPoint[] {
+  const days = [...new Set(calendarDays)].sort();
+  return [...viewRows].reverse().map((item) => {
+    const indexDays = frequency === "daily" ? [item.date] : days.filter((day) =>
+      marginWeekStart(day) === marginWeekStart(item.date) && day <= item.date);
+    const complete = indexDays.map((day) => completeChartBar(bars[day]?.[indexCode]));
+    const ohlc = indexDays.length && complete.every((bar) => bar !== null)
+      ? { open: complete[0]!.open, high: Math.max(...complete.map((bar) => bar!.high)),
+          low: Math.min(...complete.map((bar) => bar!.low)), close: complete[complete.length - 1]!.close }
+      : null;
+    const money = item.row?.sector_long_yen?.[sectorCode];
+    const marginOku = money === null || money === undefined || money === "" ||
+      !Number.isFinite(Number(money)) || Number(money) < 0 ? null : Number(money) / 100_000_000;
+    return { date: item.date, open: ohlc?.open ?? null, high: ohlc?.high ?? null,
+      low: ohlc?.low ?? null, close: ohlc?.close ?? null, marginOku,
+      provisional: item.provisional, missing: item.missing };
+  });
 }
 
 // JPX corrected its 19/20 October issue-level PDFs after their first release.

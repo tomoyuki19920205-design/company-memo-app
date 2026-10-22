@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { MARGIN_SECTORS, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
+import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
   indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection, marginWeekStart,
   type MarginRow } from "../lib/margin-interest";
 
@@ -75,6 +75,37 @@ test("weekly uses holiday-adjusted final day, flags missing finals and the lates
   const narrow = buildMarginViewRows(rows, calendar, "2026-10-20", "2026-10-21", "weekly", "2026-10-21");
   assert.deepEqual(narrow.map(({ date, comparisonDate }) => [date, comparisonDate]),
     [["2026-10-21", "2026-10-16"]]);
+});
+
+test("daily charts use exact balance date OHLC and distinguish missing money from zero", () => {
+  const rows = [dated("2026-10-20", "0"), dated("2026-10-21")];
+  const days = ["2026-10-20", "2026-10-21"];
+  const view = buildMarginViewRows(rows, days, days[0], days[1], "daily", days[1]);
+  const bars = {
+    "2026-10-20": { "0040": { open: "10", high: "13", low: "9", close: "11" } },
+    "2026-10-21": { "0040": { open: null, high: "14", low: "10", close: "12" } },
+  };
+  const points = buildMarginChartPoints(view, days, bars, "0050", "0040", "daily");
+  assert.deepEqual(points.map(({ date, open, close, marginOku }) => [date, open, close, marginOku]), [
+    [days[0], 10, 11, 0], [days[1], null, null, 1],
+  ]);
+  assert.equal(buildMarginChartPoints(view, days, bars, "1050", "0041", "daily")[0].marginOku, null);
+});
+
+test("weekly candle combines provider days through provisional balance date and uses final balance only", () => {
+  const days = ["2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23"];
+  const view = buildMarginViewRows([dated(days[0], "200000000"), dated(days[2], "300000000")],
+    days, days[0], days[2], "weekly", days[2]);
+  const bars = {
+    [days[0]]: { "0040": { open: "10", high: "12", low: "9", close: "11" } },
+    [days[1]]: { "0040": { open: "11", high: "14", low: "10", close: "13" } },
+    [days[2]]: { "0040": { open: "13", high: "15", low: "12", close: "14" } },
+  };
+  const [point] = buildMarginChartPoints(view, days, bars, "0050", "0040", "weekly");
+  assert.deepEqual([point.date, point.open, point.high, point.low, point.close,
+    point.marginOku, point.provisional], [days[2], 10, 15, 9, 14, 3, true]);
+  delete (bars as Record<string, unknown>)[days[1]];
+  assert.equal(buildMarginChartPoints(view, days, bars, "0050", "0040", "weekly")[0].open, null);
 });
 
 test("missing values remain distinct from actual zero and yen remain precise until rendering", () => {

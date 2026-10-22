@@ -4505,9 +4505,12 @@ body:has(.alerts-layout) {
 .margin-period .margin-frequency-button.active { background:#1d4ed8; border-color:#93c5fd; color:white; box-shadow:0 0 0 2px #60a5fa55; }
 .margin-period .margin-ratio-button { background:var(--card-bg); color:#bfdbfe; }
 .margin-period .margin-ratio-button.active { background:#0f766e; border-color:#5eead4; color:white; box-shadow:0 0 0 2px #5eead466; }
+.margin-period .margin-chart-button { background:var(--card-bg); color:#bfdbfe; }
+.margin-period .margin-chart-button.active { background:#6d28d9; border-color:#c4b5fd; color:white; box-shadow:0 0 0 2px #a78bfa66; }
 .margin-period > span { margin-left:auto; padding-bottom:7px; }
 .margin-ratio-explanation { margin:-4px 0 12px; color:var(--text-muted); font-size:.78rem; line-height:1.6; }
 .margin-week-explanation { margin:-4px 0 12px; color:var(--text-muted); font-size:.78rem; line-height:1.6; }
+.margin-chart-explanation { margin:-4px 0 12px; color:var(--text-muted); font-size:.78rem; line-height:1.6; }
 .margin-auth,.margin-empty { padding:32px; color:var(--text-muted); }
 .margin-error { margin:12px 0; color:#fca5a5; }
 .margin-table-scroll { width:100%; max-height:calc(100vh - 250px); min-height:180px; overflow:auto; border:1px solid var(--border); border-radius:7px; scrollbar-gutter:stable; }
@@ -4543,4 +4546,27 @@ body:has(.alerts-layout) {
 .margin-note { margin:10px 0 0; color:var(--text-muted); font-size:.77rem; line-height:1.6; }
 .margin-warning { margin:8px 0 0; padding:8px 10px; border:1px solid #a16207; border-radius:5px; background:#422006; color:#fde68a; font-size:.78rem; }
 .margin-warning a { margin-left:8px; color:#bfdbfe; text-decoration:underline; }
+.margin-chart-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; align-items:start; }
+.margin-chart-card { min-width:0; padding:14px; border:1px solid var(--border); border-radius:8px; background:var(--card-bg); }
+.margin-chart-card header { display:flex; align-items:center; gap:8px; min-height:25px; }
+.margin-chart-card h2 { margin:0; color:var(--text); font-size:.94rem; font-weight:650; }
+.margin-chart-legend { display:flex; gap:16px; flex-wrap:wrap; margin:5px 0; color:var(--text-muted); font-size:.72rem; }
+.margin-chart-legend span::before { content:""; display:inline-block; width:11px; height:11px; margin-right:5px; vertical-align:-1px; border-radius:2px; }
+.margin-candle-key::before { background:#4ADE80; }
+.margin-bar-key::before { background:#60a5fa88; }
+.margin-chart-host { min-height:225px; }
+.margin-chart-placeholder { display:grid; place-items:center; min-height:225px; color:var(--text-muted); font-size:.8rem; }
+.margin-chart-plot { position:relative; }
+.margin-chart-plot svg { display:block; width:100%; height:auto; min-height:220px; }
+.margin-chart-gridline { stroke:#334155; stroke-width:1; }
+.margin-chart-axis-text { fill:#aab9ca; font-size:10px; font-variant-numeric:tabular-nums; }
+.margin-chart-axis-title { fill:#cbd5e1; font-size:11px; }
+.margin-chart-bar { fill:#60a5fa; fill-opacity:.38; }
+.margin-chart-up line,.margin-chart-up rect { stroke:#4ADE80; fill:#4ADE80; stroke-width:1.7; }
+.margin-chart-down line,.margin-chart-down rect { stroke:#FF4D4F; fill:#FF4D4F; stroke-width:1.7; }
+.margin-chart-crosshair { stroke:#e2e8f0; stroke-dasharray:3 3; stroke-width:1; pointer-events:none; }
+.margin-chart-tooltip { position:absolute; z-index:2; top:22px; right:5px; display:grid; grid-template-columns:repeat(2,max-content); gap:2px 10px; padding:7px 9px; border:1px solid #64748b; border-radius:5px; background:#0b1520ed; color:#e2e8f0; font-size:.72rem; pointer-events:none; box-shadow:0 5px 18px #0008; }
+.margin-chart-tooltip strong,.margin-chart-tooltip span:last-child { grid-column:1 / -1; }
+@media (max-width:1450px) { .margin-chart-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:850px) { .margin-chart-grid { grid-template-columns:minmax(0,1fr); } }
 @media (max-width:700px) { .margin-page { padding:12px; } .margin-heading { align-items:start; flex-direction:column; } .margin-period > span { margin-left:0; } .margin-table-scroll { max-height:calc(100vh - 290px); } }
