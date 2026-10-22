@@ -165,6 +165,24 @@ export function buildMarginChartPoints(
   sectorCode: string, indexCode: string, frequency: MarginFrequency,
   weeklyBars: MarginIndexBars = {},
 ): MarginChartPoint[] {
+  return buildChartPoints(viewRows, calendarDays, bars, indexCode, frequency, weeklyBars,
+    (row) => row.sector_long_yen?.[sectorCode]);
+}
+
+/** Market money uses the same saved Tokyo-market amount as the normal table and ratio. */
+export function buildMarginMarketChartPoints(
+  viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
+  frequency: MarginFrequency, weeklyBars: MarginIndexBars = {},
+): MarginChartPoint[] {
+  return buildChartPoints(viewRows, calendarDays, bars, "TOPIX", frequency, weeklyBars,
+    (row) => row.long_value_yen);
+}
+
+function buildChartPoints(
+  viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
+  indexCode: string, frequency: MarginFrequency, weeklyBars: MarginIndexBars,
+  moneyFor: (row: MarginRow) => string | number | null | undefined,
+): MarginChartPoint[] {
   const days = [...new Set(calendarDays)].sort();
   return [...viewRows].reverse().map((item) => {
     const indexDays = frequency === "daily" ? [item.date] : days.filter((day) =>
@@ -176,7 +194,7 @@ export function buildMarginChartPoints(
           low: Math.min(...complete.map((bar) => bar!.low)), close: complete[complete.length - 1]!.close }
       : null;
     const ohlc = savedWeekly ?? derived;
-    const money = item.row?.sector_long_yen?.[sectorCode];
+    const money = item.row ? moneyFor(item.row) : null;
     const marginOku = money === null || money === undefined || money === "" ||
       !Number.isFinite(Number(money)) || Number(money) < 0 ? null : Number(money) / 100_000_000;
     return { date: item.date, open: ohlc?.open ?? null, high: ohlc?.high ?? null,

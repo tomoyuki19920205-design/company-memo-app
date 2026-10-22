@@ -136,7 +136,7 @@ export default function MarginInterestPage() {
     {frequency === "weekly" && viewRows.some((item) => item.row?.money_reason) &&
       <p className="margin-week-explanation">2026年9月25日より前のJ-Quants銘柄別信用残には金額がありません。業種別の金額・レシオは「—」、市場全体の金額はJPXの東京・名古屋合計から名証の名古屋分を引いた東京市場分（百万円単位）です。保存済みの業種別株数は下の週次株数表に表示します。指数の週足は週内の日足四本値から作成しています。</p>}
     {ratioMode && !chartMode && <p className="margin-ratio-explanation">レシオ＝保存済みの信用買い残金額（円）÷同じ残高基準日の指数終値（pt）÷1億。市場全体はTOPIX、各業種は対応する東証33業種別株価指数で計算し、億円／ptで小数点以下4桁まで表示します。指数・金額が欠損、または指数が0以下の場合は「—」を表示します。</p>}
-    {chartMode && <p className="margin-chart-explanation">東証33業種の株価指数（始値・高値・安値・終値）と、同じ残高基準日の信用買い残金額を重ねて表示します。週足は週内の最初の始値・最高値・最安値・最後の終値、買い残は週末時点の残高です。欠損は補完しません。</p>}
+    {chartMode && <p className="margin-chart-explanation">市場全体のTOPIXと東証33業種の株価指数（始値・高値・安値・終値）に、同じ残高基準日の信用買い残金額を重ねて表示します。週足は週内の最初の始値・最高値・最安値・最後の終値、買い残は週末時点の残高です。欠損は補完しません。</p>}
     {error && <p role="alert" className="margin-error">{error}</p>}
     {!loading && !error && viewRows.length === 0 && <p className="margin-empty">指定期間の保存済みデータはありません。</p>}
 

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
+import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
   indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection, marginWeekStart,
   type MarginRow } from "../lib/margin-interest";
 
@@ -90,6 +90,28 @@ test("daily charts use exact balance date OHLC and distinguish missing money fro
     [days[0], 10, 11, 0], [days[1], null, null, 1],
   ]);
   assert.equal(buildMarginChartPoints(view, days, bars, "1050", "0041", "daily")[0].marginOku, null);
+});
+
+test("market chart uses saved Tokyo money and TOPIX candles for daily and historical weekly dates", () => {
+  const day = "2026-10-21";
+  const daily = buildMarginViewRows([dated(day, "6500000000000")], [day], day, day, "daily", day);
+  const dailyBars = { [day]: { TOPIX: { open: "4000", high: "4050", low: "3980", close: "4025" } } };
+  const [dailyPoint] = buildMarginMarketChartPoints(daily, [day], dailyBars, "daily");
+  assert.deepEqual([dailyPoint.date, dailyPoint.open, dailyPoint.high, dailyPoint.low,
+    dailyPoint.close, dailyPoint.marginOku], [day, 4000, 4050, 3980, 4025, 65000]);
+
+  const weekDay = "2026-07-24";
+  const oldWeek = { ...dated(weekDay, "6474105000000"), source_frequency: "weekly" as const,
+    sector_long_yen: {} };
+  const weekly = buildMarginViewRows([oldWeek], ["2026-07-21", "2026-07-22", "2026-07-23", weekDay],
+    "2026-07-22", weekDay, "weekly", day);
+  const weeklyBars = { [weekDay]: { TOPIX: {
+    open: "3944.79", high: "4070.43", low: "3930.17", close: "4011.31",
+  } } };
+  const [weeklyPoint] = buildMarginMarketChartPoints(weekly, [weekDay], {}, "weekly", weeklyBars);
+  assert.deepEqual([weeklyPoint.date, weeklyPoint.open, weeklyPoint.high, weeklyPoint.low,
+    weeklyPoint.close, weeklyPoint.marginOku], [weekDay, 3944.79, 4070.43, 3930.17, 4011.31, 64741.05]);
+  assert.equal(buildMarginChartPoints(weekly, [weekDay], {}, "0050", "0040", "weekly")[0].marginOku, null);
 });
 
 test("weekly candle combines provider days through provisional balance date and uses final balance only", () => {

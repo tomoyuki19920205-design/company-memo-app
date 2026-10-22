@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MARGIN_SECTORS, buildMarginChartPoints, type MarginChartPoint,
+import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, type MarginChartPoint,
   type MarginFrequency, type MarginIndexBars, type MarginViewRow } from "@/lib/margin-interest";
 
 const format = (value: number | null, digits = 2) => value === null ? "—" :
@@ -106,7 +106,9 @@ export default function MarginSectorCharts({ viewRows, calendarDays, indexBars, 
   viewRows: MarginViewRow[]; calendarDays: string[]; indexBars: MarginIndexBars; weeklyBars: MarginIndexBars;
   frequency: MarginFrequency;
 }) {
-  return <div className="margin-chart-grid" aria-label="東証33業種の複合チャート">
+  return <div className="margin-chart-grid" aria-label="市場全体と東証33業種の複合チャート">
+    <SectorChart name="市場全体（TOPIX）" frequency={frequency} points={buildMarginMarketChartPoints(
+      viewRows, calendarDays, indexBars, frequency, weeklyBars)} />
     {MARGIN_SECTORS.map((sector) => <SectorChart key={sector.code} name={sector.name}
       frequency={frequency} points={buildMarginChartPoints(
         viewRows, calendarDays, indexBars, sector.code, sector.indexCode, frequency, weeklyBars)} />)}
