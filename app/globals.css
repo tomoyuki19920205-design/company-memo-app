@@ -4559,6 +4559,7 @@ body:has(.alerts-layout) {
 .margin-chart-plot { position:relative; }
 .margin-chart-plot svg { display:block; width:100%; height:auto; min-height:220px; }
 .margin-chart-gridline { stroke:#334155; stroke-width:1; }
+.margin-chart-money-tick { stroke:#aab9ca; stroke-width:1; }
 .margin-chart-axis-text { fill:#aab9ca; font-size:10px; font-variant-numeric:tabular-nums; }
 .margin-chart-axis-title { fill:#cbd5e1; font-size:11px; }
 .margin-chart-bar { fill:#60a5fa; fill-opacity:.38; }

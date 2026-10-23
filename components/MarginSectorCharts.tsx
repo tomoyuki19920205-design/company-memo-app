@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, type MarginChartPoint,
   type MarginFrequency, type MarginIndexBars, type MarginViewRow } from "@/lib/margin-interest";
+import { buildMarginMoneyScale, marginMoneyY } from "@/lib/margin-chart-scale";
 
 const format = (value: number | null, digits = 2) => value === null ? "—" :
   value.toLocaleString("ja-JP", { minimumFractionDigits: digits, maximumFractionDigits: digits });
@@ -31,12 +32,12 @@ function SectorChart({ name, points, frequency }: {
   const maxPrice = prices.length ? Math.max(...prices.map((point) => point.high!)) : 1;
   const pricePad = Math.max((maxPrice - minPrice) * 0.08, maxPrice * 0.005, 1);
   const priceBottom = Math.max(0, minPrice - pricePad), priceTop = maxPrice + pricePad;
-  const maxMoney = Math.max(...points.map((point) => point.marginOku ?? 0), 1) * 1.12;
+  const moneyScale = buildMarginMoneyScale(points.map((point) => point.marginOku));
   const step = plotWidth / Math.max(points.length, 1);
   const candleWidth = Math.max(2, Math.min(12, step * 0.5));
   const barWidth = Math.max(3, Math.min(18, step * 0.75));
   const priceY = (value: number) => top + (priceTop - value) / (priceTop - priceBottom) * plotHeight;
-  const moneyY = (value: number) => bottom - value / maxMoney * plotHeight;
+  const moneyY = (value: number) => marginMoneyY(value, moneyScale, top, bottom);
   const active = hovered === null ? null : points[hovered];
   const latest = points.at(-1);
   const ticks = [...new Set([0, Math.floor((points.length - 1) / 2), points.length - 1])]
@@ -65,15 +66,21 @@ function SectorChart({ name, points, frequency }: {
                   y1={top + fraction * plotHeight} y2={top + fraction * plotHeight} />
                 <text className="margin-chart-axis-text" x={left - 6} y={top + fraction * plotHeight + 4}
                   textAnchor="end">{format(priceTop - fraction * (priceTop - priceBottom), 0)}</text>
-                <text className="margin-chart-axis-text" x={width - right + 6} y={top + fraction * plotHeight + 4}>
-                  {format((1 - fraction) * maxMoney, 0)}</text>
               </g>)}
+              {moneyScale.ticks.map((value) => <g key={value}>
+                <line className="margin-chart-money-tick" x1={width - right} x2={width - right + 4}
+                  y1={moneyY(value)} y2={moneyY(value)} />
+                <text className="margin-chart-axis-text" x={width - right + 6} y={moneyY(value) + 4}>
+                  {format(value, moneyScale.digits)}</text>
+              </g>)}
+              {!moneyScale.ticks.length && <text className="margin-chart-axis-text"
+                x={width - right + 6} y={top + plotHeight / 2 + 4}>—</text>}
               <text className="margin-chart-axis-title" x={left} y={11}>指数（pt）</text>
               <text className="margin-chart-axis-title" x={width - right} y={11} textAnchor="end">買い残（億円）</text>
               {points.map((point, index) => point.marginOku === null ? null : <rect key={`bar-${point.date}`}
                 data-date={point.date} className="margin-chart-bar"
                 x={left + step * (index + 0.5) - barWidth / 2} y={moneyY(point.marginOku)}
-                width={barWidth} height={bottom - moneyY(point.marginOku)} />)}
+                width={barWidth} height={Math.max(0, bottom - moneyY(point.marginOku))} />)}
               {points.map((point, index) => point.open === null || point.high === null ||
                 point.low === null || point.close === null ? null : <g key={`candle-${point.date}`}
                 data-date={point.date} className={point.close >= point.open ? "margin-chart-up" : "margin-chart-down"}>
