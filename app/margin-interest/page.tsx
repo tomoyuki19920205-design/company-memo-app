@@ -46,7 +46,7 @@ export default function MarginInterestPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [ratioMode, setRatioMode] = useState(false);
-  const [chartMode, setChartMode] = useState(false);
+  const [chartMode, setChartMode] = useState(true);
   const [frequency, setFrequency] = useState<MarginFrequency>("daily");
   const [error, setError] = useState("");
 
