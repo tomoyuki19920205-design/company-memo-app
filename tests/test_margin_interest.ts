@@ -130,6 +130,35 @@ test("weekly candle combines provider days through provisional balance date and 
   assert.equal(buildMarginChartPoints(view, days, bars, "0050", "0040", "weekly")[0].open, null);
 });
 
+test("newer index dates extend daily and weekly charts without carrying forward credit money", () => {
+  const days = ["2026-10-22", "2026-10-23"];
+  const bars = {
+    [days[0]]: { TOPIX: { open: "3950", high: "4010", low: "3940", close: "3997" },
+      "0040": { open: "500", high: "510", low: "495", close: "505" } },
+    [days[1]]: { TOPIX: { open: "3985", high: "3987", low: "3907", close: "3965" },
+      "0040": { open: "505", high: "509", low: "490", close: "492" } },
+  };
+  const rows = [dated(days[0], "6614343940904")];
+  const range = { from: days[0], to: days[1] };
+  const daily = buildMarginViewRows(rows, days, range.from, range.to, "daily", days[0]);
+  const market = buildMarginMarketChartPoints(daily, days, bars, "daily", {}, range);
+  assert.deepEqual(market.map(({ date, close, marginOku }) => [date, close, marginOku]),
+    [[days[0], 3997, 66143.43940904], [days[1], 3965, null]]);
+  const sector = buildMarginChartPoints(daily, days, bars, "0050", "0040", "daily", {}, range);
+  assert.deepEqual(sector.map(({ date, close, marginOku }) => [date, close, marginOku]),
+    [[days[0], 505, 66143.43940904], [days[1], 492, null]]);
+  assert.deepEqual(buildMarginMarketChartPoints(daily, days, bars, "daily", {},
+    { from: days[0], to: days[0] }).map(({ date }) => date), [days[0]]);
+
+  const weekly = buildMarginViewRows(rows, days, range.from, range.to, "weekly", days[0]);
+  const weeklyMarket = buildMarginMarketChartPoints(weekly, days, bars, "weekly", {}, range);
+  assert.deepEqual(weeklyMarket.map(({ date, open, high, low, close, marginOku }) =>
+    [date, open, high, low, close, marginOku]), [
+    [days[0], 3950, 4010, 3940, 3997, 66143.43940904],
+    [days[1], 3950, 4010, 3907, 3965, null],
+  ]);
+});
+
 test("old weekly volume rows stay out of daily mode while saved weekly candles remain visible", () => {
   const days = ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17",
     "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24"];

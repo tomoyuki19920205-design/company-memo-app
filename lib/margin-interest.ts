@@ -159,47 +159,70 @@ function completeChartBar(value: MarginIndexBar | undefined) {
   return { open, high, low, close };
 }
 
-/** Index days and credit balances join on the actual balance date. No close-only candles. */
+/** Index days extend independently; credit money is used only on its actual balance date. */
 export function buildMarginChartPoints(
   viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
   sectorCode: string, indexCode: string, frequency: MarginFrequency,
-  weeklyBars: MarginIndexBars = {},
+  weeklyBars: MarginIndexBars = {}, range?: { from: string; to: string },
 ): MarginChartPoint[] {
   return buildChartPoints(viewRows, calendarDays, bars, indexCode, frequency, weeklyBars,
-    (row) => row.sector_long_yen?.[sectorCode]);
+    (row) => row.sector_long_yen?.[sectorCode], range);
 }
 
 /** Market money uses the same saved Tokyo-market amount as the normal table and ratio. */
 export function buildMarginMarketChartPoints(
   viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
   frequency: MarginFrequency, weeklyBars: MarginIndexBars = {},
+  range?: { from: string; to: string },
 ): MarginChartPoint[] {
   return buildChartPoints(viewRows, calendarDays, bars, "TOPIX", frequency, weeklyBars,
-    (row) => row.long_value_yen);
+    (row) => row.long_value_yen, range);
 }
 
 function buildChartPoints(
   viewRows: MarginViewRow[], calendarDays: string[], bars: MarginIndexBars,
   indexCode: string, frequency: MarginFrequency, weeklyBars: MarginIndexBars,
   moneyFor: (row: MarginRow) => string | number | null | undefined,
+  range?: { from: string; to: string },
 ): MarginChartPoint[] {
   const days = [...new Set(calendarDays)].sort();
-  return [...viewRows].reverse().map((item) => {
-    const indexDays = frequency === "daily" ? [item.date] : days.filter((day) =>
-      marginWeekStart(day) === marginWeekStart(item.date) && day <= item.date);
+  const byDate = new Map(viewRows.map((item) => [item.date, item]));
+  const chartDates = new Set(viewRows.map((item) => item.date));
+  if (range) {
+    const indexDates = Object.keys(bars).filter((day) =>
+      range.from <= day && day <= range.to && completeChartBar(bars[day]?.[indexCode]));
+    if (frequency === "daily") {
+      for (const day of indexDates) chartDates.add(day);
+    } else {
+      // A new index day may follow the latest published balance in the same week.
+      // Keep both actual dates so the newer index does not inherit old money.
+      const latestByWeek = new Map<string, string>();
+      for (const day of indexDates.sort()) latestByWeek.set(marginWeekStart(day), day);
+      for (const day of latestByWeek.values()) chartDates.add(day);
+      for (const day of Object.keys(weeklyBars)) {
+        if (range.from <= day && day <= range.to && completeChartBar(weeklyBars[day]?.[indexCode])) {
+          chartDates.add(day);
+        }
+      }
+    }
+  }
+  return [...chartDates].sort().map((date) => {
+    const item = byDate.get(date);
+    const indexDays = frequency === "daily" ? [date] : days.filter((day) =>
+      marginWeekStart(day) === marginWeekStart(date) && day <= date);
     const complete = indexDays.map((day) => completeChartBar(bars[day]?.[indexCode]));
-    const savedWeekly = frequency === "weekly" ? completeChartBar(weeklyBars[item.date]?.[indexCode]) : null;
+    const savedWeekly = frequency === "weekly" ? completeChartBar(weeklyBars[date]?.[indexCode]) : null;
     const derived = indexDays.length && complete.every((bar) => bar !== null)
       ? { open: complete[0]!.open, high: Math.max(...complete.map((bar) => bar!.high)),
           low: Math.min(...complete.map((bar) => bar!.low)), close: complete[complete.length - 1]!.close }
       : null;
     const ohlc = savedWeekly ?? derived;
-    const money = item.row ? moneyFor(item.row) : null;
+    const money = item?.row ? moneyFor(item.row) : null;
     const marginOku = money === null || money === undefined || money === "" ||
       !Number.isFinite(Number(money)) || Number(money) < 0 ? null : Number(money) / 100_000_000;
-    return { date: item.date, open: ohlc?.open ?? null, high: ohlc?.high ?? null,
+    return { date, open: ohlc?.open ?? null, high: ohlc?.high ?? null,
       low: ohlc?.low ?? null, close: ohlc?.close ?? null, marginOku,
-      provisional: item.provisional, missing: item.missing };
+      provisional: item?.provisional ?? false, missing: item?.missing ?? false };
   });
 }
 

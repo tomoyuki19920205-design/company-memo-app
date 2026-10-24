@@ -39,13 +39,13 @@ function SectorChart({ name, points, frequency }: {
   const priceY = (value: number) => top + (priceTop - value) / (priceTop - priceBottom) * plotHeight;
   const moneyY = (value: number) => marginMoneyY(value, moneyScale, top, bottom);
   const active = hovered === null ? null : points[hovered];
-  const latest = points.at(-1);
+  const latestProvisional = [...points].reverse().find((point) => point.provisional);
   const ticks = [...new Set([0, Math.floor((points.length - 1) / 2), points.length - 1])]
     .filter((index) => index >= 0 && index < points.length);
 
   return <article className="margin-chart-card" data-sector={name}>
-    <header><h2>{name}</h2>{latest?.provisional && <span className="margin-week-status provisional">
-      暫定・{latest.date}</span>}{points.some((point) => point.missing) &&
+    <header><h2>{name}</h2>{latestProvisional && <span className="margin-week-status provisional">
+      暫定・{latestProvisional.date}</span>}{points.some((point) => point.missing) &&
       <span className="margin-week-status missing" title={points.filter((point) => point.missing)
         .map((point) => point.date).join("、")}>週末残高欠損</span>}</header>
     <div className="margin-chart-legend"><span className="margin-candle-key">指数ローソク足</span>
@@ -81,6 +81,11 @@ function SectorChart({ name, points, frequency }: {
                 data-date={point.date} className="margin-chart-bar"
                 x={left + step * (index + 0.5) - barWidth / 2} y={moneyY(point.marginOku)}
                 width={barWidth} height={Math.max(0, bottom - moneyY(point.marginOku))} />)}
+              {points.slice(1).map((point, index) => point.close === null ||
+                points[index].close === null ? null : <line key={`close-${point.date}`}
+                  className="margin-chart-close-line"
+                  x1={left + step * (index + 0.5)} y1={priceY(points[index].close!)}
+                  x2={left + step * (index + 1.5)} y2={priceY(point.close)} />)}
               {points.map((point, index) => point.open === null || point.high === null ||
                 point.low === null || point.close === null ? null : <g key={`candle-${point.date}`}
                 data-date={point.date} className={point.close >= point.open ? "margin-chart-up" : "margin-chart-down"}>
@@ -96,28 +101,28 @@ function SectorChart({ name, points, frequency }: {
                 x={left + step * (index + 0.5)} y={height - 18} textAnchor="middle">
                 {points[index].date.slice(5)}</text>)}
               <text className="margin-chart-axis-title" x={left + plotWidth / 2} y={height - 2}
-                textAnchor="middle">残高基準日</text>
+                textAnchor="middle">データ対象日</text>
             </svg>
             {active && <div className="margin-chart-tooltip" role="status">
-              <strong>{active.date}{active.provisional ? "（暫定）" : ""}{active.missing ? "（買い残欠損）" : ""}</strong>
+              <strong>対象日 {active.date}{active.provisional ? "（暫定）" : ""}{active.missing ? "（買い残欠損）" : ""}</strong>
               <span>始値 {format(active.open)} pt</span><span>高値 {format(active.high)} pt</span>
               <span>安値 {format(active.low)} pt</span><span>終値 {format(active.close)} pt</span>
-              <span>信用買い残 {format(active.marginOku)} 億円</span>
+              <span>信用買い残 {active.marginOku === null ? "未取得" : `${format(active.marginOku)} 億円`}</span>
             </div>}
           </div>}
     </div>
   </article>;
 }
 
-export default function MarginSectorCharts({ viewRows, calendarDays, indexBars, weeklyBars, frequency }: {
+export default function MarginSectorCharts({ viewRows, calendarDays, indexBars, weeklyBars, frequency, range }: {
   viewRows: MarginViewRow[]; calendarDays: string[]; indexBars: MarginIndexBars; weeklyBars: MarginIndexBars;
-  frequency: MarginFrequency;
+  frequency: MarginFrequency; range: { from: string; to: string };
 }) {
   return <div className="margin-chart-grid" aria-label="市場全体と東証33業種の複合チャート">
     <SectorChart name="市場全体（TOPIX）" frequency={frequency} points={buildMarginMarketChartPoints(
-      viewRows, calendarDays, indexBars, frequency, weeklyBars)} />
+      viewRows, calendarDays, indexBars, frequency, weeklyBars, range)} />
     {MARGIN_SECTORS.map((sector) => <SectorChart key={sector.code} name={sector.name}
       frequency={frequency} points={buildMarginChartPoints(
-        viewRows, calendarDays, indexBars, sector.code, sector.indexCode, frequency, weeklyBars)} />)}
+        viewRows, calendarDays, indexBars, sector.code, sector.indexCode, frequency, weeklyBars, range)} />)}
   </div>;
 }
