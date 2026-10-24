@@ -4563,7 +4563,7 @@ body:has(.alerts-layout) {
 .margin-chart-axis-text { fill:#aab9ca; font-size:10px; font-variant-numeric:tabular-nums; }
 .margin-chart-axis-title { fill:#cbd5e1; font-size:11px; }
 .margin-chart-bar { fill:#60a5fa; fill-opacity:.38; }
-.margin-chart-boundary { stroke:#FF4D4F; stroke-width:1.5; stroke-dasharray:4 4; vector-effect:non-scaling-stroke; pointer-events:none; }
+.margin-chart-boundary { stroke:#60a5fa; stroke-opacity:.38; stroke-width:1.5; stroke-dasharray:4 4; vector-effect:non-scaling-stroke; pointer-events:none; }
 .margin-chart-close-line { stroke:#93c5fd; stroke-width:1.3; opacity:.8; pointer-events:none; }
 .margin-chart-up line,.margin-chart-up rect { stroke:#4ADE80; fill:#4ADE80; stroke-width:1.7; }
 .margin-chart-down line,.margin-chart-down rect { stroke:#FF4D4F; fill:#FF4D4F; stroke-width:1.7; }
