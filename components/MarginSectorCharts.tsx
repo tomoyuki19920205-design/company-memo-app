@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, type MarginChartPoint,
+import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints,
+  findMarginChartBoundary, type MarginChartPoint,
   type MarginFrequency, type MarginIndexBars, type MarginViewRow } from "@/lib/margin-interest";
 import { buildMarginMoneyScale, marginMoneyY } from "@/lib/margin-chart-scale";
 
@@ -34,6 +35,9 @@ function SectorChart({ name, points, frequency }: {
   const priceBottom = Math.max(0, minPrice - pricePad), priceTop = maxPrice + pricePad;
   const moneyScale = buildMarginMoneyScale(points.map((point) => point.marginOku));
   const step = plotWidth / Math.max(points.length, 1);
+  const boundary = findMarginChartBoundary(points, frequency);
+  const boundaryX = boundary === null ? null :
+    left + step * (boundary.beforeIndex + boundary.afterIndex + 1) / 2;
   const candleWidth = Math.max(2, Math.min(12, step * 0.5));
   const barWidth = Math.max(3, Math.min(18, step * 0.75));
   const priceY = (value: number) => top + (priceTop - value) / (priceTop - priceBottom) * plotHeight;
@@ -81,6 +85,10 @@ function SectorChart({ name, points, frequency }: {
                 data-date={point.date} className="margin-chart-bar"
                 x={left + step * (index + 0.5) - barWidth / 2} y={moneyY(point.marginOku)}
                 width={barWidth} height={Math.max(0, bottom - moneyY(point.marginOku))} />)}
+              {boundary !== null && boundaryX !== null && <line className="margin-chart-boundary"
+                data-before={points[boundary.beforeIndex].date}
+                data-after={points[boundary.afterIndex].date}
+                x1={boundaryX} x2={boundaryX} y1={top} y2={bottom} />}
               {points.slice(1).map((point, index) => point.close === null ||
                 points[index].close === null ? null : <line key={`close-${point.date}`}
                   className="margin-chart-close-line"

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, buildMarginViewRows, formatIndexClose, formatMarginOku, formatMarginRatio,
+import { MARGIN_SECTORS, buildMarginChartPoints, buildMarginMarketChartPoints, buildMarginViewRows,
+  findMarginChartBoundary, formatIndexClose, formatMarginOku, formatMarginRatio,
   indexDirection, initialMarginPeriod, jpxCorrectionDifference, marginRatioDirection, marginWeekStart,
   type MarginRow } from "../lib/margin-interest";
 
@@ -157,6 +158,29 @@ test("newer index dates extend daily and weekly charts without carrying forward 
     [days[0], 3950, 4010, 3940, 3997, 66143.43940904],
     [days[1], 3950, 4010, 3907, 3965, null],
   ]);
+});
+
+test("chart boundary uses actual saved balance and index dates, including a zero balance", () => {
+  const point = (date: string, marginOku: number | null, close: number | null = 100) => ({
+    date, marginOku, close, open: close, high: close, low: close,
+    provisional: false, missing: false,
+  });
+  const points = [point("2026-10-21", 3), point("2026-10-22", 0), point("2026-10-23", null)];
+  assert.deepEqual(findMarginChartBoundary(points, "daily"), { beforeIndex: 1, afterIndex: 2 });
+  assert.equal(findMarginChartBoundary(points.slice(0, 2), "daily"), null);
+  assert.equal(findMarginChartBoundary(points.slice(2), "daily"), null);
+  assert.equal(findMarginChartBoundary([point("2026-10-22", 3), point("2026-10-23", null, null)], "daily"), null);
+});
+
+test("weekly boundary skips newer index dates within the saved balance week", () => {
+  const point = (date: string, marginOku: number | null) => ({
+    date, marginOku, close: 100, open: 100, high: 100, low: 100,
+    provisional: false, missing: false,
+  });
+  const points = [point("2026-10-22", 5), point("2026-10-23", null)];
+  assert.equal(findMarginChartBoundary(points, "weekly"), null);
+  assert.deepEqual(findMarginChartBoundary([...points, point("2026-10-26", null)], "weekly"),
+    { beforeIndex: 1, afterIndex: 2 });
 });
 
 test("old weekly volume rows stay out of daily mode while saved weekly candles remain visible", () => {

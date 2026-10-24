@@ -87,6 +87,22 @@ export function marginWeekStart(day: string): string {
   return shiftDate(day, -(weekday === 0 ? 6 : weekday - 1));
 }
 
+/** Locate the visible transition from saved balances to index-only candles. */
+export function findMarginChartBoundary(
+  points: MarginChartPoint[], frequency: MarginFrequency,
+): { beforeIndex: number; afterIndex: number } | null {
+  const lastMarginIndex = points.findLastIndex((point) => point.marginOku !== null);
+  if (lastMarginIndex < 0) return null;
+  const lastMarginWeek = marginWeekStart(points[lastMarginIndex].date);
+  const afterIndex = points.findIndex((point, index) => index > lastMarginIndex &&
+    point.close !== null && (frequency === "daily" || marginWeekStart(point.date) > lastMarginWeek));
+  if (afterIndex < 0) return null;
+  const beforeIndex = frequency === "daily" ? lastMarginIndex :
+    points.findLastIndex((point, index) => index < afterIndex &&
+      marginWeekStart(point.date) === lastMarginWeek);
+  return { beforeIndex, afterIndex };
+}
+
 /** Use the official trading calendar so missing dates never fall back silently. */
 export function buildMarginViewRows(
   rows: MarginRow[], calendarDays: string[], from: string, to: string,
