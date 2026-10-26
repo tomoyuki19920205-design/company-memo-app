@@ -19,6 +19,15 @@ test("amount-only dividend revision remains 配当修正", () => {
   assert.equal(getDividendPolicyDisplay(row as never).detected, false);
 });
 
+test("an increased total keeps the generic label when the disclosure says 配当予想の修正", () => {
+  const row = event("2027年3月期配当予想の修正に関するお知らせ", {
+    previous_dividend_per_share: 60,
+    revised_dividend_per_share: 80,
+  }, "increase");
+  assert.equal(getDividendCompositeLabel(row as never), "配当修正");
+  assert.equal(getDividendCompositeBodyLabel(row as never), "配当修正");
+});
+
 test("dividend policy change is appended without creating another event", () => {
   const row = event("配当方針の変更及び配当予想の修正", {
     policy_change_detected: true,

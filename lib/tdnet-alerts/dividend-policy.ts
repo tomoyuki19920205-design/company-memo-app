@@ -47,7 +47,8 @@ export function getDividendBaseLabel(eventSubtype: string | null | undefined): s
 export function getDividendCompositeLabel(
   event: Pick<TdnetEvent, "event_subtype" | "headline" | "raw_payload">,
 ): string {
-  const base = getDividendBaseLabel(event.event_subtype);
+  const base = /増配|減配/.test(event.headline || "")
+    ? getDividendBaseLabel(event.event_subtype) : "配当修正";
   const policy = getDividendPolicyDisplay(event);
   return policy.detected ? `${base}・${policy.label}` : base;
 }
@@ -55,7 +56,8 @@ export function getDividendCompositeLabel(
 export function getDividendCompositeBodyLabel(
   event: Pick<TdnetEvent, "event_subtype" | "headline" | "raw_payload">,
 ): string {
-  const base = getDividendBaseLabel(event.event_subtype);
+  const base = /増配|減配/.test(event.headline || "")
+    ? getDividendBaseLabel(event.event_subtype) : "配当修正";
   const policy = getDividendPolicyDisplay(event);
   return policy.detected ? `${base}／${policy.label}` : base;
 }
