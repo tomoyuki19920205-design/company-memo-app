@@ -398,13 +398,17 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             }
 
             // market data はキャッシュヒット時も必ず Supabase から再取得する。
-            const [marketResult, perShareResult, actionResult] = await Promise.allSettled([
+            const [financialsResult, marketResult, perShareResult, actionResult] = await Promise.allSettled([
+                loadFinancials(ticker),
                 loadLatestMarketData(ticker),
                 loadPerShareData(ticker),
                 loadCorporateActions(ticker),
             ]);
             if (loadRequestIdRef.current !== currentRequestId) return;
 
+            const freshFinancials = financialsResult.status === "fulfilled"
+                ? financialsResult.value : cached.financials;
+            setFinancials(freshFinancials);
             const freshMarket = marketResult.status === "fulfilled" ? marketResult.value : null;
             const freshPerShare = perShareResult.status === "fulfilled" ? perShareResult.value : [];
             const freshActions = actionResult.status === "fulfilled" ? actionResult.value : [];
@@ -418,6 +422,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             setValuation(calculateValuation(freshMarket, freshPerShare, freshActions));
             tickerCacheRef.current.set(ticker, {
                 ...cached,
+                financials: freshFinancials,
                 marketData: freshMarket,
                 perShareData: displayPerShare,
             });
