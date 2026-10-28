@@ -71,6 +71,11 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
   }));
   assert.doesNotMatch(legacyMessageDetail, /upward 2027年3月期 第2四半期/);
   assert.match(legacyMessageDetail, /業績予想及び配当予想の修正に関するお知らせ/);
+  const apiProjectionDetail = renderToStaticMarkup(createElement(AlertDetailPanel, {
+    event: { ...alert, formatted_message: "", display_title: "業績予想及び配当予想の修正に関するお知らせ", display_summary: "upward 2027年3月期 第2四半期", headline: "業績予想及び配当予想の修正に関するお知らせ" },
+    userId: "test-user", onUpdate: () => {},
+  }));
+  assert.doesNotMatch(apiProjectionDetail, /upward 2027年3月期 第2四半期/);
 });
 
 test("same notification ID refreshes its EPS summary when its payload is corrected", () => {
