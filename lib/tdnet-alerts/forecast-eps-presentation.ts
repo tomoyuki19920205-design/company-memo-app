@@ -80,7 +80,7 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
     const fiscal = fiscalPeriod ? "" : row.fiscalPeriod ? `${row.fiscalPeriod} ` : "";
     const basis = row.basis ? ` ${row.basis}` : "";
     const rate = row.previous === 0 ? "" : ` (${((row.revised - row.previous) / Math.abs(row.previous) * 100) >= 0 ? "+" : ""}${((row.revised - row.previous) / Math.abs(row.previous) * 100).toFixed(1)}%)`;
-    return `${fiscal}${periodNames[row.period]}${basis} EPS：修正前${amount(row.previous)} → 修正後${amount(row.revised)}${rate}`;
+    return `${fiscal}${periodNames[row.period]}${basis} EPS：${amount(row.previous)}→${amount(row.revised)}${rate}`;
   });
   return { fiscalPeriod, lines };
 }

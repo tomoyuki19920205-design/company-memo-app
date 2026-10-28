@@ -20,8 +20,8 @@ test("two period EPS rows are labelled, ordered and identical for string JSON pa
   for (const candidate of [rows, [...rows].reverse()]) {
     const output = getForecastEpsPresentation(event({ eps_revisions: candidate }, true));
     assert.equal(output.fiscalPeriod, "2027年3月期");
-    assert.match(output.lines[0], /^2Q（累計） 連結 EPS：修正前12.34円 → 修正後27.32円/);
-    assert.match(output.lines[1], /^通期 連結 EPS：修正前59.92円 → 修正後81.06円/);
+    assert.equal(output.lines[0], "2Q（累計） 連結 EPS：12.34円→27.32円 (+121.4%)");
+    assert.equal(output.lines[1], "通期 連結 EPS：59.92円→81.06円 (+35.3%)");
   }
 });
 
@@ -51,8 +51,7 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
   } as unknown as EnrichedEvent;
   const summary = formatCardSummary(alert, { category: "forecast" } as never, "");
   assert.equal(summary.line2, "2027年3月期");
-  assert.match(summary.line3 || "", /2Q（累計） 連結 EPS：修正前12\.34円 → 修正後27\.32円/);
-  assert.match(summary.line3 || "", /\n通期 連結 EPS：修正前59\.92円 → 修正後81\.06円/);
+  assert.equal(summary.line3, "2Q（累計） 連結 EPS：12.34円→27.32円 (+121.4%)\n通期 連結 EPS：59.92円→81.06円 (+35.3%)");
   const body = formatCardBody(alert).text;
   assert.match(body, /2027年3月期\n2Q（累計）/);
   assert.match(body, /\n通期 連結 EPS：/);
@@ -63,8 +62,9 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
     event: { ...alert, formatted_message: "業績予想及び配当予想の修正" },
     userId: "test-user", onUpdate: () => {},
   }));
-  assert.match(detail, /2Q（累計） 連結 EPS：修正前12\.34円 → 修正後27\.32円/);
-  assert.match(detail, /通期 連結 EPS：修正前59\.92円 → 修正後81\.06円/);
+  assert.match(detail, /2Q（累計） 連結 EPS：12\.34円→27\.32円 \(\+121\.4%\)/);
+  assert.match(detail, /通期 連結 EPS：59\.92円→81\.06円 \(\+35\.3%\)/);
+  assert.doesNotMatch(detail, /修正前|修正後/);
   const legacyMessageDetail = renderToStaticMarkup(createElement(AlertDetailPanel, {
     event: { ...alert, formatted_message: "upward 2027年3月期 第2四半期", display_summary: "upward 2027年3月期 第2四半期", headline: "業績予想及び配当予想の修正に関するお知らせ" },
     userId: "test-user", onUpdate: () => {},
