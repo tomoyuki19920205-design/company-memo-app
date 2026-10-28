@@ -189,7 +189,12 @@ export default function AlertDetailPanel({
   if (forecastEps?.lines.length) {
     const storedSummary = event.formatted_message?.trim() || event.display_summary?.trim() || "";
     const machineSummary = /^(?:upward|downward|difference|neutral|undecided)\s+20\d{2}年(?:[1-9]|1[0-2])月期\s+(?:第[1-4]四半期|中間期|上期|通期)$/.test(storedSummary);
-    mainMessage = [forecastEps.fiscalPeriod, ...forecastEps.lines, machineSummary ? event.headline : mainMessage].filter(Boolean).join("\n");
+    const heading = event.headline?.trim() || (machineSummary ? event.display_title?.trim() : mainMessage.split("\n")[0]?.trim()) || "";
+    const messageLines = machineSummary ? [] : mainMessage.trim().split("\n");
+    if (messageLines[0]?.trim() === heading) messageLines.shift();
+    if (messageLines[messageLines.length - 1]?.trim() === heading) messageLines.pop();
+    const tail = messageLines.join("\n").trim();
+    mainMessage = [heading, ...forecastEps.lines, tail].filter(Boolean).join("\n");
   }
 
   return (

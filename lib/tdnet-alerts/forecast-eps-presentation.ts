@@ -40,7 +40,7 @@ function legacyPeriod(label: string): Period {
 }
 
 const periodNames: Record<Period, string> = {
-  "2Q_CUMULATIVE": "2Q（累計）",
+  "2Q_CUMULATIVE": "2Q",
   "2Q_STANDALONE": "2Q（単独）",
   "FULL_YEAR": "通期",
   "UNKNOWN": "期間不明",
@@ -96,9 +96,8 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
   const lines = displayed.map(row => {
     const amount = (value: number | null) => value === null ? "—" : `${value}円`;
     const profit = (value: number | null) => value === null ? "—" : `${value}百万`;
-    const fiscal = fiscalPeriod ? "" : row.fiscalPeriod ? `${row.fiscalPeriod} ` : "";
-    const basis = row.basis || "";
-    return `${fiscal}${periodNames[row.period]}${basis}\n営:${profit(row.previousOp)}→${profit(row.revisedOp)}\nEPS:${amount(row.previousEps)}→${amount(row.revisedEps)}`;
+    const basis = row.basis ? ` ${row.basis}` : "";
+    return `${periodNames[row.period]}${basis}\n営:${profit(row.previousOp)}→${profit(row.revisedOp)}\nEPS:${amount(row.previousEps)}→${amount(row.revisedEps)}`;
   });
   return { fiscalPeriod, lines };
 }

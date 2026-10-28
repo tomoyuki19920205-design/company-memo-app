@@ -295,7 +295,6 @@ export const formatCardBody = (event: EnrichedEvent): {
       if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
       if (metrics.length > 1) lines.push(metrics.join("  "));
     }
-    if (epsPresentation.fiscalPeriod) lines.push(epsPresentation.fiscalPeriod);
     lines.push(...epsPresentation.lines);
     if (!epsPresentation.lines.length && ext.period_label) lines.push(String(ext.period_label));
 
@@ -609,9 +608,9 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
 
     const epsPresentation = getForecastEpsPresentation(event);
-    line2 = epsPresentation.fiscalPeriod || epsPresentation.lines[0] || "";
+    line2 = epsPresentation.fiscalPeriod ? "" : epsPresentation.lines[0] || "";
     line3 = (epsPresentation.fiscalPeriod ? epsPresentation.lines : epsPresentation.lines.slice(1)).join("\n") || undefined;
-    if (!line2) {
+    if (!epsPresentation.lines.length) {
       const opPct = ext.change_op_pct;
       if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
       else if (ext.change_ordinary_pct != null) line2 = `経常利益 ${fmtPct(ext.change_ordinary_pct)}`;
