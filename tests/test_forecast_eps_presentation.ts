@@ -8,8 +8,11 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { EnrichedEvent, TdnetEvent } from "../lib/tdnet-alerts/types";
 
-const revision = (period: string, previous_eps: number | null, revised_eps: number | null) => ({
+const revision = (period: string, previous_eps: number | null, revised_eps: number | null,
+  previous_op: number | null = period === "FULL_YEAR" ? 4100 : 700,
+  revised_op: number | null = period === "FULL_YEAR" ? 5700 : 1900) => ({
   fiscal_period: "2027年3月期", period, basis: "連結", previous_eps, revised_eps,
+  previous_op, revised_op, op_unit: "millions_jpy",
 });
 const event = (extracted: object, stringify = false) => ({
   raw_payload: (stringify ? JSON.stringify({ extracted }) : { extracted }) as TdnetEvent["raw_payload"],
@@ -20,8 +23,8 @@ test("two period EPS rows are labelled, ordered and identical for string JSON pa
   for (const candidate of [rows, [...rows].reverse()]) {
     const output = getForecastEpsPresentation(event({ eps_revisions: candidate }, true));
     assert.equal(output.fiscalPeriod, "2027年3月期");
-    assert.equal(output.lines[0], "2Q（累計） 連結 EPS：12.34円→27.32円 (+121.4%)");
-    assert.equal(output.lines[1], "通期 連結 EPS：59.92円→81.06円 (+35.3%)");
+    assert.equal(output.lines[0], "2Q（累計） 連結\n営業利益：700百万円→1,900百万円 (+171.4%)\nEPS：12.34円→27.32円 (+121.4%)");
+    assert.equal(output.lines[1], "通期 連結\n営業利益：4,100百万円→5,700百万円 (+39.0%)\nEPS：59.92円→81.06円 (+35.3%)");
   }
 });
 
@@ -33,8 +36,8 @@ test("single period, unknown period, missing EPS and legacy payloads stay safe",
   assert.match(getForecastEpsPresentation(event({ previous_eps: 12.34, revised_eps: 27.32, period_label: "2027年3月期 中間期・通期" })).lines[0], /^期間不明/);
   assert.match(getForecastEpsPresentation(event({ previous_eps: 59.92, revised_eps: 81.06, period_label: "2027年3月期 通期" })).lines[0], /^通期/);
   assert.match(getForecastEpsPresentation(event({ eps_revisions: [revision("2Q_STANDALONE", 12.34, 27.32)] })).lines[0], /^2Q（単独）/);
-  assert.equal(getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, null)] })).lines.length, 0);
-  assert.equal(getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 59.92)] })).lines.length, 0);
+  assert.match(getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, null)] })).lines[0], /EPS：59\.92円→—$/);
+  assert.equal(getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 59.92, 4100, 4100)] })).lines.length, 0);
   assert.deepEqual(getForecastEpsPresentation({ raw_payload: "broken" as unknown as TdnetEvent["raw_payload"] }).lines, []);
 });
 
@@ -51,10 +54,10 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
   } as unknown as EnrichedEvent;
   const summary = formatCardSummary(alert, { category: "forecast" } as never, "");
   assert.equal(summary.line2, "2027年3月期");
-  assert.equal(summary.line3, "2Q（累計） 連結 EPS：12.34円→27.32円 (+121.4%)\n通期 連結 EPS：59.92円→81.06円 (+35.3%)");
+  assert.equal(summary.line3, "2Q（累計） 連結\n営業利益：700百万円→1,900百万円 (+171.4%)\nEPS：12.34円→27.32円 (+121.4%)\n通期 連結\n営業利益：4,100百万円→5,700百万円 (+39.0%)\nEPS：59.92円→81.06円 (+35.3%)");
   const body = formatCardBody(alert).text;
   assert.match(body, /2027年3月期\n2Q（累計）/);
-  assert.match(body, /\n通期 連結 EPS：/);
+  assert.match(body, /\n通期 連結\n営業利益：4,100百万円→5,700百万円/);
   process.env.NEXT_PUBLIC_SUPABASE_URL ||= "https://example.supabase.co";
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||= "test-key";
   (globalThis as { React?: typeof React }).React = React;
@@ -62,8 +65,8 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
     event: { ...alert, formatted_message: "業績予想及び配当予想の修正" },
     userId: "test-user", onUpdate: () => {},
   }));
-  assert.match(detail, /2Q（累計） 連結 EPS：12\.34円→27\.32円 \(\+121\.4%\)/);
-  assert.match(detail, /通期 連結 EPS：59\.92円→81\.06円 \(\+35\.3%\)/);
+  assert.match(detail, /2Q（累計） 連結\n営業利益：700百万円→1,900百万円 \(\+171\.4%\)\nEPS：12\.34円→27\.32円 \(\+121\.4%\)/);
+  assert.match(detail, /通期 連結\n営業利益：4,100百万円→5,700百万円 \(\+39\.0%\)\nEPS：59\.92円→81\.06円 \(\+35\.3%\)/);
   assert.doesNotMatch(detail, /修正前|修正後/);
   const legacyMessageDetail = renderToStaticMarkup(createElement(AlertDetailPanel, {
     event: { ...alert, formatted_message: "upward 2027年3月期 第2四半期", display_summary: "upward 2027年3月期 第2四半期", headline: "業績予想及び配当予想の修正に関するお知らせ" },
@@ -92,6 +95,19 @@ test("same notification ID refreshes its EPS summary when its payload is correct
     revision("FULL_YEAR", 59.92, 81.06),
   ] } } };
   const summary = formatCardSummary(corrected, { category: "forecast" } as never, "");
-  assert.match(summary.line3 || "", /2Q（累計）.*\n通期/);
-  assert.match(formatCardBody(corrected).text, /2Q（累計）.*\n通期/);
+  assert.match(summary.line3 || "", /2Q（累計）[\s\S]*\n通期/);
+  assert.match(formatCardBody(corrected).text, /2Q（累計）[\s\S]*\n通期/);
+});
+
+test("unchanged, missing, zero and deficit operating values keep their own rate rules", () => {
+  const unchanged = getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 81.06, 4100, 4100)] })).lines[0];
+  assert.match(unchanged, /営業利益：4,100百万円→4,100百万円 \(\+0\.0%\)/);
+  const missing = getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 81.06, null, 5700)] })).lines[0];
+  assert.match(missing, /営業利益：—→5,700百万円\n/);
+  const zero = getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 81.06, 0, 5700)] })).lines[0];
+  assert.match(zero, /営業利益：0百万円→5,700百万円\n/);
+  const deficit = getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 81.06, -100, 5700)] })).lines[0];
+  assert.match(deficit, /営業利益：-100百万円→5,700百万円\n/);
+  const old = getForecastEpsPresentation(event({ eps_revisions: [{ fiscal_period: "2027年3月期", period: "FULL_YEAR", basis: "連結", previous_eps: 59.92, revised_eps: 81.06 }] })).lines[0];
+  assert.match(old, /営業利益：—→—\nEPS：59\.92円→81\.06円/);
 });

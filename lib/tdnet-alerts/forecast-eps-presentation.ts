@@ -5,8 +5,10 @@ type EpsRow = {
   fiscalPeriod: string | null;
   period: Period;
   basis: string | null;
-  previous: number;
-  revised: number;
+  previousEps: number | null;
+  revisedEps: number | null;
+  previousOp: number | null;
+  revisedOp: number | null;
 };
 
 function record(value: unknown): Record<string, unknown> | null {
@@ -21,6 +23,18 @@ function eps(value: unknown): number | null {
   if (value === null || value === undefined || value === "") return null;
   const number = Number(value);
   return Number.isFinite(number) && Math.abs(number) <= 10000 ? number : null;
+}
+
+function operatingProfit(value: unknown, unit: unknown): number | null {
+  if (unit !== "millions_jpy" || value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) && Math.abs(number) <= 1e9 ? number : null;
+}
+
+function rate(previous: number | null, revised: number | null, suppressNonpositive = false): string {
+  if (previous === null || revised === null || previous === 0 || (suppressNonpositive && previous < 0)) return "";
+  const percent = (revised - previous) / Math.abs(previous) * 100;
+  return ` (${percent >= 0 ? "+" : ""}${percent.toFixed(1)}%)`;
 }
 
 function legacyPeriod(label: string): Period {
@@ -54,12 +68,17 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
       if (!row) continue;
       const previous = eps(row.previous_eps);
       const revised = eps(row.revised_eps);
-      if (previous === null || revised === null || previous === revised) continue;
+      const previousOp = operatingProfit(row.previous_op, row.op_unit);
+      const revisedOp = operatingProfit(row.revised_op, row.op_unit);
+      if (previous === null && revised === null && previousOp === null && revisedOp === null) continue;
+      if (previous !== null && revised !== null && previous === revised &&
+          previousOp === revisedOp) continue;
       const period = typeof row.period === "string" && row.period in periodNames
         ? row.period as Period : "UNKNOWN";
       const fiscalPeriod = typeof row.fiscal_period === "string" && /^20\d{2}年(?:[1-9]|1[0-2])月期$/.test(row.fiscal_period)
         ? row.fiscal_period : null;
-      rows.push({ fiscalPeriod, period, basis: typeof row.basis === "string" ? row.basis : null, previous, revised });
+      rows.push({ fiscalPeriod, period, basis: typeof row.basis === "string" ? row.basis : null,
+        previousEps: previous, revisedEps: revised, previousOp, revisedOp });
     }
   } else {
     const previous = eps(extracted.previous_eps);
@@ -67,7 +86,8 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
     if (previous !== null && revised !== null && previous !== revised) {
       const label = typeof extracted.period_label === "string" ? extracted.period_label : "";
       const fiscalPeriod = label.match(/20\d{2}年(?:[1-9]|1[0-2])月期/)?.[0] ?? null;
-      rows.push({ fiscalPeriod, period: legacyPeriod(label), basis: null, previous, revised });
+      rows.push({ fiscalPeriod, period: legacyPeriod(label), basis: typeof extracted.basis === "string" ? extracted.basis : null,
+        previousEps: previous, revisedEps: revised, previousOp: null, revisedOp: null });
     }
   }
   rows.sort((a, b) => (a.fiscalPeriod || "").localeCompare(b.fiscalPeriod || "")
@@ -76,11 +96,11 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
   const fiscalPeriod = rows.length && rows.every(row => row.fiscalPeriod === rows[0].fiscalPeriod)
     ? rows[0].fiscalPeriod : null;
   const lines = rows.map(row => {
-    const amount = (value: number) => `${value}円`;
+    const amount = (value: number | null) => value === null ? "—" : `${value}円`;
+    const profit = (value: number | null) => value === null ? "—" : `${new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 3 }).format(value)}百万円`;
     const fiscal = fiscalPeriod ? "" : row.fiscalPeriod ? `${row.fiscalPeriod} ` : "";
     const basis = row.basis ? ` ${row.basis}` : "";
-    const rate = row.previous === 0 ? "" : ` (${((row.revised - row.previous) / Math.abs(row.previous) * 100) >= 0 ? "+" : ""}${((row.revised - row.previous) / Math.abs(row.previous) * 100).toFixed(1)}%)`;
-    return `${fiscal}${periodNames[row.period]}${basis} EPS：${amount(row.previous)}→${amount(row.revised)}${rate}`;
+    return `${fiscal}${periodNames[row.period]}${basis}\n営業利益：${profit(row.previousOp)}→${profit(row.revisedOp)}${rate(row.previousOp, row.revisedOp, true)}\nEPS：${amount(row.previousEps)}→${amount(row.revisedEps)}${rate(row.previousEps, row.revisedEps)}`;
   });
   return { fiscalPeriod, lines };
 }
