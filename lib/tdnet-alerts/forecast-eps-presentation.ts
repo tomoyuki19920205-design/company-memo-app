@@ -31,12 +31,6 @@ function operatingProfit(value: unknown, unit: unknown): number | null {
   return Number.isFinite(number) && Math.abs(number) <= 1e9 ? number : null;
 }
 
-function rate(previous: number | null, revised: number | null, suppressNonpositive = false): string {
-  if (previous === null || revised === null || previous === 0 || (suppressNonpositive && previous < 0)) return "";
-  const percent = (revised - previous) / Math.abs(previous) * 100;
-  return ` (${percent >= 0 ? "+" : ""}${percent.toFixed(1)}%)`;
-}
-
 function legacyPeriod(label: string): Period {
   const fullYear = /通期/.test(label);
   const cumulative = /(?:第?2四半期|2Q).*累計|中間期|上期|上半期/i.test(label);
@@ -70,14 +64,14 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
       const revised = eps(row.revised_eps);
       const previousOp = operatingProfit(row.previous_op, row.op_unit);
       const revisedOp = operatingProfit(row.revised_op, row.op_unit);
-      if (previous === null && revised === null && previousOp === null && revisedOp === null) continue;
-      if (previous !== null && revised !== null && previous === revised &&
-          previousOp === revisedOp) continue;
       const period = typeof row.period === "string" && row.period in periodNames
         ? row.period as Period : "UNKNOWN";
       const fiscalPeriod = typeof row.fiscal_period === "string" && /^20\d{2}年(?:[1-9]|1[0-2])月期$/.test(row.fiscal_period)
         ? row.fiscal_period : null;
-      rows.push({ fiscalPeriod, period, basis: typeof row.basis === "string" ? row.basis : null,
+      const basis = row.basis === "連結" || row.basis === "個別" ? row.basis : null;
+      if (previous === null && revised === null && previousOp === null && revisedOp === null &&
+          (!fiscalPeriod || period === "UNKNOWN" || !basis)) continue;
+      rows.push({ fiscalPeriod, period, basis,
         previousEps: previous, revisedEps: revised, previousOp, revisedOp });
     }
   } else {
@@ -93,14 +87,18 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
   rows.sort((a, b) => (a.fiscalPeriod || "").localeCompare(b.fiscalPeriod || "")
     || periodOrder[a.period] - periodOrder[b.period]
     || (a.basis || "").localeCompare(b.basis || ""));
-  const fiscalPeriod = rows.length && rows.every(row => row.fiscalPeriod === rows[0].fiscalPeriod)
-    ? rows[0].fiscalPeriod : null;
-  const lines = rows.map(row => {
+  const consolidated = new Set(rows.filter(row => row.fiscalPeriod && row.period !== "UNKNOWN" && row.basis === "連結")
+    .map(row => `${row.fiscalPeriod}:${row.period}`));
+  const displayed = rows.filter(row => row.basis !== "個別" || !row.fiscalPeriod || row.period === "UNKNOWN"
+    || !consolidated.has(`${row.fiscalPeriod}:${row.period}`));
+  const fiscalPeriod = displayed.length && displayed.every(row => row.fiscalPeriod === displayed[0].fiscalPeriod)
+    ? displayed[0].fiscalPeriod : null;
+  const lines = displayed.map(row => {
     const amount = (value: number | null) => value === null ? "—" : `${value}円`;
-    const profit = (value: number | null) => value === null ? "—" : `${new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 3 }).format(value)}百万円`;
+    const profit = (value: number | null) => value === null ? "—" : `${value}百万`;
     const fiscal = fiscalPeriod ? "" : row.fiscalPeriod ? `${row.fiscalPeriod} ` : "";
-    const basis = row.basis ? ` ${row.basis}` : "";
-    return `${fiscal}${periodNames[row.period]}${basis}\n営業利益：${profit(row.previousOp)}→${profit(row.revisedOp)}${rate(row.previousOp, row.revisedOp, true)}\nEPS：${amount(row.previousEps)}→${amount(row.revisedEps)}${rate(row.previousEps, row.revisedEps)}`;
+    const basis = row.basis || "";
+    return `${fiscal}${periodNames[row.period]}${basis}\n営:${profit(row.previousOp)}→${profit(row.revisedOp)}\nEPS:${amount(row.previousEps)}→${amount(row.revisedEps)}`;
   });
   return { fiscalPeriod, lines };
 }

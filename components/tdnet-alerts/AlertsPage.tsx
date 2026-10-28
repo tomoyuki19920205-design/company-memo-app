@@ -270,29 +270,31 @@ export const formatCardBody = (event: EnrichedEvent): {
     const capitalBody = formatCapitalActionCard(event);
     if (capitalBody) lines.push(capitalBody);
   } else if (event.event_type === "forecast") {
-    const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
-      : event.event_subtype === "difference" ? "📋 差異開示"
-      : event.event_subtype === "downward" ? "🔻 下方修正"
-      : "📊 業績修正";
-    const opPct  = ext.change_op_pct;
-    const ordPct = ext.change_ordinary_pct;
-    const netPct = ext.change_net_income_pct;
-    const summaryPct = opPct ?? ordPct ?? netPct;
-    const summaryPctLabel = opPct != null ? "営業利益"
-      : ordPct != null ? "経常利益"
-      : netPct != null ? "純利益"
-      : null;
-    const summaryStr = summaryPctLabel != null
-      ? `${summaryPctLabel} ${fmtPct(summaryPct)}`
-      : "";
-    lines.push(summaryStr ? `${typeEmoji}  ${summaryStr}` : typeEmoji);
-
-    const metrics: string[] = [];
-    if (opPct  != null) metrics.push(`営業利益 ${fmtPct(opPct)}`);
-    if (ordPct != null) metrics.push(`経常利益 ${fmtPct(ordPct)}`);
-    if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
-    if (metrics.length > 1) lines.push(metrics.join("  "));
     const epsPresentation = getForecastEpsPresentation(event);
+    if (!epsPresentation.lines.length) {
+      const typeEmoji = event.event_subtype === "upward" ? "🔺 上方修正"
+        : event.event_subtype === "difference" ? "📋 差異開示"
+        : event.event_subtype === "downward" ? "🔻 下方修正"
+        : "📊 業績修正";
+      const opPct  = ext.change_op_pct;
+      const ordPct = ext.change_ordinary_pct;
+      const netPct = ext.change_net_income_pct;
+      const summaryPct = opPct ?? ordPct ?? netPct;
+      const summaryPctLabel = opPct != null ? "営業利益"
+        : ordPct != null ? "経常利益"
+        : netPct != null ? "純利益"
+        : null;
+      const summaryStr = summaryPctLabel != null
+        ? `${summaryPctLabel} ${fmtPct(summaryPct)}`
+        : "";
+      lines.push(summaryStr ? `${typeEmoji}  ${summaryStr}` : typeEmoji);
+
+      const metrics: string[] = [];
+      if (opPct  != null) metrics.push(`営業利益 ${fmtPct(opPct)}`);
+      if (ordPct != null) metrics.push(`経常利益 ${fmtPct(ordPct)}`);
+      if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
+      if (metrics.length > 1) lines.push(metrics.join("  "));
+    }
     if (epsPresentation.fiscalPeriod) lines.push(epsPresentation.fiscalPeriod);
     lines.push(...epsPresentation.lines);
     if (!epsPresentation.lines.length && ext.period_label) lines.push(String(ext.period_label));
