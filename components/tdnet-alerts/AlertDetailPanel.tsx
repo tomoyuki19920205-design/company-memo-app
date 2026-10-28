@@ -188,7 +188,7 @@ export default function AlertDetailPanel({
   const forecastEps = event.event_type === "forecast" ? getForecastEpsPresentation(event) : null;
   if (forecastEps?.lines.length) {
     const storedSummary = event.formatted_message?.trim() || event.display_summary?.trim() || "";
-    const machineSummary = /^(?:upward|downward|difference|neutral|undecided)\s+20\d{2}年(?:[1-9]|1[0-2])月期\s+(?:第[1-4]四半期|中間期|上期|通期)$/.test(storedSummary);
+    const machineSummary = /^(?:upward|downward|difference|neutral|undecided)\s+20\d{2}年(?:[1-9]|1[0-2])月期(?:\s+(?:第[1-4]四半期|中間期|上期|通期))?$/.test(storedSummary);
     const heading = event.headline?.trim() || (machineSummary ? event.display_title?.trim() : mainMessage.split("\n")[0]?.trim()) || "";
     const messageLines = machineSummary ? [] : mainMessage.trim().split("\n");
     if (messageLines[0]?.trim() === heading) messageLines.shift();

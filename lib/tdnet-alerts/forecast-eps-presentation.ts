@@ -7,6 +7,8 @@ type EpsRow = {
   basis: string | null;
   previousEps: number | null;
   revisedEps: number | null;
+  previousEpsText: string | null;
+  revisedEpsText: string | null;
   previousOp: number | null;
   revisedOp: number | null;
 };
@@ -23,6 +25,11 @@ function eps(value: unknown): number | null {
   if (value === null || value === undefined || value === "") return null;
   const number = Number(value);
   return Number.isFinite(number) && Math.abs(number) <= 10000 ? number : null;
+}
+
+function epsText(value: unknown, number: number | null): string | null {
+  return number !== null && typeof value === "string" && /^-?\d+(?:\.\d+)?$/.test(value)
+    && Number(value) === number ? value : null;
 }
 
 function operatingProfit(value: unknown, unit: unknown): number | null {
@@ -72,7 +79,9 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
       if (previous === null && revised === null && previousOp === null && revisedOp === null &&
           (!fiscalPeriod || period === "UNKNOWN" || !basis)) continue;
       rows.push({ fiscalPeriod, period, basis,
-        previousEps: previous, revisedEps: revised, previousOp, revisedOp });
+        previousEps: previous, revisedEps: revised,
+        previousEpsText: epsText(row.previous_eps_text, previous),
+        revisedEpsText: epsText(row.revised_eps_text, revised), previousOp, revisedOp });
     }
   } else {
     const previous = eps(extracted.previous_eps);
@@ -81,7 +90,8 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
       const label = typeof extracted.period_label === "string" ? extracted.period_label : "";
       const fiscalPeriod = label.match(/20\d{2}年(?:[1-9]|1[0-2])月期/)?.[0] ?? null;
       rows.push({ fiscalPeriod, period: legacyPeriod(label), basis: typeof extracted.basis === "string" ? extracted.basis : null,
-        previousEps: previous, revisedEps: revised, previousOp: null, revisedOp: null });
+        previousEps: previous, revisedEps: revised, previousEpsText: null, revisedEpsText: null,
+        previousOp: null, revisedOp: null });
     }
   }
   rows.sort((a, b) => (a.fiscalPeriod || "").localeCompare(b.fiscalPeriod || "")
@@ -94,10 +104,10 @@ export function getForecastEpsPresentation(event: Pick<TdnetEvent, "raw_payload"
   const fiscalPeriod = displayed.length && displayed.every(row => row.fiscalPeriod === displayed[0].fiscalPeriod)
     ? displayed[0].fiscalPeriod : null;
   const lines = displayed.map(row => {
-    const amount = (value: number | null) => value === null ? "—" : `${value}円`;
+    const amount = (value: number | null, sourceText: string | null) => value === null ? "—" : `${sourceText ?? value}円`;
     const profit = (value: number | null) => value === null ? "—" : `${value}百万`;
     const basis = row.basis ? ` ${row.basis}` : "";
-    return `${periodNames[row.period]}${basis}\n営:${profit(row.previousOp)}→${profit(row.revisedOp)}\nEPS:${amount(row.previousEps)}→${amount(row.revisedEps)}`;
+    return `${periodNames[row.period]}${basis}\n営:${profit(row.previousOp)}→${profit(row.revisedOp)}\nEPS:${amount(row.previousEps, row.previousEpsText)}→${amount(row.revisedEps, row.revisedEpsText)}`;
   });
   return { fiscalPeriod, lines };
 }

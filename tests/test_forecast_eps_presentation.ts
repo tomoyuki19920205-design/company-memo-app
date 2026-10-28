@@ -28,6 +28,31 @@ test("two period profit and EPS rows use three compact lines in either table ord
   }
 });
 
+test("Sekisui's two corrected tables retain EPS precision in card and detail", () => {
+  const alert = {
+    id: "a8ed2a62-31e2-447c-bfe9-2ead7c205bc1",
+    ticker: "4228", company_name: "積水化成", event_type: "forecast", event_subtype: "upward",
+    disclosed_at: "2026-10-28T07:00:00+00:00", detected_at: "2026-10-28T07:00:00+00:00",
+    headline: "連結業績予想および配当予想の修正に関するお知らせ",
+    raw_payload: { extracted: { eps_revisions: [
+      { ...revision("2Q_CUMULATIVE", 43.86, 54.79, 1600, 3000), previous_eps_text: "43.86", revised_eps_text: "54.79" },
+      { ...revision("FULL_YEAR", 54.83, 81, 3100, 5300), previous_eps_text: "54.83", revised_eps_text: "81.00" },
+    ] } },
+  } as unknown as EnrichedEvent;
+  const expected = "2Q 連結\n営:1600百万→3000百万\nEPS:43.86円→54.79円\n通期 連結\n営:3100百万→5300百万\nEPS:54.83円→81.00円";
+  assert.equal(formatCardBody(alert).text, expected);
+  assert.equal(formatCardSummary(alert, { category: "forecast" } as never, "").line3, expected);
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||= "https://example.supabase.co";
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||= "test-key";
+  (globalThis as { React?: typeof React }).React = React;
+  const detail = renderToStaticMarkup(createElement(AlertDetailPanel, {
+    event: { ...alert, formatted_message: "upward 2027年3月期" },
+    userId: "test-user", onUpdate: () => {},
+  }));
+  assert.ok(detail.includes(expected));
+  assert.doesNotMatch(detail, /期間不明|2027年3月期|（累計）/);
+});
+
 test("single period, unknown period, missing EPS and legacy payloads stay safe", () => {
   assert.equal(getForecastEpsPresentation(event({ eps_revisions: [revision("FULL_YEAR", 59.92, 81.06)] })).lines.length, 1);
   assert.equal(getForecastEpsPresentation(event({ eps_revisions: [revision("2Q_CUMULATIVE", 12.34, 27.32)] })).lines.length, 1);
