@@ -15,6 +15,7 @@ import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-poli
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
 import { getForecastEpsPresentation } from "@/lib/tdnet-alerts/forecast-eps-presentation";
+import { spaceEarningsReasonItems } from "@/lib/tdnet-alerts/earnings-reason-spacing";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-alerts/card-expansion";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
@@ -75,6 +76,7 @@ const processLines = (str: string) => str.split("\n").map((line, j, arr) => (
 
 const renderHighlightedCardBody = (text: string, event: EnrichedEvent) => {
   if (!text) return null;
+  if (event.event_type === "earnings") text = spaceEarningsReasonItems(text);
   const cacheKey = `${event.id}:${text}:v2`;
   if (highlightCache.has(cacheKey)) return highlightCache.get(cacheKey);
 

@@ -18,6 +18,7 @@ import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
 import { getForecastEpsPresentation } from "@/lib/tdnet-alerts/forecast-eps-presentation";
+import { spaceEarningsReasonItems } from "@/lib/tdnet-alerts/earnings-reason-spacing";
 import { isEdinetOrderEvent } from "./AlertsPage";
 import IpoAnalysisPanel from "./IpoAnalysisPanel";
 import ForecastReason from "./ForecastReason";
@@ -194,7 +195,7 @@ export default function AlertDetailPanel({
   return (
     <div className="detail-panel">
       {/* Main message: Discord と同一内容 */}
-      <div className="detail-main-message">{mainMessage}</div>
+      <div className="detail-main-message">{event.event_type === "earnings" ? spaceEarningsReasonItems(mainMessage) : mainMessage}</div>
 
       {/* Meta info */}
       <div className="detail-meta">
