@@ -65,6 +65,12 @@ test("the actual card formatters expose fiscal year and both EPS rows", () => {
   }));
   assert.match(detail, /2Q（累計） 連結 EPS：修正前12\.34円 → 修正後27\.32円/);
   assert.match(detail, /通期 連結 EPS：修正前59\.92円 → 修正後81\.06円/);
+  const legacyMessageDetail = renderToStaticMarkup(createElement(AlertDetailPanel, {
+    event: { ...alert, formatted_message: "upward 2027年3月期 第2四半期", display_summary: "upward 2027年3月期 第2四半期", headline: "業績予想及び配当予想の修正に関するお知らせ" },
+    userId: "test-user", onUpdate: () => {},
+  }));
+  assert.doesNotMatch(legacyMessageDetail, /upward 2027年3月期 第2四半期/);
+  assert.match(legacyMessageDetail, /業績予想及び配当予想の修正に関するお知らせ/);
 });
 
 test("same notification ID refreshes its EPS summary when its payload is corrected", () => {
