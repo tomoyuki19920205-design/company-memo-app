@@ -3535,6 +3535,13 @@ textarea::placeholder {
   overflow-wrap: anywhere;
 }
 
+.alert-card-forecast-summary {
+  white-space: pre-line;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
+
 .alert-card-financial-summary {
   display: flex;
   align-items: baseline;

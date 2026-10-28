@@ -14,6 +14,7 @@ import {
 import { isNotificationEventVisible } from "@/lib/tdnet-alerts/notification-policy";
 import { getDividendCompositeBodyLabel, getDividendCompositeLabel, getDividendPolicyDisplay } from "@/lib/tdnet-alerts/dividend-policy";
 import { formatCapitalActionCard, getIpoListingCardTitle } from "@/lib/tdnet-alerts/capital-actions";
+import { getForecastEpsPresentation } from "@/lib/tdnet-alerts/forecast-eps-presentation";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-alerts/card-expansion";
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
@@ -208,14 +209,14 @@ const highlightCache = new Map<string, React.ReactNode>();
 
 // 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
 // 長い headline / formatted_message は使わない
-const formatCardBody = (event: EnrichedEvent): { 
+export const formatCardBody = (event: EnrichedEvent): {
   text: string; 
   isFallback: boolean;
   primaryText?: string;
   summaryText?: string;
   compareText?: string;
 } => {
-  if (event.event_type !== "buyback" && bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
+  if (event.event_type !== "buyback" && event.event_type !== "forecast" && bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -289,17 +290,10 @@ const formatCardBody = (event: EnrichedEvent): {
     if (ordPct != null) metrics.push(`経常利益 ${fmtPct(ordPct)}`);
     if (netPct != null) metrics.push(`純利益 ${fmtPct(netPct)}`);
     if (metrics.length > 1) lines.push(metrics.join("  "));
-    const epsPrev = ext.previous_eps;
-    const epsRev  = ext.revised_eps;
-    if (epsPrev != null && epsRev != null) {
-      const p = Number(epsPrev), r = Number(epsRev);
-      if (!isNaN(p) && !isNaN(r) && Math.abs(p) <= 10000 && Math.abs(r) <= 10000) {
-        const ePct = p !== 0 ? (r - p) / Math.abs(p) * 100 : null;
-        lines.push(`EPS: ${fmtDiv(p)}→${fmtDiv(r)}${ePct !== null ? `(${fmtPct(ePct)})` : ""}`);
-      }
-    }
-    const periodLabel = ext.period_label;
-    if (periodLabel) lines.push(String(periodLabel));
+    const epsPresentation = getForecastEpsPresentation(event);
+    if (epsPresentation.fiscalPeriod) lines.push(epsPresentation.fiscalPeriod);
+    lines.push(...epsPresentation.lines);
+    if (!epsPresentation.lines.length && ext.period_label) lines.push(String(ext.period_label));
 
   } else if (event.event_type === "buyback") {
     if (ext.disclosure_role === "related_non_decision") {
@@ -450,8 +444,8 @@ const getOpTurnaroundLabel = (
   return null; // 両方黒字: 通常YOY表示
 };
 
-const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
-  if (event.event_type !== "buyback" && summaryCache.has(event.id)) return summaryCache.get(event.id)!;
+export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
+  if (event.event_type !== "buyback" && event.event_type !== "forecast" && summaryCache.has(event.id)) return summaryCache.get(event.id)!;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -610,15 +604,9 @@ const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBad
     
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
 
-    const epsPrev = ext.previous_eps;
-    const epsRev  = ext.revised_eps;
-    if (epsPrev != null && epsRev != null) {
-      const p = Number(epsPrev), r = Number(epsRev);
-      if (!isNaN(p) && !isNaN(r) && p !== 0) {
-        const ePct = (r - p) / Math.abs(p) * 100;
-        line2 = `EPS ${fmtDiv(p)}→${fmtDiv(r)}(${fmtPct(ePct)})`;
-      }
-    }
+    const epsPresentation = getForecastEpsPresentation(event);
+    line2 = epsPresentation.fiscalPeriod || epsPresentation.lines[0] || "";
+    line3 = (epsPresentation.fiscalPeriod ? epsPresentation.lines : epsPresentation.lines.slice(1)).join("\n") || undefined;
     if (!line2) {
       const opPct = ext.change_op_pct;
       if (opPct != null) line2 = `営業利益 ${fmtPct(opPct)}`;
@@ -1558,14 +1546,14 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
                        {renderHighlightedCardBody(line1, event)}
                     </div>
                     {displayLine2 && (
-                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "buyback" ? "buyback-card-metric" : ""}`}>
+                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "buyback" ? "buyback-card-metric" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`}>
                           {event.event_type === "earnings"
                             ? renderCompactEarningsCardLine(displayLine2)
                             : renderHighlightedCardBody(displayLine2, event)}
                        </div>
                     )}
                     {displayLine3 && (
-                       <div className={`alert-card-summary-line3 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""}`} style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
+                       <div className={`alert-card-summary-line3 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`} style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
                           {event.event_type === "earnings"
                             ? renderCompactEarningsCardLine(displayLine3)
                             : renderHighlightedCardBody(displayLine3, event)}

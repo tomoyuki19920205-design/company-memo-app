@@ -17,6 +17,7 @@ import { buildSegmentViewData } from "@/lib/tdnet-alerts/segment-normalize";
 import { getDividendCompositeLabel } from "@/lib/tdnet-alerts/dividend-policy";
 import { getBuybackCard } from "@/lib/tdnet-alerts/buyback-card";
 import { getValidatedMaterialUrl, isCompanyIrEvent, isPdfOnlyMaterialEvent } from "@/lib/tdnet-alerts/material-alerts";
+import { getForecastEpsPresentation } from "@/lib/tdnet-alerts/forecast-eps-presentation";
 import { isEdinetOrderEvent } from "./AlertsPage";
 import IpoAnalysisPanel from "./IpoAnalysisPanel";
 import ForecastReason from "./ForecastReason";
@@ -182,6 +183,10 @@ export default function AlertDetailPanel({
     !mainMessage.includes(event.headline.trim())
   ) {
     mainMessage = mainMessage + "\n" + event.headline;
+  }
+  const forecastEps = event.event_type === "forecast" ? getForecastEpsPresentation(event) : null;
+  if (forecastEps?.lines.length) {
+    mainMessage = [forecastEps.fiscalPeriod, ...forecastEps.lines, mainMessage].filter(Boolean).join("\n");
   }
 
   return (
