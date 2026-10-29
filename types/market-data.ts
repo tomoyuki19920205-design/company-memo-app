@@ -14,6 +14,7 @@ export interface MarketDataRecord {
     turnover: number | null;
     adj_close: number | null;
     market_cap: number | null;
+    source?: string | null;
 }
 
 /** Supabase per_share_data テーブル行 */
@@ -81,6 +82,7 @@ export interface ValuationMetrics {
     pbr: number | null;              // PBR（最新BPS）
     div_yield: number | null;        // 配当利回り % (予想配当優先)
     price_date: string | null;       // 株価基準日
+    price_source?: string | null;
     // 内訳（デバッグ・表示用）
     eps_used: number | null;         // PER計算に使用したEPS
     eps_basis: "forecast" | "actual" | null;  // どちらのEPSを使用したか

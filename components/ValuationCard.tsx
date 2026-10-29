@@ -29,6 +29,16 @@ function formatPrice(val: number | null): string {
     return val.toLocaleString("ja-JP");
 }
 
+function PriceSource({ source, date }: { source?: string | null; date: string }) {
+    if (!source) return null;
+    if (source === "nse_daily_report") {
+        const reportDate = date.replaceAll("-", "");
+        return <> · <a href={`https://www.nse.or.jp/market/condition/report/files/${reportDate}.pdf`}
+            target="_blank" rel="noopener noreferrer">名証公式日報</a></>;
+    }
+    return <> · {source}</>;
+}
+
 /** basis バッジ (予/実) */
 function BasisBadge({ basis }: { basis: "forecast" | "actual" | null }) {
     if (!basis) return null;
@@ -54,7 +64,7 @@ function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
         return (
             <div className={rootClass}>
                 <span className="valuation-card-title">マーケット指標</span>
-                <span className="valuation-card-empty">データなし</span>
+                <span className="valuation-card-empty">株価未取得</span>
             </div>
         );
     }
@@ -87,7 +97,7 @@ function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
                 <span className="valuation-card-title">マーケット指標</span>
                 {valuation.price_date && (
                     <span className="valuation-card-date">
-                        ({valuation.price_date})
+                        ({valuation.price_date}<PriceSource source={valuation.price_source} date={valuation.price_date} />)
                     </span>
                 )}
                 <div className="valuation-card-items">
@@ -116,7 +126,7 @@ function ValuationCard({ valuation, loading, compact }: ValuationCardProps) {
                 <h3 className="valuation-card-title">マーケット指標</h3>
                 {valuation.price_date && (
                     <span className="valuation-card-date">
-                        基準日: {valuation.price_date}
+                        基準日: {valuation.price_date}<PriceSource source={valuation.price_source} date={valuation.price_date} />
                     </span>
                 )}
             </div>

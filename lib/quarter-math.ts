@@ -100,6 +100,7 @@ export interface CumulativeRow {
 function safeSub(a: number | null, b: number | null): number | null {
     if (a === null || a === undefined) return null;
     if (b === null || b === undefined) return null;
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return null;
     return a - b;
 }
 
@@ -150,9 +151,24 @@ export function displayedProfit(record: FinancialRecord, industry?: string | nul
 
 function displayedSgAndA(record: FinancialRecord, profit: SelectedProfit): number | null {
     // GP minus ordinary profit or PBT is not SG&A.
-    return profit.metric !== "operating_profit"
-        ? null
+    if (profit.metric !== "operating_profit") return null;
+    const direct = record.selling_general_and_administrative_expenses;
+    return direct !== null && direct !== undefined && Number.isFinite(direct)
+        ? direct
         : calcSgAndA(record.gross_profit, record.operating_profit);
+}
+
+function standaloneSgAndA(current: FinancialRecord, prior: FinancialRecord): number | null {
+    const a = current.selling_general_and_administrative_expenses;
+    const b = prior.selling_general_and_administrative_expenses;
+    if (a !== null && a !== undefined && b !== null && b !== undefined &&
+        Number.isFinite(a) && Number.isFinite(b)) return a - b;
+    // Derive both cumulative sides by the same method if either disclosed
+    // amount is missing. Never mix a direct value with an estimate.
+    return safeSub(
+        calcSgAndA(current.gross_profit, current.operating_profit),
+        calcSgAndA(prior.gross_profit, prior.operating_profit),
+    );
 }
 
 // ============================================================
@@ -259,7 +275,9 @@ export function buildQStandaloneRows(records: FinancialRecord[], industry?: stri
                     ? safeSub(currentProfit.value, previousProfit.value)
                     : null;
                 const grossMarginRate = calcGrossMarginRate(gp, sales);
-                const sgAndA = currentProfit.metric === "operating_profit" ? calcSgAndA(gp, op) : null;
+                const sgAndA = currentProfit.metric === "operating_profit" &&
+                    currentProfit.metric === previousProfit.metric
+                    ? standaloneSgAndA(r, prevRecord) : null;
                 const opMargin = calcOpMargin(op, sales);
 
                 result.push({

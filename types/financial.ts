@@ -4,6 +4,7 @@ export interface FinancialRecord {
     quarter: string;
     sales: number | null;
     gross_profit: number | null;
+    selling_general_and_administrative_expenses?: number | null;
     operating_profit: number | null;
     profit_before_tax: number | null;
     ordinary_profit: number | null;

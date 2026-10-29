@@ -134,7 +134,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
         const supabase = createSupabaseBrowser();
         const columns =
             "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,ordinary_profit,net_income,eps,source,updated_at";
-        const [actualResult, forecastResult] = await Promise.all([
+        const [actualResult, forecastResult, sgaResult] = await Promise.all([
             supabase
                 .from("api_latest_financials_canonical")
                 .select(columns)
@@ -149,7 +149,20 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
                 .order("period", { ascending: false })
                 .order("quarter", { ascending: false })
                 .limit(100),
+            t === "1777"
+                ? supabase
+                    .from("canonical_financials")
+                    .select("period,quarter,value")
+                    .eq("ticker", t)
+                    .eq("metric", "selling_general_and_administrative_expenses")
+                    .eq("source", "official_pdf")
+                    .limit(100)
+                : Promise.resolve({ data: [], error: null }),
         ]);
+
+        if (sgaResult.error) {
+            throw new Error(`販管費取得に失敗しました: ${sgaResult.error.message}`);
+        }
 
         if (actualResult.error) {
             if (
@@ -173,13 +186,23 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
             }
         }
 
-        const rows = [
-            ...(actualResult.data ?? []),
+        const sgaByPeriod = new Map(
+            (sgaResult.data ?? []).map((row) => [`${row.period}:${row.quarter}`, row.value]),
+        );
+        const completedActuals = (actualResult.data ?? []).map((row) => {
+            const key = `${row.period}:${row.quarter}`;
+            return {
+                ...row,
+                selling_general_and_administrative_expenses: sgaByPeriod.get(key) ?? null,
+            };
+        });
+        const completedRows = [
+            ...completedActuals,
             ...(forecastResult.error ? [] : (forecastResult.data ?? [])),
         ];
-        if (rows.length === 0) return [];
+        if (completedRows.length === 0) return [];
 
-        return transformFinancialRows(rows as ViewerFinancialRow[]);
+        return transformFinancialRows(completedRows as ViewerFinancialRow[]);
     } catch (err) {
         console.error("loadFinancials error:", err);
         throw err;
@@ -832,7 +855,7 @@ export async function loadLatestMarketData(
         const { data, error } = await supabase
             .from("market_data")
             .select(
-                "ticker,date,open,high,low,close,volume,turnover,adj_close,market_cap",
+                "ticker,date,open,high,low,close,volume,turnover,adj_close,market_cap,source",
             )
             .eq("ticker", t)
             .order("date", { ascending: false })
@@ -861,6 +884,7 @@ export async function loadLatestMarketData(
             adj_close: data.adj_close !== null ? Number(data.adj_close) : null,
             market_cap:
                 data.market_cap !== null ? Number(data.market_cap) : null,
+            source: data.source,
         } as MarketDataRecord;
     } catch (err) {
         console.warn("[market_data] 取得例外:", err);
@@ -1120,6 +1144,7 @@ export function calculateValuation(
         pbr: null,
         div_yield: null,
         price_date: null,
+        price_source: null,
         eps_used: null,
         eps_basis: null,
         raw_forecast_eps: null,
@@ -1159,6 +1184,7 @@ export function calculateValuation(
             stock_price: price,
             market_cap: market.market_cap,
             price_date: priceDate,
+            price_source: market.source ?? null,
         };
     }
 
@@ -1239,6 +1265,7 @@ export function calculateValuation(
         pbr,
         div_yield: divYield,
         price_date: priceDate,
+        price_source: market.source ?? null,
         eps_used: epsUsed,
         eps_basis: epsBasis,
         raw_forecast_eps: primary.forecast_eps,

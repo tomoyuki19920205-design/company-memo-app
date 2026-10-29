@@ -6,6 +6,7 @@ export interface ViewerFinancialRow {
     quarter: string;
     sales: number | null;
     gross_profit: number | null;
+    selling_general_and_administrative_expenses?: number | null;
     operating_profit: number | null;
     profit_before_tax?: number | null;
     ordinary_profit?: number | null;
@@ -30,6 +31,7 @@ export function transformFinancialRows(rows: ViewerFinancialRow[]): FinancialRec
         quarter: row.quarter,
         sales: row.sales,
         gross_profit: row.gross_profit,
+        selling_general_and_administrative_expenses: row.selling_general_and_administrative_expenses ?? null,
         operating_profit: row.operating_profit,
         profit_before_tax: row.profit_before_tax ?? null,
         ordinary_profit: row.ordinary_profit ?? null,
