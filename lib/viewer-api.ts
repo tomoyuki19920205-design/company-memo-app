@@ -134,10 +134,12 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
         const supabase = createSupabaseBrowser();
         const columns =
             "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,ordinary_profit,net_income,eps,source,updated_at";
+        const actualColumns =
+            "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,ordinary_profit,net_income,eps,source,updated_at,cost_of_sales,sga,non_operating_income,non_operating_expenses,extraordinary_income,extraordinary_losses,income_taxes";
         const [actualResult, forecastResult, sgaResult] = await Promise.all([
             supabase
                 .from("api_latest_financials_canonical")
-                .select(columns)
+                .select(actualColumns)
                 .eq("ticker", t)
                 .order("period", { ascending: false })
                 .order("quarter", { ascending: false })
@@ -193,7 +195,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
             const key = `${row.period}:${row.quarter}`;
             return {
                 ...row,
-                selling_general_and_administrative_expenses: sgaByPeriod.get(key) ?? null,
+                selling_general_and_administrative_expenses: row.sga ?? sgaByPeriod.get(key) ?? null,
             };
         });
         const completedRows = [
@@ -202,7 +204,24 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
         ];
         if (completedRows.length === 0) return [];
 
-        return transformFinancialRows(completedRows as ViewerFinancialRow[]);
+        // Keep the existing actual/forecast transformation and attach only
+        // actual statement detail. A same-period forecast cannot inherit it.
+        const detailByKey = new Map(completedActuals.map((row) => [
+            `${row.period}|${row.quarter}|${row.source}`, row,
+        ]));
+        const num = (value: unknown): number | null => value == null ? null : Number(value);
+        return transformFinancialRows(completedRows as ViewerFinancialRow[]).map((row) => {
+            const detail = detailByKey.get(`${row.period}|${row.quarter}|${row.source}`);
+            return {
+                ...row,
+                cost_of_sales: num(detail?.cost_of_sales),
+                non_operating_income: num(detail?.non_operating_income),
+                non_operating_expenses: num(detail?.non_operating_expenses),
+                extraordinary_income: num(detail?.extraordinary_income),
+                extraordinary_losses: num(detail?.extraordinary_losses),
+                income_taxes: num(detail?.income_taxes),
+            };
+        });
     } catch (err) {
         console.error("loadFinancials error:", err);
         throw err;

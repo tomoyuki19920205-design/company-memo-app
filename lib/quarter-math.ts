@@ -94,6 +94,62 @@ export interface CumulativeRow {
     source: string;
 }
 
+export const PL_DETAIL_METRICS = [
+    { key: "sales", label: "売上高" },
+    { key: "cost_of_sales", label: "売上原価" },
+    { key: "gross_profit", label: "売上総利益" },
+    { key: "selling_general_and_administrative_expenses", label: "販管費" },
+    { key: "operating_profit", label: "営業利益" },
+    { key: "non_operating_income", label: "営業外収益" },
+    { key: "non_operating_expenses", label: "営業外費用" },
+    { key: "ordinary_profit", label: "経常利益" },
+    { key: "extraordinary_income", label: "特別利益" },
+    { key: "extraordinary_losses", label: "特別損失" },
+    { key: "profit_before_tax", label: "税引前利益" },
+    { key: "income_taxes", label: "法人税等" },
+    { key: "net_income", label: "親会社株主純利益" },
+    { key: "eps", label: "EPS（円）" },
+] as const;
+
+export type PLDetailMetric = (typeof PL_DETAIL_METRICS)[number]["key"];
+
+export interface PLDetailRow {
+    period: string;
+    quarter: string;
+    values: Record<PLDetailMetric, number | null>;
+}
+
+function plValue(row: FinancialRecord, metric: PLDetailMetric): number | null {
+    const value = row[metric];
+    return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+/** Amounts use the same scope and fiscal-year cumulative basis; EPS stays YTD only. */
+export function buildPLDetailRows(records: FinancialRecord[], standalone: boolean): PLDetailRow[] {
+    const byPeriod = new Map<string, Map<string, FinancialRecord>>();
+    for (const row of records) {
+        if (!byPeriod.has(row.period)) byPeriod.set(row.period, new Map());
+        byPeriod.get(row.period)!.set(row.quarter, row);
+    }
+    return records.map((row) => {
+        const periodMap = byPeriod.get(row.period)!;
+        const prevQuarter = previousQuarterFor(row, periodMap, byPeriod);
+        const prior = prevQuarter ? periodMap.get(prevQuarter) : undefined;
+        const comparable = prior &&
+            row.consolidation_scope === prior.consolidation_scope &&
+            FORECAST_SOURCES.has(row.source) === FORECAST_SOURCES.has(prior.source);
+        const values = {} as Record<PLDetailMetric, number | null>;
+        for (const { key } of PL_DETAIL_METRICS) {
+            const current = plValue(row, key);
+            values[key] = !standalone ? current
+                : key === "eps" ? null
+                : prevQuarter === null ? current
+                : comparable ? safeSub(current, plValue(prior, key)) : null;
+        }
+        return { period: row.period, quarter: row.quarter, values };
+    });
+}
+
 // ============================================================
 // 安全な減算 (null安全)
 // ============================================================
