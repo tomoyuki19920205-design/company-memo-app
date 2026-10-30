@@ -20,45 +20,9 @@ import { KpiFormulaControls, KpiFormulaInput, KpiFormulaCell } from "@/component
 import { KpiEditorStore, type KpiEdit, type PlMemoEdit } from "@/lib/kpi-editor-store";
 import { buildKpiBook } from "@/lib/kpi-reference-book";
 import { isFormulaInput, targetKey, type Sheet } from "@/lib/kpi-formula";
-import {
-    buildPLDetailRows, PL_DETAIL_METRICS, filterLast5Years,
-    sortForDisplay, FORECAST_SOURCES, type PLDetailRow,
-} from "@/lib/quarter-math";
 
 /** 何もしない安定参照関数。onSelect など毎レンダー生成を避けるために使用 */
 const NOOP = () => {};
-
-function PLDetailTable({ rows, label, standalone }: { rows: PLDetailRow[]; label: string; standalone: boolean }) {
-    const columns = standalone ? PL_DETAIL_METRICS.filter(({ key }) => key !== "eps") : PL_DETAIL_METRICS;
-    return (
-        <div className="pl-table-block" style={{ marginTop: 8 }}>
-            <div className="pl-table-label">{label}</div>
-            <div style={{ overflowX: "auto", maxHeight: 400, overflowY: "auto" }}>
-                <table className="pl-table" style={{ minWidth: 1680 }}>
-                    <thead><tr>
-                        <th style={{ minWidth: 105 }}>PERIOD</th><th style={{ minWidth: 45 }}>Q</th>
-                        {columns.map(({ key, label: heading }) => (
-                            <th key={key} className="num-col" style={{ minWidth: 105, whiteSpace: "nowrap" }}>{heading}</th>
-                        ))}
-                    </tr></thead>
-                    <tbody>{rows.map((row) => (
-                        <tr key={`${label}-${row.period}-${row.quarter}`} className={`pl-row${row.quarter === "FY" ? " pl-row-fy" : ""}`}>
-                            <td>{row.period}</td><td>{row.quarter}</td>
-                            {columns.map(({ key }) => {
-                                const value = row.values[key];
-                                return <td key={key} className="num-col">{
-                                    key === "eps"
-                                        ? (value == null ? "–" : value.toLocaleString("ja-JP", { minimumFractionDigits: 2, maximumFractionDigits: 2 }))
-                                        : formatMillions(value)
-                                }</td>;
-                            })}
-                        </tr>
-                    ))}</tbody>
-                </table>
-            </div>
-        </div>
-    );
-}
 
 // ─── セグメント source 別タブ ─────────────────────────────
 // 'tdnet' = backfill_v4_pdf / v4_pdf (XBRL partial fallback採用済み)
@@ -669,16 +633,6 @@ function FinancialsTable({
             () => buildFinancialTableModel(data, industry),
             [data, industry],
         );
-    const detailRecords = useMemo(
-        () => sortForDisplay(filterLast5Years(data).filter((row) => !FORECAST_SOURCES.has(row.source ?? ""))),
-        [data],
-    );
-    const plDetailCumulative = useMemo(() => buildPLDetailRows(detailRecords, false), [detailRecords]);
-    const plDetailQuarter = useMemo(() => buildPLDetailRows(detailRecords, true), [detailRecords]);
-    const hasDetailedPL = useMemo(() => detailRecords.some((row) => PL_DETAIL_METRICS.some(({ key }) =>
-        key !== "sales" && key !== "gross_profit" && key !== "operating_profit" &&
-        key !== "selling_general_and_administrative_expenses" && row[key] != null
-    )), [detailRecords]);
     const editorTicker = ticker ?? displayTicker ?? "";
     const mismatchedTicker = !!ticker && data.length > 0 && displayTicker !== ticker;
     const kpiBook = useMemo(() => buildKpiBook(editorTicker, mismatchedTicker ? [] : data, kpiValues ?? {}, industry, manualTableMemos), [editorTicker, mismatchedTicker, data, kpiValues, industry, manualTableMemos]);
@@ -726,7 +680,6 @@ function FinancialsTable({
     );
 
     const [segSourceTab, setSegSourceTab] = useState<SegSourceTab>("tdnet");
-    const [detailOpen, setDetailOpen] = useState(true);
 
     // prior_comparative のようなXBRL由来の period（四半期末日等）を PLの period（決算期末日）に揃える
     const alignedSegments = useMemo(() => {
@@ -3447,13 +3400,6 @@ function FinancialsTable({
                             </div>
                         </div>{/* pl-dual-tables */}
                     </div>{/* pl-scroll-area */}
-                    {hasDetailedPL && (
-                        <details open={detailOpen} onToggle={(event) => setDetailOpen(event.currentTarget.open)} style={{ marginTop: 12 }}>
-                            <summary className="pl-table-label" style={{ cursor: "pointer" }}>PL詳細（連結実績）</summary>
-                            <PLDetailTable rows={plDetailCumulative} label="累計PL詳細（百万円、EPSのみ円）" standalone={false} />
-                            <PLDetailTable rows={plDetailQuarter} label="Q単体PL詳細（百万円、同年度の累計差分）" standalone />
-                        </details>
-                    )}
                     {/* リサイズハンドル（縦スクロール廃止のため非表示） */}
                     <div className="pl-resize-handle" style={{ display: "none" }} onMouseDown={handleResizeMouseDown}>
                         <div className="pl-resize-grip">⋯</div>

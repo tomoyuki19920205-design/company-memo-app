@@ -92,6 +92,41 @@ test("FinancialsTable SSR renders correct cumulative and standalone rows for 418
     assert.doesNotMatch(html, /税引前利益/);
 });
 
+test("shared Viewer PL keeps 6623 and 9513 base tables without the added detail region", () => {
+    const aichi = transformFinancialRows([
+        { ticker: "6623", period: "2026-03-31", quarter: "1Q", sales: 30_000, gross_profit: 6_000, operating_profit: 2_000, source: "official_ir_verified", updated_at: "" },
+        { ticker: "6623", period: "2026-03-31", quarter: "FY", sales: 129_382, gross_profit: 24_000, operating_profit: 11_153, source: "official_ir_verified", updated_at: "" },
+    ]);
+    const segments = [{
+        ticker: "6623", period: "2026-03-31", quarter: "FY",
+        segment_name: "電力機器", segment_sales: 38_004, segment_profit: 5_750,
+        source: "official_ir_verified",
+    }];
+    const aichiHtml = renderToStaticMarkup(
+        <FinancialsTable data={aichi} loading={false} segments={segments} />,
+    );
+    assert.match(rowMarkup(aichiHtml, "cumulative", "2026-03-31", "FY"), />129,382</);
+    assert.match(rowMarkup(aichiHtml, "standalone", "2026-03-31", "1Q"), />30,000</);
+    assert.match(rowMarkup(aichiHtml, "standalone", "2026-03-31", "FY"), />–</);
+    assert.match(aichiHtml, /累計セグメント/);
+    assert.match(aichiHtml, /電力機器/);
+    assert.match(aichiHtml, />38,004</);
+
+    const jpower = transformFinancialRows([
+        { ticker: "9513", period: "2026-03-31", quarter: "FY", sales: 987_654, gross_profit: 150_000, operating_profit: 80_000, source: "jquants", updated_at: "" },
+    ]);
+    const jpowerHtml = renderToStaticMarkup(
+        <FinancialsTable data={jpower} loading={false} segments={[]} />,
+    );
+    for (const html of [aichiHtml, jpowerHtml]) {
+        assert.match(html, /累計PL（百万円）/);
+        assert.match(html, /Q単体PL（百万円）/);
+        assert.doesNotMatch(html, /PL詳細|累計PL詳細|Q単体PL詳細/);
+    }
+    assert.match(rowMarkup(jpowerHtml, "cumulative", "2026-03-31", "FY"), />987,654</);
+    assert.doesNotMatch(jpowerHtml, /129,382|電力機器/);
+});
+
 test("FinancialsTable preserves the approved 5713 PBT presentation", () => {
     const rows: ViewerFinancialRow[] = [
         { ticker: "5713", period: "2026-03-31", quarter: "1Q", sales: 379_600, gross_profit: null, operating_profit: null, profit_before_tax: 37_901, source: "tdnet_xbrl", updated_at: "" },
