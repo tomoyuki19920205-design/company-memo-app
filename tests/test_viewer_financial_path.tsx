@@ -110,6 +110,17 @@ test("published 2002 2Q actual suppresses old 2Q guidance and preserves FY", () 
     assert.match(rowMarkup(html, "cumulative", "2027-03-31", "2Q"), /441,756/);
 });
 
+test("later withdrawal takes precedence over a saved numeric 2Q forecast", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "2221", period: "2027-03-31", quarter: "2Q", sales: 14_880, gross_profit: null, operating_profit: -260, source: "tdnet_forecast", disclosure_datetime: "2026-10-30T06:00:00Z", updated_at: "" },
+        { ticker: "2221", period: "2027-03-31", quarter: "2Q", sales: null, gross_profit: null, operating_profit: null, source: "tdnet_forecast", forecast_status: "withdrawn", disclosure_datetime: "2026-10-31T06:00:00Z", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    const half = html.slice(html.indexOf('data-forecast-quarter="2Q"'));
+    assert.match(half, /撤回/);
+    assert.doesNotMatch(half, /14,880/);
+});
+
 test("FinancialsTable SSR renders correct cumulative and standalone rows for 418A", () => {
     const html = renderToStaticMarkup(
         <FinancialsTable
