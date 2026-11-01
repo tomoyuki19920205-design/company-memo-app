@@ -71,6 +71,45 @@ test("financial table model keeps alpha issuers separate from numeric issuers", 
     assert.ok(mirrativ.cumulativeRows.every((item) => !johnanValues.has(item.sales ?? NaN)));
 });
 
+test("official 2221 upper-half revision appears before the independent FY guidance", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "2221", period: "2027-03-31", quarter: "1Q", sales: 7_000, gross_profit: null, operating_profit: 100, source: "jquants", updated_at: "" },
+        { ticker: "2221", period: "2027-03-31", quarter: "2Q", sales: 14_880, gross_profit: null, operating_profit: -260, ordinary_profit: 1_100, net_income: 770, source: "tdnet_forecast", updated_at: "", disclosure_datetime: "2026-10-30T15:30:00+09:00", source_url: "https://www2.jpx.co.jp/disc/22210/140120261030560533.pdf", sales_accounting_scope: "consolidated", operating_profit_accounting_scope: "consolidated" },
+        { ticker: "2221", period: "2027-03-31", quarter: "FY", sales: 30_600, gross_profit: null, operating_profit: 300, source: "jquants_forecast_fy", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    const half = html.indexOf('data-forecast-quarter="2Q"');
+    const full = html.indexOf('data-forecast-quarter="FY"');
+    assert.ok(half >= 0 && full > half);
+    assert.match(html.slice(half, full), /14,880/);
+    assert.match(html.slice(half, full), /−260|−260|\-260/);
+    assert.match(html.slice(full), /30,600/);
+    assert.match(html.slice(half, full), /出典/);
+});
+
+test("official non-disclosure is distinct from unresolved guidance", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "1787", period: "2027-03-31", quarter: "1Q", sales: 4_000, gross_profit: null, operating_profit: 300, source: "jquants", updated_at: "" },
+        { ticker: "1787", period: "2027-03-31", quarter: "2Q", sales: null, gross_profit: null, operating_profit: null, source: "tdnet_forecast", forecast_status: "not_disclosed", updated_at: "" },
+        { ticker: "1787", period: "2027-03-31", quarter: "FY", sales: 15_200, gross_profit: null, operating_profit: 1_307, source: "jquants_forecast_fy", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    assert.match(html, /最新2Q予想[\s\S]*非開示/);
+    assert.match(html, /最新FY予想[\s\S]*15,200/);
+});
+
+test("published 2002 2Q actual suppresses old 2Q guidance and preserves FY", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "2002", period: "2027-03-31", quarter: "2Q", sales: 441_756, gross_profit: null, operating_profit: 22_823, source: "jquants", updated_at: "" },
+        { ticker: "2002", period: "2027-03-31", quarter: "2Q", sales: 440_000, gross_profit: null, operating_profit: 20_000, source: "jquants_forecast", updated_at: "" },
+        { ticker: "2002", period: "2027-03-31", quarter: "FY", sales: 900_000, gross_profit: null, operating_profit: 48_000, source: "jquants_forecast_fy", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    assert.doesNotMatch(html, /data-forecast-quarter="2Q"/);
+    assert.match(html, /data-forecast-quarter="FY"/);
+    assert.match(rowMarkup(html, "cumulative", "2027-03-31", "2Q"), /441,756/);
+});
+
 test("FinancialsTable SSR renders correct cumulative and standalone rows for 418A", () => {
     const html = renderToStaticMarkup(
         <FinancialsTable

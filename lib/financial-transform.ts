@@ -14,6 +14,11 @@ export interface ViewerFinancialRow {
     eps?: number | null;
     source: string | null;
     updated_at: string | null;
+    disclosure_datetime?: string | null;
+    source_url?: string | null;
+    sales_accounting_scope?: string | null;
+    operating_profit_accounting_scope?: string | null;
+    forecast_status?: "not_disclosed" | "undecided" | "withdrawn" | "unresolved" | null;
 }
 
 const QUARTER_ORDER: Record<string, number> = {
@@ -39,6 +44,11 @@ export function transformFinancialRows(rows: ViewerFinancialRow[]): FinancialRec
         eps: row.eps ?? null,
         source: row.source ?? "",
         updated_at: row.updated_at ?? "",
+        disclosure_datetime: row.disclosure_datetime ?? null,
+        source_url: row.source_url ?? null,
+        sales_accounting_scope: row.sales_accounting_scope ?? null,
+        operating_profit_accounting_scope: row.operating_profit_accounting_scope ?? null,
+        forecast_status: row.forecast_status ?? null,
     }));
 
     return records.sort((a, b) => {

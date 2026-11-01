@@ -135,7 +135,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
         const columns =
             "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,ordinary_profit,net_income,eps,source,updated_at";
         const actualColumns = `${columns},sga`;
-        const [actualResult, forecastResult, sgaResult] = await Promise.all([
+        const [actualResult, forecastResult, sgaResult, statusResult] = await Promise.all([
             supabase
                 .from("api_latest_financials_canonical")
                 .select(actualColumns)
@@ -145,7 +145,7 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
                 .limit(100),
             supabase
                 .from("api_latest_financials_canonical_forecast")
-                .select(columns)
+                .select(`${columns},disclosure_datetime,source_url,accounting_scope,sales_accounting_scope,operating_profit_accounting_scope`)
                 .eq("ticker", t)
                 .order("period", { ascending: false })
                 .order("quarter", { ascending: false })
@@ -159,6 +159,11 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
                     .eq("source", "official_pdf")
                     .limit(100)
                 : Promise.resolve({ data: [], error: null }),
+            supabase
+                .from("company_2q_forecast_status")
+                .select("ticker,period,status,disclosure_datetime,source_url,updated_at")
+                .eq("ticker", t)
+                .limit(20),
         ]);
 
         if (sgaResult.error) {
@@ -200,6 +205,23 @@ export async function loadFinancials(ticker: string): Promise<FinancialRecord[]>
         const completedRows = [
             ...completedActuals,
             ...(forecastResult.error ? [] : (forecastResult.data ?? [])),
+            ...(statusResult.error ? [] : (statusResult.data ?? []).map((row) => ({
+                ticker: row.ticker,
+                period: row.period,
+                quarter: "2Q",
+                sales: null,
+                gross_profit: null,
+                operating_profit: null,
+                profit_before_tax: null,
+                ordinary_profit: null,
+                net_income: null,
+                eps: null,
+                source: "tdnet_forecast",
+                updated_at: row.updated_at,
+                disclosure_datetime: row.disclosure_datetime,
+                source_url: row.source_url,
+                forecast_status: row.status,
+            }))),
         ];
         if (completedRows.length === 0) return [];
 

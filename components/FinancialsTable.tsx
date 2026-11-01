@@ -628,7 +628,7 @@ function FinancialsTable({
     const displayTicker = data.length > 0 && data.every((row) => row.ticker === data[0].ticker)
         ? data[0].ticker
         : null;
-    const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows } =
+    const { cumulativeRows: cumRows, standaloneRows: qRows, forecastFYRows, forecast2QRows } =
         useMemo(
             () => buildFinancialTableModel(data, industry),
             [data, industry],
@@ -3419,21 +3419,66 @@ function FinancialsTable({
                             forecastFYRows.find(r => r.period === latestActualFYPeriod) ??
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
 
-                        if (!latestForecast) return null;
-                        const selectedForecastProfit = selectProfitDisplay(latestForecast, industry);
-                        const forecastRefRow = forecastFYRows.indexOf(latestForecast);
-                        const forecastProfit = selectedForecastProfit.value;
-                        if (latestForecast.sales === null && forecastProfit === null) return null;
-
-                        const sales = latestForecast.sales;
-                        const op    = forecastProfit;
+                        const targetPeriod = latestForecast?.period ?? forecast2QRows[0]?.period ?? cumRows[0]?.period;
+                        if (!targetPeriod) return null;
+                        const selectedForecastProfit = latestForecast
+                            ? selectProfitDisplay(latestForecast, industry) : null;
+                        const forecastRefRow = latestForecast ? forecastFYRows.indexOf(latestForecast) : -1;
+                        const sales = latestForecast?.sales ?? null;
+                        const op = selectedForecastProfit?.value ?? null;
                         const opMargin =
-                            op !== null && sales !== null && sales !== 0
+                            op !== null && sales !== null && sales > 0
                                 ? (op / sales) * 100
                                 : null;
 
+                        const actual2QPublished = cumRows.some(
+                            r => r.period === targetPeriod && r.quarter === "2Q",
+                        );
+                        const numeric2Q = forecast2QRows.find(
+                            r => r.period === targetPeriod &&
+                                (r.sales !== null || r.operating_profit !== null),
+                        );
+                        const status2Q = forecast2QRows.find(
+                            r => r.period === targetPeriod && r.forecast_status,
+                        );
+                        const statusWins = !!status2Q && (!numeric2Q || (
+                            !!status2Q.disclosure_datetime && !!numeric2Q.disclosure_datetime &&
+                            Date.parse(status2Q.disclosure_datetime) > Date.parse(numeric2Q.disclosure_datetime)
+                        ));
+                        const latest2Q = statusWins ? undefined : numeric2Q;
+                        const statusLabel = status2Q?.forecast_status === "not_disclosed"
+                            ? "非開示"
+                            : status2Q?.forecast_status === "undecided"
+                                ? "未定"
+                                : status2Q?.forecast_status === "withdrawn"
+                                    ? "撤回"
+                                    : "取得未完了";
+                        const halfSales = latest2Q?.sales ?? null;
+                        const halfOp = latest2Q?.operating_profit ?? null;
+                        const matchingScope = !!latest2Q?.sales_accounting_scope &&
+                            latest2Q.sales_accounting_scope === latest2Q.operating_profit_accounting_scope;
+                        const halfMargin = matchingScope && halfSales !== null && halfSales > 0 && halfOp !== null
+                            ? (halfOp / halfSales) * 100 : null;
+                        const halfSource = latest2Q ?? status2Q;
+                        const halfSourceTitle = halfSource?.disclosure_datetime
+                            ? `開示: ${halfSource.disclosure_datetime}` : undefined;
+
                         return (
-                            <div className="pl-summary-bar">
+                            <>
+                            {!actual2QPublished && (
+                                <div className="pl-summary-bar" data-forecast-quarter="2Q" title={halfSourceTitle}>
+                                    <span className="pl-summary-period">最新2Q予想: {targetPeriod} 2Q（上期）</span>
+                                    {latest2Q ? (
+                                        <>
+                                            <span className="pl-summary-item"><span className="pl-summary-label">売上</span><span className="pl-summary-value">{halfSales !== null ? formatMillions(halfSales) : "—"}</span></span>
+                                            <span className="pl-summary-item"><span className="pl-summary-label">営業利益</span><span className="pl-summary-value">{halfOp !== null ? formatMillions(halfOp) : "—"}</span></span>
+                                            <span className="pl-summary-item"><span className="pl-summary-label">営業利益率</span><span className="pl-summary-value">{halfMargin !== null ? fmtMargin(halfMargin) : "—"}</span></span>
+                                        </>
+                                    ) : <span className="pl-summary-item">{statusLabel}</span>}
+                                    {halfSource?.source_url && <a href={halfSource.source_url} target="_blank" rel="noopener noreferrer" className="pl-summary-source">出典</a>}
+                                </div>
+                            )}
+                            {latestForecast && <div className="pl-summary-bar" data-forecast-quarter="FY">
                                 <span className="pl-summary-period">
                                     📌 最新FY予想: {latestForecast.period} {latestForecast.quarter}
                                 </span>
@@ -3445,12 +3490,12 @@ function FinancialsTable({
                                 )}
                                 {op !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{selectedForecastProfit.label}</span>
+                                        <span className="pl-summary-label">{selectedForecastProfit?.label}</span>
                                         <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|4`}>{formatMillions(op)}</span>
                                     </span>
                                 )}
                                 {([
-                                    ["経常利益", selectedForecastProfit.metric === "ordinary_profit" ? null : latestForecast.ordinary_profit],
+                                    ["経常利益", selectedForecastProfit?.metric === "ordinary_profit" ? null : latestForecast.ordinary_profit],
                                     ["親会社株主帰属純利益", latestForecast.net_income],
                                 ] as const).map(([label, value]) => value !== null && (
                                     <span className="pl-summary-item" key={label}>
@@ -3466,11 +3511,12 @@ function FinancialsTable({
                                 )}
                                 {opMargin !== null && (
                                     <span className="pl-summary-item">
-                                        <span className="pl-summary-label">{selectedForecastProfit.marginLabel}</span>
+                                        <span className="pl-summary-label">{selectedForecastProfit?.marginLabel}</span>
                                         <span className="pl-summary-value" data-formula-ref={`FY|${forecastRefRow}|5`}>{fmtMargin(opMargin)}</span>
                                     </span>
                                 )}
-                            </div>
+                            </div>}
+                            </>
                         );
                     })()}
                     {/* セグメント群テーブル */}

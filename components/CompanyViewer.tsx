@@ -343,6 +343,41 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         return () => { subscription.unsubscribe(); clearTimeout(timeout); };
     }, []);
 
+    // Keep an open PL current after a guidance revision or a 2Q actual filing.
+    // Only the active, visible ticker is refreshed; ticker navigation also
+    // performs its normal fresh fetch through handleLoad below.
+    useEffect(() => {
+        if (!activeTicker || !user) return;
+        const ticker = activeTicker;
+        let cancelled = false;
+        let inFlight = false;
+        const refresh = async () => {
+            if (document.visibilityState !== "visible" || inFlight) return;
+            inFlight = true;
+            try {
+                const current = await loadFinancials(ticker);
+                if (cancelled || requestedTickerRef.current !== ticker) return;
+                setFinancials(current);
+                const cached = tickerCacheRef.current.get(ticker);
+                if (cached) tickerCacheRef.current.set(ticker, { ...cached, financials: current });
+            } catch (error) {
+                console.warn("[financials] refresh failed:", error);
+            } finally {
+                inFlight = false;
+            }
+        };
+        const onVisible = () => { if (document.visibilityState === "visible") void refresh(); };
+        const timer = window.setInterval(() => { void refresh(); }, 60_000);
+        window.addEventListener("focus", onVisible);
+        document.addEventListener("visibilitychange", onVisible);
+        return () => {
+            cancelled = true;
+            window.clearInterval(timer);
+            window.removeEventListener("focus", onVisible);
+            document.removeEventListener("visibilitychange", onVisible);
+        };
+    }, [activeTicker, user]);
+
     const handleLoad = useCallback(async (targetTicker?: string, navigation?: ViewerNavigation) => {
         if (!user) return;
         const ticker = normalizeTicker(targetTicker ?? tickerInput);

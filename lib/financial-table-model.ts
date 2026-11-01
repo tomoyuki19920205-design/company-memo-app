@@ -24,5 +24,8 @@ export function buildFinancialTableModel(data: FinancialRecord[], industry?: str
                     FORECAST_SOURCES.has(row.source ?? ""),
             )
             .sort((a, b) => b.period.localeCompare(a.period)),
+        forecast2QRows: filteredAll
+            .filter((row) => row.quarter === "2Q" && FORECAST_SOURCES.has(row.source ?? ""))
+            .sort((a, b) => b.period.localeCompare(a.period)),
     };
 }

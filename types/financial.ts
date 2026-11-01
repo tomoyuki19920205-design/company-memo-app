@@ -18,6 +18,11 @@ export interface FinancialRecord {
     eps: number | null;
     source: string;
     updated_at: string;
+    disclosure_datetime?: string | null;
+    source_url?: string | null;
+    sales_accounting_scope?: string | null;
+    operating_profit_accounting_scope?: string | null;
+    forecast_status?: "not_disclosed" | "undecided" | "withdrawn" | "unresolved" | null;
     /** Optional provenance when a data source exposes statement scope. */
     consolidation_scope?: "consolidated" | "non_consolidated";
 }
