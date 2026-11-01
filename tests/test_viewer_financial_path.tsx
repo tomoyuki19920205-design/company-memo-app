@@ -121,6 +121,21 @@ test("later withdrawal takes precedence over a saved numeric 2Q forecast", () =>
     assert.doesNotMatch(half, /14,880/);
 });
 
+test("June 20 fiscal end keeps 2Q and FY on the exact company period", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "7962", period: "2026-06-20", quarter: "FY", sales: 35_000, gross_profit: null, operating_profit: 900, source: "jquants", updated_at: "" },
+        { ticker: "7962", period: "2027-06-20", quarter: "2Q", sales: 19_300, gross_profit: null, operating_profit: 200, source: "jquants_forecast", updated_at: "", sales_accounting_scope: "consolidated", operating_profit_accounting_scope: "consolidated" },
+        { ticker: "7962", period: "2027-06-20", quarter: "FY", sales: 42_000, gross_profit: null, operating_profit: 1_440, source: "jquants_forecast_fy", updated_at: "" },
+        { ticker: "7962", period: "2027-06-30", quarter: "FY", sales: 42_000, gross_profit: null, operating_profit: 1_440, source: "tdnet_forecast", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    const half = html.indexOf('data-forecast-quarter="2Q"');
+    const full = html.indexOf('data-forecast-quarter="FY"');
+    assert.match(html.slice(half, full), /2027-06-20[\s\S]*19,300/);
+    assert.match(html.slice(full), /2027-06-20[\s\S]*42,000/);
+    assert.doesNotMatch(html.slice(half, full), /2027-06-30/);
+});
+
 test("FinancialsTable SSR renders correct cumulative and standalone rows for 418A", () => {
     const html = renderToStaticMarkup(
         <FinancialsTable

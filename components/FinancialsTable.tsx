@@ -3409,17 +3409,22 @@ function FinancialsTable({
                         // 実績 FY で最新の period
                         const latestActualFYPeriod =
                             [...cumRows].reverse().find(r => r.quarter === "FY")?.period ?? "";
+                        const latestHalfPeriod = forecast2QRows.find(
+                            r => r.period > latestActualFYPeriod &&
+                                !cumRows.some(actual => actual.period === r.period && actual.quarter === "2Q"),
+                        )?.period;
 
                         // 候補選定:
                         // 1. latestActualFY より未来の予想（翌期予想）を優先
                         // 2. 同 period の当期予想
                         // 3. なければ null
                         const latestForecast: typeof forecastFYRows[0] | undefined =
+                            forecastFYRows.find(r => r.period === latestHalfPeriod) ??
                             forecastFYRows.find(r => r.period > latestActualFYPeriod) ??
                             forecastFYRows.find(r => r.period === latestActualFYPeriod) ??
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
 
-                        const targetPeriod = latestForecast?.period ?? forecast2QRows[0]?.period ?? cumRows[0]?.period;
+                        const targetPeriod = latestHalfPeriod ?? latestForecast?.period ?? cumRows[0]?.period;
                         if (!targetPeriod) return null;
                         const selectedForecastProfit = latestForecast
                             ? selectProfitDisplay(latestForecast, industry) : null;
