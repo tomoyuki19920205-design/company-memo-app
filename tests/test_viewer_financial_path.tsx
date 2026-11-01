@@ -98,6 +98,20 @@ test("official non-disclosure is distinct from unresolved guidance", () => {
     assert.match(html, /最新FY予想[\s\S]*15,200/);
 });
 
+test("bank 2Q guidance shows disclosed ordinary profit and net income without inventing operating profit", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "7380", period: "2027-03-31", quarter: "1Q", sales: 39_287, gross_profit: null, operating_profit: 11_235, source: "jquants", updated_at: "" },
+        { ticker: "7380", period: "2027-03-31", quarter: "2Q", sales: null, gross_profit: null, operating_profit: null, ordinary_profit: 21_000, net_income: 14_500, source: "tdnet_forecast", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} industry="銀行業" loading={false} segments={[]} />);
+    const half = html.slice(html.indexOf('data-forecast-quarter="2Q"'));
+    assert.match(half, /売上<\/span><span[^>]*>—/);
+    assert.match(half, /営業利益<\/span><span[^>]*>—/);
+    assert.match(half, /経常利益<\/span><span[^>]*>21,000/);
+    assert.match(half, /親会社株主帰属純利益<\/span><span[^>]*>14,500/);
+    assert.doesNotMatch(half, /取得未完了/);
+});
+
 test("published 2002 2Q actual suppresses old 2Q guidance and preserves FY", () => {
     const rows: ViewerFinancialRow[] = [
         { ticker: "2002", period: "2027-03-31", quarter: "2Q", sales: 441_756, gross_profit: null, operating_profit: 22_823, source: "jquants", updated_at: "" },

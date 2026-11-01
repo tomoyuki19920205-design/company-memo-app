@@ -3441,7 +3441,9 @@ function FinancialsTable({
                         );
                         const numeric2Q = forecast2QRows.find(
                             r => r.period === targetPeriod &&
-                                (r.sales !== null || r.operating_profit !== null),
+                                (r.sales !== null || r.operating_profit !== null ||
+                                    r.ordinary_profit !== null || r.net_income !== null ||
+                                    r.eps !== null),
                         );
                         const status2Q = forecast2QRows.find(
                             r => r.period === targetPeriod && r.forecast_status,
@@ -3477,6 +3479,9 @@ function FinancialsTable({
                                         <>
                                             <span className="pl-summary-item"><span className="pl-summary-label">売上</span><span className="pl-summary-value">{halfSales !== null ? formatMillions(halfSales) : "—"}</span></span>
                                             <span className="pl-summary-item"><span className="pl-summary-label">営業利益</span><span className="pl-summary-value">{halfOp !== null ? formatMillions(halfOp) : "—"}</span></span>
+                                            {latest2Q.ordinary_profit !== null && <span className="pl-summary-item"><span className="pl-summary-label">経常利益</span><span className="pl-summary-value">{formatMillions(latest2Q.ordinary_profit)}</span></span>}
+                                            {latest2Q.net_income !== null && <span className="pl-summary-item"><span className="pl-summary-label">親会社株主帰属純利益</span><span className="pl-summary-value">{formatMillions(latest2Q.net_income)}</span></span>}
+                                            {latest2Q.eps !== null && <span className="pl-summary-item"><span className="pl-summary-label">EPS</span><span className="pl-summary-value">{latest2Q.eps.toFixed(2)}円</span></span>}
                                             <span className="pl-summary-item"><span className="pl-summary-label">営業利益率</span><span className="pl-summary-value">{halfMargin !== null ? fmtMargin(halfMargin) : "—"}</span></span>
                                         </>
                                     ) : <span className="pl-summary-item">{statusLabel}</span>}
