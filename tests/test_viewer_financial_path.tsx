@@ -124,6 +124,21 @@ test("published 2002 2Q actual suppresses old 2Q guidance and preserves FY", () 
     assert.match(rowMarkup(html, "cumulative", "2027-03-31", "2Q"), /441,756/);
 });
 
+test("changed fiscal year keeps FY guidance on the actual 2Q period after guidance is hidden", () => {
+    const rows: ViewerFinancialRow[] = [
+        { ticker: "3446", period: "2026-06-30", quarter: "FY", sales: 1_955, gross_profit: null, operating_profit: 72, source: "jquants", updated_at: "" },
+        { ticker: "3446", period: "2027-03-31", quarter: "2Q", sales: 900, gross_profit: null, operating_profit: -100, source: "jquants", updated_at: "" },
+        { ticker: "3446", period: "2027-03-31", quarter: "2Q", sales: 866, gross_profit: null, operating_profit: -196, source: "jquants_forecast", updated_at: "" },
+        { ticker: "3446", period: "2027-03-31", quarter: "FY", sales: 1_962, gross_profit: null, operating_profit: 74, source: "jquants_nxf", updated_at: "" },
+        { ticker: "3446", period: "2027-06-30", quarter: "FY", sales: 1_962, gross_profit: null, operating_profit: 74, source: "tdnet_forecast", updated_at: "" },
+    ];
+    const html = renderToStaticMarkup(<FinancialsTable data={transformFinancialRows(rows)} loading={false} segments={[]} />);
+    assert.doesNotMatch(html, /data-forecast-quarter="2Q"/);
+    const fy = html.slice(html.indexOf('data-forecast-quarter="FY"'));
+    assert.match(fy, /最新FY予想: 2027-03-31 FY/);
+    assert.doesNotMatch(fy, /最新FY予想: 2027-06-30 FY/);
+});
+
 test("later withdrawal takes precedence over a saved numeric 2Q forecast", () => {
     const rows: ViewerFinancialRow[] = [
         { ticker: "2221", period: "2027-03-31", quarter: "2Q", sales: 14_880, gross_profit: null, operating_profit: -260, source: "tdnet_forecast", disclosure_datetime: "2026-10-30T06:00:00Z", updated_at: "" },

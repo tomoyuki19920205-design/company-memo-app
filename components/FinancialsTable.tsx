@@ -3409,6 +3409,9 @@ function FinancialsTable({
                         // 実績 FY で最新の period
                         const latestActualFYPeriod =
                             [...cumRows].reverse().find(r => r.quarter === "FY")?.period ?? "";
+                        const latestInterimActualPeriod = [...cumRows]
+                            .filter(r => r.quarter !== "FY" && r.period > latestActualFYPeriod)
+                            .sort((a, b) => b.period.localeCompare(a.period))[0]?.period;
                         const latestHalfPeriod = forecast2QRows.find(
                             r => r.period > latestActualFYPeriod &&
                                 !cumRows.some(actual => actual.period === r.period && actual.quarter === "2Q"),
@@ -3420,6 +3423,7 @@ function FinancialsTable({
                         // 3. なければ null
                         const latestForecast: typeof forecastFYRows[0] | undefined =
                             forecastFYRows.find(r => r.period === latestHalfPeriod) ??
+                            forecastFYRows.find(r => r.period === latestInterimActualPeriod) ??
                             forecastFYRows.find(r => r.period > latestActualFYPeriod) ??
                             forecastFYRows.find(r => r.period === latestActualFYPeriod) ??
                             (latestActualFYPeriod === "" ? forecastFYRows[0] : undefined);
