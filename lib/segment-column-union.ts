@@ -29,16 +29,21 @@ export function createSegmentIdentityResolver(
     normalizeName: (name: string) => string,
 ): (name: string, row?: SegmentColumnIdentityInput) => string {
     const provenByExactName = new Map<string, Set<string>>();
+    const provenByFiscalYear = new Map<string, Set<string>>();
     for (const row of segments) {
         if (!row.business_key || !row.comparison_definition) continue;
         const name = normalizeName(row.segment_name) || row.segment_name;
         if (!provenByExactName.has(name)) provenByExactName.set(name, new Set());
         provenByExactName.get(name)!.add(row.business_key);
+        const fiscalKey = `${row.period}|${name}`;
+        if (!provenByFiscalYear.has(fiscalKey)) provenByFiscalYear.set(fiscalKey, new Set());
+        provenByFiscalYear.get(fiscalKey)!.add(row.business_key);
     }
     return (name, row) => {
         if (row?.business_key && row.comparison_definition) return `source:${row.business_key}`;
         const exactName = normalizeName(name) || name;
-        const proven = provenByExactName.get(exactName);
+        const proven = (row && provenByFiscalYear.get(`${row.period}|${exactName}`))
+            || provenByExactName.get(exactName);
         // This only retains the pre-existing equality of full normalized names.
         // Conflicting proven identities never supply an alias to an unverified row.
         return proven?.size === 1 ? `source:${[...proven][0]}` : exactName;
