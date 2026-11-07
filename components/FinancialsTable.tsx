@@ -12,7 +12,7 @@ import { parseTsvClipboard } from "@/lib/tsv-parser";
 import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
-import { normalizeSegmentDisplayKey, pickSegmentDisplayName, normalizeSegmentAliasKey, normalizeSegmentSemanticKey, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
+import { normalizeSegmentDisplayKey, pickSegmentDisplayName, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
 import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
@@ -296,69 +296,9 @@ export function buildSegmentInfo(
         return result;
     })();
 
-    // 日本語アンカー Set は referenceSegments のみから構築
-    // (他 period の EDINET 日本語名を列キーに混入させない)
-    const _JP_CHK = /[\u3040-\u30ff\u4e00-\u9fff]/;
-
-    // disableSemanticMerge=true (Allタブ) の場合: jpAnchorSet / jpSemanticAnchorMap を空にし
-    // resolveDk が semantic 統合を行わないようにする。
-    // これにより TDNET 英語名と EDINET 日本語名が同じ意味キーで1列に潰れるのを防ぐ。
-    const jpAnchorSet = opts.disableSemanticMerge
-        ? new Set<string>()
-        : new Set<string>(
-            referenceSegments
-                .map((s) => s.segment_name)
-                .filter((name) => name && _JP_CHK.test(name))
-                .map((name) => normalizeSegmentDisplayKey(name))
-                .filter(Boolean),
-        );
-
-    // semantic key → Japanese display_dk マップ
-    // 日英共通の意味キーで照合し、英語名を日本語 display_dk へ解決する
-    // disableSemanticMerge=true の場合は構築しない（空 Map のまま）
-    const jpSemanticAnchorMap = new Map<string, string>();
-    if (!opts.disableSemanticMerge) {
-        for (const seg of referenceSegments) {
-            const name = seg.segment_name;
-            if (!name || !_JP_CHK.test(name)) continue;
-            const displayDk = normalizeSegmentDisplayKey(name);
-            const semanticDk = normalizeSegmentSemanticKey(name);
-            if (displayDk && semanticDk && !jpSemanticAnchorMap.has(semanticDk)) {
-                jpSemanticAnchorMap.set(semanticDk, displayDk);
-            }
-        }
-    }
-
-    // TDNET英語名を日本語アンカーdkへ解決するヘルパー
-    // 0. semantic key → 1. alias完全一致 → 2. alias部分一致
-    const resolveDk = (name: string): string => {
-        const baseDk = normalizeSegmentDisplayKey(name) || name;
-
-        // 0. semantic key 判定（日英共通意味キーで JP displayDk へ解決）
-        const semanticKey = normalizeSegmentSemanticKey(name);
-        const jpFromSemantic = jpSemanticAnchorMap.get(semanticKey);
-        const alias = normalizeSegmentAliasKey(name);
-        const aliasDk = alias ? (normalizeSegmentDisplayKey(alias) || "") : "";
-        if (jpFromSemantic) return jpFromSemantic;
-
-        // 1 & 2. alias判定（完全一致 → 部分一致）
-        if (alias && aliasDk) {
-            // 1. 完全一致
-            if (jpAnchorSet.has(aliasDk)) return aliasDk;
-            // 2. 部分一致フォールバック（短すぎるキーの誤統合を防ぐ）
-            if (aliasDk.length >= 3) {
-                for (const jpDk of jpAnchorSet) {
-                    if (
-                        jpDk.length >= 3 &&
-                        (jpDk.includes(aliasDk) || aliasDk.includes(jpDk))
-                    ) {
-                        return jpDk;
-                    }
-                }
-            }
-        }
-        return baseDk;
-    };
+    // A substring or translated keyword is not evidence of the same business.
+    // Preserve exact normalized source identities across all source tabs.
+    const resolveDk = (name: string): string => normalizeSegmentDisplayKey(name) || name;
 
     // 最新FYの既存列順を維持しつつ、正式API winnerに存在する過年度segmentを
     // 決定論的に右側へ追加する。identity解決はresolveDkへ集約し、同一identityの

@@ -54,3 +54,35 @@ test("scope or currency changes block both differences", () => {
         assert.equal(info.segmentQMap.get("2027-05-31|2Q")![col.profitKey], null);
     }
 });
+
+test("translated substrings do not merge distinct businesses or replace their values", () => {
+    const rows: SegmentRecord[] = [
+        { ...first, quarter: "FY", source: "edinet_xbrl", segment_name: "電材及び管材", segment_sales: 100, segment_profit: 0 },
+        { ...first, quarter: "FY", source: "xbrl", segment_name: "Advanced Materials", segment_sales: 200, segment_profit: -20 },
+        { ...first, quarter: "FY", source: "xbrl", segment_name: "Water Supply", segment_sales: 300, segment_profit: 30 },
+    ];
+    for (const options of [{}, { disableSemanticMerge: true }]) {
+        const info = buildSegmentInfo(rows, options);
+        assert.equal(info.segmentColumns.length, 3);
+        assert.deepEqual(info.segmentColumns.map(c => info.segmentMap.get("2027-05-31|FY")![c.profitKey]).sort((a, b) => Number(a) - Number(b)), [-20, 0, 30]);
+    }
+});
+
+test("an alias inside a longer Japanese business name cannot invent a quarterly difference", () => {
+    const info = buildSegmentInfo([
+        { ...first, source: "xbrl", segment_name: "Publishing", segment_sales: 100 },
+        { ...second, source: "edinet_xbrl", segment_name: "情報出版サービス", segment_sales: 250 },
+    ]);
+    assert.equal(info.segmentColumns.length, 2);
+    const current = info.segmentColumns.find(c => c.segmentName === "情報出版サービス")!;
+    assert.equal(info.segmentQMap.get("2027-05-31|2Q")![current.salesKey], null);
+});
+
+test("whitespace and full-width variants of the exact business remain comparable", () => {
+    const info = buildSegmentInfo([
+        { ...first, segment_name: "ＡＩ データセンター" },
+        { ...second, segment_name: "AI\nデータセンター" },
+    ]);
+    assert.equal(info.segmentColumns.length, 1);
+    assert.equal(info.segmentQMap.get("2027-05-31|2Q")![info.segmentColumns[0].profitKey], -34);
+});
