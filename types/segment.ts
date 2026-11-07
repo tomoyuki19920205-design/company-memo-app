@@ -6,6 +6,11 @@ export interface SegmentRecord {
     segment_sales: number | null;
     segment_profit: number | null;
     profit_basis?: string | null;
+    profit_label?: string | null;
+    sales_basis?: string | null;
+    sales_label?: string | null;
+    accounting_scope?: string | null;
+    currency?: string | null;
     period_start?: string | null;
     period_end?: string | null;
     segment_definition?: string | null;

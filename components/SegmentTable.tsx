@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useCallback, useRef } from "react";
 import type { SegmentRecord } from "@/types/segment";
-import { segmentProfitLabel } from "@/lib/segment-profit";
+import { segmentProfitLabel, segmentSalesLabel } from "@/lib/segment-profit";
 import type { SegmentCellOverride } from "@/types/segment-override";
 import { formatMillions } from "@/lib/format";
 import { buildOverrideKey, normalizeSegmentDisplayKey } from "@/lib/segment-normalize";
@@ -266,7 +266,7 @@ function SegmentTable({
                                 <thead>
                                     <tr>
                                         <th>セグメント名</th>
-                                        <th className="num-col">売上</th>
+                                        <th className="num-col">{segmentSalesLabel(data.find(row => row.period === group.period && row.quarter === group.quarter)?.sales_basis)}</th>
                                         <th className="num-col">{segmentProfitLabel(data.find(row => row.period === group.period && row.quarter === group.quarter && row.profit_basis)?.profit_basis)}</th>
                                         <th className="num-col">利益率</th>
                                     </tr>

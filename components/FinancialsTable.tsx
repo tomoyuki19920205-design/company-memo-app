@@ -3,7 +3,7 @@
 import React, { useMemo, useCallback, useRef, useState, useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
-import { segmentProfitLabel, segmentComparisonReason } from "@/lib/segment-profit";
+import { segmentProfitLabel, segmentSalesLabel, segmentComparisonReason } from "@/lib/segment-profit";
 import { formatMillions, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
@@ -220,6 +220,7 @@ interface SegmentColumnDef {
     salesKey: string;
     profitKey: string;
     profitLabel: string;
+    salesLabel: string;
 }
 
 /** 前四半期の定義 (Q単体計算用) */
@@ -382,6 +383,8 @@ export function buildSegmentInfo(
         segmentName: pickSegmentDisplayName(names),
         salesKey: `seg:${displayKey}:sales`,
         profitKey: `seg:${displayKey}:profit`,
+        salesLabel: segmentSalesLabel(allSegments.filter(s => resolveDk(s.segment_name) === displayKey)
+            .sort((a, b) => b.period.localeCompare(a.period))[0]?.sales_basis),
         profitLabel: segmentProfitLabel(allSegments.filter(s => resolveDk(s.segment_name) === displayKey)
             .sort((a, b) => b.period.localeCompare(a.period))[0]?.profit_basis),
     }));
@@ -438,12 +441,13 @@ export function buildSegmentInfo(
                         segmentQReasons.set(`${curKey}|${col.profitKey}`, "前四半期の累計値が未取得");
                     } else {
                         // 前四半期データあり: 差分計算
-                        const reason = segmentComparisonReason(
-                            metadata.get(`${curKey}|${col.display_key}`),
-                            metadata.get(`${prevKey}|${col.display_key}`));
-                        qRow[col.salesKey] = reason === null && curSales !== null && prevSales !== null ? curSales - prevSales : null;
+                        const currentMeta = metadata.get(`${curKey}|${col.display_key}`);
+                        const previousMeta = metadata.get(`${prevKey}|${col.display_key}`);
+                        const salesReason = segmentComparisonReason(currentMeta, previousMeta, "sales");
+                        const reason = segmentComparisonReason(currentMeta, previousMeta, "profit");
+                        qRow[col.salesKey] = salesReason === null && curSales !== null && prevSales !== null ? curSales - prevSales : null;
                         qRow[col.profitKey] = reason === null && curProfit !== null && prevProfit !== null ? curProfit - prevProfit : null;
-                        if (qRow[col.salesKey] === null) segmentQReasons.set(`${curKey}|${col.salesKey}`, reason ?? (curSales === null ? "当四半期の売上累計値が未取得" : "前四半期の売上累計値が未取得"));
+                        if (qRow[col.salesKey] === null) segmentQReasons.set(`${curKey}|${col.salesKey}`, salesReason ?? (curSales === null ? "当四半期の売上累計値が未取得" : "前四半期の売上累計値が未取得"));
                         if (qRow[col.profitKey] === null) segmentQReasons.set(`${curKey}|${col.profitKey}`, reason ?? (curProfit === null ? "当四半期の利益累計値が未取得" : "前四半期の利益累計値が未取得"));
                     }
                 }
@@ -468,7 +472,14 @@ export function buildSegmentInfo(
         }
     }
 
-    return { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap };
+    const segmentLabels = new Map<string, string>();
+    for (const seg of filtered) {
+        const prefix = `${seg.period}|${seg.quarter}|seg:${resolveDk(seg.segment_name)}`;
+        const scope = seg.accounting_scope === "non_consolidated" ? " / 非連結" : seg.accounting_scope === "consolidated" ? " / 連結" : "";
+        segmentLabels.set(`${prefix}:sales`, segmentSalesLabel(seg.sales_basis) + (seg.sales_label ? ` / 原表: ${seg.sales_label}` : "") + scope);
+        segmentLabels.set(`${prefix}:profit`, segmentProfitLabel(seg.profit_basis) + (seg.profit_label ? ` / 原表: ${seg.profit_label}` : "") + scope);
+    }
+    return { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap, segmentLabels };
 }
 
 // ============================================================
@@ -907,7 +918,7 @@ function FinancialsTable({
     }, [filteredBySource]);
 
     // セグメント列 (filteredForSegBuild を入力にすることでタブ切替え + priority フィルタを実現)
-    const { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap } = useMemo(
+    const { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap, segmentLabels } = useMemo(
         () => buildSegmentInfo(filteredForSegBuild, { disableSemanticMerge: segSourceTab === "all" }),
         [filteredForSegBuild, segSourceTab]
     );
@@ -923,8 +934,8 @@ function FinancialsTable({
                 .trim();
             // fullName: hover tooltip 用（省略前の元の segment 名）
             headers.push({
-                label: `${cleanName} 外部売上`,
-                fullName: `${sc.segmentName} — 外部顧客向け売上（百万円）`,
+                label: `${cleanName} ${sc.salesLabel}`,
+                fullName: `${sc.segmentName} — ${sc.salesLabel}（百万円）`,
                 className: "num-col seg-sales-col",
             });
             headers.push({
@@ -3632,7 +3643,7 @@ function FinancialsTable({
                                                             const fy = extractFiscalYear(row.period);
                                                             return (
                                                                 <React.Fragment key={sc.segmentName}>
-                                                                    <SegOverrideCell value={salesVal} source={salesSource} width={segWidths[sIdx]}
+                                                                    <SegOverrideCell value={salesVal} source={salesSource} width={segWidths[sIdx]} description={segmentLabels.get(`${mapKey}|${sc.salesKey}`)}
                                                                         editable={isEditableQ && (salesVal === null || salesSource === "manual") && !!onSegmentOverrideSave}
                                                                         isManual={salesSource === "manual"} fiscalYear={fy} quarter={row.quarter} segmentName={sc.segmentName} metric="sales"
                                                                         onSave={onSegmentOverrideSave} onDelete={onSegmentOverrideDelete}
@@ -3642,7 +3653,7 @@ function FinancialsTable({
                                                                         segEditInitValue={editingSegCell?.rowIdx === idx && editingSegCell?.colIdx === sIdx ? segEditValue : undefined}
                                                                         onSegEditDone={finishSegEditing}
                                                                     />
-                                                                    <SegOverrideCell value={profitVal} source={profitSource} width={segWidths[pIdx]}
+                                                                    <SegOverrideCell value={profitVal} source={profitSource} width={segWidths[pIdx]} description={segmentLabels.get(`${mapKey}|${sc.profitKey}`)}
                                                                         editable={isEditableQ && (profitVal === null || profitSource === "manual") && !!onSegmentOverrideSave}
                                                                         isManual={profitSource === "manual"} fiscalYear={fy} quarter={row.quarter} segmentName={sc.segmentName} metric="operating_profit"
                                                                         onSave={onSegmentOverrideSave} onDelete={onSegmentOverrideDelete}
@@ -3705,8 +3716,8 @@ function FinancialsTable({
                                                             const pIdx = scIdx * 2 + 1;
                                                             return (
                                                                 <React.Fragment key={sc.segmentName}>
-                                                                    <td className="num-col seg-data-cell" title={segmentQReasons.get(`${reasonKey}|${sc.salesKey}`)} style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : ""}</td>
-                                                                    <td className="num-col seg-data-cell segment-group-end" title={segmentQReasons.get(`${reasonKey}|${sc.profitKey}`)} style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : ""}</td>
+                                                                    <td className="num-col seg-data-cell" title={segmentQReasons.get(`${reasonKey}|${sc.salesKey}`) ?? segmentLabels.get(`${reasonKey}|${sc.salesKey}`)} style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : ""}</td>
+                                                                    <td className="num-col seg-data-cell segment-group-end" title={segmentQReasons.get(`${reasonKey}|${sc.profitKey}`) ?? segmentLabels.get(`${reasonKey}|${sc.profitKey}`)} style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : ""}</td>
                                                                 </React.Fragment>
                                                             );
                                                         })}
@@ -3976,9 +3987,11 @@ function SegOverrideCell({
     onRangeMouseDown,
     onRangeMouseEnter,
     extraClassName = "",
+    description,
 }: {
     value: number | null;
     source?: string;
+    description?: string;
     width: number;
     editable: boolean;
     isManual: boolean;
@@ -4119,7 +4132,7 @@ function SegOverrideCell({
             onClick={handleCellClick}
             onMouseDown={(e) => { onRangeMouseDown?.(e); }}
             onMouseEnter={() => { onRangeMouseEnter?.(); }}
-            title={canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : "クリックして選択（ペースト用）"}
+            title={[description, canEdit ? (isManual ? "クリックで再編集" : "クリックして入力") : "クリックして選択（ペースト用）"].filter(Boolean).join(" / ")}
         >
             <div className="segment-cell-display">
                 {editable && value === null ? (
