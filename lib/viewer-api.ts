@@ -357,7 +357,7 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
         const supabase = createSupabaseBrowser();
         const { data, error } = await supabase
             .from("api_latest_segments")
-            .select("ticker,period,quarter,segment_name,sales,profit,source,source_priority")
+            .select("ticker,period,quarter,segment_name,sales,profit,source,source_priority,profit_basis,period_start,period_end,segment_definition")
             .eq("ticker", t)
             .order("period", { ascending: false })
             .order("quarter", { ascending: true })
@@ -400,6 +400,10 @@ export async function loadSegmentData(ticker: string): Promise<SegmentRecord[]> 
             segment_name: row.segment_name,
             segment_sales: row.sales !== null ? Number(row.sales) : null,
             segment_profit: row.profit !== null ? Number(row.profit) : null,
+            profit_basis: row.profit_basis,
+            period_start: row.period_start,
+            period_end: row.period_end,
+            segment_definition: row.segment_definition,
             source: row.source ?? undefined,
             source_priority: row.source_priority != null ? Number(row.source_priority) : null,
         }));

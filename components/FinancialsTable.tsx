@@ -3,6 +3,7 @@
 import React, { useMemo, useCallback, useRef, useState, useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
+import { segmentProfitLabel, compatibleSegmentPeriods } from "@/lib/segment-profit";
 import { formatMillions, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
@@ -218,6 +219,7 @@ interface SegmentColumnDef {
     segmentName: string;  // 表示名 (日本語優先)
     salesKey: string;
     profitKey: string;
+    profitLabel: string;
 }
 
 /** 前四半期の定義 (Q単体計算用) */
@@ -228,7 +230,7 @@ const SEG_PREV_QUARTER: Record<string, string | null> = {
     "FY": "3Q",
 };
 
-function buildSegmentInfo(
+export function buildSegmentInfo(
     segments: SegmentRecord[],
     opts: { disableSemanticMerge?: boolean } = {}
 ) {
@@ -380,6 +382,8 @@ function buildSegmentInfo(
         segmentName: pickSegmentDisplayName(names),
         salesKey: `seg:${displayKey}:sales`,
         profitKey: `seg:${displayKey}:profit`,
+        profitLabel: segmentProfitLabel(allSegments.filter(s => resolveDk(s.segment_name) === displayKey)
+            .sort((a, b) => b.period.localeCompare(a.period))[0]?.profit_basis),
     }));
 
     // 累計用 segmentMap: key = "period|quarter"
@@ -392,6 +396,9 @@ function buildSegmentInfo(
     // Q単体用 segmentQMap: key = "period|quarter"
     // 1Q: 累計そのまま, 2Q: 2Q累計-1Q累計, 3Q: 3Q累計-2Q累計, FY: FY累計-3Q累計
     const segmentQMap = new Map<string, Record<string, number | null>>();
+    const metadata = new Map(filtered.map(s => [
+        `${s.period}|${s.quarter}|${resolveDk(s.segment_name)}`, s,
+    ]));
     // periodごとにグルーピングして差分計算
     const periodSet = new Set<string>();
     for (const seg of filtered) {
@@ -426,8 +433,11 @@ function buildSegmentInfo(
                         qRow[col.profitKey] = null;
                     } else {
                         // 前四半期データあり: 差分計算
-                        qRow[col.salesKey] = (curSales !== null && prevSales !== null) ? curSales - prevSales : null;
-                        qRow[col.profitKey] = (curProfit !== null && prevProfit !== null) ? curProfit - prevProfit : null;
+                        const compatible = compatibleSegmentPeriods(
+                            metadata.get(`${curKey}|${col.display_key}`),
+                            metadata.get(`${prevKey}|${col.display_key}`));
+                        qRow[col.salesKey] = compatible && curSales !== null && prevSales !== null ? curSales - prevSales : null;
+                        qRow[col.profitKey] = compatible && curProfit !== null && prevProfit !== null ? curProfit - prevProfit : null;
                     }
                 }
             }
@@ -911,8 +921,8 @@ function FinancialsTable({
                 className: "num-col seg-sales-col",
             });
             headers.push({
-                label: `${cleanName} 利益`,
-                fullName: `${sc.segmentName} — 利益（百万円）`,
+                label: `${cleanName} ${sc.profitLabel}`,
+                fullName: `${sc.segmentName} — ${sc.profitLabel}（百万円）`,
                 className: "num-col seg-profit-col",
             });
         }
