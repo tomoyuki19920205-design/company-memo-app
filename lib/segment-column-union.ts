@@ -3,6 +3,8 @@ export interface SegmentColumnIdentityInput {
     quarter?: string;
     segment_name: string;
     segment_order?: number | null;
+    business_key?: string | null;
+    comparison_definition?: string | null;
 }
 
 export interface SegmentColumnValueInput extends SegmentColumnIdentityInput {
@@ -41,7 +43,7 @@ interface HistoricalGroup extends SegmentColumnIdentityGroup {
 export function buildSegmentColumnUnion(
     allSegments: SegmentColumnIdentityInput[],
     referenceSegments: SegmentColumnIdentityInput[],
-    resolveDisplayKey: (name: string) => string,
+    resolveDisplayKey: (name: string, row?: SegmentColumnIdentityInput) => string,
 ): SegmentColumnIdentityGroup[] {
     const groups = new Map<string, SegmentColumnIdentityGroup>();
 
@@ -50,7 +52,7 @@ export function buildSegmentColumnUnion(
     };
 
     for (const segment of referenceSegments) {
-        const displayKey = resolveDisplayKey(segment.segment_name);
+        const displayKey = resolveDisplayKey(segment.segment_name, segment);
         if (!displayKey) continue;
         let group = groups.get(displayKey);
         if (!group) {
@@ -62,7 +64,7 @@ export function buildSegmentColumnUnion(
 
     const historical = new Map<string, HistoricalGroup>();
     allSegments.forEach((segment, index) => {
-        const displayKey = resolveDisplayKey(segment.segment_name);
+        const displayKey = resolveDisplayKey(segment.segment_name, segment);
         if (!displayKey) return;
 
         const existing = groups.get(displayKey);
@@ -131,7 +133,7 @@ export function buildSegmentColumnUnion(
 export function buildSegmentValueMap(
     segments: SegmentColumnValueInput[],
     columns: SegmentValueColumn[],
-    resolveDisplayKey: (name: string) => string,
+    resolveDisplayKey: (name: string, row?: SegmentColumnIdentityInput) => string,
 ): Map<string, Record<string, number | null>> {
     const columnsByIdentity = new Map(
         columns.map((column) => [column.display_key, column]),
@@ -140,7 +142,7 @@ export function buildSegmentValueMap(
 
     for (const segment of segments) {
         const column = columnsByIdentity.get(
-            resolveDisplayKey(segment.segment_name),
+            resolveDisplayKey(segment.segment_name, segment),
         );
         if (!column) continue;
 

@@ -22,7 +22,11 @@ export function segmentComparisonReason(current?: SegmentRecord, previous?: Segm
     if (metric === "sales" && (current.sales_basis ?? null) !== (previous.sales_basis ?? null)) return "売上基準が異なるため単独計算不可";
     if ((current.accounting_scope ?? null) !== (previous.accounting_scope ?? null)) return "連結区分が異なるため単独計算不可";
     if ((current.currency ?? null) !== (previous.currency ?? null)) return "通貨が異なるため単独計算不可";
-    if ((current.segment_definition ?? null) !== (previous.segment_definition ?? null)) return "セグメント区分が異なるため単独計算不可";
+    const bothOriginalDefinitions = current.comparison_definition && previous.comparison_definition;
+    const currentDefinition = bothOriginalDefinitions ? current.comparison_definition : current.segment_definition;
+    const previousDefinition = bothOriginalDefinitions ? previous.comparison_definition : previous.segment_definition;
+    if ((currentDefinition ?? null) !== (previousDefinition ?? null)) return "セグメント区分が異なるため単独計算不可";
+    if (bothOriginalDefinitions && (!current.business_key || current.business_key !== previous.business_key)) return "原表の事業区分が異なるため単独計算不可";
     if ((current.period_start ?? null) !== (previous.period_start ?? null)) return "累計開始日が異なるため単独計算不可";
     return null;
 }

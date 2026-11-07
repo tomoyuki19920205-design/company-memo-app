@@ -298,7 +298,8 @@ export function buildSegmentInfo(
 
     // A substring or translated keyword is not evidence of the same business.
     // Preserve exact normalized source identities across all source tabs.
-    const resolveDk = (name: string): string => normalizeSegmentDisplayKey(name) || name;
+    const resolveDk = (name: string, row?: { business_key?: string | null; comparison_definition?: string | null }): string =>
+        row?.business_key && row?.comparison_definition ? `source:${row.business_key}` : normalizeSegmentDisplayKey(name) || name;
 
     // 最新FYの既存列順を維持しつつ、正式API winnerに存在する過年度segmentを
     // 決定論的に右側へ追加する。identity解決はresolveDkへ集約し、同一identityの
@@ -323,9 +324,9 @@ export function buildSegmentInfo(
         segmentName: pickSegmentDisplayName(names),
         salesKey: `seg:${displayKey}:sales`,
         profitKey: `seg:${displayKey}:profit`,
-        salesLabel: segmentSalesLabel(allSegments.filter(s => resolveDk(s.segment_name) === displayKey)
+        salesLabel: segmentSalesLabel(allSegments.filter(s => resolveDk(s.segment_name, s) === displayKey)
             .sort((a, b) => b.period.localeCompare(a.period))[0]?.sales_basis),
-        profitLabel: segmentProfitLabel(allSegments.filter(s => resolveDk(s.segment_name) === displayKey)
+        profitLabel: segmentProfitLabel(allSegments.filter(s => resolveDk(s.segment_name, s) === displayKey)
             .sort((a, b) => b.period.localeCompare(a.period))[0]?.profit_basis),
     }));
 
@@ -341,7 +342,7 @@ export function buildSegmentInfo(
     const segmentQMap = new Map<string, Record<string, number | null>>();
     const segmentQReasons = new Map<string, string>();
     const metadata = new Map(filtered.map(s => [
-        `${s.period}|${s.quarter}|${resolveDk(s.segment_name)}`, s,
+        `${s.period}|${s.quarter}|${resolveDk(s.segment_name, s)}`, s,
     ]));
     // periodごとにグルーピングして差分計算
     const periodSet = new Set<string>();
@@ -403,7 +404,7 @@ export function buildSegmentInfo(
     for (const seg of segments) {
         const key = `${seg.period}|${seg.quarter}`;
         const col2 = (() => {
-            const dk = resolveDk(seg.segment_name);
+            const dk = resolveDk(seg.segment_name, seg);
             return segmentColumns.find((c) => c.salesKey === `seg:${dk}:sales`);
         })();
         if (col2) {
@@ -414,7 +415,7 @@ export function buildSegmentInfo(
 
     const segmentLabels = new Map<string, string>();
     for (const seg of filtered) {
-        const prefix = `${seg.period}|${seg.quarter}|seg:${resolveDk(seg.segment_name)}`;
+        const prefix = `${seg.period}|${seg.quarter}|seg:${resolveDk(seg.segment_name, seg)}`;
         const scope = seg.accounting_scope === "non_consolidated" ? " / 非連結" : seg.accounting_scope === "consolidated" ? " / 連結" : "";
         segmentLabels.set(`${prefix}:sales`, segmentSalesLabel(seg.sales_basis) + (seg.sales_label ? ` / 原表: ${seg.sales_label}` : "") + scope);
         segmentLabels.set(`${prefix}:profit`, segmentProfitLabel(seg.profit_basis) + (seg.profit_label ? ` / 原表: ${seg.profit_label}` : "") + scope);

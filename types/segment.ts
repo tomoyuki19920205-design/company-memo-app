@@ -14,6 +14,9 @@ export interface SegmentRecord {
     period_start?: string | null;
     period_end?: string | null;
     segment_definition?: string | null;
+    /** Exact printed header, only exposed for a fully verified unique period. */
+    business_key?: string | null;
+    comparison_definition?: string | null;
     source?: string;
     /** source_priority: api_latest_segments の優先順位 (小さいほど優先) */
     source_priority?: number | null;
