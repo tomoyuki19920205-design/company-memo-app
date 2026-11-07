@@ -57,3 +57,14 @@ test("filling original identity in one period preserves exact-name comparisons w
     assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.salesKey], 714);
     assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.profitKey], 64);
 });
+
+test("an unrelated fiscal year's renamed header does not split an exact-name neighbor", () => {
+    const unverified = { ...prior, business_key: null, comparison_definition: null };
+    const current = { ...annual, segment_name: prior.segment_name, segment_definition: prior.segment_definition };
+    const older = { ...current, period: "2023-03-31", business_key: "旧物流サービス" };
+    const info = buildSegmentInfo([unverified, current, older]);
+    const col = info.segmentColumns.find(c => c.display_key === "source:物流サービス")!;
+    assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.salesKey], 714);
+    assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.profitKey], 64);
+    assert.equal(info.segmentColumns.length, 2);
+});
