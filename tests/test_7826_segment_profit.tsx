@@ -32,10 +32,13 @@ test("zero and losses remain visible; only compatible cumulative profits are sub
     const two={...one,quarter:"2Q",segment_profit:-5,period_end:"2026-12-31"};
     const info=buildSegmentInfo([one,two]);const col=info.segmentColumns[0];
     assert.equal(info.segmentQMap.get("2027-06-30|2Q")![col.profitKey],-5);
-    for(const change of [{profit_basis:"operating_profit"},{segment_definition:"new"},{period_start:"2026-08-01"}]) {
-        assert.equal(buildSegmentInfo([one,{...two,...change}]).segmentQMap.get("2027-06-30|2Q")![col.profitKey],null);
+    for(const [change, reason] of [[{profit_basis:"operating_profit"},"利益基準"],[{segment_definition:"new"},"セグメント区分"],[{period_start:"2026-08-01"},"累計開始日"]] as const) {
+        const incompatible=buildSegmentInfo([one,{...two,...change}]);
+        assert.equal(incompatible.segmentQMap.get("2027-06-30|2Q")![col.profitKey],null);
+        assert.match(incompatible.segmentQReasons.get(`2027-06-30|2Q|${col.profitKey}`)!,new RegExp(reason));
     }
     assert.equal(buildSegmentInfo([two]).segmentQMap.get("2027-06-30|2Q")![col.profitKey],null);
+    assert.match(buildSegmentInfo([two]).segmentQReasons.get(`2027-06-30|2Q|${col.profitKey}`)!,/前四半期/);
     const html=renderToStaticMarkup(<SegmentTable data={[one,two]} loading={false} overrides={[]} />);
     assert.match(html,/>0</);assert.match(html,/-5/);
     assert.equal(segmentProfitLabel("operating_profit"),"セグメント利益（営業利益ベース）");

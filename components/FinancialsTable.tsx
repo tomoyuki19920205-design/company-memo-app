@@ -3,7 +3,7 @@
 import React, { useMemo, useCallback, useRef, useState, useEffect, useLayoutEffect, useSyncExternalStore } from "react";
 import type { FinancialRecord } from "@/types/financial";
 import type { SegmentRecord } from "@/types/segment";
-import { segmentProfitLabel, compatibleSegmentPeriods } from "@/lib/segment-profit";
+import { segmentProfitLabel, segmentComparisonReason } from "@/lib/segment-profit";
 import { formatMillions, displayValue } from "@/lib/format";
 import { useColumnResize, type ColumnDef } from "@/components/ResizableTable";
 import type { GridData } from "@/lib/memo-api";
@@ -396,6 +396,7 @@ export function buildSegmentInfo(
     // Q単体用 segmentQMap: key = "period|quarter"
     // 1Q: 累計そのまま, 2Q: 2Q累計-1Q累計, 3Q: 3Q累計-2Q累計, FY: FY累計-3Q累計
     const segmentQMap = new Map<string, Record<string, number | null>>();
+    const segmentQReasons = new Map<string, string>();
     const metadata = new Map(filtered.map(s => [
         `${s.period}|${s.quarter}|${resolveDk(s.segment_name)}`, s,
     ]));
@@ -421,6 +422,8 @@ export function buildSegmentInfo(
                     // 1Q: 累計 = 単体
                     qRow[col.salesKey] = curSales;
                     qRow[col.profitKey] = curProfit;
+                    if (curSales === null) segmentQReasons.set(`${curKey}|${col.salesKey}`, "当四半期の売上値が未取得");
+                    if (curProfit === null) segmentQReasons.set(`${curKey}|${col.profitKey}`, "当四半期の利益値が未取得");
                 } else {
                     const prevKey = `${period}|${prevQ}`;
                     const prevData = segmentMap.get(prevKey);
@@ -431,13 +434,17 @@ export function buildSegmentInfo(
                         // 前四半期がなければ単独四半期を計算しない。
                         qRow[col.salesKey] = null;
                         qRow[col.profitKey] = null;
+                        segmentQReasons.set(`${curKey}|${col.salesKey}`, "前四半期の累計値が未取得");
+                        segmentQReasons.set(`${curKey}|${col.profitKey}`, "前四半期の累計値が未取得");
                     } else {
                         // 前四半期データあり: 差分計算
-                        const compatible = compatibleSegmentPeriods(
+                        const reason = segmentComparisonReason(
                             metadata.get(`${curKey}|${col.display_key}`),
                             metadata.get(`${prevKey}|${col.display_key}`));
-                        qRow[col.salesKey] = compatible && curSales !== null && prevSales !== null ? curSales - prevSales : null;
-                        qRow[col.profitKey] = compatible && curProfit !== null && prevProfit !== null ? curProfit - prevProfit : null;
+                        qRow[col.salesKey] = reason === null && curSales !== null && prevSales !== null ? curSales - prevSales : null;
+                        qRow[col.profitKey] = reason === null && curProfit !== null && prevProfit !== null ? curProfit - prevProfit : null;
+                        if (qRow[col.salesKey] === null) segmentQReasons.set(`${curKey}|${col.salesKey}`, reason ?? (curSales === null ? "当四半期の売上累計値が未取得" : "前四半期の売上累計値が未取得"));
+                        if (qRow[col.profitKey] === null) segmentQReasons.set(`${curKey}|${col.profitKey}`, reason ?? (curProfit === null ? "当四半期の利益累計値が未取得" : "前四半期の利益累計値が未取得"));
                     }
                 }
             }
@@ -461,7 +468,7 @@ export function buildSegmentInfo(
         }
     }
 
-    return { segmentColumns, segmentMap, segmentQMap, sourceMap };
+    return { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap };
 }
 
 // ============================================================
@@ -900,7 +907,7 @@ function FinancialsTable({
     }, [filteredBySource]);
 
     // セグメント列 (filteredForSegBuild を入力にすることでタブ切替え + priority フィルタを実現)
-    const { segmentColumns, segmentMap, segmentQMap, sourceMap } = useMemo(
+    const { segmentColumns, segmentMap, segmentQMap, segmentQReasons, sourceMap } = useMemo(
         () => buildSegmentInfo(filteredForSegBuild, { disableSemanticMerge: segSourceTab === "all" }),
         [filteredForSegBuild, segSourceTab]
     );
@@ -3693,12 +3700,13 @@ function FinancialsTable({
                                                         {segmentColumns.map((sc, scIdx) => {
                                                             const salesVal = getSegQValue(row.period, row.quarter, sc.salesKey);
                                                             const profitVal = getSegQValue(row.period, row.quarter, sc.profitKey);
+                                                            const reasonKey = `${normalizePeriod(row.period)}|${normalizeQuarter(row.quarter)}`;
                                                             const sIdx = scIdx * 2;
                                                             const pIdx = scIdx * 2 + 1;
                                                             return (
                                                                 <React.Fragment key={sc.segmentName}>
-                                                                    <td className="num-col seg-data-cell" style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : ""}</td>
-                                                                    <td className="num-col seg-data-cell segment-group-end" style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : ""}</td>
+                                                                    <td className="num-col seg-data-cell" title={segmentQReasons.get(`${reasonKey}|${sc.salesKey}`)} style={{ width: segWidths[sIdx], minWidth: segWidths[sIdx] }}>{salesVal !== null ? formatMillions(salesVal) : ""}</td>
+                                                                    <td className="num-col seg-data-cell segment-group-end" title={segmentQReasons.get(`${reasonKey}|${sc.profitKey}`)} style={{ width: segWidths[pIdx], minWidth: segWidths[pIdx] }}>{profitVal !== null ? formatMillions(profitVal) : ""}</td>
                                                                 </React.Fragment>
                                                             );
                                                         })}
