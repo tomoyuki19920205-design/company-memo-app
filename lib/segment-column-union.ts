@@ -23,6 +23,28 @@ export interface SegmentValueColumn {
     profitKey: string;
 }
 
+/** Keep exact legacy names on their column while proof is filled period by period. */
+export function createSegmentIdentityResolver(
+    segments: SegmentColumnIdentityInput[],
+    normalizeName: (name: string) => string,
+): (name: string, row?: SegmentColumnIdentityInput) => string {
+    const provenByExactName = new Map<string, Set<string>>();
+    for (const row of segments) {
+        if (!row.business_key || !row.comparison_definition) continue;
+        const name = normalizeName(row.segment_name) || row.segment_name;
+        if (!provenByExactName.has(name)) provenByExactName.set(name, new Set());
+        provenByExactName.get(name)!.add(row.business_key);
+    }
+    return (name, row) => {
+        if (row?.business_key && row.comparison_definition) return `source:${row.business_key}`;
+        const exactName = normalizeName(name) || name;
+        const proven = provenByExactName.get(exactName);
+        // This only retains the pre-existing equality of full normalized names.
+        // Conflicting proven identities never supply an alias to an unverified row.
+        return proven?.size === 1 ? `source:${[...proven][0]}` : exactName;
+    };
+}
+
 interface HistoricalGroup extends SegmentColumnIdentityGroup {
     latestPeriod: string;
     segmentOrder: number | null;

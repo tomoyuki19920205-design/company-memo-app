@@ -13,7 +13,7 @@ import type { SegmentOverrideSaveRequest } from "@/types/segment-override";
 import { normalizePeriod, normalizeQuarter } from "@/lib/normalize";
 import { extractFiscalYear } from "@/lib/viewer-api";
 import { normalizeSegmentDisplayKey, pickSegmentDisplayName, isTdnetSegmentSource, EDINET_SOURCES } from "@/lib/segment-normalize";
-import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue } from "@/lib/segment-column-union";
+import { buildSegmentColumnUnion, buildSegmentValueMap, hasDisplayableSegmentValue, createSegmentIdentityResolver } from "@/lib/segment-column-union";
 import type { KpiDefMap, KpiValueMap } from "@/lib/kpi-api";
 import { buildFinancialTableModel } from "@/lib/financial-table-model";
 import { getCompanyProfitDisplay, isFinancialIndustry, selectProfitDisplay } from "@/lib/company-profit-display";
@@ -298,8 +298,7 @@ export function buildSegmentInfo(
 
     // A substring or translated keyword is not evidence of the same business.
     // Preserve exact normalized source identities across all source tabs.
-    const resolveDk = (name: string, row?: { business_key?: string | null; comparison_definition?: string | null }): string =>
-        row?.business_key && row?.comparison_definition ? `source:${row.business_key}` : normalizeSegmentDisplayKey(name) || name;
+    const resolveDk = createSegmentIdentityResolver(allSegments, normalizeSegmentDisplayKey);
 
     // 最新FYの既存列順を維持しつつ、正式API winnerに存在する過年度segmentを
     // 決定論的に右側へ追加する。identity解決はresolveDkへ集約し、同一identityの

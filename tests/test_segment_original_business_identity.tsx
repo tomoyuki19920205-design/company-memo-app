@@ -47,3 +47,13 @@ test("identical raw labels never share another row's source identity", () => {
     assert.equal(row["seg:source:建設/日本:profit"], 289);
     assert.equal(row["seg:source:開発/日本:profit"], -10);
 });
+
+test("filling original identity in one period preserves exact-name comparisons with its neighbor", () => {
+    const unverified = { ...prior, business_key: null, comparison_definition: null };
+    const current = { ...annual, segment_name: prior.segment_name, segment_definition: prior.segment_definition };
+    const info = buildSegmentInfo([unverified, current]);
+    assert.equal(info.segmentColumns.length, 1);
+    const col = info.segmentColumns[0];
+    assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.salesKey], 714);
+    assert.equal(info.segmentQMap.get("2024-03-31|FY")![col.profitKey], 64);
+});
