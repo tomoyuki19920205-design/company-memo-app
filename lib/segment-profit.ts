@@ -6,6 +6,7 @@ export function segmentProfitLabel(basis?: string | null): string {
         ordinary_profit: "経常利益", profit_before_tax: "税引前利益",
         adjusted_operating_profit: "調整後営業利益", core_operating_profit: "コア営業利益",
         business_profit: "事業利益", before_goodwill_amortization: "のれん等償却前利益",
+        ebitda: "EBITDA", adjusted_ebitda: "調整後EBITDA",
         company_defined_unknown: "基準未確定",
     };
     return labels[basis ?? ""] ? `セグメント利益（${labels[basis!]}ベース）` : "セグメント利益";

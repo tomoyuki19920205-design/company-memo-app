@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { buildSegmentInfo } from "../components/FinancialsTable";
 import SegmentTable from "../components/SegmentTable";
 import type { SegmentRecord } from "../types/segment";
+import { segmentProfitLabel } from "../lib/segment-profit";
 
 const first: SegmentRecord = {
     ticker: "4443", period: "2027-05-31", quarter: "1Q", segment_name: "Eight Business",
@@ -16,6 +17,7 @@ const first: SegmentRecord = {
 const second: SegmentRecord = { ...first, quarter: "2Q", segment_sales: 3000, segment_profit: -200, period_end: "2026-11-30" };
 
 test("company-defined profit and internal-inclusive sales retain their disclosed labels", () => {
+    assert.equal(segmentProfitLabel("ebitda"), "セグメント利益（EBITDAベース）");
     const info = buildSegmentInfo([first]);
     const col = info.segmentColumns[0];
     assert.match(col.salesLabel, /内部取引込み/);
