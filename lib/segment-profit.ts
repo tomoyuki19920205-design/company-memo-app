@@ -4,6 +4,7 @@ export function segmentProfitLabel(basis?: string | null): string {
     const labels: Record<string, string> = {
         gross_profit: "売上総利益", operating_profit: "営業利益",
         ordinary_profit: "経常利益", profit_before_tax: "税引前利益",
+        net_profit: "純利益", profit_attributable_to_owners: "親会社所有者帰属純利益",
         adjusted_operating_profit: "調整後営業利益", core_operating_profit: "コア営業利益",
         business_profit: "事業利益", before_goodwill_amortization: "のれん等償却前利益",
         ebitda: "EBITDA", adjusted_ebitda: "調整後EBITDA",
