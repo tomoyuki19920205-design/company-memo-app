@@ -914,7 +914,6 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const supabaseRef = useRef(createSupabaseBrowser());
   const viewerRef = useRef<CompanyViewerHandle>(null);
-  const reportViewerRef = useRef<string | null>(null);
   const listPaneRef = useRef<HTMLDivElement>(null);
   const listScrollTargetRef = useRef<number | null>(null);
   const [listBottomSpace, setListBottomSpace] = useState(0);
@@ -1134,10 +1133,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       : { type: "select", id: event.id, allowCollapse });
     const showForecastDetail = mobile && getDisplayCategory(event.event_type, event.headline) === "forecast";
     setRightPaneTab(showForecastDetail ? "detail" : "company");
-    if (!showForecastDetail && (!isReport || reportViewerRef.current !== event.ticker)) {
+    if (!showForecastDetail && (!isReport || viewerRef.current?.getSelectedTicker() !== event.ticker)) {
       viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
     }
-    reportViewerRef.current = isReport ? event.ticker : null;
 
     if (!event.is_read) {
       // 既読化処理もUIをブロックしないように非同期で後追い実行

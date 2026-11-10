@@ -148,6 +148,7 @@ function buildManualTableMemos(
 /** CompanyViewer の外部制御インターフェース */
 export interface CompanyViewerHandle {
     loadTicker: (ticker: string, destination?: "pl" | "order" | "edinet") => void;
+    getSelectedTicker: () => string;
 }
 
 type ViewerNavigation = { id: number; ticker: string; destination: "pl" | "order" | "edinet" };
@@ -687,10 +688,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     // 外部制御: forwardRef で loadTicker を公開
     // ============================================================
     useImperativeHandle(ref, () => ({
+        getSelectedTicker: () => navigationRef.current?.ticker || activeTicker,
         loadTicker: (ticker: string, destination = "pl") => {
             requestViewerNavigation(ticker, destination);
         },
-    }), [requestViewerNavigation]);
+    }), [requestViewerNavigation, activeTicker]);
 
     useLayoutEffect(() => {
         const navigation = navigationRef.current;
