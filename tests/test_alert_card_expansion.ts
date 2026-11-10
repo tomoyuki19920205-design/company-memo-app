@@ -5,6 +5,17 @@ import { cardExpansionReducer as reduce, createCardExpansionState } from "../lib
 const select = (id: string, allowCollapse = true) => ({ type: "select", id, allowCollapse } as const);
 const pin = (id: string) => ({ type: "togglePin", id } as const);
 
+test("closing an acceleration report preserves Viewer selection and ordinary pins", () => {
+  let state = reduce(createCardExpansionState(), pin("ordinary"));
+  state = reduce(state, { type: "open", id: "report-A" });
+  state = reduce(state, { type: "open", id: "report-B" });
+  assert.equal(state.expandedId, "report-B");
+  state = reduce(state, { type: "closeReport", id: "report-B" });
+  assert.equal(state.expandedId, null);
+  assert.equal(state.selectedId, "report-B");
+  assert(state.pinnedIds.has("ordinary"));
+});
+
 test("ordinary desktop cards still toggle and replace the open card", () => {
   let state = reduce(createCardExpansionState(), select("A"));
   state = reduce(state, select("B"));
