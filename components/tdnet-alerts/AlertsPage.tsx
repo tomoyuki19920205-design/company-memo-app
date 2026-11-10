@@ -21,6 +21,8 @@ import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-aler
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
+import AccelerationReportBody from './AccelerationReportBody';
+import { reportStateLabel } from '@/lib/tdnet-alerts/acceleration';
 import { requiredListBottomSpace } from "@/lib/tdnet-alerts/list-scroll";
 import ForecastReason from "./ForecastReason";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
@@ -912,6 +914,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const supabaseRef = useRef(createSupabaseBrowser());
   const viewerRef = useRef<CompanyViewerHandle>(null);
+  const reportViewerRef = useRef<string | null>(null);
   const listPaneRef = useRef<HTMLDivElement>(null);
   const listScrollTargetRef = useRef<number | null>(null);
   const [listBottomSpace, setListBottomSpace] = useState(0);
@@ -947,9 +950,9 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   });
 
   // イベント読み込み
-  const loadEvents = useCallback(async () => {
+  const loadEvents = useCallback(async (background = false) => {
     const requestId = ++eventsRequestIdRef.current;
-    setLoading(true);
+    if (!background) setLoading(true);
     try {
       const opts: Parameters<typeof fetchEvents>[1] = {
         userId,
@@ -964,6 +967,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       else if (filter === "forecast") opts.eventType = "forecast";
       else if (filter === "dividend") opts.eventType = "dividend";
       else if (filter === "earnings") opts.eventType = "earnings";
+      else if (filter === "acceleration") { opts.accelerationOnly = true; opts.skipClientSort = true; }
       else if (filter === "management_strategy") opts.eventType = "management_strategy";
       else if (filter === "edinet_order") {
         // partialも取得するためクエリパラメータから外し、フロントエンド側でフィルタする
@@ -1018,7 +1022,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   }, [userId, filter, selectedDate, allPeriodTickerSearch]);
 
   useEffect(() => {
-    loadEvents();
+    void loadEvents();
+    const refresh = setInterval(() => {
+      if (document.visibilityState === 'visible') { alertsCacheRef.current.clear(); void loadEvents(true); }
+    }, 60000);
+    return () => { clearInterval(refresh); eventsRequestIdRef.current++; };
   }, [loadEvents]);
 
   // 音を初期化
@@ -1060,6 +1068,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleFilterChange = (f: FilterType) => {
     setFilter(f);
+    if (f === "acceleration") setSelectedDate(null);
   };
 
   const handleTodayClick = () => {
@@ -1111,15 +1120,24 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleSelectEvent = (event: EnrichedEvent) => {
     listScrollTargetRef.current = listPaneRef.current?.scrollTop ?? null;
-    setMobilePane("company");
+    const report = event.acceleration;
+    const isReport = report && (report.decision === 'matched' || report.version > 0);
+    if (isReport && expandedId === event.id) {
+      dispatchCardExpansion({ type: 'closeReport', id: event.id });
+      return;
+    }
+    setMobilePane(isReport ? "list" : "company");
     const mobile = window.matchMedia("(max-width: 900px)").matches;
     const allowCollapse = !mobile;
-    dispatchCardExpansion(selectedId === event.id && expandedId === event.id
+    dispatchCardExpansion(isReport || selectedId === event.id && expandedId === event.id
       ? { type: "open", id: event.id }
       : { type: "select", id: event.id, allowCollapse });
     const showForecastDetail = mobile && getDisplayCategory(event.event_type, event.headline) === "forecast";
     setRightPaneTab(showForecastDetail ? "detail" : "company");
-    if (!showForecastDetail) viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
+    if (!showForecastDetail && (!isReport || reportViewerRef.current !== event.ticker)) {
+      viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
+    }
+    reportViewerRef.current = isReport ? event.ticker : null;
 
     if (!event.is_read) {
       // 既読化処理もUIをブロックしないように非同期で後追い実行
@@ -1254,6 +1272,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     { key: "forecast", label: "📉 業績修正" },
     { key: "dividend", label: "💰 配当" },
     { key: "earnings", label: "📋 決算" },
+    { key: "acceleration", label: "営利YoY加速レポート" },
     { key: "management_strategy", label: "🧭 中期経営・戦略" },
     { key: "edinet_order", label: "📦 受注・受注残" },
     { key: "discord", label: "🔔 Discord対象" },
@@ -1471,6 +1490,33 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const isSelected = selectedId === event.id;
               const isPinned = pinnedIds.has(event.id);
               const isExpanded = expandedId === event.id || isPinned;
+
+              const reportExpanded = expandedId === event.id;
+              const report = event.acceleration;
+              if (report && (report.decision === 'matched' || report.version > 0)) {
+                const unreadReport = report.state === 'completed' && report.version > (report.read_version || 0);
+                return <div key={event.id} data-event-id={event.id} data-ticker={event.ticker}
+                  className={`alert-card acceleration-card ${reportExpanded ? 'expanded selected' : 'collapsed'} ${!event.is_read ? 'unread' : ''}`}
+                  onClick={() => handleSelectEvent(event)}>
+                  <div className="acceleration-card-meta">
+                    <span>{reportStateLabel(report)}</span><span>{report.quarter}Q</span><span>開示 {report.business_date}</span>
+                    {unreadReport && <strong className="acceleration-unread">{report.read_version ? '更新' : 'レポート未読'}</strong>}
+                    <button className="action-btn" aria-label="スター" onClick={e => handleToggleStar(event, e)}>{event.is_starred ? '⭐' : '☆'}</button>
+                    <button className="action-btn" aria-label={event.is_read ? '通常通知を未読に戻す' : '通常通知を既読にする'} onClick={e => handleToggleRead(event, e)}>{event.is_read ? '📖' : '📩'}</button>
+                  </div>
+                  <button className="acceleration-title" aria-expanded={reportExpanded} onClick={e => { e.stopPropagation(); handleSelectEvent(event); }}>
+                    {report.state === 'completed' ? report.title : `${event.ticker} ${event.company_name} ${report.quarter}Q｜${reportStateLabel(report)}`}
+                  </button>
+                  {report.acceleration_pt !== null && <div className="acceleration-card-meta">加速幅 {Number(report.acceleration_pt).toFixed(2)}pt
+                    {report.published_at && <span>更新 {formatTime(report.published_at)}・第{report.version}版</span>}
+                  </div>}
+                  {reportExpanded && <>
+                    <AccelerationReportBody key={`${event.id}:${report.version}:${report.state}`} event={event} report={report} userId={userId}
+                      onRead={(key, version) => { alertsCacheRef.current.clear(); setEvents(previous => previous.map(e => e.acceleration?.logical_key === key ? { ...e, acceleration: { ...e.acceleration, read_version: version } } : e)); }} />
+                    <button onClick={e => { e.stopPropagation(); dispatchCardExpansion({ type: 'closeReport', id: event.id }); }}>閉じる</button>
+                  </>}
+                </div>;
+              }
 
               if (isCompanyIrEvent(event.event_type)) {
                 const directUrl = getValidatedMaterialUrl(event);

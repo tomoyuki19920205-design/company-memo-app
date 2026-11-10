@@ -35,7 +35,7 @@ function materialLabelClass(children: React.ReactNode): string | undefined {
         : undefined;
 }
 
-type ReportMarkdownType = "sector_weekly" | "ny_market_daily" | "ipo_analysis";
+type ReportMarkdownType = "sector_weekly" | "ny_market_daily" | "ipo_analysis" | "op_acceleration";
 
 export default function SectorReportMarkdown({ markdown, reportType }: { markdown: string; reportType: ReportMarkdownType }) {
     const normalized = markdown.replace(/\r\n?/g, "\n");

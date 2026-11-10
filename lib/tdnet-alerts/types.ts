@@ -102,6 +102,7 @@ export interface IpoAnalysisReport {
 
 // Enriched event with user-specific states
 export interface EnrichedEvent extends TdnetEvent {
+  acceleration?: import('./acceleration').AccelerationReport;
   is_read: boolean;
   is_starred: boolean;
   comments_count: number;
@@ -109,6 +110,7 @@ export interface EnrichedEvent extends TdnetEvent {
 
 // Filter state
 export type FilterType =
+  | "acceleration"
   | "all"
   | "unread"
   | "starred"

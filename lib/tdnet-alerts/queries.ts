@@ -3,6 +3,8 @@ import type { TdnetEvent, TdnetEventComment, EnrichedEvent, IpoAnalysisReport } 
 import { isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } from "./material-alerts";
 import { applyNotificationTitleExclusions, isNotificationEventVisible } from "./notification-policy";
 
+import { enrichAcceleration } from "./acceleration";
+
 // ============================================================
 // 一覧取得
 // ============================================================
@@ -10,6 +12,7 @@ export async function fetchEvents(
   supabase: SupabaseClient,
   opts: {
     userId: string;
+    accelerationOnly?: boolean;
     limit?: number;
     eventType?: string;
     search?: string;
@@ -41,6 +44,14 @@ export async function fetchEvents(
     .order("created_at", { ascending: false })
     .limit(actualLimit);
 
+  if (opts.accelerationOnly) {
+    const { data, error } = await supabase.from("op_acceleration_reports")
+      .select("event_id,published_at").eq("state", "completed").eq("decision", "matched")
+      .not("event_id", "is", null).order("published_at", { ascending: false }).limit(actualLimit);
+    if (error) throw error;
+    if (!data?.length) return [];
+    query = query.in("id", data.map(r => r.event_id));
+  }
   if (!opts.showArchived) {
     query = query.eq("status", "active");
   }
@@ -133,7 +144,7 @@ export async function fetchEvents(
     if (!skipDateFilter) {
       query = query.gte("detected_at", gte).lt("detected_at", lt);
     }
-  } else if (!opts.search && !opts.starredOnly) {
+  } else if (!opts.search && !opts.starredOnly && !opts.accelerationOnly) {
     // 通常モード: 直近30日のみ取得（全期間だと古いデータが大量混入するため）
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
@@ -181,6 +192,11 @@ export async function fetchEvents(
     commentCountMap.set(c.event_id, (commentCountMap.get(c.event_id) || 0) + 1);
   });
 
+  // Optional report metadata must not disable ordinary notifications on failure.
+  let acceleration = new Map();
+  try { acceleration = await enrichAcceleration(supabase, eventIds, opts.userId); }
+  catch (error) { if (opts.accelerationOnly) throw error; console.warn("Acceleration metadata unavailable", error); }
+
   // Enriched events を作成
   let enriched: EnrichedEvent[] = visibleEvents.map((e: any) => {
     // raw_payload の復元 (一覧取得の軽量化対応)
@@ -202,6 +218,7 @@ export async function fetchEvents(
     return {
       ...e,
       raw_payload: reconstructedPayload,
+      acceleration: acceleration.get(e.id),
       is_read: readSet.has(e.id),
       is_starred: starSet.has(e.id),
       comments_count: commentCountMap.get(e.id) || 0,
@@ -491,6 +508,10 @@ export async function fetchEvents(
     opts.starredOnly ? "starredOnly" : "",
     "(DB:", events.length, "-> 表示:", enriched.length, ")"
   );
+  if (opts.accelerationOnly) {
+    enriched = enriched.filter(e => e.acceleration?.state === "completed" && e.acceleration.decision === "matched");
+    enriched.sort((a, b) => (b.acceleration?.published_at || "").localeCompare(a.acceleration?.published_at || ""));
+  }
   return enriched;
 }
 

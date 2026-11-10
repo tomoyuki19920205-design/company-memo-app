@@ -4580,3 +4580,17 @@ body:has(.alerts-layout) {
 @media (max-width:1450px) { .margin-chart-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:850px) { .margin-chart-grid { grid-template-columns:minmax(0,1fr); } }
 @media (max-width:700px) { .margin-page { padding:12px; } .margin-heading { align-items:start; flex-direction:column; } .margin-period > span { margin-left:0; } .margin-table-scroll { max-height:calc(100vh - 290px); } }
+
+.acceleration-card { min-width: 0; overflow-wrap: anywhere; }
+.acceleration-title { display: block; width: 100%; text-align: left; color: inherit; background: transparent; border: 0; font: inherit; font-weight: 650; line-height: 1.65; cursor: pointer; padding: 6px 0; white-space: normal; }
+.acceleration-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .75rem; color: var(--text-secondary, #64748b); }
+.acceleration-unread { color: #b45309; background: #fef3c7; border-radius: 4px; padding: 1px 5px; }
+.acceleration-report { cursor: text; font-size: .85rem; line-height: 1.85; margin-top: 12px; user-select: text; }
+.acceleration-report p { margin: 10px 0; white-space: pre-wrap; }
+.acceleration-report h4 { margin: 22px 0 8px; font-size: .95rem; }
+.acceleration-report a { color: #2563eb; text-decoration: underline; overflow-wrap: anywhere; }
+.acceleration-table-scroll { overflow-x: auto; max-width: 100%; }
+.acceleration-table-scroll table { border-collapse: collapse; font-size: .75rem; width: max-content; min-width: 100%; }
+.acceleration-table-scroll td, .acceleration-table-scroll th { padding: 6px 8px; border: 1px solid var(--border-color, #cbd5e1); white-space: nowrap; }
+.acceleration-report details { margin-top: 20px; border-top: 1px solid #cbd5e1; padding-top: 12px; }
+.acceleration-report textarea { width: 100%; min-height: 70px; box-sizing: border-box; }
