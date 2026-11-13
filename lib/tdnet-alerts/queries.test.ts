@@ -81,6 +81,22 @@ function hasTickerCondition(calls: RecordedCall[], ticker: string): boolean {
   );
 }
 
+test("a missing financial ticker does not interrupt other earnings enrichment", async () => {
+  const event = { id: "missing-financial", headline: "決算短信", event_type: "earnings", ticker: "2990",
+    raw_payload: { extracted: { fiscal_period: "2027-03-31", quarter: "2Q", sales_current: 1000000 } },
+    disclosed_at: "2026-11-13T07:00:00Z" };
+  const supabase = { from: (table: string) => new FakeQuery(table === "tdnet_events" ? [event] : table === "financials"
+    ? [{ ticker: "1111", period: "2027-03-31", quarter: "2Q", sales: 1, operating_profit: 1 }] : []) };
+  const warnings: unknown[][] = [];
+  const original = console.warn;
+  console.warn = (...args: unknown[]) => { warnings.push(args); };
+  try {
+    const rows = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-11-13" });
+    assert.equal(rows.length, 1);
+    assert.equal(warnings.length, 0);
+  } finally { console.warn = original; }
+});
+
 function searchCondition(calls: RecordedCall[]): string | undefined {
   return calls.find((call) => call.method === "or")?.condition;
 }

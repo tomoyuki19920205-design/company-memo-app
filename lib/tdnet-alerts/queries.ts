@@ -334,7 +334,7 @@ export async function fetchEvents(
 
           // exactPeriod をイベントから取得できれば最優先で使用
           const exactPeriod = String(ext.period || ext.fiscal_period || "");
-          if (exactPeriod && exactPeriod.includes("-") && finMap[ev.ticker][exactPeriod]?.[quarter]) {
+          if (exactPeriod && exactPeriod.includes("-") && finMap[ev.ticker]?.[exactPeriod]?.[quarter]) {
             currPeriod = exactPeriod;
           } else {
             // 取得できない場合は、op_current / sales_current の値で照合する
