@@ -101,6 +101,19 @@ function searchCondition(calls: RecordedCall[]): string | undefined {
   return calls.find((call) => call.method === "or")?.condition;
 }
 
+test("source exclusions and profit concepts survive legacy financial enrichment", async () => {
+  for (const extra of [{ has_yoy: false }, { ordinary_profit_current: 2000000 }, { profit_before_tax_current: 2000000 }]) {
+    const ext = { fiscal_period: "2027-03-31", quarter: "2Q", sales_current: 1000000, op_current: null, sales_yoy: null, op_yoy: null, ...extra };
+    const event = { id: "source-semantics", headline: "決算短信", event_type: "earnings", ticker: "3719", raw_payload: { extracted: ext }, disclosed_at: "2026-11-13T12:00:00Z" };
+    const financials = [{ ticker: "3719", period: "2027-03-31", quarter: "2Q", sales: 1, operating_profit: 2 }, { ticker: "3719", period: "2026-03-31", quarter: "2Q", sales: 0.5, operating_profit: 1 }];
+    const supabase = { from: (table: string) => new FakeQuery(table === "tdnet_events" ? [event] : table === "financials" ? financials : []) };
+    const rows = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-11-13" });
+    assert.deepEqual((rows[0].raw_payload as any).extracted, ext);
+    assert.equal((rows[0].raw_payload as any).extracted.op_current, null);
+    assert.equal((rows[0].raw_payload as any).extracted.sales_yoy, null);
+  }
+});
+
 test("searches an uppercase alpha ticker by exact ticker", async () => {
   const calls = await captureSearchCalls("581A");
   assert.equal(hasTickerCondition(calls, "581A"), true);

@@ -271,6 +271,8 @@ export async function fetchEvents(
         (() => {
           const rp = e.raw_payload as Record<string, unknown>;
           const ext = (rp?.extracted ?? {}) as Record<string, unknown>;
+          if (ext.has_yoy === false || ext.yoy_unavailable_reason) return false;
+          if (ext.op_current == null && (ext.ordinary_profit_current != null || ext.profit_before_tax_current != null)) return false;
           return ext.sales_yoy == null || ext.op_yoy == null;
         })()
     );
