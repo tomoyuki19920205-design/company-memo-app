@@ -10,11 +10,13 @@ type RecordedCall =
 
 class FakeQuery {
   readonly calls: RecordedCall[] = [];
+  private bounds: [number, number] | null = null;
   constructor(private readonly rows: unknown[] = []) {}
 
   select() { return this; }
   order() { return this; }
   limit() { return this; }
+  range(start: number, end: number) { this.bounds = [start, end]; return this; }
   not(column: string, operator: string, value: string) {
     this.calls.push({ method: "not", column, operator, value });
     return this;
@@ -40,7 +42,8 @@ class FakeQuery {
     onfulfilled?: ((value: { data: unknown[]; error: null }) => TResult1 | PromiseLike<TResult1>) | null,
     onrejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null,
   ) {
-    return Promise.resolve({ data: this.rows, error: null }).then(onfulfilled, onrejected);
+    const rows = this.bounds ? this.rows.slice(this.bounds[0], this.bounds[1] + 1) : this.rows;
+    return Promise.resolve({ data: rows, error: null }).then(onfulfilled, onrejected);
   }
 }
 
@@ -51,6 +54,25 @@ async function captureSearchCalls(search: string): Promise<RecordedCall[]> {
   await fetchEvents(supabase as never, { userId: "test-user", search });
   return query.calls;
 }
+
+test("a busy selected day includes every card and bounds related UUID lookups", async () => {
+  const rows = Array.from({ length: 1188 }, (_, i) => ({
+    id: `event-${i}`, headline: "業績予想の修正", event_type: "forecast",
+    ticker: "1234", raw_payload: {}, disclosed_at: "2026-11-13T07:00:00Z",
+  }));
+  const relatedQueries: FakeQuery[] = [];
+  const supabase = { from: (table: string) => {
+    const query = new FakeQuery(table === "tdnet_events" ? rows : []);
+    if (table.startsWith("tdnet_event_")) relatedQueries.push(query);
+    return query;
+  }};
+  const result = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-11-13", limit: 1000 });
+  assert.equal(result.length, 1188);
+  assert.equal(new Set(result.map(row => row.id)).size, 1188);
+  for (const query of relatedQueries) {
+    for (const call of query.calls) if (call.method === "in") assert.ok(call.values.length <= 100);
+  }
+});
 
 function hasTickerCondition(calls: RecordedCall[], ticker: string): boolean {
   return calls.some((call) =>

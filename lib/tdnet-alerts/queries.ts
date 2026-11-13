@@ -42,6 +42,7 @@ export async function fetchEvents(
     .order("disclosed_at", { ascending: false, nullsFirst: false })
     .order("detected_at", { ascending: false })
     .order("created_at", { ascending: false })
+    .order("id", { ascending: false })
     .limit(actualLimit);
 
   if (opts.accelerationOnly) {
@@ -152,8 +153,23 @@ export async function fetchEvents(
     query = query.gte("detected_at", thirtyDaysAgo.toISOString());
   }
 
-  const { data: events, error } = await query;
-  if (error) throw error;
+  // A selected day must not silently truncate at the PostgREST 1,000-row cap.
+  let events: any[] = [];
+  if (opts.selectedDate && !isAllPeriodSearchActive) {
+    const PAGE_SIZE = 200;
+    for (let offset = 0; ; offset += PAGE_SIZE) {
+      const { data, error } = await query.range(offset, offset + PAGE_SIZE - 1);
+      if (error) throw error;
+      events.push(...(data || []));
+      if (!data || data.length < PAGE_SIZE) break;
+      if (offset >= 9800) throw new Error("通知が10,000件を超えました。検索条件を絞ってください。");
+    }
+    events = [...new Map(events.map(event => [event.id, event])).values()];
+  } else {
+    const result = await query;
+    if (result.error) throw result.error;
+    events = result.data || [];
+  }
   if (!events || events.length === 0) {
     return [];
   }
@@ -164,29 +180,25 @@ export async function fetchEvents(
   if (visibleEvents.length === 0) return [];
 
   const eventIds = visibleEvents.map((e: any) => e.id);
-  const { data: reads } = await supabase
-    .from("tdnet_event_reads")
-    .select("event_id")
-    .eq("user_id", opts.userId)
-    .in("event_id", eventIds);
-
-  const readSet = new Set((reads || []).map((r: { event_id: string }) => r.event_id));
-
-  // スター情報を一括取得
-  const { data: stars } = await supabase
-    .from("tdnet_event_stars")
-    .select("event_id")
-    .eq("user_id", opts.userId)
-    .in("event_id", eventIds);
-
-  const starSet = new Set((stars || []).map((s: { event_id: string }) => s.event_id));
+  // UUID lists of 1,000 entries exceed the gateway URL limit. Keep each GET bounded.
+  const related = async (table: string, ownOnly: boolean) => {
+    const rows: { event_id: string }[] = [];
+    for (let i = 0; i < eventIds.length; i += 100) {
+      let request = supabase.from(table).select("event_id").in("event_id", eventIds.slice(i, i + 100));
+      if (ownOnly) request = request.eq("user_id", opts.userId);
+      const { data, error } = await request;
+      if (error) throw error;
+      rows.push(...(data || []));
+    }
+    return rows;
+  };
+  const [reads, stars, commentCounts] = await Promise.all([
+    related("tdnet_event_reads", true), related("tdnet_event_stars", true), related("tdnet_event_comments", false),
+  ]);
+  const readSet = new Set(reads.map(r => r.event_id));
+  const starSet = new Set(stars.map(s => s.event_id));
 
   // コメント数を一括取得
-  const { data: commentCounts } = await supabase
-    .from("tdnet_event_comments")
-    .select("event_id")
-    .in("event_id", eventIds);
-
   const commentCountMap = new Map<string, number>();
   (commentCounts || []).forEach((c: { event_id: string }) => {
     commentCountMap.set(c.event_id, (commentCountMap.get(c.event_id) || 0) + 1);

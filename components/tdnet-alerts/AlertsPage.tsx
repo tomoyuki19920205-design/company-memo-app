@@ -885,6 +885,8 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [allPeriodTickerSearch, setAllPeriodTickerSearch] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [lastLoadedAt, setLastLoadedAt] = useState<string | null>(null);
   const [discordSortMode, setDiscordSortModeState] = useState<"timeline" | "category">(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("tdnet_discord_sort");
@@ -1013,8 +1015,13 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       if (requestId !== eventsRequestIdRef.current) return;
       alertsCacheRef.current.set(cacheKey, { timestamp: Date.now(), events: data });
       setEvents(data);
+      setLoadError(null);
+      setLastLoadedAt(new Date().toLocaleTimeString("ja-JP", { timeZone: "Asia/Tokyo" }));
     } catch (err) {
-      if (requestId === eventsRequestIdRef.current) console.error("Failed to load events:", err);
+      if (requestId === eventsRequestIdRef.current) {
+        console.error("Failed to load events:", err);
+        setLoadError("通知を更新できませんでした。表示中の内容は最新ではない可能性があります。");
+      }
     } finally {
       if (requestId === eventsRequestIdRef.current) setLoading(false);
     }
@@ -1330,6 +1337,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           style={{ width: leftPaneWidth, flexShrink: 0 }}
         >
           <div className="alerts-list-controls">
+            {loadError && (
+              <div role="alert" style={{ padding: "8px 16px", background: "#542b1c", color: "#fff" }}>
+                {loadError} {lastLoadedAt && `最終取得 ${lastLoadedAt} JST`}
+                <button onClick={() => { alertsCacheRef.current.clear(); void loadEvents(); }} style={{ marginLeft: 12 }}>再取得</button>
+              </div>
+            )}
             <div className="filter-bar">
               <div className="filter-primary-row">
                 <select
