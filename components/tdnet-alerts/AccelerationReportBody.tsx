@@ -5,6 +5,7 @@ import { createSupabaseBrowser } from '@/lib/supabase-browser';
 import { reportStateLabel, type AccelerationReport } from '@/lib/tdnet-alerts/acceleration';
 import type { EnrichedEvent, TdnetEventComment } from '@/lib/tdnet-alerts/types';
 import { fetchComments, addComment } from '@/lib/tdnet-alerts/queries';
+import { OP_ACCELERATION_PRODUCTION_ENABLED } from '@/lib/tdnet-alerts/production-features';
 
 const safeUrl = (url: string) => { try { const u = new URL(url); return ['https:', 'http:'].includes(u.protocol) ? u.href : null; } catch { return null; } };
 export default function AccelerationReportBody({ report, event, userId, onRead }: {
@@ -17,6 +18,7 @@ export default function AccelerationReportBody({ report, event, userId, onRead }
   const [memo, setMemo] = useState(''); const [saving, setSaving] = useState(false);
   const onReadRef = useRef(onRead); onReadRef.current = onRead;
   useEffect(() => {
+    if (!OP_ACCELERATION_PRODUCTION_ENABLED) return;
     let current = true; setBody(''); setError(''); setOriginal(''); setComments([]);
     const load = async () => {
       setLoading(true);
@@ -44,10 +46,12 @@ export default function AccelerationReportBody({ report, event, userId, onRead }
     void load(); return () => { current = false; };
   }, [event.id, report.logical_key, report.version, report.state, retry, userId]);
   const saveMemo = async () => {
+    if (!OP_ACCELERATION_PRODUCTION_ENABLED) return;
     if (!memo.trim()) return; setSaving(true);
     try { await addComment(client.current, event.id, userId, memo.trim()); setMemo(''); setComments(await fetchComments(client.current, event.id)); }
     catch { setError('メモを保存できませんでした'); } finally { setSaving(false); }
   };
+  if (!OP_ACCELERATION_PRODUCTION_ENABLED) return null;
   return <section className="acceleration-report" aria-label="営利YoY加速レポート本文" onClick={e => e.stopPropagation()} onPointerDown={e => e.stopPropagation()}>
     {loading && <p role="status">レポートを読み込んでいます…</p>}
     {report.state !== 'completed' && <p role="status">{reportStateLabel(report)}{report.last_error && `：${report.last_error}`}</p>}

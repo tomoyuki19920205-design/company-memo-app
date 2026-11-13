@@ -56,7 +56,7 @@ async function captureSearchCalls(search: string): Promise<RecordedCall[]> {
 }
 
 test("a busy selected day includes every card and bounds related UUID lookups", async () => {
-  const rows = Array.from({ length: 1188 }, (_, i) => ({
+  const rows = Array.from({ length: 2501 }, (_, i) => ({
     id: `event-${i}`, headline: "業績予想の修正", event_type: "forecast",
     ticker: "1234", raw_payload: {}, disclosed_at: "2026-11-13T07:00:00Z",
   }));
@@ -67,11 +67,28 @@ test("a busy selected day includes every card and bounds related UUID lookups", 
     return query;
   }};
   const result = await fetchEvents(supabase as never, { userId: "test-user", selectedDate: "2026-11-13", limit: 1000 });
-  assert.equal(result.length, 1188);
-  assert.equal(new Set(result.map(row => row.id)).size, 1188);
+  assert.equal(result.length, 2501);
+  assert.equal(new Set(result.map(row => row.id)).size, 2501);
   for (const query of relatedQueries) {
     for (const call of query.calls) if (call.method === "in") assert.ok(call.values.length <= 100);
   }
+});
+
+test("production suspension preserves ordinary earnings and never reads acceleration tables", async () => {
+  const event = { id: "ordinary", ticker: "1234", event_type: "earnings", headline: "決算短信", raw_payload: {} };
+  const tables: string[] = [];
+  const supabase = { from: (table: string) => {
+    tables.push(table);
+    assert.ok(!table.startsWith("op_acceleration"));
+    return new FakeQuery(table === "tdnet_events" ? [event] : []);
+  }};
+  const rows = await fetchEvents(supabase as never, { userId: "user", selectedDate: "2026-11-13" });
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].id, "ordinary");
+  assert.equal(rows[0].acceleration, undefined);
+  const before = tables.length;
+  assert.deepEqual(await fetchEvents(supabase as never, { userId: "user", accelerationOnly: true }), []);
+  assert.equal(tables.length, before);
 });
 
 function hasTickerCondition(calls: RecordedCall[], ticker: string): boolean {

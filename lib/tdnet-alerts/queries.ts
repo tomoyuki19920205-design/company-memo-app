@@ -4,6 +4,7 @@ import { isCompanyIrEvent, isLinkableMaterialEvent, isPdfOnlyMaterialEvent } fro
 import { applyNotificationTitleExclusions, isNotificationEventVisible } from "./notification-policy";
 
 import { enrichAcceleration } from "./acceleration";
+import { OP_ACCELERATION_PRODUCTION_ENABLED } from "./production-features";
 
 // ============================================================
 // 一覧取得
@@ -29,6 +30,8 @@ export async function fetchEvents(
     allPeriodTickerSearch?: boolean;
   }
 ): Promise<EnrichedEvent[]> {
+  // Also reject a stale dedicated-filter request without querying any report data.
+  if (opts.accelerationOnly && !OP_ACCELERATION_PRODUCTION_ENABLED) return [];
   const limit = opts.limit ?? 1000;
   // limit 調整: 全期間ONかつ検索入力がある場合は 100 に制限
   const isAllPeriodSearchActive = opts.allPeriodTickerSearch && Boolean(opts.search?.trim());
@@ -206,7 +209,7 @@ export async function fetchEvents(
 
   // Optional report metadata must not disable ordinary notifications on failure.
   let acceleration = new Map();
-  try { acceleration = await enrichAcceleration(supabase, eventIds, opts.userId); }
+  try { if (OP_ACCELERATION_PRODUCTION_ENABLED) acceleration = await enrichAcceleration(supabase, eventIds, opts.userId); }
   catch (error) { if (opts.accelerationOnly) throw error; console.warn("Acceleration metadata unavailable", error); }
 
   // Enriched events を作成

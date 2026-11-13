@@ -23,6 +23,7 @@ import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/l
 import AlertDetailPanel from "./AlertDetailPanel";
 import AccelerationReportBody from './AccelerationReportBody';
 import { reportStateLabel } from '@/lib/tdnet-alerts/acceleration';
+import { OP_ACCELERATION_PRODUCTION_ENABLED } from '@/lib/tdnet-alerts/production-features';
 import { requiredListBottomSpace } from "@/lib/tdnet-alerts/list-scroll";
 import ForecastReason from "./ForecastReason";
 import CompanyViewer, { type CompanyViewerHandle } from "@/components/CompanyViewer";
@@ -1126,7 +1127,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
   const handleSelectEvent = (event: EnrichedEvent) => {
     listScrollTargetRef.current = listPaneRef.current?.scrollTop ?? null;
-    const report = event.acceleration;
+    const report = OP_ACCELERATION_PRODUCTION_ENABLED ? event.acceleration : undefined;
     const isReport = report && (report.decision === 'matched' || report.version > 0);
     if (isReport && expandedId === event.id) {
       dispatchCardExpansion({ type: 'closeReport', id: event.id });
@@ -1277,7 +1278,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     { key: "forecast", label: "📉 業績修正" },
     { key: "dividend", label: "💰 配当" },
     { key: "earnings", label: "📋 決算" },
-    { key: "acceleration", label: "営利YoY加速レポート" },
+    ...(OP_ACCELERATION_PRODUCTION_ENABLED ? [{ key: "acceleration" as const, label: "営利YoY加速レポート" }] : []),
     { key: "management_strategy", label: "🧭 中期経営・戦略" },
     { key: "edinet_order", label: "📦 受注・受注残" },
     { key: "discord", label: "🔔 Discord対象" },
@@ -1503,7 +1504,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
               const isExpanded = expandedId === event.id || isPinned;
 
               const reportExpanded = expandedId === event.id;
-              const report = event.acceleration;
+              const report = OP_ACCELERATION_PRODUCTION_ENABLED ? event.acceleration : undefined;
               if (report && (report.decision === 'matched' || report.version > 0)) {
                 const unreadReport = report.state === 'completed' && report.version > (report.read_version || 0);
                 return <div key={event.id} data-event-id={event.id} data-ticker={event.ticker}
