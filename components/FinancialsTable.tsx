@@ -1106,11 +1106,23 @@ function FinancialsTable({
         const section = gridRef.current;
         const bar = section.querySelector<HTMLElement>(".formula-bar-sticky");
         if (!bar) return;
-        const update = () => section.style.setProperty("--pl-formula-offset", `${bar.getBoundingClientRect().height}px`);
+        const update = () => {
+            const height = bar.getBoundingClientRect().height;
+            // A hidden detail tab has no valid height; preserve the visible offset.
+            if (height <= 0) return;
+            const value = `${height}px`;
+            if (section.style.getPropertyValue("--pl-formula-offset") !== value) {
+                section.style.setProperty("--pl-formula-offset", value);
+            }
+        };
         update();
-        const observer = new ResizeObserver(update);
+        let frame = 0;
+        const observer = new ResizeObserver(() => {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(update);
+        });
         observer.observe(bar);
-        return () => observer.disconnect();
+        return () => { observer.disconnect(); cancelAnimationFrame(frame); };
     }, [loading, formulaBarHeight]);
 
     const handleFbResizeStart = useCallback((e: React.MouseEvent) => {

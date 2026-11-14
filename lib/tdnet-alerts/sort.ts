@@ -26,16 +26,11 @@ function compareDigitTokens(a: string, b: string): number {
   return lexical || a.length - b.length;
 }
 
-function compareTickers(a: unknown, b: unknown): number {
-  const tickerA = normalizedTicker(a);
-  const tickerB = normalizedTicker(b);
-  if (tickerA === null || tickerB === null) {
-    if (tickerA === tickerB) return 0;
-    return tickerA === null ? 1 : -1;
+function compareTickers(tokensA: string[] | null, tokensB: string[] | null): number {
+  if (tokensA === null || tokensB === null) {
+    if (tokensA === tokensB) return 0;
+    return tokensA === null ? 1 : -1;
   }
-
-  const tokensA = tickerA.match(/\d+|[A-Z]+/g) ?? [];
-  const tokensB = tickerB.match(/\d+|[A-Z]+/g) ?? [];
   for (let index = 0; index < Math.max(tokensA.length, tokensB.length); index += 1) {
     const tokenA = tokensA[index];
     const tokenB = tokensB[index];
@@ -57,12 +52,13 @@ function compareTickers(a: unknown, b: unknown): number {
  */
 export function sortAlertsByDisclosureTimeAndTicker<T extends SortableAlert>(events: readonly T[]): T[] {
   return events
-    .map((event, index) => ({ event, index }))
+    // Date parsing and ticker tokenization happen once per row, not per comparison.
+    .map((event, index) => ({ event, index, minute: disclosureMinute(event), tokens: normalizedTicker(event.ticker)?.match(/\d+|[A-Z]+/g) ?? null }))
     .sort((a, b) => {
-      const timeComparison = disclosureMinute(b.event) - disclosureMinute(a.event);
+      const timeComparison = b.minute - a.minute;
       if (timeComparison !== 0) return timeComparison;
 
-      const tickerComparison = compareTickers(a.event.ticker, b.event.ticker);
+      const tickerComparison = compareTickers(a.tokens, b.tokens);
       return tickerComparison || a.index - b.index;
     })
     .map(({ event }) => event);

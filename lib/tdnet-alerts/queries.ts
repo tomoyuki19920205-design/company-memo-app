@@ -28,6 +28,7 @@ export async function fetchEvents(
      *  「全件」タブ向け。 */
     skipClientSort?: boolean;
     allPeriodTickerSearch?: boolean;
+    signal?: AbortSignal;
   }
 ): Promise<EnrichedEvent[]> {
   // Also reject a stale dedicated-filter request without querying any report data.
@@ -47,6 +48,7 @@ export async function fetchEvents(
     .order("created_at", { ascending: false })
     .order("id", { ascending: false })
     .limit(actualLimit);
+  if (opts.signal) query = query.abortSignal(opts.signal);
 
   if (opts.accelerationOnly) {
     const { data, error } = await supabase.from("op_acceleration_reports")
@@ -161,6 +163,7 @@ export async function fetchEvents(
   if (opts.selectedDate && !isAllPeriodSearchActive) {
     const PAGE_SIZE = 200;
     for (let offset = 0; ; offset += PAGE_SIZE) {
+      opts.signal?.throwIfAborted();
       const { data, error } = await query.range(offset, offset + PAGE_SIZE - 1);
       if (error) throw error;
       events.push(...(data || []));
@@ -184,20 +187,31 @@ export async function fetchEvents(
 
   const eventIds = visibleEvents.map((e: any) => e.id);
   // UUID lists of 1,000 entries exceed the gateway URL limit. Keep each GET bounded.
-  const related = async (table: string, ownOnly: boolean) => {
-    const rows: { event_id: string }[] = [];
-    for (let i = 0; i < eventIds.length; i += 100) {
-      let request = supabase.from(table).select("event_id").in("event_id", eventIds.slice(i, i + 100));
-      if (ownOnly) request = request.eq("user_id", opts.userId);
-      const { data, error } = await request;
-      if (error) throw error;
-      rows.push(...(data || []));
+  const relatedTables = ["tdnet_event_reads", "tdnet_event_stars", "tdnet_event_comments"];
+  const relatedRows: { event_id: string }[][] = [[], [], []];
+  const tasks = relatedTables.flatMap((table, index) => {
+    const chunks: { table: string; index: number; ids: string[] }[] = [];
+    for (let i = 0; i < eventIds.length; i += 100) chunks.push({ table, index, ids: eventIds.slice(i, i + 100) });
+    return chunks;
+  });
+  let nextTask = 0;
+  // Bound concurrency across all three tables, not six workers per table.
+  await Promise.all(Array.from({ length: Math.min(6, tasks.length) }, async () => {
+    while (nextTask < tasks.length) {
+      const { table, index, ids } = tasks[nextTask++];
+      for (let offset = 0; ; offset += 1000) {
+        opts.signal?.throwIfAborted();
+        let request = supabase.from(table).select("event_id").in("event_id", ids).order("id").range(offset, offset + 999);
+        if (index < 2) request = request.eq("user_id", opts.userId);
+        if (opts.signal) request = request.abortSignal(opts.signal);
+        const { data, error } = await request;
+        if (error) throw error;
+        relatedRows[index].push(...(data || []));
+        if (!data || data.length < 1000) break;
+      }
     }
-    return rows;
-  };
-  const [reads, stars, commentCounts] = await Promise.all([
-    related("tdnet_event_reads", true), related("tdnet_event_stars", true), related("tdnet_event_comments", false),
-  ]);
+  }));
+  const [reads, stars, commentCounts] = relatedRows;
   const readSet = new Set(reads.map(r => r.event_id));
   const starSet = new Set(stars.map(s => s.event_id));
 

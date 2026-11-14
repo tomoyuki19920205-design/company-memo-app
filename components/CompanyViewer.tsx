@@ -4,6 +4,7 @@ import React, {
     useState, useCallback, useEffect, useLayoutEffect, useRef,
     forwardRef, useImperativeHandle,
 } from "react";
+import { BoundedCache } from "@/lib/bounded-cache";
 import TickerHeader from "@/components/TickerHeader";
 import FinancialsTable from "@/components/FinancialsTable";
 import ForecastTable from "@/components/ForecastTable";
@@ -201,7 +202,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
     const [dataLoading, setDataLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
 
-    const tickerCacheRef = useRef<Map<string, CachedViewerData>>(new Map());
+    const tickerCacheRef = useRef(new BoundedCache<string, CachedViewerData>(12));
     const loadRequestIdRef = useRef<number>(0);
     const requestedTickerRef = useRef("");
     const navigationIdRef = useRef(0);
@@ -255,7 +256,11 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
         update();
         window.addEventListener("scroll", update, { passive: true });
         window.addEventListener("resize", update);
-        const ro = new ResizeObserver(update);
+        let frame = 0;
+        const ro = new ResizeObserver(() => {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(update);
+        });
         ro.observe(document.documentElement);
         if (document.body) ro.observe(document.body);
 
@@ -263,6 +268,7 @@ const CompanyViewer = forwardRef<CompanyViewerHandle, {}>((_, ref) => {
             window.removeEventListener("scroll", update);
             window.removeEventListener("resize", update);
             ro.disconnect();
+            cancelAnimationFrame(frame);
         };
     }, []);
 

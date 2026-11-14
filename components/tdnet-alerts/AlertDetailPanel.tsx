@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
   markAsRead,
@@ -22,6 +22,7 @@ import { spaceEarningsReasonItems } from "@/lib/tdnet-alerts/earnings-reason-spa
 import { isEdinetOrderEvent } from "./AlertsPage";
 import IpoAnalysisPanel from "./IpoAnalysisPanel";
 import ForecastReason from "./ForecastReason";
+import { fetchCachedEventDetail } from "@/lib/tdnet-alerts/detail-cache";
 
 interface AlertDetailPanelProps {
   event: EnrichedEvent;
@@ -52,49 +53,42 @@ export default function AlertDetailPanel({
   // rawSegments が変わった時だけ統合キー計算を実行（再描画のたびには走らない）
   const segmentViewData = useMemo(() => buildSegmentViewData(rawSegments), [rawSegments]);
 
-  const loadComments = useCallback(async () => {
-    try {
-      const data = await fetchComments(supabaseRef.current, event.id);
-      setComments(data);
-    } catch (err) {
-      console.error("Failed to load comments:", err);
-    }
-  }, [event.id]);
-
   useEffect(() => {
+    let active = true;
     setEvent(initialEvent);
     
     // 足りないフィールド（一覧の軽量化で省略されたもの）があれば取得
     if (initialEvent.summary === undefined || initialEvent.formatted_message === undefined) {
-      supabaseRef.current
-        .from("tdnet_events")
-        .select("summary, formatted_message, raw_payload")
-        .eq("id", initialEvent.id)
-        .single()
-        .then(({ data, error }) => {
-          if (!error && data) {
+      fetchCachedEventDetail(supabaseRef.current, initialEvent, userId)
+        .then((data) => {
+          if (active && data) {
             setEvent(prev => ({ ...prev, ...data }));
           }
-        });
+        }).catch(err => { if (active) console.error("Failed to load event detail:", err); });
     }
     
-    loadComments();
+    setComments([]);
+    fetchComments(supabaseRef.current, initialEvent.id)
+      .then(data => { if (active) setComments(data); })
+      .catch(err => { if (active) console.error("Failed to load comments:", err); });
     setShowRaw(false);
     setRawSegments([]);
     // earnings / forecast イベントのみセグメント取得
-    const cat = getDisplayCategory(event.event_type, event.headline);
+    const cat = getDisplayCategory(initialEvent.event_type, initialEvent.headline);
+    setSegLoading(false);
     if (cat === "earnings" || cat === "forecast") {
       setSegLoading(true);
       // raw_payload から period / quarter を取得（なければ null で最新を取得）
-      const payload = event.raw_payload as Record<string, unknown>;
+      const payload = initialEvent.raw_payload as Record<string, unknown>;
       const period = (payload?.period ?? payload?.fiscal_year_end ?? null) as string | null;
       const quarter = (payload?.quarter ?? null) as string | null;
-      fetchSegmentFinancials(supabaseRef.current, event.ticker, period, quarter)
-        .then((rows) => setRawSegments(rows))
-        .catch(() => setRawSegments([]))
-        .finally(() => setSegLoading(false));
+      fetchSegmentFinancials(supabaseRef.current, initialEvent.ticker, period, quarter)
+        .then((rows) => { if (active) setRawSegments(rows); })
+        .catch(() => { if (active) setRawSegments([]); })
+        .finally(() => { if (active) setSegLoading(false); });
     }
-  }, [loadComments, initialEvent.id, initialEvent.ticker, initialEvent.event_type, initialEvent.headline, initialEvent.raw_payload]);
+    return () => { active = false; };
+  }, [initialEvent, userId]);
 
   const handleToggleRead = async () => {
     try {
@@ -125,7 +119,8 @@ export default function AlertDetailPanel({
     try {
       await addComment(supabaseRef.current, event.id, userId, newComment.trim());
       setNewComment("");
-      await loadComments();
+      const updatedComments = await fetchComments(supabaseRef.current, event.id);
+      setComments(updatedComments);
       onUpdate({ ...event, comments_count: comments.length + 1 });
     } catch (err) {
       console.error("Failed to add comment:", err);

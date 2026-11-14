@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useLayoutEffect, useCallback, useRef, useReducer } from "react";
+import React, { useState, useEffect, useLayoutEffect, useCallback, useRef, useReducer, useMemo } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { fetchEvents, markAsRead, markAsUnread, toggleStar } from "@/lib/tdnet-alerts/queries";
 import { useRealtimeAlerts } from "@/lib/tdnet-alerts/realtime";
@@ -21,6 +21,7 @@ import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-aler
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
+import VirtualAlertList from "./VirtualAlertList";
 import AccelerationReportBody from './AccelerationReportBody';
 import { reportStateLabel } from '@/lib/tdnet-alerts/acceleration';
 import { OP_ACCELERATION_PRODUCTION_ENABLED } from '@/lib/tdnet-alerts/production-features';
@@ -34,6 +35,8 @@ type AlertsCacheEntry = {
   events: EnrichedEvent[];
 };
 const ALERTS_CACHE_TTL_MS = 30_000;
+const ALERTS_CACHE_MAX_ENTRIES = 4;
+const MemoizedCompanyViewer = React.memo(CompanyViewer);
 const LEFT_PANE_DEFAULT_WIDTH = 400;
 const LEFT_PANE_MIN_WIDTH = 0;
 
@@ -80,8 +83,9 @@ const processLines = (str: string) => str.split("\n").map((line, j, arr) => (
 const renderHighlightedCardBody = (text: string, event: EnrichedEvent) => {
   if (!text) return null;
   if (event.event_type === "earnings") text = spaceEarningsReasonItems(text);
-  const cacheKey = `${event.id}:${text}:v2`;
-  if (highlightCache.has(cacheKey)) return highlightCache.get(cacheKey);
+  const cacheKey = text;
+  const cached = highlightCache.get(event);
+  if (cached?.has(cacheKey)) return cached.get(cacheKey);
 
   const applyRegex = (
     nodes: React.ReactNode[],
@@ -162,7 +166,9 @@ const renderHighlightedCardBody = (text: string, event: EnrichedEvent) => {
     </>
   );
 
-  highlightCache.set(cacheKey, result);
+  const entries = cached ?? new Map<string, React.ReactNode>();
+  entries.set(cacheKey, result);
+  highlightCache.set(event, entries);
   return result;
 };
 
@@ -208,20 +214,20 @@ const getPriorityClass = (rank: number) => {
   return "";
 };
 
-const summaryCache = new Map<string, { line1: string; line2: string; line3?: string }>();
-const bodyCache = new Map<string, { text: string; isFallback: boolean }>();
-const highlightCache = new Map<string, React.ReactNode>();
+const summaryCache = new WeakMap<EnrichedEvent, { line1: string; line2: string; line3?: string }>();
+const bodyCache = new WeakMap<EnrichedEvent, { text: string; isFallback: boolean }>();
+const highlightCache = new WeakMap<EnrichedEvent, Map<string, React.ReactNode>>();
 
 // 全タブ共通カード本文フォーマッタ: raw_payload の数値を整形して表示
 // 長い headline / formatted_message は使わない
 export const formatCardBody = (event: EnrichedEvent): {
-  text: string; 
+  text: string;
   isFallback: boolean;
   primaryText?: string;
   summaryText?: string;
   compareText?: string;
 } => {
-  if (event.event_type !== "buyback" && event.event_type !== "forecast" && bodyCache.has(event.id)) return bodyCache.get(event.id) as any;
+  if (event.event_type !== "buyback" && event.event_type !== "forecast" && bodyCache.has(event)) return bodyCache.get(event) as any;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -356,7 +362,7 @@ export const formatCardBody = (event: EnrichedEvent): {
   } else if (event.event_type === "earnings") {
     const primaryLines: string[] = [];
     if (event.event_subtype) primaryLines.push(event.event_subtype);
-    
+
     if (event.primary_metric_name && event.primary_metric_value) {
       const yoy = event.primary_metric_yoy
         ? `（YOY ${event.primary_metric_yoy}）`
@@ -371,7 +377,7 @@ export const formatCardBody = (event: EnrichedEvent): {
       const cmpOpStatus = cmp.op_yoy_status;
       if (cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
-        
+
         let cmpOpStr = "YOY-";
         if (cmp.op_yoy != null) {
           cmpOpStr = `YOY${fmtPct(cmp.op_yoy * 100)}`;
@@ -384,7 +390,7 @@ export const formatCardBody = (event: EnrichedEvent): {
           };
           if (statusMap[cmpOpStatus]) cmpOpStr = statusMap[cmpOpStatus];
         }
-        
+
         compareText = `${cmp.label || ""} 売上(YOY${cmpSales}) 営利(${cmpOpStr})`;
       }
     }
@@ -392,7 +398,7 @@ export const formatCardBody = (event: EnrichedEvent): {
     if (event.display_summary?.trim()) {
       summaryText = event.display_summary.trim();
     }
-    
+
     console.log("[AlertsPage Debug 3816]", {
       ticker: event.ticker,
       primaryText,
@@ -421,11 +427,11 @@ export const formatCardBody = (event: EnrichedEvent): {
   const text = lines.filter((s) => s.trim()).join("\n");
   if (text) {
     const res = { text, isFallback: false, primaryText, summaryText, compareText };
-    bodyCache.set(event.id, res as any);
+    bodyCache.set(event, res as any);
     return res;
   }
   const fallbackRes = { text: (event.headline || "").trim(), isFallback: true };
-  bodyCache.set(event.id, fallbackRes);
+  bodyCache.set(event, fallbackRes);
   return fallbackRes;
 };
 
@@ -451,7 +457,7 @@ const getOpTurnaroundLabel = (
 };
 
 export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof getBadgeConfig>, subtypeLabel: string) => {
-  if (event.event_type !== "buyback" && event.event_type !== "forecast" && summaryCache.has(event.id)) return summaryCache.get(event.id)!;
+  if (event.event_type !== "buyback" && event.event_type !== "forecast" && summaryCache.has(event)) return summaryCache.get(event)!;
   const rawVal = event.raw_payload;
   const rp: Record<string, unknown> | null =
     typeof rawVal === "string"
@@ -460,7 +466,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
         })()
       : (rawVal as Record<string, unknown> | null) ?? null;
   const ext = (rp && typeof rp === "object" && rp.extracted && typeof rp.extracted === "object" ? rp.extracted : {}) as Record<string, unknown>;
-  
+
   const fmtPct = (v: unknown): string => {
     const n = Number(v);
     if (isNaN(n)) return "?%";
@@ -476,10 +482,10 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
   const d = new Date(event.disclosed_at || event.detected_at);
   const dateStr = `${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
   const timeStr = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
-  
+
   const ticker = event.ticker;
   const name = event.company_name || "";
-  
+
   let typeLabel = subtypeLabel;
   let line1 = "";
   let line2 = "";
@@ -487,12 +493,12 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
 
   if (event.event_type === "earnings") {
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.period_label || ""}`.trim();
-    
+
     const comp = rp?.notification_compare_json as any;
 
     let metric1 = "";
     let metric2 = "";
-    
+
     const fm = event.formatted_message || event.display_summary || "";
     let fallbackSalesYoy: string | null = null;
     let fallbackOpYoy: string | null = null;
@@ -502,7 +508,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
       const oMatch = fm.match(/(?:営業利益|営利).*?YOY\s*([+-]?[\d.]+%)/i);
       if (oMatch) fallbackOpYoy = oMatch[1];
     }
-    
+
     const currSalesVal = comp?.current?.sales_yoy ?? ext.sales_yoy;
     let currSalesStr = "-";
     if (currSalesVal != null) {
@@ -511,7 +517,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
       currSalesStr = fallbackSalesYoy;
     }
     metric1 = `売上（YOY${currSalesStr}）`;
-    
+
     const currOpVal = comp?.current?.op_yoy ?? ext.op_yoy;
     const opStatus = comp?.current?.op_yoy_status ?? ext.op_yoy_status;
     const statusMap: Record<string, string> = {
@@ -564,10 +570,10 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
     if (comp?.compare) {
       const cmp = comp.compare;
       const cmpOpStatus = cmp.op_yoy_status;
-      
+
       if (cmp.label || cmp.sales_yoy != null || cmp.op_yoy != null || cmpOpStatus) {
         const cmpSales = cmp.sales_yoy != null ? fmtPct(cmp.sales_yoy * 100) : "-";
-        
+
         let cmpOpStr = "YOY-";
 
         // 3行目表示: 当年実績 vs 来期予想 (FY/4Q の場合のみ特別判定)
@@ -598,7 +604,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
         else if (q === "FY" || q === "4Q") compLabel = "来期FY予想";
         else if (q === "2Q" || q === "3Q") compLabel = "前Q";
         else compLabel = cmp.label || "前Q";
-        
+
         line3 = `売上（YOY${cmpSales}） 営利（${cmpOpStr}） ${compLabel}`.trim();
       }
     }
@@ -607,7 +613,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
     else if (event.event_subtype === "downward") typeLabel = "下方";
     else if (event.event_subtype === "difference") typeLabel = "差異";
     else typeLabel = "修正";
-    
+
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel}`.trim();
 
     const epsPresentation = getForecastEpsPresentation(event);
@@ -638,7 +644,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
   } else if (event.event_type === "dividend") {
     const policy = getDividendPolicyDisplay(event);
     typeLabel = getDividendCompositeLabel(event);
-    
+
     const prev = ext.previous_dividend_per_share;
     const rev  = ext.revised_dividend_per_share;
     let divStr = "";
@@ -652,7 +658,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
   } else if (isEdinetOrderEvent(event.event_type)) {
     typeLabel = "受注/有報";
     line1 = `${dateStr} ${timeStr} ${ticker} ${name} ${typeLabel} ${ext.quarter || ext.fiscal_year || ""}`.trim();
-    
+
     let metrics = [];
     const isPartial = event.event_type === "edinet_order_partial";
 
@@ -674,7 +680,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
     } else if (isPartial) {
       metrics.push("受注残 未開示");
     }
-    
+
     if (metrics.length > 0) {
       line2 = metrics.join(" ");
     } else {
@@ -691,7 +697,7 @@ export const formatCardSummary = (event: EnrichedEvent, badge: ReturnType<typeof
   }
 
   const res = { line1, line2, line3 };
-  summaryCache.set(event.id, res);
+  summaryCache.set(event, res);
   return res;
 };
 
@@ -771,7 +777,7 @@ const getEarningsOpSortKey = (event: EnrichedEvent): { bucket: number, yoyValue:
     if (turnaround === "黒転") return { bucket: 0, yoyValue: 0 };
     if (turnaround === "赤字継続") return { bucket: 2, yoyValue: 0 };
     if (turnaround === "赤転") return { bucket: 3, yoyValue: 0 };
-    
+
     // 通常YOY
     if (!isNaN(opYoyNum)) return { bucket: 1, yoyValue: opYoyNum };
   } else if (currOpVal != null && !isNaN(opYoyNum)) {
@@ -798,9 +804,9 @@ const getCategoryScore = (event: EnrichedEvent, category: string): number | null
   const badge = getBadgeConfig(event.event_type, event.headline);
   const subtypeLabel = event.event_subtype ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype) : "";
   const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
-  
+
   const text = `${line1 || ""} ${line2 || ""} ${line3 || ""} ${event.formatted_message || ""} ${JSON.stringify(event.raw_payload || {})}`;
-  
+
   switch (category) {
     case "earnings": return getEarningsScore(text);
     case "buyback": return getBuybackScore(text);
@@ -868,10 +874,318 @@ const getImpactSortKey = (event: EnrichedEvent, activeCategory: string): { bucke
 };
 
 
+const formatTime = (dt: string) => {
+  const d = new Date(dt);
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+  const MM = String(d.getMonth() + 1).padStart(2, "0");
+  const DD = String(d.getDate()).padStart(2, "0");
+  return `${MM}/${DD} ${hh}:${mm}`;
+};
+
+type AlertCardProps = {
+  event: EnrichedEvent;
+  isSelected: boolean;
+  isPinned: boolean;
+  isExpanded: boolean;
+  isDiscordTab: boolean;
+  userId: string;
+  onSelect: (event: EnrichedEvent) => void;
+  onToggleRead: (event: EnrichedEvent, e: React.MouseEvent) => void;
+  onToggleStar: (event: EnrichedEvent, e: React.MouseEvent) => void;
+  onTogglePin: (id: string) => void;
+  onCloseReport: (id: string) => void;
+  onReportRead: (key: string, version: number) => void;
+};
+const AlertCard = React.memo(function AlertCard({ event, isSelected, isPinned, isExpanded, isDiscordTab, userId, onSelect, onToggleRead, onToggleStar, onTogglePin, onCloseReport, onReportRead }: AlertCardProps) {
+
+  const badge = getBadgeConfig(event.event_type, event.headline);
+  const priorityClass = !event.is_read ? getPriorityClass(event.priority_rank) : "";
+  const subtypeLabel = event.event_subtype
+    ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype)
+    : "";
+
+  const reportExpanded = isExpanded;
+  const report = OP_ACCELERATION_PRODUCTION_ENABLED ? event.acceleration : undefined;
+  if (report && (report.decision === 'matched' || report.version > 0)) {
+    const unreadReport = report.state === 'completed' && report.version > (report.read_version || 0);
+    return <div key={event.id} data-event-id={event.id} data-ticker={event.ticker}
+      className={`alert-card acceleration-card ${reportExpanded ? 'expanded selected' : 'collapsed'} ${!event.is_read ? 'unread' : ''}`}
+      onClick={() => onSelect(event)}>
+      <div className="acceleration-card-meta">
+        <span>{reportStateLabel(report)}</span><span>{report.quarter}Q</span><span>開示 {report.business_date}</span>
+        {unreadReport && <strong className="acceleration-unread">{report.read_version ? '更新' : 'レポート未読'}</strong>}
+        <button className="action-btn" aria-label="スター" onClick={e => onToggleStar(event, e)}>{event.is_starred ? '⭐' : '☆'}</button>
+        <button className="action-btn" aria-label={event.is_read ? '通常通知を未読に戻す' : '通常通知を既読にする'} onClick={e => onToggleRead(event, e)}>{event.is_read ? '📖' : '📩'}</button>
+      </div>
+      <button className="acceleration-title" aria-expanded={reportExpanded} onClick={e => { e.stopPropagation(); onSelect(event); }}>
+        {report.state === 'completed' ? report.title : `${event.ticker} ${event.company_name} ${report.quarter}Q｜${reportStateLabel(report)}`}
+      </button>
+      {report.acceleration_pt !== null && <div className="acceleration-card-meta">加速幅 {Number(report.acceleration_pt).toFixed(2)}pt
+        {report.published_at && <span>更新 {formatTime(report.published_at)}・第{report.version}版</span>}
+      </div>}
+      {reportExpanded && <>
+        <AccelerationReportBody key={`${event.id}:${report.version}:${report.state}`} event={event} report={report} userId={userId}
+          onRead={onReportRead} />
+        <button onClick={e => { e.stopPropagation(); onCloseReport(event.id); }}>閉じる</button>
+      </>}
+    </div>;
+  }
+
+  if (isCompanyIrEvent(event.event_type)) {
+    const directUrl = getValidatedMaterialUrl(event);
+    return (
+      <div
+        key={event.id} data-event-id={event.id}
+        className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
+        onClick={() => onSelect(event)}
+      >
+        <div className="alert-card-summary-line1">
+          {event.ticker} {event.company_name}
+        </div>
+        <div className="alert-card-summary-line2">{event.headline}</div>
+        {directUrl && (
+          <a
+            href={directUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+            style={{ display: "block", fontSize: "0.82em", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+            title={directUrl}
+          >
+            {directUrl}
+          </a>
+        )}
+      </div>
+    );
+  }
+
+  if (isPdfOnlyMaterialEvent(event.event_type)) {
+    const material = getPdfOnlyMaterialCardContent(event);
+    return (
+      <div
+        key={event.id} data-event-id={event.id}
+        className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
+        onClick={() => onSelect(event)}
+      >
+        <div className="alert-card-summary-line1" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
+          <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
+            {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} [{material.label}]
+          </span>
+          {material.url && (
+            <a
+              href={material.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn pdf-link"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+              title="PDFを開く"
+              style={{ flexShrink: 0, textDecoration: "none", color: "inherit" }}
+            >
+              📄PDF
+            </a>
+          )}
+        </div>
+        <div className="alert-card-summary-line2" title={material.title}>
+          {material.title}
+        </div>
+      </div>
+    );
+  }
+
+  if (!isExpanded) {
+    const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
+    const displayLine2 = event.event_type === "earnings" ? formatCompactEarningsCardLine(line2) : line2;
+    const displayLine3 = event.event_type === "earnings" && line3 ? formatCompactEarningsCardLine(line3) : line3;
+    return (
+      <div
+        key={event.id} data-event-id={event.id}
+        className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${priorityClass}`}
+        onClick={() => onSelect(event)}
+      >
+        <div className={`alert-card-summary-line1 ${event.event_type === "buyback" ? "buyback-card-title" : ""}`}>
+           {renderHighlightedCardBody(line1, event)}
+        </div>
+        {displayLine2 && (
+           <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "buyback" ? "buyback-card-metric" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`}>
+              {event.event_type === "earnings"
+                ? renderCompactEarningsCardLine(displayLine2)
+                : renderHighlightedCardBody(displayLine2, event)}
+           </div>
+        )}
+        {displayLine3 && (
+           <div className={`alert-card-summary-line3 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`} style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
+              {event.event_type === "earnings"
+                ? renderCompactEarningsCardLine(displayLine3)
+                : renderHighlightedCardBody(displayLine3, event)}
+           </div>
+        )}
+      </div>
+    );
+  }
+
+  // 全タブ共通: raw_payload の数値要約を表示。長い headline は使わない。
+  const { text: cardBody, isFallback, primaryText, compareText, summaryText } = formatCardBody(event);
+  // Discord タブのみ: 送信時刻を末尾に追加
+  let discordExtra = "";
+  if (isDiscordTab && event.discord_sent_at) {
+    const d = new Date(event.discord_sent_at);
+    const mm  = String(d.getMonth() + 1).padStart(2, "0");
+    const dd  = String(d.getDate()).padStart(2, "0");
+    const hh  = String(d.getHours()).padStart(2, "0");
+    const min = String(d.getMinutes()).padStart(2, "0");
+    discordExtra = `\n🔔 ${d.getFullYear()}-${mm}-${dd} ${hh}:${min}`;
+  }
+  const bodyText = cardBody + discordExtra;
+
+  return (
+    <div
+      key={event.id} data-event-id={event.id}
+      className={`alert-card expanded ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""} ${priorityClass}`}
+      onClick={() => onSelect(event)}
+    >
+      {/* Row 1: Time + Badge + Actions */}
+      <div className="alert-card-header">
+        <span className="alert-time">
+          {formatTime(event.disclosed_at || event.detected_at)}
+        </span>
+        <span className={`alert-badge ${badge.category}`}>
+          {badge.emoji} {event.event_type === "dividend" ? getDividendCompositeLabel(event) : (subtypeLabel || badge.label)}
+        </span>
+        {event.event_type === "edinet_order_partial" && (
+          <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
+            片側のみ
+          </span>
+        )}
+        {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.review_label : null)) && (
+          <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
+            {((event.raw_payload as Record<string, any>).extracted?.review_label)}
+          </span>
+        )}
+        {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.classification === "PARTIAL_METRIC_REVIEW_CAUTION" : false)) && (
+          <span className="alert-badge" style={{ backgroundColor: "#fecaca", color: "#991b1b", marginLeft: "4px" }}>
+            要確認
+          </span>
+        )}
+        <span className="alert-card-actions">
+          <button
+            type="button"
+            className="action-btn card-pin-btn"
+            aria-pressed={isPinned}
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onTogglePin(event.id);
+            }}
+            title={isPinned ? "固定を解除して閉じる" : "カードを開いたまま固定する"}
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 3 21 8l-4 1-3 5-4 1-1 4-4-4 4-1 1-4 5-3zM9 15l-6 6" />
+            </svg>
+            {isPinned ? "固定中" : "固定"}
+          </button>
+          <button
+            className={`action-btn ${event.is_starred ? "active" : ""}`}
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => onToggleStar(event, e)}
+            title="スター"
+          >
+            {event.is_starred ? "⭐" : (
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="rgba(0,0,0,0.4)"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0px 1px 1px rgba(0,0,0,0.5))", pointerEvents: "none" }}
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            )}
+          </button>
+          {event.pdf_url && (
+            <a
+              href={event.pdf_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn pdf-link"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+              title="PDFを開く"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              📄PDF
+            </a>
+          )}
+          <button
+            className={`action-btn ${!event.is_read ? "active" : ""}`}
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => onToggleRead(event, e)}
+            title={event.is_read ? "未読に戻す" : "既読にする"}
+          >
+            {event.is_read ? "📖" : "📩"}
+          </button>
+          {event.comments_count > 0 && (
+            <span style={{ fontSize: "0.72rem", color: "#8b5cf6" }}>
+              💬{event.comments_count}
+            </span>
+          )}
+        </span>
+      </div>
+
+      {/* Row 2: Ticker + Company Name */}
+      <div className="alert-card-company">
+        <span className="alert-ticker">{event.ticker}</span>
+        {event.company_name && (
+          <span className="alert-company-name">{event.company_name}</span>
+        )}
+      </div>
+
+      {/* Row 3: 数値要約 (fallback時はheadlineを1行muted) */}
+      <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
+        {event.event_type === "earnings" && !isFallback ? (
+          <>
+            {primaryText && renderHighlightedCardBody(primaryText, event)}
+            {compareText && (
+              <div
+                className="notification-compare"
+                style={{
+                  marginTop: "4px",
+                  marginBottom: "8px",
+                  padding: "4px 8px",
+                  backgroundColor: "var(--bg-secondary, #f3f4f6)",
+                  borderRadius: "4px",
+                  fontSize: "0.9em",
+                  color: "var(--text-secondary, #4b5563)",
+                  borderLeft: "3px solid #8b5cf6"
+                }}
+              >
+                {compareText}
+              </div>
+            )}
+            {summaryText && renderHighlightedCardBody(summaryText + discordExtra, event)}
+          </>
+        ) : (
+          renderHighlightedCardBody(bodyText, event)
+        )}
+      </div>
+      {getDisplayCategory(event.event_type, event.headline) === "forecast" && <ForecastReason event={event} />}
+    </div>
+  );
+
+});
+
 export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const [events, setEvents] = useState<EnrichedEvent[]>([]);
   const [cardExpansion, dispatchCardExpansion] = useReducer(cardExpansionReducer, undefined, createCardExpansionState);
   const { selectedId, expandedId, pinnedIds } = cardExpansion;
+  const cardExpansionRef = useRef(cardExpansion);
+  cardExpansionRef.current = cardExpansion;
   const deepLinkHandledRef = useRef(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedDate, setSelectedDate] = useState<string | null>(() => {
@@ -928,38 +1242,31 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const dragStartWidthRef = useRef(0);
   const alertsCacheRef = useRef<Map<string, AlertsCacheEntry>>(new Map());
   const eventsRequestIdRef = useRef(0);
-
-  // Realtime 接続
-  const { status: connectionStatus } = useRealtimeAlerts({
-    onNewEvent: (newEvent: TdnetEvent) => {
-      if (!isNotificationEventVisible(newEvent)) return;
-      alertsCacheRef.current.clear();
-      setEvents((prev) => {
-        if (prev.some((e) => e.id === newEvent.id)) return prev;
-        const enriched: EnrichedEvent = {
-          ...newEvent,
-          is_read: false,
-          is_starred: false,
-          comments_count: 0,
-        };
-        return [enriched, ...prev];
-      });
-    },
-    onUpdatedEvent: () => {
-      alertsCacheRef.current.clear();
-      void loadEvents();
-    },
-  });
+  const eventsAbortRef = useRef<AbortController | null>(null);
+  const realtimeRefreshRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const eventsInFlightRef = useRef(false);
+  const refreshAgainRef = useRef(false);
 
   // イベント読み込み
   const loadEvents = useCallback(async (background = false) => {
+    // A burst of realtime updates must not repeatedly cancel a large day's load.
+    if (background && eventsInFlightRef.current) {
+      refreshAgainRef.current = true;
+      return;
+    }
     const requestId = ++eventsRequestIdRef.current;
-    if (!background) setLoading(true);
+    eventsAbortRef.current?.abort();
+    const controller = new AbortController();
+    eventsAbortRef.current = controller;
+    eventsInFlightRef.current = true;
+    if (!background) { setLoading(true); setEvents([]); }
+
     try {
       const opts: Parameters<typeof fetchEvents>[1] = {
         userId,
         limit: 1000,
         allPeriodTickerSearch,
+        signal: controller.signal,
       };
 
       if (filter === "unread") opts.unreadOnly = true;
@@ -1001,6 +1308,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       if (cached && Date.now() - cached.timestamp < ALERTS_CACHE_TTL_MS) {
         if (requestId !== eventsRequestIdRef.current) return;
         setEvents(cached.events);
+        setLoadError(null);
         setLoading(false);
         return;
       }
@@ -1014,7 +1322,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
 
       const data = await fetchEvents(supabaseRef.current, opts);
       if (requestId !== eventsRequestIdRef.current) return;
+      alertsCacheRef.current.delete(cacheKey);
       alertsCacheRef.current.set(cacheKey, { timestamp: Date.now(), events: data });
+      while (alertsCacheRef.current.size > ALERTS_CACHE_MAX_ENTRIES) {
+        alertsCacheRef.current.delete(alertsCacheRef.current.keys().next().value!);
+      }
       setEvents(data);
       setLoadError(null);
       setLastLoadedAt(new Date().toLocaleTimeString("ja-JP", { timeZone: "Asia/Tokyo" }));
@@ -1024,16 +1336,52 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         setLoadError("通知を更新できませんでした。表示中の内容は最新ではない可能性があります。");
       }
     } finally {
-      if (requestId === eventsRequestIdRef.current) setLoading(false);
+      if (requestId === eventsRequestIdRef.current) {
+        eventsInFlightRef.current = false;
+        setLoading(false);
+        if (refreshAgainRef.current) {
+          refreshAgainRef.current = false;
+          alertsCacheRef.current.clear();
+          if (realtimeRefreshRef.current) clearTimeout(realtimeRefreshRef.current);
+          realtimeRefreshRef.current = setTimeout(() => {
+            realtimeRefreshRef.current = null;
+            void loadEvents(true);
+          }, 250);
+        }
+      }
     }
   }, [userId, filter, selectedDate, allPeriodTickerSearch]);
+
+  // INSERT must respect the active date/search/category just like UPDATE.
+  // Burst notifications coalesce into one background fetch; no partial result is shown.
+  const scheduleRealtimeRefresh = useCallback(() => {
+    alertsCacheRef.current.clear();
+    if (realtimeRefreshRef.current) return;
+    realtimeRefreshRef.current = setTimeout(() => {
+      realtimeRefreshRef.current = null;
+      void loadEvents(true);
+    }, 250);
+  }, [loadEvents]);
+  const { status: connectionStatus } = useRealtimeAlerts({
+    onNewEvent: (event: TdnetEvent) => { if (isNotificationEventVisible(event)) scheduleRealtimeRefresh(); },
+    onUpdatedEvent: scheduleRealtimeRefresh,
+  });
 
   useEffect(() => {
     void loadEvents();
     const refresh = setInterval(() => {
       if (document.visibilityState === 'visible') { alertsCacheRef.current.clear(); void loadEvents(true); }
     }, 60000);
-    return () => { clearInterval(refresh); eventsRequestIdRef.current++; };
+    return () => {
+      clearInterval(refresh);
+      eventsRequestIdRef.current++;
+      eventsAbortRef.current?.abort();
+      eventsInFlightRef.current = false;
+      refreshAgainRef.current = false;
+      if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+      if (realtimeRefreshRef.current) clearTimeout(realtimeRefreshRef.current);
+      realtimeRefreshRef.current = null;
+    };
   }, [loadEvents]);
 
   // 音を初期化
@@ -1120,12 +1468,17 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   const handleSearchChange = (value: string) => {
     setSearch(value);
     searchRef.current = value;
+    eventsRequestIdRef.current++;
+    eventsAbortRef.current?.abort();
+    eventsInFlightRef.current = false;
+    setLoading(true);
     if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
     // 300ms debounce: 高速タイピング時の過剰クエリを抑制
     searchDebounceRef.current = setTimeout(() => loadEvents(), 300);
   };
 
-  const handleSelectEvent = (event: EnrichedEvent) => {
+  const handleSelectEvent = useCallback((event: EnrichedEvent) => {
+    const { selectedId, expandedId } = cardExpansionRef.current;
     listScrollTargetRef.current = listPaneRef.current?.scrollTop ?? null;
     const report = OP_ACCELERATION_PRODUCTION_ENABLED ? event.acceleration : undefined;
     const isReport = report && (report.decision === 'matched' || report.version > 0);
@@ -1159,7 +1512,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         }
       })();
     }
-  };
+  }, [userId]);
 
   useLayoutEffect(() => {
     const pane = listPaneRef.current;
@@ -1181,11 +1534,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
   useEffect(() => {
     listScrollTargetRef.current = null;
     setListBottomSpace(0);
+    if (listPaneRef.current) listPaneRef.current.scrollTop = 0;
   }, [filter, selectedDate, search, allPeriodTickerSearch]);
 
-  const handleToggleRead = async (event: EnrichedEvent, e: React.MouseEvent) => {
+  const handleToggleRead = useCallback(async (event: EnrichedEvent, e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     // オプティミスティック・アップデート (即時UI反映)
     setEvents((prev) =>
       prev.map((ev) =>
@@ -1209,11 +1563,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         )
       );
     }
-  };
+  }, [userId]);
 
-  const handleToggleStar = async (event: EnrichedEvent, e: React.MouseEvent) => {
+  const handleToggleStar = useCallback(async (event: EnrichedEvent, e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     // オプティミスティック・アップデート (即時UI反映)
     setEvents((prev) =>
       prev.map((ev) =>
@@ -1233,7 +1587,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
         )
       );
     }
-  };
+  }, [userId]);
 
   const handleLogout = async () => {
     await supabaseRef.current.auth.signOut();
@@ -1256,16 +1610,65 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
     setRightPaneTab("company");
     viewerRef.current?.loadTicker(event.ticker, viewerDestinationForEvent(event.event_type));
   }, [events]);
-  const unreadCount = events.filter((e) => !e.is_read).length;
+  const displayEvents = useMemo(() => {
+    const isDiscordTab = filter === "discord";
 
-  const formatTime = (dt: string) => {
-    const d = new Date(dt);
-    const hh = String(d.getHours()).padStart(2, "0");
-    const mm = String(d.getMinutes()).padStart(2, "0");
-    const MM = String(d.getMonth() + 1).padStart(2, "0");
-    const DD = String(d.getDate()).padStart(2, "0");
-    return `${MM}/${DD} ${hh}:${mm}`;
-  };
+    // ====================
+    // Full 優先フィルタの実装
+    // ====================
+    const fullOrders = new Set(events.filter(e => e.event_type === "edinet_order")
+      .map(e => `${e.ticker}:${(e.raw_payload as any)?.extracted?.period}`));
+    const filteredEvents = events.filter(e => {
+      // 受注タブの場合はフロントエンドでフィルタ
+      if (filter === "edinet_order" && !isEdinetOrderEvent(e.event_type)) {
+        return false;
+      }
+
+      if (e.event_type !== "edinet_order_partial") return true;
+      const eExt = (e.raw_payload && typeof e.raw_payload === "object") ? (e.raw_payload as Record<string, any>).extracted : null;
+      const ePeriod = eExt?.period;
+      if (!ePeriod) return true;
+
+      const hasFull = fullOrders.has(`${e.ticker}:${ePeriod}`);
+      return !hasFull;
+    });
+
+    // ソート処理
+    let displayEvents = sortAlertsByDisclosureTimeAndTicker(filteredEvents);
+
+    if (isDiscordTab && discordSortMode === "category") {
+      displayEvents = [...filteredEvents].sort((a, b) => {
+        // 未読を常に上
+        if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
+        const getScore = (ev: typeof a) => {
+          const baseCat = getDisplayCategory(ev.event_type, ev.headline);
+          return getCategoryScore(ev, baseCat) ?? 0;
+        };
+        const aScore = getScore(a);
+        const bScore = getScore(b);
+        if (aScore !== bScore) return bScore - aScore; // スコア降順
+        return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+      });
+    }
+
+
+    return displayEvents;
+  }, [events, filter, discordSortMode]);
+  const unreadCount = useMemo(() => displayEvents.filter(e => !e.is_read).length, [displayEvents]);
+  const handleTogglePin = useCallback((id: string) => dispatchCardExpansion({ type: "togglePin", id }), []);
+  const handleCloseReport = useCallback((id: string) => dispatchCardExpansion({ type: "closeReport", id }), []);
+  const handleReportRead = useCallback((key: string, version: number) => {
+    alertsCacheRef.current.clear();
+    setEvents(previous => previous.map(e => e.acceleration?.logical_key === key ? { ...e, acceleration: { ...e.acceleration, read_version: version } } : e));
+  }, []);
+  const renderCard = useCallback((event: EnrichedEvent) => <AlertCard event={event}
+    isSelected={selectedId === event.id} isPinned={pinnedIds.has(event.id)}
+    isExpanded={expandedId === event.id || pinnedIds.has(event.id)} isDiscordTab={filter === "discord"}
+    userId={userId} onSelect={handleSelectEvent} onToggleRead={handleToggleRead} onToggleStar={handleToggleStar}
+    onTogglePin={handleTogglePin} onCloseReport={handleCloseReport} onReportRead={handleReportRead} />,
+    [selectedId, expandedId, pinnedIds, filter, userId, handleSelectEvent, handleToggleRead, handleToggleStar, handleTogglePin, handleCloseReport, handleReportRead]);
+
+
 
 
 
@@ -1301,8 +1704,11 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
       <header className="alerts-header">
         <div className="alerts-header-left">
           <TopNavigation active="company" />
-          <span className="stat-badge unread">未読 {unreadCount}</span>
-          <span className="stat-badge total">表示件数 {events.length}件</span>
+          <span className="stat-badge unread">{loading ? "未読 —" : `未読 ${unreadCount}`}</span>
+          <span className="stat-badge total">{loading ? "取得中…" : loadError && !events.length ? "取得失敗" : `表示件数 ${displayEvents.length}件`}
+            {!loading && (filter === "starred" || !selectedDate || allPeriodTickerSearch && search.trim()) &&
+              `（${filter === "starred" ? "スター検索対象の" : "取得"}上限 ${allPeriodTickerSearch && search.trim() ? 100 : 1000}件）`}
+          </span>
         </div>
         <div className="alerts-header-right">
           <span className="stat-badge" title={`接続: ${connectionStatus}`}>
@@ -1426,345 +1832,16 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           </div>
           {loading ? (
             <div className="loading-message">読み込み中...</div>
-          ) : events.length === 0 ? (
+          ) : displayEvents.length === 0 ? (
             <div className="placeholder">
               <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>📭</div>
-              <div>イベントがありません</div>
+              <div>{loadError ? "通知を取得できませんでした" : "イベントがありません"}</div>
               <div style={{ fontSize: "0.8rem", marginTop: "0.3rem" }}>
                 フィルタを変更するか、新着を待ってください
               </div>
             </div>
           ) : (
-            (() => {
-            const isDiscordTab = filter === "discord";
-            
-            // ====================
-            // Full 優先フィルタの実装
-            // ====================
-            const filteredEvents = events.filter(e => {
-              // 受注タブの場合はフロントエンドでフィルタ
-              if (filter === "edinet_order" && !isEdinetOrderEvent(e.event_type)) {
-                return false;
-              }
-
-              if (e.event_type !== "edinet_order_partial") return true;
-              const eExt = (e.raw_payload && typeof e.raw_payload === "object") ? (e.raw_payload as Record<string, any>).extracted : null;
-              const ePeriod = eExt?.period;
-              if (!ePeriod) return true;
-              
-              const hasFull = events.some(f => 
-                f.event_type === "edinet_order" &&
-                f.ticker === e.ticker &&
-                ((f.raw_payload && typeof f.raw_payload === "object" ? (f.raw_payload as Record<string, any>).extracted : null)?.period === ePeriod)
-              );
-              return !hasFull;
-            });
-
-            // ソート処理
-            let displayEvents = sortAlertsByDisclosureTimeAndTicker(filteredEvents);
-
-            if (isDiscordTab && discordSortMode === "category") {
-              displayEvents = [...filteredEvents].sort((a, b) => {
-                // 未読を常に上
-                if (a.is_read !== b.is_read) return a.is_read ? 1 : -1;
-                const getScore = (ev: typeof a) => {
-                  const baseCat = getDisplayCategory(ev.event_type, ev.headline);
-                  return getCategoryScore(ev, baseCat) ?? 0;
-                };
-                const aScore = getScore(a);
-                const bScore = getScore(b);
-                if (aScore !== bScore) return bScore - aScore; // スコア降順
-                return new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
-              });
-            }
-
-            const nodes = displayEvents.map((event) => {
-              const badge = getBadgeConfig(event.event_type, event.headline);
-              const priorityClass = !event.is_read ? getPriorityClass(event.priority_rank) : "";
-              const subtypeLabel = event.event_subtype
-                ? (EVENT_SUBTYPE_LABELS[event.event_subtype] ?? event.event_subtype)
-                : "";
-
-              // 全タブ共通: raw_payload の数値要約を表示。長い headline は使わない。
-              const { text: cardBody, isFallback, primaryText, compareText, summaryText } = formatCardBody(event);
-              // Discord タブのみ: 送信時刻を末尾に追加
-              let discordExtra = "";
-              if (isDiscordTab && event.discord_sent_at) {
-                const d = new Date(event.discord_sent_at);
-                const mm  = String(d.getMonth() + 1).padStart(2, "0");
-                const dd  = String(d.getDate()).padStart(2, "0");
-                const hh  = String(d.getHours()).padStart(2, "0");
-                const min = String(d.getMinutes()).padStart(2, "0");
-                discordExtra = `\n🔔 ${d.getFullYear()}-${mm}-${dd} ${hh}:${min}`;
-              }
-              const bodyText = cardBody + discordExtra;
-
-              const isSelected = selectedId === event.id;
-              const isPinned = pinnedIds.has(event.id);
-              const isExpanded = expandedId === event.id || isPinned;
-
-              const reportExpanded = expandedId === event.id;
-              const report = OP_ACCELERATION_PRODUCTION_ENABLED ? event.acceleration : undefined;
-              if (report && (report.decision === 'matched' || report.version > 0)) {
-                const unreadReport = report.state === 'completed' && report.version > (report.read_version || 0);
-                return <div key={event.id} data-event-id={event.id} data-ticker={event.ticker}
-                  className={`alert-card acceleration-card ${reportExpanded ? 'expanded selected' : 'collapsed'} ${!event.is_read ? 'unread' : ''}`}
-                  onClick={() => handleSelectEvent(event)}>
-                  <div className="acceleration-card-meta">
-                    <span>{reportStateLabel(report)}</span><span>{report.quarter}Q</span><span>開示 {report.business_date}</span>
-                    {unreadReport && <strong className="acceleration-unread">{report.read_version ? '更新' : 'レポート未読'}</strong>}
-                    <button className="action-btn" aria-label="スター" onClick={e => handleToggleStar(event, e)}>{event.is_starred ? '⭐' : '☆'}</button>
-                    <button className="action-btn" aria-label={event.is_read ? '通常通知を未読に戻す' : '通常通知を既読にする'} onClick={e => handleToggleRead(event, e)}>{event.is_read ? '📖' : '📩'}</button>
-                  </div>
-                  <button className="acceleration-title" aria-expanded={reportExpanded} onClick={e => { e.stopPropagation(); handleSelectEvent(event); }}>
-                    {report.state === 'completed' ? report.title : `${event.ticker} ${event.company_name} ${report.quarter}Q｜${reportStateLabel(report)}`}
-                  </button>
-                  {report.acceleration_pt !== null && <div className="acceleration-card-meta">加速幅 {Number(report.acceleration_pt).toFixed(2)}pt
-                    {report.published_at && <span>更新 {formatTime(report.published_at)}・第{report.version}版</span>}
-                  </div>}
-                  {reportExpanded && <>
-                    <AccelerationReportBody key={`${event.id}:${report.version}:${report.state}`} event={event} report={report} userId={userId}
-                      onRead={(key, version) => { alertsCacheRef.current.clear(); setEvents(previous => previous.map(e => e.acceleration?.logical_key === key ? { ...e, acceleration: { ...e.acceleration, read_version: version } } : e)); }} />
-                    <button onClick={e => { e.stopPropagation(); dispatchCardExpansion({ type: 'closeReport', id: event.id }); }}>閉じる</button>
-                  </>}
-                </div>;
-              }
-
-              if (isCompanyIrEvent(event.event_type)) {
-                const directUrl = getValidatedMaterialUrl(event);
-                return (
-                  <div
-                    key={event.id}
-                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
-                    onClick={() => handleSelectEvent(event)}
-                  >
-                    <div className="alert-card-summary-line1">
-                      {event.ticker} {event.company_name}
-                    </div>
-                    <div className="alert-card-summary-line2">{event.headline}</div>
-                    {directUrl && (
-                      <a
-                        href={directUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onPointerDown={(e) => e.stopPropagation()}
-                        onClick={(e) => e.stopPropagation()}
-                        style={{ display: "block", fontSize: "0.82em", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
-                        title={directUrl}
-                      >
-                        {directUrl}
-                      </a>
-                    )}
-                  </div>
-                );
-              }
-
-              if (isPdfOnlyMaterialEvent(event.event_type)) {
-                const material = getPdfOnlyMaterialCardContent(event);
-                return (
-                  <div
-                    key={event.id}
-                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""}`}
-                    onClick={() => handleSelectEvent(event)}
-                  >
-                    <div className="alert-card-summary-line1" style={{ display: "flex", alignItems: "center", gap: "8px", whiteSpace: "nowrap" }}>
-                      <span style={{ minWidth: 0, overflow: "hidden", textOverflow: "ellipsis" }}>
-                        {formatTime(event.disclosed_at || event.detected_at)} {event.ticker} {event.company_name} [{material.label}]
-                      </span>
-                      {material.url && (
-                        <a
-                          href={material.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="action-btn pdf-link"
-                          onPointerDown={(e) => e.stopPropagation()}
-                          onClick={(e) => e.stopPropagation()}
-                          title="PDFを開く"
-                          style={{ flexShrink: 0, textDecoration: "none", color: "inherit" }}
-                        >
-                          📄PDF
-                        </a>
-                      )}
-                    </div>
-                    <div className="alert-card-summary-line2" title={material.title}>
-                      {material.title}
-                    </div>
-                  </div>
-                );
-              }
-
-              if (!isExpanded) {
-                const { line1, line2, line3 } = formatCardSummary(event, badge, subtypeLabel);
-                const displayLine2 = event.event_type === "earnings" ? formatCompactEarningsCardLine(line2) : line2;
-                const displayLine3 = event.event_type === "earnings" && line3 ? formatCompactEarningsCardLine(line3) : line3;
-                return (
-                  <div
-                    key={event.id}
-                    className={`alert-card collapsed ${!event.is_read ? "unread" : ""} ${priorityClass}`}
-                    onClick={() => handleSelectEvent(event)}
-                  >
-                    <div className={`alert-card-summary-line1 ${event.event_type === "buyback" ? "buyback-card-title" : ""}`}>
-                       {renderHighlightedCardBody(line1, event)}
-                    </div>
-                    {displayLine2 && (
-                       <div className={`alert-card-summary-line2 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "buyback" ? "buyback-card-metric" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`}>
-                          {event.event_type === "earnings"
-                            ? renderCompactEarningsCardLine(displayLine2)
-                            : renderHighlightedCardBody(displayLine2, event)}
-                       </div>
-                    )}
-                    {displayLine3 && (
-                       <div className={`alert-card-summary-line3 ${event.event_type === "earnings" ? "alert-card-financial-summary" : ""} ${event.event_type === "forecast" ? "alert-card-forecast-summary" : ""}`} style={{ fontSize: '0.85em', color: 'var(--color-gray-500)', marginTop: '2px' }}>
-                          {event.event_type === "earnings"
-                            ? renderCompactEarningsCardLine(displayLine3)
-                            : renderHighlightedCardBody(displayLine3, event)}
-                       </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <div
-                  key={event.id}
-                  className={`alert-card expanded ${!event.is_read ? "unread" : ""} ${isSelected ? "selected" : ""} ${priorityClass}`}
-                  onClick={() => handleSelectEvent(event)}
-                >
-                  {/* Row 1: Time + Badge + Actions */}
-                  <div className="alert-card-header">
-                    <span className="alert-time">
-                      {formatTime(event.disclosed_at || event.detected_at)}
-                    </span>
-                    <span className={`alert-badge ${badge.category}`}>
-                      {badge.emoji} {event.event_type === "dividend" ? getDividendCompositeLabel(event) : (subtypeLabel || badge.label)}
-                    </span>
-                    {event.event_type === "edinet_order_partial" && (
-                      <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
-                        片側のみ
-                      </span>
-                    )}
-                    {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.review_label : null)) && (
-                      <span className="alert-badge" style={{ backgroundColor: "#fef08a", color: "#854d0e", marginLeft: "4px" }}>
-                        {((event.raw_payload as Record<string, any>).extracted?.review_label)}
-                      </span>
-                    )}
-                    {event.event_type === "edinet_order_partial" && ((event.raw_payload && typeof event.raw_payload === "object" ? (event.raw_payload as Record<string, any>).extracted?.classification === "PARTIAL_METRIC_REVIEW_CAUTION" : false)) && (
-                      <span className="alert-badge" style={{ backgroundColor: "#fecaca", color: "#991b1b", marginLeft: "4px" }}>
-                        要確認
-                      </span>
-                    )}
-                    <span className="alert-card-actions">
-                      <button
-                        type="button"
-                        className="action-btn card-pin-btn"
-                        aria-pressed={isPinned}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          dispatchCardExpansion({ type: "togglePin", id: event.id });
-                        }}
-                        title={isPinned ? "固定を解除して閉じる" : "カードを開いたまま固定する"}
-                      >
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M16 3 21 8l-4 1-3 5-4 1-1 4-4-4 4-1 1-4 5-3zM9 15l-6 6" />
-                        </svg>
-                        {isPinned ? "固定中" : "固定"}
-                      </button>
-                      <button
-                        className={`action-btn ${event.is_starred ? "active" : ""}`}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        onClick={(e) => handleToggleStar(event, e)}
-                        title="スター"
-                      >
-                        {event.is_starred ? "⭐" : (
-                          <svg
-                            viewBox="0 0 24 24"
-                            width="16"
-                            height="16"
-                            fill="rgba(0,0,0,0.4)"
-                            stroke="#ffffff"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            style={{ display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0px 1px 1px rgba(0,0,0,0.5))", pointerEvents: "none" }}
-                          >
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
-                        )}
-                      </button>
-                      {event.pdf_url && (
-                        <a
-                          href={event.pdf_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="action-btn pdf-link"
-                          onPointerDown={(e) => e.stopPropagation()}
-                          onClick={(e) => e.stopPropagation()}
-                          title="PDFを開く"
-                          style={{ textDecoration: "none", color: "inherit" }}
-                        >
-                          📄PDF
-                        </a>
-                      )}
-                      <button
-                        className={`action-btn ${!event.is_read ? "active" : ""}`}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        onClick={(e) => handleToggleRead(event, e)}
-                        title={event.is_read ? "未読に戻す" : "既読にする"}
-                      >
-                        {event.is_read ? "📖" : "📩"}
-                      </button>
-                      {event.comments_count > 0 && (
-                        <span style={{ fontSize: "0.72rem", color: "#8b5cf6" }}>
-                          💬{event.comments_count}
-                        </span>
-                      )}
-                    </span>
-                  </div>
-
-                  {/* Row 2: Ticker + Company Name */}
-                  <div className="alert-card-company">
-                    <span className="alert-ticker">{event.ticker}</span>
-                    {event.company_name && (
-                      <span className="alert-company-name">{event.company_name}</span>
-                    )}
-                  </div>
-
-                  {/* Row 3: 数値要約 (fallback時はheadlineを1行muted) */}
-                  <div className={`alert-card-body${isFallback ? " fallback" : ""}`}>
-                    {event.event_type === "earnings" && !isFallback ? (
-                      <>
-                        {primaryText && renderHighlightedCardBody(primaryText, event)}
-                        {compareText && (
-                          <div 
-                            className="notification-compare" 
-                            style={{ 
-                              marginTop: "4px", 
-                              marginBottom: "8px",
-                              padding: "4px 8px", 
-                              backgroundColor: "var(--bg-secondary, #f3f4f6)", 
-                              borderRadius: "4px",
-                              fontSize: "0.9em",
-                              color: "var(--text-secondary, #4b5563)",
-                              borderLeft: "3px solid #8b5cf6"
-                            }}
-                          >
-                            {compareText}
-                          </div>
-                        )}
-                        {summaryText && renderHighlightedCardBody(summaryText + discordExtra, event)}
-                      </>
-                    ) : (
-                      renderHighlightedCardBody(bodyText, event)
-                    )}
-                  </div>
-                  {getDisplayCategory(event.event_type, event.headline) === "forecast" && <ForecastReason event={event} />}
-                </div>
-              );
-            });
-            console.timeEnd("renderEvents");
-            return nodes;
-            })()
+            <VirtualAlertList events={displayEvents} scrollRef={listPaneRef} renderCard={renderCard} />
           )}
           {listBottomSpace > 0 && <div style={{ height: listBottomSpace }} aria-hidden="true" />}
         </div>
@@ -1806,7 +1883,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           )}
           {/* Keep one viewer mounted across selection and detail-tab changes. */}
           <div className="cvs-body" style={{ flex: 1, overflow: "hidden", minHeight: 0, display: selectedEvent && rightPaneTab === "detail" ? "none" : "flex", flexDirection: "column" }}>
-            <CompanyViewer ref={viewerRef} />
+            <MemoizedCompanyViewer ref={viewerRef} />
           </div>
           {selectedEvent && rightPaneTab === "detail" && (
                 <AlertDetailPanel
