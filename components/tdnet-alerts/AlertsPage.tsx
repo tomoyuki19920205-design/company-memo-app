@@ -21,6 +21,7 @@ import { cardExpansionReducer, createCardExpansionState } from "@/lib/tdnet-aler
 import type { EnrichedEvent, TdnetEvent, FilterType } from "@/lib/tdnet-alerts/types";
 import { EVENT_TYPE_CONFIG, EVENT_SUBTYPE_LABELS, getDisplayCategory } from "@/lib/tdnet-alerts/types";
 import AlertDetailPanel from "./AlertDetailPanel";
+import AccelerationFeed from "./AccelerationFeed";
 import VirtualAlertList from "./VirtualAlertList";
 import AccelerationReportBody from './AccelerationReportBody';
 import { reportStateLabel } from '@/lib/tdnet-alerts/acceleration';
@@ -1743,6 +1744,7 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           ref={listPaneRef}
           style={{ width: leftPaneWidth, flexShrink: 0 }}
         >
+          <AccelerationFeed />
           <div className="alerts-list-controls">
             {loadError && (
               <div role="alert" style={{ padding: "8px 16px", background: "#542b1c", color: "#fff" }}>
