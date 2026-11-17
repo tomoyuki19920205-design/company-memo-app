@@ -1,3 +1,4 @@
+import { loadFinancialsBatch } from "./financial-loader";
 import { applyPublicationWindow } from "./news-publication";
 import { createSupabaseBrowser } from "./supabase-browser";
 import { normalizeTicker } from "./memo-api";
@@ -5,10 +6,6 @@ import type { FinancialRecord } from "@/types/financial";
 import type { ForecastRevision } from "@/types/forecast";
 import type { MonthlyRecord } from "@/types/monthly";
 import type { KpiRecord } from "@/types/kpi";
-import {
-    transformFinancialRows,
-    type ViewerFinancialRow,
-} from "./financial-transform";
 import type { LatestNewsScanRun, NewsEvent, NewsQuery, NewsStreamItem } from "@/types/news";
 import { normalizeTicker as normalizeNewsTicker } from "./memo-api";
 
@@ -129,109 +126,9 @@ export async function loadCompanyMaster(): Promise<SearchCandidate[]> {
 export async function loadFinancials(ticker: string): Promise<FinancialRecord[]> {
     const t = normalizeTicker(ticker);
     if (!t) return [];
-
-    try {
-        const supabase = createSupabaseBrowser();
-        const columns =
-            "ticker,period,quarter,sales,gross_profit,operating_profit,profit_before_tax,ordinary_profit,net_income,eps,source,updated_at";
-        const actualColumns = `${columns},sga`;
-        const [actualResult, forecastResult, sgaResult, statusResult] = await Promise.all([
-            supabase
-                .from("api_latest_financials_canonical")
-                .select(actualColumns)
-                .eq("ticker", t)
-                .order("period", { ascending: false })
-                .order("quarter", { ascending: false })
-                .limit(100),
-            supabase
-                .from("api_latest_financials_canonical_forecast")
-                .select(`${columns},disclosure_datetime,source_url,accounting_scope,sales_accounting_scope,operating_profit_accounting_scope`)
-                .eq("ticker", t)
-                .order("period", { ascending: false })
-                .order("quarter", { ascending: false })
-                .limit(100),
-            t === "1777"
-                ? supabase
-                    .from("canonical_financials")
-                    .select("period,quarter,value")
-                    .eq("ticker", t)
-                    .eq("metric", "selling_general_and_administrative_expenses")
-                    .eq("source", "official_pdf")
-                    .limit(100)
-                : Promise.resolve({ data: [], error: null }),
-            supabase
-                .from("company_2q_forecast_status")
-                .select("ticker,period,status,disclosure_datetime,source_url,updated_at")
-                .eq("ticker", t)
-                .limit(20),
-        ]);
-
-        if (sgaResult.error) {
-            throw new Error(`販管費取得に失敗しました: ${sgaResult.error.message}`);
-        }
-
-        if (actualResult.error) {
-            if (
-                actualResult.error.code === "PGRST200" ||
-                actualResult.error.message?.includes("not find")
-            ) {
-                console.warn("api_latest_financials view が未作成です");
-                return [];
-            }
-            throw new Error(`PL取得に失敗しました: ${actualResult.error.message}`);
-        }
-
-        if (forecastResult.error) {
-            if (
-                forecastResult.error.code === "PGRST200" ||
-                forecastResult.error.message?.includes("not find")
-            ) {
-                console.warn("forecast financials view が未作成です");
-            } else {
-                throw new Error(`予想PL取得に失敗しました: ${forecastResult.error.message}`);
-            }
-        }
-
-        const sgaByPeriod = new Map(
-            (sgaResult.data ?? []).map((row) => [`${row.period}:${row.quarter}`, row.value]),
-        );
-        const completedActuals = (actualResult.data ?? []).map((row) => {
-            const key = `${row.period}:${row.quarter}`;
-            return {
-                ...row,
-                selling_general_and_administrative_expenses: row.sga ?? sgaByPeriod.get(key) ?? null,
-            };
-        });
-        const completedRows = [
-            ...completedActuals,
-            ...(forecastResult.error ? [] : (forecastResult.data ?? [])),
-            ...(statusResult.error ? [] : (statusResult.data ?? []).map((row) => ({
-                ticker: row.ticker,
-                period: row.period,
-                quarter: "2Q",
-                sales: null,
-                gross_profit: null,
-                operating_profit: null,
-                profit_before_tax: null,
-                ordinary_profit: null,
-                net_income: null,
-                eps: null,
-                source: "tdnet_forecast",
-                updated_at: row.updated_at,
-                disclosure_datetime: row.disclosure_datetime,
-                source_url: row.source_url,
-                forecast_status: row.status,
-            }))),
-        ];
-        if (completedRows.length === 0) return [];
-
-        return transformFinancialRows(completedRows as ViewerFinancialRow[]);
-    } catch (err) {
-        console.error("loadFinancials error:", err);
-        throw err;
-    }
+    const data = await loadFinancialsBatch(createSupabaseBrowser(), [t]);
+    return data.get(t) ?? [];
 }
-
 // ============================================================
 // Forecast Revision — スタブ (テーブル未存在時は空配列)
 // ============================================================

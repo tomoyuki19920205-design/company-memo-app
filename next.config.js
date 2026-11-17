@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingIncludes: {
+    '/api/earnings-calendar': ['./server-data/earnings-calendar/**/*.json'],
+    '/earnings-calendar': ['./server-data/earnings-calendar/schedules.json'],
+  },
   async headers() {
     return [
       {
