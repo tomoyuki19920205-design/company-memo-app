@@ -1,0 +1,2416 @@
+{
+  "id": "2391-6c15f78a7da50efcfed09855546ba8a1dfbae1ebf20041d8a1078baea6c78400",
+  "code": "2391",
+  "companyName": "株式会社プラネット",
+  "announcementDate": "2026-11-25",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "2391-generation-f965d779331c9c13 · 6c15f78a",
+  "savedAt": "2026-11-18T14:48:41+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 799.6880000000001,
+  "operatingProfit": 121.75000000000011,
+  "revenueYoY": {
+    "rate": 0.005887998470453913,
+    "label": "+0.6%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.2942724485123199,
+    "label": "-29.4%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 2391 株式会社プラネット｜2027-07-31期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 791.69 | 799.69 | 807.69 |\n| 営業利益 | 103.75 | 121.75 | 136.75 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 4.68 | 0.59% |  |\n| YoY | 営業利益 | -50.77 | -29.43% |  |\n| QnQ | 売上高 | 0.00 | 0.00% |  |\n| QnQ | 営業利益 | -13.00 | -9.65% |  |\n\n## 会社予想\nS01の公表会社予想は中間累計と通期であり、第1四半期単独予想ではない。S04で通期売上・営業利益・純利益の同額を確認した。提示資料内ではその後の修正は確認できないが、基準日時までの開示一覧の網羅性が不足するため最新性はunverified。四等分や会社予想からの差引きを独自予測に使用していない。\n\n## 市場コンセンサス\n未確認。提示保存原文に公表市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n商品データベース移行後の直前四半期実績を起点に、従量収入の下押し、顧客・接続拡大、運用原価、先行投資費用を別々に置く条件付き差分積上げ。数量×単価の完全な積上げではなく、定性的な事業動向と実績規模から設定した感応度シナリオであり、統計的信頼区間ではない。直前四半期並みの季節的水準を仮置きするため確度は低い。経常利益・純利益は営業外収益の計上時期、特別損益、税負担の四半期根拠が不足するためnull。\n\n## 条件付き中心予測\n中心ケースは売上799.69、営業利益121.75。顧客・接続拡大が物流効率化による従量収入の減少を補う一方、先行投資の費用化が営業利益を抑える。弱気ケースは売上791.69、営業利益103.75、強気ケースは売上807.69、営業利益136.75。\n\n## 費用から算出した利益\n中心ケースの売上原価は325.56、販管費は352.38。直前四半期の費用実績を基準に追加費用を見積もり、営業利益を算出した。会社の減益予想に一致させるための費用逆算は行っていない。\n\n## 比較に残る不確実性\n前年同期から直前四半期までの売上差4.68と営業利益差-37.77は、原因別に十分説明できないため残差として残した。移行後の基準を使うことでPRS移行効果の二重計上を避ける一方、季節性とサービス構成の変化を完全には分離できない。\n\n## 会社予想との区別\n会社は中間累計売上1,575.00、営業利益225.00、通期売上3,195.00、営業利益485.00を公表している。これらは対象四半期単独の数値ではなく、独自シナリオの算式にも含めていない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -12.00 | 直前四半期からの条件付き減収 |\n| 拡販の追加寄与 | 4.00 | 直前四半期に未包含の純増収仮定 |\n| 残差（economic_unexplained） | 4.68 | 前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を金額で分離できない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -12.00 | 物流効率化による追加減収仮定 |\n| 拡販の追加寄与 | 4.00 | 顧客・接続拡大による追加収入仮定 |\n| 残差（none） | 0.00 | モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | -8.00 | 売上変化の寄与。費用影響は別掲 |\n| 追加原価 | -3.00 | 運用保守等の追加費用 |\n| 追加販管費 | -20.00 | 研究開発・人的資本等の追加費用 |\n| 残差（economic_unexplained） | -37.77 | 前年同期から直前四半期までの利益差。売上・原価・販管費の差は観察できるが、移行・季節性・開発費等の原因別金額が未確認。丸め差とは扱わない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | -8.00 | 追加売上の純変化 |\n| 追加原価 | -3.00 | 運用保守等の追加費用 |\n| 追加販管費 | -20.00 | 先行投資の費用化 |\n| 残差（none） | 0.00 | 条件付きモデルの差額は全て説明。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -8.00 | 直前四半期からの条件付き減収 |\n| 拡販の追加寄与 | 8.00 | 直前四半期に未包含の純増収仮定 |\n| 残差（economic_unexplained） | 4.68 | 前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -8.00 | 物流効率化による追加減収仮定 |\n| 拡販の追加寄与 | 8.00 | 顧客・接続拡大による追加収入仮定 |\n| 残差（none） | 0.00 | モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | 0.00 | 売上変化の寄与。費用影響は別掲 |\n| 追加原価 | -1.00 | 運用保守等の追加費用 |\n| 追加販管費 | -12.00 | 研究開発・人的資本等の追加費用 |\n| 残差（economic_unexplained） | -37.77 | 前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | 0.00 | 追加売上の純変化 |\n| 追加原価 | -1.00 | 運用保守等の追加費用 |\n| 追加販管費 | -12.00 | 先行投資の費用化 |\n| 残差（none） | 0.00 | 条件付きモデルの差額は全て説明。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -4.00 | 直前四半期からの条件付き減収 |\n| 拡販の追加寄与 | 12.00 | 直前四半期に未包含の純増収仮定 |\n| 残差（economic_unexplained） | 4.68 | 前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入の追加下押し | -4.00 | 物流効率化による追加減収仮定 |\n| 拡販の追加寄与 | 12.00 | 顧客・接続拡大による追加収入仮定 |\n| 残差（none） | 0.00 | モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | 8.00 | 売上変化の寄与。費用影響は別掲 |\n| 追加原価 | 0.00 | 追加原価を吸収する条件 |\n| 追加販管費 | -6.00 | 先行投資費用の緩やかな立ち上がり |\n| 残差（economic_unexplained） | -37.77 | 前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 従量収入と拡販 | 8.00 | 追加売上の純変化 |\n| 追加原価 | 0.00 | 追加原価を吸収する条件 |\n| 追加販管費 | -6.00 | 先行投資の費用化 |\n| 残差（none） | 0.00 | 条件付きモデルの差額は全て説明。 |\n\n## エラー・未解決事項\n- PRS向け利用料、移行後の残存データベース売上と費用が個別に確認できず、前年同期比較の原因別残差が大きい。\n- S01 PDF page 9では表示額による売上総利益から販管費の差引と営業利益に微小差があり、S03にも同様の表示差がある。比較基準には開示営業利益を採用し、直前四半期差引では当該差が相殺される。\n- S01–S08の保存本文はtruncated=false。S09・S10の本文、公式質疑応答、KPI詳細ページ、最新の開示一覧は原本未確認であり、非開示とは断定しない。\n- S01とS05・S06には関係会社の議決権所有割合の表記差がある。予測に利用せず、どちらかへ修正していない。\n- S01の事業別表示変更は全社合計の累計差引を妨げないと判断したが、サービス別の比較可能性は未確立。直接四半期開示を捏造して補っていない。\n- S05は関係会社異動による業績影響なしと記載。合併による費用節減や増収を追加していない。\n- サービス別収益分解はS01 PDF pages 26–27で省略されている。数量と単価から売上を直接算出できず、独自予測は実績基準の条件付き感応度にとどまる。\n- 入力予定日2026年11月25日は一次資料で未確認のためannouncement_dateはnull。S10は資料一覧にあるが保存原文が提示されていない。\n- 営業外収益・特別損益・税負担について対象四半期の根拠ある範囲を設定できず、経常利益と純利益は予測していない。\n- 対象決算が未発表という収集結果は提示されているが、保存原文だけでは基準日時までの開示の網羅性を確認できない。target_already_announced=falseは提示された収集結果に依拠する。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_cogs_add: 直前四半期には商品データベース移行後の原価が既に含まれる。これを基準に運用保守費等の小幅増加だけを置き、移行による費用削減を重ねて計上しない。\n- base_data_loss: 従量収入の下押しを全社四半期売上の約1%とする条件付き中心仮定。基本料には同率の減少を掛けず、データ量減少の売上影響額として扱う。\n- base_expansion: 新規メーカー、販売レポート、ASN接続の追加寄与をまとめた純増収仮定。サービス別売上構成が非開示のため利用社数の伸び率を売上全体に適用せず、全社四半期売上の約1%に抑える。\n- base_sga_add: 先行投資が段階的に費用化する中心条件。追加額は前年第1四半期と直前四半期の販管費水準差に近い規模とし、利益目標から逆算しない。直前四半期に含まれる研究開発費・人件費はそのまま基準に残す。\n- bear_cogs_add: 直前四半期の売上原価を維持したうえで、運用保守・通信費等の上振れを約1%追加する。原価の中心が運用保守と償却であるため、従量売上減少に比例する原価削減は想定しない。\n- bear_data_loss: 直前四半期の全社売上を起点に、SKU削減・大容量化・配送頻度低下による従量収入への追加下押しを置く。基幹EDIデータ量の微減という記述と整合する、全社四半期売上の約1.5%に相当するストレス仮定。処理量の実測値ではない。\n- bear_expansion: 隣接業界メーカー数、販売レポート利用企業数、ASNデータ量の増加を踏まえた純増収。導入調整の長期化を重視し、直前四半期から全社売上の約0.5%の追加寄与に限定する。既存四半期に含まれる成長分は再加算しない。\n- bear_sga_add: 研究開発・新規領域への集中投資と人的資本強化が早期に費用化する条件。直前四半期販管費に追加し、上限の規模は前年度研究開発費の約3か月分を参考とする。会社の四半期予算ではない。\n- bull_cogs_add: 既存インフラの余力で拡販分を吸収し、売上原価が直前四半期並みにとどまる条件。償却終了や設備削減による追加節減は見込まない。\n- bull_data_loss: データ量微減が続くものの追加下押しが小さい場合。全社四半期売上の約0.5%を下押し幅とする。\n- bull_expansion: 導入調整が進む場合の純増収仮定。既存サービスの拡販を中心に全社四半期売上の約1.5%を置き、返品サービスの大型案件や未確認の値上げは加算しない。\n- bull_sga_add: 先行投資費用の立ち上がりが緩やかな場合。前年度研究開発費の約3か月分に対して約3割の追加規模を置く。投資の中止や費用の資産化を事実として仮定しない。\n- 四半期の固定料・従量料別収入、処理量、サービス別単価と売上構成は保存原文に非開示。\n- 期末EDI利用社数は確認できるが、当四半期の期間平均利用社数と前年同月比較は原本未確認。\n- 直前四半期から対象四半期への季節性をゼロとする基準仮定を置く。季節的変動が強い場合はシナリオ範囲を外れ得る。\n- 研究開発・人件費・運用保守費の当四半期増分と投資費用化の時期は未確認。\n\n## 根拠・保存記録\n- S01 [2026年7月期決算短信〔日本基準〕（非連結）（2027年7月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534911.pdf) / 公表 2026-09-14T15:40:00+09:00 / retrieved / SHA-256 `b5fb0657c1641c0a2c479f0331ee85bba6fc82fe0b7bf9f500312c28d974ffb6`\n- S02 [2026年7月期第1四半期決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/23910/140120251125508211.pdf) / 公表 2025-11-25 / retrieved / SHA-256 `2e317ee5970067419b3885f168f656febadbf3fa81b3015df510425869f172ac`\n- S03 [2026年7月期第3四半期決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/23910/140120260526547549.pdf) / 公表 2026-05-27T15:40:00+09:00 / retrieved / SHA-256 `f852ca315313f6abb38e92a3aacdfa2580a34534540b50cdf15275b3bd1dc44f`\n- S04 [2026年7月期 決算説明会資料](https://www2.jpx.co.jp/disc/23910/140120260929542258.pdf) / 公表 2026-09-29T16:30:00+09:00 / retrieved / SHA-256 `f880b7834c60e862b23a004fde5b6116340eaa06bd8296178a01a066400551db`\n- S05 [その他の関係会社の異動に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261026556318.pdf) / 公表 2026-10-26T17:30:00+09:00 / retrieved / SHA-256 `4a0a7844257b953e4510e0d163a565d787bb883d9de11fd4a4cfd3f98d1fff4a`\n- S06 [支配株主等に関する事項について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555310.pdf) / 公表 2026-10-26T15:00:00+09:00 / retrieved / SHA-256 `096e9efc40ff9035540fa13692e6e11b57f1fa6c10765bf89b587cddb02cd0c9`\n- S07 [代表取締役の異動に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534942.pdf) / 公表 2026-09-14T15:40:00+09:00 / retrieved / SHA-256 `84505f2ebdd0895eb2a75e9fe181ae41953133afc882578d870062236b1d199a`\n- S08 [サービス利用・登録状況（公式トップページ掲載：2026年10月末EDI利用社数）](https://www.planet-van.co.jp/) / 公表 2026-11-02 / retrieved / SHA-256 `57c110c44c70f495aaa032f525d359b4820fce669755e46a3c9c7d2d6f6c67a1`\n- S09 [株主・投資家向け情報（証券コード確認）](https://www.planet-van.co.jp/ir/) / 公表  / unavailable / SHA-256 `なし`\n- S10 [IRカレンダー](https://www.planet-van.co.jp/ir/calendar.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "2391",
+    "company_name": "株式会社プラネット",
+    "announcement_date": "2026-11-25",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 791.6880000000001,
+        "operating_profit": 103.75000000000011,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 799.6880000000001,
+        "operating_profit": 121.75000000000011,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 807.6880000000001,
+        "operating_profit": 136.7500000000001,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 0.0,
+          "rate": 0.0,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -12.99999999999983,
+          "rate": -0.09647495361780954,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 4.681000000000154,
+          "rate": 0.005887998470453913,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -50.76699999999988,
+          "rate": -0.2942724485123199,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy_revenue": 3148.985,
+      "fy_op": 557.16,
+      "fy_cogs": 1239.611,
+      "fy_sga": 1352.213,
+      "nine_revenue": 2349.297,
+      "nine_op": 422.41,
+      "nine_cogs": 915.051,
+      "nine_sga": 1011.835,
+      "prior_revenue": 795.007,
+      "prior_op": 172.517,
+      "prior_cogs": 295.814,
+      "prior_sga": 326.675,
+      "fy_rd": 82.12,
+      "bear_data_loss": 12.0,
+      "base_data_loss": 8.0,
+      "bull_data_loss": 4.0,
+      "bear_expansion": 4.0,
+      "base_expansion": 8.0,
+      "bull_expansion": 12.0,
+      "bear_cogs_add": 3.0,
+      "base_cogs_add": 1.0,
+      "bull_cogs_add": 0.0,
+      "bear_sga_add": 20.0,
+      "base_sga_add": 12.0,
+      "bull_sga_add": 6.0,
+      "g_h1_revenue": 1575.0,
+      "g_h1_op": 225.0,
+      "g_h1_ordinary": 245.0,
+      "g_h1_net": 170.0,
+      "g_fy_revenue": 3195.0,
+      "g_fy_op": 485.0,
+      "g_fy_ordinary": 515.0,
+      "g_fy_net": 355.0,
+      "prev_revenue": 799.6880000000001,
+      "prev_op": 134.74999999999994,
+      "prev_cogs": 324.56000000000006,
+      "prev_sga": 340.37799999999993,
+      "historical_revenue_gap": 4.681000000000154,
+      "historical_op_gap": -37.76700000000005,
+      "historical_cogs_gap": 28.746000000000038,
+      "historical_sga_gap": 13.702999999999918,
+      "bear_revenue": 791.6880000000001,
+      "bear_cogs": 327.56000000000006,
+      "bear_sga": 360.37799999999993,
+      "bear_op": 103.75000000000011,
+      "base_revenue": 799.6880000000001,
+      "base_cogs": 325.56000000000006,
+      "base_sga": 352.37799999999993,
+      "base_op": 121.75000000000011,
+      "bull_revenue": 807.6880000000001,
+      "bull_cogs": 324.56000000000006,
+      "bull_sga": 346.37799999999993,
+      "bull_op": 136.7500000000001,
+      "company_h1_revenue": 1575.0,
+      "company_h1_op": 225.0,
+      "company_fy_revenue": 3195.0,
+      "company_fy_op": 485.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2,8,10",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 795.007,
+        "operating_profit": 172.517,
+        "ordinary_profit": 178.945,
+        "net_profit": 121.026
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2,8,10",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 2,9–10,16",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 799.6880000000001,
+        "operating_profit": 134.74999999999994,
+        "ordinary_profit": 146.06899999999996,
+        "net_profit": 107.769
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "bear_data_loss-bear_data_loss-bear_data_loss",
+            "reason": "直前四半期からの条件付き減収",
+            "amount": -12.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "bear_expansion",
+            "reason": "直前四半期に未包含の純増収仮定",
+            "amount": 4.0
+          }
+        ],
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を金額で分離できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "bear_data_loss-bear_data_loss-bear_data_loss",
+            "reason": "物流効率化による追加減収仮定",
+            "amount": -12.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "bear_expansion",
+            "reason": "顧客・接続拡大による追加収入仮定",
+            "amount": 4.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "bear_expansion-bear_data_loss",
+            "reason": "売上変化の寄与。費用影響は別掲",
+            "amount": -8.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-bear_cogs",
+            "reason": "運用保守等の追加費用",
+            "amount": -3.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-bear_sga",
+            "reason": "研究開発・人的資本等の追加費用",
+            "amount": -20.0
+          }
+        ],
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの利益差。売上・原価・販管費の差は観察できるが、移行・季節性・開発費等の原因別金額が未確認。丸め差とは扱わない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "bear_expansion-bear_data_loss",
+            "reason": "追加売上の純変化",
+            "amount": -8.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-bear_cogs",
+            "reason": "運用保守等の追加費用",
+            "amount": -3.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-bear_sga",
+            "reason": "先行投資の費用化",
+            "amount": -20.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "base_data_loss-base_data_loss-base_data_loss",
+            "reason": "直前四半期からの条件付き減収",
+            "amount": -8.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "base_expansion",
+            "reason": "直前四半期に未包含の純増収仮定",
+            "amount": 8.0
+          }
+        ],
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "base_data_loss-base_data_loss-base_data_loss",
+            "reason": "物流効率化による追加減収仮定",
+            "amount": -8.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "base_expansion",
+            "reason": "顧客・接続拡大による追加収入仮定",
+            "amount": 8.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "base_expansion-base_data_loss",
+            "reason": "売上変化の寄与。費用影響は別掲",
+            "amount": 0.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-base_cogs",
+            "reason": "運用保守等の追加費用",
+            "amount": -1.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-base_sga",
+            "reason": "研究開発・人的資本等の追加費用",
+            "amount": -12.0
+          }
+        ],
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "base_expansion-base_data_loss",
+            "reason": "追加売上の純変化",
+            "amount": 0.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-base_cogs",
+            "reason": "運用保守等の追加費用",
+            "amount": -1.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-base_sga",
+            "reason": "先行投資の費用化",
+            "amount": -12.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "bull_data_loss-bull_data_loss-bull_data_loss",
+            "reason": "直前四半期からの条件付き減収",
+            "amount": -4.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "bull_expansion",
+            "reason": "直前四半期に未包含の純増収仮定",
+            "amount": 12.0
+          }
+        ],
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "従量収入の追加下押し",
+            "formula": "bull_data_loss-bull_data_loss-bull_data_loss",
+            "reason": "物流効率化による追加減収仮定",
+            "amount": -4.0
+          },
+          {
+            "label": "拡販の追加寄与",
+            "formula": "bull_expansion",
+            "reason": "顧客・接続拡大による追加収入仮定",
+            "amount": 12.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "bull_expansion-bull_data_loss",
+            "reason": "売上変化の寄与。費用影響は別掲",
+            "amount": 8.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-bull_cogs",
+            "reason": "追加原価を吸収する条件",
+            "amount": 0.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-bull_sga",
+            "reason": "先行投資費用の緩やかな立ち上がり",
+            "amount": -6.0
+          }
+        ],
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "従量収入と拡販",
+            "formula": "bull_expansion-bull_data_loss",
+            "reason": "追加売上の純変化",
+            "amount": 8.0
+          },
+          {
+            "label": "追加原価",
+            "formula": "prev_cogs-bull_cogs",
+            "reason": "追加原価を吸収する条件",
+            "amount": 0.0
+          },
+          {
+            "label": "追加販管費",
+            "formula": "prev_sga-bull_sga",
+            "reason": "先行投資の費用化",
+            "amount": -6.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      }
+    ],
+    "issues": [
+      "PRS向け利用料、移行後の残存データベース売上と費用が個別に確認できず、前年同期比較の原因別残差が大きい。",
+      "S01 PDF page 9では表示額による売上総利益から販管費の差引と営業利益に微小差があり、S03にも同様の表示差がある。比較基準には開示営業利益を採用し、直前四半期差引では当該差が相殺される。",
+      "S01–S08の保存本文はtruncated=false。S09・S10の本文、公式質疑応答、KPI詳細ページ、最新の開示一覧は原本未確認であり、非開示とは断定しない。",
+      "S01とS05・S06には関係会社の議決権所有割合の表記差がある。予測に利用せず、どちらかへ修正していない。",
+      "S01の事業別表示変更は全社合計の累計差引を妨げないと判断したが、サービス別の比較可能性は未確立。直接四半期開示を捏造して補っていない。",
+      "S05は関係会社異動による業績影響なしと記載。合併による費用節減や増収を追加していない。",
+      "サービス別収益分解はS01 PDF pages 26–27で省略されている。数量と単価から売上を直接算出できず、独自予測は実績基準の条件付き感応度にとどまる。",
+      "入力予定日2026年11月25日は一次資料で未確認のためannouncement_dateはnull。S10は資料一覧にあるが保存原文が提示されていない。",
+      "営業外収益・特別損益・税負担について対象四半期の根拠ある範囲を設定できず、経常利益と純利益は予測していない。",
+      "対象決算が未発表という収集結果は提示されているが、保存原文だけでは基準日時までの開示の網羅性を確認できない。target_already_announced=falseは提示された収集結果に依拠する。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -8.0,
+            "rate": -0.01000390152159342,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -30.99999999999983,
+            "rate": -0.23005565862708602,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -3.3189999999998463,
+            "rate": -0.004174806007997221,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -68.76699999999988,
+            "rate": -0.39860999205875297,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 0.0,
+            "rate": 0.0,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -12.99999999999983,
+            "rate": -0.09647495361780954,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 4.681000000000154,
+            "rate": 0.005887998470453913,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -50.76699999999988,
+            "rate": -0.2942724485123199,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 8.0,
+            "rate": 0.01000390152159342,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 2.0000000000001705,
+            "rate": 0.014842300556587543,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 12.681000000000154,
+            "rate": 0.01595080294890505,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -35.76699999999988,
+            "rate": -0.20732449555695892,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -3.3189999999998463,
+        "explained_sum": -8.0,
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を金額で分離できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -8.0,
+        "explained_sum": -8.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -68.76699999999988,
+        "explained_sum": -31.0,
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの利益差。売上・原価・販管費の差は観察できるが、移行・季節性・開発費等の原因別金額が未確認。丸め差とは扱わない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -30.99999999999983,
+        "explained_sum": -31.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 4.681000000000154,
+        "explained_sum": 0.0,
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 0.0,
+        "explained_sum": 0.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -50.76699999999988,
+        "explained_sum": -13.0,
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -12.99999999999983,
+        "explained_sum": -13.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 12.681000000000154,
+        "explained_sum": 8.0,
+        "residual": 4.681000000000154,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 8.0,
+        "explained_sum": 8.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -35.76699999999988,
+        "explained_sum": 2.0,
+        "residual": -37.76700000000005,
+        "residual_type": "economic_unexplained",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 2.0000000000001705,
+        "explained_sum": 2.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデルの差額は全て説明。"
+      }
+    ],
+    "conditions": [
+      "base_cogs_add: 直前四半期には商品データベース移行後の原価が既に含まれる。これを基準に運用保守費等の小幅増加だけを置き、移行による費用削減を重ねて計上しない。",
+      "base_data_loss: 従量収入の下押しを全社四半期売上の約1%とする条件付き中心仮定。基本料には同率の減少を掛けず、データ量減少の売上影響額として扱う。",
+      "base_expansion: 新規メーカー、販売レポート、ASN接続の追加寄与をまとめた純増収仮定。サービス別売上構成が非開示のため利用社数の伸び率を売上全体に適用せず、全社四半期売上の約1%に抑える。",
+      "base_sga_add: 先行投資が段階的に費用化する中心条件。追加額は前年第1四半期と直前四半期の販管費水準差に近い規模とし、利益目標から逆算しない。直前四半期に含まれる研究開発費・人件費はそのまま基準に残す。",
+      "bear_cogs_add: 直前四半期の売上原価を維持したうえで、運用保守・通信費等の上振れを約1%追加する。原価の中心が運用保守と償却であるため、従量売上減少に比例する原価削減は想定しない。",
+      "bear_data_loss: 直前四半期の全社売上を起点に、SKU削減・大容量化・配送頻度低下による従量収入への追加下押しを置く。基幹EDIデータ量の微減という記述と整合する、全社四半期売上の約1.5%に相当するストレス仮定。処理量の実測値ではない。",
+      "bear_expansion: 隣接業界メーカー数、販売レポート利用企業数、ASNデータ量の増加を踏まえた純増収。導入調整の長期化を重視し、直前四半期から全社売上の約0.5%の追加寄与に限定する。既存四半期に含まれる成長分は再加算しない。",
+      "bear_sga_add: 研究開発・新規領域への集中投資と人的資本強化が早期に費用化する条件。直前四半期販管費に追加し、上限の規模は前年度研究開発費の約3か月分を参考とする。会社の四半期予算ではない。",
+      "bull_cogs_add: 既存インフラの余力で拡販分を吸収し、売上原価が直前四半期並みにとどまる条件。償却終了や設備削減による追加節減は見込まない。",
+      "bull_data_loss: データ量微減が続くものの追加下押しが小さい場合。全社四半期売上の約0.5%を下押し幅とする。",
+      "bull_expansion: 導入調整が進む場合の純増収仮定。既存サービスの拡販を中心に全社四半期売上の約1.5%を置き、返品サービスの大型案件や未確認の値上げは加算しない。",
+      "bull_sga_add: 先行投資費用の立ち上がりが緩やかな場合。前年度研究開発費の約3か月分に対して約3割の追加規模を置く。投資の中止や費用の資産化を事実として仮定しない。",
+      "四半期の固定料・従量料別収入、処理量、サービス別単価と売上構成は保存原文に非開示。",
+      "期末EDI利用社数は確認できるが、当四半期の期間平均利用社数と前年同月比較は原本未確認。",
+      "直前四半期から対象四半期への季節性をゼロとする基準仮定を置く。季節的変動が強い場合はシナリオ範囲を外れ得る。",
+      "研究開発・人件費・運用保守費の当四半期増分と投資費用化の時期は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期決算短信〔日本基準〕（非連結）（2027年7月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534911.pdf",
+        "published_at": "2026-09-14T15:40:00+09:00",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534911.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S01.txt",
+        "sha256": "b5fb0657c1641c0a2c479f0331ee85bba6fc82fe0b7bf9f500312c28d974ffb6",
+        "text_sha256": "90414b9946b2ee54582c2d2858395d657361fd6b6ec9eb8a73c04df2ec2a8383",
+        "retrieved_at": "2026-11-18T14:45:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 28338,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/23910/140120251125508211.pdf",
+        "published_at": "2025-11-25",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/23910/140120251125508211.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S02.txt",
+        "sha256": "2e317ee5970067419b3885f168f656febadbf3fa81b3015df510425869f172ac",
+        "text_sha256": "2e26c14a9085c46246f739a0d8cdc083d110b6d8b74e631d7cee191c2b62584e",
+        "retrieved_at": "2026-11-18T14:45:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8035,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期第3四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/23910/140120260526547549.pdf",
+        "published_at": "2026-05-27T15:40:00+09:00",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/23910/140120260526547549.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S03.txt",
+        "sha256": "f852ca315313f6abb38e92a3aacdfa2580a34534540b50cdf15275b3bd1dc44f",
+        "text_sha256": "5c637a7dc634c3a78448eba0f0d08ced5de19178c9f35e9a5386e05a1eb4f42c",
+        "retrieved_at": "2026-11-18T14:45:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8522,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 決算説明会資料",
+        "url": "https://www2.jpx.co.jp/disc/23910/140120260929542258.pdf",
+        "published_at": "2026-09-29T16:30:00+09:00",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/23910/140120260929542258.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S04.txt",
+        "sha256": "f880b7834c60e862b23a004fde5b6116340eaa06bd8296178a01a066400551db",
+        "text_sha256": "344ec6e2eeba95c639a8ca2ab6b61e76f16fdb5e1811324f0bd14aa657675240",
+        "retrieved_at": "2026-11-18T14:45:10+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 6513,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "その他の関係会社の異動に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261026556318.pdf",
+        "published_at": "2026-10-26T17:30:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261026556318.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S05.txt",
+        "sha256": "4a0a7844257b953e4510e0d163a565d787bb883d9de11fd4a4cfd3f98d1fff4a",
+        "text_sha256": "63f2c4c447332a92350b34990b5e3dbf9cb4cb792f4a5cbb42c52160e18f5891",
+        "retrieved_at": "2026-11-18T14:45:10+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1918,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "支配株主等に関する事項について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555310.pdf",
+        "published_at": "2026-10-26T15:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555310.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S06.txt",
+        "sha256": "096e9efc40ff9035540fa13692e6e11b57f1fa6c10765bf89b587cddb02cd0c9",
+        "text_sha256": "7654d77a755d6fc616073515a781c1d05a6e4f04b03f84da77cf4fd28871bbb0",
+        "retrieved_at": "2026-11-18T14:45:11+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2054,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "代表取締役の異動に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534942.pdf",
+        "published_at": "2026-09-14T15:40:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260911534942.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S07.txt",
+        "sha256": "84505f2ebdd0895eb2a75e9fe181ae41953133afc882578d870062236b1d199a",
+        "text_sha256": "341608343a5e356e7c743d073b7659b43c24f694e5c97cd475fa7acc5d0eb071",
+        "retrieved_at": "2026-11-18T14:45:11+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 417,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "サービス利用・登録状況（公式トップページ掲載：2026年10月末EDI利用社数）",
+        "url": "https://www.planet-van.co.jp/",
+        "published_at": "2026-11-02",
+        "category": "kpi",
+        "final_url": "https://www.planet-van.co.jp/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S08.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261125\\companies\\2391\\sources\\S08.txt",
+        "sha256": "57c110c44c70f495aaa032f525d359b4820fce669755e46a3c9c7d2d6f6c67a1",
+        "text_sha256": "9b602ec04659f2bc21f791fb999b596b350027fd648f4e75881875c700d3bc5b",
+        "retrieved_at": "2026-11-18T14:45:11+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3409,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "株主・投資家向け情報（証券コード確認）",
+        "url": "https://www.planet-van.co.jp/ir/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T14:45:11+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "IRカレンダー",
+        "url": "https://www.planet-van.co.jp/ir/calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T14:45:11+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy_revenue",
+          "value": 3148.985,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 損益計算書、千円から換算"
+        },
+        {
+          "id": "fy_op",
+          "value": 557.16,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "fy_cogs",
+          "value": 1239.611,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "fy_sga",
+          "value": 1352.213,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "nine_revenue",
+          "value": 2349.297,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "nine_op",
+          "value": 422.41,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "nine_cogs",
+          "value": 915.051,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "nine_sga",
+          "value": 1011.835,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prior_revenue",
+          "value": 795.007,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prior_op",
+          "value": 172.517,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prior_cogs",
+          "value": 295.814,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prior_sga",
+          "value": 326.675,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "fy_rd",
+          "value": 82.12,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 17 研究開発費"
+        },
+        {
+          "id": "bear_data_loss",
+          "value": 12,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4,16、S04 PDF page 3",
+          "rationale": "直前四半期の全社売上を起点に、SKU削減・大容量化・配送頻度低下による従量収入への追加下押しを置く。基幹EDIデータ量の微減という記述と整合する、全社四半期売上の約1.5%に相当するストレス仮定。処理量の実測値ではない。",
+          "sensitivity": "減収仮定が1増えると売上・営業利益が各1減る。費用は別途設定。",
+          "material": true
+        },
+        {
+          "id": "base_data_loss",
+          "value": 8,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4,16、S04 PDF page 3",
+          "rationale": "従量収入の下押しを全社四半期売上の約1%とする条件付き中心仮定。基本料には同率の減少を掛けず、データ量減少の売上影響額として扱う。",
+          "sensitivity": "影響額が1変わると売上・営業利益が逆方向に各1変わる。",
+          "material": true
+        },
+        {
+          "id": "bull_data_loss",
+          "value": 4,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 4、S04 PDF page 3",
+          "rationale": "データ量微減が続くものの追加下押しが小さい場合。全社四半期売上の約0.5%を下押し幅とする。",
+          "sensitivity": "影響額が1増えると売上・営業利益が各1減る。",
+          "material": true
+        },
+        {
+          "id": "bear_expansion",
+          "value": 4,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 5–6",
+          "rationale": "隣接業界メーカー数、販売レポート利用企業数、ASNデータ量の増加を踏まえた純増収。導入調整の長期化を重視し、直前四半期から全社売上の約0.5%の追加寄与に限定する。既存四半期に含まれる成長分は再加算しない。",
+          "sensitivity": "追加売上が1変わると売上・営業利益が同方向に各1変わる。追加運用費は原価増分に含む。",
+          "material": true
+        },
+        {
+          "id": "base_expansion",
+          "value": 8,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 5–6",
+          "rationale": "新規メーカー、販売レポート、ASN接続の追加寄与をまとめた純増収仮定。サービス別売上構成が非開示のため利用社数の伸び率を売上全体に適用せず、全社四半期売上の約1%に抑える。",
+          "sensitivity": "追加寄与が1変わると売上・営業利益が同方向に各1変わる。",
+          "material": true
+        },
+        {
+          "id": "bull_expansion",
+          "value": 12,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 5–6",
+          "rationale": "導入調整が進む場合の純増収仮定。既存サービスの拡販を中心に全社四半期売上の約1.5%を置き、返品サービスの大型案件や未確認の値上げは加算しない。",
+          "sensitivity": "追加寄与が1変わると売上・営業利益が同方向に各1変わる。",
+          "material": true
+        },
+        {
+          "id": "bear_cogs_add",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 9,11、S03 PDF page 8",
+          "rationale": "直前四半期の売上原価を維持したうえで、運用保守・通信費等の上振れを約1%追加する。原価の中心が運用保守と償却であるため、従量売上減少に比例する原価削減は想定しない。",
+          "sensitivity": "追加原価が1増えると営業利益が1減る。",
+          "material": true
+        },
+        {
+          "id": "base_cogs_add",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 9,11、S03 PDF page 8",
+          "rationale": "直前四半期には商品データベース移行後の原価が既に含まれる。これを基準に運用保守費等の小幅増加だけを置き、移行による費用削減を重ねて計上しない。",
+          "sensitivity": "追加原価が1変わると営業利益が逆方向に1変わる。",
+          "material": true
+        },
+        {
+          "id": "bull_cogs_add",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 11",
+          "rationale": "既存インフラの余力で拡販分を吸収し、売上原価が直前四半期並みにとどまる条件。償却終了や設備削減による追加節減は見込まない。",
+          "sensitivity": "原価が想定を1超えると営業利益が1減る。",
+          "material": true
+        },
+        {
+          "id": "bear_sga_add",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 9,17、S04 PDF page 8",
+          "rationale": "研究開発・新規領域への集中投資と人的資本強化が早期に費用化する条件。直前四半期販管費に追加し、上限の規模は前年度研究開発費の約3か月分を参考とする。会社の四半期予算ではない。",
+          "sensitivity": "追加費用が1増えると営業利益が1減る。追加費用の発生時期が主要感応度。",
+          "material": true
+        },
+        {
+          "id": "base_sga_add",
+          "value": 12,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 9,17、S02/S03 PDF page 8、S04 PDF page 8",
+          "rationale": "先行投資が段階的に費用化する中心条件。追加額は前年第1四半期と直前四半期の販管費水準差に近い規模とし、利益目標から逆算しない。直前四半期に含まれる研究開発費・人件費はそのまま基準に残す。",
+          "sensitivity": "追加費用が1変わると営業利益が逆方向に1変わる。",
+          "material": true
+        },
+        {
+          "id": "bull_sga_add",
+          "value": 6,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 9,17、S04 PDF page 8",
+          "rationale": "先行投資費用の立ち上がりが緩やかな場合。前年度研究開発費の約3か月分に対して約3割の追加規模を置く。投資の中止や費用の資産化を事実として仮定しない。",
+          "sensitivity": "費用化が1前倒しになると営業利益が1減る。",
+          "material": true
+        },
+        {
+          "id": "g_h1_revenue",
+          "value": 1575,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "g_h1_op",
+          "value": 225,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "g_h1_ordinary",
+          "value": 245,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "g_h1_net",
+          "value": 170,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "g_fy_revenue",
+          "value": 3195,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期予想"
+        },
+        {
+          "id": "g_fy_op",
+          "value": 485,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期予想"
+        },
+        {
+          "id": "g_fy_ordinary",
+          "value": 515,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期予想"
+        },
+        {
+          "id": "g_fy_net",
+          "value": 355,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期予想"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prev_revenue",
+          "formula": "fy_revenue-nine_revenue"
+        },
+        {
+          "id": "prev_op",
+          "formula": "fy_op-nine_op"
+        },
+        {
+          "id": "prev_cogs",
+          "formula": "fy_cogs-nine_cogs"
+        },
+        {
+          "id": "prev_sga",
+          "formula": "fy_sga-nine_sga"
+        },
+        {
+          "id": "historical_revenue_gap",
+          "formula": "prev_revenue-prior_revenue"
+        },
+        {
+          "id": "historical_op_gap",
+          "formula": "prev_op-prior_op"
+        },
+        {
+          "id": "historical_cogs_gap",
+          "formula": "prev_cogs-prior_cogs"
+        },
+        {
+          "id": "historical_sga_gap",
+          "formula": "prev_sga-prior_sga"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "prev_revenue-bear_data_loss+bear_expansion"
+        },
+        {
+          "id": "bear_cogs",
+          "formula": "prev_cogs+bear_cogs_add"
+        },
+        {
+          "id": "bear_sga",
+          "formula": "prev_sga+bear_sga_add"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cogs-bear_sga"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "prev_revenue-base_data_loss+base_expansion"
+        },
+        {
+          "id": "base_cogs",
+          "formula": "prev_cogs+base_cogs_add"
+        },
+        {
+          "id": "base_sga",
+          "formula": "prev_sga+base_sga_add"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cogs-base_sga"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "prev_revenue-bull_data_loss+bull_expansion"
+        },
+        {
+          "id": "bull_cogs",
+          "formula": "prev_cogs+bull_cogs_add"
+        },
+        {
+          "id": "bull_sga",
+          "formula": "prev_sga+bull_sga_add"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cogs-bull_sga"
+        },
+        {
+          "id": "company_h1_revenue",
+          "formula": "g_h1_revenue"
+        },
+        {
+          "id": "company_h1_op",
+          "formula": "g_h1_op"
+        },
+        {
+          "id": "company_fy_revenue",
+          "formula": "g_fy_revenue"
+        },
+        {
+          "id": "company_fy_op",
+          "formula": "g_fy_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "全社サービス収入：移行後の既存基盤と追加拡販",
+              "revenue": "bear_revenue",
+              "operating_profit": "bear_op"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "全社サービス収入：移行後の既存基盤と追加拡販",
+              "revenue": "base_revenue",
+              "operating_profit": "base_op"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "全社サービス収入：移行後の既存基盤と追加拡販",
+              "revenue": "bull_revenue",
+              "operating_profit": "bull_op"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 795.007,
+          "operating_profit": 172.517,
+          "ordinary_profit": 178.945,
+          "net_profit": 121.026,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "日本基準_全社合計_認識測定変更なし",
+          "presentation_version": "事業別補足情報あり_通期表示変更前",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2,8,10"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 2349.297,
+          "operating_profit": 422.41,
+          "ordinary_profit": 449.475,
+          "net_profit": 304.565,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "日本基準_全社合計_認識測定変更なし",
+          "presentation_version": "事業別補足情報あり_通期表示変更前",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,8,10"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 3148.985,
+          "operating_profit": 557.16,
+          "ordinary_profit": 595.544,
+          "net_profit": 412.334,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "日本基準_全社合計_認識測定変更なし",
+          "presentation_version": "EDI及びデータベース区分の一括表示後",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,9–10,16",
+          "comparability_note": "S01 page 16の変更は事業別売上・原価の一括表示。S03の損益計算書も全社合計であり、全社売上・利益の認識測定変更は示されていないため、この合計項目に限り累計差引を採用。事業別の差引は行わない。"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "従量課金と物流効率化",
+          "mechanism": "月次基本料と通信処理料から成る収入のうち、SKU削減・大容量化・配送頻度低下が従量収入を押し下げる。消費財の販売金額上昇をそのままEDI売上増加とは扱わない。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4,16、S04 PDF page 3",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "固定料・従量料の構成比と実処理量が非開示のため、売上影響額の条件付き感応度として数量影響を近似。"
+        },
+        {
+          "name": "顧客・接続の拡大",
+          "mechanism": "隣接業界メーカー、販売レポート利用企業、ASNデータ量の拡大が基本料・従量収入を支える。ただし接続調整に時間を要し、数量伸長と売上計上時期は一致しない。",
+          "source_ids": [
+            "S04",
+            "S08"
+          ],
+          "locator": "S04 PDF pages 5–6、S08 新着情報2026年11月2日",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "S08の期末利用社数だけでは期間平均利用数や単価を推定できない。各サービスの売上構成も非開示。"
+        },
+        {
+          "name": "PRS移行と比較基準",
+          "mechanism": "商品データベース終了後の直前四半期を基準とし、移行に伴う売上減少・利用料収受・費用変化を追加で二重計上しない。PRS自体の売上や持分法参考利益は単体損益に加算しない。",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 4,28–29、S03 PDF pages 4–5",
+          "calculation_ids": [
+            "prev_revenue",
+            "prev_cogs",
+            "prev_sga"
+          ],
+          "not_quantified_reason": "PRS向け利用料と残存データベース売上の個別金額は確認できない。前年同期から直前四半期までの変化の原因別金額は残差に残す。"
+        },
+        {
+          "name": "運用保守費と先行投資",
+          "mechanism": "運用保守・償却を含む直前四半期原価を引き継ぎ、研究開発・新規領域・人的資本への追加費用を販管費に上乗せする。営業利益は売上から原価と販管費を差し引いて算出。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 9,11,17、S04 PDF page 8",
+          "calculation_ids": [
+            "bear_cogs",
+            "base_cogs",
+            "bull_cogs",
+            "bear_sga",
+            "base_sga",
+            "bull_sga",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "投資費用の四半期配分と新規ソフトウエアの供用開始日は未確認。追加費用は過去の費用規模を用いた独自仮定。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "bear_data_loss-bear_data_loss-bear_data_loss",
+              "reason": "直前四半期からの条件付き減収"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "bear_expansion",
+              "reason": "直前四半期に未包含の純増収仮定"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を金額で分離できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "bear_data_loss-bear_data_loss-bear_data_loss",
+              "reason": "物流効率化による追加減収仮定"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "bear_expansion",
+              "reason": "顧客・接続拡大による追加収入仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "bear_expansion-bear_data_loss",
+              "reason": "売上変化の寄与。費用影響は別掲"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-bear_cogs",
+              "reason": "運用保守等の追加費用"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-bear_sga",
+              "reason": "研究開発・人的資本等の追加費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの利益差。売上・原価・販管費の差は観察できるが、移行・季節性・開発費等の原因別金額が未確認。丸め差とは扱わない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "bear_expansion-bear_data_loss",
+              "reason": "追加売上の純変化"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-bear_cogs",
+              "reason": "運用保守等の追加費用"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-bear_sga",
+              "reason": "先行投資の費用化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデルの差額は全て説明。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "base_data_loss-base_data_loss-base_data_loss",
+              "reason": "直前四半期からの条件付き減収"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "base_expansion",
+              "reason": "直前四半期に未包含の純増収仮定"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "base_data_loss-base_data_loss-base_data_loss",
+              "reason": "物流効率化による追加減収仮定"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "base_expansion",
+              "reason": "顧客・接続拡大による追加収入仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "base_expansion-base_data_loss",
+              "reason": "売上変化の寄与。費用影響は別掲"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-base_cogs",
+              "reason": "運用保守等の追加費用"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-base_sga",
+              "reason": "研究開発・人的資本等の追加費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "base_expansion-base_data_loss",
+              "reason": "追加売上の純変化"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-base_cogs",
+              "reason": "運用保守等の追加費用"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-base_sga",
+              "reason": "先行投資の費用化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデルの差額は全て説明。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "bull_data_loss-bull_data_loss-bull_data_loss",
+              "reason": "直前四半期からの条件付き減収"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "bull_expansion",
+              "reason": "直前四半期に未包含の純増収仮定"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの売上差。PRS移行、既存EDI変化、季節性の個別寄与を分離できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "従量収入の追加下押し",
+              "formula": "bull_data_loss-bull_data_loss-bull_data_loss",
+              "reason": "物流効率化による追加減収仮定"
+            },
+            {
+              "label": "拡販の追加寄与",
+              "formula": "bull_expansion",
+              "reason": "顧客・接続拡大による追加収入仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を説明。未知の季節性が存在しないとの実証ではない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "bull_expansion-bull_data_loss",
+              "reason": "売上変化の寄与。費用影響は別掲"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-bull_cogs",
+              "reason": "追加原価を吸収する条件"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-bull_sga",
+              "reason": "先行投資費用の緩やかな立ち上がり"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期から直前四半期までの利益差。費用科目の差は確認できるが原因別の定量説明が不足。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "従量収入と拡販",
+              "formula": "bull_expansion-bull_data_loss",
+              "reason": "追加売上の純変化"
+            },
+            {
+              "label": "追加原価",
+              "formula": "prev_cogs-bull_cogs",
+              "reason": "追加原価を吸収する条件"
+            },
+            {
+              "label": "追加販管費",
+              "formula": "prev_sga-bull_sga",
+              "reason": "先行投資の費用化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデルの差額は全て説明。"
+        }
+      ],
+      "company_guidance": "S01の公表会社予想は中間累計と通期であり、第1四半期単独予想ではない。S04で通期売上・営業利益・純利益の同額を確認した。提示資料内ではその後の修正は確認できないが、基準日時までの開示一覧の網羅性が不足するため最新性はunverified。四等分や会社予想からの差引きを独自予測に使用していない。",
+      "consensus": "未確認。提示保存原文に公表市場コンセンサスは含まれていない。",
+      "independent_forecast": "商品データベース移行後の直前四半期実績を起点に、従量収入の下押し、顧客・接続拡大、運用原価、先行投資費用を別々に置く条件付き差分積上げ。数量×単価の完全な積上げではなく、定性的な事業動向と実績規模から設定した感応度シナリオであり、統計的信頼区間ではない。直前四半期並みの季節的水準を仮置きするため確度は低い。経常利益・純利益は営業外収益の計上時期、特別損益、税負担の四半期根拠が不足するためnull。",
+      "narrative": [
+        {
+          "heading": "条件付き中心予測",
+          "text": "中心ケースは売上{{value:base_revenue}}、営業利益{{value:base_op}}。顧客・接続拡大が物流効率化による従量収入の減少を補う一方、先行投資の費用化が営業利益を抑える。弱気ケースは売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気ケースは売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4,9,11,17、S03 PDF page 8、S04 PDF pages 3,5–8"
+        },
+        {
+          "heading": "費用から算出した利益",
+          "text": "中心ケースの売上原価は{{value:base_cogs}}、販管費は{{value:base_sga}}。直前四半期の費用実績を基準に追加費用を見積もり、営業利益を算出した。会社の減益予想に一致させるための費用逆算は行っていない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 9,11,17、S03 PDF page 8、S04 PDF page 8"
+        },
+        {
+          "heading": "比較に残る不確実性",
+          "text": "前年同期から直前四半期までの売上差{{value:historical_revenue_gap}}と営業利益差{{value:historical_op_gap}}は、原因別に十分説明できないため残差として残した。移行後の基準を使うことでPRS移行効果の二重計上を避ける一方、季節性とサービス構成の変化を完全には分離できない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 4,9,16、S02 PDF page 8、S03 PDF pages 4–5,8"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "会社は中間累計売上{{value:company_h1_revenue}}、営業利益{{value:company_h1_op}}、通期売上{{value:company_fy_revenue}}、営業利益{{value:company_fy_op}}を公表している。これらは対象四半期単独の数値ではなく、独自シナリオの算式にも含めていない。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1、S04 PDF page 8"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "四半期の固定料・従量料別収入、処理量、サービス別単価と売上構成は保存原文に非開示。",
+        "期末EDI利用社数は確認できるが、当四半期の期間平均利用社数と前年同月比較は原本未確認。",
+        "研究開発・人件費・運用保守費の当四半期増分と投資費用化の時期は未確認。",
+        "直前四半期から対象四半期への季節性をゼロとする基準仮定を置く。季節的変動が強い場合はシナリオ範囲を外れ得る。"
+      ],
+      "material_unresolved": [
+        "入力予定日2026年11月25日は一次資料で未確認のためannouncement_dateはnull。S10は資料一覧にあるが保存原文が提示されていない。",
+        "対象決算が未発表という収集結果は提示されているが、保存原文だけでは基準日時までの開示の網羅性を確認できない。target_already_announced=falseは提示された収集結果に依拠する。",
+        "S01–S08の保存本文はtruncated=false。S09・S10の本文、公式質疑応答、KPI詳細ページ、最新の開示一覧は原本未確認であり、非開示とは断定しない。",
+        "サービス別収益分解はS01 PDF pages 26–27で省略されている。数量と単価から売上を直接算出できず、独自予測は実績基準の条件付き感応度にとどまる。",
+        "PRS向け利用料、移行後の残存データベース売上と費用が個別に確認できず、前年同期比較の原因別残差が大きい。",
+        "S01の事業別表示変更は全社合計の累計差引を妨げないと判断したが、サービス別の比較可能性は未確立。直接四半期開示を捏造して補っていない。",
+        "S01 PDF page 9では表示額による売上総利益から販管費の差引と営業利益に微小差があり、S03にも同様の表示差がある。比較基準には開示営業利益を採用し、直前四半期差引では当該差が相殺される。",
+        "S01とS05・S06には関係会社の議決権所有割合の表記差がある。予測に利用せず、どちらかへ修正していない。",
+        "S05は関係会社異動による業績影響なしと記載。合併による費用節減や増収を追加していない。",
+        "営業外収益・特別損益・税負担について対象四半期の根拠ある範囲を設定できず、経常利益と純利益は予測していない。"
+      ],
+      "guidance_records": [
+        {
+          "id": "guidance_h1_revenue",
+          "metric": "revenue",
+          "value_ref": "g_h1_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "g_h1_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "g_h1_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_net",
+          "metric": "net_profit",
+          "value_ref": "g_h1_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 第2四半期累計予想"
+        },
+        {
+          "id": "guidance_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "g_fy_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1、S04 PDF page 8で同額を再確認"
+        },
+        {
+          "id": "guidance_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "g_fy_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1、S04 PDF page 8で同額を再確認"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "g_fy_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期予想"
+        },
+        {
+          "id": "guidance_fy_net",
+          "metric": "net_profit",
+          "value_ref": "g_fy_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T15:40:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1、S04 PDF page 8で同額を再確認"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "PRS向け利用料、移行後の残存データベース売上と費用が個別に確認できず、前年同期比較の原因別残差が大きい。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "S01 PDF page 9では表示額による売上総利益から販管費の差引と営業利益に微小差があり、S03にも同様の表示差がある。比較基準には開示営業利益を採用し、直前四半期差引では当該差が相殺される。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "S01–S08の保存本文はtruncated=false。S09・S10の本文、公式質疑応答、KPI詳細ページ、最新の開示一覧は原本未確認であり、非開示とは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "S01とS05・S06には関係会社の議決権所有割合の表記差がある。予測に利用せず、どちらかへ修正していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "S01の事業別表示変更は全社合計の累計差引を妨げないと判断したが、サービス別の比較可能性は未確立。直接四半期開示を捏造して補っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "S05は関係会社異動による業績影響なしと記載。合併による費用節減や増収を追加していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "サービス別収益分解はS01 PDF pages 26–27で省略されている。数量と単価から売上を直接算出できず、独自予測は実績基準の条件付き感応度にとどまる。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "入力予定日2026年11月25日は一次資料で未確認のためannouncement_dateはnull。S10は資料一覧にあるが保存原文が提示されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "営業外収益・特別損益・税負担について対象四半期の根拠ある範囲を設定できず、経常利益と純利益は予測していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "対象決算が未発表という収集結果は提示されているが、保存原文だけでは基準日時までの開示の網羅性を確認できない。target_already_announced=falseは提示された収集結果に依拠する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "base_cogs_add: 直前四半期には商品データベース移行後の原価が既に含まれる。これを基準に運用保守費等の小幅増加だけを置き、移行による費用削減を重ねて計上しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "base_data_loss: 従量収入の下押しを全社四半期売上の約1%とする条件付き中心仮定。基本料には同率の減少を掛けず、データ量減少の売上影響額として扱う。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "base_expansion: 新規メーカー、販売レポート、ASN接続の追加寄与をまとめた純増収仮定。サービス別売上構成が非開示のため利用社数の伸び率を売上全体に適用せず、全社四半期売上の約1%に抑える。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "base_sga_add: 先行投資が段階的に費用化する中心条件。追加額は前年第1四半期と直前四半期の販管費水準差に近い規模とし、利益目標から逆算しない。直前四半期に含まれる研究開発費・人件費はそのまま基準に残す。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bear_cogs_add: 直前四半期の売上原価を維持したうえで、運用保守・通信費等の上振れを約1%追加する。原価の中心が運用保守と償却であるため、従量売上減少に比例する原価削減は想定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bear_data_loss: 直前四半期の全社売上を起点に、SKU削減・大容量化・配送頻度低下による従量収入への追加下押しを置く。基幹EDIデータ量の微減という記述と整合する、全社四半期売上の約1.5%に相当するストレス仮定。処理量の実測値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bear_expansion: 隣接業界メーカー数、販売レポート利用企業数、ASNデータ量の増加を踏まえた純増収。導入調整の長期化を重視し、直前四半期から全社売上の約0.5%の追加寄与に限定する。既存四半期に含まれる成長分は再加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bear_sga_add: 研究開発・新規領域への集中投資と人的資本強化が早期に費用化する条件。直前四半期販管費に追加し、上限の規模は前年度研究開発費の約3か月分を参考とする。会社の四半期予算ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bull_cogs_add: 既存インフラの余力で拡販分を吸収し、売上原価が直前四半期並みにとどまる条件。償却終了や設備削減による追加節減は見込まない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bull_data_loss: データ量微減が続くものの追加下押しが小さい場合。全社四半期売上の約0.5%を下押し幅とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bull_expansion: 導入調整が進む場合の純増収仮定。既存サービスの拡販を中心に全社四半期売上の約1.5%を置き、返品サービスの大型案件や未確認の値上げは加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "bull_sga_add: 先行投資費用の立ち上がりが緩やかな場合。前年度研究開発費の約3か月分に対して約3割の追加規模を置く。投資の中止や費用の資産化を事実として仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "四半期の固定料・従量料別収入、処理量、サービス別単価と売上構成は保存原文に非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "期末EDI利用社数は確認できるが、当四半期の期間平均利用社数と前年同月比較は原本未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "直前四半期から対象四半期への季節性をゼロとする基準仮定を置く。季節的変動が強い場合はシナリオ範囲を外れ得る。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2391",
+      "company_name": "株式会社プラネット",
+      "kind": "condition",
+      "message": "研究開発・人件費・運用保守費の当四半期増分と投資費用化の時期は未確認。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/2391/result.json": "f965d779331c9c13c7540822b20b3a74ca09e0bd5d8c7a0c04fd09951f4351c5",
+    "reports/2391.md": "359c73c67cc46917d14a0ac0033d4b28e6e5ca5dddd2e7bb0c5f59a39c31fa38"
+  }
+}

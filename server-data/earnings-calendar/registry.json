@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-11-18T00:28:41.928829+00:00",
+  "updatedAt": "2026-11-18T14:52:06+09:00",
   "period": {
     "from": "2026-11-01",
     "to": "2027-04-30"
@@ -13,8 +13,8 @@
     "master": 3694,
     "registeredCompanies": 3016,
     "confirmedCompanies": 3015,
-    "officialIr": 0,
-    "exchange": 3015,
+    "officialIr": 1,
+    "exchange": 3014,
     "provisional": 1,
     "unknown": 679,
     "withoutCandidate": 678,
@@ -22,7 +22,7 @@
     "checked": 3694,
     "notChecked": 0,
     "changedCompanies": 0,
-    "periodUnverified": 3262,
+    "periodUnverified": 3261,
     "viewerMatches": {
       "matched": 3610,
       "name_mismatch": 84
@@ -170230,21 +170230,45 @@
         "quarter": 2
       },
       "quarter": 2,
-      "targetConfirmed": false,
-      "periodBasis": "fiscal_calendar_unverified",
-      "status": "exchange",
-      "confirmationStatus": "exchange",
-      "source": "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show",
-      "checkedAt": "2026-11-18T00:20:42.002985+00:00",
-      "sourcePublishedAt": null,
-      "updatedAt": "2026-11-18T00:28:31.558908+00:00",
+      "targetConfirmed": true,
+      "periodBasis": "explicit",
+      "status": "official_ir",
+      "confirmationStatus": "official_ir",
+      "source": "https://contents.xj-storage.jp/xcontents/AS01800/7965f60e/2d4a/424a/84e8/9701f909413c/140120261110572262.pdf",
+      "checkedAt": "2026-11-18T14:52:06+09:00",
+      "sourcePublishedAt": "2026-11-11T15:30:00+09:00",
+      "updatedAt": "2026-11-18T14:52:06+09:00",
       "actualDate": null,
       "codeAliases": [],
-      "sourceHash": "35919f3512831fad50a7840694acf479fe97fe93b82f670cdf13b3aa79945f33",
-      "note": "発表日とQ表記は取引所届出。決算年は期末日との暦対応であり、決算期変更の有無・対象年は未照合。",
+      "sourceHash": "bc75b6a5f7bea05aef34374907e7dd9a068da8d0c7572f5bff8b8998b63ebdac",
+      "note": "11月11日公表の決算発表日のお知らせ本文1ページで、12月4日発表・2027年3月期第2四半期を確認。予測対象は7〜9月単独。",
       "firstRegisteredAt": "2026-11-18T00:28:31.558908+00:00",
-      "previousRegisteredAt": null,
-      "history": []
+      "previousRegisteredAt": "2026-11-18T00:28:31.558908+00:00",
+      "history": [
+        {
+          "changedAt": "2026-11-18T14:52:06+09:00",
+          "before": {
+            "code": "9008",
+            "companyName": "京王電鉄",
+            "date": "2026-12-04",
+            "announcementTime": null,
+            "target": {
+              "fiscalYearEnd": "2027-03-31",
+              "quarter": 2
+            },
+            "status": "exchange",
+            "confirmationStatus": "exchange",
+            "actualDate": null,
+            "targetConfirmed": false,
+            "periodBasis": "fiscal_calendar_unverified",
+            "note": "発表日とQ表記は取引所届出。決算年は期末日との暦対応であり、決算期変更の有無・対象年は未照合。",
+            "source": "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show",
+            "checkedAt": "2026-11-18T00:20:42.002985+00:00",
+            "sourcePublishedAt": null,
+            "updatedAt": "2026-11-18T00:28:31.558908+00:00"
+          }
+        }
+      ]
     },
     {
       "id": "9678:2026-10-31:Q4",

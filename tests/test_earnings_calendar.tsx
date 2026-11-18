@@ -75,10 +75,11 @@ test("Markdown blocks raw HTML, script URLs, file links and tracking images",()=
 test("versioned artifacts keep exact source rates and distinguish completed reviews",()=>{
   const index=JSON.parse(readFileSync("server-data/earnings-calendar/index.json","utf8")) as ForecastVersion[];
   const schedule=JSON.parse(readFileSync("server-data/earnings-calendar/schedules.json","utf8"));
-  const twelve=schedule.filter((r:any)=>r.date==="2026-12-04");assert.equal(twelve.length,12);
-  assert.ok(twelve.every((r:any)=>r.status==="unconfirmed"));
   const original=index.filter(v=>v.version.startsWith('20261204_asof20261117_1709_quality_v2'));
   assert.equal(original.length,12);assert.ok(original.every(v=>v.reviewExecuted));
+  const originalCodes=new Set(original.map(v=>v.code));
+  const twelve=schedule.filter((r:any)=>r.date==="2026-12-04"&&originalCodes.has(r.code));assert.equal(twelve.length,12);
+  assert.ok(twelve.every((r:any)=>r.status==="unconfirmed"));
   for(const v of index){
     const d=JSON.parse(readFileSync(`server-data/earnings-calendar/details/${v.id}.json`,"utf8"));
     assert.equal(v.revenue,d.result.scenarios.base.revenue);

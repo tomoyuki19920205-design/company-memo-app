@@ -70,13 +70,21 @@ test('legacy confirmed targets remain compatible, aliases alone cannot suppress 
   assert.equal(extract([schedule({targetConfirmed:undefined})],[forecast()]).count,0);
   assert.equal(extract([schedule({codeAliases:['1111']})],[forecast({code:'1111'})]).count,1);
 });
-test('real registry: December 4 excludes exactly twelve forecasts and exports only Keio without an inferred fiscal year',async()=>{
+test('real registry: original December 4 forecasts stay excluded and Keio follows primary-source confirmation',async()=>{
   const read=async<T,>(name:string):Promise<T>=>JSON.parse(await readFile(`server-data/earnings-calendar/${name}.json`,'utf8'));
   const [registry,legacy,index]=await Promise.all([read<ScheduleRegistry>('registry'),read<CalendarSchedule[]>('schedules'),read<ForecastVersion[]>('index')]);
   const schedules=applyIdentityReviews(mergeSchedules(legacy,registry.schedules),registry);
-  const result=extractForecastTargets(date,schedules,index,registry.companies??[]);
+  // Keep the original forecast population fixed while the live store gains new versions.
+  const original=index.filter(v=>v.version.startsWith('20261204_asof20261117_1709_quality_v2'));
+  assert.equal(original.length,12);
+  const result=extractForecastTargets(date,schedules,original,registry.companies??[]);
   assert.equal(result.total,13);assert.equal(result.forecasted,12);assert.equal(result.count,1);assert.equal(result.excluded.length,0);
-  assert.deepEqual(result.candidates.map(c=>[c.code,c.company_name,c.fiscal_year]),[['9008','京王電鉄','']]);
+  const keio=schedules.find(s=>s.code==='9008'&&s.date===date)!;
+  assert.deepEqual(result.candidates.map(c=>[c.code,c.company_name,c.fiscal_year]),[['9008','京王電鉄',keio.targetConfirmed?keio.target!.fiscalYearEnd.slice(0,4):'']]);
+  if(keio.targetConfirmed){
+    assert.deepEqual(keio.target,{fiscalYearEnd:'2027-03-31',quarter:2});
+    assert.match(keio.source??'',/^https:\/\/contents\.xj-storage\.jp\/xcontents\/AS01800\//);
+  }
   assert.deepEqual(result.forecastedCodes,['1873','2353','2910','3172','3662','3816','436A','4707','6040','6696','7265','9678']);
   const empty=extractForecastTargets('2026-12-05',schedules,index,registry.companies??[]);assert.equal(empty.count,0);
   const busy=extractForecastTargets('2026-11-13',schedules,index,registry.companies??[]);assert.equal(busy.total,769);assert.equal(busy.count,769);assert.equal(new Set(busy.candidates.map(c=>c.code)).size,769);
