@@ -1,0 +1,1205 @@
+{
+  "id": "3071-afe3f707e84902b676e083b9deb3116c12118cca0d32f0f44d44ae5d7cb685e5",
+  "code": "3071",
+  "companyName": "株式会社ストリーム",
+  "announcementDate": "2026-12-08",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3071-review-4000c950f3675cc8 · afe3f707",
+  "savedAt": "2026-11-18T16:14:47+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3071 株式会社ストリーム｜2027-01-31期 Q3単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n未確認。S01・S05は資料一覧に記載されているが、保存原文が提示されておらず、会社予想の金額・対象期間・定義・修正状況を確認できない。guidance_recordsには登録しない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n算定不能。保存原文には対象企業の売上、利益、数量、価格、セグメント構成、採算、設備、費用の確認値がなく、根拠ある仮定範囲を設定できない。売上高・営業利益・経常利益・純利益の予測を提示せず、scenariosを空とする。会社予想からの差引き推計も行っていない。\n\n## 予測の可否\n対象は指定条件に従う第3四半期単独。提示された保存原文は上場株式数等の変更に関するJPX資料の一部のみであり、対象企業の業績予測に必要な基礎数値を確認できない。条件付きシナリオも、数量・価格・構成・採算の裏付けがないため設定できない。\n\n## 原文と調査メタデータの区別\n資料一覧とdiscoveryの確認記録は提示されているが、決算短信や説明資料の原文に代わる業績数値の根拠には用いていない。比較実績と予測がともに未算定のため、各ブリッジの残差はゼロではなく未算定とした。\n\n## エラー・未解決事項\n- S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。\n- S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。\n- S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。\n- bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。\n- documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。\n- target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 企業固有の業績要因なし\n- 前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。\n- 同一会計・連結範囲の比較四半期不足: qoq\n- 同一会計・連結範囲の比較四半期不足: yoy\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。\n- 当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。\n- 資料確認未了: already_announced\n- 資料確認未了: company_guidance\n- 資料確認未了: historical\n- 資料確認未了: identity\n- 資料確認未了: latest_results\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n- レビューへ渡す原文に省略あり: S11\n- S11の対象企業掲載行を見落としている。名称「ストリーム」とコード3071の対応は原文で確認できる。material_unresolved、coverage.identity、再計算結果および自動指摘の関連記録を見直すこと。ただし、正式商号・決算期・会計基準・連結範囲までこの行で確認した扱いにはしない。\n- 業績原資料と入力・算式・全シナリオが欠落し、独立予測として評価できない。取得エラーは会社による非開示を意味しない。S11は株式数等の資料であり業績資料の代替にならない。\n- S11の取得日時は基準日時後だが、本文の発行日は2026年10月20日であり、基準日時以前の資料であることを確認できる。取得日時だけで除外する必要はない。他資料の公表日・内容はメタデータから原文確認済みに格上げしない。\n- 子会社債権取立不能に関する直接開示がなく、損失計上と既存引当金・連結調整・会社予想との関係を確認できない。現段階で損失額を予測へ加算・減算する根拠はない。\n- 12件のブリッジは比較区分を示すだけで、増減説明は成立していない。残差nullをゼロや丸め差に置換せず、比較実績・予測・要因別金額が揃った後に残差を算定し分類する必要がある。\n- guidance_recordsとcompany_guidance_comparisonsは空だが、S01・S05という候補は存在する。本文未確認として候補を保持し、対象期間と改定履歴を確認すること。現在は会社予想との乖離自体が算定不能であり、乖離を誤りとは判定しない。\n- target_already_announced=falseを裏付ける基準日時までの公表状況と訂正・重要開示の確認がない。未発見を未公表・不存在と断定せず、状態未確認として扱う必要がある。\n\n## 条件・不確実性\n記録なし。独立検証済みを意味しません。\n\n## 根拠・保存記録\n- S01 [2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www.stream-jp.com/pdf/tansin202602.pdf) / 公表 2026-09-08 / unavailable / SHA-256 `なし`\n- S02 [2027年1月期 第1四半期決算短信〔日本基準〕（連結）（公式掲載ページ、直接PDF未確認）](https://www.stream-jp.com/ir/library.html) / 公表 2026-06-08 / unavailable / SHA-256 `なし`\n- S03 [2026年1月期 第3四半期決算短信〔日本基準〕（連結）](https://www.stream-jp.com/pdf/tansin202503.pdf) / 公表 2025-12-08 / unavailable / SHA-256 `なし`\n- S04 [2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www.stream-jp.com/pdf/tansin202502.pdf) / 公表 2025-09-08 / unavailable / SHA-256 `なし`\n- S05 [2026年1月期 決算短信〔日本基準〕（連結）（2027年1月期会社予想を含む）](https://www.stream-jp.com/pdf/tansin202504.pdf) / 公表 2026-03-13 / unavailable / SHA-256 `なし`\n- S06 [2027年1月期 第2四半期（中間期）決算関連資料（公式掲載ページ、直接PDF未確認）](https://www.stream-jp.com/ir/library/session.html) / 公表 2026-09-11 / unavailable / SHA-256 `なし`\n- S07 [2026年1月期 決算関連資料](https://www.stream-jp.com/pdf/press260327.pdf) / 公表 2026-03-27 / unavailable / SHA-256 `なし`\n- S08 [有価証券報告書 第27期（2025年2月1日～2026年1月31日）](https://www.stream-jp.com/pdf/yuuka022.pdf) / 公表 2026-04-22 / unavailable / SHA-256 `なし`\n- S09 [2026年度ニュース一覧（7月17日の子会社債権取立不能等の掲載）](https://www.stream-jp.com/ir/news/2026.html) / 公表  / unavailable / SHA-256 `なし`\n- S10 [投資家情報・株式情報](https://www.stream-jp.com/ir/) / 公表  / unavailable / SHA-256 `なし`\n- S11 [JPX 2026年9月分 新株予約権の行使等に伴う上場株式数等の変更](https://www.jpx.co.jp/listing/co/t13vrt000000nsy7-att/HP-2026.9.pdf) / 公表 2026-10-20 / retrieved / SHA-256 `04cc35f6dab43d3498f3adabd4969581d62208cae0a19a74bf0559eae63bb019`\n- S12 [IRカレンダー](https://www.stream-jp.com/ir/calendar.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](3071_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 3071 株式会社ストリーム 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n業績予測は基礎資料・入力・算式が欠落しており検証未了。一方、提示されたS11の25ページにはストリーム（3071）が掲載されており、生成担当の「22ページ途中までで対象企業の行がない」という説明は誤り。資料範囲と企業照合の記録は修正が必要だが、業績予測数値を設定・変更する根拠はない。公式発表日の未確認は経済的品質判定から除外した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | fail | inputsは空であり業績数値の転記一致は検証不能。ただし、S11に対象企業の掲載行がないという資料認識は原文と矛盾する。25ページで名称・コードおよび月末現在上場株式数28,525,000株を確認できる。この株数は売上・利益の入力値ではない。 | S11 PDF page 25 |\n| 2 | unresolved | 指定された2026年8月1日～10月31日の第3四半期単独、日本基準・連結・百万円について、決算原文による確認ができない。当期Q2単独は中間累計－Q1累計、前年Q3単独はQ3累計－中間累計で導出する必要があるが、S01～S04本文と訂正・会計方針・連結範囲の情報がない。 |   |\n| 3 | unresolved | assumptionsとdriversは空で、material=trueの登録仮定は0件。したがってassumption_reviewsの対象はないが、重要仮定の合理性を合格とは判定できない。企業固有の数量・価格・商品構成・費用の数値根拠もない。diagnostic_perturbationの提示もない。 |   |\n| 4 | unresolved | calculationsとscenariosが空で、利益率・費用の設定や逆算を検証する対象がない。提示モデルに逆算式は見当たらないが、経済的合理性を確認したことにはならない。 |   |\n| 5 | unresolved | S09に関連する子会社債権取立不能は資料名等での言及にとどまり、直接開示本文がない。損失額、認識時期、計上科目、引当済額、実績・会社予想への包含を確認できず、二重計上の有無は判断不能。予測が空であることを二重計上なしの証明にはしない。 |   |\n| 6 | unresolved | bear・base・bullの予測値と比較実績がなく、売上・営業利益のYoY/QnQブリッジ12件はcomponentsが空、residualがnullである。増減額＝予測－比較実績、残差＝増減額－要因別寄与額合計の再計算は不能。丸め差・会計上の比較基準変更・未説明の経済的残差を分類する根拠もない。nullはゼロではなく未算定として維持すべきであり、Finite number requiredだけで経済的な計算誤りが確定したとはいえない。 |   |\n| 7 | fail | 業績検証には追加原資料が必要。同時に、現在提示されたS11本文には25ページの対象企業行と73ページ途中までの内容があるため、22ページ途中までとの説明およびそれに依存した未確認記録は修正が必要。S11全体が完全であるとは判断しない。会社予想候補S01・S05は本文未確認としてレビューに残す。 | S11 PDF page 25 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。\n- **Medium** / machine: S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。\n- **Medium** / machine: S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。\n- **Medium** / machine: bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。\n- **Medium** / machine: documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。\n- **Medium** / machine: target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 企業固有の業績要因なし\n- **Medium** / machine: 前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。\n- **Medium** / machine: 同一会計・連結範囲の比較四半期不足: qoq\n- **Medium** / machine: 同一会計・連結範囲の比較四半期不足: yoy\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。\n- **Medium** / machine: 当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。\n- **High** / machine: 資料確認未了: already_announced\n- **Medium** / machine: 資料確認未了: company_guidance\n- **Medium** / machine: 資料確認未了: historical\n- **Medium** / machine: 資料確認未了: identity\n- **High** / machine: 資料確認未了: latest_results\n- **Medium** / machine: 資料確認未了: presentation\n- **Medium** / machine: 資料確認未了: segments_kpi\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **High** / source_coverage: レビューへ渡す原文に省略あり: S11\n- **Medium** / fact: S11の対象企業掲載行を見落としている。名称「ストリーム」とコード3071の対応は原文で確認できる。material_unresolved、coverage.identity、再計算結果および自動指摘の関連記録を見直すこと。ただし、正式商号・決算期・会計基準・連結範囲までこの行で確認した扱いにはしない。\n- **High** / other: 業績原資料と入力・算式・全シナリオが欠落し、独立予測として評価できない。取得エラーは会社による非開示を意味しない。S11は株式数等の資料であり業績資料の代替にならない。\n- **Medium** / other: S11の取得日時は基準日時後だが、本文の発行日は2026年10月20日であり、基準日時以前の資料であることを確認できる。取得日時だけで除外する必要はない。他資料の公表日・内容はメタデータから原文確認済みに格上げしない。\n- **High** / double_count: 子会社債権取立不能に関する直接開示がなく、損失計上と既存引当金・連結調整・会社予想との関係を確認できない。現段階で損失額を予測へ加算・減算する根拠はない。\n- **High** / residual: 12件のブリッジは比較区分を示すだけで、増減説明は成立していない。残差nullをゼロや丸め差に置換せず、比較実績・予測・要因別金額が揃った後に残差を算定し分類する必要がある。\n- **Medium** / guidance: guidance_recordsとcompany_guidance_comparisonsは空だが、S01・S05という候補は存在する。本文未確認として候補を保持し、対象期間と改定履歴を確認すること。現在は会社予想との乖離自体が算定不能であり、乖離を誤りとは判定しない。\n- **High** / other: target_already_announced=falseを裏付ける基準日時までの公表状況と訂正・重要開示の確認がない。未発見を未公表・不存在と断定せず、状態未確認として扱う必要がある。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-08\", \"official_date\": \"2026-12-08\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://www.stream-jp.com/ir/calendar.html の公式ページ検索結果に「2026.12.08 2027年1月期 第3四半期決算短信発表」と記載。検索結果で予定を確認したもので、本文取得では日程部分が表示されず、ページの更新日時はunknown。\", \"warnings\": [\"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[\n  {\n    \"target\": \"model.material_unresolvedのS11掲載範囲・対象企業照合に関する記述、および同内容のrecalculation.errors・automatic_findings\",\n    \"old_value\": \"S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。\",\n    \"new_value\": \"今回提示されたS11本文はPDF page 73の途中まで含まれ、PDF page 25でストリーム（3071）の名称・コード対応と2026年9月末現在上場株式数28,525,000株を確認できる。資料全体には省略が残る。\",\n    \"reason\": \"提示原文に対象企業行が存在し、従前の掲載範囲説明と照合不能の判断が誤っている。業績予測数値の変更は提案しない。\",\n    \"source_ids\": [\n      \"S11\"\n    ],\n    \"locator\": \"PDF page 25\",\n    \"evidence_excerpt\": \"ストリーム (3071) 28,525,000 0\"\n  }\n]\n[\n  \"基準日時2026年11月18日14:33 JST以前の公表を確認できるS01・S02の決算本文と訂正資料。当期中間累計・Q1累計からQ2単独実績を算定し、単位・会計基準・連結範囲を照合するため。\",\n  \"同条件を満たすS03・S04の決算本文と訂正資料。前年Q3単独実績と比較基準の変更を確認するため。\",\n  \"S01・S05の会社予想本文、および基準日時までの全予想修正開示。候補ごとの対象期間、発表・改定時点、金額、定義を確認するため。\",\n  \"S06・S07・S08の原文。数量・価格・商品構成・セグメント採算・原価・販管費と、仮定の数値範囲を裏付けるため。\",\n  \"S09が参照する子会社債権取立不能等の直接開示と関連注記。損失額、計上時期、引当・連結処理、実績・会社予想への包含を確認するため。\",\n  \"基準日時までの公式開示一覧と関連本文。対象決算の公表状況、訂正、重要開示を確認するため。\",\n  \"S12の基準日時以前の公式日程本文。発表予定日の照合警告を解消するため。経済的品質評価とは分ける。\",\n  \"原資料に紐づく入力ID・算式・全シナリオ・重要仮定台帳・要因別ブリッジを含むモデル。数値一致、恣意的逆算、感応度、YoY/QnQおよび残差を再計算するため。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/3071/quality_review.json) / [レビュー原回答](../companies/3071/independent_review.json) / [計算検査](../companies/3071/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "3071",
+    "company_name": "株式会社ストリーム",
+    "announcement_date": "2026-12-08",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {},
+    "historicals": [],
+    "bridges": [],
+    "issues": [
+      "S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。",
+      "S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。",
+      "S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。",
+      "bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。",
+      "documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。",
+      "target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "企業固有の業績要因なし",
+      "前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。",
+      "同一会計・連結範囲の比較四半期不足: qoq",
+      "同一会計・連結範囲の比較四半期不足: yoy",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。",
+      "当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。",
+      "資料確認未了: already_announced",
+      "資料確認未了: company_guidance",
+      "資料確認未了: historical",
+      "資料確認未了: identity",
+      "資料確認未了: latest_results",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures",
+      "レビューへ渡す原文に省略あり: S11",
+      "S11の対象企業掲載行を見落としている。名称「ストリーム」とコード3071の対応は原文で確認できる。material_unresolved、coverage.identity、再計算結果および自動指摘の関連記録を見直すこと。ただし、正式商号・決算期・会計基準・連結範囲までこの行で確認した扱いにはしない。",
+      "業績原資料と入力・算式・全シナリオが欠落し、独立予測として評価できない。取得エラーは会社による非開示を意味しない。S11は株式数等の資料であり業績資料の代替にならない。",
+      "S11の取得日時は基準日時後だが、本文の発行日は2026年10月20日であり、基準日時以前の資料であることを確認できる。取得日時だけで除外する必要はない。他資料の公表日・内容はメタデータから原文確認済みに格上げしない。",
+      "子会社債権取立不能に関する直接開示がなく、損失計上と既存引当金・連結調整・会社予想との関係を確認できない。現段階で損失額を予測へ加算・減算する根拠はない。",
+      "12件のブリッジは比較区分を示すだけで、増減説明は成立していない。残差nullをゼロや丸め差に置換せず、比較実績・予測・要因別金額が揃った後に残差を算定し分類する必要がある。",
+      "guidance_recordsとcompany_guidance_comparisonsは空だが、S01・S05という候補は存在する。本文未確認として候補を保持し、対象期間と改定履歴を確認すること。現在は会社予想との乖離自体が算定不能であり、乖離を誤りとは判定しない。",
+      "target_already_announced=falseを裏付ける基準日時までの公表状況と訂正・重要開示の確認がない。未発見を未公表・不存在と断定せず、状態未確認として扱う必要がある。"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www.stream-jp.com/pdf/tansin202602.pdf",
+        "published_at": "2026-09-08",
+        "category": "latest_results",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:27+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "2027年1月期 第1四半期決算短信〔日本基準〕（連結）（公式掲載ページ、直接PDF未確認）",
+        "url": "https://www.stream-jp.com/ir/library.html",
+        "published_at": "2026-06-08",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:29+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2026年1月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.stream-jp.com/pdf/tansin202503.pdf",
+        "published_at": "2025-12-08",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:31+09:00"
+      },
+      {
+        "id": "S04",
+        "title": "2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www.stream-jp.com/pdf/tansin202502.pdf",
+        "published_at": "2025-09-08",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:33+09:00"
+      },
+      {
+        "id": "S05",
+        "title": "2026年1月期 決算短信〔日本基準〕（連結）（2027年1月期会社予想を含む）",
+        "url": "https://www.stream-jp.com/pdf/tansin202504.pdf",
+        "published_at": "2026-03-13",
+        "category": "guidance",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:34+09:00"
+      },
+      {
+        "id": "S06",
+        "title": "2027年1月期 第2四半期（中間期）決算関連資料（公式掲載ページ、直接PDF未確認）",
+        "url": "https://www.stream-jp.com/ir/library/session.html",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:36+09:00"
+      },
+      {
+        "id": "S07",
+        "title": "2026年1月期 決算関連資料",
+        "url": "https://www.stream-jp.com/pdf/press260327.pdf",
+        "published_at": "2026-03-27",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:38+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "有価証券報告書 第27期（2025年2月1日～2026年1月31日）",
+        "url": "https://www.stream-jp.com/pdf/yuuka022.pdf",
+        "published_at": "2026-04-22",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-18T15:54:40+09:00"
+      },
+      {
+        "id": "S09",
+        "title": "2026年度ニュース一覧（7月17日の子会社債権取立不能等の掲載）",
+        "url": "https://www.stream-jp.com/ir/news/2026.html",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T15:54:40+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "投資家情報・株式情報",
+        "url": "https://www.stream-jp.com/ir/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T15:54:40+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "JPX 2026年9月分 新株予約権の行使等に伴う上場株式数等の変更",
+        "url": "https://www.jpx.co.jp/listing/co/t13vrt000000nsy7-att/HP-2026.9.pdf",
+        "published_at": "2026-10-20",
+        "category": "identity",
+        "final_url": "https://www.jpx.co.jp/listing/co/t13vrt000000nsy7-att/HP-2026.9.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261208\\companies\\3071\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261208\\companies\\3071\\sources\\S11.txt",
+        "sha256": "04cc35f6dab43d3498f3adabd4969581d62208cae0a19a74bf0559eae63bb019",
+        "text_sha256": "6e4b20df0ece0a8d21ff52281ad9d835d0e4096585f7dc560472320dd24cc1b8",
+        "retrieved_at": "2026-11-18T15:54:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 227828,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "IRカレンダー",
+        "url": "https://www.stream-jp.com/ir/calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T15:54:43+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3071",
+      "announcement_date": "2026-12-08",
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [],
+      "calculations": [],
+      "scenarios": {},
+      "cumulative_historicals": [],
+      "quarterly_historicals": [],
+      "guidance_records": [],
+      "drivers": [],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測の算定根拠が原文未確認のため、差額・残差とも算定不能。"
+        }
+      ],
+      "company_guidance": "未確認。S01・S05は資料一覧に記載されているが、保存原文が提示されておらず、会社予想の金額・対象期間・定義・修正状況を確認できない。guidance_recordsには登録しない。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスは含まれていない。",
+      "independent_forecast": "算定不能。保存原文には対象企業の売上、利益、数量、価格、セグメント構成、採算、設備、費用の確認値がなく、根拠ある仮定範囲を設定できない。売上高・営業利益・経常利益・純利益の予測を提示せず、scenariosを空とする。会社予想からの差引き推計も行っていない。",
+      "narrative": [
+        {
+          "heading": "予測の可否",
+          "text": "対象は指定条件に従う第3四半期単独。提示された保存原文は上場株式数等の変更に関するJPX資料の一部のみであり、対象企業の業績予測に必要な基礎数値を確認できない。条件付きシナリオも、数量・価格・構成・採算の裏付けがないため設定できない。"
+        },
+        {
+          "heading": "原文と調査メタデータの区別",
+          "text": "資料一覧とdiscoveryの確認記録は提示されているが、決算短信や説明資料の原文に代わる業績数値の根拠には用いていない。比較実績と予測がともに未算定のため、各ブリッジの残差はゼロではなく未算定とした。"
+        }
+      ],
+      "coverage": {
+        "identity": "unknown",
+        "schedule": "unknown",
+        "latest_results": "unknown",
+        "presentation": "unknown",
+        "company_guidance": "unknown",
+        "historical": "unknown",
+        "segments_kpi": "unknown",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [],
+      "material_unresolved": [
+        "documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。",
+        "S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。",
+        "企業名・コード、決算予定日、対象期間、会計基準・連結範囲は指定条件および資料メタデータに基づく。identity_verifiedとschedule_verifiedはdiscoveryの記録であり、保存原文による再確認はできていない。",
+        "target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。",
+        "当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。",
+        "前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。",
+        "S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。",
+        "S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。",
+        "対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。",
+        "bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。"
+      ],
+      "_truncated_source_ids": [
+        "S11"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 11,
+      "Medium": 21,
+      "Low": 0
+    },
+    "material_assumption_count": 0,
+    "schedule_check": {
+      "input_date": "2026-12-08",
+      "official_date": "2026-12-08",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://www.stream-jp.com/ir/calendar.html の公式ページ検索結果に「2026.12.08 2027年1月期 第3四半期決算短信発表」と記載。検索結果で予定を確認したもので、本文取得では日程部分が表示されず、ページの更新日時はunknown。",
+      "warnings": [
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "要修正",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "企業固有の業績要因なし"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "同一会計・連結範囲の比較四半期不足: qoq"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "同一会計・連結範囲の比較四半期不足: yoy"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: company_guidance"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: historical"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: identity"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: latest_results"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: presentation"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: segments_kpi"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "High",
+        "category": "source_coverage",
+        "message": "レビューへ渡す原文に省略あり: S11"
+      },
+      {
+        "severity": "Medium",
+        "category": "fact",
+        "message": "S11の対象企業掲載行を見落としている。名称「ストリーム」とコード3071の対応は原文で確認できる。material_unresolved、coverage.identity、再計算結果および自動指摘の関連記録を見直すこと。ただし、正式商号・決算期・会計基準・連結範囲までこの行で確認した扱いにはしない。",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "PDF page 25",
+        "evidence_excerpt": "ストリーム (3071) 28,525,000 0",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "other",
+        "message": "業績原資料と入力・算式・全シナリオが欠落し、独立予測として評価できない。取得エラーは会社による非開示を意味しない。S11は株式数等の資料であり業績資料の代替にならない。",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "PDF page 1",
+        "evidence_excerpt": "新株予約権の行使等に伴う上場株式数等の変更（対象期間 2026年9月1日 ～ 2026年9月30日）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "other",
+        "message": "S11の取得日時は基準日時後だが、本文の発行日は2026年10月20日であり、基準日時以前の資料であることを確認できる。取得日時だけで除外する必要はない。他資料の公表日・内容はメタデータから原文確認済みに格上げしない。",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "PDF page 1",
+        "evidence_excerpt": "所　報　　2026年10月20日（火）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "double_count",
+        "message": "子会社債権取立不能に関する直接開示がなく、損失計上と既存引当金・連結調整・会社予想との関係を確認できない。現段階で損失額を予測へ加算・減算する根拠はない。",
+        "source_ids": [],
+        "locator": "",
+        "evidence_excerpt": "",
+        "origin": "independent_ai",
+        "citation_verified": false
+      },
+      {
+        "severity": "High",
+        "category": "residual",
+        "message": "12件のブリッジは比較区分を示すだけで、増減説明は成立していない。残差nullをゼロや丸め差に置換せず、比較実績・予測・要因別金額が揃った後に残差を算定し分類する必要がある。",
+        "source_ids": [],
+        "locator": "",
+        "evidence_excerpt": "",
+        "origin": "independent_ai",
+        "citation_verified": false
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "guidance_recordsとcompany_guidance_comparisonsは空だが、S01・S05という候補は存在する。本文未確認として候補を保持し、対象期間と改定履歴を確認すること。現在は会社予想との乖離自体が算定不能であり、乖離を誤りとは判定しない。",
+        "source_ids": [],
+        "locator": "",
+        "evidence_excerpt": "",
+        "origin": "independent_ai",
+        "citation_verified": false
+      },
+      {
+        "severity": "High",
+        "category": "other",
+        "message": "target_already_announced=falseを裏付ける基準日時までの公表状況と訂正・重要開示の確認がない。未発見を未公表・不存在と断定せず、状態未確認として扱う必要がある。",
+        "source_ids": [],
+        "locator": "",
+        "evidence_excerpt": "",
+        "origin": "independent_ai",
+        "citation_verified": false
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 11,
+      "Medium": 21,
+      "Low": 0
+    },
+    "assumptions": [],
+    "guidance": [],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S06・S07・S08の原文がなく、企業固有の数量・価格・商品構成・セグメント採算・設備・費用に基づく予測範囲を設定できない。単に一部変数が未公表なのではなく、予測の基礎資料自体が欠落している。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S09に関する子会社債権取立不能の情報はdiscoveryの記録のみ。直接開示原文、損失額、計上時期、既存実績・会社予想への包含状況は未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11の保存原文はPDF page 1～22の途中まででtruncated=true。ストリーム（3071）の掲載行は提示範囲に含まれず、同資料による対象企業の照合もできない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "bridgesの12項目は必要な比較区分を示す未算定レコードであり、シナリオ予測の成立を意味しない。比較実績・予測・要因別金額がないため算式を作成できず、残差はnullとした。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "documentsに保存原文があるのはS11のみ。S01～S10およびS12は資料情報等の提示にとどまり、本回答では原文未確認。これらを会社による非開示とは扱わない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "target_already_announced=falseは提示されたdiscoveryの状態を引き継いだもの。基準日時までの公表状況を保存原文で網羅的に確認した結果ではない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "企業固有の業績要因なし",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "前年第3四半期単独の比較基準にはS03の第3四半期累計とS04の中間累計が必要だが、双方の数値・会計版が原文未確認。会社による直接四半期開示も確認できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "同一会計・連結範囲の比較四半期不足: qoq",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "同一会計・連結範囲の比較四半期不足: yoy",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "対象四半期末後から基準日時までの訂正、会社予想修正および重要開示は原文未確認。未発見を不存在と判断しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "当期第2四半期単独の比較基準にはS01の中間累計とS02の第1四半期累計が必要だが、双方の数値・会計版が原文未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: company_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: historical",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: identity",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: latest_results",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: presentation",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: segments_kpi",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "source_coverage",
+      "message": "レビューへ渡す原文に省略あり: S11",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "fact",
+      "message": "S11の対象企業掲載行を見落としている。名称「ストリーム」とコード3071の対応は原文で確認できる。material_unresolved、coverage.identity、再計算結果および自動指摘の関連記録を見直すこと。ただし、正式商号・決算期・会計基準・連結範囲までこの行で確認した扱いにはしない。",
+      "source_ids": "['S11']",
+      "locator": "PDF page 25",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "other",
+      "message": "業績原資料と入力・算式・全シナリオが欠落し、独立予測として評価できない。取得エラーは会社による非開示を意味しない。S11は株式数等の資料であり業績資料の代替にならない。",
+      "source_ids": "['S11']",
+      "locator": "PDF page 1",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "other",
+      "message": "S11の取得日時は基準日時後だが、本文の発行日は2026年10月20日であり、基準日時以前の資料であることを確認できる。取得日時だけで除外する必要はない。他資料の公表日・内容はメタデータから原文確認済みに格上げしない。",
+      "source_ids": "['S11']",
+      "locator": "PDF page 1",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "double_count",
+      "message": "子会社債権取立不能に関する直接開示がなく、損失計上と既存引当金・連結調整・会社予想との関係を確認できない。現段階で損失額を予測へ加算・減算する根拠はない。",
+      "source_ids": "[]",
+      "locator": "",
+      "citation_verified": "False"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "residual",
+      "message": "12件のブリッジは比較区分を示すだけで、増減説明は成立していない。残差nullをゼロや丸め差に置換せず、比較実績・予測・要因別金額が揃った後に残差を算定し分類する必要がある。",
+      "source_ids": "[]",
+      "locator": "",
+      "citation_verified": "False"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "guidance_recordsとcompany_guidance_comparisonsは空だが、S01・S05という候補は存在する。本文未確認として候補を保持し、対象期間と改定履歴を確認すること。現在は会社予想との乖離自体が算定不能であり、乖離を誤りとは判定しない。",
+      "source_ids": "[]",
+      "locator": "",
+      "citation_verified": "False"
+    },
+    {
+      "code": "3071",
+      "company_name": "株式会社ストリーム",
+      "severity": "High",
+      "category": "other",
+      "message": "target_already_announced=falseを裏付ける基準日時までの公表状況と訂正・重要開示の確認がない。未発見を未公表・不存在と断定せず、状態未確認として扱う必要がある。",
+      "source_ids": "[]",
+      "locator": "",
+      "citation_verified": "False"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": {
+    "code": "3071",
+    "input_date": "2026-12-08",
+    "official_date": "2026-12-08",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://www.stream-jp.com/ir/calendar.html の公式ページ検索結果に「2026.12.08 2027年1月期 第3四半期決算短信発表」と記載。検索結果で予定を確認したもので、本文取得では日程部分が表示されず、ページの更新日時はunknown。",
+    "warnings": "['資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/3071/result.json": "4000c950f3675cc8cadf2861241413f8dbd1e51ce19105e28bc6c33ed472e500",
+    "reports/3071.md": "a719284e80e804922d5f371f24d568c5c3720a1e24098661f6db3d905924b7f4",
+    "reports/3071_review.md": "ee97d624e20d8e9640c2ee5d7bf404e31b223b75188705dc2820d711438b333a",
+    "companies/3071/quality_review.json": "ed98f29ac5d438249c97ed1baf77e836e590b87c1cdfd73bbf82644b652d99d2",
+    "companies/3071/independent_review.json": "e4532c3fcdcf5a586dc27c3dafd5bc880810ab7a6664e476a36a49475cf045b1"
+  }
+}
