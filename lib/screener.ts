@@ -36,6 +36,8 @@ export const SCREENER_METRICS: MetricDefinition[] = [
     { key: "new_ytd_high_last_10d", label: "年初来高値更新10日", digits: 0 },
     { key: "sales_growth_beat_pp", label: "売上growth beat(pp)", digits: 2 },
     { key: "operating_profit_growth_beat_pp", label: "営業利益growth beat(pp)", digits: 2 },
+    { key: "sales_yoy_acceleration_pp", label: "売上高YoY加速度（pt）", digits: 2 },
+    { key: "operating_profit_yoy_acceleration_pp", label: "営業利益YoY加速度（pt）", digits: 2 },
     { key: "op_upward_revision_count_3y", label: "営業利益上方修正3年", digits: 0 },
     { key: "any_earnings_upward_revision_event_count_3y", label: "業績上方修正イベント3年", digits: 0 },
     { key: "market_cap", label: "時価総額", digits: 0 },
