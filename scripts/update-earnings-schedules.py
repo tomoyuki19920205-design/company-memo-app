@@ -19,6 +19,13 @@ def name_key(s):
     s=unicodedata.normalize('NFKC',s or '').casefold()
     return re.sub(r'[\s・.\-ー]','',s.replace('株式会社','').replace('(株)',''))
 
+def retained_identity_review(company,prior):
+    """A manual identity decision applies only to the exact reviewed pair."""
+    review=(prior or {}).get('viewerIdentityReview')
+    if review and all(review.get(k)==company.get(k) for k in ('code','companyName','viewerCode','viewerName')):
+        return copy.deepcopy(review)
+    return None
+
 def identity(row):
     t=row.get('target')
     # Unknown periods are quarantined under an explicit unresolved identity.
@@ -257,6 +264,8 @@ def _update(cache,store,start,end,viewer,manual,master_updates,report,now):
         m['viewerCode']=match['ticker_code'] if match else None
         m['viewerName']=match.get('name_ja') if match else None
         m['viewerDuplicateAlias']=code in exact and code+'0' in exact
+        review=retained_identity_review(m,prior)
+        if review: m['viewerIdentityReview']=review
     schedules=sorted(events.values(),key=lambda r:(r['date'],r['code'],r['id']))
     active=[r for r in schedules if r['date'] and start<=r['date']<=end]
     unique={r['code'] for r in active};confirmed={r['code'] for r in active if r.get('confirmationStatus') in ('exchange','official_ir','announced')}

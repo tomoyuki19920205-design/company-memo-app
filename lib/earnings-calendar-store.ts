@@ -1,7 +1,7 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import type { CalendarSchedule, ForecastDetail, ForecastVersion, ComparisonContext, ScheduleRegistry } from "../types/earnings-calendar";
-import {mergeSchedules} from './earnings-schedules';
+import {mergeSchedules,applyIdentityReviews} from './earnings-schedules';
 
 // Server-only filesystem adapter. Never import this module from a client component.
 // Vercel receives a read-only build bundle; the offline importer updates it before deployment.
@@ -23,7 +23,7 @@ export async function readRegistry():Promise<ScheduleRegistry|null> {
 }
 export async function readSchedules() {
   const [legacy,registry]=await Promise.all([json<CalendarSchedule[]>('schedules.json',[]),readRegistry()]);
-  return mergeSchedules(legacy,registry?.schedules??[]);
+  return applyIdentityReviews(mergeSchedules(legacy,registry?.schedules??[]),registry);
 }
 export const readForecastIndex = () => json<ForecastVersion[]>("index.json",[]);
 export const readComparisonContexts = () => json<Record<string,ComparisonContext[]>>("comparison-contexts.json",{});

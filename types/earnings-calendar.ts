@@ -8,6 +8,7 @@ export interface CalendarSchedule {
   confirmationStatus?:ScheduleStatus; checkedAt?:string; sourcePublishedAt?:string|null;
   firstRegisteredAt?:string; actualDate?:string|null; note?:string; periodBasis?:string;
   codeAliases?:string[];
+  financialLinkStatus?:'verified'|'hold'; financialLinkNote?:string;
   history?:{changedAt:string;before:Partial<CalendarSchedule>}[];
 }
 export interface ScheduleOverview {
@@ -16,7 +17,15 @@ export interface ScheduleOverview {
   sources:{url:string;terms:string;checkedAt:string;type:string}[];
 }
 export interface UnresolvedCompany {code:string;companyName:string;reason:string;collectionStatus:string;checkedAt:string}
-export interface ScheduleRegistry extends ScheduleOverview {schemaVersion:number;schedules:CalendarSchedule[];unresolved:UnresolvedCompany[]}
+export interface CompanyIdentityReview {
+  code:string;companyName:string;viewerCode:string|null;viewerName:string|null;
+  status:'verified'|'hold';reason:string;sourceUrls:string[];checkedAt:string;
+}
+export interface ScheduleCompany {
+  code:string;companyName:string;viewerMatch:string;viewerCode:string|null;viewerName:string|null;
+  viewerIdentityReview?:CompanyIdentityReview;
+}
+export interface ScheduleRegistry extends ScheduleOverview {schemaVersion:number;schedules:CalendarSchedule[];unresolved:UnresolvedCompany[];companies?:ScheduleCompany[]}
 export interface DayScheduleCount {count:number;statuses:Partial<Record<ScheduleStatus,number>>;coverage:"partial"|"uncollected"|"confirmed_zero"}
 export interface Growth { rate: number | null; label: string; tone: "positive" | "negative" | "neutral"; note: string }
 export interface ForecastVersion {

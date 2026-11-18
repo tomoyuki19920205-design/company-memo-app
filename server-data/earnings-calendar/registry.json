@@ -1098,7 +1098,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "151A",
       "viewerName": "ダイブ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "151A",
+        "companyName": "ダイブグループ",
+        "viewerCode": "151A",
+        "viewerName": "ダイブ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ダイブグループ",
+            "old": "ダイブ",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "153A",
@@ -4334,7 +4353,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2108",
       "viewerName": "日本甜菜製糖",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2108",
+        "companyName": "ニッテン",
+        "viewerCode": "2108",
+        "viewerName": "日本甜菜製糖",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ニッテン",
+            "old": "日本甜菜製糖",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "2109",
@@ -6089,7 +6127,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2268",
       "viewerName": "Ｂ−Ｒ　サーティワン　アイスクリーム",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2268",
+        "companyName": "Ｂ－Ｒ　サーティワン　アイスクリーム",
+        "viewerCode": "2268",
+        "viewerName": "Ｂ−Ｒ　サーティワン　アイスクリーム",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "2269",
@@ -8944,7 +8994,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2501",
       "viewerName": "サッポロホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2501",
+        "companyName": "サッポロビール",
+        "viewerCode": "2501",
+        "viewerName": "サッポロホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "サッポロビール",
+            "old": "サッポロホールディングス",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "2502",
@@ -9322,7 +9391,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2587",
       "viewerName": "サントリー食品インターナショナル",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2587",
+        "companyName": "サントリービバレッジ＆フード",
+        "viewerCode": "2587",
+        "viewerName": "サントリー食品インターナショナル",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "サントリービバレッジ＆フード",
+            "old": "サントリー食品インターナショナル",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "2588",
@@ -9565,7 +9653,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2613",
       "viewerName": "Ｊ−オイルミルズ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2613",
+        "companyName": "Ｊ－オイルミルズ",
+        "viewerCode": "2613",
+        "viewerName": "Ｊ−オイルミルズ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "261A",
@@ -10105,7 +10205,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2681",
       "viewerName": "ゲオホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2681",
+        "companyName": "セカンドリテイリング",
+        "viewerCode": "2681",
+        "viewerName": "ゲオホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "セカンドリテイリング",
+            "old": "ゲオホールディングス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "2683",
@@ -10132,7 +10251,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2683",
       "viewerName": "魚喜",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "2683",
+        "companyName": "ＵＯＧｒｏｕｐ",
+        "viewerCode": "2683",
+        "viewerName": "魚喜",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＵＯＧｒｏｕｐ",
+            "old": "魚喜",
+            "date": "20260901"
+          }
+        ]
+      }
     },
     {
       "code": "2685",
@@ -10213,7 +10351,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2689",
       "viewerName": "オルバヘルスケアホールディングス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "2689",
+        "companyName": "オルバディーブイエックスヘルスケア",
+        "viewerCode": "2689",
+        "viewerName": "オルバヘルスケアホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "オルバディーブイエックスヘルスケア",
+            "old": "オルバヘルスケアホールディングス",
+            "date": "20260901"
+          }
+        ]
+      }
     },
     {
       "code": "268A",
@@ -12960,7 +13117,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "2927",
       "viewerName": "ＡＦＣ−ＨＤアムスライフサイエンス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "2927",
+        "companyName": "ＡＦＣ－ＨＤアムスライフサイエンス",
+        "viewerCode": "2927",
+        "viewerName": "ＡＦＣ−ＨＤアムスライフサイエンス",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "2929",
@@ -15363,7 +15532,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3104",
       "viewerName": "富士紡ホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3104",
+        "companyName": "フジボウホールディングス",
+        "viewerCode": "3104",
+        "viewerName": "富士紡ホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "フジボウホールディングス",
+            "old": "富士紡ホールディングス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "3105",
@@ -16571,7 +16759,31 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3182",
       "viewerName": "オイシックス・ラ・大地",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3182",
+        "companyName": "オイシックス",
+        "viewerCode": "3182",
+        "viewerName": "オイシックス・ラ・大地",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "オイシックス",
+            "old": "オイシックス・ラ・大地",
+            "date": "20260701"
+          },
+          {
+            "new": "オイシックスドット大地",
+            "old": "オイシックス",
+            "date": "20170701"
+          }
+        ]
+      }
     },
     {
       "code": "3183",
@@ -18029,7 +18241,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3306",
       "viewerName": "日本製麻",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3306",
+        "companyName": "ＳＥＩＭＡホールディングス",
+        "viewerCode": "3306",
+        "viewerName": "日本製麻",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＳＥＩＭＡホールディングス",
+            "old": "日本製麻",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "330A",
@@ -19541,7 +19772,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3422",
       "viewerName": "Ｊ−ＭＡＸ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3422",
+        "companyName": "Ｊ－ＭＡＸ",
+        "viewerCode": "3422",
+        "viewerName": "Ｊ−ＭＡＸ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "3423",
@@ -19676,7 +19919,20 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3434",
       "viewerName": "アルファ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3434",
+        "companyName": "アルファＣｏ",
+        "viewerCode": "3434",
+        "viewerName": "アルファ",
+        "status": "verified",
+        "reason": "公式IRで証券コード3434と株式会社アルファの対応を確認。取引所銘柄表記はアルファCo",
+        "sourceUrls": [
+          "https://www.kk-alpha.com/ir/faq.html",
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "3435",
@@ -20243,7 +20499,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3474",
       "viewerName": "Ｇ−ＦＡＣＴＯＲＹ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3474",
+        "companyName": "Ｇ－ＦＡＣＴＯＲＹ",
+        "viewerCode": "3474",
+        "viewerName": "Ｇ−ＦＡＣＴＯＲＹ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "3475",
@@ -20324,7 +20592,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3479",
       "viewerName": "ティーケーピー",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3479",
+        "companyName": "ＴＫＰ",
+        "viewerCode": "3479",
+        "viewerName": "ティーケーピー",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＴＫＰ",
+            "old": "ティーケーピー",
+            "date": "20260601"
+          }
+        ]
+      }
     },
     {
       "code": "3482",
@@ -21917,7 +22204,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3626",
       "viewerName": "ＴＩＳ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3626",
+        "companyName": "ＴＩＳＩ",
+        "viewerCode": "3626",
+        "viewerName": "ＴＩＳ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＴＩＳＩ",
+            "old": "ＴＩＳ",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "3627",
@@ -22612,7 +22918,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3664",
       "viewerName": "モブキャストホールディングス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3664",
+        "companyName": "ＷＩＺＥ",
+        "viewerCode": "3664",
+        "viewerName": "モブキャストホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＷＩＺＥ",
+            "old": "モブキャストホールディングス",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "3665",
@@ -22774,7 +23099,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3672",
       "viewerName": "オルトプラス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3672",
+        "companyName": "オルトプラスホールディングス",
+        "viewerCode": "3672",
+        "viewerName": "オルトプラス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "オルトプラスホールディングス",
+            "old": "オルトプラス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "3673",
@@ -23125,7 +23469,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "368A",
       "viewerName": "北里コーポレーション",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "368A",
+        "companyName": "北里",
+        "viewerCode": "368A",
+        "viewerName": "北里コーポレーション",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "北里",
+            "old": "北里コーポレーション",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "3690",
@@ -23746,7 +24109,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3750",
       "viewerName": "ＡＤＲ１２０Ｓ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3750",
+        "companyName": "ＡＤＲバイオメディカルホールディングス",
+        "viewerCode": "3750",
+        "viewerName": "ＡＤＲ１２０Ｓ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＡＤＲバイオメディカルホールディングス",
+            "old": "ＡＤＲ１２０Ｓ",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "3753",
@@ -24873,7 +25255,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3840",
       "viewerName": "パス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3840",
+        "companyName": "ヴィクトン",
+        "viewerCode": "3840",
+        "viewerName": "パス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ヴィクトン",
+            "old": "パス",
+            "date": "20260901"
+          }
+        ]
+      }
     },
     {
       "code": "3841",
@@ -25062,7 +25463,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3850",
       "viewerName": "エヌ・ティ・ティ・データ・イントラマート",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "3850",
+        "companyName": "イントラマート",
+        "viewerCode": "3850",
+        "viewerName": "エヌ・ティ・ティ・データ・イントラマート",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "イントラマート",
+            "old": "エヌ・ティ・ティ・データ・イントラマート",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "3851",
@@ -25872,7 +26292,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3914",
       "viewerName": "ＪＩＧ−ＳＡＷ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3914",
+        "companyName": "ＪＩＧ－ＳＡＷ",
+        "viewerCode": "3914",
+        "viewerName": "ＪＩＧ−ＳＡＷ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "3915",
@@ -25980,7 +26412,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "3918",
       "viewerName": "ＰＣＩホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "3918",
+        "companyName": "ＰＣＩソリューションズ",
+        "viewerCode": "3918",
+        "viewerName": "ＰＣＩホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＰＣＩソリューションズ",
+            "old": "ＰＣＩホールディングス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "3920",
@@ -33435,7 +33886,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "4390",
       "viewerName": "アイ・ピー・エス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "4390",
+        "companyName": "ＩＰＳ",
+        "viewerCode": "4390",
+        "viewerName": "アイ・ピー・エス",
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "4391",
@@ -34723,7 +35184,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "4444",
       "viewerName": "インフォネット",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "4444",
+        "companyName": "インフォネットグループ",
+        "viewerCode": "4444",
+        "viewerName": "インフォネット",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "インフォネットグループ",
+            "old": "インフォネット",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "4445",
@@ -34779,7 +35259,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "4446",
       "viewerName": "Ｌｉｎｋ−Ｕグループ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "4446",
+        "companyName": "Ｌｉｎｋ－Ｕグループ",
+        "viewerCode": "4446",
+        "viewerName": "Ｌｉｎｋ−Ｕグループ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "4447",
@@ -37299,7 +37791,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "4598",
       "viewerName": "Ｄｅｌｔａ−Ｆｌｙ　Ｐｈａｒｍａ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "4598",
+        "companyName": "Ｄｅｌｔａ－Ｆｌｙ　Ｐｈａｒｍａ",
+        "viewerCode": "4598",
+        "viewerName": "Ｄｅｌｔａ−Ｆｌｙ　Ｐｈａｒｍａ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "4599",
@@ -41827,7 +42331,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "4933",
       "viewerName": "Ｉ−ｎｅ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "4933",
+        "companyName": "Ｉ－ｎｅ",
+        "viewerCode": "4933",
+        "viewerName": "Ｉ−ｎｅ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "4934",
@@ -44263,7 +44779,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "519A",
       "viewerName": "Ｇ－ベーシック",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "519A",
+        "companyName": "ベーシック",
+        "viewerCode": "519A",
+        "viewerName": "Ｇ－ベーシック",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5201",
@@ -44375,7 +44903,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "520A",
       "viewerName": null,
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "520A",
+        "companyName": "ジェイファーマ",
+        "viewerCode": "520A",
+        "viewerName": null,
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5210",
@@ -44599,7 +45137,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "523A",
       "viewerName": "Ｇ－セイワＨＤ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "523A",
+        "companyName": "セイワホールディングス",
+        "viewerCode": "523A",
+        "viewerName": "Ｇ－セイワＨＤ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5240",
@@ -45635,7 +46185,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5333",
       "viewerName": "日本碍子",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "5333",
+        "companyName": "ＮＧＫ",
+        "viewerCode": "5333",
+        "viewerName": "日本碍子",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＮＧＫ",
+            "old": "日本碍子",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "5334",
@@ -46307,7 +46876,20 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "542A",
       "viewerName": "Ｇ－ビタブリッドＪ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "542A",
+        "companyName": "ビタブリッドジャパン",
+        "viewerCode": "542A",
+        "viewerName": "Ｇ－ビタブリッドＪ",
+        "status": "verified",
+        "reason": "JPX公式相場表で542Aの略称G-ビタブリッドJを確認",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/automation/markets/statistics-equities/daily/files/202611/stq_20261106.pdf",
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "543A",
@@ -46699,7 +47281,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "546A",
       "viewerName": "ＭＩＲＡＩＮＩ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "546A",
+        "companyName": "ＭＩＲＡＩＮＩホールディングス",
+        "viewerCode": "546A",
+        "viewerName": "ＭＩＲＡＩＮＩ",
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5471",
@@ -46755,7 +47347,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "547A",
       "viewerName": null,
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "547A",
+        "companyName": "ムニノバホールディングス",
+        "viewerCode": "547A",
+        "viewerName": null,
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5480",
@@ -46839,7 +47441,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "548A",
       "viewerName": null,
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "548A",
+        "companyName": "システムエグゼ",
+        "viewerCode": "548A",
+        "viewerName": null,
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5491",
@@ -46895,7 +47507,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "549A",
       "viewerName": "ヒトトヒトＨＤ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "549A",
+        "companyName": "ヒトトヒトホールディングス",
+        "viewerCode": "549A",
+        "viewerName": "ヒトトヒトＨＤ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "550A",
@@ -47147,7 +47771,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "554A",
       "viewerName": "Ｇ－バトンズ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "554A",
+        "companyName": "バトンズ",
+        "viewerCode": "554A",
+        "viewerName": "Ｇ－バトンズ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5563",
@@ -47203,7 +47839,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "556A",
       "viewerName": "Ｇ－犬猫生活",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "556A",
+        "companyName": "犬猫生活",
+        "viewerCode": "556A",
+        "viewerName": "Ｇ－犬猫生活",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5570",
@@ -47287,7 +47935,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5572",
       "viewerName": "Ｒｉｄｇｅ−ｉ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "5572",
+        "companyName": "Ｒｉｄｇｅ－ｉ",
+        "viewerCode": "5572",
+        "viewerName": "Ｒｉｄｇｅ−ｉ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5574",
@@ -47595,7 +48255,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "558A",
       "viewerName": "Ｇ－ＳＱＵＥＥＺＥ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "558A",
+        "companyName": "ＳＱＵＥＥＺＥ",
+        "viewerCode": "558A",
+        "viewerName": "Ｇ－ＳＱＵＥＥＺＥ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5590",
@@ -48519,7 +49191,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5721",
       "viewerName": "エス・サイエンス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "5721",
+        "companyName": "エスクリプトエナジー",
+        "viewerCode": "5721",
+        "viewerName": "エス・サイエンス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "エスクリプトエナジー",
+            "old": "エス・サイエンス",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "5724",
@@ -48743,7 +49434,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "575A",
       "viewerName": null,
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "575A",
+        "companyName": "前澤ホールディングス",
+        "viewerCode": "575A",
+        "viewerName": null,
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5801",
@@ -48967,7 +49668,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "581A",
       "viewerName": "Ｇ－ＧＯ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "581A",
+        "companyName": "ＧＯ",
+        "viewerCode": "581A",
+        "viewerName": "Ｇ－ＧＯ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5820",
@@ -49191,7 +49904,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5842",
       "viewerName": "インテグラル",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "5842",
+        "companyName": "インテグラル・グループ",
+        "viewerCode": "5842",
+        "viewerName": "インテグラル",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "インテグラル・グループ",
+            "old": "インテグラル",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "5843",
@@ -49695,7 +50427,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5891",
       "viewerName": "魁力屋",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "5891",
+        "companyName": "ＳＡＫＩＧＡＫＥホールディングス",
+        "viewerCode": "5891",
+        "viewerName": "魁力屋",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＳＡＫＩＧＡＫＥホールディングス",
+            "old": "魁力屋",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "5892",
@@ -49751,7 +50502,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "589A",
       "viewerName": "Ｇ－ネイス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "589A",
+        "companyName": "ネイス",
+        "viewerCode": "589A",
+        "viewerName": "Ｇ－ネイス",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5900",
@@ -49835,7 +50598,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "5902",
       "viewerName": "ホッカンホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "5902",
+        "companyName": "ホッカン",
+        "viewerCode": "5902",
+        "viewerName": "ホッカンホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ホッカン",
+            "old": "ホッカンホールディングス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "5905",
@@ -50367,7 +51149,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "593A",
       "viewerName": "Ｇ－ティアフォー",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "593A",
+        "companyName": "ティアフォー",
+        "viewerCode": "593A",
+        "viewerName": "Ｇ－ティアフォー",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "5940",
@@ -52627,7 +53421,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6072",
       "viewerName": "地盤ネットホールディングス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "6072",
+        "companyName": "ＥＲＴＨ　Ｇｒｏｕｐ",
+        "viewerCode": "6072",
+        "viewerName": "地盤ネットホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＥＲＴＨ　Ｇｒｏｕｐ",
+            "old": "地盤ネットホールディングス",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "6073",
@@ -53103,7 +53916,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6093",
       "viewerName": "エスクロー・エージェント・ジャパン",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6093",
+        "companyName": "ミトラグループ",
+        "viewerCode": "6093",
+        "viewerName": "エスクロー・エージェント・ジャパン",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ミトラグループ",
+            "old": "エスクロー・エージェント・ジャパン",
+            "date": "20260601"
+          }
+        ]
+      }
     },
     {
       "code": "6094",
@@ -54531,7 +55363,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6196",
       "viewerName": "ストライク",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6196",
+        "companyName": "ストライクグループ",
+        "viewerCode": "6196",
+        "viewerName": "ストライク",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ストライクグループ",
+            "old": "ストライク",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "6198",
@@ -55203,7 +56054,20 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6237",
       "viewerName": "イワキ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6237",
+        "companyName": "イワキポンプ",
+        "viewerCode": "6237",
+        "viewerName": "イワキ",
+        "status": "verified",
+        "reason": "会社決算説明資料で6237・株式会社イワキ・銘柄名イワキポンプの対応を確認",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/disc/62370/140120250513544976.pdf",
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6238",
@@ -55287,7 +56151,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "623A",
       "viewerName": null,
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "623A",
+        "companyName": "ベルテックス",
+        "viewerCode": "623A",
+        "viewerName": null,
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6240",
@@ -56855,7 +57729,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6333",
       "viewerName": "帝国電機製作所",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6333",
+        "companyName": "ＴＥＩＫＯＫＵ",
+        "viewerCode": "6333",
+        "viewerName": "帝国電機製作所",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＴＥＩＫＯＫＵ",
+            "old": "帝国電機製作所",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "6334",
@@ -58283,7 +59176,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6412",
       "viewerName": "平和",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6412",
+        "companyName": "平和ホールディングス",
+        "viewerCode": "6412",
+        "viewerName": "平和",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "平和ホールディングス",
+            "old": "平和",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "6413",
@@ -58451,7 +59363,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6420",
       "viewerName": "ガリレイ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6420",
+        "companyName": "ガリレイホールディングス",
+        "viewerCode": "6420",
+        "viewerName": "ガリレイ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ガリレイホールディングス",
+            "old": "ガリレイ",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "6424",
@@ -58927,7 +59858,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6459",
       "viewerName": "大和冷機工業",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6459",
+        "companyName": "だいわ",
+        "viewerCode": "6459",
+        "viewerName": "大和冷機工業",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "だいわ",
+            "old": "大和冷機工業",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "6460",
@@ -60243,7 +61193,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "652A",
       "viewerName": "トグルHD",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "652A",
+        "companyName": "トグルホールディングス",
+        "viewerCode": "652A",
+        "viewerName": "トグルHD",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6532",
@@ -60411,7 +61373,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6539",
       "viewerName": "ＭＳ−Ｊａｐａｎ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "6539",
+        "companyName": "ＭＳ－Ｊａｐａｎ",
+        "viewerCode": "6539",
+        "viewerName": "ＭＳ−Ｊａｐａｎ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "653A",
@@ -61055,7 +62029,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "656A",
       "viewerName": "オルガナイズ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "656A",
+        "companyName": "Ａｌｌｇａｎｉｚｅ　Ｈｏｌｄｉｎｇｓ",
+        "viewerCode": "656A",
+        "viewerName": "オルガナイズ",
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6570",
@@ -61587,7 +62571,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "660A",
       "viewerName": "レセプショニスト",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "660A",
+        "companyName": "ＲＥＣＥＰＴＩＯＮＩＳＴ",
+        "viewerCode": "660A",
+        "viewerName": "レセプショニスト",
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6612",
@@ -62707,7 +63701,20 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "6676",
       "viewerName": "バッファロー",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "6676",
+        "companyName": "ＢＵＦＦＡＬＯ",
+        "viewerCode": "6676",
+        "viewerName": "バッファロー",
+        "status": "verified",
+        "reason": "公式株式基本情報で6676・株式会社バッファロー・銘柄名称BUFFALOの対応を確認",
+        "sourceUrls": [
+          "https://www.buffalo.jp/ir/stock/info.html",
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "6677",
@@ -74983,7 +75990,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "7561",
       "viewerName": "ハークスレイ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "7561",
+        "companyName": "ハークスレイホールディングス",
+        "viewerCode": "7561",
+        "viewerName": "ハークスレイ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ハークスレイホールディングス",
+            "old": "ハークスレイ",
+            "date": "20260701"
+          }
+        ]
+      }
     },
     {
       "code": "7562",
@@ -75571,7 +76597,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "7606",
       "viewerName": "ユナイテッドアローズ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "7606",
+        "companyName": "ＴＡＢＡＹＡホールディングス",
+        "viewerCode": "7606",
+        "viewerName": "ユナイテッドアローズ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＴＡＢＡＹＡホールディングス",
+            "old": "ユナイテッドアローズ",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "7607",
@@ -76663,7 +77708,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "7695",
       "viewerName": "交換できるくん",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "7695",
+        "companyName": "リフォームテクノロジー",
+        "viewerCode": "7695",
+        "viewerName": "交換できるくん",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "リフォームテクノロジー",
+            "old": "交換できるくん",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "7698",
@@ -82543,7 +83607,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "8074",
       "viewerName": "ユアサ商事",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "8074",
+        "companyName": "ＹＵＡＳＡ",
+        "viewerCode": "8074",
+        "viewerName": "ユアサ商事",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＹＵＡＳＡ",
+            "old": "ユアサ商事",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "8075",
@@ -84167,7 +85250,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "8173",
       "viewerName": "上新電機",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "8173",
+        "companyName": "Ｊｏｓｈｉｎ",
+        "viewerCode": "8173",
+        "viewerName": "上新電機",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "Ｊｏｓｈｉｎ",
+            "old": "上新電機",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "8174",
@@ -87135,7 +88237,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "8595",
       "viewerName": "ジャフコ　グループ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "8595",
+        "companyName": "ＪＡＦＣＯ",
+        "viewerCode": "8595",
+        "viewerName": "ジャフコ　グループ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＪＡＦＣＯ",
+            "old": "ジャフコ　グループ",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "8596",
@@ -88059,7 +89180,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "8750",
       "viewerName": "第一生命ホールディングス",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "8750",
+        "companyName": "第一ライフグループ",
+        "viewerCode": "8750",
+        "viewerName": "第一生命ホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "第一ライフグループ",
+            "old": "第一生命ホールディングス",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "8766",
@@ -90383,7 +91523,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9044",
       "viewerName": "南海電気鉄道",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "9044",
+        "companyName": "ＮＡＮＫＡＩ",
+        "viewerCode": "9044",
+        "viewerName": "南海電気鉄道",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＮＡＮＫＡＩ",
+            "old": "南海電気鉄道",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "9045",
@@ -91055,7 +92214,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9090",
       "viewerName": "ＡＺ−ＣＯＭ丸和ホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9090",
+        "companyName": "ＡＺ－ＣＯＭ丸和ホールディングス",
+        "viewerCode": "9090",
+        "viewerName": "ＡＺ−ＣＯＭ丸和ホールディングス",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "9101",
@@ -91475,7 +92646,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9160",
       "viewerName": "ノバレーゼ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9160",
+        "companyName": "オンザページ",
+        "viewerCode": "9160",
+        "viewerName": "ノバレーゼ",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "オンザページ",
+            "old": "ノバレーゼ",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "9162",
@@ -92147,7 +93337,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9227",
       "viewerName": "マイクロ波化学",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9227",
+        "companyName": "ＭＷＣＣ",
+        "viewerCode": "9227",
+        "viewerName": "マイクロ波化学",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "ＭＷＣＣ",
+            "old": "マイクロ波化学",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "9229",
@@ -92791,7 +94000,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9258",
       "viewerName": "ＣＳ−Ｃ",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "9258",
+        "companyName": "ＣＳ－Ｃ",
+        "viewerCode": "9258",
+        "viewerName": "ＣＳ−Ｃ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "9259",
@@ -93631,7 +94852,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9326",
       "viewerName": "関通",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9326",
+        "companyName": "関通ホールディングス",
+        "viewerCode": "9326",
+        "viewerName": "関通",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "関通ホールディングス",
+            "old": "関通",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "9327",
@@ -94583,7 +95823,17 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9399",
       "viewerName": "ビート・ホールディングス・リミテッド（貝徳控股有限公司）",
-      "viewerDuplicateAlias": false
+      "viewerDuplicateAlias": false,
+      "viewerIdentityReview": {
+        "code": "9399",
+        "companyName": "ビート・ホールディングス・リミテッド",
+        "viewerCode": "9399",
+        "viewerName": "ビート・ホールディングス・リミテッド（貝徳控股有限公司）",
+        "status": "hold",
+        "reason": "一次資料で既存財務企業名との同一性を確認できないため、カレンダーからの財務連動を保留",
+        "sourceUrls": [],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "9401",
@@ -94751,7 +96001,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9412",
       "viewerName": "スカパーＪＳＡＴホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9412",
+        "companyName": "スカパーＪＳＡＴ",
+        "viewerCode": "9412",
+        "viewerName": "スカパーＪＳＡＴホールディングス",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00",
+        "renameEvidence": [
+          {
+            "new": "スカパーＪＳＡＴ",
+            "old": "スカパーＪＳＡＴホールディングス",
+            "date": "20260401"
+          }
+        ]
+      }
     },
     {
       "code": "9413",
@@ -94891,7 +96160,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9418",
       "viewerName": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9418",
+        "companyName": "Ｕ－ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
+        "viewerCode": "9418",
+        "viewerName": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.527011+00:00"
+      }
     },
     {
       "code": "9419",
@@ -98075,7 +99356,19 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9726",
       "viewerName": "ＫＮＴ−ＣＴホールディングス",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9726",
+        "companyName": "ＫＮＴ－ＣＴホールディングス",
+        "viewerCode": "9726",
+        "viewerName": "ＫＮＴ−ＣＴホールディングス",
+        "status": "verified",
+        "reason": "全半角・ハイフン・市場接頭辞・HD略記のみの差",
+        "sourceUrls": [
+          "https://www2.jpx.co.jp/tseHpFront/JJK010010Action.do?Show=Show"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.528016+00:00"
+      }
     },
     {
       "code": "9729",
@@ -100147,7 +101440,26 @@
       "viewerMatch": "name_mismatch",
       "viewerCode": "9906",
       "viewerName": "藤井産業",
-      "viewerDuplicateAlias": true
+      "viewerDuplicateAlias": true,
+      "viewerIdentityReview": {
+        "code": "9906",
+        "companyName": "藤井産業ホールディングス",
+        "viewerCode": "9906",
+        "viewerName": "藤井産業",
+        "status": "verified",
+        "reason": "JPX公式商号変更一覧で同一証券コードの旧商号から新商号への変更を照合",
+        "sourceUrls": [
+          "https://www.jpx.co.jp/listing/others/changed/tvdivq0000001hyn-att/tvdivq000000twmr.xlsx"
+        ],
+        "checkedAt": "2026-11-18T02:17:19.528016+00:00",
+        "renameEvidence": [
+          {
+            "new": "藤井産業ホールディングス",
+            "old": "藤井産業",
+            "date": "20261001"
+          }
+        ]
+      }
     },
     {
       "code": "9908",

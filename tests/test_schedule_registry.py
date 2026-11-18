@@ -7,6 +7,16 @@ m=module('registry','update-earnings-schedules.py');c=module('collector','collec
 NOW='2026-11-18T08:00:00+09:00'
 ROW={'code':'436A','company_name':'試験会社','announcement_date':'2026-12-04','fiscal_year_end':'2027-04-30','quarter':2,'status':'exchange','source_url':'https://example.org/ir','source_published_at':'2026-11-17T15:00:00+09:00'}
 class RegistryTests(unittest.TestCase):
+    def test_identity_review_survives_reimport_only_for_the_reviewed_pair(self):
+        company={'code':'436A','companyName':'Current','viewerCode':'436A','viewerName':'Old'}
+        review={**company,'status':'verified','reason':'official rename'}
+        prior={**company,'viewerIdentityReview':review}
+        retained=m.retained_identity_review(company,prior)
+        self.assertEqual(retained,review);self.assertIsNot(retained,review)
+        for field in company:
+            self.assertIsNone(m.retained_identity_review({**company,field:'changed'},prior))
+        self.assertIsNone(m.retained_identity_review(company,None))
+
     def test_same_target_reimport_and_moved_date_keeps_history(self):
         events={};changes=[];issues=[]
         self.assertEqual(m.upsert(events,ROW,NOW,changes,issues),'added')

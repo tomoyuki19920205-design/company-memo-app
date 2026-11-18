@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mergeSchedules,countMonth,daySchedules} from '../lib/earnings-schedules';
+import {mergeSchedules,countMonth,daySchedules,applyIdentityReviews} from '../lib/earnings-schedules';
 import {relevantVersions,latestForecast} from '../lib/earnings-calendar';
-import type {CalendarSchedule,ForecastVersion} from '../types/earnings-calendar';
+import type {CalendarSchedule,ForecastVersion,ScheduleRegistry,ScheduleCompany} from '../types/earnings-calendar';
 const row=(code='436A',date='2026-12-04'):CalendarSchedule=>({code,companyName:'Company',date,status:'exchange',target:{fiscalYearEnd:'2027-04-30',quarter:2},source:'https://example.org',updatedAt:'2026-11-18'});
 test('new schedules replace same company FY Q, preserving different quarters',()=>{
  const old=row(),next={...row('436A','2026-12-07'),status:'changed' as const};
@@ -30,4 +30,18 @@ test('explicit code-change alias replaces old row while preserving its separate 
 test('5000 companies count without requiring a forecast or duplicating rows',()=>{
  const rows=Array.from({length:5000},(_,i)=>row(String(i)));assert.equal(countMonth(rows,'2026-12')['2026-12-04'].count,5000);
  assert.equal(daySchedules([...rows,...rows],'2026-12-04').length,5000);
+});
+
+test('unverified company identity retains its schedule/count but holds financial linkage',()=>{
+ const company:ScheduleCompany={code:'436A',companyName:'Current',viewerMatch:'name_mismatch',viewerCode:'436A',viewerName:'Old'};
+ const registry={companies:[company]};
+ const held=applyIdentityReviews([row()],registry);
+ assert.equal(held[0].financialLinkStatus,'hold');assert.equal(countMonth(held,'2026-12')['2026-12-04'].count,1);
+ const review={...company,status:'verified' as const,reason:'Official rename',sourceUrls:['https://example.org/rename'],checkedAt:'2026-11-18'};
+ assert.equal(applyIdentityReviews([row()],{companies:[{...company,viewerIdentityReview:review}]} )[0].financialLinkStatus,'verified');
+ for(const changed of [{viewerCode:'9999'},{companyName:'Other'},{viewerName:'Another'}]){
+  assert.equal(applyIdentityReviews([row()],{companies:[{...company,...changed,viewerIdentityReview:review}]} )[0].financialLinkStatus,'hold');
+ }
+ assert.equal(applyIdentityReviews([row()],{companies:[{...company,viewerIdentityReview:{...review,status:'hold'}}]} )[0].financialLinkStatus,'hold');
+ assert.deepEqual(applyIdentityReviews([row()],null),[row()]);
 });

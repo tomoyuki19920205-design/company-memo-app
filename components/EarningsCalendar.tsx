@@ -144,7 +144,7 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
       </section>
       {splitter(1)}
       <section className="ec-financial" aria-label="選択企業のCompany Viewer"><div className="ec-financial-heading"><span>COMPANY VIEWER</span><b>{selected||"—"}</b></div>
-        {!current?<p className="ec-empty">企業を選択してください</p>:current.financialsAvailable===false?<p className="ec-empty">財務データ未登録</p>:<div className="ec-viewer"><CompanyViewer ref={viewerRef}/></div>}
+        {!current?<p className="ec-empty">企業を選択してください</p>:current.financialLinkStatus==='hold'?<p className="ec-empty">企業対応の確認待ちのためPL連動を保留しています。<br/>{current.financialLinkNote}</p>:current.financialsAvailable===false?<p className="ec-empty">財務データ未登録</p>:<div className="ec-viewer"><CompanyViewer ref={viewerRef}/></div>}
       </section>
     </div>
   </main>;

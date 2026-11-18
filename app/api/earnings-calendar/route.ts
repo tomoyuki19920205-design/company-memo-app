@@ -34,14 +34,14 @@ export async function GET(request:NextRequest) {
     if(code) {
       const company=scheduled.find(s=>s.code===code);
       if(!company) return reply({error:"この日の予定企業ではありません"},404);
-      const versions=[code,...(company.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,company.target));
+      const versions=company.financialLinkStatus==='hold'?[]:[code,...(company.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,company.target));
       const selected=version?versions.find(v=>v.id===version):latestForecast(versions);
       if(version&&!selected) return reply({error:"予測バージョンが見つかりません"},404);
       const saved=selected?await readForecast(selected.id):null;
       return reply({versions,detail:saved?{...saved,preAnnouncement:selected!.preAnnouncement}:null});
     }
     if(!scheduled.length) return reply({rows:[],date,overview,coverage:'uncollected'});
-    const codes=scheduled.map(s=>s.code);
+    const codes=scheduled.filter(s=>s.financialLinkStatus!=='hold').map(s=>s.code);
     let financeError:string|undefined;
     let data=new Map(); let provenance:Awaited<ReturnType<typeof loadFinancialProvenance>>|undefined;
     const industries=new Map<string,string>();
@@ -67,15 +67,17 @@ export async function GET(request:NextRequest) {
     const metaByTicker=new Map<string,NonNullable<typeof provenance>>();
     for(const m of provenance??[]) {const group=metaByTicker.get(m.ticker)??[];group.push(m);metaByTicker.set(m.ticker,group);}
     const rows:CalendarRow[]=scheduled.map(s=>{
-      const forecast=latestForecast([s.code,...(s.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,s.target)));
+      const held=s.financialLinkStatus==='hold';
+      const forecast=held?null:latestForecast([s.code,...(s.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,s.target)));
       let rowError=financialErrors.get(s.code);
       let previous:CalendarRow['previous']={target:null,current:null,previousYear:null,revenueYoY:emptyGrowth(),profitYoY:emptyGrowth(),notes:['対象決算年が未確認のため前Q比較を保留']};
       try {
-        if(s.target)previous=previousQuarter(data.get(s.code)??[],s.target,date,industries.get(s.code),provenance?metaByTicker.get(s.code)??[]:undefined,contexts[forecast?.id??""]??[]);
+        if(held)previous.notes=[s.financialLinkNote??'企業対応未確認のため財務連動を保留'];
+        else if(s.target)previous=previousQuarter(data.get(s.code)??[],s.target,date,industries.get(s.code),provenance?metaByTicker.get(s.code)??[]:undefined,contexts[forecast?.id??""]??[]);
         if(s.targetConfirmed===false)previous.notes.push('対象年は期末日とQ表記の暦対応。決算期変更の有無は未照合');
       } catch(e) {rowError=`前Q比較未了: ${e instanceof Error?e.message:'比較条件エラー'}`;}
       return {...s,forecast,previous,
-      financialsAvailable:financialErrors.has(s.code)?null:(data.get(s.code)?.length??0)>0,financeError:rowError};});
+      financialsAvailable:held?false:financialErrors.has(s.code)?null:(data.get(s.code)?.length??0)>0,financeError:rowError};});
     return reply({rows,date,financeError,overview,coverage:'partial'});
   } catch(e) {
     console.error("[earnings-calendar]",e instanceof Error?e.message:e);
