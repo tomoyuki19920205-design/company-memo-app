@@ -1,0 +1,2081 @@
+{
+  "id": "3193-8594c8797a5576744d615f4c01a0eb43f39d9859057f36b08eee5dc4af560574",
+  "code": "3193",
+  "companyName": "株式会社エターナルホスピタリティグループ",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3193-generation-3ff71c98a55a4ca5 · 8594c879",
+  "savedAt": "2026-11-18T18:20:51+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 13170.783304,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": 0.04803204925346292,
+    "label": "+4.8%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3193 株式会社エターナルホスピタリティグループ｜2027-07-31期 Q1単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 13,116.23 | 13,170.78 | 13,225.33 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 603.63 | 4.80% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 235.06 | 1.82% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS01の会社予想は中間累計及び通期であり、対象第1四半期単独予想ではない。S04 PDF page 9によれば、国内鳥貴族の10月価格改定は未織込み、8月からの賃上げ及び休日増は織込み済み。S10は当該子会社設立による業績予想修正なしとしている。ただし基準日時までの修正履歴の網羅確認はできていないため、guidance_recordsのrevision_statusはunverifiedとした。S05の中期目標修正は同じ通期予想に対応するため独立の上乗せ要因にしない。\n\n## 市場コンセンサス\n未確認。提示資料に市場コンセンサスの数値・集計主体・基準日はない。\n\n## 独自予測・差引推計の区分\n対象四半期の月次実績を国内直営売上へ接続し、海外直営とその他収益を別建てにした条件付き売上予測。会社予想の四等分や期後修正予想からの差引きではない。海外・その他のシナリオ幅は履歴と店舗構成に基づく感応度であり、実績や確率的信頼区間ではない。営業利益は費用の合理的な積上げ範囲が不足するためnull。経常利益・純利益もnull。\n\n## 条件付き売上予測\n中心売上は13,170.78百万円、弱気は13,116.23百万円、強気は13,225.33百万円。売上の大部分を占める国内直営は対象期間の月次指数で近似し、海外直営とFC関連等の不確実性を分けた。シナリオ幅には国内の対象範囲差による誤差を含めていない。\n\n## 増収の中身と値上げ\n国内直営の前年同期からの増収寄与は567.97百万円。既存店は客数減を客単価上昇で補う構図で、増収は前期出店分などの寄与に依存する。10月は値上げ後も既存店売上が前年割れであり、値上げ率をそのまま増収率として加算できない。月次全店指数に価格改定の実現効果は既に含まれている。\n\n## 利益予測の限界\n賃上げ、休日拡大、食材費上昇、海外先行赤字を金額で分離できず、利益予測は提示しない。前四半期営業利益430.17百万円には出店費用の偏重があり、その利益率を対象四半期に適用する根拠も不足する。上海店舗の減損や親会社個別の評価損を対象四半期の連結営業費用として再計上しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内直営売上の変化 | 567.97 | 対象四半期の全店月次指数を国内直営売上へ近似適用。 |\n| 海外直営売上の変化 | 3.55 | 直近四半期売上を基準にした弱気条件。 |\n| 直営店以外の売上の変化 | -22.45 | FC関連等を含む残余売上の弱気条件。 |\n| 残差（none） | 0.00 | モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前年同四半期を起点とする国内直営増減 | 567.97 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とする海外直営増減 | 3.55 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とするその他増減 | -22.45 | 前年同期基準のモデル寄与。 |\n| 残差（economic_unexplained） | -368.57 | 前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、季節要因と断定せず未説明残差とした。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内直営売上の変化 | 567.97 | 対象四半期の全店月次指数を国内直営売上へ近似適用。 |\n| 海外直営売上の変化 | 35.65 | 直近四半期売上維持の中心条件。 |\n| 直営店以外の売上の変化 | 0.00 | 残余売上を前年同期並みとする中心条件。 |\n| 残差（none） | 0.00 | モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前年同四半期を起点とする国内直営増減 | 567.97 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とする海外直営増減 | 35.65 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とするその他増減 | 0.00 | 前年同期基準のモデル寄与。 |\n| 残差（economic_unexplained） | -368.57 | 前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内直営売上の変化 | 567.97 | 対象四半期の全店月次指数を国内直営売上へ近似適用。 |\n| 海外直営売上の変化 | 67.75 | 直近四半期売上を基準にした強気条件。 |\n| 直営店以外の売上の変化 | 22.45 | 海外FC等の寄与を見込む強気条件。 |\n| 残差（none） | 0.00 | モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前年同四半期を起点とする国内直営増減 | 567.97 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とする海外直営増減 | 67.75 | 前年同期基準のモデル寄与。 |\n| 前年同四半期を起点とするその他増減 | 22.45 | 前年同期基準のモデル寄与。 |\n| 残差（economic_unexplained） | -368.57 | 前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。 |\n\n## エラー・未解決事項\n- S01～S11はtruncated=falseとして提示されている。ただしPDF画像そのものとの照合、訂正履歴、基準日時までの追加開示の網羅確認は行っていない。\n- S03及びS01には会計方針変更・修正再表示なしの記載があり、売上・営業利益の通期累計から第3四半期累計を差し引いた。収益区分変更は西日本・東日本・海外の同一区分で比較した。取得原価配分確定による遡及変更を示す記載は提示原文にはない。\n- S11の貸倒引当金繰入及び関係会社株式評価損は前年度の個別決算項目で、連結では相殺消去されると明記されている。対象期の連結損失予測に転用しない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 会社予想の数値自体は原文確認済みだが、最新性の網羅確認は未完了。過年度の旧予想は対象期の予想として採用していない。\n- 保存原文の収益分解表は千円単位の内訳合計と総額に微差がある。予測基準のその他売上は総額から国内直営・海外直営を控除して定義し、原資料の内訳合計と完全一致すると主張しない。\n- 営業外損益・特別損益・税率の対象四半期見通しが不足している。前年同期純利益には移転補償金と税負担の影響があるため、そのまま延長しない。\n- 国内月次は鳥貴族直営店のみ。収益認識注記の西日本・東日本直営売上は他ブランドを含み得るため、同一範囲と断定できない。国内予測にはこの近似誤差が残る。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 対象決算は提示された保存原文には含まれていない。target_already_announced=falseは提供された探索情報によるもので、基準日時までの公開状況を独自に網羅確認した結果ではない。\n- 海外売上・その他売上のシナリオは条件付き感応度であり、各店舗の稼働日数や単価から積み上げた確定範囲ではない。海外FC・合弁の店舗増は直営売上増として計上していない。\n- 給与費の対象基盤、時間給・労働時間、食材別仕入単価、店舗別費用、海外四半期損失の数値が提示原文にない。公表資料全体で非開示とは断定せず、費用予測に必要な範囲が未確認とする。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n- 飲食事業は単一セグメントで、S01及びS02等ではセグメント別利益の記載が省略されている。ブランド・地域別四半期営業利益は提示原文で確認できない。\n\n## 条件・不確実性\n- base_other_factor: 直営店以外の売上を前年同期並みとする条件。海外FC増、国内TCC増、国内大吉の店舗減を踏まえ、単価や計上時期が確認できない部分に純増を見込まない。\n- base_overseas_factor: 直近四半期の海外直営売上を維持する条件。韓国の前期末出店と米国の対象期中店舗増が上海の弱さを相殺すると仮定する。各地域の増減額を確認できないため、相殺は独自仮定。\n- bear_other_factor: 直営店以外の連結売上を前年同期比5%減とする条件。国内大吉の店舗減と加盟金計上時期の変動が、海外FC増の寄与を上回る場合を置く。料率や加盟金単価は確認できないため、店舗当たり売上の実績推計ではない。\n- bear_overseas_factor: 直近四半期の海外直営売上を基準に10%減とする条件。上海の軟調と閉店準備を重く見る。海外店舗増にはFC・合弁が多く、総店舗数の伸びを直営売上に適用しない。前年同四半期の海外直営売上に近い水準となる。\n- bull_other_factor: 直営店以外の売上を前年同期比5%増とする条件。海外FCの店舗増に伴うロイヤリティ・加盟金と国内TCC増が寄与する場合。FC・合弁店舗の店頭売上は連結売上へ直接加算しない。\n- bull_overseas_factor: 直近四半期比10%増の条件。韓国の前期末出店と米国の期中店舗増の寄与が上海の弱さを上回ると仮定する。直営店舗数の急増は確認できないため、大幅な増収は置かない。\n- domestic_proxy_index: 前年同期の国内直営店売上に、対象四半期の国内鳥貴族直営全店売上指数を適用する。前年同期の国内直営店はグループ全体412店に対して鳥貴族411店であり、主要部分を近似できる。ただし国内直営売上と月次対象ブランドの範囲は完全一致しないため、確定値ではない。全店指数には既存店の客数・客単価変化と店舗増が包含されている。\n- その他売上のシナリオはロイヤリティ・加盟金の計上時期が大きく変わらないことを条件とする。\n- 上海の閉店意思決定は確認できるが、S08の中国店舗数は対象期中に減少しておらず、閉店完了や費用削減実現を仮定していない。\n- 国内直営売上と国内鳥貴族月次対象の範囲差による誤差が小さいことを条件としている。\n- 海外直営売上の直近四半期比変化を弱気・中心・強気の感応度で扱い、為替や各国決算取込期間の変化は分離していない。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/31930/140120260911535131.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `aadf2c9bf41bce63affd3ec452921bf28f9300886a99992e052ba3d492f6e645`\n- S02 [2026年7月期 第1四半期決算短信〔日本基準〕（連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251205/20251205515379.pdf) / 公表 2025-12-05 / retrieved / SHA-256 `4cf81ea86abedde904de44ae95e900a4d48576f8af7c142d0670e418035bd203`\n- S03 [2026年7月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/31930/140120260605563896.pdf) / 公表 2026-06-05 / retrieved / SHA-256 `7d90a5a108aa857f3f1b2571feee351590b1311188d90f391d8df41f4b7892bb`\n- S04 [第40期（2026年7月期）期末 決算説明会資料](https://www2.jpx.co.jp/disc/31930/140120260917537886.pdf) / 公表 2026-09-17 / retrieved / SHA-256 `22bb1d9c521894aaf39ea25c9eebf273f0ce37b17ffc0d7dc359fb2e80bdb507`\n- S05 [中期経営計画の数値目標修正に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534865.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `2ae48c393b9d6f0fab7b92b1ac00504bdd809d638f737be36a8da624cf899dcd`\n- S06 [月次報告（2026年8月度）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260907/20260907532351.pdf) / 公表 2026-09-07 / retrieved / SHA-256 `a242e1ffbe237bacf03b5ef45550149320730d3bd409d07d9db8d72d6fb22a48`\n- S07 [月次報告（2026年9月度）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261007/20261007547086.pdf) / 公表 2026-10-07 / retrieved / SHA-256 `bb7e39bd5dab0e42eaa96bf596da7250612243ec5627281ecdd0cd7db2536cd6`\n- S08 [月次報告（2026年10月度）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261109/20261109569070.pdf) / 公表 2026-11-09 / retrieved / SHA-256 `7458e5b0a579766d19528103f549da4a89b5c38cf98f491bc231b6abfbda795b`\n- S09 [「焼鳥屋 鳥貴族」全店における価格改定のお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534195.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `b58f9c0e23fc20ce9ef66a3de4ce4f9c26ba34549a50418b615a8ed6514c004e`\n- S10 [（開示事項の経過）米国中間持株会社（特定子会社）の設立に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261015/20261015551597.pdf) / 公表 2026-10-15 / retrieved / SHA-256 `122818b339d1af7cf57777dfeb4019eade409f156081cab1eae971f18b954b20`\n- S11 [貸倒引当金繰入額及び関係会社株式評価損の発生（個別）に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536201.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `301e651a152b0278ac03ee8bd530dbb581810ee0ff6f4c5fbb3df76532477c3e`\n- S12 [株式情報](https://eternal-hospitality.co.jp/ir/stock/) / 公表  / unavailable / SHA-256 `なし`\n- S13 [IRカレンダー](https://eternal-hospitality.co.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 発表予定日は入力条件の2026-12-11を保持したが、公式日程の本文は提示されていない。S13は資料一覧のみで原文未確認。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3193",
+    "company_name": "株式会社エターナルホスピタリティグループ",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 13116.233354,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 13170.783304,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 13225.333254000001,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 235.0553039999977,
+          "rate": 0.018171014727582216,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 603.6263040000013,
+          "rate": 0.04803204925346292,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prior_revenue": 12567.157,
+      "prior_op": 888.648,
+      "prior_west": 4658.629,
+      "prior_east": 7174.169,
+      "prior_overseas": 285.336,
+      "fy_revenue": 51254.445,
+      "fy_op": 2797.226,
+      "nine_revenue": 38318.717,
+      "nine_op": 2367.053,
+      "fy_overseas": 1238.515,
+      "nine_overseas": 917.527,
+      "domestic_all_store_index": 1.048,
+      "existing_sales_index": 1.002,
+      "existing_customers_index": 0.993,
+      "existing_ticket_index": 1.01,
+      "domestic_proxy_index": 1.048,
+      "bear_overseas_factor": 0.9,
+      "base_overseas_factor": 1.0,
+      "bull_overseas_factor": 1.1,
+      "bear_other_factor": 0.95,
+      "base_other_factor": 1.0,
+      "bull_other_factor": 1.05,
+      "guidance_h1_revenue": 27990.0,
+      "guidance_h1_op": 1532.0,
+      "guidance_h1_ordinary": 1510.0,
+      "guidance_h1_net": 936.0,
+      "guidance_fy_revenue": 57231.0,
+      "guidance_fy_op": 3078.0,
+      "guidance_fy_ordinary": 3050.0,
+      "guidance_fy_net": 1891.0,
+      "prior_domestic": 11832.797999999999,
+      "prior_other": 449.02300000000037,
+      "q4_revenue": 12935.728000000003,
+      "q4_op": 430.17300000000023,
+      "q4_overseas": 320.98800000000006,
+      "forecast_domestic": 12400.772304,
+      "domestic_change": 567.9743040000012,
+      "bear_overseas": 288.8892000000001,
+      "base_overseas": 320.98800000000006,
+      "bull_overseas": 353.0868000000001,
+      "bear_other": 426.5718500000003,
+      "base_other": 449.02300000000037,
+      "bull_other": 471.4741500000004,
+      "bear_revenue": 13116.233354,
+      "base_revenue": 13170.783304,
+      "bull_revenue": 13225.333254000001,
+      "qoq_unexplained": -368.57100000000355
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2、7、11",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 12567.157,
+        "operating_profit": 888.648,
+        "ordinary_profit": 905.831,
+        "net_profit": 767.223
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2、7、11",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 2、8、15",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 12935.728000000003,
+        "operating_profit": 430.17300000000023,
+        "ordinary_profit": 405.02700000000004,
+        "net_profit": -214.46800000000007
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "国内直営売上の変化",
+            "formula": "domestic_change",
+            "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "海外直営売上の変化",
+            "formula": "bear_overseas-prior_overseas",
+            "reason": "直近四半期売上を基準にした弱気条件。",
+            "amount": 3.5532000000000608
+          },
+          {
+            "label": "直営店以外の売上の変化",
+            "formula": "bear_other-prior_other",
+            "reason": "FC関連等を含む残余売上の弱気条件。",
+            "amount": -22.45115000000004
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "前年同四半期を起点とする国内直営増減",
+            "formula": "domestic_change",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "前年同四半期を起点とする海外直営増減",
+            "formula": "bear_overseas-prior_overseas",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 3.5532000000000608
+          },
+          {
+            "label": "前年同四半期を起点とするその他増減",
+            "formula": "bear_other-prior_other",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": -22.45115000000004
+          }
+        ],
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、季節要因と断定せず未説明残差とした。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "国内直営売上の変化",
+            "formula": "domestic_change",
+            "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "海外直営売上の変化",
+            "formula": "base_overseas-prior_overseas",
+            "reason": "直近四半期売上維持の中心条件。",
+            "amount": 35.652000000000044
+          },
+          {
+            "label": "直営店以外の売上の変化",
+            "formula": "base_other-prior_other",
+            "reason": "残余売上を前年同期並みとする中心条件。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "前年同四半期を起点とする国内直営増減",
+            "formula": "domestic_change",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "前年同四半期を起点とする海外直営増減",
+            "formula": "base_overseas-prior_overseas",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 35.652000000000044
+          },
+          {
+            "label": "前年同四半期を起点とするその他増減",
+            "formula": "base_other-prior_other",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 0.0
+          }
+        ],
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "国内直営売上の変化",
+            "formula": "domestic_change",
+            "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "海外直営売上の変化",
+            "formula": "bull_overseas-prior_overseas",
+            "reason": "直近四半期売上を基準にした強気条件。",
+            "amount": 67.75080000000008
+          },
+          {
+            "label": "直営店以外の売上の変化",
+            "formula": "bull_other-prior_other",
+            "reason": "海外FC等の寄与を見込む強気条件。",
+            "amount": 22.45115000000004
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "前年同四半期を起点とする国内直営増減",
+            "formula": "domestic_change",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 567.9743040000012
+          },
+          {
+            "label": "前年同四半期を起点とする海外直営増減",
+            "formula": "bull_overseas-prior_overseas",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 67.75080000000008
+          },
+          {
+            "label": "前年同四半期を起点とするその他増減",
+            "formula": "bull_other-prior_other",
+            "reason": "前年同期基準のモデル寄与。",
+            "amount": 22.45115000000004
+          }
+        ],
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+      }
+    ],
+    "issues": [
+      "S01～S11はtruncated=falseとして提示されている。ただしPDF画像そのものとの照合、訂正履歴、基準日時までの追加開示の網羅確認は行っていない。",
+      "S03及びS01には会計方針変更・修正再表示なしの記載があり、売上・営業利益の通期累計から第3四半期累計を差し引いた。収益区分変更は西日本・東日本・海外の同一区分で比較した。取得原価配分確定による遡及変更を示す記載は提示原文にはない。",
+      "S11の貸倒引当金繰入及び関係会社株式評価損は前年度の個別決算項目で、連結では相殺消去されると明記されている。対象期の連結損失予測に転用しない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "会社予想の数値自体は原文確認済みだが、最新性の網羅確認は未完了。過年度の旧予想は対象期の予想として採用していない。",
+      "保存原文の収益分解表は千円単位の内訳合計と総額に微差がある。予測基準のその他売上は総額から国内直営・海外直営を控除して定義し、原資料の内訳合計と完全一致すると主張しない。",
+      "営業外損益・特別損益・税率の対象四半期見通しが不足している。前年同期純利益には移転補償金と税負担の影響があるため、そのまま延長しない。",
+      "国内月次は鳥貴族直営店のみ。収益認識注記の西日本・東日本直営売上は他ブランドを含み得るため、同一範囲と断定できない。国内予測にはこの近似誤差が残る。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "対象決算は提示された保存原文には含まれていない。target_already_announced=falseは提供された探索情報によるもので、基準日時までの公開状況を独自に網羅確認した結果ではない。",
+      "海外売上・その他売上のシナリオは条件付き感応度であり、各店舗の稼働日数や単価から積み上げた確定範囲ではない。海外FC・合弁の店舗増は直営売上増として計上していない。",
+      "給与費の対象基盤、時間給・労働時間、食材別仕入単価、店舗別費用、海外四半期損失の数値が提示原文にない。公表資料全体で非開示とは断定せず、費用予測に必要な範囲が未確認とする。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures",
+      "飲食事業は単一セグメントで、S01及びS02等ではセグメント別利益の記載が省略されている。ブランド・地域別四半期営業利益は提示原文で確認できない。"
+    ],
+    "schedule_warnings": [
+      "発表予定日は入力条件の2026-12-11を保持したが、公式日程の本文は提示されていない。S13は資料一覧のみで原文未確認。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 180.50535399999717,
+            "rate": 0.013954015885305962,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 549.0763540000007,
+            "rate": 0.04369137379281573,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 235.0553039999977,
+            "rate": 0.018171014727582216,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 603.6263040000013,
+            "rate": 0.04803204925346292,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 289.60525399999824,
+            "rate": 0.02238801356985847,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 658.1762540000018,
+            "rate": 0.05237272471411011,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 549.0763540000007,
+        "explained_sum": 549.0763540000012,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 180.50535399999717,
+        "explained_sum": 549.0763540000012,
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "difference": -4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、季節要因と断定せず未説明残差とした。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 603.6263040000013,
+        "explained_sum": 603.6263040000013,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 235.0553039999977,
+        "explained_sum": 603.6263040000013,
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 658.1762540000018,
+        "explained_sum": 658.1762540000013,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 289.60525399999824,
+        "explained_sum": 658.1762540000013,
+        "residual": -368.57100000000355,
+        "residual_type": "economic_unexplained",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+      }
+    ],
+    "conditions": [
+      "base_other_factor: 直営店以外の売上を前年同期並みとする条件。海外FC増、国内TCC増、国内大吉の店舗減を踏まえ、単価や計上時期が確認できない部分に純増を見込まない。",
+      "base_overseas_factor: 直近四半期の海外直営売上を維持する条件。韓国の前期末出店と米国の対象期中店舗増が上海の弱さを相殺すると仮定する。各地域の増減額を確認できないため、相殺は独自仮定。",
+      "bear_other_factor: 直営店以外の連結売上を前年同期比5%減とする条件。国内大吉の店舗減と加盟金計上時期の変動が、海外FC増の寄与を上回る場合を置く。料率や加盟金単価は確認できないため、店舗当たり売上の実績推計ではない。",
+      "bear_overseas_factor: 直近四半期の海外直営売上を基準に10%減とする条件。上海の軟調と閉店準備を重く見る。海外店舗増にはFC・合弁が多く、総店舗数の伸びを直営売上に適用しない。前年同四半期の海外直営売上に近い水準となる。",
+      "bull_other_factor: 直営店以外の売上を前年同期比5%増とする条件。海外FCの店舗増に伴うロイヤリティ・加盟金と国内TCC増が寄与する場合。FC・合弁店舗の店頭売上は連結売上へ直接加算しない。",
+      "bull_overseas_factor: 直近四半期比10%増の条件。韓国の前期末出店と米国の期中店舗増の寄与が上海の弱さを上回ると仮定する。直営店舗数の急増は確認できないため、大幅な増収は置かない。",
+      "domestic_proxy_index: 前年同期の国内直営店売上に、対象四半期の国内鳥貴族直営全店売上指数を適用する。前年同期の国内直営店はグループ全体412店に対して鳥貴族411店であり、主要部分を近似できる。ただし国内直営売上と月次対象ブランドの範囲は完全一致しないため、確定値ではない。全店指数には既存店の客数・客単価変化と店舗増が包含されている。",
+      "その他売上のシナリオはロイヤリティ・加盟金の計上時期が大きく変わらないことを条件とする。",
+      "上海の閉店意思決定は確認できるが、S08の中国店舗数は対象期中に減少しておらず、閉店完了や費用削減実現を仮定していない。",
+      "国内直営売上と国内鳥貴族月次対象の範囲差による誤差が小さいことを条件としている。",
+      "海外直営売上の直近四半期比変化を弱気・中心・強気の感応度で扱い、為替や各国決算取込期間の変化は分離していない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/31930/140120260911535131.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/31930/140120260911535131.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S01.txt",
+        "sha256": "aadf2c9bf41bce63affd3ec452921bf28f9300886a99992e052ba3d492f6e645",
+        "text_sha256": "8888442261d4cea69e5887c69fe09e6a666cefe084495039c13d1bd3636bab14",
+        "retrieved_at": "2026-11-18T18:17:32+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 21316,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251205/20251205515379.pdf",
+        "published_at": "2025-12-05",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251205/20251205515379.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S02.txt",
+        "sha256": "4cf81ea86abedde904de44ae95e900a4d48576f8af7c142d0670e418035bd203",
+        "text_sha256": "8a0042a1748e7c35624bed3c8e19384369e9bb6e2b1e8804118726891bdad6f2",
+        "retrieved_at": "2026-11-18T18:17:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13197,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/31930/140120260605563896.pdf",
+        "published_at": "2026-06-05",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/31930/140120260605563896.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S03.txt",
+        "sha256": "7d90a5a108aa857f3f1b2571feee351590b1311188d90f391d8df41f4b7892bb",
+        "text_sha256": "ea8d0d59f0dcaa4f1412738fa7cb58afe64b36cea89aebe16af896b83abe96d8",
+        "retrieved_at": "2026-11-18T18:17:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 15923,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "第40期（2026年7月期）期末 決算説明会資料",
+        "url": "https://www2.jpx.co.jp/disc/31930/140120260917537886.pdf",
+        "published_at": "2026-09-17",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/31930/140120260917537886.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S04.txt",
+        "sha256": "22bb1d9c521894aaf39ea25c9eebf273f0ce37b17ffc0d7dc359fb2e80bdb507",
+        "text_sha256": "9e293d3eef887ae9b856cc9264b5fd86033127ce10acf4441b772aba5dd5293a",
+        "retrieved_at": "2026-11-18T18:17:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16822,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "中期経営計画の数値目標修正に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534865.pdf",
+        "published_at": "2026-09-11",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534865.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S05.txt",
+        "sha256": "2ae48c393b9d6f0fab7b92b1ac00504bdd809d638f737be36a8da624cf899dcd",
+        "text_sha256": "dcaac8a58ca18f9bc6865e50910ff03d766db9ca9573ede30e7d83fdfdaa4dff",
+        "retrieved_at": "2026-11-18T18:17:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1094,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "月次報告（2026年8月度）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260907/20260907532351.pdf",
+        "published_at": "2026-09-07",
+        "category": "kpi",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260907/20260907532351.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S06.txt",
+        "sha256": "a242e1ffbe237bacf03b5ef45550149320730d3bd409d07d9db8d72d6fb22a48",
+        "text_sha256": "b2e1acc61b82945fc0f04a94187b7095c7c86f9ddc8c54c8121b8b1ebd5e88ef",
+        "retrieved_at": "2026-11-18T18:17:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1853,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "月次報告（2026年9月度）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261007/20261007547086.pdf",
+        "published_at": "2026-10-07",
+        "category": "kpi",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261007/20261007547086.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S07.txt",
+        "sha256": "bb7e39bd5dab0e42eaa96bf596da7250612243ec5627281ecdd0cd7db2536cd6",
+        "text_sha256": "6ec54d2402e859326f50a4b0f36972fd7bc82e9407a50de5e32d0e5e81b7fda8",
+        "retrieved_at": "2026-11-18T18:17:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1907,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "月次報告（2026年10月度）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261109/20261109569070.pdf",
+        "published_at": "2026-11-09",
+        "category": "kpi",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261109/20261109569070.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S08.txt",
+        "sha256": "7458e5b0a579766d19528103f549da4a89b5c38cf98f491bc231b6abfbda795b",
+        "text_sha256": "d066aa6a1297ec0b32125c0063f107a257cd9a2f331a8358f006a90157cd2262",
+        "retrieved_at": "2026-11-18T18:17:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2007,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "「焼鳥屋 鳥貴族」全店における価格改定のお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534195.pdf",
+        "published_at": "2026-09-10",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534195.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S09.txt",
+        "sha256": "b58f9c0e23fc20ce9ef66a3de4ce4f9c26ba34549a50418b615a8ed6514c004e",
+        "text_sha256": "9882039373bc1d7b5ad5fab6590fe124f171b25462e35627e7b293fb55b7bf74",
+        "retrieved_at": "2026-11-18T18:17:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1203,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "（開示事項の経過）米国中間持株会社（特定子会社）の設立に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261015/20261015551597.pdf",
+        "published_at": "2026-10-15",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261015/20261015551597.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S10.txt",
+        "sha256": "122818b339d1af7cf57777dfeb4019eade409f156081cab1eae971f18b954b20",
+        "text_sha256": "0106b9261602f843ae9c6e873b802458beff9532524fc58a348f99da43dba8f9",
+        "retrieved_at": "2026-11-18T18:17:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 988,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "貸倒引当金繰入額及び関係会社株式評価損の発生（個別）に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536201.pdf",
+        "published_at": "2026-09-14",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536201.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3193\\sources\\S11.txt",
+        "sha256": "301e651a152b0278ac03ee8bd530dbb581810ee0ff6f4c5fbb3df76532477c3e",
+        "text_sha256": "96194fd933014b78e9ccb0d63d555b5a332cc140734c9f193096fb6594bb4ceb",
+        "retrieved_at": "2026-11-18T18:17:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 727,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "株式情報",
+        "url": "https://eternal-hospitality.co.jp/ir/stock/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T18:17:36+09:00"
+      },
+      {
+        "id": "S13",
+        "title": "IRカレンダー",
+        "url": "https://eternal-hospitality.co.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T18:17:36+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3193",
+      "announcement_date": "2026-12-11",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "prior_revenue",
+          "value": 12567.157,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、当第1四半期連結累計期間"
+        },
+        {
+          "id": "prior_op",
+          "value": 888.648,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、当第1四半期連結累計期間"
+        },
+        {
+          "id": "prior_west",
+          "value": 4658.629,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11、収益認識関係"
+        },
+        {
+          "id": "prior_east",
+          "value": 7174.169,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11、収益認識関係"
+        },
+        {
+          "id": "prior_overseas",
+          "value": 285.336,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11、直営店・海外"
+        },
+        {
+          "id": "fy_revenue",
+          "value": 51254.445,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、当連結会計年度"
+        },
+        {
+          "id": "fy_op",
+          "value": 2797.226,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、当連結会計年度"
+        },
+        {
+          "id": "nine_revenue",
+          "value": 38318.717,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、当第3四半期連結累計期間"
+        },
+        {
+          "id": "nine_op",
+          "value": 2367.053,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、当第3四半期連結累計期間"
+        },
+        {
+          "id": "fy_overseas",
+          "value": 1238.515,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 15、直営店・海外"
+        },
+        {
+          "id": "nine_overseas",
+          "value": 917.527,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 11、直営店・海外"
+        },
+        {
+          "id": "domestic_all_store_index",
+          "value": 1.048,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、国内鳥貴族直営店・全店売上高・累計"
+        },
+        {
+          "id": "existing_sales_index",
+          "value": 1.002,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、既存店売上高・累計"
+        },
+        {
+          "id": "existing_customers_index",
+          "value": 0.993,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、客数・累計"
+        },
+        {
+          "id": "existing_ticket_index",
+          "value": 1.01,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、客単価・累計"
+        },
+        {
+          "id": "domestic_proxy_index",
+          "value": 1.048,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S02",
+            "S08"
+          ],
+          "locator": "S02 PDF pages 4、11；S08 PDF page 1",
+          "rationale": "前年同期の国内直営店売上に、対象四半期の国内鳥貴族直営全店売上指数を適用する。前年同期の国内直営店はグループ全体412店に対して鳥貴族411店であり、主要部分を近似できる。ただし国内直営売上と月次対象ブランドの範囲は完全一致しないため、確定値ではない。全店指数には既存店の客数・客単価変化と店舗増が包含されている。",
+          "sensitivity": "適用指数が0.01変動すると、予測売上はprior_domesticの1%変動する。全シナリオ共通の近似誤差であり、シナリオ幅には含めていない。",
+          "material": true
+        },
+        {
+          "id": "bear_overseas_factor",
+          "value": 0.9,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S08"
+          ],
+          "locator": "S01 PDF page 15；S03 PDF page 11；S04 PDF pages 19～22；S08 PDF page 1",
+          "rationale": "直近四半期の海外直営売上を基準に10%減とする条件。上海の軟調と閉店準備を重く見る。海外店舗増にはFC・合弁が多く、総店舗数の伸びを直営売上に適用しない。前年同四半期の海外直営売上に近い水準となる。",
+          "sensitivity": "係数0.1につき売上がq4_overseasの10%変動する。為替・閉店時期を含むストレス条件であり、統計的な下限ではない。",
+          "material": true
+        },
+        {
+          "id": "base_overseas_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S08"
+          ],
+          "locator": "S01 PDF page 15；S03 PDF page 11；S04 PDF pages 19～22；S08 PDF page 1",
+          "rationale": "直近四半期の海外直営売上を維持する条件。韓国の前期末出店と米国の対象期中店舗増が上海の弱さを相殺すると仮定する。各地域の増減額を確認できないため、相殺は独自仮定。",
+          "sensitivity": "係数0.1につき売上がq4_overseasの10%変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_overseas_factor",
+          "value": 1.1,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S08"
+          ],
+          "locator": "S01 PDF page 15；S03 PDF page 11；S04 PDF pages 19～22；S08 PDF page 1",
+          "rationale": "直近四半期比10%増の条件。韓国の前期末出店と米国の期中店舗増の寄与が上海の弱さを上回ると仮定する。直営店舗数の急増は確認できないため、大幅な増収は置かない。",
+          "sensitivity": "係数0.1につき売上がq4_overseasの10%変動する。為替換算や稼働期間次第でこの条件を外れる。",
+          "material": true
+        },
+        {
+          "id": "bear_other_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S08"
+          ],
+          "locator": "S02 PDF page 11；S04 PDF pages 5、9、22；S08 PDF page 1",
+          "rationale": "直営店以外の連結売上を前年同期比5%減とする条件。国内大吉の店舗減と加盟金計上時期の変動が、海外FC増の寄与を上回る場合を置く。料率や加盟金単価は確認できないため、店舗当たり売上の実績推計ではない。",
+          "sensitivity": "係数0.05につき売上がprior_otherの5%変動する。加盟金の集中計上がある場合は範囲外となる。",
+          "material": true
+        },
+        {
+          "id": "base_other_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S08"
+          ],
+          "locator": "S02 PDF page 11；S04 PDF pages 5、9、22；S08 PDF page 1",
+          "rationale": "直営店以外の売上を前年同期並みとする条件。海外FC増、国内TCC増、国内大吉の店舗減を踏まえ、単価や計上時期が確認できない部分に純増を見込まない。",
+          "sensitivity": "係数0.05につき売上がprior_otherの5%変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_other_factor",
+          "value": 1.05,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S08"
+          ],
+          "locator": "S02 PDF page 11；S04 PDF pages 5、9、22；S08 PDF page 1",
+          "rationale": "直営店以外の売上を前年同期比5%増とする条件。海外FCの店舗増に伴うロイヤリティ・加盟金と国内TCC増が寄与する場合。FC・合弁店舗の店頭売上は連結売上へ直接加算しない。",
+          "sensitivity": "係数0.05につき売上がprior_otherの5%変動する。料率・加盟金計上時期は未確認であり、統計的な上限ではない。",
+          "material": true
+        },
+        {
+          "id": "guidance_h1_revenue",
+          "value": 27990,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_op",
+          "value": 1532,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_ordinary",
+          "value": 1510,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_net",
+          "value": 936,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_fy_revenue",
+          "value": 57231,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期予想"
+        },
+        {
+          "id": "guidance_fy_op",
+          "value": 3078,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期予想"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "value": 3050,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期予想"
+        },
+        {
+          "id": "guidance_fy_net",
+          "value": 1891,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期予想"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_domestic",
+          "formula": "prior_west+prior_east"
+        },
+        {
+          "id": "prior_other",
+          "formula": "prior_revenue-prior_domestic-prior_overseas"
+        },
+        {
+          "id": "q4_revenue",
+          "formula": "fy_revenue-nine_revenue"
+        },
+        {
+          "id": "q4_op",
+          "formula": "fy_op-nine_op"
+        },
+        {
+          "id": "q4_overseas",
+          "formula": "fy_overseas-nine_overseas"
+        },
+        {
+          "id": "forecast_domestic",
+          "formula": "prior_domestic*domestic_proxy_index"
+        },
+        {
+          "id": "domestic_change",
+          "formula": "forecast_domestic-prior_domestic"
+        },
+        {
+          "id": "bear_overseas",
+          "formula": "q4_overseas*bear_overseas_factor"
+        },
+        {
+          "id": "base_overseas",
+          "formula": "q4_overseas*base_overseas_factor"
+        },
+        {
+          "id": "bull_overseas",
+          "formula": "q4_overseas*bull_overseas_factor"
+        },
+        {
+          "id": "bear_other",
+          "formula": "prior_other*bear_other_factor"
+        },
+        {
+          "id": "base_other",
+          "formula": "prior_other*base_other_factor"
+        },
+        {
+          "id": "bull_other",
+          "formula": "prior_other*bull_other_factor"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "forecast_domestic+bear_overseas+bear_other"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "forecast_domestic+base_overseas+base_other"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "forecast_domestic+bull_overseas+bull_other"
+        },
+        {
+          "id": "qoq_unexplained",
+          "formula": "prior_revenue-q4_revenue"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内直営店・月次指数適用近似",
+              "revenue": "forecast_domestic"
+            },
+            {
+              "name": "海外直営店",
+              "revenue": "bear_overseas"
+            },
+            {
+              "name": "直営店以外の売上・その他の収益",
+              "revenue": "bear_other"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内直営店・月次指数適用近似",
+              "revenue": "forecast_domestic"
+            },
+            {
+              "name": "海外直営店",
+              "revenue": "base_overseas"
+            },
+            {
+              "name": "直営店以外の売上・その他の収益",
+              "revenue": "base_other"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内直営店・月次指数適用近似",
+              "revenue": "forecast_domestic"
+            },
+            {
+              "name": "海外直営店",
+              "revenue": "bull_overseas"
+            },
+            {
+              "name": "直営店以外の売上・その他の収益",
+              "revenue": "bull_other"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 12567.157,
+          "operating_profit": 888.648,
+          "ordinary_profit": 905.831,
+          "net_profit": 767.223,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年7月期公表版・収益分解は西日本／東日本／海外区分・修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2、7、11"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 38318.717,
+          "operating_profit": 2367.053,
+          "ordinary_profit": 2394.975,
+          "net_profit": 1532.564,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年7月期公表版・収益分解は西日本／東日本／海外区分・修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2、7、11"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 51254.445,
+          "operating_profit": 2797.226,
+          "ordinary_profit": 2800.002,
+          "net_profit": 1318.096,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年7月期公表版・収益分解は西日本／東日本／海外区分・修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2、8、15"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "国内直営の客数・客単価・店舗増",
+          "mechanism": "対象期間の累計既存店客数は前年割れ、客単価上昇で既存店売上は概ね横ばい。全店売上は既存店を上回り、前期出店分などの寄与が主要な増収要因。全店指数を使うため、店舗数増と価格改定を追加加算しない。",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、店舗数及び月次動向",
+          "calculation_ids": [
+            "forecast_domestic",
+            "domestic_change"
+          ],
+          "not_quantified_reason": "既存店対象売上の絶対額と非鳥貴族の国内直営売上が分離できず、客数・客単価・新店寄与それぞれの厳密な金額分解は行わない。"
+        },
+        {
+          "name": "海外直営とFC・合弁の構成",
+          "mechanism": "米国の店舗増、韓国の前期末出店、上海の弱い採算を分けて考える。香港・シンガポール・フィリピンはFC、台湾は合弁であり、総店舗数増を直営売上へ換算しない。",
+          "source_ids": [
+            "S04",
+            "S08"
+          ],
+          "locator": "S04 PDF pages 19～22；S08 PDF page 1及び注記",
+          "calculation_ids": [
+            "bear_overseas",
+            "base_overseas",
+            "bull_overseas",
+            "bear_other",
+            "base_other",
+            "bull_other"
+          ],
+          "not_quantified_reason": "地域別四半期売上、FC料率、加盟金単価、為替及び現地決算の連結取込期間が未確認。直近売上を基準に条件付き感応度を設定した。"
+        },
+        {
+          "name": "賃上げ・休日増・原材料費・出店費用",
+          "mechanism": "対象期首からの賃上げと休日増、原材料費上昇が利益を圧迫する。前四半期は出店費用が偏重しており、前四半期営業利益率の単純適用も適切でない。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S09"
+          ],
+          "locator": "S01 PDF page 8；S04 PDF pages 3、9、26；S09 PDF page 2",
+          "calculation_ids": [],
+          "not_quantified_reason": "賃上げ対象の給与費基盤、時間給・稼働時間、食材価格変化、四半期の出店費用・海外損失が分離されていない。総販管費から利益に合わせて逆算せず、営業利益はnullとした。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "国内直営売上の変化",
+              "formula": "domestic_change",
+              "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。"
+            },
+            {
+              "label": "海外直営売上の変化",
+              "formula": "bear_overseas-prior_overseas",
+              "reason": "直近四半期売上を基準にした弱気条件。"
+            },
+            {
+              "label": "直営店以外の売上の変化",
+              "formula": "bear_other-prior_other",
+              "reason": "FC関連等を含む残余売上の弱気条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "前年同四半期を起点とする国内直営増減",
+              "formula": "domestic_change",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とする海外直営増減",
+              "formula": "bear_overseas-prior_overseas",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とするその他増減",
+              "formula": "bear_other-prior_other",
+              "reason": "前年同期基準のモデル寄与。"
+            }
+          ],
+          "residual": "qoq_unexplained",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、季節要因と断定せず未説明残差とした。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "費用積上げの合理的な範囲を設定できず営業利益予測がnullのため、差額及び未説明残差の金額も算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期の出店費用偏重は確認できるが金額を分離できず、営業利益差額及び未説明残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "国内直営売上の変化",
+              "formula": "domestic_change",
+              "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。"
+            },
+            {
+              "label": "海外直営売上の変化",
+              "formula": "base_overseas-prior_overseas",
+              "reason": "直近四半期売上維持の中心条件。"
+            },
+            {
+              "label": "直営店以外の売上の変化",
+              "formula": "base_other-prior_other",
+              "reason": "残余売上を前年同期並みとする中心条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "前年同四半期を起点とする国内直営増減",
+              "formula": "domestic_change",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とする海外直営増減",
+              "formula": "base_overseas-prior_overseas",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とするその他増減",
+              "formula": "base_other-prior_other",
+              "reason": "前年同期基準のモデル寄与。"
+            }
+          ],
+          "residual": "qoq_unexplained",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "費用積上げの合理的な範囲を設定できず、営業利益差額及び未説明残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期の出店費用偏重を金額分離できず、営業利益差額及び未説明残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "国内直営売上の変化",
+              "formula": "domestic_change",
+              "reason": "対象四半期の全店月次指数を国内直営売上へ近似適用。"
+            },
+            {
+              "label": "海外直営売上の変化",
+              "formula": "bull_overseas-prior_overseas",
+              "reason": "直近四半期売上を基準にした強気条件。"
+            },
+            {
+              "label": "直営店以外の売上の変化",
+              "formula": "bull_other-prior_other",
+              "reason": "海外FC等の寄与を見込む強気条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の売上区分で全差額を説明。仮定の正確性が確認されたという意味ではない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "前年同四半期を起点とする国内直営増減",
+              "formula": "domestic_change",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とする海外直営増減",
+              "formula": "bull_overseas-prior_overseas",
+              "reason": "前年同期基準のモデル寄与。"
+            },
+            {
+              "label": "前年同四半期を起点とするその他増減",
+              "formula": "bull_other-prior_other",
+              "reason": "前年同期基準のモデル寄与。"
+            }
+          ],
+          "residual": "qoq_unexplained",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期と前四半期の実績差。季節性・店舗構成・単価等への金額配賦ができないため、未説明残差として保持。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "費用積上げの合理的な範囲を設定できず、営業利益差額及び未説明残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期の出店費用偏重を金額分離できず、営業利益差額及び未説明残差は算定不能。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "g_h1_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_h1_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、第2四半期累計"
+        },
+        {
+          "id": "g_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_h1_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、第2四半期累計"
+        },
+        {
+          "id": "g_h1_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_h1_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、第2四半期累計"
+        },
+        {
+          "id": "g_h1_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_h1_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、第2四半期累計"
+        },
+        {
+          "id": "g_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_fy_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、通期"
+        },
+        {
+          "id": "g_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_fy_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、通期"
+        },
+        {
+          "id": "g_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_fy_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、通期"
+        },
+        {
+          "id": "g_fy_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_fy_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、通期"
+        }
+      ],
+      "company_guidance": "S01の会社予想は中間累計及び通期であり、対象第1四半期単独予想ではない。S04 PDF page 9によれば、国内鳥貴族の10月価格改定は未織込み、8月からの賃上げ及び休日増は織込み済み。S10は当該子会社設立による業績予想修正なしとしている。ただし基準日時までの修正履歴の網羅確認はできていないため、guidance_recordsのrevision_statusはunverifiedとした。S05の中期目標修正は同じ通期予想に対応するため独立の上乗せ要因にしない。",
+      "consensus": "未確認。提示資料に市場コンセンサスの数値・集計主体・基準日はない。",
+      "independent_forecast": "対象四半期の月次実績を国内直営売上へ接続し、海外直営とその他収益を別建てにした条件付き売上予測。会社予想の四等分や期後修正予想からの差引きではない。海外・その他のシナリオ幅は履歴と店舗構成に基づく感応度であり、実績や確率的信頼区間ではない。営業利益は費用の合理的な積上げ範囲が不足するためnull。経常利益・純利益もnull。",
+      "narrative": [
+        {
+          "heading": "条件付き売上予測",
+          "text": "中心売上は{{value:base_revenue}}百万円、弱気は{{value:bear_revenue}}百万円、強気は{{value:bull_revenue}}百万円。売上の大部分を占める国内直営は対象期間の月次指数で近似し、海外直営とFC関連等の不確実性を分けた。シナリオ幅には国内の対象範囲差による誤差を含めていない。"
+        },
+        {
+          "heading": "増収の中身と値上げ",
+          "text": "国内直営の前年同期からの増収寄与は{{value:domestic_change}}百万円。既存店は客数減を客単価上昇で補う構図で、増収は前期出店分などの寄与に依存する。10月は値上げ後も既存店売上が前年割れであり、値上げ率をそのまま増収率として加算できない。月次全店指数に価格改定の実現効果は既に含まれている。"
+        },
+        {
+          "heading": "利益予測の限界",
+          "text": "賃上げ、休日拡大、食材費上昇、海外先行赤字を金額で分離できず、利益予測は提示しない。前四半期営業利益{{value:q4_op}}百万円には出店費用の偏重があり、その利益率を対象四半期に適用する根拠も不足する。上海店舗の減損や親会社個別の評価損を対象四半期の連結営業費用として再計上しない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "国内直営売上と国内鳥貴族月次対象の範囲差による誤差が小さいことを条件としている。",
+        "海外直営売上の直近四半期比変化を弱気・中心・強気の感応度で扱い、為替や各国決算取込期間の変化は分離していない。",
+        "上海の閉店意思決定は確認できるが、S08の中国店舗数は対象期中に減少しておらず、閉店完了や費用削減実現を仮定していない。",
+        "その他売上のシナリオはロイヤリティ・加盟金の計上時期が大きく変わらないことを条件とする。"
+      ],
+      "material_unresolved": [
+        "発表予定日は入力条件の2026-12-11を保持したが、公式日程の本文は提示されていない。S13は資料一覧のみで原文未確認。",
+        "対象決算は提示された保存原文には含まれていない。target_already_announced=falseは提供された探索情報によるもので、基準日時までの公開状況を独自に網羅確認した結果ではない。",
+        "S01～S11はtruncated=falseとして提示されている。ただしPDF画像そのものとの照合、訂正履歴、基準日時までの追加開示の網羅確認は行っていない。",
+        "飲食事業は単一セグメントで、S01及びS02等ではセグメント別利益の記載が省略されている。ブランド・地域別四半期営業利益は提示原文で確認できない。",
+        "国内月次は鳥貴族直営店のみ。収益認識注記の西日本・東日本直営売上は他ブランドを含み得るため、同一範囲と断定できない。国内予測にはこの近似誤差が残る。",
+        "海外売上・その他売上のシナリオは条件付き感応度であり、各店舗の稼働日数や単価から積み上げた確定範囲ではない。海外FC・合弁の店舗増は直営売上増として計上していない。",
+        "給与費の対象基盤、時間給・労働時間、食材別仕入単価、店舗別費用、海外四半期損失の数値が提示原文にない。公表資料全体で非開示とは断定せず、費用予測に必要な範囲が未確認とする。",
+        "営業外損益・特別損益・税率の対象四半期見通しが不足している。前年同期純利益には移転補償金と税負担の影響があるため、そのまま延長しない。",
+        "S11の貸倒引当金繰入及び関係会社株式評価損は前年度の個別決算項目で、連結では相殺消去されると明記されている。対象期の連結損失予測に転用しない。",
+        "S03及びS01には会計方針変更・修正再表示なしの記載があり、売上・営業利益の通期累計から第3四半期累計を差し引いた。収益区分変更は西日本・東日本・海外の同一区分で比較した。取得原価配分確定による遡及変更を示す記載は提示原文にはない。",
+        "保存原文の収益分解表は千円単位の内訳合計と総額に微差がある。予測基準のその他売上は総額から国内直営・海外直営を控除して定義し、原資料の内訳合計と完全一致すると主張しない。",
+        "会社予想の数値自体は原文確認済みだが、最新性の網羅確認は未完了。過年度の旧予想は対象期の予想として採用していない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "S01～S11はtruncated=falseとして提示されている。ただしPDF画像そのものとの照合、訂正履歴、基準日時までの追加開示の網羅確認は行っていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "S03及びS01には会計方針変更・修正再表示なしの記載があり、売上・営業利益の通期累計から第3四半期累計を差し引いた。収益区分変更は西日本・東日本・海外の同一区分で比較した。取得原価配分確定による遡及変更を示す記載は提示原文にはない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "S11の貸倒引当金繰入及び関係会社株式評価損は前年度の個別決算項目で、連結では相殺消去されると明記されている。対象期の連結損失予測に転用しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "会社予想の数値自体は原文確認済みだが、最新性の網羅確認は未完了。過年度の旧予想は対象期の予想として採用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "保存原文の収益分解表は千円単位の内訳合計と総額に微差がある。予測基準のその他売上は総額から国内直営・海外直営を控除して定義し、原資料の内訳合計と完全一致すると主張しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "営業外損益・特別損益・税率の対象四半期見通しが不足している。前年同期純利益には移転補償金と税負担の影響があるため、そのまま延長しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "国内月次は鳥貴族直営店のみ。収益認識注記の西日本・東日本直営売上は他ブランドを含み得るため、同一範囲と断定できない。国内予測にはこの近似誤差が残る。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "対象決算は提示された保存原文には含まれていない。target_already_announced=falseは提供された探索情報によるもので、基準日時までの公開状況を独自に網羅確認した結果ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "海外売上・その他売上のシナリオは条件付き感応度であり、各店舗の稼働日数や単価から積み上げた確定範囲ではない。海外FC・合弁の店舗増は直営売上増として計上していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "給与費の対象基盤、時間給・労働時間、食材別仕入単価、店舗別費用、海外四半期損失の数値が提示原文にない。公表資料全体で非開示とは断定せず、費用予測に必要な範囲が未確認とする。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "issue",
+      "message": "飲食事業は単一セグメントで、S01及びS02等ではセグメント別利益の記載が省略されている。ブランド・地域別四半期営業利益は提示原文で確認できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "base_other_factor: 直営店以外の売上を前年同期並みとする条件。海外FC増、国内TCC増、国内大吉の店舗減を踏まえ、単価や計上時期が確認できない部分に純増を見込まない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "base_overseas_factor: 直近四半期の海外直営売上を維持する条件。韓国の前期末出店と米国の対象期中店舗増が上海の弱さを相殺すると仮定する。各地域の増減額を確認できないため、相殺は独自仮定。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "bear_other_factor: 直営店以外の連結売上を前年同期比5%減とする条件。国内大吉の店舗減と加盟金計上時期の変動が、海外FC増の寄与を上回る場合を置く。料率や加盟金単価は確認できないため、店舗当たり売上の実績推計ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "bear_overseas_factor: 直近四半期の海外直営売上を基準に10%減とする条件。上海の軟調と閉店準備を重く見る。海外店舗増にはFC・合弁が多く、総店舗数の伸びを直営売上に適用しない。前年同四半期の海外直営売上に近い水準となる。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "bull_other_factor: 直営店以外の売上を前年同期比5%増とする条件。海外FCの店舗増に伴うロイヤリティ・加盟金と国内TCC増が寄与する場合。FC・合弁店舗の店頭売上は連結売上へ直接加算しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "bull_overseas_factor: 直近四半期比10%増の条件。韓国の前期末出店と米国の期中店舗増の寄与が上海の弱さを上回ると仮定する。直営店舗数の急増は確認できないため、大幅な増収は置かない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "domestic_proxy_index: 前年同期の国内直営店売上に、対象四半期の国内鳥貴族直営全店売上指数を適用する。前年同期の国内直営店はグループ全体412店に対して鳥貴族411店であり、主要部分を近似できる。ただし国内直営売上と月次対象ブランドの範囲は完全一致しないため、確定値ではない。全店指数には既存店の客数・客単価変化と店舗増が包含されている。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "その他売上のシナリオはロイヤリティ・加盟金の計上時期が大きく変わらないことを条件とする。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "上海の閉店意思決定は確認できるが、S08の中国店舗数は対象期中に減少しておらず、閉店完了や費用削減実現を仮定していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "国内直営売上と国内鳥貴族月次対象の範囲差による誤差が小さいことを条件としている。",
+      "quality": "保留"
+    },
+    {
+      "code": "3193",
+      "company_name": "株式会社エターナルホスピタリティグループ",
+      "kind": "condition",
+      "message": "海外直営売上の直近四半期比変化を弱気・中心・強気の感応度で扱い、為替や各国決算取込期間の変化は分離していない。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3193/result.json": "3ff71c98a55a4ca5ebfacf48a67ed79f839ed5802b39aee515eaee0a39ce58df",
+    "reports/3193.md": "b8e6e71c476d4551809c7f8cdb08c45f891856e3f618b58a4b779d9a75899d8d"
+  }
+}
