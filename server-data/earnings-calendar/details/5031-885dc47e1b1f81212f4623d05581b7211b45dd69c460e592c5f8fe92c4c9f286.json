@@ -1,0 +1,4237 @@
+{
+  "id": "5031-885dc47e1b1f81212f4623d05581b7211b45dd69c460e592c5f8fe92c4c9f286",
+  "code": "5031",
+  "companyName": "モイ株式会社",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "5031-review-c3873b2fba624a34 · 885dc47e",
+  "savedAt": "2026-11-18T17:54:21+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 1514.7853921557219,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": -0.08111233785660675,
+    "label": "-8.1%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 5031 モイ株式会社｜2027-01-31期 Q3単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 1,393.66 | 1,514.79 | 1,633.99 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -133.71 | -8.11% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | -58.52 | -3.72% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存原文で確認できる最新の通期会社予想はS03の据え置き予想。第3四半期単独予想ではない。当期純利益予想は繰延税金資産の回収可能性の見積りを理由に未定。S15は事故影響を精査中としており、修正後会社予想や期後修正値からの差引き推計は使用していない。latest_confirmedは提示資料内での確認を意味する。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスの数値はない。\n\n## 独自予測・差引推計の区分\n売上のみ条件付き独自予測。ポイントは直近四半期の認識売上をPU比・ARPPU比で調整し、停止相当日数を控除。メンバーシップはGMVと実効テイクレートで推計。残余売上は直近水準とプレミア配信の変動幅を参考に設定した。ポイントの認識売上への換算関係とメンバーシップの実効テイクレートが維持され、補填による追加の売上減額が対象四半期に生じない条件である。会社予想の按分や前年比の一律延長ではない。事故対応費用に根拠ある金額範囲を設定できないため、営業・経常・純利益はnullとする。\n\n## 対象と売上の条件付き予測\n対象は次回決算で開示される第3四半期単独。売上は弱気1,393.66、中心1,514.79、強気1,633.99。中心条件ではポイントPUの減少幅縮小とARPPU改善を想定するが、四半期末のサービス停止が回復を抑える。メンバーシップは継続課金と単価改善が支えとなる。\n\n## 比較実績と採算\n同一会計版の累計差引による前年同期売上は1,648.50、営業利益は119.16。前四半期売上は1,573.30、営業利益は60.36。Web決済移行は手数料削減と配信者還元増を同時に生むため、売上減少だけでは採算を判断できない。事故対応費用と補填の会計処理が未確定であり、開示される営業利益全体の数値予測は保留する。\n\n## 反証条件\n未使用ポイントの増加、課金の月末偏重、会員解約や当四半期に帰属する補填による売上減額が大きければ、提示した売上レンジを下回り得る。翌四半期の停止日数や中長期のAI・SBI提携収益を対象四半期に加減していない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | -254.38 | 直近KPIを起点とした弱気条件と対象期内停止を反映。 |\n| メンバーシップ | 8.41 | 会員数・単価と実効テイクレートから推計。 |\n| 残差（economic_unexplained） | -8.86 | プレミア配信等の残余売上の増減。合計額は推計したが、内訳および個別の経済要因への配賦は未解明。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | -168.38 | PU減少、単価軟化および停止による売上減。 |\n| メンバーシップ | -2.59 | 会員数減少と単価横ばい。 |\n| 残差（economic_unexplained） | -8.67 | プレミア配信等の残余売上の増減。内訳未解明部分を丸め差とは扱わない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | -146.46 | PUの減少幅縮小とARPPU改善を仮定し、対象期内停止を控除。 |\n| メンバーシップ | 15.35 | 会員数・単価の緩やかな改善。 |\n| 残差（economic_unexplained） | -2.61 | プレミア配信等の残余売上の増減。個別要因への配賦は未解明。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | -60.46 | 数量微減と単価改善に、期末停止を反映。 |\n| メンバーシップ | 4.35 | 直近KPIを基準とした会員数・単価の改善。 |\n| 残差（economic_unexplained） | -2.41 | プレミア配信等の残余売上に対する停止控除を含む。内訳が未解明のため独立した事業要因と断定しない。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | -40.02 | 獲得施策によるPU反転とARPPU上昇を仮定。停止影響は強気でも控除。 |\n| メンバーシップ | 22.09 | 会員獲得と上位プラン等の構成改善。 |\n| 残差（economic_unexplained） | 3.43 | プレミア配信等の残余売上の増減。内訳未解明部分を含む。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ポイント数量・単価・停止影響 | 45.98 | 数量・単価改善から停止影響を控除。 |\n| メンバーシップ | 11.09 | 会員数と単価の改善。 |\n| 残差（economic_unexplained） | 3.62 | プレミア配信等の残余売上の変化。詳細な販売数量・価格による説明はできない。 |\n\n## エラー・未解決事項\n- S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。\n- S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。\n- S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。\n- S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。\n- 経済的な説明が未検証の残差: bear/yoy/revenue\n- 経済的な説明が未検証の残差: bear/qoq/revenue\n- 経済的な説明が未検証の残差: base/yoy/revenue\n- 経済的な説明が未検証の残差: base/qoq/revenue\n- 経済的な説明が未検証の残差: bull/yoy/revenue\n- 経済的な説明が未検証の残差: bull/qoq/revenue\n- 重要仮定の裏付け未検証: bear_pu\n- 重要仮定の裏付け未検証: base_pu\n- 重要仮定の裏付け未検証: bull_pu\n- 重要仮定の裏付け未検証: bear_arppu\n- 重要仮定の裏付け未検証: base_arppu\n- 重要仮定の裏付け未検証: bull_arppu\n- 重要仮定の裏付け未検証: bear_lost_days\n- 重要仮定の裏付け未検証: base_lost_days\n- 重要仮定の裏付け未検証: bull_lost_days\n- 会社予想比較の条件: g27_revenue\n- 会社予想比較の条件: g27_op\n- 会社予想比較の条件: g27_ordinary\n- ポイントPU・ARPPUの重要仮定6件は過去水準と施策方針から選んだ独自条件であり、対象期の採用値を支持する数量的証拠がない。中心値を検証済み予測として扱えない。停止換算3件も実時間と売上影響を分けて管理する必要がある。\n- 55,000×8,100円×3か月は1,336.5百万円で、認識ポイント売上1,358との差は21.5百万円。これを未使用ポイントだけ、または丸めだけで説明できない。相対モデルはこの差を含む換算関係の維持を暗黙に仮定しており、利用停止時には特に検証が必要。メンバーシップも118,000×1,716円×3か月＝607.464百万円とGMV610との差があり、固定換算・固定テイクレートは独立した未検証条件である。\n- 27Q2の非ポイント売上表示214とメンバーシップ153＋プレミア55＝208には6百万円差があり、通常の百万円単位の端数処理だけでは説明できない。残余62.303とプレミア55との差7.303の全額を丸め差にもその他実績にも確定できない。一方、S10には『その他売上』の独立項目があり、生成担当の説明より追加検証の手掛かりは存在する。ただし同項目は前年通期予想であり、当期Q2差額の確定根拠にはならない。\n- 残余売上全体をプレミア配信の変動幅で0.9・1.0・1.1倍し、さらに停止日割りする根拠は不足する。メンバーシップPU・ARPPUの採用値にも将来値の裏付けはなく、material=falseや利益感応度未算定は、売上予測への重要性が小さい証拠にはならない。\n- 補填は単なる潜在リスクではなく実施方針が公表済み。追加売上減額が対象四半期に生じないという条件は否定も確認もできず、金額・収益認識・費用区分の検証が必要。売上レンジの下限を保証する材料はなく、全利益nullの保留は合理的である。\n- 機械側のFinite number requiredを、そのままCriticalな経済的誤りとは認定しない。対象利益がnullである一方、比較実績は存在するため、『比較値なし』という表示は『予測値未算定』と区別すべき。nullを許容した未完了判定と売上ブリッジの算術判定を分離する必要がある。\n\n## 条件・不確実性\n- PU・ARPPU仮定は停止前の通常稼働換算であり、停止による数量減をあらかじめ含めていない。停止控除との二重計上を避けた。\n- base_arppu: 直近Q1からQ2の上昇幅に近い緩やかな改善を仮定。価格改定の新規実施を仮定せず、利用・課金構成の変化として扱う。\n- base_lost_days: 10月28日10時40分頃から10月31日末までの停止時間に概ね対応する日割り。日別利用は均等と仮定。\n- base_member_arppu: 直近Q1からQ2の上昇幅に近い改善を仮定。\n- base_member_pu: 直近Q1とQ2の間の水準。PayPay対応による利便性改善と会員数の足踏みを併せて反映。\n- base_other_factor: プレミア配信等を含む残余売上を直近Q2並みとする。内訳未解明部分について成長を上乗せしない。\n- base_pu: 直近のPU減少が続く一方、S08の直接的なユーザー獲得施策で減少幅が縮小する条件。停止前の通常稼働換算。\n- bear_arppu: 直近Q1の8,005円付近まで戻る条件。高課金層の維持が弱まる場合を想定。\n- bear_lost_days: 10月28日午前の停止から四半期末までを、月末の利用偏重を含め通常売上4日相当とする。11月の停止分は対象外。\n- bear_member_arppu: 直近Q2水準を維持し、追加の単価改善を見込まない。\n- bear_member_pu: S07の直近四半期レンジ下端を採用。会員数の小幅減少を仮定。\n- bear_other_factor: プレミア配信等を含む残余売上を直近Q2から1割減と仮定。S07のプレミア配信の四半期変動幅を参考にするが、残余全額をプレミア配信とは断定しない。\n- bear_pu: 停止前の通常稼働を仮定した月間平均ポイントPU。S07 page 12の直近58千人から55千人への減少と、前年Q2からQ3の67千人から63千人への減少を参考に、獲得施策が競争圧力を相殺できない条件。\n- bull_arppu: ロイヤル層の課金維持とイベント効果が強い条件。上昇幅は過去の四半期推移で見られた幅を参考に設定。\n- bull_lost_days: 停止時間に近い日割りとし、月末の売上偏重を見込まない条件。四半期内の再開や取り戻しは仮定しない。\n- bull_member_arppu: 上位プラン利用などの構成改善が強い場合。過去四半期の単価上昇幅を参考とした条件。\n- bull_member_pu: 直近Q1水準を小幅に上回る獲得改善を仮定。大型の提携効果は加算しない。\n- bull_other_factor: プレミア配信の過去四半期変動を参考に、残余売上全体の1割増を仮定。新規事業の売上は別途加算しない。\n- bull_pu: S08の下期PU反転施策が一定の効果を持ち、直近Q1水準を下回る範囲で回復する条件。停止前の通常稼働換算。\n- quarter_days: 対象期間の暦日数。停止による売上影響を日割りする計算上の分母。\n- プレミア配信等の残余売上全体に停止日割りを適用した。予約販売や既存購入分の収益認識によって影響は変わる。\n- ポイント予測は、未使用ポイントの増減、丸められたPU、月次PUとARPPUの共変動を含む直近の認識売上への換算関係が維持される条件。\n- メンバーシップは月額課金が継続し、対象四半期に追加の返金・売上減額がない条件。補填をゼロと確認したものではない。\n- 各シナリオは確率区間ではなく、提示資料に基づく数量・単価・停止影響の条件比較。\n\n## 根拠・保存記録\n- S01 [公式IR 株式情報](https://about.moi.st/ja/ir/stock/overview/) / 公表  / unavailable / SHA-256 `なし`\n- S02 [公式IRカレンダー](https://about.moi.st/ja/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n- S03 [2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534106.pdf) / 公表 2026-09-10T15:30:00+09:00 / retrieved / SHA-256 `6a64bf038304a1dc86019e1ac06a2a6550acd430c880e6715a21704767b3f483`\n- S04 [2027年1月期 第1四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567163.pdf) / 公表 2026-06-10T15:30:00+09:00 / retrieved / SHA-256 `26172c9a26a47a253dbf7290da799f4cff9473363bcba661e0a70c7ef2628693`\n- S05 [2026年1月期 第3四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517039.pdf) / 公表 2025-12-10T15:30:00+09:00 / retrieved / SHA-256 `f03505746d8d2ac9254c05aee6b766423fffdfcad71f82f67a74665de1be57e6`\n- S06 [2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250910/20250909555320.pdf) / 公表 2025-09-10 / retrieved / SHA-256 `836c482c4bfc7ca6e89e2ea22ce0cc91f58eb30cd18f04459090f5eb460b4f3b`\n- S07 [2027年1月期第2四半期決算説明資料（会社予想・ポイント及びメンバーシップKPIを含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534117.pdf) / 公表 2026-09-10T15:30:00+09:00 / retrieved / SHA-256 `7675da852ad3e8dacf9bf859a6ac7fab4f04873bc2a12552bf6a41c40a03b978`\n- S08 [よくある質問と回答（2027年1月期第2四半期決算）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535957.pdf) / 公表 2026-09-14T15:30:00+09:00 / retrieved / SHA-256 `6d6ef1bfdb5e61812d03a55fd7d94330b2ba76ca3ad8785eb2318286d55b485a`\n- S09 [2027年1月期 第1四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567174.pdf) / 公表 2026-06-10T15:30:00+09:00 / retrieved / SHA-256 `f83cc1a66bb943420becd0926136513f66eaa51c2c5d445d9763d060e5d82468`\n- S10 [2026年1月期 第3四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517041.pdf) / 公表 2025-12-10T15:30:00+09:00 / retrieved / SHA-256 `809fc58c6f035b52ba63540591e2b12114fc03bfa5a315572c8403d501f62e22`\n- S11 [2026年1月期 決算短信〔日本基準〕（非連結）（2027年1月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579297.pdf) / 公表 2026-03-11T15:30:00+09:00 / retrieved / SHA-256 `eb09656dda6a44115cfb24ebe2c9faf239cc055d4707ed5c83a6c5b20b69ec7b`\n- S12 [2026年1月期 決算説明資料（事業計画及び成長可能性に関する事項）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579298.pdf) / 公表 2026-03-11T15:30:00+09:00 / retrieved / SHA-256 `a7669c88e64ab8e71b2f10a807c45958010652c2fd293241a4756d6c12e2d740`\n- S13 [当社サーバーへの不正アクセスに関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261028/20261028558252.pdf) / 公表 2026-10-28T18:10:00+09:00 / retrieved / SHA-256 `4785f591fe9b948a5c0bfff57b700e625ff2d8fa17adaf7decc25f9a9adca744`\n- S14 [（経過報告）当社サーバーへの不正アクセスに関するお知らせ（第２報）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559851.pdf) / 公表 2026-10-29T16:40:00+09:00 / retrieved / SHA-256 `9fb73be02da6f53f92d88b54edf1a9303fb29d8dd80322760d24a3a27daed7c5`\n- S15 [（経過報告）当社サーバーへの不正アクセスに関するお知らせ（第３報）およびサービスの再開について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261105/20261105565350.pdf) / 公表 2026-11-05T12:00:00+09:00 / retrieved / SHA-256 `ac1db5a3fb8a2eecec055d3d148c6a688817cd1e878abd919d22feced26eb9ab`\n\n## 対象日照合（経済的品質と別管理）\n- 決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](5031_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 5031 モイ株式会社 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n累計実績、KPI入力、単位換算および売上計算に明確な転記・算式誤りは認めない。ただし、重要仮定9件の採用値には十分な数値的裏付けがなく、ポイント売上への換算関係、残余売上の内訳、補填の収益認識と事故関連費用が未解明。売上は条件比較として算術的に整合するが、利益を含む予測全体は検証完了とできない。会社通期予想との期間不一致や決算発表日の未確認自体は、経済的品質の不合格理由としない。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | conditional | S03～S06の損益計算書と累計実績入力は一致し、千円から百万円への換算も正しい。S07の27Q2ポイント売上1,358、PU55千、ARPPU8,100円、メンバーシップ売上153、GMV610、PU118千、ARPPU1,716円、およびS10の26Q3ポイント売上1,444、メンバーシップ売上142も入力と一致する。ただし、27Q2売上1,573.303からポイント1,358とメンバーシップ153を引いた62.303はプレミア配信表示55を7.303上回り、原資料の内訳を完全には照合できない。 | S03, S04, S05, S06, S07, S10 S03～S06 PDF page 7; S07 PDF pages 11～16; S10 PDF pages 15,18 |\n| 2 | passed | 日本基準・非連結で比較範囲は一致し、各短信に会計方針変更・修正再表示なしの記載がある。当期Q2単独は中間累計－Q1累計、前年Q3単独はQ3累計－中間累計とする差引きで適切。売上比較値は1,573.303と1,648.499、営業利益比較値は60.359と119.163百万円。対象2026年8～10月は92日。使用したS03～S15は提示公表日が基準日時以前であり、取得時刻が基準日時後であることだけをもって将来情報混入とはしない。ただし保存版の改訂履歴は確認できない。 | S03, S04, S05, S06 S03～S06 PDF pages 1,2,7 |\n| 3 | unresolved | 重要仮定9件を全件個別評価した。過去KPIと施策方針は方向性の参考になるが、対象四半期の採用PU・ARPPUを支持する定量的な獲得・継続・課金計画はない。停止時間から約3.56日を算出することはできるが、同日数の売上損失への換算は未裏付け。固定テイクレート、認識売上への換算関係維持、追加売上減額なしも重要な未検証条件である。機械的感応度が示されても採用値の根拠にはならない。 | S07, S08, S13, S15 S07 PDF pages 12,15,16,46,47; S08 PDF page 1 A1; S13 PDF page 1; S15 PDF page 2 |\n| 4 | conditional | 提示算式に目標利益率や会社予想利益から費用を逆算する処理はない。全シナリオの利益をnullとし、手数料減少を全額増益にしていない点は適切。ただし、費用モデル自体がないため対象四半期の採算は未検証。nullをゼロに置換して機械検査を通す修正は不適切である。 | S07, S15 S07 PDF page 9; S15 PDF page 2 第5項 |\n| 5 | conditional | 停止前換算のPU・ARPPUからポイント売上を計算し、停止控除を1回適用する算式には明示的な二重控除はない。11月停止分、AI・SBI提携収益、過年度特別損失の剥落を追加計上していない。一方、購入と使用の時点差、補填チケット、視聴期間延長の対象期帰属は未検証であり、停止日割りと補填の経済的影響を完全には分離できない。 | S07, S14, S15 S07 PDF page 46; S14 PDF page 2 第5項; S15 PDF page 2 第4項 |\n| 6 | conditional | 売上は全3シナリオで数量比×単価比、停止率、メンバーシップ実効テイクレートの算式と整合する。百万円単位で弱気1,393.658、中心1,514.785、強気1,633.995。YoYは順に-254.841（-15.459%）、-133.714（-8.111%）、-14.504（-0.880%）、QnQは-179.645（-11.418%）、-58.518（-3.719%）、+60.692（+3.858%）。残差はother予測－other比較値であり、YoYが-8.864、-2.607、+3.427、QnQが-8.668、-2.411、+3.623。算式上の閉合は経済的説明の完了を意味しない。表示丸めを含む基礎値と未説明内訳の寄与は分離未了で、会計基準変更に起因する残差を示す証拠はない。全シナリオの利益増減は未算定である。 | S03, S04, S05, S06, S07, S10 S03～S06 PDF page 7; S07 PDF pages 11～16; S10 PDF pages 15,18 |\n| 7 | unresolved | 基準日時以前の売上内訳照合資料、月次KPIとポイント使用・購入の対応、補填の会計処理、事故関連費用の金額・帰属・区分が必要。公開資料で取得できない項目は未解明のまま保持する。予測値を確定修正できる証拠はなく、数値変更は提案しない。公式発表日は別途対象日照合警告として扱う。 | S15 PDF page 2 第5項 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| revenue / g27_revenue | 未算定 | 1,514.79 | 未算定 | 対象期間外 / 6,829百万円は2026年2月～2027年1月の通期予想。3月11日公表値を9月10日に据え置いた履歴を確認した。9月10日は改定日ではなく据置確認日である。上期控除後3,647.956百万円はQ3・Q4合計で、Q3単独と直接比較できない。数量低下と事故停止は会社の増収前提との差を説明する方向性を持つが、Q4予測がないため通期乖離は未算定。基準日時までの最新性は提示資料内に限る。 |\n| operating_profit / g27_op | 未算定 | 未算定 | 未算定 | 対象期間外 / 409百万円は同一会計基準・単体の通期予想で、3月11日公表値の9月10日据置を確認。上期控除後286.887百万円は下期全体である。会社は決済手数料低下と売上回復を想定するが、事故費用を含む対象Q3利益がnullのため同期間の乖離評価はできない。乖離なしを意味しない。 |\n| ordinary_profit / g27_ordinary | 未算定 | 未算定 | 未算定 | 対象期間外 / 461百万円は通期予想で、3月11日公表値の9月10日据置を確認。上期控除後279.651百万円はQ3単独ではない。対象Q3の営業外収益および事故関連損益区分が未確定で、経常利益予測もnullのため数量・費用・一時要因による同期間の乖離評価はできない。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n| 2 | bear_pu | 51000 | 未算定（制約あり） | 非表示 | 未検証：過去の58千→55千、67千→63千の低下は確認できる。しかし対象期51,000人という水準、施策の効果不足および停止前換算への接続を定量的に裏付けない。 |\n| 3 | base_pu | 54000 | 未算定（制約あり） | 非表示 | 未検証：ユーザー獲得への重点移行は確認できるが、減少幅が1,000人に縮小し54,000人となる獲得数・離脱率の根拠は示されていない。 |\n| 4 | bull_pu | 57000 | 未算定（制約あり） | 非表示 | 未検証：下期反転の会社方針はあるが、対象Q3の57,000人を導く定量計画はない。Q1実績を下回るという制約だけでは支持できない。 |\n| 5 | bear_arppu | 0.008 | 未算定（制約あり） | 非表示 | 未検証：Q1実績8,005円は確認できるが、対象期に8,000円へ低下する課金構成・利用動向の証拠はない。過去実績への近似は予測値の裏付けと区別する。 |\n| 6 | base_arppu | 0.0082 | 未算定（制約あり） | 非表示 | 未検証：直近95円上昇に対する100円上昇の仮定は説明可能な外挿だが、対象期8,200円という数値の裏付けはない。ロイヤル層の一般的説明だけでsupportedとはしない。 |\n| 7 | bull_arppu | 0.0084 | 未算定（制約あり） | 非表示 | 未検証：過去の単価上昇幅とエンゲージメント維持は参考になるが、8,400円に至るイベント別売上、課金構成、人数との共変動は未提示。 |\n| 8 | bear_lost_days | 4 | 未算定（制約あり） | 非表示 | 未検証：期末まで停止が続いたことは原文と整合するが、通常売上4日分への換算には月末偏重の定量資料がない。実時間を上回る売上損失係数は会社開示値ではない。 |\n| 9 | base_lost_days | 3.56 | 未算定（制約あり） | 非表示 | 未検証：10月28日10時40分から11月1日0時までは約3.5556日で、3.56日への丸めは合理的。ただし日別売上均等、停止時間と認識売上損失の比例は原資料で支持されず、売上控除仮定全体としてunsupported。 |\n| 10 | bull_lost_days | 3.5 | 未算定（制約あり） | 非表示 | 未検証：3.5日は停止実時間に近いものの、約3.5556日との差を埋める売上分布の根拠はない。単なる丸めを想定した条件比較としては可能だが、3.5日分の損失を実証しない。 |\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。\n- **Medium** / machine: S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。\n- **Medium** / machine: S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。\n- **Medium** / machine: S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: bear/yoy/revenue\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: bear/qoq/revenue\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: base/yoy/revenue\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: base/qoq/revenue\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: bull/yoy/revenue\n- **Medium** / economic_residual: 経済的な説明が未検証の残差: bull/qoq/revenue\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_pu\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_pu\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_pu\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_arppu\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_arppu\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_arppu\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_lost_days\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_lost_days\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_lost_days\n- **Medium** / guidance_metadata: 会社予想比較の条件: g27_revenue\n- **Medium** / guidance_metadata: 会社予想比較の条件: g27_op\n- **Medium** / guidance_metadata: 会社予想比較の条件: g27_ordinary\n- **High** / assumption: ポイントPU・ARPPUの重要仮定6件は過去水準と施策方針から選んだ独自条件であり、対象期の採用値を支持する数量的証拠がない。中心値を検証済み予測として扱えない。停止換算3件も実時間と売上影響を分けて管理する必要がある。\n- **High** / assumption: 55,000×8,100円×3か月は1,336.5百万円で、認識ポイント売上1,358との差は21.5百万円。これを未使用ポイントだけ、または丸めだけで説明できない。相対モデルはこの差を含む換算関係の維持を暗黙に仮定しており、利用停止時には特に検証が必要。メンバーシップも118,000×1,716円×3か月＝607.464百万円とGMV610との差があり、固定換算・固定テイクレートは独立した未検証条件である。\n- **Medium** / residual: 27Q2の非ポイント売上表示214とメンバーシップ153＋プレミア55＝208には6百万円差があり、通常の百万円単位の端数処理だけでは説明できない。残余62.303とプレミア55との差7.303の全額を丸め差にもその他実績にも確定できない。一方、S10には『その他売上』の独立項目があり、生成担当の説明より追加検証の手掛かりは存在する。ただし同項目は前年通期予想であり、当期Q2差額の確定根拠にはならない。\n- **Medium** / assumption: 残余売上全体をプレミア配信の変動幅で0.9・1.0・1.1倍し、さらに停止日割りする根拠は不足する。メンバーシップPU・ARPPUの採用値にも将来値の裏付けはなく、material=falseや利益感応度未算定は、売上予測への重要性が小さい証拠にはならない。\n- **High** / assumption: 補填は単なる潜在リスクではなく実施方針が公表済み。追加売上減額が対象四半期に生じないという条件は否定も確認もできず、金額・収益認識・費用区分の検証が必要。売上レンジの下限を保証する材料はなく、全利益nullの保留は合理的である。\n- **Medium** / other: 機械側のFinite number requiredを、そのままCriticalな経済的誤りとは認定しない。対象利益がnullである一方、比較実績は存在するため、『比較値なし』という表示は『予測値未算定』と区別すべき。nullを許容した未完了判定と売上ブリッジの算術判定を分離する必要がある。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-10\", \"official_date\": \"2026-12-10\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://about.moi.st/ja/ir/calendar/ の公式IRカレンダーの2026年欄に「12月10日」「2027年1月期 第3半期決算発表（15時30分予定）」と記載（「第3半期」は原文表記）。対象は2027年1月期第3四半期単独（2026年8月1日～10月31日）。\", \"warnings\": [\"決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。\", \"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[]\n[\n  \"基準日時以前のS07原本画像・訂正資料およびサービス別売上明細：27Q2の非ポイント売上214、メンバーシップ153、プレミア55と総売上との差を照合するため。\",\n  \"基準日時以前に公表された月次PU・ARPPU、集計定義、ポイント購入・使用額および未使用残高の増減資料：相対モデルの換算関係と停止控除の妥当性を確認するため。\",\n  \"基準日時以前のサービス別・日別利用状況と停止範囲、チケット販売・配信の収益認識方針：通常売上3.5～4日分という損失仮定を評価するため。\",\n  \"基準日時以前の補填案内および会計処理に関する開示：メンバーシップ、プレミア配信、ポイント売上への影響と対象四半期への帰属を確認するため。\",\n  \"基準日時以前の事故対応費用、通常費用、一過性費用の内訳・計上予定資料：営業・経常・純利益と全シナリオの増減説明を完成させるため。未開示の場合は未算定を維持する。\",\n  \"基準日時以前の開示一覧と保存版・改訂履歴：S15以降の追加開示および会社予想の最新性を確認するため。\",\n  \"基準日時以前の公式IRカレンダー保存本文：対象決算発表日の照合に限定して使用するため。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/5031/quality_review.json) / [レビュー原回答](../companies/5031/independent_review.json) / [計算検査](../companies/5031/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "5031",
+    "company_name": "モイ株式会社",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 1393.6582833647208,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 1514.7853921557219,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 1633.9945681515642,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -58.51760784427802,
+          "rate": -0.037194111906147784,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -133.71360784427839,
+          "rate": -0.08111233785660675,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "h27q1_sales": 1607.741,
+      "h27q1_op": 61.754,
+      "h27q2_sales": 3181.044,
+      "h27q2_op": 122.113,
+      "h26q2_sales": 3305.556,
+      "h26q2_op": 146.162,
+      "h26q3_sales": 4954.055,
+      "h26q3_op": 265.325,
+      "q2_points": 1358.0,
+      "q2_point_pu": 55000.0,
+      "q2_point_arppu": 0.0081,
+      "q2_member_sales": 153.0,
+      "q2_member_gmv": 610.0,
+      "q2_member_pu": 118000.0,
+      "q2_member_arppu": 0.001716,
+      "yoy_points": 1444.0,
+      "yoy_member_sales": 142.0,
+      "guidance_sales": 6829.0,
+      "guidance_op": 409.0,
+      "guidance_ordinary": 461.0,
+      "quarter_days": 92.0,
+      "bear_pu": 51000.0,
+      "base_pu": 54000.0,
+      "bull_pu": 57000.0,
+      "bear_arppu": 0.008,
+      "base_arppu": 0.0082,
+      "bull_arppu": 0.0084,
+      "bear_lost_days": 4.0,
+      "base_lost_days": 3.56,
+      "bull_lost_days": 3.5,
+      "bear_member_pu": 116000.0,
+      "base_member_pu": 119000.0,
+      "bull_member_pu": 122000.0,
+      "bear_member_arppu": 0.001716,
+      "base_member_arppu": 0.00175,
+      "bull_member_arppu": 0.00178,
+      "bear_other_factor": 0.9,
+      "base_other_factor": 1.0,
+      "bull_other_factor": 1.1,
+      "qoq_revenue": 1573.3029999999999,
+      "qoq_op": 60.359,
+      "yoy_revenue": 1648.4990000000003,
+      "yoy_op": 119.16299999999998,
+      "q2_other": 62.302999999999884,
+      "yoy_other": 62.49900000000025,
+      "member_take_rate": 0.25081967213114753,
+      "bear_point_normal": 1243.6902356902358,
+      "base_point_normal": 1349.7696969696972,
+      "bull_point_normal": 1459.5070707070709,
+      "bear_points": 1189.6167471819647,
+      "base_points": 1297.5394782608696,
+      "bull_points": 1403.982345191041,
+      "bear_member_gmv": 599.6610169491526,
+      "base_member_gmv": 627.3581644344356,
+      "bull_member_gmv": 654.1997550472125,
+      "bear_member": 150.40677966101694,
+      "base_member": 157.35376911224367,
+      "bull_member": 164.08616806921887,
+      "bear_other": 53.634756521739035,
+      "base_other": 59.89214478260858,
+      "bull_other": 65.92605489130423,
+      "bear_revenue": 1393.6582833647208,
+      "base_revenue": 1514.7853921557219,
+      "bull_revenue": 1633.9945681515642,
+      "bear_yoy_residual": -8.864243478261102,
+      "base_yoy_residual": -2.6068552173916544,
+      "bull_yoy_residual": 3.4270548913039818,
+      "bear_qoq_residual": -8.668243478260734,
+      "base_qoq_residual": -2.410855217391287,
+      "bull_qoq_residual": 3.623054891304349
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 2,7",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "1Q累計",
+        "revenue": 1607.741,
+        "operating_profit": 61.754,
+        "ordinary_profit": 99.09,
+        "net_profit": 62.353
+      },
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "PDF pages 2,7",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 1573.3029999999999,
+        "operating_profit": 60.359,
+        "ordinary_profit": 82.25899999999999,
+        "net_profit": 59.243
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S06"
+        ],
+        "locator": "PDF pages 2,7",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S05",
+          "S06"
+        ],
+        "locator": "PDF pages 2,7",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": 1648.4990000000003,
+        "operating_profit": 119.16299999999998,
+        "ordinary_profit": 125.24099999999999,
+        "net_profit": 65.96400000000001
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "yoy_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "bear_points-yoy_points",
+            "reason": "直近KPIを起点とした弱気条件と対象期内停止を反映。",
+            "amount": -254.38325281803532
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "bear_member-yoy_member_sales",
+            "reason": "会員数・単価と実効テイクレートから推計。",
+            "amount": 8.406779661016941
+          }
+        ],
+        "residual": -8.864243478261102,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上の増減。合計額は推計したが、内訳および個別の経済要因への配賦は未解明。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "qoq_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "bear_points-q2_points",
+            "reason": "PU減少、単価軟化および停止による売上減。",
+            "amount": -168.38325281803532
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "bear_member-q2_member_sales",
+            "reason": "会員数減少と単価横ばい。",
+            "amount": -2.593220338983059
+          }
+        ],
+        "residual": -8.668243478260734,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を丸め差とは扱わない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "yoy_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "base_points-yoy_points",
+            "reason": "PUの減少幅縮小とARPPU改善を仮定し、対象期内停止を控除。",
+            "amount": -146.4605217391304
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "base_member-yoy_member_sales",
+            "reason": "会員数・単価の緩やかな改善。",
+            "amount": 15.353769112243668
+          }
+        ],
+        "residual": -2.6068552173916544,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上の増減。個別要因への配賦は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "qoq_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "base_points-q2_points",
+            "reason": "数量微減と単価改善に、期末停止を反映。",
+            "amount": -60.4605217391304
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "base_member-q2_member_sales",
+            "reason": "直近KPIを基準とした会員数・単価の改善。",
+            "amount": 4.353769112243668
+          }
+        ],
+        "residual": -2.410855217391287,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上に対する停止控除を含む。内訳が未解明のため独立した事業要因と断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "yoy_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "bull_points-yoy_points",
+            "reason": "獲得施策によるPU反転とARPPU上昇を仮定。停止影響は強気でも控除。",
+            "amount": -40.01765480895892
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "bull_member-yoy_member_sales",
+            "reason": "会員獲得と上位プラン等の構成改善。",
+            "amount": 22.08616806921887
+          }
+        ],
+        "residual": 3.4270548913039818,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を含む。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "qoq_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "ポイント数量・単価・停止影響",
+            "formula": "bull_points-q2_points",
+            "reason": "数量・単価改善から停止影響を控除。",
+            "amount": 45.98234519104108
+          },
+          {
+            "label": "メンバーシップ",
+            "formula": "bull_member-q2_member_sales",
+            "reason": "会員数と単価の改善。",
+            "amount": 11.086168069218871
+          }
+        ],
+        "residual": 3.623054891304349,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "プレミア配信等の残余売上の変化。詳細な販売数量・価格による説明はできない。"
+      }
+    ],
+    "issues": [
+      "S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。",
+      "S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。",
+      "S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。",
+      "S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。",
+      "経済的な説明が未検証の残差: bear/yoy/revenue",
+      "経済的な説明が未検証の残差: bear/qoq/revenue",
+      "経済的な説明が未検証の残差: base/yoy/revenue",
+      "経済的な説明が未検証の残差: base/qoq/revenue",
+      "経済的な説明が未検証の残差: bull/yoy/revenue",
+      "経済的な説明が未検証の残差: bull/qoq/revenue",
+      "重要仮定の裏付け未検証: bear_pu",
+      "重要仮定の裏付け未検証: base_pu",
+      "重要仮定の裏付け未検証: bull_pu",
+      "重要仮定の裏付け未検証: bear_arppu",
+      "重要仮定の裏付け未検証: base_arppu",
+      "重要仮定の裏付け未検証: bull_arppu",
+      "重要仮定の裏付け未検証: bear_lost_days",
+      "重要仮定の裏付け未検証: base_lost_days",
+      "重要仮定の裏付け未検証: bull_lost_days",
+      "会社予想比較の条件: g27_revenue",
+      "会社予想比較の条件: g27_op",
+      "会社予想比較の条件: g27_ordinary",
+      "ポイントPU・ARPPUの重要仮定6件は過去水準と施策方針から選んだ独自条件であり、対象期の採用値を支持する数量的証拠がない。中心値を検証済み予測として扱えない。停止換算3件も実時間と売上影響を分けて管理する必要がある。",
+      "55,000×8,100円×3か月は1,336.5百万円で、認識ポイント売上1,358との差は21.5百万円。これを未使用ポイントだけ、または丸めだけで説明できない。相対モデルはこの差を含む換算関係の維持を暗黙に仮定しており、利用停止時には特に検証が必要。メンバーシップも118,000×1,716円×3か月＝607.464百万円とGMV610との差があり、固定換算・固定テイクレートは独立した未検証条件である。",
+      "27Q2の非ポイント売上表示214とメンバーシップ153＋プレミア55＝208には6百万円差があり、通常の百万円単位の端数処理だけでは説明できない。残余62.303とプレミア55との差7.303の全額を丸め差にもその他実績にも確定できない。一方、S10には『その他売上』の独立項目があり、生成担当の説明より追加検証の手掛かりは存在する。ただし同項目は前年通期予想であり、当期Q2差額の確定根拠にはならない。",
+      "残余売上全体をプレミア配信の変動幅で0.9・1.0・1.1倍し、さらに停止日割りする根拠は不足する。メンバーシップPU・ARPPUの採用値にも将来値の裏付けはなく、material=falseや利益感応度未算定は、売上予測への重要性が小さい証拠にはならない。",
+      "補填は単なる潜在リスクではなく実施方針が公表済み。追加売上減額が対象四半期に生じないという条件は否定も確認もできず、金額・収益認識・費用区分の検証が必要。売上レンジの下限を保証する材料はなく、全利益nullの保留は合理的である。",
+      "機械側のFinite number requiredを、そのままCriticalな経済的誤りとは認定しない。対象利益がnullである一方、比較実績は存在するため、『比較値なし』という表示は『予測値未算定』と区別すべき。nullを許容した未完了判定と売上ブリッジの算術判定を分離する必要がある。"
+    ],
+    "schedule_warnings": [
+      "決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。",
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -179.6447166352791,
+            "rate": -0.11418316537582343,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -254.84071663527948,
+            "rate": -0.15458954881700226,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -58.51760784427802,
+            "rate": -0.037194111906147784,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -133.71360784427839,
+            "rate": -0.08111233785660675,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 60.6915681515643,
+            "rate": 0.038575892979015675,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -14.50443184843607,
+            "rate": -0.008798568787992027,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -254.84071663527948,
+        "explained_sum": -245.97647315701838,
+        "residual": -8.864243478261102,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上の増減。合計額は推計したが、内訳および個別の経済要因への配賦は未解明。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -179.6447166352791,
+        "explained_sum": -170.97647315701838,
+        "residual": -8.668243478260734,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を丸め差とは扱わない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -133.71360784427839,
+        "explained_sum": -131.10675262688673,
+        "residual": -2.6068552173916544,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上の増減。個別要因への配賦は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -58.51760784427802,
+        "explained_sum": -56.10675262688673,
+        "residual": -2.410855217391287,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上に対する停止控除を含む。内訳が未解明のため独立した事業要因と断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -14.50443184843607,
+        "explained_sum": -17.931486739740052,
+        "residual": 3.4270548913039818,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を含む。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 60.6915681515643,
+        "explained_sum": 57.06851326025995,
+        "residual": 3.623054891304349,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "プレミア配信等の残余売上の変化。詳細な販売数量・価格による説明はできない。"
+      }
+    ],
+    "conditions": [
+      "PU・ARPPU仮定は停止前の通常稼働換算であり、停止による数量減をあらかじめ含めていない。停止控除との二重計上を避けた。",
+      "base_arppu: 直近Q1からQ2の上昇幅に近い緩やかな改善を仮定。価格改定の新規実施を仮定せず、利用・課金構成の変化として扱う。",
+      "base_lost_days: 10月28日10時40分頃から10月31日末までの停止時間に概ね対応する日割り。日別利用は均等と仮定。",
+      "base_member_arppu: 直近Q1からQ2の上昇幅に近い改善を仮定。",
+      "base_member_pu: 直近Q1とQ2の間の水準。PayPay対応による利便性改善と会員数の足踏みを併せて反映。",
+      "base_other_factor: プレミア配信等を含む残余売上を直近Q2並みとする。内訳未解明部分について成長を上乗せしない。",
+      "base_pu: 直近のPU減少が続く一方、S08の直接的なユーザー獲得施策で減少幅が縮小する条件。停止前の通常稼働換算。",
+      "bear_arppu: 直近Q1の8,005円付近まで戻る条件。高課金層の維持が弱まる場合を想定。",
+      "bear_lost_days: 10月28日午前の停止から四半期末までを、月末の利用偏重を含め通常売上4日相当とする。11月の停止分は対象外。",
+      "bear_member_arppu: 直近Q2水準を維持し、追加の単価改善を見込まない。",
+      "bear_member_pu: S07の直近四半期レンジ下端を採用。会員数の小幅減少を仮定。",
+      "bear_other_factor: プレミア配信等を含む残余売上を直近Q2から1割減と仮定。S07のプレミア配信の四半期変動幅を参考にするが、残余全額をプレミア配信とは断定しない。",
+      "bear_pu: 停止前の通常稼働を仮定した月間平均ポイントPU。S07 page 12の直近58千人から55千人への減少と、前年Q2からQ3の67千人から63千人への減少を参考に、獲得施策が競争圧力を相殺できない条件。",
+      "bull_arppu: ロイヤル層の課金維持とイベント効果が強い条件。上昇幅は過去の四半期推移で見られた幅を参考に設定。",
+      "bull_lost_days: 停止時間に近い日割りとし、月末の売上偏重を見込まない条件。四半期内の再開や取り戻しは仮定しない。",
+      "bull_member_arppu: 上位プラン利用などの構成改善が強い場合。過去四半期の単価上昇幅を参考とした条件。",
+      "bull_member_pu: 直近Q1水準を小幅に上回る獲得改善を仮定。大型の提携効果は加算しない。",
+      "bull_other_factor: プレミア配信の過去四半期変動を参考に、残余売上全体の1割増を仮定。新規事業の売上は別途加算しない。",
+      "bull_pu: S08の下期PU反転施策が一定の効果を持ち、直近Q1水準を下回る範囲で回復する条件。停止前の通常稼働換算。",
+      "quarter_days: 対象期間の暦日数。停止による売上影響を日割りする計算上の分母。",
+      "プレミア配信等の残余売上全体に停止日割りを適用した。予約販売や既存購入分の収益認識によって影響は変わる。",
+      "ポイント予測は、未使用ポイントの増減、丸められたPU、月次PUとARPPUの共変動を含む直近の認識売上への換算関係が維持される条件。",
+      "メンバーシップは月額課金が継続し、対象四半期に追加の返金・売上減額がない条件。補填をゼロと確認したものではない。",
+      "各シナリオは確率区間ではなく、提示資料に基づく数量・単価・停止影響の条件比較。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "公式IR 株式情報",
+        "url": "https://about.moi.st/ja/ir/stock/overview/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:10:49+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "公式IRカレンダー",
+        "url": "https://about.moi.st/ja/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:10:49+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534106.pdf",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534106.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S03.txt",
+        "sha256": "6a64bf038304a1dc86019e1ac06a2a6550acd430c880e6715a21704767b3f483",
+        "text_sha256": "414f21ce4b6a55f41888cfdbd19d8fa03b1217529931e709cd632eb41b2eb2d2",
+        "retrieved_at": "2026-11-18T17:10:50+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9871,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2027年1月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567163.pdf",
+        "published_at": "2026-06-10T15:30:00+09:00",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567163.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S04.txt",
+        "sha256": "26172c9a26a47a253dbf7290da799f4cff9473363bcba661e0a70c7ef2628693",
+        "text_sha256": "1b5fa58c47243ccca49dcb5f000053cc6f0c6e0594dca101317874a99ca64f87",
+        "retrieved_at": "2026-11-18T17:10:51+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10017,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年1月期 第3四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517039.pdf",
+        "published_at": "2025-12-10T15:30:00+09:00",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517039.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S05.txt",
+        "sha256": "f03505746d8d2ac9254c05aee6b766423fffdfcad71f82f67a74665de1be57e6",
+        "text_sha256": "eb06fc15f5afed7563b831e946538019e4e749ef806ed8efcde62a9823522351",
+        "retrieved_at": "2026-11-18T17:10:51+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9236,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250910/20250909555320.pdf",
+        "published_at": "2025-09-10",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250910/20250909555320.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S06.txt",
+        "sha256": "836c482c4bfc7ca6e89e2ea22ce0cc91f58eb30cd18f04459090f5eb460b4f3b",
+        "text_sha256": "fd8efe0c4f83a4302f55e69bba5577a4aa3e0458c11a354a81a96e462d73ab78",
+        "retrieved_at": "2026-11-18T17:10:52+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10025,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2027年1月期第2四半期決算説明資料（会社予想・ポイント及びメンバーシップKPIを含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534117.pdf",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260910/20260910534117.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S07.txt",
+        "sha256": "7675da852ad3e8dacf9bf859a6ac7fab4f04873bc2a12552bf6a41c40a03b978",
+        "text_sha256": "02b43e98ca50d40196bf30d52a1918ed353340857fa5aef17408d316ddafc5e8",
+        "retrieved_at": "2026-11-18T17:10:54+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 20730,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "よくある質問と回答（2027年1月期第2四半期決算）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535957.pdf",
+        "published_at": "2026-09-14T15:30:00+09:00",
+        "category": "qa",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535957.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S08.txt",
+        "sha256": "6d6ef1bfdb5e61812d03a55fd7d94330b2ba76ca3ad8785eb2318286d55b485a",
+        "text_sha256": "5dc2c4e0099e69e5c0b390adf77fb6656f1d5a28f62b9d2355701ab2cb314295",
+        "retrieved_at": "2026-11-18T17:10:55+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3768,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2027年1月期 第1四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567174.pdf",
+        "published_at": "2026-06-10T15:30:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260610567174.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S09.txt",
+        "sha256": "f83cc1a66bb943420becd0926136513f66eaa51c2c5d445d9763d060e5d82468",
+        "text_sha256": "b738e2c32bc78aa9be275b192061e1a8b7482056d28c2d45aea89795b7b62059",
+        "retrieved_at": "2026-11-18T17:10:57+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18497,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2026年1月期 第3四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517041.pdf",
+        "published_at": "2025-12-10T15:30:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251210/20251210517041.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S10.txt",
+        "sha256": "809fc58c6f035b52ba63540591e2b12114fc03bfa5a315572c8403d501f62e22",
+        "text_sha256": "df0819c7805ba2cd699556559003c4714e0367bb39b98054fb44d33880129e50",
+        "retrieved_at": "2026-11-18T17:11:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 21689,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "2026年1月期 決算短信〔日本基準〕（非連結）（2027年1月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579297.pdf",
+        "published_at": "2026-03-11T15:30:00+09:00",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579297.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S11.txt",
+        "sha256": "eb09656dda6a44115cfb24ebe2c9faf239cc055d4707ed5c83a6c5b20b69ec7b",
+        "text_sha256": "daabbf4bb3782b89b452497393537bedcb0fcbbbc0154b0ab7d204a0bd532763",
+        "retrieved_at": "2026-11-18T17:11:02+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 15593,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "2026年1月期 決算説明資料（事業計画及び成長可能性に関する事項）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579298.pdf",
+        "published_at": "2026-03-11T15:30:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260311/20260310579298.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S12.txt",
+        "sha256": "a7669c88e64ab8e71b2f10a807c45958010652c2fd293241a4756d6c12e2d740",
+        "text_sha256": "ee95aba269330454fdf11474bfd87b2475e5fc1eb2cad42b118128277b5d225c",
+        "retrieved_at": "2026-11-18T17:11:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 24238,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "当社サーバーへの不正アクセスに関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261028/20261028558252.pdf",
+        "published_at": "2026-10-28T18:10:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261028/20261028558252.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S13.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S13.txt",
+        "sha256": "4785f591fe9b948a5c0bfff57b700e625ff2d8fa17adaf7decc25f9a9adca744",
+        "text_sha256": "d9ddc55d09946783c5a9445d8d6c74fb46057122760884eaa9978d5ac7713255",
+        "retrieved_at": "2026-11-18T17:11:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1031,
+        "parser_version": 2
+      },
+      {
+        "id": "S14",
+        "title": "（経過報告）当社サーバーへの不正アクセスに関するお知らせ（第２報）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559851.pdf",
+        "published_at": "2026-10-29T16:40:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559851.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S14.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S14.txt",
+        "sha256": "9fb73be02da6f53f92d88b54edf1a9303fb29d8dd80322760d24a3a27daed7c5",
+        "text_sha256": "0062434b481004d57117401258f7053a85c083757e8aba07b919938e093260f7",
+        "retrieved_at": "2026-11-18T17:11:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2290,
+        "parser_version": 2
+      },
+      {
+        "id": "S15",
+        "title": "（経過報告）当社サーバーへの不正アクセスに関するお知らせ（第３報）およびサービスの再開について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261105/20261105565350.pdf",
+        "published_at": "2026-11-05T12:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261105/20261105565350.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S15.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\5031\\sources\\S15.txt",
+        "sha256": "ac1db5a3fb8a2eecec055d3d148c6a688817cd1e878abd919d22feced26eb9ab",
+        "text_sha256": "fbc64e762f5296f2606ba6a5975340705fba8e5a24b51a60ae827f94abf756fa",
+        "retrieved_at": "2026-11-18T17:11:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2019,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "announcement_date": "2026-12-10",
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "h27q1_sales",
+          "value": 1607.741,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 当第1四半期累計"
+        },
+        {
+          "id": "h27q1_op",
+          "value": 61.754,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 当第1四半期累計"
+        },
+        {
+          "id": "h27q2_sales",
+          "value": 3181.044,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当中間会計期間"
+        },
+        {
+          "id": "h27q2_op",
+          "value": 122.113,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当中間会計期間"
+        },
+        {
+          "id": "h26q2_sales",
+          "value": 3305.556,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 7 当中間会計期間"
+        },
+        {
+          "id": "h26q2_op",
+          "value": 146.162,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 7 当中間会計期間"
+        },
+        {
+          "id": "h26q3_sales",
+          "value": 4954.055,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7 当第3四半期累計"
+        },
+        {
+          "id": "h26q3_op",
+          "value": 265.325,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7 当第3四半期累計"
+        },
+        {
+          "id": "q2_points",
+          "value": 1358,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 11 27Q2ポイント販売売上、百万円表示"
+        },
+        {
+          "id": "q2_point_pu",
+          "value": 55000,
+          "kind": "fact",
+          "unit": "人",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 12 27Q2月間平均ポイントPU、千人表示"
+        },
+        {
+          "id": "q2_point_arppu",
+          "value": 0.0081,
+          "kind": "fact",
+          "unit": "百万円/人/月",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 12 27Q2ポイントARPPU、円から百万円に換算"
+        },
+        {
+          "id": "q2_member_sales",
+          "value": 153,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 14 27Q2メンバーシップ売上"
+        },
+        {
+          "id": "q2_member_gmv",
+          "value": 610,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 15 27Q2メンバーシップGMV、消費税込"
+        },
+        {
+          "id": "q2_member_pu",
+          "value": 118000,
+          "kind": "fact",
+          "unit": "人",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16 27Q2月間平均メンバーシップPU"
+        },
+        {
+          "id": "q2_member_arppu",
+          "value": 0.001716,
+          "kind": "fact",
+          "unit": "百万円/人/月",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16 27Q2メンバーシップARPPU、円から百万円に換算"
+        },
+        {
+          "id": "yoy_points",
+          "value": 1444,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 15 26Q3ポイント販売売上"
+        },
+        {
+          "id": "yoy_member_sales",
+          "value": 142,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 18 26Q3メンバーシップ売上"
+        },
+        {
+          "id": "guidance_sales",
+          "value": 6829,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 409,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 461,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "quarter_days",
+          "value": 92,
+          "kind": "assumption",
+          "unit": "日",
+          "rationale": "対象期間の暦日数。停止による売上影響を日割りする計算上の分母。",
+          "sensitivity": "日別売上の季節性は停止換算日数の感応度で扱う。"
+        },
+        {
+          "id": "bear_pu",
+          "value": 51000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "停止前の通常稼働を仮定した月間平均ポイントPU。S07 page 12の直近58千人から55千人への減少と、前年Q2からQ3の67千人から63千人への減少を参考に、獲得施策が競争圧力を相殺できない条件。",
+          "sensitivity": "他条件一定でPUが1%変化するとポイント売上も1%変化する。停止影響は別途控除する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+          "material": true
+        },
+        {
+          "id": "base_pu",
+          "value": 54000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "直近のPU減少が続く一方、S08の直接的なユーザー獲得施策で減少幅が縮小する条件。停止前の通常稼働換算。",
+          "sensitivity": "他条件一定でPUが1%変化するとポイント売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF pages 1-3",
+          "material": true
+        },
+        {
+          "id": "bull_pu",
+          "value": 57000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "S08の下期PU反転施策が一定の効果を持ち、直近Q1水準を下回る範囲で回復する条件。停止前の通常稼働換算。",
+          "sensitivity": "他条件一定でPUが1%変化するとポイント売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bear_arppu",
+          "value": 0.008,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "直近Q1の8,005円付近まで戻る条件。高課金層の維持が弱まる場合を想定。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとポイント売上も1%変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 12",
+          "material": true
+        },
+        {
+          "id": "base_arppu",
+          "value": 0.0082,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "直近Q1からQ2の上昇幅に近い緩やかな改善を仮定。価格改定の新規実施を仮定せず、利用・課金構成の変化として扱う。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとポイント売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 3 A9",
+          "material": true
+        },
+        {
+          "id": "bull_arppu",
+          "value": 0.0084,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "ロイヤル層の課金維持とイベント効果が強い条件。上昇幅は過去の四半期推移で見られた幅を参考に設定。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとポイント売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+          "material": true
+        },
+        {
+          "id": "bear_lost_days",
+          "value": 4,
+          "kind": "assumption",
+          "unit": "日",
+          "rationale": "10月28日午前の停止から四半期末までを、月末の利用偏重を含め通常売上4日相当とする。11月の停止分は対象外。",
+          "sensitivity": "換算日数が1日増えると通常稼働ポイント売上の92分の1が減少する。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1; S15 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "base_lost_days",
+          "value": 3.56,
+          "kind": "assumption",
+          "unit": "日",
+          "rationale": "10月28日10時40分頃から10月31日末までの停止時間に概ね対応する日割り。日別利用は均等と仮定。",
+          "sensitivity": "換算日数が1日増えると通常稼働ポイント売上の92分の1が減少する。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1; S15 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bull_lost_days",
+          "value": 3.5,
+          "kind": "assumption",
+          "unit": "日",
+          "rationale": "停止時間に近い日割りとし、月末の売上偏重を見込まない条件。四半期内の再開や取り戻しは仮定しない。",
+          "sensitivity": "換算日数が1日増えると通常稼働ポイント売上の92分の1が減少する。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1; S15 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bear_member_pu",
+          "value": 116000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "S07の直近四半期レンジ下端を採用。会員数の小幅減少を仮定。",
+          "sensitivity": "他条件一定でPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16"
+        },
+        {
+          "id": "base_member_pu",
+          "value": 119000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "直近Q1とQ2の間の水準。PayPay対応による利便性改善と会員数の足踏みを併せて反映。",
+          "sensitivity": "他条件一定でPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 16; S08 PDF page 2 A7"
+        },
+        {
+          "id": "bull_member_pu",
+          "value": 122000,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "直近Q1水準を小幅に上回る獲得改善を仮定。大型の提携効果は加算しない。",
+          "sensitivity": "他条件一定でPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 16; S08 PDF page 1 A1"
+        },
+        {
+          "id": "bear_member_arppu",
+          "value": 0.001716,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "直近Q2水準を維持し、追加の単価改善を見込まない。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16"
+        },
+        {
+          "id": "base_member_arppu",
+          "value": 0.00175,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "直近Q1からQ2の上昇幅に近い改善を仮定。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16"
+        },
+        {
+          "id": "bull_member_arppu",
+          "value": 0.00178,
+          "kind": "assumption",
+          "unit": "百万円/人/月",
+          "rationale": "上位プラン利用などの構成改善が強い場合。過去四半期の単価上昇幅を参考とした条件。",
+          "sensitivity": "他条件一定でARPPUが1%変化するとメンバーシップ売上も1%変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF pages 7,16"
+        },
+        {
+          "id": "bear_other_factor",
+          "value": 0.9,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "プレミア配信等を含む残余売上を直近Q2から1割減と仮定。S07のプレミア配信の四半期変動幅を参考にするが、残余全額をプレミア配信とは断定しない。",
+          "sensitivity": "倍率が0.1変化するとq2_otherの0.1倍だけ停止前売上が変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF pages 11,13,14"
+        },
+        {
+          "id": "base_other_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "プレミア配信等を含む残余売上を直近Q2並みとする。内訳未解明部分について成長を上乗せしない。",
+          "sensitivity": "倍率が0.1変化するとq2_otherの0.1倍だけ停止前売上が変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF pages 11,13,14"
+        },
+        {
+          "id": "bull_other_factor",
+          "value": 1.1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "プレミア配信の過去四半期変動を参考に、残余売上全体の1割増を仮定。新規事業の売上は別途加算しない。",
+          "sensitivity": "倍率が0.1変化するとq2_otherの0.1倍だけ停止前売上が変化する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF pages 11,13,14"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "qoq_revenue",
+          "formula": "h27q2_sales-h27q1_sales"
+        },
+        {
+          "id": "qoq_op",
+          "formula": "h27q2_op-h27q1_op"
+        },
+        {
+          "id": "yoy_revenue",
+          "formula": "h26q3_sales-h26q2_sales"
+        },
+        {
+          "id": "yoy_op",
+          "formula": "h26q3_op-h26q2_op"
+        },
+        {
+          "id": "q2_other",
+          "formula": "qoq_revenue-q2_points-q2_member_sales"
+        },
+        {
+          "id": "yoy_other",
+          "formula": "yoy_revenue-yoy_points-yoy_member_sales"
+        },
+        {
+          "id": "member_take_rate",
+          "formula": "q2_member_sales/q2_member_gmv"
+        },
+        {
+          "id": "bear_point_normal",
+          "formula": "q2_points*bear_pu/q2_point_pu*bear_arppu/q2_point_arppu"
+        },
+        {
+          "id": "base_point_normal",
+          "formula": "q2_points*base_pu/q2_point_pu*base_arppu/q2_point_arppu"
+        },
+        {
+          "id": "bull_point_normal",
+          "formula": "q2_points*bull_pu/q2_point_pu*bull_arppu/q2_point_arppu"
+        },
+        {
+          "id": "bear_points",
+          "formula": "bear_point_normal*(quarter_days-bear_lost_days)/quarter_days"
+        },
+        {
+          "id": "base_points",
+          "formula": "base_point_normal*(quarter_days-base_lost_days)/quarter_days"
+        },
+        {
+          "id": "bull_points",
+          "formula": "bull_point_normal*(quarter_days-bull_lost_days)/quarter_days"
+        },
+        {
+          "id": "bear_member_gmv",
+          "formula": "q2_member_gmv*bear_member_pu/q2_member_pu*bear_member_arppu/q2_member_arppu"
+        },
+        {
+          "id": "base_member_gmv",
+          "formula": "q2_member_gmv*base_member_pu/q2_member_pu*base_member_arppu/q2_member_arppu"
+        },
+        {
+          "id": "bull_member_gmv",
+          "formula": "q2_member_gmv*bull_member_pu/q2_member_pu*bull_member_arppu/q2_member_arppu"
+        },
+        {
+          "id": "bear_member",
+          "formula": "bear_member_gmv*member_take_rate"
+        },
+        {
+          "id": "base_member",
+          "formula": "base_member_gmv*member_take_rate"
+        },
+        {
+          "id": "bull_member",
+          "formula": "bull_member_gmv*member_take_rate"
+        },
+        {
+          "id": "bear_other",
+          "formula": "q2_other*bear_other_factor*(quarter_days-bear_lost_days)/quarter_days"
+        },
+        {
+          "id": "base_other",
+          "formula": "q2_other*base_other_factor*(quarter_days-base_lost_days)/quarter_days"
+        },
+        {
+          "id": "bull_other",
+          "formula": "q2_other*bull_other_factor*(quarter_days-bull_lost_days)/quarter_days"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_points+bear_member+bear_other"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_points+base_member+base_other"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_points+bull_member+bull_other"
+        },
+        {
+          "id": "bear_yoy_residual",
+          "formula": "bear_revenue-yoy_revenue-(bear_points-yoy_points)-(bear_member-yoy_member_sales)"
+        },
+        {
+          "id": "base_yoy_residual",
+          "formula": "base_revenue-yoy_revenue-(base_points-yoy_points)-(base_member-yoy_member_sales)"
+        },
+        {
+          "id": "bull_yoy_residual",
+          "formula": "bull_revenue-yoy_revenue-(bull_points-yoy_points)-(bull_member-yoy_member_sales)"
+        },
+        {
+          "id": "bear_qoq_residual",
+          "formula": "bear_revenue-qoq_revenue-(bear_points-q2_points)-(bear_member-q2_member_sales)"
+        },
+        {
+          "id": "base_qoq_residual",
+          "formula": "base_revenue-qoq_revenue-(base_points-q2_points)-(base_member-q2_member_sales)"
+        },
+        {
+          "id": "bull_qoq_residual",
+          "formula": "bull_revenue-qoq_revenue-(bull_points-q2_points)-(bull_member-q2_member_sales)"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ポイント販売",
+              "revenue": "bear_points"
+            },
+            {
+              "name": "メンバーシップ",
+              "revenue": "bear_member"
+            },
+            {
+              "name": "プレミア配信等・内訳未解明部分を含む残余売上",
+              "revenue": "bear_other"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ポイント販売",
+              "revenue": "base_points"
+            },
+            {
+              "name": "メンバーシップ",
+              "revenue": "base_member"
+            },
+            {
+              "name": "プレミア配信等・内訳未解明部分を含む残余売上",
+              "revenue": "base_other"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ポイント販売",
+              "revenue": "bull_points"
+            },
+            {
+              "name": "メンバーシップ",
+              "revenue": "bull_member"
+            },
+            {
+              "name": "プレミア配信等・内訳未解明部分を含む残余売上",
+              "revenue": "bull_other"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 1,
+          "period_start": "2026-02-01",
+          "period_end": "2026-04-30",
+          "revenue": 1607.741,
+          "operating_profit": 61.754,
+          "ordinary_profit": 99.09,
+          "net_profit": 62.353,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2,7"
+        },
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 2,
+          "period_start": "2026-02-01",
+          "period_end": "2026-07-31",
+          "revenue": 3181.044,
+          "operating_profit": 122.113,
+          "ordinary_profit": 181.349,
+          "net_profit": 121.596,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,7"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 2,
+          "period_start": "2025-02-01",
+          "period_end": "2025-07-31",
+          "revenue": 3305.556,
+          "operating_profit": 146.162,
+          "ordinary_profit": 181.12,
+          "net_profit": 68.872,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF pages 2,7"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 3,
+          "period_start": "2025-02-01",
+          "period_end": "2025-10-31",
+          "revenue": 4954.055,
+          "operating_profit": 265.325,
+          "ordinary_profit": 306.361,
+          "net_profit": 134.836,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 2,7"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "g27_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_sales",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1,5 通期予想据え置き"
+        },
+        {
+          "id": "g27_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1,5 通期予想据え置き"
+        },
+        {
+          "id": "g27_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1,5 通期予想据え置き"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "ポイント課金人数と課金単価",
+          "mechanism": "競争環境によるカジュアル層離脱が数量を減らす一方、ロイヤル層の利用とイベントがARPPUを支える。直近売上を数量比と単価比で変化させる。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF pages 8,11,12,46; S08 PDF pages 1,3",
+          "calculation_ids": [
+            "bear_point_normal",
+            "base_point_normal",
+            "bull_point_normal"
+          ],
+          "not_quantified_reason": "未使用ポイントの増減と月次PU・ARPPUの共変動は個別推計せず、直近四半期の売上への換算関係が一定という条件を置く。"
+        },
+        {
+          "name": "メンバーシップの会員数・単価・手数料収入",
+          "mechanism": "税込GMVを会員数と単価の比率で推計し、直近の実効テイクレートを適用する。GMV自体を売上として計上しない。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF pages 14-16,47; S08 PDF page 2 A7",
+          "calculation_ids": [
+            "member_take_rate",
+            "bear_member",
+            "base_member",
+            "bull_member"
+          ],
+          "not_quantified_reason": "停止に伴う返金・補填の売上認識への影響は不明。月額課金売上に機械的な停止日割りは適用しない。"
+        },
+        {
+          "name": "四半期末のサービス停止",
+          "mechanism": "ポイント利用とプレミア配信等の売上機会を対象四半期内の停止日数相当だけ減額する。翌四半期の停止期間は控除しない。",
+          "source_ids": [
+            "S13",
+            "S14",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1; S14 PDF pages 1-2; S15 PDF pages 1-2",
+          "calculation_ids": [
+            "bear_points",
+            "base_points",
+            "bull_points",
+            "bear_other",
+            "base_other",
+            "bull_other"
+          ],
+          "not_quantified_reason": "日別課金・利用分布、補填額、復旧費の計上時期と会計区分は未開示。"
+        },
+        {
+          "name": "決済構成と配信者還元",
+          "mechanism": "Web決済移行は決済手数料を減らす一方、配信者取分率の上昇で売上原価を増やす。決済手数料減少を全額増益とは扱えない。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S12"
+          ],
+          "locator": "S07 PDF pages 9,17,19; S08 PDF page 1 A2; S12 PDF page 33",
+          "calculation_ids": [],
+          "not_quantified_reason": "通常収益力の条件付き試算は可能だが、事故関連費用の規模・営業費用への算入範囲に根拠ある上下限がなく、対象四半期の営業利益全体は数値化しない。"
+        },
+        {
+          "name": "人員・インフラ・販売促進・一過性費用",
+          "mechanism": "採用・昇給とユーザー獲得施策が費用を押し上げ、トラフィック平準化がインフラ費用を抑制する。増資・移転費用には一過性部分がある。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S09"
+          ],
+          "locator": "S07 PDF pages 9,19,34; S08 PDF page 2 A5; S09 PDF pages 7,32",
+          "calculation_ids": [],
+          "not_quantified_reason": "事故対応費と通常の体制強化・インフラ費用を区分できず、一過性費用の剥落額も非開示。利益を合わせる費用逆算は行わない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "yoy_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "bear_points-yoy_points",
+              "reason": "直近KPIを起点とした弱気条件と対象期内停止を反映。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "bear_member-yoy_member_sales",
+              "reason": "会員数・単価と実効テイクレートから推計。"
+            }
+          ],
+          "residual": "bear_yoy_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上の増減。合計額は推計したが、内訳および個別の経済要因への配賦は未解明。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "qoq_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "bear_points-q2_points",
+              "reason": "PU減少、単価軟化および停止による売上減。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "bear_member-q2_member_sales",
+              "reason": "会員数減少と単価横ばい。"
+            }
+          ],
+          "residual": "bear_qoq_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を丸め差とは扱わない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "yoy_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "事故関連費用の金額・計上区分が未開示で、営業利益予測および前年差の金額残差を算出できない。残差ゼロを意味しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "qoq_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "事故関連費用と一過性費用の剥落を定量化できず、前四半期差は未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "yoy_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "base_points-yoy_points",
+              "reason": "PUの減少幅縮小とARPPU改善を仮定し、対象期内停止を控除。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "base_member-yoy_member_sales",
+              "reason": "会員数・単価の緩やかな改善。"
+            }
+          ],
+          "residual": "base_yoy_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上の増減。個別要因への配賦は未解明。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "qoq_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "base_points-q2_points",
+              "reason": "数量微減と単価改善に、期末停止を反映。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "base_member-q2_member_sales",
+              "reason": "直近KPIを基準とした会員数・単価の改善。"
+            }
+          ],
+          "residual": "base_qoq_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上に対する停止控除を含む。内訳が未解明のため独立した事業要因と断定しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "yoy_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "通常の採算改善と事故関連費用を合わせた対象四半期営業利益の範囲を確定できず、差額は未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "qoq_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "事故関連費用の計上額と増資・移転費用の剥落額が不明で、差額は未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "yoy_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "bull_points-yoy_points",
+              "reason": "獲得施策によるPU反転とARPPU上昇を仮定。停止影響は強気でも控除。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "bull_member-yoy_member_sales",
+              "reason": "会員獲得と上位プラン等の構成改善。"
+            }
+          ],
+          "residual": "bull_yoy_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を含む。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "qoq_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "ポイント数量・単価・停止影響",
+              "formula": "bull_points-q2_points",
+              "reason": "数量・単価改善から停止影響を控除。"
+            },
+            {
+              "label": "メンバーシップ",
+              "formula": "bull_member-q2_member_sales",
+              "reason": "会員数と単価の改善。"
+            }
+          ],
+          "residual": "bull_qoq_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "プレミア配信等の残余売上の変化。詳細な販売数量・価格による説明はできない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "yoy_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "売上の強気条件から事故費用の下限を推定することはできず、営業利益差額は未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "qoq_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "事故費用をゼロとする根拠がなく、強気営業利益および残差金額も未算定。"
+        }
+      ],
+      "company_guidance": "保存原文で確認できる最新の通期会社予想はS03の据え置き予想。第3四半期単独予想ではない。当期純利益予想は繰延税金資産の回収可能性の見積りを理由に未定。S15は事故影響を精査中としており、修正後会社予想や期後修正値からの差引き推計は使用していない。latest_confirmedは提示資料内での確認を意味する。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスの数値はない。",
+      "independent_forecast": "売上のみ条件付き独自予測。ポイントは直近四半期の認識売上をPU比・ARPPU比で調整し、停止相当日数を控除。メンバーシップはGMVと実効テイクレートで推計。残余売上は直近水準とプレミア配信の変動幅を参考に設定した。ポイントの認識売上への換算関係とメンバーシップの実効テイクレートが維持され、補填による追加の売上減額が対象四半期に生じない条件である。会社予想の按分や前年比の一律延長ではない。事故対応費用に根拠ある金額範囲を設定できないため、営業・経常・純利益はnullとする。",
+      "narrative": [
+        {
+          "heading": "対象と売上の条件付き予測",
+          "text": "対象は次回決算で開示される第3四半期単独。売上は弱気{{value:bear_revenue}}、中心{{value:base_revenue}}、強気{{value:bull_revenue}}。中心条件ではポイントPUの減少幅縮小とARPPU改善を想定するが、四半期末のサービス停止が回復を抑える。メンバーシップは継続課金と単価改善が支えとなる。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S13",
+            "S15"
+          ],
+          "locator": "S07 PDF pages 11-16; S08 PDF pages 1-3; S13 PDF page 1; S15 PDF pages 1-2"
+        },
+        {
+          "heading": "比較実績と採算",
+          "text": "同一会計版の累計差引による前年同期売上は{{value:yoy_revenue}}、営業利益は{{value:yoy_op}}。前四半期売上は{{value:qoq_revenue}}、営業利益は{{value:qoq_op}}。Web決済移行は手数料削減と配信者還元増を同時に生むため、売上減少だけでは採算を判断できない。事故対応費用と補填の会計処理が未確定であり、開示される営業利益全体の数値予測は保留する。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S15"
+          ],
+          "locator": "S03-S06 各PDF page 7; S07 PDF pages 9,19; S15 PDF page 2"
+        },
+        {
+          "heading": "反証条件",
+          "text": "未使用ポイントの増加、課金の月末偏重、会員解約や当四半期に帰属する補填による売上減額が大きければ、提示した売上レンジを下回り得る。翌四半期の停止日数や中長期のAI・SBI提携収益を対象四半期に加減していない。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S15"
+          ],
+          "locator": "S07 PDF pages 4-5,46-47; S08 PDF page 2 A8; S15 PDF pages 1-2"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "reviewed",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "ポイント予測は、未使用ポイントの増減、丸められたPU、月次PUとARPPUの共変動を含む直近の認識売上への換算関係が維持される条件。",
+        "PU・ARPPU仮定は停止前の通常稼働換算であり、停止による数量減をあらかじめ含めていない。停止控除との二重計上を避けた。",
+        "メンバーシップは月額課金が継続し、対象四半期に追加の返金・売上減額がない条件。補填をゼロと確認したものではない。",
+        "プレミア配信等の残余売上全体に停止日割りを適用した。予約販売や既存購入分の収益認識によって影響は変わる。",
+        "各シナリオは確率区間ではなく、提示資料に基づく数量・単価・停止影響の条件比較。"
+      ],
+      "material_unresolved": [
+        "S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。",
+        "S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。",
+        "S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。",
+        "営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。",
+        "決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。",
+        "提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。",
+        "S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 15,
+      "Medium": 19,
+      "Low": 0
+    },
+    "material_assumption_count": 9,
+    "schedule_check": {
+      "input_date": "2026-12-10",
+      "official_date": "2026-12-10",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://about.moi.st/ja/ir/calendar/ の公式IRカレンダーの2026年欄に「12月10日」「2027年1月期 第3半期決算発表（15時30分予定）」と記載（「第3半期」は原文表記）。対象は2027年1月期第3四半期単独（2026年8月1日～10月31日）。",
+      "warnings": [
+        "決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。",
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "g27_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_sales",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 1514.7853921557219,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "6,829百万円は2026年2月～2027年1月の通期予想。3月11日公表値を9月10日に据え置いた履歴を確認した。9月10日は改定日ではなく据置確認日である。上期控除後3,647.956百万円はQ3・Q4合計で、Q3単独と直接比較できない。数量低下と事故停止は会社の増収前提との差を説明する方向性を持つが、Q4予測がないため通期乖離は未算定。基準日時までの最新性は提示資料内に限る。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5; S07 PDF page 24; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "３．2027年１月期の業績予想（2026年２月１日～2027年１月31日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g27_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "409百万円は同一会計基準・単体の通期予想で、3月11日公表値の9月10日据置を確認。上期控除後286.887百万円は下期全体である。会社は決済手数料低下と売上回復を想定するが、事故費用を含む対象Q3利益がnullのため同期間の乖離評価はできない。乖離なしを意味しない。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5; S07 PDF pages 24～26; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "通期 6,829 2.1 409 20.5 461 18.5 － － －"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g27_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "461百万円は通期予想で、3月11日公表値の9月10日据置を確認。上期控除後279.651百万円はQ3単独ではない。対象Q3の営業外収益および事故関連損益区分が未確定で、経常利益予測もnullのため数量・費用・一時要因による同期間の乖離評価はできない。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5,7; S07 PDF page 20; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "通期 6,829 2.1 409 20.5 461 18.5 － － －"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "保留",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: bear/yoy/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": -254.84071663527948,
+          "explained_sum": -245.97647315701838,
+          "residual": -8.864243478261102,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上の増減。合計額は推計したが、内訳および個別の経済要因への配賦は未解明。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: bear/qoq/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "expected_delta": -179.6447166352791,
+          "explained_sum": -170.97647315701838,
+          "residual": -8.668243478260734,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を丸め差とは扱わない。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: base/yoy/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": -133.71360784427839,
+          "explained_sum": -131.10675262688673,
+          "residual": -2.6068552173916544,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上の増減。個別要因への配賦は未解明。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: base/qoq/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "expected_delta": -58.51760784427802,
+          "explained_sum": -56.10675262688673,
+          "residual": -2.410855217391287,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上に対する停止控除を含む。内訳が未解明のため独立した事業要因と断定しない。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: bull/yoy/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": -14.50443184843607,
+          "explained_sum": -17.931486739740052,
+          "residual": 3.4270548913039818,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上の増減。内訳未解明部分を含む。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "economic_residual",
+        "message": "経済的な説明が未検証の残差: bull/qoq/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "expected_delta": 60.6915681515643,
+          "explained_sum": 57.06851326025995,
+          "residual": 3.623054891304349,
+          "residual_type": "economic_unexplained",
+          "difference": 0.0,
+          "status": "passed",
+          "residual_explanation": "プレミア配信等の残余売上の変化。詳細な販売数量・価格による説明はできない。"
+        }
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_pu",
+        "assumption_id": "bear_pu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_pu",
+        "assumption_id": "base_pu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_pu",
+        "assumption_id": "bull_pu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_arppu",
+        "assumption_id": "bear_arppu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_arppu",
+        "assumption_id": "base_arppu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_arppu",
+        "assumption_id": "bull_arppu",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_lost_days",
+        "assumption_id": "bear_lost_days",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_lost_days",
+        "assumption_id": "base_lost_days",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_lost_days",
+        "assumption_id": "bull_lost_days",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g27_revenue",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g27_op",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g27_ordinary",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "ポイントPU・ARPPUの重要仮定6件は過去水準と施策方針から選んだ独自条件であり、対象期の採用値を支持する数量的証拠がない。中心値を検証済み予測として扱えない。停止換算3件も実時間と売上影響を分けて管理する必要がある。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF page 1 A1",
+        "evidence_excerpt": "第一に、現在好調に推移しているポイントARPPU の高い収益性を維持してまいります。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "55,000×8,100円×3か月は1,336.5百万円で、認識ポイント売上1,358との差は21.5百万円。これを未使用ポイントだけ、または丸めだけで説明できない。相対モデルはこの差を含む換算関係の維持を暗黙に仮定しており、利用停止時には特に検証が必要。メンバーシップも118,000×1,716円×3か月＝607.464百万円とGMV610との差があり、固定換算・固定テイクレートは独立した未検証条件である。",
+        "source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 12,15,16,46,47",
+        "evidence_excerpt": "ユーザーによる\n購入ポイント使用額\nポイント販売売上",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "residual",
+        "message": "27Q2の非ポイント売上表示214とメンバーシップ153＋プレミア55＝208には6百万円差があり、通常の百万円単位の端数処理だけでは説明できない。残余62.303とプレミア55との差7.303の全額を丸め差にもその他実績にも確定できない。一方、S10には『その他売上』の独立項目があり、生成担当の説明より追加検証の手掛かりは存在する。ただし同項目は前年通期予想であり、当期Q2差額の確定根拠にはならない。",
+        "source_ids": [
+          "S07",
+          "S10"
+        ],
+        "locator": "S07 PDF pages 11,13,14; S10 PDF page 5",
+        "evidence_excerpt": "その他売上 ＋  4百万円",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "assumption",
+        "message": "残余売上全体をプレミア配信の変動幅で0.9・1.0・1.1倍し、さらに停止日割りする根拠は不足する。メンバーシップPU・ARPPUの採用値にも将来値の裏付けはなく、material=falseや利益感応度未算定は、売上予測への重要性が小さい証拠にはならない。",
+        "source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 14～16,44",
+        "evidence_excerpt": "ツイキャスプレミアにおけるチケット・コンテンツ販売手数料等売上となります。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "補填は単なる潜在リスクではなく実施方針が公表済み。追加売上減額が対象四半期に生じないという条件は否定も確認もできず、金額・収益認識・費用区分の検証が必要。売上レンジの下限を保証する材料はなく、全利益nullの保留は合理的である。",
+        "source_ids": [
+          "S15"
+        ],
+        "locator": "PDF page 2 第4項・第5項",
+        "evidence_excerpt": "テムチケットの補填や視聴期間の延長等の個別対応を実施いたします。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "other",
+        "message": "機械側のFinite number requiredを、そのままCriticalな経済的誤りとは認定しない。対象利益がnullである一方、比較実績は存在するため、『比較値なし』という表示は『予測値未算定』と区別すべき。nullを許容した未完了判定と売上ブリッジの算術判定を分離する必要がある。",
+        "source_ids": [
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S15"
+        ],
+        "locator": "S03～S06 PDF page 7; S15 PDF page 2 第5項",
+        "evidence_excerpt": "営業利益 146,162 122,113",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 15,
+      "Medium": 19,
+      "Low": 0
+    },
+    "assumptions": [
+      {
+        "id": "quarter_days",
+        "category": "その他事業仮定",
+        "adopted_value": 92,
+        "unit": "日",
+        "rationale": "対象期間の暦日数。停止による売上影響を日割りする計算上の分母。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 1
+      },
+      {
+        "id": "bear_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 51000,
+        "unit": "人",
+        "rationale": "停止前の通常稼働を仮定した月間平均ポイントPU。S07 page 12の直近58千人から55千人への減少と、前年Q2からQ3の67千人から63千人への減少を参考に、獲得施策が競争圧力を相殺できない条件。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 2,
+        "independent_review": {
+          "id": "bear_pu",
+          "status": "unsupported",
+          "reason": "過去の58千→55千、67千→63千の低下は確認できる。しかし対象期51,000人という水準、施策の効果不足および停止前換算への接続を定量的に裏付けない。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 1 A1",
+          "evidence_excerpt": "▍月間平均ポイントPUは、YoY -17.4%( -11千）の55千に。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 54000,
+        "unit": "人",
+        "rationale": "直近のPU減少が続く一方、S08の直接的なユーザー獲得施策で減少幅が縮小する条件。停止前の通常稼働換算。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF pages 1-3",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 3,
+        "independent_review": {
+          "id": "base_pu",
+          "status": "unsupported",
+          "reason": "ユーザー獲得への重点移行は確認できるが、減少幅が1,000人に縮小し54,000人となる獲得数・離脱率の根拠は示されていない。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 2 A5",
+          "evidence_excerpt": "フトし、トップラインの再成長に向けた効果検証をしっかりと行いながら、実行してまいります。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 57000,
+        "unit": "人",
+        "rationale": "S08の下期PU反転施策が一定の効果を持ち、直近Q1水準を下回る範囲で回復する条件。停止前の通常稼働換算。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF page 1",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 4,
+        "independent_review": {
+          "id": "bull_pu",
+          "status": "unsupported",
+          "reason": "下期反転の会社方針はあるが、対象Q3の57,000人を導く定量計画はない。Q1実績を下回るという制約だけでは支持できない。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 1 A1",
+          "evidence_excerpt": "る施策を重点的に実施することでポイント PU を反転させ、ポイント販売売上を再び成長軌道に乗せる\n計画です。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_arppu",
+        "category": "その他事業仮定",
+        "adopted_value": 0.008,
+        "unit": "百万円/人/月",
+        "rationale": "直近Q1の8,005円付近まで戻る条件。高課金層の維持が弱まる場合を想定。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF page 12",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 5,
+        "independent_review": {
+          "id": "bear_arppu",
+          "status": "unsupported",
+          "reason": "Q1実績8,005円は確認できるが、対象期に8,000円へ低下する課金構成・利用動向の証拠はない。過去実績への近似は予測値の裏付けと区別する。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 12 ポイントARPPU推移",
+          "evidence_excerpt": "7,940 8,005 8,100"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_arppu",
+        "category": "その他事業仮定",
+        "adopted_value": 0.0082,
+        "unit": "百万円/人/月",
+        "rationale": "直近Q1からQ2の上昇幅に近い緩やかな改善を仮定。価格改定の新規実施を仮定せず、利用・課金構成の変化として扱う。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF page 3 A9",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 6,
+        "independent_review": {
+          "id": "base_arppu",
+          "status": "unsupported",
+          "reason": "直近95円上昇に対する100円上昇の仮定は説明可能な外挿だが、対象期8,200円という数値の裏付けはない。ロイヤル層の一般的説明だけでsupportedとはしない。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 3 A9",
+          "evidence_excerpt": "▍月間平均ポイントARPPUは、YoY＋9.2%(＋684円）の8,100円に増加。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_arppu",
+        "category": "その他事業仮定",
+        "adopted_value": 0.0084,
+        "unit": "百万円/人/月",
+        "rationale": "ロイヤル層の課金維持とイベント効果が強い条件。上昇幅は過去の四半期推移で見られた幅を参考に設定。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 7,
+        "independent_review": {
+          "id": "bull_arppu",
+          "status": "unsupported",
+          "reason": "過去の単価上昇幅とエンゲージメント維持は参考になるが、8,400円に至るイベント別売上、課金構成、人数との共変動は未提示。",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 12; S08 PDF page 3 A9",
+          "evidence_excerpt": "ト向上に寄与していると考えております。一方で、競合環境変化の影響により、カジュアル層の新規"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_lost_days",
+        "category": "その他事業仮定",
+        "adopted_value": 4,
+        "unit": "日",
+        "rationale": "10月28日午前の停止から四半期末までを、月末の利用偏重を含め通常売上4日相当とする。11月の停止分は対象外。",
+        "source_ids": [
+          "S13",
+          "S15"
+        ],
+        "context_source_ids": [
+          "S13",
+          "S15"
+        ],
+        "locator": "S13 PDF page 1; S15 PDF page 1",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 8,
+        "independent_review": {
+          "id": "bear_lost_days",
+          "status": "unsupported",
+          "reason": "期末まで停止が続いたことは原文と整合するが、通常売上4日分への換算には月末偏重の定量資料がない。実時間を上回る売上損失係数は会社開示値ではない。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1 第1項; S15 PDF page 1 第1項",
+          "evidence_excerpt": "たしました。被害拡大を防止し詳細な調査を行うため、同日 10 時40 分頃より、一時的に当社サービス「ツイ"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_lost_days",
+        "category": "その他事業仮定",
+        "adopted_value": 3.56,
+        "unit": "日",
+        "rationale": "10月28日10時40分頃から10月31日末までの停止時間に概ね対応する日割り。日別利用は均等と仮定。",
+        "source_ids": [
+          "S13",
+          "S15"
+        ],
+        "context_source_ids": [
+          "S13",
+          "S15"
+        ],
+        "locator": "S13 PDF page 1; S15 PDF page 1",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 9,
+        "independent_review": {
+          "id": "base_lost_days",
+          "status": "unsupported",
+          "reason": "10月28日10時40分から11月1日0時までは約3.5556日で、3.56日への丸めは合理的。ただし日別売上均等、停止時間と認識売上損失の比例は原資料で支持されず、売上控除仮定全体としてunsupported。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1 第1項; S15 PDF page 1 第1項",
+          "evidence_excerpt": "2026 年11 月4 日からサービスサイトを公開し、録画視聴機能、収益の支払い申請、ツイキャスプレミ"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_lost_days",
+        "category": "その他事業仮定",
+        "adopted_value": 3.5,
+        "unit": "日",
+        "rationale": "停止時間に近い日割りとし、月末の売上偏重を見込まない条件。四半期内の再開や取り戻しは仮定しない。",
+        "source_ids": [
+          "S13",
+          "S15"
+        ],
+        "context_source_ids": [
+          "S13",
+          "S15"
+        ],
+        "locator": "S13 PDF page 1; S15 PDF page 1",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 10,
+        "independent_review": {
+          "id": "bull_lost_days",
+          "status": "unsupported",
+          "reason": "3.5日は停止実時間に近いものの、約3.5556日との差を埋める売上分布の根拠はない。単なる丸めを想定した条件比較としては可能だが、3.5日分の損失を実証しない。",
+          "source_ids": [
+            "S13",
+            "S15"
+          ],
+          "locator": "S13 PDF page 1 第1項; S15 PDF page 1 第1項",
+          "evidence_excerpt": " 2026 年11 月11 日（予定） ：すべてのライブ配信および視聴を再開。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_member_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 116000,
+        "unit": "人",
+        "rationale": "S07の直近四半期レンジ下端を採用。会員数の小幅減少を仮定。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF page 16",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 11
+      },
+      {
+        "id": "base_member_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 119000,
+        "unit": "人",
+        "rationale": "直近Q1とQ2の間の水準。PayPay対応による利便性改善と会員数の足踏みを併せて反映。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 16; S08 PDF page 2 A7",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 12
+      },
+      {
+        "id": "bull_member_pu",
+        "category": "その他事業仮定",
+        "adopted_value": 122000,
+        "unit": "人",
+        "rationale": "直近Q1水準を小幅に上回る獲得改善を仮定。大型の提携効果は加算しない。",
+        "source_ids": [
+          "S07",
+          "S08"
+        ],
+        "context_source_ids": [
+          "S07",
+          "S08"
+        ],
+        "locator": "S07 PDF page 16; S08 PDF page 1 A1",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 13
+      },
+      {
+        "id": "bear_member_arppu",
+        "category": "数量・単価",
+        "adopted_value": 0.001716,
+        "unit": "百万円/人/月",
+        "rationale": "直近Q2水準を維持し、追加の単価改善を見込まない。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF page 16",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 14
+      },
+      {
+        "id": "base_member_arppu",
+        "category": "その他事業仮定",
+        "adopted_value": 0.00175,
+        "unit": "百万円/人/月",
+        "rationale": "直近Q1からQ2の上昇幅に近い改善を仮定。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF page 16",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 15
+      },
+      {
+        "id": "bull_member_arppu",
+        "category": "数量・単価",
+        "adopted_value": 0.00178,
+        "unit": "百万円/人/月",
+        "rationale": "上位プラン利用などの構成改善が強い場合。過去四半期の単価上昇幅を参考とした条件。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 7,16",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 16
+      },
+      {
+        "id": "bear_other_factor",
+        "category": "その他事業仮定",
+        "adopted_value": 0.9,
+        "unit": "倍率",
+        "rationale": "プレミア配信等を含む残余売上を直近Q2から1割減と仮定。S07のプレミア配信の四半期変動幅を参考にするが、残余全額をプレミア配信とは断定しない。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 11,13,14",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 17
+      },
+      {
+        "id": "base_other_factor",
+        "category": "売上成長",
+        "adopted_value": 1,
+        "unit": "倍率",
+        "rationale": "プレミア配信等を含む残余売上を直近Q2並みとする。内訳未解明部分について成長を上乗せしない。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 11,13,14",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 18
+      },
+      {
+        "id": "bull_other_factor",
+        "category": "その他事業仮定",
+        "adopted_value": 1.1,
+        "unit": "倍率",
+        "rationale": "プレミア配信の過去四半期変動を参考に、残余売上全体の1割増を仮定。新規事業の売上は別途加算しない。",
+        "source_ids": [
+          "S07"
+        ],
+        "context_source_ids": [
+          "S07"
+        ],
+        "locator": "PDF pages 11,13,14",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 19
+      }
+    ],
+    "guidance": [
+      {
+        "id": "g27_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_sales",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 1514.7853921557219,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "6,829百万円は2026年2月～2027年1月の通期予想。3月11日公表値を9月10日に据え置いた履歴を確認した。9月10日は改定日ではなく据置確認日である。上期控除後3,647.956百万円はQ3・Q4合計で、Q3単独と直接比較できない。数量低下と事故停止は会社の増収前提との差を説明する方向性を持つが、Q4予測がないため通期乖離は未算定。基準日時までの最新性は提示資料内に限る。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5; S07 PDF page 24; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "３．2027年１月期の業績予想（2026年２月１日～2027年１月31日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g27_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "409百万円は同一会計基準・単体の通期予想で、3月11日公表値の9月10日据置を確認。上期控除後286.887百万円は下期全体である。会社は決済手数料低下と売上回復を想定するが、事故費用を含む対象Q3利益がnullのため同期間の乖離評価はできない。乖離なしを意味しない。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5; S07 PDF pages 24～26; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "通期 6,829 2.1 409 20.5 461 18.5 － － －"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g27_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "published_at": "2026-09-10T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1,5 通期予想据え置き",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g27_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "461百万円は通期予想で、3月11日公表値の9月10日据置を確認。上期控除後279.651百万円はQ3単独ではない。対象Q3の営業外収益および事故関連損益区分が未確定で、経常利益予測もnullのため数量・費用・一時要因による同期間の乖離評価はできない。",
+          "source_ids": [
+            "S03",
+            "S07",
+            "S11",
+            "S15"
+          ],
+          "locator": "S03 PDF pages 1,5,7; S07 PDF page 20; S11 PDF page 2; S15 PDF page 2",
+          "evidence_excerpt": "通期 6,829 2.1 409 20.5 461 18.5 － － －"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S07 PDF pages 11,13,14の売上内訳には、ポイント以外合計とメンバーシップ・プレミア配信合計の不一致がある。原本画像の再確認は行っておらず、誤植・抽出誤り・その他売上のどれかを確定できない。残余をプレミア配信実績や丸め差と断定せず、売上ブリッジでも経済的未説明残差とした。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S07の丸められたPU・ARPPUを直接乗じても認識ポイント売上と一致しない。未使用ポイントの増減や集計方法を分離できないため、独自予測は直近認識売上を基準とした相対数量・単価モデルに限定する。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S15 PDF page 2では補填等を含む業績影響が精査中。復旧・調査・セキュリティ強化・補填の費用額、対象四半期への帰属、営業費用と特別損失の区分が非開示であり、利益全体に根拠ある上下限を設定できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S15記載の11月のライブ配信再開予定について、その後の実施確認原文はない。対象四半期末まで停止が続いた判断には影響しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "営業外の音楽著作権使用料収益は四半期ごとの変動があり、対象期の計上予定は非開示。事故関連損益の区分も不明で経常利益はnull。税効果と補填関連損失を合理的に評価できず純利益もnull。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "提示PDF本文はtruncated=falseであり、短縮による欠落は表示されていない。ただし原本画像・改訂履歴の完全照合は未実施。S15以降から基準日時までの追加開示の網羅性は、提示資料だけでは確認できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: bear/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: bear/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: base/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: base/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: bull/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "economic_residual",
+      "message": "経済的な説明が未検証の残差: bull/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_pu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_pu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_pu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_arppu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_arppu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_arppu",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_lost_days",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_lost_days",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_lost_days",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g27_revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g27_op",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g27_ordinary",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "ポイントPU・ARPPUの重要仮定6件は過去水準と施策方針から選んだ独自条件であり、対象期の採用値を支持する数量的証拠がない。中心値を検証済み予測として扱えない。停止換算3件も実時間と売上影響を分けて管理する必要がある。",
+      "source_ids": "['S07', 'S08']",
+      "locator": "S07 PDF page 12; S08 PDF page 1 A1",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "55,000×8,100円×3か月は1,336.5百万円で、認識ポイント売上1,358との差は21.5百万円。これを未使用ポイントだけ、または丸めだけで説明できない。相対モデルはこの差を含む換算関係の維持を暗黙に仮定しており、利用停止時には特に検証が必要。メンバーシップも118,000×1,716円×3か月＝607.464百万円とGMV610との差があり、固定換算・固定テイクレートは独立した未検証条件である。",
+      "source_ids": "['S07']",
+      "locator": "PDF pages 12,15,16,46,47",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "residual",
+      "message": "27Q2の非ポイント売上表示214とメンバーシップ153＋プレミア55＝208には6百万円差があり、通常の百万円単位の端数処理だけでは説明できない。残余62.303とプレミア55との差7.303の全額を丸め差にもその他実績にも確定できない。一方、S10には『その他売上』の独立項目があり、生成担当の説明より追加検証の手掛かりは存在する。ただし同項目は前年通期予想であり、当期Q2差額の確定根拠にはならない。",
+      "source_ids": "['S07', 'S10']",
+      "locator": "S07 PDF pages 11,13,14; S10 PDF page 5",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "assumption",
+      "message": "残余売上全体をプレミア配信の変動幅で0.9・1.0・1.1倍し、さらに停止日割りする根拠は不足する。メンバーシップPU・ARPPUの採用値にも将来値の裏付けはなく、material=falseや利益感応度未算定は、売上予測への重要性が小さい証拠にはならない。",
+      "source_ids": "['S07']",
+      "locator": "PDF pages 14～16,44",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "補填は単なる潜在リスクではなく実施方針が公表済み。追加売上減額が対象四半期に生じないという条件は否定も確認もできず、金額・収益認識・費用区分の検証が必要。売上レンジの下限を保証する材料はなく、全利益nullの保留は合理的である。",
+      "source_ids": "['S15']",
+      "locator": "PDF page 2 第4項・第5項",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "company_name": "モイ株式会社",
+      "severity": "Medium",
+      "category": "other",
+      "message": "機械側のFinite number requiredを、そのままCriticalな経済的誤りとは認定しない。対象利益がnullである一方、比較実績は存在するため、『比較値なし』という表示は『予測値未算定』と区別すべき。nullを許容した未完了判定と売上ブリッジの算術判定を分離する必要がある。",
+      "source_ids": "['S03', 'S04', 'S05', 'S06', 'S15']",
+      "locator": "S03～S06 PDF page 7; S15 PDF page 2 第5項",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [
+    {
+      "code": "5031",
+      "id": "quarter_days",
+      "category": "その他事業仮定",
+      "adopted_value": "92",
+      "unit": "日",
+      "rationale": "対象期間の暦日数。停止による売上影響を日割りする計算上の分母。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "1",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bear_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "51000",
+      "unit": "人",
+      "rationale": "停止前の通常稼働を仮定した月間平均ポイントPU。S07 page 12の直近58千人から55千人への減少と、前年Q2からQ3の67千人から63千人への減少を参考に、獲得施策が競争圧力を相殺できない条件。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "2",
+      "independent_review": "{\"id\": \"bear_pu\", \"status\": \"unsupported\", \"reason\": \"過去の58千→55千、67千→63千の低下は確認できる。しかし対象期51,000人という水準、施策の効果不足および停止前換算への接続を定量的に裏付けない。\", \"source_ids\": [\"S07\", \"S08\"], \"locator\": \"S07 PDF page 12; S08 PDF page 1 A1\", \"evidence_excerpt\": \"▍月間平均ポイントPUは、YoY -17.4%( -11千）の55千に。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "base_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "54000",
+      "unit": "人",
+      "rationale": "直近のPU減少が続く一方、S08の直接的なユーザー獲得施策で減少幅が縮小する条件。停止前の通常稼働換算。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 12; S08 PDF pages 1-3",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "3",
+      "independent_review": "{\"id\": \"base_pu\", \"status\": \"unsupported\", \"reason\": \"ユーザー獲得への重点移行は確認できるが、減少幅が1,000人に縮小し54,000人となる獲得数・離脱率の根拠は示されていない。\", \"source_ids\": [\"S07\", \"S08\"], \"locator\": \"S07 PDF page 12; S08 PDF page 2 A5\", \"evidence_excerpt\": \"フトし、トップラインの再成長に向けた効果検証をしっかりと行いながら、実行してまいります。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bull_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "57000",
+      "unit": "人",
+      "rationale": "S08の下期PU反転施策が一定の効果を持ち、直近Q1水準を下回る範囲で回復する条件。停止前の通常稼働換算。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 12; S08 PDF page 1",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "4",
+      "independent_review": "{\"id\": \"bull_pu\", \"status\": \"unsupported\", \"reason\": \"下期反転の会社方針はあるが、対象Q3の57,000人を導く定量計画はない。Q1実績を下回るという制約だけでは支持できない。\", \"source_ids\": [\"S07\", \"S08\"], \"locator\": \"S07 PDF page 12; S08 PDF page 1 A1\", \"evidence_excerpt\": \"る施策を重点的に実施することでポイント PU を反転させ、ポイント販売売上を再び成長軌道に乗せる\\n計画です。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bear_arppu",
+      "category": "その他事業仮定",
+      "adopted_value": "0.008",
+      "unit": "百万円/人/月",
+      "rationale": "直近Q1の8,005円付近まで戻る条件。高課金層の維持が弱まる場合を想定。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF page 12",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "5",
+      "independent_review": "{\"id\": \"bear_arppu\", \"status\": \"unsupported\", \"reason\": \"Q1実績8,005円は確認できるが、対象期に8,000円へ低下する課金構成・利用動向の証拠はない。過去実績への近似は予測値の裏付けと区別する。\", \"source_ids\": [\"S07\"], \"locator\": \"PDF page 12 ポイントARPPU推移\", \"evidence_excerpt\": \"7,940 8,005 8,100\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "base_arppu",
+      "category": "その他事業仮定",
+      "adopted_value": "0.0082",
+      "unit": "百万円/人/月",
+      "rationale": "直近Q1からQ2の上昇幅に近い緩やかな改善を仮定。価格改定の新規実施を仮定せず、利用・課金構成の変化として扱う。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 12; S08 PDF page 3 A9",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "6",
+      "independent_review": "{\"id\": \"base_arppu\", \"status\": \"unsupported\", \"reason\": \"直近95円上昇に対する100円上昇の仮定は説明可能な外挿だが、対象期8,200円という数値の裏付けはない。ロイヤル層の一般的説明だけでsupportedとはしない。\", \"source_ids\": [\"S07\", \"S08\"], \"locator\": \"S07 PDF page 12; S08 PDF page 3 A9\", \"evidence_excerpt\": \"▍月間平均ポイントARPPUは、YoY＋9.2%(＋684円）の8,100円に増加。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bull_arppu",
+      "category": "その他事業仮定",
+      "adopted_value": "0.0084",
+      "unit": "百万円/人/月",
+      "rationale": "ロイヤル層の課金維持とイベント効果が強い条件。上昇幅は過去の四半期推移で見られた幅を参考に設定。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 12; S08 PDF pages 1,3",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "7",
+      "independent_review": "{\"id\": \"bull_arppu\", \"status\": \"unsupported\", \"reason\": \"過去の単価上昇幅とエンゲージメント維持は参考になるが、8,400円に至るイベント別売上、課金構成、人数との共変動は未提示。\", \"source_ids\": [\"S07\", \"S08\"], \"locator\": \"S07 PDF page 12; S08 PDF page 3 A9\", \"evidence_excerpt\": \"ト向上に寄与していると考えております。一方で、競合環境変化の影響により、カジュアル層の新規\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bear_lost_days",
+      "category": "その他事業仮定",
+      "adopted_value": "4",
+      "unit": "日",
+      "rationale": "10月28日午前の停止から四半期末までを、月末の利用偏重を含め通常売上4日相当とする。11月の停止分は対象外。",
+      "source_ids": "[\"S13\", \"S15\"]",
+      "context_source_ids": "[\"S13\", \"S15\"]",
+      "locator": "S13 PDF page 1; S15 PDF page 1",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "8",
+      "independent_review": "{\"id\": \"bear_lost_days\", \"status\": \"unsupported\", \"reason\": \"期末まで停止が続いたことは原文と整合するが、通常売上4日分への換算には月末偏重の定量資料がない。実時間を上回る売上損失係数は会社開示値ではない。\", \"source_ids\": [\"S13\", \"S15\"], \"locator\": \"S13 PDF page 1 第1項; S15 PDF page 1 第1項\", \"evidence_excerpt\": \"たしました。被害拡大を防止し詳細な調査を行うため、同日 10 時40 分頃より、一時的に当社サービス「ツイ\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "base_lost_days",
+      "category": "その他事業仮定",
+      "adopted_value": "3.56",
+      "unit": "日",
+      "rationale": "10月28日10時40分頃から10月31日末までの停止時間に概ね対応する日割り。日別利用は均等と仮定。",
+      "source_ids": "[\"S13\", \"S15\"]",
+      "context_source_ids": "[\"S13\", \"S15\"]",
+      "locator": "S13 PDF page 1; S15 PDF page 1",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "9",
+      "independent_review": "{\"id\": \"base_lost_days\", \"status\": \"unsupported\", \"reason\": \"10月28日10時40分から11月1日0時までは約3.5556日で、3.56日への丸めは合理的。ただし日別売上均等、停止時間と認識売上損失の比例は原資料で支持されず、売上控除仮定全体としてunsupported。\", \"source_ids\": [\"S13\", \"S15\"], \"locator\": \"S13 PDF page 1 第1項; S15 PDF page 1 第1項\", \"evidence_excerpt\": \"2026 年11 月4 日からサービスサイトを公開し、録画視聴機能、収益の支払い申請、ツイキャスプレミ\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bull_lost_days",
+      "category": "その他事業仮定",
+      "adopted_value": "3.5",
+      "unit": "日",
+      "rationale": "停止時間に近い日割りとし、月末の売上偏重を見込まない条件。四半期内の再開や取り戻しは仮定しない。",
+      "source_ids": "[\"S13\", \"S15\"]",
+      "context_source_ids": "[\"S13\", \"S15\"]",
+      "locator": "S13 PDF page 1; S15 PDF page 1",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "10",
+      "independent_review": "{\"id\": \"bull_lost_days\", \"status\": \"unsupported\", \"reason\": \"3.5日は停止実時間に近いものの、約3.5556日との差を埋める売上分布の根拠はない。単なる丸めを想定した条件比較としては可能だが、3.5日分の損失を実証しない。\", \"source_ids\": [\"S13\", \"S15\"], \"locator\": \"S13 PDF page 1 第1項; S15 PDF page 1 第1項\", \"evidence_excerpt\": \" 2026 年11 月11 日（予定） ：すべてのライブ配信および視聴を再開。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "bear_member_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "116000",
+      "unit": "人",
+      "rationale": "S07の直近四半期レンジ下端を採用。会員数の小幅減少を仮定。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF page 16",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "11",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "base_member_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "119000",
+      "unit": "人",
+      "rationale": "直近Q1とQ2の間の水準。PayPay対応による利便性改善と会員数の足踏みを併せて反映。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 16; S08 PDF page 2 A7",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "12",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bull_member_pu",
+      "category": "その他事業仮定",
+      "adopted_value": "122000",
+      "unit": "人",
+      "rationale": "直近Q1水準を小幅に上回る獲得改善を仮定。大型の提携効果は加算しない。",
+      "source_ids": "[\"S07\", \"S08\"]",
+      "context_source_ids": "[\"S07\", \"S08\"]",
+      "locator": "S07 PDF page 16; S08 PDF page 1 A1",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "13",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bear_member_arppu",
+      "category": "数量・単価",
+      "adopted_value": "0.001716",
+      "unit": "百万円/人/月",
+      "rationale": "直近Q2水準を維持し、追加の単価改善を見込まない。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF page 16",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "14",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "base_member_arppu",
+      "category": "その他事業仮定",
+      "adopted_value": "0.00175",
+      "unit": "百万円/人/月",
+      "rationale": "直近Q1からQ2の上昇幅に近い改善を仮定。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF page 16",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "15",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bull_member_arppu",
+      "category": "数量・単価",
+      "adopted_value": "0.00178",
+      "unit": "百万円/人/月",
+      "rationale": "上位プラン利用などの構成改善が強い場合。過去四半期の単価上昇幅を参考とした条件。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF pages 7,16",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "16",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bear_other_factor",
+      "category": "その他事業仮定",
+      "adopted_value": "0.9",
+      "unit": "倍率",
+      "rationale": "プレミア配信等を含む残余売上を直近Q2から1割減と仮定。S07のプレミア配信の四半期変動幅を参考にするが、残余全額をプレミア配信とは断定しない。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF pages 11,13,14",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "17",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "base_other_factor",
+      "category": "売上成長",
+      "adopted_value": "1",
+      "unit": "倍率",
+      "rationale": "プレミア配信等を含む残余売上を直近Q2並みとする。内訳未解明部分について成長を上乗せしない。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF pages 11,13,14",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "18",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "5031",
+      "id": "bull_other_factor",
+      "category": "その他事業仮定",
+      "adopted_value": "1.1",
+      "unit": "倍率",
+      "rationale": "プレミア配信の過去四半期変動を参考に、残余売上全体の1割増を仮定。新規事業の売上は別途加算しない。",
+      "source_ids": "[\"S07\"]",
+      "context_source_ids": "[\"S07\"]",
+      "locator": "PDF pages 11,13,14",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "19",
+      "independent_review": "",
+      "citation_verified": ""
+    }
+  ],
+  "guidance": [
+    {
+      "code": "5031",
+      "id": "g27_revenue",
+      "metric": "revenue",
+      "value_ref": "guidance_sales",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円",
+      "published_at": "2026-09-10T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S03\"]",
+      "locator": "PDF pages 1,5 通期予想据え置き",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "1514.7853921557219",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"g27_revenue\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"6,829百万円は2026年2月～2027年1月の通期予想。3月11日公表値を9月10日に据え置いた履歴を確認した。9月10日は改定日ではなく据置確認日である。上期控除後3,647.956百万円はQ3・Q4合計で、Q3単独と直接比較できない。数量低下と事故停止は会社の増収前提との差を説明する方向性を持つが、Q4予測がないため通期乖離は未算定。基準日時までの最新性は提示資料内に限る。\", \"source_ids\": [\"S03\", \"S07\", \"S11\", \"S15\"], \"locator\": \"S03 PDF pages 1,5; S07 PDF page 24; S11 PDF page 2; S15 PDF page 2\", \"evidence_excerpt\": \"３．2027年１月期の業績予想（2026年２月１日～2027年１月31日）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "g27_op",
+      "metric": "operating_profit",
+      "value_ref": "guidance_op",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円",
+      "published_at": "2026-09-10T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S03\"]",
+      "locator": "PDF pages 1,5 通期予想据え置き",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"g27_op\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"409百万円は同一会計基準・単体の通期予想で、3月11日公表値の9月10日据置を確認。上期控除後286.887百万円は下期全体である。会社は決済手数料低下と売上回復を想定するが、事故費用を含む対象Q3利益がnullのため同期間の乖離評価はできない。乖離なしを意味しない。\", \"source_ids\": [\"S03\", \"S07\", \"S11\", \"S15\"], \"locator\": \"S03 PDF pages 1,5; S07 PDF pages 24～26; S11 PDF page 2; S15 PDF page 2\", \"evidence_excerpt\": \"通期 6,829 2.1 409 20.5 461 18.5 － － －\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "5031",
+      "id": "g27_ordinary",
+      "metric": "ordinary_profit",
+      "value_ref": "guidance_ordinary",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円",
+      "published_at": "2026-09-10T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S03\"]",
+      "locator": "PDF pages 1,5 通期予想据え置き",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"g27_ordinary\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"461百万円は通期予想で、3月11日公表値の9月10日据置を確認。上期控除後279.651百万円はQ3単独ではない。対象Q3の営業外収益および事故関連損益区分が未確定で、経常利益予測もnullのため数量・費用・一時要因による同期間の乖離評価はできない。\", \"source_ids\": [\"S03\", \"S07\", \"S11\", \"S15\"], \"locator\": \"S03 PDF pages 1,5,7; S07 PDF page 20; S11 PDF page 2; S15 PDF page 2\", \"evidence_excerpt\": \"通期 6,829 2.1 409 20.5 461 18.5 － － －\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "5031",
+    "input_date": "2026-12-10",
+    "official_date": "2026-12-10",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://about.moi.st/ja/ir/calendar/ の公式IRカレンダーの2026年欄に「12月10日」「2027年1月期 第3半期決算発表（15時30分予定）」と記載（「第3半期」は原文表記）。対象は2027年1月期第3四半期単独（2026年8月1日～10月31日）。",
+    "warnings": "['決算発表日は提示された対象条件およびdiscoveryを採用した。S02のIRカレンダー保存原文はdocumentsに含まれず、原文確認済みとは扱わない。', '資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/5031/result.json": "c3873b2fba624a3429f91afe6e7b7db6a5e00d9c9f92cd4a25a5c30310157fbc",
+    "reports/5031.md": "ea763200f9763b501219d04ab7828829a91937f14f88a7457d1f308ca40cf8ec",
+    "reports/5031_review.md": "5a967e4987f979f8f675a90ec3ce71f65136c6073195f391a06c2ee136f8b4b4",
+    "companies/5031/quality_review.json": "d894bf7dd7a83e09a95853513e8c5fb49fb03326f1cf030eb425fab87fbd0573",
+    "companies/5031/independent_review.json": "c4c74ea97cfbbdff714998aa6e9f29a75811fd7e0b882d4a1c7a387a5988f64d"
+  }
+}

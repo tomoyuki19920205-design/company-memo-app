@@ -752,8 +752,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:08:50+09:00"
+    "source": "https://kabuyoho.jp/sp/report?bcode=350A の本文に「次回発表予定 第1四半期決算：2026/12/10」と記載。会社公式 https://www.digitalgrid.com/ir/calendar/ では12月に第1四半期決算発表との記載のみ確認でき、具体的な日付の会社IR・取引所根拠は未確認のためschedule_verifiedはfalse。",
+    "updatedAt": "2026-11-18T17:52:08+09:00"
   },
   {
     "code": "4026",
@@ -776,8 +776,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:08:50+09:00"
+    "source": "公式IR https://www.yukes.co.jp/ir/ にIRカレンダーはあるが、2026年12月10日という具体的な予定日を会社IR・取引所資料で確認できず。参考として https://kabuyoho.jp/sp/report?bcode=4334 の検索結果には「次回発表予定 第3四半期決算：2026/12/10」とあるが、公式根拠未確認のため確定日として採用しない。",
+    "updatedAt": "2026-11-18T17:52:14+09:00"
   },
   {
     "code": "4422",
@@ -788,20 +788,20 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:11:59+09:00"
+    "source": "公式IR https://www.valuenex.com/jp/investor-relations の「IRスケジュール」リンクを確認したが、2026-12-10の予定日を示す公式記載は取得できなかった。第三者サイトの検索結果には同日の記載があるものの、会社IR・取引所による裏付けはunknown。",
+    "updatedAt": "2026-11-18T17:52:53+09:00"
   },
   {
     "code": "4441",
     "companyName": "トビラシステムズ",
     "date": "2026-12-10",
-    "status": "unconfirmed",
+    "status": "official",
     "target": {
       "fiscalYearEnd": "2026-10-31",
       "quarter": 4
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:15:29+09:00"
+    "source": "https://tobila.com/news/info/p3172/ の2026年11月16日公開記事に、2026年10月期通期決算発表は12月10日12時予定と記載。https://tobila.com/ir/calendar/ にも同日程を記載。対象は2026年10月期第4四半期単独（2026年8月1日～10月31日）。",
+    "updatedAt": "2026-11-18T17:53:42+09:00"
   },
   {
     "code": "5031",
@@ -812,8 +812,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:15:08+09:00"
+    "source": "https://about.moi.st/ja/ir/calendar/ の公式IRカレンダーの2026年欄に「12月10日」「2027年1月期 第3半期決算発表（15時30分予定）」と記載（「第3半期」は原文表記）。対象は2027年1月期第3四半期単独（2026年8月1日～10月31日）。",
+    "updatedAt": "2026-11-18T17:54:21+09:00"
   },
   {
     "code": "6184",
@@ -824,8 +824,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:16:11+09:00"
+    "source": "https://www.kamakura-net.co.jp/ir/other/calendar.php に「2026年12月10日（木）2027年1月期第3四半期決算短信発表」と記載。対象は2026年8月1日～10月31日の第3四半期単独。基準日時以前の検索で対象決算の発表済み資料は確認されなかった。",
+    "updatedAt": "2026-11-18T17:56:07+09:00"
   },
   {
     "code": "6535",
@@ -836,8 +836,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:18:17+09:00"
+    "source": "https://www.i-mobile.co.jp/ir/calendar.html の検索結果には次回イベントとして「2026年12月 2027年７月期第１四半期決算発表」と記載。ただし本文取得では動的表示部分を取得できず、12月10日を会社IR・取引所で確認できなかった。https://finance.yahoo.co.jp/quote/6535.T の検索結果には2026年12月10日予定と表示されたが、公式の確定根拠としては採用していない。",
+    "updatedAt": "2026-11-18T17:56:00+09:00"
   },
   {
     "code": "6577",
@@ -848,8 +848,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:20:43+09:00"
+    "source": "https://www.best1cruise-corp.info/ir/ir-calendar/ は2026年12月に2027年7月期第1四半期決算を発表予定と記載。具体的な日は補完的に https://kabuyoho.jp/report?bcode=6577 の本文で「次回発表予定 第1四半期決算：2026/12/10」を確認した。同ページの株価表示は11月18日13:38、財務データ更新日は2026年11月17日。会社IR・取引所による日単位の予定は未確認。",
+    "updatedAt": "2026-11-18T17:56:10+09:00"
   },
   {
     "code": "6619",
@@ -860,8 +860,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:21:25+09:00"
+    "source": "https://data.kabu-trendpro.com/company/6619/ に2026-11-03収録として第3四半期決算発表予定2026-12-10と記載。https://finance.yahoo.co.jp/quote/6619.T でも同日予定を確認。ただし会社IR・取引所の一次情報では予定日を直接確認できず、schedule_verifiedはfalse。",
+    "updatedAt": "2026-11-18T17:56:26+09:00"
   },
   {
     "code": "6966",
@@ -872,8 +872,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:22:28+09:00"
+    "source": "公式IRカレンダー https://www.mitsui-high-tec.com/ir/calendar/ を確認したが、2026-12-10という具体的な発表日を公式資料・取引所資料で確認できなかった。第三者の検索結果には同日との記載があるが、公式根拠未確認のため採用しない。",
+    "updatedAt": "2026-11-18T17:59:12+09:00"
   },
   {
     "code": "7196",
@@ -884,8 +884,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:25:37+09:00"
+    "source": "https://data.kabu-trendpro.com/search_company_info.php?search_word=%EF%BC%A3%EF%BD%81%EF%BD%93%EF%BD%81 ：2026年11月3日収録、7196 Casa、第3四半期決算発表予定2026年12月10日と記載（JPX情報の転載）。https://finance.yahoo.co.jp/quote/7196.T でも同日予定を確認。予定日の照合は二次情報によるもので、会社公式 https://casa-inc.co.jp/ir/schedule/ では具体的日付を取得できず、一次資料での直接確認は未完了。",
+    "updatedAt": "2026-11-18T17:59:04+09:00"
   },
   {
     "code": "7640",
@@ -908,8 +908,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:26:19+09:00"
+    "source": "会社IRイベントページ https://ir.hamayuu.co.jp/ja/ir/event.html の検索結果は「2026年12月上旬・2027年7月期第1四半期決算発表」だが、本文取得では2026年7月期の日程が返り、表示内容が一致しない。https://kabuyoho.jp/sp/report?bcode=7682 等の外部検索結果には2026/12/10とあるが、会社IR・取引所の一次資料では具体的な日付を確認できなかった。",
+    "updatedAt": "2026-11-18T17:58:33+09:00"
   },
   {
     "code": "7777",
@@ -920,8 +920,8 @@
       "fiscalYearEnd": "2027-04-30",
       "quarter": 2
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:28:45+09:00"
+    "source": "https://www.3d-matrix.co.jp/ の会社公式検索結果に、2026-11-17付で「2027年４月期第２四半期の決算短信につきまして、2026年12月10日に開示を予定しております」と記載。予定日は検索結果で確認済みだが、公式ページ本文は502エラーで未取得。",
+    "updatedAt": "2026-11-18T17:59:19+09:00"
   },
   {
     "code": "8927",
@@ -932,8 +932,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:31:33+09:00"
+    "source": "公式IRカレンダー https://meiho-est.com/ir/ir-calendar/ では2026年12月10日の発表予定を確認できなかった。https://finance.yahoo.co.jp/quote/8927.T および https://s.kabutan.jp/stocks/8927/news の検索結果には2026年12月10日予定と表示されるが、会社・取引所の一次資料による予定日の確認は未了。",
+    "updatedAt": "2026-11-18T18:01:15+09:00"
   },
   {
     "code": "9627",
@@ -944,8 +944,8 @@
       "fiscalYearEnd": "2027-04-30",
       "quarter": 2
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:32:36+09:00"
+    "source": "https://www.ainj.co.jp/corporate/ir/calendar.html に「2026年12月10日(木)2027年4月期第2四半期決算発表（予定）」と記載。対象は2027年4月期第2四半期単独（2026年8月～10月）。基準日時点の最新決算資料は第1四半期。",
+    "updatedAt": "2026-11-18T18:02:43+09:00"
   },
   {
     "code": "9632",
@@ -956,8 +956,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:34:21+09:00"
+    "source": "https://subaru-kougyou.jp/ir/calendar.html は2026年10月23日現在のカレンダーで、2026年の「第113期第３四半期決算発表」と開示時刻16:00を確認。ただし取得本文に発表日が表示されず、2026-12-10を公式資料で確認できなかった。https://finance.yahoo.co.jp/quote/9632.T の検索結果には2026年12月10日予定とあるが、一次資料による日付の照合は未完了。",
+    "updatedAt": "2026-11-18T18:02:13+09:00"
   },
   {
     "code": "9636",
@@ -968,8 +968,8 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:34:21+09:00"
+    "source": "会社IRおよびJPXの公開検索では、2026年12月10日という予定日の一次資料を確認できず。https://finance.yahoo.co.jp/quote/9636.T および https://s.kabutan.jp/stocks/9636/ の検索結果には同日を予定日として記載しているが、一次資料による照合は未完了。",
+    "updatedAt": "2026-11-18T18:01:50+09:00"
   },
   {
     "code": "9692",
@@ -980,7 +980,7 @@
       "fiscalYearEnd": "2027-01-31",
       "quarter": 3
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T17:38:08+09:00"
+    "source": "https://www.cec-ltd.co.jp/ir/calendar.html に「2026年12月10日 2027年1月期 第3四半期決算発表」と記載。対象は2026年8月1日～10月31日の第3四半期単独。公式短信一覧の最新掲載は第2四半期であり、対象決算の発表済み資料は確認されない。",
+    "updatedAt": "2026-11-18T18:05:02+09:00"
   }
 ]
