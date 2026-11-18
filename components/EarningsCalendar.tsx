@@ -4,6 +4,7 @@ import {useVirtualizer} from "@tanstack/react-virtual";
 import TopNavigation from "./TopNavigation";
 import CompanyViewer,{type CompanyViewerHandle} from "./CompanyViewer";
 import EarningsReportMarkdown from "./EarningsReportMarkdown";
+import EarningsTargetsExport from "./EarningsTargetsExport";
 import type {CalendarRow,ForecastDetail,ForecastVersion,Growth,ScheduleOverview,DayScheduleCount,UnresolvedCompany} from "@/types/earnings-calendar";
 import {scheduleLabels,sortCalendarRows,resizeCalendar,type CalendarSort} from "@/lib/earnings-calendar";
 
@@ -99,6 +100,7 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
     <div className="ec-layout" ref={layoutRef} style={{gridTemplateColumns:`minmax(0,${panes[0]}fr) 10px minmax(0,${panes[1]}fr) 10px minmax(0,${panes[2]}fr)`}}>
       <section className="ec-left" aria-label="決算予定企業一覧">
         <div className="ec-list-tools"><div className="ec-date-row"><button className="ec-date-button" aria-expanded={open} onClick={()=>setOpen(!open)}>📅 {dateLabel(date)} <span>▾</span></button><strong>{loading?'…':rows.length?`${rows.length}社`:'未登録'}</strong></div>
+          <EarningsTargetsExport key={date} date={date}/>
           {open&&<div className="ec-month" role="dialog" aria-label="決算日を選択" onKeyDown={e=>{if(e.key==="Escape")setOpen(false);}}><div className="ec-month-heading"><button aria-label="前月" onClick={()=>moveMonth(-1)}>‹</button><b>{month.replace("-","年 ")}月</b><button aria-label="翌月" onClick={()=>moveMonth(1)}>›</button><button onClick={()=>{setMonth(today.slice(0,7));}}>今日</button></div>
             {monthError&&<p role="alert">{monthError}</p>}<div className="ec-month-grid">{"日月火水木金土".split("").map(d=><span className="ec-weekday" key={d}>{d}</span>)}
               {Array.from({length:first.getUTCDay()},(_,i)=><span key={`blank${i}`}/>)}

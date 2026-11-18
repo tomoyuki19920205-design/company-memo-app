@@ -23,6 +23,7 @@ export interface CompanyIdentityReview {
 }
 export interface ScheduleCompany {
   code:string;companyName:string;viewerMatch:string;viewerCode:string|null;viewerName:string|null;
+  source?:string;listingStatus?:string;
   viewerIdentityReview?:CompanyIdentityReview;
 }
 export interface ScheduleRegistry extends ScheduleOverview {schemaVersion:number;schedules:CalendarSchedule[];unresolved:UnresolvedCompany[];companies?:ScheduleCompany[]}

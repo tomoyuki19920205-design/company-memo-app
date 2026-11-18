@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { readForecast, readForecastIndex, readSchedules, readComparisonContexts, readRegistry } from "@/lib/earnings-calendar-store";
 import {countMonth,daySchedules,overviewOf} from '@/lib/earnings-schedules';
+import {extractForecastTargets,forecastTargetsCsv,forecastTargetsFilename} from '@/lib/earnings-targets';
 import {loadCalendarBatches} from '@/lib/earnings-calendar-batch';
 import { latestForecast, previousQuarter, relevantVersions, emptyGrowth } from "@/lib/earnings-calendar";
 import { loadFinancialsBatch, loadFinancialProvenance } from "@/lib/financial-loader";
@@ -31,6 +32,13 @@ export async function GET(request:NextRequest) {
     if(!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date)) || new Date(date).toISOString().slice(0,10)!==date) return reply({error:"日付の形式が不正です"},400);
     const scheduled=daySchedules(schedules,date);
     const index=await readForecastIndex();
+    if(p.get('mode')==='targets') {
+      const targets=extractForecastTargets(date,schedules,index,registry?.companies??[]);
+      if(p.get('format')!=='csv')return reply(targets);
+      return new NextResponse(forecastTargetsCsv(targets),{headers:{
+        'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="${forecastTargetsFilename(date)}"`,
+        'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff'}});
+    }
     if(code) {
       const company=scheduled.find(s=>s.code===code);
       if(!company) return reply({error:"この日の予定企業ではありません"},404);

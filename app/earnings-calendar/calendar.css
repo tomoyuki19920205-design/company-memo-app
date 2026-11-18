@@ -60,3 +60,13 @@ body:has(.earnings-calendar){padding-bottom:0;overflow:hidden;}
 .ec-coverage{font-size:11px;color:var(--text-secondary,#a1a6b3);margin:6px 0;border:1px solid var(--border-color,#303642);border-radius:6px;padding:6px;max-height:220px;overflow:auto;overflow-wrap:anywhere}
 .ec-coverage summary{cursor:pointer;color:var(--text-primary,#e5e7eb)}
 .ec-coverage p{margin:6px 0;line-height:1.6}.ec-coverage ul{padding-left:18px}.ec-coverage li{margin:6px 0}.ec-coverage li small{display:block;color:#b2b8c5}.ec-coverage a{color:#8db3ff}
+.ec-target-export{margin:0 0 10px;font-size:12px}
+.ec-target-actions{display:flex;align-items:center;gap:6px}
+.ec-target-button,.ec-target-refresh{border:1px solid #344a65;background:#172b42;color:#e6effa;border-radius:5px;padding:7px 10px;cursor:pointer;font:inherit}
+.ec-target-button:disabled{opacity:.5;cursor:default}
+.ec-target-button:focus-visible,.ec-target-refresh:focus-visible{outline:2px solid #76bbff;outline-offset:2px}
+.ec-target-details{margin-top:6px;color:#adbacd;line-height:1.6;overflow-wrap:anywhere}
+.ec-target-details summary{cursor:pointer}
+.ec-target-details p{margin:6px 0}
+.ec-target-details ul{margin:6px 0;padding-left:20px;max-height:130px;overflow:auto}
+.ec-target-error{color:#fca5a5;margin:6px 0}
