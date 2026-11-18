@@ -1,0 +1,2541 @@
+{
+  "id": "2294-b40fe392b2810975adb0b253b66d9d60a9ba120a031a026cf337f21aa5dde360",
+  "code": "2294",
+  "companyName": "株式会社柿安本店",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-04-30",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "2294-generation-d4094dc2cd46c661 · b40fe392",
+  "savedAt": "2026-11-18T16:55:03+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 8349.0,
+  "operatingProfit": 54.970000000000255,
+  "revenueYoY": {
+    "rate": -0.004886769964243146,
+    "label": "-0.5%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.3532941176470558,
+    "label": "-35.3%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 2294 株式会社柿安本店｜2027-04-30期 Q2単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 8,264.70 | 8,349.00 | 8,433.30 |\n| 営業利益 | -61.03 | 54.97 | 171.82 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -41.00 | -0.49% |  |\n| YoY | 営業利益 | -30.03 | -35.33% |  |\n| QnQ | 売上高 | -97.00 | -1.15% |  |\n| QnQ | 営業利益 | -10.03 | -15.43% |  |\n\n## 会社予想\nS06で公表した通期連結予想をS03で据え置き。guidance_recordsは提示原文内で最新確認できた予想を記録したもので、基準日時までの網羅確認を意味しない。S06 PDF page 1に年次管理への移行に伴う中間予想の記載省略が明記されているため、対象Q2単独の会社予想は設定しない。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスは含まれない。\n\n## 独自予測・差引推計の区分\n8月・9月の事業別全店売上速報と、前年季節性および直近事業動向に基づく10月仮定を積み上げる条件付き予測。原価率と販管費を実績から独立に設定して営業利益を算出した。会社通期予想の四等分や期後修正予想の差引きは使用していない。売上速報は決算確定実績と区別し、決算移行調整を仮定として置く。部門別営業利益、経常利益、純利益は根拠不足により予測しない。\n\n## 対象四半期と中心予測\n対象は次回中間決算で開示される第2四半期単独。中心売上は8,349.00、営業利益は54.97。精肉と和菓子の販売回復を見込む一方、レストランの店舗縮小と食品の減収が全社の回復を抑える。\n\n## 採算の条件\n弱気では売上8,264.70、営業利益-61.03、強気では売上8,433.30、営業利益171.82。販売額の振れだけでなく、原材料負担と販管費の抑制が損益を大きく左右する。強気には粗利改善と費用削減の同時実現が必要であり、各ケースは統計的な予測区間ではない。\n\n## 比較と精度の限界\n前年同四半期の比較売上は同一会計版の累計差引による8,390.00、営業利益は85.00を全シナリオで共通使用する。売上変化を客数・価格・退店別に配賦する根拠がないため、売上ブリッジには説明不能差を残す。営業利益ブリッジは粗利率と販管費の算術分解であり、原材料や商品構成ごとの因果寄与を確認したものではない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -125.30 | 前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別の金額寄与を分離できず、経済要因の未分解残差として全額を残す。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -181.30 | 直前Q1と積上げ予測の差額。季節性と店舗構成変化の個別金額を確認できず、全額を未分解残差とする。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | -66.29 | 前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は売上ブリッジの残差に残る。 |\n| 原価率・構成変化 | -33.74 | 弱気原価率と前年Q2原価率の差。原材料・商品構成別の分離は未確認。 |\n| 販管費変化 | -47.00 | 独立に設定した販管費と前年Q2累計差引の差。 |\n| 残差（rounding） | 1.00 | 表示金額による売上－原価－販管費と公表営業利益の差。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | -95.72 | 直前Q1粗利率を固定した機械的寄与。 |\n| 原価率・構成変化 | -24.32 | 弱気原価率と直前Q1原価率の差。 |\n| 販管費変化 | -7.00 | 弱気費用仮定と直前Q1実績の差。 |\n| 残差（rounding） | 1.00 | 直前Q1の表示損益項目再構成と公表営業利益の差。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -41.00 | 前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -97.00 | 直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | -21.69 | 前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。 |\n| 原価率・構成変化 | 7.66 | 中心原価率と前年Q2原価率の差。 |\n| 販管費変化 | -17.00 | 中心費用仮定と前年Q2累計差引の差。 |\n| 残差（rounding） | 1.00 | 表示金額による損益項目再構成と営業利益の差。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | -51.21 | 直前Q1粗利率を固定した機械的寄与。 |\n| 原価率・構成変化 | 17.18 | 中心原価率と直前Q1原価率の差。 |\n| 販管費変化 | 23.00 | 中心費用仮定と直前Q1実績の差。 |\n| 残差（rounding） | 1.00 | 直前Q1表示額の再構成と営業利益の差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | 43.30 | 前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -12.70 | 直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | 22.91 | 前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。 |\n| 原価率・構成変化 | 49.91 | 強気原価率と前年Q2原価率の差。 |\n| 販管費変化 | 13.00 | 強気費用仮定と前年Q2累計差引の差。 |\n| 残差（rounding） | 1.00 | 表示金額による損益項目再構成と営業利益の差。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利寄与 | -6.70 | 直前Q1粗利率を固定した機械的寄与。 |\n| 原価率・構成変化 | 59.52 | 強気原価率と直前Q1原価率の差。 |\n| 販管費変化 | 53.00 | 強気費用仮定と直前Q1実績の差。 |\n| 残差（rounding） | 1.00 | 直前Q1表示額の再構成と営業利益の差。 |\n\n## エラー・未解決事項\n- S03公表後から基準日時までの業績修正・訂正・重要期後開示の有無は網羅確認できない。期後修正見込みは使用していない。\n- S07・S08 PDF page 3の前年Q2直接開示売上は8389だが、S04とS05の百万円表示累計差引は8390。これは直接開示と累計差引の表示精度差であり、全比較を累計差引に統一した。異なる会計版の混在は確認されていない。\n- S09・S10は表の文字抽出順序が崩れている。各事業の既存店・全店の対と全社合計との整合から行を対応付けたが、PDF画像そのものの確認はしていない。\n- S10はdiscoveryに原文未読との記載があるが、今回documentsには保存本文が提示されているため、その本文を使用した。URLの到達性や公式配信元との照合は行っていない。\n- 入力予定日2026-12-10は提示された会社原文で確認できないためannouncement_dateはnull。対象発表が基準日時点で未公表という提供情報はあるが、独自の網羅確認はしていない。\n- 営業外収益は配当等の計上時期が不明で、税負担は直近Q1と前年で差が大きい。特別損益・税効果も予測根拠が不足するため経常利益と純利益をnullとした。\n- 提示されたS03～S10の本文にはtruncated=falseとある。本文欠落を前提にはしないが、資料外の質疑応答、10月速報、改訂履歴は原文未確認。\n- 月次の事業合計と全社合計には小差があり、月次累計の差分と単月合計、短信累計にも差がある。原因をすべて丸めと断定せず、全社合計との差を保持し、連結移行調整は未確認の仮定とした。\n- 月次速報をinputsのfactとして格納したのは公表された観測値という意味に限る。確定決算実績ではなく、全件にmeasurement_statusを付して区別した。\n- 販管費の人件費・賃借料等への分解、原価の数量・仕入価格への分解を行える資料は不足。条件付きの連結原価率と費用額で補い、利益目標から費用を逆算していない。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- 10月の事業別売上速報は提示されておらず原文未確認。非開示とは断定しない。\n- base_cogs_rate: 直近Q1と前年Q2の原価率を主な基準とし、精肉・和菓子の販売構成と原価対策による小幅改善を仮定。通期会社計画の原価率までの回復は前提としない。\n- base_sga: 前年Q2累計差引4353と直近Q1の4393の間に置き、退店による店舗費用削減と人件費上昇の相殺を仮定。減価償却費を含む費用総額として扱う。\n- bear_cogs_rate: 直近Q1原価率約47.2%、前年Q2累計差引原価率約47.1%を基準に、原材料高と販促負担が強まる条件として47.5%を置く。\n- bear_oct_factor: 事業別に異なる中心予測を設定した後、未確認の10月販売に共通の需要下振れを与える感応度。前年増減率の一律延長ではない。\n- bear_sga: 直近Q1販管費4393、前年Q2累計差引4353を基準に、人件費上昇が退店の費用減を上回る条件。営業利益から逆算していない。\n- bull_cogs_rate: 高付加価値商品の構成改善と原価対策が進み、会社通期計画の原価率に近づく条件。実現を確認した数値ではない。\n- bull_oct_factor: 事業別の中心予測に対する10月販売の上振れ感応度。9月の精肉・和菓子の回復が継続する条件。\n- bull_sga: 退店後の店舗費用削減と既存事業の効率改善により、前年Q2累計差引4353を小幅に下回る条件。増収時にも費用管理が効くことが必要。\n- monthly_conversion: 月次速報から連結決算への追加調整を中心ではゼロと置く。月次累計と単月合計、短信との小差があり、厳密な同一性は未確認。\n- oct_deli: 前年Q2累計差引3075から前年8月1076・9月981を控除した10月相当1018を参考に、9月の全店売上が前年並みまで回復した状況と高付加価値商品の販売を織り込む。\n- oct_food: 前年Q2累計差引305から前年8月129・9月61を控除した10月相当115を参考に、8月の大幅減収から9月に減収幅が縮小した状況を反映。ホテル向け甘味や外販の拡大は定量受注未確認のため別途上乗せしない。\n- oct_meat: 前年Q2セグメント累計差引3097から前年8月1105・9月967を控除した10月相当1025を参考に、9月の全店売上回復と既存店増収を反映。数量・単価の分離推定は行わない。\n- oct_restaurant: 前年Q2累計差引353から前年8月131・9月106を控除した10月相当116に対し、退店後の店舗規模と9月全店売上の落ち込みを反映。既存店の売上維持を全店回復とは扱わない。\n- oct_sweets: 前年Q2累計差引1560から前年8月566・9月504を控除した10月相当490に対し、9月の全店増収、季節商品とコラボ商品の需要を反映。秋の歳時効果はこの売上に含め、別途加算しない。\n- 原材料費、人件費、減価償却費の対象四半期実額と部門配賦は未確認。\n- 四半期内の出退店・改装日程、店舗別売上・費用は未確認。年間計画を四半期実績に置き換えていない。\n- 数量、客数、単価、廃棄率、商品別粗利率は提示原文に記載がない。\n- 食品卸売の納品時期による変動は、設定した10月感応度を超える可能性がある。\n\n## 根拠・保存記録\n- S01 [株式情報（証券コード・上場市場・事業年度）](https://www.kakiyasuhonten.co.jp/ir/stock/info.php) / 公表  / unavailable / SHA-256 `なし`\n- S02 [IRカレンダー](https://www.kakiyasuhonten.co.jp/ir/calendar.php) / 公表  / unavailable / SHA-256 `なし`\n- S03 [2027年4月期第1四半期決算短信〔日本基準〕（連結）](https://tdnet-pdf.kabutan.jp/20260909/140120260908532911.pdf) / 公表 2026-09-09 / retrieved / SHA-256 `9582b1b751ef5aa74fef58ebcc2953dd8b9dfadc1cfeabacb158b5ab9651287c`\n- S04 [2026年4月期第2四半期（中間期）決算短信〔日本基準〕（連結）](https://kabuyoho-sls-disclose.ifis.co.jp/1f0/140120251210517557.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `cfa7cd6b7f51ccdc57341437c536b3b3d88511ff50ab1df61d3648cc6f7c6908`\n- S05 [2026年4月期第1四半期決算短信〔日本基準〕（連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250908/20250908554311.pdf) / 公表 2025-09-08 / retrieved / SHA-256 `755b2f9c584a64db5723eaf802435f7c3cffbb153e5b05a28b268009edb4ff31`\n- S06 [2026年4月期決算短信〔日本基準〕（連結）（2027年4月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260609566480.pdf) / 公表 2026-06-10 / retrieved / SHA-256 `0e9ea1e838a891a598fe6a710cc9331ca2eaefd65e6c0525c9a405f3c012ea47`\n- S07 [2026年4月期 決算説明会資料](https://assets.minkabu.jp/news/article_media_content/urn%3Anewsml%3Atdnet.info%3A20260615570401/140120260615570401.pdf) / 公表 2026-06-15 / retrieved / SHA-256 `a1fe8853a26d8c9a2d8046f3e8dfcfb78647d57862815c2dd7117c2d9b17d8a0`\n- S08 [2026年4月期第2四半期 決算説明会資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519154.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `c72840cecc7d5b852d513796c5fbbbc9a9aebbafa6e5454b0c4c8f3c8b682872`\n- S09 [2027年4月期8月度の売上高についてのお知らせ](https://assets.minkabu.jp/news/article_media_content/urn:newsml:tdnet.info:20260908532919/140120260908532919.pdf) / 公表 2026-09-09 / retrieved / SHA-256 `6477a4eb2ae19f2f9f3ecc99d6584ed93486587c91edc719e1a8bb37cef126ca`\n- S10 [2027年4月期9月度の売上高についてのお知らせ](https://www.release.tdnet.info/inbs/140120261015551044.pdf) / 公表 2026-10-15 / retrieved / SHA-256 `8f097c97fd8715c70e929f0aa76c17f2bfe4d262e7a80dda7fa600b8d53b4707`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "2294",
+    "company_name": "株式会社柿安本店",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-04-30期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-04-30",
+      "quarter": 2,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 8264.7,
+        "operating_profit": -61.032499999999345,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 8349.0,
+        "operating_profit": 54.970000000000255,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 8433.3,
+        "operating_profit": 171.8154999999988,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -97.0,
+          "rate": -0.011484726497750414,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -10.029999999999745,
+          "rate": -0.1543076923076884,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -41.0,
+          "rate": -0.004886769964243146,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -30.029999999999745,
+          "rate": -0.3532941176470558,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_h1_sales": 17047.0,
+      "py_q1_sales": 8657.0,
+      "py_h1_op": 324.0,
+      "py_q1_op": 239.0,
+      "py_h1_cogs": 7976.0,
+      "py_q1_cogs": 4025.0,
+      "py_h1_sga": 8745.0,
+      "py_q1_sga": 4392.0,
+      "cq1_sales": 8446.0,
+      "cq1_op": 65.0,
+      "cq1_cogs": 3987.0,
+      "cq1_sga": 4393.0,
+      "aug_meat": 1092.0,
+      "aug_deli": 1052.0,
+      "aug_sweets": 574.0,
+      "aug_restaurant": 99.0,
+      "aug_food": 67.0,
+      "aug_total": 2886.0,
+      "sep_meat": 992.0,
+      "sep_deli": 980.0,
+      "sep_sweets": 554.0,
+      "sep_restaurant": 73.0,
+      "sep_food": 53.0,
+      "sep_total": 2653.0,
+      "oct_meat": 1050.0,
+      "oct_deli": 1040.0,
+      "oct_sweets": 540.0,
+      "oct_restaurant": 80.0,
+      "oct_food": 100.0,
+      "bear_oct_factor": 0.97,
+      "bull_oct_factor": 1.03,
+      "monthly_conversion": 0.0,
+      "bear_cogs_rate": 0.475,
+      "base_cogs_rate": 0.47,
+      "bull_cogs_rate": 0.465,
+      "bear_sga": 4400.0,
+      "base_sga": 4370.0,
+      "bull_sga": 4340.0,
+      "guide_sales": 36000.0,
+      "guide_op": 1400.0,
+      "guide_ordinary": 1450.0,
+      "guide_net": 800.0,
+      "py_q2_sales": 8390.0,
+      "py_q2_op": 85.0,
+      "py_q2_cogs": 3951.0,
+      "py_q2_sga": 4353.0,
+      "py_q2_gm": 0.5290822407628128,
+      "cq1_gm": 0.5279422211697845,
+      "monthly_gap": 3.0,
+      "sales_adjustment": 3.0,
+      "bear_meat": 3102.5,
+      "bear_deli": 3040.8,
+      "bear_sweets": 1651.8,
+      "bear_restaurant": 249.6,
+      "bear_food": 217.0,
+      "bear_revenue": 8264.7,
+      "bear_cogs": 3925.7325,
+      "bear_op": -61.032499999999345,
+      "base_meat": 3134.0,
+      "base_deli": 3072.0,
+      "base_sweets": 1668.0,
+      "base_restaurant": 252.0,
+      "base_food": 220.0,
+      "base_revenue": 8349.0,
+      "base_cogs": 3924.0299999999997,
+      "base_op": 54.970000000000255,
+      "bull_meat": 3165.5,
+      "bull_deli": 3103.2,
+      "bull_sweets": 1684.2,
+      "bull_restaurant": 254.4,
+      "bull_food": 223.0,
+      "bull_revenue": 8433.3,
+      "bull_cogs": 3921.4845,
+      "bull_op": 171.8154999999988,
+      "bear_yoy_sales_delta": -125.29999999999927,
+      "bear_qoq_sales_delta": -181.29999999999927,
+      "base_yoy_sales_delta": -41.0,
+      "base_qoq_sales_delta": -97.0,
+      "bull_yoy_sales_delta": 43.29999999999927,
+      "bull_qoq_sales_delta": -12.700000000000728,
+      "yoy_op_rounding": 1.0,
+      "qoq_op_rounding": 1.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF pages 1・2・8",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "1Q累計",
+        "revenue": 8657.0,
+        "operating_profit": 239.0,
+        "ordinary_profit": 253.0,
+        "net_profit": 147.0
+      },
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04",
+          "S05"
+        ],
+        "locator": "PDF pages 1・2・7",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": 8390.0,
+        "operating_profit": 85.0,
+        "ordinary_profit": 91.0,
+        "net_profit": 29.0
+      },
+      {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1・2・8",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "1Q累計",
+        "revenue": 8446.0,
+        "operating_profit": 65.0,
+        "ordinary_profit": 87.0,
+        "net_profit": 16.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [],
+        "residual": -125.29999999999927,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別の金額寄与を分離できず、経済要因の未分解残差として全額を残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [],
+        "residual": -181.29999999999927,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Q1と積上げ予測の差額。季節性と店舗構成変化の個別金額を確認できず、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "bear_yoy_sales_delta*py_q2_gm",
+            "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は売上ブリッジの残差に残る。",
+            "amount": -66.29400476758006
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "bear_revenue-bear_cogs-bear_revenue*py_q2_gm",
+            "reason": "弱気原価率と前年Q2原価率の差。原材料・商品構成別の分離は未確認。",
+            "amount": -33.738495232419154
+          },
+          {
+            "label": "販管費変化",
+            "formula": "py_q2_sga-bear_sga",
+            "reason": "独立に設定した販管費と前年Q2累計差引の差。",
+            "amount": -47.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "表示金額による売上－原価－販管費と公表営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "各PDF page 1 百万円未満切捨て、S04 PDF page 7、S05 PDF page 8",
+          "description": "累計表示額を差し引いた損益項目の再構成と営業利益差引値の間に1百万円の差がある。"
+        },
+        "rounding_tolerance": 2
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "bear_qoq_sales_delta*cq1_gm",
+            "reason": "直前Q1粗利率を固定した機械的寄与。",
+            "amount": -95.71592469808155
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "bear_revenue-bear_cogs-bear_revenue*cq1_gm",
+            "reason": "弱気原価率と直前Q1原価率の差。",
+            "amount": -24.31657530191751
+          },
+          {
+            "label": "販管費変化",
+            "formula": "cq1_sga-bear_sga",
+            "reason": "弱気費用仮定と直前Q1実績の差。",
+            "amount": -7.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "直前Q1の表示損益項目再構成と公表営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 百万円未満切捨て、PDF page 8",
+          "description": "売上－原価－販管費は66、営業利益は65で、1百万円の表示差。"
+        },
+        "rounding_tolerance": 2
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [],
+        "residual": -41.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [],
+        "residual": -97.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "base_yoy_sales_delta*py_q2_gm",
+            "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。",
+            "amount": -21.692371871275327
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "base_revenue-base_cogs-base_revenue*py_q2_gm",
+            "reason": "中心原価率と前年Q2原価率の差。",
+            "amount": 7.662371871275354
+          },
+          {
+            "label": "販管費変化",
+            "formula": "py_q2_sga-base_sga",
+            "reason": "中心費用仮定と前年Q2累計差引の差。",
+            "amount": -17.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "表示金額による損益項目再構成と営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "各PDF page 1、S04 PDF page 7、S05 PDF page 8",
+          "description": "百万円未満切捨ての累計差引で、損益項目の再構成と営業利益に1百万円の差。"
+        },
+        "rounding_tolerance": 2
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "base_qoq_sales_delta*cq1_gm",
+            "reason": "直前Q1粗利率を固定した機械的寄与。",
+            "amount": -51.2103954534691
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "base_revenue-base_cogs-base_revenue*cq1_gm",
+            "reason": "中心原価率と直前Q1原価率の差。",
+            "amount": 17.180395453469828
+          },
+          {
+            "label": "販管費変化",
+            "formula": "cq1_sga-base_sga",
+            "reason": "中心費用仮定と直前Q1実績の差。",
+            "amount": 23.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "直前Q1表示額の再構成と営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・8",
+          "description": "百万円未満切捨て。売上－原価－販管費は66、営業利益は65。"
+        },
+        "rounding_tolerance": 2
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [],
+        "residual": 43.29999999999927,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [],
+        "residual": -12.700000000000728,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "bull_yoy_sales_delta*py_q2_gm",
+            "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。",
+            "amount": 22.909261025029412
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "bull_revenue-bull_cogs-bull_revenue*py_q2_gm",
+            "reason": "強気原価率と前年Q2原価率の差。",
+            "amount": 49.90623897496971
+          },
+          {
+            "label": "販管費変化",
+            "formula": "py_q2_sga-bull_sga",
+            "reason": "強気費用仮定と前年Q2累計差引の差。",
+            "amount": 13.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "表示金額による損益項目再構成と営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "各PDF page 1、S04 PDF page 7、S05 PDF page 8",
+          "description": "百万円未満切捨ての累計差引で、損益項目の再構成と営業利益に1百万円の差。"
+        },
+        "rounding_tolerance": 2
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上変化の粗利寄与",
+            "formula": "bull_qoq_sales_delta*cq1_gm",
+            "reason": "直前Q1粗利率を固定した機械的寄与。",
+            "amount": -6.7048662088566475
+          },
+          {
+            "label": "原価率・構成変化",
+            "formula": "bull_revenue-bull_cogs-bull_revenue*cq1_gm",
+            "reason": "強気原価率と直前Q1原価率の差。",
+            "amount": 59.520366208855194
+          },
+          {
+            "label": "販管費変化",
+            "formula": "cq1_sga-bull_sga",
+            "reason": "強気費用仮定と直前Q1実績の差。",
+            "amount": 53.0
+          }
+        ],
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "residual_explanation": "直前Q1表示額の再構成と営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・8",
+          "description": "百万円未満切捨て。売上－原価－販管費は66、営業利益は65。"
+        },
+        "rounding_tolerance": 2
+      }
+    ],
+    "issues": [
+      "S03公表後から基準日時までの業績修正・訂正・重要期後開示の有無は網羅確認できない。期後修正見込みは使用していない。",
+      "S07・S08 PDF page 3の前年Q2直接開示売上は8389だが、S04とS05の百万円表示累計差引は8390。これは直接開示と累計差引の表示精度差であり、全比較を累計差引に統一した。異なる会計版の混在は確認されていない。",
+      "S09・S10は表の文字抽出順序が崩れている。各事業の既存店・全店の対と全社合計との整合から行を対応付けたが、PDF画像そのものの確認はしていない。",
+      "S10はdiscoveryに原文未読との記載があるが、今回documentsには保存本文が提示されているため、その本文を使用した。URLの到達性や公式配信元との照合は行っていない。",
+      "入力予定日2026-12-10は提示された会社原文で確認できないためannouncement_dateはnull。対象発表が基準日時点で未公表という提供情報はあるが、独自の網羅確認はしていない。",
+      "営業外収益は配当等の計上時期が不明で、税負担は直近Q1と前年で差が大きい。特別損益・税効果も予測根拠が不足するため経常利益と純利益をnullとした。",
+      "提示されたS03～S10の本文にはtruncated=falseとある。本文欠落を前提にはしないが、資料外の質疑応答、10月速報、改訂履歴は原文未確認。",
+      "月次の事業合計と全社合計には小差があり、月次累計の差分と単月合計、短信累計にも差がある。原因をすべて丸めと断定せず、全社合計との差を保持し、連結移行調整は未確認の仮定とした。",
+      "月次速報をinputsのfactとして格納したのは公表された観測値という意味に限る。確定決算実績ではなく、全件にmeasurement_statusを付して区別した。",
+      "販管費の人件費・賃借料等への分解、原価の数量・仕入価格への分解を行える資料は不足。条件付きの連結原価率と費用額で補い、利益目標から費用を逆算していない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -181.29999999999927,
+            "rate": -0.021465782618991153,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -126.03249999999935,
+            "rate": -1.9389615384615284,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -125.29999999999927,
+            "rate": -0.01493444576877226,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -146.03249999999935,
+            "rate": -1.7180294117646981,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -97.0,
+            "rate": -0.011484726497750414,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -10.029999999999745,
+            "rate": -0.1543076923076884,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -41.0,
+            "rate": -0.004886769964243146,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -30.029999999999745,
+            "rate": -0.3532941176470558,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -12.700000000000728,
+            "rate": -0.0015036703765096764,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 106.81549999999879,
+            "rate": 1.643315384615366,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 43.29999999999927,
+            "rate": 0.005160905840285968,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 86.81549999999879,
+            "rate": 1.0213588235293976,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -125.29999999999927,
+        "explained_sum": 0,
+        "residual": -125.29999999999927,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別の金額寄与を分離できず、経済要因の未分解残差として全額を残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -181.29999999999927,
+        "explained_sum": 0,
+        "residual": -181.29999999999927,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Q1と積上げ予測の差額。季節性と店舗構成変化の個別金額を確認できず、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -146.03249999999935,
+        "explained_sum": -147.03249999999923,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": -1.1368683772161603e-13,
+        "status": "passed",
+        "residual_explanation": "表示金額による売上－原価－販管費と公表営業利益の差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -126.03249999999935,
+        "explained_sum": -127.03249999999906,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": -2.8421709430404007e-13,
+        "status": "passed",
+        "residual_explanation": "直前Q1の表示損益項目再構成と公表営業利益の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -41.0,
+        "explained_sum": 0,
+        "residual": -41.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -97.0,
+        "explained_sum": 0,
+        "residual": -97.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -30.029999999999745,
+        "explained_sum": -31.029999999999973,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": 2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "表示金額による損益項目再構成と営業利益の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -10.029999999999745,
+        "explained_sum": -11.02999999999927,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": -4.760636329592671e-13,
+        "status": "passed",
+        "residual_explanation": "直前Q1表示額の再構成と営業利益の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 43.29999999999927,
+        "explained_sum": 0,
+        "residual": 43.29999999999927,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -12.700000000000728,
+        "explained_sum": 0,
+        "residual": -12.700000000000728,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 86.81549999999879,
+        "explained_sum": 85.81549999999912,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": -3.268496584496461e-13,
+        "status": "passed",
+        "residual_explanation": "表示金額による損益項目再構成と営業利益の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 106.81549999999879,
+        "explained_sum": 105.81549999999855,
+        "residual": 1.0,
+        "residual_type": "rounding",
+        "difference": 2.4158453015843406e-13,
+        "status": "passed",
+        "residual_explanation": "直前Q1表示額の再構成と営業利益の差。"
+      }
+    ],
+    "conditions": [
+      "10月の事業別売上速報は提示されておらず原文未確認。非開示とは断定しない。",
+      "base_cogs_rate: 直近Q1と前年Q2の原価率を主な基準とし、精肉・和菓子の販売構成と原価対策による小幅改善を仮定。通期会社計画の原価率までの回復は前提としない。",
+      "base_sga: 前年Q2累計差引4353と直近Q1の4393の間に置き、退店による店舗費用削減と人件費上昇の相殺を仮定。減価償却費を含む費用総額として扱う。",
+      "bear_cogs_rate: 直近Q1原価率約47.2%、前年Q2累計差引原価率約47.1%を基準に、原材料高と販促負担が強まる条件として47.5%を置く。",
+      "bear_oct_factor: 事業別に異なる中心予測を設定した後、未確認の10月販売に共通の需要下振れを与える感応度。前年増減率の一律延長ではない。",
+      "bear_sga: 直近Q1販管費4393、前年Q2累計差引4353を基準に、人件費上昇が退店の費用減を上回る条件。営業利益から逆算していない。",
+      "bull_cogs_rate: 高付加価値商品の構成改善と原価対策が進み、会社通期計画の原価率に近づく条件。実現を確認した数値ではない。",
+      "bull_oct_factor: 事業別の中心予測に対する10月販売の上振れ感応度。9月の精肉・和菓子の回復が継続する条件。",
+      "bull_sga: 退店後の店舗費用削減と既存事業の効率改善により、前年Q2累計差引4353を小幅に下回る条件。増収時にも費用管理が効くことが必要。",
+      "monthly_conversion: 月次速報から連結決算への追加調整を中心ではゼロと置く。月次累計と単月合計、短信との小差があり、厳密な同一性は未確認。",
+      "oct_deli: 前年Q2累計差引3075から前年8月1076・9月981を控除した10月相当1018を参考に、9月の全店売上が前年並みまで回復した状況と高付加価値商品の販売を織り込む。",
+      "oct_food: 前年Q2累計差引305から前年8月129・9月61を控除した10月相当115を参考に、8月の大幅減収から9月に減収幅が縮小した状況を反映。ホテル向け甘味や外販の拡大は定量受注未確認のため別途上乗せしない。",
+      "oct_meat: 前年Q2セグメント累計差引3097から前年8月1105・9月967を控除した10月相当1025を参考に、9月の全店売上回復と既存店増収を反映。数量・単価の分離推定は行わない。",
+      "oct_restaurant: 前年Q2累計差引353から前年8月131・9月106を控除した10月相当116に対し、退店後の店舗規模と9月全店売上の落ち込みを反映。既存店の売上維持を全店回復とは扱わない。",
+      "oct_sweets: 前年Q2累計差引1560から前年8月566・9月504を控除した10月相当490に対し、9月の全店増収、季節商品とコラボ商品の需要を反映。秋の歳時効果はこの売上に含め、別途加算しない。",
+      "原材料費、人件費、減価償却費の対象四半期実額と部門配賦は未確認。",
+      "四半期内の出退店・改装日程、店舗別売上・費用は未確認。年間計画を四半期実績に置き換えていない。",
+      "数量、客数、単価、廃棄率、商品別粗利率は提示原文に記載がない。",
+      "食品卸売の納品時期による変動は、設定した10月感応度を超える可能性がある。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "株式情報（証券コード・上場市場・事業年度）",
+        "url": "https://www.kakiyasuhonten.co.jp/ir/stock/info.php",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:50:57+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "IRカレンダー",
+        "url": "https://www.kakiyasuhonten.co.jp/ir/calendar.php",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:50:57+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2027年4月期第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://tdnet-pdf.kabutan.jp/20260909/140120260908532911.pdf",
+        "published_at": "2026-09-09",
+        "category": "latest_results",
+        "final_url": "https://tdnet-pdf.kabutan.jp/20260909/140120260908532911.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S03.txt",
+        "sha256": "9582b1b751ef5aa74fef58ebcc2953dd8b9dfadc1cfeabacb158b5ab9651287c",
+        "text_sha256": "cd4f6d07576aeffdad1b35fd1d6a728e8bd035c113149a216bfbf8b4934b6294",
+        "retrieved_at": "2026-11-18T16:50:57+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11822,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年4月期第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://kabuyoho-sls-disclose.ifis.co.jp/1f0/140120251210517557.pdf",
+        "published_at": "2025-12-11",
+        "category": "historical",
+        "final_url": "https://kabuyoho-sls-disclose.ifis.co.jp/1f0/140120251210517557.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S04.txt",
+        "sha256": "cfa7cd6b7f51ccdc57341437c536b3b3d88511ff50ab1df61d3648cc6f7c6908",
+        "text_sha256": "aed26e1e99f4ddb46a14f96318e28a8969e52f682d55b144856848c652b8dd2d",
+        "retrieved_at": "2026-11-18T16:50:58+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10216,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年4月期第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250908/20250908554311.pdf",
+        "published_at": "2025-09-08",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250908/20250908554311.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S05.txt",
+        "sha256": "755b2f9c584a64db5723eaf802435f7c3cffbb153e5b05a28b268009edb4ff31",
+        "text_sha256": "c20e4659c92979cd3b1fbd58b279d17fa8c9740c759970ea8b5daf1cd54a76a9",
+        "retrieved_at": "2026-11-18T16:50:58+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11925,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年4月期決算短信〔日本基準〕（連結）（2027年4月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260609566480.pdf",
+        "published_at": "2026-06-10",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260610/20260609566480.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S06.txt",
+        "sha256": "0e9ea1e838a891a598fe6a710cc9331ca2eaefd65e6c0525c9a405f3c012ea47",
+        "text_sha256": "a77306f3babece1d302e1a10b108cbd82956d4c92d3ca38affcc32083874b584",
+        "retrieved_at": "2026-11-18T16:50:59+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16758,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年4月期 決算説明会資料",
+        "url": "https://assets.minkabu.jp/news/article_media_content/urn%3Anewsml%3Atdnet.info%3A20260615570401/140120260615570401.pdf",
+        "published_at": "2026-06-15",
+        "category": "presentation",
+        "final_url": "https://assets.minkabu.jp/news/article_media_content/urn%3Anewsml%3Atdnet.info%3A20260615570401/140120260615570401.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S07.txt",
+        "sha256": "a1fe8853a26d8c9a2d8046f3e8dfcfb78647d57862815c2dd7117c2d9b17d8a0",
+        "text_sha256": "6b0491a60de78b5d14260a3b019ad2f932806447ec5e219447fd10574dcff8cc",
+        "retrieved_at": "2026-11-18T16:50:59+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 4203,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年4月期第2四半期 決算説明会資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519154.pdf",
+        "published_at": "2025-12-15",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519154.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S08.txt",
+        "sha256": "c72840cecc7d5b852d513796c5fbbbc9a9aebbafa6e5454b0c4c8f3c8b682872",
+        "text_sha256": "98914cba108a043540e980a0eea2f0d367cbb8bc950b2d7bcd31fb80cc1fdfce",
+        "retrieved_at": "2026-11-18T16:51:00+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3029,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2027年4月期8月度の売上高についてのお知らせ",
+        "url": "https://assets.minkabu.jp/news/article_media_content/urn:newsml:tdnet.info:20260908532919/140120260908532919.pdf",
+        "published_at": "2026-09-09",
+        "category": "kpi",
+        "final_url": "https://assets.minkabu.jp/news/article_media_content/urn:newsml:tdnet.info:20260908532919/140120260908532919.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S09.txt",
+        "sha256": "6477a4eb2ae19f2f9f3ecc99d6584ed93486587c91edc719e1a8bb37cef126ca",
+        "text_sha256": "c0f0f9ea99e9c7273218f4d3e43d44db23ac7916b0428b6d2c43f63049c316ff",
+        "retrieved_at": "2026-11-18T16:51:00+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 861,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2027年4月期9月度の売上高についてのお知らせ",
+        "url": "https://www.release.tdnet.info/inbs/140120261015551044.pdf",
+        "published_at": "2026-10-15",
+        "category": "kpi",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261015551044.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2294\\sources\\S10.txt",
+        "sha256": "8f097c97fd8715c70e929f0aa76c17f2bfe4d262e7a80dda7fa600b8d53b4707",
+        "text_sha256": "24f9e26635353f95b8e070869e6e2c5817db863748d59c868d3f5c12f822eb7d",
+        "retrieved_at": "2026-11-18T16:51:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 850,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "2294",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 2,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_h1_sales",
+          "value": 17047,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "py_q1_sales",
+          "value": 8657,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 324,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "py_q1_op",
+          "value": 239,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_cogs",
+          "value": 7976,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "py_q1_cogs",
+          "value": 4025,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_sga",
+          "value": 8745,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "py_q1_sga",
+          "value": 4392,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cq1_sales",
+          "value": 8446,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cq1_op",
+          "value": 65,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cq1_cogs",
+          "value": 3987,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cq1_sga",
+          "value": 4393,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "aug_meat",
+          "value": 1092,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 精肉事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "aug_deli",
+          "value": 1052,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 惣菜事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "aug_sweets",
+          "value": 574,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 和菓子事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "aug_restaurant",
+          "value": 99,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 レストラン事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "aug_food",
+          "value": 67,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 食品事業・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "aug_total",
+          "value": 2886,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 1 全社合計・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_meat",
+          "value": 992,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 精肉事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_deli",
+          "value": 980,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 惣菜事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_sweets",
+          "value": 554,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 和菓子事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_restaurant",
+          "value": 73,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 レストラン事業・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_food",
+          "value": 53,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 食品事業・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "sep_total",
+          "value": 2653,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S10"
+          ],
+          "locator": "PDF page 1 全社合計・全店・単月",
+          "measurement_status": "公表速報値。未監査であり決算確定実績ではない"
+        },
+        {
+          "id": "oct_meat",
+          "value": 1050,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S09",
+            "S10"
+          ],
+          "locator": "S04 PDF page 11、S05 PDF page 11、S09・S10 PDF page 1",
+          "rationale": "前年Q2セグメント累計差引3097から前年8月1105・9月967を控除した10月相当1025を参考に、9月の全店売上回復と既存店増収を反映。数量・単価の分離推定は行わない。",
+          "sensitivity": "10月売上を中心から上下3%動かすと四半期売上は上下31.5変化。原価率一定の場合、営業利益への影響は売上変化に粗利率を乗じる。",
+          "material": true
+        },
+        {
+          "id": "oct_deli",
+          "value": 1040,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S09",
+            "S10"
+          ],
+          "locator": "S04 PDF page 11、S05 PDF page 11、S09・S10 PDF page 1",
+          "rationale": "前年Q2累計差引3075から前年8月1076・9月981を控除した10月相当1018を参考に、9月の全店売上が前年並みまで回復した状況と高付加価値商品の販売を織り込む。",
+          "sensitivity": "10月売上を上下3%動かすと四半期売上は上下31.2変化。",
+          "material": true
+        },
+        {
+          "id": "oct_sweets",
+          "value": 540,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03・S04 PDF page 4、S04・S05 PDF page 11、S09・S10 PDF page 1",
+          "rationale": "前年Q2累計差引1560から前年8月566・9月504を控除した10月相当490に対し、9月の全店増収、季節商品とコラボ商品の需要を反映。秋の歳時効果はこの売上に含め、別途加算しない。",
+          "sensitivity": "10月売上を上下3%動かすと四半期売上は上下16.2変化。",
+          "material": true
+        },
+        {
+          "id": "oct_restaurant",
+          "value": 80,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06",
+            "S09",
+            "S10"
+          ],
+          "locator": "S04・S05 PDF page 11、S06 PDF page 6、S09・S10 PDF page 1",
+          "rationale": "前年Q2累計差引353から前年8月131・9月106を控除した10月相当116に対し、退店後の店舗規模と9月全店売上の落ち込みを反映。既存店の売上維持を全店回復とは扱わない。",
+          "sensitivity": "10月売上を上下3%動かすと四半期売上は上下2.4変化。退店影響が想定以上なら下限を下回る。",
+          "material": true
+        },
+        {
+          "id": "oct_food",
+          "value": 100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF page 5、S04・S05 PDF page 11、S09・S10 PDF page 1",
+          "rationale": "前年Q2累計差引305から前年8月129・9月61を控除した10月相当115を参考に、8月の大幅減収から9月に減収幅が縮小した状況を反映。ホテル向け甘味や外販の拡大は定量受注未確認のため別途上乗せしない。",
+          "sensitivity": "10月売上を上下3%動かすと四半期売上は上下3変化。ただし卸売の納品時期次第ではこの範囲を超える。",
+          "material": true
+        },
+        {
+          "id": "bear_oct_factor",
+          "value": 0.97,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "事業別に異なる中心予測を設定した後、未確認の10月販売に共通の需要下振れを与える感応度。前年増減率の一律延長ではない。",
+          "sensitivity": "係数が0.01変化すると四半期売上が28.1変化。統計的信頼区間ではない。",
+          "material": true
+        },
+        {
+          "id": "bull_oct_factor",
+          "value": 1.03,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "事業別の中心予測に対する10月販売の上振れ感応度。9月の精肉・和菓子の回復が継続する条件。",
+          "sensitivity": "係数が0.01変化すると四半期売上が28.1変化。",
+          "material": true
+        },
+        {
+          "id": "monthly_conversion",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF page 1、S09・S10 PDF page 1",
+          "rationale": "月次速報から連結決算への追加調整を中心ではゼロと置く。月次累計と単月合計、短信との小差があり、厳密な同一性は未確認。",
+          "sensitivity": "追加調整が10発生すれば売上は10、営業利益は各シナリオの粗利率を乗じた額だけ変化。10は感応度単位であり確認済み調整額ではない。",
+          "material": true
+        },
+        {
+          "id": "bear_cogs_rate",
+          "value": 0.475,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S03 PDF pages 4・8、S04 PDF page 7、S05 PDF page 8",
+          "rationale": "直近Q1原価率約47.2%、前年Q2累計差引原価率約47.1%を基準に、原材料高と販促負担が強まる条件として47.5%を置く。",
+          "sensitivity": "原価率が0.5ポイント上昇すると営業利益は当該シナリオ売上の0.5%減少。",
+          "material": true
+        },
+        {
+          "id": "base_cogs_rate",
+          "value": 0.47,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S07"
+          ],
+          "locator": "S03 PDF page 8、S04 PDF page 7、S05 PDF page 8、S07 PDF pages 5・6",
+          "rationale": "直近Q1と前年Q2の原価率を主な基準とし、精肉・和菓子の販売構成と原価対策による小幅改善を仮定。通期会社計画の原価率までの回復は前提としない。",
+          "sensitivity": "原価率が0.5ポイント変化すると営業利益は売上の0.5%逆方向に変化。",
+          "material": true
+        },
+        {
+          "id": "bull_cogs_rate",
+          "value": 0.465,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S07"
+          ],
+          "locator": "S03 PDF pages 4・8、S07 PDF pages 5・6",
+          "rationale": "高付加価値商品の構成改善と原価対策が進み、会社通期計画の原価率に近づく条件。実現を確認した数値ではない。",
+          "sensitivity": "原価率が中心より0.5ポイント低下する効果は強気売上の0.5%。",
+          "material": true
+        },
+        {
+          "id": "bear_sga",
+          "value": 4400,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S03 PDF pages 4・8、S04 PDF page 7、S05 PDF page 8",
+          "rationale": "直近Q1販管費4393、前年Q2累計差引4353を基準に、人件費上昇が退店の費用減を上回る条件。営業利益から逆算していない。",
+          "sensitivity": "販管費が10増えると営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "base_sga",
+          "value": 4370,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S03 PDF page 8、S04 PDF page 7、S05 PDF page 8、S06 PDF page 4",
+          "rationale": "前年Q2累計差引4353と直近Q1の4393の間に置き、退店による店舗費用削減と人件費上昇の相殺を仮定。減価償却費を含む費用総額として扱う。",
+          "sensitivity": "販管費が10変化すると営業利益は同額逆方向に変化。",
+          "material": true
+        },
+        {
+          "id": "bull_sga",
+          "value": 4340,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S03 PDF page 8、S04 PDF page 7、S05 PDF page 8、S06 PDF page 4",
+          "rationale": "退店後の店舗費用削減と既存事業の効率改善により、前年Q2累計差引4353を小幅に下回る条件。増収時にも費用管理が効くことが必要。",
+          "sensitivity": "販管費が10増加すると営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "guide_sales",
+          "value": 36000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期連結業績予想"
+        },
+        {
+          "id": "guide_op",
+          "value": 1400,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期連結業績予想"
+        },
+        {
+          "id": "guide_ordinary",
+          "value": 1450,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期連結業績予想"
+        },
+        {
+          "id": "guide_net",
+          "value": 800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 通期連結業績予想"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_q2_sales",
+          "formula": "py_h1_sales-py_q1_sales"
+        },
+        {
+          "id": "py_q2_op",
+          "formula": "py_h1_op-py_q1_op"
+        },
+        {
+          "id": "py_q2_cogs",
+          "formula": "py_h1_cogs-py_q1_cogs"
+        },
+        {
+          "id": "py_q2_sga",
+          "formula": "py_h1_sga-py_q1_sga"
+        },
+        {
+          "id": "py_q2_gm",
+          "formula": "(py_q2_sales-py_q2_cogs)/py_q2_sales"
+        },
+        {
+          "id": "cq1_gm",
+          "formula": "(cq1_sales-cq1_cogs)/cq1_sales"
+        },
+        {
+          "id": "monthly_gap",
+          "formula": "aug_total+sep_total-aug_meat-aug_deli-aug_sweets-aug_restaurant-aug_food-sep_meat-sep_deli-sep_sweets-sep_restaurant-sep_food"
+        },
+        {
+          "id": "sales_adjustment",
+          "formula": "monthly_gap+monthly_conversion"
+        },
+        {
+          "id": "bear_meat",
+          "formula": "aug_meat+sep_meat+oct_meat*bear_oct_factor"
+        },
+        {
+          "id": "bear_deli",
+          "formula": "aug_deli+sep_deli+oct_deli*bear_oct_factor"
+        },
+        {
+          "id": "bear_sweets",
+          "formula": "aug_sweets+sep_sweets+oct_sweets*bear_oct_factor"
+        },
+        {
+          "id": "bear_restaurant",
+          "formula": "aug_restaurant+sep_restaurant+oct_restaurant*bear_oct_factor"
+        },
+        {
+          "id": "bear_food",
+          "formula": "aug_food+sep_food+oct_food*bear_oct_factor"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_meat+bear_deli+bear_sweets+bear_restaurant+bear_food+sales_adjustment"
+        },
+        {
+          "id": "bear_cogs",
+          "formula": "bear_revenue*bear_cogs_rate"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cogs-bear_sga"
+        },
+        {
+          "id": "base_meat",
+          "formula": "aug_meat+sep_meat+oct_meat"
+        },
+        {
+          "id": "base_deli",
+          "formula": "aug_deli+sep_deli+oct_deli"
+        },
+        {
+          "id": "base_sweets",
+          "formula": "aug_sweets+sep_sweets+oct_sweets"
+        },
+        {
+          "id": "base_restaurant",
+          "formula": "aug_restaurant+sep_restaurant+oct_restaurant"
+        },
+        {
+          "id": "base_food",
+          "formula": "aug_food+sep_food+oct_food"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_meat+base_deli+base_sweets+base_restaurant+base_food+sales_adjustment"
+        },
+        {
+          "id": "base_cogs",
+          "formula": "base_revenue*base_cogs_rate"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cogs-base_sga"
+        },
+        {
+          "id": "bull_meat",
+          "formula": "aug_meat+sep_meat+oct_meat*bull_oct_factor"
+        },
+        {
+          "id": "bull_deli",
+          "formula": "aug_deli+sep_deli+oct_deli*bull_oct_factor"
+        },
+        {
+          "id": "bull_sweets",
+          "formula": "aug_sweets+sep_sweets+oct_sweets*bull_oct_factor"
+        },
+        {
+          "id": "bull_restaurant",
+          "formula": "aug_restaurant+sep_restaurant+oct_restaurant*bull_oct_factor"
+        },
+        {
+          "id": "bull_food",
+          "formula": "aug_food+sep_food+oct_food*bull_oct_factor"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_meat+bull_deli+bull_sweets+bull_restaurant+bull_food+sales_adjustment"
+        },
+        {
+          "id": "bull_cogs",
+          "formula": "bull_revenue*bull_cogs_rate"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cogs-bull_sga"
+        },
+        {
+          "id": "bear_yoy_sales_delta",
+          "formula": "bear_revenue-py_q2_sales"
+        },
+        {
+          "id": "bear_qoq_sales_delta",
+          "formula": "bear_revenue-cq1_sales"
+        },
+        {
+          "id": "base_yoy_sales_delta",
+          "formula": "base_revenue-py_q2_sales"
+        },
+        {
+          "id": "base_qoq_sales_delta",
+          "formula": "base_revenue-cq1_sales"
+        },
+        {
+          "id": "bull_yoy_sales_delta",
+          "formula": "bull_revenue-py_q2_sales"
+        },
+        {
+          "id": "bull_qoq_sales_delta",
+          "formula": "bull_revenue-cq1_sales"
+        },
+        {
+          "id": "yoy_op_rounding",
+          "formula": "py_q2_sales-py_q2_cogs-py_q2_sga-py_q2_op"
+        },
+        {
+          "id": "qoq_op_rounding",
+          "formula": "cq1_sales-cq1_cogs-cq1_sga-cq1_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "精肉事業",
+              "revenue": "bear_meat"
+            },
+            {
+              "name": "惣菜事業",
+              "revenue": "bear_deli"
+            },
+            {
+              "name": "和菓子事業",
+              "revenue": "bear_sweets"
+            },
+            {
+              "name": "レストラン事業",
+              "revenue": "bear_restaurant"
+            },
+            {
+              "name": "食品事業",
+              "revenue": "bear_food"
+            },
+            {
+              "name": "速報合計との差額・決算移行仮定",
+              "revenue": "sales_adjustment"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "精肉事業",
+              "revenue": "base_meat"
+            },
+            {
+              "name": "惣菜事業",
+              "revenue": "base_deli"
+            },
+            {
+              "name": "和菓子事業",
+              "revenue": "base_sweets"
+            },
+            {
+              "name": "レストラン事業",
+              "revenue": "base_restaurant"
+            },
+            {
+              "name": "食品事業",
+              "revenue": "base_food"
+            },
+            {
+              "name": "速報合計との差額・決算移行仮定",
+              "revenue": "sales_adjustment"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "精肉事業",
+              "revenue": "bull_meat"
+            },
+            {
+              "name": "惣菜事業",
+              "revenue": "bull_deli"
+            },
+            {
+              "name": "和菓子事業",
+              "revenue": "bull_sweets"
+            },
+            {
+              "name": "レストラン事業",
+              "revenue": "bull_restaurant"
+            },
+            {
+              "name": "食品事業",
+              "revenue": "bull_food"
+            },
+            {
+              "name": "速報合計との差額・決算移行仮定",
+              "revenue": "sales_adjustment"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 1,
+          "period_start": "2025-05-01",
+          "period_end": "2025-07-31",
+          "revenue": 8657,
+          "operating_profit": 239,
+          "ordinary_profit": 253,
+          "net_profit": 147,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "公表原数値。会計方針変更・見積変更・修正再表示なし。提示原文に取得原価配分による損益改訂の記載なし",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 1・2・8"
+        },
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 2,
+          "period_start": "2025-05-01",
+          "period_end": "2025-10-31",
+          "revenue": 17047,
+          "operating_profit": 324,
+          "ordinary_profit": 344,
+          "net_profit": 176,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "公表原数値。会計方針変更・見積変更・修正再表示なし。提示原文に取得原価配分による損益改訂の記載なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 1・2・7"
+        },
+        {
+          "fiscal_year_end": "2027-04-30",
+          "quarter": 1,
+          "period_start": "2026-05-01",
+          "period_end": "2026-07-31",
+          "revenue": 8446,
+          "operating_profit": 65,
+          "ordinary_profit": 87,
+          "net_profit": 16,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "公表原数値。会計方針変更・見積変更・修正再表示なし。前年Q1比較損益はS05と一致",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・2・8"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "精肉の既存店回復と全店売上",
+          "mechanism": "9月は既存店と全店がともに前年を上回る。値頃感を訴求する予約販売とブランド商品の構成が販売額・粗利に影響する。",
+          "source_ids": [
+            "S03",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF page 4、S09・S10 PDF page 1",
+          "calculation_ids": [
+            "bear_meat",
+            "base_meat",
+            "bull_meat"
+          ],
+          "not_quantified_reason": "客数、販売重量、平均単価、商品別粗利は提示資料に記載なし。売上金額で積み上げる。"
+        },
+        {
+          "name": "惣菜と和菓子の季節商品構成",
+          "mechanism": "惣菜は9月に全店売上が前年並みへ回復し、和菓子は増収が拡大。コラボ商品と秋の歳時需要が売上を支えるが販促費と原材料費が利益を左右する。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03・S04 PDF page 4、S09・S10 PDF page 1",
+          "calculation_ids": [
+            "base_deli",
+            "base_sweets",
+            "base_cogs"
+          ],
+          "not_quantified_reason": "商品別の販売数量・単価・廃棄率がなく、構成による粗利改善は連結原価率の条件付き仮定に含める。"
+        },
+        {
+          "name": "レストラン退店と食品卸売",
+          "mechanism": "レストランは既存店が概ね維持されても退店後の全店売上が減少。食品は卸売納品や販路構成により月次変動が大きい。",
+          "source_ids": [
+            "S03",
+            "S06",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF pages 4・5、S06 PDF page 6、S09・S10 PDF page 1",
+          "calculation_ids": [
+            "base_restaurant",
+            "base_food"
+          ],
+          "not_quantified_reason": "店舗別売上と卸売契約別納品予定は未確認。新販路効果を別途加算しない。"
+        },
+        {
+          "name": "原材料費・人件費・店舗費用",
+          "mechanism": "直近Q1は売上減少に対して販管費がほぼ横ばいで、原価率も悪化。原価率と販管費を別々に設定して営業利益を計算する。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S07"
+          ],
+          "locator": "S03 PDF pages 4・8、S04 PDF page 7、S05 PDF page 8、S07 PDF pages 5・7",
+          "calculation_ids": [
+            "bear_cogs",
+            "base_cogs",
+            "bull_cogs",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "当四半期の部門別費用・改装稼働日が未確認のため、部門利益を無理に配賦しない。減価償却と退店効果は原価率・販管費に包含し二重加算しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": "bear_yoy_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別の金額寄与を分離できず、経済要因の未分解残差として全額を残す。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": "bear_qoq_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Q1と積上げ予測の差額。季節性と店舗構成変化の個別金額を確認できず、全額を未分解残差とする。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "bear_yoy_sales_delta*py_q2_gm",
+              "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は売上ブリッジの残差に残る。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "bear_revenue-bear_cogs-bear_revenue*py_q2_gm",
+              "reason": "弱気原価率と前年Q2原価率の差。原材料・商品構成別の分離は未確認。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "py_q2_sga-bear_sga",
+              "reason": "独立に設定した販管費と前年Q2累計差引の差。"
+            }
+          ],
+          "residual": "yoy_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "表示金額による売上－原価－販管費と公表営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S04",
+              "S05"
+            ],
+            "locator": "各PDF page 1 百万円未満切捨て、S04 PDF page 7、S05 PDF page 8",
+            "description": "累計表示額を差し引いた損益項目の再構成と営業利益差引値の間に1百万円の差がある。"
+          },
+          "rounding_tolerance": 2
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "bear_qoq_sales_delta*cq1_gm",
+              "reason": "直前Q1粗利率を固定した機械的寄与。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "bear_revenue-bear_cogs-bear_revenue*cq1_gm",
+              "reason": "弱気原価率と直前Q1原価率の差。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "cq1_sga-bear_sga",
+              "reason": "弱気費用仮定と直前Q1実績の差。"
+            }
+          ],
+          "residual": "qoq_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "直前Q1の表示損益項目再構成と公表営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03"
+            ],
+            "locator": "PDF page 1 百万円未満切捨て、PDF page 8",
+            "description": "売上－原価－販管費は66、営業利益は65で、1百万円の表示差。"
+          },
+          "rounding_tolerance": 2
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": "base_yoy_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": "base_qoq_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "base_yoy_sales_delta*py_q2_gm",
+              "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "base_revenue-base_cogs-base_revenue*py_q2_gm",
+              "reason": "中心原価率と前年Q2原価率の差。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "py_q2_sga-base_sga",
+              "reason": "中心費用仮定と前年Q2累計差引の差。"
+            }
+          ],
+          "residual": "yoy_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "表示金額による損益項目再構成と営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S04",
+              "S05"
+            ],
+            "locator": "各PDF page 1、S04 PDF page 7、S05 PDF page 8",
+            "description": "百万円未満切捨ての累計差引で、損益項目の再構成と営業利益に1百万円の差。"
+          },
+          "rounding_tolerance": 2
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "base_qoq_sales_delta*cq1_gm",
+              "reason": "直前Q1粗利率を固定した機械的寄与。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "base_revenue-base_cogs-base_revenue*cq1_gm",
+              "reason": "中心原価率と直前Q1原価率の差。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "cq1_sga-base_sga",
+              "reason": "中心費用仮定と直前Q1実績の差。"
+            }
+          ],
+          "residual": "qoq_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "直前Q1表示額の再構成と営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03"
+            ],
+            "locator": "PDF pages 1・8",
+            "description": "百万円未満切捨て。売上－原価－販管費は66、営業利益は65。"
+          },
+          "rounding_tolerance": 2
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": "bull_yoy_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q2累計差引と月次・10月仮定の積上げとの差額。客数・単価・退店・構成別寄与を分離できず全額を未分解残差とする。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": "bull_qoq_sales_delta",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Q1との差額。季節性と店舗構成変化の個別金額は未確認であり、全額を未分解残差とする。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "bull_yoy_sales_delta*py_q2_gm",
+              "reason": "前年Q2粗利率を固定した機械的寄与。売上変動の経済要因は未分解。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "bull_revenue-bull_cogs-bull_revenue*py_q2_gm",
+              "reason": "強気原価率と前年Q2原価率の差。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "py_q2_sga-bull_sga",
+              "reason": "強気費用仮定と前年Q2累計差引の差。"
+            }
+          ],
+          "residual": "yoy_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "表示金額による損益項目再構成と営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S04",
+              "S05"
+            ],
+            "locator": "各PDF page 1、S04 PDF page 7、S05 PDF page 8",
+            "description": "百万円未満切捨ての累計差引で、損益項目の再構成と営業利益に1百万円の差。"
+          },
+          "rounding_tolerance": 2
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上変化の粗利寄与",
+              "formula": "bull_qoq_sales_delta*cq1_gm",
+              "reason": "直前Q1粗利率を固定した機械的寄与。"
+            },
+            {
+              "label": "原価率・構成変化",
+              "formula": "bull_revenue-bull_cogs-bull_revenue*cq1_gm",
+              "reason": "強気原価率と直前Q1原価率の差。"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "cq1_sga-bull_sga",
+              "reason": "強気費用仮定と直前Q1実績の差。"
+            }
+          ],
+          "residual": "qoq_op_rounding",
+          "residual_type": "rounding",
+          "residual_explanation": "直前Q1表示額の再構成と営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03"
+            ],
+            "locator": "PDF pages 1・8",
+            "description": "百万円未満切捨て。売上－原価－販管費は66、営業利益は65。"
+          },
+          "rounding_tolerance": 2
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "fy_guidance_sales",
+          "metric": "revenue",
+          "value_ref": "guide_sales",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・5"
+        },
+        {
+          "id": "fy_guidance_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_op",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・5"
+        },
+        {
+          "id": "fy_guidance_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guide_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1・5"
+        },
+        {
+          "id": "fy_guidance_net",
+          "metric": "net_profit",
+          "value_ref": "guide_net",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1 親会社株主に帰属する当期純利益"
+        }
+      ],
+      "company_guidance": "S06で公表した通期連結予想をS03で据え置き。guidance_recordsは提示原文内で最新確認できた予想を記録したもので、基準日時までの網羅確認を意味しない。S06 PDF page 1に年次管理への移行に伴う中間予想の記載省略が明記されているため、対象Q2単独の会社予想は設定しない。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスは含まれない。",
+      "independent_forecast": "8月・9月の事業別全店売上速報と、前年季節性および直近事業動向に基づく10月仮定を積み上げる条件付き予測。原価率と販管費を実績から独立に設定して営業利益を算出した。会社通期予想の四等分や期後修正予想の差引きは使用していない。売上速報は決算確定実績と区別し、決算移行調整を仮定として置く。部門別営業利益、経常利益、純利益は根拠不足により予測しない。",
+      "narrative": [
+        {
+          "heading": "対象四半期と中心予測",
+          "text": "対象は次回中間決算で開示される第2四半期単独。中心売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。精肉と和菓子の販売回復を見込む一方、レストランの店舗縮小と食品の減収が全社の回復を抑える。",
+          "source_ids": [
+            "S03",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF pages 4・5、S09・S10 PDF page 1"
+        },
+        {
+          "heading": "採算の条件",
+          "text": "弱気では売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。販売額の振れだけでなく、原材料負担と販管費の抑制が損益を大きく左右する。強気には粗利改善と費用削減の同時実現が必要であり、各ケースは統計的な予測区間ではない。",
+          "source_ids": [
+            "S03",
+            "S07"
+          ],
+          "locator": "S03 PDF pages 4・8、S07 PDF page 5"
+        },
+        {
+          "heading": "比較と精度の限界",
+          "text": "前年同四半期の比較売上は同一会計版の累計差引による{{value:py_q2_sales}}、営業利益は{{value:py_q2_op}}を全シナリオで共通使用する。売上変化を客数・価格・退店別に配賦する根拠がないため、売上ブリッジには説明不能差を残す。営業利益ブリッジは粗利率と販管費の算術分解であり、原材料や商品構成ごとの因果寄与を確認したものではない。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 2・7、S05 PDF pages 2・8"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "10月の事業別売上速報は提示されておらず原文未確認。非開示とは断定しない。",
+        "数量、客数、単価、廃棄率、商品別粗利率は提示原文に記載がない。",
+        "四半期内の出退店・改装日程、店舗別売上・費用は未確認。年間計画を四半期実績に置き換えていない。",
+        "原材料費、人件費、減価償却費の対象四半期実額と部門配賦は未確認。",
+        "食品卸売の納品時期による変動は、設定した10月感応度を超える可能性がある。"
+      ],
+      "material_unresolved": [
+        "入力予定日2026-12-10は提示された会社原文で確認できないためannouncement_dateはnull。対象発表が基準日時点で未公表という提供情報はあるが、独自の網羅確認はしていない。",
+        "S10はdiscoveryに原文未読との記載があるが、今回documentsには保存本文が提示されているため、その本文を使用した。URLの到達性や公式配信元との照合は行っていない。",
+        "S09・S10は表の文字抽出順序が崩れている。各事業の既存店・全店の対と全社合計との整合から行を対応付けたが、PDF画像そのものの確認はしていない。",
+        "月次速報をinputsのfactとして格納したのは公表された観測値という意味に限る。確定決算実績ではなく、全件にmeasurement_statusを付して区別した。",
+        "月次の事業合計と全社合計には小差があり、月次累計の差分と単月合計、短信累計にも差がある。原因をすべて丸めと断定せず、全社合計との差を保持し、連結移行調整は未確認の仮定とした。",
+        "S07・S08 PDF page 3の前年Q2直接開示売上は8389だが、S04とS05の百万円表示累計差引は8390。これは直接開示と累計差引の表示精度差であり、全比較を累計差引に統一した。異なる会計版の混在は確認されていない。",
+        "販管費の人件費・賃借料等への分解、原価の数量・仕入価格への分解を行える資料は不足。条件付きの連結原価率と費用額で補い、利益目標から費用を逆算していない。",
+        "営業外収益は配当等の計上時期が不明で、税負担は直近Q1と前年で差が大きい。特別損益・税効果も予測根拠が不足するため経常利益と純利益をnullとした。",
+        "S03公表後から基準日時までの業績修正・訂正・重要期後開示の有無は網羅確認できない。期後修正見込みは使用していない。",
+        "提示されたS03～S10の本文にはtruncated=falseとある。本文欠落を前提にはしないが、資料外の質疑応答、10月速報、改訂履歴は原文未確認。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "S03公表後から基準日時までの業績修正・訂正・重要期後開示の有無は網羅確認できない。期後修正見込みは使用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "S07・S08 PDF page 3の前年Q2直接開示売上は8389だが、S04とS05の百万円表示累計差引は8390。これは直接開示と累計差引の表示精度差であり、全比較を累計差引に統一した。異なる会計版の混在は確認されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "S09・S10は表の文字抽出順序が崩れている。各事業の既存店・全店の対と全社合計との整合から行を対応付けたが、PDF画像そのものの確認はしていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "S10はdiscoveryに原文未読との記載があるが、今回documentsには保存本文が提示されているため、その本文を使用した。URLの到達性や公式配信元との照合は行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "入力予定日2026-12-10は提示された会社原文で確認できないためannouncement_dateはnull。対象発表が基準日時点で未公表という提供情報はあるが、独自の網羅確認はしていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "営業外収益は配当等の計上時期が不明で、税負担は直近Q1と前年で差が大きい。特別損益・税効果も予測根拠が不足するため経常利益と純利益をnullとした。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "提示されたS03～S10の本文にはtruncated=falseとある。本文欠落を前提にはしないが、資料外の質疑応答、10月速報、改訂履歴は原文未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "月次の事業合計と全社合計には小差があり、月次累計の差分と単月合計、短信累計にも差がある。原因をすべて丸めと断定せず、全社合計との差を保持し、連結移行調整は未確認の仮定とした。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "月次速報をinputsのfactとして格納したのは公表された観測値という意味に限る。確定決算実績ではなく、全件にmeasurement_statusを付して区別した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "販管費の人件費・賃借料等への分解、原価の数量・仕入価格への分解を行える資料は不足。条件付きの連結原価率と費用額で補い、利益目標から費用を逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "10月の事業別売上速報は提示されておらず原文未確認。非開示とは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "base_cogs_rate: 直近Q1と前年Q2の原価率を主な基準とし、精肉・和菓子の販売構成と原価対策による小幅改善を仮定。通期会社計画の原価率までの回復は前提としない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "base_sga: 前年Q2累計差引4353と直近Q1の4393の間に置き、退店による店舗費用削減と人件費上昇の相殺を仮定。減価償却費を含む費用総額として扱う。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bear_cogs_rate: 直近Q1原価率約47.2%、前年Q2累計差引原価率約47.1%を基準に、原材料高と販促負担が強まる条件として47.5%を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bear_oct_factor: 事業別に異なる中心予測を設定した後、未確認の10月販売に共通の需要下振れを与える感応度。前年増減率の一律延長ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bear_sga: 直近Q1販管費4393、前年Q2累計差引4353を基準に、人件費上昇が退店の費用減を上回る条件。営業利益から逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bull_cogs_rate: 高付加価値商品の構成改善と原価対策が進み、会社通期計画の原価率に近づく条件。実現を確認した数値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bull_oct_factor: 事業別の中心予測に対する10月販売の上振れ感応度。9月の精肉・和菓子の回復が継続する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "bull_sga: 退店後の店舗費用削減と既存事業の効率改善により、前年Q2累計差引4353を小幅に下回る条件。増収時にも費用管理が効くことが必要。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "monthly_conversion: 月次速報から連結決算への追加調整を中心ではゼロと置く。月次累計と単月合計、短信との小差があり、厳密な同一性は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "oct_deli: 前年Q2累計差引3075から前年8月1076・9月981を控除した10月相当1018を参考に、9月の全店売上が前年並みまで回復した状況と高付加価値商品の販売を織り込む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "oct_food: 前年Q2累計差引305から前年8月129・9月61を控除した10月相当115を参考に、8月の大幅減収から9月に減収幅が縮小した状況を反映。ホテル向け甘味や外販の拡大は定量受注未確認のため別途上乗せしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "oct_meat: 前年Q2セグメント累計差引3097から前年8月1105・9月967を控除した10月相当1025を参考に、9月の全店売上回復と既存店増収を反映。数量・単価の分離推定は行わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "oct_restaurant: 前年Q2累計差引353から前年8月131・9月106を控除した10月相当116に対し、退店後の店舗規模と9月全店売上の落ち込みを反映。既存店の売上維持を全店回復とは扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "oct_sweets: 前年Q2累計差引1560から前年8月566・9月504を控除した10月相当490に対し、9月の全店増収、季節商品とコラボ商品の需要を反映。秋の歳時効果はこの売上に含め、別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "原材料費、人件費、減価償却費の対象四半期実額と部門配賦は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "四半期内の出退店・改装日程、店舗別売上・費用は未確認。年間計画を四半期実績に置き換えていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "数量、客数、単価、廃棄率、商品別粗利率は提示原文に記載がない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "2294",
+      "company_name": "株式会社柿安本店",
+      "kind": "condition",
+      "message": "食品卸売の納品時期による変動は、設定した10月感応度を超える可能性がある。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/2294/result.json": "d4094dc2cd46c6615b7960afac3988de80d73f1b0a86344afae1dc533892e75e",
+    "reports/2294.md": "c87628f4bec13d437ec064dfbd7c7f8757b36d75ae9cfd2d1d703364398e22b7"
+  }
+}

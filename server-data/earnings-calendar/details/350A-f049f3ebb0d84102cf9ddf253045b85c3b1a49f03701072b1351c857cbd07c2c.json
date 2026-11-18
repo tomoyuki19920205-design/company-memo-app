@@ -1,0 +1,2852 @@
+{
+  "id": "350A-f049f3ebb0d84102cf9ddf253045b85c3b1a49f03701072b1351c857cbd07c2c",
+  "code": "350A",
+  "companyName": "デジタルグリッド株式会社",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "350A-generation-253eece0d296ad29 · f049f3eb",
+  "savedAt": "2026-11-18T17:08:45+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 2085.4724569838054,
+  "operatingProfit": 982.8573220631706,
+  "revenueYoY": {
+    "rate": 0.03986049429493009,
+    "label": "+4.0%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.07916721203573815,
+    "label": "-7.9%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 350A デジタルグリッド株式会社｜2027-07-31期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 1,630.54 | 2,085.47 | 2,498.97 |\n| 営業利益 | 490.40 | 982.86 | 1,413.36 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 79.94 | 3.99% |  |\n| YoY | 営業利益 | -84.50 | -7.92% |  |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存原文で確認できる対象年度の会社予想は2027年7月期通期の連結予想。対象第1四半期単独予想は提示原文では確認できない。会社は電力精算収益を保守的に計画し、ASの価格上限引下げを既に織り込んでいる。期後修正の網羅性が未確認のため、guidance_recordsの最新性はunverifiedとした。\n\n## 市場コンセンサス\n未確認。提示資料に対象四半期の公表市場コンセンサス数値はない。\n\n## 独自予測・差引推計の区分\n取扱電力量×実現手数料単価、PF付帯収益、電力精算、ASの実効稼働量×単価、その他収益を合算した独自の条件付き予測。費用は直前原価、前年同季節の人件費、人員相当数、非人件費販管費、追加償却から積算した。会社通期予想の四等分や差引き推計ではない。シナリオは確率区間ではなく、精算・AS稼働・費用計上に条件を置いた低信頼度の感応度予測。\n\n## 対象四半期の条件付き予測\n中心ケースの売上は2,085.47、営業利益は982.86。弱気では売上1,630.54・営業利益490.40、強気では売上2,498.97・営業利益1,413.36となる。電力精算収益と費用計上時期への依存が大きく、中心ケースを確定的な着地予想とは扱わない。\n\n## 契約基盤と収益化の時間差\n電力PFは春に獲得した契約の寄与が続く一方、単価調整が数量増の効果を抑える。再エネは長期契約が支えるが発電量には季節性がある。ASは運開容量の増加が先行し、市場参入と収益認識には時間差があるため、期後の運開容量を対象四半期全期間に適用していない。\n\n## 比較上の注意\n前年同四半期は電力精算収益が高く、直前四半期は販管費の集中で営業利益が抑えられていた。中心ケースは前年同四半期に対して費用増が重く、直前四半期に対しては費用集中の反動が利益を支える構図になる。調整後販管費を短信実績に混ぜず、比較基準は同じ連結会計実績に統一した。\n\n## 会社予想との区別\n会社通期売上予想は7,967.00、営業利益予想は2,865.00。独自予測では会社計画から対象四半期を割り出さず、ASの制度変更を実績基準の単価仮定に一度だけ反映した。借入費用・税金の対象四半期計上を説明できないため、経常利益と純利益は予測していない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | -143.32 | 電力PFと再エネPFを別々に数量×単価で積算した差。 |\n| 精算・付帯収益・AS・その他の合計変化 | -231.67 | 精算減少とAS稼働増加等の条件付き純効果。前年の比較額は連結売上からDGP手数料を控除。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。予測誤差がゼロという意味ではない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | -117.96 | 季節性と単価調整を反映。 |\n| 精算・付帯収益・AS・その他の合計変化 | -258.15 | 精算条件の悪化と市場参入待ちを含むAS増収の純効果。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | -374.99 | 対応する売上ブリッジと同じ数量・価格・収益構成。 |\n| 原価・人件費・その他販管費・追加償却の変化 | -201.96 | 前年実績総費用に対し、個別費用仮定を積算した費用上側条件。 |\n| 残差（none） | 0.00 | 費用を売上原価と販管費の合計で比較するため表示内訳差を残差にしない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | -376.11 | 対応する売上ブリッジと一致。 |\n| 費用計上時期と費用水準の変化 | 296.43 | 直前Qに集中した販管費からの減少と、人員増・追加償却を合算。集中費用の全額消失は仮定しない。 |\n| 残差（none） | 0.00 | モデルの総費用差を全額表示。個別費目への厳密な配賦は未確認。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | -25.93 | 電力PFの容量増と単価低下、再エネの発電量増を積算。 |\n| 精算・付帯収益・AS・その他の合計変化 | 105.87 | 前年の高い精算収益からの反動とAS成長の純効果。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | -0.57 | 需要家電力量の増加と再エネ発電の季節性、手数料単価調整を反映。 |\n| 精算・付帯収益・AS・その他の合計変化 | 79.39 | 精算は直前Qに近い条件、ASは参入容量増と上限価格低下の純効果。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | 79.94 | 対応する売上ブリッジと一致。 |\n| 原価・人件費・その他販管費・追加償却の変化 | -164.44 | 人員増、広告・制度対応費、設備稼働を個別に設定した費用増減。 |\n| 残差（none） | 0.00 | 売上差と総費用差で営業利益差を完全に分解。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | 78.83 | 対応する売上ブリッジと一致。 |\n| 費用計上時期と費用水準の変化 | 333.95 | 直前Qの販管費集中からの反動を費目別仮定で表現し、人員増・追加償却を含める。 |\n| 残差（none） | 0.00 | 調整後販管費は比較実績に採用せず、短信の総費用を使用。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | 74.99 | 数量増加と直前Q単価維持の条件。 |\n| 精算・付帯収益・AS・その他の合計変化 | 418.45 | 良好な精算環境とAS市場参入の進展を反映。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| DGP手数料の数量・単価・構成変化 | 100.35 | 電力需要増と再エネ発電量の季節性を反映。 |\n| 精算・付帯収益・AS・その他の合計変化 | 391.98 | 精算環境改善とAS実効稼働量増加の純効果。 |\n| 残差（none） | 0.00 | モデル上の全売上区分を包含。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | 493.44 | 対応する売上ブリッジと一致。 |\n| 原価・人件費・その他販管費・追加償却の変化 | -147.44 | 数量増による原価増を含め、採用・設備稼働の費用発生が遅い条件。 |\n| 残差（none） | 0.00 | 売上差と総費用差で営業利益差を完全に分解。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 積上げ売上の変化 | 492.33 | 対応する売上ブリッジと一致。 |\n| 費用計上時期と費用水準の変化 | 350.95 | 直前Qの費用集中からの反動と対象Qの費用下側条件。 |\n| 残差（none） | 0.00 | モデルの総費用差を全額表示。残差ゼロは各費用仮定の確実性を意味しない。 |\n\n## エラー・未解決事項\n- 11月12日の出雲市蓄電所開示および10月28日提出の有価証券報告書は保存原文がなく、対象Qの収益・償却確認には使用していない。\n- AS実効稼働量倍率は公表運開容量と市場参入待ちを使った仮定。直前Q平均EPRX容量がなく、容量当たり収益を直接検証できない。\n- S06の調整後販管費は制度対応費等の期間配分を変更した管理値。会計上の修正再表示ではなく、累計実績の差引きには使用していない。\n- S07 PDF page 3の直前Q電力量と、S07 PDF page 23・S11 Sheet P.6の電力量には差がある。数量基準はS11の728GWh・190GWhに統一し、差の原因は未確認。丸め差と断定していない。\n- S11 Sheet P.5 M10のその他事業売上キャッシュ値は短信累計差引きと一致しない。S11には他にも疑わしい数値・注記があり、比較連結実績はS03・S04・S05を優先した。\n- S11はSheet P.8途中で短縮されており、後続グラフ・免責事項等は未確認。S08はPDF page 51以降が短縮され、残りの資料範囲は未確認。\n- S12は会社作成資料の転載原文。公式直接URLは未確認であり、11月4日の取扱量を10月末実績とは扱っていない。\n- discoveryではS11本文未取得とあるが、今回提示されたdocumentsにはセル本文があるため、その提示範囲は確認済みとした。取得時点と基準日時後の差し替え有無は未確認。\n- 基準日時までの会社予想修正・重要開示の網羅性は未確認。9月公表予想が現在も最新であるとは確定していない。\n- 増減要因の合計不一致: base/qoq/operating_profit\n- 増減要因の合計不一致: base/qoq/revenue\n- 増減要因の合計不一致: bear/qoq/operating_profit\n- 増減要因の合計不一致: bear/qoq/revenue\n- 増減要因の合計不一致: bull/qoq/operating_profit\n- 増減要因の合計不一致: bull/qoq/revenue\n- 売上原価は直前Q実績を両PF電力量で近似しているが、連結原価には他事業費用も含む。原価の数量感応度と追加AS原価率は独自仮定であり、営業利益予測の主要な限界。\n- 対象決算は提示されたdiscoveryで未発表とされるが、保存原文だけでは未発表状況の網羅的確認はできない。\n- 直前累計不足: 2026-07-31\n- 経常利益は借入残高だけでは金利・手数料・計上時期を十分に説明できずnull。純利益も税率見積りと通期調整の不確実性からnull。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n- 追加償却費は対象Qの資産別明細がなく条件設定にとどまる。AM収益の本格化と費用先行の組合せは未確認。\n- 電力精算のシナリオ幅は過去実績に基づく条件設定であり、対象Qの市場データによる推定区間ではない。損失を含む範囲外の着地も排除できない。\n- AIへ渡した原文に省略あり: S08,S11\n\n## 条件・不確実性\n- ASの対象Q月次EPRX参入容量、約定率、サービス報酬率は原文未確認。\n- ancillary_revenue: 電力PF付帯収益と再エネPF証書等を合算。前年同Qの両事業の契約由来その他収益合計約99、直前Qも約106であり、共通条件として100とする。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9。\n- base_as_capacity_factor: 前期中の運開案件が対象Q中に順次収益化する条件。期後250MWを対象Q全期間の市場稼働容量に置き換えない。直前Q平均EPRX容量が未確認のため相対的な実効稼働量仮定とする。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。\n- base_as_price_factor: 上限引下げに対し商品構成・約定条件・複数市場運用による部分的吸収を仮定。会社通期予想は計算に使用していないため制度影響の二重控除はない。出典：S09 PDF page 3 Q11、S10 PDF page 3。\n- base_avg_headcount: 7月末と11月初の人数の中間程度を期中平均相当とする。S12の従業員定義が従前と完全に同一かは未確認。出典：S06 PDF page 12、S12 PDF page 2。\n- base_incremental_depreciation: 新規AM設備の段階的稼働に伴う追加費用。前年の軽資産構造からの移行を織り込むが、通期の調整後EBITDA差額の四等分はしない。出典：S06 PDF pages 31、36、S09 PDF page 2 Q5。\n- base_other_sga: 前年同Qの調整後その他販管費を目安とし、広告継続・制度費用を含む対象Q計上額を独自仮定。通期や利益目標から逆算していない。出典：S06 PDF page 12。\n- base_power_price_factor: 主要更新時期を通過し、単価調整が緩やかになるという説明を踏まえ、直前Qから3%低下を仮定。出典：S09 PDF page 3 Q10、S10 PDF page 2。\n- base_power_volume: 容量比補正の約755GWhに営業強化と夏季需要の寄与を限定的に加えた中心条件。期末容量を期中平均と同一とはみなさない。出典：S06 PDF pages 18–21、S09 PDF page 3 Q13。\n- base_re_volume: 既存契約の稼働寄与と追加案件を限定的に織り込む。直前Qの春夏発電量190GWhをそのまま延長しない。出典：S06 PDF page 25、S11 Sheet P.6 U10。\n- base_settlement: 直前Qの両PF契約外収益差引額に近い条件。夏季に高かった前年同Qの全額再現は置かない。精算損益を契約容量に比例させない。出典：S03 PDF page 12、S05 PDF page 9、S10 PDF page 2。\n- bear_as_capacity_factor: 直前Q対比の収益稼働容量相当倍率。直前Q末EPRX参入100MWと運転開始165MW、その後の運開増加に対し3～5か月の参入待ちを考慮し、収益化が遅い条件。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。\n- bear_as_price_factor: 9月からの上限価格15円から10円への引下げが強く波及。対象Qのうち2か月を新上限とする単純加重比率約0.778をストレスの参考にし、実現単価そのものとは区別。出典：S09 PDF page 3 Q11。\n- bear_avg_headcount: 7月末101人、11月1日114人を踏まえた費用上側の平均人員相当。実際の期中平均人数ではなく、採用時期・賃金上昇も含めた費用ストレス。出典：S06 PDF page 12、S12 PDF page 2。\n- bear_incremental_depreciation: 既存原価・販管費に含む従来償却とは別に、新規AM設備の追加償却を仮定。期末連系済4.2MWと建設仮勘定の大きさから早期稼働時の負担を置く。資産別耐用年数が未確認のため条件付き費用ストレス。出典：S03 PDF page 7、S06 PDF pages 31、35。\n- bear_other_sga: 非人件費販管費。前年同Q実績約289、調整後約370、直前Q調整後約435を参考に広告・制度対応等の負担が重い条件。調整後値は会計実績に置換せず仮定の目安に限定。出典：S08 PDF page 7、S06 PDF page 12。\n- bear_power_price_factor: 直前Qの電力PF実現手数料単価からさらに8%低下する条件。合算単価の直前Q低下幅8%をストレス幅の参考にするが、電力PF固有実績とは扱わない。出典：S06 PDF page 10、S10 PDF page 2。\n- bear_power_volume: 前年同Q取扱量651GWh、前年同Q末契約容量751MWに対し直近末871MW。前年同Qの負荷特性を容量比で補正した約755GWhを中心に、天候・解約・期中平均容量の不確実性を考慮した下側。出典：S08 PDF page 8、S06 PDF page 18。\n- bear_re_volume: 前年同Q127GWhと契約容量330MW、直近393MWを比較すると同季節負荷で約151GWh。これを下側条件とする。出典：S08 PDF page 8、S06 PDF page 25。\n- bear_settlement: 両PFの電力精算等の契約外収益合計。前年同Q約674、直前Q約458に対し市況悪化を置く条件付き下側。会社の保守的計画説明も参考とする。保証された下限ではない。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9、S09 PDF page 3 Q9。\n- bull_as_capacity_factor: 前期からの待機案件の市場参入・約定が順調な条件。新規運開案件の全量即時収益化は含めない。出典：S06 PDF page 29、S09 PDF page 3 Q12。\n- bull_as_price_factor: 上限価格が実現収益へ与える影響が限定される条件。市場商品別の実収益構成は未確認。出典：S09 PDF page 3 Q11、S10 PDF page 3。\n- bull_avg_headcount: 採用が期末寄りで費用発生が遅い条件。人員増自体は織り込む。出典：S06 PDF page 12、S12 PDF page 2。\n- bull_incremental_depreciation: 新規AM設備の本格稼働が対象Q後に偏る条件。ASの外部受託増加とは分離する。出典：S09 PDF pages 2–3 Q5、Q14。\n- bull_other_sga: 制度対応の計上集中がなく、広告投下効率が改善する条件。直近第3四半期調整後その他販管費約337を参考にする。出典：S06 PDF page 12。\n- bull_power_price_factor: ヘッジ商品・顧客維持施策により直前Q単価を維持する上側条件。値上げは仮定しない。出典：S06 PDF page 21、S10 PDF page 2。\n- bull_power_volume: 既存契約の通期寄与、夏季負荷、新規獲得が強い場合。前年同Qの単純成長率延長ではなく、直近契約基盤に対する負荷・稼働条件の上側。出典：S06 PDF pages 18–21。\n- bull_re_volume: 案件稼働と発電条件が良好な場合。マッチング成立容量を全量即時売上化せず、直前Q発電量を下回る範囲に設定。出典：S06 PDF page 25、S10 PDF page 2。\n- bull_settlement: 前年同Qに近い良好な精算環境が再現する上側条件。対象期市況を観測した推計ではない。出典：S04 PDF page 8、S10 PDF page 2。\n- incremental_as_cost_ratio: 既存AS費用を含む直前Q連結原価を土台とし、AS増収分に追加の直接運用費15%を置く。AS直前Q利益率約62%と運用基盤の拡張余地を参考にするが、公表限界原価率ではない。人件費は販管費で別途積算。出典：S07 PDF page 3、S06 PDF page 28。\n- 人員の期中平均、賞与・広告・制度対応費用の対象Q計上額は原文未確認。\n- 会社計画の取扱電力量等の内訳とセグメント別営業利益はS09で非開示と明記されている。\n- 再エネ手数料単価は直前Q実現値を維持すると仮定し、契約構成変化による別の単価上昇は計上していない。\n- 対象Qの取扱電力量、手数料単価、電力精算損益は原文未確認。\n- 設備別運開日・償却開始日・耐用年数は原文未確認。追加償却は条件付き仮定。\n\n## 根拠・保存記録\n- S01 [株式情報](https://www.digitalgrid.com/ir/stock/overview/) / 公表  / unavailable / SHA-256 `なし`\n- S02 [IRカレンダー](https://www.digitalgrid.com/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n- S03 [2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）](https://ssl4.eir-parts.net/doc/350A/tdnet/2883438/00.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `f6b7a7f7fdb212c1742952b2d74b1b973af2c6bc7b29203d6c876f13039c701b`\n- S04 [2026年7月期 第1四半期決算短信〔日本基準〕（連結）（前年同期間）](https://www2.jpx.co.jp/disc/350A0/140120251210517398.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `3cd98646a5db18ddaf2e3d80ac4745a0655b4c84f9b2b440468d3dc6d747940d`\n- S05 [2026年7月期 第3四半期決算短信〔日本基準〕（連結）（直前四半期の累計差分用）](https://www2.jpx.co.jp/disc/350A0/140120260611567973.pdf) / 公表 2026-06-11 / retrieved / SHA-256 `0dd4225353ba9e7e517c46ee04a7e8e046eb3edbfaff883f054c1594977a1495`\n- S06 [2026年7月期通期決算説明資料（事業計画及び成長可能性に関する事項）_1](https://www2.jpx.co.jp/disc/350A0/140120260910534347.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `348f50ac8c0cc040ef956386ac19e0b3f09ebf10b09899012f433fdf2411e52c`\n- S07 [2026年7月期通期決算説明資料（事業計画及び成長可能性に関する事項）_2](https://www2.jpx.co.jp/disc/350A0/140120260910534400.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `7be7fd6d2bc2fe3fde490ba219708444e92deaea1c10d272f4ce52d469e434ca`\n- S08 [2026年7月期 第1四半期決算説明資料](https://www2.jpx.co.jp/disc/350A0/140120251211518193.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `e827222e5aa8825bb47c160aa4f8c35e1dcf7c5874e88afd85ec7e588cae2363`\n- S09 [決算説明会のご質問とご回答（2026年7月期 通期）](https://www2.jpx.co.jp/disc/350A0/140120260911535071.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `8b16a4f86f848594a69720c0849be9d23abda1110926008974b9c53a45f65e88`\n- S10 [よくあるご質問とご回答（2026年5～7月）](https://www2.jpx.co.jp/disc/350A0/140120260901530180.pdf) / 公表 2026-09-01 / retrieved / SHA-256 `59c27a77e070d52d687f61c1600d412d86ebffe563172862c9fb26d799680135`\n- S11 [DIGITAL GRID Investor Data Book Q4 and Full-Year FY2026](https://files.microcms-assets.io/assets/8cbfc136d535410e87b6bbe09445ad39/8c7b9672242b4d1b8ba620e7e308dc82/DIGITAL%20GRID_Investor%20Data%20Book_Q4%20and%20Full-Year%20FY2026.xlsx) / 公表 2026-09-11 / retrieved / SHA-256 `c9e4bdbbd92c4664336be241e1433e7d9e5a1077c4878e848fa9a4b85533ff51`\n- S12 [系統用蓄電池の取扱量が250MWを突破 約1カ月で50MW増加 全国9エリアに拡大（会社開示資料の転載PDF）](https://kabuyoho-sls-disclose.ifis.co.jp/328/140120261105565054.pdf) / 公表 2026-11-05 / retrieved / SHA-256 `4372579097f70f1e46c28d2c0eecf5283fb662f4d66010280b596949fefe2d47`\n- S13 [決算・業績進捗情報（発表予定日の補助照合）](https://kabuyoho.jp/sp/report?bcode=350A) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 2026年12月10日の決算発表日は提示された対象条件と第三者確認記録に依拠する。会社・取引所の具体的日付の保存原文はなく、公式日程は未確認。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "350A",
+    "company_name": "デジタルグリッド株式会社",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 1630.5371124927706,
+        "operating_profit": 490.40286197923183,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 2085.4724569838054,
+        "operating_profit": 982.8573220631706,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 2498.971562463852,
+        "operating_profit": 1413.3565883742162,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 79.94145698380544,
+          "rate": 0.03986049429493009,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -84.49967793682936,
+          "rate": -0.07916721203573815,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_revenue": 2005.531,
+      "py_op": 1067.357,
+      "py_fee": 1207.319,
+      "fy_revenue": 7113.916,
+      "fy_op": 3017.771,
+      "ytd_revenue": 5107.27,
+      "ytd_op": 2447.692,
+      "fy_power_fee": 3881.714,
+      "ytd_power_fee": 2898.124,
+      "fy_re_fee": 632.679,
+      "ytd_re_fee": 434.311,
+      "q4_power_volume": 728.0,
+      "q4_re_volume": 190.0,
+      "q4_as_revenue": 253.0,
+      "fy_cogs": 1320.356,
+      "ytd_cogs": 992.615,
+      "py_personnel": 284.0,
+      "py_headcount": 84.0,
+      "guidance_revenue": 7967.0,
+      "guidance_op": 2865.0,
+      "guidance_ordinary": 2394.0,
+      "guidance_net": 1673.0,
+      "bear_power_volume": 730.0,
+      "base_power_volume": 770.0,
+      "bull_power_volume": 810.0,
+      "bear_power_price_factor": 0.92,
+      "base_power_price_factor": 0.97,
+      "bull_power_price_factor": 1.0,
+      "bear_re_volume": 150.0,
+      "base_re_volume": 165.0,
+      "bull_re_volume": 180.0,
+      "ancillary_revenue": 100.0,
+      "bear_settlement": 200.0,
+      "base_settlement": 450.0,
+      "bull_settlement": 650.0,
+      "bear_as_capacity_factor": 1.3,
+      "base_as_capacity_factor": 1.6,
+      "bull_as_capacity_factor": 1.9,
+      "bear_as_price_factor": 0.78,
+      "base_as_price_factor": 0.85,
+      "bull_as_price_factor": 0.95,
+      "other_revenue": 10.0,
+      "incremental_as_cost_ratio": 0.15,
+      "bear_avg_headcount": 114.0,
+      "base_avg_headcount": 108.0,
+      "bull_avg_headcount": 104.0,
+      "bear_other_sga": 410.0,
+      "base_other_sga": 370.0,
+      "bull_other_sga": 340.0,
+      "bear_incremental_depreciation": 30.0,
+      "base_incremental_depreciation": 20.0,
+      "bull_incremental_depreciation": 10.0,
+      "q4_revenue": 2006.6459999999997,
+      "q4_op": 570.0790000000002,
+      "q4_power_fee": 983.5900000000001,
+      "q4_re_fee": 198.368,
+      "q4_fee": 1181.958,
+      "q4_power_price": 1.351085164835165,
+      "q4_re_price": 1.0440421052631579,
+      "q4_cogs": 327.741,
+      "q4_total_cost": 1436.5669999999996,
+      "py_total_cost": 938.174,
+      "q4_nonfee": 824.6879999999996,
+      "py_nonfee": 798.212,
+      "bear_power_fee": 907.3887967032969,
+      "base_power_fee": 1009.1255096153847,
+      "bull_power_fee": 1094.3789835164837,
+      "bear_re_fee": 156.60631578947368,
+      "base_re_fee": 172.26694736842106,
+      "bull_re_fee": 187.92757894736843,
+      "bear_fee": 1063.9951124927707,
+      "base_fee": 1181.3924569838057,
+      "bull_fee": 1282.306562463852,
+      "bear_as_revenue": 256.54200000000003,
+      "base_as_revenue": 344.08,
+      "bull_as_revenue": 456.66499999999996,
+      "bear_nonfee": 566.542,
+      "base_nonfee": 904.0799999999999,
+      "bull_nonfee": 1216.665,
+      "bear_revenue": 1630.5371124927706,
+      "base_revenue": 2085.4724569838054,
+      "bull_revenue": 2498.971562463852,
+      "bear_cogs": 314.70567908496724,
+      "base_cogs": 347.4722777777777,
+      "bull_cogs": 383.99592647058824,
+      "bear_personnel": 385.42857142857144,
+      "base_personnel": 365.14285714285717,
+      "bull_personnel": 351.6190476190476,
+      "bear_total_cost": 1140.1342505135387,
+      "base_total_cost": 1102.6151349206348,
+      "bull_total_cost": 1085.6149740896358,
+      "bear_op": 490.40286197923183,
+      "base_op": 982.8573220631706,
+      "bull_op": 1413.3565883742162
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 2、7",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 2005.531,
+        "operating_profit": 1067.357,
+        "ordinary_profit": 1066.76,
+        "net_profit": 791.484
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF pages 2、7",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2、8",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "bear_fee-py_fee",
+            "reason": "電力PFと再エネPFを別々に数量×単価で積算した差。",
+            "amount": -143.3238875072293
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "bear_nonfee-py_nonfee",
+            "reason": "精算減少とAS稼働増加等の条件付き純効果。前年の比較額は連結売上からDGP手数料を控除。",
+            "amount": -231.66999999999996
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。予測誤差がゼロという意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "bear_fee-q4_fee",
+            "reason": "季節性と単価調整を反映。",
+            "amount": -117.96288750722942
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "bear_nonfee-q4_nonfee",
+            "reason": "精算条件の悪化と市場参入待ちを含むAS増収の純効果。",
+            "amount": -258.1459999999996
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "bear_revenue-py_revenue",
+            "reason": "対応する売上ブリッジと同じ数量・価格・収益構成。",
+            "amount": -374.9938875072294
+          },
+          {
+            "label": "原価・人件費・その他販管費・追加償却の変化",
+            "formula": "py_total_cost-bear_total_cost",
+            "reason": "前年実績総費用に対し、個別費用仮定を積算した費用上側条件。",
+            "amount": -201.96025051353877
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用を売上原価と販管費の合計で比較するため表示内訳差を残差にしない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q4_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "bear_revenue-q4_revenue",
+            "reason": "対応する売上ブリッジと一致。",
+            "amount": -376.10888750722916
+          },
+          {
+            "label": "費用計上時期と費用水準の変化",
+            "formula": "q4_total_cost-bear_total_cost",
+            "reason": "直前Qに集中した販管費からの減少と、人員増・追加償却を合算。集中費用の全額消失は仮定しない。",
+            "amount": 296.4327494864608
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデルの総費用差を全額表示。個別費目への厳密な配賦は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "base_fee-py_fee",
+            "reason": "電力PFの容量増と単価低下、再エネの発電量増を積算。",
+            "amount": -25.926543016194273
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "base_nonfee-py_nonfee",
+            "reason": "前年の高い精算収益からの反動とAS成長の純効果。",
+            "amount": 105.86799999999994
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "base_fee-q4_fee",
+            "reason": "需要家電力量の増加と再エネ発電の季節性、手数料単価調整を反映。",
+            "amount": -0.5655430161943968
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "base_nonfee-q4_nonfee",
+            "reason": "精算は直前Qに近い条件、ASは参入容量増と上限価格低下の純効果。",
+            "amount": 79.39200000000028
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "base_revenue-py_revenue",
+            "reason": "対応する売上ブリッジと一致。",
+            "amount": 79.94145698380544
+          },
+          {
+            "label": "原価・人件費・その他販管費・追加償却の変化",
+            "formula": "py_total_cost-base_total_cost",
+            "reason": "人員増、広告・制度対応費、設備稼働を個別に設定した費用増減。",
+            "amount": -164.4411349206348
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q4_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "base_revenue-q4_revenue",
+            "reason": "対応する売上ブリッジと一致。",
+            "amount": 78.82645698380566
+          },
+          {
+            "label": "費用計上時期と費用水準の変化",
+            "formula": "q4_total_cost-base_total_cost",
+            "reason": "直前Qの販管費集中からの反動を費目別仮定で表現し、人員増・追加償却を含める。",
+            "amount": 333.9518650793648
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "調整後販管費は比較実績に採用せず、短信の総費用を使用。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "bull_fee-py_fee",
+            "reason": "数量増加と直前Q単価維持の条件。",
+            "amount": 74.9875624638521
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "bull_nonfee-py_nonfee",
+            "reason": "良好な精算環境とAS市場参入の進展を反映。",
+            "amount": 418.453
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "DGP手数料の数量・単価・構成変化",
+            "formula": "bull_fee-q4_fee",
+            "reason": "電力需要増と再エネ発電量の季節性を反映。",
+            "amount": 100.34856246385198
+          },
+          {
+            "label": "精算・付帯収益・AS・その他の合計変化",
+            "formula": "bull_nonfee-q4_nonfee",
+            "reason": "精算環境改善とAS実効稼働量増加の純効果。",
+            "amount": 391.9770000000003
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "bull_revenue-py_revenue",
+            "reason": "対応する売上ブリッジと一致。",
+            "amount": 493.4405624638521
+          },
+          {
+            "label": "原価・人件費・その他販管費・追加償却の変化",
+            "formula": "py_total_cost-bull_total_cost",
+            "reason": "数量増による原価増を含め、採用・設備稼働の費用発生が遅い条件。",
+            "amount": -147.4409740896358
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q4_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "積上げ売上の変化",
+            "formula": "bull_revenue-q4_revenue",
+            "reason": "対応する売上ブリッジと一致。",
+            "amount": 492.3255624638523
+          },
+          {
+            "label": "費用計上時期と費用水準の変化",
+            "formula": "q4_total_cost-bull_total_cost",
+            "reason": "直前Qの費用集中からの反動と対象Qの費用下側条件。",
+            "amount": 350.9520259103638
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデルの総費用差を全額表示。残差ゼロは各費用仮定の確実性を意味しない。"
+      }
+    ],
+    "issues": [
+      "11月12日の出雲市蓄電所開示および10月28日提出の有価証券報告書は保存原文がなく、対象Qの収益・償却確認には使用していない。",
+      "AS実効稼働量倍率は公表運開容量と市場参入待ちを使った仮定。直前Q平均EPRX容量がなく、容量当たり収益を直接検証できない。",
+      "S06の調整後販管費は制度対応費等の期間配分を変更した管理値。会計上の修正再表示ではなく、累計実績の差引きには使用していない。",
+      "S07 PDF page 3の直前Q電力量と、S07 PDF page 23・S11 Sheet P.6の電力量には差がある。数量基準はS11の728GWh・190GWhに統一し、差の原因は未確認。丸め差と断定していない。",
+      "S11 Sheet P.5 M10のその他事業売上キャッシュ値は短信累計差引きと一致しない。S11には他にも疑わしい数値・注記があり、比較連結実績はS03・S04・S05を優先した。",
+      "S11はSheet P.8途中で短縮されており、後続グラフ・免責事項等は未確認。S08はPDF page 51以降が短縮され、残りの資料範囲は未確認。",
+      "S12は会社作成資料の転載原文。公式直接URLは未確認であり、11月4日の取扱量を10月末実績とは扱っていない。",
+      "discoveryではS11本文未取得とあるが、今回提示されたdocumentsにはセル本文があるため、その提示範囲は確認済みとした。取得時点と基準日時後の差し替え有無は未確認。",
+      "基準日時までの会社予想修正・重要開示の網羅性は未確認。9月公表予想が現在も最新であるとは確定していない。",
+      "増減要因の合計不一致: base/qoq/operating_profit",
+      "増減要因の合計不一致: base/qoq/revenue",
+      "増減要因の合計不一致: bear/qoq/operating_profit",
+      "増減要因の合計不一致: bear/qoq/revenue",
+      "増減要因の合計不一致: bull/qoq/operating_profit",
+      "増減要因の合計不一致: bull/qoq/revenue",
+      "売上原価は直前Q実績を両PF電力量で近似しているが、連結原価には他事業費用も含む。原価の数量感応度と追加AS原価率は独自仮定であり、営業利益予測の主要な限界。",
+      "対象決算は提示されたdiscoveryで未発表とされるが、保存原文だけでは未発表状況の網羅的確認はできない。",
+      "直前累計不足: 2026-07-31",
+      "経常利益は借入残高だけでは金利・手数料・計上時期を十分に説明できずnull。純利益も税率見積りと通期調整の不確実性からnull。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures",
+      "追加償却費は対象Qの資産別明細がなく条件設定にとどまる。AM収益の本格化と費用先行の組合せは未確認。",
+      "電力精算のシナリオ幅は過去実績に基づく条件設定であり、対象Qの市場データによる推定区間ではない。損失を含む範囲外の着地も排除できない。",
+      "AIへ渡した原文に省略あり: S08,S11"
+    ],
+    "schedule_warnings": [
+      "2026年12月10日の決算発表日は提示された対象条件と第三者確認記録に依拠する。会社・取引所の具体的日付の保存原文はなく、公式日程は未確認。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -374.9938875072294,
+            "rate": -0.18697985097574127,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -576.9541380207681,
+            "rate": -0.54054467064044,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 79.94145698380544,
+            "rate": 0.03986049429493009,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -84.49967793682936,
+            "rate": -0.07916721203573815,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 493.4405624638521,
+            "rate": 0.24603985800461428,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 345.9995883742163,
+            "rate": 0.32416481868223684,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -374.9938875072294,
+        "explained_sum": -374.99388750722926,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.1368683772161603e-13,
+        "status": "passed",
+        "residual_explanation": "モデル上の全売上区分を包含。予測誤差がゼロという意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -376.10888750722904,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -576.9541380207681,
+        "explained_sum": -576.9541380207681,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "費用を売上原価と販管費の合計で比較するため表示内訳差を残差にしない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -79.67613802076835,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "モデルの総費用差を全額表示。個別費目への厳密な配賦は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 79.94145698380544,
+        "explained_sum": 79.94145698380567,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 78.82645698380588,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -84.49967793682936,
+        "explained_sum": -84.49967793682936,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 412.77832206317044,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "調整後販管費は比較実績に採用せず、短信の総費用を使用。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 493.4405624638521,
+        "explained_sum": 493.4405624638521,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 492.3255624638523,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "モデル上の全売上区分を包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 345.9995883742163,
+        "explained_sum": 345.9995883742163,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 843.2775883742161,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "モデルの総費用差を全額表示。残差ゼロは各費用仮定の確実性を意味しない。"
+      }
+    ],
+    "conditions": [
+      "ASの対象Q月次EPRX参入容量、約定率、サービス報酬率は原文未確認。",
+      "ancillary_revenue: 電力PF付帯収益と再エネPF証書等を合算。前年同Qの両事業の契約由来その他収益合計約99、直前Qも約106であり、共通条件として100とする。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9。",
+      "base_as_capacity_factor: 前期中の運開案件が対象Q中に順次収益化する条件。期後250MWを対象Q全期間の市場稼働容量に置き換えない。直前Q平均EPRX容量が未確認のため相対的な実効稼働量仮定とする。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+      "base_as_price_factor: 上限引下げに対し商品構成・約定条件・複数市場運用による部分的吸収を仮定。会社通期予想は計算に使用していないため制度影響の二重控除はない。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+      "base_avg_headcount: 7月末と11月初の人数の中間程度を期中平均相当とする。S12の従業員定義が従前と完全に同一かは未確認。出典：S06 PDF page 12、S12 PDF page 2。",
+      "base_incremental_depreciation: 新規AM設備の段階的稼働に伴う追加費用。前年の軽資産構造からの移行を織り込むが、通期の調整後EBITDA差額の四等分はしない。出典：S06 PDF pages 31、36、S09 PDF page 2 Q5。",
+      "base_other_sga: 前年同Qの調整後その他販管費を目安とし、広告継続・制度費用を含む対象Q計上額を独自仮定。通期や利益目標から逆算していない。出典：S06 PDF page 12。",
+      "base_power_price_factor: 主要更新時期を通過し、単価調整が緩やかになるという説明を踏まえ、直前Qから3%低下を仮定。出典：S09 PDF page 3 Q10、S10 PDF page 2。",
+      "base_power_volume: 容量比補正の約755GWhに営業強化と夏季需要の寄与を限定的に加えた中心条件。期末容量を期中平均と同一とはみなさない。出典：S06 PDF pages 18–21、S09 PDF page 3 Q13。",
+      "base_re_volume: 既存契約の稼働寄与と追加案件を限定的に織り込む。直前Qの春夏発電量190GWhをそのまま延長しない。出典：S06 PDF page 25、S11 Sheet P.6 U10。",
+      "base_settlement: 直前Qの両PF契約外収益差引額に近い条件。夏季に高かった前年同Qの全額再現は置かない。精算損益を契約容量に比例させない。出典：S03 PDF page 12、S05 PDF page 9、S10 PDF page 2。",
+      "bear_as_capacity_factor: 直前Q対比の収益稼働容量相当倍率。直前Q末EPRX参入100MWと運転開始165MW、その後の運開増加に対し3～5か月の参入待ちを考慮し、収益化が遅い条件。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+      "bear_as_price_factor: 9月からの上限価格15円から10円への引下げが強く波及。対象Qのうち2か月を新上限とする単純加重比率約0.778をストレスの参考にし、実現単価そのものとは区別。出典：S09 PDF page 3 Q11。",
+      "bear_avg_headcount: 7月末101人、11月1日114人を踏まえた費用上側の平均人員相当。実際の期中平均人数ではなく、採用時期・賃金上昇も含めた費用ストレス。出典：S06 PDF page 12、S12 PDF page 2。",
+      "bear_incremental_depreciation: 既存原価・販管費に含む従来償却とは別に、新規AM設備の追加償却を仮定。期末連系済4.2MWと建設仮勘定の大きさから早期稼働時の負担を置く。資産別耐用年数が未確認のため条件付き費用ストレス。出典：S03 PDF page 7、S06 PDF pages 31、35。",
+      "bear_other_sga: 非人件費販管費。前年同Q実績約289、調整後約370、直前Q調整後約435を参考に広告・制度対応等の負担が重い条件。調整後値は会計実績に置換せず仮定の目安に限定。出典：S08 PDF page 7、S06 PDF page 12。",
+      "bear_power_price_factor: 直前Qの電力PF実現手数料単価からさらに8%低下する条件。合算単価の直前Q低下幅8%をストレス幅の参考にするが、電力PF固有実績とは扱わない。出典：S06 PDF page 10、S10 PDF page 2。",
+      "bear_power_volume: 前年同Q取扱量651GWh、前年同Q末契約容量751MWに対し直近末871MW。前年同Qの負荷特性を容量比で補正した約755GWhを中心に、天候・解約・期中平均容量の不確実性を考慮した下側。出典：S08 PDF page 8、S06 PDF page 18。",
+      "bear_re_volume: 前年同Q127GWhと契約容量330MW、直近393MWを比較すると同季節負荷で約151GWh。これを下側条件とする。出典：S08 PDF page 8、S06 PDF page 25。",
+      "bear_settlement: 両PFの電力精算等の契約外収益合計。前年同Q約674、直前Q約458に対し市況悪化を置く条件付き下側。会社の保守的計画説明も参考とする。保証された下限ではない。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9、S09 PDF page 3 Q9。",
+      "bull_as_capacity_factor: 前期からの待機案件の市場参入・約定が順調な条件。新規運開案件の全量即時収益化は含めない。出典：S06 PDF page 29、S09 PDF page 3 Q12。",
+      "bull_as_price_factor: 上限価格が実現収益へ与える影響が限定される条件。市場商品別の実収益構成は未確認。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+      "bull_avg_headcount: 採用が期末寄りで費用発生が遅い条件。人員増自体は織り込む。出典：S06 PDF page 12、S12 PDF page 2。",
+      "bull_incremental_depreciation: 新規AM設備の本格稼働が対象Q後に偏る条件。ASの外部受託増加とは分離する。出典：S09 PDF pages 2–3 Q5、Q14。",
+      "bull_other_sga: 制度対応の計上集中がなく、広告投下効率が改善する条件。直近第3四半期調整後その他販管費約337を参考にする。出典：S06 PDF page 12。",
+      "bull_power_price_factor: ヘッジ商品・顧客維持施策により直前Q単価を維持する上側条件。値上げは仮定しない。出典：S06 PDF page 21、S10 PDF page 2。",
+      "bull_power_volume: 既存契約の通期寄与、夏季負荷、新規獲得が強い場合。前年同Qの単純成長率延長ではなく、直近契約基盤に対する負荷・稼働条件の上側。出典：S06 PDF pages 18–21。",
+      "bull_re_volume: 案件稼働と発電条件が良好な場合。マッチング成立容量を全量即時売上化せず、直前Q発電量を下回る範囲に設定。出典：S06 PDF page 25、S10 PDF page 2。",
+      "bull_settlement: 前年同Qに近い良好な精算環境が再現する上側条件。対象期市況を観測した推計ではない。出典：S04 PDF page 8、S10 PDF page 2。",
+      "incremental_as_cost_ratio: 既存AS費用を含む直前Q連結原価を土台とし、AS増収分に追加の直接運用費15%を置く。AS直前Q利益率約62%と運用基盤の拡張余地を参考にするが、公表限界原価率ではない。人件費は販管費で別途積算。出典：S07 PDF page 3、S06 PDF page 28。",
+      "人員の期中平均、賞与・広告・制度対応費用の対象Q計上額は原文未確認。",
+      "会社計画の取扱電力量等の内訳とセグメント別営業利益はS09で非開示と明記されている。",
+      "再エネ手数料単価は直前Q実現値を維持すると仮定し、契約構成変化による別の単価上昇は計上していない。",
+      "対象Qの取扱電力量、手数料単価、電力精算損益は原文未確認。",
+      "設備別運開日・償却開始日・耐用年数は原文未確認。追加償却は条件付き仮定。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "株式情報",
+        "url": "https://www.digitalgrid.com/ir/stock/overview/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:04:04+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "IRカレンダー",
+        "url": "https://www.digitalgrid.com/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:04:04+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）",
+        "url": "https://ssl4.eir-parts.net/doc/350A/tdnet/2883438/00.pdf",
+        "published_at": "2026-09-10",
+        "category": "latest_results",
+        "final_url": "https://ssl4.eir-parts.net/doc/350A/tdnet/2883438/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S03.txt",
+        "sha256": "f6b7a7f7fdb212c1742952b2d74b1b973af2c6bc7b29203d6c876f13039c701b",
+        "text_sha256": "fc27b42e244849b6846f3edb50f8f2998eb807ea00cf05b428df54c98791188b",
+        "retrieved_at": "2026-11-18T17:04:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17537,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（連結）（前年同期間）",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120251210517398.pdf",
+        "published_at": "2025-12-11",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120251210517398.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S04.txt",
+        "sha256": "3cd98646a5db18ddaf2e3d80ac4745a0655b4c84f9b2b440468d3dc6d747940d",
+        "text_sha256": "31923d7e362424f403dc001be0a7dbe975c777547379220c42cc674d45085bcb",
+        "retrieved_at": "2026-11-18T17:04:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9358,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（連結）（直前四半期の累計差分用）",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120260611567973.pdf",
+        "published_at": "2026-06-11",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120260611567973.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S05.txt",
+        "sha256": "0dd4225353ba9e7e517c46ee04a7e8e046eb3edbfaff883f054c1594977a1495",
+        "text_sha256": "d92b6707675a0885cfde8ff920b7d124a91ddcd7583ee617241b0493a2e0bd9c",
+        "retrieved_at": "2026-11-18T17:04:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10406,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年7月期通期決算説明資料（事業計画及び成長可能性に関する事項）_1",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120260910534347.pdf",
+        "published_at": "2026-09-10",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120260910534347.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S06.txt",
+        "sha256": "348f50ac8c0cc040ef956386ac19e0b3f09ebf10b09899012f433fdf2411e52c",
+        "text_sha256": "2f89e684cacbaea84ec5ea8b34bf256488b4d895860ee97a7fa2c1ea36642dd4",
+        "retrieved_at": "2026-11-18T17:04:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 23892,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年7月期通期決算説明資料（事業計画及び成長可能性に関する事項）_2",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120260910534400.pdf",
+        "published_at": "2026-09-10",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120260910534400.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S07.txt",
+        "sha256": "7be7fd6d2bc2fe3fde490ba219708444e92deaea1c10d272f4ce52d469e434ca",
+        "text_sha256": "418699079beef8d48a95649d7bceec029cb44b7a40d1a654ea3778e4ee01b88f",
+        "retrieved_at": "2026-11-18T17:04:11+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 28045,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年7月期 第1四半期決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120251211518193.pdf",
+        "published_at": "2025-12-11",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120251211518193.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S08.txt",
+        "sha256": "e827222e5aa8825bb47c160aa4f8c35e1dcf7c5874e88afd85ec7e588cae2363",
+        "text_sha256": "710740ff0b5627684176a6fa3fd71d3cd03895d5dc909cbc66ef8c9926a3106c",
+        "retrieved_at": "2026-11-18T17:04:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 48469,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "決算説明会のご質問とご回答（2026年7月期 通期）",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120260911535071.pdf",
+        "published_at": "2026-09-11",
+        "category": "qa",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120260911535071.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S09.txt",
+        "sha256": "8b16a4f86f848594a69720c0849be9d23abda1110926008974b9c53a45f65e88",
+        "text_sha256": "c9437e19936613bd8cc0a051f086da235b6d9ad98b21150dd51633e3e7b5a388",
+        "retrieved_at": "2026-11-18T17:04:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 4557,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "よくあるご質問とご回答（2026年5～7月）",
+        "url": "https://www2.jpx.co.jp/disc/350A0/140120260901530180.pdf",
+        "published_at": "2026-09-01",
+        "category": "qa",
+        "final_url": "https://www2.jpx.co.jp/disc/350A0/140120260901530180.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S10.txt",
+        "sha256": "59c27a77e070d52d687f61c1600d412d86ebffe563172862c9fb26d799680135",
+        "text_sha256": "381c8ac3cec4b0d69d24af56227f75e1d234dc77d0ecd53c191b2e5aad271e41",
+        "retrieved_at": "2026-11-18T17:04:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5645,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "DIGITAL GRID Investor Data Book Q4 and Full-Year FY2026",
+        "url": "https://files.microcms-assets.io/assets/8cbfc136d535410e87b6bbe09445ad39/8c7b9672242b4d1b8ba620e7e308dc82/DIGITAL%20GRID_Investor%20Data%20Book_Q4%20and%20Full-Year%20FY2026.xlsx",
+        "published_at": "2026-09-11",
+        "category": "kpi",
+        "final_url": "https://files.microcms-assets.io/assets/8cbfc136d535410e87b6bbe09445ad39/8c7b9672242b4d1b8ba620e7e308dc82/DIGITAL%20GRID_Investor%20Data%20Book_Q4%20and%20Full-Year%20FY2026.xlsx",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S11.xlsx",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S11.txt",
+        "sha256": "c9e4bdbbd92c4664336be241e1433e7d9e5a1077c4878e848fa9a4b85533ff51",
+        "text_sha256": "7ff135f50a7c19d47d16d7dace4ceb2c81a79e563418a9a9f29e3756419ea330",
+        "retrieved_at": "2026-11-18T17:04:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 52462,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "系統用蓄電池の取扱量が250MWを突破 約1カ月で50MW増加 全国9エリアに拡大（会社開示資料の転載PDF）",
+        "url": "https://kabuyoho-sls-disclose.ifis.co.jp/328/140120261105565054.pdf",
+        "published_at": "2026-11-05",
+        "category": "kpi",
+        "final_url": "https://kabuyoho-sls-disclose.ifis.co.jp/328/140120261105565054.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\350A\\sources\\S12.txt",
+        "sha256": "4372579097f70f1e46c28d2c0eecf5283fb662f4d66010280b596949fefe2d47",
+        "text_sha256": "3fef455b95d2dc65e5b282d0634bd7b2abf90b366fd3276fff8342f07f9c6fec",
+        "retrieved_at": "2026-11-18T17:04:16+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2092,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "決算・業績進捗情報（発表予定日の補助照合）",
+        "url": "https://kabuyoho.jp/sp/report?bcode=350A",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:04:16+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "350A",
+      "announcement_date": "2026-12-10",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_revenue",
+          "value": 2005.531,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 売上高"
+        },
+        {
+          "id": "py_op",
+          "value": 1067.357,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 営業利益"
+        },
+        {
+          "id": "py_fee",
+          "value": 1207.319,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8 DGP手数料収益合計"
+        },
+        {
+          "id": "fy_revenue",
+          "value": 7113.916,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 売上高"
+        },
+        {
+          "id": "fy_op",
+          "value": 3017.771,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 営業利益"
+        },
+        {
+          "id": "ytd_revenue",
+          "value": 5107.27,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7 当第3四半期累計売上高"
+        },
+        {
+          "id": "ytd_op",
+          "value": 2447.692,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7 当第3四半期累計営業利益"
+        },
+        {
+          "id": "fy_power_fee",
+          "value": 3881.714,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 12 電力PF・DGP手数料収益"
+        },
+        {
+          "id": "ytd_power_fee",
+          "value": 2898.124,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 電力PF・DGP手数料収益"
+        },
+        {
+          "id": "fy_re_fee",
+          "value": 632.679,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 12 再エネPF・DGP手数料収益"
+        },
+        {
+          "id": "ytd_re_fee",
+          "value": 434.311,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 再エネPF・DGP手数料収益"
+        },
+        {
+          "id": "q4_power_volume",
+          "value": 728,
+          "kind": "fact",
+          "unit": "GWh",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "Sheet P.6 U9。公表速報値、改訂可能性あり"
+        },
+        {
+          "id": "q4_re_volume",
+          "value": 190,
+          "kind": "fact",
+          "unit": "GWh",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "Sheet P.6 U10。公表速報値、改訂可能性あり"
+        },
+        {
+          "id": "q4_as_revenue",
+          "value": 253,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07",
+            "S11"
+          ],
+          "locator": "S07 PDF page 3 AS事業4Q売上高、S11 Sheet P.5 M11。百万円未満切捨て"
+        },
+        {
+          "id": "fy_cogs",
+          "value": 1320.356,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 売上原価"
+        },
+        {
+          "id": "ytd_cogs",
+          "value": 992.615,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7 当第3四半期累計売上原価"
+        },
+        {
+          "id": "py_personnel",
+          "value": 284,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 7 第1四半期人件費。百万円未満切捨て"
+        },
+        {
+          "id": "py_headcount",
+          "value": 84,
+          "kind": "fact",
+          "unit": "人",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 7 2025年10月末人員。役員・臨時雇用を除く"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 7967,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 2865,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 2394,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 1673,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 親会社株主に帰属する当期純利益予想"
+        },
+        {
+          "id": "bear_power_volume",
+          "value": 730,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "前年同Q取扱量651GWh、前年同Q末契約容量751MWに対し直近末871MW。前年同Qの負荷特性を容量比で補正した約755GWhを中心に、天候・解約・期中平均容量の不確実性を考慮した下側。出典：S08 PDF page 8、S06 PDF page 18。",
+          "sensitivity": "10GWh変化で電力PF手数料売上が10×採用手数料単価だけ変化。",
+          "material": true
+        },
+        {
+          "id": "base_power_volume",
+          "value": 770,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "容量比補正の約755GWhに営業強化と夏季需要の寄与を限定的に加えた中心条件。期末容量を期中平均と同一とはみなさない。出典：S06 PDF pages 18–21、S09 PDF page 3 Q13。",
+          "sensitivity": "10GWh変化で電力PF手数料売上が10×採用手数料単価だけ変化。",
+          "material": true
+        },
+        {
+          "id": "bull_power_volume",
+          "value": 810,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "既存契約の通期寄与、夏季負荷、新規獲得が強い場合。前年同Qの単純成長率延長ではなく、直近契約基盤に対する負荷・稼働条件の上側。出典：S06 PDF pages 18–21。",
+          "sensitivity": "10GWh変化で電力PF手数料売上が10×採用手数料単価だけ変化。",
+          "material": true
+        },
+        {
+          "id": "bear_power_price_factor",
+          "value": 0.92,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "直前Qの電力PF実現手数料単価からさらに8%低下する条件。合算単価の直前Q低下幅8%をストレス幅の参考にするが、電力PF固有実績とは扱わない。出典：S06 PDF page 10、S10 PDF page 2。",
+          "sensitivity": "係数0.01上昇で売上は対象電力量×q4_power_price×0.01増加。",
+          "material": true
+        },
+        {
+          "id": "base_power_price_factor",
+          "value": 0.97,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "主要更新時期を通過し、単価調整が緩やかになるという説明を踏まえ、直前Qから3%低下を仮定。出典：S09 PDF page 3 Q10、S10 PDF page 2。",
+          "sensitivity": "係数0.01上昇で売上は対象電力量×q4_power_price×0.01増加。",
+          "material": true
+        },
+        {
+          "id": "bull_power_price_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "ヘッジ商品・顧客維持施策により直前Q単価を維持する上側条件。値上げは仮定しない。出典：S06 PDF page 21、S10 PDF page 2。",
+          "sensitivity": "係数0.01低下で売上は対象電力量×q4_power_price×0.01減少。",
+          "material": true
+        },
+        {
+          "id": "bear_re_volume",
+          "value": 150,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "前年同Q127GWhと契約容量330MW、直近393MWを比較すると同季節負荷で約151GWh。これを下側条件とする。出典：S08 PDF page 8、S06 PDF page 25。",
+          "sensitivity": "10GWh変化で売上は10×q4_re_price変化。",
+          "material": true
+        },
+        {
+          "id": "base_re_volume",
+          "value": 165,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "既存契約の稼働寄与と追加案件を限定的に織り込む。直前Qの春夏発電量190GWhをそのまま延長しない。出典：S06 PDF page 25、S11 Sheet P.6 U10。",
+          "sensitivity": "10GWh変化で売上は10×q4_re_price変化。",
+          "material": true
+        },
+        {
+          "id": "bull_re_volume",
+          "value": 180,
+          "kind": "assumption",
+          "unit": "GWh",
+          "rationale": "案件稼働と発電条件が良好な場合。マッチング成立容量を全量即時売上化せず、直前Q発電量を下回る範囲に設定。出典：S06 PDF page 25、S10 PDF page 2。",
+          "sensitivity": "10GWh変化で売上は10×q4_re_price変化。",
+          "material": true
+        },
+        {
+          "id": "ancillary_revenue",
+          "value": 100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "電力PF付帯収益と再エネPF証書等を合算。前年同Qの両事業の契約由来その他収益合計約99、直前Qも約106であり、共通条件として100とする。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9。",
+          "sensitivity": "20増減すると売上が20増減。費用連動は別途検討が必要。",
+          "material": true
+        },
+        {
+          "id": "bear_settlement",
+          "value": 200,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "両PFの電力精算等の契約外収益合計。前年同Q約674、直前Q約458に対し市況悪化を置く条件付き下側。会社の保守的計画説明も参考とする。保証された下限ではない。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9、S09 PDF page 3 Q9。",
+          "sensitivity": "100増減すると売上・営業利益が各100増減。他条件一定。",
+          "material": true
+        },
+        {
+          "id": "base_settlement",
+          "value": 450,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前Qの両PF契約外収益差引額に近い条件。夏季に高かった前年同Qの全額再現は置かない。精算損益を契約容量に比例させない。出典：S03 PDF page 12、S05 PDF page 9、S10 PDF page 2。",
+          "sensitivity": "100増減すると売上・営業利益が各100増減。他条件一定。",
+          "material": true
+        },
+        {
+          "id": "bull_settlement",
+          "value": 650,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同Qに近い良好な精算環境が再現する上側条件。対象期市況を観測した推計ではない。出典：S04 PDF page 8、S10 PDF page 2。",
+          "sensitivity": "100増減すると売上・営業利益が各100増減。他条件一定。",
+          "material": true
+        },
+        {
+          "id": "bear_as_capacity_factor",
+          "value": 1.3,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "直前Q対比の収益稼働容量相当倍率。直前Q末EPRX参入100MWと運転開始165MW、その後の運開増加に対し3～5か月の参入待ちを考慮し、収益化が遅い条件。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+          "sensitivity": "倍率0.1変化でAS売上はq4_as_revenue×採用単価係数×0.1変化。",
+          "material": true
+        },
+        {
+          "id": "base_as_capacity_factor",
+          "value": 1.6,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前期中の運開案件が対象Q中に順次収益化する条件。期後250MWを対象Q全期間の市場稼働容量に置き換えない。直前Q平均EPRX容量が未確認のため相対的な実効稼働量仮定とする。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+          "sensitivity": "倍率0.1変化でAS売上はq4_as_revenue×採用単価係数×0.1変化。",
+          "material": true
+        },
+        {
+          "id": "bull_as_capacity_factor",
+          "value": 1.9,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前期からの待機案件の市場参入・約定が順調な条件。新規運開案件の全量即時収益化は含めない。出典：S06 PDF page 29、S09 PDF page 3 Q12。",
+          "sensitivity": "倍率0.1変化でAS売上はq4_as_revenue×採用単価係数×0.1変化。",
+          "material": true
+        },
+        {
+          "id": "bear_as_price_factor",
+          "value": 0.78,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "9月からの上限価格15円から10円への引下げが強く波及。対象Qのうち2か月を新上限とする単純加重比率約0.778をストレスの参考にし、実現単価そのものとは区別。出典：S09 PDF page 3 Q11。",
+          "sensitivity": "係数0.05変化でAS売上はq4_as_revenue×採用容量倍率×0.05変化。",
+          "material": true
+        },
+        {
+          "id": "base_as_price_factor",
+          "value": 0.85,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "上限引下げに対し商品構成・約定条件・複数市場運用による部分的吸収を仮定。会社通期予想は計算に使用していないため制度影響の二重控除はない。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+          "sensitivity": "係数0.05変化でAS売上はq4_as_revenue×採用容量倍率×0.05変化。",
+          "material": true
+        },
+        {
+          "id": "bull_as_price_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "上限価格が実現収益へ与える影響が限定される条件。市場商品別の実収益構成は未確認。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+          "sensitivity": "係数0.05変化でAS売上はq4_as_revenue×採用容量倍率×0.05変化。",
+          "material": true
+        },
+        {
+          "id": "other_revenue",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "AS以外のその他事業は直前Q売上約7を基礎に小幅寄与のみ仮定。AMの年間稼働予定を初四半期に前倒ししない。出典：S07 PDF page 3、S06 PDF page 31。",
+          "sensitivity": "10増減すると連結売上が10増減。",
+          "material": false
+        },
+        {
+          "id": "incremental_as_cost_ratio",
+          "value": 0.15,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "既存AS費用を含む直前Q連結原価を土台とし、AS増収分に追加の直接運用費15%を置く。AS直前Q利益率約62%と運用基盤の拡張余地を参考にするが、公表限界原価率ではない。人件費は販管費で別途積算。出典：S07 PDF page 3、S06 PDF page 28。",
+          "sensitivity": "係数0.10上昇で営業利益はAS増収分の10%減少。",
+          "material": true
+        },
+        {
+          "id": "bear_avg_headcount",
+          "value": 114,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "7月末101人、11月1日114人を踏まえた費用上側の平均人員相当。実際の期中平均人数ではなく、採用時期・賃金上昇も含めた費用ストレス。出典：S06 PDF page 12、S12 PDF page 2。",
+          "sensitivity": "1人相当増加で営業利益はpy_personnel/py_headcount減少。",
+          "material": true
+        },
+        {
+          "id": "base_avg_headcount",
+          "value": 108,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "7月末と11月初の人数の中間程度を期中平均相当とする。S12の従業員定義が従前と完全に同一かは未確認。出典：S06 PDF page 12、S12 PDF page 2。",
+          "sensitivity": "1人相当増加で営業利益はpy_personnel/py_headcount減少。",
+          "material": true
+        },
+        {
+          "id": "bull_avg_headcount",
+          "value": 104,
+          "kind": "assumption",
+          "unit": "人",
+          "rationale": "採用が期末寄りで費用発生が遅い条件。人員増自体は織り込む。出典：S06 PDF page 12、S12 PDF page 2。",
+          "sensitivity": "1人相当増加で営業利益はpy_personnel/py_headcount減少。",
+          "material": true
+        },
+        {
+          "id": "bear_other_sga",
+          "value": 410,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "非人件費販管費。前年同Q実績約289、調整後約370、直前Q調整後約435を参考に広告・制度対応等の負担が重い条件。調整後値は会計実績に置換せず仮定の目安に限定。出典：S08 PDF page 7、S06 PDF page 12。",
+          "sensitivity": "50増加で営業利益が50減少。",
+          "material": true
+        },
+        {
+          "id": "base_other_sga",
+          "value": 370,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同Qの調整後その他販管費を目安とし、広告継続・制度費用を含む対象Q計上額を独自仮定。通期や利益目標から逆算していない。出典：S06 PDF page 12。",
+          "sensitivity": "50増加で営業利益が50減少。",
+          "material": true
+        },
+        {
+          "id": "bull_other_sga",
+          "value": 340,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "制度対応の計上集中がなく、広告投下効率が改善する条件。直近第3四半期調整後その他販管費約337を参考にする。出典：S06 PDF page 12。",
+          "sensitivity": "50増加で営業利益が50減少。",
+          "material": true
+        },
+        {
+          "id": "bear_incremental_depreciation",
+          "value": 30,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "既存原価・販管費に含む従来償却とは別に、新規AM設備の追加償却を仮定。期末連系済4.2MWと建設仮勘定の大きさから早期稼働時の負担を置く。資産別耐用年数が未確認のため条件付き費用ストレス。出典：S03 PDF page 7、S06 PDF pages 31、35。",
+          "sensitivity": "追加償却10増加で営業利益が10減少。",
+          "material": true
+        },
+        {
+          "id": "base_incremental_depreciation",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "新規AM設備の段階的稼働に伴う追加費用。前年の軽資産構造からの移行を織り込むが、通期の調整後EBITDA差額の四等分はしない。出典：S06 PDF pages 31、36、S09 PDF page 2 Q5。",
+          "sensitivity": "追加償却10増加で営業利益が10減少。",
+          "material": true
+        },
+        {
+          "id": "bull_incremental_depreciation",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "新規AM設備の本格稼働が対象Q後に偏る条件。ASの外部受託増加とは分離する。出典：S09 PDF pages 2–3 Q5、Q14。",
+          "sensitivity": "追加償却10増加で営業利益が10減少。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "q4_revenue",
+          "formula": "fy_revenue-ytd_revenue"
+        },
+        {
+          "id": "q4_op",
+          "formula": "fy_op-ytd_op"
+        },
+        {
+          "id": "q4_power_fee",
+          "formula": "fy_power_fee-ytd_power_fee"
+        },
+        {
+          "id": "q4_re_fee",
+          "formula": "fy_re_fee-ytd_re_fee"
+        },
+        {
+          "id": "q4_fee",
+          "formula": "q4_power_fee+q4_re_fee"
+        },
+        {
+          "id": "q4_power_price",
+          "formula": "q4_power_fee/q4_power_volume"
+        },
+        {
+          "id": "q4_re_price",
+          "formula": "q4_re_fee/q4_re_volume"
+        },
+        {
+          "id": "q4_cogs",
+          "formula": "fy_cogs-ytd_cogs"
+        },
+        {
+          "id": "q4_total_cost",
+          "formula": "q4_revenue-q4_op"
+        },
+        {
+          "id": "py_total_cost",
+          "formula": "py_revenue-py_op"
+        },
+        {
+          "id": "q4_nonfee",
+          "formula": "q4_revenue-q4_fee"
+        },
+        {
+          "id": "py_nonfee",
+          "formula": "py_revenue-py_fee"
+        },
+        {
+          "id": "bear_power_fee",
+          "formula": "bear_power_volume*q4_power_price*bear_power_price_factor"
+        },
+        {
+          "id": "base_power_fee",
+          "formula": "base_power_volume*q4_power_price*base_power_price_factor"
+        },
+        {
+          "id": "bull_power_fee",
+          "formula": "bull_power_volume*q4_power_price*bull_power_price_factor"
+        },
+        {
+          "id": "bear_re_fee",
+          "formula": "bear_re_volume*q4_re_price"
+        },
+        {
+          "id": "base_re_fee",
+          "formula": "base_re_volume*q4_re_price"
+        },
+        {
+          "id": "bull_re_fee",
+          "formula": "bull_re_volume*q4_re_price"
+        },
+        {
+          "id": "bear_fee",
+          "formula": "bear_power_fee+bear_re_fee"
+        },
+        {
+          "id": "base_fee",
+          "formula": "base_power_fee+base_re_fee"
+        },
+        {
+          "id": "bull_fee",
+          "formula": "bull_power_fee+bull_re_fee"
+        },
+        {
+          "id": "bear_as_revenue",
+          "formula": "q4_as_revenue*bear_as_capacity_factor*bear_as_price_factor"
+        },
+        {
+          "id": "base_as_revenue",
+          "formula": "q4_as_revenue*base_as_capacity_factor*base_as_price_factor"
+        },
+        {
+          "id": "bull_as_revenue",
+          "formula": "q4_as_revenue*bull_as_capacity_factor*bull_as_price_factor"
+        },
+        {
+          "id": "bear_nonfee",
+          "formula": "ancillary_revenue+bear_settlement+bear_as_revenue+other_revenue"
+        },
+        {
+          "id": "base_nonfee",
+          "formula": "ancillary_revenue+base_settlement+base_as_revenue+other_revenue"
+        },
+        {
+          "id": "bull_nonfee",
+          "formula": "ancillary_revenue+bull_settlement+bull_as_revenue+other_revenue"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_fee+bear_nonfee"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_fee+base_nonfee"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_fee+bull_nonfee"
+        },
+        {
+          "id": "bear_cogs",
+          "formula": "q4_cogs*(bear_power_volume+bear_re_volume)/(q4_power_volume+q4_re_volume)+(bear_as_revenue-q4_as_revenue)*incremental_as_cost_ratio"
+        },
+        {
+          "id": "base_cogs",
+          "formula": "q4_cogs*(base_power_volume+base_re_volume)/(q4_power_volume+q4_re_volume)+(base_as_revenue-q4_as_revenue)*incremental_as_cost_ratio"
+        },
+        {
+          "id": "bull_cogs",
+          "formula": "q4_cogs*(bull_power_volume+bull_re_volume)/(q4_power_volume+q4_re_volume)+(bull_as_revenue-q4_as_revenue)*incremental_as_cost_ratio"
+        },
+        {
+          "id": "bear_personnel",
+          "formula": "py_personnel*bear_avg_headcount/py_headcount"
+        },
+        {
+          "id": "base_personnel",
+          "formula": "py_personnel*base_avg_headcount/py_headcount"
+        },
+        {
+          "id": "bull_personnel",
+          "formula": "py_personnel*bull_avg_headcount/py_headcount"
+        },
+        {
+          "id": "bear_total_cost",
+          "formula": "bear_cogs+bear_personnel+bear_other_sga+bear_incremental_depreciation"
+        },
+        {
+          "id": "base_total_cost",
+          "formula": "base_cogs+base_personnel+base_other_sga+base_incremental_depreciation"
+        },
+        {
+          "id": "bull_total_cost",
+          "formula": "bull_cogs+bull_personnel+bull_other_sga+bull_incremental_depreciation"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_total_cost"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_total_cost"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_total_cost"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電力PFのDGP手数料",
+              "revenue": "bear_power_fee"
+            },
+            {
+              "name": "再エネPFのDGP手数料",
+              "revenue": "bear_re_fee"
+            },
+            {
+              "name": "両PFの付帯契約・証書等",
+              "revenue": "ancillary_revenue"
+            },
+            {
+              "name": "両PFの電力精算等",
+              "revenue": "bear_settlement"
+            },
+            {
+              "name": "AS事業",
+              "revenue": "bear_as_revenue"
+            },
+            {
+              "name": "AS以外のその他事業",
+              "revenue": "other_revenue"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電力PFのDGP手数料",
+              "revenue": "base_power_fee"
+            },
+            {
+              "name": "再エネPFのDGP手数料",
+              "revenue": "base_re_fee"
+            },
+            {
+              "name": "両PFの付帯契約・証書等",
+              "revenue": "ancillary_revenue"
+            },
+            {
+              "name": "両PFの電力精算等",
+              "revenue": "base_settlement"
+            },
+            {
+              "name": "AS事業",
+              "revenue": "base_as_revenue"
+            },
+            {
+              "name": "AS以外のその他事業",
+              "revenue": "other_revenue"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電力PFのDGP手数料",
+              "revenue": "bull_power_fee"
+            },
+            {
+              "name": "再エネPFのDGP手数料",
+              "revenue": "bull_re_fee"
+            },
+            {
+              "name": "両PFの付帯契約・証書等",
+              "revenue": "ancillary_revenue"
+            },
+            {
+              "name": "両PFの電力精算等",
+              "revenue": "bull_settlement"
+            },
+            {
+              "name": "AS事業",
+              "revenue": "bull_as_revenue"
+            },
+            {
+              "name": "AS以外のその他事業",
+              "revenue": "other_revenue"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 2005.531,
+          "operating_profit": 1067.357,
+          "ordinary_profit": 1066.76,
+          "net_profit": 791.484,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "短信公表値・会計方針変更および修正再表示なし。調整後販管費への置換なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2、7"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 5107.27,
+          "operating_profit": 2447.692,
+          "ordinary_profit": 2551.286,
+          "net_profit": 1871.97,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "短信公表値・会計方針変更および修正再表示なし。通期短信と同じ会計方針の累計として採用",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 2、7"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 7113.916,
+          "operating_profit": 3017.771,
+          "ordinary_profit": 2909.525,
+          "net_profit": 2037.673,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "短信公表値・会計方針変更および修正再表示なし。第3四半期短信と同じ会計方針の累計として採用",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2、8"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "電力PFの契約基盤・需要量・手数料単価",
+          "mechanism": "春の新規契約の継続寄与と夏季負荷で電力量が増加する一方、競争に伴う単価調整が手数料収益を抑える。",
+          "source_ids": [
+            "S06",
+            "S09",
+            "S10"
+          ],
+          "locator": "S06 PDF pages 10、18–21、S09 PDF page 3 Q9–Q13、S10 PDF page 2",
+          "calculation_ids": [
+            "bear_power_fee",
+            "base_power_fee",
+            "bull_power_fee"
+          ],
+          "not_quantified_reason": "対象Qの月次契約容量と実現単価は未確認。数量・単価を独立した条件として設定。"
+        },
+        {
+          "name": "再エネPFの発電量と長期契約",
+          "mechanism": "既存案件の稼働寄与と契約容量増加を反映し、季節性を考慮した発電量に直前Q手数料単価を適用。",
+          "source_ids": [
+            "S06",
+            "S08"
+          ],
+          "locator": "S06 PDF page 25、S08 PDF pages 8、19",
+          "calculation_ids": [
+            "bear_re_fee",
+            "base_re_fee",
+            "bull_re_fee"
+          ],
+          "not_quantified_reason": "案件別運開日、発電実績、サービス構成別単価は未確認。単価維持は独自仮定。"
+        },
+        {
+          "name": "一般送配電事業者との電力精算",
+          "mechanism": "調達価格とインバランス精算等により変動し、契約容量の増加と独立して売上・利益を左右する。",
+          "source_ids": [
+            "S03",
+            "S09",
+            "S10"
+          ],
+          "locator": "S03 PDF page 12 注4、S09 PDF page 3 Q9、S10 PDF page 2",
+          "calculation_ids": [
+            "bear_nonfee",
+            "base_nonfee",
+            "bull_nonfee"
+          ],
+          "not_quantified_reason": "過去実績を参照した条件幅であり、対象Qの市況・精算データから確率的な範囲は推定できない。"
+        },
+        {
+          "name": "ASの市場参入待ちと価格上限変更",
+          "mechanism": "運開済容量の増加が審査・テスト後に収益化する。実効稼働量の拡大と単価低下を別々に計算。",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S09",
+            "S12"
+          ],
+          "locator": "S06 PDF page 29、S07 PDF page 33、S09 PDF page 3 Q11–Q14、S12 PDF page 1",
+          "calculation_ids": [
+            "bear_as_revenue",
+            "base_as_revenue",
+            "bull_as_revenue"
+          ],
+          "not_quantified_reason": "月次EPRX参入容量、約定率、報酬率の原文数値は未確認。"
+        },
+        {
+          "name": "人員増加・広告等の費用・設備稼働",
+          "mechanism": "人員相当数から人件費を積算し、非人件費販管費と追加償却を別建てする。既存原価は取扱電力量で近似し、AS追加運用費を加算。",
+          "source_ids": [
+            "S03",
+            "S06",
+            "S08",
+            "S12"
+          ],
+          "locator": "S03 PDF pages 7–8、S06 PDF pages 12、31、36、S08 PDF page 7、S12 PDF page 2",
+          "calculation_ids": [
+            "bear_total_cost",
+            "base_total_cost",
+            "bull_total_cost"
+          ],
+          "not_quantified_reason": "連結原価を全て電力量比例とする部分は簡略化。セグメント別原価構造・設備償却開始日が未確認で、営業利益の信頼度は売上より低い。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "bear_fee-py_fee",
+              "reason": "電力PFと再エネPFを別々に数量×単価で積算した差。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "bear_nonfee-py_nonfee",
+              "reason": "精算減少とAS稼働増加等の条件付き純効果。前年の比較額は連結売上からDGP手数料を控除。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。予測誤差がゼロという意味ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "bear_fee-q4_fee",
+              "reason": "季節性と単価調整を反映。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "bear_nonfee-q4_nonfee",
+              "reason": "精算条件の悪化と市場参入待ちを含むAS増収の純効果。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "bear_revenue-py_revenue",
+              "reason": "対応する売上ブリッジと同じ数量・価格・収益構成。"
+            },
+            {
+              "label": "原価・人件費・その他販管費・追加償却の変化",
+              "formula": "py_total_cost-bear_total_cost",
+              "reason": "前年実績総費用に対し、個別費用仮定を積算した費用上側条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用を売上原価と販管費の合計で比較するため表示内訳差を残差にしない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "bear_revenue-q4_revenue",
+              "reason": "対応する売上ブリッジと一致。"
+            },
+            {
+              "label": "費用計上時期と費用水準の変化",
+              "formula": "q4_total_cost-bear_total_cost",
+              "reason": "直前Qに集中した販管費からの減少と、人員増・追加償却を合算。集中費用の全額消失は仮定しない。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデルの総費用差を全額表示。個別費目への厳密な配賦は未確認。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "base_fee-py_fee",
+              "reason": "電力PFの容量増と単価低下、再エネの発電量増を積算。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "base_nonfee-py_nonfee",
+              "reason": "前年の高い精算収益からの反動とAS成長の純効果。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "base_fee-q4_fee",
+              "reason": "需要家電力量の増加と再エネ発電の季節性、手数料単価調整を反映。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "base_nonfee-q4_nonfee",
+              "reason": "精算は直前Qに近い条件、ASは参入容量増と上限価格低下の純効果。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "base_revenue-py_revenue",
+              "reason": "対応する売上ブリッジと一致。"
+            },
+            {
+              "label": "原価・人件費・その他販管費・追加償却の変化",
+              "formula": "py_total_cost-base_total_cost",
+              "reason": "人員増、広告・制度対応費、設備稼働を個別に設定した費用増減。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "base_revenue-q4_revenue",
+              "reason": "対応する売上ブリッジと一致。"
+            },
+            {
+              "label": "費用計上時期と費用水準の変化",
+              "formula": "q4_total_cost-base_total_cost",
+              "reason": "直前Qの販管費集中からの反動を費目別仮定で表現し、人員増・追加償却を含める。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "調整後販管費は比較実績に採用せず、短信の総費用を使用。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "bull_fee-py_fee",
+              "reason": "数量増加と直前Q単価維持の条件。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "bull_nonfee-py_nonfee",
+              "reason": "良好な精算環境とAS市場参入の進展を反映。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "DGP手数料の数量・単価・構成変化",
+              "formula": "bull_fee-q4_fee",
+              "reason": "電力需要増と再エネ発電量の季節性を反映。"
+            },
+            {
+              "label": "精算・付帯収益・AS・その他の合計変化",
+              "formula": "bull_nonfee-q4_nonfee",
+              "reason": "精算環境改善とAS実効稼働量増加の純効果。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の全売上区分を包含。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "bull_revenue-py_revenue",
+              "reason": "対応する売上ブリッジと一致。"
+            },
+            {
+              "label": "原価・人件費・その他販管費・追加償却の変化",
+              "formula": "py_total_cost-bull_total_cost",
+              "reason": "数量増による原価増を含め、採用・設備稼働の費用発生が遅い条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "売上差と総費用差で営業利益差を完全に分解。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "積上げ売上の変化",
+              "formula": "bull_revenue-q4_revenue",
+              "reason": "対応する売上ブリッジと一致。"
+            },
+            {
+              "label": "費用計上時期と費用水準の変化",
+              "formula": "q4_total_cost-bull_total_cost",
+              "reason": "直前Qの費用集中からの反動と対象Qの費用下側条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデルの総費用差を全額表示。残差ゼロは各費用仮定の確実性を意味しない。"
+        }
+      ],
+      "company_guidance": "保存原文で確認できる対象年度の会社予想は2027年7月期通期の連結予想。対象第1四半期単独予想は提示原文では確認できない。会社は電力精算収益を保守的に計画し、ASの価格上限引下げを既に織り込んでいる。期後修正の網羅性が未確認のため、guidance_recordsの最新性はunverifiedとした。",
+      "consensus": "未確認。提示資料に対象四半期の公表市場コンセンサス数値はない。",
+      "independent_forecast": "取扱電力量×実現手数料単価、PF付帯収益、電力精算、ASの実効稼働量×単価、その他収益を合算した独自の条件付き予測。費用は直前原価、前年同季節の人件費、人員相当数、非人件費販管費、追加償却から積算した。会社通期予想の四等分や差引き推計ではない。シナリオは確率区間ではなく、精算・AS稼働・費用計上に条件を置いた低信頼度の感応度予測。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き予測",
+          "text": "中心ケースの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気では売上{{value:bear_revenue}}・営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}・営業利益{{value:bull_op}}となる。電力精算収益と費用計上時期への依存が大きく、中心ケースを確定的な着地予想とは扱わない。"
+        },
+        {
+          "heading": "契約基盤と収益化の時間差",
+          "text": "電力PFは春に獲得した契約の寄与が続く一方、単価調整が数量増の効果を抑える。再エネは長期契約が支えるが発電量には季節性がある。ASは運開容量の増加が先行し、市場参入と収益認識には時間差があるため、期後の運開容量を対象四半期全期間に適用していない。"
+        },
+        {
+          "heading": "比較上の注意",
+          "text": "前年同四半期は電力精算収益が高く、直前四半期は販管費の集中で営業利益が抑えられていた。中心ケースは前年同四半期に対して費用増が重く、直前四半期に対しては費用集中の反動が利益を支える構図になる。調整後販管費を短信実績に混ぜず、比較基準は同じ連結会計実績に統一した。"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "会社通期売上予想は{{value:guidance_revenue}}、営業利益予想は{{value:guidance_op}}。独自予測では会社計画から対象四半期を割り出さず、ASの制度変更を実績基準の単価仮定に一度だけ反映した。借入費用・税金の対象四半期計上を説明できないため、経常利益と純利益は予測していない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象Qの取扱電力量、手数料単価、電力精算損益は原文未確認。",
+        "会社計画の取扱電力量等の内訳とセグメント別営業利益はS09で非開示と明記されている。",
+        "ASの対象Q月次EPRX参入容量、約定率、サービス報酬率は原文未確認。",
+        "人員の期中平均、賞与・広告・制度対応費用の対象Q計上額は原文未確認。",
+        "設備別運開日・償却開始日・耐用年数は原文未確認。追加償却は条件付き仮定。",
+        "再エネ手数料単価は直前Q実現値を維持すると仮定し、契約構成変化による別の単価上昇は計上していない。"
+      ],
+      "material_unresolved": [
+        "2026年12月10日の決算発表日は提示された対象条件と第三者確認記録に依拠する。会社・取引所の具体的日付の保存原文はなく、公式日程は未確認。",
+        "対象決算は提示されたdiscoveryで未発表とされるが、保存原文だけでは未発表状況の網羅的確認はできない。",
+        "基準日時までの会社予想修正・重要開示の網羅性は未確認。9月公表予想が現在も最新であるとは確定していない。",
+        "電力精算のシナリオ幅は過去実績に基づく条件設定であり、対象Qの市場データによる推定区間ではない。損失を含む範囲外の着地も排除できない。",
+        "AS実効稼働量倍率は公表運開容量と市場参入待ちを使った仮定。直前Q平均EPRX容量がなく、容量当たり収益を直接検証できない。",
+        "売上原価は直前Q実績を両PF電力量で近似しているが、連結原価には他事業費用も含む。原価の数量感応度と追加AS原価率は独自仮定であり、営業利益予測の主要な限界。",
+        "追加償却費は対象Qの資産別明細がなく条件設定にとどまる。AM収益の本格化と費用先行の組合せは未確認。",
+        "S06の調整後販管費は制度対応費等の期間配分を変更した管理値。会計上の修正再表示ではなく、累計実績の差引きには使用していない。",
+        "S07 PDF page 3の直前Q電力量と、S07 PDF page 23・S11 Sheet P.6の電力量には差がある。数量基準はS11の728GWh・190GWhに統一し、差の原因は未確認。丸め差と断定していない。",
+        "S11 Sheet P.5 M10のその他事業売上キャッシュ値は短信累計差引きと一致しない。S11には他にも疑わしい数値・注記があり、比較連結実績はS03・S04・S05を優先した。",
+        "discoveryではS11本文未取得とあるが、今回提示されたdocumentsにはセル本文があるため、その提示範囲は確認済みとした。取得時点と基準日時後の差し替え有無は未確認。",
+        "S11はSheet P.8途中で短縮されており、後続グラフ・免責事項等は未確認。S08はPDF page 51以降が短縮され、残りの資料範囲は未確認。",
+        "S12は会社作成資料の転載原文。公式直接URLは未確認であり、11月4日の取扱量を10月末実績とは扱っていない。",
+        "11月12日の出雲市蓄電所開示および10月28日提出の有価証券報告書は保存原文がなく、対象Qの収益・償却確認には使用していない。",
+        "経常利益は借入残高だけでは金利・手数料・計上時期を十分に説明できずnull。純利益も税率見積りと通期調整の不確実性からnull。"
+      ],
+      "guidance_records": [
+        {
+          "id": "g_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "g_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "g_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        },
+        {
+          "id": "g_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 2 2027年7月期連結業績予想"
+        }
+      ],
+      "_truncated_source_ids": [
+        "S08",
+        "S11"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "11月12日の出雲市蓄電所開示および10月28日提出の有価証券報告書は保存原文がなく、対象Qの収益・償却確認には使用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "AS実効稼働量倍率は公表運開容量と市場参入待ちを使った仮定。直前Q平均EPRX容量がなく、容量当たり収益を直接検証できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "S06の調整後販管費は制度対応費等の期間配分を変更した管理値。会計上の修正再表示ではなく、累計実績の差引きには使用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "S07 PDF page 3の直前Q電力量と、S07 PDF page 23・S11 Sheet P.6の電力量には差がある。数量基準はS11の728GWh・190GWhに統一し、差の原因は未確認。丸め差と断定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "S11 Sheet P.5 M10のその他事業売上キャッシュ値は短信累計差引きと一致しない。S11には他にも疑わしい数値・注記があり、比較連結実績はS03・S04・S05を優先した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "S11はSheet P.8途中で短縮されており、後続グラフ・免責事項等は未確認。S08はPDF page 51以降が短縮され、残りの資料範囲は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "S12は会社作成資料の転載原文。公式直接URLは未確認であり、11月4日の取扱量を10月末実績とは扱っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "discoveryではS11本文未取得とあるが、今回提示されたdocumentsにはセル本文があるため、その提示範囲は確認済みとした。取得時点と基準日時後の差し替え有無は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "基準日時までの会社予想修正・重要開示の網羅性は未確認。9月公表予想が現在も最新であるとは確定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "売上原価は直前Q実績を両PF電力量で近似しているが、連結原価には他事業費用も含む。原価の数量感応度と追加AS原価率は独自仮定であり、営業利益予測の主要な限界。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "対象決算は提示されたdiscoveryで未発表とされるが、保存原文だけでは未発表状況の網羅的確認はできない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2026-07-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "経常利益は借入残高だけでは金利・手数料・計上時期を十分に説明できずnull。純利益も税率見積りと通期調整の不確実性からnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "追加償却費は対象Qの資産別明細がなく条件設定にとどまる。AM収益の本格化と費用先行の組合せは未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "電力精算のシナリオ幅は過去実績に基づく条件設定であり、対象Qの市場データによる推定区間ではない。損失を含む範囲外の着地も排除できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "issue",
+      "message": "AIへ渡した原文に省略あり: S08,S11",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "ASの対象Q月次EPRX参入容量、約定率、サービス報酬率は原文未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "ancillary_revenue: 電力PF付帯収益と再エネPF証書等を合算。前年同Qの両事業の契約由来その他収益合計約99、直前Qも約106であり、共通条件として100とする。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_as_capacity_factor: 前期中の運開案件が対象Q中に順次収益化する条件。期後250MWを対象Q全期間の市場稼働容量に置き換えない。直前Q平均EPRX容量が未確認のため相対的な実効稼働量仮定とする。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_as_price_factor: 上限引下げに対し商品構成・約定条件・複数市場運用による部分的吸収を仮定。会社通期予想は計算に使用していないため制度影響の二重控除はない。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_avg_headcount: 7月末と11月初の人数の中間程度を期中平均相当とする。S12の従業員定義が従前と完全に同一かは未確認。出典：S06 PDF page 12、S12 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_incremental_depreciation: 新規AM設備の段階的稼働に伴う追加費用。前年の軽資産構造からの移行を織り込むが、通期の調整後EBITDA差額の四等分はしない。出典：S06 PDF pages 31、36、S09 PDF page 2 Q5。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_other_sga: 前年同Qの調整後その他販管費を目安とし、広告継続・制度費用を含む対象Q計上額を独自仮定。通期や利益目標から逆算していない。出典：S06 PDF page 12。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_power_price_factor: 主要更新時期を通過し、単価調整が緩やかになるという説明を踏まえ、直前Qから3%低下を仮定。出典：S09 PDF page 3 Q10、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_power_volume: 容量比補正の約755GWhに営業強化と夏季需要の寄与を限定的に加えた中心条件。期末容量を期中平均と同一とはみなさない。出典：S06 PDF pages 18–21、S09 PDF page 3 Q13。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_re_volume: 既存契約の稼働寄与と追加案件を限定的に織り込む。直前Qの春夏発電量190GWhをそのまま延長しない。出典：S06 PDF page 25、S11 Sheet P.6 U10。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "base_settlement: 直前Qの両PF契約外収益差引額に近い条件。夏季に高かった前年同Qの全額再現は置かない。精算損益を契約容量に比例させない。出典：S03 PDF page 12、S05 PDF page 9、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_as_capacity_factor: 直前Q対比の収益稼働容量相当倍率。直前Q末EPRX参入100MWと運転開始165MW、その後の運開増加に対し3～5か月の参入待ちを考慮し、収益化が遅い条件。出典：S06 PDF page 29、S09 PDF page 3 Q12、S12 PDF page 1。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_as_price_factor: 9月からの上限価格15円から10円への引下げが強く波及。対象Qのうち2か月を新上限とする単純加重比率約0.778をストレスの参考にし、実現単価そのものとは区別。出典：S09 PDF page 3 Q11。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_avg_headcount: 7月末101人、11月1日114人を踏まえた費用上側の平均人員相当。実際の期中平均人数ではなく、採用時期・賃金上昇も含めた費用ストレス。出典：S06 PDF page 12、S12 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_incremental_depreciation: 既存原価・販管費に含む従来償却とは別に、新規AM設備の追加償却を仮定。期末連系済4.2MWと建設仮勘定の大きさから早期稼働時の負担を置く。資産別耐用年数が未確認のため条件付き費用ストレス。出典：S03 PDF page 7、S06 PDF pages 31、35。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_other_sga: 非人件費販管費。前年同Q実績約289、調整後約370、直前Q調整後約435を参考に広告・制度対応等の負担が重い条件。調整後値は会計実績に置換せず仮定の目安に限定。出典：S08 PDF page 7、S06 PDF page 12。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_power_price_factor: 直前Qの電力PF実現手数料単価からさらに8%低下する条件。合算単価の直前Q低下幅8%をストレス幅の参考にするが、電力PF固有実績とは扱わない。出典：S06 PDF page 10、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_power_volume: 前年同Q取扱量651GWh、前年同Q末契約容量751MWに対し直近末871MW。前年同Qの負荷特性を容量比で補正した約755GWhを中心に、天候・解約・期中平均容量の不確実性を考慮した下側。出典：S08 PDF page 8、S06 PDF page 18。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_re_volume: 前年同Q127GWhと契約容量330MW、直近393MWを比較すると同季節負荷で約151GWh。これを下側条件とする。出典：S08 PDF page 8、S06 PDF page 25。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bear_settlement: 両PFの電力精算等の契約外収益合計。前年同Q約674、直前Q約458に対し市況悪化を置く条件付き下側。会社の保守的計画説明も参考とする。保証された下限ではない。出典：S04 PDF page 8、S03 PDF page 12、S05 PDF page 9、S09 PDF page 3 Q9。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_as_capacity_factor: 前期からの待機案件の市場参入・約定が順調な条件。新規運開案件の全量即時収益化は含めない。出典：S06 PDF page 29、S09 PDF page 3 Q12。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_as_price_factor: 上限価格が実現収益へ与える影響が限定される条件。市場商品別の実収益構成は未確認。出典：S09 PDF page 3 Q11、S10 PDF page 3。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_avg_headcount: 採用が期末寄りで費用発生が遅い条件。人員増自体は織り込む。出典：S06 PDF page 12、S12 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_incremental_depreciation: 新規AM設備の本格稼働が対象Q後に偏る条件。ASの外部受託増加とは分離する。出典：S09 PDF pages 2–3 Q5、Q14。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_other_sga: 制度対応の計上集中がなく、広告投下効率が改善する条件。直近第3四半期調整後その他販管費約337を参考にする。出典：S06 PDF page 12。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_power_price_factor: ヘッジ商品・顧客維持施策により直前Q単価を維持する上側条件。値上げは仮定しない。出典：S06 PDF page 21、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_power_volume: 既存契約の通期寄与、夏季負荷、新規獲得が強い場合。前年同Qの単純成長率延長ではなく、直近契約基盤に対する負荷・稼働条件の上側。出典：S06 PDF pages 18–21。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_re_volume: 案件稼働と発電条件が良好な場合。マッチング成立容量を全量即時売上化せず、直前Q発電量を下回る範囲に設定。出典：S06 PDF page 25、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "bull_settlement: 前年同Qに近い良好な精算環境が再現する上側条件。対象期市況を観測した推計ではない。出典：S04 PDF page 8、S10 PDF page 2。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "incremental_as_cost_ratio: 既存AS費用を含む直前Q連結原価を土台とし、AS増収分に追加の直接運用費15%を置く。AS直前Q利益率約62%と運用基盤の拡張余地を参考にするが、公表限界原価率ではない。人件費は販管費で別途積算。出典：S07 PDF page 3、S06 PDF page 28。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "人員の期中平均、賞与・広告・制度対応費用の対象Q計上額は原文未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "会社計画の取扱電力量等の内訳とセグメント別営業利益はS09で非開示と明記されている。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "再エネ手数料単価は直前Q実現値を維持すると仮定し、契約構成変化による別の単価上昇は計上していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "対象Qの取扱電力量、手数料単価、電力精算損益は原文未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "350A",
+      "company_name": "デジタルグリッド株式会社",
+      "kind": "condition",
+      "message": "設備別運開日・償却開始日・耐用年数は原文未確認。追加償却は条件付き仮定。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/350A/result.json": "253eece0d296ad2989d088182e5adbc4903716a362a12db8065bcc2af01d8928",
+    "reports/350A.md": "3cb148fb050297363793796f484f44f8e7e23df4279f970ce54db821e9629133"
+  }
+}

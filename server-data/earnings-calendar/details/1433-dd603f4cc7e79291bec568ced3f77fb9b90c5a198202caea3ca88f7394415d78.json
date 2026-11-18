@@ -1,0 +1,2783 @@
+{
+  "id": "1433-dd603f4cc7e79291bec568ced3f77fb9b90c5a198202caea3ca88f7394415d78",
+  "code": "1433",
+  "companyName": "ベステラ株式会社",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "1433-generation-00dd9f622270f9fd · dd603f4c",
+  "savedAt": "2026-11-18T16:47:31+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 3152.26972,
+  "operatingProfit": 261.369944,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 1433 ベステラ株式会社｜2027-01-31期 Q3単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 2,832.47 | 3,152.27 | 3,472.07 |\n| 営業利益 | 131.76 | 261.37 | 403.37 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 530.39 | 20.23% |  |\n| QnQ | 営業利益 | 40.03 | 18.08% |  |\n\n## 会社予想\n通期予想はS06の修正後予想を採用。売上高・営業利益・経常利益は据え置き、親会社株主に帰属する当期純利益のみ投資有価証券関連の一過性要因を反映して修正。S05には3Q累計の会社見込みがあり、確認した上期実績を控除したcompany_implied_q3_revenueとcompany_implied_q3_opを参考値として区別する。これらは独自予測ではない。latest_confirmedは提示された保存資料内の最新確認を意味し、基準日までの後続開示の網羅性は未確認。\n\n## 市場コンセンサス\n未確認。提示された保存資料に対象四半期の市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n期首受注残×売上計上率による完成工事高、その他事業売上、事業別粗利率、直近Q2販管費と追加費用から組み立てた条件付き独自予測。会社の累計見込み差引きや通期予想の四等分ではない。セグメント利益は売上総利益ベースのため、revenue_componentsのoperating_profitには転記していない。未算定の事故直接損益を除く営業モデルであり、事故影響を含む全損益の下限は示していない。経常利益は新規長期借入の適用金利・利息期間、配当等の四半期配分を十分に確定できずnull。純利益も事故関連損益・保険・税効果の範囲を設定できずnull。\n\n## 対象四半期の条件付き予測\n中心予測は売上高3,152.27、営業利益261.37。弱気は売上高2,832.47、営業利益131.76、強気は売上高3,472.07、営業利益403.37。大型工事の売上寄与が本格化する一方、開始局面では原価が先行し、完工時の追加工事・スクラップ利益が上期と同様に得られるとは限らない。\n\n## 会社見込みとの区別\n会社の3Q累計見込みから上期確定実績を控除した参考値は、売上高3,167.55、営業利益225.16。中心予測との差は売上高-15.28、営業利益36.21。会社見込みには上期上振れと下期の保守的な採算判断が既に反映されており、上期の上振れ分をさらに加えていない。\n\n## 比較と検証すべき点\n前年同四半期は売上高2,967.30、営業利益309.27、前四半期は売上高2,621.88、営業利益221.34。増収の持続には、受注残の存在だけでなく大型工事の実際の進捗と監督員の戦力化が必要。大阪事務所の開設や将来のPCB解体需要を、当四半期の追加売上として別途計上していない。\n\n## 予測の限界\n前四半期のその他事業売上は累計差引きで-2.21となり、減額理由が保存原文では説明されていない。追加の売上取消しがないことを条件とした小規模な売上レンジを置いた。事故の未算定損失は弱気シナリオにも金額を織り込めず、営業利益がこのレンジを下回る可能性は残る。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | -58.14 | 受注残の売上計上仮定と前年の完成工事高との差。案件・数量・価格別には分解できない。 |\n| その他事業・連結構成の変化 | -76.69 | 売却後の小規模事業仮定との差。売却影響だけとは断定しない。 |\n| 残差（none） | 0.00 | 公表売上合計から完成工事高を控除して比較用その他を定義しており、算術残差なし。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | 208.39 | 端境期後の施工進捗を仮定。 |\n| その他事業の変化 | 2.21 | 前Qの負の差引き売上からの変化。減額の理由は未解明。 |\n| 残差（none） | 0.00 | 算術残差なし。その他事業の経済的原因は未解明であり、売上回復の確定事実ではない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | -28.59 | 前年単独の連結粗利率を固定した会計的な規模効果。 |\n| 採算・事業構成効果 | -90.86 | 新規工事の初期原価、スクラップ時期、その他事業構成を粗利仮定に包含。個別寄与は識別できない。 |\n| 販管費差 | -58.06 | 前年単独実績と直近費用から積み上げた予測との差。 |\n| 残差（none） | 0.00 | 累計差引き後の粗利－販管費と営業利益は一致。個別要因の因果分解を示すものではない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | 45.74 | 前Q単独の連結粗利率を固定した規模効果。 |\n| 採算・事業構成効果 | -105.32 | 工事開始時の採算低下を中心とする条件付き粗利変化。 |\n| 販管費差 | -30.00 | 採用・支援体制・拠点費用の上乗せ。 |\n| 残差（none） | 0.00 | 算術残差なし。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | 251.66 | 受注残計上率と大型工事の進捗を反映した完成工事高との差。 |\n| その他事業・連結構成の変化 | -66.69 | 売却後の小規模事業仮定との差。全額を子会社売却影響としない。 |\n| 残差（none） | 0.00 | 公表売上合計基準で算術残差なし。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | 518.19 | 端境期解消と電力などの大型工事の寄与を想定。 |\n| その他事業の変化 | 12.21 | 前Qの負の差引き売上が繰り返されない条件。 |\n| 残差（none） | 0.00 | 算術残差なし。その他事業の減額理由は未解明。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | 39.23 | 前年単独粗利率で評価した増減収効果。 |\n| 採算・事業構成効果 | -39.07 | 選択受注改善と新規大型工事の初期採算を合わせた粗利仮定。 |\n| 販管費差 | -48.06 | 人件費・支援部門・拠点費用を含む販管費の差。 |\n| 残差（none） | 0.00 | 算術残差なし。採算・構成効果内の案件別寄与は未分解。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | 115.19 | 前Q単独粗利率で評価した増減収効果。 |\n| 採算・事業構成効果 | -55.16 | 上期の完工・清算利益を一律延長せず、工事開始局面への移行を織り込む。 |\n| 販管費差 | -20.00 | 直近費用への採用・支援・拠点費用上乗せ。 |\n| 残差（none） | 0.00 | 算術残差なし。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | 561.46 | 既存受注残の計上が進む条件。新規拠点の未受注案件は加算していない。 |\n| その他事業・連結構成の変化 | -56.69 | 売却後の小規模売上と前年実績との差。 |\n| 残差（none） | 0.00 | 公表売上合計基準で算術残差なし。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 完成工事高の変化 | 827.99 | 大型工事の立ち上がりと施工能力の活用が進む条件。 |\n| その他事業の変化 | 22.21 | 前Qの売上減額が繰り返されない条件。 |\n| 残差（none） | 0.00 | 算術残差なし。その他事業の減額理由は未解明。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | 107.05 | 前年単独粗利率で評価した増減収効果。 |\n| 採算・事業構成効果 | 25.11 | 完工・清算が早まり、上期近傍の完成工事粗利率を維持する条件。 |\n| 販管費差 | -38.06 | 経費抑制下の販管費積み上げと前年単独実績との差。 |\n| 残差（none） | 0.00 | 算術残差なし。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模効果 | 184.65 | 前Q単独粗利率で評価した増減収効果。 |\n| 採算・事業構成効果 | 7.38 | 元請採算と清算進捗が支える粗利変化。スクラップ利益の別途加算なし。 |\n| 販管費差 | -10.00 | 採用・拠点費用増を既存体制の活用で抑える条件。 |\n| 残差（none） | 0.00 | 算術残差なし。 |\n\n## エラー・未解決事項\n- S01のその他事業売上35.838がS02のQ1累計38.045を下回る。全社売上から完成工事高を控除してもQ2単独は負となる。訂正、売上取消し、会計組替えのいずれかは原文から確定できず、非開示の理由を推測して修正していない。\n- S05 PDF page 4の会計期間見込欄にはQ3売上3,169、営業利益227とある一方、累計見込9,063・800からS01の精密な上期実績を控除すると3,167.545・225.160となる。通常の単純な表示丸めと断定できないため、会社見込み差引き値を参考採用し、会計期間欄の数値は予測入力・直接四半期実績として採用しない。\n- S05・S07等のグラフ抽出には複数年度の業界構成比や系列ラベルの混在がある。PDF画像の原本確認が禁止されているため、曖昧な業界別・元請別金額を作らず、明瞭な本文と短信の合計値を使用した。\n- S11はtruncated=falseだが質疑応答本文は会員登録の案内で途切れている。質疑応答の必要範囲は未確認。説明本文の経常利益増加率には短信と整合しない記述があるため、その率は採用していない。\n- S13は保存本文がなく原本未確認。S15は配信案内のみで動画内容は未確認。S16・S17も保存本文が提示されていない。\n- 事故の直接損益はS01・S05で会社が算定困難と明示している。これは会社公表時点の未算定事項であり、その後の追加開示の有無は別途原本未確認。\n- 借入金の金利水準、四半期の金融収益、事故補償と保険回収の時期・税務処理について根拠ある範囲を設定できず、経常利益・純利益は予測しない。\n- 入力された2026-12-10の発表予定日は会社・取引所の一次情報で確認できていない。announcement_dateは対象条件の入力値を保持したもので、確認済み日程ではない。\n- 前年比較は売却前子会社を含む公表連結実績。継続事業だけに組み替えた比較値ではない。ブリッジの構成・採算項目は会計的分解であり、売却・単価・数量・工事別採算の独立した因果寄与を確定するものではない。\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 提示資料に対象Q3の確定発表はないためtarget_already_announcedをfalseとした。ただし、基準日時までの開示一覧の網羅性は原本未確認。\n- 直前累計不足: 2025-10-31\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_construction_margin: 選択受注・見積精度改善を維持する一方、上期に寄与した完工時の追加工事・スクラップ利益を繰り返さず、新規大型工事中心の構成により上期から粗利率が低下すると仮定。\n- base_conversion: 大型工事の売上寄与が本格化し、採用による施工余力もある一方、若手育成と新規工事の立ち上がりを要する。直近の参考回転率の範囲内で35.5%を採用。会社の3Q売上見込みは水準照合にのみ使用し、会社予想の差引きを予測式には使用しない。\n- base_other_sales: 当上期その他事業売上の半期平均を下回る小規模な継続売上を仮置き。Q1から上期にかけての売上減額の理由が未確認のため、会社予測ではなく条件付きの感応度設定。\n- base_sga_increment: Q2単独販管費に対し約6%の増加を仮定。採用と安全・工事サポート体制強化、大阪拠点開設を織り込み、売却子会社の費用削減は直近実績に既に含まれるため再控除しない。\n- bear_construction_margin: 前年上期の完成工事粗利率は約17.9%、当上期は約21.9%。新規大型工事の初期原価、スクラップ搬出遅延、労務費負担により前年上期近傍へ低下する条件。事故の未算定の直接損失は含めない。\n- bear_conversion: 期首受注残からの当四半期売上計上率。直近Q2の完成工事高／Q1末受注残は約28.7%、Q1の完成工事高／年度期首受注残は約38.0%。これらは新規受注分を含み得る参考回転率であり、実際の受注残消化率ではない。S05の端境期解消・電力大型工事の寄与を踏まえつつ、着工遅延を見込む条件として32%を置く。\n- bear_other_sales: 子会社売却後のその他事業は縮小。保存原文ではQ2単独売上が負になる不整合があり、その値を将来へ延長せず、追加の売上取消しがないという条件下で下限をゼロとする。\n- bear_sga_increment: Q2単独販管費を基礎に、工事サポート・安全関連人員、採用、拠点開設の追加費用を約9%上乗せするストレス条件。直接事故補償は含めない。基礎費用に既存の事故関連販管費を含むため、その過去計上額は別途加算しない。\n- bull_construction_margin: 工事の完工・清算が早く進み、元請工事の採算が維持される条件。当上期の完成工事粗利率近傍を上限に置き、元請目標利益率を全工事に適用しない。スクラップ寄与はこの粗利率に包含する。\n- bull_conversion: 電力大型工事の立ち上がり、既存工事の前倒し進捗、監督員の戦力化が進む条件。Q1の参考回転率を小幅に上回る39%を置く。受注残の増加率を売上に一律適用していない。\n- bull_other_sales: 売上減額が再発せず、当上期の四半期平均近傍の小規模売上を計上する条件。撤退済み人材サービス子会社の売上復活は想定しない。\n- bull_sga_increment: 採用・拠点費用は増えるが、経費抑制と既存支援体制の活用によりQ2単独比約3%の増加に収まる条件。利益目標から逆算せず、直近の費用水準から設定。\n- その他事業の追加売上取消しがないことを条件とする。\n- 元請・下請構成と清算時期の効果は粗利率仮定に包含し、スクラップ利益や追加工事利益を別途上乗せしない。\n- 全シナリオで未算定の事故直接損失を除外。既存販管費に含まれる事故対応費を再加算していない。\n- 受注残回転率の参考値は期中新規受注分を含み得るため、既存受注残のみの消化率とは一致しない。\n- 工事別の四半期進捗、売上計上額、原価、追加受注、スクラップ数量・単価は保存資料では非開示。\n\n## 根拠・保存記録\n- S01 [2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/14330/140120260909533607.pdf) / 公表 2026-09-09 / retrieved / SHA-256 `24211096df9cf989bfbb8e895098996e865d0f5af651b34a3be37f8faa43c6a2`\n- S02 [2027年1月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/14330/140120260609566425.pdf) / 公表 2026-06-09 / retrieved / SHA-256 `90ca31524b3f5367b5bbff1c89869e676052eb1684340723d79a8536e3f7841b`\n- S03 [2026年1月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/14330/140120251210517206.pdf) / 公表 2025-12-10 / retrieved / SHA-256 `3ae939057dd18f3ed0eacacd56f0df18c920c4b74c564c930901901df3452a2d`\n- S04 [2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/14330/140120250909555055.pdf) / 公表 2025-09-09 / retrieved / SHA-256 `f77d0ffbe5eb5be4826ee9cee309aa839a2766bb738dbd24ba3df0258a0d41f4`\n- S05 [2027年1月期 第2四半期 決算説明資料](https://www2.jpx.co.jp/disc/14330/140120260909533624.pdf) / 公表 2026-09-09 / retrieved / SHA-256 `ae3696924094dca8b52f85ddbd5fbaebd870f1722eaae6a97dfdd6d101434222`\n- S06 [特別損失（投資有価証券評価損）の計上並びに第2四半期（中間期）業績予想と実績値との差異に関するお知らせ及び通期連結業績予想の修正に関するお知らせ](https://www2.jpx.co.jp/disc/14330/140120260909533636.pdf) / 公表 2026-09-09 / retrieved / SHA-256 `bd0b09ab2b72e781610f41bf9070e5f85f33b2a04934c04dd0a9febdd1264dc6`\n- S07 [2027年1月期 第1四半期 決算説明資料](https://www2.jpx.co.jp/disc/14330/140120260609566458.pdf) / 公表 2026-06-09 / retrieved / SHA-256 `c4085e0fd5e916f937a1e035ec2e1df17ce902ae8986f6d9c42b84c2542e8456`\n- S08 [2026年1月期 第3四半期 決算説明資料](https://www2.jpx.co.jp/disc/14330/140120251210517330.pdf) / 公表 2025-12-10 / retrieved / SHA-256 `52f25cd55cf17cce83877d5d8baeb78252858ba7353c92f0ad170f2cf3fba2d5`\n- S09 [2026年1月期 第2四半期 決算説明資料](https://www2.jpx.co.jp/disc/14330/140120250908554815.pdf) / 公表 2025-09-09 / retrieved / SHA-256 `a0d0323c89979dafaae100a515ba9d5b41c062b683cea87b3576ea75a1913996`\n- S10 [2026年1月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/14330/140120260311580114.pdf) / 公表 2026-03-12 / retrieved / SHA-256 `8e5a5fbdae35c84ee6fe75ba059823c26e5f9ef43cbfcab64ee2d599a339163c`\n- S11 [2027年1月期第2四半期決算説明会 書き起こし・質疑応答（会社提供）](https://finance.logmi.jp/articles/385685) / 公表 2026-09-16 / retrieved / SHA-256 `32fae56868c8492f563b011a298365ec9ed96c26d28cd014469af6eddaec281e`\n- S12 [大阪事務所 開設のお知らせ](https://www.besterra.co.jp/news/2026/002857.html) / 公表 2026-09-01 / retrieved / SHA-256 `ec2a0096291893e5ac391293d23a0ef0762592a7fbf8d64ea26f12d37a763768`\n- S13 [「再エネ設備材の資源循環アップサイクル事業」実装の報告](https://www.besterra.co.jp/news/5bfa02da5f9bf4f27dcb635c145cf257f2f941ed.pdf) / 公表 2026-08-19 / unavailable / SHA-256 `なし`\n- S14 [行方不明者の発見について](https://www.besterra.co.jp/news/2fe8a7f65d09c2d83c77698b73ba1d0f3f2e179c.pdf) / 公表 2026-07-23 / retrieved / SHA-256 `d4f973dca8827f5e3d97e3b1e090e0f0fb774a5aae652e6f867103114d22b453`\n- S15 [インベストメントブリッジ主催 個人投資家向けオンラインセミナー アーカイブ動画配信のお知らせ](https://www.besterra.co.jp/news/2026/002860.html) / 公表 2026-11-12 / retrieved / SHA-256 `345e3ab0014c0da6c23cb5ae105addb2d5eb686e39a99acd5c47d28b055b4b42`\n- S16 [株式情報](https://www.besterra.co.jp/ir/stock/) / 公表  / unavailable / SHA-256 `なし`\n- S17 [IRカレンダー](https://www.besterra.co.jp/ir/calendar.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "1433",
+    "company_name": "ベステラ株式会社",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 2832.46848,
+        "operating_profit": 131.7603264,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 3152.26972,
+        "operating_profit": 261.369944,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 3472.07096,
+        "operating_profit": 403.3716112,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 530.39372,
+          "rate": 0.20229550138908176,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 40.027943999999934,
+          "rate": 0.18084206341317927,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "cy_h1_sales": 5895.455,
+      "cy_q1_sales": 3273.579,
+      "py_q3_sales": 8068.016,
+      "py_h1_sales": 5100.719,
+      "cy_h1_op": 574.84,
+      "cy_q1_op": 353.498,
+      "py_q3_op": 535.469,
+      "py_h1_op": 226.203,
+      "cy_h1_gp": 1285.34,
+      "cy_q1_gp": 715.914,
+      "py_q3_gp": 1555.101,
+      "py_h1_gp": 925.806,
+      "cy_h1_sga": 710.5,
+      "cy_q1_sga": 362.416,
+      "py_q3_sga": 1019.631,
+      "py_h1_sga": 699.602,
+      "cy_h1_construction": 5859.616,
+      "cy_q1_construction": 3235.533,
+      "py_q3_construction": 7826.884,
+      "py_h1_construction": 4936.275,
+      "opening_backlog": 8851.464,
+      "q1_end_backlog": 9141.633,
+      "year_opening_backlog": 8512.12,
+      "cy_h1_construction_gp": 1282.361,
+      "guidance_fy_sales": 13000.0,
+      "guidance_fy_op": 1000.0,
+      "guidance_fy_ordinary": 1020.0,
+      "guidance_fy_net": 530.0,
+      "guidance_q3_cumulative_sales": 9063.0,
+      "guidance_q3_cumulative_op": 800.0,
+      "bear_conversion": 0.32,
+      "base_conversion": 0.355,
+      "bull_conversion": 0.39,
+      "bear_construction_margin": 0.18,
+      "base_construction_margin": 0.2,
+      "bull_construction_margin": 0.22,
+      "bear_other_sales": 0.0,
+      "base_other_sales": 10.0,
+      "bull_other_sales": 20.0,
+      "other_margin": 0.1,
+      "bear_sga_increment": 30.0,
+      "base_sga_increment": 20.0,
+      "bull_sga_increment": 10.0,
+      "previous_revenue": 2621.8759999999997,
+      "previous_op": 221.34200000000004,
+      "previous_gp": 569.4259999999999,
+      "previous_sga": 348.084,
+      "previous_construction": 2624.083,
+      "previous_other": -2.2070000000003347,
+      "previous_margin": 0.21718265852389662,
+      "prior_revenue": 2967.2969999999996,
+      "prior_op": 309.2660000000001,
+      "prior_gp": 629.2950000000001,
+      "prior_sga": 320.029,
+      "prior_construction": 2890.6090000000004,
+      "prior_other": 76.68799999999919,
+      "prior_margin": 0.21207684973900495,
+      "recent_turnover_reference": 0.2870475110956653,
+      "q1_turnover_reference": 0.3801089505317124,
+      "h1_construction_margin": 0.21884727599897333,
+      "company_implied_q3_revenue": 3167.545,
+      "company_implied_q3_op": 225.15999999999997,
+      "bear_construction_revenue": 2832.46848,
+      "bear_construction_gp": 509.8443264,
+      "bear_other_gp": 0.0,
+      "bear_revenue": 2832.46848,
+      "bear_gp": 509.8443264,
+      "bear_sga": 378.084,
+      "bear_op": 131.7603264,
+      "base_construction_revenue": 3142.26972,
+      "base_construction_gp": 628.453944,
+      "base_other_gp": 1.0,
+      "base_revenue": 3152.26972,
+      "base_gp": 629.453944,
+      "base_sga": 368.084,
+      "base_op": 261.369944,
+      "bull_construction_revenue": 3452.07096,
+      "bull_construction_gp": 759.4556112,
+      "bull_other_gp": 2.0,
+      "bull_revenue": 3472.07096,
+      "bull_gp": 761.4556112,
+      "bull_sga": 358.084,
+      "bull_op": 403.3716112,
+      "base_vs_company_revenue": -15.275280000000294,
+      "base_vs_company_op": 36.20994400000001
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2,8",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "1Q累計",
+        "revenue": 3273.579,
+        "operating_profit": 353.498,
+        "ordinary_profit": 370.731,
+        "net_profit": 259.896
+      },
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF pages 2,9",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 2621.8759999999997,
+        "operating_profit": 221.34200000000004,
+        "ordinary_profit": 238.29600000000005,
+        "net_profit": -160.79000000000002
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 10,14,16–17",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2,8,11",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "bear_construction_revenue-prior_construction",
+            "reason": "受注残の売上計上仮定と前年の完成工事高との差。案件・数量・価格別には分解できない。",
+            "amount": -58.14052000000038
+          },
+          {
+            "label": "その他事業・連結構成の変化",
+            "formula": "bear_other_sales-prior_other",
+            "reason": "売却後の小規模事業仮定との差。売却影響だけとは断定しない。",
+            "amount": -76.68799999999919
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "公表売上合計から完成工事高を控除して比較用その他を定義しており、算術残差なし。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "bear_construction_revenue-previous_construction",
+            "reason": "端境期後の施工進捗を仮定。",
+            "amount": 208.38547999999992
+          },
+          {
+            "label": "その他事業の変化",
+            "formula": "bear_other_sales-previous_other",
+            "reason": "前Qの負の差引き売上からの変化。減額の理由は未解明。",
+            "amount": 2.2070000000003347
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。その他事業の経済的原因は未解明であり、売上回復の確定事実ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(bear_revenue-prior_revenue)*prior_margin",
+            "reason": "前年単独の連結粗利率を固定した会計的な規模効果。",
+            "amount": -28.594007776572333
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "bear_gp-bear_revenue*prior_margin",
+            "reason": "新規工事の初期原価、スクラップ時期、その他事業構成を粗利仮定に包含。個別寄与は識別できない。",
+            "amount": -90.85666582342776
+          },
+          {
+            "label": "販管費差",
+            "formula": "prior_sga-bear_sga",
+            "reason": "前年単独実績と直近費用から積み上げた予測との差。",
+            "amount": -58.05500000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "累計差引き後の粗利－販管費と営業利益は一致。個別要因の因果分解を示すものではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(bear_revenue-previous_revenue)*previous_margin",
+            "reason": "前Q単独の連結粗利率を固定した規模効果。",
+            "amount": 45.737034671540584
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "bear_gp-bear_revenue*previous_margin",
+            "reason": "工事開始時の採算低下を中心とする条件付き粗利変化。",
+            "amount": -105.31870827154046
+          },
+          {
+            "label": "販管費差",
+            "formula": "previous_sga-bear_sga",
+            "reason": "採用・支援体制・拠点費用の上乗せ。",
+            "amount": -30.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "base_construction_revenue-prior_construction",
+            "reason": "受注残計上率と大型工事の進捗を反映した完成工事高との差。",
+            "amount": 251.6607199999994
+          },
+          {
+            "label": "その他事業・連結構成の変化",
+            "formula": "base_other_sales-prior_other",
+            "reason": "売却後の小規模事業仮定との差。全額を子会社売却影響としない。",
+            "amount": -66.68799999999919
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "公表売上合計基準で算術残差なし。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "base_construction_revenue-previous_construction",
+            "reason": "端境期解消と電力などの大型工事の寄与を想定。",
+            "amount": 518.1867199999997
+          },
+          {
+            "label": "その他事業の変化",
+            "formula": "base_other_sales-previous_other",
+            "reason": "前Qの負の差引き売上が繰り返されない条件。",
+            "amount": 12.207000000000335
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(base_revenue-prior_revenue)*prior_margin",
+            "reason": "前年単独粗利率で評価した増減収効果。",
+            "amount": 39.22843174525508
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "base_gp-base_revenue*prior_margin",
+            "reason": "選択受注改善と新規大型工事の初期採算を合わせた粗利仮定。",
+            "amount": -39.069487745255174
+          },
+          {
+            "label": "販管費差",
+            "formula": "prior_sga-base_sga",
+            "reason": "人件費・支援部門・拠点費用を含む販管費の差。",
+            "amount": -48.05500000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。採算・構成効果内の案件別寄与は未分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(base_revenue-previous_revenue)*previous_margin",
+            "reason": "前Q単独粗利率で評価した増減収効果。",
+            "amount": 115.19231817397925
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "base_gp-base_revenue*previous_margin",
+            "reason": "上期の完工・清算利益を一律延長せず、工事開始局面への移行を織り込む。",
+            "amount": -55.16437417397924
+          },
+          {
+            "label": "販管費差",
+            "formula": "previous_sga-base_sga",
+            "reason": "直近費用への採用・支援・拠点費用上乗せ。",
+            "amount": -20.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "bull_construction_revenue-prior_construction",
+            "reason": "既存受注残の計上が進む条件。新規拠点の未受注案件は加算していない。",
+            "amount": 561.4619599999996
+          },
+          {
+            "label": "その他事業・連結構成の変化",
+            "formula": "bull_other_sales-prior_other",
+            "reason": "売却後の小規模売上と前年実績との差。",
+            "amount": -56.68799999999919
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "公表売上合計基準で算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "完成工事高の変化",
+            "formula": "bull_construction_revenue-previous_construction",
+            "reason": "大型工事の立ち上がりと施工能力の活用が進む条件。",
+            "amount": 827.9879599999999
+          },
+          {
+            "label": "その他事業の変化",
+            "formula": "bull_other_sales-previous_other",
+            "reason": "前Qの売上減額が繰り返されない条件。",
+            "amount": 22.207000000000335
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(bull_revenue-prior_revenue)*prior_margin",
+            "reason": "前年単独粗利率で評価した増減収効果。",
+            "amount": 107.05087126708258
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "bull_gp-bull_revenue*prior_margin",
+            "reason": "完工・清算が早まり、上期近傍の完成工事粗利率を維持する条件。",
+            "amount": 25.109739932917364
+          },
+          {
+            "label": "販管費差",
+            "formula": "prior_sga-bull_sga",
+            "reason": "経費抑制下の販管費積み上げと前年単独実績との差。",
+            "amount": -38.05500000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模効果",
+            "formula": "(bull_revenue-previous_revenue)*previous_margin",
+            "reason": "前Q単独粗利率で評価した増減収効果。",
+            "amount": 184.647601676418
+          },
+          {
+            "label": "採算・事業構成効果",
+            "formula": "bull_gp-bull_revenue*previous_margin",
+            "reason": "元請採算と清算進捗が支える粗利変化。スクラップ利益の別途加算なし。",
+            "amount": 7.382009523582042
+          },
+          {
+            "label": "販管費差",
+            "formula": "previous_sga-bull_sga",
+            "reason": "採用・拠点費用増を既存体制の活用で抑える条件。",
+            "amount": -10.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "算術残差なし。"
+      }
+    ],
+    "issues": [
+      "S01のその他事業売上35.838がS02のQ1累計38.045を下回る。全社売上から完成工事高を控除してもQ2単独は負となる。訂正、売上取消し、会計組替えのいずれかは原文から確定できず、非開示の理由を推測して修正していない。",
+      "S05 PDF page 4の会計期間見込欄にはQ3売上3,169、営業利益227とある一方、累計見込9,063・800からS01の精密な上期実績を控除すると3,167.545・225.160となる。通常の単純な表示丸めと断定できないため、会社見込み差引き値を参考採用し、会計期間欄の数値は予測入力・直接四半期実績として採用しない。",
+      "S05・S07等のグラフ抽出には複数年度の業界構成比や系列ラベルの混在がある。PDF画像の原本確認が禁止されているため、曖昧な業界別・元請別金額を作らず、明瞭な本文と短信の合計値を使用した。",
+      "S11はtruncated=falseだが質疑応答本文は会員登録の案内で途切れている。質疑応答の必要範囲は未確認。説明本文の経常利益増加率には短信と整合しない記述があるため、その率は採用していない。",
+      "S13は保存本文がなく原本未確認。S15は配信案内のみで動画内容は未確認。S16・S17も保存本文が提示されていない。",
+      "事故の直接損益はS01・S05で会社が算定困難と明示している。これは会社公表時点の未算定事項であり、その後の追加開示の有無は別途原本未確認。",
+      "借入金の金利水準、四半期の金融収益、事故補償と保険回収の時期・税務処理について根拠ある範囲を設定できず、経常利益・純利益は予測しない。",
+      "入力された2026-12-10の発表予定日は会社・取引所の一次情報で確認できていない。announcement_dateは対象条件の入力値を保持したもので、確認済み日程ではない。",
+      "前年比較は売却前子会社を含む公表連結実績。継続事業だけに組み替えた比較値ではない。ブリッジの構成・採算項目は会計的分解であり、売却・単価・数量・工事別採算の独立した因果寄与を確定するものではない。",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "提示資料に対象Q3の確定発表はないためtarget_already_announcedをfalseとした。ただし、基準日時までの開示一覧の網羅性は原本未確認。",
+      "直前累計不足: 2025-10-31",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 210.59248000000025,
+            "rate": 0.08032129665933868,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -89.58167360000004,
+            "rate": -0.40472062961390076,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 530.39372,
+            "rate": 0.20229550138908176,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 40.027943999999934,
+            "rate": 0.18084206341317927,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 850.1949600000003,
+            "rate": 0.324269706118825,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 182.02961119999998,
+            "rate": 0.8223907401216215,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -134.82851999999957,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "公表売上合計から完成工事高を控除して比較用その他を定義しており、算術残差なし。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 210.59248000000025,
+        "explained_sum": 210.59248000000025,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。その他事業の経済的原因は未解明であり、売上回復の確定事実ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -177.5056736000001,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "累計差引き後の粗利－販管費と営業利益は一致。個別要因の因果分解を示すものではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -89.58167360000004,
+        "explained_sum": -89.58167359999987,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.7053025658242404e-13,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 184.9727200000002,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "公表売上合計基準で算術残差なし。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 530.39372,
+        "explained_sum": 530.39372,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -47.8960560000001,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "算術残差なし。採算・構成効果内の案件別寄与は未分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 40.027943999999934,
+        "explained_sum": 40.027944000000005,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -7.105427357601002e-14,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 504.77396000000044,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "公表売上合計基準で算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 850.1949600000003,
+        "explained_sum": 850.1949600000003,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 94.10561119999994,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "算術残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 182.02961119999998,
+        "explained_sum": 182.02961120000003,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "算術残差なし。"
+      }
+    ],
+    "conditions": [
+      "base_construction_margin: 選択受注・見積精度改善を維持する一方、上期に寄与した完工時の追加工事・スクラップ利益を繰り返さず、新規大型工事中心の構成により上期から粗利率が低下すると仮定。",
+      "base_conversion: 大型工事の売上寄与が本格化し、採用による施工余力もある一方、若手育成と新規工事の立ち上がりを要する。直近の参考回転率の範囲内で35.5%を採用。会社の3Q売上見込みは水準照合にのみ使用し、会社予想の差引きを予測式には使用しない。",
+      "base_other_sales: 当上期その他事業売上の半期平均を下回る小規模な継続売上を仮置き。Q1から上期にかけての売上減額の理由が未確認のため、会社予測ではなく条件付きの感応度設定。",
+      "base_sga_increment: Q2単独販管費に対し約6%の増加を仮定。採用と安全・工事サポート体制強化、大阪拠点開設を織り込み、売却子会社の費用削減は直近実績に既に含まれるため再控除しない。",
+      "bear_construction_margin: 前年上期の完成工事粗利率は約17.9%、当上期は約21.9%。新規大型工事の初期原価、スクラップ搬出遅延、労務費負担により前年上期近傍へ低下する条件。事故の未算定の直接損失は含めない。",
+      "bear_conversion: 期首受注残からの当四半期売上計上率。直近Q2の完成工事高／Q1末受注残は約28.7%、Q1の完成工事高／年度期首受注残は約38.0%。これらは新規受注分を含み得る参考回転率であり、実際の受注残消化率ではない。S05の端境期解消・電力大型工事の寄与を踏まえつつ、着工遅延を見込む条件として32%を置く。",
+      "bear_other_sales: 子会社売却後のその他事業は縮小。保存原文ではQ2単独売上が負になる不整合があり、その値を将来へ延長せず、追加の売上取消しがないという条件下で下限をゼロとする。",
+      "bear_sga_increment: Q2単独販管費を基礎に、工事サポート・安全関連人員、採用、拠点開設の追加費用を約9%上乗せするストレス条件。直接事故補償は含めない。基礎費用に既存の事故関連販管費を含むため、その過去計上額は別途加算しない。",
+      "bull_construction_margin: 工事の完工・清算が早く進み、元請工事の採算が維持される条件。当上期の完成工事粗利率近傍を上限に置き、元請目標利益率を全工事に適用しない。スクラップ寄与はこの粗利率に包含する。",
+      "bull_conversion: 電力大型工事の立ち上がり、既存工事の前倒し進捗、監督員の戦力化が進む条件。Q1の参考回転率を小幅に上回る39%を置く。受注残の増加率を売上に一律適用していない。",
+      "bull_other_sales: 売上減額が再発せず、当上期の四半期平均近傍の小規模売上を計上する条件。撤退済み人材サービス子会社の売上復活は想定しない。",
+      "bull_sga_increment: 採用・拠点費用は増えるが、経費抑制と既存支援体制の活用によりQ2単独比約3%の増加に収まる条件。利益目標から逆算せず、直近の費用水準から設定。",
+      "その他事業の追加売上取消しがないことを条件とする。",
+      "元請・下請構成と清算時期の効果は粗利率仮定に包含し、スクラップ利益や追加工事利益を別途上乗せしない。",
+      "全シナリオで未算定の事故直接損失を除外。既存販管費に含まれる事故対応費を再加算していない。",
+      "受注残回転率の参考値は期中新規受注分を含み得るため、既存受注残のみの消化率とは一致しない。",
+      "工事別の四半期進捗、売上計上額、原価、追加受注、スクラップ数量・単価は保存資料では非開示。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260909533607.pdf",
+        "published_at": "2026-09-09",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260909533607.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S01.txt",
+        "sha256": "24211096df9cf989bfbb8e895098996e865d0f5af651b34a3be37f8faa43c6a2",
+        "text_sha256": "7ea6ae550bfbba8e19037a90c46b1974b4758001e157af5426594f80a456fb61",
+        "retrieved_at": "2026-11-18T16:42:48+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 15460,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年1月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260609566425.pdf",
+        "published_at": "2026-06-09",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260609566425.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S02.txt",
+        "sha256": "90ca31524b3f5367b5bbff1c89869e676052eb1684340723d79a8536e3f7841b",
+        "text_sha256": "52fcb9e02d436929e347b01acd12d483796ac6549dd084064acffeaf3b79b226",
+        "retrieved_at": "2026-11-18T16:42:49+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11773,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年1月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120251210517206.pdf",
+        "published_at": "2025-12-10",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120251210517206.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S03.txt",
+        "sha256": "3ae939057dd18f3ed0eacacd56f0df18c920c4b74c564c930901901df3452a2d",
+        "text_sha256": "77388d72aa91eabf3f982b490f2a18439474707d2a73549033a8801e4c14cc8e",
+        "retrieved_at": "2026-11-18T16:42:49+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13644,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120250909555055.pdf",
+        "published_at": "2025-09-09",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120250909555055.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S04.txt",
+        "sha256": "f77d0ffbe5eb5be4826ee9cee309aa839a2766bb738dbd24ba3df0258a0d41f4",
+        "text_sha256": "1a7f0a371ef030b3e228ef20205080e58ef1df644cf452f3db5f2d5f6f616530",
+        "retrieved_at": "2026-11-18T16:42:51+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18075,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2027年1月期 第2四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260909533624.pdf",
+        "published_at": "2026-09-09",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260909533624.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S05.txt",
+        "sha256": "ae3696924094dca8b52f85ddbd5fbaebd870f1722eaae6a97dfdd6d101434222",
+        "text_sha256": "ac32f6d58e6fa0c8527303e0d5adc693a10daac2b659055a5715fc25a9a50533",
+        "retrieved_at": "2026-11-18T16:42:51+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16678,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "特別損失（投資有価証券評価損）の計上並びに第2四半期（中間期）業績予想と実績値との差異に関するお知らせ及び通期連結業績予想の修正に関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260909533636.pdf",
+        "published_at": "2026-09-09",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260909533636.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S06.txt",
+        "sha256": "bd0b09ab2b72e781610f41bf9070e5f85f33b2a04934c04dd0a9febdd1264dc6",
+        "text_sha256": "fdb9a45177e3ba822c603aad5cee96cd19714f7cb3067895058f994717d7d960",
+        "retrieved_at": "2026-11-18T16:42:52+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1738,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2027年1月期 第1四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260609566458.pdf",
+        "published_at": "2026-06-09",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260609566458.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S07.txt",
+        "sha256": "c4085e0fd5e916f937a1e035ec2e1df17ce902ae8986f6d9c42b84c2542e8456",
+        "text_sha256": "fea7d61af3e39ba0b19b3ec8ae07bc36887faa095135530f1d321985fbe488d1",
+        "retrieved_at": "2026-11-18T16:42:52+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11629,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年1月期 第3四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120251210517330.pdf",
+        "published_at": "2025-12-10",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120251210517330.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S08.txt",
+        "sha256": "52f25cd55cf17cce83877d5d8baeb78252858ba7353c92f0ad170f2cf3fba2d5",
+        "text_sha256": "d769e60547a7c16cac2f161b5d6f9f440996ff6a49ca2c8c8d9f650143581d3e",
+        "retrieved_at": "2026-11-18T16:42:53+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13408,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2026年1月期 第2四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120250908554815.pdf",
+        "published_at": "2025-09-09",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120250908554815.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S09.txt",
+        "sha256": "a0d0323c89979dafaae100a515ba9d5b41c062b683cea87b3576ea75a1913996",
+        "text_sha256": "3618ad2982d68c34f26643018215063ffe6ccfef47f274fde9e9bee009957c18",
+        "retrieved_at": "2026-11-18T16:42:54+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10900,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2026年1月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/14330/140120260311580114.pdf",
+        "published_at": "2026-03-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/14330/140120260311580114.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S10.txt",
+        "sha256": "8e5a5fbdae35c84ee6fe75ba059823c26e5f9ef43cbfcab64ee2d599a339163c",
+        "text_sha256": "c5a2d72c1f14888af0b540133a6af7e1e6af794095cc36d419628e485757f124",
+        "retrieved_at": "2026-11-18T16:42:55+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 25643,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "2027年1月期第2四半期決算説明会 書き起こし・質疑応答（会社提供）",
+        "url": "https://finance.logmi.jp/articles/385685",
+        "published_at": "2026-09-16",
+        "category": "qa",
+        "final_url": "https://finance.logmi.jp/articles/385685",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S11.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S11.txt",
+        "sha256": "32fae56868c8492f563b011a298365ec9ed96c26d28cd014469af6eddaec281e",
+        "text_sha256": "5b2f21e2f4df852a599847736bffc245213ea1e41cc14e811463c3efc6914bc0",
+        "retrieved_at": "2026-11-18T16:42:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11575,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "大阪事務所 開設のお知らせ",
+        "url": "https://www.besterra.co.jp/news/2026/002857.html",
+        "published_at": "2026-09-01",
+        "category": "other",
+        "final_url": "https://www.besterra.co.jp/news/2026/002857.html",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S12.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S12.txt",
+        "sha256": "ec2a0096291893e5ac391293d23a0ef0762592a7fbf8d64ea26f12d37a763768",
+        "text_sha256": "49fd7496e7c63913b29665acec4b072c7e875cd7b7507036228bf1bdd3691a4e",
+        "retrieved_at": "2026-11-18T16:42:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1054,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "「再エネ設備材の資源循環アップサイクル事業」実装の報告",
+        "url": "https://www.besterra.co.jp/news/5bfa02da5f9bf4f27dcb635c145cf257f2f941ed.pdf",
+        "published_at": "2026-08-19",
+        "category": "other",
+        "final_url": "https://www.besterra.co.jp/news/5bfa02da5f9bf4f27dcb635c145cf257f2f941ed.pdf",
+        "status": "unavailable",
+        "error": "原文抽出が空または不足。画像・音声資料は未検証",
+        "retrieved_at": "2026-11-18T16:42:56+09:00"
+      },
+      {
+        "id": "S14",
+        "title": "行方不明者の発見について",
+        "url": "https://www.besterra.co.jp/news/2fe8a7f65d09c2d83c77698b73ba1d0f3f2e179c.pdf",
+        "published_at": "2026-07-23",
+        "category": "other",
+        "final_url": "https://www.besterra.co.jp/news/2fe8a7f65d09c2d83c77698b73ba1d0f3f2e179c.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S14.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S14.txt",
+        "sha256": "d4f973dca8827f5e3d97e3b1e090e0f0fb774a5aae652e6f867103114d22b453",
+        "text_sha256": "97ccaf8ed0f5fff00206a439412ffd550939de5ce727cb6e195569c373ebf7c3",
+        "retrieved_at": "2026-11-18T16:42:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 541,
+        "parser_version": 2
+      },
+      {
+        "id": "S15",
+        "title": "インベストメントブリッジ主催 個人投資家向けオンラインセミナー アーカイブ動画配信のお知らせ",
+        "url": "https://www.besterra.co.jp/news/2026/002860.html",
+        "published_at": "2026-11-12",
+        "category": "qa",
+        "final_url": "https://www.besterra.co.jp/news/2026/002860.html",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S15.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\1433\\sources\\S15.txt",
+        "sha256": "345e3ab0014c0da6c23cb5ae105addb2d5eb686e39a99acd5c47d28b055b4b42",
+        "text_sha256": "897d9275923371c11b761232aff7c57d702753c2319f954b8a3946252d887368",
+        "retrieved_at": "2026-11-18T16:42:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 989,
+        "parser_version": 2
+      },
+      {
+        "id": "S16",
+        "title": "株式情報",
+        "url": "https://www.besterra.co.jp/ir/stock/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:42:56+09:00"
+      },
+      {
+        "id": "S17",
+        "title": "IRカレンダー",
+        "url": "https://www.besterra.co.jp/ir/calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:42:56+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "1433",
+      "announcement_date": "2026-12-10",
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "cy_h1_sales",
+          "value": 5895.455,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 売上高合計"
+        },
+        {
+          "id": "cy_q1_sales",
+          "value": 3273.579,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 売上高合計"
+        },
+        {
+          "id": "py_q3_sales",
+          "value": 8068.016,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 売上高合計・累計"
+        },
+        {
+          "id": "py_h1_sales",
+          "value": 5100.719,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 10 売上高合計"
+        },
+        {
+          "id": "cy_h1_op",
+          "value": 574.84,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 営業利益"
+        },
+        {
+          "id": "cy_q1_op",
+          "value": 353.498,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 営業利益"
+        },
+        {
+          "id": "py_q3_op",
+          "value": 535.469,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 営業利益・累計"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 226.203,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 10 営業利益"
+        },
+        {
+          "id": "cy_h1_gp",
+          "value": 1285.34,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 売上総利益合計"
+        },
+        {
+          "id": "cy_q1_gp",
+          "value": 715.914,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 売上総利益合計"
+        },
+        {
+          "id": "py_q3_gp",
+          "value": 1555.101,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 売上総利益合計・累計"
+        },
+        {
+          "id": "py_h1_gp",
+          "value": 925.806,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 10 売上総利益合計"
+        },
+        {
+          "id": "cy_h1_sga",
+          "value": 710.5,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 販売費及び一般管理費合計"
+        },
+        {
+          "id": "cy_q1_sga",
+          "value": 362.416,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 販売費及び一般管理費"
+        },
+        {
+          "id": "py_q3_sga",
+          "value": 1019.631,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 販売費及び一般管理費・累計"
+        },
+        {
+          "id": "py_h1_sga",
+          "value": 699.602,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 10 販売費及び一般管理費合計"
+        },
+        {
+          "id": "cy_h1_construction",
+          "value": 5859.616,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 完成工事高"
+        },
+        {
+          "id": "cy_q1_construction",
+          "value": 3235.533,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 完成工事高"
+        },
+        {
+          "id": "py_q3_construction",
+          "value": 7826.884,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 完成工事高・累計"
+        },
+        {
+          "id": "py_h1_construction",
+          "value": 4936.275,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 10 完成工事高"
+        },
+        {
+          "id": "opening_backlog",
+          "value": 8851.464,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 16 次期繰越工事高"
+        },
+        {
+          "id": "q1_end_backlog",
+          "value": 9141.633,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14 次期繰越工事高"
+        },
+        {
+          "id": "year_opening_backlog",
+          "value": 8512.12,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14 前期繰越工事高"
+        },
+        {
+          "id": "cy_h1_construction_gp",
+          "value": 1282.361,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 完成工事総利益"
+        },
+        {
+          "id": "guidance_fy_sales",
+          "value": 13000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・今回修正予想"
+        },
+        {
+          "id": "guidance_fy_op",
+          "value": 1000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・今回修正予想"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "value": 1020,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・今回修正予想"
+        },
+        {
+          "id": "guidance_fy_net",
+          "value": 530,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・今回修正予想"
+        },
+        {
+          "id": "guidance_q3_cumulative_sales",
+          "value": 9063,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 4 累計期間・2027年1月期実績欄の3Q見込値"
+        },
+        {
+          "id": "guidance_q3_cumulative_op",
+          "value": 800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF page 4 累計期間3Q見込値；S11「2027年1月期 業績の進捗状況について」"
+        },
+        {
+          "id": "bear_conversion",
+          "value": 0.32,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "期首受注残からの当四半期売上計上率。直近Q2の完成工事高／Q1末受注残は約28.7%、Q1の完成工事高／年度期首受注残は約38.0%。これらは新規受注分を含み得る参考回転率であり、実際の受注残消化率ではない。S05の端境期解消・電力大型工事の寄与を踏まえつつ、着工遅延を見込む条件として32%を置く。",
+          "sensitivity": "計上率が1ポイント変わると売上は88.51464、粗利率18%の下で営業利益は15.9326352変動。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 16；S02 PDF page 14；S05 PDF pages 6–7",
+          "material": true
+        },
+        {
+          "id": "base_conversion",
+          "value": 0.355,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "大型工事の売上寄与が本格化し、採用による施工余力もある一方、若手育成と新規工事の立ち上がりを要する。直近の参考回転率の範囲内で35.5%を採用。会社の3Q売上見込みは水準照合にのみ使用し、会社予想の差引きを予測式には使用しない。",
+          "sensitivity": "計上率が1ポイント変わると売上は88.51464、粗利率20%の下で営業利益は17.702928変動。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 4,6–9,11；S11「1人あたり完成工事高（単体）の推移について」",
+          "material": true
+        },
+        {
+          "id": "bull_conversion",
+          "value": 0.39,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "電力大型工事の立ち上がり、既存工事の前倒し進捗、監督員の戦力化が進む条件。Q1の参考回転率を小幅に上回る39%を置く。受注残の増加率を売上に一律適用していない。",
+          "sensitivity": "計上率が1ポイント変わると売上は88.51464、粗利率22%の下で営業利益は19.4732208変動。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 6–9,11；S11「2027年1月期 業績の進捗状況について」",
+          "material": true
+        },
+        {
+          "id": "bear_construction_margin",
+          "value": 0.18,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年上期の完成工事粗利率は約17.9%、当上期は約21.9%。新規大型工事の初期原価、スクラップ搬出遅延、労務費負担により前年上期近傍へ低下する条件。事故の未算定の直接損失は含めない。",
+          "sensitivity": "粗利率1ポイントの変化による営業利益変動はbear_construction_revenueの1%。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9；S04 PDF page 10；S11「2027年1月期 業績の進捗状況について」",
+          "material": true
+        },
+        {
+          "id": "base_construction_margin",
+          "value": 0.2,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "選択受注・見積精度改善を維持する一方、上期に寄与した完工時の追加工事・スクラップ利益を繰り返さず、新規大型工事中心の構成により上期から粗利率が低下すると仮定。",
+          "sensitivity": "粗利率1ポイントの変化による営業利益変動はbase_construction_revenueの1%。",
+          "source_ids": [
+            "S05",
+            "S07",
+            "S11"
+          ],
+          "locator": "S05 PDF page 8；S07 PDF page 5；S11「2027年1月期 業績の進捗状況について」",
+          "material": true
+        },
+        {
+          "id": "bull_construction_margin",
+          "value": 0.22,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "工事の完工・清算が早く進み、元請工事の採算が維持される条件。当上期の完成工事粗利率近傍を上限に置き、元請目標利益率を全工事に適用しない。スクラップ寄与はこの粗利率に包含する。",
+          "sensitivity": "粗利率1ポイントの変化による営業利益変動はbull_construction_revenueの1%。",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9；S05 PDF page 8；S11「2027年1月期 業績の進捗状況について」",
+          "material": true
+        },
+        {
+          "id": "bear_other_sales",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "子会社売却後のその他事業は縮小。保存原文ではQ2単独売上が負になる不整合があり、その値を将来へ延長せず、追加の売上取消しがないという条件下で下限をゼロとする。",
+          "sensitivity": "その他事業売上が10増減すると連結売上も10増減。取消しが続く場合はこの下限を下回る。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S10"
+          ],
+          "locator": "S01 PDF page 9；S02 PDF page 8；S10 PDF page 19",
+          "material": true
+        },
+        {
+          "id": "base_other_sales",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "当上期その他事業売上の半期平均を下回る小規模な継続売上を仮置き。Q1から上期にかけての売上減額の理由が未確認のため、会社予測ではなく条件付きの感応度設定。",
+          "sensitivity": "その他事業売上が10増減すると連結売上も10増減、仮定粗利率10%では営業利益が1増減。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 9；S02 PDF page 8",
+          "material": true
+        },
+        {
+          "id": "bull_other_sales",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "売上減額が再発せず、当上期の四半期平均近傍の小規模売上を計上する条件。撤退済み人材サービス子会社の売上復活は想定しない。",
+          "sensitivity": "その他事業売上が10増減すると連結売上も10増減、仮定粗利率10%では営業利益が1増減。",
+          "source_ids": [
+            "S01",
+            "S10"
+          ],
+          "locator": "S01 PDF pages 4,9；S10 PDF page 19",
+          "material": true
+        },
+        {
+          "id": "other_margin",
+          "value": 0.1,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "当上期その他事業の粗利率約8.3%を参考に10%とする。Q2単独の売上・粗利がともに負になるため、その比率は採用しない。",
+          "sensitivity": "粗利率が5ポイント変わると中心シナリオの営業利益は0.5変動。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 9；S02 PDF page 8",
+          "material": false
+        },
+        {
+          "id": "bear_sga_increment",
+          "value": 30,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "Q2単独販管費を基礎に、工事サポート・安全関連人員、採用、拠点開設の追加費用を約9%上乗せするストレス条件。直接事故補償は含めない。基礎費用に既存の事故関連販管費を含むため、その過去計上額は別途加算しない。",
+          "sensitivity": "追加販管費が10増えると営業利益は10減少。",
+          "source_ids": [
+            "S05",
+            "S11",
+            "S12"
+          ],
+          "locator": "S05 PDF pages 5,10–11,20；S11「販売費及び一般管理費」；S12「開設の目的」",
+          "material": true
+        },
+        {
+          "id": "base_sga_increment",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "Q2単独販管費に対し約6%の増加を仮定。採用と安全・工事サポート体制強化、大阪拠点開設を織り込み、売却子会社の費用削減は直近実績に既に含まれるため再控除しない。",
+          "sensitivity": "追加販管費が10増えると営業利益は10減少。",
+          "source_ids": [
+            "S05",
+            "S11",
+            "S12"
+          ],
+          "locator": "S05 PDF pages 10–11,20；S11「販売費及び一般管理費」；S12「開設の目的」",
+          "material": true
+        },
+        {
+          "id": "bull_sga_increment",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "採用・拠点費用は増えるが、経費抑制と既存支援体制の活用によりQ2単独比約3%の増加に収まる条件。利益目標から逆算せず、直近の費用水準から設定。",
+          "sensitivity": "追加販管費が10増えると営業利益は10減少。",
+          "source_ids": [
+            "S05",
+            "S11",
+            "S12"
+          ],
+          "locator": "S05 PDF pages 10–11,20；S11「販売費及び一般管理費」；S12「開設の目的」",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "previous_revenue",
+          "formula": "cy_h1_sales-cy_q1_sales"
+        },
+        {
+          "id": "previous_op",
+          "formula": "cy_h1_op-cy_q1_op"
+        },
+        {
+          "id": "previous_gp",
+          "formula": "cy_h1_gp-cy_q1_gp"
+        },
+        {
+          "id": "previous_sga",
+          "formula": "cy_h1_sga-cy_q1_sga"
+        },
+        {
+          "id": "previous_construction",
+          "formula": "cy_h1_construction-cy_q1_construction"
+        },
+        {
+          "id": "previous_other",
+          "formula": "previous_revenue-previous_construction"
+        },
+        {
+          "id": "previous_margin",
+          "formula": "previous_gp/previous_revenue"
+        },
+        {
+          "id": "prior_revenue",
+          "formula": "py_q3_sales-py_h1_sales"
+        },
+        {
+          "id": "prior_op",
+          "formula": "py_q3_op-py_h1_op"
+        },
+        {
+          "id": "prior_gp",
+          "formula": "py_q3_gp-py_h1_gp"
+        },
+        {
+          "id": "prior_sga",
+          "formula": "py_q3_sga-py_h1_sga"
+        },
+        {
+          "id": "prior_construction",
+          "formula": "py_q3_construction-py_h1_construction"
+        },
+        {
+          "id": "prior_other",
+          "formula": "prior_revenue-prior_construction"
+        },
+        {
+          "id": "prior_margin",
+          "formula": "prior_gp/prior_revenue"
+        },
+        {
+          "id": "recent_turnover_reference",
+          "formula": "previous_construction/q1_end_backlog"
+        },
+        {
+          "id": "q1_turnover_reference",
+          "formula": "cy_q1_construction/year_opening_backlog"
+        },
+        {
+          "id": "h1_construction_margin",
+          "formula": "cy_h1_construction_gp/cy_h1_construction"
+        },
+        {
+          "id": "company_implied_q3_revenue",
+          "formula": "guidance_q3_cumulative_sales-cy_h1_sales"
+        },
+        {
+          "id": "company_implied_q3_op",
+          "formula": "guidance_q3_cumulative_op-cy_h1_op"
+        },
+        {
+          "id": "bear_construction_revenue",
+          "formula": "opening_backlog*bear_conversion"
+        },
+        {
+          "id": "bear_construction_gp",
+          "formula": "bear_construction_revenue*bear_construction_margin"
+        },
+        {
+          "id": "bear_other_gp",
+          "formula": "bear_other_sales*other_margin"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_construction_revenue+bear_other_sales"
+        },
+        {
+          "id": "bear_gp",
+          "formula": "bear_construction_gp+bear_other_gp"
+        },
+        {
+          "id": "bear_sga",
+          "formula": "previous_sga+bear_sga_increment"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_gp-bear_sga"
+        },
+        {
+          "id": "base_construction_revenue",
+          "formula": "opening_backlog*base_conversion"
+        },
+        {
+          "id": "base_construction_gp",
+          "formula": "base_construction_revenue*base_construction_margin"
+        },
+        {
+          "id": "base_other_gp",
+          "formula": "base_other_sales*other_margin"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_construction_revenue+base_other_sales"
+        },
+        {
+          "id": "base_gp",
+          "formula": "base_construction_gp+base_other_gp"
+        },
+        {
+          "id": "base_sga",
+          "formula": "previous_sga+base_sga_increment"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_gp-base_sga"
+        },
+        {
+          "id": "bull_construction_revenue",
+          "formula": "opening_backlog*bull_conversion"
+        },
+        {
+          "id": "bull_construction_gp",
+          "formula": "bull_construction_revenue*bull_construction_margin"
+        },
+        {
+          "id": "bull_other_gp",
+          "formula": "bull_other_sales*other_margin"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_construction_revenue+bull_other_sales"
+        },
+        {
+          "id": "bull_gp",
+          "formula": "bull_construction_gp+bull_other_gp"
+        },
+        {
+          "id": "bull_sga",
+          "formula": "previous_sga+bull_sga_increment"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_gp-bull_sga"
+        },
+        {
+          "id": "base_vs_company_revenue",
+          "formula": "base_revenue-company_implied_q3_revenue"
+        },
+        {
+          "id": "base_vs_company_op",
+          "formula": "base_op-company_implied_q3_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "解体・メンテナンス事業",
+              "revenue": "bear_construction_revenue"
+            },
+            {
+              "name": "その他",
+              "revenue": "bear_other_sales"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "解体・メンテナンス事業",
+              "revenue": "base_construction_revenue"
+            },
+            {
+              "name": "その他",
+              "revenue": "base_other_sales"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "解体・メンテナンス事業",
+              "revenue": "bull_construction_revenue"
+            },
+            {
+              "name": "その他",
+              "revenue": "bull_other_sales"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 1,
+          "period_start": "2026-02-01",
+          "period_end": "2026-04-30",
+          "revenue": 3273.579,
+          "operating_profit": 353.498,
+          "ordinary_profit": 370.731,
+          "net_profit": 259.896,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2027公表損益計算書版。S02・S01とも会計方針変更・修正再表示なし。売却済み子会社を除外した当期連結範囲。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2,8"
+        },
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 2,
+          "period_start": "2026-02-01",
+          "period_end": "2026-07-31",
+          "revenue": 5895.455,
+          "operating_profit": 574.84,
+          "ordinary_profit": 609.027,
+          "net_profit": 99.106,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2027公表損益計算書版。S02・S01とも会計方針変更・修正再表示なし。売却済み子会社を除外した当期連結範囲。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,9"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 2,
+          "period_start": "2025-02-01",
+          "period_end": "2025-07-31",
+          "revenue": 5100.719,
+          "operating_profit": 226.203,
+          "ordinary_profit": 215.073,
+          "net_profit": 220.631,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026期中公表版。法人税等会計基準適用後・損益影響なし。S03と同じ損益定義。TERRA・ESHINO取得でのれんなし、暫定PPAによる損益改訂の記載なし。売却前の子会社を含む。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 10,14,16–17"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 3,
+          "period_start": "2025-02-01",
+          "period_end": "2025-10-31",
+          "revenue": 8068.016,
+          "operating_profit": 535.469,
+          "ordinary_profit": 529.623,
+          "net_profit": 436.329,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026期中公表版。法人税等会計基準適用後・損益影響なし。S04と同じ損益定義。暫定PPAによる損益改訂の記載なし。売却前の子会社を含む。",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,8,11"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "fy_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_fy_sales",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S06"
+          ],
+          "locator": "S01 PDF page 1；S06 PDF page 2 今回修正予想"
+        },
+        {
+          "id": "fy_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_fy_op",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S06"
+          ],
+          "locator": "S01 PDF page 1；S06 PDF page 2 今回修正予想"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_fy_ordinary",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S06"
+          ],
+          "locator": "S01 PDF page 1；S06 PDF page 2 今回修正予想"
+        },
+        {
+          "id": "fy_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_fy_net",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S06"
+          ],
+          "locator": "S01 PDF page 1；S06 PDF page 2 親会社株主に帰属する当期純利益"
+        },
+        {
+          "id": "q3_cumulative_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_q3_cumulative_sales",
+          "period_start": "2026-02-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 4 累計期間・2027年1月期実績欄3Q見込値。短信の正式予想とは別の説明資料見込み"
+        },
+        {
+          "id": "q3_cumulative_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_q3_cumulative_op",
+          "period_start": "2026-02-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-09",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF page 4 累計期間3Q見込値；S11「2027年1月期 業績の進捗状況について」で上方見直しを説明"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "大型工事の着工・進捗と受注残",
+          "mechanism": "Q2の完工・着工の端境期を経て電力などの大型工事が売上に寄与する。期首受注残に四半期計上率を掛けて完成工事高を予測。受注残には有価物売却予想額を含むため、スクラップ売上を別途加算しない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 16 注1–2；S05 PDF pages 6–7,14",
+          "calculation_ids": [
+            "bear_construction_revenue",
+            "base_construction_revenue",
+            "bull_construction_revenue"
+          ],
+          "not_quantified_reason": "工事別進捗・当期新規受注からの即時売上計上は保存資料で確認できず、既存受注残を中心とした条件付き集約モデル。"
+        },
+        {
+          "name": "元請構成・スクラップ・工事段階による採算",
+          "mechanism": "元請の選択受注は粗利を支えるが、工事開始時の原価先行と完工時の追加受注・スクラップ清算で四半期採算が変わる。これらを完成工事粗利率の範囲に包含する。",
+          "source_ids": [
+            "S05",
+            "S07",
+            "S11"
+          ],
+          "locator": "S05 PDF page 8；S07 PDF page 5；S11「2027年1月期 業績の進捗状況について」「完成工事高に占める元請案件の推移」",
+          "calculation_ids": [
+            "bear_construction_gp",
+            "base_construction_gp",
+            "bull_construction_gp"
+          ],
+          "not_quantified_reason": "工事別原価、スクラップ数量・単価、Q3の元請比率は非開示。抽出グラフに系列の混在もあり、元請・下請別の精密推計は採用しない。"
+        },
+        {
+          "name": "施工能力と販管費",
+          "mechanism": "監督員の採用は施工能力を支える一方、育成・安全管理・工事サポート・拠点拡充は費用増となる。直近Q2単独販管費へ追加費用を積み上げる。",
+          "source_ids": [
+            "S05",
+            "S11",
+            "S12"
+          ],
+          "locator": "S05 PDF pages 9–11,20；S11「1人あたり完成工事高」「販売費及び一般管理費」；S12 本文",
+          "calculation_ids": [
+            "bear_sga",
+            "base_sga",
+            "bull_sga"
+          ],
+          "not_quantified_reason": "単体監督員数を連結売上へ直接乗算しない。新規採用者の稼働能力、給与、拠点費用の金額内訳は非開示。"
+        },
+        {
+          "name": "子会社売却とその他事業の原資料不整合",
+          "mechanism": "前年Q3は売却前子会社を含み、当期は除外後の範囲となる。前年実績を継続事業へ仮想的に組み替えず、公表連結値同士で比較する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S10"
+          ],
+          "locator": "S01 PDF pages 4,9；S02 PDF page 8；S10 PDF page 19",
+          "calculation_ids": [
+            "previous_other",
+            "prior_other",
+            "base_other_gp"
+          ],
+          "not_quantified_reason": "その他事業の当上期累計売上がQ1累計を下回る理由は保存原文に説明がない。売却子会社の前年Q3単独の損益も未確認であり、全差額を売却影響と断定しない。"
+        },
+        {
+          "name": "事故による直接損益",
+          "mechanism": "補償、保険回収、追加費用や施工への影響が予測を下振れさせる可能性がある。",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S11"
+          ],
+          "locator": "S01 PDF pages 6,13；S05 PDF pages 3,5；S11 冒頭の事故説明",
+          "calculation_ids": [],
+          "not_quantified_reason": "会社が合理的算定困難としている直接損益は金額レンジを設定できない。全シナリオは未算定の直接事故損失を除く条件付き予測。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "bear_construction_revenue-prior_construction",
+              "reason": "受注残の売上計上仮定と前年の完成工事高との差。案件・数量・価格別には分解できない。"
+            },
+            {
+              "label": "その他事業・連結構成の変化",
+              "formula": "bear_other_sales-prior_other",
+              "reason": "売却後の小規模事業仮定との差。売却影響だけとは断定しない。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "公表売上合計から完成工事高を控除して比較用その他を定義しており、算術残差なし。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "bear_construction_revenue-previous_construction",
+              "reason": "端境期後の施工進捗を仮定。"
+            },
+            {
+              "label": "その他事業の変化",
+              "formula": "bear_other_sales-previous_other",
+              "reason": "前Qの負の差引き売上からの変化。減額の理由は未解明。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。その他事業の経済的原因は未解明であり、売上回復の確定事実ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(bear_revenue-prior_revenue)*prior_margin",
+              "reason": "前年単独の連結粗利率を固定した会計的な規模効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "bear_gp-bear_revenue*prior_margin",
+              "reason": "新規工事の初期原価、スクラップ時期、その他事業構成を粗利仮定に包含。個別寄与は識別できない。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "prior_sga-bear_sga",
+              "reason": "前年単独実績と直近費用から積み上げた予測との差。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "累計差引き後の粗利－販管費と営業利益は一致。個別要因の因果分解を示すものではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(bear_revenue-previous_revenue)*previous_margin",
+              "reason": "前Q単独の連結粗利率を固定した規模効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "bear_gp-bear_revenue*previous_margin",
+              "reason": "工事開始時の採算低下を中心とする条件付き粗利変化。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "previous_sga-bear_sga",
+              "reason": "採用・支援体制・拠点費用の上乗せ。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "base_construction_revenue-prior_construction",
+              "reason": "受注残計上率と大型工事の進捗を反映した完成工事高との差。"
+            },
+            {
+              "label": "その他事業・連結構成の変化",
+              "formula": "base_other_sales-prior_other",
+              "reason": "売却後の小規模事業仮定との差。全額を子会社売却影響としない。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "公表売上合計基準で算術残差なし。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "base_construction_revenue-previous_construction",
+              "reason": "端境期解消と電力などの大型工事の寄与を想定。"
+            },
+            {
+              "label": "その他事業の変化",
+              "formula": "base_other_sales-previous_other",
+              "reason": "前Qの負の差引き売上が繰り返されない条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(base_revenue-prior_revenue)*prior_margin",
+              "reason": "前年単独粗利率で評価した増減収効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "base_gp-base_revenue*prior_margin",
+              "reason": "選択受注改善と新規大型工事の初期採算を合わせた粗利仮定。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "prior_sga-base_sga",
+              "reason": "人件費・支援部門・拠点費用を含む販管費の差。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。採算・構成効果内の案件別寄与は未分解。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(base_revenue-previous_revenue)*previous_margin",
+              "reason": "前Q単独粗利率で評価した増減収効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "base_gp-base_revenue*previous_margin",
+              "reason": "上期の完工・清算利益を一律延長せず、工事開始局面への移行を織り込む。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "previous_sga-base_sga",
+              "reason": "直近費用への採用・支援・拠点費用上乗せ。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "bull_construction_revenue-prior_construction",
+              "reason": "既存受注残の計上が進む条件。新規拠点の未受注案件は加算していない。"
+            },
+            {
+              "label": "その他事業・連結構成の変化",
+              "formula": "bull_other_sales-prior_other",
+              "reason": "売却後の小規模売上と前年実績との差。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "公表売上合計基準で算術残差なし。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "完成工事高の変化",
+              "formula": "bull_construction_revenue-previous_construction",
+              "reason": "大型工事の立ち上がりと施工能力の活用が進む条件。"
+            },
+            {
+              "label": "その他事業の変化",
+              "formula": "bull_other_sales-previous_other",
+              "reason": "前Qの売上減額が繰り返されない条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。その他事業の減額理由は未解明。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(bull_revenue-prior_revenue)*prior_margin",
+              "reason": "前年単独粗利率で評価した増減収効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "bull_gp-bull_revenue*prior_margin",
+              "reason": "完工・清算が早まり、上期近傍の完成工事粗利率を維持する条件。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "prior_sga-bull_sga",
+              "reason": "経費抑制下の販管費積み上げと前年単独実績との差。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模効果",
+              "formula": "(bull_revenue-previous_revenue)*previous_margin",
+              "reason": "前Q単独粗利率で評価した増減収効果。"
+            },
+            {
+              "label": "採算・事業構成効果",
+              "formula": "bull_gp-bull_revenue*previous_margin",
+              "reason": "元請採算と清算進捗が支える粗利変化。スクラップ利益の別途加算なし。"
+            },
+            {
+              "label": "販管費差",
+              "formula": "previous_sga-bull_sga",
+              "reason": "採用・拠点費用増を既存体制の活用で抑える条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "算術残差なし。"
+        }
+      ],
+      "company_guidance": "通期予想はS06の修正後予想を採用。売上高・営業利益・経常利益は据え置き、親会社株主に帰属する当期純利益のみ投資有価証券関連の一過性要因を反映して修正。S05には3Q累計の会社見込みがあり、確認した上期実績を控除したcompany_implied_q3_revenueとcompany_implied_q3_opを参考値として区別する。これらは独自予測ではない。latest_confirmedは提示された保存資料内の最新確認を意味し、基準日までの後続開示の網羅性は未確認。",
+      "consensus": "未確認。提示された保存資料に対象四半期の市場コンセンサスはない。",
+      "independent_forecast": "期首受注残×売上計上率による完成工事高、その他事業売上、事業別粗利率、直近Q2販管費と追加費用から組み立てた条件付き独自予測。会社の累計見込み差引きや通期予想の四等分ではない。セグメント利益は売上総利益ベースのため、revenue_componentsのoperating_profitには転記していない。未算定の事故直接損益を除く営業モデルであり、事故影響を含む全損益の下限は示していない。経常利益は新規長期借入の適用金利・利息期間、配当等の四半期配分を十分に確定できずnull。純利益も事故関連損益・保険・税効果の範囲を設定できずnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き予測",
+          "text": "中心予測は売上高{{value:base_revenue}}、営業利益{{value:base_op}}。弱気は売上高{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気は売上高{{value:bull_revenue}}、営業利益{{value:bull_op}}。大型工事の売上寄与が本格化する一方、開始局面では原価が先行し、完工時の追加工事・スクラップ利益が上期と同様に得られるとは限らない。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 4,6–8；S11「2027年1月期 業績の進捗状況について」"
+        },
+        {
+          "heading": "会社見込みとの区別",
+          "text": "会社の3Q累計見込みから上期確定実績を控除した参考値は、売上高{{value:company_implied_q3_revenue}}、営業利益{{value:company_implied_q3_op}}。中心予測との差は売上高{{value:base_vs_company_revenue}}、営業利益{{value:base_vs_company_op}}。会社見込みには上期上振れと下期の保守的な採算判断が既に反映されており、上期の上振れ分をさらに加えていない。",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S06",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9；S05 PDF page 4；S06 PDF page 2；S11「2027年1月期 業績の進捗状況について」"
+        },
+        {
+          "heading": "比較と検証すべき点",
+          "text": "前年同四半期は売上高{{value:prior_revenue}}、営業利益{{value:prior_op}}、前四半期は売上高{{value:previous_revenue}}、営業利益{{value:previous_op}}。増収の持続には、受注残の存在だけでなく大型工事の実際の進捗と監督員の戦力化が必要。大阪事務所の開設や将来のPCB解体需要を、当四半期の追加売上として別途計上していない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9；S02 PDF page 8；S03 PDF page 8；S04 PDF page 10；S05 PDF pages 9,20–21；S11「トピックス② 大阪事務所の新設について」"
+        },
+        {
+          "heading": "予測の限界",
+          "text": "前四半期のその他事業売上は累計差引きで{{value:previous_other}}となり、減額理由が保存原文では説明されていない。追加の売上取消しがないことを条件とした小規模な売上レンジを置いた。事故の未算定損失は弱気シナリオにも金額を織り込めず、営業利益がこのレンジを下回る可能性は残る。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 9,13；S02 PDF page 8；S05 PDF page 3"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "工事別の四半期進捗、売上計上額、原価、追加受注、スクラップ数量・単価は保存資料では非開示。",
+        "受注残回転率の参考値は期中新規受注分を含み得るため、既存受注残のみの消化率とは一致しない。",
+        "その他事業の追加売上取消しがないことを条件とする。",
+        "全シナリオで未算定の事故直接損失を除外。既存販管費に含まれる事故対応費を再加算していない。",
+        "元請・下請構成と清算時期の効果は粗利率仮定に包含し、スクラップ利益や追加工事利益を別途上乗せしない。"
+      ],
+      "material_unresolved": [
+        "入力された2026-12-10の発表予定日は会社・取引所の一次情報で確認できていない。announcement_dateは対象条件の入力値を保持したもので、確認済み日程ではない。",
+        "提示資料に対象Q3の確定発表はないためtarget_already_announcedをfalseとした。ただし、基準日時までの開示一覧の網羅性は原本未確認。",
+        "S05 PDF page 4の会計期間見込欄にはQ3売上3,169、営業利益227とある一方、累計見込9,063・800からS01の精密な上期実績を控除すると3,167.545・225.160となる。通常の単純な表示丸めと断定できないため、会社見込み差引き値を参考採用し、会計期間欄の数値は予測入力・直接四半期実績として採用しない。",
+        "S01のその他事業売上35.838がS02のQ1累計38.045を下回る。全社売上から完成工事高を控除してもQ2単独は負となる。訂正、売上取消し、会計組替えのいずれかは原文から確定できず、非開示の理由を推測して修正していない。",
+        "S05・S07等のグラフ抽出には複数年度の業界構成比や系列ラベルの混在がある。PDF画像の原本確認が禁止されているため、曖昧な業界別・元請別金額を作らず、明瞭な本文と短信の合計値を使用した。",
+        "S11はtruncated=falseだが質疑応答本文は会員登録の案内で途切れている。質疑応答の必要範囲は未確認。説明本文の経常利益増加率には短信と整合しない記述があるため、その率は採用していない。",
+        "S13は保存本文がなく原本未確認。S15は配信案内のみで動画内容は未確認。S16・S17も保存本文が提示されていない。",
+        "事故の直接損益はS01・S05で会社が算定困難と明示している。これは会社公表時点の未算定事項であり、その後の追加開示の有無は別途原本未確認。",
+        "借入金の金利水準、四半期の金融収益、事故補償と保険回収の時期・税務処理について根拠ある範囲を設定できず、経常利益・純利益は予測しない。",
+        "前年比較は売却前子会社を含む公表連結実績。継続事業だけに組み替えた比較値ではない。ブリッジの構成・採算項目は会計的分解であり、売却・単価・数量・工事別採算の独立した因果寄与を確定するものではない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "S01のその他事業売上35.838がS02のQ1累計38.045を下回る。全社売上から完成工事高を控除してもQ2単独は負となる。訂正、売上取消し、会計組替えのいずれかは原文から確定できず、非開示の理由を推測して修正していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "S05 PDF page 4の会計期間見込欄にはQ3売上3,169、営業利益227とある一方、累計見込9,063・800からS01の精密な上期実績を控除すると3,167.545・225.160となる。通常の単純な表示丸めと断定できないため、会社見込み差引き値を参考採用し、会計期間欄の数値は予測入力・直接四半期実績として採用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "S05・S07等のグラフ抽出には複数年度の業界構成比や系列ラベルの混在がある。PDF画像の原本確認が禁止されているため、曖昧な業界別・元請別金額を作らず、明瞭な本文と短信の合計値を使用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "S11はtruncated=falseだが質疑応答本文は会員登録の案内で途切れている。質疑応答の必要範囲は未確認。説明本文の経常利益増加率には短信と整合しない記述があるため、その率は採用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "S13は保存本文がなく原本未確認。S15は配信案内のみで動画内容は未確認。S16・S17も保存本文が提示されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "事故の直接損益はS01・S05で会社が算定困難と明示している。これは会社公表時点の未算定事項であり、その後の追加開示の有無は別途原本未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "借入金の金利水準、四半期の金融収益、事故補償と保険回収の時期・税務処理について根拠ある範囲を設定できず、経常利益・純利益は予測しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "入力された2026-12-10の発表予定日は会社・取引所の一次情報で確認できていない。announcement_dateは対象条件の入力値を保持したもので、確認済み日程ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "前年比較は売却前子会社を含む公表連結実績。継続事業だけに組み替えた比較値ではない。ブリッジの構成・採算項目は会計的分解であり、売却・単価・数量・工事別採算の独立した因果寄与を確定するものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "提示資料に対象Q3の確定発表はないためtarget_already_announcedをfalseとした。ただし、基準日時までの開示一覧の網羅性は原本未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-10-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "base_construction_margin: 選択受注・見積精度改善を維持する一方、上期に寄与した完工時の追加工事・スクラップ利益を繰り返さず、新規大型工事中心の構成により上期から粗利率が低下すると仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "base_conversion: 大型工事の売上寄与が本格化し、採用による施工余力もある一方、若手育成と新規工事の立ち上がりを要する。直近の参考回転率の範囲内で35.5%を採用。会社の3Q売上見込みは水準照合にのみ使用し、会社予想の差引きを予測式には使用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "base_other_sales: 当上期その他事業売上の半期平均を下回る小規模な継続売上を仮置き。Q1から上期にかけての売上減額の理由が未確認のため、会社予測ではなく条件付きの感応度設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "base_sga_increment: Q2単独販管費に対し約6%の増加を仮定。採用と安全・工事サポート体制強化、大阪拠点開設を織り込み、売却子会社の費用削減は直近実績に既に含まれるため再控除しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bear_construction_margin: 前年上期の完成工事粗利率は約17.9%、当上期は約21.9%。新規大型工事の初期原価、スクラップ搬出遅延、労務費負担により前年上期近傍へ低下する条件。事故の未算定の直接損失は含めない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bear_conversion: 期首受注残からの当四半期売上計上率。直近Q2の完成工事高／Q1末受注残は約28.7%、Q1の完成工事高／年度期首受注残は約38.0%。これらは新規受注分を含み得る参考回転率であり、実際の受注残消化率ではない。S05の端境期解消・電力大型工事の寄与を踏まえつつ、着工遅延を見込む条件として32%を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bear_other_sales: 子会社売却後のその他事業は縮小。保存原文ではQ2単独売上が負になる不整合があり、その値を将来へ延長せず、追加の売上取消しがないという条件下で下限をゼロとする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bear_sga_increment: Q2単独販管費を基礎に、工事サポート・安全関連人員、採用、拠点開設の追加費用を約9%上乗せするストレス条件。直接事故補償は含めない。基礎費用に既存の事故関連販管費を含むため、その過去計上額は別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bull_construction_margin: 工事の完工・清算が早く進み、元請工事の採算が維持される条件。当上期の完成工事粗利率近傍を上限に置き、元請目標利益率を全工事に適用しない。スクラップ寄与はこの粗利率に包含する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bull_conversion: 電力大型工事の立ち上がり、既存工事の前倒し進捗、監督員の戦力化が進む条件。Q1の参考回転率を小幅に上回る39%を置く。受注残の増加率を売上に一律適用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bull_other_sales: 売上減額が再発せず、当上期の四半期平均近傍の小規模売上を計上する条件。撤退済み人材サービス子会社の売上復活は想定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "bull_sga_increment: 採用・拠点費用は増えるが、経費抑制と既存支援体制の活用によりQ2単独比約3%の増加に収まる条件。利益目標から逆算せず、直近の費用水準から設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "その他事業の追加売上取消しがないことを条件とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "元請・下請構成と清算時期の効果は粗利率仮定に包含し、スクラップ利益や追加工事利益を別途上乗せしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "全シナリオで未算定の事故直接損失を除外。既存販管費に含まれる事故対応費を再加算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "受注残回転率の参考値は期中新規受注分を含み得るため、既存受注残のみの消化率とは一致しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "1433",
+      "company_name": "ベステラ株式会社",
+      "kind": "condition",
+      "message": "工事別の四半期進捗、売上計上額、原価、追加受注、スクラップ数量・単価は保存資料では非開示。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/1433/result.json": "00dd9f622270f9fd30181ca072c8800ae57b0e19f1c30b797927c67d1ce99a58",
+    "reports/1433.md": "a25b6e256dc11a27aa823c30ba3f7f8531347d9ee6c77efff8b72aa9ba4dd81f"
+  }
+}

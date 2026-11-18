@@ -1,0 +1,1524 @@
+{
+  "id": "4026-6b3b417d0b8b55428ad8f8325a86791ed7c582327af97f1354bf6bec998a04bb",
+  "code": "4026",
+  "companyName": "神島化学工業株式会社",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-04-30",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "4026-generation-535830c1fd4d0e94 · 6b3b417d",
+  "savedAt": "2026-11-18T17:08:30+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 4026 神島化学工業株式会社｜2027-04-30期 Q2単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS04で中間累計と通期の会社予想を確認。保存資料内では最新の数値予想であり、S05・S07の未定状態を更新している。対象四半期単独の直接予想ではない。S01の実績が未確認のため、中間累計予想から第1四半期実績を控除した会社予想ベースの単独値も算出できない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスの数値、集計主体、対象期間はない。\n\n## 独自予測・差引推計の区分\n売上高、営業利益、経常利益、純利益は未算定。前年同四半期のセグメント売上・利益は累計差引で再現できるが、当期の原燃料環境変化に対する価格転嫁と数量増の内訳、直近採算、費用発生時期の幅を裏付けられない。単に未公表変数があるためではなく、対象四半期の数量・単価・費用の合理的な範囲を設定する基礎が不足しているため、scenariosを空とした。会社予想の均等配分や前年増減率の一律延長は行っていない。\n\n## 対象四半期と予測の限界\n対象は次回中間決算に含まれる第2四半期単独。前年同四半期は売上高6,884.00、営業利益682.00と累計差引で算出できる。一方、直近第1四半期の保存本文が空のため、足元の売上・採算と前四半期比較を確認できない。\n\n## 会社予想と独自予測の区別\n会社の中間累計予想は売上高14,570.00、営業利益1,170.00。通期予想は売上高30,530.00、営業利益2,470.00。いずれも対象四半期単独の独自予測としては採用しない。会社が織り込む価格転嫁、数量増、コスト改善を重ねて加算しない。\n\n## 企業固有の確認点\n建材は高級軒天ボードと新外壁材の販売構成、化成品は医薬・サプリメント向けと工業用途の構成、セラミックスは受注回復が焦点となる。採算面では原燃料高の転嫁時期と修繕・設備費用の発生時期が重要。過去の高付加価値品拡販実績だけでは、当期の数量と採算の上下限を確定できない。\n\n## エラー・未解決事項\n- 12本のbridgesは比較の欠落箇所を示すための未算定レコード。シナリオ予測が存在しないため差額算式を作らず、residualをnullとした。残差ゼロや経済要因の説明完了を意味しない。\n- S01が未確認のため当期第1四半期累計はcumulative_historicalsに追加していない。会社中間累計予想からの単独差引、前四半期比較は不能。\n- S01はtruncated=falseだが、保存内容はページ見出しのみで本文が欠落している。直近第1四半期の実績、セグメント情報、会計方針・表示変更を原文確認できない。これは非開示ではなく原本未確認である。\n- S04の予想は保存資料内の最新確認値として登録した。基準日時までの追加修正・差し替えを、S10・S11の原文から確認できていない。\n- S05・S06には過去の数量・構成・コスト改善に関する説明があるが、当期対象四半期に適用する増減幅と費用範囲を特定できない。根拠のない仮定レンジを作らず、独自予測を未算定とした。\n- S06の旧中期計画はS05でローリング計画の数値未定が示されているため、当期の有効なセグメント予想として採用しない。\n- S08の新柄色数は同一資料内で記載が一致していない。業績推計には使用していない。\n- ZESTAに関する基準日当日の追加開示は保存原文がなく、公表時刻も未確認。S05・S07の発売予定を販売実績に置き換えていない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 前年単独値は百万円未満切捨ての累計公表値の差引であり、円単位の単独実績とは端数差が生じ得る。セグメント合計との差は照合用計算として残し、予測ブリッジの丸め残差とはしていない。\n- 同一会計・連結範囲の比較四半期不足: qoq\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 経常利益・純利益は、営業利益に加えて当期の金融費用、特別損益、税負担の根拠が不足し、予測していない。\n- 資料確認未了: already_announced\n- 資料確認未了: latest_results\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- S08には新製品の掲載価格はあるが、メーカー実現売価、出荷数量、既存製品からの置換率は記載されていない。\n- 対象実績の公表済み資料は提示資料内にないが、適時開示一覧の原文がないため網羅確認はできない。\n- 当期の修繕実施時期、設備の稼働・償却開始時期と関連費用は未確認。\n- 確認した保存原文には、当期対象四半期の製品別出荷数量、実現単価、用途別構成、受注残がない。会社全体で非開示とは断定しない。\n\n## 根拠・保存記録\n- S01 [2027年4月期 第1四半期決算短信〔日本基準〕（非連結）](https://konoshima.co.jp/topics/file/00396.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `5d0db3fb33529836160f93a851225dd565b28f5294259aba50ce79b7c71c2820`\n- S02 [2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://konoshima.co.jp/topics/file/00369.pdf) / 公表 2025-12-10 / retrieved / SHA-256 `60764c64e445b504a3e57b6da376e7a8c8d5180ae4e5b4d925fe1b87720f3ff6`\n- S03 [2026年4月期 第1四半期決算短信〔日本基準〕（非連結）](https://www.konoshima.co.jp/topics/file/00366.pdf) / 公表 2025-09-10 / retrieved / SHA-256 `1f76a247de13a4218e9d699726c7f5eacb635ee8efe553eccbb3d0d15d1ffe84`\n- S04 [業績予想及び配当予想の公表に関するお知らせ](https://konoshima.co.jp/topics/file/00397.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `e7a4f77b7cb4294e8e19d765c012ae5791b1f07d32a6b6f27ea0bda1a5519d6a`\n- S05 [2026年4月期 決算説明資料](https://konoshima.co.jp/topics/file/00387.pdf) / 公表 2026-06-15 / retrieved / SHA-256 `3f9fe19419eefc5cebb37740001466fc88e6124d22f7a414743f2c274a2d8956`\n- S06 [2026年4月期 第2四半期（中間期）決算説明資料 ～決算概要～](https://www.konoshima.co.jp/topics/file/00373.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `0827b64fd83ba8ff5a5951e655a277ef1c353ac6048f9ec6f101bbf190521c4e`\n- S07 [2026年4月期 決算短信〔日本基準〕（非連結）](https://konoshima.co.jp/topics/file/00385.pdf) / 公表 2026-06-10 / retrieved / SHA-256 `8774d99cc0e708c899476427e96ce274d7ae0743f85089de540a961f906fe146`\n- S08 [シーリングレス外壁材シリーズ「DRESSE TRIARD」を発売](https://konoshima.co.jp/topics/file/00398.pdf) / 公表 2026-09-30 / retrieved / SHA-256 `5f7797a89801410916fd7c2ded7d96864647784829eda136e5980aaf4c69b9ec`\n- S09 [IRカレンダー](https://konoshima.co.jp/corp/ircal/ircal.cgi) / 公表  / unavailable / SHA-256 `なし`\n- S10 [決算短信一覧](https://konoshima.co.jp/corp/ea/list.cgi) / 公表  / unavailable / SHA-256 `なし`\n- S11 [適時開示一覧](https://konoshima.co.jp/corp/td/list.cgi) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 指定発表日2026-12-10は一次資料で日付まで裏付けられていない。S09の保存原文もないためannouncement_dateはnullとした。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "4026",
+    "company_name": "神島化学工業株式会社",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-04-30期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-04-30",
+      "quarter": 2,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_h1_revenue": 13827.0,
+      "py_h1_op": 1210.0,
+      "py_h1_ordinary": 1156.0,
+      "py_h1_net": 803.0,
+      "py_q1_revenue": 6943.0,
+      "py_q1_op": 528.0,
+      "py_q1_ordinary": 503.0,
+      "py_q1_net": 352.0,
+      "py_h1_build_revenue": 7629.0,
+      "py_q1_build_revenue": 3771.0,
+      "py_h1_build_op": 657.0,
+      "py_q1_build_op": 284.0,
+      "py_h1_chem_revenue": 6197.0,
+      "py_q1_chem_revenue": 3171.0,
+      "py_h1_chem_op": 1013.0,
+      "py_q1_chem_op": 468.0,
+      "py_h1_corporate_adjustment": -460.0,
+      "py_q1_corporate_adjustment": -224.0,
+      "guidance_h1_revenue": 14570.0,
+      "guidance_h1_op": 1170.0,
+      "guidance_h1_ordinary": 1100.0,
+      "guidance_h1_net": 770.0,
+      "guidance_fy_revenue": 30530.0,
+      "guidance_fy_op": 2470.0,
+      "guidance_fy_ordinary": 2300.0,
+      "guidance_fy_net": 1610.0,
+      "py_q2_revenue": 6884.0,
+      "py_q2_op": 682.0,
+      "py_q2_ordinary": 653.0,
+      "py_q2_net": 451.0,
+      "py_q2_build_revenue": 3858.0,
+      "py_q2_build_op": 373.0,
+      "py_q2_chem_revenue": 3026.0,
+      "py_q2_chem_op": 545.0,
+      "py_q2_corporate_adjustment": -236.0,
+      "py_q2_revenue_reconciliation": 0.0,
+      "py_q2_op_reconciliation": 0.0,
+      "company_h1_revenue": 14570.0,
+      "company_h1_op": 1170.0,
+      "company_fy_revenue": 30530.0,
+      "company_fy_op": 2470.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF page 1、2、7、8：当期実績、会計方針等、表示方法の変更",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "1Q累計",
+        "revenue": 6943.0,
+        "operating_profit": 528.0,
+        "ordinary_profit": 503.0,
+        "net_profit": 352.0
+      },
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S02",
+          "S03"
+        ],
+        "locator": "PDF page 1、2、8：当期実績、会計方針等",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": 6884.0,
+        "operating_profit": 682.0,
+        "ordinary_profit": 653.0,
+        "net_profit": 451.0
+      }
+    ],
+    "bridges": [],
+    "issues": [
+      "12本のbridgesは比較の欠落箇所を示すための未算定レコード。シナリオ予測が存在しないため差額算式を作らず、residualをnullとした。残差ゼロや経済要因の説明完了を意味しない。",
+      "S01が未確認のため当期第1四半期累計はcumulative_historicalsに追加していない。会社中間累計予想からの単独差引、前四半期比較は不能。",
+      "S01はtruncated=falseだが、保存内容はページ見出しのみで本文が欠落している。直近第1四半期の実績、セグメント情報、会計方針・表示変更を原文確認できない。これは非開示ではなく原本未確認である。",
+      "S04の予想は保存資料内の最新確認値として登録した。基準日時までの追加修正・差し替えを、S10・S11の原文から確認できていない。",
+      "S05・S06には過去の数量・構成・コスト改善に関する説明があるが、当期対象四半期に適用する増減幅と費用範囲を特定できない。根拠のない仮定レンジを作らず、独自予測を未算定とした。",
+      "S06の旧中期計画はS05でローリング計画の数値未定が示されているため、当期の有効なセグメント予想として採用しない。",
+      "S08の新柄色数は同一資料内で記載が一致していない。業績推計には使用していない。",
+      "ZESTAに関する基準日当日の追加開示は保存原文がなく、公表時刻も未確認。S05・S07の発売予定を販売実績に置き換えていない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "前年単独値は百万円未満切捨ての累計公表値の差引であり、円単位の単独実績とは端数差が生じ得る。セグメント合計との差は照合用計算として残し、予測ブリッジの丸め残差とはしていない。",
+      "同一会計・連結範囲の比較四半期不足: qoq",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "経常利益・純利益は、営業利益に加えて当期の金融費用、特別損益、税負担の根拠が不足し、予測していない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: latest_results",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "指定発表日2026-12-10は一次資料で日付まで裏付けられていない。S09の保存原文もないためannouncement_dateはnullとした。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [
+      "S08には新製品の掲載価格はあるが、メーカー実現売価、出荷数量、既存製品からの置換率は記載されていない。",
+      "対象実績の公表済み資料は提示資料内にないが、適時開示一覧の原文がないため網羅確認はできない。",
+      "当期の修繕実施時期、設備の稼働・償却開始時期と関連費用は未確認。",
+      "確認した保存原文には、当期対象四半期の製品別出荷数量、実現単価、用途別構成、受注残がない。会社全体で非開示とは断定しない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年4月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://konoshima.co.jp/topics/file/00396.pdf",
+        "published_at": "2026-09-10",
+        "category": "latest_results",
+        "final_url": "https://konoshima.co.jp/topics/file/00396.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S01.txt",
+        "sha256": "5d0db3fb33529836160f93a851225dd565b28f5294259aba50ce79b7c71c2820",
+        "text_sha256": "fb94554abbba0b8b69721a67223294dedcc3c257350257d23d3dc3cbc60041c3",
+        "retrieved_at": "2026-11-18T17:05:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 115,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://konoshima.co.jp/topics/file/00369.pdf",
+        "published_at": "2025-12-10",
+        "category": "historical",
+        "final_url": "https://konoshima.co.jp/topics/file/00369.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S02.txt",
+        "sha256": "60764c64e445b504a3e57b6da376e7a8c8d5180ae4e5b4d925fe1b87720f3ff6",
+        "text_sha256": "9c200f61b428f1bfad72a74bc207e2df2f84bee224bf0adb094c17beaa9ef383",
+        "retrieved_at": "2026-11-18T17:05:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8237,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年4月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www.konoshima.co.jp/topics/file/00366.pdf",
+        "published_at": "2025-09-10",
+        "category": "historical",
+        "final_url": "https://www.konoshima.co.jp/topics/file/00366.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S03.txt",
+        "sha256": "1f76a247de13a4218e9d699726c7f5eacb635ee8efe553eccbb3d0d15d1ffe84",
+        "text_sha256": "1c8a75c78c5fa37a4b6ce89b1d95e9eb52c8233a0a48195ff6c6eb92f29379ee",
+        "retrieved_at": "2026-11-18T17:05:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7035,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "業績予想及び配当予想の公表に関するお知らせ",
+        "url": "https://konoshima.co.jp/topics/file/00397.pdf",
+        "published_at": "2026-09-10",
+        "category": "guidance",
+        "final_url": "https://konoshima.co.jp/topics/file/00397.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S04.txt",
+        "sha256": "e7a4f77b7cb4294e8e19d765c012ae5791b1f07d32a6b6f27ea0bda1a5519d6a",
+        "text_sha256": "79e990f793bc036de5c7d132a9676ffe0a0dec4a7d2a430ac04c3ca74d06b598",
+        "retrieved_at": "2026-11-18T17:05:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1756,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年4月期 決算説明資料",
+        "url": "https://konoshima.co.jp/topics/file/00387.pdf",
+        "published_at": "2026-06-15",
+        "category": "presentation",
+        "final_url": "https://konoshima.co.jp/topics/file/00387.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S05.txt",
+        "sha256": "3f9fe19419eefc5cebb37740001466fc88e6124d22f7a414743f2c274a2d8956",
+        "text_sha256": "d87063b00f9d946b5f435e029151dffc0c7d5d439e5c052c9ec4fc179dc743df",
+        "retrieved_at": "2026-11-18T17:05:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12224,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年4月期 第2四半期（中間期）決算説明資料 ～決算概要～",
+        "url": "https://www.konoshima.co.jp/topics/file/00373.pdf",
+        "published_at": "2025-12-15",
+        "category": "presentation",
+        "final_url": "https://www.konoshima.co.jp/topics/file/00373.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S06.txt",
+        "sha256": "0827b64fd83ba8ff5a5951e655a277ef1c353ac6048f9ec6f101bbf190521c4e",
+        "text_sha256": "5838285e063404b89ea3c95cbccc3bd85da31ee9460e67283707843b73d0c697",
+        "retrieved_at": "2026-11-18T17:05:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 14556,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年4月期 決算短信〔日本基準〕（非連結）",
+        "url": "https://konoshima.co.jp/topics/file/00385.pdf",
+        "published_at": "2026-06-10",
+        "category": "historical",
+        "final_url": "https://konoshima.co.jp/topics/file/00385.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S07.txt",
+        "sha256": "8774d99cc0e708c899476427e96ce274d7ae0743f85089de540a961f906fe146",
+        "text_sha256": "7892087d7a7e9e396cf5dd7f85891ea35f1aa4da1d7aa059f02af64483da0f3d",
+        "retrieved_at": "2026-11-18T17:05:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 14813,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "シーリングレス外壁材シリーズ「DRESSE TRIARD」を発売",
+        "url": "https://konoshima.co.jp/topics/file/00398.pdf",
+        "published_at": "2026-09-30",
+        "category": "other",
+        "final_url": "https://konoshima.co.jp/topics/file/00398.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\4026\\sources\\S08.txt",
+        "sha256": "5f7797a89801410916fd7c2ded7d96864647784829eda136e5980aaf4c69b9ec",
+        "text_sha256": "ea8c5e8671e3c692cd030000cd9682ecdce1a8c7a0811b80ff2c99d836a4ec29",
+        "retrieved_at": "2026-11-18T17:05:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1230,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "IRカレンダー",
+        "url": "https://konoshima.co.jp/corp/ircal/ircal.cgi",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:05:40+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "決算短信一覧",
+        "url": "https://konoshima.co.jp/corp/ea/list.cgi",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:05:40+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "適時開示一覧",
+        "url": "https://konoshima.co.jp/corp/td/list.cgi",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T17:05:40+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 2,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_h1_revenue",
+          "value": 13827,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、8：当中間会計期間"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 1210,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、8：当中間会計期間"
+        },
+        {
+          "id": "py_h1_ordinary",
+          "value": 1156,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、8：当中間会計期間"
+        },
+        {
+          "id": "py_h1_net",
+          "value": 803,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、8：当中間会計期間"
+        },
+        {
+          "id": "py_q1_revenue",
+          "value": 6943,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7：当第1四半期累計期間"
+        },
+        {
+          "id": "py_q1_op",
+          "value": 528,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7：当第1四半期累計期間"
+        },
+        {
+          "id": "py_q1_ordinary",
+          "value": 503,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7：当第1四半期累計期間"
+        },
+        {
+          "id": "py_q1_net",
+          "value": 352,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7：当第1四半期累計期間"
+        },
+        {
+          "id": "py_h1_build_revenue",
+          "value": 7629,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10：当中間会計期間、建材事業"
+        },
+        {
+          "id": "py_q1_build_revenue",
+          "value": 3771,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9：当第1四半期累計期間、建材事業"
+        },
+        {
+          "id": "py_h1_build_op",
+          "value": 657,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10：当中間会計期間、建材事業"
+        },
+        {
+          "id": "py_q1_build_op",
+          "value": 284,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9：当第1四半期累計期間、建材事業"
+        },
+        {
+          "id": "py_h1_chem_revenue",
+          "value": 6197,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10：当中間会計期間、化成品事業"
+        },
+        {
+          "id": "py_q1_chem_revenue",
+          "value": 3171,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9：当第1四半期累計期間、化成品事業"
+        },
+        {
+          "id": "py_h1_chem_op",
+          "value": 1013,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10：当中間会計期間、化成品事業"
+        },
+        {
+          "id": "py_q1_chem_op",
+          "value": 468,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9：当第1四半期累計期間、化成品事業"
+        },
+        {
+          "id": "py_h1_corporate_adjustment",
+          "value": -460,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10：セグメント利益の調整額"
+        },
+        {
+          "id": "py_q1_corporate_adjustment",
+          "value": -224,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9：セグメント利益の調整額"
+        },
+        {
+          "id": "guidance_h1_revenue",
+          "value": 14570,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期第2四半期（中間期）今回発表予想"
+        },
+        {
+          "id": "guidance_h1_op",
+          "value": 1170,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期第2四半期（中間期）今回発表予想"
+        },
+        {
+          "id": "guidance_h1_ordinary",
+          "value": 1100,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期第2四半期（中間期）今回発表予想"
+        },
+        {
+          "id": "guidance_h1_net",
+          "value": 770,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期第2四半期（中間期）今回発表予想"
+        },
+        {
+          "id": "guidance_fy_revenue",
+          "value": 30530,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期通期今回発表予想"
+        },
+        {
+          "id": "guidance_fy_op",
+          "value": 2470,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期通期今回発表予想"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "value": 2300,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期通期今回発表予想"
+        },
+        {
+          "id": "guidance_fy_net",
+          "value": 1610,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1：2027年4月期通期今回発表予想"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_q2_revenue",
+          "formula": "py_h1_revenue-py_q1_revenue"
+        },
+        {
+          "id": "py_q2_op",
+          "formula": "py_h1_op-py_q1_op"
+        },
+        {
+          "id": "py_q2_ordinary",
+          "formula": "py_h1_ordinary-py_q1_ordinary"
+        },
+        {
+          "id": "py_q2_net",
+          "formula": "py_h1_net-py_q1_net"
+        },
+        {
+          "id": "py_q2_build_revenue",
+          "formula": "py_h1_build_revenue-py_q1_build_revenue"
+        },
+        {
+          "id": "py_q2_build_op",
+          "formula": "py_h1_build_op-py_q1_build_op"
+        },
+        {
+          "id": "py_q2_chem_revenue",
+          "formula": "py_h1_chem_revenue-py_q1_chem_revenue"
+        },
+        {
+          "id": "py_q2_chem_op",
+          "formula": "py_h1_chem_op-py_q1_chem_op"
+        },
+        {
+          "id": "py_q2_corporate_adjustment",
+          "formula": "py_h1_corporate_adjustment-py_q1_corporate_adjustment"
+        },
+        {
+          "id": "py_q2_revenue_reconciliation",
+          "formula": "py_q2_revenue-py_q2_build_revenue-py_q2_chem_revenue"
+        },
+        {
+          "id": "py_q2_op_reconciliation",
+          "formula": "py_q2_op-py_q2_build_op-py_q2_chem_op-py_q2_corporate_adjustment"
+        },
+        {
+          "id": "company_h1_revenue",
+          "formula": "guidance_h1_revenue"
+        },
+        {
+          "id": "company_h1_op",
+          "formula": "guidance_h1_op"
+        },
+        {
+          "id": "company_fy_revenue",
+          "formula": "guidance_fy_revenue"
+        },
+        {
+          "id": "company_fy_op",
+          "formula": "guidance_fy_op"
+        }
+      ],
+      "scenarios": {},
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 1,
+          "period_start": "2025-05-01",
+          "period_end": "2025-07-31",
+          "revenue": 6943,
+          "operating_profit": 528,
+          "ordinary_profit": 503,
+          "net_profit": 352,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "FY2026_current_period_as_reported",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、2、7、8：当期実績、会計方針等、表示方法の変更",
+          "accounting_version_note": "当期主要損益は公表値。表示方法の変更は前期比較欄の営業外収益内訳に関するもので、当期主要損益の累計差引には影響しない。"
+        },
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 2,
+          "period_start": "2025-05-01",
+          "period_end": "2025-10-31",
+          "revenue": 13827,
+          "operating_profit": 1210,
+          "ordinary_profit": 1156,
+          "net_profit": 803,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "FY2026_current_period_as_reported",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、2、8：当期実績、会計方針等",
+          "accounting_version_note": "会計方針変更、会計上の見積り変更、修正再表示はいずれも無。S03の当期主要損益と同一会計版として累計差引を行う。"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "建材の高付加価値品構成と住宅・非住宅需要",
+          "mechanism": "高級軒天ボードやサイディングの拡販は売上と製品構成を改善する一方、住宅需要減少とビル工事遅延が販売数量を抑える。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S06"
+          ],
+          "locator": "S02 PDF page 4、10；S05 PDF page 6、17；S06 PDF page 6",
+          "calculation_ids": [
+            "py_q2_build_revenue",
+            "py_q2_build_op"
+          ],
+          "not_quantified_reason": "前年同四半期のセグメント基準値は算出できるが、当期の出荷数量、実現単価、高級軒天構成比と直近セグメント実績は保存原文から確認できない。"
+        },
+        {
+          "name": "マグネシウムの用途構成とセラミックス受注",
+          "mechanism": "医薬・サプリメント向け高付加価値品と工業用途の構成が採算を左右する。セラミックスはレーザー研究用途と蛍光体の受注・販売時期が売上を左右する。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S06"
+          ],
+          "locator": "S02 PDF page 4；S05 PDF page 7、15、16；S06 PDF page 7",
+          "calculation_ids": [
+            "py_q2_chem_revenue",
+            "py_q2_chem_op"
+          ],
+          "not_quantified_reason": "当期対象四半期の用途別出荷量、受注残、販売構成、採算の定量値が未確認。前年上期や前期通期の実績だけでは当期の増減幅を限定できない。"
+        },
+        {
+          "name": "原燃料高と価格転嫁・工場コスト改善",
+          "mechanism": "原燃料の調達価格上昇が製造原価を押し上げ、価格転嫁、販売数量増、工場のコスト改善が相殺する。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 1：業績予想の説明；S05 PDF page 12",
+          "calculation_ids": [],
+          "not_quantified_reason": "会社予想には相殺効果が包含されているが、対象四半期の原燃料負担、改定価格の適用時期、数量効果の内訳がない。会社予想に別途同じ効果を加算しない。"
+        },
+        {
+          "name": "修繕時期・人件費・設備稼働",
+          "mechanism": "大型修繕の実施時期、人件費、設備稼働に伴う償却費や立ち上げ費用が四半期採算を変動させる。",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "locator": "S05 PDF page 18；S06 PDF page 5、11；S07 PDF page 6、15",
+          "calculation_ids": [
+            "py_q2_corporate_adjustment"
+          ],
+          "not_quantified_reason": "前年上期の修繕費減少は時期ずれを含む。当期の修繕計画と新設備の稼働・償却開始時期、増加費用が未確認であり、前年の採算をそのまま適用できない。"
+        },
+        {
+          "name": "DRESSE TRIARDとZESTA",
+          "mechanism": "新製品は高付加価値品の販売拡大につながる可能性があるが、既存品の置換分と純増分を分ける必要がある。",
+          "source_ids": [
+            "S05",
+            "S08"
+          ],
+          "locator": "S05 PDF page 17、18；S08 PDF page 1、2",
+          "calculation_ids": [],
+          "not_quantified_reason": "DRESSE TRIARDの掲載価格はメーカーの実現売価ではなく、出荷数量や既存品置換率も提示されていない。ZESTAの予定と実際の発売・出荷を同一視できないため、増収額を設定しない。"
+        },
+        {
+          "name": "退職給付引当金戻入益の比較期間",
+          "mechanism": "会社は前期の戻入益を当期通期予想に見込んでいない。通期比較要因を対象四半期比較へ機械的に配賦することはできない。",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：業績予想の説明；S07 PDF page 4",
+          "calculation_ids": [],
+          "not_quantified_reason": "前期通期の戻入益が前年第2四半期単独に計上されたことを示す根拠はなく、対象四半期の減益要因として控除しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_revenue",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。独自予測の数量・価格レンジを設定できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。当期の原燃料費、修繕費、構成変化を定量化できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_revenue",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。独自予測の数量・価格レンジを設定できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。当期の原燃料費、修繕費、構成変化を定量化できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_revenue",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。独自予測の数量・価格レンジを設定できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期基準値は算出可能。当期の原燃料費、修繕費、構成変化を定量化できず、差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "S01本文欠落により前四半期実績が未確認。予測も未算定のため差額と残差は算定不能。"
+        }
+      ],
+      "company_guidance": "S04で中間累計と通期の会社予想を確認。保存資料内では最新の数値予想であり、S05・S07の未定状態を更新している。対象四半期単独の直接予想ではない。S01の実績が未確認のため、中間累計予想から第1四半期実績を控除した会社予想ベースの単独値も算出できない。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスの数値、集計主体、対象期間はない。",
+      "independent_forecast": "売上高、営業利益、経常利益、純利益は未算定。前年同四半期のセグメント売上・利益は累計差引で再現できるが、当期の原燃料環境変化に対する価格転嫁と数量増の内訳、直近採算、費用発生時期の幅を裏付けられない。単に未公表変数があるためではなく、対象四半期の数量・単価・費用の合理的な範囲を設定する基礎が不足しているため、scenariosを空とした。会社予想の均等配分や前年増減率の一律延長は行っていない。",
+      "narrative": [
+        {
+          "heading": "対象四半期と予測の限界",
+          "text": "対象は次回中間決算に含まれる第2四半期単独。前年同四半期は売上高{{value:py_q2_revenue}}、営業利益{{value:py_q2_op}}と累計差引で算出できる。一方、直近第1四半期の保存本文が空のため、足元の売上・採算と前四半期比較を確認できない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF page 1～9：本文欠落；S02 PDF page 1、8；S03 PDF page 1、7"
+        },
+        {
+          "heading": "会社予想と独自予測の区別",
+          "text": "会社の中間累計予想は売上高{{value:company_h1_revenue}}、営業利益{{value:company_h1_op}}。通期予想は売上高{{value:company_fy_revenue}}、営業利益{{value:company_fy_op}}。いずれも対象四半期単独の独自予測としては採用しない。会社が織り込む価格転嫁、数量増、コスト改善を重ねて加算しない。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "heading": "企業固有の確認点",
+          "text": "建材は高級軒天ボードと新外壁材の販売構成、化成品は医薬・サプリメント向けと工業用途の構成、セラミックスは受注回復が焦点となる。採算面では原燃料高の転嫁時期と修繕・設備費用の発生時期が重要。過去の高付加価値品拡販実績だけでは、当期の数量と採算の上下限を確定できない。",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06",
+            "S08"
+          ],
+          "locator": "S04 PDF page 1；S05 PDF page 6、7、12、15～18；S06 PDF page 5～7；S08 PDF page 1、2"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "unknown",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "確認した保存原文には、当期対象四半期の製品別出荷数量、実現単価、用途別構成、受注残がない。会社全体で非開示とは断定しない。",
+        "S08には新製品の掲載価格はあるが、メーカー実現売価、出荷数量、既存製品からの置換率は記載されていない。",
+        "当期の修繕実施時期、設備の稼働・償却開始時期と関連費用は未確認。",
+        "対象実績の公表済み資料は提示資料内にないが、適時開示一覧の原文がないため網羅確認はできない。"
+      ],
+      "material_unresolved": [
+        "S01はtruncated=falseだが、保存内容はページ見出しのみで本文が欠落している。直近第1四半期の実績、セグメント情報、会計方針・表示変更を原文確認できない。これは非開示ではなく原本未確認である。",
+        "S01が未確認のため当期第1四半期累計はcumulative_historicalsに追加していない。会社中間累計予想からの単独差引、前四半期比較は不能。",
+        "指定発表日2026-12-10は一次資料で日付まで裏付けられていない。S09の保存原文もないためannouncement_dateはnullとした。",
+        "S05・S06には過去の数量・構成・コスト改善に関する説明があるが、当期対象四半期に適用する増減幅と費用範囲を特定できない。根拠のない仮定レンジを作らず、独自予測を未算定とした。",
+        "S04の予想は保存資料内の最新確認値として登録した。基準日時までの追加修正・差し替えを、S10・S11の原文から確認できていない。",
+        "S06の旧中期計画はS05でローリング計画の数値未定が示されているため、当期の有効なセグメント予想として採用しない。",
+        "S08の新柄色数は同一資料内で記載が一致していない。業績推計には使用していない。",
+        "ZESTAに関する基準日当日の追加開示は保存原文がなく、公表時刻も未確認。S05・S07の発売予定を販売実績に置き換えていない。",
+        "前年単独値は百万円未満切捨ての累計公表値の差引であり、円単位の単独実績とは端数差が生じ得る。セグメント合計との差は照合用計算として残し、予測ブリッジの丸め残差とはしていない。",
+        "12本のbridgesは比較の欠落箇所を示すための未算定レコード。シナリオ予測が存在しないため差額算式を作らず、residualをnullとした。残差ゼロや経済要因の説明完了を意味しない。",
+        "経常利益・純利益は、営業利益に加えて当期の金融費用、特別損益、税負担の根拠が不足し、予測していない。"
+      ],
+      "guidance_records": [
+        {
+          "id": "g_h1_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_h1_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：中間期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_h1_op",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：中間期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_h1_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_h1_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：中間期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_h1_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_h1_net",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：中間純利益今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_fy_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：通期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_fy_op",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：通期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_fy_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：通期今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        },
+        {
+          "id": "g_fy_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_fy_net",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF page 1：当期純利益今回発表予想；S07 PDF page 1、6：会計基準・非連結"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "12本のbridgesは比較の欠落箇所を示すための未算定レコード。シナリオ予測が存在しないため差額算式を作らず、residualをnullとした。残差ゼロや経済要因の説明完了を意味しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S01が未確認のため当期第1四半期累計はcumulative_historicalsに追加していない。会社中間累計予想からの単独差引、前四半期比較は不能。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S01はtruncated=falseだが、保存内容はページ見出しのみで本文が欠落している。直近第1四半期の実績、セグメント情報、会計方針・表示変更を原文確認できない。これは非開示ではなく原本未確認である。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S04の予想は保存資料内の最新確認値として登録した。基準日時までの追加修正・差し替えを、S10・S11の原文から確認できていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S05・S06には過去の数量・構成・コスト改善に関する説明があるが、当期対象四半期に適用する増減幅と費用範囲を特定できない。根拠のない仮定レンジを作らず、独自予測を未算定とした。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S06の旧中期計画はS05でローリング計画の数値未定が示されているため、当期の有効なセグメント予想として採用しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "S08の新柄色数は同一資料内で記載が一致していない。業績推計には使用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "ZESTAに関する基準日当日の追加開示は保存原文がなく、公表時刻も未確認。S05・S07の発売予定を販売実績に置き換えていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "前年単独値は百万円未満切捨ての累計公表値の差引であり、円単位の単独実績とは端数差が生じ得る。セグメント合計との差は照合用計算として残し、予測ブリッジの丸め残差とはしていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "同一会計・連結範囲の比較四半期不足: qoq",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "経常利益・純利益は、営業利益に加えて当期の金融費用、特別損益、税負担の根拠が不足し、予測していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: latest_results",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: segments_kpi",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "condition",
+      "message": "S08には新製品の掲載価格はあるが、メーカー実現売価、出荷数量、既存製品からの置換率は記載されていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "condition",
+      "message": "対象実績の公表済み資料は提示資料内にないが、適時開示一覧の原文がないため網羅確認はできない。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "condition",
+      "message": "当期の修繕実施時期、設備の稼働・償却開始時期と関連費用は未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "4026",
+      "company_name": "神島化学工業株式会社",
+      "kind": "condition",
+      "message": "確認した保存原文には、当期対象四半期の製品別出荷数量、実現単価、用途別構成、受注残がない。会社全体で非開示とは断定しない。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/4026/result.json": "535830c1fd4d0e943eb12b86e32043b06f3afdcd72f1f24b7f8ca2c2441a606f",
+    "reports/4026.md": "6f2dcb68be29d4b43b0f31ecb7586c7af487d0e5a0e042b18212e4262030e013"
+  }
+}

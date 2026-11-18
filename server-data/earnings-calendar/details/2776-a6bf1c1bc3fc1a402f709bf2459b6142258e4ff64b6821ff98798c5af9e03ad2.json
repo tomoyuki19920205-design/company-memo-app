@@ -1,0 +1,995 @@
+{
+  "id": "2776-a6bf1c1bc3fc1a402f709bf2459b6142258e4ff64b6821ff98798c5af9e03ad2",
+  "code": "2776",
+  "companyName": "新都ホールディングス株式会社",
+  "announcementDate": "2026-12-10",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "2776-generation-b68d897c9ae61937 · a6bf1c1b",
+  "savedAt": "2026-11-18T16:57:12+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 2776 新都ホールディングス株式会社｜2027-01-31期 Q3単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS06原文で対象年度の通期連結会社予想を確認した。対象四半期単独の予想ではない。discoveryにはS01で予想修正なしを確認したとの記載があるが、S01原文は添付されていないため、基準日時点の最新版としての確認は未了。guidance_recordsのrevision_statusはunverifiedとした。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n独自予測は未算定。原文があるのは前年度通期短信と期後の資金使途変更資料のみで、現在の連結構成に対応した四半期の売上・採算基準を設定できない。会社通期予想の四等分や差引きによる対象四半期への割当ては行っていない。売上高・営業利益・経常利益・親会社株主に帰属する純利益はいずれも予測値なし。\n\n## 予測の成立条件\n金属リサイクルの取扱量・販売単価・品種別採算と、子会社の損益連結期間が中心的な業績ドライバーとなる。ただし、保存原文には直近の四半期実績と対象期の事業規模を結び付ける情報が不足しており、弱気・中心・強気の範囲を根拠付きで設定できない。\n\n## 連結範囲と期後情報\n栄新商事の株式譲渡決定は資金使途変更資料から確認できるが、対象四半期への連結影響は未確認である。北山商事への仕入資金振替は対象四半期終了後の支出予定であり、当四半期の売上や利益に直接加算しない。\n\n## エラー・未解決事項\n- S01・S03原文がないため、当年度第２四半期累計と第１四半期累計を登録できず、前四半期単独を算定できない。\n- S02・S07の説明資料、S08・S09の株式譲渡と債権放棄、S10の設備受注、S13の再生アルミニウム供給開始の原文は未提示。金額・計上時期・採算・連結影響を資料タイトルから推定していない。\n- S04・S05原文がないため、前年度第３四半期累計と第２四半期累計を登録できず、前年同四半期単独を算定できない。\n- S06 PDF page 17の前年度不動産関連サービス事業利益は、同ページのセグメント利益合計およびPDF page 5の比較記載と整合しない。のれん償却額も内訳と合計が整合しないため、疑義のある数値を補正・採用していない。\n- S06の前年度通期実績は確認できるが、直前の第３四半期累計がなく、対象四半期の比較用実績としては登録していない。\n- target_already_announced=falseは提供されたdiscoveryに基づく。基準日時点の公式IR一覧の原文は未提示のため、独自に公表状況を確認したものではない。\n- 予測と比較実績が未成立のため、指定された12本のbridgesは未算定として残し、残差をゼロと偽らずnullとした。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 同一会計・連結範囲の比較四半期不足: qoq\n- 同一会計・連結範囲の比較四半期不足: yoy\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 提示されたS06・S11に短縮表示はないが、他の必要資料は原文そのものが未提示。情報不足を会社の非開示と扱っていない。\n- 提示されたdocumentsはS06とS11のみ。資料一覧に存在することと、原文の数値を確認したことを区別した。\n- 比較対象の取得原価配分確定前後や会計組替え前後のaccounting_versionは未確認。同一会計版による累計差引きも、会社の直接四半期開示による代替も確認できない。\n- 資料確認未了: already_announced\n- 資料確認未了: company_guidance\n- 資料確認未了: historical\n- 資料確認未了: latest_results\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- AI関連案件の検収・納入時期と採算、当期の全社費用水準は原本未確認。\n- 対象四半期の金属販売数量・価格・品種構成は保存原文で確認できない。非開示とは断定しない。\n- 栄新商事の連結除外時点と対象四半期に取り込む損益は原本未確認。\n\n## 根拠・保存記録\n- S01 [2027年１月期 第２四半期（中間期）決算短信〔日本基準〕（連結）](https://www.shintohd.co.jp/wp-content/uploads/2026/09/第43期2027年01月期-四半期（中間期）決算短信_20260911114926.pdf) / 公表 2026-09-14 / unavailable / SHA-256 `なし`\n- S02 [2027年1月期 第２四半期 決算説明会資料](https://www.shintohd.co.jp/wp-content/uploads/2026/09/2027年1月期-第２四半期-決算説明会資料.pdf) / 公表 2026-09-15 / unavailable / SHA-256 `なし`\n- S03 [2027年１月期 第１四半期決算短信〔日本基準〕（連結）](https://www.shintohd.co.jp/wp-content/uploads/2026/06/2027年１月期-第１四半期決算短信〔日本基準〕連結.pdf) / 公表 2026-06-11 / unavailable / SHA-256 `なし`\n- S04 [2026年１月期 第３四半期決算短信〔日本基準〕（連結）](https://www.shintohd.co.jp/wp-content/uploads/2025/12/2026年１月期第３四半期決算短信〔日本基準〕連結.pdf) / 公表 2025-12-11 / unavailable / SHA-256 `なし`\n- S05 [第42期（2026年01月期）四半期（中間期）決算短信](https://www.shintohd.co.jp/wp-content/uploads/2025/09/第42期2026年01月期-四半期（中間期）決算短信.pdf) / 公表 2025-09-11 / unavailable / SHA-256 `なし`\n- S06 [2026年１月期 決算短信〔日本基準〕（連結）：2027年１月期会社予想の公表資料](https://www2.jpx.co.jp/disc/27760/140120260311579674.pdf) / 公表 2026-03-12 / retrieved / SHA-256 `e59e266938327ea67ad6418efce269bc9ebd74f49c90d9853bff265b76bfbe69`\n- S07 [2026年1月期 決算説明会資料](https://www.shintohd.co.jp/wp-content/uploads/2026/03/2026年1月期-決算説明会資料-1.pdf) / 公表 2026-03-16 / unavailable / SHA-256 `なし`\n- S08 [連結子会社の異動（株式譲渡）に関するお知らせ](https://www.shintohd.co.jp/wp-content/uploads/2026/10/連結子会社の異動（株式譲渡）に関するお知らせ.pdf) / 公表 2026-10-28 / unavailable / SHA-256 `なし`\n- S09 [連結子会社に対する債権放棄に関するお知らせ](https://www.shintohd.co.jp/wp-content/uploads/2026/10/連結子会社に対する債権放棄に関するお知らせ.pdf) / 公表 2026-10-28 / unavailable / SHA-256 `なし`\n- S10 [大阪府内の大規模データセンター向け電気設備供給の受注および契約締結に関するお知らせ](https://www.shintohd.co.jp/wp-content/uploads/2026/10/大阪府内の大規模データセンター向け電気設備供給の受注および契約締結に関するお知らせ.pdf) / 公表 2026-10-22 / unavailable / SHA-256 `なし`\n- S11 [資金使途の変更に関するお知らせ](https://www.shintohd.co.jp/wp-content/uploads/2026/11/20261102562758.pdf) / 公表 2026-11-02 / retrieved / SHA-256 `5a8d0d93bc9d7e3307492fd77659a279a17877ee2f8aa0609f3f91d1377d8950`\n- S12 [新株予約権の行使期間満了に関するお知らせ](https://www.shintohd.co.jp/wp-content/uploads/2026/11/（清書版）新株予約権の行使期間満了に関するお知らせ-1105-1240-fin.pdf) / 公表 2026-11-16 / unavailable / SHA-256 `なし`\n- S13 [大手総合商社との連携による再生アルミニウムの国内供給開始について](https://www.shintohd.co.jp/wp-content/uploads/2026/10/大手総合商社との連携による再生アルミニウムの国内供給開始について.pdf) / 公表 2026-10-26 / unavailable / SHA-256 `なし`\n- S14 [株式情報](https://www.shintohd.co.jp/stock/) / 公表  / unavailable / SHA-256 `なし`\n- S15 [IRカレンダー](https://www.shintohd.co.jp/ir_calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 2026-12-10という決算発表予定日は会社・取引所一次資料の保存原文で未確認のため、announcement_dateはnullとした。\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "2776",
+    "company_name": "新都ホールディングス株式会社",
+    "announcement_date": "2026-12-10",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "guidance_revenue": 48330.0,
+      "guidance_operating_profit": 784.0,
+      "guidance_ordinary_profit": 715.0,
+      "guidance_net_profit": 202.0
+    },
+    "historicals": [],
+    "bridges": [],
+    "issues": [
+      "S01・S03原文がないため、当年度第２四半期累計と第１四半期累計を登録できず、前四半期単独を算定できない。",
+      "S02・S07の説明資料、S08・S09の株式譲渡と債権放棄、S10の設備受注、S13の再生アルミニウム供給開始の原文は未提示。金額・計上時期・採算・連結影響を資料タイトルから推定していない。",
+      "S04・S05原文がないため、前年度第３四半期累計と第２四半期累計を登録できず、前年同四半期単独を算定できない。",
+      "S06 PDF page 17の前年度不動産関連サービス事業利益は、同ページのセグメント利益合計およびPDF page 5の比較記載と整合しない。のれん償却額も内訳と合計が整合しないため、疑義のある数値を補正・採用していない。",
+      "S06の前年度通期実績は確認できるが、直前の第３四半期累計がなく、対象四半期の比較用実績としては登録していない。",
+      "target_already_announced=falseは提供されたdiscoveryに基づく。基準日時点の公式IR一覧の原文は未提示のため、独自に公表状況を確認したものではない。",
+      "予測と比較実績が未成立のため、指定された12本のbridgesは未算定として残し、残差をゼロと偽らずnullとした。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "同一会計・連結範囲の比較四半期不足: qoq",
+      "同一会計・連結範囲の比較四半期不足: yoy",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "提示されたS06・S11に短縮表示はないが、他の必要資料は原文そのものが未提示。情報不足を会社の非開示と扱っていない。",
+      "提示されたdocumentsはS06とS11のみ。資料一覧に存在することと、原文の数値を確認したことを区別した。",
+      "比較対象の取得原価配分確定前後や会計組替え前後のaccounting_versionは未確認。同一会計版による累計差引きも、会社の直接四半期開示による代替も確認できない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: company_guidance",
+      "資料確認未了: historical",
+      "資料確認未了: latest_results",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "2026-12-10という決算発表予定日は会社・取引所一次資料の保存原文で未確認のため、announcement_dateはnullとした。",
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [
+      "AI関連案件の検収・納入時期と採算、当期の全社費用水準は原本未確認。",
+      "対象四半期の金属販売数量・価格・品種構成は保存原文で確認できない。非開示とは断定しない。",
+      "栄新商事の連結除外時点と対象四半期に取り込む損益は原本未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年１月期 第２四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/09/第43期2027年01月期-四半期（中間期）決算短信_20260911114926.pdf",
+        "published_at": "2026-09-14",
+        "category": "latest_results",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode character '\\u7b2c' in position 32: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:24+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "2027年1月期 第２四半期 決算説明会資料",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/09/2027年1月期-第２四半期-決算説明会資料.pdf",
+        "published_at": "2026-09-15",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode character '\\u5e74' in position 36: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:26+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2027年１月期 第１四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/06/2027年１月期-第１四半期決算短信〔日本基準〕連結.pdf",
+        "published_at": "2026-06-11",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 36-39: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:27+09:00"
+      },
+      {
+        "id": "S04",
+        "title": "2026年１月期 第３四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2025/12/2026年１月期第３四半期決算短信〔日本基準〕連結.pdf",
+        "published_at": "2025-12-11",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 36-56: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:29+09:00"
+      },
+      {
+        "id": "S05",
+        "title": "第42期（2026年01月期）四半期（中間期）決算短信",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2025/09/第42期2026年01月期-四半期（中間期）決算短信.pdf",
+        "published_at": "2025-09-11",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode character '\\u7b2c' in position 32: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:30+09:00"
+      },
+      {
+        "id": "S06",
+        "title": "2026年１月期 決算短信〔日本基準〕（連結）：2027年１月期会社予想の公表資料",
+        "url": "https://www2.jpx.co.jp/disc/27760/140120260311579674.pdf",
+        "published_at": "2026-03-12",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/27760/140120260311579674.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2776\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2776\\sources\\S06.txt",
+        "sha256": "e59e266938327ea67ad6418efce269bc9ebd74f49c90d9853bff265b76bfbe69",
+        "text_sha256": "df3d79ae740fd64b08fa62f3fd2ae0abb66b420777bb9ca6e9aaf1073f89bc46",
+        "retrieved_at": "2026-11-18T16:55:31+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 22489,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年1月期 決算説明会資料",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/03/2026年1月期-決算説明会資料-1.pdf",
+        "published_at": "2026-03-16",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode character '\\u5e74' in position 36: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:33+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "連結子会社の異動（株式譲渡）に関するお知らせ",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/10/連結子会社の異動（株式譲渡）に関するお知らせ.pdf",
+        "published_at": "2026-10-28",
+        "category": "other",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 32-53: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:35+09:00"
+      },
+      {
+        "id": "S09",
+        "title": "連結子会社に対する債権放棄に関するお知らせ",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/10/連結子会社に対する債権放棄に関するお知らせ.pdf",
+        "published_at": "2026-10-28",
+        "category": "other",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 32-52: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:36+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "大阪府内の大規模データセンター向け電気設備供給の受注および契約締結に関するお知らせ",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/10/大阪府内の大規模データセンター向け電気設備供給の受注および契約締結に関するお知らせ.pdf",
+        "published_at": "2026-10-22",
+        "category": "other",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 32-72: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:38+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "資金使途の変更に関するお知らせ",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/11/20261102562758.pdf",
+        "published_at": "2026-11-02",
+        "category": "other",
+        "final_url": "https://www.shintohd.co.jp/wp-content/uploads/2026/11/20261102562758.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2776\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261210\\companies\\2776\\sources\\S11.txt",
+        "sha256": "5a8d0d93bc9d7e3307492fd77659a279a17877ee2f8aa0609f3f91d1377d8950",
+        "text_sha256": "26ec78fa0f8cceab564fb468e6b22bc69134906704c029fcf4285914b77d0d43",
+        "retrieved_at": "2026-11-18T16:55:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1195,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "新株予約権の行使期間満了に関するお知らせ",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/11/（清書版）新株予約権の行使期間満了に関するお知らせ-1105-1240-fin.pdf",
+        "published_at": "2026-11-16",
+        "category": "other",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 32-56: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:39+09:00"
+      },
+      {
+        "id": "S13",
+        "title": "大手総合商社との連携による再生アルミニウムの国内供給開始について",
+        "url": "https://www.shintohd.co.jp/wp-content/uploads/2026/10/大手総合商社との連携による再生アルミニウムの国内供給開始について.pdf",
+        "published_at": "2026-10-26",
+        "category": "other",
+        "status": "unavailable",
+        "error": "'ascii' codec can't encode characters in position 32-63: ordinal not in range(128)",
+        "retrieved_at": "2026-11-18T16:55:41+09:00"
+      },
+      {
+        "id": "S14",
+        "title": "株式情報",
+        "url": "https://www.shintohd.co.jp/stock/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:55:41+09:00"
+      },
+      {
+        "id": "S15",
+        "title": "IRカレンダー",
+        "url": "https://www.shintohd.co.jp/ir_calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T16:55:41+09:00"
+      }
+    ],
+    "model": {
+      "code": "2776",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "guidance_revenue",
+          "value": 48330,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "guidance_operating_profit",
+          "value": 784,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary_profit",
+          "value": 715,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "guidance_net_profit",
+          "value": 202,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想・親会社株主に帰属する当期純利益"
+        }
+      ],
+      "calculations": [],
+      "scenarios": {},
+      "cumulative_historicals": [],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "金属リサイクル事業の数量・価格・連結構成",
+          "mechanism": "金属スクラップの調達量、販売単価、品種構成、加工採算が売上と利益を左右する。前年度の龍一商事の損益連結は限定された期間で、栄新商事は貸借対照表のみの連結だったため、対象年度との比較には連結構成の調整が必要。",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF pages 4、15、18～21",
+          "calculation_ids": [],
+          "not_quantified_reason": "対象年度の直近四半期実績、子会社別の損益、販売数量・価格・品種構成の保存原文がなく、増収効果と採算の合理的な範囲を設定できない。"
+        },
+        {
+          "name": "栄新商事の株式譲渡",
+          "mechanism": "株式譲渡による連結範囲の変更は売上・営業利益に影響し得る。処分損益などは経常利益以下への影響を別途確認する必要がある。",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 1、変更の理由",
+          "calculation_ids": [],
+          "not_quantified_reason": "株式譲渡を決定したことは確認できるが、S08・S09の原文がなく、実行日、連結除外時点、対象四半期に含まれる損益、譲渡・債権放棄の連結影響は未確認。"
+        },
+        {
+          "name": "北山商事への仕入資金の振替",
+          "mechanism": "金属資源の継続調達を支える運転資金の振替。変更後の支出予定時期は対象四半期終了後であり、資金額を対象四半期の増収額に置き換えることはできない。",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF pages 1～2、変更の理由・変更の内容・今後の見通し",
+          "calculation_ids": [],
+          "not_quantified_reason": "会社は連結業績への影響を軽微としている。仕入回転数、販売時期、販売単価、粗利率が確認できず、対象四半期への上乗せは行わない。"
+        },
+        {
+          "name": "AI関連販売と全社費用",
+          "mechanism": "GPU・ICチップ等の販売時期と案件採算がその他事業を左右し、各事業の利益から未配分の管理部門費用を差し引いて連結営業利益となる。",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF pages 5、18",
+          "calculation_ids": [],
+          "not_quantified_reason": "前年度の事業内容と費用構造は確認できるが、対象年度の受注・納入予定、案件原価、全社費用の直近水準は原本未確認。前年度通期値の四等分では推計しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期実績と予測額が未確定のため、差額および残差を算定できない。"
+        }
+      ],
+      "company_guidance": "S06原文で対象年度の通期連結会社予想を確認した。対象四半期単独の予想ではない。discoveryにはS01で予想修正なしを確認したとの記載があるが、S01原文は添付されていないため、基準日時点の最新版としての確認は未了。guidance_recordsのrevision_statusはunverifiedとした。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスはない。",
+      "independent_forecast": "独自予測は未算定。原文があるのは前年度通期短信と期後の資金使途変更資料のみで、現在の連結構成に対応した四半期の売上・採算基準を設定できない。会社通期予想の四等分や差引きによる対象四半期への割当ては行っていない。売上高・営業利益・経常利益・親会社株主に帰属する純利益はいずれも予測値なし。",
+      "narrative": [
+        {
+          "heading": "予測の成立条件",
+          "text": "金属リサイクルの取扱量・販売単価・品種別採算と、子会社の損益連結期間が中心的な業績ドライバーとなる。ただし、保存原文には直近の四半期実績と対象期の事業規模を結び付ける情報が不足しており、弱気・中心・強気の範囲を根拠付きで設定できない。"
+        },
+        {
+          "heading": "連結範囲と期後情報",
+          "text": "栄新商事の株式譲渡決定は資金使途変更資料から確認できるが、対象四半期への連結影響は未確認である。北山商事への仕入資金振替は対象四半期終了後の支出予定であり、当四半期の売上や利益に直接加算しない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "unknown",
+        "presentation": "unknown",
+        "company_guidance": "partial",
+        "historical": "partial",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象四半期の金属販売数量・価格・品種構成は保存原文で確認できない。非開示とは断定しない。",
+        "栄新商事の連結除外時点と対象四半期に取り込む損益は原本未確認。",
+        "AI関連案件の検収・納入時期と採算、当期の全社費用水準は原本未確認。"
+      ],
+      "material_unresolved": [
+        "提示されたdocumentsはS06とS11のみ。資料一覧に存在することと、原文の数値を確認したことを区別した。",
+        "S01・S03原文がないため、当年度第２四半期累計と第１四半期累計を登録できず、前四半期単独を算定できない。",
+        "S04・S05原文がないため、前年度第３四半期累計と第２四半期累計を登録できず、前年同四半期単独を算定できない。",
+        "比較対象の取得原価配分確定前後や会計組替え前後のaccounting_versionは未確認。同一会計版による累計差引きも、会社の直接四半期開示による代替も確認できない。",
+        "S06の前年度通期実績は確認できるが、直前の第３四半期累計がなく、対象四半期の比較用実績としては登録していない。",
+        "S02・S07の説明資料、S08・S09の株式譲渡と債権放棄、S10の設備受注、S13の再生アルミニウム供給開始の原文は未提示。金額・計上時期・採算・連結影響を資料タイトルから推定していない。",
+        "S06 PDF page 17の前年度不動産関連サービス事業利益は、同ページのセグメント利益合計およびPDF page 5の比較記載と整合しない。のれん償却額も内訳と合計が整合しないため、疑義のある数値を補正・採用していない。",
+        "2026-12-10という決算発表予定日は会社・取引所一次資料の保存原文で未確認のため、announcement_dateはnullとした。",
+        "target_already_announced=falseは提供されたdiscoveryに基づく。基準日時点の公式IR一覧の原文は未提示のため、独自に公表状況を確認したものではない。",
+        "予測と比較実績が未成立のため、指定された12本のbridgesは未算定として残し、残差をゼロと偽らずnullとした。",
+        "提示されたS06・S11に短縮表示はないが、他の必要資料は原文そのものが未提示。情報不足を会社の非開示と扱っていない。"
+      ],
+      "schema_version": "2.0",
+      "guidance_records": [
+        {
+          "id": "fy_guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-03-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "fy_guidance_operating_profit",
+          "metric": "operating_profit",
+          "value_ref": "guidance_operating_profit",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-03-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "fy_guidance_ordinary_profit",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary_profit",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-03-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想"
+        },
+        {
+          "id": "fy_guidance_net_profit",
+          "metric": "net_profit",
+          "value_ref": "guidance_net_profit",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-03-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 2、2027年１月期の連結業績予想・親会社株主に帰属する当期純利益"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "S01・S03原文がないため、当年度第２四半期累計と第１四半期累計を登録できず、前四半期単独を算定できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "S02・S07の説明資料、S08・S09の株式譲渡と債権放棄、S10の設備受注、S13の再生アルミニウム供給開始の原文は未提示。金額・計上時期・採算・連結影響を資料タイトルから推定していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "S04・S05原文がないため、前年度第３四半期累計と第２四半期累計を登録できず、前年同四半期単独を算定できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "S06 PDF page 17の前年度不動産関連サービス事業利益は、同ページのセグメント利益合計およびPDF page 5の比較記載と整合しない。のれん償却額も内訳と合計が整合しないため、疑義のある数値を補正・採用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "S06の前年度通期実績は確認できるが、直前の第３四半期累計がなく、対象四半期の比較用実績としては登録していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "target_already_announced=falseは提供されたdiscoveryに基づく。基準日時点の公式IR一覧の原文は未提示のため、独自に公表状況を確認したものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "予測と比較実績が未成立のため、指定された12本のbridgesは未算定として残し、残差をゼロと偽らずnullとした。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "同一会計・連結範囲の比較四半期不足: qoq",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "同一会計・連結範囲の比較四半期不足: yoy",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "提示されたS06・S11に短縮表示はないが、他の必要資料は原文そのものが未提示。情報不足を会社の非開示と扱っていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "提示されたdocumentsはS06とS11のみ。資料一覧に存在することと、原文の数値を確認したことを区別した。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "比較対象の取得原価配分確定前後や会計組替え前後のaccounting_versionは未確認。同一会計版による累計差引きも、会社の直接四半期開示による代替も確認できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: company_guidance",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: historical",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: latest_results",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: presentation",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: segments_kpi",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "condition",
+      "message": "AI関連案件の検収・納入時期と採算、当期の全社費用水準は原本未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "condition",
+      "message": "対象四半期の金属販売数量・価格・品種構成は保存原文で確認できない。非開示とは断定しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "2776",
+      "company_name": "新都ホールディングス株式会社",
+      "kind": "condition",
+      "message": "栄新商事の連結除外時点と対象四半期に取り込む損益は原本未確認。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/2776/result.json": "b68d897c9ae61937dbcca9926ce25466ca388439f26d0e1634eabb35a7633a8e",
+    "reports/2776.md": "9f666ce0ef95aa782916a9c35014ea90226991fb5eac5c18108316188904408d"
+  }
+}
