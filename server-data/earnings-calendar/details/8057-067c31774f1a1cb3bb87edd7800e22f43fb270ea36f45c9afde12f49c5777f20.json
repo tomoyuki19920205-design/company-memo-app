@@ -1,0 +1,3005 @@
+{
+  "id": "8057-067c31774f1a1cb3bb87edd7800e22f43fb270ea36f45c9afde12f49c5777f20",
+  "code": "8057",
+  "companyName": "内田洋行",
+  "announcementDate": "2026-12-03",
+  "target": {
+    "fiscalYearEnd": "2027-07-20",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "8057-generation-a57fdc012fa5353f · 067c3177",
+  "savedAt": "2026-11-18T15:31:41+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 67890.56,
+  "operatingProfit": 2491.01266,
+  "revenueYoY": {
+    "rate": -0.1525967347346348,
+    "label": "-15.3%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.1718707912234043,
+    "label": "-17.2%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 8057 内田洋行｜2027-07-20期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 60,578.46 | 67,890.56 | 75,202.66 |\n| 営業利益 | 1,744.40 | 2,491.01 | 3,332.49 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -12,225.44 | -15.26% |  |\n| YoY | 営業利益 | -516.99 | -17.19% |  |\n| QnQ | 売上高 | -43,465.44 | -39.03% |  |\n| QnQ | 営業利益 | 2,784.01 | 未算定 | 比較利益がゼロ以下のため伸長率非表示。増減額を参照 |\n\n## 会社予想\nS01の2027年7月期連結通期予想とS04の同年度セグメント予想を保存した。対象四半期単独予想は保存資料に記載がない。通期予想は方向と採算範囲の確認に用い、四等分や通期予想からの対象四半期差引きは行っていない。保存資料内の最新公表値だが、基準日時までの修正開示の網羅性を確認できないためguidance_recordsのrevision_statusはunverifiedとした。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n過去二期の同季セグメント売上と会社固有の需要転換を基礎にした、低確度の条件付きセグメント積上げ。公共・情報は前年増収部分の残存率、オフィスは案件成長、営業利益は各事業の費用込み採算を仮定した。受注数量・単価を把握した積上げではなく、シナリオ範囲は統計的信頼区間ではない。期後会社修正見込みの差引き推計は使用していない。営業外損益・税金・特別損益の対象期根拠が不足するため経常利益・純利益はnull。\n\n## 条件付き予測\n中心ケースの売上は67,890.56、営業利益は2,491.01。弱気ケースは売上60,578.46、営業利益1,744.40、強気ケースは売上75,202.66、営業利益3,332.49。端末更新とWindows更新の反動を見込み、教育ネットワーク、自治体標準化、ライセンス、オフィス案件が補う程度を変えた。\n\n## 公共の検収時期\n自治体標準化は延伸案件が多いが、旧資料で示された年末稼働ピークは対象四半期より後に位置する。稼働前作業の収益認識も確認できないため、延伸案件を対象期へ一括計上しない。GIGAの保守契約は複数年にわたり、導入済み台数を対象期の新規売上に重ねて加算していない。\n\n## 利益の読み方\n予測利益はセグメント売上と費用込み営業利益率から求めた。賃上げ、採用、ERP運用、SE管理基盤投資の影響は採算仮定に含み、別途費用として重ねて控除していない。高採算SIの回復や公共案件構成が弱ければ、売上の達成だけでは中心利益を確保できない。\n\n## 比較上の限界\n直前四半期は同一会計版の通期累計と第3四半期累計の差引きで、売上111,356.00、営業利益-293.00。前年同季を起点とするモデルとの基準差について、売上-31,241.00、営業利益3,300.00を前四半期比較の未説明残差として残した。前四半期の費用や検収構成を特定した改善効果とは解釈しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共需要残存・構成 | -15,162.75 | 端末特需縮小とネットワーク・自治体対応を合わせた仮定差額 |\n| 情報需要残存・構成 | -4,773.75 | Windows需要終了と継続事業の相殺 |\n| オフィス案件 | 399.96 | 大型案件検収の増加仮定 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季の外部売上の個別表示値合計と連結合計の差。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共売上・採算 | -910.27 | 費用込み営業利益率による推計差 |\n| 情報売上・採算 | -281.29 | サービス減収とSI構成の条件差 |\n| オフィス売上・採算 | -71.04 | 検収・構成・費用吸収の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | -15,162.75 | 公共売上の条件付き変化 |\n| 情報の前年同季基準からの変化 | -4,773.75 | 情報売上の条件付き変化 |\n| オフィスの前年同季基準からの変化 | 399.96 | オフィス案件の条件付き変化 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | -31,241.00 | 直前四半期実績から前年同季セグメント表示値合計へ移る基準差を残す。契約更新・検収の季節配分を個別案件に帰属できず、季節性だけで説明済みとはしない。表示端数も包含。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | -910.27 | 公共売上・採算の条件差 |\n| 情報の前年同季基準からの変化 | -281.29 | 情報売上・採算の条件差 |\n| オフィスの前年同季基準からの変化 | -71.04 | オフィス売上・採算の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | 3,300.00 | 直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共需要残存・構成 | -10,108.50 | 端末特需縮小とネットワーク・自治体対応を合わせた仮定差額 |\n| 情報需要残存・構成 | -3,182.50 | Windows需要終了と継続事業の相殺 |\n| オフィス案件 | 1,066.56 | 大型案件検収の増加仮定 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季の外部売上の個別表示値合計と連結合計の差。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共売上・採算 | -422.12 | 費用込み営業利益率による推計差 |\n| 情報売上・採算 | -129.21 | サービス減収とSI構成の条件差 |\n| オフィス売上・採算 | 35.35 | 検収・構成・費用吸収の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | -10,108.50 | 公共売上の条件付き変化 |\n| 情報の前年同季基準からの変化 | -3,182.50 | 情報売上の条件付き変化 |\n| オフィスの前年同季基準からの変化 | 1,066.56 | オフィス案件の条件付き変化 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | -31,241.00 | 直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | -422.12 | 公共売上・採算の条件差 |\n| 情報の前年同季基準からの変化 | -129.21 | 情報売上・採算の条件差 |\n| オフィスの前年同季基準からの変化 | 35.35 | オフィス売上・採算の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | 3,300.00 | 直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共需要残存・構成 | -5,054.25 | 端末特需縮小とネットワーク・自治体対応を合わせた仮定差額 |\n| 情報需要残存・構成 | -1,591.25 | Windows需要終了と継続事業の相殺 |\n| オフィス案件 | 1,733.16 | 大型案件検収の増加仮定 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季の外部売上の個別表示値合計と連結合計の差。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共売上・採算 | 167.11 | 費用込み営業利益率による推計差 |\n| 情報売上・採算 | 38.78 | サービス減収とSI構成の条件差 |\n| オフィス売上・採算 | 119.61 | 検収・構成・費用吸収の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（rounding） | -1.00 | 前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | -5,054.25 | 公共売上の条件付き変化 |\n| 情報の前年同季基準からの変化 | -1,591.25 | 情報売上の条件付き変化 |\n| オフィスの前年同季基準からの変化 | 1,733.16 | オフィス案件の条件付き変化 |\n| その他 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | -31,241.00 | 直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 公共の前年同季基準からの変化 | 167.11 | 公共売上・採算の条件差 |\n| 情報の前年同季基準からの変化 | 38.78 | 情報売上・採算の条件差 |\n| オフィスの前年同季基準からの変化 | 119.61 | オフィス売上・採算の条件差 |\n| その他・消去 | 0.00 | 前年同季据え置き |\n| 残差（economic_unexplained） | 3,300.00 | 直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。 |\n\n## エラー・未解決事項\n- S01～S06の提供本文に短縮フラグはない。一方、S07・S08の保存原文はdocumentsに含まれず、株式基本情報・IRカレンダー本文は原本未確認。\n- S04の情報関連事業の前期売上はpage 7・27とpage 10およびS01 page 20で表示差がある。確定実績にはS01を優先し、資料間差を会計組替えや丸めと断定していない。\n- S05の上期売上はpage 4とpage 5で表示差があり、第2四半期短信原文も未提示。今回必要な前年同季と前四半期の比較には用いなかった。第3四半期単独の算定は行っていない。\n- セグメント売上範囲は実績水準と需要方向に基づく条件付き設定。受注裏付けがないため対象期がこの範囲内に収まる保証はなく、中心値の精度は低い。\n- 営業利益はセグメント採算による推計であり、数量・価格・原価・販管費の完全な積上げではない。前年表示値に対するブリッジの算術一致は、因果要因を独立検証したことを意味しない。\n- 基準日時までの追加業績修正・重要開示の網羅性と独立した質疑応答資料は原本未確認。非開示と断定していない。\n- 対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された探索結果に基づく暫定判定であり、基準日時までの全開示を独立に検証したものではない。\n- 指定の2026年12月3日発表予定は会社・取引所の一次原文を確認できないためannouncement_dateはnull。対象条件としての予定日と確定日を区別した。\n- 経常利益と親会社株主に帰属する純利益は、対象期の営業外損益、特別損益、税負担の合理的な範囲を設定する根拠が不足するため予測しない。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_information_margin: 情報の営業利益率を2.3%とする。過去二期の同季採算の間で、Windows需要終了をSI回復・サービス継続が一部補う。人員・共通システム費を含む採算。\n- base_office_factor: オフィスは前年同季を基礎に8%成長。東名阪の移転、地方拠点改修、高級レンタルオフィス需要と通期セグメント見通しを方向確認に用いる。全社前年比の一律延長ではない。\n- base_office_margin: 前年同季並みの営業利益率3.6%を仮定。海外・周辺事業の採算改善と増収効果を、人件費等の増加が相殺する。\n- base_public_margin: 前年・前々年同季の営業利益率の間にある5%を仮定。端末比率低下とネットワーク・自治体業務の構成改善を、人件費とシステム費の増加が一部相殺する。\n- base_retention: 前々年から前年同四半期への公共・情報の増収額の半分が残る条件付き中心値。端末・Windows特需の終了と、教育ネットワーク、自治体対応、ライセンス継続成長の両方を反映する。資料から推定した確率的中央値ではなく、既知の同季実績間の中間条件。\n- bear_information_margin: 情報の営業利益率を1.8%とする。前年同季約2.5%、前々年同季約2.2%に対し、Windowsサービス終了、低採算ライセンスへの構成変化、SI供給遅延継続を織り込む。\n- bear_office_factor: オフィスは前年同季を基礎に3%成長。大型案件反動を考慮し、会社の通期増収方向より弱い案件獲得・検収を仮定する。\n- bear_office_margin: 前年同季の営業利益率約3.6%を下回る3%を仮定。大型案件構成と人件費負担による採算悪化を含む。\n- bear_public_margin: 外部売上に対するセグメント営業利益率を4%とする。前年同季約4.8%、前々年同季約5.4%に対し、端末減収に伴う設備・人件費の固定負担と自治体案件遅延を織り込む。販管費込みの採算仮定。\n- bear_retention: 公共・情報それぞれの前々年同四半期から前年同四半期への増収額の25%が残る条件。公共はGIGA更新減少と自治体検収の後ずれ、情報はWindows更新終了を重視する。増収額全体を特需実績とは認定せず、継続事業成長も含む増収部分の残存感応度として使う。\n- bull_information_margin: 情報の営業利益率を2.8%とする。比較的高採算の中小企業SI案件回復が、低採算ライセンス増加を上回る条件。過去同季より改善する独自仮定。\n- bull_office_factor: オフィスは前年同季を基礎に13%成長。大型案件の期内検収と公共施設案件の獲得が進む条件。\n- bull_office_margin: 案件構成と費用吸収の改善で営業利益率4%を仮定。会社通期セグメント計画の約4.1%に近いが、四半期の達成を保証するものではない。\n- bull_public_margin: 高付加価値ネットワーク・自治体対応の構成改善により6%とする。前年同季を上回るが、公表通期セグメント計画の約6.4%を下回る条件。通期利益率をそのまま四半期に適用しない。\n- bull_retention: 公共・情報の前年増収部分の75%を維持する条件。公共ネットワークと自治体作業、情報のライセンスとSI回復が特需減少を相当程度補う。前年の特需込み水準を超える前提にはしない。\n- セグメント別の四半期人件費、償却費、ERP運用費の予算内訳は保存資料に非開示。営業利益率に包含している。\n- 公共・情報の過去増収に占める一時需要と継続成長の比率は保存資料に非開示。残存率はその分解を確定した値ではない。\n- 前四半期比較の大きな残差について、季節性と費用計上時期の定量分離は未完了。\n- 対象四半期の数量・単価・受注残・案件別検収額は保存資料に記載がない。独立KPI資料そのものの有無は未確認。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔日本基準〕（連結）](https://azcms.ir-service.net/DATA/8057/ir/140120260901529425.pdf) / 公表 2026-09-02 / retrieved / SHA-256 `6c0eebe2e446985b5b64135426843fd91698dd2c89278a64237672c8e30ea6b1`\n- S02 [2026年7月期 第1四半期決算短信〔日本基準〕（連結）](https://azcms.ir-service.net/DATA/8057/ir/140120251202513366.pdf) / 公表 2025-12-03 / retrieved / SHA-256 `927366961a06857cbda3abc4c500abebf9621411385f34bb2e34b40b0f9a1a25`\n- S03 [2026年7月期 第3四半期決算短信〔日本基準〕（連結）](https://azcms.ir-service.net/DATA/8057/ir/140120260602560867.pdf) / 公表 2026-06-03 / retrieved / SHA-256 `f857f957da3091b1f9655190d84b333b4dec0c76908bc4364c378beb833e0196`\n- S04 [2026年7月期 アナリスト様向け決算説明会資料](https://www.uchida.co.jp/company/ir/pdf/20260911.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `7607f2d29428821b095bfe9b7f84a83ef24a7d6319f4dbcea9569f7a9e2ae309`\n- S05 [2026年7月期 アナリスト様向け第2四半期決算説明会資料](https://www.uchida.co.jp/company/ir/pdf/20260311.pdf) / 公表 2026-03-11 / retrieved / SHA-256 `fd6e4f76b5c24a5aee313fd058d091607919db96aa09816aaae9019ea3e9c6ed`\n- S06 [剰余金の配当および配当方針の変更（累進配当の導入）に関するお知らせ](https://azcms.ir-service.net/DATA/8057/ir/140120260901529442.pdf) / 公表 2026-09-02 / retrieved / SHA-256 `1758a3a4fc5e4a6488a5bfb27c39445bd88ee334bfe4bcde039757be84c1578b`\n- S07 [株式基本情報](https://www.uchida.co.jp/company/ir/stock/info.html) / 公表  / unavailable / SHA-256 `なし`\n- S08 [IRカレンダー](https://www.uchida.co.jp/company/ir/event/calendar.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "8057",
+    "company_name": "内田洋行",
+    "announcement_date": "2026-12-03",
+    "target_period": "2027-07-20期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-20",
+      "quarter": 1,
+      "start": "2026-07-21",
+      "end": "2026-10-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 60578.46,
+        "operating_profit": 1744.4033,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 67890.56,
+        "operating_profit": 2491.01266,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 75202.66,
+        "operating_profit": 3332.4884,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -43465.44,
+          "rate": -0.3903286755989799,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 2784.01266,
+          "rate": null,
+          "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -12225.440000000002,
+          "rate": -0.1525967347346348,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -516.9873400000001,
+          "rate": -0.1718707912234043,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_revenue": 80116.0,
+      "py_op": 3008.0,
+      "fy_revenue": 425729.0,
+      "fy_op": 15631.0,
+      "fy_ordinary": 16770.0,
+      "fy_net": 12486.0,
+      "q3_revenue": 314373.0,
+      "q3_op": 15924.0,
+      "q3_ordinary": 16710.0,
+      "q3_net": 12178.0,
+      "older_public": 18489.0,
+      "py_public": 38706.0,
+      "py_public_op": 1852.0,
+      "py_office": 13332.0,
+      "py_office_op": 483.0,
+      "older_information": 21504.0,
+      "py_information": 27869.0,
+      "py_information_op": 697.0,
+      "py_other": 208.0,
+      "py_other_op": -40.0,
+      "py_adjustment": 15.0,
+      "guide_revenue": 400000.0,
+      "guide_op": 15000.0,
+      "guide_ordinary": 16000.0,
+      "guide_net": 10500.0,
+      "guide_public": 115200.0,
+      "guide_public_op": 7350.0,
+      "guide_office": 63700.0,
+      "guide_office_op": 2600.0,
+      "guide_information": 220000.0,
+      "guide_information_op": 4800.0,
+      "bear_retention": 0.25,
+      "base_retention": 0.5,
+      "bull_retention": 0.75,
+      "bear_office_factor": 1.03,
+      "base_office_factor": 1.08,
+      "bull_office_factor": 1.13,
+      "bear_public_margin": 0.04,
+      "base_public_margin": 0.05,
+      "bull_public_margin": 0.06,
+      "bear_information_margin": 0.018,
+      "base_information_margin": 0.023,
+      "bull_information_margin": 0.028,
+      "bear_office_margin": 0.03,
+      "base_office_margin": 0.036,
+      "bull_office_margin": 0.04,
+      "forecast_other": 208.0,
+      "forecast_other_op": -40.0,
+      "forecast_adjustment": 15.0,
+      "previous_revenue": 111356.0,
+      "previous_op": -293.0,
+      "previous_ordinary": 60.0,
+      "previous_net": 308.0,
+      "public_increment": 20217.0,
+      "information_increment": 6365.0,
+      "bear_public": 23543.25,
+      "base_public": 28597.5,
+      "bull_public": 33651.75,
+      "bear_information": 23095.25,
+      "base_information": 24686.5,
+      "bull_information": 26277.75,
+      "bear_office": 13731.960000000001,
+      "base_office": 14398.560000000001,
+      "bull_office": 15065.159999999998,
+      "bear_public_op": 941.73,
+      "base_public_op": 1429.875,
+      "bull_public_op": 2019.105,
+      "bear_information_op": 415.7145,
+      "base_information_op": 567.7895,
+      "bull_information_op": 735.777,
+      "bear_office_op": 411.9588,
+      "base_office_op": 518.34816,
+      "bull_office_op": 602.6063999999999,
+      "bear_revenue": 60578.46,
+      "base_revenue": 67890.56,
+      "bull_revenue": 75202.66,
+      "bear_op": 1744.4033,
+      "base_op": 2491.01266,
+      "bull_op": 3332.4884,
+      "yoy_revenue_residual": -1.0,
+      "yoy_op_residual": -1.0,
+      "qoq_revenue_residual": -31241.0,
+      "qoq_op_residual": 3300.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2025-07-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 1–2、9",
+        "period_end": "2024-10-20",
+        "period_start": "2024-07-21",
+        "method": "1Q累計",
+        "revenue": 52563.0,
+        "operating_profit": 1537.0,
+        "ordinary_profit": 1743.0,
+        "net_profit": 1203.0
+      },
+      {
+        "fiscal_year_end": "2026-07-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 1–2、9",
+        "period_end": "2025-10-20",
+        "period_start": "2025-07-21",
+        "method": "1Q累計",
+        "revenue": 80116.0,
+        "operating_profit": 3008.0,
+        "ordinary_profit": 3295.0,
+        "net_profit": 2311.0
+      },
+      {
+        "fiscal_year_end": "2026-07-20",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1–2、9",
+        "period_end": "2026-04-20",
+        "period_start": "2026-01-21",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-20",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 1–2、12",
+        "period_end": "2026-07-20",
+        "period_start": "2026-04-21",
+        "method": "累計−直前累計",
+        "revenue": 111356.0,
+        "operating_profit": -293.0,
+        "ordinary_profit": 60.0,
+        "net_profit": 308.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共需要残存・構成",
+            "formula": "bear_public-py_public",
+            "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額",
+            "amount": -15162.75
+          },
+          {
+            "label": "情報需要残存・構成",
+            "formula": "bear_information-py_information",
+            "reason": "Windows需要終了と継続事業の相殺",
+            "amount": -4773.75
+          },
+          {
+            "label": "オフィス案件",
+            "formula": "bear_office-py_office",
+            "reason": "大型案件検収の増加仮定",
+            "amount": 399.96000000000095
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+        },
+        "rounding_tolerance": 3
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共売上・採算",
+            "formula": "bear_public_op-py_public_op",
+            "reason": "費用込み営業利益率による推計差",
+            "amount": -910.27
+          },
+          {
+            "label": "情報売上・採算",
+            "formula": "bear_information_op-py_information_op",
+            "reason": "サービス減収とSI構成の条件差",
+            "amount": -281.2855
+          },
+          {
+            "label": "オフィス売上・採算",
+            "formula": "bear_office_op-py_office_op",
+            "reason": "検収・構成・費用吸収の条件差",
+            "amount": -71.0412
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_op_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+        },
+        "rounding_tolerance": 4
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "bear_public-py_public",
+            "reason": "公共売上の条件付き変化",
+            "amount": -15162.75
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "bear_information-py_information",
+            "reason": "情報売上の条件付き変化",
+            "amount": -4773.75
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "bear_office-py_office",
+            "reason": "オフィス案件の条件付き変化",
+            "amount": 399.96000000000095
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -31241.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差を残す。契約更新・検収の季節配分を個別案件に帰属できず、季節性だけで説明済みとはしない。表示端数も包含。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "bear_public_op-py_public_op",
+            "reason": "公共売上・採算の条件差",
+            "amount": -910.27
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "bear_information_op-py_information_op",
+            "reason": "情報売上・採算の条件差",
+            "amount": -281.2855
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "bear_office_op-py_office_op",
+            "reason": "オフィス売上・採算の条件差",
+            "amount": -71.0412
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": 3300.0,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共需要残存・構成",
+            "formula": "base_public-py_public",
+            "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額",
+            "amount": -10108.5
+          },
+          {
+            "label": "情報需要残存・構成",
+            "formula": "base_information-py_information",
+            "reason": "Windows需要終了と継続事業の相殺",
+            "amount": -3182.5
+          },
+          {
+            "label": "オフィス案件",
+            "formula": "base_office-py_office",
+            "reason": "大型案件検収の増加仮定",
+            "amount": 1066.5600000000013
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+        },
+        "rounding_tolerance": 3
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共売上・採算",
+            "formula": "base_public_op-py_public_op",
+            "reason": "費用込み営業利益率による推計差",
+            "amount": -422.125
+          },
+          {
+            "label": "情報売上・採算",
+            "formula": "base_information_op-py_information_op",
+            "reason": "サービス減収とSI構成の条件差",
+            "amount": -129.21050000000002
+          },
+          {
+            "label": "オフィス売上・採算",
+            "formula": "base_office_op-py_office_op",
+            "reason": "検収・構成・費用吸収の条件差",
+            "amount": 35.34816000000001
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_op_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+        },
+        "rounding_tolerance": 4
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "base_public-py_public",
+            "reason": "公共売上の条件付き変化",
+            "amount": -10108.5
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "base_information-py_information",
+            "reason": "情報売上の条件付き変化",
+            "amount": -3182.5
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "base_office-py_office",
+            "reason": "オフィス案件の条件付き変化",
+            "amount": 1066.5600000000013
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -31241.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "base_public_op-py_public_op",
+            "reason": "公共売上・採算の条件差",
+            "amount": -422.125
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "base_information_op-py_information_op",
+            "reason": "情報売上・採算の条件差",
+            "amount": -129.21050000000002
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "base_office_op-py_office_op",
+            "reason": "オフィス売上・採算の条件差",
+            "amount": 35.34816000000001
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": 3300.0,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共需要残存・構成",
+            "formula": "bull_public-py_public",
+            "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額",
+            "amount": -5054.25
+          },
+          {
+            "label": "情報需要残存・構成",
+            "formula": "bull_information-py_information",
+            "reason": "Windows需要終了と継続事業の相殺",
+            "amount": -1591.25
+          },
+          {
+            "label": "オフィス案件",
+            "formula": "bull_office-py_office",
+            "reason": "大型案件検収の増加仮定",
+            "amount": 1733.159999999998
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+        },
+        "rounding_tolerance": 3
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共売上・採算",
+            "formula": "bull_public_op-py_public_op",
+            "reason": "費用込み営業利益率による推計差",
+            "amount": 167.10500000000002
+          },
+          {
+            "label": "情報売上・採算",
+            "formula": "bull_information_op-py_information_op",
+            "reason": "サービス減収とSI構成の条件差",
+            "amount": 38.777000000000044
+          },
+          {
+            "label": "オフィス売上・採算",
+            "formula": "bull_office_op-py_office_op",
+            "reason": "検収・構成・費用吸収の条件差",
+            "amount": 119.6063999999999
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -1.0,
+        "residual_formula": "yoy_op_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+        },
+        "rounding_tolerance": 4
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "bull_public-py_public",
+            "reason": "公共売上の条件付き変化",
+            "amount": -5054.25
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "bull_information-py_information",
+            "reason": "情報売上の条件付き変化",
+            "amount": -1591.25
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "bull_office-py_office",
+            "reason": "オフィス案件の条件付き変化",
+            "amount": 1733.159999999998
+          },
+          {
+            "label": "その他",
+            "formula": "forecast_other-py_other",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": -31241.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "公共の前年同季基準からの変化",
+            "formula": "bull_public_op-py_public_op",
+            "reason": "公共売上・採算の条件差",
+            "amount": 167.10500000000002
+          },
+          {
+            "label": "情報の前年同季基準からの変化",
+            "formula": "bull_information_op-py_information_op",
+            "reason": "情報売上・採算の条件差",
+            "amount": 38.777000000000044
+          },
+          {
+            "label": "オフィスの前年同季基準からの変化",
+            "formula": "bull_office_op-py_office_op",
+            "reason": "オフィス売上・採算の条件差",
+            "amount": 119.6063999999999
+          },
+          {
+            "label": "その他・消去",
+            "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+            "reason": "前年同季据え置き",
+            "amount": 0.0
+          }
+        ],
+        "residual": 3300.0,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      }
+    ],
+    "issues": [
+      "S01～S06の提供本文に短縮フラグはない。一方、S07・S08の保存原文はdocumentsに含まれず、株式基本情報・IRカレンダー本文は原本未確認。",
+      "S04の情報関連事業の前期売上はpage 7・27とpage 10およびS01 page 20で表示差がある。確定実績にはS01を優先し、資料間差を会計組替えや丸めと断定していない。",
+      "S05の上期売上はpage 4とpage 5で表示差があり、第2四半期短信原文も未提示。今回必要な前年同季と前四半期の比較には用いなかった。第3四半期単独の算定は行っていない。",
+      "セグメント売上範囲は実績水準と需要方向に基づく条件付き設定。受注裏付けがないため対象期がこの範囲内に収まる保証はなく、中心値の精度は低い。",
+      "営業利益はセグメント採算による推計であり、数量・価格・原価・販管費の完全な積上げではない。前年表示値に対するブリッジの算術一致は、因果要因を独立検証したことを意味しない。",
+      "基準日時までの追加業績修正・重要開示の網羅性と独立した質疑応答資料は原本未確認。非開示と断定していない。",
+      "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された探索結果に基づく暫定判定であり、基準日時までの全開示を独立に検証したものではない。",
+      "指定の2026年12月3日発表予定は会社・取引所の一次原文を確認できないためannouncement_dateはnull。対象条件としての予定日と確定日を区別した。",
+      "経常利益と親会社株主に帰属する純利益は、対象期の営業外損益、特別損益、税負担の合理的な範囲を設定する根拠が不足するため予測しない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -50777.54,
+            "rate": -0.4559928517547326,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 2037.4033,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -19537.54,
+            "rate": -0.24386564481501824,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -1263.5967,
+            "rate": -0.4200786901595745,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -43465.44,
+            "rate": -0.3903286755989799,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 2784.01266,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -12225.440000000002,
+            "rate": -0.1525967347346348,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -516.9873400000001,
+            "rate": -0.1718707912234043,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -36153.34,
+            "rate": -0.3246644994432271,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 3625.4884,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -4913.3399999999965,
+            "rate": -0.061327824654251295,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 324.4884000000002,
+            "rate": 0.10787513297872346,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -19537.54,
+        "explained_sum": -19536.54,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -1263.5967,
+        "explained_sum": -1262.5967,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -50777.54,
+        "explained_sum": -19536.54,
+        "residual": -31241.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差を残す。契約更新・検収の季節配分を個別案件に帰属できず、季節性だけで説明済みとはしない。表示端数も包含。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 2037.4033,
+        "explained_sum": -1262.5967,
+        "residual": 3300.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -12225.440000000002,
+        "explained_sum": -12224.439999999999,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": -3.637978807091713e-12,
+        "status": "passed",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -516.9873400000001,
+        "explained_sum": -515.98734,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": -1.1368683772161603e-13,
+        "status": "passed",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -43465.44,
+        "explained_sum": -12224.439999999999,
+        "residual": -31241.0,
+        "residual_type": "economic_unexplained",
+        "difference": -3.637978807091713e-12,
+        "status": "passed",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 2784.01266,
+        "explained_sum": -515.98734,
+        "residual": 3300.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -4913.3399999999965,
+        "explained_sum": -4912.340000000002,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": 5.4569682106375694e-12,
+        "status": "passed",
+        "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 324.4884000000002,
+        "explained_sum": 325.48839999999996,
+        "residual": -1.0,
+        "residual_type": "rounding",
+        "difference": 2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -36153.34,
+        "explained_sum": -4912.340000000002,
+        "residual": -31241.0,
+        "residual_type": "economic_unexplained",
+        "difference": 7.275957614183426e-12,
+        "status": "passed",
+        "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 3625.4884,
+        "explained_sum": 325.48839999999996,
+        "residual": 3300.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+      }
+    ],
+    "conditions": [
+      "base_information_margin: 情報の営業利益率を2.3%とする。過去二期の同季採算の間で、Windows需要終了をSI回復・サービス継続が一部補う。人員・共通システム費を含む採算。",
+      "base_office_factor: オフィスは前年同季を基礎に8%成長。東名阪の移転、地方拠点改修、高級レンタルオフィス需要と通期セグメント見通しを方向確認に用いる。全社前年比の一律延長ではない。",
+      "base_office_margin: 前年同季並みの営業利益率3.6%を仮定。海外・周辺事業の採算改善と増収効果を、人件費等の増加が相殺する。",
+      "base_public_margin: 前年・前々年同季の営業利益率の間にある5%を仮定。端末比率低下とネットワーク・自治体業務の構成改善を、人件費とシステム費の増加が一部相殺する。",
+      "base_retention: 前々年から前年同四半期への公共・情報の増収額の半分が残る条件付き中心値。端末・Windows特需の終了と、教育ネットワーク、自治体対応、ライセンス継続成長の両方を反映する。資料から推定した確率的中央値ではなく、既知の同季実績間の中間条件。",
+      "bear_information_margin: 情報の営業利益率を1.8%とする。前年同季約2.5%、前々年同季約2.2%に対し、Windowsサービス終了、低採算ライセンスへの構成変化、SI供給遅延継続を織り込む。",
+      "bear_office_factor: オフィスは前年同季を基礎に3%成長。大型案件反動を考慮し、会社の通期増収方向より弱い案件獲得・検収を仮定する。",
+      "bear_office_margin: 前年同季の営業利益率約3.6%を下回る3%を仮定。大型案件構成と人件費負担による採算悪化を含む。",
+      "bear_public_margin: 外部売上に対するセグメント営業利益率を4%とする。前年同季約4.8%、前々年同季約5.4%に対し、端末減収に伴う設備・人件費の固定負担と自治体案件遅延を織り込む。販管費込みの採算仮定。",
+      "bear_retention: 公共・情報それぞれの前々年同四半期から前年同四半期への増収額の25%が残る条件。公共はGIGA更新減少と自治体検収の後ずれ、情報はWindows更新終了を重視する。増収額全体を特需実績とは認定せず、継続事業成長も含む増収部分の残存感応度として使う。",
+      "bull_information_margin: 情報の営業利益率を2.8%とする。比較的高採算の中小企業SI案件回復が、低採算ライセンス増加を上回る条件。過去同季より改善する独自仮定。",
+      "bull_office_factor: オフィスは前年同季を基礎に13%成長。大型案件の期内検収と公共施設案件の獲得が進む条件。",
+      "bull_office_margin: 案件構成と費用吸収の改善で営業利益率4%を仮定。会社通期セグメント計画の約4.1%に近いが、四半期の達成を保証するものではない。",
+      "bull_public_margin: 高付加価値ネットワーク・自治体対応の構成改善により6%とする。前年同季を上回るが、公表通期セグメント計画の約6.4%を下回る条件。通期利益率をそのまま四半期に適用しない。",
+      "bull_retention: 公共・情報の前年増収部分の75%を維持する条件。公共ネットワークと自治体作業、情報のライセンスとSI回復が特需減少を相当程度補う。前年の特需込み水準を超える前提にはしない。",
+      "セグメント別の四半期人件費、償却費、ERP運用費の予算内訳は保存資料に非開示。営業利益率に包含している。",
+      "公共・情報の過去増収に占める一時需要と継続成長の比率は保存資料に非開示。残存率はその分解を確定した値ではない。",
+      "前四半期比較の大きな残差について、季節性と費用計上時期の定量分離は未完了。",
+      "対象四半期の数量・単価・受注残・案件別検収額は保存資料に記載がない。独立KPI資料そのものの有無は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔日本基準〕（連結）",
+        "url": "https://azcms.ir-service.net/DATA/8057/ir/140120260901529425.pdf",
+        "published_at": "2026-09-02",
+        "category": "latest_results",
+        "final_url": "https://azcms.ir-service.net/DATA/8057/ir/140120260901529425.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S01.txt",
+        "sha256": "6c0eebe2e446985b5b64135426843fd91698dd2c89278a64237672c8e30ea6b1",
+        "text_sha256": "936eb670f726a737b447ab55591d92176d114b5b85dc504e93118fdfd72fcab4",
+        "retrieved_at": "2026-11-18T15:26:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 23068,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://azcms.ir-service.net/DATA/8057/ir/140120251202513366.pdf",
+        "published_at": "2025-12-03",
+        "category": "historical",
+        "final_url": "https://azcms.ir-service.net/DATA/8057/ir/140120251202513366.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S02.txt",
+        "sha256": "927366961a06857cbda3abc4c500abebf9621411385f34bb2e34b40b0f9a1a25",
+        "text_sha256": "d692dc081733b2ed39b8728f497432b8d03ac8a67f65f9391276c6b2eff448a6",
+        "retrieved_at": "2026-11-18T15:26:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13998,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://azcms.ir-service.net/DATA/8057/ir/140120260602560867.pdf",
+        "published_at": "2026-06-03",
+        "category": "historical",
+        "final_url": "https://azcms.ir-service.net/DATA/8057/ir/140120260602560867.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S03.txt",
+        "sha256": "f857f957da3091b1f9655190d84b333b4dec0c76908bc4364c378beb833e0196",
+        "text_sha256": "3e816549d4247e93c234679ccfd2b6ed3170b34a2a38d14faf419a26e884d049",
+        "retrieved_at": "2026-11-18T15:26:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 14595,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 アナリスト様向け決算説明会資料",
+        "url": "https://www.uchida.co.jp/company/ir/pdf/20260911.pdf",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "final_url": "https://www.uchida.co.jp/company/ir/pdf/20260911.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S04.txt",
+        "sha256": "7607f2d29428821b095bfe9b7f84a83ef24a7d6319f4dbcea9569f7a9e2ae309",
+        "text_sha256": "4ab25c2acc83fbb80dfa93fb120d20725f44bd37592774f73d75d2e72cab6f78",
+        "retrieved_at": "2026-11-18T15:26:48+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18748,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期 アナリスト様向け第2四半期決算説明会資料",
+        "url": "https://www.uchida.co.jp/company/ir/pdf/20260311.pdf",
+        "published_at": "2026-03-11",
+        "category": "presentation",
+        "final_url": "https://www.uchida.co.jp/company/ir/pdf/20260311.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S05.txt",
+        "sha256": "fd6e4f76b5c24a5aee313fd058d091607919db96aa09816aaae9019ea3e9c6ed",
+        "text_sha256": "3ce2a65fc8238a1b4d2e78ebf509d441292498c6d450cc2bd2dfa307a5885086",
+        "retrieved_at": "2026-11-18T15:26:52+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17651,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "剰余金の配当および配当方針の変更（累進配当の導入）に関するお知らせ",
+        "url": "https://azcms.ir-service.net/DATA/8057/ir/140120260901529442.pdf",
+        "published_at": "2026-09-02",
+        "category": "other",
+        "final_url": "https://azcms.ir-service.net/DATA/8057/ir/140120260901529442.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261203\\companies\\8057\\sources\\S06.txt",
+        "sha256": "1758a3a4fc5e4a6488a5bfb27c39445bd88ee334bfe4bcde039757be84c1578b",
+        "text_sha256": "e163c4b99776f9c758a2933729c2f81d4ef204128e10b6cf09f38a4b3057073c",
+        "retrieved_at": "2026-11-18T15:26:53+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1550,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "株式基本情報",
+        "url": "https://www.uchida.co.jp/company/ir/stock/info.html",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T15:26:53+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "IRカレンダー",
+        "url": "https://www.uchida.co.jp/company/ir/event/calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T15:26:53+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "8057",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-07-20",
+        "quarter": 1,
+        "start": "2026-07-21",
+        "end": "2026-10-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_revenue",
+          "value": 80116,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "py_op",
+          "value": 3008,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "fy_revenue",
+          "value": 425729,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "fy_op",
+          "value": 15631,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "fy_ordinary",
+          "value": 16770,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "fy_net",
+          "value": 12486,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "q3_revenue",
+          "value": 314373,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q3_op",
+          "value": 15924,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q3_ordinary",
+          "value": 16710,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q3_net",
+          "value": 12178,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "older_public",
+          "value": 18489,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、2025年7月期第1四半期外部顧客売上高"
+        },
+        {
+          "id": "py_public",
+          "value": 38706,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、2026年7月期第1四半期外部顧客売上高"
+        },
+        {
+          "id": "py_public_op",
+          "value": 1852,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "py_office",
+          "value": 13332,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、外部顧客売上高"
+        },
+        {
+          "id": "py_office_op",
+          "value": 483,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "older_information",
+          "value": 21504,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、2025年7月期第1四半期外部顧客売上高"
+        },
+        {
+          "id": "py_information",
+          "value": 27869,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、2026年7月期第1四半期外部顧客売上高"
+        },
+        {
+          "id": "py_information_op",
+          "value": 697,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "py_other",
+          "value": 208,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、外部顧客売上高"
+        },
+        {
+          "id": "py_other_op",
+          "value": -40,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "py_adjustment",
+          "value": 15,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、セグメント利益調整額"
+        },
+        {
+          "id": "guide_revenue",
+          "value": 400000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guide_op",
+          "value": 15000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guide_ordinary",
+          "value": 16000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guide_net",
+          "value": 10500,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、親会社株主に帰属する当期純利益予想"
+        },
+        {
+          "id": "guide_public",
+          "value": 115200,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、公共関連事業売上高"
+        },
+        {
+          "id": "guide_public_op",
+          "value": 7350,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、公共関連事業営業利益"
+        },
+        {
+          "id": "guide_office",
+          "value": 63700,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、オフィス関連事業売上高"
+        },
+        {
+          "id": "guide_office_op",
+          "value": 2600,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、オフィス関連事業営業利益"
+        },
+        {
+          "id": "guide_information",
+          "value": 220000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、情報関連事業売上高"
+        },
+        {
+          "id": "guide_information_op",
+          "value": 4800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 27、情報関連事業営業利益"
+        },
+        {
+          "id": "bear_retention",
+          "value": 0.25,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "公共・情報それぞれの前々年同四半期から前年同四半期への増収額の25%が残る条件。公共はGIGA更新減少と自治体検収の後ずれ、情報はWindows更新終了を重視する。増収額全体を特需実績とは認定せず、継続事業成長も含む増収部分の残存感応度として使う。",
+          "sensitivity": "残存率が0.10上がると公共売上は2021.7、情報売上は636.5増える。両事業の残存率は独立して変更可能。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF page 7；S02 PDF pages 4–5、12；S04 PDF pages 13–14；S05 PDF page 24",
+          "material": true
+        },
+        {
+          "id": "base_retention",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前々年から前年同四半期への公共・情報の増収額の半分が残る条件付き中心値。端末・Windows特需の終了と、教育ネットワーク、自治体対応、ライセンス継続成長の両方を反映する。資料から推定した確率的中央値ではなく、既知の同季実績間の中間条件。",
+          "sensitivity": "残存率が0.10下がると公共売上は2021.7、情報売上は636.5減る。対応する営業利益影響は各シナリオの利益率を乗じる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 5、7；S02 PDF page 12；S04 PDF pages 8、10、13–14",
+          "material": true
+        },
+        {
+          "id": "bull_retention",
+          "value": 0.75,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "公共・情報の前年増収部分の75%を維持する条件。公共ネットワークと自治体作業、情報のライセンスとSI回復が特需減少を相当程度補う。前年の特需込み水準を超える前提にはしない。",
+          "sensitivity": "0.10の変化で公共売上2021.7、情報売上636.5が変動する。大型案件検収が集中すれば設定範囲外もあり得る。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF page 7；S02 PDF page 12；S04 PDF pages 8、10",
+          "material": true
+        },
+        {
+          "id": "bear_office_factor",
+          "value": 1.03,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "オフィスは前年同季を基礎に3%成長。大型案件反動を考慮し、会社の通期増収方向より弱い案件獲得・検収を仮定する。",
+          "sensitivity": "倍率0.01の変化で売上133.32が変動する。",
+          "source_ids": [
+            "S02",
+            "S04"
+          ],
+          "locator": "S02 PDF page 12；S04 PDF pages 9、22、27",
+          "material": true
+        },
+        {
+          "id": "base_office_factor",
+          "value": 1.08,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "オフィスは前年同季を基礎に8%成長。東名阪の移転、地方拠点改修、高級レンタルオフィス需要と通期セグメント見通しを方向確認に用いる。全社前年比の一律延長ではない。",
+          "sensitivity": "倍率0.01の変化で売上133.32が変動する。",
+          "source_ids": [
+            "S02",
+            "S04"
+          ],
+          "locator": "S02 PDF page 12；S04 PDF pages 9、22、27",
+          "material": true
+        },
+        {
+          "id": "bull_office_factor",
+          "value": 1.13,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "オフィスは前年同季を基礎に13%成長。大型案件の期内検収と公共施設案件の獲得が進む条件。",
+          "sensitivity": "倍率0.01の変化で売上133.32が変動する。",
+          "source_ids": [
+            "S02",
+            "S04"
+          ],
+          "locator": "S02 PDF page 12；S04 PDF pages 9、22–23",
+          "material": true
+        },
+        {
+          "id": "bear_public_margin",
+          "value": 0.04,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "外部売上に対するセグメント営業利益率を4%とする。前年同季約4.8%、前々年同季約5.4%に対し、端末減収に伴う設備・人件費の固定負担と自治体案件遅延を織り込む。販管費込みの採算仮定。",
+          "sensitivity": "利益率0.01の変化で当該公共売上の1%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4–5；S02 PDF page 12；S04 PDF pages 3、51–52",
+          "material": true
+        },
+        {
+          "id": "base_public_margin",
+          "value": 0.05,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年・前々年同季の営業利益率の間にある5%を仮定。端末比率低下とネットワーク・自治体業務の構成改善を、人件費とシステム費の増加が一部相殺する。",
+          "sensitivity": "利益率0.01の変化で当該公共売上の1%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4–5、7；S02 PDF page 12；S04 PDF pages 51–52",
+          "material": true
+        },
+        {
+          "id": "bull_public_margin",
+          "value": 0.06,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "高付加価値ネットワーク・自治体対応の構成改善により6%とする。前年同季を上回るが、公表通期セグメント計画の約6.4%を下回る条件。通期利益率をそのまま四半期に適用しない。",
+          "sensitivity": "利益率0.01の変化で当該公共売上の1%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF page 7；S02 PDF page 12；S04 PDF page 27",
+          "material": true
+        },
+        {
+          "id": "bear_information_margin",
+          "value": 0.018,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "情報の営業利益率を1.8%とする。前年同季約2.5%、前々年同季約2.2%に対し、Windowsサービス終了、低採算ライセンスへの構成変化、SI供給遅延継続を織り込む。",
+          "sensitivity": "利益率0.005の変化で当該情報売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF page 5；S02 PDF page 12；S04 PDF pages 10、31",
+          "material": true
+        },
+        {
+          "id": "base_information_margin",
+          "value": 0.023,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "情報の営業利益率を2.3%とする。過去二期の同季採算の間で、Windows需要終了をSI回復・サービス継続が一部補う。人員・共通システム費を含む採算。",
+          "sensitivity": "利益率0.005の変化で当該情報売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 5、7；S02 PDF page 12；S04 PDF pages 10、51–52",
+          "material": true
+        },
+        {
+          "id": "bull_information_margin",
+          "value": 0.028,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "情報の営業利益率を2.8%とする。比較的高採算の中小企業SI案件回復が、低採算ライセンス増加を上回る条件。過去同季より改善する独自仮定。",
+          "sensitivity": "利益率0.005の変化で当該情報売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 5、7；S02 PDF page 12；S04 PDF page 10",
+          "material": true
+        },
+        {
+          "id": "bear_office_margin",
+          "value": 0.03,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年同季の営業利益率約3.6%を下回る3%を仮定。大型案件構成と人件費負担による採算悪化を含む。",
+          "sensitivity": "利益率0.005の変化で当該オフィス売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4–5；S02 PDF page 12",
+          "material": true
+        },
+        {
+          "id": "base_office_margin",
+          "value": 0.036,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年同季並みの営業利益率3.6%を仮定。海外・周辺事業の採算改善と増収効果を、人件費等の増加が相殺する。",
+          "sensitivity": "利益率0.005の変化で当該オフィス売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4–5；S02 PDF page 12",
+          "material": true
+        },
+        {
+          "id": "bull_office_margin",
+          "value": 0.04,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "案件構成と費用吸収の改善で営業利益率4%を仮定。会社通期セグメント計画の約4.1%に近いが、四半期の達成を保証するものではない。",
+          "sensitivity": "利益率0.005の変化で当該オフィス売上の0.5%だけ営業利益が変動する。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 5；S04 PDF pages 9、27",
+          "material": true
+        },
+        {
+          "id": "forecast_other",
+          "value": 208,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "その他は教育研修需要が堅調との記載から前年同季据え置き。数量・単価の追加根拠がないため成長を加算しない。",
+          "sensitivity": "売上が20変われば全社売上も20変わる。利益影響は採算内訳不足のため別途見直す。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 5；S02 PDF pages 5、12",
+          "material": false
+        },
+        {
+          "id": "forecast_other_op",
+          "value": -40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "その他の営業損益は前年同季据え置き。年度利益を四等分せず同季の研修・人材派遣等の費用構造を仮置きする。",
+          "sensitivity": "営業損益が20変われば全社営業利益も20変わる。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12",
+          "material": false
+        },
+        {
+          "id": "forecast_adjustment",
+          "value": 15,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "セグメント間取引消去は前年同季据え置き。利益目標への調整項目には使用しない。",
+          "sensitivity": "調整額が10変われば全社営業利益も10変わる。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、注2",
+          "material": false
+        }
+      ],
+      "calculations": [
+        {
+          "id": "previous_revenue",
+          "formula": "fy_revenue-q3_revenue"
+        },
+        {
+          "id": "previous_op",
+          "formula": "fy_op-q3_op"
+        },
+        {
+          "id": "previous_ordinary",
+          "formula": "fy_ordinary-q3_ordinary"
+        },
+        {
+          "id": "previous_net",
+          "formula": "fy_net-q3_net"
+        },
+        {
+          "id": "public_increment",
+          "formula": "py_public-older_public"
+        },
+        {
+          "id": "information_increment",
+          "formula": "py_information-older_information"
+        },
+        {
+          "id": "bear_public",
+          "formula": "older_public+public_increment*bear_retention"
+        },
+        {
+          "id": "base_public",
+          "formula": "older_public+public_increment*base_retention"
+        },
+        {
+          "id": "bull_public",
+          "formula": "older_public+public_increment*bull_retention"
+        },
+        {
+          "id": "bear_information",
+          "formula": "older_information+information_increment*bear_retention"
+        },
+        {
+          "id": "base_information",
+          "formula": "older_information+information_increment*base_retention"
+        },
+        {
+          "id": "bull_information",
+          "formula": "older_information+information_increment*bull_retention"
+        },
+        {
+          "id": "bear_office",
+          "formula": "py_office*bear_office_factor"
+        },
+        {
+          "id": "base_office",
+          "formula": "py_office*base_office_factor"
+        },
+        {
+          "id": "bull_office",
+          "formula": "py_office*bull_office_factor"
+        },
+        {
+          "id": "bear_public_op",
+          "formula": "bear_public*bear_public_margin"
+        },
+        {
+          "id": "base_public_op",
+          "formula": "base_public*base_public_margin"
+        },
+        {
+          "id": "bull_public_op",
+          "formula": "bull_public*bull_public_margin"
+        },
+        {
+          "id": "bear_information_op",
+          "formula": "bear_information*bear_information_margin"
+        },
+        {
+          "id": "base_information_op",
+          "formula": "base_information*base_information_margin"
+        },
+        {
+          "id": "bull_information_op",
+          "formula": "bull_information*bull_information_margin"
+        },
+        {
+          "id": "bear_office_op",
+          "formula": "bear_office*bear_office_margin"
+        },
+        {
+          "id": "base_office_op",
+          "formula": "base_office*base_office_margin"
+        },
+        {
+          "id": "bull_office_op",
+          "formula": "bull_office*bull_office_margin"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_public+bear_information+bear_office+forecast_other"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_public+base_information+base_office+forecast_other"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_public+bull_information+bull_office+forecast_other"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_public_op+bear_information_op+bear_office_op+forecast_other_op+forecast_adjustment"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_public_op+base_information_op+base_office_op+forecast_other_op+forecast_adjustment"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_public_op+bull_information_op+bull_office_op+forecast_other_op+forecast_adjustment"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "py_public+py_information+py_office+py_other-py_revenue"
+        },
+        {
+          "id": "yoy_op_residual",
+          "formula": "py_public_op+py_information_op+py_office_op+py_other_op+py_adjustment-py_op"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "py_public+py_information+py_office+py_other-previous_revenue"
+        },
+        {
+          "id": "qoq_op_residual",
+          "formula": "py_public_op+py_information_op+py_office_op+py_other_op+py_adjustment-previous_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "公共関連事業",
+              "revenue": "bear_public",
+              "operating_profit": "bear_public_op"
+            },
+            {
+              "name": "オフィス関連事業",
+              "revenue": "bear_office",
+              "operating_profit": "bear_office_op"
+            },
+            {
+              "name": "情報関連事業",
+              "revenue": "bear_information",
+              "operating_profit": "bear_information_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "forecast_other",
+              "operating_profit": "forecast_other_op"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "公共関連事業",
+              "revenue": "base_public",
+              "operating_profit": "base_public_op"
+            },
+            {
+              "name": "オフィス関連事業",
+              "revenue": "base_office",
+              "operating_profit": "base_office_op"
+            },
+            {
+              "name": "情報関連事業",
+              "revenue": "base_information",
+              "operating_profit": "base_information_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "forecast_other",
+              "operating_profit": "forecast_other_op"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "公共関連事業",
+              "revenue": "bull_public",
+              "operating_profit": "bull_public_op"
+            },
+            {
+              "name": "オフィス関連事業",
+              "revenue": "bull_office",
+              "operating_profit": "bull_office_op"
+            },
+            {
+              "name": "情報関連事業",
+              "revenue": "bull_information",
+              "operating_profit": "bull_information_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "forecast_other",
+              "operating_profit": "forecast_other_op"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2025-07-20",
+          "quarter": 1,
+          "period_start": "2024-07-21",
+          "period_end": "2024-10-20",
+          "revenue": 52563,
+          "operating_profit": 1537,
+          "ordinary_profit": 1743,
+          "net_profit": 1203,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S02比較情報・修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1–2、9"
+        },
+        {
+          "fiscal_year_end": "2026-07-20",
+          "quarter": 1,
+          "period_start": "2025-07-21",
+          "period_end": "2025-10-20",
+          "revenue": 80116,
+          "operating_profit": 3008,
+          "ordinary_profit": 3295,
+          "net_profit": 2311,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表版・会計方針変更、見積変更、修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1–2、9"
+        },
+        {
+          "fiscal_year_end": "2026-07-20",
+          "quarter": 3,
+          "period_start": "2025-07-21",
+          "period_end": "2026-04-20",
+          "revenue": 314373,
+          "operating_profit": 15924,
+          "ordinary_profit": 16710,
+          "net_profit": 12178,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表版・会計方針変更、見積変更、修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1–2、9"
+        },
+        {
+          "fiscal_year_end": "2026-07-20",
+          "quarter": 4,
+          "period_start": "2025-07-21",
+          "period_end": "2026-07-20",
+          "revenue": 425729,
+          "operating_profit": 15631,
+          "ordinary_profit": 16770,
+          "net_profit": 12486,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表版・会計方針変更、見積変更、修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1–2、12"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "GIGA端末更新後の公共事業構成",
+          "mechanism": "端末更新の残存需要、教育ネットワーク・学校施設需要、自治体標準化の進捗を公共事業の売上範囲と採算にまとめて反映。過去増収の全額をGIGA特需とはみなさない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 5、7；S02 PDF pages 4、12；S04 PDF pages 8、13–14；S05 PDF page 24",
+          "calculation_ids": [
+            "bear_public",
+            "base_public",
+            "bull_public",
+            "base_public_op"
+          ],
+          "not_quantified_reason": "対象四半期の端末納入台数、単価、ネットワーク受注残、自治体案件別検収額は保存資料にない。全国の自治体遅延比率を当社売上の比率には転用していない。"
+        },
+        {
+          "name": "Windows更新終了とライセンス・SI構成",
+          "mechanism": "Windows更新サービスの反動を、継続ライセンス成長とSI回復が補う程度を売上残存率と営業利益率で表現する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 5、7；S02 PDF page 5；S04 PDF pages 10、19–21、31",
+          "calculation_ids": [
+            "bear_information",
+            "base_information",
+            "bull_information",
+            "base_information_op"
+          ],
+          "not_quantified_reason": "ライセンス図表は正確な四半期売上値を与えず、サービス単価とSI検収予定もない。契約室数を売上に直接換算しない。"
+        },
+        {
+          "name": "オフィス大型案件",
+          "mechanism": "前年同季売上を起点に移転・改修・公共施設案件の検収増を仮定し、案件構成と費用吸収を営業利益率へ反映。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S04"
+          ],
+          "locator": "S01 PDF page 5；S02 PDF page 12；S04 PDF pages 9、22–23、27",
+          "calculation_ids": [
+            "bear_office",
+            "base_office",
+            "bull_office",
+            "base_office_op"
+          ],
+          "not_quantified_reason": "案件件数、単価、契約残高は保存資料で確認できない。"
+        },
+        {
+          "name": "人材・共通システム・処理能力",
+          "mechanism": "賃上げ、採用、ERP統合、SE管理基盤投資をセグメント営業利益率の費用負担に含める。キッティング設備能力は需要を処理する能力であり販売数量とは扱わない。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4–5；S04 PDF pages 3、51–52；S05 PDF page 17",
+          "calculation_ids": [
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "対象期の人員増、賃金総額、システム償却・運用費、設備稼働率の内訳がなく、費用別積上げはできない。営業利益率に含めた費用を別途控除しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共需要残存・構成",
+              "formula": "bear_public-py_public",
+              "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額"
+            },
+            {
+              "label": "情報需要残存・構成",
+              "formula": "bear_information-py_information",
+              "reason": "Windows需要終了と継続事業の相殺"
+            },
+            {
+              "label": "オフィス案件",
+              "formula": "bear_office-py_office",
+              "reason": "大型案件検収の増加仮定"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共売上・採算",
+              "formula": "bear_public_op-py_public_op",
+              "reason": "費用込み営業利益率による推計差"
+            },
+            {
+              "label": "情報売上・採算",
+              "formula": "bear_information_op-py_information_op",
+              "reason": "サービス減収とSI構成の条件差"
+            },
+            {
+              "label": "オフィス売上・採算",
+              "formula": "bear_office_op-py_office_op",
+              "reason": "検収・構成・費用吸収の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_op_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+          },
+          "rounding_tolerance": 4
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "bear_public-py_public",
+              "reason": "公共売上の条件付き変化"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "bear_information-py_information",
+              "reason": "情報売上の条件付き変化"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "bear_office-py_office",
+              "reason": "オフィス案件の条件付き変化"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -31241,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差を残す。契約更新・検収の季節配分を個別案件に帰属できず、季節性だけで説明済みとはしない。表示端数も包含。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "bear_public_op-py_public_op",
+              "reason": "公共売上・採算の条件差"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "bear_information_op-py_information_op",
+              "reason": "情報売上・採算の条件差"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "bear_office_op-py_office_op",
+              "reason": "オフィス売上・採算の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": 3300,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共需要残存・構成",
+              "formula": "base_public-py_public",
+              "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額"
+            },
+            {
+              "label": "情報需要残存・構成",
+              "formula": "base_information-py_information",
+              "reason": "Windows需要終了と継続事業の相殺"
+            },
+            {
+              "label": "オフィス案件",
+              "formula": "base_office-py_office",
+              "reason": "大型案件検収の増加仮定"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共売上・採算",
+              "formula": "base_public_op-py_public_op",
+              "reason": "費用込み営業利益率による推計差"
+            },
+            {
+              "label": "情報売上・採算",
+              "formula": "base_information_op-py_information_op",
+              "reason": "サービス減収とSI構成の条件差"
+            },
+            {
+              "label": "オフィス売上・採算",
+              "formula": "base_office_op-py_office_op",
+              "reason": "検収・構成・費用吸収の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_op_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+          },
+          "rounding_tolerance": 4
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "base_public-py_public",
+              "reason": "公共売上の条件付き変化"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "base_information-py_information",
+              "reason": "情報売上の条件付き変化"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "base_office-py_office",
+              "reason": "オフィス案件の条件付き変化"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -31241,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "base_public_op-py_public_op",
+              "reason": "公共売上・採算の条件差"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "base_information_op-py_information_op",
+              "reason": "情報売上・採算の条件差"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "base_office_op-py_office_op",
+              "reason": "オフィス売上・採算の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": 3300,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共需要残存・構成",
+              "formula": "bull_public-py_public",
+              "reason": "端末特需縮小とネットワーク・自治体対応を合わせた仮定差額"
+            },
+            {
+              "label": "情報需要残存・構成",
+              "formula": "bull_information-py_information",
+              "reason": "Windows需要終了と継続事業の相殺"
+            },
+            {
+              "label": "オフィス案件",
+              "formula": "bull_office-py_office",
+              "reason": "大型案件検収の増加仮定"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季の外部売上の個別表示値合計と連結合計の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12の外部売上表示値"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共売上・採算",
+              "formula": "bull_public_op-py_public_op",
+              "reason": "費用込み営業利益率による推計差"
+            },
+            {
+              "label": "情報売上・採算",
+              "formula": "bull_information_op-py_information_op",
+              "reason": "サービス減収とSI構成の条件差"
+            },
+            {
+              "label": "オフィス売上・採算",
+              "formula": "bull_office_op-py_office_op",
+              "reason": "検収・構成・費用吸収の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -1,
+          "residual_formula": "yoy_op_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年同季のセグメント損益と消去の個別表示値合計と連結営業利益の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S02"
+            ],
+            "locator": "PDF page 1の百万円未満切捨て、page 12のセグメント損益・調整額"
+          },
+          "rounding_tolerance": 4
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "bull_public-py_public",
+              "reason": "公共売上の条件付き変化"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "bull_information-py_information",
+              "reason": "情報売上の条件付き変化"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "bull_office-py_office",
+              "reason": "オフィス案件の条件付き変化"
+            },
+            {
+              "label": "その他",
+              "formula": "forecast_other-py_other",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": -31241,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期実績から前年同季セグメント表示値合計へ移る基準差。契約更新・検収の季節配分を個別案件に帰属できず、経済要因を説明し切れていない。表示端数も包含。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "公共の前年同季基準からの変化",
+              "formula": "bull_public_op-py_public_op",
+              "reason": "公共売上・採算の条件差"
+            },
+            {
+              "label": "情報の前年同季基準からの変化",
+              "formula": "bull_information_op-py_information_op",
+              "reason": "情報売上・採算の条件差"
+            },
+            {
+              "label": "オフィスの前年同季基準からの変化",
+              "formula": "bull_office_op-py_office_op",
+              "reason": "オフィス売上・採算の条件差"
+            },
+            {
+              "label": "その他・消去",
+              "formula": "forecast_other_op+forecast_adjustment-py_other_op-py_adjustment",
+              "reason": "前年同季据え置き"
+            }
+          ],
+          "residual": 3300,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前四半期の損失から前年同季基準へ移る差。案件採算、費用計上時期、季節構成を分離できないため残差とする。表示端数も包含。"
+        }
+      ],
+      "company_guidance": "S01の2027年7月期連結通期予想とS04の同年度セグメント予想を保存した。対象四半期単独予想は保存資料に記載がない。通期予想は方向と採算範囲の確認に用い、四等分や通期予想からの対象四半期差引きは行っていない。保存資料内の最新公表値だが、基準日時までの修正開示の網羅性を確認できないためguidance_recordsのrevision_statusはunverifiedとした。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスは含まれていない。",
+      "independent_forecast": "過去二期の同季セグメント売上と会社固有の需要転換を基礎にした、低確度の条件付きセグメント積上げ。公共・情報は前年増収部分の残存率、オフィスは案件成長、営業利益は各事業の費用込み採算を仮定した。受注数量・単価を把握した積上げではなく、シナリオ範囲は統計的信頼区間ではない。期後会社修正見込みの差引き推計は使用していない。営業外損益・税金・特別損益の対象期根拠が不足するため経常利益・純利益はnull。",
+      "narrative": [
+        {
+          "heading": "条件付き予測",
+          "text": "中心ケースの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気ケースは売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気ケースは売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。端末更新とWindows更新の反動を見込み、教育ネットワーク、自治体標準化、ライセンス、オフィス案件が補う程度を変えた。"
+        },
+        {
+          "heading": "公共の検収時期",
+          "text": "自治体標準化は延伸案件が多いが、旧資料で示された年末稼働ピークは対象四半期より後に位置する。稼働前作業の収益認識も確認できないため、延伸案件を対象期へ一括計上しない。GIGAの保守契約は複数年にわたり、導入済み台数を対象期の新規売上に重ねて加算していない。"
+        },
+        {
+          "heading": "利益の読み方",
+          "text": "予測利益はセグメント売上と費用込み営業利益率から求めた。賃上げ、採用、ERP運用、SE管理基盤投資の影響は採算仮定に含み、別途費用として重ねて控除していない。高採算SIの回復や公共案件構成が弱ければ、売上の達成だけでは中心利益を確保できない。"
+        },
+        {
+          "heading": "比較上の限界",
+          "text": "直前四半期は同一会計版の通期累計と第3四半期累計の差引きで、売上{{value:previous_revenue}}、営業利益{{value:previous_op}}。前年同季を起点とするモデルとの基準差について、売上{{value:qoq_revenue_residual}}、営業利益{{value:qoq_op_residual}}を前四半期比較の未説明残差として残した。前四半期の費用や検収構成を特定した改善効果とは解釈しない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "公共・情報の過去増収に占める一時需要と継続成長の比率は保存資料に非開示。残存率はその分解を確定した値ではない。",
+        "対象四半期の数量・単価・受注残・案件別検収額は保存資料に記載がない。独立KPI資料そのものの有無は未確認。",
+        "セグメント別の四半期人件費、償却費、ERP運用費の予算内訳は保存資料に非開示。営業利益率に包含している。",
+        "前四半期比較の大きな残差について、季節性と費用計上時期の定量分離は未完了。"
+      ],
+      "material_unresolved": [
+        "指定の2026年12月3日発表予定は会社・取引所の一次原文を確認できないためannouncement_dateはnull。対象条件としての予定日と確定日を区別した。",
+        "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された探索結果に基づく暫定判定であり、基準日時までの全開示を独立に検証したものではない。",
+        "S01～S06の提供本文に短縮フラグはない。一方、S07・S08の保存原文はdocumentsに含まれず、株式基本情報・IRカレンダー本文は原本未確認。",
+        "基準日時までの追加業績修正・重要開示の網羅性と独立した質疑応答資料は原本未確認。非開示と断定していない。",
+        "S04の情報関連事業の前期売上はpage 7・27とpage 10およびS01 page 20で表示差がある。確定実績にはS01を優先し、資料間差を会計組替えや丸めと断定していない。",
+        "S05の上期売上はpage 4とpage 5で表示差があり、第2四半期短信原文も未提示。今回必要な前年同季と前四半期の比較には用いなかった。第3四半期単独の算定は行っていない。",
+        "セグメント売上範囲は実績水準と需要方向に基づく条件付き設定。受注裏付けがないため対象期がこの範囲内に収まる保証はなく、中心値の精度は低い。",
+        "営業利益はセグメント採算による推計であり、数量・価格・原価・販管費の完全な積上げではない。前年表示値に対するブリッジの算術一致は、因果要因を独立検証したことを意味しない。",
+        "経常利益と親会社株主に帰属する純利益は、対象期の営業外損益、特別損益、税負担の合理的な範囲を設定する根拠が不足するため予測しない。"
+      ],
+      "guidance_records": [
+        {
+          "id": "guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guide_revenue",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-02",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "guidance_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_op",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-02",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "guidance_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guide_ordinary",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-02",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "guidance_net",
+          "metric": "net_profit",
+          "value_ref": "guide_net",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-02",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "guidance_public_revenue",
+          "metric": "revenue",
+          "value_ref": "guide_public",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・公共関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF pages 25–27；年度期間はS01 PDF page 1、セグメント定義はpages 18–20"
+        },
+        {
+          "id": "guidance_public_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_public_op",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・公共関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF page 27；年度期間はS01 PDF page 1、利益定義はpage 18"
+        },
+        {
+          "id": "guidance_office_revenue",
+          "metric": "revenue",
+          "value_ref": "guide_office",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・オフィス関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF page 27；年度期間はS01 PDF page 1、セグメント定義はpages 18–20"
+        },
+        {
+          "id": "guidance_office_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_office_op",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・オフィス関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF page 27；年度期間はS01 PDF page 1、利益定義はpage 18"
+        },
+        {
+          "id": "guidance_information_revenue",
+          "metric": "revenue",
+          "value_ref": "guide_information",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・情報関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF page 27；年度期間はS01 PDF page 1、セグメント定義はpages 18–20"
+        },
+        {
+          "id": "guidance_information_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_information_op",
+          "period_start": "2026-07-21",
+          "period_end": "2027-07-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結・情報関連事業",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S04 PDF page 27；年度期間はS01 PDF page 1、利益定義はpage 18"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "S01～S06の提供本文に短縮フラグはない。一方、S07・S08の保存原文はdocumentsに含まれず、株式基本情報・IRカレンダー本文は原本未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "S04の情報関連事業の前期売上はpage 7・27とpage 10およびS01 page 20で表示差がある。確定実績にはS01を優先し、資料間差を会計組替えや丸めと断定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "S05の上期売上はpage 4とpage 5で表示差があり、第2四半期短信原文も未提示。今回必要な前年同季と前四半期の比較には用いなかった。第3四半期単独の算定は行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "セグメント売上範囲は実績水準と需要方向に基づく条件付き設定。受注裏付けがないため対象期がこの範囲内に収まる保証はなく、中心値の精度は低い。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "営業利益はセグメント採算による推計であり、数量・価格・原価・販管費の完全な積上げではない。前年表示値に対するブリッジの算術一致は、因果要因を独立検証したことを意味しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "基準日時までの追加業績修正・重要開示の網羅性と独立した質疑応答資料は原本未確認。非開示と断定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された探索結果に基づく暫定判定であり、基準日時までの全開示を独立に検証したものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "指定の2026年12月3日発表予定は会社・取引所の一次原文を確認できないためannouncement_dateはnull。対象条件としての予定日と確定日を区別した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "経常利益と親会社株主に帰属する純利益は、対象期の営業外損益、特別損益、税負担の合理的な範囲を設定する根拠が不足するため予測しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "base_information_margin: 情報の営業利益率を2.3%とする。過去二期の同季採算の間で、Windows需要終了をSI回復・サービス継続が一部補う。人員・共通システム費を含む採算。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "base_office_factor: オフィスは前年同季を基礎に8%成長。東名阪の移転、地方拠点改修、高級レンタルオフィス需要と通期セグメント見通しを方向確認に用いる。全社前年比の一律延長ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "base_office_margin: 前年同季並みの営業利益率3.6%を仮定。海外・周辺事業の採算改善と増収効果を、人件費等の増加が相殺する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "base_public_margin: 前年・前々年同季の営業利益率の間にある5%を仮定。端末比率低下とネットワーク・自治体業務の構成改善を、人件費とシステム費の増加が一部相殺する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "base_retention: 前々年から前年同四半期への公共・情報の増収額の半分が残る条件付き中心値。端末・Windows特需の終了と、教育ネットワーク、自治体対応、ライセンス継続成長の両方を反映する。資料から推定した確率的中央値ではなく、既知の同季実績間の中間条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bear_information_margin: 情報の営業利益率を1.8%とする。前年同季約2.5%、前々年同季約2.2%に対し、Windowsサービス終了、低採算ライセンスへの構成変化、SI供給遅延継続を織り込む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bear_office_factor: オフィスは前年同季を基礎に3%成長。大型案件反動を考慮し、会社の通期増収方向より弱い案件獲得・検収を仮定する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bear_office_margin: 前年同季の営業利益率約3.6%を下回る3%を仮定。大型案件構成と人件費負担による採算悪化を含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bear_public_margin: 外部売上に対するセグメント営業利益率を4%とする。前年同季約4.8%、前々年同季約5.4%に対し、端末減収に伴う設備・人件費の固定負担と自治体案件遅延を織り込む。販管費込みの採算仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bear_retention: 公共・情報それぞれの前々年同四半期から前年同四半期への増収額の25%が残る条件。公共はGIGA更新減少と自治体検収の後ずれ、情報はWindows更新終了を重視する。増収額全体を特需実績とは認定せず、継続事業成長も含む増収部分の残存感応度として使う。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bull_information_margin: 情報の営業利益率を2.8%とする。比較的高採算の中小企業SI案件回復が、低採算ライセンス増加を上回る条件。過去同季より改善する独自仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bull_office_factor: オフィスは前年同季を基礎に13%成長。大型案件の期内検収と公共施設案件の獲得が進む条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bull_office_margin: 案件構成と費用吸収の改善で営業利益率4%を仮定。会社通期セグメント計画の約4.1%に近いが、四半期の達成を保証するものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bull_public_margin: 高付加価値ネットワーク・自治体対応の構成改善により6%とする。前年同季を上回るが、公表通期セグメント計画の約6.4%を下回る条件。通期利益率をそのまま四半期に適用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "bull_retention: 公共・情報の前年増収部分の75%を維持する条件。公共ネットワークと自治体作業、情報のライセンスとSI回復が特需減少を相当程度補う。前年の特需込み水準を超える前提にはしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "セグメント別の四半期人件費、償却費、ERP運用費の予算内訳は保存資料に非開示。営業利益率に包含している。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "公共・情報の過去増収に占める一時需要と継続成長の比率は保存資料に非開示。残存率はその分解を確定した値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "前四半期比較の大きな残差について、季節性と費用計上時期の定量分離は未完了。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8057",
+      "company_name": "内田洋行",
+      "kind": "condition",
+      "message": "対象四半期の数量・単価・受注残・案件別検収額は保存資料に記載がない。独立KPI資料そのものの有無は未確認。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/8057/result.json": "a57fdc012fa5353f4b1be47b5b8c6756de2e25432f407fba3c13b94c3033fad7",
+    "reports/8057.md": "02cf1dbdeba316c0426fa7196c29d7b9a8fc19b243f7fbd198f969703e232c9b"
+  }
+}
