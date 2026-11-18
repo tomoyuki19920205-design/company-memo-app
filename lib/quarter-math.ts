@@ -17,7 +17,8 @@ const QUARTER_CALC_ORDER: Record<string, number> = {
     "1Q": 0,
     "2Q": 1,
     "3Q": 2,
-    "FY": 3,
+    "4Q": 3,
+    "FY": 4,
 };
 
 /** 前四半期を返す (1Q→null, 2Q→1Q, 3Q→2Q, FY→3Q) */
@@ -299,6 +300,6 @@ export function sortForDisplay<T extends { period: string; quarter: string }>(ro
         if (periodCmp !== 0) return periodCmp;
         const qa = QUARTER_CALC_ORDER[a.quarter] ?? 9;
         const qb = QUARTER_CALC_ORDER[b.quarter] ?? 9;
-        return qa - qb; // 1Q(0) < 2Q(1) < 3Q(2) < FY(3)
+        return qa - qb; // 1Q < 2Q < 3Q < 4Q < FY; consistent with API transformation.
     });
 }
