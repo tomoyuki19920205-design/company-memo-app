@@ -2,7 +2,7 @@
 const nextConfig = {
   outputFileTracingIncludes: {
     '/api/earnings-calendar': ['./server-data/earnings-calendar/**/*.json'],
-    '/earnings-calendar': ['./server-data/earnings-calendar/schedules.json'],
+    '/earnings-calendar': ['./server-data/earnings-calendar/schedules.json', './server-data/earnings-calendar/registry.json'],
   },
   async headers() {
     return [

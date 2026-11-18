@@ -92,6 +92,12 @@ test("calendar API authenticates before reading private forecasts",()=>{
   assert.match(route,/401/);assert.match(route,/private, no-store/);
   assert.doesNotMatch(route,/SERVICE_ROLE|NODE_ENV|bypass/i);
 });
+test('schedule-only company ignores unsupported PL period labels without breaking the day',()=>{
+ const malformed=[{...data[0],quarter:'TTM'}, {...data[0],period:'2026.07',quarter:'1Q'}];
+ const p=previousQuarter([...data,...malformed],null,'2026-11-13',null,meta);
+ assert.equal(p.target?.fiscalYearEnd,'2026-07-31');assert.equal(p.target?.quarter,4);
+ assert.equal(p.current?.revenue,300);assert.ok(p.notes.some(n=>n.includes('除外')));
+});
 test("calendar navigation is last and uniquely active",()=>{
  const html=renderToStaticMarkup(<TopNavigation active="calendar"/>);
  assert.equal((html.match(/aria-current="page"/g)??[]).length,1);

@@ -1,8 +1,10 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { readForecast, readForecastIndex, readSchedules, readComparisonContexts } from "@/lib/earnings-calendar-store";
-import { latestForecast, previousQuarter, relevantVersions } from "@/lib/earnings-calendar";
+import { readForecast, readForecastIndex, readSchedules, readComparisonContexts, readRegistry } from "@/lib/earnings-calendar-store";
+import {countMonth,daySchedules,overviewOf} from '@/lib/earnings-schedules';
+import {loadCalendarBatches} from '@/lib/earnings-calendar-batch';
+import { latestForecast, previousQuarter, relevantVersions, emptyGrowth } from "@/lib/earnings-calendar";
 import { loadFinancialsBatch, loadFinancialProvenance } from "@/lib/financial-loader";
 import type { CalendarRow } from "@/types/earnings-calendar";
 export const dynamic = "force-dynamic";
@@ -18,41 +20,63 @@ export async function GET(request:NextRequest) {
   const month=p.get("month"),date=p.get("date"),code=p.get("code"),version=p.get("version");
   try {
     const schedules=await readSchedules();
+    const registry=await readRegistry(),overview=overviewOf(registry);
+    if(p.get('mode')==='unresolved') return reply({companies:registry?.unresolved??[],overview});
     if (month) {
       if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) return reply({error:"月の形式が不正です"},400);
-      const counts:Record<string,number>={};
-      for(const row of schedules.filter(s=>s.date.startsWith(month+"-"))) counts[row.date]=(counts[row.date]??0)+1;
-      return reply({counts});
+      const days=countMonth(schedules,month);
+      const counts=Object.fromEntries(Object.entries(days).map(([d,v])=>[d,v.count]));
+      return reply({counts,days,overview});
     }
     if(!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date)) || new Date(date).toISOString().slice(0,10)!==date) return reply({error:"日付の形式が不正です"},400);
-    const scheduled=schedules.filter(s=>s.date===date);
+    const scheduled=daySchedules(schedules,date);
     const index=await readForecastIndex();
     if(code) {
       const company=scheduled.find(s=>s.code===code);
       if(!company) return reply({error:"この日の予定企業ではありません"},404);
-      const versions=relevantVersions(index,code,date,company.target);
+      const versions=[code,...(company.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,company.target));
       const selected=version?versions.find(v=>v.id===version):latestForecast(versions);
       if(version&&!selected) return reply({error:"予測バージョンが見つかりません"},404);
-      return reply({versions,detail:selected?await readForecast(selected.id):null});
+      const saved=selected?await readForecast(selected.id):null;
+      return reply({versions,detail:saved?{...saved,preAnnouncement:selected!.preAnnouncement}:null});
     }
-    if(!scheduled.length) return reply({rows:[],date});
+    if(!scheduled.length) return reply({rows:[],date,overview,coverage:'uncollected'});
     const codes=scheduled.map(s=>s.code);
     let financeError:string|undefined;
     let data=new Map(); let provenance:Awaited<ReturnType<typeof loadFinancialProvenance>>|undefined;
     const industries=new Map<string,string>();
+    let financialErrors=new Map<string,string>();
     try {
-      data=await loadFinancialsBatch(supabase,codes);
       const from=`${Math.min(...scheduled.map(s=>Number(s.target?.fiscalYearEnd.slice(0,4)??date.slice(0,4))))-2}-01-01`;
-      const [meta,companies]=await Promise.all([loadFinancialProvenance(supabase,codes,from),supabase.from("companies").select("ticker_code,industry").in("ticker_code",codes)]);
-      provenance=meta;
-      for(const c of companies.data??[]) industries.set(c.ticker_code,c.industry);
-    } catch(e) { financeError=e instanceof Error?e.message:"財務取得エラー"; }
+      // The common loader/calculation stays unchanged; only calendar request scheduling differs.
+      provenance=[];
+      const loaded=await loadCalendarBatches(codes,async group=>{
+          const [financials,meta,companies]=await Promise.all([loadFinancialsBatch(supabase,group),loadFinancialProvenance(supabase,group,from),supabase.from('companies').select('ticker_code,industry').in('ticker_code',group)]);
+          if(companies.error)throw new Error('業種情報の取得に失敗しました');
+          return {financials,meta,companies:companies.data??[]};
+      });
+      financialErrors=loaded.errors;
+      if(financialErrors.size)financeError=`${financialErrors.size}社の財務取得が未了です。各社の比較条件を確認してください。`;
+        for(const {value:result} of loaded.results) {
+          for(const [ticker,records] of result.financials)data.set(ticker,records);
+          provenance.push(...result.meta);
+          for(const c of result.companies)industries.set(c.ticker_code,c.industry);
+        }
+    } catch(e) { financeError=e instanceof Error?e.message:"財務取得エラー";for(const code of codes)financialErrors.set(code,financeError); }
     const contexts=await readComparisonContexts();
+    const metaByTicker=new Map<string,NonNullable<typeof provenance>>();
+    for(const m of provenance??[]) {const group=metaByTicker.get(m.ticker)??[];group.push(m);metaByTicker.set(m.ticker,group);}
     const rows:CalendarRow[]=scheduled.map(s=>{
-      const forecast=latestForecast(relevantVersions(index,s.code,date,s.target));
-      return {...s,forecast,previous:previousQuarter(data.get(s.code)??[],s.target,date,industries.get(s.code),provenance,contexts[forecast?.id??""]??[]),
-      financialsAvailable:financeError?null:(data.get(s.code)?.length??0)>0,financeError};});
-    return reply({rows,date,financeError});
+      const forecast=latestForecast([s.code,...(s.codeAliases??[])].flatMap(c=>relevantVersions(index,c,date,s.target)));
+      let rowError=financialErrors.get(s.code);
+      let previous:CalendarRow['previous']={target:null,current:null,previousYear:null,revenueYoY:emptyGrowth(),profitYoY:emptyGrowth(),notes:['対象決算年が未確認のため前Q比較を保留']};
+      try {
+        if(s.target)previous=previousQuarter(data.get(s.code)??[],s.target,date,industries.get(s.code),provenance?metaByTicker.get(s.code)??[]:undefined,contexts[forecast?.id??""]??[]);
+        if(s.targetConfirmed===false)previous.notes.push('対象年は期末日とQ表記の暦対応。決算期変更の有無は未照合');
+      } catch(e) {rowError=`前Q比較未了: ${e instanceof Error?e.message:'比較条件エラー'}`;}
+      return {...s,forecast,previous,
+      financialsAvailable:financialErrors.has(s.code)?null:(data.get(s.code)?.length??0)>0,financeError:rowError};});
+    return reply({rows,date,financeError,overview,coverage:'partial'});
   } catch(e) {
     console.error("[earnings-calendar]",e instanceof Error?e.message:e);
     return reply({error:"カレンダーデータを取得できませんでした"},500);

@@ -4,7 +4,7 @@ import {useVirtualizer} from "@tanstack/react-virtual";
 import TopNavigation from "./TopNavigation";
 import CompanyViewer,{type CompanyViewerHandle} from "./CompanyViewer";
 import EarningsReportMarkdown from "./EarningsReportMarkdown";
-import type {CalendarRow,ForecastDetail,ForecastVersion,Growth} from "@/types/earnings-calendar";
+import type {CalendarRow,ForecastDetail,ForecastVersion,Growth,ScheduleOverview,DayScheduleCount,UnresolvedCompany} from "@/types/earnings-calendar";
 import {scheduleLabels,sortCalendarRows,resizeCalendar,type CalendarSort} from "@/lib/earnings-calendar";
 
 const api="/api/earnings-calendar";
@@ -27,6 +27,8 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
   const [date,setDate]=useState(initialDate),[month,setMonth]=useState(initialDate.slice(0,7));
   const [open,setOpen]=useState(false),[counts,setCounts]=useState<Record<string,number>>({});
   const [monthError,setMonthError]=useState("");
+  const [dayCounts,setDayCounts]=useState<Record<string,DayScheduleCount>>({}),[overview,setOverview]=useState<ScheduleOverview|null>(null);
+  const [unresolved,setUnresolved]=useState<UnresolvedCompany[]|null>(null),[unknownSearch,setUnknownSearch]=useState(''),[unknownError,setUnknownError]=useState('');
   const [rows,setRows]=useState<CalendarRow[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState("");
   const [selected,setSelected]=useState(""),[search,setSearch]=useState("");
   const [sort,setSort]=useState<CalendarSort>("code"),[ascending,setAscending]=useState(true);
@@ -50,8 +52,8 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
     window.history.replaceState(null,"",u);
   },[date,selected]);
   useEffect(()=>{
-    const controller=new AbortController(); setMonthError(""); setCounts({});
-    read<{counts:Record<string,number>}>({month},controller.signal).then(r=>setCounts(r.counts)).catch(e=>{if(e.name!=="AbortError")setMonthError(e.message);});
+    const controller=new AbortController(); setMonthError(""); setCounts({});setDayCounts({});
+    read<{counts:Record<string,number>;days:Record<string,DayScheduleCount>;overview:ScheduleOverview|null}>({month},controller.signal).then(r=>{setCounts(r.counts);setDayCounts(r.days);setOverview(r.overview);}).catch(e=>{if(e.name!=="AbortError")setMonthError(e.message);});
     return ()=>controller.abort();
   },[month]);
   useEffect(()=>{
@@ -72,6 +74,9 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
   },[selected,date,version,rows]);
   useEffect(()=>{if(selected && current?.financialsAvailable!==false) viewerRef.current?.loadTicker(selected);},[selected,current?.financialsAvailable]);
   const filtered=useMemo(()=>sortCalendarRows(rows.filter(r=>`${r.code} ${r.companyName}`.toLowerCase().includes(search.toLowerCase())),sort,ascending),[rows,search,sort,ascending]);
+  const unknownFiltered=(unresolved??[]).filter(r=>`${r.code} ${r.companyName}`.toLowerCase().includes(unknownSearch.toLowerCase()));
+  const unknownReason=(r:UnresolvedCompany)=>r.reason==='request_failed'?'取得失敗':r.reason==='not_checked'?'未取得':'対象期間の日程未掲載';
+  const loadUnknown=()=>{if(unresolved)return;setUnknownError('');read<{companies:UnresolvedCompany[]}>({mode:'unresolved'}).then(r=>setUnresolved(r.companies)).catch(e=>setUnknownError(e.message));};
   const virtual=useVirtualizer({count:filtered.length,getScrollElement:()=>listRef.current,estimateSize:()=>82,overscan:8});
   const today=new Date(Date.now()+9*3600000).toISOString().slice(0,10);
   const first=new Date(month+"-01T00:00:00Z");
@@ -93,20 +98,27 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
     <header className="ec-header"><TopNavigation active="calendar"/><div className="ec-heading"><div><h1>決算カレンダー <span>業績予測</span></h1><p>発表予定から、予測の根拠と企業の財務を確認</p></div><span className="ec-mode">保存予測を閲覧</span></div></header>
     <div className="ec-layout" ref={layoutRef} style={{gridTemplateColumns:`minmax(0,${panes[0]}fr) 10px minmax(0,${panes[1]}fr) 10px minmax(0,${panes[2]}fr)`}}>
       <section className="ec-left" aria-label="決算予定企業一覧">
-        <div className="ec-list-tools"><div className="ec-date-row"><button className="ec-date-button" aria-expanded={open} onClick={()=>setOpen(!open)}>📅 {dateLabel(date)} <span>▾</span></button><strong>{loading?"…":rows.length}社</strong></div>
+        <div className="ec-list-tools"><div className="ec-date-row"><button className="ec-date-button" aria-expanded={open} onClick={()=>setOpen(!open)}>📅 {dateLabel(date)} <span>▾</span></button><strong>{loading?'…':rows.length?`${rows.length}社`:'未登録'}</strong></div>
           {open&&<div className="ec-month" role="dialog" aria-label="決算日を選択" onKeyDown={e=>{if(e.key==="Escape")setOpen(false);}}><div className="ec-month-heading"><button aria-label="前月" onClick={()=>moveMonth(-1)}>‹</button><b>{month.replace("-","年 ")}月</b><button aria-label="翌月" onClick={()=>moveMonth(1)}>›</button><button onClick={()=>{setMonth(today.slice(0,7));}}>今日</button></div>
             {monthError&&<p role="alert">{monthError}</p>}<div className="ec-month-grid">{"日月火水木金土".split("").map(d=><span className="ec-weekday" key={d}>{d}</span>)}
               {Array.from({length:first.getUTCDay()},(_,i)=><span key={`blank${i}`}/>)}
-              {Array.from({length:days},(_,i)=>{const day=month+"-"+String(i+1).padStart(2,"0");return <button key={day} onClick={()=>chooseDate(day)} aria-label={`${day} ${counts[day]??0}社`} aria-pressed={date===day} aria-current={today===day?"date":undefined} className={`${date===day?"selected":""} ${today===day?"today":""}`}><span>{i+1}</span><small>{counts[day]?`${counts[day]}社`:""}</small></button>;})}</div><p className="ec-muted">件数は予測の有無にかかわらず、登録された発表予定を集計</p></div>}
+              {Array.from({length:days},(_,i)=>{const day=month+"-"+String(i+1).padStart(2,"0"),entry=dayCounts[day];const label=counts[day]?`${counts[day]}社`:entry?.coverage==='confirmed_zero'?'0社確認済み':'未取得';return <button key={day} onClick={()=>chooseDate(day)} aria-label={`${day} ${label}`} title={entry?Object.entries(entry.statuses).map(([s,n])=>`${scheduleLabels[s as keyof typeof scheduleLabels]} ${n}社`).join(' / '):'日程未登録。0社と確認した日ではありません。'} aria-pressed={date===day} aria-current={today===day?"date":undefined} className={`${date===day?"selected":""} ${today===day?"today":""}`}><span>{i+1}</span><small>{label}</small></button>;})}</div><p className="ec-muted">登録企業を重複排除して集計。未取得は0社確認済みではありません。件数にカーソルを置くと内訳を表示。</p></div>}
+          {overview&&<details className="ec-coverage" onToggle={e=>{if(e.currentTarget.open)loadUnknown();}}><summary>対象 {overview.stats.master.toLocaleString()}社 · 日程未確認 {overview.stats.unknown.toLocaleString()}社</summary>
+            <p>対象期間 {overview.period.from} ～ {overview.period.to}<br/>予定登録 {overview.stats.registeredCompanies.toLocaleString()}社 / 確認済み {overview.stats.confirmedCompanies.toLocaleString()}社 / 暫定 {overview.stats.provisional}社<br/>取得失敗 {overview.stats.failed}社 / 未取得 {overview.stats.notChecked}社</p>
+            <p>{overview.coverageNote}<br/>更新: {new Date(overview.updatedAt).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})} JST</p>
+            <input aria-label="日程未確認企業の検索" placeholder="未確認企業を検索" value={unknownSearch} onChange={e=>setUnknownSearch(e.target.value)}/>
+            {unknownError?<p role="alert">{unknownError}</p>:!unresolved?<p>一覧を読み込み中…</p>:<><small>{unknownFiltered.length}社（先頭50社を表示・検索で絞り込み）</small><ul>{unknownFiltered.slice(0,50).map(r=><li key={r.code}>{r.code} {r.companyName}<small>{unknownReason(r)}</small></li>)}</ul></>}
+            {overview.sources.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">取引所情報・原資料 ↗</a>)}
+          </details>}
           <input aria-label="企業コード・企業名で絞り込み" value={search} onChange={e=>setSearch(e.target.value)} placeholder="企業コード・企業名で検索"/>
           <div className="ec-list-note"><span>単独四半期 / YoY</span><span>{filtered.length}社を表示</span></div>
-          <p className="ec-schedule-note">{rows.filter(r=>r.status!=="official").length}社は公式確定日ではありません</p>
+          <p className="ec-schedule-note">{Object.entries(rows.reduce<Record<string,number>>((acc,r)=>{const label=scheduleLabels[r.status];acc[label]=(acc[label]??0)+1;return acc;},{})).map(([label,n])=>`${label} ${n}社`).join(' / ')||'この日は予定未登録・網羅確認前です'}</p>
         </div>
         <div className="ec-column-head" role="row"><div>{sortButton("code","企業")}</div><div>{sortButton("previousRevenue","前Q売上")}</div><div>{sortButton("previousProfit","前Q営利")}</div><div className="ec-forecast-column">{sortButton("forecastRevenue","予測売上")}</div><div className="ec-forecast-column">{sortButton("forecastProfit","予測営利")}</div></div>
         <div className="ec-list-scroll" ref={listRef} data-testid="calendar-list-scroll">
           {loading&&<p className="ec-empty">予定企業・財務データを読み込み中…</p>}
           {error&&<div className="ec-empty" role="alert">{error} <a href="/login">ログイン</a></div>}
-          {!loading&&!error&&!filtered.length&&<p className="ec-empty">該当する決算予定企業はありません</p>}
+          {!loading&&!error&&!filtered.length&&<p className="ec-empty">{rows.length?'検索条件に一致する企業はありません':'この日の予定は未登録です。決算予定が0社と確認したものではありません。'}</p>}
           <div style={{height:virtual.getTotalSize(),position:"relative"}}>{virtual.getVirtualItems().map(item=>{const row=filtered[item.index];return <button key={row.code} className={`ec-company-row${selected===row.code?" selected":""}`} style={{position:"absolute",top:0,left:0,width:"100%",height:82,transform:`translateY(${item.start}px)`}} onClick={()=>{setSelected(row.code);setVersion("");}} aria-pressed={selected===row.code} aria-label={`${row.code} ${row.companyName}`} data-code={row.code}>
             <span className="ec-company"><b>{row.code}</b><span title={row.companyName}>{row.companyName}</span><small>{scheduleLabels[row.status]}</small></span>
             <span title={[`${row.previous.target?.fiscalYearEnd??"—"} Q${row.previous.target?.quarter??"—"}`,row.previous.revenueYoY.note,...row.previous.notes].join("\n")}><GrowthCell value={row.previous.revenueYoY}/>{row.previous.notes.length>0&&<small className="ec-comparison-note">比較条件注意</small>}</span>
@@ -118,6 +130,7 @@ export default function EarningsCalendar({initialDate}:{initialDate:string}) {
       <section className="ec-report" ref={reportRef} aria-label="個別業績予測レポート" data-testid="calendar-report-scroll">
         {!current?<p className="ec-empty">左の一覧から企業を選択してください</p>:<>
           <div className="ec-report-heading"><small>FORECAST & REVIEW</small><h2>{current.code} {current.companyName}</h2><div className="ec-badges"><span>{scheduleLabels[current.status]}</span><span className="ec-quality">{detail?.quality??current.forecast?.quality??"未予測"}</span></div>
+            <details className="ec-previous-detail"><summary>予定日の出典・変更履歴</summary><p>{current.date} {current.announcementTime??'時刻未確認'} / {scheduleLabels[current.confirmationStatus??current.status]}</p><p>対象: {current.target?.fiscalYearEnd??'決算年未確認'} Q{current.target?.quarter??current.quarter??'—'} {current.targetConfirmed===false?'（対象年未照合）':''}</p><p>確認: {current.checkedAt??current.updatedAt}<br/>資料更新: {current.sourcePublishedAt??'記載なし'}<br/>初回登録: {current.firstRegisteredAt??current.updatedAt}</p>{/^https?:\/\//.test(current.source)&&<a href={current.source} target="_blank" rel="noreferrer">原資料を開く ↗</a>}<p>{current.note}</p>{current.actualDate&&<p>実際の発表日: {current.actualDate}</p>}{current.history?.length?current.history.map((h,i)=><p key={i}>{h.changedAt} / 旧予定: {h.before.date||'日程未判明'} / {h.before.status?scheduleLabels[h.before.status]:''}</p>):<p>予定変更なし</p>}</details>
             <details className="ec-previous-detail"><summary>前Qの比較元・確認状態</summary><p>{current.previous.target?.fiscalYearEnd??"—"}期 Q{current.previous.target?.quarter??"—"} 単独 / 前年同四半期比較</p><p>売上: {current.previous.previousYear?.revenue??"—"} → {current.previous.current?.revenue??"—"} 百万円</p><p>営業利益: {current.previous.previousYear?.operatingProfit??"—"} → {current.previous.current?.operatingProfit??"—"} 百万円</p>{current.previous.notes.map(n=><p key={n}>{n}</p>)}{current.financeError&&<p role="alert">{current.financeError}</p>}<p>既存Company Viewerの最新PL・共通Q単体計算。予測作成当時のPLスナップショットとは区別しています。</p></details>
           </div>
           {versions.length>0&&<label className="ec-version">予測バージョン<select value={version||detail?.id||""} onChange={e=>setVersion(e.target.value)}>{!detail&&!version&&<option value="">発表前の有効な予測なし（参考版を選択）</option>}{versions.map(v=><option key={v.id} value={v.id}>{v.asOf} / {v.version}{!v.preAnnouncement?"（発表日以後・参考）":""}</option>)}</select></label>}

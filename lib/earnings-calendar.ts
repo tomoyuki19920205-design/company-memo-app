@@ -4,7 +4,7 @@ import type { FinancialProvenance } from "./financial-loader";
 import { buildFinancialTableModel } from "./financial-table-model";
 import { FORECAST_SOURCES } from "./quarter-math";
 
-export const scheduleLabels = {official:"公式確定",external:"外部サイト予定",provisional:"暫定",unconfirmed:"公式日未確認"};
+export const scheduleLabels = {official:"公式確定",external:"外部サイト予定",provisional:"暫定",unconfirmed:"公式日未確認",official_ir:"公式IR確認済み",exchange:"取引所届出",unknown:"日程未判明",changed:"変更・延期",announced:"発表済み"};
 export const emptyGrowth = (note = "比較値なし"): Growth => ({rate:null,label:"—",tone:"neutral",note});
 export function growth(current: number | null | undefined, previous: number | null | undefined): Growth {
   if (current == null || previous == null || !Number.isFinite(current) || !Number.isFinite(previous)) return emptyGrowth();
@@ -31,7 +31,10 @@ export function latestForecast(versions: ForecastVersion[]) {
   return versions.filter(v => v.valid && v.preAnnouncement).sort((a,b) => Date.parse(b.asOf)-Date.parse(a.asOf) || Date.parse(b.savedAt)-Date.parse(a.savedAt) || b.id.localeCompare(a.id))[0] ?? null;
 }
 export function relevantVersions(versions: ForecastVersion[], code: string, date: string, target?: TargetQuarter | null) {
-  return versions.filter(v=>v.code===code && v.announcementDate===date && (!target || v.target.fiscalYearEnd===target.fiscalYearEnd && v.target.quarter===target.quarter));
+  return versions.filter(v=>v.code===code && (target ? v.target.fiscalYearEnd===target.fiscalYearEnd && v.target.quarter===target.quarter : v.announcementDate===date))
+    // Keep the saved version, but never call it a pre-announcement forecast if
+    // the newly scheduled date has moved to/before its analysis date (JST).
+    .map(v=>({...v,preAnnouncement:v.preAnnouncement&&Date.parse(v.asOf)<Date.parse(`${date}T00:00:00+09:00`)}));
 }
 function quarterEnd(period: string, quarter: number) {
   return shiftFiscalEnd(period,-(4-quarter)*3);
@@ -43,7 +46,11 @@ export function previousQuarter(data: FinancialRecord[], target: TargetQuarter |
   const notes: string[] = [];
   if (!wanted) {
     // For schedule-only rows use the last completed quarter before the selected announcement.
-    const candidates = rows.filter(r=>quarterEnd(r.period,r.quarter==="FY"?4:Number(r.quarter[0])) < date)
+    // The Viewer also carries non-quarter/legacy period labels. They cannot be
+    // used as a calendar date; leave its PL presentation/calculation unchanged.
+    const datedRows=rows.filter(r=>/^(?:[123]Q|FY)$/.test(r.quarter) && /^\d{4}-\d{2}-\d{2}$/.test(r.period) && Number.isFinite(Date.parse(r.period)) && new Date(r.period).toISOString().slice(0,10)===r.period);
+    if(datedRows.length!==rows.length)notes.push('決算期・四半期表記が不明なPL行はカレンダー比較から除外');
+    const candidates = datedRows.filter(r=>quarterEnd(r.period,r.quarter==="FY"?4:Number(r.quarter[0])) < date)
       .sort((a,b)=>quarterEnd(b.period,b.quarter==="FY"?4:Number(b.quarter[0])).localeCompare(quarterEnd(a.period,a.quarter==="FY"?4:Number(a.quarter[0]))));
     if (candidates[0]) wanted = {fiscalYearEnd:candidates[0].period,quarter:candidates[0].quarter==="FY"?4:Number(candidates[0].quarter[0])};
     notes.push("予測対象期未登録のため、選択日より前の最新完了四半期を表示");

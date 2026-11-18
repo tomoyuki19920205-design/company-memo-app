@@ -57,3 +57,6 @@ body:has(.earnings-calendar){padding-bottom:0;overflow:hidden;}
 .ec-report .ec-markdown code{font-size:calc(11px * var(--ec-report-text-scale));}
 .ec-report .ec-table-scroll{min-width:0;overscroll-behavior-inline:contain;}
 .ec-report .ec-table-scroll table{font-size:calc(10px * var(--ec-report-text-scale));line-height:1.85;}
+.ec-coverage{font-size:11px;color:var(--text-secondary,#a1a6b3);margin:6px 0;border:1px solid var(--border-color,#303642);border-radius:6px;padding:6px;max-height:220px;overflow:auto;overflow-wrap:anywhere}
+.ec-coverage summary{cursor:pointer;color:var(--text-primary,#e5e7eb)}
+.ec-coverage p{margin:6px 0;line-height:1.6}.ec-coverage ul{padding-left:18px}.ec-coverage li{margin:6px 0}.ec-coverage li small{display:block;color:#b2b8c5}.ec-coverage a{color:#8db3ff}
