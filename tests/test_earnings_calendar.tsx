@@ -72,18 +72,23 @@ test("Markdown blocks raw HTML, script URLs, file links and tracking images",()=
   assert.doesNotMatch(html,/<script|javascript:|file:\/\/|<img/);
   assert.match(html,/rel="noopener noreferrer"/);assert.match(html,/ec-table-scroll/);assert.match(html,/123/);
 });
-test("all 12 real imported artifacts keep exact source rates and report text",()=>{
+test("versioned artifacts keep exact source rates and distinguish completed reviews",()=>{
   const index=JSON.parse(readFileSync("server-data/earnings-calendar/index.json","utf8")) as ForecastVersion[];
   const schedule=JSON.parse(readFileSync("server-data/earnings-calendar/schedules.json","utf8"));
   const twelve=schedule.filter((r:any)=>r.date==="2026-12-04");assert.equal(twelve.length,12);
   assert.ok(twelve.every((r:any)=>r.status==="unconfirmed"));
+  const original=index.filter(v=>v.version.startsWith('20261204_asof20261117_1709_quality_v2'));
+  assert.equal(original.length,12);assert.ok(original.every(v=>v.reviewExecuted));
   for(const v of index){
     const d=JSON.parse(readFileSync(`server-data/earnings-calendar/details/${v.id}.json`,"utf8"));
     assert.equal(v.revenue,d.result.scenarios.base.revenue);
     assert.equal(v.operatingProfit,d.result.scenarios.base.operating_profit);
     if(v.revenueYoY.rate!==null)assert.equal(v.revenueYoY.rate,d.result.comparisons.yoy.revenue.rate);
     if(v.profitYoY.rate!==null)assert.equal(v.profitYoY.rate,d.result.comparisons.yoy.operating_profit.rate);
-    assert.ok(d.markdown.length>1000);assert.ok(d.reviewMarkdown.length>1000);assert.ok(v.reviewExecuted);
+    assert.ok(d.markdown.length>1000);
+    assert.equal(v.reviewExecuted,Boolean(d.review.executed));
+    if(v.reviewExecuted)assert.ok(d.reviewMarkdown.length>1000);
+    else assert.match(d.reviewMarkdown,/未作成/);
   }
 });
 test("calendar API authenticates before reading private forecasts",()=>{

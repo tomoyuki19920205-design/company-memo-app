@@ -1,0 +1,3150 @@
+{
+  "id": "8630-ed8bb67abaf3bd6df9f9cb8bf794f51ab0d841a9c3c8fa8687516e1377262215",
+  "code": "8630",
+  "companyName": "ＳＯＭＰＯホールディングス株式会社",
+  "announcementDate": "2026-11-19",
+  "target": {
+    "fiscalYearEnd": "2027-03-31",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "8630-review-c2a5ab1f8b275027 · ed8bb67a",
+  "savedAt": "2026-11-18T14:43:02+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 1731951.5128479656,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 8630 ＳＯＭＰＯホールディングス株式会社｜2027-03-31期 Q2単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 1,688,582.00 | 1,731,951.51 | 1,775,321.03 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 114,969.51 | 7.11% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存原文で確認できる当年度通期予想は、保険収益、親会社所有者帰属利益、修正連結利益。S02・S04で確認し、guidance_recordsに記録した。対象Q2単独予想ではなく、四等分や残期間への均等配分には使用していない。基準日時点までの修正開示の網羅性は未確認。\n\n## 市場コンセンサス\n未確認。提示された保存原文に公表市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n保険収益に限り、損保ジャパン、SIH、その他保険会社・連結消去等の純額を積み上げた条件付き独自予測。最新Q1の事業規模と前年四半期間の収益認識パターンを用い、海外の季節増加の再現度を変えている。数量と価格を分離した契約単位モデルではなく、確度は低い。会社の期後修正見込みからの差引き推計は使用していない。営業利益・経常利益は指標非開示または非適用、純利益は引受費用と金融損益の範囲設定に必要な根拠不足によりnull。\n\n## 対象四半期の条件付き見通し\nQ2単独の保険収益は、弱気1,688,582.00、中心1,731,951.51、強気1,775,321.03とする。国内損保の収益認識の季節性と、Aspen連結後の海外事業規模が主な支えとなる。シナリオ幅は海外の季節性の再現度を示し、災害や市場急変を含む包括的な予測区間ではない。\n\n## 比較基準と説明の限界\n前年Q2保険収益は中間累計からQ1を差し引いた1,380,868.00を比較基準とする。その他保険会社・内部取引消去等について残る前年同期差6,214.00は、価格、数量、会計組替えへ配賦できないため説明不能残差として残す。\n\n## 利益予測を数値化しない理由\n料率適正化と手数料率低下は引受採算を支える一方、修理費インフレ、自然災害、大口事故、支払備金の再評価が利益を左右する。さらに金融市場由来の損益とAspen関連費用を対象四半期について拘束できない。保険サービス損益や税後修正利益を営業利益へ読み替えることはせず、純利益も未推計とする。\n\n## 会社予想との区別\n確認済み資料の通期会社予想は、保険収益6,410,000.00、親会社所有者帰属利益490,000.00、修正連結利益500,000.00である。これらは年間の公表予想であり、本推計の四半期数値とは対象期間と作成主体が異なる。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの収益水準と季節配分 | 24,500.00 | 当年Q1水準に前年の季節差を反映した条件付き差額。 |\n| SIHの事業規模と季節配分 | 277,000.00 | Aspen込み当年Q1水準を維持する仮定と前年Q2実績の差。 |\n| 残差（economic_unexplained） | 6,214.00 | その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの季節配分 | 71,600.00 | 前年に観測されたQ2とQ1の収益差を反映。 |\n| SIHの季節配分 | 0.00 | 弱気では季節増加を反映しない。 |\n| 残差（none） | 0.00 | その他保険会社・連結消去等をQ1据置きとするモデル上の残差であり、実績の安定性を確認したものではない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの収益水準と季節配分 | 24,500.00 | 当年Q1水準に前年の季節差を反映した条件付き差額。 |\n| SIHの事業規模と季節配分 | 320,369.51 | Aspen込み当年Q1水準に前年季節増加率を半分反映。 |\n| 残差（economic_unexplained） | 6,214.00 | その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの季節配分 | 71,600.00 | 前年に観測されたQ2とQ1の収益差を反映。 |\n| SIHの季節配分 | 43,369.51 | 前年季節増加率の半分を当年Q1水準に反映。 |\n| 残差（none） | 0.00 | その他保険会社・連結消去等をQ1据置きとするモデル上の残差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの収益水準と季節配分 | 24,500.00 | 当年Q1水準に前年の季節差を反映した条件付き差額。 |\n| SIHの事業規模と季節配分 | 363,739.03 | Aspen込み当年Q1水準に前年季節増加率を全面反映。 |\n| 残差（economic_unexplained） | 6,214.00 | その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 損保ジャパンの季節配分 | 71,600.00 | 前年に観測されたQ2とQ1の収益差を反映。 |\n| SIHの季節配分 | 86,739.03 | 前年季節増加率を当年Q1水準に全面反映。 |\n| 残差（none） | 0.00 | その他保険会社・連結消去等をQ1据置きとするモデル上の残差。 |\n\n## エラー・未解決事項\n- S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。\n- S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。\n- S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。\n- S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。\n- S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。\n- S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。\n- S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。\n- S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。\n- 損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。\n- 直前累計不足: 2025-09-30\n- 資料確認未了: already_announced\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n- 増減要因の照合未了: bear/yoy/revenue\n- 増減要因の照合未了: base/yoy/revenue\n- 増減要因の照合未了: bull/yoy/revenue\n- 重要仮定の裏付け未検証: domestic_season_weight\n- 重要仮定の裏付け未検証: overseas_bear_weight\n- 重要仮定の裏付け未検証: overseas_base_weight\n- 重要仮定の裏付け未検証: overseas_bull_weight\n- 重要仮定の裏付け未検証: remaining_revenue_weight\n- 会社予想比較の条件: annual_insurance_revenue_guidance\n- 会社予想比較の条件: annual_parent_profit_guidance\n- 会社予想比較の条件: annual_adjusted_profit_guidance\n- 資料短縮に関する生成担当の説明は添付本文と矛盾する。S04の海外詳細28～32ページ、生保34～39ページ、介護41～43ページ、S05の海外等シート、S13・S15の後半詳細を使用して未確認事項を再整理する必要がある。資料があることだけでQ2利益予測が可能とは断定しない。\n- 海外の季節性代理値に為替変動が混在する。前年Q1の換算レート143.75円と中間期146.07円は異なる。円建て累計差引き自体は正しいが、その増加率を純粋な季節性として当年へ延長する根拠はない。ドル建て同一会計版の四半期動向と円換算要因を分離する必要がある。\n- 再計算出力の『直前累計不足』は提示データと矛盾する。前年Q1と中間累計は原資料・入力ともに存在する。前年Q2収益1,380,868百万円、親会社帰属利益241,835百万円を比較値へ接続し、全シナリオYoYを再計算する必要がある。現在の『増減要因の合計不一致』は算式不一致ではなく比較値欠落による判定不良。\n- YoY残差6,214百万円は維持すべきだが、全額を確定した経済要因と認定することもできない。億円表示の丸め、比較基準変更、その他保険会社と消去の経済的変動は未分離。会計基準変更分や丸め分を根拠なくゼロとせず、未分離額として管理する。QnQ残差ゼロは据置き仮定の結果にすぎない。\n- 管理会計のセグメント組替えと連結保険収益の比較基準を混同しないこと。S04の過去セグメント利益は遡及修正されている一方、採用したS02・S07の前年Q1連結収益は一致する。組替えの存在だけで連結Q2差引きを不可能と扱う根拠はない。\n- 会社予想3候補は期間・指標を区別すれば直接比較非適用であり、会社予想との差を理由に予測額を修正すべきではない。ただしlatest_confirmedを基準日時までの網羅的な最新版確認と解釈させないよう、8月14日時点の確認とその後の未確認を明示する。\n\n## 条件・不確実性\n- Aspen連結後に前年SIHの四半期季節性が再現されるかは未確認。\n- domestic_season_weight: S04 PDF pages 16～18とS10 PDF page 23は国内損保の保険収益認識の季節性を説明している。損保ジャパンについて前年Q2とQ1の全種目グロス保険収益の差額を当年Q1に加える。前年の季節差が金額ベースで維持される条件付き仮定であり、資料の認識イメージを実際の配分率とは扱わない。価格改定効果は当年Q1の水準に既に含まれる。\n- overseas_base_weight: 中心では前年SIHのQ1からQ2への保険収益増加率を当年Q1水準に半分反映する。Aspen連結で構成が変わったため、前年の季節パターンの全面適用と横ばいの中間を条件として置く。これは観測された受注・契約成長率ではない。\n- overseas_bear_weight: 弱気ではSIHのQ2保険収益をAspenを含む当年Q1水準に据え置き、前年に見られたQ2への収益増加を見込まない。新しい構成で前年の季節性が再現されない場合を表す。\n- overseas_bull_weight: 強気では前年SIHのQ1からQ2への保険収益増加率が、Aspenを含む当年Q1の事業規模でも再現されると仮定する。前年同期比の増収率を一律延長するものではない。\n- remaining_revenue_weight: 連結保険収益から損保ジャパンとSIHを除いた残額は、国内生命保険、その他保険会社、内部取引消去、表示精度差を含む。その合計を当年Q1水準に据え置く。S02の国内生命保険収益は前年Q1から概ね横ばいだが、残額全体の安定性を確定実績とは扱わない。\n- その他保険会社と連結消去等の純額はQ1据置きを仮定している。\n- 当年Q2の契約数量、平均保険料、更新率と七月料率改定の既経過化率は保存原文では未確認。\n- 当年Q2の自然災害・大口事故、再保険回収、支払備金再評価、投資評価損益は未確認。\n\n## 根拠・保存記録\n- S01 [IRイベント・決算発表予定](https://www.sompo-hd.com/ir/event) / 公表  / unavailable / SHA-256 `なし`\n- S02 [2027年3月期第1四半期決算短信〔IFRS〕（連結）](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_1.pdf?la=ja-JP) / 公表 2026-08-14 / retrieved / SHA-256 `3b7d6d474b6b24cd3ff765e747a5f568ba341d28864ba8eee1243a5084da4a79`\n- S03 [2027年3月期第1四半期決算参考資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_2.pdf?la=ja-JP) / 公表 2026-08-14 / retrieved / SHA-256 `b455963538a2821d2dc2aebf6e07315646d364b3a70c2c561bd23e9c4a72fc20`\n- S04 [2026年度第1四半期決算説明資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260814.pdf?la=ja-JP) / 公表 2026-08-14 / retrieved / SHA-256 `f6c2a2cdccfbd5da0f7022d31fb442d4694bd5732a5507e91248c6928fe825f5`\n- S05 [2026年度第1四半期決算データ集](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/data_20260814.xlsx?la=ja-JP) / 公表 2026-08-14 / retrieved / SHA-256 `e7da9c844df02643f3a904cc838923a2868b58685a34e36b391e1e0f156c2b20`\n- S06 [2026年3月期中間期決算短信〔IFRS〕（連結）](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_1.pdf?la=ja-JP) / 公表 2025-11-19 / retrieved / SHA-256 `1c7b21904c6d5dfbd3bffd0e4e7d5f9578b21ca659de1a8c0cd686677b441c53`\n- S07 [2026年3月期第1四半期決算短信〔IFRS〕（連結）](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_1.pdf?la=ja-JP) / 公表 2025-08-14 / retrieved / SHA-256 `90d498e6c3d49aa30005f916c3dd0d1e3bd267de136719074d8bf8b3ad857277`\n- S08 [2026年3月期中間期決算参考資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_2.pdf?la=ja-JP) / 公表 2025-11-19 / retrieved / SHA-256 `137c48d5a23378ac1ed14a16aa93e7071f61c737c3f1f0ec07f3faab509eacc5`\n- S09 [2026年3月期第1四半期決算参考資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_2.pdf?la=ja-JP) / 公表 2025-08-14 / retrieved / SHA-256 `01e872b4af0b9ccb5b81453f86ab1d86091d877f8bde6d57bd759a95797c27dd`\n- S10 [2025年度中間期決算説明資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20251119.pdf?la=ja-JP) / 公表 2025-11-19 / retrieved / SHA-256 `c8cc314ecac7cd40442711597376a49919381b648b6185e756a4d793c738cf45`\n- S11 [2025年度第1四半期決算説明資料](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20250814.pdf?la=ja-JP) / 公表 2025-08-14 / retrieved / SHA-256 `618a998467f041c5024b1f6d2496e0f62361d0c9ed54bd3bc8a223ee17c579c6`\n- S12 [2026年3月期決算短信〔IFRS〕（連結）・2027年3月期会社予想](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260520_1.pdf?la=ja-JP) / 公表 2026-05-20 / retrieved / SHA-256 `549dcaf6200d1862d6a5d368aaed40c90c21fd68693e30c68d9ef5db39247c9e`\n- S13 [2025年度決算説明資料・2026年度通期業績予想](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260520.pdf?la=ja-JP) / 公表 2026-05-20 / retrieved / SHA-256 `2f4ddaa3407441a7fb27e60939ef7f797bf0e81ee0b3b01dde80c81441ab2840`\n- S14 [IRミーティング：課題の最前線を進化の最前線へ](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_1.pdf?la=ja-JP) / 公表 2026-05-22 / retrieved / SHA-256 `21fddb4d6765581ad53b0dd9e664d247e5dddc5c2af67d9b614125413ca9e316`\n- S15 [IRミーティング：課題の最前線を進化の最前線へ（補足資料）](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_2.pdf?la=ja-JP) / 公表 2026-05-22 / retrieved / SHA-256 `f2c11f1f8e42af4a738d4b6d657b801336e87552a3290e8dabcc3bf8445985b0`\n- S16 [損保ジャパン営業成績速報（2026年10月、4～9月確報を含む）](https://www.sompo-hd.com/-/media/hd/files/doc/pdf/e_seiseki/seiseki.pdf?la=ja-JP) / 公表  / unavailable / SHA-256 `なし`\n- S17 [自己株式の取得状況に関するお知らせ](https://www.sompo-hd.com/-/media/hd/files/news/2026/20261105_1.pdf?la=ja-JP) / 公表 2026-11-05 / retrieved / SHA-256 `7dde87d7a507e2d42893ac766beddab76d0fa600ceee09d5b8f5f8f723087b05`\n- S18 [自己株式の取得状況に関するお知らせ](https://www.sompo-hd.com/-/media/hd/files/news/2026/20261005_1.pdf?la=ja-JP) / 公表 2026-10-05 / retrieved / SHA-256 `730d78bb0500f22608ef450349b476866bd80c8c3b3d2ae48306391b00d77fcd`\n- S19 [SOMPOインターナショナルによるService Insurance Companiesの買収に合意](https://www.sompo-hd.com/-/media/hd/files/news/2026/20260707_1.pdf?la=ja-JP) / 公表 2026-07-07 / retrieved / SHA-256 `e5075fe8bb4f2462d97a5c0ae5b908a617d0f1181150d01dfe0e15c9e1e6f51b`\n- S20 [商号の変更および定款の一部変更に関するお知らせ](https://www.sompo-hd.com/-/media/hd/files/news/2026/20260520_4.pdf?la=ja-JP) / 公表 2026-05-20 / retrieved / SHA-256 `2746a7154a2cbfecaad97546046188e1be021ac7f6f5cf3da00e144758e6c021`\n\n## 対象日照合（経済的品質と別管理）\n- S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](8630_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 8630 ＳＯＭＰＯホールディングス株式会社 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n実績入力9件と会社予想3件の数値・単位換算は原文と一致する。予測収益の算術も整合するが、重要仮定5件の採用係数には数値的裏付けがない。海外の円建て四半期増加率を季節性とする説明は為替変動等を分離していない。前年Q2比較値の欠落と、それに起因する機械判定は修正が必要。また、添付本文には海外・生保・介護の詳細が存在し、資料短縮を理由とする未確認事項の一部は事実と異なる。予測額の確定変更は提案しない。公式発表日・未発表状態の未確認は経済的品質判定から除外した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | 連結保険収益は前年Q1 1,263,583、前年中間累計2,644,451、当年Q1 1,616,982百万円で一致。SJIは6,263・13,242・6,508億円、SIHは5,604・11,753・8,919億円で、各100倍の入力と一致する。通期会社予想6,410,000・490,000・500,000百万円も一致。SJI・SIHは億円表示からの換算であり、百万円精度の実測値ではない。 | S02, S03, S04, S06, S07, S08, S09 S02 PDF page 6; S03 PDF pages 5～6; S04 PDF pages 6・11; S06 PDF page 5; S07 PDF page 6; S08・S09 PDF pages 4～5 |\n| 2 | conditional | 対象は2026年7～9月単独。前年比較は2025年4～9月累計から4～6月累計を控除でき、IFRS連結として整合する。海外IFRS17の4～6月・4～9月と、補足IFRS4の1～6月・1～9月は区別されている。ただしAspen取得後の構成変化、Sompo Life Reの新規連結、事業帰属変更があるため同一事業構成の比較ではない。取得原価配分の確定状況と対象期間の追加連結は未確認。 | S02, S06, S07, S10, S11, S12, S13 S02 PDF pages 2・8～9; S06・S07 PDF pages 1～2; S10 PDF page 32; S11 PDF page 27; S12 PDF page 2; S13 PDF page 7 |\n| 3 | unresolved | material=trueの5件を全件unsupportedとした。国内の季節性の存在は確認できるが、前年差額71,600百万円の全額再現を裏付けない。海外の0・0.5・1という反映係数と残額据置きにも定量根拠がない。海外の前年円建て増加率約9.73%には為替等が含まれ、純粋な季節増加率とは確認できない。感応度は機械的テストであり、会社の代替予測として扱えない。 | S04, S05, S10, S11 S04 PDF pages 2・17・29; S05 海外保険事業シート J8・K8; S10 PDF pages 2・35; S11 PDF pages 2・29 |\n| 4 | conditional | 提示算式に利益率・費用を目標利益から逆算する処理はない。営業利益を保険サービス損益や修正連結利益で代用せず、経常利益を非適用、純利益を未推計とする区別は妥当。ただし『海外の最新詳細資料が短縮されている』という未推計理由は添付本文に反する。既存の費用・再保険・投資損益資料を再評価した上で、対象Q2固有の不足情報を限定する必要がある。 | S02, S04 S02 PDF page 6; S04 PDF pages 16・28～32 |\n| 5 | conditional | 算式上、Aspen寄与、料率改定効果、シナジー、自然災害剥落を別途重ねて加算する処理は確認されない。当年Q1にAspen効果が含まれることは原文で確認できる。ただし前年の四半期差を季節性として適用する際に、前年固有の価格・数量・為替変化を再度持ち込む可能性は未解消。追加買収の未加算は二重計上回避にはなるが、寄与が存在しない証明にはならない。 | S04, S13, S19 S04 PDF page 29; S13 PDF page 7; S19 PDF page 1 |\n| 6 | fail | 前年Q2収益は2,644,451−1,263,583=1,380,868百万円。弱気・中心・強気予測は1,688,582、1,731,951.512848、1,775,321.025696百万円。YoY差額は307,714、351,083.512848、394,453.025696で、各々24,500＋SIH差額277,000／320,369.512848／363,739.025696＋残差6,214に一致する。YoY率は各差額÷1,380,868。QnQ差額は71,600、114,969.512848、158,339.025696で、各々71,600＋海外増分0／43,369.512848／86,739.025696に一致し、率は各差額÷1,616,982、約4.4280%／7.1101%／9.7923%。モデルの橋渡し算式は整合するが、再計算出力が前年Q2をnullとしてYoYを欠落させている。約1.2e-10百万円の差は浮動小数点誤差。6,214百万円はこれとは別の未説明残差で、表示丸め・比較基準変更分は未分離。QnQ残差ゼロは据置き仮定の恒等式であり経済的説明の完了ではない。利益null行を数値演算したエラーは、利益予測の誤りと区別すべき。 | S02, S03, S06, S07, S08, S09 S06 PDF page 5; S07 PDF page 6; S02 PDF page 6; S03 PDF pages 5～6; S08・S09 PDF pages 4～5; 提示model.calculations・bridges、recalculation.historicals |\n| 7 | fail | S04は50ページまで、S13は53ページまで、S15は54ページまで本文があり、S05にも海外・生保・介護シートが存在する。モデルの短縮資料一覧、海外詳細未提示という説明、関連coverage・機械エラーを更新する必要がある。既存資料の再評価後も、Q2固有の契約動向、為替、災害・備金、買収会計、連結消去、基準日時点までの予想修正の網羅性は不足する。採用資料の日付は基準日時以前で、取得時刻が基準日時後であることと公表日を混同しない。 | S04, S05, S13, S15 S04 PDF pages 28～49; S05 海外保険事業・SOMPOひまわり生命・介護事業シート; S13 PDF pages 31～52; S15 PDF pages 33～53 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| 保険収益 / annual_insurance_revenue_guidance | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年度通期6,410,000百万円を5月20日資料と8月14日資料で確認し、同値の再掲を確認した。対象Q2単独とは期間が一致せず、四等分や残期間均等配分で乖離を判定することは不適切。8月14日以後から基準日時までの修正網羅性は未確認。通期の数量・価格・買収・為替要因は参考になるが、本モデルには通期予測がなく同期間の乖離検証はできない。 |\n| 親会社の所有者に帰属する当期利益 / annual_parent_profit_guidance | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年4月1日～2027年3月31日の490,000百万円を確認。5月20日の当初予想を8月14日に修正なしで維持している。基準日時までの後続修正の網羅性は未確認。Q2純利益予測がnullのため乖離は算定不能であり、予想不一致とは判定しない。 |\n| 修正連結利益 / annual_adjusted_profit_guidance | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年度通期500,000百万円と、8月14日時点で5月開示から変更なしを確認。修正連結利益は4～3月の会社独自調整指標であり、海外事業部門別の1～12月指標、営業利益、親会社帰属利益とは区別が必要。モデルに同期間・同指標の予測がないため乖離比較は非適用。基準日時までの後続修正の網羅性は未確認。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n| 1 | domestic_season_weight | 1 | 未算定（制約あり） | 非表示 | 未検証：係数1は前年Q2−Q1差額71,600百万円の金額維持を仮定する。会社の季節性説明はネット・自賠責等除外の説明を含み、全種目グロス差額の当年再現を定量保証していない。前年差額には商品改定、契約構成等も含み得る。0.1変動で7,160百万円という感応度は算式に一致するが採用係数の証拠ではない。 |\n| 2 | overseas_bear_weight | 0 | 未算定（制約あり） | 非表示 | 未検証：係数0によるQ1据置きは分析者の条件設定。原文にはQ2横ばいの会社予測も下限を保証する情報もない。Aspen込みQ1水準は確認できるが、為替・更改・数量減少により下回る可能性を拘束できない。 |\n| 3 | overseas_base_weight | 0.5 | 未算定（制約あり） | 非表示 | 未検証：係数0.5は横ばいと前年増加率の中間を置いただけで、契約・価格・更改・Aspen構成比による推定ではない。前年円建て増加率約9.73%に対し、S05の同一表示系列ではドル建てQ2は8,046−3,898=4,148百万ドル、Q1比約6.41%。円建て増加全体を季節性とする説明は不十分。ドル系列は遡及修正注記もあるため、そのまま確定修正値として置換できない。 |\n| 4 | overseas_bull_weight | 1 | 未算定（制約あり） | 非表示 | 未検証：係数1はAspen取得前の円建て増加パターンを取得後の全SIHに適用する仮定。新旧構成の季節性、前年為替効果の再現、上側条件の妥当性を裏付ける数値がない。会社の成長説明は係数1を支持しない。 |\n| 5 | remaining_revenue_weight | 1 | 未算定（制約あり） | 非表示 | 未検証：係数1による残額74,282百万円の据置きは、国内生保の前年Q1比横ばいだけでは裏付けられない。その他保険会社、内部取引消去、事業帰属変更、表示精度差を含む残額全体のQ2安定性は未確認。1%変動742.82百万円の感応度は正しいが、利益感応度未算定をゼロとは扱えない。 |\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。\n- **Medium** / machine: S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。\n- **Medium** / machine: S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。\n- **Medium** / machine: S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。\n- **Medium** / machine: S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。\n- **Medium** / machine: S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。\n- **Medium** / machine: S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。\n- **Medium** / machine: S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。\n- **Medium** / machine: 損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。\n- **Medium** / machine: 直前累計不足: 2025-09-30\n- **High** / machine: 資料確認未了: already_announced\n- **Medium** / machine: 資料確認未了: presentation\n- **Medium** / machine: 資料確認未了: segments_kpi\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **Medium** / comparability: 増減要因の照合未了: bear/yoy/revenue\n- **Medium** / comparability: 増減要因の照合未了: base/yoy/revenue\n- **Medium** / comparability: 増減要因の照合未了: bull/yoy/revenue\n- **High** / material_assumption: 重要仮定の裏付け未検証: domestic_season_weight\n- **High** / material_assumption: 重要仮定の裏付け未検証: overseas_bear_weight\n- **High** / material_assumption: 重要仮定の裏付け未検証: overseas_base_weight\n- **High** / material_assumption: 重要仮定の裏付け未検証: overseas_bull_weight\n- **High** / material_assumption: 重要仮定の裏付け未検証: remaining_revenue_weight\n- **Medium** / guidance_metadata: 会社予想比較の条件: annual_insurance_revenue_guidance\n- **Medium** / guidance_metadata: 会社予想比較の条件: annual_parent_profit_guidance\n- **Medium** / guidance_metadata: 会社予想比較の条件: annual_adjusted_profit_guidance\n- **High** / fact: 資料短縮に関する生成担当の説明は添付本文と矛盾する。S04の海外詳細28～32ページ、生保34～39ページ、介護41～43ページ、S05の海外等シート、S13・S15の後半詳細を使用して未確認事項を再整理する必要がある。資料があることだけでQ2利益予測が可能とは断定しない。\n- **High** / assumption: 海外の季節性代理値に為替変動が混在する。前年Q1の換算レート143.75円と中間期146.07円は異なる。円建て累計差引き自体は正しいが、その増加率を純粋な季節性として当年へ延長する根拠はない。ドル建て同一会計版の四半期動向と円換算要因を分離する必要がある。\n- **High** / other: 再計算出力の『直前累計不足』は提示データと矛盾する。前年Q1と中間累計は原資料・入力ともに存在する。前年Q2収益1,380,868百万円、親会社帰属利益241,835百万円を比較値へ接続し、全シナリオYoYを再計算する必要がある。現在の『増減要因の合計不一致』は算式不一致ではなく比較値欠落による判定不良。\n- **Medium** / residual: YoY残差6,214百万円は維持すべきだが、全額を確定した経済要因と認定することもできない。億円表示の丸め、比較基準変更、その他保険会社と消去の経済的変動は未分離。会計基準変更分や丸め分を根拠なくゼロとせず、未分離額として管理する。QnQ残差ゼロは据置き仮定の結果にすぎない。\n- **Medium** / period: 管理会計のセグメント組替えと連結保険収益の比較基準を混同しないこと。S04の過去セグメント利益は遡及修正されている一方、採用したS02・S07の前年Q1連結収益は一致する。組替えの存在だけで連結Q2差引きを不可能と扱う根拠はない。\n- **Medium** / guidance: 会社予想3候補は期間・指標を区別すれば直接比較非適用であり、会社予想との差を理由に予測額を修正すべきではない。ただしlatest_confirmedを基準日時までの網羅的な最新版確認と解釈させないよう、8月14日時点の確認とその後の未確認を明示する。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-11-19\", \"official_date\": \"2026-11-19\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://www.sompo-hd.com/ir/event ：次回イベントとして「2026年11月19日 2027年3月期第2四半期決算発表（15:30予定）」を掲載。https://www.sompo-hd.com/ir/data/summary/ ：最新掲載は2027年3月期第1四半期。対象は2027年3月期第2四半期単独（2026年7月1日～9月30日）であり、中間累計から第1四半期累計を差し引く対象。\", \"warnings\": [\"S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。\", \"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[\n  {\n    \"target\": \"recalculation.historicals[fiscal_year_end=2026-03-31,quarter=2].revenue\",\n    \"old_value\": null,\n    \"new_value\": 1380868,\n    \"reason\": \"同年度IFRS連結の中間累計2,644,451−Q1累計1,263,583。原資料と入力の双方で確認できる比較値欠落の修正であり、予測額の変更ではない。\",\n    \"source_ids\": [\n      \"S06\",\n      \"S07\"\n    ],\n    \"locator\": \"S06 PDF page 5; S07 PDF page 6\",\n    \"evidence_excerpt\": \"保険収益 2,580,943 2,644,451\"\n  },\n  {\n    \"target\": \"recalculation.historicals[fiscal_year_end=2026-03-31,quarter=2].net_profit\",\n    \"old_value\": null,\n    \"new_value\": 241835,\n    \"reason\": \"同年度IFRS連結の親会社所有者帰属中間利益360,428−Q1利益118,593。過去比較値を復元する修正であり、当年Q2純利益予測を補完するものではない。\",\n    \"source_ids\": [\n      \"S06\",\n      \"S07\"\n    ],\n    \"locator\": \"S06 PDF page 5; S07 PDF page 6\",\n    \"evidence_excerpt\": \"親会社の所有者 182,577 360,428\"\n  }\n]\n[\n  \"まず追加取得せず、既に添付されたS04・S05・S13・S15の海外・生保・介護詳細を再評価し、資料短縮に関する誤記とcoverageを更新すること。\",\n  \"基準日時以前に公表された対象Q2の契約数量、平均保険料、更改率、商品構成、料率改定の実施・既経過化状況。国内の前年季節差維持を検証するため。\",\n  \"基準日時以前のSIH・Aspen別のIFRS17四半期収益、同一連結範囲・同一会計版の比較系列、四半期換算為替。円建て増加を季節性・事業成長・為替に分けるため。\",\n  \"その他保険会社の保険収益と内部取引消去の四半期明細、および億円表示前の原値・丸め方法。残差6,214百万円を丸め、比較基準変更、経済的変動へ分解するため。\",\n  \"基準日時以前のAspen取得原価配分と比較値修正の注記、Service Insurance Companies・Fator Seguradoraの取得完了日、連結開始日、収益寄与。対象Q2の連結範囲を検証するため。\",\n  \"基準日時以前に公表された対象Q2の災害・大口事故、備金再評価、再保険回収、金融損益・統合費用の情報。既存のQ1・通期資料で不足する利益予測条件を限定するため。\",\n  \"2026年8月14日から2026年11月18日14時33分までの業績予想修正・訂正開示の公表履歴と本文。会社予想の最新版を確認するため。\",\n  \"S16の基準日時以前の公表日を確認できる固定版本文。営業成績保険料をIFRS保険収益と区別しつつ対象期間の数量・価格動向を検証するため。\",\n  \"S01の基準日時点の保存本文。公式発表予定日・未発表状態を照合するための資料であり、経済的品質判定とは分離する。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/8630/quality_review.json) / [レビュー原回答](../companies/8630/independent_review.json) / [計算検査](../companies/8630/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "8630",
+    "company_name": "ＳＯＭＰＯホールディングス株式会社",
+    "announcement_date": "2026-11-19",
+    "target_period": "2027-03-31期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-03-31",
+      "quarter": 2,
+      "start": "2026-07-01",
+      "end": "2026-09-30",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 1688582.0,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 1731951.5128479656,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 1775321.0256959316,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 114969.51284796558,
+          "rate": 0.07110129416899234,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prior_q1_revenue": 1263583.0,
+      "prior_h1_revenue": 2644451.0,
+      "current_q1_revenue": 1616982.0,
+      "prior_q1_sji": 626300.0,
+      "prior_h1_sji": 1324200.0,
+      "current_q1_sji": 650800.0,
+      "prior_q1_sih": 560400.0,
+      "prior_h1_sih": 1175300.0,
+      "current_q1_sih": 891900.0,
+      "domestic_season_weight": 1.0,
+      "overseas_bear_weight": 0.0,
+      "overseas_base_weight": 0.5,
+      "overseas_bull_weight": 1.0,
+      "remaining_revenue_weight": 1.0,
+      "guidance_revenue": 6410000.0,
+      "guidance_net_profit": 490000.0,
+      "guidance_adjusted_profit": 500000.0,
+      "prior_q2_revenue": 1380868.0,
+      "prior_q2_sji": 697900.0,
+      "prior_q2_sih": 614900.0,
+      "prior_q2_remaining": 68068.0,
+      "current_q1_remaining": 74282.0,
+      "domestic_season_change": 71600.0,
+      "forecast_sji": 722400.0,
+      "overseas_season_change": 86739.02569593147,
+      "bear_sih": 891900.0,
+      "base_sih": 935269.5128479657,
+      "bull_sih": 978639.0256959315,
+      "forecast_remaining": 74282.0,
+      "bear_revenue": 1688582.0,
+      "base_revenue": 1731951.5128479656,
+      "bull_revenue": 1775321.0256959316,
+      "yoy_remaining_residual": 6214.0,
+      "qoq_remaining_residual": 0.0,
+      "company_annual_revenue": 6410000.0,
+      "company_annual_net_profit": 490000.0,
+      "company_annual_adjusted_profit": 500000.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-03-31",
+        "quarter": 1,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S07",
+          "S02"
+        ],
+        "locator": "S07 PDF page 6、S02 PDF page 6比較欄",
+        "period_end": "2025-06-30",
+        "period_start": "2025-04-01",
+        "method": "1Q累計",
+        "revenue": 1263583.0,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": 118593.0
+      },
+      {
+        "fiscal_year_end": "2026-03-31",
+        "quarter": 2,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S06"
+        ],
+        "locator": "PDF pages 2・5",
+        "period_end": "2025-09-30",
+        "period_start": "2025-07-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2027-03-31",
+        "quarter": 1,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2・6・8～9",
+        "period_end": "2026-06-30",
+        "period_start": "2026-04-01",
+        "method": "1Q累計",
+        "revenue": 1616982.0,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": 181168.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "comparison_ref": "prior_q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの収益水準と季節配分",
+            "formula": "forecast_sji-prior_q2_sji",
+            "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。",
+            "amount": 24500.0
+          },
+          {
+            "label": "SIHの事業規模と季節配分",
+            "formula": "bear_sih-prior_q2_sih",
+            "reason": "Aspen込み当年Q1水準を維持する仮定と前年Q2実績の差。",
+            "amount": 277000.0
+          }
+        ],
+        "residual": 6214.0,
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+        "residual_type": "economic_unexplained"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "comparison_ref": "current_q1_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの季節配分",
+            "formula": "forecast_sji-current_q1_sji",
+            "reason": "前年に観測されたQ2とQ1の収益差を反映。",
+            "amount": 71600.0
+          },
+          {
+            "label": "SIHの季節配分",
+            "formula": "bear_sih-current_q1_sih",
+            "reason": "弱気では季節増加を反映しない。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差であり、実績の安定性を確認したものではない。",
+        "residual_type": "none"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "comparison_ref": "prior_q2_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの収益水準と季節配分",
+            "formula": "forecast_sji-prior_q2_sji",
+            "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。",
+            "amount": 24500.0
+          },
+          {
+            "label": "SIHの事業規模と季節配分",
+            "formula": "base_sih-prior_q2_sih",
+            "reason": "Aspen込み当年Q1水準に前年季節増加率を半分反映。",
+            "amount": 320369.5128479657
+          }
+        ],
+        "residual": 6214.0,
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+        "residual_type": "economic_unexplained"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "comparison_ref": "current_q1_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの季節配分",
+            "formula": "forecast_sji-current_q1_sji",
+            "reason": "前年に観測されたQ2とQ1の収益差を反映。",
+            "amount": 71600.0
+          },
+          {
+            "label": "SIHの季節配分",
+            "formula": "base_sih-current_q1_sih",
+            "reason": "前年季節増加率の半分を当年Q1水準に反映。",
+            "amount": 43369.5128479657
+          }
+        ],
+        "residual": 0.0,
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。",
+        "residual_type": "none"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "comparison_ref": "prior_q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの収益水準と季節配分",
+            "formula": "forecast_sji-prior_q2_sji",
+            "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。",
+            "amount": 24500.0
+          },
+          {
+            "label": "SIHの事業規模と季節配分",
+            "formula": "bull_sih-prior_q2_sih",
+            "reason": "Aspen込み当年Q1水準に前年季節増加率を全面反映。",
+            "amount": 363739.0256959315
+          }
+        ],
+        "residual": 6214.0,
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+        "residual_type": "economic_unexplained"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "comparison_ref": "current_q1_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "損保ジャパンの季節配分",
+            "formula": "forecast_sji-current_q1_sji",
+            "reason": "前年に観測されたQ2とQ1の収益差を反映。",
+            "amount": 71600.0
+          },
+          {
+            "label": "SIHの季節配分",
+            "formula": "bull_sih-current_q1_sih",
+            "reason": "前年季節増加率を当年Q1水準に全面反映。",
+            "amount": 86739.02569593152
+          }
+        ],
+        "residual": 0.0,
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。",
+        "residual_type": "none"
+      }
+    ],
+    "issues": [
+      "S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。",
+      "S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。",
+      "S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。",
+      "S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。",
+      "S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。",
+      "S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。",
+      "S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。",
+      "S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。",
+      "損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。",
+      "直前累計不足: 2025-09-30",
+      "資料確認未了: already_announced",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures",
+      "増減要因の照合未了: bear/yoy/revenue",
+      "増減要因の照合未了: base/yoy/revenue",
+      "増減要因の照合未了: bull/yoy/revenue",
+      "重要仮定の裏付け未検証: domestic_season_weight",
+      "重要仮定の裏付け未検証: overseas_bear_weight",
+      "重要仮定の裏付け未検証: overseas_base_weight",
+      "重要仮定の裏付け未検証: overseas_bull_weight",
+      "重要仮定の裏付け未検証: remaining_revenue_weight",
+      "会社予想比較の条件: annual_insurance_revenue_guidance",
+      "会社予想比較の条件: annual_parent_profit_guidance",
+      "会社予想比較の条件: annual_adjusted_profit_guidance",
+      "資料短縮に関する生成担当の説明は添付本文と矛盾する。S04の海外詳細28～32ページ、生保34～39ページ、介護41～43ページ、S05の海外等シート、S13・S15の後半詳細を使用して未確認事項を再整理する必要がある。資料があることだけでQ2利益予測が可能とは断定しない。",
+      "海外の季節性代理値に為替変動が混在する。前年Q1の換算レート143.75円と中間期146.07円は異なる。円建て累計差引き自体は正しいが、その増加率を純粋な季節性として当年へ延長する根拠はない。ドル建て同一会計版の四半期動向と円換算要因を分離する必要がある。",
+      "再計算出力の『直前累計不足』は提示データと矛盾する。前年Q1と中間累計は原資料・入力ともに存在する。前年Q2収益1,380,868百万円、親会社帰属利益241,835百万円を比較値へ接続し、全シナリオYoYを再計算する必要がある。現在の『増減要因の合計不一致』は算式不一致ではなく比較値欠落による判定不良。",
+      "YoY残差6,214百万円は維持すべきだが、全額を確定した経済要因と認定することもできない。億円表示の丸め、比較基準変更、その他保険会社と消去の経済的変動は未分離。会計基準変更分や丸め分を根拠なくゼロとせず、未分離額として管理する。QnQ残差ゼロは据置き仮定の結果にすぎない。",
+      "管理会計のセグメント組替えと連結保険収益の比較基準を混同しないこと。S04の過去セグメント利益は遡及修正されている一方、採用したS02・S07の前年Q1連結収益は一致する。組替えの存在だけで連結Q2差引きを不可能と扱う根拠はない。",
+      "会社予想3候補は期間・指標を区別すれば直接比較非適用であり、会社予想との差を理由に予測額を修正すべきではない。ただしlatest_confirmedを基準日時までの網羅的な最新版確認と解釈させないよう、8月14日時点の確認とその後の未確認を明示する。"
+    ],
+    "schedule_warnings": [
+      "S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。",
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 71600.0,
+            "rate": 0.044280022906872184,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 114969.51284796558,
+            "rate": 0.07110129416899234,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 158339.02569593163,
+            "rate": 0.0979225654311128,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 301500.0,
+        "residual": 6214.0,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 71600.0,
+        "explained_sum": 71600.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差であり、実績の安定性を確認したものではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 344869.5128479657,
+        "residual": 6214.0,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 114969.51284796558,
+        "explained_sum": 114969.5128479657,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.1641532182693481e-10,
+        "status": "passed",
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 388239.0256959315,
+        "residual": 6214.0,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 158339.02569593163,
+        "explained_sum": 158339.02569593152,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.1641532182693481e-10,
+        "status": "passed",
+        "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。"
+      }
+    ],
+    "conditions": [
+      "Aspen連結後に前年SIHの四半期季節性が再現されるかは未確認。",
+      "domestic_season_weight: S04 PDF pages 16～18とS10 PDF page 23は国内損保の保険収益認識の季節性を説明している。損保ジャパンについて前年Q2とQ1の全種目グロス保険収益の差額を当年Q1に加える。前年の季節差が金額ベースで維持される条件付き仮定であり、資料の認識イメージを実際の配分率とは扱わない。価格改定効果は当年Q1の水準に既に含まれる。",
+      "overseas_base_weight: 中心では前年SIHのQ1からQ2への保険収益増加率を当年Q1水準に半分反映する。Aspen連結で構成が変わったため、前年の季節パターンの全面適用と横ばいの中間を条件として置く。これは観測された受注・契約成長率ではない。",
+      "overseas_bear_weight: 弱気ではSIHのQ2保険収益をAspenを含む当年Q1水準に据え置き、前年に見られたQ2への収益増加を見込まない。新しい構成で前年の季節性が再現されない場合を表す。",
+      "overseas_bull_weight: 強気では前年SIHのQ1からQ2への保険収益増加率が、Aspenを含む当年Q1の事業規模でも再現されると仮定する。前年同期比の増収率を一律延長するものではない。",
+      "remaining_revenue_weight: 連結保険収益から損保ジャパンとSIHを除いた残額は、国内生命保険、その他保険会社、内部取引消去、表示精度差を含む。その合計を当年Q1水準に据え置く。S02の国内生命保険収益は前年Q1から概ね横ばいだが、残額全体の安定性を確定実績とは扱わない。",
+      "その他保険会社と連結消去等の純額はQ1据置きを仮定している。",
+      "当年Q2の契約数量、平均保険料、更新率と七月料率改定の既経過化率は保存原文では未確認。",
+      "当年Q2の自然災害・大口事故、再保険回収、支払備金再評価、投資評価損益は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "IRイベント・決算発表予定",
+        "url": "https://www.sompo-hd.com/ir/event",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T14:35:24+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "2027年3月期第1四半期決算短信〔IFRS〕（連結）",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_1.pdf?la=ja-JP",
+        "published_at": "2026-08-14",
+        "category": "latest_results",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S02.txt",
+        "sha256": "3b7d6d474b6b24cd3ff765e747a5f568ba341d28864ba8eee1243a5084da4a79",
+        "text_sha256": "d0486891031b6fabec56e696335aad7c10ba1e8d14bdc874b6d2b006deda64aa",
+        "retrieved_at": "2026-11-18T14:35:27+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11163,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2027年3月期第1四半期決算参考資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_2.pdf?la=ja-JP",
+        "published_at": "2026-08-14",
+        "category": "kpi",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260814_2.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S03.txt",
+        "sha256": "b455963538a2821d2dc2aebf6e07315646d364b3a70c2c561bd23e9c4a72fc20",
+        "text_sha256": "974af36863e10eac99b864d16728a2d59faecefc53c37658c2771a44bc441dff",
+        "retrieved_at": "2026-11-18T14:35:28+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5327,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年度第1四半期決算説明資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260814.pdf?la=ja-JP",
+        "published_at": "2026-08-14",
+        "category": "presentation",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260814.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S04.txt",
+        "sha256": "f6c2a2cdccfbd5da0f7022d31fb442d4694bd5732a5507e91248c6928fe825f5",
+        "text_sha256": "eb81adc7b7035dffa7ae2461942554c58a64a1616acac88132ace947b8c854de",
+        "retrieved_at": "2026-11-18T14:35:31+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 27457,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年度第1四半期決算データ集",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/data_20260814.xlsx?la=ja-JP",
+        "published_at": "2026-08-14",
+        "category": "kpi",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/data_20260814.xlsx?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S05.xlsx",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S05.txt",
+        "sha256": "e7da9c844df02643f3a904cc838923a2868b58685a34e36b391e1e0f156c2b20",
+        "text_sha256": "2635f613a224fe4788bbc1836cc83d46f5c211a8ef9147a766bf2acf840acba7",
+        "retrieved_at": "2026-11-18T14:35:31+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 47834,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年3月期中間期決算短信〔IFRS〕（連結）",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_1.pdf?la=ja-JP",
+        "published_at": "2025-11-19",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S06.txt",
+        "sha256": "1c7b21904c6d5dfbd3bffd0e4e7d5f9578b21ca659de1a8c0cd686677b441c53",
+        "text_sha256": "6ffac101450df4a5e80e93ad70283af362d7269f34c92b380c06df3f8f3951df",
+        "retrieved_at": "2026-11-18T14:35:32+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7211,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年3月期第1四半期決算短信〔IFRS〕（連結）",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_1.pdf?la=ja-JP",
+        "published_at": "2025-08-14",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S07.txt",
+        "sha256": "90d498e6c3d49aa30005f916c3dd0d1e3bd267de136719074d8bf8b3ad857277",
+        "text_sha256": "60bc24750140f87685de880c751942e0653f1ae373c8ea06e4a9f760909aa1f5",
+        "retrieved_at": "2026-11-18T14:35:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11005,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年3月期中間期決算参考資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_2.pdf?la=ja-JP",
+        "published_at": "2025-11-19",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20251119_2.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S08.txt",
+        "sha256": "137c48d5a23378ac1ed14a16aa93e7071f61c737c3f1f0ec07f3faab509eacc5",
+        "text_sha256": "2b9711b604f78e52381bf434ec99a7ac9bcbb63e59bc7183b3af40ca30cf99a8",
+        "retrieved_at": "2026-11-18T14:35:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 27949,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2026年3月期第1四半期決算参考資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_2.pdf?la=ja-JP",
+        "published_at": "2025-08-14",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2025/20250814_2.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S09.txt",
+        "sha256": "01e872b4af0b9ccb5b81453f86ab1d86091d877f8bde6d57bd759a95797c27dd",
+        "text_sha256": "56272d070e7797b003f419d116a07f5ea246f01791fb468adfdb1ccc19e676a6",
+        "retrieved_at": "2026-11-18T14:35:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 20980,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2025年度中間期決算説明資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20251119.pdf?la=ja-JP",
+        "published_at": "2025-11-19",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20251119.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S10.txt",
+        "sha256": "c8cc314ecac7cd40442711597376a49919381b648b6185e756a4d793c738cf45",
+        "text_sha256": "7df7f420411863602f129db24e399c800c8cd1915e1d945e571ddd6f9285fe4e",
+        "retrieved_at": "2026-11-18T14:35:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 35181,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "2025年度第1四半期決算説明資料",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20250814.pdf?la=ja-JP",
+        "published_at": "2025-08-14",
+        "category": "historical",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2025/ir_20250814.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S11.txt",
+        "sha256": "618a998467f041c5024b1f6d2496e0f62361d0c9ed54bd3bc8a223ee17c579c6",
+        "text_sha256": "6cf6ead3912776cc9f6870757d0a7ea31e28500bc4810b3c6f9019dffaeff94c",
+        "retrieved_at": "2026-11-18T14:35:47+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 28503,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "2026年3月期決算短信〔IFRS〕（連結）・2027年3月期会社予想",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260520_1.pdf?la=ja-JP",
+        "published_at": "2026-05-20",
+        "category": "guidance",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/news2026/20260520_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S12.txt",
+        "sha256": "549dcaf6200d1862d6a5d368aaed40c90c21fd68693e30c68d9ef5db39247c9e",
+        "text_sha256": "8d13433b4b7056aa9a94a75622bfd42c0507fb160da3338ceb920afc74a59315",
+        "retrieved_at": "2026-11-18T14:35:50+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18400,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "2025年度決算説明資料・2026年度通期業績予想",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260520.pdf?la=ja-JP",
+        "published_at": "2026-05-20",
+        "category": "guidance",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/ir_20260520.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S13.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S13.txt",
+        "sha256": "2f4ddaa3407441a7fb27e60939ef7f797bf0e81ee0b3b01dde80c81441ab2840",
+        "text_sha256": "89e834a9009220659e9475069b640959a03b18798dbd453aff1fa9dfecfd2836",
+        "retrieved_at": "2026-11-18T14:35:54+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 30486,
+        "parser_version": 2
+      },
+      {
+        "id": "S14",
+        "title": "IRミーティング：課題の最前線を進化の最前線へ",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_1.pdf?la=ja-JP",
+        "published_at": "2026-05-22",
+        "category": "presentation",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S14.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S14.txt",
+        "sha256": "21fddb4d6765581ad53b0dd9e664d247e5dddc5c2af67d9b614125413ca9e316",
+        "text_sha256": "399e1fd4ad10d938e25a6fbe6d98a9de9132affbc368d1648493e43284f0f600",
+        "retrieved_at": "2026-11-18T14:35:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7717,
+        "parser_version": 2
+      },
+      {
+        "id": "S15",
+        "title": "IRミーティング：課題の最前線を進化の最前線へ（補足資料）",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_2.pdf?la=ja-JP",
+        "published_at": "2026-05-22",
+        "category": "presentation",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/ir/2026/20260522_2.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S15.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S15.txt",
+        "sha256": "f2c11f1f8e42af4a738d4b6d657b801336e87552a3290e8dabcc3bf8445985b0",
+        "text_sha256": "7779ff0b1fad8e34234cac58d205a6c21db8f19303b616138fa555dc8c12f0e4",
+        "retrieved_at": "2026-11-18T14:36:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 27029,
+        "parser_version": 2
+      },
+      {
+        "id": "S16",
+        "title": "損保ジャパン営業成績速報（2026年10月、4～9月確報を含む）",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/doc/pdf/e_seiseki/seiseki.pdf?la=ja-JP",
+        "published_at": "",
+        "category": "kpi",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T14:36:03+09:00"
+      },
+      {
+        "id": "S17",
+        "title": "自己株式の取得状況に関するお知らせ",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20261105_1.pdf?la=ja-JP",
+        "published_at": "2026-11-05",
+        "category": "other",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20261105_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S17.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S17.txt",
+        "sha256": "7dde87d7a507e2d42893ac766beddab76d0fa600ceee09d5b8f5f8f723087b05",
+        "text_sha256": "92607fa2ed2d3b163adbfa9bcaf41226615ac9fa86f4190143a6c0eadd97224b",
+        "retrieved_at": "2026-11-18T14:36:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 750,
+        "parser_version": 2
+      },
+      {
+        "id": "S18",
+        "title": "自己株式の取得状況に関するお知らせ",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20261005_1.pdf?la=ja-JP",
+        "published_at": "2026-10-05",
+        "category": "other",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20261005_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S18.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S18.txt",
+        "sha256": "730d78bb0500f22608ef450349b476866bd80c8c3b3d2ae48306391b00d77fcd",
+        "text_sha256": "1d828f86952823efa4d7c5dbb03f0e951d8f692fd758b4f70173ef0aeeafa227",
+        "retrieved_at": "2026-11-18T14:36:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 748,
+        "parser_version": 2
+      },
+      {
+        "id": "S19",
+        "title": "SOMPOインターナショナルによるService Insurance Companiesの買収に合意",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20260707_1.pdf?la=ja-JP",
+        "published_at": "2026-07-07",
+        "category": "other",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20260707_1.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S19.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S19.txt",
+        "sha256": "e5075fe8bb4f2462d97a5c0ae5b908a617d0f1181150d01dfe0e15c9e1e6f51b",
+        "text_sha256": "07f69a499f29328782d24e46f307500b9ad791b6ab2f15fbd033a6cb66c37628",
+        "retrieved_at": "2026-11-18T14:36:04+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2317,
+        "parser_version": 2
+      },
+      {
+        "id": "S20",
+        "title": "商号の変更および定款の一部変更に関するお知らせ",
+        "url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20260520_4.pdf?la=ja-JP",
+        "published_at": "2026-05-20",
+        "category": "identity",
+        "final_url": "https://www.sompo-hd.com/-/media/hd/files/news/2026/20260520_4.pdf?la=ja-JP",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S20.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261119\\companies\\8630\\sources\\S20.txt",
+        "sha256": "2746a7154a2cbfecaad97546046188e1be021ac7f6f5cf3da00e144758e6c021",
+        "text_sha256": "72a37d106695fa773f0677ae38e7f20f57057ee5c05a266193f0594e06df4b8f",
+        "retrieved_at": "2026-11-18T14:36:04+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1658,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "8630",
+      "announcement_date": "2026-11-19",
+      "period": {
+        "fiscal_year_end": "2027-03-31",
+        "quarter": 2,
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "metric_definitions": {
+        "revenue": "連結損益計算書の保険収益。その他の営業収益、投資損益は含まない。",
+        "operating_profit": "保存原文の連結損益計算書に営業利益の表示がないためnull。保険サービス損益や修正連結利益で代用しない。",
+        "ordinary_profit": "IFRS連結の経常利益は非適用。",
+        "net_profit": "親会社の所有者に帰属する四半期利益。対象四半期の予測に必要な根拠が不足するためnull。"
+      },
+      "inputs": [
+        {
+          "id": "prior_q1_revenue",
+          "value": 1263583,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 6、2025年4～6月の保険収益"
+        },
+        {
+          "id": "prior_h1_revenue",
+          "value": 2644451,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 5、2025年4～9月の保険収益"
+        },
+        {
+          "id": "current_q1_revenue",
+          "value": 1616982,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 6、2026年4～6月の保険収益"
+        },
+        {
+          "id": "prior_q1_sji",
+          "value": 626300,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 4、損保ジャパン単体IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "prior_h1_sji",
+          "value": 1324200,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 4、損保ジャパン単体IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "current_q1_sji",
+          "value": 650800,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 5、損保ジャパン単体IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "prior_q1_sih",
+          "value": 560400,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S09"
+          ],
+          "locator": "PDF page 5、SIH連結IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "prior_h1_sih",
+          "value": 1175300,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 5、SIH連結IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "current_q1_sih",
+          "value": 891900,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 6、SIH連結IFRS保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "domestic_season_weight",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "S04 PDF pages 16～18とS10 PDF page 23は国内損保の保険収益認識の季節性を説明している。損保ジャパンについて前年Q2とQ1の全種目グロス保険収益の差額を当年Q1に加える。前年の季節差が金額ベースで維持される条件付き仮定であり、資料の認識イメージを実際の配分率とは扱わない。価格改定効果は当年Q1の水準に既に含まれる。",
+          "sensitivity": "係数が0.1変化すると保険収益は7160百万円変化する。新規契約数量、商品構成、季節配分の変化はこの仮定からの乖離要因。",
+          "source_ids": [
+            "S04",
+            "S10",
+            "S08",
+            "S09"
+          ],
+          "locator": "S04 PDF pages 16～18、S10 PDF page 23、S08・S09 PDF page 4",
+          "material": true
+        },
+        {
+          "id": "overseas_bear_weight",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "弱気ではSIHのQ2保険収益をAspenを含む当年Q1水準に据え置き、前年に見られたQ2への収益増加を見込まない。新しい構成で前年の季節性が再現されない場合を表す。",
+          "sensitivity": "季節増加の反映係数が0.1変わると、SIH当年Q1保険収益に前年Q2/Q1の増加率を乗じた金額の0.1倍だけ連結保険収益が変化する。重大な契約減少や為替変動がある場合はこの範囲を外れ得る。",
+          "source_ids": [
+            "S03",
+            "S08",
+            "S09",
+            "S13"
+          ],
+          "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+          "material": true
+        },
+        {
+          "id": "overseas_base_weight",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "中心では前年SIHのQ1からQ2への保険収益増加率を当年Q1水準に半分反映する。Aspen連結で構成が変わったため、前年の季節パターンの全面適用と横ばいの中間を条件として置く。これは観測された受注・契約成長率ではない。",
+          "sensitivity": "弱気は反映なし、強気は前年の季節増加率を全て反映。Aspenの追加寄与や為替効果を別途加算しない。",
+          "source_ids": [
+            "S03",
+            "S08",
+            "S09",
+            "S13"
+          ],
+          "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+          "material": true
+        },
+        {
+          "id": "overseas_bull_weight",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "強気では前年SIHのQ1からQ2への保険収益増加率が、Aspenを含む当年Q1の事業規模でも再現されると仮定する。前年同期比の増収率を一律延長するものではない。",
+          "sensitivity": "前年季節増加率の全面反映が上側条件。新規買収の追加連結、料率、数量、為替を個別に上乗せしない。",
+          "source_ids": [
+            "S03",
+            "S08",
+            "S09",
+            "S13"
+          ],
+          "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+          "material": true
+        },
+        {
+          "id": "remaining_revenue_weight",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "連結保険収益から損保ジャパンとSIHを除いた残額は、国内生命保険、その他保険会社、内部取引消去、表示精度差を含む。その合計を当年Q1水準に据え置く。S02の国内生命保険収益は前年Q1から概ね横ばいだが、残額全体の安定性を確定実績とは扱わない。",
+          "sensitivity": "残額が1%変動すると連結保険収益は742.82百万円変化する。残額の前年同期差は事業要因に配賦できず、YoYブリッジで説明不能残差とする。",
+          "source_ids": [
+            "S02",
+            "S03"
+          ],
+          "locator": "S02 PDF pages 6・8、S03 PDF pages 5～7",
+          "material": true
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 6410000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 11、2026年度予想・保険収益。億円表示を百万円換算"
+        },
+        {
+          "id": "guidance_net_profit",
+          "value": 490000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、2027年3月期通期・親会社の所有者に帰属する当期利益"
+        },
+        {
+          "id": "guidance_adjusted_profit",
+          "value": 500000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 6・9、2026年度通期修正連結利益。億円表示を百万円換算"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q2_revenue",
+          "formula": "prior_h1_revenue-prior_q1_revenue"
+        },
+        {
+          "id": "prior_q2_sji",
+          "formula": "prior_h1_sji-prior_q1_sji"
+        },
+        {
+          "id": "prior_q2_sih",
+          "formula": "prior_h1_sih-prior_q1_sih"
+        },
+        {
+          "id": "prior_q2_remaining",
+          "formula": "prior_q2_revenue-prior_q2_sji-prior_q2_sih"
+        },
+        {
+          "id": "current_q1_remaining",
+          "formula": "current_q1_revenue-current_q1_sji-current_q1_sih"
+        },
+        {
+          "id": "domestic_season_change",
+          "formula": "(prior_q2_sji-prior_q1_sji)*domestic_season_weight"
+        },
+        {
+          "id": "forecast_sji",
+          "formula": "current_q1_sji+domestic_season_change"
+        },
+        {
+          "id": "overseas_season_change",
+          "formula": "current_q1_sih*(prior_q2_sih-prior_q1_sih)/prior_q1_sih"
+        },
+        {
+          "id": "bear_sih",
+          "formula": "current_q1_sih+overseas_season_change*overseas_bear_weight"
+        },
+        {
+          "id": "base_sih",
+          "formula": "current_q1_sih+overseas_season_change*overseas_base_weight"
+        },
+        {
+          "id": "bull_sih",
+          "formula": "current_q1_sih+overseas_season_change*overseas_bull_weight"
+        },
+        {
+          "id": "forecast_remaining",
+          "formula": "current_q1_remaining*remaining_revenue_weight"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "forecast_sji+bear_sih+forecast_remaining"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "forecast_sji+base_sih+forecast_remaining"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "forecast_sji+bull_sih+forecast_remaining"
+        },
+        {
+          "id": "yoy_remaining_residual",
+          "formula": "forecast_remaining-prior_q2_remaining"
+        },
+        {
+          "id": "qoq_remaining_residual",
+          "formula": "forecast_remaining-current_q1_remaining"
+        },
+        {
+          "id": "company_annual_revenue",
+          "formula": "guidance_revenue"
+        },
+        {
+          "id": "company_annual_net_profit",
+          "formula": "guidance_net_profit"
+        },
+        {
+          "id": "company_annual_adjusted_profit",
+          "formula": "guidance_adjusted_profit"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "損保ジャパン・全種目グロス保険収益",
+              "revenue": "forecast_sji"
+            },
+            {
+              "name": "SIH連結・グロス保険収益",
+              "revenue": "bear_sih"
+            },
+            {
+              "name": "その他保険会社・連結消去等の純額",
+              "revenue": "forecast_remaining"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "損保ジャパン・全種目グロス保険収益",
+              "revenue": "forecast_sji"
+            },
+            {
+              "name": "SIH連結・グロス保険収益",
+              "revenue": "base_sih"
+            },
+            {
+              "name": "その他保険会社・連結消去等の純額",
+              "revenue": "forecast_remaining"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "損保ジャパン・全種目グロス保険収益",
+              "revenue": "forecast_sji"
+            },
+            {
+              "name": "SIH連結・グロス保険収益",
+              "revenue": "bull_sih"
+            },
+            {
+              "name": "その他保険会社・連結消去等の純額",
+              "revenue": "forecast_remaining"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-03-31",
+          "quarter": 1,
+          "period_start": "2025-04-01",
+          "period_end": "2025-06-30",
+          "revenue": 1263583,
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": 118593,
+          "accounting_basis": "IFRS",
+          "accounting_version": "2025年度公表時の連結損益計算書。S02比較欄と一致。後年の管理会計上のセグメント組替値は使用しない。",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S07",
+            "S02"
+          ],
+          "locator": "S07 PDF page 6、S02 PDF page 6比較欄"
+        },
+        {
+          "fiscal_year_end": "2026-03-31",
+          "quarter": 2,
+          "period_start": "2025-04-01",
+          "period_end": "2025-09-30",
+          "revenue": 2644451,
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": 360428,
+          "accounting_basis": "IFRS",
+          "accounting_version": "2025年度公表時の連結損益計算書。S07と同じ会計方針の公表版。後年の管理会計上のセグメント組替値は使用しない。",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF pages 2・5"
+        },
+        {
+          "fiscal_year_end": "2027-03-31",
+          "quarter": 1,
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "revenue": 1616982,
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": 181168,
+          "accounting_basis": "IFRS",
+          "accounting_version": "2026-08-14公表版。事業帰属見直し後。Aspen取得原価配分の確定状況は保存原文では未確認。",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2・6・8～9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "国内損保の料率改定と保険収益認識の季節性",
+          "mechanism": "当年Q1の既経過保険収益には料率適正化が反映済み。Q2は保険事故の季節性に伴う収益認識増加を前年の四半期差額で近似する。七月料率改定の追加効果は契約更新・既経過化の進捗が未確認のため別途加算しない。",
+          "source_ids": [
+            "S04",
+            "S15",
+            "S08",
+            "S09"
+          ],
+          "locator": "S04 PDF pages 17・26、S15 PDF page 26、S08・S09 PDF page 4",
+          "calculation_ids": [
+            "domestic_season_change",
+            "forecast_sji"
+          ],
+          "not_quantified_reason": "契約件数と平均保険料、七月改定の既経過化率を独立には推計できない。"
+        },
+        {
+          "name": "海外保険のAspen連結と事業構成",
+          "mechanism": "Aspenを含む当年Q1のSIH保険収益を出発点とする。前年Q2への収益増加パターンが新しい事業構成でどの程度再現されるかをシナリオ化する。",
+          "source_ids": [
+            "S03",
+            "S08",
+            "S09",
+            "S13"
+          ],
+          "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+          "calculation_ids": [
+            "overseas_season_change",
+            "bear_sih",
+            "base_sih",
+            "bull_sih"
+          ],
+          "not_quantified_reason": "Aspen単独の四半期収益と海外種目別の当年Q2数量・価格・為替は未確認。既に含まれるAspen寄与を追加加算しない。"
+        },
+        {
+          "name": "保険金、再保険回収、事業費と金融損益",
+          "mechanism": "国内損保では料率適正化と手数料率低下が収支改善に寄与する一方、修理費単価上昇、事故率、自然災害、大口事故が費用を左右する。海外では事業構成と投資資産拡大が引受損益・金融損益に影響する。",
+          "source_ids": [
+            "S04",
+            "S03"
+          ],
+          "locator": "S04 PDF pages 4・18～25、S03 PDF pages 4～7",
+          "calculation_ids": [],
+          "not_quantified_reason": "国内Q1には支払備金の簡便法が使われ、Q2の再評価幅が不明。海外の最新詳細資料が短縮され、災害損害、再保険回収、投資評価損益の合理的な四半期範囲を設定できない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "comparison_ref": "prior_q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの収益水準と季節配分",
+              "formula": "forecast_sji-prior_q2_sji",
+              "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。"
+            },
+            {
+              "label": "SIHの事業規模と季節配分",
+              "formula": "bear_sih-prior_q2_sih",
+              "reason": "Aspen込み当年Q1水準を維持する仮定と前年Q2実績の差。"
+            }
+          ],
+          "residual": "yoy_remaining_residual",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+          "residual_type": "economic_unexplained"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "comparison_ref": "current_q1_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの季節配分",
+              "formula": "forecast_sji-current_q1_sji",
+              "reason": "前年に観測されたQ2とQ1の収益差を反映。"
+            },
+            {
+              "label": "SIHの季節配分",
+              "formula": "bear_sih-current_q1_sih",
+              "reason": "弱気では季節増加を反映しない。"
+            }
+          ],
+          "residual": "qoq_remaining_residual",
+          "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差であり、実績の安定性を確認したものではない。",
+          "residual_type": "none"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "comparison_ref": "prior_q2_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの収益水準と季節配分",
+              "formula": "forecast_sji-prior_q2_sji",
+              "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。"
+            },
+            {
+              "label": "SIHの事業規模と季節配分",
+              "formula": "base_sih-prior_q2_sih",
+              "reason": "Aspen込み当年Q1水準に前年季節増加率を半分反映。"
+            }
+          ],
+          "residual": "yoy_remaining_residual",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+          "residual_type": "economic_unexplained"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "comparison_ref": "current_q1_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの季節配分",
+              "formula": "forecast_sji-current_q1_sji",
+              "reason": "前年に観測されたQ2とQ1の収益差を反映。"
+            },
+            {
+              "label": "SIHの季節配分",
+              "formula": "base_sih-current_q1_sih",
+              "reason": "前年季節増加率の半分を当年Q1水準に反映。"
+            }
+          ],
+          "residual": "qoq_remaining_residual",
+          "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。",
+          "residual_type": "none"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "comparison_ref": "prior_q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの収益水準と季節配分",
+              "formula": "forecast_sji-prior_q2_sji",
+              "reason": "当年Q1水準に前年の季節差を反映した条件付き差額。"
+            },
+            {
+              "label": "SIHの事業規模と季節配分",
+              "formula": "bull_sih-prior_q2_sih",
+              "reason": "Aspen込み当年Q1水準に前年季節増加率を全面反映。"
+            }
+          ],
+          "residual": "yoy_remaining_residual",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。",
+          "residual_type": "economic_unexplained"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "comparison_ref": "current_q1_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "損保ジャパンの季節配分",
+              "formula": "forecast_sji-current_q1_sji",
+              "reason": "前年に観測されたQ2とQ1の収益差を反映。"
+            },
+            {
+              "label": "SIHの季節配分",
+              "formula": "bull_sih-current_q1_sih",
+              "reason": "前年季節増加率を当年Q1水準に全面反映。"
+            }
+          ],
+          "residual": "qoq_remaining_residual",
+          "residual_explanation": "その他保険会社・連結消去等をQ1据置きとするモデル上の残差。",
+          "residual_type": "none"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "comparison_ref": null,
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_explanation": "営業利益の直接開示がなく、比較実績・予測・差額とも算定対象外。",
+          "residual_type": "unclassified"
+        }
+      ],
+      "company_guidance": "保存原文で確認できる当年度通期予想は、保険収益、親会社所有者帰属利益、修正連結利益。S02・S04で確認し、guidance_recordsに記録した。対象Q2単独予想ではなく、四等分や残期間への均等配分には使用していない。基準日時点までの修正開示の網羅性は未確認。",
+      "consensus": "未確認。提示された保存原文に公表市場コンセンサスはない。",
+      "independent_forecast": "保険収益に限り、損保ジャパン、SIH、その他保険会社・連結消去等の純額を積み上げた条件付き独自予測。最新Q1の事業規模と前年四半期間の収益認識パターンを用い、海外の季節増加の再現度を変えている。数量と価格を分離した契約単位モデルではなく、確度は低い。会社の期後修正見込みからの差引き推計は使用していない。営業利益・経常利益は指標非開示または非適用、純利益は引受費用と金融損益の範囲設定に必要な根拠不足によりnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き見通し",
+          "text": "Q2単独の保険収益は、弱気{{value:bear_revenue}}、中心{{value:base_revenue}}、強気{{value:bull_revenue}}とする。国内損保の収益認識の季節性と、Aspen連結後の海外事業規模が主な支えとなる。シナリオ幅は海外の季節性の再現度を示し、災害や市場急変を含む包括的な予測区間ではない。"
+        },
+        {
+          "heading": "比較基準と説明の限界",
+          "text": "前年Q2保険収益は中間累計からQ1を差し引いた{{value:prior_q2_revenue}}を比較基準とする。その他保険会社・内部取引消去等について残る前年同期差{{value:yoy_remaining_residual}}は、価格、数量、会計組替えへ配賦できないため説明不能残差として残す。"
+        },
+        {
+          "heading": "利益予測を数値化しない理由",
+          "text": "料率適正化と手数料率低下は引受採算を支える一方、修理費インフレ、自然災害、大口事故、支払備金の再評価が利益を左右する。さらに金融市場由来の損益とAspen関連費用を対象四半期について拘束できない。保険サービス損益や税後修正利益を営業利益へ読み替えることはせず、純利益も未推計とする。"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "確認済み資料の通期会社予想は、保険収益{{value:company_annual_revenue}}、親会社所有者帰属利益{{value:company_annual_net_profit}}、修正連結利益{{value:company_annual_adjusted_profit}}である。これらは年間の公表予想であり、本推計の四半期数値とは対象期間と作成主体が異なる。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "partial",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "当年Q2の契約数量、平均保険料、更新率と七月料率改定の既経過化率は保存原文では未確認。",
+        "Aspen連結後に前年SIHの四半期季節性が再現されるかは未確認。",
+        "当年Q2の自然災害・大口事故、再保険回収、支払備金再評価、投資評価損益は未確認。",
+        "その他保険会社と連結消去等の純額はQ1据置きを仮定している。"
+      ],
+      "material_unresolved": [
+        "S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。",
+        "S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。",
+        "S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。",
+        "S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。",
+        "S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。",
+        "S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。",
+        "S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。",
+        "損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。",
+        "当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。",
+        "S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。",
+        "S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。",
+        "基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。"
+      ],
+      "guidance_records": [
+        {
+          "id": "annual_insurance_revenue_guidance",
+          "metric": "保険収益",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S02"
+          ],
+          "locator": "S04 PDF page 11・2026年度予想、S02 PDF page 1・年度対象期間"
+        },
+        {
+          "id": "annual_parent_profit_guidance",
+          "metric": "親会社の所有者に帰属する当期利益",
+          "value_ref": "guidance_net_profit",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、通期連結業績予想・修正なし"
+        },
+        {
+          "id": "annual_adjusted_profit_guidance",
+          "metric": "修正連結利益",
+          "value_ref": "guidance_adjusted_profit",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "IFRSを基礎とする会社独自修正指標",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S04",
+            "S15"
+          ],
+          "locator": "S04 PDF pages 6・9、S15 PDF page 21・修正連結利益の定義と会計期間"
+        }
+      ],
+      "_truncated_source_ids": [
+        "S04",
+        "S05",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S15"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 13,
+      "Medium": 24,
+      "Low": 0
+    },
+    "material_assumption_count": 5,
+    "schedule_check": {
+      "input_date": "2026-11-19",
+      "official_date": "2026-11-19",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://www.sompo-hd.com/ir/event ：次回イベントとして「2026年11月19日 2027年3月期第2四半期決算発表（15:30予定）」を掲載。https://www.sompo-hd.com/ir/data/summary/ ：最新掲載は2027年3月期第1四半期。対象は2027年3月期第2四半期単独（2026年7月1日～9月30日）であり、中間累計から第1四半期累計を差し引く対象。",
+      "warnings": [
+        "S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。",
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "annual_insurance_revenue_guidance",
+        "metric": "保険収益",
+        "value_ref": "guidance_revenue",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S04",
+          "S02"
+        ],
+        "locator": "S04 PDF page 11・2026年度予想、S02 PDF page 1・年度対象期間",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_insurance_revenue_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年度通期6,410,000百万円を5月20日資料と8月14日資料で確認し、同値の再掲を確認した。対象Q2単独とは期間が一致せず、四等分や残期間均等配分で乖離を判定することは不適切。8月14日以後から基準日時までの修正網羅性は未確認。通期の数量・価格・買収・為替要因は参考になるが、本モデルには通期予測がなく同期間の乖離検証はできない。",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S13"
+          ],
+          "locator": "S02 PDF page 1; S04 PDF pages 1・11; S13 PDF pages 1・13",
+          "evidence_excerpt": "保険収益 50,655 53,729 +3,074 64,100 +10,370"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "annual_parent_profit_guidance",
+        "metric": "親会社の所有者に帰属する当期利益",
+        "value_ref": "guidance_net_profit",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF page 1、通期連結業績予想・修正なし",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_parent_profit_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年4月1日～2027年3月31日の490,000百万円を確認。5月20日の当初予想を8月14日に修正なしで維持している。基準日時までの後続修正の網羅性は未確認。Q2純利益予測がnullのため乖離は算定不能であり、予想不一致とは判定しない。",
+          "source_ids": [
+            "S02",
+            "S12"
+          ],
+          "locator": "S02 PDF page 1; S12 PDF page 1",
+          "evidence_excerpt": "通期 490,000 △23.4 549.17\n(注) 直近に公表されている業績予想からの修正の有無 ： 無"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "annual_adjusted_profit_guidance",
+        "metric": "修正連結利益",
+        "value_ref": "guidance_adjusted_profit",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRSを基礎とする会社独自修正指標",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S04",
+          "S15"
+        ],
+        "locator": "S04 PDF pages 6・9、S15 PDF page 21・修正連結利益の定義と会計期間",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_adjusted_profit_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年度通期500,000百万円と、8月14日時点で5月開示から変更なしを確認。修正連結利益は4～3月の会社独自調整指標であり、海外事業部門別の1～12月指標、営業利益、親会社帰属利益とは区別が必要。モデルに同期間・同指標の予測がないため乖離比較は非適用。基準日時までの後続修正の網羅性は未確認。",
+          "source_ids": [
+            "S04",
+            "S13",
+            "S15"
+          ],
+          "locator": "S04 PDF page 9; S13 PDF page 9; S15 PDF page 21",
+          "evidence_excerpt": "2026年5月開示から変更なし"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "要修正",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "直前累計不足: 2025-09-30"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: presentation"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: segments_kpi"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bear/yoy/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 301500.0,
+          "residual": 6214.0,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: base/yoy/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 344869.5128479657,
+          "residual": 6214.0,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bull/yoy/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 388239.0256959315,
+          "residual": 6214.0,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "その他保険会社・内部取引消去等の純額差。構成要因への配賦ができず、全額を経済的説明不能残差とする。"
+        }
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: domestic_season_weight",
+        "assumption_id": "domestic_season_weight",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: overseas_bear_weight",
+        "assumption_id": "overseas_bear_weight",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: overseas_base_weight",
+        "assumption_id": "overseas_base_weight",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: overseas_bull_weight",
+        "assumption_id": "overseas_bull_weight",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: remaining_revenue_weight",
+        "assumption_id": "remaining_revenue_weight",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: annual_insurance_revenue_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: annual_parent_profit_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: annual_adjusted_profit_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "fact",
+        "message": "資料短縮に関する生成担当の説明は添付本文と矛盾する。S04の海外詳細28～32ページ、生保34～39ページ、介護41～43ページ、S05の海外等シート、S13・S15の後半詳細を使用して未確認事項を再整理する必要がある。資料があることだけでQ2利益予測が可能とは断定しない。",
+        "source_ids": [
+          "S04",
+          "S05",
+          "S13",
+          "S15"
+        ],
+        "locator": "S04 PDF page 30; S05 海外保険事業シート; S13 PDF pages 31～46; S15 PDF pages 33～53",
+        "evidence_excerpt": "コンバインド・レシオ計\n(割引影響含む) 85.7% 87.6% +1.9pt 89.0%",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "海外の季節性代理値に為替変動が混在する。前年Q1の換算レート143.75円と中間期146.07円は異なる。円建て累計差引き自体は正しいが、その増加率を純粋な季節性として当年へ延長する根拠はない。ドル建て同一会計版の四半期動向と円換算要因を分離する必要がある。",
+        "source_ids": [
+          "S04",
+          "S10",
+          "S11",
+          "S05"
+        ],
+        "locator": "S04 PDF page 2; S10 PDF page 2; S11 PDF page 2; S05 海外保険事業シート J8・K8",
+        "evidence_excerpt": "中間期 152.45 中間期 146.07",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "other",
+        "message": "再計算出力の『直前累計不足』は提示データと矛盾する。前年Q1と中間累計は原資料・入力ともに存在する。前年Q2収益1,380,868百万円、親会社帰属利益241,835百万円を比較値へ接続し、全シナリオYoYを再計算する必要がある。現在の『増減要因の合計不一致』は算式不一致ではなく比較値欠落による判定不良。",
+        "source_ids": [
+          "S06",
+          "S07"
+        ],
+        "locator": "S06 PDF page 5; S07 PDF page 6; recalculation.historicals・bridge_checks",
+        "evidence_excerpt": "親会社の所有者 182,577 360,428",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "residual",
+        "message": "YoY残差6,214百万円は維持すべきだが、全額を確定した経済要因と認定することもできない。億円表示の丸め、比較基準変更、その他保険会社と消去の経済的変動は未分離。会計基準変更分や丸め分を根拠なくゼロとせず、未分離額として管理する。QnQ残差ゼロは据置き仮定の結果にすぎない。",
+        "source_ids": [
+          "S02",
+          "S03",
+          "S08",
+          "S09"
+        ],
+        "locator": "S02 PDF pages 8～9; S03 PDF pages 5～6; S08・S09 PDF pages 4～5",
+        "evidence_excerpt": "（単位：億円、％）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "period",
+        "message": "管理会計のセグメント組替えと連結保険収益の比較基準を混同しないこと。S04の過去セグメント利益は遡及修正されている一方、採用したS02・S07の前年Q1連結収益は一致する。組替えの存在だけで連結Q2差引きを不可能と扱う根拠はない。",
+        "source_ids": [
+          "S02",
+          "S04",
+          "S07"
+        ],
+        "locator": "S02 PDF pages 6・8～9; S04 PDF page 7; S07 PDF page 6",
+        "evidence_excerpt": "過去数値は遡及修正",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "会社予想3候補は期間・指標を区別すれば直接比較非適用であり、会社予想との差を理由に予測額を修正すべきではない。ただしlatest_confirmedを基準日時までの網羅的な最新版確認と解釈させないよう、8月14日時点の確認とその後の未確認を明示する。",
+        "source_ids": [
+          "S02",
+          "S04"
+        ],
+        "locator": "S02 PDF page 1; S04 PDF page 9",
+        "evidence_excerpt": "3．2027年3月期の連結業績予想（2026年4月1日～2027年3月31日）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 13,
+      "Medium": 24,
+      "Low": 0
+    },
+    "assumptions": [
+      {
+        "id": "domestic_season_weight",
+        "category": "数量・単価",
+        "adopted_value": 1,
+        "unit": "倍",
+        "rationale": "S04 PDF pages 16～18とS10 PDF page 23は国内損保の保険収益認識の季節性を説明している。損保ジャパンについて前年Q2とQ1の全種目グロス保険収益の差額を当年Q1に加える。前年の季節差が金額ベースで維持される条件付き仮定であり、資料の認識イメージを実際の配分率とは扱わない。価格改定効果は当年Q1の水準に既に含まれる。",
+        "source_ids": [
+          "S04",
+          "S10",
+          "S08",
+          "S09"
+        ],
+        "context_source_ids": [
+          "S04",
+          "S10",
+          "S08",
+          "S09"
+        ],
+        "locator": "S04 PDF pages 16～18、S10 PDF page 23、S08・S09 PDF page 4",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 1,
+        "independent_review": {
+          "id": "domestic_season_weight",
+          "status": "unsupported",
+          "reason": "係数1は前年Q2−Q1差額71,600百万円の金額維持を仮定する。会社の季節性説明はネット・自賠責等除外の説明を含み、全種目グロス差額の当年再現を定量保証していない。前年差額には商品改定、契約構成等も含み得る。0.1変動で7,160百万円という感応度は算式に一致するが採用係数の証拠ではない。",
+          "source_ids": [
+            "S04",
+            "S08",
+            "S09",
+            "S10"
+          ],
+          "locator": "S04 PDF page 17; S08・S09 PDF page 4; S10 PDF page 23",
+          "evidence_excerpt": "IFRSでは保険事故の発生の季節性を考慮して保険収益を認識するため、保険事故の少ない第1四半期は通期と比較して保険収益がやや低くなる傾向にある(年間累計では同額)"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "overseas_bear_weight",
+        "category": "連結・事業売却",
+        "adopted_value": 0,
+        "unit": "倍",
+        "rationale": "弱気ではSIHのQ2保険収益をAspenを含む当年Q1水準に据え置き、前年に見られたQ2への収益増加を見込まない。新しい構成で前年の季節性が再現されない場合を表す。",
+        "source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 2,
+        "independent_review": {
+          "id": "overseas_bear_weight",
+          "status": "unsupported",
+          "reason": "係数0によるQ1据置きは分析者の条件設定。原文にはQ2横ばいの会社予測も下限を保証する情報もない。Aspen込みQ1水準は確認できるが、為替・更改・数量減少により下回る可能性を拘束できない。",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 6; S04 PDF page 29",
+          "evidence_excerpt": "再保険 +91.8%：\nAspen連結効果および好調なカジュアルティの更改が牽引"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "overseas_base_weight",
+        "category": "連結・事業売却",
+        "adopted_value": 0.5,
+        "unit": "倍",
+        "rationale": "中心では前年SIHのQ1からQ2への保険収益増加率を当年Q1水準に半分反映する。Aspen連結で構成が変わったため、前年の季節パターンの全面適用と横ばいの中間を条件として置く。これは観測された受注・契約成長率ではない。",
+        "source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 3,
+        "independent_review": {
+          "id": "overseas_base_weight",
+          "status": "unsupported",
+          "reason": "係数0.5は横ばいと前年増加率の中間を置いただけで、契約・価格・更改・Aspen構成比による推定ではない。前年円建て増加率約9.73%に対し、S05の同一表示系列ではドル建てQ2は8,046−3,898=4,148百万ドル、Q1比約6.41%。円建て増加全体を季節性とする説明は不十分。ドル系列は遡及修正注記もあるため、そのまま確定修正値として置換できない。",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S10"
+          ],
+          "locator": "S04 PDF page 2; S05 海外保険事業シート J8・K8・C46; S10 PDF page 2",
+          "evidence_excerpt": "C46=*2 セグメント変更に伴う影響を遡及修正"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "overseas_bull_weight",
+        "category": "連結・事業売却",
+        "adopted_value": 1,
+        "unit": "倍",
+        "rationale": "強気では前年SIHのQ1からQ2への保険収益増加率が、Aspenを含む当年Q1の事業規模でも再現されると仮定する。前年同期比の増収率を一律延長するものではない。",
+        "source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S03",
+          "S08",
+          "S09",
+          "S13"
+        ],
+        "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 4,
+        "independent_review": {
+          "id": "overseas_bull_weight",
+          "status": "unsupported",
+          "reason": "係数1はAspen取得前の円建て増加パターンを取得後の全SIHに適用する仮定。新旧構成の季節性、前年為替効果の再現、上側条件の妥当性を裏付ける数値がない。会社の成長説明は係数1を支持しない。",
+          "source_ids": [
+            "S04",
+            "S13"
+          ],
+          "locator": "S04 PDF page 29; S13 PDF page 32",
+          "evidence_excerpt": "2026年度は、対前年+31%(Aspenを除くと+6％)の増収を見込む"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "remaining_revenue_weight",
+        "category": "連結・事業売却",
+        "adopted_value": 1,
+        "unit": "倍",
+        "rationale": "連結保険収益から損保ジャパンとSIHを除いた残額は、国内生命保険、その他保険会社、内部取引消去、表示精度差を含む。その合計を当年Q1水準に据え置く。S02の国内生命保険収益は前年Q1から概ね横ばいだが、残額全体の安定性を確定実績とは扱わない。",
+        "source_ids": [
+          "S02",
+          "S03"
+        ],
+        "context_source_ids": [
+          "S02",
+          "S03"
+        ],
+        "locator": "S02 PDF pages 6・8、S03 PDF pages 5～7",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 5,
+        "independent_review": {
+          "id": "remaining_revenue_weight",
+          "status": "unsupported",
+          "reason": "係数1による残額74,282百万円の据置きは、国内生保の前年Q1比横ばいだけでは裏付けられない。その他保険会社、内部取引消去、事業帰属変更、表示精度差を含む残額全体のQ2安定性は未確認。1%変動742.82百万円の感応度は正しいが、利益感応度未算定をゼロとは扱えない。",
+          "source_ids": [
+            "S02",
+            "S03"
+          ],
+          "locator": "S02 PDF pages 4・8～9; S03 PDF pages 5～7",
+          "evidence_excerpt": "保険収益は、前年同四半期連結累計期間に比べて1億円増加して644億円となりました。"
+        },
+        "citation_verified": true
+      }
+    ],
+    "guidance": [
+      {
+        "id": "annual_insurance_revenue_guidance",
+        "metric": "保険収益",
+        "value_ref": "guidance_revenue",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S04",
+          "S02"
+        ],
+        "locator": "S04 PDF page 11・2026年度予想、S02 PDF page 1・年度対象期間",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_insurance_revenue_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年度通期6,410,000百万円を5月20日資料と8月14日資料で確認し、同値の再掲を確認した。対象Q2単独とは期間が一致せず、四等分や残期間均等配分で乖離を判定することは不適切。8月14日以後から基準日時までの修正網羅性は未確認。通期の数量・価格・買収・為替要因は参考になるが、本モデルには通期予測がなく同期間の乖離検証はできない。",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S13"
+          ],
+          "locator": "S02 PDF page 1; S04 PDF pages 1・11; S13 PDF pages 1・13",
+          "evidence_excerpt": "保険収益 50,655 53,729 +3,074 64,100 +10,370"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "annual_parent_profit_guidance",
+        "metric": "親会社の所有者に帰属する当期利益",
+        "value_ref": "guidance_net_profit",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF page 1、通期連結業績予想・修正なし",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_parent_profit_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年4月1日～2027年3月31日の490,000百万円を確認。5月20日の当初予想を8月14日に修正なしで維持している。基準日時までの後続修正の網羅性は未確認。Q2純利益予測がnullのため乖離は算定不能であり、予想不一致とは判定しない。",
+          "source_ids": [
+            "S02",
+            "S12"
+          ],
+          "locator": "S02 PDF page 1; S12 PDF page 1",
+          "evidence_excerpt": "通期 490,000 △23.4 549.17\n(注) 直近に公表されている業績予想からの修正の有無 ： 無"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "annual_adjusted_profit_guidance",
+        "metric": "修正連結利益",
+        "value_ref": "guidance_adjusted_profit",
+        "period_start": "2026-04-01",
+        "period_end": "2027-03-31",
+        "accounting_basis": "IFRSを基礎とする会社独自修正指標",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-08-14",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S04",
+          "S15"
+        ],
+        "locator": "S04 PDF pages 6・9、S15 PDF page 21・修正連結利益の定義と会計期間",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "annual_adjusted_profit_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "2026年度通期500,000百万円と、8月14日時点で5月開示から変更なしを確認。修正連結利益は4～3月の会社独自調整指標であり、海外事業部門別の1～12月指標、営業利益、親会社帰属利益とは区別が必要。モデルに同期間・同指標の予測がないため乖離比較は非適用。基準日時までの後続修正の網羅性は未確認。",
+          "source_ids": [
+            "S04",
+            "S13",
+            "S15"
+          ],
+          "locator": "S04 PDF page 9; S13 PDF page 9; S15 PDF page 21",
+          "evidence_excerpt": "2026年5月開示から変更なし"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S02の営業利益・経常利益は連結損益計算書に表示がない。一方、対象Q2の純利益を推計する詳細情報の不足は、指標自体の非開示ではなく必要範囲の未確認である。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S02の当年セグメント収益は保険収益とその他の営業収益の合計であり、前年の表示説明とも差がある。そのまま保険収益のセグメント予測には使用せず、S03の損保ジャパン・SIH保険収益と連結残額で接続した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S04は海外保険事業の詳細が始まるPDF page 27で短縮されている。S13も海外保険・国内生保・介護の詳細より前で短縮され、海外の最新種目別収益・採算・季節性を十分確認できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S05にはセル抽出本文が提示されているため、discoveryの本文未確認という記述をそのまま踏襲しない。ただし本文は損保ジャパンシート途中で短縮され、海外シート等は未確認。介護等の修正利益にはS04との数値差もあるため、当該数値を予測へ採用していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S08・S09・S10・S11・S12・S13・S15は短縮資料。必要な海外採算、国内生保・介護の費用内訳、取得原価配分と後発事象の全範囲は未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S15の国内料率改定計画は確認できるが、対象期間の実施結果と数量影響は未確認。最新Q1に含まれる料率効果へ計画効果を重ねて加算していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S16の保存本文と基準日時点の固定版が提示されていないため、営業成績速報は使用していない。非開示とは判定していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S19は買収合意の原文であり、対象四半期内の買収完了日、連結開始日、収益規模を確認できない。追加寄与を仮定していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "基準日時点までの業績予想修正・訂正の網羅性は未確認。guidance_recordsのlatest_confirmedは提示された保存原文内での最新確認を意味する。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "当年Q1のAspen取得原価配分の確定状況は未確認。次回開示で比較Q1が修正された場合は、現行Q1との単純差引きを避け、同じ会計版へ更新する必要がある。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "損保ジャパンとSIHの入力は億円表示からの換算値で、百万円精度の原値ではない。連結との差額には表示精度差も含まれるが、その金額を分離できないため、YoY残差を丸め差と断定していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "直前累計不足: 2025-09-30",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: presentation",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: segments_kpi",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bear/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: base/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bull/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: domestic_season_weight",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: overseas_bear_weight",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: overseas_base_weight",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: overseas_bull_weight",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: remaining_revenue_weight",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: annual_insurance_revenue_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: annual_parent_profit_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: annual_adjusted_profit_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "fact",
+      "message": "資料短縮に関する生成担当の説明は添付本文と矛盾する。S04の海外詳細28～32ページ、生保34～39ページ、介護41～43ページ、S05の海外等シート、S13・S15の後半詳細を使用して未確認事項を再整理する必要がある。資料があることだけでQ2利益予測が可能とは断定しない。",
+      "source_ids": "['S04', 'S05', 'S13', 'S15']",
+      "locator": "S04 PDF page 30; S05 海外保険事業シート; S13 PDF pages 31～46; S15 PDF pages 33～53",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "海外の季節性代理値に為替変動が混在する。前年Q1の換算レート143.75円と中間期146.07円は異なる。円建て累計差引き自体は正しいが、その増加率を純粋な季節性として当年へ延長する根拠はない。ドル建て同一会計版の四半期動向と円換算要因を分離する必要がある。",
+      "source_ids": "['S04', 'S10', 'S11', 'S05']",
+      "locator": "S04 PDF page 2; S10 PDF page 2; S11 PDF page 2; S05 海外保険事業シート J8・K8",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "High",
+      "category": "other",
+      "message": "再計算出力の『直前累計不足』は提示データと矛盾する。前年Q1と中間累計は原資料・入力ともに存在する。前年Q2収益1,380,868百万円、親会社帰属利益241,835百万円を比較値へ接続し、全シナリオYoYを再計算する必要がある。現在の『増減要因の合計不一致』は算式不一致ではなく比較値欠落による判定不良。",
+      "source_ids": "['S06', 'S07']",
+      "locator": "S06 PDF page 5; S07 PDF page 6; recalculation.historicals・bridge_checks",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "residual",
+      "message": "YoY残差6,214百万円は維持すべきだが、全額を確定した経済要因と認定することもできない。億円表示の丸め、比較基準変更、その他保険会社と消去の経済的変動は未分離。会計基準変更分や丸め分を根拠なくゼロとせず、未分離額として管理する。QnQ残差ゼロは据置き仮定の結果にすぎない。",
+      "source_ids": "['S02', 'S03', 'S08', 'S09']",
+      "locator": "S02 PDF pages 8～9; S03 PDF pages 5～6; S08・S09 PDF pages 4～5",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "period",
+      "message": "管理会計のセグメント組替えと連結保険収益の比較基準を混同しないこと。S04の過去セグメント利益は遡及修正されている一方、採用したS02・S07の前年Q1連結収益は一致する。組替えの存在だけで連結Q2差引きを不可能と扱う根拠はない。",
+      "source_ids": "['S02', 'S04', 'S07']",
+      "locator": "S02 PDF pages 6・8～9; S04 PDF page 7; S07 PDF page 6",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "company_name": "ＳＯＭＰＯホールディングス株式会社",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "会社予想3候補は期間・指標を区別すれば直接比較非適用であり、会社予想との差を理由に予測額を修正すべきではない。ただしlatest_confirmedを基準日時までの網羅的な最新版確認と解釈させないよう、8月14日時点の確認とその後の未確認を明示する。",
+      "source_ids": "['S02', 'S04']",
+      "locator": "S02 PDF page 1; S04 PDF page 9",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [
+    {
+      "code": "8630",
+      "id": "domestic_season_weight",
+      "category": "数量・単価",
+      "adopted_value": "1",
+      "unit": "倍",
+      "rationale": "S04 PDF pages 16～18とS10 PDF page 23は国内損保の保険収益認識の季節性を説明している。損保ジャパンについて前年Q2とQ1の全種目グロス保険収益の差額を当年Q1に加える。前年の季節差が金額ベースで維持される条件付き仮定であり、資料の認識イメージを実際の配分率とは扱わない。価格改定効果は当年Q1の水準に既に含まれる。",
+      "source_ids": "[\"S04\", \"S10\", \"S08\", \"S09\"]",
+      "context_source_ids": "[\"S04\", \"S10\", \"S08\", \"S09\"]",
+      "locator": "S04 PDF pages 16～18、S10 PDF page 23、S08・S09 PDF page 4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "1",
+      "independent_review": "{\"id\": \"domestic_season_weight\", \"status\": \"unsupported\", \"reason\": \"係数1は前年Q2−Q1差額71,600百万円の金額維持を仮定する。会社の季節性説明はネット・自賠責等除外の説明を含み、全種目グロス差額の当年再現を定量保証していない。前年差額には商品改定、契約構成等も含み得る。0.1変動で7,160百万円という感応度は算式に一致するが採用係数の証拠ではない。\", \"source_ids\": [\"S04\", \"S08\", \"S09\", \"S10\"], \"locator\": \"S04 PDF page 17; S08・S09 PDF page 4; S10 PDF page 23\", \"evidence_excerpt\": \"IFRSでは保険事故の発生の季節性を考慮して保険収益を認識するため、保険事故の少ない第1四半期は通期と比較して保険収益がやや低くなる傾向にある(年間累計では同額)\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "overseas_bear_weight",
+      "category": "連結・事業売却",
+      "adopted_value": "0",
+      "unit": "倍",
+      "rationale": "弱気ではSIHのQ2保険収益をAspenを含む当年Q1水準に据え置き、前年に見られたQ2への収益増加を見込まない。新しい構成で前年の季節性が再現されない場合を表す。",
+      "source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "context_source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "2",
+      "independent_review": "{\"id\": \"overseas_bear_weight\", \"status\": \"unsupported\", \"reason\": \"係数0によるQ1据置きは分析者の条件設定。原文にはQ2横ばいの会社予測も下限を保証する情報もない。Aspen込みQ1水準は確認できるが、為替・更改・数量減少により下回る可能性を拘束できない。\", \"source_ids\": [\"S03\", \"S04\"], \"locator\": \"S03 PDF page 6; S04 PDF page 29\", \"evidence_excerpt\": \"再保険 +91.8%：\\nAspen連結効果および好調なカジュアルティの更改が牽引\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "overseas_base_weight",
+      "category": "連結・事業売却",
+      "adopted_value": "0.5",
+      "unit": "倍",
+      "rationale": "中心では前年SIHのQ1からQ2への保険収益増加率を当年Q1水準に半分反映する。Aspen連結で構成が変わったため、前年の季節パターンの全面適用と横ばいの中間を条件として置く。これは観測された受注・契約成長率ではない。",
+      "source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "context_source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "3",
+      "independent_review": "{\"id\": \"overseas_base_weight\", \"status\": \"unsupported\", \"reason\": \"係数0.5は横ばいと前年増加率の中間を置いただけで、契約・価格・更改・Aspen構成比による推定ではない。前年円建て増加率約9.73%に対し、S05の同一表示系列ではドル建てQ2は8,046−3,898=4,148百万ドル、Q1比約6.41%。円建て増加全体を季節性とする説明は不十分。ドル系列は遡及修正注記もあるため、そのまま確定修正値として置換できない。\", \"source_ids\": [\"S04\", \"S05\", \"S10\"], \"locator\": \"S04 PDF page 2; S05 海外保険事業シート J8・K8・C46; S10 PDF page 2\", \"evidence_excerpt\": \"C46=*2 セグメント変更に伴う影響を遡及修正\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "overseas_bull_weight",
+      "category": "連結・事業売却",
+      "adopted_value": "1",
+      "unit": "倍",
+      "rationale": "強気では前年SIHのQ1からQ2への保険収益増加率が、Aspenを含む当年Q1の事業規模でも再現されると仮定する。前年同期比の増収率を一律延長するものではない。",
+      "source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "context_source_ids": "[\"S03\", \"S08\", \"S09\", \"S13\"]",
+      "locator": "S03 PDF page 6、S08・S09 PDF page 5、S13 PDF pages 5～7",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "4",
+      "independent_review": "{\"id\": \"overseas_bull_weight\", \"status\": \"unsupported\", \"reason\": \"係数1はAspen取得前の円建て増加パターンを取得後の全SIHに適用する仮定。新旧構成の季節性、前年為替効果の再現、上側条件の妥当性を裏付ける数値がない。会社の成長説明は係数1を支持しない。\", \"source_ids\": [\"S04\", \"S13\"], \"locator\": \"S04 PDF page 29; S13 PDF page 32\", \"evidence_excerpt\": \"2026年度は、対前年+31%(Aspenを除くと+6％)の増収を見込む\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "remaining_revenue_weight",
+      "category": "連結・事業売却",
+      "adopted_value": "1",
+      "unit": "倍",
+      "rationale": "連結保険収益から損保ジャパンとSIHを除いた残額は、国内生命保険、その他保険会社、内部取引消去、表示精度差を含む。その合計を当年Q1水準に据え置く。S02の国内生命保険収益は前年Q1から概ね横ばいだが、残額全体の安定性を確定実績とは扱わない。",
+      "source_ids": "[\"S02\", \"S03\"]",
+      "context_source_ids": "[\"S02\", \"S03\"]",
+      "locator": "S02 PDF pages 6・8、S03 PDF pages 5～7",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "5",
+      "independent_review": "{\"id\": \"remaining_revenue_weight\", \"status\": \"unsupported\", \"reason\": \"係数1による残額74,282百万円の据置きは、国内生保の前年Q1比横ばいだけでは裏付けられない。その他保険会社、内部取引消去、事業帰属変更、表示精度差を含む残額全体のQ2安定性は未確認。1%変動742.82百万円の感応度は正しいが、利益感応度未算定をゼロとは扱えない。\", \"source_ids\": [\"S02\", \"S03\"], \"locator\": \"S02 PDF pages 4・8～9; S03 PDF pages 5～7\", \"evidence_excerpt\": \"保険収益は、前年同四半期連結累計期間に比べて1億円増加して644億円となりました。\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "guidance": [
+    {
+      "code": "8630",
+      "id": "annual_insurance_revenue_guidance",
+      "metric": "保険収益",
+      "value_ref": "guidance_revenue",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-08-14",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S04\", \"S02\"]",
+      "locator": "S04 PDF page 11・2026年度予想、S02 PDF page 1・年度対象期間",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"annual_insurance_revenue_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年度通期6,410,000百万円を5月20日資料と8月14日資料で確認し、同値の再掲を確認した。対象Q2単独とは期間が一致せず、四等分や残期間均等配分で乖離を判定することは不適切。8月14日以後から基準日時までの修正網羅性は未確認。通期の数量・価格・買収・為替要因は参考になるが、本モデルには通期予測がなく同期間の乖離検証はできない。\", \"source_ids\": [\"S02\", \"S04\", \"S13\"], \"locator\": \"S02 PDF page 1; S04 PDF pages 1・11; S13 PDF pages 1・13\", \"evidence_excerpt\": \"保険収益 50,655 53,729 +3,074 64,100 +10,370\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "annual_parent_profit_guidance",
+      "metric": "親会社の所有者に帰属する当期利益",
+      "value_ref": "guidance_net_profit",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-08-14",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S02\"]",
+      "locator": "PDF page 1、通期連結業績予想・修正なし",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"annual_parent_profit_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年4月1日～2027年3月31日の490,000百万円を確認。5月20日の当初予想を8月14日に修正なしで維持している。基準日時までの後続修正の網羅性は未確認。Q2純利益予測がnullのため乖離は算定不能であり、予想不一致とは判定しない。\", \"source_ids\": [\"S02\", \"S12\"], \"locator\": \"S02 PDF page 1; S12 PDF page 1\", \"evidence_excerpt\": \"通期 490,000 △23.4 549.17\\n(注) 直近に公表されている業績予想からの修正の有無 ： 無\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "8630",
+      "id": "annual_adjusted_profit_guidance",
+      "metric": "修正連結利益",
+      "value_ref": "guidance_adjusted_profit",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "accounting_basis": "IFRSを基礎とする会社独自修正指標",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-08-14",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S04\", \"S15\"]",
+      "locator": "S04 PDF pages 6・9、S15 PDF page 21・修正連結利益の定義と会計期間",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"annual_adjusted_profit_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年度通期500,000百万円と、8月14日時点で5月開示から変更なしを確認。修正連結利益は4～3月の会社独自調整指標であり、海外事業部門別の1～12月指標、営業利益、親会社帰属利益とは区別が必要。モデルに同期間・同指標の予測がないため乖離比較は非適用。基準日時までの後続修正の網羅性は未確認。\", \"source_ids\": [\"S04\", \"S13\", \"S15\"], \"locator\": \"S04 PDF page 9; S13 PDF page 9; S15 PDF page 21\", \"evidence_excerpt\": \"2026年5月開示から変更なし\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "8630",
+    "input_date": "2026-11-19",
+    "official_date": "2026-11-19",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://www.sompo-hd.com/ir/event ：次回イベントとして「2026年11月19日 2027年3月期第2四半期決算発表（15:30予定）」を掲載。https://www.sompo-hd.com/ir/data/summary/ ：最新掲載は2027年3月期第1四半期。対象は2027年3月期第2四半期単独（2026年7月1日～9月30日）であり、中間累計から第1四半期累計を差し引く対象。",
+    "warnings": "['S01の保存本文がdocumentsにない。発表日と対象未発表の状態は提示された対象条件を採用したが、保存原文による独自確認はできない。', '資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/8630/result.json": "c2a5ab1f8b2750274628758bdb9de8ed48642789bd2c08d58c052168b5b4e84b",
+    "reports/8630.md": "1866774dd38c9b6a5aaf775e507fcfb860dbe2ab7dc2b3927eb2fa4b4bffcddc",
+    "reports/8630_review.md": "32b6c8ac02804e9e3f6b3e0d2da1f3342511c5affabe8b5c573b6016dca797f1",
+    "companies/8630/quality_review.json": "ce6db5e6aa0b87188be9a6d481d535639d3b9bb90300afd25efb815b38c1ae48",
+    "companies/8630/independent_review.json": "c06cc6d7d5242a3e823631bef902826cb36b05c9f296fde6e5c5933d652d1d36"
+  }
+}
