@@ -1,0 +1,2111 @@
+{
+  "id": "9008-b88ff855c7705171f1357429d876c35db7d42c1678e0686535e04af57eb4dd1d",
+  "code": "9008",
+  "companyName": "京王電鉄株式会社",
+  "announcementDate": "2026-12-04",
+  "target": {
+    "fiscalYearEnd": "2027-03-31",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "9008-generation-9163664834660011 · b88ff855",
+  "savedAt": "2026-11-18T15:41:37+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 110839.0,
+  "operatingProfit": 11820.0,
+  "revenueYoY": {
+    "rate": -0.05225309961522018,
+    "label": "-5.2%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.20221382289416848,
+    "label": "-20.2%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 9008 京王電鉄株式会社｜2027-03-31期 Q2単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 110,339.00 | 110,839.00 | 111,339.00 |\n| 営業利益 | 11,763.55 | 11,820.00 | 11,876.45 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -6,111.00 | -5.23% |  |\n| YoY | 営業利益 | -2,996.00 | -20.22% |  |\n| QnQ | 売上高 | -12,322.00 | -10.00% |  |\n| QnQ | 営業利益 | -4,360.00 | -26.95% |  |\n\n## 会社予想\n正式な通期会社予想はS01の据置予想として保存した。S08は対象中間期終了後の未確定参考見込みで、正式な通期予想修正でも確定実績でもない。参考中間期から公表Q1を控除した値をreference_q2_rev及びreference_q2_opとし、独自仮定と区別した。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスは見当たらない。\n\n## 独自予測・差引推計の区分\n会社参考見込みを基礎とする条件付き予測。中心は中間期参考見込みからQ1を差し引き、セグメント収益構成と照合したもの。完全な独立積上げではない。独自部分は不動産販売認識額の局所感応度と、その参考採算による営業利益変化に限定する。3シナリオは追加決算修正がない条件での比較であり、障害調査を含む最終決算全体の予測区間ではない。経常・純利益は対象期間の営業外損益、特別損益及び税金を合理的に限定できずnull。\n\n## 対象単独四半期と条件付き中心\n対象は中間期累計ではなく、その後半の単独四半期。会社の期後参考見込みから差し引く営業収益は110,839.00、営業利益は11,820.00。中心予測は営業収益110,839.00、営業利益11,820.00となるが、参考数値とQ1が修正されないことが前提である。\n\n## 数量・単価と収益構成\n鉄道は定期・定期外とも輸送量増が支える一方、エネルギー費増が収益増を相殺する。不動産はQ1大型売却の反動と一部物件の下期期ずれが重要。ホテルは単価上昇が寄与するが、改装・償却・人件費と季節性を伴う。これらの既知効果は会社参考値に含むものとし、追加計上しない。\n\n## 独自感応度の範囲\n不動産販売認識額だけを小幅に変える条件では、弱気の営業収益は110,339.00、営業利益は11,763.55、強気の営業収益は111,339.00、営業利益は11,876.45。案件別原価を確認できないため、中間期参考採算を感応度に使用している。追加障害費用や調査による訂正額をこの幅でカバーできるとは判断していない。\n\n## 比較の限界\n前年同Qの営業収益は116,950.00、営業利益は14,816.00。中心の前年差は営業収益-6,111.00、営業利益-2,996.00。要因別の金額裏付けが不足するためブリッジには経済的未説明残差として残した。セグメント収益合計と連結表示値の照合差-1.00も明示し、営業上の要因とは解釈しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 独自仮定の不動産販売認識減 | -500.00 | 会社参考値からの追加的な局所感応度。既開示の期ずれとは別の仮定。 |\n| 残差（economic_unexplained） | -6,111.00 | 会社参考値中心と前年同Qとの差。交通、物件構成、ホテル、建設、生活サービス、消去の影響を含むが、数量・単価・費用別に金額分解していない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 独自仮定の不動産販売認識減 | -500.00 | 外部販売額の局所感応度。 |\n| 残差（economic_unexplained） | -12,322.00 | 会社参考値中心とQ1との差。Q1大型物件売却の反動や季節性を含むが、要因別金額は未確定。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 不動産販売認識減の採算影響 | -56.45 | 売上感応度に中間期参考採算を適用。 |\n| 残差（economic_unexplained） | -2,996.00 | 参考値中心の前年差は費用・案件構成の金額別裏付けが不足。計画比燃料費増を前年差として流用していない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 不動産販売認識減の採算影響 | -56.45 | 売上感応度に中間期参考採算を適用。 |\n| 残差（economic_unexplained） | -4,360.00 | 参考値中心の前Q差。物件構成、ホテル季節性、費用認識等の分離ができないため残差とする。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -6,111.00 | 会社参考値差引きによる総差額を明示。セグメント表示額は構成の確認に用い、数量・価格等の因果寄与としては未分解。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -12,322.00 | Q1大型物件売却の反動、季節性、検収時期等の総差額。個別寄与額は未確認。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -2,996.00 | 利益参考値からの差引きであり、前年からの費用・採算変化の完全な積上げではない。未説明額を全額残す。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 残差（economic_unexplained） | -4,360.00 | 物件採算、宿泊季節性、償却・人件費・動力費等の四半期差を金額分解できないため全額残差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 独自仮定の不動産販売認識増 | 500.00 | 会社参考値からの外部販売認識額の局所感応度。追加案件の存在を意味しない。 |\n| 残差（economic_unexplained） | -6,111.00 | 会社参考値中心と前年同Qとの差は、弱気・中心と共通の未分解残差。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 独自仮定の不動産販売認識増 | 500.00 | 外部販売認識額の局所感応度。 |\n| 残差（economic_unexplained） | -12,322.00 | 会社参考値中心とQ1との差は、弱気・中心と共通の未分解残差。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 不動産販売認識増の採算影響 | 56.45 | 売上感応度に中間期参考採算を適用。 |\n| 残差（economic_unexplained） | -2,996.00 | 参考値中心の前年差は、弱気・中心と共通の未分解残差。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 不動産販売認識増の採算影響 | 56.45 | 売上感応度に中間期参考採算を適用。 |\n| 残差（economic_unexplained） | -4,360.00 | 参考値中心の前Q差は、弱気・中心と共通の未分解残差。 |\n\n## エラー・未解決事項\n- S08には『経理部調整未』『グルカン記載メモ』等の作業メモらしき文字列、試算注記、別会社名の混入がある。保存本文の明示された参考値を限定的に採用し、内部メモの数値は予測根拠に採用していない。PDF画像との照合は実施しておらず、これらの表示状態は原本未確認。\n- coverageのreviewedは提示された保存本文の確認を意味し、外部検索、独立レビュー、原本画像照合又は決算確定を意味しない。\n- 不動産の物件別価格・持分・引渡実績・原価、ホテル全施設の販売可能室数、建設案件別検収・採算、Q2費用内訳は保存本文では確認できない。企業が他の媒体でも非開示としているとは断定しない。\n- 会社参考営業利益の連結総額とセグメント・連結修正の概数合計は一致しない。『程度』の値から正確な内訳を復元せず、利益中心値には連結総額を優先した。差を丸め差と断定していない。\n- 全documentsはtruncated=falseで、提示範囲の短縮表示はない。discoveryに残るS07本文未取得の記述に対し、今回のdocumentsには本文があるため、その保存本文を確認対象とした。外部原本の再取得、質疑応答資料、独立月次資料は未確認。\n- 前年Q1・中間期は提示短信で会計方針変更・修正再表示なしを確認して差し引いた。取得原価配分確定による別版の提示はないが、今後の調査による過年度・Q1訂正の有無は未確認。\n- 独自の弱気・強気は不動産販売額の局所感応度であり、最終決算の全不確実性を覆う上下限ではない。調査修正額と障害費用について根拠ある範囲を設定できない。\n- 経常利益・純利益の対象単独四半期に必要な営業外損益、特別損益、実効税率の根拠が不足。通期予想からの機械的配分は行っていない。\n\n## 条件・不確実性\n- S08は調査・期中レビューによって修正され得る参考数値。全シナリオでQ1が訂正されないことを仮定した。\n- additional_op_adjustment: 物件販売感応度以外の追加決算修正・障害関連営業費用が参考営業利益に対して発生せず、Q1も訂正されないことを全シナリオの条件とする。追加費用が存在しないと確認したものではない。\n- h1_construction_anchor: 会社が計画通り進捗と説明する建設設備業の中間期参考値を採用。個別工事の検収数量からの独立再構築ではない。\n- h1_elimination_anchor: 会社の中間期参考値『△180億円程度』を固定する条件。セグメント内外の消去を独自に重複させない。\n- h1_hotel_anchor: 客室単価上昇と当四半期の軽微な障害影響を含む中間期参考値『300億円程度』を固定する条件。\n- h1_property_anchor: 物件販売の下期への期ずれを含む中間期参考値『530億円程度』を中心値に採用。\n- h1_service_anchor: 百貨店の弱含み、ストアの増収、決済停止影響を包含する中間期参考値を採用。\n- h1_transport_anchor: 会社の中間期参考値『690億円程度』を、確定時に変更されない条件で計算上の中心値に採用する。鉄道輸送量増とバス収入を既に含む。\n- property_op_anchor: 中間期の不動産販売業参考利益を感応度用採算に採用。案件別限界利益率として確認された値ではない。\n- property_sales_anchor: 中間期の不動産販売業参考値を、局所的な売上変動に対する採算の近似に使用。\n- property_sales_step: 販売の期ずれが開示され、販売収益参考値も概数であるため、その表示値31000の約1.6%に相当する小幅な認識額差を局所感応度として設定。実在する追加案件、訂正予定額、統計的な予測区間を意味しない。\n- ホテル予約停止の翌四半期影響を対象四半期へ移していない。\n- 不動産販売の感応度は外部売上を想定し、内部消去額と案件構成以外の費用を固定した。\n- 追加の障害関連営業費用が参考値に包含される範囲は未確認。ゼロ追加は条件であり確定事実ではない。\n\n## 根拠・保存記録\n- S01 [2027年3月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/90080/140120260805510137.pdf) / 公表 2026-08-06 / retrieved / SHA-256 `32c184e0e3d6325b0815bae62f8fddb647c9ef0e56f0e0139e8056f9f9a04c1f`\n- S02 [2026年度第1四半期 決算補足説明資料](https://www2.jpx.co.jp/disc/90080/140120260805510257.pdf) / 公表 2026-08-06 / retrieved / SHA-256 `df66501f822bba717515195b6dd4f0af083bfaeeeb810dc1866cc9b2a5b07df6`\n- S03 [2026年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/90080/140120251107591337.pdf) / 公表 2025-11-10 / retrieved / SHA-256 `fb0514b5d8d97abc968e84233b58000f6eed461741752c6968126acc6c8085cd`\n- S04 [2026年3月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/90080/140120250730524083.pdf) / 公表 2025-08-06 / retrieved / SHA-256 `5a0018e97e8e409c8fafbfd6279e4ab570a49d61ec75aba9da0b82b08c513df8`\n- S05 [2026年3月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/90080/140120260512526310.pdf) / 公表 2026-05-13 / retrieved / SHA-256 `c60b3fa513c2da18883251f52a1221b8c9c12f3320579d632620f111d0a53a8b`\n- S06 [2025年度 決算補足説明資料（2026年度業績予想・セグメント計画を含む）](https://www2.jpx.co.jp/disc/90080/140120260512526463.pdf) / 公表 2026-05-13 / retrieved / SHA-256 `44359f76957ffe49af3ac69aa7b3db01a14c01c0b496f078cf4fbc371ef9e264`\n- S07 [2025年度決算説明会資料](https://contents.xj-storage.jp/xcontents/AS01800/a8ea3709/319f/497b/9a42/6f7bdca4c3b6/20260518151247212s.pdf) / 公表 2026-05-18 / retrieved / SHA-256 `ba3a827053a80dda4d74de6d4133d6374bb298e495c136edfc2bd5de9fa506a6`\n- S08 [2027年3月期第2四半期決算の発表延期に伴う事業の進捗状況に関するお知らせ（2026年度第2四半期事業進捗説明資料添付）](https://www.release.tdnet.info/inbs/140120261116581333.pdf) / 公表 2026-11-17T10:30:00+09:00 / retrieved / SHA-256 `87b5452a9855fcbc9df7a7c2296fb75620a077169e149109fe2866ceb72e13fc`\n- S09 [2027年3月期半期報告書の提出期限延長に係る承認及び2027年3月期第2四半期（中間期）決算発表日のお知らせ](https://www.release.tdnet.info/inbs/140120261110572262.pdf) / 公表 2026-11-11T15:30:00+09:00 / retrieved / SHA-256 `bc75b6a5f7bea05aef34374907e7dd9a068da8d0c7572f5bff8b8998b63ebdac`\n- S10 [2027年3月期第2四半期（中間期）決算発表の延期に関するお知らせ](https://www.release.tdnet.info/inbs/140120261027557227.pdf) / 公表 2026-10-30T15:30:00+09:00 / retrieved / SHA-256 `43bf667c6f7e31ab72843044e711234f472ada607355705d00de322e6fd70032`\n- S11 [剰余金の配当（中間配当）に関するお知らせ](https://www.release.tdnet.info/inbs/140120261109568531.pdf) / 公表 2026-11-10T15:30:00+09:00 / retrieved / SHA-256 `b4b9fd2f290d61e3f9923bed9b8cb8f7233e3e9d7cc944538fe49556ebdb4217`\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "9008",
+    "company_name": "京王電鉄株式会社",
+    "announcement_date": "2026-12-04",
+    "target_period": "2027-03-31期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-03-31",
+      "quarter": 2,
+      "start": "2026-07-01",
+      "end": "2026-09-30",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 110339.0,
+        "operating_profit": 11763.548387096775,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 110839.0,
+        "operating_profit": 11820.0,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 111339.0,
+        "operating_profit": 11876.451612903225,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -12322.0,
+          "rate": -0.10004790477505054,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -4360.0,
+          "rate": -0.2694684796044499,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -6111.0,
+          "rate": -0.05225309961522018,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -2996.0,
+          "rate": -0.20221382289416848,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_h1_rev": 230688.0,
+      "py_h1_op": 31485.0,
+      "py_q1_rev": 113738.0,
+      "py_q1_op": 16669.0,
+      "cy_q1_rev": 123161.0,
+      "cy_q1_op": 16180.0,
+      "q1_transport_rev": 34512.0,
+      "q1_property_rev": 33358.0,
+      "q1_hotel_rev": 16012.0,
+      "q1_construction_rev": 12220.0,
+      "q1_service_rev": 34747.0,
+      "q1_elimination_rev": -7689.0,
+      "fy_rev_guidance": 504000.0,
+      "fy_op_guidance": 51000.0,
+      "fy_ordinary_guidance": 47800.0,
+      "fy_net_guidance": 43000.0,
+      "h1_rev_reference": 234000.0,
+      "h1_op_reference": 28000.0,
+      "h1_transport_anchor": 69000.0,
+      "h1_property_anchor": 53000.0,
+      "h1_hotel_anchor": 30000.0,
+      "h1_construction_anchor": 30000.0,
+      "h1_service_anchor": 70000.0,
+      "h1_elimination_anchor": -18000.0,
+      "property_sales_anchor": 31000.0,
+      "property_op_anchor": 3500.0,
+      "property_sales_step": 500.0,
+      "additional_op_adjustment": 0.0,
+      "py_q2_rev": 116950.0,
+      "py_q2_op": 14816.0,
+      "reference_q2_rev": 110839.0,
+      "reference_q2_op": 11820.0,
+      "transport_rev": 34488.0,
+      "property_rev": 19642.0,
+      "hotel_rev": 13988.0,
+      "construction_rev": 17780.0,
+      "service_rev": 35253.0,
+      "elimination_rev": -10311.0,
+      "segment_sum_rev": 110840.0,
+      "presentation_reconciliation": -1.0,
+      "property_margin": 0.11290322580645161,
+      "property_op_step": 56.45161290322581,
+      "bear_property_rev": 19142.0,
+      "bull_property_rev": 20142.0,
+      "base_revenue": 110839.0,
+      "base_op": 11820.0,
+      "bear_revenue": 110339.0,
+      "bear_op": 11763.548387096775,
+      "bull_revenue": 111339.0,
+      "bull_op": 11876.451612903225,
+      "base_yoy_rev_residual": -6111.0,
+      "base_qoq_rev_residual": -12322.0,
+      "base_yoy_op_residual": -2996.0,
+      "base_qoq_op_residual": -4360.0,
+      "negative_sales_step": -500.0,
+      "negative_op_step": -56.45161290322581
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-03-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF page 1～2、7、9",
+        "period_end": "2025-06-30",
+        "period_start": "2025-04-01",
+        "method": "1Q累計",
+        "revenue": 113738.0,
+        "operating_profit": 16669.0,
+        "ordinary_profit": 16807.0,
+        "net_profit": 11976.0
+      },
+      {
+        "fiscal_year_end": "2026-03-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "PDF page 1～2、7、9",
+        "period_end": "2025-09-30",
+        "period_start": "2025-07-01",
+        "method": "累計−直前累計",
+        "revenue": 116950.0,
+        "operating_profit": 14816.0,
+        "ordinary_profit": 13882.0,
+        "net_profit": 9746.0
+      },
+      {
+        "fiscal_year_end": "2027-03-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1～2、7、9",
+        "period_end": "2026-06-30",
+        "period_start": "2026-04-01",
+        "method": "1Q累計",
+        "revenue": 123161.0,
+        "operating_profit": 16180.0,
+        "ordinary_profit": 16162.0,
+        "net_profit": 11710.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q2_rev",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "独自仮定の不動産販売認識減",
+            "formula": "negative_sales_step",
+            "reason": "会社参考値からの追加的な局所感応度。既開示の期ずれとは別の仮定。",
+            "amount": -500.0
+          }
+        ],
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "会社参考値中心と前年同Qとの差。交通、物件構成、ホテル、建設、生活サービス、消去の影響を含むが、数量・単価・費用別に金額分解していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q1_rev",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "独自仮定の不動産販売認識減",
+            "formula": "negative_sales_step",
+            "reason": "外部販売額の局所感応度。",
+            "amount": -500.0
+          }
+        ],
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "会社参考値中心とQ1との差。Q1大型物件売却の反動や季節性を含むが、要因別金額は未確定。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q2_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "不動産販売認識減の採算影響",
+            "formula": "negative_op_step",
+            "reason": "売上感応度に中間期参考採算を適用。",
+            "amount": -56.45161290322581
+          }
+        ],
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "参考値中心の前年差は費用・案件構成の金額別裏付けが不足。計画比燃料費増を前年差として流用していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q1_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "不動産販売認識減の採算影響",
+            "formula": "negative_op_step",
+            "reason": "売上感応度に中間期参考採算を適用。",
+            "amount": -56.45161290322581
+          }
+        ],
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "参考値中心の前Q差。物件構成、ホテル季節性、費用認識等の分離ができないため残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q2_rev",
+        "forecast_ref": "base_revenue",
+        "components": [],
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "会社参考値差引きによる総差額を明示。セグメント表示額は構成の確認に用い、数量・価格等の因果寄与としては未分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q1_rev",
+        "forecast_ref": "base_revenue",
+        "components": [],
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "Q1大型物件売却の反動、季節性、検収時期等の総差額。個別寄与額は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q2_op",
+        "forecast_ref": "base_op",
+        "components": [],
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "利益参考値からの差引きであり、前年からの費用・採算変化の完全な積上げではない。未説明額を全額残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q1_op",
+        "forecast_ref": "base_op",
+        "components": [],
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "物件採算、宿泊季節性、償却・人件費・動力費等の四半期差を金額分解できないため全額残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q2_rev",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "独自仮定の不動産販売認識増",
+            "formula": "property_sales_step",
+            "reason": "会社参考値からの外部販売認識額の局所感応度。追加案件の存在を意味しない。",
+            "amount": 500.0
+          }
+        ],
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "会社参考値中心と前年同Qとの差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q1_rev",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "独自仮定の不動産販売認識増",
+            "formula": "property_sales_step",
+            "reason": "外部販売認識額の局所感応度。",
+            "amount": 500.0
+          }
+        ],
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "会社参考値中心とQ1との差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q2_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "不動産販売認識増の採算影響",
+            "formula": "property_op_step",
+            "reason": "売上感応度に中間期参考採算を適用。",
+            "amount": 56.45161290322581
+          }
+        ],
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "参考値中心の前年差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q1_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "不動産販売認識増の採算影響",
+            "formula": "property_op_step",
+            "reason": "売上感応度に中間期参考採算を適用。",
+            "amount": 56.45161290322581
+          }
+        ],
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "参考値中心の前Q差は、弱気・中心と共通の未分解残差。"
+      }
+    ],
+    "issues": [
+      "S08には『経理部調整未』『グルカン記載メモ』等の作業メモらしき文字列、試算注記、別会社名の混入がある。保存本文の明示された参考値を限定的に採用し、内部メモの数値は予測根拠に採用していない。PDF画像との照合は実施しておらず、これらの表示状態は原本未確認。",
+      "coverageのreviewedは提示された保存本文の確認を意味し、外部検索、独立レビュー、原本画像照合又は決算確定を意味しない。",
+      "不動産の物件別価格・持分・引渡実績・原価、ホテル全施設の販売可能室数、建設案件別検収・採算、Q2費用内訳は保存本文では確認できない。企業が他の媒体でも非開示としているとは断定しない。",
+      "会社参考営業利益の連結総額とセグメント・連結修正の概数合計は一致しない。『程度』の値から正確な内訳を復元せず、利益中心値には連結総額を優先した。差を丸め差と断定していない。",
+      "全documentsはtruncated=falseで、提示範囲の短縮表示はない。discoveryに残るS07本文未取得の記述に対し、今回のdocumentsには本文があるため、その保存本文を確認対象とした。外部原本の再取得、質疑応答資料、独立月次資料は未確認。",
+      "前年Q1・中間期は提示短信で会計方針変更・修正再表示なしを確認して差し引いた。取得原価配分確定による別版の提示はないが、今後の調査による過年度・Q1訂正の有無は未確認。",
+      "独自の弱気・強気は不動産販売額の局所感応度であり、最終決算の全不確実性を覆う上下限ではない。調査修正額と障害費用について根拠ある範囲を設定できない。",
+      "経常利益・純利益の対象単独四半期に必要な営業外損益、特別損益、実効税率の根拠が不足。通期予想からの機械的配分は行っていない。"
+    ],
+    "schedule_warnings": [],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -12822.0,
+            "rate": -0.10410763147424916,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -4416.451612903225,
+            "rate": -0.2729574544439571,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -6611.0,
+            "rate": -0.056528430953398885,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -3052.4516129032254,
+            "rate": -0.20602400195081164,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -12322.0,
+            "rate": -0.10004790477505054,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -4360.0,
+            "rate": -0.2694684796044499,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -6111.0,
+            "rate": -0.05225309961522018,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -2996.0,
+            "rate": -0.20221382289416848,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -11822.0,
+            "rate": -0.09598817807585193,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -4303.548387096775,
+            "rate": -0.2659795047649428,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -5611.0,
+            "rate": -0.04797776827704147,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -2939.5483870967746,
+            "rate": -0.1984036438375253,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -6611.0,
+        "explained_sum": -500.0,
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "会社参考値中心と前年同Qとの差。交通、物件構成、ホテル、建設、生活サービス、消去の影響を含むが、数量・単価・費用別に金額分解していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -12822.0,
+        "explained_sum": -500.0,
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "会社参考値中心とQ1との差。Q1大型物件売却の反動や季節性を含むが、要因別金額は未確定。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -3052.4516129032254,
+        "explained_sum": -56.45161290322581,
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "参考値中心の前年差は費用・案件構成の金額別裏付けが不足。計画比燃料費増を前年差として流用していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -4416.451612903225,
+        "explained_sum": -56.45161290322581,
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "参考値中心の前Q差。物件構成、ホテル季節性、費用認識等の分離ができないため残差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -6111.0,
+        "explained_sum": 0,
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "会社参考値差引きによる総差額を明示。セグメント表示額は構成の確認に用い、数量・価格等の因果寄与としては未分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -12322.0,
+        "explained_sum": 0,
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "Q1大型物件売却の反動、季節性、検収時期等の総差額。個別寄与額は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -2996.0,
+        "explained_sum": 0,
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "利益参考値からの差引きであり、前年からの費用・採算変化の完全な積上げではない。未説明額を全額残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -4360.0,
+        "explained_sum": 0,
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "物件採算、宿泊季節性、償却・人件費・動力費等の四半期差を金額分解できないため全額残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -5611.0,
+        "explained_sum": 500.0,
+        "residual": -6111.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "会社参考値中心と前年同Qとの差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -11822.0,
+        "explained_sum": 500.0,
+        "residual": -12322.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "会社参考値中心とQ1との差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -2939.5483870967746,
+        "explained_sum": 56.45161290322581,
+        "residual": -2996.0,
+        "residual_type": "economic_unexplained",
+        "difference": -4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "参考値中心の前年差は、弱気・中心と共通の未分解残差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -4303.548387096775,
+        "explained_sum": 56.45161290322581,
+        "residual": -4360.0,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "参考値中心の前Q差は、弱気・中心と共通の未分解残差。"
+      }
+    ],
+    "conditions": [
+      "S08は調査・期中レビューによって修正され得る参考数値。全シナリオでQ1が訂正されないことを仮定した。",
+      "additional_op_adjustment: 物件販売感応度以外の追加決算修正・障害関連営業費用が参考営業利益に対して発生せず、Q1も訂正されないことを全シナリオの条件とする。追加費用が存在しないと確認したものではない。",
+      "h1_construction_anchor: 会社が計画通り進捗と説明する建設設備業の中間期参考値を採用。個別工事の検収数量からの独立再構築ではない。",
+      "h1_elimination_anchor: 会社の中間期参考値『△180億円程度』を固定する条件。セグメント内外の消去を独自に重複させない。",
+      "h1_hotel_anchor: 客室単価上昇と当四半期の軽微な障害影響を含む中間期参考値『300億円程度』を固定する条件。",
+      "h1_property_anchor: 物件販売の下期への期ずれを含む中間期参考値『530億円程度』を中心値に採用。",
+      "h1_service_anchor: 百貨店の弱含み、ストアの増収、決済停止影響を包含する中間期参考値を採用。",
+      "h1_transport_anchor: 会社の中間期参考値『690億円程度』を、確定時に変更されない条件で計算上の中心値に採用する。鉄道輸送量増とバス収入を既に含む。",
+      "property_op_anchor: 中間期の不動産販売業参考利益を感応度用採算に採用。案件別限界利益率として確認された値ではない。",
+      "property_sales_anchor: 中間期の不動産販売業参考値を、局所的な売上変動に対する採算の近似に使用。",
+      "property_sales_step: 販売の期ずれが開示され、販売収益参考値も概数であるため、その表示値31000の約1.6%に相当する小幅な認識額差を局所感応度として設定。実在する追加案件、訂正予定額、統計的な予測区間を意味しない。",
+      "ホテル予約停止の翌四半期影響を対象四半期へ移していない。",
+      "不動産販売の感応度は外部売上を想定し、内部消去額と案件構成以外の費用を固定した。",
+      "追加の障害関連営業費用が参考値に包含される範囲は未確認。ゼロ追加は条件であり確定事実ではない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年3月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120260805510137.pdf",
+        "published_at": "2026-08-06",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120260805510137.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S01.txt",
+        "sha256": "32c184e0e3d6325b0815bae62f8fddb647c9ef0e56f0e0139e8056f9f9a04c1f",
+        "text_sha256": "bf47e4812701321f192ca234a580fbbdbaba72a52c9e1b54c75784a46c7f14ce",
+        "retrieved_at": "2026-11-18T15:38:12+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 6998,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年度第1四半期 決算補足説明資料",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120260805510257.pdf",
+        "published_at": "2026-08-06",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120260805510257.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S02.txt",
+        "sha256": "df66501f822bba717515195b6dd4f0af083bfaeeeb810dc1866cc9b2a5b07df6",
+        "text_sha256": "15343d419b094e2ea3b441dcc6bf9fd3bd7596e3978cd787b0e5e2dd59bcd6c4",
+        "retrieved_at": "2026-11-18T15:38:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13466,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120251107591337.pdf",
+        "published_at": "2025-11-10",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120251107591337.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S03.txt",
+        "sha256": "fb0514b5d8d97abc968e84233b58000f6eed461741752c6968126acc6c8085cd",
+        "text_sha256": "ed470cfe1a277da5024e246439d0368e1f0e52de27a33f493d086f9e03af848a",
+        "retrieved_at": "2026-11-18T15:38:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8182,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年3月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120250730524083.pdf",
+        "published_at": "2025-08-06",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120250730524083.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S04.txt",
+        "sha256": "5a0018e97e8e409c8fafbfd6279e4ab570a49d61ec75aba9da0b82b08c513df8",
+        "text_sha256": "45f4757740537ce96c76dd6101ed30b4fcaef1c8612b0bc4101080f068e2c859",
+        "retrieved_at": "2026-11-18T15:38:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7476,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年3月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120260512526310.pdf",
+        "published_at": "2026-05-13",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120260512526310.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S05.txt",
+        "sha256": "c60b3fa513c2da18883251f52a1221b8c9c12f3320579d632620f111d0a53a8b",
+        "text_sha256": "5784fee1875c54b903436e04a3a7e83aceebc19a4d48532549bb8b7dfe229e3d",
+        "retrieved_at": "2026-11-18T15:38:17+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 19871,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2025年度 決算補足説明資料（2026年度業績予想・セグメント計画を含む）",
+        "url": "https://www2.jpx.co.jp/disc/90080/140120260512526463.pdf",
+        "published_at": "2026-05-13",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/90080/140120260512526463.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S06.txt",
+        "sha256": "44359f76957ffe49af3ac69aa7b3db01a14c01c0b496f078cf4fbc371ef9e264",
+        "text_sha256": "8e3834e5dfca77cb43fb18ed7b52304af8034193ae6dbce80c153bf56e30ce31",
+        "retrieved_at": "2026-11-18T15:38:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 15457,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2025年度決算説明会資料",
+        "url": "https://contents.xj-storage.jp/xcontents/AS01800/a8ea3709/319f/497b/9a42/6f7bdca4c3b6/20260518151247212s.pdf",
+        "published_at": "2026-05-18",
+        "category": "presentation",
+        "final_url": "https://contents.xj-storage.jp/xcontents/AS01800/a8ea3709/319f/497b/9a42/6f7bdca4c3b6/20260518151247212s.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S07.txt",
+        "sha256": "ba3a827053a80dda4d74de6d4133d6374bb298e495c136edfc2bd5de9fa506a6",
+        "text_sha256": "b48317471a3b2b6095d330ed159e91865998b21f532afd195808b4df7eec382c",
+        "retrieved_at": "2026-11-18T15:38:20+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 14472,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2027年3月期第2四半期決算の発表延期に伴う事業の進捗状況に関するお知らせ（2026年度第2四半期事業進捗説明資料添付）",
+        "url": "https://www.release.tdnet.info/inbs/140120261116581333.pdf",
+        "published_at": "2026-11-17T10:30:00+09:00",
+        "category": "other",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261116581333.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S08.txt",
+        "sha256": "87b5452a9855fcbc9df7a7c2296fb75620a077169e149109fe2866ceb72e13fc",
+        "text_sha256": "1dc947770a3cd7db31195d7f536340b8850b9aae3dd3f57816c85b155f1585c4",
+        "retrieved_at": "2026-11-18T15:38:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10980,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2027年3月期半期報告書の提出期限延長に係る承認及び2027年3月期第2四半期（中間期）決算発表日のお知らせ",
+        "url": "https://www.release.tdnet.info/inbs/140120261110572262.pdf",
+        "published_at": "2026-11-11T15:30:00+09:00",
+        "category": "schedule",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261110572262.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S09.txt",
+        "sha256": "bc75b6a5f7bea05aef34374907e7dd9a068da8d0c7572f5bff8b8998b63ebdac",
+        "text_sha256": "0ca6a3d9c66c69c508298f0b0d35bab6e31a4d6b7f57757f9a3822f113e3a865",
+        "retrieved_at": "2026-11-18T15:38:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 738,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2027年3月期第2四半期（中間期）決算発表の延期に関するお知らせ",
+        "url": "https://www.release.tdnet.info/inbs/140120261027557227.pdf",
+        "published_at": "2026-10-30T15:30:00+09:00",
+        "category": "other",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261027557227.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S10.txt",
+        "sha256": "43bf667c6f7e31ab72843044e711234f472ada607355705d00de322e6fd70032",
+        "text_sha256": "a268658b1c24c61e892daf8d2896e06bf64d1cd8ce6a9348f3a45564158429b6",
+        "retrieved_at": "2026-11-18T15:38:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 662,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "剰余金の配当（中間配当）に関するお知らせ",
+        "url": "https://www.release.tdnet.info/inbs/140120261109568531.pdf",
+        "published_at": "2026-11-10T15:30:00+09:00",
+        "category": "guidance",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261109568531.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261204\\companies\\9008\\sources\\S11.txt",
+        "sha256": "b4b9fd2f290d61e3f9923bed9b8cb8f7233e3e9d7cc944538fe49556ebdb4217",
+        "text_sha256": "86c784076c96961327a5fea699b1dbb6658f0782b762a31981ca9cd19916bdaf",
+        "retrieved_at": "2026-11-18T15:38:22+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1077,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "9008",
+      "announcement_date": "2026-12-04",
+      "period": {
+        "fiscal_year_end": "2027-03-31",
+        "quarter": 2,
+        "start": "2026-07-01",
+        "end": "2026-09-30",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_h1_rev",
+          "value": 230688,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 31485,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "py_q1_rev",
+          "value": 113738,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "py_q1_op",
+          "value": 16669,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "cy_q1_rev",
+          "value": 123161,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "cy_q1_op",
+          "value": 16180,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、7"
+        },
+        {
+          "id": "q1_transport_rev",
+          "value": 34512,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_property_rev",
+          "value": 33358,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_hotel_rev",
+          "value": 16012,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_construction_rev",
+          "value": 12220,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_service_rev",
+          "value": 34747,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_elimination_rev",
+          "value": -7689,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "fy_rev_guidance",
+          "value": 504000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "fy_op_guidance",
+          "value": 51000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "value": 47800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "fy_net_guidance",
+          "value": 43000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "h1_rev_reference",
+          "value": 234000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、営業収益・第2四半期参考値",
+          "status": "期後公表の未確定参考値。正式な確定実績でも通期予想修正でもなく、company_guidance区分に参考見込みとして格納。原文は『程度』。"
+        },
+        {
+          "id": "h1_op_reference",
+          "value": 28000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、営業利益・第2四半期参考値",
+          "status": "期後公表の未確定参考値。正式な確定実績でも通期予想修正でもなく、company_guidance区分に参考見込みとして格納。原文は『程度』。"
+        },
+        {
+          "id": "h1_transport_anchor",
+          "value": 69000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、交通業営業収益参考値",
+          "rationale": "会社の中間期参考値『690億円程度』を、確定時に変更されない条件で計算上の中心値に採用する。鉄道輸送量増とバス収入を既に含む。",
+          "sensitivity": "累計営業収益の修正は、Q1が変更されない限り同額だけQ2単独に反映。修正幅の確率的範囲は設定しない。"
+        },
+        {
+          "id": "h1_property_anchor",
+          "value": 53000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 6、11",
+          "rationale": "物件販売の下期への期ずれを含む中間期参考値『530億円程度』を中心値に採用。",
+          "sensitivity": "不動産販売の認識額について中心から上下500の局所感応度を別入力で設定。既に示された下期期ずれを再度控除しない。"
+        },
+        {
+          "id": "h1_hotel_anchor",
+          "value": 30000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 7、11、15～16",
+          "rationale": "客室単価上昇と当四半期の軽微な障害影響を含む中間期参考値『300億円程度』を固定する条件。",
+          "sensitivity": "累計参考値の修正はQ2に同額反映する。10～12月の予約停止影響は対象期間外のため追加控除しない。"
+        },
+        {
+          "id": "h1_construction_anchor",
+          "value": 30000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 7、11",
+          "rationale": "会社が計画通り進捗と説明する建設設備業の中間期参考値を採用。個別工事の検収数量からの独立再構築ではない。",
+          "sensitivity": "検収・原価認識に伴う参考値修正は同額だけ対象単独売上に反映。案件別の幅は未設定。"
+        },
+        {
+          "id": "h1_service_anchor",
+          "value": 70000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 7、11、17",
+          "rationale": "百貨店の弱含み、ストアの増収、決済停止影響を包含する中間期参考値を採用。",
+          "sensitivity": "累計参考値が修正されれば同額だけQ2売上が変動。決済停止影響の追加計上はしない。"
+        },
+        {
+          "id": "h1_elimination_anchor",
+          "value": -18000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、営業収益の連結修正",
+          "rationale": "会社の中間期参考値『△180億円程度』を固定する条件。セグメント内外の消去を独自に重複させない。",
+          "sensitivity": "消去額が100増加すると連結営業収益は100減少する。物件販売感応度は外部販売を想定し、この消去額を変えない。"
+        },
+        {
+          "id": "property_sales_anchor",
+          "value": 31000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、不動産販売業営業収益参考値",
+          "rationale": "中間期の不動産販売業参考値を、局所的な売上変動に対する採算の近似に使用。",
+          "sensitivity": "利益参考値を固定すると、分母の販売収益が増えるほど感応度用利益率は低下する。"
+        },
+        {
+          "id": "property_op_anchor",
+          "value": 3500,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 11、不動産販売業営業利益参考値",
+          "rationale": "中間期の不動産販売業参考利益を感応度用採算に採用。案件別限界利益率として確認された値ではない。",
+          "sensitivity": "感応度用利益率が1ポイント変わると、売上500の変動に対する営業利益感応度は5変化する。"
+        },
+        {
+          "id": "property_sales_step",
+          "value": 500,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 6、11",
+          "rationale": "販売の期ずれが開示され、販売収益参考値も概数であるため、その表示値31000の約1.6%に相当する小幅な認識額差を局所感応度として設定。実在する追加案件、訂正予定額、統計的な予測区間を意味しない。",
+          "sensitivity": "弱気で売上500減、強気で500増。利益は不動産販売業参考採算を乗じて変化させる。",
+          "material": true
+        },
+        {
+          "id": "additional_op_adjustment",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、6～9、11",
+          "rationale": "物件販売感応度以外の追加決算修正・障害関連営業費用が参考営業利益に対して発生せず、Q1も訂正されないことを全シナリオの条件とする。追加費用が存在しないと確認したものではない。",
+          "sensitivity": "未包含の営業費用が100追加される場合、各シナリオの営業利益は100低下。根拠のある上限は設定できない。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_q2_rev",
+          "formula": "py_h1_rev-py_q1_rev"
+        },
+        {
+          "id": "py_q2_op",
+          "formula": "py_h1_op-py_q1_op"
+        },
+        {
+          "id": "reference_q2_rev",
+          "formula": "h1_rev_reference-cy_q1_rev"
+        },
+        {
+          "id": "reference_q2_op",
+          "formula": "h1_op_reference-cy_q1_op"
+        },
+        {
+          "id": "transport_rev",
+          "formula": "h1_transport_anchor-q1_transport_rev"
+        },
+        {
+          "id": "property_rev",
+          "formula": "h1_property_anchor-q1_property_rev"
+        },
+        {
+          "id": "hotel_rev",
+          "formula": "h1_hotel_anchor-q1_hotel_rev"
+        },
+        {
+          "id": "construction_rev",
+          "formula": "h1_construction_anchor-q1_construction_rev"
+        },
+        {
+          "id": "service_rev",
+          "formula": "h1_service_anchor-q1_service_rev"
+        },
+        {
+          "id": "elimination_rev",
+          "formula": "h1_elimination_anchor-q1_elimination_rev"
+        },
+        {
+          "id": "segment_sum_rev",
+          "formula": "transport_rev+property_rev+hotel_rev+construction_rev+service_rev+elimination_rev"
+        },
+        {
+          "id": "presentation_reconciliation",
+          "formula": "reference_q2_rev-segment_sum_rev"
+        },
+        {
+          "id": "property_margin",
+          "formula": "property_op_anchor/property_sales_anchor"
+        },
+        {
+          "id": "property_op_step",
+          "formula": "property_sales_step*property_margin"
+        },
+        {
+          "id": "bear_property_rev",
+          "formula": "property_rev-property_sales_step"
+        },
+        {
+          "id": "bull_property_rev",
+          "formula": "property_rev+property_sales_step"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "segment_sum_rev+presentation_reconciliation"
+        },
+        {
+          "id": "base_op",
+          "formula": "reference_q2_op+additional_op_adjustment"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "base_revenue-property_sales_step"
+        },
+        {
+          "id": "bear_op",
+          "formula": "base_op-property_op_step"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "base_revenue+property_sales_step"
+        },
+        {
+          "id": "bull_op",
+          "formula": "base_op+property_op_step"
+        },
+        {
+          "id": "base_yoy_rev_residual",
+          "formula": "base_revenue-py_q2_rev"
+        },
+        {
+          "id": "base_qoq_rev_residual",
+          "formula": "base_revenue-cy_q1_rev"
+        },
+        {
+          "id": "base_yoy_op_residual",
+          "formula": "base_op-py_q2_op"
+        },
+        {
+          "id": "base_qoq_op_residual",
+          "formula": "base_op-cy_q1_op"
+        },
+        {
+          "id": "negative_sales_step",
+          "formula": "property_sales_step-property_sales_step-property_sales_step"
+        },
+        {
+          "id": "negative_op_step",
+          "formula": "property_op_step-property_op_step-property_op_step"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "交通業",
+              "revenue": "transport_rev"
+            },
+            {
+              "name": "不動産業",
+              "revenue": "bear_property_rev"
+            },
+            {
+              "name": "ホテル業",
+              "revenue": "hotel_rev"
+            },
+            {
+              "name": "建設設備業",
+              "revenue": "construction_rev"
+            },
+            {
+              "name": "生活サービス業",
+              "revenue": "service_rev"
+            },
+            {
+              "name": "連結消去",
+              "revenue": "elimination_rev"
+            },
+            {
+              "name": "連結表示値との照合差",
+              "revenue": "presentation_reconciliation"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "交通業",
+              "revenue": "transport_rev"
+            },
+            {
+              "name": "不動産業",
+              "revenue": "property_rev"
+            },
+            {
+              "name": "ホテル業",
+              "revenue": "hotel_rev"
+            },
+            {
+              "name": "建設設備業",
+              "revenue": "construction_rev"
+            },
+            {
+              "name": "生活サービス業",
+              "revenue": "service_rev"
+            },
+            {
+              "name": "連結消去",
+              "revenue": "elimination_rev"
+            },
+            {
+              "name": "連結表示値との照合差",
+              "revenue": "presentation_reconciliation"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "交通業",
+              "revenue": "transport_rev"
+            },
+            {
+              "name": "不動産業",
+              "revenue": "bull_property_rev"
+            },
+            {
+              "name": "ホテル業",
+              "revenue": "hotel_rev"
+            },
+            {
+              "name": "建設設備業",
+              "revenue": "construction_rev"
+            },
+            {
+              "name": "生活サービス業",
+              "revenue": "service_rev"
+            },
+            {
+              "name": "連結消去",
+              "revenue": "elimination_rev"
+            },
+            {
+              "name": "連結表示値との照合差",
+              "revenue": "presentation_reconciliation"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-03-31",
+          "quarter": 1,
+          "period_start": "2025-04-01",
+          "period_end": "2025-06-30",
+          "revenue": 113738,
+          "operating_profit": 16669,
+          "ordinary_profit": 16807,
+          "net_profit": 11976,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・2025年度開始の新セグメント区分・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1～2、7、9"
+        },
+        {
+          "fiscal_year_end": "2026-03-31",
+          "quarter": 2,
+          "period_start": "2025-04-01",
+          "period_end": "2025-09-30",
+          "revenue": 230688,
+          "operating_profit": 31485,
+          "ordinary_profit": 30689,
+          "net_profit": 21722,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・2025年度開始の新セグメント区分・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1～2、7、9"
+        },
+        {
+          "fiscal_year_end": "2027-03-31",
+          "quarter": 1,
+          "period_start": "2026-04-01",
+          "period_end": "2026-06-30",
+          "revenue": 123161,
+          "operating_profit": 16180,
+          "ordinary_profit": 16162,
+          "net_profit": 11710,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年8月6日公表版・新セグメント区分継続・当四半期の会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1～2、7、9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "guidance_fy_rev",
+          "metric": "revenue",
+          "value_ref": "fy_rev_guidance",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-06",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期業績予想・修正なし"
+        },
+        {
+          "id": "guidance_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "fy_op_guidance",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-06",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期業績予想・修正なし"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "fy_ordinary_guidance",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-06",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期業績予想・修正なし"
+        },
+        {
+          "id": "guidance_fy_net",
+          "metric": "net_profit",
+          "value_ref": "fy_net_guidance",
+          "period_start": "2026-04-01",
+          "period_end": "2027-03-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主帰属",
+          "unit": "百万円",
+          "published_at": "2026-08-06",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期業績予想・修正なし"
+        },
+        {
+          "id": "reference_h1_rev",
+          "metric": "revenue",
+          "value_ref": "h1_rev_reference",
+          "period_start": "2026-04-01",
+          "period_end": "2026-09-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-17T10:30:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、11の未確定参考値、S09 PDF page 1の対象半期期間",
+          "record_type": "期後公表参考見込み・正式業績予想修正ではない"
+        },
+        {
+          "id": "reference_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "h1_op_reference",
+          "period_start": "2026-04-01",
+          "period_end": "2026-09-30",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-17T10:30:00+09:00",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、11の未確定参考値、S09 PDF page 1の対象半期期間",
+          "record_type": "期後公表参考見込み・正式業績予想修正ではない"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "鉄道の輸送量・旅客構成とエネルギー費",
+          "mechanism": "定期・定期外の輸送量増が収入を支える一方、動力費・軽油費の計画超過が採算を圧迫する。これらは会社中間期参考値に包含済みとして扱う。",
+          "source_ids": [
+            "S02",
+            "S08"
+          ],
+          "locator": "S02 PDF page 7～10、S08 PDF page 6、9、12～14",
+          "calculation_ids": [
+            "transport_rev"
+          ],
+          "not_quantified_reason": "輸送KPIも未確定参考値。計画比エネルギー費超過を前年同期比・前四半期比の費用差に転用せず、独立した利益寄与額は未算定。"
+        },
+        {
+          "name": "不動産販売の引渡時期と案件構成",
+          "mechanism": "Q1の大型売却と、サンウッド等の販売の下期期ずれによってQ2単独収益が変わる。条件付きシナリオでは外部販売認識額を変え、参考採算で利益感応度を計算する。",
+          "source_ids": [
+            "S02",
+            "S07",
+            "S08"
+          ],
+          "locator": "S02 PDF page 11、S07 PDF page 26、S08 PDF page 6、11",
+          "calculation_ids": [
+            "property_rev",
+            "property_margin",
+            "property_op_step",
+            "bear_property_rev",
+            "bull_property_rev"
+          ],
+          "not_quantified_reason": "物件別販売価格、持分、引渡済戸数、原価及び限界利益率は保存本文で確認できない。"
+        },
+        {
+          "name": "ホテルの単価上昇・稼働率・改装",
+          "mechanism": "客室単価上昇が増収を支え、改装と人件費・減価償却費が採算に影響する。予約受付停止による大きな稼働低下の見立ては主に次四半期に属する。",
+          "source_ids": [
+            "S02",
+            "S07",
+            "S08"
+          ],
+          "locator": "S02 PDF page 12、S07 PDF page 11、S08 PDF page 7～8、15～16",
+          "calculation_ids": [
+            "hotel_rev"
+          ],
+          "not_quantified_reason": "全施設の販売可能室数・部門別収益構成・Q2費用が揃わず、室数×稼働率×単価でセグメント全体を独立再計算できない。"
+        },
+        {
+          "name": "建設検収と生活サービスの収益構成",
+          "mechanism": "建設設備業は完成工事の認識時期、生活サービス業は百貨店とストアの構成、資産除去債務関連費用が重要。",
+          "source_ids": [
+            "S02",
+            "S08"
+          ],
+          "locator": "S02 PDF page 15～17、S08 PDF page 7、11、17",
+          "calculation_ids": [
+            "construction_rev",
+            "service_rev"
+          ],
+          "not_quantified_reason": "Q2の案件別検収額、粗利率、資産除去債務に伴う費用の単独四半期額は保存本文で確認できない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_rev",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "独自仮定の不動産販売認識減",
+              "formula": "negative_sales_step",
+              "reason": "会社参考値からの追加的な局所感応度。既開示の期ずれとは別の仮定。"
+            }
+          ],
+          "residual": "base_yoy_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社参考値中心と前年同Qとの差。交通、物件構成、ホテル、建設、生活サービス、消去の影響を含むが、数量・単価・費用別に金額分解していない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q1_rev",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "独自仮定の不動産販売認識減",
+              "formula": "negative_sales_step",
+              "reason": "外部販売額の局所感応度。"
+            }
+          ],
+          "residual": "base_qoq_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社参考値中心とQ1との差。Q1大型物件売却の反動や季節性を含むが、要因別金額は未確定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "不動産販売認識減の採算影響",
+              "formula": "negative_op_step",
+              "reason": "売上感応度に中間期参考採算を適用。"
+            }
+          ],
+          "residual": "base_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "参考値中心の前年差は費用・案件構成の金額別裏付けが不足。計画比燃料費増を前年差として流用していない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q1_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "不動産販売認識減の採算影響",
+              "formula": "negative_op_step",
+              "reason": "売上感応度に中間期参考採算を適用。"
+            }
+          ],
+          "residual": "base_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "参考値中心の前Q差。物件構成、ホテル季節性、費用認識等の分離ができないため残差とする。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_rev",
+          "forecast_ref": "base_revenue",
+          "components": [],
+          "residual": "base_yoy_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社参考値差引きによる総差額を明示。セグメント表示額は構成の確認に用い、数量・価格等の因果寄与としては未分解。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q1_rev",
+          "forecast_ref": "base_revenue",
+          "components": [],
+          "residual": "base_qoq_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "Q1大型物件売却の反動、季節性、検収時期等の総差額。個別寄与額は未確認。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": "base_op",
+          "components": [],
+          "residual": "base_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "利益参考値からの差引きであり、前年からの費用・採算変化の完全な積上げではない。未説明額を全額残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q1_op",
+          "forecast_ref": "base_op",
+          "components": [],
+          "residual": "base_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "物件採算、宿泊季節性、償却・人件費・動力費等の四半期差を金額分解できないため全額残差。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q2_rev",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "独自仮定の不動産販売認識増",
+              "formula": "property_sales_step",
+              "reason": "会社参考値からの外部販売認識額の局所感応度。追加案件の存在を意味しない。"
+            }
+          ],
+          "residual": "base_yoy_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社参考値中心と前年同Qとの差は、弱気・中心と共通の未分解残差。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q1_rev",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "独自仮定の不動産販売認識増",
+              "formula": "property_sales_step",
+              "reason": "外部販売認識額の局所感応度。"
+            }
+          ],
+          "residual": "base_qoq_rev_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社参考値中心とQ1との差は、弱気・中心と共通の未分解残差。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q2_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "不動産販売認識増の採算影響",
+              "formula": "property_op_step",
+              "reason": "売上感応度に中間期参考採算を適用。"
+            }
+          ],
+          "residual": "base_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "参考値中心の前年差は、弱気・中心と共通の未分解残差。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q1_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "不動産販売認識増の採算影響",
+              "formula": "property_op_step",
+              "reason": "売上感応度に中間期参考採算を適用。"
+            }
+          ],
+          "residual": "base_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "参考値中心の前Q差は、弱気・中心と共通の未分解残差。"
+        }
+      ],
+      "company_guidance": "正式な通期会社予想はS01の据置予想として保存した。S08は対象中間期終了後の未確定参考見込みで、正式な通期予想修正でも確定実績でもない。参考中間期から公表Q1を控除した値をreference_q2_rev及びreference_q2_opとし、独自仮定と区別した。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスは見当たらない。",
+      "independent_forecast": "会社参考見込みを基礎とする条件付き予測。中心は中間期参考見込みからQ1を差し引き、セグメント収益構成と照合したもの。完全な独立積上げではない。独自部分は不動産販売認識額の局所感応度と、その参考採算による営業利益変化に限定する。3シナリオは追加決算修正がない条件での比較であり、障害調査を含む最終決算全体の予測区間ではない。経常・純利益は対象期間の営業外損益、特別損益及び税金を合理的に限定できずnull。",
+      "narrative": [
+        {
+          "heading": "対象単独四半期と条件付き中心",
+          "text": "対象は中間期累計ではなく、その後半の単独四半期。会社の期後参考見込みから差し引く営業収益は{{value:reference_q2_rev}}、営業利益は{{value:reference_q2_op}}。中心予測は営業収益{{value:base_revenue}}、営業利益{{value:base_op}}となるが、参考数値とQ1が修正されないことが前提である。",
+          "source_ids": [
+            "S01",
+            "S08",
+            "S09"
+          ],
+          "locator": "S01 PDF page 1、S08 PDF page 1、11、S09 PDF page 1"
+        },
+        {
+          "heading": "数量・単価と収益構成",
+          "text": "鉄道は定期・定期外とも輸送量増が支える一方、エネルギー費増が収益増を相殺する。不動産はQ1大型売却の反動と一部物件の下期期ずれが重要。ホテルは単価上昇が寄与するが、改装・償却・人件費と季節性を伴う。これらの既知効果は会社参考値に含むものとし、追加計上しない。",
+          "source_ids": [
+            "S02",
+            "S08"
+          ],
+          "locator": "S02 PDF page 7、11～12、S08 PDF page 6～9、12～16"
+        },
+        {
+          "heading": "独自感応度の範囲",
+          "text": "不動産販売認識額だけを小幅に変える条件では、弱気の営業収益は{{value:bear_revenue}}、営業利益は{{value:bear_op}}、強気の営業収益は{{value:bull_revenue}}、営業利益は{{value:bull_op}}。案件別原価を確認できないため、中間期参考採算を感応度に使用している。追加障害費用や調査による訂正額をこの幅でカバーできるとは判断していない。",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、6、11"
+        },
+        {
+          "heading": "比較の限界",
+          "text": "前年同Qの営業収益は{{value:py_q2_rev}}、営業利益は{{value:py_q2_op}}。中心の前年差は営業収益{{value:base_yoy_rev_residual}}、営業利益{{value:base_yoy_op_residual}}。要因別の金額裏付けが不足するためブリッジには経済的未説明残差として残した。セグメント収益合計と連結表示値の照合差{{value:presentation_reconciliation}}も明示し、営業上の要因とは解釈しない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S08"
+          ],
+          "locator": "S01 PDF page 9、S03・S04 PDF page 1、S08 PDF page 11"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "reviewed",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "reviewed",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "S08は調査・期中レビューによって修正され得る参考数値。全シナリオでQ1が訂正されないことを仮定した。",
+        "不動産販売の感応度は外部売上を想定し、内部消去額と案件構成以外の費用を固定した。",
+        "追加の障害関連営業費用が参考値に包含される範囲は未確認。ゼロ追加は条件であり確定事実ではない。",
+        "ホテル予約停止の翌四半期影響を対象四半期へ移していない。"
+      ],
+      "material_unresolved": [
+        "S08には『経理部調整未』『グルカン記載メモ』等の作業メモらしき文字列、試算注記、別会社名の混入がある。保存本文の明示された参考値を限定的に採用し、内部メモの数値は予測根拠に採用していない。PDF画像との照合は実施しておらず、これらの表示状態は原本未確認。",
+        "会社参考営業利益の連結総額とセグメント・連結修正の概数合計は一致しない。『程度』の値から正確な内訳を復元せず、利益中心値には連結総額を優先した。差を丸め差と断定していない。",
+        "独自の弱気・強気は不動産販売額の局所感応度であり、最終決算の全不確実性を覆う上下限ではない。調査修正額と障害費用について根拠ある範囲を設定できない。",
+        "不動産の物件別価格・持分・引渡実績・原価、ホテル全施設の販売可能室数、建設案件別検収・採算、Q2費用内訳は保存本文では確認できない。企業が他の媒体でも非開示としているとは断定しない。",
+        "経常利益・純利益の対象単独四半期に必要な営業外損益、特別損益、実効税率の根拠が不足。通期予想からの機械的配分は行っていない。",
+        "前年Q1・中間期は提示短信で会計方針変更・修正再表示なしを確認して差し引いた。取得原価配分確定による別版の提示はないが、今後の調査による過年度・Q1訂正の有無は未確認。",
+        "全documentsはtruncated=falseで、提示範囲の短縮表示はない。discoveryに残るS07本文未取得の記述に対し、今回のdocumentsには本文があるため、その保存本文を確認対象とした。外部原本の再取得、質疑応答資料、独立月次資料は未確認。",
+        "coverageのreviewedは提示された保存本文の確認を意味し、外部検索、独立レビュー、原本画像照合又は決算確定を意味しない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "S08には『経理部調整未』『グルカン記載メモ』等の作業メモらしき文字列、試算注記、別会社名の混入がある。保存本文の明示された参考値を限定的に採用し、内部メモの数値は予測根拠に採用していない。PDF画像との照合は実施しておらず、これらの表示状態は原本未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "coverageのreviewedは提示された保存本文の確認を意味し、外部検索、独立レビュー、原本画像照合又は決算確定を意味しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "不動産の物件別価格・持分・引渡実績・原価、ホテル全施設の販売可能室数、建設案件別検収・採算、Q2費用内訳は保存本文では確認できない。企業が他の媒体でも非開示としているとは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "会社参考営業利益の連結総額とセグメント・連結修正の概数合計は一致しない。『程度』の値から正確な内訳を復元せず、利益中心値には連結総額を優先した。差を丸め差と断定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "全documentsはtruncated=falseで、提示範囲の短縮表示はない。discoveryに残るS07本文未取得の記述に対し、今回のdocumentsには本文があるため、その保存本文を確認対象とした。外部原本の再取得、質疑応答資料、独立月次資料は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "前年Q1・中間期は提示短信で会計方針変更・修正再表示なしを確認して差し引いた。取得原価配分確定による別版の提示はないが、今後の調査による過年度・Q1訂正の有無は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "独自の弱気・強気は不動産販売額の局所感応度であり、最終決算の全不確実性を覆う上下限ではない。調査修正額と障害費用について根拠ある範囲を設定できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "issue",
+      "message": "経常利益・純利益の対象単独四半期に必要な営業外損益、特別損益、実効税率の根拠が不足。通期予想からの機械的配分は行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "S08は調査・期中レビューによって修正され得る参考数値。全シナリオでQ1が訂正されないことを仮定した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "additional_op_adjustment: 物件販売感応度以外の追加決算修正・障害関連営業費用が参考営業利益に対して発生せず、Q1も訂正されないことを全シナリオの条件とする。追加費用が存在しないと確認したものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_construction_anchor: 会社が計画通り進捗と説明する建設設備業の中間期参考値を採用。個別工事の検収数量からの独立再構築ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_elimination_anchor: 会社の中間期参考値『△180億円程度』を固定する条件。セグメント内外の消去を独自に重複させない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_hotel_anchor: 客室単価上昇と当四半期の軽微な障害影響を含む中間期参考値『300億円程度』を固定する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_property_anchor: 物件販売の下期への期ずれを含む中間期参考値『530億円程度』を中心値に採用。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_service_anchor: 百貨店の弱含み、ストアの増収、決済停止影響を包含する中間期参考値を採用。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "h1_transport_anchor: 会社の中間期参考値『690億円程度』を、確定時に変更されない条件で計算上の中心値に採用する。鉄道輸送量増とバス収入を既に含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "property_op_anchor: 中間期の不動産販売業参考利益を感応度用採算に採用。案件別限界利益率として確認された値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "property_sales_anchor: 中間期の不動産販売業参考値を、局所的な売上変動に対する採算の近似に使用。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "property_sales_step: 販売の期ずれが開示され、販売収益参考値も概数であるため、その表示値31000の約1.6%に相当する小幅な認識額差を局所感応度として設定。実在する追加案件、訂正予定額、統計的な予測区間を意味しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "ホテル予約停止の翌四半期影響を対象四半期へ移していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "不動産販売の感応度は外部売上を想定し、内部消去額と案件構成以外の費用を固定した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "9008",
+      "company_name": "京王電鉄株式会社",
+      "kind": "condition",
+      "message": "追加の障害関連営業費用が参考値に包含される範囲は未確認。ゼロ追加は条件であり確定事実ではない。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/9008/result.json": "9163664834660011027aee5a5aa49aaef36f1b553ad5fa8ad5b3d6d4fae1b6a0",
+    "reports/9008.md": "32170d73dcc4e9a1bb8e08664d882fe0e931805c03e448a888335e91b8facacc"
+  }
+}
