@@ -544,6 +544,70 @@
     }
   },
   {
+    "id": "3854-fcfbd006ad89470008cd41b7eab831820761bd6a990909b338a1baf3c23ac09f",
+    "code": "3854",
+    "companyName": "株式会社アイル",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2027-07-31",
+      "quarter": 1
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "3854-generation-909f721a0416b2c3 · fcfbd006",
+    "savedAt": "2026-11-18T15:49:32+09:00",
+    "quality": "保留",
+    "reviewExecuted": false,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 5373.482490000001,
+    "operatingProfit": null,
+    "revenueYoY": {
+      "rate": 0.060981194103820115,
+      "label": "+6.1%",
+      "tone": "positive",
+      "note": ""
+    },
+    "profitYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
+    }
+  },
+  {
+    "id": "3854-fe784b8724f2e0b040531eabf828824e640aa19a14823c6d605564cb5a7ade8c",
+    "code": "3854",
+    "companyName": "株式会社アイル",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2027-07-31",
+      "quarter": 1
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "3854-review-63c11636d506b084 · fe784b87",
+    "savedAt": "2026-11-18T15:52:11+09:00",
+    "quality": "保留",
+    "reviewExecuted": true,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 5373.482490000001,
+    "operatingProfit": null,
+    "revenueYoY": {
+      "rate": 0.060981194103820115,
+      "label": "+6.1%",
+      "tone": "positive",
+      "note": ""
+    },
+    "profitYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
+    }
+  },
+  {
     "id": "4369-3b356d002d24fdd8b28c37e12f5dbeb00128c83ce4a6fd183b77529a698d4b02",
     "code": "4369",
     "companyName": "株式会社トリケミカル研究所",
@@ -763,6 +827,70 @@
     "profitYoY": {
       "rate": null,
       "label": "赤転",
+      "tone": "negative",
+      "note": ""
+    }
+  },
+  {
+    "id": "5971-48f1f94d81bc321aff0644d422d403d791f8315a25d8acd0ee43b6267fc775ee",
+    "code": "5971",
+    "companyName": "株式会社共和工業所",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2027-04-30",
+      "quarter": 2
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "5971-generation-7afe6e8967eff32f · 48f1f94d",
+    "savedAt": "2026-11-18T15:49:19+09:00",
+    "quality": "検証未了",
+    "reviewExecuted": false,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 2654.690538405267,
+    "operatingProfit": 150.50784593740457,
+    "revenueYoY": {
+      "rate": 0.05322711429947959,
+      "label": "+5.3%",
+      "tone": "positive",
+      "note": ""
+    },
+    "profitYoY": {
+      "rate": -0.15755976011348796,
+      "label": "-15.8%",
+      "tone": "negative",
+      "note": ""
+    }
+  },
+  {
+    "id": "5971-f66138cdb742853a0201f02069d29f4658bb7d5106b45f60c758f2c651360ffb",
+    "code": "5971",
+    "companyName": "株式会社共和工業所",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2027-04-30",
+      "quarter": 2
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "5971-review-3304b7fad9cd67a3 · f66138cd",
+    "savedAt": "2026-11-18T15:52:16+09:00",
+    "quality": "要修正",
+    "reviewExecuted": true,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 2654.690538405267,
+    "operatingProfit": 150.50784593740457,
+    "revenueYoY": {
+      "rate": 0.05322711429947959,
+      "label": "+5.3%",
+      "tone": "positive",
+      "note": ""
+    },
+    "profitYoY": {
+      "rate": -0.15755976011348796,
+      "label": "-15.8%",
       "tone": "negative",
       "note": ""
     }
@@ -989,6 +1117,70 @@
       "label": "赤縮",
       "tone": "positive",
       "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+    }
+  },
+  {
+    "id": "7856-aa1f556bf1111931e187c1c7385d8b5969fe1142dd912eaa3409ffd7371b59d8",
+    "code": "7856",
+    "companyName": "萩原工業株式会社",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2026-10-31",
+      "quarter": 4
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "7856-generation-68d3a7d01aae752e · aa1f556b",
+    "savedAt": "2026-11-18T15:49:48+09:00",
+    "quality": "検証未了",
+    "reviewExecuted": false,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 9250.173400000003,
+    "operatingProfit": 816.8802850000011,
+    "revenueYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
+    },
+    "profitYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
+    }
+  },
+  {
+    "id": "7856-65ca52fb82fb653d7fc4d3ce00b7175c7df63df0f3d83332569f0ad736affd0d",
+    "code": "7856",
+    "companyName": "萩原工業株式会社",
+    "announcementDate": "2026-12-07",
+    "target": {
+      "fiscalYearEnd": "2026-10-31",
+      "quarter": 4
+    },
+    "asOf": "2026-11-18T14:33:00+09:00",
+    "version": "7856-review-8b7a13760c976f7b · 65ca52fb",
+    "savedAt": "2026-11-18T15:52:43+09:00",
+    "quality": "要修正",
+    "reviewExecuted": true,
+    "reviewPassed": false,
+    "valid": true,
+    "preAnnouncement": true,
+    "revenue": 9250.173400000003,
+    "operatingProfit": 816.8802850000011,
+    "revenueYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
+    },
+    "profitYoY": {
+      "rate": null,
+      "label": "—",
+      "tone": "neutral",
+      "note": "比較値なし"
     }
   },
   {
