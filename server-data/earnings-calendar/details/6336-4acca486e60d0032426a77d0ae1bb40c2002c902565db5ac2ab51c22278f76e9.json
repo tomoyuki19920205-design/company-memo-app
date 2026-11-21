@@ -1,0 +1,4353 @@
+{
+  "id": "6336-4acca486e60d0032426a77d0ae1bb40c2002c902565db5ac2ab51c22278f76e9",
+  "code": "6336",
+  "companyName": "株式会社石井表記",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "6336-review-7759d14acff82568 · 4acca486",
+  "savedAt": "2026-11-21T23:25:00+09:00",
+  "quality": "要修正",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 4353.0,
+  "operatingProfit": 294.00000000000006,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 6336 株式会社石井表記｜2027-01-31期 Q3単独\n品質状態：**要修正**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 3,953.00 | 4,353.00 | 4,753.00 |\n| 営業利益 | 159.25 | 294.00 | 417.15 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 310.00 | 7.67% |  |\n| QnQ | 営業利益 | 81.00 | 38.03% |  |\n\n## 会社予想\n保存原文で確認した最新の会社予想は、2026年9月11日修正の通期連結予想。対象四半期単独の会社予想は保存原文にない。通期予想から中間実績を控除した下半期差引き値はcalculationsに分離し、独自予測の配分元には使用していない。latest_confirmedは提示原文の範囲内を意味する。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n直近のセグメント単独実績、AI関連受注残の売上化説明、製品構成、JPNの採算悪化を基にした条件付きセグメント積上げ。売上と採算の仮定は実績ではなく、確率的な予測区間でもない。数量・価格・費用別の精密積上げはできないが、直近実績を参照するシナリオは作成可能と判断した。営業利益を先に定めた費用の逆算は行っていない。経常利益と純利益は根拠不足でnull。\n\n## 対象四半期の条件付き予測\n中心シナリオの売上は4,353.00、営業利益は294.00。AI関連設備の検収進展が主要な増収要因で、操作パネル需要が下支えする。一方、JPNの材料高と受注遅延、下半期の修繕負担が利益改善を抑える。\n\n## シナリオの幅と反証条件\n弱気は売上3,953.00・営業利益159.25、強気は売上4,753.00・営業利益417.15。装置検収が後ずれする場合や、修繕・材料費負担が仮定した採算範囲を超える場合は下振れる。受注残金額と検収予定が未確認のため、この範囲を保証された上下限として扱わない。\n\n## 会社予想との区別\n会社の通期予想から上期実績を引いた下半期の差引き値は、売上10,009.00、営業利益863.00。これは対象四半期単独の会社予想でも独自予測でもない。会社修正に含まれるAI需要、JPN悪化、修繕時期変更を別途加算していない。\n\n## 比較の限界\n前四半期単独は売上4,043.00、営業利益213.00。同一会計版の当期累計差引きで算出した。前年同四半期は必要な原文が未確認のため算定せず、前年同期比ブリッジは未算定残差を明示した。\n\n## 増減要因の接続\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置セグメント | 57.00 | AI関連受注残の売上化が限定的となる条件。 |\n| ディスプレイ及び電子部品 | -147.00 | JPNと自動車向けの弱さを反映。 |\n| その他 | 0.00 | 直前四半期水準を維持。 |\n| 残差（none） | 0.00 | 表示値ベースでセグメント差額の合計と連結差額が一致。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置の売上・採算複合効果 | -2.00 | 検収の限定進展、製品構成と修繕負担を含む条件付き差額。 |\n| 電子部品等の売上・採算複合効果 | -51.75 | 減収と材料高による採算悪化を含む。 |\n| その他 | 0.00 | 表示値ベースのその他損益。 |\n| 残差（none） | 0.00 | セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置セグメント | 307.00 | AI関連受注残の売上化による増収条件。 |\n| ディスプレイ及び電子部品 | 3.00 | 操作パネル需要とJPNの弱さが相殺し、売上をほぼ維持。 |\n| その他 | 0.00 | 直前四半期水準を維持。 |\n| 残差（none） | 0.00 | 表示値ベースでセグメント差額の合計と連結差額が一致。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置の売上・採算複合効果 | 99.00 | 装置構成改善と修繕負担を含む条件付き差額。 |\n| 電子部品等の売上・採算複合効果 | -18.00 | 売上維持と材料高による採算抑制を含む。 |\n| その他 | 0.00 | 表示値ベースのその他損益。 |\n| 残差（none） | 0.00 | セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置セグメント | 557.00 | AI関連設備の検収進展を強く反映する条件。 |\n| ディスプレイ及び電子部品 | 153.00 | 操作パネルと実装売上の緩やかな増加条件。 |\n| その他 | 0.00 | 直前四半期水準を維持。 |\n| 残差（none） | 0.00 | 表示値ベースでセグメント差額の合計と連結差額が一致。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 装置の売上・採算複合効果 | 198.00 | 設備検収と製品構成改善を反映し、修繕負担も採算に包含。 |\n| 電子部品等の売上・採算複合効果 | 6.15 | 直前四半期並みの採算で販売増加。 |\n| その他 | 0.00 | 表示値ベースのその他損益。 |\n| 残差（none） | 0.00 | セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。 |\n\n## エラー・未解決事項\n- S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。\n- S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。\n- S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。\n- セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。\n- 会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。\n- 同一会計・連結範囲の比較四半期不足: yoy\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。\n- 累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。\n- 資料確認未了: already_announced\n- 資料確認未了: historical\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n- 重要仮定の裏付け未検証: bull_equipment_margin\n- 重要仮定の裏付け未検証: bear_equipment_margin\n- 重要仮定の裏付け未検証: bull_equipment_sales\n- 重要仮定の裏付け未検証: base_equipment_margin\n- 重要仮定の裏付け未検証: bull_display_margin\n- 重要仮定の裏付け未検証: bear_display_margin\n- 重要仮定の裏付け未検証: bear_equipment_sales\n- 重要仮定の裏付け未検証: base_equipment_sales\n- 重要仮定の裏付け未検証: base_display_margin\n- 重要仮定の裏付け未検証: bull_display_sales\n- 重要仮定の裏付け未検証: bear_display_sales\n- 重要仮定の裏付け未検証: base_display_sales\n- 会社予想比較の条件: fy_sales_guidance\n- 会社予想比較の条件: fy_op_guidance\n- 会社予想比較の条件: fy_ordinary_guidance\n- 会社予想比較の条件: fy_net_guidance\n- レビューへ渡す原文に省略あり: S09\n- 重要仮定12件は方向性の説明と採用数値の根拠が分離されていない。特に中心装置利益率14%への改善が利益予測を大きく左右する。数量・単価・製品構成・修繕費から採用値へ至る根拠を追加する必要がある。diagnostic_perturbationは機械的テスト、既存シナリオ置換も独自仮定間の比較であり、いずれも会社が示す代替予測ではない。\n- 前年第3四半期累計のS03原文がなく、前年単独値＝前年第3四半期累計−7472（売上）、同累計−464（営業利益）を完成できない。全シナリオのYoYを未算定のまま保持する必要がある。機械側のFinite number requiredは欠損処理上の問題であり、予測数値の算術誤りを示すものではない。\n- 営業利益のQnQ残差ゼロは、予測セグメント利益から実績セグメント利益を引く算術恒等式である。数量・価格・構成・修繕・材料費の説明額は未算定であり、未説明の経済的残差をゼロと認定できない。算術残差と経済要因の未定量部分を別項目で管理すべきである。\n- 売上表示値の合計差は上期8092−(2316+5770+5)=1、第1四半期4049−(1273+2773+2)=1で、切捨て表示に整合しQnQでは相殺される。浮動小数点の約10のマイナス14乗の差も経済的残差ではない。会計基準変更による影響はS06がなしと明記しており、これらと未説明の経済要因を混同しない。\n- 再計算結果の前年第2四半期単独値はすべてnullだが、提示比較欄から表示値差引きで売上3868、営業利益280、経常利益327、純利益298を算出可能。比較版の整合性確認を付して再計算処理を点検すべきであり、前年第3四半期の欠損とは別問題。これを補っても対象四半期YoYは完成しない。\n- S05の通期連結予想の表示値単純差は売上1435、純利益124だが増減額欄は1434、123。予想水準の転記は正しく、表示端数等の可能性を除けないため今回予想値を修正しない。増減額を使用する場合は未丸め値または会社説明を確認する。\n- 9月11日の修正事実は確認できるが、その後から基準日時までの開示履歴がないため最新予想であることと対象実績が未公表であることの網羅的検証は未了。S01の重要な後発事象なしは9月11日時点の記述であり、11月18日までの不存在の証明にはならない。\n\n## 条件・不確実性\n- JPNの損失額、材料高の影響額、新規量産品の受注時期は定量的に確認できない。\n- base_display_margin: 直近両四半期の利益率の間を採用。操作パネル需要は下支えするが、JPNの通期営業損失見通しと材料高を織り込む。\n- base_display_sales: 直前四半期とほぼ同水準。操作パネルの需要増を認める一方、中国の実装需要停滞とJPNの受注遅延を踏まえ、急回復を見込まない。\n- base_equipment_margin: 直前四半期から装置構成が改善する一方、上期平均の営業利益率には届かない条件。下半期の修繕負担を採算に含み、追加控除しない。\n- base_equipment_sales: 設備と消耗品の販売が好調だった第1四半期の売上水準をやや上回る条件。会社が説明する下半期のAI関連受注残売上化を反映するが、その四半期配分は独自仮定。\n- bear_display_margin: JPNの材料高と営業損失が悪化し、第1四半期のセグメント利益率を下回る条件。既存の赤字と追加悪化をこの採算に包含。\n- bear_display_sales: 直近両四半期の売上水準の間を採用。JPNの新規量産品受注遅延と自動車向け生産調整が、操作パネル需要増を一部相殺する条件。\n- bear_equipment_margin: 直前四半期の営業利益率をやや下回る条件。装置構成の弱さと下半期へ繰り延べた修繕の負担を含む。売上原価と販管費を含むセグメント採算であり、修繕費を別途控除しない。\n- bear_equipment_sales: 直前四半期のセグメント売上を起点に、AI関連受注残の売上化が限定的となる条件。液晶装置の需要回復や大型案件の集中検収は織り込まない。受注残の金額を確認した推計ではない。\n- bull_display_margin: 直前四半期とほぼ同じ採算を維持する条件。JPNの黒字化や材料価格の反落は仮定しない。\n- bull_display_sales: 操作パネルと電子部品実装の販売が直前四半期から緩やかに増える条件。増分は直近のセグメント四半期間増収幅以内とし、JPNの新規量産品獲得は前提にしない。\n- bull_equipment_margin: 設備売上の構成改善で上期平均を上回るが、好採算だった第1四半期の利益率を下回る条件。修繕費を含む採算であり、修繕延期そのものを追加利益として計上しない。\n- bull_equipment_sales: AI関連設備の検収が進み、直近の四半期間売上変動幅を上回る増収となる条件。仕掛品増加と下半期の受注残売上化説明を方向性の根拠とする。仕掛品を売価換算した数値ではなく、確率的な上限でもない。\n- 保存原文では装置台数、単価、受注残金額、案件別検収予定が非開示。\n- 修繕費の総額、実施四半期、セグメント配賦が非開示で、営業利益は仮定した採算範囲に収まることが条件。\n- 為替差損益、助成金、特別損益、四半期の税率調整に根拠ある範囲を設定できないため、経常利益と親会社株主帰属純利益は予測しない。\n\n## 根拠・保存記録\n- S01 [2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534744.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `9bfa3b2c9763d8e3ac1320b7c77d8d481d57da881210c0a08c9eb9fd25da2d89`\n- S02 [2027年1月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/63360/140120260608565549.pdf) / 公表 2026-06-09 / retrieved / SHA-256 `7fbc998c3110a7c3f7fa7c15332bbea4b88ef34177aa89566ebed79415a852ed`\n- S03 [2026年1月期 第3四半期決算短信〔日本基準〕（連結）](https://www.ishiihyoki.co.jp/cms_upload/ir_financial/16/20251212.pdf) / 公表 2025-12-12 / unavailable / SHA-256 `なし`\n- S04 [2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www.ishiihyoki.co.jp/cms_upload/ir_financial/16/20250911.pdf) / 公表 2025-09-11 / unavailable / SHA-256 `なし`\n- S05 [2027年1月期第2四半期累計期間業績予想値と実績値との差異及び通期業績予想の修正ならびに配当予想の修正に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260909533613.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `25232320f778eea89cecfa783d7bc8ed89d58943f3c0d0b3ff8aadc997fedd14`\n- S06 [2026年1月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/63360/140120260313581191.pdf) / 公表 2026-03-13 / retrieved / SHA-256 `da40343ddb0c8b84e8bf89f7d5fad2adeeb57d9378837e90a17b1fa7c9bb2cc9`\n- S07 [資本コストや株価を意識した経営の実現に向けた対応について（アップデート）](https://www.ishiihyoki.co.jp/upload/news/attach/2026060903.pdf) / 公表 2026-06-09 / unavailable / SHA-256 `なし`\n- S08 [IRカレンダー／IR資料室](https://www.ishiihyoki.co.jp/IR/closing/short/) / 公表  / unavailable / SHA-256 `なし`\n- S09 [東京証券取引所 株式相場表 2026年11月11日](https://www.jpx.co.jp/automation/markets/statistics-equities/daily/files/202611/stq_20261111.pdf) / 公表 2026-11-11 / retrieved / SHA-256 `b2b6cfdcd23929f9d96cb865af31f435611109365079c249f8451bd6b9a8f428`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[要修正：詳細レビュー](6336_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 6336 株式会社石井表記 独立レビュー\n\n判定：**要修正**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n原文の実績・会社予想と入力は一致し、3シナリオの予測算式と前四半期比の算術照合にも誤りは認めない。一方、重要仮定12件の採用数値には定量的裏付けがなく、全件unsupported。前年第3四半期原文不足でYoYは検証不能。営業利益のセグメント差額による残差ゼロは経済要因の説明完了を意味しない。予測数値の確定修正は提案しない。発表予定日の未確認は経済的品質判定から除外した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | S01・S02の表紙、損益計算書、セグメント表と、実績入力14件および累計履歴の4利益指標を照合し一致。会社予想入力4件もS05の通期連結・今回発表予想と一致。S01・S02・S05・S06は本文の日付が基準日時以前であり、取得日時が基準日時後であることとは区別した。 | S01, S02, S05, S06 S01 PDF pages 1,8,12; S02 PDF pages 1,8,11; S05 PDF pages 1-2; S06 PDF page 1 |\n| 2 | conditional | 当期は日本基準・連結で、上期2026年2～7月から第1四半期2～4月を控除する前四半期5～7月の算定は適切。対象8～10月は第3四半期単独。S01・S02は会計方針変更、修正再表示、重要な連結範囲変更なし。S06の前年度会計方針変更は財務諸表への影響なしと明記。ただし前年第3四半期の比較版・範囲はS03未添付のため未確認。 | S01, S02, S06 S01 PDF pages 1-2; S02 PDF pages 1-2; S06 PDF page 16 |\n| 3 | unresolved | AI関連需要、受注残売上化、JPNの受注遅延・材料高という方向性は原文にある。しかし売上6件・利益率6件の採用数値を裏付ける数量、単価、四半期配分、費用額は確認できない。過去実績との大小関係や機械的感応度だけでは採用値を支持できず、重要仮定12件を全件unsupportedとした。 | S05 PDF page 2、通期予想差異の理由 |\n| 4 | unresolved | 提示算式はセグメント売上×利益率の積上げであり、目標営業利益から費用を逆算する式はない。ただし利益率を選んだ過程の独立性は確認不能。装置の前四半期利益率90/1043≒8.63%に対して中心14%、強気18%とする改善幅、修繕費を含めた費用吸収力の定量説明が不足している。 | S05 PDF page 2、上期差異の理由 |\n| 5 | conditional | 算式上、修繕延期、JPN損失、AI需要をセグメント利益とは別に加減算する項目はなく、明示的二重計上は認めない。固定資産売却益、為替差損益、助成金も営業利益に加算していない。ただし修繕・材料高が採用利益率にどの程度含まれるかは未検証であり、費用の織込み不足は排除できない。 | S01, S05 S01 PDF page 8; S05 PDF page 2 |\n| 6 | unresolved | 前四半期売上8092−4049=4043、営業利益580−367=213。弱気は売上1100+2850+3=3953、利益1100×0.08+2850×0.025=159.25。中心は4353・294、強気は4753・417.15。QnQ売上差は順に−90、310、710、増減率−2.2261%、7.6676%、17.5612%。利益差は−53.75、81、204.15、増減率−25.2347%、38.0282%、95.8451%。各率は差額/前四半期値。売上差の事業別分解は57−147、307+3、557+153、利益差は−2−51.75、99−18、198+6.15で一致。ただし経済要因別分解は未完了。全シナリオのYoYは前年第3四半期累計不足により未算定であり、ゼロ補完不可。 | S01, S02 S01 PDF pages 1,12; S02 PDF pages 1,11 |\n| 7 | unresolved | 優先追加資料は前年第3四半期短信、重要仮定の定量根拠、9月11日以降から基準日時までの開示履歴。S04不足だけで前年中間比較値を欠損扱いする必要はなく、S01に比較値がある。補足説明資料・説明会は作成・開催なしと確認できるため、それ自体を必須資料欠落としない。予定日の公式確認は別管理。現時点で予測値を変更する確定的根拠はない。 | S01, S02 S01 PDF page 1; S02 PDF page 1 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| revenue / fy_sales_guidance | 未算定 | 4,353.00 | 未算定 | 対象期間外 / 18101は2026年2月1日～2027年1月31日の通期連結予想で、9月11日修正を確認。対象第3四半期単独とは期間不一致。下半期差引き10009は正しいが四半期予想ではない。通期達成に必要な第4四半期売上は弱気6056、中心5656、強気5256となるが、これは整合性診断であり会社予想・独自予測ではない。検収時期の定量情報がなく、その配分の合理性は未確認。最新性は提示原文内に限る。 |\n| operating_profit / fy_op_guidance | 未算定 | 294.00 | 未算定 | 対象期間外 / 1443は9月11日修正の通期連結予想。対象四半期とは期間不一致。下半期差引き863は正しい。通期達成に必要な第4四半期利益は弱気703.75、中心569、強気445.85となるが、費用時期・製品構成が未確認であり達成可能性は判定不能。会社予想との乖離自体は誤りとしない。 |\n| ordinary_profit / fy_ordinary_guidance | 未算定 | 未算定 | 未算定 | 対象期間外 / 1491は9月11日修正の通期連結経常利益予想と一致。対象四半期単独とは期間不一致で、独自経常利益予測もnullのため乖離比較は適用外。9月11日以降の改定有無は未確認。 |\n| net_profit / fy_net_guidance | 未算定 | 未算定 | 未算定 | 対象期間外 / 1069は9月11日修正の通期連結・親会社株主に帰属する当期純利益予想と一致し、個別純利益852との混同はない。対象四半期単独とは期間不一致、独自予測もnullのため乖離比較は適用外。最新性は提示原文内に限る。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n| 1 | bull_equipment_margin | 0.18 | 160.000 | 54.4% | 未検証：18%は上期約15.93%を上回り第1四半期約21.92%を下回る。しかし下半期の修繕負担を吸収しつつ前四半期比約9.37ポイント改善する根拠はない。既存シナリオへの置換感応度は採用率の証拠ではない。 |\n| 2 | bear_equipment_margin | 0.08 | 110.000 | 37.4% | 未検証：8%が前四半期約8.63%を下回ることは正しいが、その差約0.63ポイントで製品構成と修繕負担を吸収できる根拠はない。修繕額・配賦・時期が未確認。 |\n| 3 | bull_equipment_sales | 1600.0 | 90.000 | 30.6% | 未検証：1600は前四半期から557増。仕掛品は第1四半期末1036から中間期末1328へ292増えているが、連結簿価であり、装置売価・利益・検収四半期への換算根拠はない。 |\n| 4 | base_equipment_margin | 0.14 | 81.000 | 27.6% | 未検証：14%は前四半期約8.63%と上期約15.93%の間だが、改善約5.37ポイントの製品構成・固定費・修繕費別の根拠がない。売上1350で利益率を1ポイント変えると利益13.5変動する算式は正しいが、14%を支持しない。 |\n| 5 | bull_display_margin | 0.041 | 50.400 | 17.1% | 未検証：4.1%は前四半期123/2997≒4.104%とほぼ一致。ただし売上拡大局面で材料高・JPN損失を含めて同率を維持できる原文上の数値根拠はない。 |\n| 6 | bear_display_margin | 0.025 | 45.600 | 15.5% | 未検証：2.5%は第1四半期約3.17%より低く、材料高・JPN損失の方向性とは整合する。ただし損失悪化額や材料価格感応度がなく、2.5%という率は支持できない。 |\n| 7 | bear_equipment_sales | 1100.0 | 40.000 | 13.6% | 未検証：1100は前四半期1043より57増。受注増の方向性は確認できるが、限定的な検収を57の増収へ変換する数量・単価・時期の根拠がない。 |\n| 8 | base_equipment_sales | 1350.0 | 35.000 | 11.9% | 未検証：1350は第1四半期1273を77上回る。下半期の受注残売上化は根拠になるが、対象四半期への配分と1350という水準は裏付けられない。 |\n| 9 | base_display_margin | 0.035 | 30.000 | 10.2% | 未検証：3.5%は第1四半期約3.17%と前四半期約4.10%の間である。しかしJPN損失と他事業の利益寄与を分離できず、採用率を正当化する費用積上げがない。 |\n| 10 | bull_display_sales | 3150.0 | 12.300 | 4.2% | 未検証：3150の前四半期比増分153は直近増分224以内だが、過去の増分以内という条件は採用値の根拠にならない。電子部品実装需要の拡大を示す原文もなく、強気条件の実現性は未確認。 |\n| 11 | bear_display_sales | 2850.0 | 7.500 | 2.6% | 未検証：2850が第1四半期2773と前四半期2997の間であることは正しい。ただし自動車向け減収と操作パネル増収の相殺額を定量化しておらず、2850の選択は支持できない。 |\n| 12 | base_display_sales | 3000.0 | 5.250 | 1.8% | 未検証：3000は前四半期2997とほぼ同水準だが、需要増とJPN悪化が相殺するとの数量的裏付けはない。過去水準の据置きは会社の代替予測ではない。 |\n\n## 予測の修正記録\n標準営業利益：旧 294.00 → 新 294.00 百万円。差 0.00。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。\n- **Medium** / machine: S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。\n- **Medium** / machine: S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。\n- **Medium** / machine: セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。\n- **Medium** / machine: 会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。\n- **Medium** / machine: 同一会計・連結範囲の比較四半期不足: yoy\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。\n- **Medium** / machine: 累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。\n- **High** / machine: 資料確認未了: already_announced\n- **Medium** / machine: 資料確認未了: historical\n- **Medium** / machine: 資料確認未了: presentation\n- **Medium** / machine: 資料確認未了: segments_kpi\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_equipment_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_equipment_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_equipment_sales\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_equipment_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_display_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_display_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_equipment_sales\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_equipment_sales\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_display_margin\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_display_sales\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_display_sales\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_display_sales\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy_sales_guidance\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy_op_guidance\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy_ordinary_guidance\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy_net_guidance\n- **High** / source_coverage: レビューへ渡す原文に省略あり: S09\n- **High** / assumption: 重要仮定12件は方向性の説明と採用数値の根拠が分離されていない。特に中心装置利益率14%への改善が利益予測を大きく左右する。数量・単価・製品構成・修繕費から採用値へ至る根拠を追加する必要がある。diagnostic_perturbationは機械的テスト、既存シナリオ置換も独自仮定間の比較であり、いずれも会社が示す代替予測ではない。\n- **High** / period: 前年第3四半期累計のS03原文がなく、前年単独値＝前年第3四半期累計−7472（売上）、同累計−464（営業利益）を完成できない。全シナリオのYoYを未算定のまま保持する必要がある。機械側のFinite number requiredは欠損処理上の問題であり、予測数値の算術誤りを示すものではない。\n- **High** / residual: 営業利益のQnQ残差ゼロは、予測セグメント利益から実績セグメント利益を引く算術恒等式である。数量・価格・構成・修繕・材料費の説明額は未算定であり、未説明の経済的残差をゼロと認定できない。算術残差と経済要因の未定量部分を別項目で管理すべきである。\n- **Low** / residual: 売上表示値の合計差は上期8092−(2316+5770+5)=1、第1四半期4049−(1273+2773+2)=1で、切捨て表示に整合しQnQでは相殺される。浮動小数点の約10のマイナス14乗の差も経済的残差ではない。会計基準変更による影響はS06がなしと明記しており、これらと未説明の経済要因を混同しない。\n- **Medium** / other: 再計算結果の前年第2四半期単独値はすべてnullだが、提示比較欄から表示値差引きで売上3868、営業利益280、経常利益327、純利益298を算出可能。比較版の整合性確認を付して再計算処理を点検すべきであり、前年第3四半期の欠損とは別問題。これを補っても対象四半期YoYは完成しない。\n- **Low** / guidance: S05の通期連結予想の表示値単純差は売上1435、純利益124だが増減額欄は1434、123。予想水準の転記は正しく、表示端数等の可能性を除けないため今回予想値を修正しない。増減額を使用する場合は未丸め値または会社説明を確認する。\n- **Medium** / guidance: 9月11日の修正事実は確認できるが、その後から基準日時までの開示履歴がないため最新予想であることと対象実績が未公表であることの網羅的検証は未了。S01の重要な後発事象なしは9月11日時点の記述であり、11月18日までの不存在の証明にはならない。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-11\", \"official_date\": \"2026-12-11\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://www.ishiihyoki.co.jp/IR/closing/short/ の公式IRカレンダー検索結果に「2026年12月11日」「2027年1月期 第3四半期決算発表予定」と明記。ページ本文は取得エラーで未読。掲載開始日と基準日時時点のページ履歴はunknown。\", \"warnings\": [\"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[]\n[\n  \"基準日時以前に公表されたS03の全文。前年第3四半期累計、比較版、連結範囲、セグメント情報を確認し、S01の前年中間比較欄と差し引いて全シナリオのYoYを完成するため。\",\n  \"基準日時以前の受注残金額、案件別検収予定、装置台数・単価・製品構成、消耗品売上の資料。装置売上1100・1350・1600の数値設定を検証するため。\",\n  \"基準日時以前の修繕費総額・実施時期・配賦、JPN損失額、材料高影響、事業別費用の資料。利益率6件の裏付けと経済要因別利益ブリッジを検証するため。存在・開示の有無自体は未確認。\",\n  \"2026年9月11日から11月18日14時33分までの開示一覧および該当開示本文。追加予想修正、重要事象、対象実績公表の有無を確認するため。\",\n  \"必要に応じて半期報告書と前年中間期S04。詳細注記や前年比較版の整合性を補強するため。ただし前年中間実績の数値自体はS01で確認済み。\",\n  \"S08の公式カレンダー本文と基準日時以前の掲載履歴。発表予定日の照合専用であり、経済的品質判定とは分離する。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/6336/quality_review.json) / [レビュー原回答](../companies/6336/independent_review.json) / [計算検査](../companies/6336/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "6336",
+    "company_name": "株式会社石井表記",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "要修正",
+    "scenarios": {
+      "bear": {
+        "revenue": 3953.0,
+        "operating_profit": 159.25,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 4353.0,
+        "operating_profit": 294.00000000000006,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 4753.0,
+        "operating_profit": 417.15,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 310.0,
+          "rate": 0.07667573583972298,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 81.00000000000006,
+          "rate": 0.38028169014084534,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "h1_revenue": 8092.0,
+      "h1_op": 580.0,
+      "q1_revenue": 4049.0,
+      "q1_op": 367.0,
+      "h1_equipment_sales": 2316.0,
+      "h1_equipment_op": 369.0,
+      "q1_equipment_sales": 1273.0,
+      "q1_equipment_op": 279.0,
+      "h1_display_sales": 5770.0,
+      "h1_display_op": 211.0,
+      "q1_display_sales": 2773.0,
+      "q1_display_op": 88.0,
+      "h1_other_sales": 5.0,
+      "q1_other_sales": 2.0,
+      "guidance_sales": 18101.0,
+      "guidance_op": 1443.0,
+      "guidance_ordinary": 1491.0,
+      "guidance_net": 1069.0,
+      "bear_equipment_sales": 1100.0,
+      "base_equipment_sales": 1350.0,
+      "bull_equipment_sales": 1600.0,
+      "bear_display_sales": 2850.0,
+      "base_display_sales": 3000.0,
+      "bull_display_sales": 3150.0,
+      "bear_equipment_margin": 0.08,
+      "base_equipment_margin": 0.14,
+      "bull_equipment_margin": 0.18,
+      "bear_display_margin": 0.025,
+      "base_display_margin": 0.035,
+      "bull_display_margin": 0.041,
+      "other_sales": 3.0,
+      "other_op": 0.0,
+      "q2_revenue": 4043.0,
+      "q2_op": 213.0,
+      "q2_equipment_sales": 1043.0,
+      "q2_equipment_op": 90.0,
+      "q2_display_sales": 2997.0,
+      "q2_display_op": 123.0,
+      "q2_other_sales": 3.0,
+      "q2_other_op": 0.0,
+      "company_implied_h2_sales": 10009.0,
+      "company_implied_h2_op": 863.0,
+      "bear_equipment_op": 88.0,
+      "bear_display_op": 71.25,
+      "bear_revenue": 3953.0,
+      "bear_op": 159.25,
+      "base_equipment_op": 189.00000000000003,
+      "base_display_op": 105.00000000000001,
+      "base_revenue": 4353.0,
+      "base_op": 294.00000000000006,
+      "bull_equipment_op": 288.0,
+      "bull_display_op": 129.15,
+      "bull_revenue": 4753.0,
+      "bull_op": 417.15
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 1-2",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "1Q累計",
+        "revenue": 4049.0,
+        "operating_profit": 367.0,
+        "ordinary_profit": 376.0,
+        "net_profit": 266.0
+      },
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF pages 1-2",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 4043.0,
+        "operating_profit": 213.0,
+        "ordinary_profit": 227.0,
+        "net_profit": 184.0
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 1,8",
+        "period_end": "2025-04-30",
+        "period_start": "2025-02-01",
+        "method": "1Q累計",
+        "revenue": 3604.0,
+        "operating_profit": 184.0,
+        "ordinary_profit": 194.0,
+        "net_profit": 162.0
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1,8",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "q2_revenue",
+        "forecast": "bear_revenue",
+        "difference_formula": "bear_revenue-q2_revenue",
+        "components": [
+          {
+            "label": "装置セグメント",
+            "formula": "bear_equipment_sales-q2_equipment_sales",
+            "reason": "AI関連受注残の売上化が限定的となる条件。",
+            "amount": 57.0
+          },
+          {
+            "label": "ディスプレイ及び電子部品",
+            "formula": "bear_display_sales-q2_display_sales",
+            "reason": "JPNと自動車向けの弱さを反映。",
+            "amount": -147.0
+          },
+          {
+            "label": "その他",
+            "formula": "other_sales-q2_other_sales",
+            "reason": "直前四半期水準を維持。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "q2_op",
+        "forecast": "bear_op",
+        "difference_formula": "bear_op-q2_op",
+        "components": [
+          {
+            "label": "装置の売上・採算複合効果",
+            "formula": "bear_equipment_op-q2_equipment_op",
+            "reason": "検収の限定進展、製品構成と修繕負担を含む条件付き差額。",
+            "amount": -2.0
+          },
+          {
+            "label": "電子部品等の売上・採算複合効果",
+            "formula": "bear_display_op-q2_display_op",
+            "reason": "減収と材料高による採算悪化を含む。",
+            "amount": -51.75
+          },
+          {
+            "label": "その他",
+            "formula": "other_op-q2_other_op",
+            "reason": "表示値ベースのその他損益。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "q2_revenue",
+        "forecast": "base_revenue",
+        "difference_formula": "base_revenue-q2_revenue",
+        "components": [
+          {
+            "label": "装置セグメント",
+            "formula": "base_equipment_sales-q2_equipment_sales",
+            "reason": "AI関連受注残の売上化による増収条件。",
+            "amount": 307.0
+          },
+          {
+            "label": "ディスプレイ及び電子部品",
+            "formula": "base_display_sales-q2_display_sales",
+            "reason": "操作パネル需要とJPNの弱さが相殺し、売上をほぼ維持。",
+            "amount": 3.0
+          },
+          {
+            "label": "その他",
+            "formula": "other_sales-q2_other_sales",
+            "reason": "直前四半期水準を維持。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "q2_op",
+        "forecast": "base_op",
+        "difference_formula": "base_op-q2_op",
+        "components": [
+          {
+            "label": "装置の売上・採算複合効果",
+            "formula": "base_equipment_op-q2_equipment_op",
+            "reason": "装置構成改善と修繕負担を含む条件付き差額。",
+            "amount": 99.00000000000003
+          },
+          {
+            "label": "電子部品等の売上・採算複合効果",
+            "formula": "base_display_op-q2_display_op",
+            "reason": "売上維持と材料高による採算抑制を含む。",
+            "amount": -17.999999999999986
+          },
+          {
+            "label": "その他",
+            "formula": "other_op-q2_other_op",
+            "reason": "表示値ベースのその他損益。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "q2_revenue",
+        "forecast": "bull_revenue",
+        "difference_formula": "bull_revenue-q2_revenue",
+        "components": [
+          {
+            "label": "装置セグメント",
+            "formula": "bull_equipment_sales-q2_equipment_sales",
+            "reason": "AI関連設備の検収進展を強く反映する条件。",
+            "amount": 557.0
+          },
+          {
+            "label": "ディスプレイ及び電子部品",
+            "formula": "bull_display_sales-q2_display_sales",
+            "reason": "操作パネルと実装売上の緩やかな増加条件。",
+            "amount": 153.0
+          },
+          {
+            "label": "その他",
+            "formula": "other_sales-q2_other_sales",
+            "reason": "直前四半期水準を維持。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "q2_op",
+        "forecast": "bull_op",
+        "difference_formula": "bull_op-q2_op",
+        "components": [
+          {
+            "label": "装置の売上・採算複合効果",
+            "formula": "bull_equipment_op-q2_equipment_op",
+            "reason": "設備検収と製品構成改善を反映し、修繕負担も採算に包含。",
+            "amount": 198.0
+          },
+          {
+            "label": "電子部品等の売上・採算複合効果",
+            "formula": "bull_display_op-q2_display_op",
+            "reason": "直前四半期並みの採算で販売増加。",
+            "amount": 6.150000000000006
+          },
+          {
+            "label": "その他",
+            "formula": "other_op-q2_other_op",
+            "reason": "表示値ベースのその他損益。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      }
+    ],
+    "issues": [
+      "S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。",
+      "S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。",
+      "S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。",
+      "セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。",
+      "会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。",
+      "同一会計・連結範囲の比較四半期不足: yoy",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。",
+      "累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。",
+      "資料確認未了: already_announced",
+      "資料確認未了: historical",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures",
+      "重要仮定の裏付け未検証: bull_equipment_margin",
+      "重要仮定の裏付け未検証: bear_equipment_margin",
+      "重要仮定の裏付け未検証: bull_equipment_sales",
+      "重要仮定の裏付け未検証: base_equipment_margin",
+      "重要仮定の裏付け未検証: bull_display_margin",
+      "重要仮定の裏付け未検証: bear_display_margin",
+      "重要仮定の裏付け未検証: bear_equipment_sales",
+      "重要仮定の裏付け未検証: base_equipment_sales",
+      "重要仮定の裏付け未検証: base_display_margin",
+      "重要仮定の裏付け未検証: bull_display_sales",
+      "重要仮定の裏付け未検証: bear_display_sales",
+      "重要仮定の裏付け未検証: base_display_sales",
+      "会社予想比較の条件: fy_sales_guidance",
+      "会社予想比較の条件: fy_op_guidance",
+      "会社予想比較の条件: fy_ordinary_guidance",
+      "会社予想比較の条件: fy_net_guidance",
+      "レビューへ渡す原文に省略あり: S09",
+      "重要仮定12件は方向性の説明と採用数値の根拠が分離されていない。特に中心装置利益率14%への改善が利益予測を大きく左右する。数量・単価・製品構成・修繕費から採用値へ至る根拠を追加する必要がある。diagnostic_perturbationは機械的テスト、既存シナリオ置換も独自仮定間の比較であり、いずれも会社が示す代替予測ではない。",
+      "前年第3四半期累計のS03原文がなく、前年単独値＝前年第3四半期累計−7472（売上）、同累計−464（営業利益）を完成できない。全シナリオのYoYを未算定のまま保持する必要がある。機械側のFinite number requiredは欠損処理上の問題であり、予測数値の算術誤りを示すものではない。",
+      "営業利益のQnQ残差ゼロは、予測セグメント利益から実績セグメント利益を引く算術恒等式である。数量・価格・構成・修繕・材料費の説明額は未算定であり、未説明の経済的残差をゼロと認定できない。算術残差と経済要因の未定量部分を別項目で管理すべきである。",
+      "売上表示値の合計差は上期8092−(2316+5770+5)=1、第1四半期4049−(1273+2773+2)=1で、切捨て表示に整合しQnQでは相殺される。浮動小数点の約10のマイナス14乗の差も経済的残差ではない。会計基準変更による影響はS06がなしと明記しており、これらと未説明の経済要因を混同しない。",
+      "再計算結果の前年第2四半期単独値はすべてnullだが、提示比較欄から表示値差引きで売上3868、営業利益280、経常利益327、純利益298を算出可能。比較版の整合性確認を付して再計算処理を点検すべきであり、前年第3四半期の欠損とは別問題。これを補っても対象四半期YoYは完成しない。",
+      "S05の通期連結予想の表示値単純差は売上1435、純利益124だが増減額欄は1434、123。予想水準の転記は正しく、表示端数等の可能性を除けないため今回予想値を修正しない。増減額を使用する場合は未丸め値または会社説明を確認する。",
+      "9月11日の修正事実は確認できるが、その後から基準日時までの開示履歴がないため最新予想であることと対象実績が未公表であることの網羅的検証は未了。S01の重要な後発事象なしは9月11日時点の記述であり、11月18日までの不存在の証明にはならない。"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -90.0,
+            "rate": -0.022260697501855057,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -53.75,
+            "rate": -0.25234741784037557,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 310.0,
+            "rate": 0.07667573583972298,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 81.00000000000006,
+            "rate": 0.38028169014084534,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 710.0,
+            "rate": 0.17561216918130101,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 204.14999999999998,
+            "rate": 0.9584507042253521,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -90.0,
+        "explained_sum": -90.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -53.75,
+        "explained_sum": -53.75,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 310.0,
+        "explained_sum": 310.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 81.00000000000006,
+        "explained_sum": 81.00000000000004,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 710.0,
+        "explained_sum": 710.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 204.14999999999998,
+        "explained_sum": 204.15,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+      }
+    ],
+    "conditions": [
+      "JPNの損失額、材料高の影響額、新規量産品の受注時期は定量的に確認できない。",
+      "base_display_margin: 直近両四半期の利益率の間を採用。操作パネル需要は下支えするが、JPNの通期営業損失見通しと材料高を織り込む。",
+      "base_display_sales: 直前四半期とほぼ同水準。操作パネルの需要増を認める一方、中国の実装需要停滞とJPNの受注遅延を踏まえ、急回復を見込まない。",
+      "base_equipment_margin: 直前四半期から装置構成が改善する一方、上期平均の営業利益率には届かない条件。下半期の修繕負担を採算に含み、追加控除しない。",
+      "base_equipment_sales: 設備と消耗品の販売が好調だった第1四半期の売上水準をやや上回る条件。会社が説明する下半期のAI関連受注残売上化を反映するが、その四半期配分は独自仮定。",
+      "bear_display_margin: JPNの材料高と営業損失が悪化し、第1四半期のセグメント利益率を下回る条件。既存の赤字と追加悪化をこの採算に包含。",
+      "bear_display_sales: 直近両四半期の売上水準の間を採用。JPNの新規量産品受注遅延と自動車向け生産調整が、操作パネル需要増を一部相殺する条件。",
+      "bear_equipment_margin: 直前四半期の営業利益率をやや下回る条件。装置構成の弱さと下半期へ繰り延べた修繕の負担を含む。売上原価と販管費を含むセグメント採算であり、修繕費を別途控除しない。",
+      "bear_equipment_sales: 直前四半期のセグメント売上を起点に、AI関連受注残の売上化が限定的となる条件。液晶装置の需要回復や大型案件の集中検収は織り込まない。受注残の金額を確認した推計ではない。",
+      "bull_display_margin: 直前四半期とほぼ同じ採算を維持する条件。JPNの黒字化や材料価格の反落は仮定しない。",
+      "bull_display_sales: 操作パネルと電子部品実装の販売が直前四半期から緩やかに増える条件。増分は直近のセグメント四半期間増収幅以内とし、JPNの新規量産品獲得は前提にしない。",
+      "bull_equipment_margin: 設備売上の構成改善で上期平均を上回るが、好採算だった第1四半期の利益率を下回る条件。修繕費を含む採算であり、修繕延期そのものを追加利益として計上しない。",
+      "bull_equipment_sales: AI関連設備の検収が進み、直近の四半期間売上変動幅を上回る増収となる条件。仕掛品増加と下半期の受注残売上化説明を方向性の根拠とする。仕掛品を売価換算した数値ではなく、確率的な上限でもない。",
+      "保存原文では装置台数、単価、受注残金額、案件別検収予定が非開示。",
+      "修繕費の総額、実施四半期、セグメント配賦が非開示で、営業利益は仮定した採算範囲に収まることが条件。",
+      "為替差損益、助成金、特別損益、四半期の税率調整に根拠ある範囲を設定できないため、経常利益と親会社株主帰属純利益は予測しない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534744.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534744.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S01.txt",
+        "sha256": "9bfa3b2c9763d8e3ac1320b7c77d8d481d57da881210c0a08c9eb9fd25da2d89",
+        "text_sha256": "fbca40c3cb746186bf5bc8a852f5d7e3fe378befff8289100d812b0b8eabca96",
+        "retrieved_at": "2026-11-21T22:21:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11525,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年1月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/63360/140120260608565549.pdf",
+        "published_at": "2026-06-09",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/63360/140120260608565549.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S02.txt",
+        "sha256": "7fbc998c3110a7c3f7fa7c15332bbea4b88ef34177aa89566ebed79415a852ed",
+        "text_sha256": "4822ef1d045151a3ff0a4ac33aa60b9445a545812ed8e4cb58aa2434e21adace",
+        "retrieved_at": "2026-11-21T22:21:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9480,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年1月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.ishiihyoki.co.jp/cms_upload/ir_financial/16/20251212.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "[Errno 11002] getaddrinfo failed",
+        "retrieved_at": "2026-11-21T22:21:34+09:00"
+      },
+      {
+        "id": "S04",
+        "title": "2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www.ishiihyoki.co.jp/cms_upload/ir_financial/16/20250911.pdf",
+        "published_at": "2025-09-11",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "[Errno 11001] getaddrinfo failed",
+        "retrieved_at": "2026-11-21T22:21:34+09:00"
+      },
+      {
+        "id": "S05",
+        "title": "2027年1月期第2四半期累計期間業績予想値と実績値との差異及び通期業績予想の修正ならびに配当予想の修正に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260909533613.pdf",
+        "published_at": "2026-09-11",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260909533613.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S05.txt",
+        "sha256": "25232320f778eea89cecfa783d7bc8ed89d58943f3c0d0b3ff8aadc997fedd14",
+        "text_sha256": "3ac034b3586cbc9283c9c7cbb2d40531061f60a78c531f02326840df1e14d873",
+        "retrieved_at": "2026-11-21T22:21:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3348,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年1月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/63360/140120260313581191.pdf",
+        "published_at": "2026-03-13",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/63360/140120260313581191.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S06.txt",
+        "sha256": "da40343ddb0c8b84e8bf89f7d5fad2adeeb57d9378837e90a17b1fa7c9bb2cc9",
+        "text_sha256": "a6f818c2276d41fdeff1a3e0bf65034c16de248c9049e444fcbfda90fbddf0e6",
+        "retrieved_at": "2026-11-21T22:21:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 22998,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "資本コストや株価を意識した経営の実現に向けた対応について（アップデート）",
+        "url": "https://www.ishiihyoki.co.jp/upload/news/attach/2026060903.pdf",
+        "published_at": "2026-06-09",
+        "category": "other",
+        "status": "unavailable",
+        "error": "[Errno 11001] getaddrinfo failed",
+        "retrieved_at": "2026-11-21T22:21:36+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "IRカレンダー／IR資料室",
+        "url": "https://www.ishiihyoki.co.jp/IR/closing/short/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T22:21:36+09:00"
+      },
+      {
+        "id": "S09",
+        "title": "東京証券取引所 株式相場表 2026年11月11日",
+        "url": "https://www.jpx.co.jp/automation/markets/statistics-equities/daily/files/202611/stq_20261111.pdf",
+        "published_at": "2026-11-11",
+        "category": "identity",
+        "final_url": "https://www.jpx.co.jp/automation/markets/statistics-equities/daily/files/202611/stq_20261111.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\6336\\sources\\S09.txt",
+        "sha256": "b2b6cfdcd23929f9d96cb865af31f435611109365079c249f8451bd6b9a8f428",
+        "text_sha256": "f4cea464134fc360dbe40319dfb76a264fb557fe721ce4f8c8fb44bed6ae4cf9",
+        "retrieved_at": "2026-11-21T22:21:56+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1192969,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "6336",
+      "announcement_date": "2026-12-11",
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "h1_revenue",
+          "value": 8092,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "h1_op",
+          "value": 580,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "q1_revenue",
+          "value": 4049,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "q1_op",
+          "value": 367,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "h1_equipment_sales",
+          "value": 2316,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "h1_equipment_op",
+          "value": 369,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "q1_equipment_sales",
+          "value": 1273,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "q1_equipment_op",
+          "value": 279,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "h1_display_sales",
+          "value": 5770,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "h1_display_op",
+          "value": 211,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "q1_display_sales",
+          "value": 2773,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "q1_display_op",
+          "value": 88,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "h1_other_sales",
+          "value": 5,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "q1_other_sales",
+          "value": 2,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "guidance_sales",
+          "value": 18101,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 2、通期連結・今回発表予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 1443,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 2、通期連結・今回発表予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 1491,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 2、通期連結・今回発表予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 1069,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 2、通期連結・親会社株主に帰属する当期純利益"
+        },
+        {
+          "id": "bear_equipment_sales",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+          "rationale": "直前四半期のセグメント売上を起点に、AI関連受注残の売上化が限定的となる条件。液晶装置の需要回復や大型案件の集中検収は織り込まない。受注残の金額を確認した推計ではない。",
+          "sensitivity": "装置売上が100変動すると連結売上も100、当シナリオの採算一定なら営業利益は8変動する。",
+          "material": true
+        },
+        {
+          "id": "base_equipment_sales",
+          "value": 1350,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+          "rationale": "設備と消耗品の販売が好調だった第1四半期の売上水準をやや上回る条件。会社が説明する下半期のAI関連受注残売上化を反映するが、その四半期配分は独自仮定。",
+          "sensitivity": "装置売上が100変動すると連結売上も100、当シナリオの採算一定なら営業利益は14変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_equipment_sales",
+          "value": 1600,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,6,12; S02 PDF pages 6,11; S05 PDF page 2",
+          "rationale": "AI関連設備の検収が進み、直近の四半期間売上変動幅を上回る増収となる条件。仕掛品増加と下半期の受注残売上化説明を方向性の根拠とする。仕掛品を売価換算した数値ではなく、確率的な上限でもない。",
+          "sensitivity": "装置売上が100変動すると連結売上も100、当シナリオの採算一定なら営業利益は18変動する。検収後ずれが主要な下振れ要因。",
+          "material": true
+        },
+        {
+          "id": "bear_display_sales",
+          "value": 2850,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直近両四半期の売上水準の間を採用。JPNの新規量産品受注遅延と自動車向け生産調整が、操作パネル需要増を一部相殺する条件。",
+          "sensitivity": "売上が100変動すると連結売上も100、採算一定なら営業利益は2.5変動する。",
+          "material": true
+        },
+        {
+          "id": "base_display_sales",
+          "value": 3000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直前四半期とほぼ同水準。操作パネルの需要増を認める一方、中国の実装需要停滞とJPNの受注遅延を踏まえ、急回復を見込まない。",
+          "sensitivity": "売上が100変動すると連結売上も100、採算一定なら営業利益は3.5変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_display_sales",
+          "value": 3150,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12,14; S02 PDF pages 11,12; S05 PDF page 2",
+          "rationale": "操作パネルと電子部品実装の販売が直前四半期から緩やかに増える条件。増分は直近のセグメント四半期間増収幅以内とし、JPNの新規量産品獲得は前提にしない。",
+          "sensitivity": "売上が100変動すると連結売上も100、採算一定なら営業利益は4.1変動する。",
+          "material": true
+        },
+        {
+          "id": "bear_equipment_margin",
+          "value": 0.08,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直前四半期の営業利益率をやや下回る条件。装置構成の弱さと下半期へ繰り延べた修繕の負担を含む。売上原価と販管費を含むセグメント採算であり、修繕費を別途控除しない。",
+          "sensitivity": "利益率が1ポイント変動すると当シナリオの営業利益は11変動する。修繕負担が想定範囲を超える場合、この利益予測は成立しない。",
+          "material": true
+        },
+        {
+          "id": "base_equipment_margin",
+          "value": 0.14,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直前四半期から装置構成が改善する一方、上期平均の営業利益率には届かない条件。下半期の修繕負担を採算に含み、追加控除しない。",
+          "sensitivity": "利益率が1ポイント変動すると当シナリオの営業利益は13.5変動する。修繕費の実施時期・金額により変動。",
+          "material": true
+        },
+        {
+          "id": "bull_equipment_margin",
+          "value": 0.18,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "設備売上の構成改善で上期平均を上回るが、好採算だった第1四半期の利益率を下回る条件。修繕費を含む採算であり、修繕延期そのものを追加利益として計上しない。",
+          "sensitivity": "利益率が1ポイント変動すると当シナリオの営業利益は16変動する。",
+          "material": true
+        },
+        {
+          "id": "bear_display_margin",
+          "value": 0.025,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "JPNの材料高と営業損失が悪化し、第1四半期のセグメント利益率を下回る条件。既存の赤字と追加悪化をこの採算に包含。",
+          "sensitivity": "利益率が1ポイント変動すると営業利益は28.5変動する。",
+          "material": true
+        },
+        {
+          "id": "base_display_margin",
+          "value": 0.035,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直近両四半期の利益率の間を採用。操作パネル需要は下支えするが、JPNの通期営業損失見通しと材料高を織り込む。",
+          "sensitivity": "利益率が1ポイント変動すると営業利益は30変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_display_margin",
+          "value": 0.041,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "rationale": "直前四半期とほぼ同じ採算を維持する条件。JPNの黒字化や材料価格の反落は仮定しない。",
+          "sensitivity": "利益率が1ポイント変動すると営業利益は31.5変動する。",
+          "material": true
+        },
+        {
+          "id": "other_sales",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11",
+          "rationale": "その他事業の売上を直前累計差額と同水準に置く。",
+          "sensitivity": "売上の変動額だけ連結売上が変動する。",
+          "material": false
+        },
+        {
+          "id": "other_op",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11",
+          "rationale": "その他事業の損益は開示表示上ゼロ近傍であり、予測もゼロとする。",
+          "sensitivity": "実際の損益が1変動すれば連結営業利益も1変動する。",
+          "material": false
+        }
+      ],
+      "calculations": [
+        {
+          "id": "q2_revenue",
+          "formula": "h1_revenue-q1_revenue"
+        },
+        {
+          "id": "q2_op",
+          "formula": "h1_op-q1_op"
+        },
+        {
+          "id": "q2_equipment_sales",
+          "formula": "h1_equipment_sales-q1_equipment_sales"
+        },
+        {
+          "id": "q2_equipment_op",
+          "formula": "h1_equipment_op-q1_equipment_op"
+        },
+        {
+          "id": "q2_display_sales",
+          "formula": "h1_display_sales-q1_display_sales"
+        },
+        {
+          "id": "q2_display_op",
+          "formula": "h1_display_op-q1_display_op"
+        },
+        {
+          "id": "q2_other_sales",
+          "formula": "h1_other_sales-q1_other_sales"
+        },
+        {
+          "id": "q2_other_op",
+          "formula": "q2_op-q2_equipment_op-q2_display_op"
+        },
+        {
+          "id": "company_implied_h2_sales",
+          "formula": "guidance_sales-h1_revenue"
+        },
+        {
+          "id": "company_implied_h2_op",
+          "formula": "guidance_op-h1_op"
+        },
+        {
+          "id": "bear_equipment_op",
+          "formula": "bear_equipment_sales*bear_equipment_margin"
+        },
+        {
+          "id": "bear_display_op",
+          "formula": "bear_display_sales*bear_display_margin"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_equipment_sales+bear_display_sales+other_sales"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_equipment_op+bear_display_op+other_op"
+        },
+        {
+          "id": "base_equipment_op",
+          "formula": "base_equipment_sales*base_equipment_margin"
+        },
+        {
+          "id": "base_display_op",
+          "formula": "base_display_sales*base_display_margin"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_equipment_sales+base_display_sales+other_sales"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_equipment_op+base_display_op+other_op"
+        },
+        {
+          "id": "bull_equipment_op",
+          "formula": "bull_equipment_sales*bull_equipment_margin"
+        },
+        {
+          "id": "bull_display_op",
+          "formula": "bull_display_sales*bull_display_margin"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_equipment_sales+bull_display_sales+other_sales"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_equipment_op+bull_display_op+other_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電子機器部品製造装置",
+              "revenue": "bear_equipment_sales",
+              "operating_profit": "bear_equipment_op"
+            },
+            {
+              "name": "ディスプレイ及び電子部品",
+              "revenue": "bear_display_sales",
+              "operating_profit": "bear_display_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "other_sales",
+              "operating_profit": "other_op"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電子機器部品製造装置",
+              "revenue": "base_equipment_sales",
+              "operating_profit": "base_equipment_op"
+            },
+            {
+              "name": "ディスプレイ及び電子部品",
+              "revenue": "base_display_sales",
+              "operating_profit": "base_display_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "other_sales",
+              "operating_profit": "other_op"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "電子機器部品製造装置",
+              "revenue": "bull_equipment_sales",
+              "operating_profit": "bull_equipment_op"
+            },
+            {
+              "name": "ディスプレイ及び電子部品",
+              "revenue": "bull_display_sales",
+              "operating_profit": "bull_display_op"
+            },
+            {
+              "name": "その他",
+              "revenue": "other_sales",
+              "operating_profit": "other_op"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 1,
+          "period_start": "2026-02-01",
+          "period_end": "2026-04-30",
+          "revenue": 4049,
+          "operating_profit": 367,
+          "ordinary_profit": 376,
+          "net_profit": 266,
+          "accounting_basis": "日本基準",
+          "accounting_version": "当期公表版・会計方針変更及び修正再表示なし",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1-2"
+        },
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 2,
+          "period_start": "2026-02-01",
+          "period_end": "2026-07-31",
+          "revenue": 8092,
+          "operating_profit": 580,
+          "ordinary_profit": 603,
+          "net_profit": 450,
+          "accounting_basis": "日本基準",
+          "accounting_version": "当期公表版・会計方針変更及び修正再表示なし",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1-2"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 1,
+          "period_start": "2025-02-01",
+          "period_end": "2025-04-30",
+          "revenue": 3604,
+          "operating_profit": 184,
+          "ordinary_profit": 194,
+          "net_profit": 162,
+          "accounting_basis": "日本基準",
+          "accounting_version": "S02掲載の前年比較版",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1,8"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 2,
+          "period_start": "2025-02-01",
+          "period_end": "2025-07-31",
+          "revenue": 7472,
+          "operating_profit": 464,
+          "ordinary_profit": 521,
+          "net_profit": 460,
+          "accounting_basis": "日本基準",
+          "accounting_version": "S01掲載の前年比較版",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1,8"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "fy_sales_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_sales",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF page 2"
+        },
+        {
+          "id": "fy_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF page 2"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF page 2"
+        },
+        {
+          "id": "fy_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF page 2、親会社株主に帰属する当期純利益"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "AI関連パッケージ基板向け設備の受注残売上化",
+          "mechanism": "受注増が設備の検収と売上構成改善につながる。下半期の売上化方針は会社説明、対象四半期への配分と採算は独自仮定。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 2",
+          "calculation_ids": [
+            "bear_equipment_op",
+            "base_equipment_op",
+            "bull_equipment_op"
+          ],
+          "not_quantified_reason": "受注残金額、装置台数、単価、検収予定の定量開示が保存原文にないため、数量と価格の分離はできない。"
+        },
+        {
+          "name": "操作パネル需要とJPNの収益悪化",
+          "mechanism": "操作パネル需要増が売上を支える一方、JPNの新規量産品受注遅延と材料高が採算を抑える。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,14; S05 PDF page 2",
+          "calculation_ids": [
+            "bear_display_op",
+            "base_display_op",
+            "bull_display_op"
+          ],
+          "not_quantified_reason": "子会社別の売上・営業損失額と材料価格の定量感応度は保存原文にない。"
+        },
+        {
+          "name": "下半期への修繕費繰延べ",
+          "mechanism": "上期の販管費抑制効果が下半期に反転し得る。シナリオのセグメント採算に包含し、別途の増益・減益を加算しない。",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 2、上期差異の理由",
+          "calculation_ids": [
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "修繕費総額、実施四半期、セグメント配賦は非開示。費用別の積上げはできず、採算範囲内に収まることが条件。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": null,
+          "forecast": "bear_revenue",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": null,
+          "forecast": "bear_op",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "q2_revenue",
+          "forecast": "bear_revenue",
+          "difference_formula": "bear_revenue-q2_revenue",
+          "components": [
+            {
+              "label": "装置セグメント",
+              "formula": "bear_equipment_sales-q2_equipment_sales",
+              "reason": "AI関連受注残の売上化が限定的となる条件。"
+            },
+            {
+              "label": "ディスプレイ及び電子部品",
+              "formula": "bear_display_sales-q2_display_sales",
+              "reason": "JPNと自動車向けの弱さを反映。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_sales-q2_other_sales",
+              "reason": "直前四半期水準を維持。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "q2_op",
+          "forecast": "bear_op",
+          "difference_formula": "bear_op-q2_op",
+          "components": [
+            {
+              "label": "装置の売上・採算複合効果",
+              "formula": "bear_equipment_op-q2_equipment_op",
+              "reason": "検収の限定進展、製品構成と修繕負担を含む条件付き差額。"
+            },
+            {
+              "label": "電子部品等の売上・採算複合効果",
+              "formula": "bear_display_op-q2_display_op",
+              "reason": "減収と材料高による採算悪化を含む。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_op-q2_other_op",
+              "reason": "表示値ベースのその他損益。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": null,
+          "forecast": "base_revenue",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": null,
+          "forecast": "base_op",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "q2_revenue",
+          "forecast": "base_revenue",
+          "difference_formula": "base_revenue-q2_revenue",
+          "components": [
+            {
+              "label": "装置セグメント",
+              "formula": "base_equipment_sales-q2_equipment_sales",
+              "reason": "AI関連受注残の売上化による増収条件。"
+            },
+            {
+              "label": "ディスプレイ及び電子部品",
+              "formula": "base_display_sales-q2_display_sales",
+              "reason": "操作パネル需要とJPNの弱さが相殺し、売上をほぼ維持。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_sales-q2_other_sales",
+              "reason": "直前四半期水準を維持。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "q2_op",
+          "forecast": "base_op",
+          "difference_formula": "base_op-q2_op",
+          "components": [
+            {
+              "label": "装置の売上・採算複合効果",
+              "formula": "base_equipment_op-q2_equipment_op",
+              "reason": "装置構成改善と修繕負担を含む条件付き差額。"
+            },
+            {
+              "label": "電子部品等の売上・採算複合効果",
+              "formula": "base_display_op-q2_display_op",
+              "reason": "売上維持と材料高による採算抑制を含む。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_op-q2_other_op",
+              "reason": "表示値ベースのその他損益。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": null,
+          "forecast": "bull_revenue",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": null,
+          "forecast": "bull_op",
+          "difference_formula": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年第3四半期累計のS03原文未確認により前年同四半期単独を算定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "q2_revenue",
+          "forecast": "bull_revenue",
+          "difference_formula": "bull_revenue-q2_revenue",
+          "components": [
+            {
+              "label": "装置セグメント",
+              "formula": "bull_equipment_sales-q2_equipment_sales",
+              "reason": "AI関連設備の検収進展を強く反映する条件。"
+            },
+            {
+              "label": "ディスプレイ及び電子部品",
+              "formula": "bull_display_sales-q2_display_sales",
+              "reason": "操作パネルと実装売上の緩やかな増加条件。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_sales-q2_other_sales",
+              "reason": "直前四半期水準を維持。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "表示値ベースでセグメント差額の合計と連結差額が一致。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "q2_op",
+          "forecast": "bull_op",
+          "difference_formula": "bull_op-q2_op",
+          "components": [
+            {
+              "label": "装置の売上・採算複合効果",
+              "formula": "bull_equipment_op-q2_equipment_op",
+              "reason": "設備検収と製品構成改善を反映し、修繕負担も採算に包含。"
+            },
+            {
+              "label": "電子部品等の売上・採算複合効果",
+              "formula": "bull_display_op-q2_display_op",
+              "reason": "直前四半期並みの採算で販売増加。"
+            },
+            {
+              "label": "その他",
+              "formula": "other_op-q2_other_op",
+              "reason": "表示値ベースのその他損益。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "セグメント別差額で全額を照合。数量・単価・費用ごとの因果分解ではない。"
+        }
+      ],
+      "company_guidance": "保存原文で確認した最新の会社予想は、2026年9月11日修正の通期連結予想。対象四半期単独の会社予想は保存原文にない。通期予想から中間実績を控除した下半期差引き値はcalculationsに分離し、独自予測の配分元には使用していない。latest_confirmedは提示原文の範囲内を意味する。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスは含まれていない。",
+      "independent_forecast": "直近のセグメント単独実績、AI関連受注残の売上化説明、製品構成、JPNの採算悪化を基にした条件付きセグメント積上げ。売上と採算の仮定は実績ではなく、確率的な予測区間でもない。数量・価格・費用別の精密積上げはできないが、直近実績を参照するシナリオは作成可能と判断した。営業利益を先に定めた費用の逆算は行っていない。経常利益と純利益は根拠不足でnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き予測",
+          "text": "中心シナリオの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。AI関連設備の検収進展が主要な増収要因で、操作パネル需要が下支えする。一方、JPNの材料高と受注遅延、下半期の修繕負担が利益改善を抑える。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2"
+        },
+        {
+          "heading": "シナリオの幅と反証条件",
+          "text": "弱気は売上{{value:bear_revenue}}・営業利益{{value:bear_op}}、強気は売上{{value:bull_revenue}}・営業利益{{value:bull_op}}。装置検収が後ずれする場合や、修繕・材料費負担が仮定した採算範囲を超える場合は下振れる。受注残金額と検収予定が未確認のため、この範囲を保証された上下限として扱わない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 2"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "会社の通期予想から上期実績を引いた下半期の差引き値は、売上{{value:company_implied_h2_sales}}、営業利益{{value:company_implied_h2_op}}。これは対象四半期単独の会社予想でも独自予測でもない。会社修正に含まれるAI需要、JPN悪化、修繕時期変更を別途加算していない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF page 2"
+        },
+        {
+          "heading": "比較の限界",
+          "text": "前四半期単独は売上{{value:q2_revenue}}、営業利益{{value:q2_op}}。同一会計版の当期累計差引きで算出した。前年同四半期は必要な原文が未確認のため算定せず、前年同期比ブリッジは未算定残差を明示した。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF pages 1-2"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "unknown",
+        "company_guidance": "reviewed",
+        "historical": "partial",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "保存原文では装置台数、単価、受注残金額、案件別検収予定が非開示。",
+        "修繕費の総額、実施四半期、セグメント配賦が非開示で、営業利益は仮定した採算範囲に収まることが条件。",
+        "JPNの損失額、材料高の影響額、新規量産品の受注時期は定量的に確認できない。",
+        "為替差損益、助成金、特別損益、四半期の税率調整に根拠ある範囲を設定できないため、経常利益と親会社株主帰属純利益は予測しない。"
+      ],
+      "material_unresolved": [
+        "S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。",
+        "S08のカレンダー原文がないため、決算予定日は提示された対象条件を採用した。基準日時以前の掲載履歴も未確認。",
+        "S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。",
+        "S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。",
+        "対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。",
+        "セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。",
+        "累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。",
+        "会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。"
+      ],
+      "_truncated_source_ids": [
+        "S09"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": 294.00000000000006,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 18,
+      "Medium": 18,
+      "Low": 2
+    },
+    "material_assumption_count": 12,
+    "schedule_check": {
+      "input_date": "2026-12-11",
+      "official_date": "2026-12-11",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://www.ishiihyoki.co.jp/IR/closing/short/ の公式IRカレンダー検索結果に「2026年12月11日」「2027年1月期 第3四半期決算発表予定」と明記。ページ本文は取得エラーで未読。掲載開始日と基準日時時点のページ履歴はunknown。",
+      "warnings": [
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "fy_sales_guidance",
+        "metric": "revenue",
+        "value_ref": "guidance_sales",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 4353.0,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_sales_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "18101は2026年2月1日～2027年1月31日の通期連結予想で、9月11日修正を確認。対象第3四半期単独とは期間不一致。下半期差引き10009は正しいが四半期予想ではない。通期達成に必要な第4四半期売上は弱気6056、中心5656、強気5256となるが、これは整合性診断であり会社予想・独自予測ではない。検収時期の定量情報がなく、その配分の合理性は未確認。最新性は提示原文内に限る。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "２．2027 年１月期通期業績予想（2026 年２月１日～2027 年１月 31 日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_op_guidance",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 294.00000000000006,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_op_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1443は9月11日修正の通期連結予想。対象四半期とは期間不一致。下半期差引き863は正しい。通期達成に必要な第4四半期利益は弱気703.75、中心569、強気445.85となるが、費用時期・製品構成が未確認であり達成可能性は判定不能。会社予想との乖離自体は誤りとしない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_ordinary_guidance",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_ordinary_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1491は9月11日修正の通期連結経常利益予想と一致。対象四半期単独とは期間不一致で、独自経常利益予測もnullのため乖離比較は適用外。9月11日以降の改定有無は未確認。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_net_guidance",
+        "metric": "net_profit",
+        "value_ref": "guidance_net",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2、親会社株主に帰属する当期純利益",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_net_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1069は9月11日修正の通期連結・親会社株主に帰属する当期純利益予想と一致し、個別純利益852との混同はない。対象四半期単独とは期間不一致、独自予測もnullのため乖離比較は適用外。最新性は提示原文内に限る。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "通期 18,101 15.7 1,443 26.6 1,491 25.9 1,069 20.2 133.92"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "検証未了",
+    "quality": "要修正",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "同一会計・連結範囲の比較四半期不足: yoy"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: historical"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: presentation"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: segments_kpi"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_equipment_margin",
+        "assumption_id": "bull_equipment_margin",
+        "absolute_effect": 160.0,
+        "relative_effect": 0.5442176870748299
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_equipment_margin",
+        "assumption_id": "bear_equipment_margin",
+        "absolute_effect": 110.0,
+        "relative_effect": 0.3741496598639455
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_equipment_sales",
+        "assumption_id": "bull_equipment_sales",
+        "absolute_effect": 90.0,
+        "relative_effect": 0.3061224489795918
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_equipment_margin",
+        "assumption_id": "base_equipment_margin",
+        "absolute_effect": 81.00000000000006,
+        "relative_effect": 0.2755102040816328
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_display_margin",
+        "assumption_id": "bull_display_margin",
+        "absolute_effect": 50.39999999999998,
+        "relative_effect": 0.17142857142857132
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_display_margin",
+        "assumption_id": "bear_display_margin",
+        "absolute_effect": 45.60000000000002,
+        "relative_effect": 0.1551020408163266
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_equipment_sales",
+        "assumption_id": "bear_equipment_sales",
+        "absolute_effect": 40.0,
+        "relative_effect": 0.13605442176870747
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_equipment_sales",
+        "assumption_id": "base_equipment_sales",
+        "absolute_effect": 35.0,
+        "relative_effect": 0.11904761904761903
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_display_margin",
+        "assumption_id": "base_display_margin",
+        "absolute_effect": 30.000000000000057,
+        "relative_effect": 0.10204081632653078
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_display_sales",
+        "assumption_id": "bull_display_sales",
+        "absolute_effect": 12.299999999999955,
+        "relative_effect": 0.041836734693877387
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_display_sales",
+        "assumption_id": "bear_display_sales",
+        "absolute_effect": 7.5,
+        "relative_effect": 0.025510204081632647
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_display_sales",
+        "assumption_id": "base_display_sales",
+        "absolute_effect": 5.25,
+        "relative_effect": 0.017857142857142853
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy_sales_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy_op_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy_ordinary_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy_net_guidance",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "source_coverage",
+        "message": "レビューへ渡す原文に省略あり: S09"
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "重要仮定12件は方向性の説明と採用数値の根拠が分離されていない。特に中心装置利益率14%への改善が利益予測を大きく左右する。数量・単価・製品構成・修繕費から採用値へ至る根拠を追加する必要がある。diagnostic_perturbationは機械的テスト、既存シナリオ置換も独自仮定間の比較であり、いずれも会社が示す代替予測ではない。",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 2",
+        "evidence_excerpt": "あります。また、売上高増加に伴い、営業利益以下の各段階利益も前回予想を上回る見込みでありま",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "period",
+        "message": "前年第3四半期累計のS03原文がなく、前年単独値＝前年第3四半期累計−7472（売上）、同累計−464（営業利益）を完成できない。全シナリオのYoYを未算定のまま保持する必要がある。機械側のFinite number requiredは欠損処理上の問題であり、予測数値の算術誤りを示すものではない。",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、前年中間期比較欄。S03本文未添付",
+        "evidence_excerpt": "2026年１月期中間期 7,472 △0.1 464 3.6 521 3.2 460 29.5",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "residual",
+        "message": "営業利益のQnQ残差ゼロは、予測セグメント利益から実績セグメント利益を引く算術恒等式である。数量・価格・構成・修繕・材料費の説明額は未算定であり、未説明の経済的残差をゼロと認定できない。算術残差と経済要因の未定量部分を別項目で管理すべきである。",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S05 PDF page 2",
+        "evidence_excerpt": "２．セグメント利益の合計は、中間連結損益計算書の営業利益と一致しております。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "residual",
+        "message": "売上表示値の合計差は上期8092−(2316+5770+5)=1、第1四半期4049−(1273+2773+2)=1で、切捨て表示に整合しQnQでは相殺される。浮動小数点の約10のマイナス14乗の差も経済的残差ではない。会計基準変更による影響はS06がなしと明記しており、これらと未説明の経済要因を混同しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S06"
+        ],
+        "locator": "S01 PDF pages 1,12; S02 PDF pages 1,11; S06 PDF page 16",
+        "evidence_excerpt": "（百万円未満切捨て）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "other",
+        "message": "再計算結果の前年第2四半期単独値はすべてnullだが、提示比較欄から表示値差引きで売上3868、営業利益280、経常利益327、純利益298を算出可能。比較版の整合性確認を付して再計算処理を点検すべきであり、前年第3四半期の欠損とは別問題。これを補っても対象四半期YoYは完成しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S06"
+        ],
+        "locator": "S01 PDF page 1; S02 PDF page 1; S06 PDF page 16",
+        "evidence_excerpt": "2026年１月期第１四半期 3,604 13.0 184 267.0 194 94.0 162 115.1",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "guidance",
+        "message": "S05の通期連結予想の表示値単純差は売上1435、純利益124だが増減額欄は1434、123。予想水準の転記は正しく、表示端数等の可能性を除けないため今回予想値を修正しない。増減額を使用する場合は未丸め値または会社説明を確認する。",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 2、通期連結予想修正表",
+        "evidence_excerpt": "増  減  額          （Ｂ－Ａ）  1,434 288 285 123 －",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "9月11日の修正事実は確認できるが、その後から基準日時までの開示履歴がないため最新予想であることと対象実績が未公表であることの網羅的検証は未了。S01の重要な後発事象なしは9月11日時点の記述であり、11月18日までの不存在の証明にはならない。",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 14",
+        "evidence_excerpt": "（重要な後発事象）\n該当事項はありません。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 18,
+      "Medium": 18,
+      "Low": 2
+    },
+    "assumptions": [
+      {
+        "id": "bull_equipment_margin",
+        "category": "利益率",
+        "adopted_value": 0.18,
+        "unit": "比率",
+        "rationale": "設備売上の構成改善で上期平均を上回るが、好採算だった第1四半期の利益率を下回る条件。修繕費を含む採算であり、修繕延期そのものを追加利益として計上しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_equipment_margin",
+            "value": 0.08,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -160.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_equipment_margin",
+            "value": 0.14,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -63.99999999999994
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 160.0,
+        "relative_to_forecast_profit": 0.5442176870748299,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 1,
+        "independent_review": {
+          "id": "bull_equipment_margin",
+          "status": "unsupported",
+          "reason": "18%は上期約15.93%を上回り第1四半期約21.92%を下回る。しかし下半期の修繕負担を吸収しつつ前四半期比約9.37ポイント改善する根拠はない。既存シナリオへの置換感応度は採用率の証拠ではない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "（△） 279 88 367 △0 367 － 367"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_equipment_margin",
+        "category": "利益率",
+        "adopted_value": 0.08,
+        "unit": "比率",
+        "rationale": "直前四半期の営業利益率をやや下回る条件。装置構成の弱さと下半期へ繰り延べた修繕の負担を含む。売上原価と販管費を含むセグメント採算であり、修繕費を別途控除しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_equipment_margin",
+            "value": 0.14,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 66.00000000000003,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_equipment_margin",
+            "value": 0.18,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 110.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 110.0,
+        "relative_to_forecast_profit": 0.3741496598639455,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 2,
+        "independent_review": {
+          "id": "bear_equipment_margin",
+          "status": "unsupported",
+          "reason": "8%が前四半期約8.63%を下回ることは正しいが、その差約0.63ポイントで製品構成と修繕負担を吸収できる根拠はない。修繕額・配賦・時期が未確認。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "期に変更したことなどから、 販売費及び一般管理費の支出も当初想定を下回り、 営業利益以下の各段階"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_equipment_sales",
+        "category": "受注残転換",
+        "adopted_value": 1600.0,
+        "unit": "百万円",
+        "rationale": "AI関連設備の検収が進み、直近の四半期間売上変動幅を上回る増収となる条件。仕掛品増加と下半期の受注残売上化説明を方向性の根拠とする。仕掛品を売価換算した数値ではなく、確率的な上限でもない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,6,12; S02 PDF pages 6,11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_equipment_sales",
+            "value": 1100,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -90.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_equipment_sales",
+            "value": 1350,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -45.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 90.0,
+        "relative_to_forecast_profit": 0.3061224489795918,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 3,
+        "independent_review": {
+          "id": "bull_equipment_sales",
+          "status": "unsupported",
+          "reason": "1600は前四半期から557増。仕掛品は第1四半期末1036から中間期末1328へ292増えているが、連結簿価であり、装置売価・利益・検収四半期への換算根拠はない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 6; S02 PDF page 6; S05 PDF page 2",
+          "evidence_excerpt": "仕掛品 985 1,328"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_equipment_margin",
+        "category": "利益率",
+        "adopted_value": 0.14,
+        "unit": "比率",
+        "rationale": "直前四半期から装置構成が改善する一方、上期平均の営業利益率には届かない条件。下半期の修繕負担を採算に含み、追加控除しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_equipment_margin",
+            "value": 0.08,
+            "operating_profit": 213.0,
+            "change": -81.00000000000006,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -81.00000000000006,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_equipment_margin",
+            "value": 0.18,
+            "operating_profit": 348.0,
+            "change": 53.99999999999994,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 53.99999999999994,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 81.00000000000006,
+        "relative_to_forecast_profit": 0.2755102040816328,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 4,
+        "independent_review": {
+          "id": "base_equipment_margin",
+          "status": "unsupported",
+          "reason": "14%は前四半期約8.63%と上期約15.93%の間だが、改善約5.37ポイントの製品構成・固定費・修繕費別の根拠がない。売上1350で利益率を1ポイント変えると利益13.5変動する算式は正しいが、14%を支持しない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "セグメント利益 369 211 580 0 580 － 580"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_display_margin",
+        "category": "利益率",
+        "adopted_value": 0.041,
+        "unit": "比率",
+        "rationale": "直前四半期とほぼ同じ採算を維持する条件。JPNの黒字化や材料価格の反落は仮定しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_display_margin",
+            "value": 0.025,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -50.39999999999998
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_display_margin",
+            "value": 0.035,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -18.899999999999977
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 50.39999999999998,
+        "relative_to_forecast_profit": 0.17142857142857132,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 5,
+        "independent_review": {
+          "id": "bull_display_margin",
+          "status": "unsupported",
+          "reason": "4.1%は前四半期123/2997≒4.104%とほぼ一致。ただし売上拡大局面で材料高・JPN損失を含めて同率を維持できる原文上の数値根拠はない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "料価格の上昇などの影響により営業損失を計上し、 想定を下回る結果となりました。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_display_margin",
+        "category": "利益率",
+        "adopted_value": 0.025,
+        "unit": "比率",
+        "rationale": "JPNの材料高と営業損失が悪化し、第1四半期のセグメント利益率を下回る条件。既存の赤字と追加悪化をこの採算に包含。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_display_margin",
+            "value": 0.035,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 28.5,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_display_margin",
+            "value": 0.041,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 45.60000000000002,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 45.60000000000002,
+        "relative_to_forecast_profit": 0.1551020408163266,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 6,
+        "independent_review": {
+          "id": "bear_display_margin",
+          "status": "unsupported",
+          "reason": "2.5%は第1四半期約3.17%より低く、材料高・JPN損失の方向性とは整合する。ただし損失悪化額や材料価格感応度がなく、2.5%という率は支持できない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 2",
+          "evidence_excerpt": "遅れること、 材料価格も想定以上に上昇していることなどから、 通期ベースでも営業損失を計上し連結"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_equipment_sales",
+        "category": "受注残転換",
+        "adopted_value": 1100.0,
+        "unit": "百万円",
+        "rationale": "直前四半期のセグメント売上を起点に、AI関連受注残の売上化が限定的となる条件。液晶装置の需要回復や大型案件の集中検収は織り込まない。受注残の金額を確認した推計ではない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_equipment_sales",
+            "value": 1350,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 20.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_equipment_sales",
+            "value": 1600,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 40.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 40.0,
+        "relative_to_forecast_profit": 0.13605442176870747,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 7,
+        "independent_review": {
+          "id": "bear_equipment_sales",
+          "status": "unsupported",
+          "reason": "1100は前四半期1043より57増。受注増の方向性は確認できるが、限定的な検収を57の増収へ変換する数量・単価・時期の根拠がない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 2",
+          "evidence_excerpt": "プリント基板分野では、ＡＩ関連向けパッケージ基板の需要増加に伴い関連設備の受注が増加しております。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_equipment_sales",
+        "category": "受注残転換",
+        "adopted_value": 1350.0,
+        "unit": "百万円",
+        "rationale": "設備と消耗品の販売が好調だった第1四半期の売上水準をやや上回る条件。会社が説明する下半期のAI関連受注残売上化を反映するが、その四半期配分は独自仮定。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_equipment_sales",
+            "value": 1100,
+            "operating_profit": 259.00000000000006,
+            "change": -35.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -35.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_equipment_sales",
+            "value": 1600,
+            "operating_profit": 329.00000000000006,
+            "change": 35.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 35.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 35.0,
+        "relative_to_forecast_profit": 0.11904761904761903,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 8,
+        "independent_review": {
+          "id": "base_equipment_sales",
+          "status": "unsupported",
+          "reason": "1350は第1四半期1273を77上回る。下半期の受注残売上化は根拠になるが、対象四半期への配分と1350という水準は裏付けられない。",
+          "source_ids": [
+            "S02",
+            "S05"
+          ],
+          "locator": "S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "残高が売上計上されてくることを主要因として、全社ベースでの売上高は当初予想を上回る見込みで"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_display_margin",
+        "category": "利益率",
+        "adopted_value": 0.035,
+        "unit": "比率",
+        "rationale": "直近両四半期の利益率の間を採用。操作パネル需要は下支えするが、JPNの通期営業損失見通しと材料高を織り込む。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_display_margin",
+            "value": 0.025,
+            "operating_profit": 264.0,
+            "change": -30.000000000000057,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -30.000000000000057,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_display_margin",
+            "value": 0.041,
+            "operating_profit": 312.0,
+            "change": 17.999999999999943,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 17.999999999999943,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 30.000000000000057,
+        "relative_to_forecast_profit": 0.10204081632653078,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 9,
+        "independent_review": {
+          "id": "base_display_margin",
+          "status": "unsupported",
+          "reason": "3.5%は第1四半期約3.17%と前四半期約4.10%の間である。しかしJPN損失と他事業の利益寄与を分離できず、採用率を正当化する費用積上げがない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+          "evidence_excerpt": "減収減益となり、営業損失を計上しております。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_display_sales",
+        "category": "連結・事業売却",
+        "adopted_value": 3150.0,
+        "unit": "百万円",
+        "rationale": "操作パネルと電子部品実装の販売が直前四半期から緩やかに増える条件。増分は直近のセグメント四半期間増収幅以内とし、JPNの新規量産品獲得は前提にしない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12,14; S02 PDF pages 11,12; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_display_sales",
+            "value": 2850,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -12.299999999999955
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_display_sales",
+            "value": 3000,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -6.149999999999977
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 12.299999999999955,
+        "relative_to_forecast_profit": 0.041836734693877387,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 10,
+        "independent_review": {
+          "id": "bull_display_sales",
+          "status": "unsupported",
+          "reason": "3150の前四半期比増分153は直近増分224以内だが、過去の増分以内という条件は採用値の根拠にならない。電子部品実装需要の拡大を示す原文もなく、強気条件の実現性は未確認。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,12,14; S02 PDF pages 11-12",
+          "evidence_excerpt": "ら電子部品実装需要も拡大せずほぼ前年同期並みの業績となりました。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_display_sales",
+        "category": "連結・事業売却",
+        "adopted_value": 2850.0,
+        "unit": "百万円",
+        "rationale": "直近両四半期の売上水準の間を採用。JPNの新規量産品受注遅延と自動車向け生産調整が、操作パネル需要増を一部相殺する条件。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_display_sales",
+            "value": 3000,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 3.75,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_display_sales",
+            "value": 3150,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 7.5,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 7.5,
+        "relative_to_forecast_profit": 0.025510204081632647,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 11,
+        "independent_review": {
+          "id": "bear_display_sales",
+          "status": "unsupported",
+          "reason": "2850が第1四半期2773と前四半期2997の間であることは正しい。ただし自動車向け減収と操作パネル増収の相殺額を定量化しておらず、2850の選択は支持できない。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,12; S02 PDF page 11",
+          "evidence_excerpt": "自動車向け印刷製品において顧客の生産調整の影響が大きく、売上高は前年同期と比較し減少しました。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_display_sales",
+        "category": "連結・事業売却",
+        "adopted_value": 3000.0,
+        "unit": "百万円",
+        "rationale": "直前四半期とほぼ同水準。操作パネルの需要増を認める一方、中国の実装需要停滞とJPNの受注遅延を踏まえ、急回復を見込まない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_display_sales",
+            "value": 2850,
+            "operating_profit": 288.75000000000006,
+            "change": -5.25,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -5.25,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_display_sales",
+            "value": 3150,
+            "operating_profit": 299.25000000000006,
+            "change": 5.25,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 5.25,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 5.25,
+        "relative_to_forecast_profit": 0.017857142857142853,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 12,
+        "independent_review": {
+          "id": "base_display_sales",
+          "status": "unsupported",
+          "reason": "3000は前四半期2997とほぼ同水準だが、需要増とJPN悪化が相殺するとの数量的裏付けはない。過去水準の据置きは会社の代替予測ではない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 2",
+          "evidence_excerpt": "産業用機械向け操作パネルについては、顧客の需要が増加しており売上高が前年同期と比較して増加しておりま"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "other_op",
+        "category": "連結・事業売却",
+        "adopted_value": 0.0,
+        "unit": "百万円",
+        "rationale": "その他事業の損益は開示表示上ゼロ近傍であり、予測もゼロとする。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": -1.0,
+            "operating_profit": 293.00000000000006,
+            "change": -1.0,
+            "scenario_profit_changes": {
+              "bear": -1.0,
+              "base": -1.0,
+              "bull": -1.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 1.0,
+            "operating_profit": 295.00000000000006,
+            "change": 1.0,
+            "scenario_profit_changes": {
+              "bear": 1.0,
+              "base": 1.0,
+              "bull": 1.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 1.0,
+        "relative_to_forecast_profit": 0.0034013605442176865,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": true,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 13
+      },
+      {
+        "id": "other_sales",
+        "category": "連結・事業売却",
+        "adopted_value": 3.0,
+        "unit": "百万円",
+        "rationale": "その他事業の売上を直前累計差額と同水準に置く。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 11",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 2.7,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 3.3,
+            "operating_profit": 294.00000000000006,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 0.0,
+        "relative_to_forecast_profit": 0.0,
+        "near_zero_profit": false,
+        "material": false,
+        "affects_base_profit": false,
+        "declared_material": false,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 14
+      }
+    ],
+    "guidance": [
+      {
+        "id": "fy_sales_guidance",
+        "metric": "revenue",
+        "value_ref": "guidance_sales",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 4353.0,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_sales_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "18101は2026年2月1日～2027年1月31日の通期連結予想で、9月11日修正を確認。対象第3四半期単独とは期間不一致。下半期差引き10009は正しいが四半期予想ではない。通期達成に必要な第4四半期売上は弱気6056、中心5656、強気5256となるが、これは整合性診断であり会社予想・独自予測ではない。検収時期の定量情報がなく、その配分の合理性は未確認。最新性は提示原文内に限る。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "２．2027 年１月期通期業績予想（2026 年２月１日～2027 年１月 31 日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_op_guidance",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 294.00000000000006,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_op_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1443は9月11日修正の通期連結予想。対象四半期とは期間不一致。下半期差引き863は正しい。通期達成に必要な第4四半期利益は弱気703.75、中心569、強気445.85となるが、費用時期・製品構成が未確認であり達成可能性は判定不能。会社予想との乖離自体は誤りとしない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_ordinary_guidance",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_ordinary_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1491は9月11日修正の通期連結経常利益予想と一致。対象四半期単独とは期間不一致で、独自経常利益予測もnullのため乖離比較は適用外。9月11日以降の改定有無は未確認。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy_net_guidance",
+        "metric": "net_profit",
+        "value_ref": "guidance_net",
+        "period_start": "2026-02-01",
+        "period_end": "2027-01-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S05 PDF page 2、親会社株主に帰属する当期純利益",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy_net_guidance",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "1069は9月11日修正の通期連結・親会社株主に帰属する当期純利益予想と一致し、個別純利益852との混同はない。対象四半期単独とは期間不一致、独自予測もnullのため乖離比較は適用外。最新性は提示原文内に限る。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 1; S05 PDF pages 1-2",
+          "evidence_excerpt": "通期 18,101 15.7 1,443 26.6 1,491 25.9 1,069 20.2 133.92"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S03とS04は資料一覧に存在するが保存原文が添付されていない。前年中間実績はS01の比較欄で確認できるものの、前年第3四半期累計は原本未確認であり、前年同四半期単独とYoYブリッジは算定不能。非開示とは扱わない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S07の原文、半期報告書、独立したKPI資料は未確認。S01・S02は補足説明資料作成なし、説明会開催なしと記載するが、別途の質疑応答資料の有無は未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S09は短縮され、対象銘柄があるとされるPDF page 81が保存本文に含まれない。企業名とコードはS01・S02表紙で確認した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "セグメント採算には数量、価格、構成、固定費、修繕費等が混在する。ブリッジの残差ゼロはセグメント別の算術照合を意味し、各経済要因の独立した定量確認を意味しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "会社予想修正表の増減額には表示された予想値の単純差と一致しない箇所があるため、増減額欄を予測根拠に用いず、今回発表予想の水準を採用した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "同一会計・連結範囲の比較四半期不足: yoy",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "対象実績が既に公表済みでないという設定を採用したが、保存原文だけでは基準日時までの全開示の不存在を検証できない。期後開示と追加会社修正の網羅性も未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "累計表示値は百万円未満切捨てであり、差引き単独値は表示値ベース。売上のセグメント表示値合計と連結合計の差は上期・第1四半期で同額のため、前四半期比較では差が相殺される。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: historical",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: presentation",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: segments_kpi",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_equipment_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_equipment_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_equipment_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_equipment_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_display_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_display_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_equipment_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_equipment_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_display_margin",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_display_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_display_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_display_sales",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy_sales_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy_op_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy_ordinary_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy_net_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "source_coverage",
+      "message": "レビューへ渡す原文に省略あり: S09",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "assumption",
+      "message": "重要仮定12件は方向性の説明と採用数値の根拠が分離されていない。特に中心装置利益率14%への改善が利益予測を大きく左右する。数量・単価・製品構成・修繕費から採用値へ至る根拠を追加する必要がある。diagnostic_perturbationは機械的テスト、既存シナリオ置換も独自仮定間の比較であり、いずれも会社が示す代替予測ではない。",
+      "source_ids": "['S05']",
+      "locator": "PDF page 2",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "period",
+      "message": "前年第3四半期累計のS03原文がなく、前年単独値＝前年第3四半期累計−7472（売上）、同累計−464（営業利益）を完成できない。全シナリオのYoYを未算定のまま保持する必要がある。機械側のFinite number requiredは欠損処理上の問題であり、予測数値の算術誤りを示すものではない。",
+      "source_ids": "['S01']",
+      "locator": "PDF page 1、前年中間期比較欄。S03本文未添付",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "High",
+      "category": "residual",
+      "message": "営業利益のQnQ残差ゼロは、予測セグメント利益から実績セグメント利益を引く算術恒等式である。数量・価格・構成・修繕・材料費の説明額は未算定であり、未説明の経済的残差をゼロと認定できない。算術残差と経済要因の未定量部分を別項目で管理すべきである。",
+      "source_ids": "['S01', 'S05']",
+      "locator": "S01 PDF page 12; S05 PDF page 2",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Low",
+      "category": "residual",
+      "message": "売上表示値の合計差は上期8092−(2316+5770+5)=1、第1四半期4049−(1273+2773+2)=1で、切捨て表示に整合しQnQでは相殺される。浮動小数点の約10のマイナス14乗の差も経済的残差ではない。会計基準変更による影響はS06がなしと明記しており、これらと未説明の経済要因を混同しない。",
+      "source_ids": "['S01', 'S02', 'S06']",
+      "locator": "S01 PDF pages 1,12; S02 PDF pages 1,11; S06 PDF page 16",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "other",
+      "message": "再計算結果の前年第2四半期単独値はすべてnullだが、提示比較欄から表示値差引きで売上3868、営業利益280、経常利益327、純利益298を算出可能。比較版の整合性確認を付して再計算処理を点検すべきであり、前年第3四半期の欠損とは別問題。これを補っても対象四半期YoYは完成しない。",
+      "source_ids": "['S01', 'S02', 'S06']",
+      "locator": "S01 PDF page 1; S02 PDF page 1; S06 PDF page 16",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Low",
+      "category": "guidance",
+      "message": "S05の通期連結予想の表示値単純差は売上1435、純利益124だが増減額欄は1434、123。予想水準の転記は正しく、表示端数等の可能性を除けないため今回予想値を修正しない。増減額を使用する場合は未丸め値または会社説明を確認する。",
+      "source_ids": "['S05']",
+      "locator": "PDF page 2、通期連結予想修正表",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "company_name": "株式会社石井表記",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "9月11日の修正事実は確認できるが、その後から基準日時までの開示履歴がないため最新予想であることと対象実績が未公表であることの網羅的検証は未了。S01の重要な後発事象なしは9月11日時点の記述であり、11月18日までの不存在の証明にはならない。",
+      "source_ids": "['S01']",
+      "locator": "PDF page 14",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [
+    {
+      "code": "6336",
+      "id": "bull_equipment_margin",
+      "category": "利益率",
+      "adopted_value": "0.18",
+      "unit": "比率",
+      "rationale": "設備売上の構成改善で上期平均を上回るが、好採算だった第1四半期の利益率を下回る条件。修繕費を含む採算であり、修繕延期そのものを追加利益として計上しない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_equipment_margin\", \"value\": 0.08, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -160.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_equipment_margin\", \"value\": 0.14, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -63.99999999999994}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "160.0",
+      "relative_to_forecast_profit": "0.5442176870748299",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "1",
+      "independent_review": "{\"id\": \"bull_equipment_margin\", \"status\": \"unsupported\", \"reason\": \"18%は上期約15.93%を上回り第1四半期約21.92%を下回る。しかし下半期の修繕負担を吸収しつつ前四半期比約9.37ポイント改善する根拠はない。既存シナリオへの置換感応度は採用率の証拠ではない。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF page 12; S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"（△） 279 88 367 △0 367 － 367\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bear_equipment_margin",
+      "category": "利益率",
+      "adopted_value": "0.08",
+      "unit": "比率",
+      "rationale": "直前四半期の営業利益率をやや下回る条件。装置構成の弱さと下半期へ繰り延べた修繕の負担を含む。売上原価と販管費を含むセグメント採算であり、修繕費を別途控除しない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_equipment_margin\", \"value\": 0.14, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 66.00000000000003, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_equipment_margin\", \"value\": 0.18, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 110.0, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "110.0",
+      "relative_to_forecast_profit": "0.3741496598639455",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "2",
+      "independent_review": "{\"id\": \"bear_equipment_margin\", \"status\": \"unsupported\", \"reason\": \"8%が前四半期約8.63%を下回ることは正しいが、その差約0.63ポイントで製品構成と修繕負担を吸収できる根拠はない。修繕額・配賦・時期が未確認。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF page 12; S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"期に変更したことなどから、 販売費及び一般管理費の支出も当初想定を下回り、 営業利益以下の各段階\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bull_equipment_sales",
+      "category": "受注残転換",
+      "adopted_value": "1600.0",
+      "unit": "百万円",
+      "rationale": "AI関連設備の検収が進み、直近の四半期間売上変動幅を上回る増収となる条件。仕掛品増加と下半期の受注残売上化説明を方向性の根拠とする。仕掛品を売価換算した数値ではなく、確率的な上限でもない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,6,12; S02 PDF pages 6,11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_equipment_sales\", \"value\": 1100, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -90.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_equipment_sales\", \"value\": 1350, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -45.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "90.0",
+      "relative_to_forecast_profit": "0.3061224489795918",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "3",
+      "independent_review": "{\"id\": \"bull_equipment_sales\", \"status\": \"unsupported\", \"reason\": \"1600は前四半期から557増。仕掛品は第1四半期末1036から中間期末1328へ292増えているが、連結簿価であり、装置売価・利益・検収四半期への換算根拠はない。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF page 6; S02 PDF page 6; S05 PDF page 2\", \"evidence_excerpt\": \"仕掛品 985 1,328\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "base_equipment_margin",
+      "category": "利益率",
+      "adopted_value": "0.14",
+      "unit": "比率",
+      "rationale": "直前四半期から装置構成が改善する一方、上期平均の営業利益率には届かない条件。下半期の修繕負担を採算に含み、追加控除しない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_equipment_margin\", \"value\": 0.08, \"operating_profit\": 213.0, \"change\": -81.00000000000006, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -81.00000000000006, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_equipment_margin\", \"value\": 0.18, \"operating_profit\": 348.0, \"change\": 53.99999999999994, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 53.99999999999994, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "81.00000000000006",
+      "relative_to_forecast_profit": "0.2755102040816328",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "4",
+      "independent_review": "{\"id\": \"base_equipment_margin\", \"status\": \"unsupported\", \"reason\": \"14%は前四半期約8.63%と上期約15.93%の間だが、改善約5.37ポイントの製品構成・固定費・修繕費別の根拠がない。売上1350で利益率を1ポイント変えると利益13.5変動する算式は正しいが、14%を支持しない。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF page 12; S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"セグメント利益 369 211 580 0 580 － 580\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bull_display_margin",
+      "category": "利益率",
+      "adopted_value": "0.041",
+      "unit": "比率",
+      "rationale": "直前四半期とほぼ同じ採算を維持する条件。JPNの黒字化や材料価格の反落は仮定しない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_display_margin\", \"value\": 0.025, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -50.39999999999998}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_display_margin\", \"value\": 0.035, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -18.899999999999977}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "50.39999999999998",
+      "relative_to_forecast_profit": "0.17142857142857132",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "5",
+      "independent_review": "{\"id\": \"bull_display_margin\", \"status\": \"unsupported\", \"reason\": \"4.1%は前四半期123/2997≒4.104%とほぼ一致。ただし売上拡大局面で材料高・JPN損失を含めて同率を維持できる原文上の数値根拠はない。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF page 12; S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"料価格の上昇などの影響により営業損失を計上し、 想定を下回る結果となりました。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bear_display_margin",
+      "category": "利益率",
+      "adopted_value": "0.025",
+      "unit": "比率",
+      "rationale": "JPNの材料高と営業損失が悪化し、第1四半期のセグメント利益率を下回る条件。既存の赤字と追加悪化をこの採算に包含。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_display_margin\", \"value\": 0.035, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 28.5, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_display_margin\", \"value\": 0.041, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 45.60000000000002, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "45.60000000000002",
+      "relative_to_forecast_profit": "0.1551020408163266",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "6",
+      "independent_review": "{\"id\": \"bear_display_margin\", \"status\": \"unsupported\", \"reason\": \"2.5%は第1四半期約3.17%より低く、材料高・JPN損失の方向性とは整合する。ただし損失悪化額や材料価格感応度がなく、2.5%という率は支持できない。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 4; S05 PDF page 2\", \"evidence_excerpt\": \"遅れること、 材料価格も想定以上に上昇していることなどから、 通期ベースでも営業損失を計上し連結\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bear_equipment_sales",
+      "category": "受注残転換",
+      "adopted_value": "1100.0",
+      "unit": "百万円",
+      "rationale": "直前四半期のセグメント売上を起点に、AI関連受注残の売上化が限定的となる条件。液晶装置の需要回復や大型案件の集中検収は織り込まない。受注残の金額を確認した推計ではない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_equipment_sales\", \"value\": 1350, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 20.0, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_equipment_sales\", \"value\": 1600, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 40.0, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "40.0",
+      "relative_to_forecast_profit": "0.13605442176870747",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "7",
+      "independent_review": "{\"id\": \"bear_equipment_sales\", \"status\": \"unsupported\", \"reason\": \"1100は前四半期1043より57増。受注増の方向性は確認できるが、限定的な検収を57の増収へ変換する数量・単価・時期の根拠がない。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 4; S05 PDF page 2\", \"evidence_excerpt\": \"プリント基板分野では、ＡＩ関連向けパッケージ基板の需要増加に伴い関連設備の受注が増加しております。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "base_equipment_sales",
+      "category": "受注残転換",
+      "adopted_value": "1350.0",
+      "unit": "百万円",
+      "rationale": "設備と消耗品の販売が好調だった第1四半期の売上水準をやや上回る条件。会社が説明する下半期のAI関連受注残売上化を反映するが、その四半期配分は独自仮定。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF pages 4,11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_equipment_sales\", \"value\": 1100, \"operating_profit\": 259.00000000000006, \"change\": -35.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -35.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_equipment_sales\", \"value\": 1600, \"operating_profit\": 329.00000000000006, \"change\": 35.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 35.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "35.0",
+      "relative_to_forecast_profit": "0.11904761904761903",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "8",
+      "independent_review": "{\"id\": \"base_equipment_sales\", \"status\": \"unsupported\", \"reason\": \"1350は第1四半期1273を77上回る。下半期の受注残売上化は根拠になるが、対象四半期への配分と1350という水準は裏付けられない。\", \"source_ids\": [\"S02\", \"S05\"], \"locator\": \"S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"残高が売上計上されてくることを主要因として、全社ベースでの売上高は当初予想を上回る見込みで\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "base_display_margin",
+      "category": "利益率",
+      "adopted_value": "0.035",
+      "unit": "比率",
+      "rationale": "直近両四半期の利益率の間を採用。操作パネル需要は下支えするが、JPNの通期営業損失見通しと材料高を織り込む。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_display_margin\", \"value\": 0.025, \"operating_profit\": 264.0, \"change\": -30.000000000000057, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -30.000000000000057, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_display_margin\", \"value\": 0.041, \"operating_profit\": 312.0, \"change\": 17.999999999999943, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 17.999999999999943, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "30.000000000000057",
+      "relative_to_forecast_profit": "0.10204081632653078",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "9",
+      "independent_review": "{\"id\": \"base_display_margin\", \"status\": \"unsupported\", \"reason\": \"3.5%は第1四半期約3.17%と前四半期約4.10%の間である。しかしJPN損失と他事業の利益寄与を分離できず、採用率を正当化する費用積上げがない。\", \"source_ids\": [\"S01\", \"S02\", \"S05\"], \"locator\": \"S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2\", \"evidence_excerpt\": \"減収減益となり、営業損失を計上しております。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bull_display_sales",
+      "category": "連結・事業売却",
+      "adopted_value": "3150.0",
+      "unit": "百万円",
+      "rationale": "操作パネルと電子部品実装の販売が直前四半期から緩やかに増える条件。増分は直近のセグメント四半期間増収幅以内とし、JPNの新規量産品獲得は前提にしない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12,14; S02 PDF pages 11,12; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_display_sales\", \"value\": 2850, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -12.299999999999955}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_display_sales\", \"value\": 3000, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -6.149999999999977}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "12.299999999999955",
+      "relative_to_forecast_profit": "0.041836734693877387",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "10",
+      "independent_review": "{\"id\": \"bull_display_sales\", \"status\": \"unsupported\", \"reason\": \"3150の前四半期比増分153は直近増分224以内だが、過去の増分以内という条件は採用値の根拠にならない。電子部品実装需要の拡大を示す原文もなく、強気条件の実現性は未確認。\", \"source_ids\": [\"S01\", \"S02\"], \"locator\": \"S01 PDF pages 4,12,14; S02 PDF pages 11-12\", \"evidence_excerpt\": \"ら電子部品実装需要も拡大せずほぼ前年同期並みの業績となりました。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "bear_display_sales",
+      "category": "連結・事業売却",
+      "adopted_value": "2850.0",
+      "unit": "百万円",
+      "rationale": "直近両四半期の売上水準の間を採用。JPNの新規量産品受注遅延と自動車向け生産調整が、操作パネル需要増を一部相殺する条件。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_display_sales\", \"value\": 3000, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 3.75, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_display_sales\", \"value\": 3150, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 7.5, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "7.5",
+      "relative_to_forecast_profit": "0.025510204081632647",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "11",
+      "independent_review": "{\"id\": \"bear_display_sales\", \"status\": \"unsupported\", \"reason\": \"2850が第1四半期2773と前四半期2997の間であることは正しい。ただし自動車向け減収と操作パネル増収の相殺額を定量化しておらず、2850の選択は支持できない。\", \"source_ids\": [\"S01\", \"S02\"], \"locator\": \"S01 PDF pages 4,12; S02 PDF page 11\", \"evidence_excerpt\": \"自動車向け印刷製品において顧客の生産調整の影響が大きく、売上高は前年同期と比較し減少しました。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "base_display_sales",
+      "category": "連結・事業売却",
+      "adopted_value": "3000.0",
+      "unit": "百万円",
+      "rationale": "直前四半期とほぼ同水準。操作パネルの需要増を認める一方、中国の実装需要停滞とJPNの受注遅延を踏まえ、急回復を見込まない。",
+      "source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF pages 4,12; S02 PDF page 11; S05 PDF page 2",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_display_sales\", \"value\": 2850, \"operating_profit\": 288.75000000000006, \"change\": -5.25, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -5.25, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_display_sales\", \"value\": 3150, \"operating_profit\": 299.25000000000006, \"change\": 5.25, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 5.25, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "5.25",
+      "relative_to_forecast_profit": "0.017857142857142853",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "12",
+      "independent_review": "{\"id\": \"base_display_sales\", \"status\": \"unsupported\", \"reason\": \"3000は前四半期2997とほぼ同水準だが、需要増とJPN悪化が相殺するとの数量的裏付けはない。過去水準の据置きは会社の代替予測ではない。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 4; S05 PDF page 2\", \"evidence_excerpt\": \"産業用機械向け操作パネルについては、顧客の需要が増加しており売上高が前年同期と比較して増加しておりま\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "other_op",
+      "category": "連結・事業売却",
+      "adopted_value": "0.0",
+      "unit": "百万円",
+      "rationale": "その他事業の損益は開示表示上ゼロ近傍であり、予測もゼロとする。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": -1.0, \"operating_profit\": 293.00000000000006, \"change\": -1.0, \"scenario_profit_changes\": {\"bear\": -1.0, \"base\": -1.0, \"bull\": -1.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 1.0, \"operating_profit\": 295.00000000000006, \"change\": 1.0, \"scenario_profit_changes\": {\"bear\": 1.0, \"base\": 1.0, \"bull\": 1.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "1.0",
+      "relative_to_forecast_profit": "0.0034013605442176865",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "True",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "13",
+      "independent_review": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6336",
+      "id": "other_sales",
+      "category": "連結・事業売却",
+      "adopted_value": "3.0",
+      "unit": "百万円",
+      "rationale": "その他事業の売上を直前累計差額と同水準に置く。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 11",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 2.7, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 3.3, \"operating_profit\": 294.00000000000006, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "0.0",
+      "relative_to_forecast_profit": "0.0",
+      "near_zero_profit": "False",
+      "material": "False",
+      "affects_base_profit": "False",
+      "declared_material": "False",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "14",
+      "independent_review": "",
+      "citation_verified": ""
+    }
+  ],
+  "guidance": [
+    {
+      "code": "6336",
+      "id": "fy_sales_guidance",
+      "metric": "revenue",
+      "value_ref": "guidance_sales",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\", \"S05\"]",
+      "locator": "S01 PDF page 1; S05 PDF page 2",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "4353.0",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy_sales_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"18101は2026年2月1日～2027年1月31日の通期連結予想で、9月11日修正を確認。対象第3四半期単独とは期間不一致。下半期差引き10009は正しいが四半期予想ではない。通期達成に必要な第4四半期売上は弱気6056、中心5656、強気5256となるが、これは整合性診断であり会社予想・独自予測ではない。検収時期の定量情報がなく、その配分の合理性は未確認。最新性は提示原文内に限る。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 1; S05 PDF pages 1-2\", \"evidence_excerpt\": \"２．2027 年１月期通期業績予想（2026 年２月１日～2027 年１月 31 日）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "fy_op_guidance",
+      "metric": "operating_profit",
+      "value_ref": "guidance_op",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\", \"S05\"]",
+      "locator": "S01 PDF page 1; S05 PDF page 2",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "294.00000000000006",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy_op_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"1443は9月11日修正の通期連結予想。対象四半期とは期間不一致。下半期差引き863は正しい。通期達成に必要な第4四半期利益は弱気703.75、中心569、強気445.85となるが、費用時期・製品構成が未確認であり達成可能性は判定不能。会社予想との乖離自体は誤りとしない。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 1; S05 PDF pages 1-2\", \"evidence_excerpt\": \"今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "fy_ordinary_guidance",
+      "metric": "ordinary_profit",
+      "value_ref": "guidance_ordinary",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\", \"S05\"]",
+      "locator": "S01 PDF page 1; S05 PDF page 2",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy_ordinary_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"1491は9月11日修正の通期連結経常利益予想と一致。対象四半期単独とは期間不一致で、独自経常利益予測もnullのため乖離比較は適用外。9月11日以降の改定有無は未確認。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 1; S05 PDF pages 1-2\", \"evidence_excerpt\": \"今 回 発 表 予 想            （Ｂ）  18,101 1,443 1,491 1,069 133.92\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6336",
+      "id": "fy_net_guidance",
+      "metric": "net_profit",
+      "value_ref": "guidance_net",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\", \"S05\"]",
+      "locator": "S01 PDF page 1; S05 PDF page 2、親会社株主に帰属する当期純利益",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy_net_guidance\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"1069は9月11日修正の通期連結・親会社株主に帰属する当期純利益予想と一致し、個別純利益852との混同はない。対象四半期単独とは期間不一致、独自予測もnullのため乖離比較は適用外。最新性は提示原文内に限る。\", \"source_ids\": [\"S01\", \"S05\"], \"locator\": \"S01 PDF page 1; S05 PDF pages 1-2\", \"evidence_excerpt\": \"通期 18,101 15.7 1,443 26.6 1,491 25.9 1,069 20.2 133.92\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "6336",
+    "input_date": "2026-12-11",
+    "official_date": "2026-12-11",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://www.ishiihyoki.co.jp/IR/closing/short/ の公式IRカレンダー検索結果に「2026年12月11日」「2027年1月期 第3四半期決算発表予定」と明記。ページ本文は取得エラーで未読。掲載開始日と基準日時時点のページ履歴はunknown。",
+    "warnings": "['資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/6336/result.json": "7759d14acff825686a9bc5237af4b2c7b5858224efad9f88acd5f4d07c962b87",
+    "reports/6336.md": "37baf459aff4c18b4b5f837c7576f3f7ef424f21038a490247cbf32372f2b932",
+    "reports/6336_review.md": "3770e0da27dd16a11c6850b657e1fa197a00774f0758fe488ba0c56538a769e4",
+    "companies/6336/quality_review.json": "cf82bfad4f423a62077fa2cbc8c14a868b6557bdaf7c83f04fb423133ab4e014",
+    "companies/6336/independent_review.json": "c908346f09a91703aaf3395a381b1522c9aa91e117a1c00f51ebbc9b7fc7cdfa"
+  }
+}
