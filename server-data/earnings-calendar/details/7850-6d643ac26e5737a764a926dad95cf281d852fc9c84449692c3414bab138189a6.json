@@ -1,0 +1,2333 @@
+{
+  "id": "7850-6d643ac26e5737a764a926dad95cf281d852fc9c84449692c3414bab138189a6",
+  "code": "7850",
+  "companyName": "総合商研株式会社",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "7850-generation-b5f5fd5d8fca099e · 6d643ac2",
+  "savedAt": "2026-11-21T22:41:36+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 4829.350079999999,
+  "operatingProfit": 60.663039999999995,
+  "revenueYoY": {
+    "rate": -0.02706276249420548,
+    "label": "-2.7%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.409392774040287,
+    "label": "-40.9%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 7850 総合商研株式会社｜2027-07-31期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 4,547.58 | 4,829.35 | 5,061.48 |\n| 営業利益 | -51.31 | 60.66 | 152.35 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -134.33 | -2.71% |  |\n| YoY | 営業利益 | -42.05 | -40.94% |  |\n| QnQ | 売上高 | 2,378.15 | 97.02% |  |\n| QnQ | 営業利益 | 416.19 | 未算定 | 比較利益がゼロ以下のため伸長率非表示。増減額を参照 |\n\n## 会社予想\n公表会社予想は令和9年7月期通期の日本基準・連結。S01で公表されS04でも同額を確認。対象第1四半期単独の会社予想は提示資料にない。S09は前期修正であり、対象期の予想や差引き推計には使用していない。\n\n## 市場コンセンサス\n未確認。提示された保存資料に市場コンセンサスの記載はない。\n\n## 独自予測・差引推計の区分\n前年同四半期実績を基準に、年賀・非年賀の構成を仮定し、それぞれの売上変化、増分採算、追加費用、効率化を積み上げた条件付き予測。会社予想の四等分や期後修正見込みからの差引きではない。数量と価格を分離した精密予測ではなく、構成及び限界利益率の仮定依存度が高い。経常利益と親会社株主帰属純利益は、受取手数料の再現性、季節資金利息、税効果の根拠不足によりnull。\n\n## 対象四半期の見通し\n中心ケースの売上は4,829.35、営業利益は60.66。年賀需要減少による減収を販促・BPOの拡大が部分的に補うが、人件費等の追加負担が利益を圧迫する。前年に始まったWeb受託を新たな増収要因として再加算していない。\n\n## 条件付きレンジ\n弱気ケースは売上4,547.58、営業利益-51.31。強気ケースは売上5,061.48、営業利益152.35。差を生むのは年賀減収の深さ、非年賀の増収、工程集約とAI活用の発現時期であり、確率付きの予測区間ではない。\n\n## 季節性と検証点\n直前四半期は売上2,451.20、営業利益-355.52。前四半期比較には大きな季節性が含まれ、前年同期との基準差を売上2,512.48、営業利益458.24の未分解残差として残した。翌春公開予定の自治体WebやAIアバターの案件規模を当四半期へ先取りしていない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀需要・構成変化 | -416.10 | 年賀基準売上に独自の売上変化率を適用 |\n| 非年賀販促等 | 0.00 | 紙媒体減少と販促拡大の相殺条件 |\n| 残差（none） | 0.00 | 条件付きモデル内で全差額を配分。実際の要因が完全に判明した意味ではない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀限界利益 | -104.02 | 年賀減収に仮定限界利益率を適用 |\n| 非年賀限界利益 | 0.00 | 非年賀増収に仮定限界利益率を適用 |\n| 追加費用と効率化 | -50.00 | 費用増と固定費削減を独立設定 |\n| 残差（none） | 0.00 | 前年営業利益を基準に増分損益を積み上げ。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀の前年同期からの変化 | -416.10 | 前年同期構成を基準とする予測差 |\n| 非年賀の前年同期からの変化 | 0.00 | 前年同期構成を基準とする予測差 |\n| 残差（economic_unexplained） | 2,512.48 | 前年第1四半期と直前第4四半期の実績差。季節性を含むが、年賀・非年賀・案件時期への金額分解はできない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀増分採算 | -104.02 | 前年同期からの変化 |\n| 非年賀増分採算 | 0.00 | 前年同期からの変化 |\n| 追加費用と効率化 | -50.00 | 前年同期からの変化 |\n| 残差（economic_unexplained） | 458.24 | 前年第1四半期と直前第4四半期の実績利益差。年賀固定費、先行支出、案件構成、期末費用抑制の寄与額は分解不能。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀需要・構成変化 | -249.66 | 需要縮小を販売チャネル拡大が一部補完 |\n| 非年賀販促等 | 115.33 | ISP・BPO等の増収仮定 |\n| 残差（none） | 0.00 | 条件付きモデル内で全差額を配分。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀限界利益 | -62.41 | 年賀減収に仮定限界利益率を適用 |\n| 非年賀限界利益 | 40.36 | 非年賀増収に仮定限界利益率を適用 |\n| 追加費用と効率化 | -20.00 | 人件費等増加から追加削減を控除 |\n| 残差（none） | 0.00 | 前年営業利益を基準に増分損益を積み上げ。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀の前年同期からの変化 | -249.66 | 前年同期構成を基準とする予測差 |\n| 非年賀の前年同期からの変化 | 115.33 | 前年同期構成を基準とする予測差 |\n| 残差（economic_unexplained） | 2,512.48 | 前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀増分採算 | -62.41 | 前年同期からの変化 |\n| 非年賀増分採算 | 40.36 | 前年同期からの変化 |\n| 追加費用と効率化 | -20.00 | 前年同期からの変化 |\n| 残差（economic_unexplained） | 458.24 | 前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀需要・構成変化 | -104.02 | 新規顧客獲得により減収を緩和 |\n| 非年賀販促等 | 201.82 | 販促・BPO等の横展開が進む条件 |\n| 残差（none） | 0.00 | 条件付きモデル内で全差額を配分。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀限界利益 | -26.01 | 年賀減収に仮定限界利益率を適用 |\n| 非年賀限界利益 | 70.64 | 非年賀増収に仮定限界利益率を適用 |\n| 追加費用と効率化 | 5.00 | 追加投資負担の一巡と早期効率化 |\n| 残差（none） | 0.00 | 前年営業利益を基準に増分損益を積み上げ。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀の前年同期からの変化 | -104.02 | 前年同期構成を基準とする予測差 |\n| 非年賀の前年同期からの変化 | 201.82 | 前年同期構成を基準とする予測差 |\n| 残差（economic_unexplained） | 2,512.48 | 前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 年賀増分採算 | -26.01 | 前年同期からの変化 |\n| 非年賀増分採算 | 70.64 | 前年同期からの変化 |\n| 追加費用と効率化 | 5.00 | 前年同期からの変化 |\n| 残差（economic_unexplained） | 458.24 | 前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。 |\n\n## エラー・未解決事項\n- S04の名入れ印刷・年賀パック売上の合計とS06のサービス別年賀状印刷売上は一致しない。集計範囲・定義の調整表が確認できないため、予測の規模基準はS06へ統一し、S04の金額は合算していない。\n- S05には質疑応答本文がなく、別途質疑資料の有無は未確認。提示資料の範囲では対象実績発表を確認していないが、開示の網羅性は検証できない。\n- S06はPDF page 38途中で短縮。以降の連結財務諸表注記、収益認識方針、原価情報等は原本未確認であり、非開示とは断定しない。\n- S10・S11は資料一覧のみで保存本文が提示されていない。基準日時点の株式データ・IRカレンダー原文版は未確認。\n- 入力予定日の2026年12月11日は公式保存原文で確認できないため、announcement_dateは空文字とした。\n- 前年第1四半期の年賀配分と限界利益率は実績ではない。構成感応度を別途示しているが、弱気・強気ケースは全ての構成変動を包含する上下限ではない。\n- 受取手数料の増加が対象四半期に継続する根拠、季節資金の金利条件、税効果の見通しが不足しているため、経常・純利益は予測しない。\n- 直前四半期は同一会計版の通期累計と第3四半期累計から算出。今回比較に不要な第3四半期単独は、第2四半期累計未提示のため算出していない。\n- 資料確認未了: already_announced\n- AIへ渡した原文に省略あり: S06\n\n## 条件・不確実性\n- base_cost_increase: 人件費等20、その他AI・セキュリティ等の継続費用10を仮置き。前期の先行投資費用が全額再増加するとは置かず、継続する採用・待遇改善を反映。\n- base_efficiency: 工程集約、内製化、AIによる追加固定費削減を前年同期販管費の1%未満に限定。配送量減少による費用減は限界利益率に含み、ここでは重複計上しない。\n- base_nenga_change: 前年に開始したWeb受託の効果は前年実績に包含済みとし再加算しない。需要縮小が続く一方、販売チャネル拡大・顧客獲得で減収を一部緩和する中心仮定。\n- base_other_change: 前期商業印刷の地域別伸び率、受注残増加、高採算のデジタル追加受注を参考に、販促・BPOによる4%増収を置く。受注残は納期不明のため別途加算しない。自治体Web案件の全額計上も想定しない。\n- bear_cost_increase: 前年同四半期比の追加費用。前年同期の給料手当増加とその他販管費増加、期末人員増加、AI・セキュリティ投資継続を参照し、人件費等30とその他継続費用20を独立に仮置き。売上連動費用は限界利益率に含め除外。\n- bear_efficiency: 製造工程集約・AI活用の追加固定費削減が当四半期に発現しない条件。既存の削減効果は前年利益に包含。\n- bear_nenga_change: 年賀需要の縮小継続を想定。前期の商品別減収は名入れ印刷と年賀パックで大きく異なるため、一律延長せず、弱気では数量減を価格・受託拡大で十分補えない売上減20%を置く。\n- bear_other_change: 商業印刷・販促・BPO等の非年賀売上について、紙媒体減少と販促領域拡大が相殺する弱気条件。\n- bull_cost_increase: 人件費等10、その他継続費用5を仮置き。前期のAI・システム基盤投資の増加が一巡する強気条件。\n- bull_efficiency: 工程集約・AIの追加固定費削減が早期に進む条件。前年同期販管費の2%未満に限定し、売上連動費用減少と分離。\n- bull_nenga_change: 新規顧客・デジタル販売チャネルによる補完が進み、年賀減収を5%に抑える強気条件。数量や価格の確定値ではない。\n- bull_other_change: 販促資材・ISP・BPOへの横展開が進む強気条件。前期の地域別商業印刷伸び率の範囲内で7%増収を設定するが、当四半期の受注実績ではない。\n- nenga_contribution: 年賀減収による営業利益影響の限界利益率を25%と仮定。前年第1四半期の連結粗利率約28%を参照し、用紙・外注・配送等の変動費減少を含める。部門別の開示利益率ではない。\n- other_contribution: 販促・BPO・デジタル増収の限界利益率を35%と仮定。店内販促の粗利改善方針と追加案件の高採算性を参照し、連結平均より高い増分採算を置く。売上原価と増収に伴う変動販管費を控除した仮定であり、セグメント実績ではない。\n- prior_nenga_share: 前年第1四半期の年賀売上構成は非開示。年賀売上が上半期に集中し、第1四半期末に年賀売上債権が積み上がることから、前年通期年賀状印刷売上の50%を前年第1四半期に配分する条件付き仮定。会社予想の期間配分ではない。45～55%を構成感応度の検討範囲とし、実際の構成を確認したものではない。\n- 人件費・AI・セキュリティ費用の当四半期増加額と効率化効果は非開示。\n- 年賀・非年賀別の限界利益率と固定費は非開示。\n- 年賀状印刷の前年第1四半期売上構成は非開示のため、通期実績に対する配分を仮定。\n- 当四半期の年賀受注数量、単価、商品構成、売上計上時期は提示資料で未確認。\n- 自治体Webの契約金額・進捗認識条件、受注残の納期構成は提示本文に記載なし。\n\n## 根拠・保存記録\n- S01 [令和8年7月期 決算短信〔日本基準〕（連結）（令和9年7月期会社予想を含む）](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/cdebe8f3-4bc7-4378-9792-c80006a58ff1.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `95321d28f5c19ad6f544a680bfba0f837466d4bebd75cfd58272fe38b3551e26`\n- S02 [令和8年7月期 第3四半期決算短信〔日本基準〕（連結）](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3c2384370527803aff664458fa36add0.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `9a851e11504524d9e7993707ca305f2a171beea5b12461a5da25cc6f09c92bdf`\n- S03 [令和8年7月期 第1四半期決算短信〔日本基準〕（連結）](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3b4e3dc97bf8700f0a92442d7f9cf79e.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `b9ab01f6c44a1e98d819b3cba3e6e6e598efcf70959f2bf45f024f25d8d82d56`\n- S04 [第55期 決算説明会資料](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/explanation/24ea4221aa9de0696f06a40ab5cd593d.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `089796a3c4ff7afc38ba0d6df5a4f5433f16d8926f7399f6d6d4cf0f2f22d81b`\n- S05 [第55期 決算説明会書き起こし（業績・第56期見通しの補足説明）](https://www.shouken.co.jp/explanation/55_explanation/?period=end) / 公表 2026-10-01 / retrieved / SHA-256 `bd33d53d0d1e60ff531ed76ff1f2e0c801f7209622d1d1f89dd64ecb343ed510`\n- S06 [第55期 有価証券報告書](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/report/f2a864154dee5329bf1e0da1c0445540.pdf) / 公表 2026-10-28 / retrieved / SHA-256 `0a33c502c37795d1f193a6f85c18eae39a9fcbafcf0da2a86cd99f202009584d`\n- S07 [代表者の異動に関するお知らせ](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/4f4aa9e967a1cc52621091740e534800.pdf) / 公表 2026-10-28 / retrieved / SHA-256 `e0c03ebccb4296f63daeeeb62b23508fc2d88ef4dcc5bcf8d29a786d5dcd2283`\n- S08 [北海道内自治体におけるホームページ再構築業務の受託状況について](https://www.shouken.co.jp/info/news/7940/) / 公表 2026-09-03 / retrieved / SHA-256 `083047d7938afde24031f9f32559c59a7a0a8295e3398dab071426474cacc48b`\n- S09 [通期業績予想の修正に関するお知らせ（令和8年7月期）](https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/d1c62d23051dd9bf70afb2af15411477-2.pdf) / 公表 2026-09-04 / retrieved / SHA-256 `d997b56ed28d325b71fc29838e3c9b88c0a0f90cfcc945428ba31d0a58d0a027`\n- S10 [株式データ](https://www.shouken.co.jp/ir/stockinfo/) / 公表  / unavailable / SHA-256 `なし`\n- S11 [IRカレンダー](https://www.shouken.co.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "7850",
+    "company_name": "総合商研株式会社",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 4547.583299999999,
+        "operating_profit": -51.311425000000014,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 4829.350079999999,
+        "operating_profit": 60.663039999999995,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 5061.48005,
+        "operating_profit": 152.34510999999998,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 2378.1540799999993,
+          "rate": 0.9702015179528685,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 416.18503999999996,
+          "rate": null,
+          "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -134.33092000000033,
+          "rate": -0.02706276249420548,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -42.04996,
+          "rate": -0.409392774040287,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prior_revenue": 4963.681,
+      "prior_op": 102.713,
+      "annual_revenue": 16030.976,
+      "annual_op": 315.06,
+      "q3_revenue": 13579.78,
+      "q3_op": 670.582,
+      "annual_nenga_hokkaido": 2906.572,
+      "annual_nenga_tokyo": 1253.272,
+      "annual_nenga_west": 1.133,
+      "guidance_revenue": 16100.0,
+      "guidance_op": 320.0,
+      "guidance_ordinary": 455.0,
+      "guidance_net": 320.0,
+      "prior_nenga_share": 0.5,
+      "bear_nenga_change": -0.2,
+      "base_nenga_change": -0.12,
+      "bull_nenga_change": -0.05,
+      "bear_other_change": 0.0,
+      "base_other_change": 0.04,
+      "bull_other_change": 0.07,
+      "nenga_contribution": 0.25,
+      "other_contribution": 0.35,
+      "bear_cost_increase": 50.0,
+      "base_cost_increase": 30.0,
+      "bull_cost_increase": 15.0,
+      "bear_efficiency": 0.0,
+      "base_efficiency": 10.0,
+      "bull_efficiency": 20.0,
+      "previous_revenue": 2451.196,
+      "previous_op": -355.522,
+      "annual_nenga": 4160.977,
+      "prior_nenga": 2080.4885,
+      "prior_other": 2883.1924999999997,
+      "bear_nenga_delta": -416.09770000000003,
+      "base_nenga_delta": -249.65861999999998,
+      "bull_nenga_delta": -104.02442500000001,
+      "bear_other_delta": 0.0,
+      "base_other_delta": 115.3277,
+      "bull_other_delta": 201.823475,
+      "bear_nenga_revenue": 1664.3908,
+      "base_nenga_revenue": 1830.82988,
+      "bull_nenga_revenue": 1976.4640749999999,
+      "bear_other_revenue": 2883.1924999999997,
+      "base_other_revenue": 2998.5201999999995,
+      "bull_other_revenue": 3085.015975,
+      "bear_revenue": 4547.583299999999,
+      "base_revenue": 4829.350079999999,
+      "bull_revenue": 5061.48005,
+      "bear_nenga_profit_delta": -104.02442500000001,
+      "base_nenga_profit_delta": -62.414654999999996,
+      "bull_nenga_profit_delta": -26.006106250000002,
+      "bear_other_profit_delta": 0.0,
+      "base_other_profit_delta": 40.364695,
+      "bull_other_profit_delta": 70.63821625,
+      "bear_cost_delta": -50.0,
+      "base_cost_delta": -20.0,
+      "bull_cost_delta": 5.0,
+      "bear_op": -51.311425000000014,
+      "base_op": 60.663039999999995,
+      "bull_op": 152.34510999999998,
+      "qoq_revenue_residual": 2512.4849999999997,
+      "qoq_op_residual": 458.235
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF page 7、会計版はPDF page 2",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 4963.681,
+        "operating_profit": 102.713,
+        "ordinary_profit": 149.268,
+        "net_profit": 102.108
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF page 7、会計版はPDF page 2",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF page 8、会計版はPDF page 2",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 2451.196,
+        "operating_profit": -355.522,
+        "ordinary_profit": -321.08,
+        "net_profit": -217.654
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀需要・構成変化",
+            "formula": "bear_nenga_delta",
+            "reason": "年賀基準売上に独自の売上変化率を適用",
+            "amount": -416.09770000000003
+          },
+          {
+            "label": "非年賀販促等",
+            "formula": "bear_other_delta",
+            "reason": "紙媒体減少と販促拡大の相殺条件",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内で全差額を配分。実際の要因が完全に判明した意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀限界利益",
+            "formula": "bear_nenga_profit_delta",
+            "reason": "年賀減収に仮定限界利益率を適用",
+            "amount": -104.02442500000001
+          },
+          {
+            "label": "非年賀限界利益",
+            "formula": "bear_other_profit_delta",
+            "reason": "非年賀増収に仮定限界利益率を適用",
+            "amount": 0.0
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "bear_cost_delta",
+            "reason": "費用増と固定費削減を独立設定",
+            "amount": -50.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀の前年同期からの変化",
+            "formula": "bear_nenga_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": -416.09770000000003
+          },
+          {
+            "label": "非年賀の前年同期からの変化",
+            "formula": "bear_other_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": 0.0
+          }
+        ],
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが、年賀・非年賀・案件時期への金額分解はできない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀増分採算",
+            "formula": "bear_nenga_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": -104.02442500000001
+          },
+          {
+            "label": "非年賀増分採算",
+            "formula": "bear_other_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": 0.0
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "bear_cost_delta",
+            "reason": "前年同期からの変化",
+            "amount": -50.0
+          }
+        ],
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。年賀固定費、先行支出、案件構成、期末費用抑制の寄与額は分解不能。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀需要・構成変化",
+            "formula": "base_nenga_delta",
+            "reason": "需要縮小を販売チャネル拡大が一部補完",
+            "amount": -249.65861999999998
+          },
+          {
+            "label": "非年賀販促等",
+            "formula": "base_other_delta",
+            "reason": "ISP・BPO等の増収仮定",
+            "amount": 115.3277
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内で全差額を配分。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀限界利益",
+            "formula": "base_nenga_profit_delta",
+            "reason": "年賀減収に仮定限界利益率を適用",
+            "amount": -62.414654999999996
+          },
+          {
+            "label": "非年賀限界利益",
+            "formula": "base_other_profit_delta",
+            "reason": "非年賀増収に仮定限界利益率を適用",
+            "amount": 40.364695
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "base_cost_delta",
+            "reason": "人件費等増加から追加削減を控除",
+            "amount": -20.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀の前年同期からの変化",
+            "formula": "base_nenga_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": -249.65861999999998
+          },
+          {
+            "label": "非年賀の前年同期からの変化",
+            "formula": "base_other_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": 115.3277
+          }
+        ],
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀増分採算",
+            "formula": "base_nenga_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": -62.414654999999996
+          },
+          {
+            "label": "非年賀増分採算",
+            "formula": "base_other_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": 40.364695
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "base_cost_delta",
+            "reason": "前年同期からの変化",
+            "amount": -20.0
+          }
+        ],
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀需要・構成変化",
+            "formula": "bull_nenga_delta",
+            "reason": "新規顧客獲得により減収を緩和",
+            "amount": -104.02442500000001
+          },
+          {
+            "label": "非年賀販促等",
+            "formula": "bull_other_delta",
+            "reason": "販促・BPO等の横展開が進む条件",
+            "amount": 201.823475
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内で全差額を配分。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀限界利益",
+            "formula": "bull_nenga_profit_delta",
+            "reason": "年賀減収に仮定限界利益率を適用",
+            "amount": -26.006106250000002
+          },
+          {
+            "label": "非年賀限界利益",
+            "formula": "bull_other_profit_delta",
+            "reason": "非年賀増収に仮定限界利益率を適用",
+            "amount": 70.63821625
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "bull_cost_delta",
+            "reason": "追加投資負担の一巡と早期効率化",
+            "amount": 5.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "年賀の前年同期からの変化",
+            "formula": "bull_nenga_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": -104.02442500000001
+          },
+          {
+            "label": "非年賀の前年同期からの変化",
+            "formula": "bull_other_delta",
+            "reason": "前年同期構成を基準とする予測差",
+            "amount": 201.823475
+          }
+        ],
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "年賀増分採算",
+            "formula": "bull_nenga_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": -26.006106250000002
+          },
+          {
+            "label": "非年賀増分採算",
+            "formula": "bull_other_profit_delta",
+            "reason": "前年同期からの変化",
+            "amount": 70.63821625
+          },
+          {
+            "label": "追加費用と効率化",
+            "formula": "bull_cost_delta",
+            "reason": "前年同期からの変化",
+            "amount": 5.0
+          }
+        ],
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+      }
+    ],
+    "issues": [
+      "S04の名入れ印刷・年賀パック売上の合計とS06のサービス別年賀状印刷売上は一致しない。集計範囲・定義の調整表が確認できないため、予測の規模基準はS06へ統一し、S04の金額は合算していない。",
+      "S05には質疑応答本文がなく、別途質疑資料の有無は未確認。提示資料の範囲では対象実績発表を確認していないが、開示の網羅性は検証できない。",
+      "S06はPDF page 38途中で短縮。以降の連結財務諸表注記、収益認識方針、原価情報等は原本未確認であり、非開示とは断定しない。",
+      "S10・S11は資料一覧のみで保存本文が提示されていない。基準日時点の株式データ・IRカレンダー原文版は未確認。",
+      "入力予定日の2026年12月11日は公式保存原文で確認できないため、announcement_dateは空文字とした。",
+      "前年第1四半期の年賀配分と限界利益率は実績ではない。構成感応度を別途示しているが、弱気・強気ケースは全ての構成変動を包含する上下限ではない。",
+      "受取手数料の増加が対象四半期に継続する根拠、季節資金の金利条件、税効果の見通しが不足しているため、経常・純利益は予測しない。",
+      "直前四半期は同一会計版の通期累計と第3四半期累計から算出。今回比較に不要な第3四半期単独は、第2四半期累計未提示のため算出していない。",
+      "資料確認未了: already_announced",
+      "AIへ渡した原文に省略あり: S06"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 2096.3872999999994,
+            "rate": 0.8552507836990594,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 304.21057499999995,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -416.09770000000026,
+            "rate": -0.08382845311775682,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -154.024425,
+            "rate": -1.4995611558420066,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 2378.1540799999993,
+            "rate": 0.9702015179528685,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 416.18503999999996,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -134.33092000000033,
+            "rate": -0.02706276249420548,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -42.04996,
+            "rate": -0.409392774040287,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 2610.28405,
+            "rate": 1.0649022150819438,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 507.86710999999997,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 97.79905000000053,
+            "rate": 0.019702928129346053,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 49.63210999999998,
+            "rate": 0.48321157010310267,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -416.09770000000026,
+        "explained_sum": -416.09770000000003,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内で全差額を配分。実際の要因が完全に判明した意味ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -154.024425,
+        "explained_sum": -154.024425,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 2096.3872999999994,
+        "explained_sum": -416.09770000000003,
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが、年賀・非年賀・案件時期への金額分解はできない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 304.21057499999995,
+        "explained_sum": -154.024425,
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "difference": -5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。年賀固定費、先行支出、案件構成、期末費用抑制の寄与額は分解不能。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -134.33092000000033,
+        "explained_sum": -134.33092,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -3.410605131648481e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内で全差額を配分。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -42.04996,
+        "explained_sum": -42.04996,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 2378.1540799999993,
+        "explained_sum": -134.33092,
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "difference": -4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 416.18503999999996,
+        "explained_sum": -42.04996,
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "difference": -5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 97.79905000000053,
+        "explained_sum": 97.79905,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 5.400124791776761e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内で全差額を配分。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 49.63210999999998,
+        "explained_sum": 49.63211,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 2610.28405,
+        "explained_sum": 97.79905,
+        "residual": 2512.4849999999997,
+        "residual_type": "economic_unexplained",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 507.86710999999997,
+        "explained_sum": 49.63211,
+        "residual": 458.235,
+        "residual_type": "economic_unexplained",
+        "difference": -5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+      }
+    ],
+    "conditions": [
+      "base_cost_increase: 人件費等20、その他AI・セキュリティ等の継続費用10を仮置き。前期の先行投資費用が全額再増加するとは置かず、継続する採用・待遇改善を反映。",
+      "base_efficiency: 工程集約、内製化、AIによる追加固定費削減を前年同期販管費の1%未満に限定。配送量減少による費用減は限界利益率に含み、ここでは重複計上しない。",
+      "base_nenga_change: 前年に開始したWeb受託の効果は前年実績に包含済みとし再加算しない。需要縮小が続く一方、販売チャネル拡大・顧客獲得で減収を一部緩和する中心仮定。",
+      "base_other_change: 前期商業印刷の地域別伸び率、受注残増加、高採算のデジタル追加受注を参考に、販促・BPOによる4%増収を置く。受注残は納期不明のため別途加算しない。自治体Web案件の全額計上も想定しない。",
+      "bear_cost_increase: 前年同四半期比の追加費用。前年同期の給料手当増加とその他販管費増加、期末人員増加、AI・セキュリティ投資継続を参照し、人件費等30とその他継続費用20を独立に仮置き。売上連動費用は限界利益率に含め除外。",
+      "bear_efficiency: 製造工程集約・AI活用の追加固定費削減が当四半期に発現しない条件。既存の削減効果は前年利益に包含。",
+      "bear_nenga_change: 年賀需要の縮小継続を想定。前期の商品別減収は名入れ印刷と年賀パックで大きく異なるため、一律延長せず、弱気では数量減を価格・受託拡大で十分補えない売上減20%を置く。",
+      "bear_other_change: 商業印刷・販促・BPO等の非年賀売上について、紙媒体減少と販促領域拡大が相殺する弱気条件。",
+      "bull_cost_increase: 人件費等10、その他継続費用5を仮置き。前期のAI・システム基盤投資の増加が一巡する強気条件。",
+      "bull_efficiency: 工程集約・AIの追加固定費削減が早期に進む条件。前年同期販管費の2%未満に限定し、売上連動費用減少と分離。",
+      "bull_nenga_change: 新規顧客・デジタル販売チャネルによる補完が進み、年賀減収を5%に抑える強気条件。数量や価格の確定値ではない。",
+      "bull_other_change: 販促資材・ISP・BPOへの横展開が進む強気条件。前期の地域別商業印刷伸び率の範囲内で7%増収を設定するが、当四半期の受注実績ではない。",
+      "nenga_contribution: 年賀減収による営業利益影響の限界利益率を25%と仮定。前年第1四半期の連結粗利率約28%を参照し、用紙・外注・配送等の変動費減少を含める。部門別の開示利益率ではない。",
+      "other_contribution: 販促・BPO・デジタル増収の限界利益率を35%と仮定。店内販促の粗利改善方針と追加案件の高採算性を参照し、連結平均より高い増分採算を置く。売上原価と増収に伴う変動販管費を控除した仮定であり、セグメント実績ではない。",
+      "prior_nenga_share: 前年第1四半期の年賀売上構成は非開示。年賀売上が上半期に集中し、第1四半期末に年賀売上債権が積み上がることから、前年通期年賀状印刷売上の50%を前年第1四半期に配分する条件付き仮定。会社予想の期間配分ではない。45～55%を構成感応度の検討範囲とし、実際の構成を確認したものではない。",
+      "人件費・AI・セキュリティ費用の当四半期増加額と効率化効果は非開示。",
+      "年賀・非年賀別の限界利益率と固定費は非開示。",
+      "年賀状印刷の前年第1四半期売上構成は非開示のため、通期実績に対する配分を仮定。",
+      "当四半期の年賀受注数量、単価、商品構成、売上計上時期は提示資料で未確認。",
+      "自治体Webの契約金額・進捗認識条件、受注残の納期構成は提示本文に記載なし。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "令和8年7月期 決算短信〔日本基準〕（連結）（令和9年7月期会社予想を含む）",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/cdebe8f3-4bc7-4378-9792-c80006a58ff1.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/cdebe8f3-4bc7-4378-9792-c80006a58ff1.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S01.txt",
+        "sha256": "95321d28f5c19ad6f544a680bfba0f837466d4bebd75cfd58272fe38b3551e26",
+        "text_sha256": "938d1be71f995490066d4e2479dadef1bf80b14e0f8a4be9cc4d17cebf03a50f",
+        "retrieved_at": "2026-11-21T22:38:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12207,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "令和8年7月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3c2384370527803aff664458fa36add0.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3c2384370527803aff664458fa36add0.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S02.txt",
+        "sha256": "9a851e11504524d9e7993707ca305f2a171beea5b12461a5da25cc6f09c92bdf",
+        "text_sha256": "e0abf450bb139d960510da9791294e8c5a20d7cf176404cdaa1b7566980cad06",
+        "retrieved_at": "2026-11-21T22:38:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7491,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "令和8年7月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3b4e3dc97bf8700f0a92442d7f9cf79e.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/result/3b4e3dc97bf8700f0a92442d7f9cf79e.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S03.txt",
+        "sha256": "b9ab01f6c44a1e98d819b3cba3e6e6e598efcf70959f2bf45f024f25d8d82d56",
+        "text_sha256": "a90e2db7ba75620a8cc4a94ecdc544e51b48632712eb8abf1fa9fba4a6d5d28d",
+        "retrieved_at": "2026-11-21T22:38:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7283,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "第55期 決算説明会資料",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/explanation/24ea4221aa9de0696f06a40ab5cd593d.pdf",
+        "published_at": "2026-09-18",
+        "category": "presentation",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/explanation/24ea4221aa9de0696f06a40ab5cd593d.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S04.txt",
+        "sha256": "089796a3c4ff7afc38ba0d6df5a4f5433f16d8926f7399f6d6d4cf0f2f22d81b",
+        "text_sha256": "66898d0fcccd52ed5e3fcd1f2a3e6cf7212a6048946433149a1d558ee2c1231b",
+        "retrieved_at": "2026-11-21T22:38:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7972,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "第55期 決算説明会書き起こし（業績・第56期見通しの補足説明）",
+        "url": "https://www.shouken.co.jp/explanation/55_explanation/?period=end",
+        "published_at": "2026-10-01",
+        "category": "presentation",
+        "final_url": "https://www.shouken.co.jp/explanation/55_explanation/?period=end",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S05.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S05.txt",
+        "sha256": "bd33d53d0d1e60ff531ed76ff1f2e0c801f7209622d1d1f89dd64ecb343ed510",
+        "text_sha256": "f450f2385782095175ba8e27afff65039c437edaa5a8bcfdf61a657c1d216430",
+        "retrieved_at": "2026-11-21T22:38:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3302,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "第55期 有価証券報告書",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/report/f2a864154dee5329bf1e0da1c0445540.pdf",
+        "published_at": "2026-10-28",
+        "category": "other",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/report/f2a864154dee5329bf1e0da1c0445540.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S06.txt",
+        "sha256": "0a33c502c37795d1f193a6f85c18eae39a9fcbafcf0da2a86cd99f202009584d",
+        "text_sha256": "67bb15de24b0a54789502a7da86a729e5d7ae5ac34f1f98b0b791b5db3b68108",
+        "retrieved_at": "2026-11-21T22:38:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 91571,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "代表者の異動に関するお知らせ",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/4f4aa9e967a1cc52621091740e534800.pdf",
+        "published_at": "2026-10-28",
+        "category": "other",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/4f4aa9e967a1cc52621091740e534800.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S07.txt",
+        "sha256": "e0c03ebccb4296f63daeeeb62b23508fc2d88ef4dcc5bcf8d29a786d5dcd2283",
+        "text_sha256": "6ca494b3da503e2a87a59b59d8a1f12c5ccdba8d0fe65365c6d467eda5e2c484",
+        "retrieved_at": "2026-11-21T22:38:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 827,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "北海道内自治体におけるホームページ再構築業務の受託状況について",
+        "url": "https://www.shouken.co.jp/info/news/7940/",
+        "published_at": "2026-09-03",
+        "category": "kpi",
+        "final_url": "https://www.shouken.co.jp/info/news/7940/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S08.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S08.txt",
+        "sha256": "083047d7938afde24031f9f32559c59a7a0a8295e3398dab071426474cacc48b",
+        "text_sha256": "c603d5595c18bbf2370922e49970f513d41b193bc3e7cbe4df6522b8843e2158",
+        "retrieved_at": "2026-11-21T22:38:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1813,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "通期業績予想の修正に関するお知らせ（令和8年7月期）",
+        "url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/d1c62d23051dd9bf70afb2af15411477-2.pdf",
+        "published_at": "2026-09-04",
+        "category": "historical",
+        "final_url": "https://www.shouken.co.jp/sp/wp-content/themes/shouken/uploads/info/d1c62d23051dd9bf70afb2af15411477-2.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\7850\\sources\\S09.txt",
+        "sha256": "d997b56ed28d325b71fc29838e3c9b88c0a0f90cfcc945428ba31d0a58d0a027",
+        "text_sha256": "e8d0fa8f5d9332d3e39a48ebf7001864cacc381ef233d24d96ffe90c3258c05b",
+        "retrieved_at": "2026-11-21T22:38:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1130,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "株式データ",
+        "url": "https://www.shouken.co.jp/ir/stockinfo/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T22:38:14+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "IRカレンダー",
+        "url": "https://www.shouken.co.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T22:38:14+09:00"
+      }
+    ],
+    "model": {
+      "code": "7850",
+      "announcement_date": "",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "prior_revenue",
+          "value": 4963.681,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第1四半期連結累計期間・売上高、千円から換算"
+        },
+        {
+          "id": "prior_op",
+          "value": 102.713,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第1四半期連結累計期間・営業利益、千円から換算"
+        },
+        {
+          "id": "annual_revenue",
+          "value": 16030.976,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・売上高、千円から換算"
+        },
+        {
+          "id": "annual_op",
+          "value": 315.06,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・営業利益、千円から換算"
+        },
+        {
+          "id": "q3_revenue",
+          "value": 13579.78,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・売上高、千円から換算"
+        },
+        {
+          "id": "q3_op",
+          "value": 670.582,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・営業利益、千円から換算"
+        },
+        {
+          "id": "annual_nenga_hokkaido",
+          "value": 2906.572,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 20 地域別・サービス別販売実績、北海道エリア年賀状印刷"
+        },
+        {
+          "id": "annual_nenga_tokyo",
+          "value": 1253.272,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 20 地域別・サービス別販売実績、東京エリア年賀状印刷"
+        },
+        {
+          "id": "annual_nenga_west",
+          "value": 1.133,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 20 地域別・サービス別販売実績、西日本エリア年賀状印刷"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 16100,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想、S04 PDF page 12 第56期見通し"
+        },
+        {
+          "id": "guidance_op",
+          "value": 320,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想、S04 PDF page 12 第56期見通し"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 455,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想、S04 PDF page 12 第56期見通し"
+        },
+        {
+          "id": "guidance_net",
+          "value": 320,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 親会社株主に帰属する当期純利益予想、S04 PDF page 12"
+        },
+        {
+          "id": "prior_nenga_share",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S06"
+          ],
+          "locator": "S03 PDF pages 4–7、S06 PDF pages 16・20",
+          "rationale": "前年第1四半期の年賀売上構成は非開示。年賀売上が上半期に集中し、第1四半期末に年賀売上債権が積み上がることから、前年通期年賀状印刷売上の50%を前年第1四半期に配分する条件付き仮定。会社予想の期間配分ではない。45～55%を構成感応度の検討範囲とし、実際の構成を確認したものではない。",
+          "sensitivity": "配分率が5ポイント上昇すると年賀基準売上が208.04885増え、非年賀基準売上が同額減る。中心ケース売上は33.287816減少、営業利益は9.1541494減少する。",
+          "material": true
+        },
+        {
+          "id": "bear_nenga_change",
+          "value": -0.2,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S04 PDF page 6、S05 補足説明冒頭、S06 PDF page 20",
+          "rationale": "年賀需要の縮小継続を想定。前期の商品別減収は名入れ印刷と年賀パックで大きく異なるため、一律延長せず、弱気では数量減を価格・受託拡大で十分補えない売上減20%を置く。",
+          "sensitivity": "年賀売上変化率1ポイントにつき売上はannual_nenga*prior_nenga_share*0.01、営業利益はその25%変動。",
+          "material": true
+        },
+        {
+          "id": "base_nenga_change",
+          "value": -0.12,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S04 PDF page 6、S05 補足説明冒頭、S06 PDF page 20",
+          "rationale": "前年に開始したWeb受託の効果は前年実績に包含済みとし再加算しない。需要縮小が続く一方、販売チャネル拡大・顧客獲得で減収を一部緩和する中心仮定。",
+          "sensitivity": "年賀売上変化率1ポイントにつき売上はannual_nenga*prior_nenga_share*0.01、営業利益はその25%変動。",
+          "material": true
+        },
+        {
+          "id": "bull_nenga_change",
+          "value": -0.05,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF page 6、S06 PDF page 12",
+          "rationale": "新規顧客・デジタル販売チャネルによる補完が進み、年賀減収を5%に抑える強気条件。数量や価格の確定値ではない。",
+          "sensitivity": "年賀売上変化率1ポイントにつき売上はannual_nenga*prior_nenga_share*0.01、営業利益はその25%変動。",
+          "material": true
+        },
+        {
+          "id": "bear_other_change",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S04 PDF page 5、S05 補足説明、S06 PDF page 20",
+          "rationale": "商業印刷・販促・BPO等の非年賀売上について、紙媒体減少と販促領域拡大が相殺する弱気条件。",
+          "sensitivity": "変化率1ポイントで非年賀基準売上の1%増減、営業利益はその35%増減。",
+          "material": true
+        },
+        {
+          "id": "base_other_change",
+          "value": 0.04,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S09"
+          ],
+          "locator": "S04 PDF page 5、S06 PDF pages 19–20、S09 PDF page 1 修正理由",
+          "rationale": "前期商業印刷の地域別伸び率、受注残増加、高採算のデジタル追加受注を参考に、販促・BPOによる4%増収を置く。受注残は納期不明のため別途加算しない。自治体Web案件の全額計上も想定しない。",
+          "sensitivity": "変化率1ポイントで非年賀基準売上の1%増減、営業利益はその35%増減。",
+          "material": true
+        },
+        {
+          "id": "bull_other_change",
+          "value": 0.07,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S09"
+          ],
+          "locator": "S04 PDF page 5、S06 PDF page 20、S09 PDF page 1 修正理由",
+          "rationale": "販促資材・ISP・BPOへの横展開が進む強気条件。前期の地域別商業印刷伸び率の範囲内で7%増収を設定するが、当四半期の受注実績ではない。",
+          "sensitivity": "変化率1ポイントで非年賀基準売上の1%増減、営業利益はその35%増減。",
+          "material": true
+        },
+        {
+          "id": "nenga_contribution",
+          "value": 0.25,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 7 損益計算書、S04 PDF page 6",
+          "rationale": "年賀減収による営業利益影響の限界利益率を25%と仮定。前年第1四半期の連結粗利率約28%を参照し、用紙・外注・配送等の変動費減少を含める。部門別の開示利益率ではない。",
+          "sensitivity": "20～30%で検討。中心ケースでは5ポイントの上昇で営業利益が12.482931減少する。",
+          "material": true
+        },
+        {
+          "id": "other_contribution",
+          "value": 0.35,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S09"
+          ],
+          "locator": "S03 PDF page 7、S04 PDF page 5、S09 PDF page 1",
+          "rationale": "販促・BPO・デジタル増収の限界利益率を35%と仮定。店内販促の粗利改善方針と追加案件の高採算性を参照し、連結平均より高い増分採算を置く。売上原価と増収に伴う変動販管費を控除した仮定であり、セグメント実績ではない。",
+          "sensitivity": "30～40%で検討。中心ケースでは5ポイントの上昇で営業利益が5.766385増加する。",
+          "material": true
+        },
+        {
+          "id": "bear_cost_increase",
+          "value": 50,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S06"
+          ],
+          "locator": "S01 PDF page 8、S03 PDF page 7、S06 PDF pages 6・12",
+          "rationale": "前年同四半期比の追加費用。前年同期の給料手当増加とその他販管費増加、期末人員増加、AI・セキュリティ投資継続を参照し、人件費等30とその他継続費用20を独立に仮置き。売上連動費用は限界利益率に含め除外。",
+          "sensitivity": "追加費用が10増えると営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "base_cost_increase",
+          "value": 30,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S06"
+          ],
+          "locator": "S01 PDF page 8、S03 PDF page 7、S06 PDF pages 6・12",
+          "rationale": "人件費等20、その他AI・セキュリティ等の継続費用10を仮置き。前期の先行投資費用が全額再増加するとは置かず、継続する採用・待遇改善を反映。",
+          "sensitivity": "追加費用が10増えると営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "bull_cost_increase",
+          "value": 15,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S06"
+          ],
+          "locator": "S01 PDF page 8、S03 PDF page 7、S06 PDF page 12",
+          "rationale": "人件費等10、その他継続費用5を仮置き。前期のAI・システム基盤投資の増加が一巡する強気条件。",
+          "sensitivity": "追加費用が10増えると営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "bear_efficiency",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 6・8、S06 PDF page 12",
+          "rationale": "製造工程集約・AI活用の追加固定費削減が当四半期に発現しない条件。既存の削減効果は前年利益に包含。",
+          "sensitivity": "追加削減効果が10増えると営業利益は10増加。",
+          "material": true
+        },
+        {
+          "id": "base_efficiency",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S06"
+          ],
+          "locator": "S03 PDF page 7、S04 PDF pages 6・8、S06 PDF page 12",
+          "rationale": "工程集約、内製化、AIによる追加固定費削減を前年同期販管費の1%未満に限定。配送量減少による費用減は限界利益率に含み、ここでは重複計上しない。",
+          "sensitivity": "追加削減効果が10未達なら営業利益は10減少。",
+          "material": true
+        },
+        {
+          "id": "bull_efficiency",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S06"
+          ],
+          "locator": "S03 PDF page 7、S04 PDF pages 6・8、S06 PDF page 12",
+          "rationale": "工程集約・AIの追加固定費削減が早期に進む条件。前年同期販管費の2%未満に限定し、売上連動費用減少と分離。",
+          "sensitivity": "追加削減効果が10未達なら営業利益は10減少。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "previous_revenue",
+          "formula": "annual_revenue-q3_revenue"
+        },
+        {
+          "id": "previous_op",
+          "formula": "annual_op-q3_op"
+        },
+        {
+          "id": "annual_nenga",
+          "formula": "annual_nenga_hokkaido+annual_nenga_tokyo+annual_nenga_west"
+        },
+        {
+          "id": "prior_nenga",
+          "formula": "annual_nenga*prior_nenga_share"
+        },
+        {
+          "id": "prior_other",
+          "formula": "prior_revenue-prior_nenga"
+        },
+        {
+          "id": "bear_nenga_delta",
+          "formula": "prior_nenga*bear_nenga_change"
+        },
+        {
+          "id": "base_nenga_delta",
+          "formula": "prior_nenga*base_nenga_change"
+        },
+        {
+          "id": "bull_nenga_delta",
+          "formula": "prior_nenga*bull_nenga_change"
+        },
+        {
+          "id": "bear_other_delta",
+          "formula": "prior_other*bear_other_change"
+        },
+        {
+          "id": "base_other_delta",
+          "formula": "prior_other*base_other_change"
+        },
+        {
+          "id": "bull_other_delta",
+          "formula": "prior_other*bull_other_change"
+        },
+        {
+          "id": "bear_nenga_revenue",
+          "formula": "prior_nenga+bear_nenga_delta"
+        },
+        {
+          "id": "base_nenga_revenue",
+          "formula": "prior_nenga+base_nenga_delta"
+        },
+        {
+          "id": "bull_nenga_revenue",
+          "formula": "prior_nenga+bull_nenga_delta"
+        },
+        {
+          "id": "bear_other_revenue",
+          "formula": "prior_other+bear_other_delta"
+        },
+        {
+          "id": "base_other_revenue",
+          "formula": "prior_other+base_other_delta"
+        },
+        {
+          "id": "bull_other_revenue",
+          "formula": "prior_other+bull_other_delta"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_nenga_revenue+bear_other_revenue"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_nenga_revenue+base_other_revenue"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_nenga_revenue+bull_other_revenue"
+        },
+        {
+          "id": "bear_nenga_profit_delta",
+          "formula": "bear_nenga_delta*nenga_contribution"
+        },
+        {
+          "id": "base_nenga_profit_delta",
+          "formula": "base_nenga_delta*nenga_contribution"
+        },
+        {
+          "id": "bull_nenga_profit_delta",
+          "formula": "bull_nenga_delta*nenga_contribution"
+        },
+        {
+          "id": "bear_other_profit_delta",
+          "formula": "bear_other_delta*other_contribution"
+        },
+        {
+          "id": "base_other_profit_delta",
+          "formula": "base_other_delta*other_contribution"
+        },
+        {
+          "id": "bull_other_profit_delta",
+          "formula": "bull_other_delta*other_contribution"
+        },
+        {
+          "id": "bear_cost_delta",
+          "formula": "bear_efficiency-bear_cost_increase"
+        },
+        {
+          "id": "base_cost_delta",
+          "formula": "base_efficiency-base_cost_increase"
+        },
+        {
+          "id": "bull_cost_delta",
+          "formula": "bull_efficiency-bull_cost_increase"
+        },
+        {
+          "id": "bear_op",
+          "formula": "prior_op+bear_nenga_profit_delta+bear_other_profit_delta+bear_cost_delta"
+        },
+        {
+          "id": "base_op",
+          "formula": "prior_op+base_nenga_profit_delta+base_other_profit_delta+base_cost_delta"
+        },
+        {
+          "id": "bull_op",
+          "formula": "prior_op+bull_nenga_profit_delta+bull_other_profit_delta+bull_cost_delta"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "prior_revenue-previous_revenue"
+        },
+        {
+          "id": "qoq_op_residual",
+          "formula": "prior_op-previous_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "年賀状印刷・構成配分仮定",
+              "revenue": "bear_nenga_revenue"
+            },
+            {
+              "name": "商業印刷・販促・BPO等の非年賀",
+              "revenue": "bear_other_revenue"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "年賀状印刷・構成配分仮定",
+              "revenue": "base_nenga_revenue"
+            },
+            {
+              "name": "商業印刷・販促・BPO等の非年賀",
+              "revenue": "base_other_revenue"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "年賀状印刷・構成配分仮定",
+              "revenue": "bull_nenga_revenue"
+            },
+            {
+              "name": "商業印刷・販促・BPO等の非年賀",
+              "revenue": "bull_other_revenue"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 4963.681,
+          "operating_profit": 102.713,
+          "ordinary_profit": 149.268,
+          "net_profit": 102.108,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、会計版はPDF page 2"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 13579.78,
+          "operating_profit": 670.582,
+          "ordinary_profit": 773.313,
+          "net_profit": 531.4,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、会計版はPDF page 2"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 16030.976,
+          "operating_profit": 315.06,
+          "ordinary_profit": 452.233,
+          "net_profit": 313.746,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、会計版はPDF page 2"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "年賀状印刷の数量減と販売チャネル",
+          "mechanism": "需要縮小が売上を押し下げ、新規顧客・販売チャネルが補完する。前年のWeb受託開始効果は基準実績に包含。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S06"
+          ],
+          "locator": "S03 PDF page 4、S04 PDF page 6、S06 PDF page 20",
+          "calculation_ids": [
+            "prior_nenga",
+            "bear_nenga_revenue",
+            "base_nenga_revenue",
+            "bull_nenga_revenue"
+          ],
+          "not_quantified_reason": "数量と価格の個別寄与は分離できず、商品構成を含む売上変化率を条件付きで設定。"
+        },
+        {
+          "name": "販促・ISP・BPOの構成改善",
+          "mechanism": "紙媒体の減少を店内販促・デジタル・継続運用受託が補完し、増分採算を改善する。",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S09"
+          ],
+          "locator": "S04 PDF page 5、S06 PDF pages 19–20、S09 PDF page 1",
+          "calculation_ids": [
+            "base_other_revenue",
+            "base_other_profit_delta"
+          ],
+          "not_quantified_reason": "受注残の納期と案件別採算は保存本文に記載がなく、売上増分と限界利益率を仮定。"
+        },
+        {
+          "name": "工程集約・AIと人件費",
+          "mechanism": "内製化・工程集約・AI利用の追加費用削減と、待遇改善・専門人材採用・セキュリティ費用増が競合する。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 6・8・11、S06 PDF pages 6・12・23",
+          "calculation_ids": [
+            "bear_cost_delta",
+            "base_cost_delta",
+            "bull_cost_delta"
+          ],
+          "not_quantified_reason": "重要な設備新設・除却計画は該当なし。個別施策の当四半期費用・削減額は非開示のため、小幅な追加効果のみ仮定。"
+        },
+        {
+          "name": "自治体WebとAIアバターの計上時期",
+          "mechanism": "自治体Webは翌春公開予定、AIアバターも翌春導入予定で、受託決定をそのまま当四半期売上にしない。",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S08"
+          ],
+          "locator": "S04 PDF page 7、S05 補足説明・AIアバター導入予定、S08 新規受託・現在構築中の実績",
+          "calculation_ids": [],
+          "not_quantified_reason": "契約額・進捗認識条件・検収日が保存本文では確認できず、案件別加算なし。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀需要・構成変化",
+              "formula": "bear_nenga_delta",
+              "reason": "年賀基準売上に独自の売上変化率を適用"
+            },
+            {
+              "label": "非年賀販促等",
+              "formula": "bear_other_delta",
+              "reason": "紙媒体減少と販促拡大の相殺条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内で全差額を配分。実際の要因が完全に判明した意味ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀限界利益",
+              "formula": "bear_nenga_profit_delta",
+              "reason": "年賀減収に仮定限界利益率を適用"
+            },
+            {
+              "label": "非年賀限界利益",
+              "formula": "bear_other_profit_delta",
+              "reason": "非年賀増収に仮定限界利益率を適用"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "bear_cost_delta",
+              "reason": "費用増と固定費削減を独立設定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀の前年同期からの変化",
+              "formula": "bear_nenga_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            },
+            {
+              "label": "非年賀の前年同期からの変化",
+              "formula": "bear_other_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが、年賀・非年賀・案件時期への金額分解はできない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀増分採算",
+              "formula": "bear_nenga_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "非年賀増分採算",
+              "formula": "bear_other_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "bear_cost_delta",
+              "reason": "前年同期からの変化"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。年賀固定費、先行支出、案件構成、期末費用抑制の寄与額は分解不能。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀需要・構成変化",
+              "formula": "base_nenga_delta",
+              "reason": "需要縮小を販売チャネル拡大が一部補完"
+            },
+            {
+              "label": "非年賀販促等",
+              "formula": "base_other_delta",
+              "reason": "ISP・BPO等の増収仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内で全差額を配分。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀限界利益",
+              "formula": "base_nenga_profit_delta",
+              "reason": "年賀減収に仮定限界利益率を適用"
+            },
+            {
+              "label": "非年賀限界利益",
+              "formula": "base_other_profit_delta",
+              "reason": "非年賀増収に仮定限界利益率を適用"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "base_cost_delta",
+              "reason": "人件費等増加から追加削減を控除"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀の前年同期からの変化",
+              "formula": "base_nenga_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            },
+            {
+              "label": "非年賀の前年同期からの変化",
+              "formula": "base_other_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀増分採算",
+              "formula": "base_nenga_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "非年賀増分採算",
+              "formula": "base_other_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "base_cost_delta",
+              "reason": "前年同期からの変化"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀需要・構成変化",
+              "formula": "bull_nenga_delta",
+              "reason": "新規顧客獲得により減収を緩和"
+            },
+            {
+              "label": "非年賀販促等",
+              "formula": "bull_other_delta",
+              "reason": "販促・BPO等の横展開が進む条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内で全差額を配分。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀限界利益",
+              "formula": "bull_nenga_profit_delta",
+              "reason": "年賀減収に仮定限界利益率を適用"
+            },
+            {
+              "label": "非年賀限界利益",
+              "formula": "bull_other_profit_delta",
+              "reason": "非年賀増収に仮定限界利益率を適用"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "bull_cost_delta",
+              "reason": "追加投資負担の一巡と早期効率化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年営業利益を基準に増分損益を積み上げ。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "年賀の前年同期からの変化",
+              "formula": "bull_nenga_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            },
+            {
+              "label": "非年賀の前年同期からの変化",
+              "formula": "bull_other_delta",
+              "reason": "前年同期構成を基準とする予測差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績差。季節性を含むが事業別寄与額は未解明。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "年賀増分採算",
+              "formula": "bull_nenga_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "非年賀増分採算",
+              "formula": "bull_other_profit_delta",
+              "reason": "前年同期からの変化"
+            },
+            {
+              "label": "追加費用と効率化",
+              "formula": "bull_cost_delta",
+              "reason": "前年同期からの変化"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年第1四半期と直前第4四半期の実績利益差。季節要因と案件採算・費用時期を金額分解できない。"
+        }
+      ],
+      "company_guidance": "公表会社予想は令和9年7月期通期の日本基準・連結。S01で公表されS04でも同額を確認。対象第1四半期単独の会社予想は提示資料にない。S09は前期修正であり、対象期の予想や差引き推計には使用していない。",
+      "consensus": "未確認。提示された保存資料に市場コンセンサスの記載はない。",
+      "independent_forecast": "前年同四半期実績を基準に、年賀・非年賀の構成を仮定し、それぞれの売上変化、増分採算、追加費用、効率化を積み上げた条件付き予測。会社予想の四等分や期後修正見込みからの差引きではない。数量と価格を分離した精密予測ではなく、構成及び限界利益率の仮定依存度が高い。経常利益と親会社株主帰属純利益は、受取手数料の再現性、季節資金利息、税効果の根拠不足によりnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の見通し",
+          "text": "中心ケースの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。年賀需要減少による減収を販促・BPOの拡大が部分的に補うが、人件費等の追加負担が利益を圧迫する。前年に始まったWeb受託を新たな増収要因として再加算していない。"
+        },
+        {
+          "heading": "条件付きレンジ",
+          "text": "弱気ケースは売上{{value:bear_revenue}}、営業利益{{value:bear_op}}。強気ケースは売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。差を生むのは年賀減収の深さ、非年賀の増収、工程集約とAI活用の発現時期であり、確率付きの予測区間ではない。"
+        },
+        {
+          "heading": "季節性と検証点",
+          "text": "直前四半期は売上{{value:previous_revenue}}、営業利益{{value:previous_op}}。前四半期比較には大きな季節性が含まれ、前年同期との基準差を売上{{value:qoq_revenue_residual}}、営業利益{{value:qoq_op_residual}}の未分解残差として残した。翌春公開予定の自治体WebやAIアバターの案件規模を当四半期へ先取りしていない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "reviewed",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "年賀状印刷の前年第1四半期売上構成は非開示のため、通期実績に対する配分を仮定。",
+        "当四半期の年賀受注数量、単価、商品構成、売上計上時期は提示資料で未確認。",
+        "年賀・非年賀別の限界利益率と固定費は非開示。",
+        "人件費・AI・セキュリティ費用の当四半期増加額と効率化効果は非開示。",
+        "自治体Webの契約金額・進捗認識条件、受注残の納期構成は提示本文に記載なし。"
+      ],
+      "material_unresolved": [
+        "入力予定日の2026年12月11日は公式保存原文で確認できないため、announcement_dateは空文字とした。",
+        "S10・S11は資料一覧のみで保存本文が提示されていない。基準日時点の株式データ・IRカレンダー原文版は未確認。",
+        "S06はPDF page 38途中で短縮。以降の連結財務諸表注記、収益認識方針、原価情報等は原本未確認であり、非開示とは断定しない。",
+        "S04の名入れ印刷・年賀パック売上の合計とS06のサービス別年賀状印刷売上は一致しない。集計範囲・定義の調整表が確認できないため、予測の規模基準はS06へ統一し、S04の金額は合算していない。",
+        "前年第1四半期の年賀配分と限界利益率は実績ではない。構成感応度を別途示しているが、弱気・強気ケースは全ての構成変動を包含する上下限ではない。",
+        "直前四半期は同一会計版の通期累計と第3四半期累計から算出。今回比較に不要な第3四半期単独は、第2四半期累計未提示のため算出していない。",
+        "受取手数料の増加が対象四半期に継続する根拠、季節資金の金利条件、税効果の見通しが不足しているため、経常・純利益は予測しない。",
+        "S05には質疑応答本文がなく、別途質疑資料の有無は未確認。提示資料の範囲では対象実績発表を確認していないが、開示の網羅性は検証できない。"
+      ],
+      "schema_version": "2.0",
+      "guidance_records": [
+        {
+          "id": "fy2027_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想。S04 PDF page 12で同額を再確認"
+        },
+        {
+          "id": "fy2027_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想。S04 PDF page 12で同額を再確認"
+        },
+        {
+          "id": "fy2027_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 通期連結業績予想。S04 PDF page 12で同額を再確認"
+        },
+        {
+          "id": "fy2027_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 1 親会社株主に帰属する当期純利益予想。S04 PDF page 12で同額を再確認"
+        }
+      ],
+      "quarterly_historicals": [],
+      "_truncated_source_ids": [
+        "S06"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "S04の名入れ印刷・年賀パック売上の合計とS06のサービス別年賀状印刷売上は一致しない。集計範囲・定義の調整表が確認できないため、予測の規模基準はS06へ統一し、S04の金額は合算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "S05には質疑応答本文がなく、別途質疑資料の有無は未確認。提示資料の範囲では対象実績発表を確認していないが、開示の網羅性は検証できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "S06はPDF page 38途中で短縮。以降の連結財務諸表注記、収益認識方針、原価情報等は原本未確認であり、非開示とは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "S10・S11は資料一覧のみで保存本文が提示されていない。基準日時点の株式データ・IRカレンダー原文版は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "入力予定日の2026年12月11日は公式保存原文で確認できないため、announcement_dateは空文字とした。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "前年第1四半期の年賀配分と限界利益率は実績ではない。構成感応度を別途示しているが、弱気・強気ケースは全ての構成変動を包含する上下限ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "受取手数料の増加が対象四半期に継続する根拠、季節資金の金利条件、税効果の見通しが不足しているため、経常・純利益は予測しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "直前四半期は同一会計版の通期累計と第3四半期累計から算出。今回比較に不要な第3四半期単独は、第2四半期累計未提示のため算出していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "issue",
+      "message": "AIへ渡した原文に省略あり: S06",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "base_cost_increase: 人件費等20、その他AI・セキュリティ等の継続費用10を仮置き。前期の先行投資費用が全額再増加するとは置かず、継続する採用・待遇改善を反映。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "base_efficiency: 工程集約、内製化、AIによる追加固定費削減を前年同期販管費の1%未満に限定。配送量減少による費用減は限界利益率に含み、ここでは重複計上しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "base_nenga_change: 前年に開始したWeb受託の効果は前年実績に包含済みとし再加算しない。需要縮小が続く一方、販売チャネル拡大・顧客獲得で減収を一部緩和する中心仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "base_other_change: 前期商業印刷の地域別伸び率、受注残増加、高採算のデジタル追加受注を参考に、販促・BPOによる4%増収を置く。受注残は納期不明のため別途加算しない。自治体Web案件の全額計上も想定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bear_cost_increase: 前年同四半期比の追加費用。前年同期の給料手当増加とその他販管費増加、期末人員増加、AI・セキュリティ投資継続を参照し、人件費等30とその他継続費用20を独立に仮置き。売上連動費用は限界利益率に含め除外。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bear_efficiency: 製造工程集約・AI活用の追加固定費削減が当四半期に発現しない条件。既存の削減効果は前年利益に包含。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bear_nenga_change: 年賀需要の縮小継続を想定。前期の商品別減収は名入れ印刷と年賀パックで大きく異なるため、一律延長せず、弱気では数量減を価格・受託拡大で十分補えない売上減20%を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bear_other_change: 商業印刷・販促・BPO等の非年賀売上について、紙媒体減少と販促領域拡大が相殺する弱気条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bull_cost_increase: 人件費等10、その他継続費用5を仮置き。前期のAI・システム基盤投資の増加が一巡する強気条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bull_efficiency: 工程集約・AIの追加固定費削減が早期に進む条件。前年同期販管費の2%未満に限定し、売上連動費用減少と分離。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bull_nenga_change: 新規顧客・デジタル販売チャネルによる補完が進み、年賀減収を5%に抑える強気条件。数量や価格の確定値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "bull_other_change: 販促資材・ISP・BPOへの横展開が進む強気条件。前期の地域別商業印刷伸び率の範囲内で7%増収を設定するが、当四半期の受注実績ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "nenga_contribution: 年賀減収による営業利益影響の限界利益率を25%と仮定。前年第1四半期の連結粗利率約28%を参照し、用紙・外注・配送等の変動費減少を含める。部門別の開示利益率ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "other_contribution: 販促・BPO・デジタル増収の限界利益率を35%と仮定。店内販促の粗利改善方針と追加案件の高採算性を参照し、連結平均より高い増分採算を置く。売上原価と増収に伴う変動販管費を控除した仮定であり、セグメント実績ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "prior_nenga_share: 前年第1四半期の年賀売上構成は非開示。年賀売上が上半期に集中し、第1四半期末に年賀売上債権が積み上がることから、前年通期年賀状印刷売上の50%を前年第1四半期に配分する条件付き仮定。会社予想の期間配分ではない。45～55%を構成感応度の検討範囲とし、実際の構成を確認したものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "人件費・AI・セキュリティ費用の当四半期増加額と効率化効果は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "年賀・非年賀別の限界利益率と固定費は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "年賀状印刷の前年第1四半期売上構成は非開示のため、通期実績に対する配分を仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "当四半期の年賀受注数量、単価、商品構成、売上計上時期は提示資料で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7850",
+      "company_name": "総合商研株式会社",
+      "kind": "condition",
+      "message": "自治体Webの契約金額・進捗認識条件、受注残の納期構成は提示本文に記載なし。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/7850/result.json": "b5f5fd5d8fca099e4758cb6d09cd7b8d5ee68ec6cb190159a6d6813d78b2da8a",
+    "reports/7850.md": "ef804906eabaf4dc587d617b31ab6a2cd5c9cf7eca888982918e2da741e07ec4"
+  }
+}
