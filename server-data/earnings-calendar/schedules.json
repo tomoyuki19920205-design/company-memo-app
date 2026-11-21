@@ -992,8 +992,8 @@
       "fiscalYearEnd": "2027-04-30",
       "quarter": 2
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:11:59+09:00"
+    "source": "https://www.astroscale.com/ja/ir/calendar に「2026年12月11日2027年4月期第2四半期決算発表」と記載。対象は2026年8月1日～10月31日の第2四半期単独。基準日時点の公式決算情報の最新掲載は2027年4月期第1四半期。",
+    "updatedAt": "2026-11-21T23:00:41+09:00"
   },
   {
     "code": "211A",
@@ -1004,8 +1004,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:11:16+09:00"
+    "source": "https://cados.jp/ir/calendar/ の掲載日程は2026年10月23日の定時株主総会までで、対象発表予定日の記載を確認できない。https://data.kabu-trendpro.com/company/211A/ は2026年10月23日収録として2026年12月11日・第1四半期と掲載するが、会社IR・取引所の一次資料では未確認のため予定日は確定しない。",
+    "updatedAt": "2026-11-21T23:00:22+09:00"
   },
   {
     "code": "218A",
@@ -1016,8 +1016,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:13:03+09:00"
+    "source": "公式IRカレンダー https://liberaware.co.jp/ir/calendar/ では具体的な予定日を確認できなかった。https://s.kabutan.jp/stocks/218A/news/?news_category_id=99 には「決算発表予定日 2026/12/11」と記載されているが、会社IR・取引所による裏付けおよび基準日時以前の掲載時点が未確認のため、予定日は未確定扱い。",
+    "updatedAt": "2026-11-21T23:00:35+09:00"
   },
   {
     "code": "2373",
@@ -1028,8 +1028,8 @@
       "fiscalYearEnd": "2026-10-31",
       "quarter": 4
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:10:55+09:00"
+    "source": "https://finance.yahoo.co.jp/quote/2373.T および https://scouter.monex.co.jp/report/zaimu/2373 の検索結果に次回発表予定日2026年12月11日と記載。後者は本決算と明記。ただし会社IR・取引所による予定日の一次根拠と、その情報が基準日時以前に公開されたことを確認できず、schedule_verifiedはfalse。日付は二次情報の記載であり推測ではない。",
+    "updatedAt": "2026-11-21T23:00:24+09:00"
   },
   {
     "code": "2923",
@@ -1040,8 +1040,8 @@
       "fiscalYearEnd": "2027-04-30",
       "quarter": 2
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:15:55+09:00"
+    "source": "会社IR https://www.satosyokuhin.co.jp/ir/ および取引所の公開情報の検索では、2026年12月11日という予定日の一次資料を確認できず。https://finance.yahoo.co.jp/quote/2923.T の検索結果には同日の予定が表示されるが、一次資料による照合と基準日時以前の掲載時点の確認が未了のため、予定日は未確定扱い。",
+    "updatedAt": "2026-11-21T23:03:13+09:00"
   },
   {
     "code": "2991",
@@ -1052,8 +1052,8 @@
       "fiscalYearEnd": "2027-07-31",
       "quarter": 1
     },
-    "source": "手動入力・公式日未確認",
-    "updatedAt": "2026-11-18T18:16:37+09:00"
+    "source": "https://landnet.co.jp/ir/calendar/?calendarYear=2026 は12月に第1四半期決算発表と記載するが、2026年12月11日の個別予定は確認できなかった。https://s.kabutan.jp/stocks/2991/finance/ および https://kabuyoho.jp/sp/reportDisclose?bcode=2991 には2026/12/11とあるが、会社IR・取引所の一次資料による日付確認は未了。",
+    "updatedAt": "2026-11-21T23:02:59+09:00"
   },
   {
     "code": "3159",
@@ -1548,6 +1548,18 @@
     "updatedAt": "2026-11-21T22:38:47+09:00"
   },
   {
+    "code": "7827",
+    "companyName": "オービス",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2026-10-31",
+      "quarter": 4
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:43:55+09:00"
+  },
+  {
     "code": "7850",
     "companyName": "総合商研",
     "date": "2026-12-11",
@@ -1558,5 +1570,113 @@
     },
     "source": "手動入力・公式日未確認",
     "updatedAt": "2026-11-21T22:41:39+09:00"
+  },
+  {
+    "code": "7878",
+    "companyName": "光・彩",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-01-31",
+      "quarter": 3
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:43:55+09:00"
+  },
+  {
+    "code": "8013",
+    "companyName": "ナイガイ",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-01-31",
+      "quarter": 3
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:46:26+09:00"
+  },
+  {
+    "code": "8142",
+    "companyName": "トーホー",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-01-31",
+      "quarter": 3
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:48:57+09:00"
+  },
+  {
+    "code": "9236",
+    "companyName": "ジャパンＭ＆Ａソリューション",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2026-10-31",
+      "quarter": 4
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:50:24+09:00"
+  },
+  {
+    "code": "9242",
+    "companyName": "メディア総研",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-07-31",
+      "quarter": 1
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:49:19+09:00"
+  },
+  {
+    "code": "9262",
+    "companyName": "シルバーライフ",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-07-31",
+      "quarter": 1
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:52:55+09:00"
+  },
+  {
+    "code": "9556",
+    "companyName": "ＩＮＴＬＯＯＰ",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-07-31",
+      "quarter": 1
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:55:48+09:00"
+  },
+  {
+    "code": "9603",
+    "companyName": "エイチ・アイ・エス",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2026-10-31",
+      "quarter": 4
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:55:48+09:00"
+  },
+  {
+    "code": "9743",
+    "companyName": "丹青社",
+    "date": "2026-12-11",
+    "status": "unconfirmed",
+    "target": {
+      "fiscalYearEnd": "2027-01-31",
+      "quarter": 3
+    },
+    "source": "手動入力・公式日未確認",
+    "updatedAt": "2026-11-21T22:57:32+09:00"
   }
 ]
