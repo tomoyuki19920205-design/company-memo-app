@@ -1,0 +1,3089 @@
+{
+  "id": "8917-14457ae075362d04ac35c05a616bd4eff0035c2fb37e3e09bac2363cf53c6eef",
+  "code": "8917",
+  "companyName": "ファースト住建株式会社",
+  "announcementDate": "2026-12-14",
+  "target": {
+    "fiscalYearEnd": "2026-10-31",
+    "quarter": 4
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "8917-generation-965aa0c86d876ca2 · 14457ae0",
+  "savedAt": "2026-11-22T00:24:22+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 11270.0,
+  "operatingProfit": 844.4330458641127,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 8917 ファースト住建株式会社｜2026-10-31期 Q4単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 9,538.00 | 11,270.00 | 12,863.00 |\n| 営業利益 | 515.03 | 844.43 | 1,171.66 |\n| 経常利益 | 475.03 | 804.43 | 1,131.66 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 1,682.44 | 17.55% |  |\n| QnQ | 営業利益 | 167.31 | 24.71% |  |\n\n## 会社予想\n提示原文で最新確認できる会社予想はS01の通期据置き予想。Q3累計との差引きはQ4売上15,106.00、営業利益678.28、経常利益631.44、親会社株主帰属純利益362.16。これは通期予想の達成に必要な差引き値で、会社によるQ4単独予想でも独自予測でもない。期後修正の見込みは採用していない。\n\n## 市場コンセンサス\n未確認。提示資料に市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n戸建・土地販売数量と構成込み平均単価、請負工事進捗売上、賃貸・付随サービス売上を積み上げ、商品別粗利率と独立した販管費モデルからQ4単独利益を算定した条件付き予測。会社通期予想の四等分や会社予想への利益合わせは行っていない。中心ケースの通期換算は売上39,564.00、営業利益2,816.15であり、売上の会社計画未達と採算改善による営業利益の計画超過が併存する。純利益は期末税額調整・非支配株主帰属損益の合理的な範囲を設定しにくいためnull。\n\n## 対象四半期と中心予測\n対象は次回本決算で明らかになる第４四半期単独。中心ケースは売上11,270.00、営業利益844.43、経常利益804.43。完成在庫不足で前年同四半期の販売数量には届かない一方、仕掛在庫の商品化で直前四半期から回復する条件を置く。\n\n## 数量回復と採算の両立が分岐点\n弱気ケースは売上9,538.00、営業利益515.03、強気ケースは売上12,863.00、営業利益1,171.66。単価には戸建・土地と地域構成が影響するため、売価上昇だけで利益改善を説明しない。仕入厳選と滞留在庫減少の効果は粗利率に含め、別途の利益上乗せは行わない。\n\n## 会社予想との距離\n会社通期予想からのQ4差引売上15,106.00は、独自の中心売上11,270.00を上回る。受注残や完成予定棟数の裏付けがないため、その差引売上を目標として販売数量を調整しない。一方、商品採算の改善と効率化を反映した営業利益は、差引き会社予想と異なる軌道を取り得る。\n\n## 比較の限界\n前年同四半期は売上11,651.53、営業利益733.03、直前四半期は売上9,587.56、営業利益677.12。いずれも連結損益の同一基準による累計差引き。商品別四半期粗利益が不足するため、営業利益ブリッジの残差を一律に採算改善や丸め差へ置き換えていない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | -2,358.41 | 前年Q4数量に対する販売数量仮定の差 |\n| 平均単価・構成 | 400.41 | 土地・地域構成と販売価格を含む平均単価差 |\n| 請負工事進捗 | -166.00 | 工事進捗売上の差 |\n| 残差（economic_unexplained） | 10.47 | 賃貸・付随サービス・マンション分譲・特建等の合計差。比較期の同一定義による詳細内訳と対象Q案件が不足するため、個別要因へ割り振らず残差とした。本文表示による微小な端数も含み得る。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | 308.27 | 直前Q数量に対する販売数量仮定の差 |\n| 平均単価・構成 | -372.55 | 価格・土地比率・地域構成の複合差 |\n| 請負工事進捗 | 15.01 | 工事進捗売上の差 |\n| 残差（economic_unexplained） | -0.30 | 賃貸・付随サービス等の合計差。物件別寄与やサービス構成の変動を個別には説明できないため残差。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | -283.91 | 弱気粗利率で売上差を評価する分解規約 |\n| 請負売上差の粗利益効果 | -39.01 | 弱気請負粗利率で工事進捗売上差を評価 |\n| 販管費 | 100.12 | 実績販管費と費用積上げ予測の差 |\n| 残差（economic_unexplained） | 4.80 | 比較Qの商品別粗利益が未確認のため、既存売上部分の採算変動、賃貸・その他粗利益差を分離できない。差額を全て採算改善と断定しない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | -9.32 | 弱気粗利率で売上差を評価 |\n| 請負売上差の粗利益効果 | 3.53 | 弱気請負粗利率で売上差を評価 |\n| 販管費 | -99.29 | 販売手数料と期末費用を含む費用差 |\n| 残差（economic_unexplained） | -57.02 | 直前Qの商品別粗利益は提示資料にない。粗利率・構成・賃貸等の未分解差を残す。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | -1,117.14 | 在庫制約を踏まえ前年Q4を下回る数量 |\n| 平均単価・構成 | 691.14 | 高単価地域・戸建比率と商品力を含む平均単価差 |\n| 請負工事進捗 | 34.00 | 既存工事の進捗に基づく条件付き売上差 |\n| 残差（economic_unexplained） | 10.47 | 賃貸・付随サービス・物件売却・特建等の合計差。詳細内訳へ割り振る根拠が不足している。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | 1,678.36 | 仕掛在庫の商品化による条件付き数量回復 |\n| 平均単価・構成 | -210.64 | 直前Qの高単価構成が一部平準化する仮定 |\n| 請負工事進捗 | 215.01 | 期末に向けた進捗売上回復 |\n| 残差（economic_unexplained） | -0.30 | 賃貸・付随サービス等の合計差。物件別・サービス別の寄与は説明できない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | -65.18 | 上期粗利率維持の条件で売上差を評価 |\n| 請負売上差の粗利益効果 | 8.33 | 上期請負粗利率で売上差を評価 |\n| 販管費 | 69.34 | 効率化を反映した実績費用基盤と期末季節性による差 |\n| 残差（economic_unexplained） | 98.91 | 比較Qの商品別採算が未確認のため、既存売上の採算差と賃貸・その他粗利益差を一括して残す。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | 224.56 | 数量回復と単価構成差による売上変動を中心粗利率で評価 |\n| 請負売上差の粗利益効果 | 52.68 | 進捗売上回復の粗利益寄与 |\n| 販管費 | -130.06 | 販売手数料と期末季節費用による差 |\n| 残差（economic_unexplained） | 20.13 | 直前Qの商品別粗利益がないため、採算・構成・賃貸等の差を個別に確定できない。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | -31.03 | 前年Q4並みまで数量が回復する条件 |\n| 平均単価・構成 | 998.03 | 直前Qに近い高単価構成を維持 |\n| 請負工事進捗 | 234.00 | 期末工事進捗が順調なケース |\n| 残差（economic_unexplained） | 10.47 | 賃貸・付随サービス・物件売却・特建等の合計差。未確認案件による増収は追加していない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建・土地数量 | 2,877.19 | 完成・引渡しが順調に進む条件付き数量増 |\n| 平均単価・構成 | -16.47 | 直前Q平均単価に近い構成を維持 |\n| 請負工事進捗 | 415.01 | 既存契約の進捗売上拡大 |\n| 残差（economic_unexplained） | -0.30 | 賃貸・付随サービス等の合計差。物件別寄与は未分解。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | 154.72 | 強気粗利率で数量・単価による売上差を評価 |\n| 請負売上差の粗利益効果 | 59.67 | 前年通期粗利率への回復条件で売上差を評価 |\n| 販管費 | 41.03 | 費用基盤と販売手数料増加の合計差 |\n| 残差（economic_unexplained） | 183.21 | 比較Qの商品別粗利益が未確認のため、採算改善と賃貸・その他粗利益差の分離はできない。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 戸建売上差の粗利益効果 | 457.72 | 強気粗利率で数量回復の粗利益効果を評価 |\n| 請負売上差の粗利益効果 | 105.83 | 順調な工事進捗による粗利益効果 |\n| 販管費 | -158.37 | 売上連動手数料と期末費用の増加 |\n| 残差（economic_unexplained） | 89.37 | 直前Qの商品別粗利益が未開示のため、既存売上の採算変動とその他粗利益差を残差に含める。 |\n\n## エラー・未解決事項\n- Q3および前年Q4の商品別粗利益が提示原文で確認できないため、営業利益ブリッジでは売上差の仮定粗利率換算と販管費差以外をeconomic_unexplainedとして残した。\n- S01からS08にはtruncated=falseが付されている。短縮による欠落は示されていないが、外部PDF画像・XBRLとの照合は行っていない。\n- S01の戸建・請負売上とS03・S04の商品別売上は百万円単位の本文表示。千円精度の実績と混在するため商品別差引・平均単価には表示精度の限界がある。連結売上・利益の比較は千円表示から換算した値を使用した。\n- S05 PDF page 10の前期末未成工事支出金はS03・S07の財務諸表と整合しない。当該説明資料の該当数値を予測の根拠に採用していない。\n- S05 PDF page 41の連結売上高・経常利益はS03の前年通期実績と一致する一方、年度表記は2026年10月期となっている。当該欄を当期確定実績として採用していない。\n- S06 PDF page 21には前年KHC売上が決算期変更による13か月集計と記載される。追加月の四半期別寄与は未確認のため、前年Q4との差を全て通常の数量変動と断定できない。\n- セグメント利益は経常利益ベースであり営業利益ではない。商品別粗利益から連結販管費を控除する予測方法を採用し、セグメント利益を営業利益として転記していない。\n- 入力の発表候補日2026-12-14は会社直接資料で確定できない。S09の保存原文が提示されていないためannouncement_dateをnullとした。\n- 取得原価配分の確定前後に関する明示的な変更は提示資料にない。同一年度の累計差引きを妨げる改訂は確認されず、PPA確定済みという独立した認定は行っていない。\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 直前累計不足: 2025-10-31\n- 純利益は連結各社の期末税額・非支配株主帰属利益の構成を合理的に特定できずnull。経常利益は営業外費用純額の明示的仮定に限って算定した。\n- 賃貸収入はS05の商品別集計と短信のマンション事業等セグメントで範囲が異なる。S07 PDF page 18で全社賃貸収入の存在を確認し、予測では全社分を含めた商品別賃貸として計上した。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_contract: 前年Q4の差引売上付近で、直前Qからの緩やかな工事進捗回復を想定。上期の四半期平均とも近い。\n- base_contract_margin: 付加価値の高い注文住宅の構成を維持し、上期粗利率を継続する条件。\n- base_house_margin: 厳選仕入・滞留在庫減少・コスト管理の効果が維持され、上期の商品別粗利率を維持する条件。追加の相乗効果を別途加算しない。\n- base_price: 土地込み上期平均約32.67と直前Q差引平均約34.25の間。直前Qの土地分譲比率低下による単価上昇を全て恒常的値上げとは扱わない。\n- base_units: 直前Qより仕掛在庫の商品化が進む一方、完成在庫不足を踏まえ前年Q4数量を下回る。標準工期75日は商品化可能性の補助根拠であり、全在庫の期内完成を仮定しない。\n- bear_contract: 新規受注の伸び悩みを反映し、直前Q差引売上付近。工事進捗認識を含むため引渡棟数×単価とはしない。\n- bear_contract_margin: 上期24.5%から原価負担で1ポイント低下する条件。\n- bear_house_margin: 上期の戸建分譲粗利率15.3%から値引き・工事費上昇を見込み、前年下期14.6%付近まで低下する条件。\n- bear_price: 土地分譲込みの上期平均単価付近。値引きや低単価地域・土地分譲の構成増を想定する。\n- bear_units: 直前Qの231棟・区画に近い水準。完成在庫の減少と需要の弱さにより、前年Q4の316棟・区画に届かないケース。\n- bull_contract: 契約資産と既存工事の進捗が期末に売上化する条件。直前Qを上回るが、未確認の大型受注は織り込まない。\n- bull_contract_margin: 前年通期の請負工事粗利率に回復する条件。\n- bull_house_margin: 採算重視販売と高単価構成により上期から0.7ポイント改善する条件。過去の同商品粗利率レンジ内だが会社の見通しではない。\n- bull_price: 直前Qの土地込み差引平均単価付近を維持するケース。\n- bull_units: 仕掛在庫の完成と販売が順調で前年Q4並みまで回復する条件。受注残によって確約された数量ではない。\n- half_year_quarters: 上期販管費から販売手数料を除いた費用を四半期換算する期間係数。会社予想の期間配分には使用しない。\n- net_nonoperating_cost: 直前Qの営業利益と経常利益の差額約33.4を基準に、利払いの増加傾向を小幅に織り込む。全ケース共通で営業外費用純額を控除。\n- other_margin: 付随サービスの上期商品別粗利率を採用する。\n- other_revenue: 戸建事業の付随サービス売上を上期実績と直前Q差引水準の間で設定。全シナリオ共通。\n- property_sale_revenue: マンション分譲・収益物件売却・特建工事は直近累計で売上がなく、対象Qの具体的案件も提示資料にないため全ケースで計上しない。案件不存在の確認ではない。\n- rent_margin: 全社賃貸を含む商品別集計に対応する上期粗利率を採用。物件減価償却等を含むため取得物件の償却費を追加控除しない。\n- rent_revenue: 直前Qのマンション事業等売上差額に全社賃貸収入を含めた水準を起点に、取得済み賃貸物件の寄与を小幅に見込む。全シナリオ共通。\n- seasonal_sga: 上期の手数料以外の四半期平均費用に、期末の賞与・その他費用の季節性を付加。前年Q4販管費が上期平均を上回ることを参照しつつ、人員・拠点減少を踏まえて抑制した仮定。利益目標から逆算していない。\n- 対象Qの地域別販売構成と戸建・土地構成は未公表。数量・単価シナリオは確定実績ではない。\n- 対象Qの完成予定棟数、契約済み在庫棟数、キャンセル、値引きの実施状況は提示原文では非開示。\n- 期末の評価損、賞与・販売促進費、税率調整、非支配株主帰属利益は未確認。\n- 期末までに収益物件売却や特建引渡しがある場合、全シナリオ共通の案件売上ゼロという条件が成立しない。\n- 注文住宅の受注残・契約別進捗率は提示原文では非開示。引渡棟数と売上認識時点は一致するとは限らない。\n\n## 根拠・保存記録\n- S01 [令和８年10月期 第３四半期決算短信〔日本基準〕（連結）（全文）](https://www.f-juken.co.jp/ir/release_pdf/tan_3q_R08-2.pdf) / 公表 2026-09-04 / retrieved / SHA-256 `1064aa24cc3c9f2d827044fbb26b5e9db76cdcf4a255a4148e143c6965404d84`\n- S02 [令和８年10月期 第２四半期（中間期）決算短信〔日本基準〕（連結）（全文）](https://www.f-juken.co.jp/ir/release_pdf/tan_2q_R08-2.pdf) / 公表 2026-06-05 / retrieved / SHA-256 `6348283c05f5c1e85330fcdd869c4d0e91a46edea1cfe341fd05444a8e5d3a29`\n- S03 [令和７年10月期 決算短信〔日本基準〕（連結）（全文）](https://www.f-juken.co.jp/ir/pdf/tan_R07-2.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `be136366b2a8c3565ffb4bc00779f2966b48155fca2fa76588f77e75bd9991da`\n- S04 [令和７年10月期 第３四半期決算短信〔日本基準〕（連結）（全文）](https://www.f-juken.co.jp/ir/pdf/tan_3q_R07-2.pdf) / 公表 2025-09-04 / retrieved / SHA-256 `6978c5645f45ef8074d4186d416eb02eb3abe62f49769838782ab9c5a811a48e`\n- S05 [令和８年10月期 第２四半期（中間期）決算説明資料](https://www.f-juken.co.jp/ir/release_pdf/kessan_siryou_R08_2q.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `e36d57ad072888416b1e5218809101c38b46843ff619710b4737312969ed3659`\n- S06 [令和７年10月期 決算説明資料](https://www.f-juken.co.jp/ir/pdf/kessan_siryou_R07.pdf) / 公表 2025-12-19 / retrieved / SHA-256 `aa2b0c277f4d49ace42dc73440e86a167f6ed141ad8f86bd3df86346bc119069`\n- S07 [第28期（令和８年10月期）半期報告書](https://www.f-juken.co.jp/ir/pdf/hanpo_R08.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `c984de7388f0d7bcce0022dded5e77e261a22621ca40dec11c2a710dbef4eb10`\n- S08 [株主優待内容の決定に関するお知らせ](https://www.f-juken.co.jp/ir/release_pdf/release260915_1.pdf) / 公表 2026-09-15 / retrieved / SHA-256 `6a08ac76bd16e334afdb8320597c8b135ab0cf0ceec718ed53b15d3942aeda35`\n- S09 [IRカレンダー](https://www.f-juken.co.jp/ir/calender.html) / 公表  / unavailable / SHA-256 `なし`\n- S10 [IRニュース（2026年）](https://www.f-juken.co.jp/ir/news.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- S09・S10は資料一覧にあるが本文未添付。期後の業績修正、発表日更新、対象実績の既発表有無を原文で確認できない。target_already_announced=falseは提示された対象条件を採用したもので、網羅確認済みではない。\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "8917",
+    "company_name": "ファースト住建株式会社",
+    "announcement_date": "2026-12-14",
+    "target_period": "2026-10-31期 Q4単独",
+    "period": {
+      "fiscal_year_end": "2026-10-31",
+      "quarter": 4,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 9538.0,
+        "operating_profit": 515.0326920542955,
+        "ordinary_profit": 475.03269205429547,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 11270.0,
+        "operating_profit": 844.4330458641127,
+        "ordinary_profit": 804.4330458641127,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 12863.0,
+        "operating_profit": 1171.663590678801,
+        "ordinary_profit": 1131.663590678801,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 1682.4350000000013,
+          "rate": 0.17548094849943666,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 167.30804586411273,
+          "rate": 0.24708590860492927,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": 160.70704586411262,
+          "rate": 0.24965132038182797,
+          "note": ""
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy25_revenue": 42883.657,
+      "fy25_op": 2490.222,
+      "fy25_sga": 4533.057,
+      "y25_q3_revenue": 31232.129,
+      "y25_q3_op": 1757.191,
+      "y25_q3_sga": 3311.385,
+      "y26_h1_revenue": 18706.434,
+      "y26_h1_op": 1294.595,
+      "y26_h1_sga": 2076.537,
+      "y26_q3_revenue": 28293.999,
+      "y26_q3_op": 1971.72,
+      "y26_q3_ordinary": 1868.564,
+      "y26_q3_net": 1137.839,
+      "y26_q3_sga": 3098.804,
+      "fy25_house_revenue": 34473.0,
+      "y25_q3_house_revenue": 24667.0,
+      "fy25_house_units": 1120.0,
+      "y25_q3_house_units": 804.0,
+      "y26_h1_house_revenue": 15091.724,
+      "y26_q3_house_revenue": 23004.0,
+      "y26_h1_house_units": 462.0,
+      "y26_q3_house_units": 693.0,
+      "fy25_contract_revenue": 6248.0,
+      "y25_q3_contract_revenue": 4682.0,
+      "y26_h1_contract_revenue": 3073.013,
+      "y26_q3_contract_revenue": 4458.0,
+      "y26_h1_fee": 332.435,
+      "guidance_revenue": 43400.0,
+      "guidance_op": 2650.0,
+      "guidance_ordinary": 2500.0,
+      "guidance_net": 1500.0,
+      "half_year_quarters": 2.0,
+      "bear_units": 240.0,
+      "base_units": 280.0,
+      "bull_units": 315.0,
+      "bear_price": 32.7,
+      "base_price": 33.5,
+      "bull_price": 34.2,
+      "bear_contract": 1400.0,
+      "base_contract": 1600.0,
+      "bull_contract": 1800.0,
+      "rent_revenue": 225.0,
+      "other_revenue": 65.0,
+      "property_sale_revenue": 0.0,
+      "bear_house_margin": 0.145,
+      "base_house_margin": 0.153,
+      "bull_house_margin": 0.16,
+      "bear_contract_margin": 0.235,
+      "base_contract_margin": 0.245,
+      "bull_contract_margin": 0.255,
+      "rent_margin": 0.465,
+      "other_margin": 1.0,
+      "seasonal_sga": 80.0,
+      "net_nonoperating_cost": 40.0,
+      "prior_q4_revenue": 11651.527999999998,
+      "prior_q4_op": 733.0310000000002,
+      "prior_q4_sga": 1221.6719999999996,
+      "prior_q4_house": 9806.0,
+      "prior_q4_units": 316.0,
+      "prior_q4_price": 31.031645569620252,
+      "prior_q4_contract": 1566.0,
+      "prior_q4_other": 279.5279999999984,
+      "previous_q_revenue": 9587.564999999999,
+      "previous_q_op": 677.125,
+      "previous_q_sga": 1022.2670000000003,
+      "previous_q_house": 7912.276,
+      "previous_q_units": 231.0,
+      "previous_q_price": 34.25227705627706,
+      "previous_q_contract": 1384.987,
+      "previous_q_other": 290.30199999999877,
+      "guidance_implied_q4_revenue": 15106.001,
+      "guidance_implied_q4_op": 678.28,
+      "guidance_implied_q4_ordinary": 631.4359999999999,
+      "guidance_implied_q4_net": 362.16100000000006,
+      "fee_rate": 0.017771158308419445,
+      "fixed_sga": 952.0509999999999,
+      "nonhousing_other_revenue": 290.0,
+      "other_gross_profit": 169.625,
+      "bear_house_revenue": 7848.000000000001,
+      "bear_revenue": 9538.0,
+      "bear_gross_profit": 1636.585,
+      "bear_sga": 1121.5523079457046,
+      "bear_op": 515.0326920542955,
+      "bear_ordinary": 475.03269205429547,
+      "base_house_revenue": 9380.0,
+      "base_revenue": 11270.0,
+      "base_gross_profit": 1996.7649999999999,
+      "base_sga": 1152.3319541358871,
+      "base_op": 844.4330458641127,
+      "base_ordinary": 804.4330458641127,
+      "bull_house_revenue": 10773.0,
+      "bull_revenue": 12863.0,
+      "bull_gross_profit": 2352.3050000000003,
+      "bull_sga": 1180.6414093211993,
+      "bull_op": 1171.663590678801,
+      "bull_ordinary": 1131.663590678801,
+      "base_full_year_revenue": 39563.998999999996,
+      "base_full_year_op": 2816.1530458641128,
+      "yoy_revenue_residual": 10.472000000001572,
+      "qoq_revenue_residual": -0.30199999999877036,
+      "bear_yoy_op_residual": 4.802000000000135,
+      "bear_qoq_op_residual": -57.01503500000038,
+      "base_yoy_op_residual": 98.91000000000011,
+      "base_qoq_op_residual": 20.13304299999959,
+      "bull_yoy_op_residual": 183.2120000000005,
+      "bull_qoq_op_residual": 89.36884500000002
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04",
+          "S01"
+        ],
+        "locator": "S04 PDF pages 7・9、S01 PDF pages 7・9",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 9・14–15",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02",
+          "S07"
+        ],
+        "locator": "S02 PDF pages 2・7・10、S07 PDF pages 13・16–18",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S07"
+        ],
+        "locator": "PDF pages 2・7・9",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 9587.564999999999,
+        "operating_profit": 677.125,
+        "ordinary_profit": 643.7260000000001,
+        "net_profit": 413.9609999999999
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q4_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(bear_units-prior_q4_units)*prior_q4_price",
+            "reason": "前年Q4数量に対する販売数量仮定の差",
+            "amount": -2358.4050632911394
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "bear_units*(bear_price-prior_q4_price)",
+            "reason": "土地・地域構成と販売価格を含む平均単価差",
+            "amount": 400.4050632911401
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "bear_contract-prior_q4_contract",
+            "reason": "工事進捗売上の差",
+            "amount": -166.0
+          }
+        ],
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス・マンション分譲・特建等の合計差。比較期の同一定義による詳細内訳と対象Q案件が不足するため、個別要因へ割り振らず残差とした。本文表示による微小な端数も含み得る。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_q_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(bear_units-previous_q_units)*previous_q_price",
+            "reason": "直前Q数量に対する販売数量仮定の差",
+            "amount": 308.27049350649355
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "bear_units*(bear_price-previous_q_price)",
+            "reason": "価格・土地比率・地域構成の複合差",
+            "amount": -372.54649350649345
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "bear_contract-previous_q_contract",
+            "reason": "工事進捗売上の差",
+            "amount": 15.01299999999992
+          }
+        ],
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与やサービス構成の変動を個別には説明できないため残差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q4_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(bear_house_revenue-prior_q4_house)*bear_house_margin",
+            "reason": "弱気粗利率で売上差を評価する分解規約",
+            "amount": -283.90999999999985
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(bear_contract-prior_q4_contract)*bear_contract_margin",
+            "reason": "弱気請負粗利率で工事進捗売上差を評価",
+            "amount": -39.01
+          },
+          {
+            "label": "販管費",
+            "formula": "prior_q4_sga-bear_sga",
+            "reason": "実績販管費と費用積上げ予測の差",
+            "amount": 100.119692054295
+          }
+        ],
+        "residual": 4.802000000000135,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "比較Qの商品別粗利益が未確認のため、既存売上部分の採算変動、賃貸・その他粗利益差を分離できない。差額を全て採算改善と断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_q_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(bear_house_revenue-previous_q_house)*bear_house_margin",
+            "reason": "弱気粗利率で売上差を評価",
+            "amount": -9.320019999999845
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(bear_contract-previous_q_contract)*bear_contract_margin",
+            "reason": "弱気請負粗利率で売上差を評価",
+            "amount": 3.528054999999981
+          },
+          {
+            "label": "販管費",
+            "formula": "previous_q_sga-bear_sga",
+            "reason": "販売手数料と期末費用を含む費用差",
+            "amount": -99.28530794570429
+          }
+        ],
+        "residual": -57.01503500000038,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Qの商品別粗利益は提示資料にない。粗利率・構成・賃貸等の未分解差を残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q4_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(base_units-prior_q4_units)*prior_q4_price",
+            "reason": "在庫制約を踏まえ前年Q4を下回る数量",
+            "amount": -1117.139240506329
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "base_units*(base_price-prior_q4_price)",
+            "reason": "高単価地域・戸建比率と商品力を含む平均単価差",
+            "amount": 691.1392405063293
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "base_contract-prior_q4_contract",
+            "reason": "既存工事の進捗に基づく条件付き売上差",
+            "amount": 34.0
+          }
+        ],
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。詳細内訳へ割り振る根拠が不足している。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_q_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(base_units-previous_q_units)*previous_q_price",
+            "reason": "仕掛在庫の商品化による条件付き数量回復",
+            "amount": 1678.3615757575758
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "base_units*(base_price-previous_q_price)",
+            "reason": "直前Qの高単価構成が一部平準化する仮定",
+            "amount": -210.63757575757649
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "base_contract-previous_q_contract",
+            "reason": "期末に向けた進捗売上回復",
+            "amount": 215.01299999999992
+          }
+        ],
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別・サービス別の寄与は説明できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q4_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(base_house_revenue-prior_q4_house)*base_house_margin",
+            "reason": "上期粗利率維持の条件で売上差を評価",
+            "amount": -65.178
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(base_contract-prior_q4_contract)*base_contract_margin",
+            "reason": "上期請負粗利率で売上差を評価",
+            "amount": 8.33
+          },
+          {
+            "label": "販管費",
+            "formula": "prior_q4_sga-base_sga",
+            "reason": "効率化を反映した実績費用基盤と期末季節性による差",
+            "amount": 69.34004586411243
+          }
+        ],
+        "residual": 98.91000000000011,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "比較Qの商品別採算が未確認のため、既存売上の採算差と賃貸・その他粗利益差を一括して残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_q_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(base_house_revenue-previous_q_house)*base_house_margin",
+            "reason": "数量回復と単価構成差による売上変動を中心粗利率で評価",
+            "amount": 224.56177200000002
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(base_contract-previous_q_contract)*base_contract_margin",
+            "reason": "進捗売上回復の粗利益寄与",
+            "amount": 52.67818499999998
+          },
+          {
+            "label": "販管費",
+            "formula": "previous_q_sga-base_sga",
+            "reason": "販売手数料と期末季節費用による差",
+            "amount": -130.06495413588686
+          }
+        ],
+        "residual": 20.13304299999959,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Qの商品別粗利益がないため、採算・構成・賃貸等の差を個別に確定できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q4_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(bull_units-prior_q4_units)*prior_q4_price",
+            "reason": "前年Q4並みまで数量が回復する条件",
+            "amount": -31.031645569620252
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "bull_units*(bull_price-prior_q4_price)",
+            "reason": "直前Qに近い高単価構成を維持",
+            "amount": 998.0316455696213
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "bull_contract-prior_q4_contract",
+            "reason": "期末工事進捗が順調なケース",
+            "amount": 234.0
+          }
+        ],
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。未確認案件による増収は追加していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_q_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "戸建・土地数量",
+            "formula": "(bull_units-previous_q_units)*previous_q_price",
+            "reason": "完成・引渡しが順調に進む条件付き数量増",
+            "amount": 2877.191272727273
+          },
+          {
+            "label": "平均単価・構成",
+            "formula": "bull_units*(bull_price-previous_q_price)",
+            "reason": "直前Q平均単価に近い構成を維持",
+            "amount": -16.46727272727265
+          },
+          {
+            "label": "請負工事進捗",
+            "formula": "bull_contract-previous_q_contract",
+            "reason": "既存契約の進捗売上拡大",
+            "amount": 415.0129999999999
+          }
+        ],
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与は未分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q4_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(bull_house_revenue-prior_q4_house)*bull_house_margin",
+            "reason": "強気粗利率で数量・単価による売上差を評価",
+            "amount": 154.72
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(bull_contract-prior_q4_contract)*bull_contract_margin",
+            "reason": "前年通期粗利率への回復条件で売上差を評価",
+            "amount": 59.67
+          },
+          {
+            "label": "販管費",
+            "formula": "prior_q4_sga-bull_sga",
+            "reason": "費用基盤と販売手数料増加の合計差",
+            "amount": 41.03059067880031
+          }
+        ],
+        "residual": 183.2120000000005,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "比較Qの商品別粗利益が未確認のため、採算改善と賃貸・その他粗利益差の分離はできない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_q_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "戸建売上差の粗利益効果",
+            "formula": "(bull_house_revenue-previous_q_house)*bull_house_margin",
+            "reason": "強気粗利率で数量回復の粗利益効果を評価",
+            "amount": 457.71584
+          },
+          {
+            "label": "請負売上差の粗利益効果",
+            "formula": "(bull_contract-previous_q_contract)*bull_contract_margin",
+            "reason": "順調な工事進捗による粗利益効果",
+            "amount": 105.82831499999998
+          },
+          {
+            "label": "販管費",
+            "formula": "previous_q_sga-bull_sga",
+            "reason": "売上連動手数料と期末費用の増加",
+            "amount": -158.37440932119898
+          }
+        ],
+        "residual": 89.36884500000002,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "直前Qの商品別粗利益が未開示のため、既存売上の採算変動とその他粗利益差を残差に含める。"
+      }
+    ],
+    "issues": [
+      "Q3および前年Q4の商品別粗利益が提示原文で確認できないため、営業利益ブリッジでは売上差の仮定粗利率換算と販管費差以外をeconomic_unexplainedとして残した。",
+      "S01からS08にはtruncated=falseが付されている。短縮による欠落は示されていないが、外部PDF画像・XBRLとの照合は行っていない。",
+      "S01の戸建・請負売上とS03・S04の商品別売上は百万円単位の本文表示。千円精度の実績と混在するため商品別差引・平均単価には表示精度の限界がある。連結売上・利益の比較は千円表示から換算した値を使用した。",
+      "S05 PDF page 10の前期末未成工事支出金はS03・S07の財務諸表と整合しない。当該説明資料の該当数値を予測の根拠に採用していない。",
+      "S05 PDF page 41の連結売上高・経常利益はS03の前年通期実績と一致する一方、年度表記は2026年10月期となっている。当該欄を当期確定実績として採用していない。",
+      "S06 PDF page 21には前年KHC売上が決算期変更による13か月集計と記載される。追加月の四半期別寄与は未確認のため、前年Q4との差を全て通常の数量変動と断定できない。",
+      "セグメント利益は経常利益ベースであり営業利益ではない。商品別粗利益から連結販管費を控除する予測方法を採用し、セグメント利益を営業利益として転記していない。",
+      "入力の発表候補日2026-12-14は会社直接資料で確定できない。S09の保存原文が提示されていないためannouncement_dateをnullとした。",
+      "取得原価配分の確定前後に関する明示的な変更は提示資料にない。同一年度の累計差引きを妨げる改訂は確認されず、PPA確定済みという独立した認定は行っていない。",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "直前累計不足: 2025-10-31",
+      "純利益は連結各社の期末税額・非支配株主帰属利益の構成を合理的に特定できずnull。経常利益は営業外費用純額の明示的仮定に限って算定した。",
+      "賃貸収入はS05の商品別集計と短信のマンション事業等セグメントで範囲が異なる。S07 PDF page 18で全社賃貸収入の存在を確認し、予測では全社分を含めた商品別賃貸として計上した。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "S09・S10は資料一覧にあるが本文未添付。期後の業績修正、発表日更新、対象実績の既発表有無を原文で確認できない。target_already_announced=falseは提示された対象条件を採用したもので、網羅確認済みではない。",
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -49.56499999999869,
+            "rate": -0.005169717232686161,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -162.09230794570453,
+            "rate": -0.23938313892664506,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": -168.69330794570465,
+            "rate": -0.26205762691844764,
+            "note": ""
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 1682.4350000000013,
+            "rate": 0.17548094849943666,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 167.30804586411273,
+            "rate": 0.24708590860492927,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": 160.70704586411262,
+            "rate": 0.24965132038182797,
+            "note": ""
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 3275.4350000000013,
+            "rate": 0.3416336681941663,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 494.53859067880103,
+            "rate": 0.7303505123556228,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": 487.9375906788009,
+            "rate": 0.7579895649372572,
+            "note": ""
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -2123.999999999999,
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "賃貸・付随サービス・マンション分譲・特建等の合計差。比較期の同一定義による詳細内訳と対象Q案件が不足するため、個別要因へ割り振らず残差とした。本文表示による微小な端数も含み得る。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -49.56499999999869,
+        "explained_sum": -49.26299999999998,
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "difference": 5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与やサービス構成の変動を個別には説明できないため残差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -222.80030794570484,
+        "residual": 4.802000000000135,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "比較Qの商品別粗利益が未確認のため、既存売上部分の採算変動、賃貸・その他粗利益差を分離できない。差額を全て採算改善と断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -162.09230794570453,
+        "explained_sum": -105.07727294570415,
+        "residual": -57.01503500000038,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Qの商品別粗利益は提示資料にない。粗利率・構成・賃貸等の未分解差を残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -391.9999999999998,
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。詳細内訳へ割り振る根拠が不足している。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 1682.4350000000013,
+        "explained_sum": 1682.7369999999992,
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "difference": 9.094947017729282e-13,
+        "status": "passed",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別・サービス別の寄与は説明できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 12.492045864112429,
+        "residual": 98.91000000000011,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "比較Qの商品別採算が未確認のため、既存売上の採算差と賃貸・その他粗利益差を一括して残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 167.30804586411273,
+        "explained_sum": 147.17500286411314,
+        "residual": 20.13304299999959,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Qの商品別粗利益がないため、採算・構成・賃貸等の差を個別に確定できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 1201.0000000000011,
+        "residual": 10.472000000001572,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。未確認案件による増収は追加していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 3275.4350000000013,
+        "explained_sum": 3275.737,
+        "residual": -0.30199999999877036,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与は未分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 255.4205906788003,
+        "residual": 183.2120000000005,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "比較Qの商品別粗利益が未確認のため、採算改善と賃貸・その他粗利益差の分離はできない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 494.53859067880103,
+        "explained_sum": 405.169745678801,
+        "residual": 89.36884500000002,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直前Qの商品別粗利益が未開示のため、既存売上の採算変動とその他粗利益差を残差に含める。"
+      }
+    ],
+    "conditions": [
+      "base_contract: 前年Q4の差引売上付近で、直前Qからの緩やかな工事進捗回復を想定。上期の四半期平均とも近い。",
+      "base_contract_margin: 付加価値の高い注文住宅の構成を維持し、上期粗利率を継続する条件。",
+      "base_house_margin: 厳選仕入・滞留在庫減少・コスト管理の効果が維持され、上期の商品別粗利率を維持する条件。追加の相乗効果を別途加算しない。",
+      "base_price: 土地込み上期平均約32.67と直前Q差引平均約34.25の間。直前Qの土地分譲比率低下による単価上昇を全て恒常的値上げとは扱わない。",
+      "base_units: 直前Qより仕掛在庫の商品化が進む一方、完成在庫不足を踏まえ前年Q4数量を下回る。標準工期75日は商品化可能性の補助根拠であり、全在庫の期内完成を仮定しない。",
+      "bear_contract: 新規受注の伸び悩みを反映し、直前Q差引売上付近。工事進捗認識を含むため引渡棟数×単価とはしない。",
+      "bear_contract_margin: 上期24.5%から原価負担で1ポイント低下する条件。",
+      "bear_house_margin: 上期の戸建分譲粗利率15.3%から値引き・工事費上昇を見込み、前年下期14.6%付近まで低下する条件。",
+      "bear_price: 土地分譲込みの上期平均単価付近。値引きや低単価地域・土地分譲の構成増を想定する。",
+      "bear_units: 直前Qの231棟・区画に近い水準。完成在庫の減少と需要の弱さにより、前年Q4の316棟・区画に届かないケース。",
+      "bull_contract: 契約資産と既存工事の進捗が期末に売上化する条件。直前Qを上回るが、未確認の大型受注は織り込まない。",
+      "bull_contract_margin: 前年通期の請負工事粗利率に回復する条件。",
+      "bull_house_margin: 採算重視販売と高単価構成により上期から0.7ポイント改善する条件。過去の同商品粗利率レンジ内だが会社の見通しではない。",
+      "bull_price: 直前Qの土地込み差引平均単価付近を維持するケース。",
+      "bull_units: 仕掛在庫の完成と販売が順調で前年Q4並みまで回復する条件。受注残によって確約された数量ではない。",
+      "half_year_quarters: 上期販管費から販売手数料を除いた費用を四半期換算する期間係数。会社予想の期間配分には使用しない。",
+      "net_nonoperating_cost: 直前Qの営業利益と経常利益の差額約33.4を基準に、利払いの増加傾向を小幅に織り込む。全ケース共通で営業外費用純額を控除。",
+      "other_margin: 付随サービスの上期商品別粗利率を採用する。",
+      "other_revenue: 戸建事業の付随サービス売上を上期実績と直前Q差引水準の間で設定。全シナリオ共通。",
+      "property_sale_revenue: マンション分譲・収益物件売却・特建工事は直近累計で売上がなく、対象Qの具体的案件も提示資料にないため全ケースで計上しない。案件不存在の確認ではない。",
+      "rent_margin: 全社賃貸を含む商品別集計に対応する上期粗利率を採用。物件減価償却等を含むため取得物件の償却費を追加控除しない。",
+      "rent_revenue: 直前Qのマンション事業等売上差額に全社賃貸収入を含めた水準を起点に、取得済み賃貸物件の寄与を小幅に見込む。全シナリオ共通。",
+      "seasonal_sga: 上期の手数料以外の四半期平均費用に、期末の賞与・その他費用の季節性を付加。前年Q4販管費が上期平均を上回ることを参照しつつ、人員・拠点減少を踏まえて抑制した仮定。利益目標から逆算していない。",
+      "対象Qの地域別販売構成と戸建・土地構成は未公表。数量・単価シナリオは確定実績ではない。",
+      "対象Qの完成予定棟数、契約済み在庫棟数、キャンセル、値引きの実施状況は提示原文では非開示。",
+      "期末の評価損、賞与・販売促進費、税率調整、非支配株主帰属利益は未確認。",
+      "期末までに収益物件売却や特建引渡しがある場合、全シナリオ共通の案件売上ゼロという条件が成立しない。",
+      "注文住宅の受注残・契約別進捗率は提示原文では非開示。引渡棟数と売上認識時点は一致するとは限らない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "令和８年10月期 第３四半期決算短信〔日本基準〕（連結）（全文）",
+        "url": "https://www.f-juken.co.jp/ir/release_pdf/tan_3q_R08-2.pdf",
+        "published_at": "2026-09-04",
+        "category": "latest_results",
+        "final_url": "https://www.f-juken.co.jp/ir/release_pdf/tan_3q_R08-2.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S01.txt",
+        "sha256": "1064aa24cc3c9f2d827044fbb26b5e9db76cdcf4a255a4148e143c6965404d84",
+        "text_sha256": "40a89c3b086de25a8d9e0789b007bce0b753cf682b92255f0bc4b65c94e3fba4",
+        "retrieved_at": "2026-11-22T00:19:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10617,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "令和８年10月期 第２四半期（中間期）決算短信〔日本基準〕（連結）（全文）",
+        "url": "https://www.f-juken.co.jp/ir/release_pdf/tan_2q_R08-2.pdf",
+        "published_at": "2026-06-05",
+        "category": "historical",
+        "final_url": "https://www.f-juken.co.jp/ir/release_pdf/tan_2q_R08-2.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S02.txt",
+        "sha256": "6348283c05f5c1e85330fcdd869c4d0e91a46edea1cfe341fd05444a8e5d3a29",
+        "text_sha256": "29a8ae0ac75543c74ac1893750356abe163f27917d6287ff67db4f0c22705668",
+        "retrieved_at": "2026-11-22T00:19:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12299,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "令和７年10月期 決算短信〔日本基準〕（連結）（全文）",
+        "url": "https://www.f-juken.co.jp/ir/pdf/tan_R07-2.pdf",
+        "published_at": "2025-12-15",
+        "category": "historical",
+        "final_url": "https://www.f-juken.co.jp/ir/pdf/tan_R07-2.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S03.txt",
+        "sha256": "be136366b2a8c3565ffb4bc00779f2966b48155fca2fa76588f77e75bd9991da",
+        "text_sha256": "deebacdd680429b4bfae7aaa2a2f13c6901c1b8cdee85b8261f9a9e5c8f4ff75",
+        "retrieved_at": "2026-11-22T00:19:20+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 19175,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "令和７年10月期 第３四半期決算短信〔日本基準〕（連結）（全文）",
+        "url": "https://www.f-juken.co.jp/ir/pdf/tan_3q_R07-2.pdf",
+        "published_at": "2025-09-04",
+        "category": "historical",
+        "final_url": "https://www.f-juken.co.jp/ir/pdf/tan_3q_R07-2.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S04.txt",
+        "sha256": "6978c5645f45ef8074d4186d416eb02eb3abe62f49769838782ab9c5a811a48e",
+        "text_sha256": "23b1ad5e6bf944be912cc55f880db6d400f26f61940f74402eabe041f5b7c40f",
+        "retrieved_at": "2026-11-22T00:19:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11269,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "令和８年10月期 第２四半期（中間期）決算説明資料",
+        "url": "https://www.f-juken.co.jp/ir/release_pdf/kessan_siryou_R08_2q.pdf",
+        "published_at": "2026-06-12",
+        "category": "presentation",
+        "final_url": "https://www.f-juken.co.jp/ir/release_pdf/kessan_siryou_R08_2q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S05.txt",
+        "sha256": "e36d57ad072888416b1e5218809101c38b46843ff619710b4737312969ed3659",
+        "text_sha256": "2a76da355da523306d383add684731e96fd297fbfb44865e8c33439059f2d43c",
+        "retrieved_at": "2026-11-22T00:19:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13555,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "令和７年10月期 決算説明資料",
+        "url": "https://www.f-juken.co.jp/ir/pdf/kessan_siryou_R07.pdf",
+        "published_at": "2025-12-19",
+        "category": "presentation",
+        "final_url": "https://www.f-juken.co.jp/ir/pdf/kessan_siryou_R07.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S06.txt",
+        "sha256": "aa2b0c277f4d49ace42dc73440e86a167f6ed141ad8f86bd3df86346bc119069",
+        "text_sha256": "a2eeb2999b33ff3707a3804085b0e6f6487e3f62332b81b150c853b81b21047f",
+        "retrieved_at": "2026-11-22T00:19:22+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13645,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "第28期（令和８年10月期）半期報告書",
+        "url": "https://www.f-juken.co.jp/ir/pdf/hanpo_R08.pdf",
+        "published_at": "2026-06-12",
+        "category": "other",
+        "final_url": "https://www.f-juken.co.jp/ir/pdf/hanpo_R08.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S07.txt",
+        "sha256": "c984de7388f0d7bcce0022dded5e77e261a22621ca40dec11c2a710dbef4eb10",
+        "text_sha256": "7979dc802a04fce8b2f481f381c47c4cd138d5ac5e448501468616be7305d92f",
+        "retrieved_at": "2026-11-22T00:19:23+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 23046,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "株主優待内容の決定に関するお知らせ",
+        "url": "https://www.f-juken.co.jp/ir/release_pdf/release260915_1.pdf",
+        "published_at": "2026-09-15",
+        "category": "other",
+        "final_url": "https://www.f-juken.co.jp/ir/release_pdf/release260915_1.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\8917\\sources\\S08.txt",
+        "sha256": "6a08ac76bd16e334afdb8320597c8b135ab0cf0ceec718ed53b15d3942aeda35",
+        "text_sha256": "7e38a116d757b5e0a7822188c232d9915132371d42813ccdd3f6dad9fba0dadc",
+        "retrieved_at": "2026-11-22T00:19:23+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 719,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "IRカレンダー",
+        "url": "https://www.f-juken.co.jp/ir/calender.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:19:23+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "IRニュース（2026年）",
+        "url": "https://www.f-juken.co.jp/ir/news.html",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:19:23+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 4,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy25_revenue",
+          "value": 42883.657,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 当連結会計年度"
+        },
+        {
+          "id": "fy25_op",
+          "value": 2490.222,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 当連結会計年度"
+        },
+        {
+          "id": "fy25_sga",
+          "value": 4533.057,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 販売費及び一般管理費合計"
+        },
+        {
+          "id": "y25_q3_revenue",
+          "value": 31232.129,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 当第３四半期連結累計期間"
+        },
+        {
+          "id": "y25_q3_op",
+          "value": 1757.191,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 当第３四半期連結累計期間"
+        },
+        {
+          "id": "y25_q3_sga",
+          "value": 3311.385,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7 販売費及び一般管理費"
+        },
+        {
+          "id": "y26_h1_revenue",
+          "value": 18706.434,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当中間連結会計期間"
+        },
+        {
+          "id": "y26_h1_op",
+          "value": 1294.595,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当中間連結会計期間"
+        },
+        {
+          "id": "y26_h1_sga",
+          "value": 2076.537,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 販売費及び一般管理費"
+        },
+        {
+          "id": "y26_q3_revenue",
+          "value": 28293.999,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7 当第３四半期連結累計期間"
+        },
+        {
+          "id": "y26_q3_op",
+          "value": 1971.72,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7 当第３四半期連結累計期間"
+        },
+        {
+          "id": "y26_q3_ordinary",
+          "value": 1868.564,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7 経常利益"
+        },
+        {
+          "id": "y26_q3_net",
+          "value": 1137.839,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7 親会社株主に帰属する四半期純利益"
+        },
+        {
+          "id": "y26_q3_sga",
+          "value": 3098.804,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7 販売費及び一般管理費"
+        },
+        {
+          "id": "fy25_house_revenue",
+          "value": 34473,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 4 戸建分譲売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "y25_q3_house_revenue",
+          "value": 24667,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 4 戸建分譲売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "fy25_house_units",
+          "value": 1120,
+          "kind": "fact",
+          "unit": "棟・区画",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 4 戸建分譲936棟・土地分譲184区画の合計"
+        },
+        {
+          "id": "y25_q3_house_units",
+          "value": 804,
+          "kind": "fact",
+          "unit": "棟・区画",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 4 戸建分譲697棟・土地分譲107区画の合計"
+        },
+        {
+          "id": "y26_h1_house_revenue",
+          "value": 15091.724,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 18 収益認識関係 当中間連結会計期間"
+        },
+        {
+          "id": "y26_q3_house_revenue",
+          "value": 23004,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 戸建分譲売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "y26_h1_house_units",
+          "value": 462,
+          "kind": "fact",
+          "unit": "棟・区画",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 4 戸建分譲399棟・土地分譲63区画の合計"
+        },
+        {
+          "id": "y26_q3_house_units",
+          "value": 693,
+          "kind": "fact",
+          "unit": "棟・区画",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 戸建分譲607棟・土地分譲86区画の合計"
+        },
+        {
+          "id": "fy25_contract_revenue",
+          "value": 6248,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 4 請負工事売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "y25_q3_contract_revenue",
+          "value": 4682,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 4 請負工事売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "y26_h1_contract_revenue",
+          "value": 3073.013,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 18 収益認識関係"
+        },
+        {
+          "id": "y26_q3_contract_revenue",
+          "value": 4458,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 請負工事売上高。百万円単位の本文表示"
+        },
+        {
+          "id": "y26_h1_fee",
+          "value": 332.435,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 16 販売手数料"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 43400,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 令和８年10月期 通期連結業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 2650,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 令和８年10月期 通期連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 2500,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 令和８年10月期 通期連結業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 1500,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 令和８年10月期 通期連結業績予想"
+        },
+        {
+          "id": "half_year_quarters",
+          "value": 2,
+          "kind": "assumption",
+          "unit": "四半期",
+          "rationale": "上期販管費から販売手数料を除いた費用を四半期換算する期間係数。会社予想の期間配分には使用しない。",
+          "sensitivity": "費用の季節性は別途seasonal_sgaで調整する。"
+        },
+        {
+          "id": "bear_units",
+          "value": 240,
+          "kind": "assumption",
+          "unit": "棟・区画",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各PDF page 4 販売数量、S01 PDF pages 5–6 在庫",
+          "rationale": "直前Qの231棟・区画に近い水準。完成在庫の減少と需要の弱さにより、前年Q4の316棟・区画に届かないケース。",
+          "sensitivity": "10棟・区画の変動で売上は10×bear_price、粗利益は10×bear_price×bear_house_margin変動。"
+        },
+        {
+          "id": "base_units",
+          "value": 280,
+          "kind": "assumption",
+          "unit": "棟・区画",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4–6、S03・S04 PDF page 4、S05 PDF pages 16・37",
+          "rationale": "直前Qより仕掛在庫の商品化が進む一方、完成在庫不足を踏まえ前年Q4数量を下回る。標準工期75日は商品化可能性の補助根拠であり、全在庫の期内完成を仮定しない。",
+          "sensitivity": "10棟・区画の変動で売上は10×base_price、粗利益は10×base_price×base_house_margin変動。"
+        },
+        {
+          "id": "bull_units",
+          "value": 315,
+          "kind": "assumption",
+          "unit": "棟・区画",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4–6、S03・S04 PDF page 4、S05 PDF pages 16・37",
+          "rationale": "仕掛在庫の完成と販売が順調で前年Q4並みまで回復する条件。受注残によって確約された数量ではない。",
+          "sensitivity": "10棟・区画の変動で売上は10×bull_price、粗利益は10×bull_price×bull_house_margin変動。"
+        },
+        {
+          "id": "bear_price",
+          "value": 32.7,
+          "kind": "assumption",
+          "unit": "百万円/棟・区画",
+          "material": true,
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 7–9・17",
+          "rationale": "土地分譲込みの上期平均単価付近。値引きや低単価地域・土地分譲の構成増を想定する。",
+          "sensitivity": "単価が1変動すると売上はbear_units変動。価格構成の変化と粗利率を同時に検討する必要がある。"
+        },
+        {
+          "id": "base_price",
+          "value": 33.5,
+          "kind": "assumption",
+          "unit": "百万円/棟・区画",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01・S02 PDF page 4、S05 PDF pages 7–9",
+          "rationale": "土地込み上期平均約32.67と直前Q差引平均約34.25の間。直前Qの土地分譲比率低下による単価上昇を全て恒常的値上げとは扱わない。",
+          "sensitivity": "単価が1変動すると売上はbase_units、粗利益はbase_units×base_house_margin変動。"
+        },
+        {
+          "id": "bull_price",
+          "value": 34.2,
+          "kind": "assumption",
+          "unit": "百万円/棟・区画",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF page 4",
+          "rationale": "直前Qの土地込み差引平均単価付近を維持するケース。",
+          "sensitivity": "単価が1変動すると売上はbull_units、粗利益はbull_units×bull_house_margin変動。"
+        },
+        {
+          "id": "bear_contract",
+          "value": 1400,
+          "kind": "assumption",
+          "unit": "百万円",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02",
+            "S07"
+          ],
+          "locator": "S01・S02 PDF page 4、S07 PDF page 6",
+          "rationale": "新規受注の伸び悩みを反映し、直前Q差引売上付近。工事進捗認識を含むため引渡棟数×単価とはしない。",
+          "sensitivity": "工事進捗売上が100変動すると粗利益は100×bear_contract_margin変動。"
+        },
+        {
+          "id": "base_contract",
+          "value": 1600,
+          "kind": "assumption",
+          "unit": "百万円",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各PDF page 4、S01 PDF page 6 契約資産",
+          "rationale": "前年Q4の差引売上付近で、直前Qからの緩やかな工事進捗回復を想定。上期の四半期平均とも近い。",
+          "sensitivity": "工事進捗売上が100変動すると粗利益は100×base_contract_margin変動。"
+        },
+        {
+          "id": "bull_contract",
+          "value": 1800,
+          "kind": "assumption",
+          "unit": "百万円",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01・S02 PDF pages 4・6、S05 PDF page 20",
+          "rationale": "契約資産と既存工事の進捗が期末に売上化する条件。直前Qを上回るが、未確認の大型受注は織り込まない。",
+          "sensitivity": "工事進捗売上が100変動すると粗利益は100×bull_contract_margin変動。"
+        },
+        {
+          "id": "rent_revenue",
+          "value": 225,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S07"
+          ],
+          "locator": "S01 PDF page 9、S02 PDF page 10、S07 PDF page 18",
+          "rationale": "直前Qのマンション事業等売上差額に全社賃貸収入を含めた水準を起点に、取得済み賃貸物件の寄与を小幅に見込む。全シナリオ共通。",
+          "sensitivity": "賃料収入が10変動すると粗利益は10×rent_margin変動。稼働率・賃料の物件別内訳は提示資料にない。"
+        },
+        {
+          "id": "other_revenue",
+          "value": 65,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01・S02 PDF page 4、S05 PDF page 9",
+          "rationale": "戸建事業の付随サービス売上を上期実績と直前Q差引水準の間で設定。全シナリオ共通。",
+          "sensitivity": "売上が10変動すると、粗利率100%の条件では粗利益も10変動。"
+        },
+        {
+          "id": "property_sale_revenue",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "material": true,
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 4–5 マンション事業等",
+          "rationale": "マンション分譲・収益物件売却・特建工事は直近累計で売上がなく、対象Qの具体的案件も提示資料にないため全ケースで計上しない。案件不存在の確認ではない。",
+          "sensitivity": "未確認の物件売却や特建引渡しがあれば本予測の範囲外。売上・原価の案件条件がないため影響額は未算定。"
+        },
+        {
+          "id": "bear_house_margin",
+          "value": 0.145,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 9・17、S06 PDF page 17",
+          "rationale": "上期の戸建分譲粗利率15.3%から値引き・工事費上昇を見込み、前年下期14.6%付近まで低下する条件。",
+          "sensitivity": "粗利率1ポイントで営業利益はbear_house_revenue×0.01変動。"
+        },
+        {
+          "id": "base_house_margin",
+          "value": 0.153,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4、S05 PDF pages 9・17",
+          "rationale": "厳選仕入・滞留在庫減少・コスト管理の効果が維持され、上期の商品別粗利率を維持する条件。追加の相乗効果を別途加算しない。",
+          "sensitivity": "粗利率1ポイントで営業利益はbase_house_revenue×0.01変動。"
+        },
+        {
+          "id": "bull_house_margin",
+          "value": 0.16,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4、S05 PDF pages 9・17",
+          "rationale": "採算重視販売と高単価構成により上期から0.7ポイント改善する条件。過去の同商品粗利率レンジ内だが会社の見通しではない。",
+          "sensitivity": "粗利率1ポイントで営業利益はbull_house_revenue×0.01変動。"
+        },
+        {
+          "id": "bear_contract_margin",
+          "value": 0.235,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 請負工事粗利益",
+          "rationale": "上期24.5%から原価負担で1ポイント低下する条件。",
+          "sensitivity": "粗利率1ポイントで営業利益はbear_contract×0.01変動。"
+        },
+        {
+          "id": "base_contract_margin",
+          "value": 0.245,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 請負工事粗利益",
+          "rationale": "付加価値の高い注文住宅の構成を維持し、上期粗利率を継続する条件。",
+          "sensitivity": "粗利率1ポイントで営業利益はbase_contract×0.01変動。"
+        },
+        {
+          "id": "bull_contract_margin",
+          "value": 0.255,
+          "kind": "assumption",
+          "unit": "比率",
+          "material": true,
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 9 請負工事粗利益",
+          "rationale": "前年通期の請負工事粗利率に回復する条件。",
+          "sensitivity": "粗利率1ポイントで営業利益はbull_contract×0.01変動。"
+        },
+        {
+          "id": "rent_margin",
+          "value": 0.465,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 不動産賃貸粗利率",
+          "rationale": "全社賃貸を含む商品別集計に対応する上期粗利率を採用。物件減価償却等を含むため取得物件の償却費を追加控除しない。",
+          "sensitivity": "粗利率1ポイントで営業利益はrent_revenue×0.01変動。"
+        },
+        {
+          "id": "other_margin",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9 その他粗利率",
+          "rationale": "付随サービスの上期商品別粗利率を採用する。",
+          "sensitivity": "粗利率10ポイント低下で営業利益はother_revenue×0.1減少。"
+        },
+        {
+          "id": "seasonal_sga",
+          "value": 80,
+          "kind": "assumption",
+          "unit": "百万円",
+          "material": true,
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S07"
+          ],
+          "locator": "S03 PDF page 9、S04 PDF page 7、S05 PDF page 15、S07 PDF page 16",
+          "rationale": "上期の手数料以外の四半期平均費用に、期末の賞与・その他費用の季節性を付加。前年Q4販管費が上期平均を上回ることを参照しつつ、人員・拠点減少を踏まえて抑制した仮定。利益目標から逆算していない。",
+          "sensitivity": "追加費用が50増減すると営業利益・経常利益は同額逆方向に変動。費目別の期末予算は提示資料にない。"
+        },
+        {
+          "id": "net_nonoperating_cost",
+          "value": 40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF page 7 営業外収益・営業外費用",
+          "rationale": "直前Qの営業利益と経常利益の差額約33.4を基準に、利払いの増加傾向を小幅に織り込む。全ケース共通で営業外費用純額を控除。",
+          "sensitivity": "営業外費用純額が10増減すると経常利益は10逆方向に変動。"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q4_revenue",
+          "formula": "fy25_revenue-y25_q3_revenue"
+        },
+        {
+          "id": "prior_q4_op",
+          "formula": "fy25_op-y25_q3_op"
+        },
+        {
+          "id": "prior_q4_sga",
+          "formula": "fy25_sga-y25_q3_sga"
+        },
+        {
+          "id": "prior_q4_house",
+          "formula": "fy25_house_revenue-y25_q3_house_revenue"
+        },
+        {
+          "id": "prior_q4_units",
+          "formula": "fy25_house_units-y25_q3_house_units"
+        },
+        {
+          "id": "prior_q4_price",
+          "formula": "prior_q4_house/prior_q4_units"
+        },
+        {
+          "id": "prior_q4_contract",
+          "formula": "fy25_contract_revenue-y25_q3_contract_revenue"
+        },
+        {
+          "id": "prior_q4_other",
+          "formula": "prior_q4_revenue-prior_q4_house-prior_q4_contract"
+        },
+        {
+          "id": "previous_q_revenue",
+          "formula": "y26_q3_revenue-y26_h1_revenue"
+        },
+        {
+          "id": "previous_q_op",
+          "formula": "y26_q3_op-y26_h1_op"
+        },
+        {
+          "id": "previous_q_sga",
+          "formula": "y26_q3_sga-y26_h1_sga"
+        },
+        {
+          "id": "previous_q_house",
+          "formula": "y26_q3_house_revenue-y26_h1_house_revenue"
+        },
+        {
+          "id": "previous_q_units",
+          "formula": "y26_q3_house_units-y26_h1_house_units"
+        },
+        {
+          "id": "previous_q_price",
+          "formula": "previous_q_house/previous_q_units"
+        },
+        {
+          "id": "previous_q_contract",
+          "formula": "y26_q3_contract_revenue-y26_h1_contract_revenue"
+        },
+        {
+          "id": "previous_q_other",
+          "formula": "previous_q_revenue-previous_q_house-previous_q_contract"
+        },
+        {
+          "id": "guidance_implied_q4_revenue",
+          "formula": "guidance_revenue-y26_q3_revenue"
+        },
+        {
+          "id": "guidance_implied_q4_op",
+          "formula": "guidance_op-y26_q3_op"
+        },
+        {
+          "id": "guidance_implied_q4_ordinary",
+          "formula": "guidance_ordinary-y26_q3_ordinary"
+        },
+        {
+          "id": "guidance_implied_q4_net",
+          "formula": "guidance_net-y26_q3_net"
+        },
+        {
+          "id": "fee_rate",
+          "formula": "y26_h1_fee/y26_h1_revenue"
+        },
+        {
+          "id": "fixed_sga",
+          "formula": "(y26_h1_sga-y26_h1_fee)/half_year_quarters+seasonal_sga"
+        },
+        {
+          "id": "nonhousing_other_revenue",
+          "formula": "rent_revenue+other_revenue+property_sale_revenue"
+        },
+        {
+          "id": "other_gross_profit",
+          "formula": "rent_revenue*rent_margin+other_revenue*other_margin"
+        },
+        {
+          "id": "bear_house_revenue",
+          "formula": "bear_units*bear_price"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_house_revenue+bear_contract+nonhousing_other_revenue"
+        },
+        {
+          "id": "bear_gross_profit",
+          "formula": "bear_house_revenue*bear_house_margin+bear_contract*bear_contract_margin+other_gross_profit"
+        },
+        {
+          "id": "bear_sga",
+          "formula": "fixed_sga+bear_revenue*fee_rate"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_gross_profit-bear_sga"
+        },
+        {
+          "id": "bear_ordinary",
+          "formula": "bear_op-net_nonoperating_cost"
+        },
+        {
+          "id": "base_house_revenue",
+          "formula": "base_units*base_price"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_house_revenue+base_contract+nonhousing_other_revenue"
+        },
+        {
+          "id": "base_gross_profit",
+          "formula": "base_house_revenue*base_house_margin+base_contract*base_contract_margin+other_gross_profit"
+        },
+        {
+          "id": "base_sga",
+          "formula": "fixed_sga+base_revenue*fee_rate"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_gross_profit-base_sga"
+        },
+        {
+          "id": "base_ordinary",
+          "formula": "base_op-net_nonoperating_cost"
+        },
+        {
+          "id": "bull_house_revenue",
+          "formula": "bull_units*bull_price"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_house_revenue+bull_contract+nonhousing_other_revenue"
+        },
+        {
+          "id": "bull_gross_profit",
+          "formula": "bull_house_revenue*bull_house_margin+bull_contract*bull_contract_margin+other_gross_profit"
+        },
+        {
+          "id": "bull_sga",
+          "formula": "fixed_sga+bull_revenue*fee_rate"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_gross_profit-bull_sga"
+        },
+        {
+          "id": "bull_ordinary",
+          "formula": "bull_op-net_nonoperating_cost"
+        },
+        {
+          "id": "base_full_year_revenue",
+          "formula": "y26_q3_revenue+base_revenue"
+        },
+        {
+          "id": "base_full_year_op",
+          "formula": "y26_q3_op+base_op"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "nonhousing_other_revenue-prior_q4_other"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "nonhousing_other_revenue-previous_q_other"
+        },
+        {
+          "id": "bear_yoy_op_residual",
+          "formula": "bear_op-prior_q4_op-(bear_house_revenue-prior_q4_house)*bear_house_margin-(bear_contract-prior_q4_contract)*bear_contract_margin-(prior_q4_sga-bear_sga)"
+        },
+        {
+          "id": "bear_qoq_op_residual",
+          "formula": "bear_op-previous_q_op-(bear_house_revenue-previous_q_house)*bear_house_margin-(bear_contract-previous_q_contract)*bear_contract_margin-(previous_q_sga-bear_sga)"
+        },
+        {
+          "id": "base_yoy_op_residual",
+          "formula": "base_op-prior_q4_op-(base_house_revenue-prior_q4_house)*base_house_margin-(base_contract-prior_q4_contract)*base_contract_margin-(prior_q4_sga-base_sga)"
+        },
+        {
+          "id": "base_qoq_op_residual",
+          "formula": "base_op-previous_q_op-(base_house_revenue-previous_q_house)*base_house_margin-(base_contract-previous_q_contract)*base_contract_margin-(previous_q_sga-base_sga)"
+        },
+        {
+          "id": "bull_yoy_op_residual",
+          "formula": "bull_op-prior_q4_op-(bull_house_revenue-prior_q4_house)*bull_house_margin-(bull_contract-prior_q4_contract)*bull_contract_margin-(prior_q4_sga-bull_sga)"
+        },
+        {
+          "id": "bull_qoq_op_residual",
+          "formula": "bull_op-previous_q_op-(bull_house_revenue-previous_q_house)*bull_house_margin-(bull_contract-previous_q_contract)*bull_contract_margin-(previous_q_sga-bull_sga)"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": "bear_ordinary",
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "戸建分譲・土地分譲",
+              "revenue": "bear_house_revenue"
+            },
+            {
+              "name": "請負工事",
+              "revenue": "bear_contract"
+            },
+            {
+              "name": "不動産賃貸・全社賃貸",
+              "revenue": "rent_revenue"
+            },
+            {
+              "name": "戸建付随サービス",
+              "revenue": "other_revenue"
+            },
+            {
+              "name": "マンション分譲・収益物件売却・特建",
+              "revenue": "property_sale_revenue"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": "base_ordinary",
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "戸建分譲・土地分譲",
+              "revenue": "base_house_revenue"
+            },
+            {
+              "name": "請負工事",
+              "revenue": "base_contract"
+            },
+            {
+              "name": "不動産賃貸・全社賃貸",
+              "revenue": "rent_revenue"
+            },
+            {
+              "name": "戸建付随サービス",
+              "revenue": "other_revenue"
+            },
+            {
+              "name": "マンション分譲・収益物件売却・特建",
+              "revenue": "property_sale_revenue"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": "bull_ordinary",
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "戸建分譲・土地分譲",
+              "revenue": "bull_house_revenue"
+            },
+            {
+              "name": "請負工事",
+              "revenue": "bull_contract"
+            },
+            {
+              "name": "不動産賃貸・全社賃貸",
+              "revenue": "rent_revenue"
+            },
+            {
+              "name": "戸建付随サービス",
+              "revenue": "other_revenue"
+            },
+            {
+              "name": "マンション分譲・収益物件売却・特建",
+              "revenue": "property_sale_revenue"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 3,
+          "period_start": "2024-11-01",
+          "period_end": "2025-07-31",
+          "revenue": 31232.129,
+          "operating_profit": 1757.191,
+          "ordinary_profit": 1665.821,
+          "net_profit": 986.536,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2022年改正法人税等会計基準適用後。連結損益はS04とS01比較欄で一致。セグメント比較にはS01のマンション事業等への組替え後表示を採用。PPA変更記載なし。",
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "locator": "S04 PDF pages 7・9、S01 PDF pages 7・9"
+        },
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 4,
+          "period_start": "2024-11-01",
+          "period_end": "2025-10-31",
+          "revenue": 42883.657,
+          "operating_profit": 2490.222,
+          "ordinary_profit": 2352.237,
+          "net_profit": 1435.197,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2022年改正法人税等会計基準適用後、マンション事業等への組替え後。比較対象Q3との連結損益基準の変更記載なし。PPA変更記載なし。",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 9・14–15"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 2,
+          "period_start": "2025-11-01",
+          "period_end": "2026-04-30",
+          "revenue": 18706.434,
+          "operating_profit": 1294.595,
+          "ordinary_profit": 1224.838,
+          "net_profit": 723.878,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2022年改正法人税等会計基準適用後、マンション事業等への組替え後。当期の会計方針変更・修正再表示なし。PPA変更記載なし。",
+          "source_ids": [
+            "S02",
+            "S07"
+          ],
+          "locator": "S02 PDF pages 2・7・10、S07 PDF pages 13・16–18"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 3,
+          "period_start": "2025-11-01",
+          "period_end": "2026-07-31",
+          "revenue": 28293.999,
+          "operating_profit": 1971.72,
+          "ordinary_profit": 1868.564,
+          "net_profit": 1137.839,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2022年改正法人税等会計基準適用後、マンション事業等への組替え後。当期の会計方針変更・修正再表示なし。PPA変更記載なし。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2・7・9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "完成在庫と仕掛在庫の商品化",
+          "mechanism": "戸建販売数量を制約する完成在庫の減少と、仕掛物件の期内完成・引渡しを別々に評価。中心ケースは前年Q4数量未達、直前Q比回復。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4–6、S05 PDF pages 16・18・37",
+          "calculation_ids": [
+            "bear_house_revenue",
+            "base_house_revenue",
+            "bull_house_revenue"
+          ],
+          "not_quantified_reason": "在庫は取得原価残高であり、工事段階別棟数・契約状況は提示資料にない。残高を直接販売価格に換算していない。"
+        },
+        {
+          "name": "戸建・土地・地域構成と販売採算",
+          "mechanism": "戸建と土地を合算した数量に構成込み平均単価を乗じ、商品別粗利率から利益を積み上げる。単価上昇を全て同一商品の値上げとは扱わない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01・S02 PDF page 4、S05 PDF pages 7・9・17",
+          "calculation_ids": [
+            "previous_q_price",
+            "base_house_revenue",
+            "base_gross_profit"
+          ],
+          "not_quantified_reason": "対象Qの地域別・戸建土地別構成が未公表で、純粋な価格効果と構成効果は分離できない。"
+        },
+        {
+          "name": "注文住宅の工事進捗",
+          "mechanism": "請負工事は高粗利だが新規受注が伸び悩む。契約資産と過去の四半期売上を参照し、工事進捗売上を条件付きで設定。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05",
+            "S07"
+          ],
+          "locator": "S01・S02 PDF pages 4・6、S05 PDF pages 9・20、S07 PDF page 6",
+          "calculation_ids": [
+            "base_revenue",
+            "base_gross_profit"
+          ],
+          "not_quantified_reason": "受注残・契約別進捗率は提示資料にない。引渡棟数をそのまま収益認識数量には使用しない。"
+        },
+        {
+          "name": "賃貸物件取得と安定収益",
+          "mechanism": "取得済み物件による収益増を賃貸売上に含め、償却等の原価を含む商品別粗利率を適用する。",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 4–6、S05 PDF pages 9・21、S07 PDF page 18",
+          "calculation_ids": [
+            "other_gross_profit"
+          ],
+          "not_quantified_reason": "物件別稼働率・取得時期・償却費の詳細がないため、取得資産に利回りを一律に掛ける推計は行わない。"
+        },
+        {
+          "name": "拠点・人員効率化と販売手数料",
+          "mechanism": "販管費は上期の手数料以外の費用を基礎とし、期末季節費用と売上連動手数料を加算。拠点再編効果を別途重複加算しない。",
+          "source_ids": [
+            "S05",
+            "S07"
+          ],
+          "locator": "S05 PDF pages 15・40、S07 PDF page 16",
+          "calculation_ids": [
+            "fee_rate",
+            "fixed_sga",
+            "bear_sga",
+            "base_sga",
+            "bull_sga"
+          ],
+          "not_quantified_reason": "手数料以外の費用にも変動費が含まれる可能性があり、固定費分類は予測上の近似。期末の費目別費用予算は未確認。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(bear_units-prior_q4_units)*prior_q4_price",
+              "reason": "前年Q4数量に対する販売数量仮定の差"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "bear_units*(bear_price-prior_q4_price)",
+              "reason": "土地・地域構成と販売価格を含む平均単価差"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "bear_contract-prior_q4_contract",
+              "reason": "工事進捗売上の差"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス・マンション分譲・特建等の合計差。比較期の同一定義による詳細内訳と対象Q案件が不足するため、個別要因へ割り振らず残差とした。本文表示による微小な端数も含み得る。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_q_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(bear_units-previous_q_units)*previous_q_price",
+              "reason": "直前Q数量に対する販売数量仮定の差"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "bear_units*(bear_price-previous_q_price)",
+              "reason": "価格・土地比率・地域構成の複合差"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "bear_contract-previous_q_contract",
+              "reason": "工事進捗売上の差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与やサービス構成の変動を個別には説明できないため残差。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(bear_house_revenue-prior_q4_house)*bear_house_margin",
+              "reason": "弱気粗利率で売上差を評価する分解規約"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(bear_contract-prior_q4_contract)*bear_contract_margin",
+              "reason": "弱気請負粗利率で工事進捗売上差を評価"
+            },
+            {
+              "label": "販管費",
+              "formula": "prior_q4_sga-bear_sga",
+              "reason": "実績販管費と費用積上げ予測の差"
+            }
+          ],
+          "residual": "bear_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "比較Qの商品別粗利益が未確認のため、既存売上部分の採算変動、賃貸・その他粗利益差を分離できない。差額を全て採算改善と断定しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_q_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(bear_house_revenue-previous_q_house)*bear_house_margin",
+              "reason": "弱気粗利率で売上差を評価"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(bear_contract-previous_q_contract)*bear_contract_margin",
+              "reason": "弱気請負粗利率で売上差を評価"
+            },
+            {
+              "label": "販管費",
+              "formula": "previous_q_sga-bear_sga",
+              "reason": "販売手数料と期末費用を含む費用差"
+            }
+          ],
+          "residual": "bear_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Qの商品別粗利益は提示資料にない。粗利率・構成・賃貸等の未分解差を残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(base_units-prior_q4_units)*prior_q4_price",
+              "reason": "在庫制約を踏まえ前年Q4を下回る数量"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "base_units*(base_price-prior_q4_price)",
+              "reason": "高単価地域・戸建比率と商品力を含む平均単価差"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "base_contract-prior_q4_contract",
+              "reason": "既存工事の進捗に基づく条件付き売上差"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。詳細内訳へ割り振る根拠が不足している。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_q_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(base_units-previous_q_units)*previous_q_price",
+              "reason": "仕掛在庫の商品化による条件付き数量回復"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "base_units*(base_price-previous_q_price)",
+              "reason": "直前Qの高単価構成が一部平準化する仮定"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "base_contract-previous_q_contract",
+              "reason": "期末に向けた進捗売上回復"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス等の合計差。物件別・サービス別の寄与は説明できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(base_house_revenue-prior_q4_house)*base_house_margin",
+              "reason": "上期粗利率維持の条件で売上差を評価"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(base_contract-prior_q4_contract)*base_contract_margin",
+              "reason": "上期請負粗利率で売上差を評価"
+            },
+            {
+              "label": "販管費",
+              "formula": "prior_q4_sga-base_sga",
+              "reason": "効率化を反映した実績費用基盤と期末季節性による差"
+            }
+          ],
+          "residual": "base_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "比較Qの商品別採算が未確認のため、既存売上の採算差と賃貸・その他粗利益差を一括して残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_q_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(base_house_revenue-previous_q_house)*base_house_margin",
+              "reason": "数量回復と単価構成差による売上変動を中心粗利率で評価"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(base_contract-previous_q_contract)*base_contract_margin",
+              "reason": "進捗売上回復の粗利益寄与"
+            },
+            {
+              "label": "販管費",
+              "formula": "previous_q_sga-base_sga",
+              "reason": "販売手数料と期末季節費用による差"
+            }
+          ],
+          "residual": "base_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Qの商品別粗利益がないため、採算・構成・賃貸等の差を個別に確定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(bull_units-prior_q4_units)*prior_q4_price",
+              "reason": "前年Q4並みまで数量が回復する条件"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "bull_units*(bull_price-prior_q4_price)",
+              "reason": "直前Qに近い高単価構成を維持"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "bull_contract-prior_q4_contract",
+              "reason": "期末工事進捗が順調なケース"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス・物件売却・特建等の合計差。未確認案件による増収は追加していない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_q_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "戸建・土地数量",
+              "formula": "(bull_units-previous_q_units)*previous_q_price",
+              "reason": "完成・引渡しが順調に進む条件付き数量増"
+            },
+            {
+              "label": "平均単価・構成",
+              "formula": "bull_units*(bull_price-previous_q_price)",
+              "reason": "直前Q平均単価に近い構成を維持"
+            },
+            {
+              "label": "請負工事進捗",
+              "formula": "bull_contract-previous_q_contract",
+              "reason": "既存契約の進捗売上拡大"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "賃貸・付随サービス等の合計差。物件別寄与は未分解。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(bull_house_revenue-prior_q4_house)*bull_house_margin",
+              "reason": "強気粗利率で数量・単価による売上差を評価"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(bull_contract-prior_q4_contract)*bull_contract_margin",
+              "reason": "前年通期粗利率への回復条件で売上差を評価"
+            },
+            {
+              "label": "販管費",
+              "formula": "prior_q4_sga-bull_sga",
+              "reason": "費用基盤と販売手数料増加の合計差"
+            }
+          ],
+          "residual": "bull_yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "比較Qの商品別粗利益が未確認のため、採算改善と賃貸・その他粗利益差の分離はできない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_q_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "戸建売上差の粗利益効果",
+              "formula": "(bull_house_revenue-previous_q_house)*bull_house_margin",
+              "reason": "強気粗利率で数量回復の粗利益効果を評価"
+            },
+            {
+              "label": "請負売上差の粗利益効果",
+              "formula": "(bull_contract-previous_q_contract)*bull_contract_margin",
+              "reason": "順調な工事進捗による粗利益効果"
+            },
+            {
+              "label": "販管費",
+              "formula": "previous_q_sga-bull_sga",
+              "reason": "売上連動手数料と期末費用の増加"
+            }
+          ],
+          "residual": "bull_qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直前Qの商品別粗利益が未開示のため、既存売上の採算変動とその他粗利益差を残差に含める。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "g26_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-04",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1・5。期初予想を据置き。提示原文内で最新確認。"
+        },
+        {
+          "id": "g26_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-04",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1・5。期初予想を据置き。提示原文内で最新確認。"
+        },
+        {
+          "id": "g26_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-04",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1・5。期初予想を据置き。提示原文内で最新確認。"
+        },
+        {
+          "id": "g26_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主帰属",
+          "unit": "百万円",
+          "published_at": "2026-09-04",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1・5。期初予想を据置き。提示原文内で最新確認。"
+        }
+      ],
+      "company_guidance": "提示原文で最新確認できる会社予想はS01の通期据置き予想。Q3累計との差引きはQ4売上{{value:guidance_implied_q4_revenue}}、営業利益{{value:guidance_implied_q4_op}}、経常利益{{value:guidance_implied_q4_ordinary}}、親会社株主帰属純利益{{value:guidance_implied_q4_net}}。これは通期予想の達成に必要な差引き値で、会社によるQ4単独予想でも独自予測でもない。期後修正の見込みは採用していない。",
+      "consensus": "未確認。提示資料に市場コンセンサスは含まれていない。",
+      "independent_forecast": "戸建・土地販売数量と構成込み平均単価、請負工事進捗売上、賃貸・付随サービス売上を積み上げ、商品別粗利率と独立した販管費モデルからQ4単独利益を算定した条件付き予測。会社通期予想の四等分や会社予想への利益合わせは行っていない。中心ケースの通期換算は売上{{value:base_full_year_revenue}}、営業利益{{value:base_full_year_op}}であり、売上の会社計画未達と採算改善による営業利益の計画超過が併存する。純利益は期末税額調整・非支配株主帰属損益の合理的な範囲を設定しにくいためnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期と中心予測",
+          "text": "対象は次回本決算で明らかになる第４四半期単独。中心ケースは売上{{value:base_revenue}}、営業利益{{value:base_op}}、経常利益{{value:base_ordinary}}。完成在庫不足で前年同四半期の販売数量には届かない一方、仕掛在庫の商品化で直前四半期から回復する条件を置く。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各PDF page 4、S01 PDF pages 5–6"
+        },
+        {
+          "heading": "数量回復と採算の両立が分岐点",
+          "text": "弱気ケースは売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気ケースは売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。単価には戸建・土地と地域構成が影響するため、売価上昇だけで利益改善を説明しない。仕入厳選と滞留在庫減少の効果は粗利率に含め、別途の利益上乗せは行わない。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4、S05 PDF pages 7・9・17"
+        },
+        {
+          "heading": "会社予想との距離",
+          "text": "会社通期予想からのQ4差引売上{{value:guidance_implied_q4_revenue}}は、独自の中心売上{{value:base_revenue}}を上回る。受注残や完成予定棟数の裏付けがないため、その差引売上を目標として販売数量を調整しない。一方、商品採算の改善と効率化を反映した営業利益は、差引き会社予想と異なる軌道を取り得る。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 1・4–5、S05 PDF pages 9・15"
+        },
+        {
+          "heading": "比較の限界",
+          "text": "前年同四半期は売上{{value:prior_q4_revenue}}、営業利益{{value:prior_q4_op}}、直前四半期は売上{{value:previous_q_revenue}}、営業利益{{value:previous_q_op}}。いずれも連結損益の同一基準による累計差引き。商品別四半期粗利益が不足するため、営業利益ブリッジの残差を一律に採算改善や丸め差へ置き換えていない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01・S02・S04 PDF page 7、S03 PDF page 9"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象Qの完成予定棟数、契約済み在庫棟数、キャンセル、値引きの実施状況は提示原文では非開示。",
+        "注文住宅の受注残・契約別進捗率は提示原文では非開示。引渡棟数と売上認識時点は一致するとは限らない。",
+        "対象Qの地域別販売構成と戸建・土地構成は未公表。数量・単価シナリオは確定実績ではない。",
+        "期末の評価損、賞与・販売促進費、税率調整、非支配株主帰属利益は未確認。",
+        "期末までに収益物件売却や特建引渡しがある場合、全シナリオ共通の案件売上ゼロという条件が成立しない。"
+      ],
+      "material_unresolved": [
+        "入力の発表候補日2026-12-14は会社直接資料で確定できない。S09の保存原文が提示されていないためannouncement_dateをnullとした。",
+        "S09・S10は資料一覧にあるが本文未添付。期後の業績修正、発表日更新、対象実績の既発表有無を原文で確認できない。target_already_announced=falseは提示された対象条件を採用したもので、網羅確認済みではない。",
+        "S01からS08にはtruncated=falseが付されている。短縮による欠落は示されていないが、外部PDF画像・XBRLとの照合は行っていない。",
+        "S05 PDF page 41の連結売上高・経常利益はS03の前年通期実績と一致する一方、年度表記は2026年10月期となっている。当該欄を当期確定実績として採用していない。",
+        "S05 PDF page 10の前期末未成工事支出金はS03・S07の財務諸表と整合しない。当該説明資料の該当数値を予測の根拠に採用していない。",
+        "賃貸収入はS05の商品別集計と短信のマンション事業等セグメントで範囲が異なる。S07 PDF page 18で全社賃貸収入の存在を確認し、予測では全社分を含めた商品別賃貸として計上した。",
+        "S01の戸建・請負売上とS03・S04の商品別売上は百万円単位の本文表示。千円精度の実績と混在するため商品別差引・平均単価には表示精度の限界がある。連結売上・利益の比較は千円表示から換算した値を使用した。",
+        "セグメント利益は経常利益ベースであり営業利益ではない。商品別粗利益から連結販管費を控除する予測方法を採用し、セグメント利益を営業利益として転記していない。",
+        "S06 PDF page 21には前年KHC売上が決算期変更による13か月集計と記載される。追加月の四半期別寄与は未確認のため、前年Q4との差を全て通常の数量変動と断定できない。",
+        "Q3および前年Q4の商品別粗利益が提示原文で確認できないため、営業利益ブリッジでは売上差の仮定粗利率換算と販管費差以外をeconomic_unexplainedとして残した。",
+        "取得原価配分の確定前後に関する明示的な変更は提示資料にない。同一年度の累計差引きを妨げる改訂は確認されず、PPA確定済みという独立した認定は行っていない。",
+        "純利益は連結各社の期末税額・非支配株主帰属利益の構成を合理的に特定できずnull。経常利益は営業外費用純額の明示的仮定に限って算定した。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "Q3および前年Q4の商品別粗利益が提示原文で確認できないため、営業利益ブリッジでは売上差の仮定粗利率換算と販管費差以外をeconomic_unexplainedとして残した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "S01からS08にはtruncated=falseが付されている。短縮による欠落は示されていないが、外部PDF画像・XBRLとの照合は行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "S01の戸建・請負売上とS03・S04の商品別売上は百万円単位の本文表示。千円精度の実績と混在するため商品別差引・平均単価には表示精度の限界がある。連結売上・利益の比較は千円表示から換算した値を使用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "S05 PDF page 10の前期末未成工事支出金はS03・S07の財務諸表と整合しない。当該説明資料の該当数値を予測の根拠に採用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "S05 PDF page 41の連結売上高・経常利益はS03の前年通期実績と一致する一方、年度表記は2026年10月期となっている。当該欄を当期確定実績として採用していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "S06 PDF page 21には前年KHC売上が決算期変更による13か月集計と記載される。追加月の四半期別寄与は未確認のため、前年Q4との差を全て通常の数量変動と断定できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "セグメント利益は経常利益ベースであり営業利益ではない。商品別粗利益から連結販管費を控除する予測方法を採用し、セグメント利益を営業利益として転記していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "入力の発表候補日2026-12-14は会社直接資料で確定できない。S09の保存原文が提示されていないためannouncement_dateをnullとした。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "取得原価配分の確定前後に関する明示的な変更は提示資料にない。同一年度の累計差引きを妨げる改訂は確認されず、PPA確定済みという独立した認定は行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-10-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "純利益は連結各社の期末税額・非支配株主帰属利益の構成を合理的に特定できずnull。経常利益は営業外費用純額の明示的仮定に限って算定した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "賃貸収入はS05の商品別集計と短信のマンション事業等セグメントで範囲が異なる。S07 PDF page 18で全社賃貸収入の存在を確認し、予測では全社分を含めた商品別賃貸として計上した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "base_contract: 前年Q4の差引売上付近で、直前Qからの緩やかな工事進捗回復を想定。上期の四半期平均とも近い。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "base_contract_margin: 付加価値の高い注文住宅の構成を維持し、上期粗利率を継続する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "base_house_margin: 厳選仕入・滞留在庫減少・コスト管理の効果が維持され、上期の商品別粗利率を維持する条件。追加の相乗効果を別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "base_price: 土地込み上期平均約32.67と直前Q差引平均約34.25の間。直前Qの土地分譲比率低下による単価上昇を全て恒常的値上げとは扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "base_units: 直前Qより仕掛在庫の商品化が進む一方、完成在庫不足を踏まえ前年Q4数量を下回る。標準工期75日は商品化可能性の補助根拠であり、全在庫の期内完成を仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bear_contract: 新規受注の伸び悩みを反映し、直前Q差引売上付近。工事進捗認識を含むため引渡棟数×単価とはしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bear_contract_margin: 上期24.5%から原価負担で1ポイント低下する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bear_house_margin: 上期の戸建分譲粗利率15.3%から値引き・工事費上昇を見込み、前年下期14.6%付近まで低下する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bear_price: 土地分譲込みの上期平均単価付近。値引きや低単価地域・土地分譲の構成増を想定する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bear_units: 直前Qの231棟・区画に近い水準。完成在庫の減少と需要の弱さにより、前年Q4の316棟・区画に届かないケース。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bull_contract: 契約資産と既存工事の進捗が期末に売上化する条件。直前Qを上回るが、未確認の大型受注は織り込まない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bull_contract_margin: 前年通期の請負工事粗利率に回復する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bull_house_margin: 採算重視販売と高単価構成により上期から0.7ポイント改善する条件。過去の同商品粗利率レンジ内だが会社の見通しではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bull_price: 直前Qの土地込み差引平均単価付近を維持するケース。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "bull_units: 仕掛在庫の完成と販売が順調で前年Q4並みまで回復する条件。受注残によって確約された数量ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "half_year_quarters: 上期販管費から販売手数料を除いた費用を四半期換算する期間係数。会社予想の期間配分には使用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "net_nonoperating_cost: 直前Qの営業利益と経常利益の差額約33.4を基準に、利払いの増加傾向を小幅に織り込む。全ケース共通で営業外費用純額を控除。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "other_margin: 付随サービスの上期商品別粗利率を採用する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "other_revenue: 戸建事業の付随サービス売上を上期実績と直前Q差引水準の間で設定。全シナリオ共通。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "property_sale_revenue: マンション分譲・収益物件売却・特建工事は直近累計で売上がなく、対象Qの具体的案件も提示資料にないため全ケースで計上しない。案件不存在の確認ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "rent_margin: 全社賃貸を含む商品別集計に対応する上期粗利率を採用。物件減価償却等を含むため取得物件の償却費を追加控除しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "rent_revenue: 直前Qのマンション事業等売上差額に全社賃貸収入を含めた水準を起点に、取得済み賃貸物件の寄与を小幅に見込む。全シナリオ共通。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "seasonal_sga: 上期の手数料以外の四半期平均費用に、期末の賞与・その他費用の季節性を付加。前年Q4販管費が上期平均を上回ることを参照しつつ、人員・拠点減少を踏まえて抑制した仮定。利益目標から逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "対象Qの地域別販売構成と戸建・土地構成は未公表。数量・単価シナリオは確定実績ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "対象Qの完成予定棟数、契約済み在庫棟数、キャンセル、値引きの実施状況は提示原文では非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "期末の評価損、賞与・販売促進費、税率調整、非支配株主帰属利益は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "期末までに収益物件売却や特建引渡しがある場合、全シナリオ共通の案件売上ゼロという条件が成立しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "8917",
+      "company_name": "ファースト住建株式会社",
+      "kind": "condition",
+      "message": "注文住宅の受注残・契約別進捗率は提示原文では非開示。引渡棟数と売上認識時点は一致するとは限らない。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/8917/result.json": "965aa0c86d876ca27ef788d3112e0f4cf87697d7a101596044f59d93d4e561fe",
+    "reports/8917.md": "779692e282dba360e5581a94434f3688fd067719754280a3963ab697f49e028a"
+  }
+}
