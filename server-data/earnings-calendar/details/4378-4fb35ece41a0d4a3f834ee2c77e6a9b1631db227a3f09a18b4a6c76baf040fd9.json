@@ -1,0 +1,2696 @@
+{
+  "id": "4378-4fb35ece41a0d4a3f834ee2c77e6a9b1631db227a3f09a18b4a6c76baf040fd9",
+  "code": "4378",
+  "companyName": "株式会社ＣＩＮＣ",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2026-10-31",
+    "quarter": 4
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "4378-generation-4e25fd49f90a3a1b · 4fb35ece",
+  "savedAt": "2026-11-21T22:03:23+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 428.09499999999997,
+  "operatingProfit": -16.22660000000002,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 4378 株式会社ＣＩＮＣ｜2026-10-31期 Q4単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 404.27 | 428.09 | 452.02 |\n| 営業利益 | -35.52 | -16.23 | 3.13 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 16.80 | 4.08% |  |\n| QnQ | 営業利益 | 5.08 | 未算定 | 比較利益がゼロ以下のため伸長率非表示。増減額を参照 |\n\n## 会社予想\nS01で据置きが確認できる通期連結予想を登録。通期予想から第3四半期累計を差し引いた対象Q相当額はguid_q4_revenue、guid_q4_op、guid_q4_ord、guid_q4_netであり、会社が直接公表した四半期予想ではない。百万円未満切捨ての予想値を使うため概算。期後修正見込みは使用していない。\n\n## 市場コンセンサス\n未確認。提示保存原文に市場コンセンサスの記載はない。\n\n## 独自予測・差引推計の区分\nARR、契約数、月額単価から売上を積み上げ、前Q総費用に追加提供費用と採用・開発負担を加えた条件付き独自予測。全シナリオでM&A追加成約なし。会社予想差引額との一致を目的とした費用逆算は行っていない。経常利益・純利益は営業外損益、税効果、期末調整の根拠不足によりnull。\n\n## 対象四半期の条件付き予測\n中心ケースの売上は428.09、営業利益は-16.23。アナリティクスの期末契約数・単価を維持できれば、KeywordmapのMRR減少を補う。ただし採用・育成とAI開発の費用負担が残り、四半期黒字化には届かない条件となる。\n\n## 上振れ・下振れの条件\n弱気ケースは売上404.27、営業利益-35.52。解約超過、顧客構成の悪化、追加投資負担を想定する。強気ケースは売上452.02、営業利益3.13。MRR下げ止まりとアナリティクスの顧客・単価改善、固定費維持が必要。M&A成約による上振れはこの範囲に含めていない。\n\n## 会社予想との区別\n据置き通期予想の差引額は売上416.88、営業利益-26.58。中心ケースとの差は売上11.21、営業利益10.35。これは比較用の差引推計であり、会社の四半期見通しや期後修正を確認したものではない。\n\n## 対象期間と比較の限界\n子会社合併と単体決算への移行は翌期からであり、対象Qは連結で予測する。期後の認定パートナー制度開始や新機能の提供を対象Q売上へ遡及加算しない。前年Q4のイベント収入などを金額分離できないため、前年比ブリッジには未説明の実績差を残した。\n\n## 増減要因の接続\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ソリューションのMRR・関連売上 | -16.31 | 解約超過と関連売上の弱気条件 |\n| アナリティクスの契約数・単価 | 9.29 | 7月末KPIからの四半期平均仮定 |\n| M&A成約売上 | 0.00 | 前Qも対象Q仮定も追加成約売上なし |\n| 残差（rounding） | 0.00 | 前Q連結売上と外部顧客セグメント売上差引合計の表示差。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ソリューションのMRR・関連売上 | -8.81 | MRR純減と関連売上維持 |\n| アナリティクスの契約数・単価 | 25.61 | 7月末KPI水準の維持 |\n| M&A成約売上 | 0.00 | 追加成約なし |\n| 残差（rounding） | 0.00 | 前Q連結売上と外部顧客セグメント売上差引合計の表示差。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ソリューションのMRR・関連売上 | -1.68 | MRR下げ止まりと有償提供拡大 |\n| アナリティクスの契約数・単価 | 42.41 | 顧客増加と案件構成改善 |\n| M&A成約売上 | 0.00 | 追加成約なし |\n| 残差（rounding） | 0.00 | 前Q連結売上と外部顧客セグメント売上差引合計の表示差。 |\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからのドライバーモデル増減 | -7.02 | MRR、関連売上、契約数・単価を積み上げた対象Qと前Qとの差 |\n| 残差（economic_unexplained） | -32.53 | 前年Q4から当年Q3への実績差。前年Q4イベント売上などの内訳額が確認できず、数量・価格要因への分解は行わない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからのドライバーモデル増減 | 16.80 | MRR、関連売上、契約数・単価による差 |\n| 残差（economic_unexplained） | -32.53 | 前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからのドライバーモデル増減 | 40.72 | MRR下げ止まり、関連売上、顧客数・単価改善による差 |\n| 残差（economic_unexplained） | -32.53 | 前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 増減収に伴う限界利益 | -4.21 | 増減収から仮定した追加提供費用を控除 |\n| 採用・育成・開発費増 | -10.00 | 前Q費用からの追加負担 |\n| 残差（none） | 0.00 | 費用モデル内では差額を全て説明。費用率自体は仮定。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 増減収に伴う限界利益 | 10.08 | 追加提供費用控除後の売上効果 |\n| 採用・育成・開発費増 | -5.00 | 前Q費用からの追加負担 |\n| 残差（none） | 0.00 | 費用モデル内では差額を全て説明。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 増減収に伴う限界利益 | 24.43 | 追加提供費用控除後の売上効果 |\n| 採用・開発負担の吸収 | 0.00 | 追加固定費を効率化で吸収する条件 |\n| 残差（none） | 0.00 | 費用モデル内では差額を全て説明。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Q比売上の限界利益効果 | -4.21 | ドライバーモデルに基づく前Q以降の変化 |\n| 追加投資負担 | -10.00 | 採用・育成・開発の追加費用 |\n| 残差（economic_unexplained） | 5.77 | 前年Q4から当年Q3への実績利益差。M&A費用削減、既存事業採算悪化等の純額を個別要因へ配分していない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Q比売上の限界利益効果 | 10.08 | ドライバーモデルに基づく前Q以降の変化 |\n| 追加投資負担 | -5.00 | 採用・育成・開発の追加費用 |\n| 残差（economic_unexplained） | 5.77 | 前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Q比売上の限界利益効果 | 24.43 | ドライバーモデルに基づく前Q以降の変化 |\n| 追加固定費 | 0.00 | 前Q並みの固定費条件 |\n| 残差（economic_unexplained） | 5.77 | 前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。 |\n\n## エラー・未解決事項\n- S01 page 4の利益説明には累計営業黒字との整合が不明瞭な文言があるため、金額はpage 8の損益計算書を優先した。\n- S01・S03の千円表示セグメント合計に微小な端数差がある。連結売上の基準値を優先し、前Q比売上ブリッジで表示差を明示した。\n- S02はPDF page 51途中で短縮されている。以降のM&A説明、注記その他の必要範囲は原文未確認であり、全資料読了とは扱わない。\n- S07のKPIスナップショット等には数値抽出欠落があり、グラフの不明瞭な対応や欠落値を補作していない。\n- 前年Q4のイベント収入額はS07 page 6に金額開示がなく、前年比差額の全てを経済要因に分解できない。\n- 前年Q4の資産除去債務見積変更はS04で確認できるが、営業利益への影響額は分離できない。遡及修正ではないため公表累計差引を採用した。\n- 営業利益は総費用の条件付きモデルであり、セグメント別利益、設備投資・償却、採用費を個別積上げできる精度の原文数値は不足している。\n- 基準日時までの開示網羅性は確認できない。S08の会社作成本文は提示されているが、会社IR・取引所の直接取得元は未確認。市場コンセンサスも未確認。\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 直前累計不足: 2025-10-31\n- 経常利益・親会社株主帰属純利益は営業外項目、税効果、期末調整の合理的範囲を設定できずnull。\n- 資料確認未了: presentation\n- 資料確認未了: subsequent_disclosures\n- AIへ渡した原文に省略あり: S02\n\n## 条件・不確実性\n- base_ana_clients: 四半期平均契約数を7月末と同水準に置く。長期契約割合の上昇を考慮し、追加の顧客純増を要求しない。\n- base_ana_price: 7月平均単価を維持。顧客数×単価をセグメント売上の代理モデルとし、エキスパートソーシング等は別加算しない。\n- base_extra_cost: 採用と開発の継続による前Q費用からの小幅増。費用適正化が続くため大幅増は置かない。\n- base_sol_factor: 四半期平均MRRを7月末の97%と置く。直近のARR純減を参考に、解約の一部を新規獲得で補う条件。会社予想の按分ではない。\n- base_sol_other: ARR対象外の外部売上を直近の概算差額に近い水準とする。初期費用、BPO、新製品を一括し、AIsearchmap売上を別途加算しない。\n- bear_ana_clients: 四半期平均契約数。7月末124社から一部解約・開始遅延が発生し、4月末117社との間に戻る条件。\n- bear_ana_price: 平均月額単価を4月0.72と7月0.76の間に設定し、案件構成の一部悪化を想定。\n- bear_extra_cost: 前Q費用に対する追加固定費・準固定費。採用、育成、AI開発の負担増を想定。前Q総費用の約2%強のストレス幅であり、利益目標からの逆算ではない。\n- bear_sol_factor: 四半期平均MRRを7月末の93%と置く。月次解約率3.6%に対して新規獲得が弱く、4月から7月のARR減少より悪化する条件。\n- bear_sol_other: ARR対象外の外部売上の仮定。前Q外部売上から4月・7月ARRの平均を四半期換算した額を控除すると約13百万円となるため、その下側を採用。実績の内訳としては未確認。\n- bull_ana_clients: 直近四半期の契約社数増加とAI支援先拡大を参考に、四半期平均が7月末を4社上回る条件。\n- bull_ana_price: 直近四半期の単価上昇幅の半分を追加し、大手・AI案件構成の改善を想定。\n- bull_extra_cost: 育成・開発負担を業務効率化で吸収し、固定費が前Q並みとなる条件。追加の費用削減額は計上しない。\n- bull_sol_factor: AI対応機能と販売機会拡大が解約を相殺し、平均MRRが7月末水準を維持する条件。純増までは見込まない。\n- bull_sol_other: 直近概算差額に小幅な有償提供拡大を加えた条件。契約実績ではなく感応度上の上側。\n- ma_sales: 全シナリオ共通で追加成約なしという条件。累計成約数は中間期から増加しておらず、対象Qの成約候補と報酬額を確認できない。\n- months: 対象四半期の月数。月額収入を四半期収入へ換算する計算定数。\n- one: 限界利益率計算用の定数。\n- variable_cost_rate: 前Q売上原価率約42%を参考に、増減収に伴う追加提供費用率を40%と置く。原価率と限界費用率は同一ではないため、費用構造の条件付き近似。前Q総費用を起点にし、既存削減効果は再加算しない。\n- year_months: ARRをMRRへ換算する計算定数。S02 page 12のARR定義に対応。\n- アナリティクスKPIとエキスパートソーシングを含むセグメント売上の厳密な対応は未確認。顧客数×単価は代理モデルであり、別売上の追加を行っていない。\n- 対象Qの月次契約数、MRR、新規獲得・解約、実現単価は保存原文で未確認。\n- 費用の固定・変動分解は非開示のため近似。採用数、戦力化時期、開発費資産計上と償却の対象Q内訳は未確認。\n- 追加M&A成約なしを共通条件とする。成約報酬の分布と案件進捗を確認できず、全事象を網羅する予測レンジではない。\n\n## 根拠・保存記録\n- S01 [2026年10月期 第3四半期決算短信〔日本基準〕（連結）](https://contents.xj-storage.jp/xcontents/AS81912/907e932f/c77d/443b/ab5c/114acfd99190/140120260911534937.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `e6f954c6f30ee6649a4799d548ec6aefc3159e661f65a3eaa2eb9715fbf33186`\n- S02 [2026年10月期第3四半期 決算説明資料](https://contents.xj-storage.jp/xcontents/AS81912/aeb8a63c/0936/46dd/8b06/69e4beb1253c/140120260911534962.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `21f406eb7908330c0fb3d92310f16604cd3055cde3fa045f277739b702203ab2`\n- S03 [2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/43780/140120260611568494.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `eaf91e18c045828b69a4b3b4b9776125710adc329c49c6d49e74fb681fcd2375`\n- S04 [2025年10月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/43780/140120251211518467.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `eed78c42868f2f4aff61b5495295a48a5f457266d3dcc19f49e1ca9f1cc0064e`\n- S05 [2025年10月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/43780/140120250911556220.pdf) / 公表 2025-09-12 / retrieved / SHA-256 `168a0c60fd7fd612954cb76b1d51018f017d5611a3bc8795658af971c0031e3a`\n- S06 [2026年10月期第2四半期 決算説明資料（よくいただくご質問を含む）](https://www2.jpx.co.jp/disc/43780/140120260611568604.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `9abcb8c16408b63ee40cc914b01cb0b5402fb36c43eb0770c7d40bb8cae73245`\n- S07 [2025年10月期通期 決算説明資料（各種KPI・2026年10月期通期業績予想を含む）](https://contents.xj-storage.jp/xcontents/AS81912/7c9cea01/0aea/4446/a97e/efb376b33856/140120251211518469.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `db7dfc2efdff457ee6bda9abc57291c3c67f3de827aa3ec2b0b5384003345502`\n- S08 [連結子会社の吸収合併（簡易合併・略式合併）及び連結子会社への債権放棄、並びに連結決算から単体決算への移行に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536117.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `9619b0b0dacce6ffecc35be2fc86e917fc2f0e855c5cb4192aef77c31c057f8d`\n- S09 [CINC、AI検索最適化（GEO/LLMO/AIO）コンサルティングにおける「CINC認定パートナー制度」を開始](https://www.cinc-j.co.jp/news/7762/) / 公表 2026-11-05 / retrieved / SHA-256 `c491f1125fd7fe3b6c0f77282a37e75bd763bc46cffbb788595cd2268fed8b8e`\n- S10 [AIsearchmap、新機能「領域別分析」をリリース](https://www.cinc-j.co.jp/news/7780/) / 公表 2026-11-11 / retrieved / SHA-256 `98f5a2bd4eb4b1bc4a0c30f69fb2dbab446584f8a3dd461165a34c66ea9ac716`\n- S11 [株式基本情報](https://www.cinc-j.co.jp/ir/stock/) / 公表  / unavailable / SHA-256 `なし`\n- S12 [IRカレンダー](https://www.cinc-j.co.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 決算発表予定日は提示条件を採用したが、S12の保存本文がなく、基準日時以前の掲載履歴は未確認。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "4378",
+    "company_name": "株式会社ＣＩＮＣ",
+    "announcement_date": "2026-12-11",
+    "target_period": "2026-10-31期 Q4単独",
+    "period": {
+      "fiscal_year_end": "2026-10-31",
+      "quarter": 4,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 404.275,
+        "operating_profit": -35.51860000000005,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 428.09499999999997,
+        "operating_profit": -16.22660000000002,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 452.02,
+        "operating_profit": 3.128399999999999,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 16.79899999999992,
+          "rate": 0.04084406364272913,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 5.0793999999999855,
+          "rate": null,
+          "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy25_rev": 1824.903,
+      "fy25_op": -112.744,
+      "q325_rev": 1381.075,
+      "q325_op": -85.672,
+      "q226_rev": 852.819,
+      "q226_op": 54.886,
+      "q326_rev": 1264.115,
+      "q326_op": 33.58,
+      "q326_ord": 36.692,
+      "q326_net": 25.976,
+      "q226_sol": 341.539,
+      "q326_sol": 495.723,
+      "q226_ana": 482.621,
+      "q326_ana": 739.732,
+      "q226_ma": 28.659,
+      "q326_ma": 28.659,
+      "apr_arr": 580.0,
+      "jul_arr": 550.0,
+      "jul_ana_clients": 124.0,
+      "jul_ana_price": 0.76,
+      "guid_rev": 1681.0,
+      "guid_op": 7.0,
+      "guid_ord": 7.0,
+      "guid_net": 4.0,
+      "months": 3.0,
+      "year_months": 12.0,
+      "one": 1.0,
+      "bear_sol_factor": 0.93,
+      "base_sol_factor": 0.97,
+      "bull_sol_factor": 1.0,
+      "bear_sol_other": 10.0,
+      "base_sol_other": 12.0,
+      "bull_sol_other": 15.0,
+      "bear_ana_clients": 120.0,
+      "base_ana_clients": 124.0,
+      "bull_ana_clients": 128.0,
+      "bear_ana_price": 0.74,
+      "base_ana_price": 0.76,
+      "bull_ana_price": 0.78,
+      "ma_sales": 0.0,
+      "variable_cost_rate": 0.4,
+      "bear_extra_cost": 10.0,
+      "base_extra_cost": 5.0,
+      "bull_extra_cost": 0.0,
+      "prior_revenue": 443.828,
+      "prior_op": -27.072000000000003,
+      "prev_revenue": 411.29600000000005,
+      "prev_op": -21.306000000000004,
+      "prev_sol": 154.18400000000003,
+      "prev_ana": 257.111,
+      "prev_ma": 0.0,
+      "prev_cost": 432.60200000000003,
+      "guid_q4_revenue": 416.885,
+      "guid_q4_op": -26.58,
+      "guid_q4_ord": -29.692,
+      "guid_q4_net": -21.976,
+      "bear_sol": 137.875,
+      "base_sol": 145.375,
+      "bull_sol": 152.5,
+      "bear_ana": 266.4,
+      "base_ana": 282.71999999999997,
+      "bull_ana": 299.52,
+      "bear_revenue": 404.275,
+      "base_revenue": 428.09499999999997,
+      "bull_revenue": 452.02,
+      "bear_cost": 439.7936,
+      "base_cost": 444.3216,
+      "bull_cost": 448.8916,
+      "bear_op": -35.51860000000005,
+      "base_op": -16.22660000000002,
+      "bull_op": 3.128399999999999,
+      "historical_revenue_gap": -32.531999999999925,
+      "historical_op_gap": 5.765999999999998,
+      "base_vs_guid_revenue": 11.20999999999998,
+      "base_vs_guid_op": 10.35339999999998
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF pages 2、8、11",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 2、9、13–14",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2、9",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 2、8",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 411.29600000000005,
+        "operating_profit": -21.306000000000004,
+        "ordinary_profit": -20.714,
+        "net_profit": -16.484
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "ソリューションのMRR・関連売上",
+            "formula": "bear_sol-prev_sol",
+            "reason": "解約超過と関連売上の弱気条件",
+            "amount": -16.309000000000026
+          },
+          {
+            "label": "アナリティクスの契約数・単価",
+            "formula": "bear_ana-prev_ana",
+            "reason": "7月末KPIからの四半期平均仮定",
+            "amount": 9.288999999999987
+          },
+          {
+            "label": "M&A成約売上",
+            "formula": "ma_sales-prev_ma",
+            "reason": "前Qも対象Q仮定も追加成約売上なし",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 page 12、S03 page 13。千円表示のセグメント合計と連結額の差"
+        },
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "ソリューションのMRR・関連売上",
+            "formula": "base_sol-prev_sol",
+            "reason": "MRR純減と関連売上維持",
+            "amount": -8.809000000000026
+          },
+          {
+            "label": "アナリティクスの契約数・単価",
+            "formula": "base_ana-prev_ana",
+            "reason": "7月末KPI水準の維持",
+            "amount": 25.60899999999998
+          },
+          {
+            "label": "M&A成約売上",
+            "formula": "ma_sales-prev_ma",
+            "reason": "追加成約なし",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 page 12、S03 page 13。千円表示の合計差"
+        },
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "prev_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "ソリューションのMRR・関連売上",
+            "formula": "bull_sol-prev_sol",
+            "reason": "MRR下げ止まりと有償提供拡大",
+            "amount": -1.684000000000026
+          },
+          {
+            "label": "アナリティクスの契約数・単価",
+            "formula": "bull_ana-prev_ana",
+            "reason": "顧客増加と案件構成改善",
+            "amount": 42.40899999999999
+          },
+          {
+            "label": "M&A成約売上",
+            "formula": "ma_sales-prev_ma",
+            "reason": "追加成約なし",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 page 12、S03 page 13。千円表示の合計差"
+        },
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "前Qからのドライバーモデル増減",
+            "formula": "bear_revenue-prev_revenue",
+            "reason": "MRR、関連売上、契約数・単価を積み上げた対象Qと前Qとの差",
+            "amount": -7.021000000000072
+          }
+        ],
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績差。前年Q4イベント売上などの内訳額が確認できず、数量・価格要因への分解は行わない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "前Qからのドライバーモデル増減",
+            "formula": "base_revenue-prev_revenue",
+            "reason": "MRR、関連売上、契約数・単価による差",
+            "amount": 16.79899999999992
+          }
+        ],
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "前Qからのドライバーモデル増減",
+            "formula": "bull_revenue-prev_revenue",
+            "reason": "MRR下げ止まり、関連売上、顧客数・単価改善による差",
+            "amount": 40.72399999999993
+          }
+        ],
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "増減収に伴う限界利益",
+            "formula": "(bear_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "増減収から仮定した追加提供費用を控除",
+            "amount": -4.212600000000043
+          },
+          {
+            "label": "採用・育成・開発費増",
+            "formula": "ma_sales-bear_extra_cost",
+            "reason": "前Q費用からの追加負担",
+            "amount": -10.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル内では差額を全て説明。費用率自体は仮定。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "増減収に伴う限界利益",
+            "formula": "(base_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "追加提供費用控除後の売上効果",
+            "amount": 10.079399999999952
+          },
+          {
+            "label": "採用・育成・開発費増",
+            "formula": "ma_sales-base_extra_cost",
+            "reason": "前Q費用からの追加負担",
+            "amount": -5.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル内では差額を全て説明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "増減収に伴う限界利益",
+            "formula": "(bull_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "追加提供費用控除後の売上効果",
+            "amount": 24.434399999999957
+          },
+          {
+            "label": "採用・開発負担の吸収",
+            "formula": "ma_sales-bull_extra_cost",
+            "reason": "追加固定費を効率化で吸収する条件",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル内では差額を全て説明。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "前Q比売上の限界利益効果",
+            "formula": "(bear_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "ドライバーモデルに基づく前Q以降の変化",
+            "amount": -4.212600000000043
+          },
+          {
+            "label": "追加投資負担",
+            "formula": "ma_sales-bear_extra_cost",
+            "reason": "採用・育成・開発の追加費用",
+            "amount": -10.0
+          }
+        ],
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。M&A費用削減、既存事業採算悪化等の純額を個別要因へ配分していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "前Q比売上の限界利益効果",
+            "formula": "(base_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "ドライバーモデルに基づく前Q以降の変化",
+            "amount": 10.079399999999952
+          },
+          {
+            "label": "追加投資負担",
+            "formula": "ma_sales-base_extra_cost",
+            "reason": "採用・育成・開発の追加費用",
+            "amount": -5.0
+          }
+        ],
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "前Q比売上の限界利益効果",
+            "formula": "(bull_revenue-prev_revenue)*(one-variable_cost_rate)",
+            "reason": "ドライバーモデルに基づく前Q以降の変化",
+            "amount": 24.434399999999957
+          },
+          {
+            "label": "追加固定費",
+            "formula": "ma_sales-bull_extra_cost",
+            "reason": "前Q並みの固定費条件",
+            "amount": 0.0
+          }
+        ],
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+      }
+    ],
+    "issues": [
+      "S01 page 4の利益説明には累計営業黒字との整合が不明瞭な文言があるため、金額はpage 8の損益計算書を優先した。",
+      "S01・S03の千円表示セグメント合計に微小な端数差がある。連結売上の基準値を優先し、前Q比売上ブリッジで表示差を明示した。",
+      "S02はPDF page 51途中で短縮されている。以降のM&A説明、注記その他の必要範囲は原文未確認であり、全資料読了とは扱わない。",
+      "S07のKPIスナップショット等には数値抽出欠落があり、グラフの不明瞭な対応や欠落値を補作していない。",
+      "前年Q4のイベント収入額はS07 page 6に金額開示がなく、前年比差額の全てを経済要因に分解できない。",
+      "前年Q4の資産除去債務見積変更はS04で確認できるが、営業利益への影響額は分離できない。遡及修正ではないため公表累計差引を採用した。",
+      "営業利益は総費用の条件付きモデルであり、セグメント別利益、設備投資・償却、採用費を個別積上げできる精度の原文数値は不足している。",
+      "基準日時までの開示網羅性は確認できない。S08の会社作成本文は提示されているが、会社IR・取引所の直接取得元は未確認。市場コンセンサスも未確認。",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "直前累計不足: 2025-10-31",
+      "経常利益・親会社株主帰属純利益は営業外項目、税効果、期末調整の合理的範囲を設定できずnull。",
+      "資料確認未了: presentation",
+      "資料確認未了: subsequent_disclosures",
+      "AIへ渡した原文に省略あり: S02"
+    ],
+    "schedule_warnings": [
+      "決算発表予定日は提示条件を採用したが、S12の保存本文がなく、基準日時以前の掲載履歴は未確認。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -7.021000000000072,
+            "rate": -0.01707043102777579,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -14.212600000000045,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 16.79899999999992,
+            "rate": 0.04084406364272913,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 5.0793999999999855,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 40.72399999999993,
+            "rate": 0.09901384890686982,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 24.434400000000004,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -7.021000000000072,
+        "explained_sum": -7.020000000000039,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": -0.0020000000000331966,
+        "status": "passed",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 16.79899999999992,
+        "explained_sum": 16.799999999999955,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": -0.0020000000000331966,
+        "status": "passed",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 40.72399999999993,
+        "explained_sum": 40.724999999999966,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": -0.0020000000000331966,
+        "status": "passed",
+        "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -7.021000000000072,
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績差。前年Q4イベント売上などの内訳額が確認できず、数量・価格要因への分解は行わない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 16.79899999999992,
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 40.72399999999993,
+        "residual": -32.531999999999925,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -14.212600000000045,
+        "explained_sum": -14.212600000000043,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.7763568394002505e-15,
+        "status": "passed",
+        "residual_explanation": "費用モデル内では差額を全て説明。費用率自体は仮定。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 5.0793999999999855,
+        "explained_sum": 5.079399999999952,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 3.375077994860476e-14,
+        "status": "passed",
+        "residual_explanation": "費用モデル内では差額を全て説明。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 24.434400000000004,
+        "explained_sum": 24.434399999999957,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.618527782440651e-14,
+        "status": "passed",
+        "residual_explanation": "費用モデル内では差額を全て説明。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -14.212600000000043,
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。M&A費用削減、既存事業採算悪化等の純額を個別要因へ配分していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 5.079399999999952,
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 24.434399999999957,
+        "residual": 5.765999999999998,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+      }
+    ],
+    "conditions": [
+      "base_ana_clients: 四半期平均契約数を7月末と同水準に置く。長期契約割合の上昇を考慮し、追加の顧客純増を要求しない。",
+      "base_ana_price: 7月平均単価を維持。顧客数×単価をセグメント売上の代理モデルとし、エキスパートソーシング等は別加算しない。",
+      "base_extra_cost: 採用と開発の継続による前Q費用からの小幅増。費用適正化が続くため大幅増は置かない。",
+      "base_sol_factor: 四半期平均MRRを7月末の97%と置く。直近のARR純減を参考に、解約の一部を新規獲得で補う条件。会社予想の按分ではない。",
+      "base_sol_other: ARR対象外の外部売上を直近の概算差額に近い水準とする。初期費用、BPO、新製品を一括し、AIsearchmap売上を別途加算しない。",
+      "bear_ana_clients: 四半期平均契約数。7月末124社から一部解約・開始遅延が発生し、4月末117社との間に戻る条件。",
+      "bear_ana_price: 平均月額単価を4月0.72と7月0.76の間に設定し、案件構成の一部悪化を想定。",
+      "bear_extra_cost: 前Q費用に対する追加固定費・準固定費。採用、育成、AI開発の負担増を想定。前Q総費用の約2%強のストレス幅であり、利益目標からの逆算ではない。",
+      "bear_sol_factor: 四半期平均MRRを7月末の93%と置く。月次解約率3.6%に対して新規獲得が弱く、4月から7月のARR減少より悪化する条件。",
+      "bear_sol_other: ARR対象外の外部売上の仮定。前Q外部売上から4月・7月ARRの平均を四半期換算した額を控除すると約13百万円となるため、その下側を採用。実績の内訳としては未確認。",
+      "bull_ana_clients: 直近四半期の契約社数増加とAI支援先拡大を参考に、四半期平均が7月末を4社上回る条件。",
+      "bull_ana_price: 直近四半期の単価上昇幅の半分を追加し、大手・AI案件構成の改善を想定。",
+      "bull_extra_cost: 育成・開発負担を業務効率化で吸収し、固定費が前Q並みとなる条件。追加の費用削減額は計上しない。",
+      "bull_sol_factor: AI対応機能と販売機会拡大が解約を相殺し、平均MRRが7月末水準を維持する条件。純増までは見込まない。",
+      "bull_sol_other: 直近概算差額に小幅な有償提供拡大を加えた条件。契約実績ではなく感応度上の上側。",
+      "ma_sales: 全シナリオ共通で追加成約なしという条件。累計成約数は中間期から増加しておらず、対象Qの成約候補と報酬額を確認できない。",
+      "months: 対象四半期の月数。月額収入を四半期収入へ換算する計算定数。",
+      "one: 限界利益率計算用の定数。",
+      "variable_cost_rate: 前Q売上原価率約42%を参考に、増減収に伴う追加提供費用率を40%と置く。原価率と限界費用率は同一ではないため、費用構造の条件付き近似。前Q総費用を起点にし、既存削減効果は再加算しない。",
+      "year_months: ARRをMRRへ換算する計算定数。S02 page 12のARR定義に対応。",
+      "アナリティクスKPIとエキスパートソーシングを含むセグメント売上の厳密な対応は未確認。顧客数×単価は代理モデルであり、別売上の追加を行っていない。",
+      "対象Qの月次契約数、MRR、新規獲得・解約、実現単価は保存原文で未確認。",
+      "費用の固定・変動分解は非開示のため近似。採用数、戦力化時期、開発費資産計上と償却の対象Q内訳は未確認。",
+      "追加M&A成約なしを共通条件とする。成約報酬の分布と案件進捗を確認できず、全事象を網羅する予測レンジではない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年10月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://contents.xj-storage.jp/xcontents/AS81912/907e932f/c77d/443b/ab5c/114acfd99190/140120260911534937.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://contents.xj-storage.jp/xcontents/AS81912/907e932f/c77d/443b/ab5c/114acfd99190/140120260911534937.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S01.txt",
+        "sha256": "e6f954c6f30ee6649a4799d548ec6aefc3159e661f65a3eaa2eb9715fbf33186",
+        "text_sha256": "35f8dcd1ec1488b76866a93e58718db09da8dc52f3c9d6cf3fdc027d2aa6be02",
+        "retrieved_at": "2026-11-21T21:59:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9569,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年10月期第3四半期 決算説明資料",
+        "url": "https://contents.xj-storage.jp/xcontents/AS81912/aeb8a63c/0936/46dd/8b06/69e4beb1253c/140120260911534962.pdf",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "final_url": "https://contents.xj-storage.jp/xcontents/AS81912/aeb8a63c/0936/46dd/8b06/69e4beb1253c/140120260911534962.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S02.txt",
+        "sha256": "21f406eb7908330c0fb3d92310f16604cd3055cde3fa045f277739b702203ab2",
+        "text_sha256": "9ba5c9477e42d27f424d6e4f73c67b388ff28b22431c1f5314a6771f1ac22137",
+        "retrieved_at": "2026-11-21T21:59:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 38122,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/43780/140120260611568494.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/43780/140120260611568494.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S03.txt",
+        "sha256": "eaf91e18c045828b69a4b3b4b9776125710adc329c49c6d49e74fb681fcd2375",
+        "text_sha256": "669bf7b350003b5b3f9a53b42caa626a2b9257567b439725bcb3db0793454e12",
+        "retrieved_at": "2026-11-21T21:59:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10637,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2025年10月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/43780/140120251211518467.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/43780/140120251211518467.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S04.txt",
+        "sha256": "eed78c42868f2f4aff61b5495295a48a5f457266d3dcc19f49e1ca9f1cc0064e",
+        "text_sha256": "3f22eba66a8e74ab7d11140c66a928bf6d6bcbbb65915069fb19f99e73136a16",
+        "retrieved_at": "2026-11-21T21:59:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13223,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2025年10月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/43780/140120250911556220.pdf",
+        "published_at": "2025-09-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/43780/140120250911556220.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S05.txt",
+        "sha256": "168a0c60fd7fd612954cb76b1d51018f017d5611a3bc8795658af971c0031e3a",
+        "text_sha256": "8feb5b342a3a81a37ac24e8d74cd5f1a4eedf5a12f930af3ed85e38065ad0920",
+        "retrieved_at": "2026-11-21T21:59:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8600,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年10月期第2四半期 決算説明資料（よくいただくご質問を含む）",
+        "url": "https://www2.jpx.co.jp/disc/43780/140120260611568604.pdf",
+        "published_at": "2026-06-12",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/43780/140120260611568604.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S06.txt",
+        "sha256": "9abcb8c16408b63ee40cc914b01cb0b5402fb36c43eb0770c7d40bb8cae73245",
+        "text_sha256": "7c8cac5d4ea7d5a11458706bb9063da1b385db920a3ef7c6fdcdcf9de65733d1",
+        "retrieved_at": "2026-11-21T21:59:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 34615,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2025年10月期通期 決算説明資料（各種KPI・2026年10月期通期業績予想を含む）",
+        "url": "https://contents.xj-storage.jp/xcontents/AS81912/7c9cea01/0aea/4446/a97e/efb376b33856/140120251211518469.pdf",
+        "published_at": "2025-12-12",
+        "category": "guidance",
+        "final_url": "https://contents.xj-storage.jp/xcontents/AS81912/7c9cea01/0aea/4446/a97e/efb376b33856/140120251211518469.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S07.txt",
+        "sha256": "db7dfc2efdff457ee6bda9abc57291c3c67f3de827aa3ec2b0b5384003345502",
+        "text_sha256": "613efd37657ff7c5f5f017034e17597b663baf2a94549922cfb8491e97e59532",
+        "retrieved_at": "2026-11-21T21:59:42+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 33629,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "連結子会社の吸収合併（簡易合併・略式合併）及び連結子会社への債権放棄、並びに連結決算から単体決算への移行に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536117.pdf",
+        "published_at": "2026-09-14",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536117.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S08.txt",
+        "sha256": "9619b0b0dacce6ffecc35be2fc86e917fc2f0e855c5cb4192aef77c31c057f8d",
+        "text_sha256": "e3b07b02b02e53d6c8cfeb1747f6dc3179a27cfff45acd533949fa479f286913",
+        "retrieved_at": "2026-11-21T21:59:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2422,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "CINC、AI検索最適化（GEO/LLMO/AIO）コンサルティングにおける「CINC認定パートナー制度」を開始",
+        "url": "https://www.cinc-j.co.jp/news/7762/",
+        "published_at": "2026-11-05",
+        "category": "other",
+        "final_url": "https://www.cinc-j.co.jp/news/7762/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S09.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S09.txt",
+        "sha256": "c491f1125fd7fe3b6c0f77282a37e75bd763bc46cffbb788595cd2268fed8b8e",
+        "text_sha256": "e04b982fe42faa089a26997cbfda08f879f912b01871315227662cfff00b849f",
+        "retrieved_at": "2026-11-21T21:59:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2873,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "AIsearchmap、新機能「領域別分析」をリリース",
+        "url": "https://www.cinc-j.co.jp/news/7780/",
+        "published_at": "2026-11-11",
+        "category": "other",
+        "final_url": "https://www.cinc-j.co.jp/news/7780/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S10.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\4378\\sources\\S10.txt",
+        "sha256": "98f5a2bd4eb4b1bc4a0c30f69fb2dbab446584f8a3dd461165a34c66ea9ac716",
+        "text_sha256": "24c84e6795185c3e3f4e6a356ddf3ad627fb19c54ec72b38a4900f41cf055483",
+        "retrieved_at": "2026-11-21T21:59:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3786,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "株式基本情報",
+        "url": "https://www.cinc-j.co.jp/ir/stock/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:59:44+09:00"
+      },
+      {
+        "id": "S12",
+        "title": "IRカレンダー",
+        "url": "https://www.cinc-j.co.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:59:44+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "announcement_date": "2026-12-11",
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "period": {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 4,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy25_rev",
+          "value": 1824.903,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 9、連結損益計算書"
+        },
+        {
+          "id": "fy25_op",
+          "value": -112.744,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 9、連結損益計算書"
+        },
+        {
+          "id": "q325_rev",
+          "value": 1381.075,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、累計売上高"
+        },
+        {
+          "id": "q325_op",
+          "value": -85.672,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、累計営業損失"
+        },
+        {
+          "id": "q226_rev",
+          "value": 852.819,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9、累計売上高"
+        },
+        {
+          "id": "q226_op",
+          "value": 54.886,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9、累計営業利益"
+        },
+        {
+          "id": "q326_rev",
+          "value": 1264.115,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、累計売上高"
+        },
+        {
+          "id": "q326_op",
+          "value": 33.58,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、累計営業利益"
+        },
+        {
+          "id": "q326_ord",
+          "value": 36.692,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、累計経常利益"
+        },
+        {
+          "id": "q326_net",
+          "value": 25.976,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8、累計親会社株主帰属純利益"
+        },
+        {
+          "id": "q226_sol",
+          "value": 341.539,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13、ソリューション外部顧客売上高"
+        },
+        {
+          "id": "q326_sol",
+          "value": 495.723,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12、ソリューション外部顧客売上高"
+        },
+        {
+          "id": "q226_ana",
+          "value": 482.621,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13、アナリティクス外部顧客売上高"
+        },
+        {
+          "id": "q326_ana",
+          "value": 739.732,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12、アナリティクス外部顧客売上高"
+        },
+        {
+          "id": "q226_ma",
+          "value": 28.659,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13、M&A仲介外部顧客売上高"
+        },
+        {
+          "id": "q326_ma",
+          "value": 28.659,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12、M&A仲介外部顧客売上高"
+        },
+        {
+          "id": "apr_arr",
+          "value": 580,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 12、4月末ARR。億円表示を換算"
+        },
+        {
+          "id": "jul_arr",
+          "value": 550,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 12、7月末ARR。億円表示を換算"
+        },
+        {
+          "id": "jul_ana_clients",
+          "value": 124,
+          "kind": "fact",
+          "unit": "社",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14、7月末契約社数"
+        },
+        {
+          "id": "jul_ana_price",
+          "value": 0.76,
+          "kind": "fact",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14、7月月額単価平均"
+        },
+        {
+          "id": "guid_rev",
+          "value": 1681,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guid_op",
+          "value": 7,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guid_ord",
+          "value": 7,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guid_net",
+          "value": 4,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "months",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "月",
+          "rationale": "対象四半期の月数。月額収入を四半期収入へ換算する計算定数。",
+          "sensitivity": "固定。営業日数による調整は行わない。"
+        },
+        {
+          "id": "year_months",
+          "value": 12,
+          "kind": "assumption",
+          "unit": "月",
+          "rationale": "ARRをMRRへ換算する計算定数。S02 page 12のARR定義に対応。",
+          "sensitivity": "固定。"
+        },
+        {
+          "id": "one",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "限界利益率計算用の定数。",
+          "sensitivity": "固定。"
+        },
+        {
+          "id": "bear_sol_factor",
+          "value": 0.93,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S02",
+            "S06"
+          ],
+          "locator": "各PDF page 12",
+          "rationale": "四半期平均MRRを7月末の93%と置く。月次解約率3.6%に対して新規獲得が弱く、4月から7月のARR減少より悪化する条件。",
+          "sensitivity": "係数が0.01変わると四半期売上は1.375百万円変化。",
+          "material": true
+        },
+        {
+          "id": "base_sol_factor",
+          "value": 0.97,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S02",
+            "S06"
+          ],
+          "locator": "各PDF page 12",
+          "rationale": "四半期平均MRRを7月末の97%と置く。直近のARR純減を参考に、解約の一部を新規獲得で補う条件。会社予想の按分ではない。",
+          "sensitivity": "係数が0.01変わると四半期売上は1.375百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_sol_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 12–13",
+          "rationale": "AI対応機能と販売機会拡大が解約を相殺し、平均MRRが7月末水準を維持する条件。純増までは見込まない。",
+          "sensitivity": "係数が0.01変わると四半期売上は1.375百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bear_sol_other",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S02",
+            "S06"
+          ],
+          "locator": "S01 page 12、S03 page 13、S02・S06 page 12",
+          "rationale": "ARR対象外の外部売上の仮定。前Q外部売上から4月・7月ARRの平均を四半期換算した額を控除すると約13百万円となるため、その下側を採用。実績の内訳としては未確認。",
+          "sensitivity": "1百万円の増減が売上に同額反映。",
+          "material": true
+        },
+        {
+          "id": "base_sol_other",
+          "value": 12,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S02",
+            "S06"
+          ],
+          "locator": "S01 page 12、S03 page 13、S02・S06 page 12",
+          "rationale": "ARR対象外の外部売上を直近の概算差額に近い水準とする。初期費用、BPO、新製品を一括し、AIsearchmap売上を別途加算しない。",
+          "sensitivity": "1百万円の増減が売上に同額反映。",
+          "material": true
+        },
+        {
+          "id": "bull_sol_other",
+          "value": 15,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 13、法人向け有償プラン提供開始",
+          "rationale": "直近概算差額に小幅な有償提供拡大を加えた条件。契約実績ではなく感応度上の上側。",
+          "sensitivity": "1百万円の増減が売上に同額反映。",
+          "material": true
+        },
+        {
+          "id": "bear_ana_clients",
+          "value": 120,
+          "kind": "assumption",
+          "unit": "社",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14",
+          "rationale": "四半期平均契約数。7月末124社から一部解約・開始遅延が発生し、4月末117社との間に戻る条件。",
+          "sensitivity": "1社当たり四半期売上2.22百万円。",
+          "material": true
+        },
+        {
+          "id": "base_ana_clients",
+          "value": 124,
+          "kind": "assumption",
+          "unit": "社",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 14–15",
+          "rationale": "四半期平均契約数を7月末と同水準に置く。長期契約割合の上昇を考慮し、追加の顧客純増を要求しない。",
+          "sensitivity": "1社当たり四半期売上2.28百万円。",
+          "material": true
+        },
+        {
+          "id": "bull_ana_clients",
+          "value": 128,
+          "kind": "assumption",
+          "unit": "社",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 14–17",
+          "rationale": "直近四半期の契約社数増加とAI支援先拡大を参考に、四半期平均が7月末を4社上回る条件。",
+          "sensitivity": "1社当たり四半期売上2.34百万円。",
+          "material": true
+        },
+        {
+          "id": "bear_ana_price",
+          "value": 0.74,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 14",
+          "rationale": "平均月額単価を4月0.72と7月0.76の間に設定し、案件構成の一部悪化を想定。",
+          "sensitivity": "0.01の変化で四半期売上3.6百万円変化。",
+          "material": true
+        },
+        {
+          "id": "base_ana_price",
+          "value": 0.76,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 14–15",
+          "rationale": "7月平均単価を維持。顧客数×単価をセグメント売上の代理モデルとし、エキスパートソーシング等は別加算しない。",
+          "sensitivity": "0.01の変化で四半期売上3.72百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_ana_price",
+          "value": 0.78,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 14–15",
+          "rationale": "直近四半期の単価上昇幅の半分を追加し、大手・AI案件構成の改善を想定。",
+          "sensitivity": "0.01の変化で四半期売上3.84百万円変化。",
+          "material": true
+        },
+        {
+          "id": "ma_sales",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 page 5、S03 page 5",
+          "rationale": "全シナリオ共通で追加成約なしという条件。累計成約数は中間期から増加しておらず、対象Qの成約候補と報酬額を確認できない。",
+          "sensitivity": "追加成約があれば売上は報酬額だけ上振れる。既存1件の報酬額を次案件へ機械的に適用しない。",
+          "material": true
+        },
+        {
+          "id": "variable_cost_rate",
+          "value": 0.4,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 page 8、S03 page 9",
+          "rationale": "前Q売上原価率約42%を参考に、増減収に伴う追加提供費用率を40%と置く。原価率と限界費用率は同一ではないため、費用構造の条件付き近似。前Q総費用を起点にし、既存削減効果は再加算しない。",
+          "sensitivity": "0.30～0.50で検証可能。0.10の変化による営業利益影響は前Q比売上差の0.10倍で逆方向。",
+          "material": true
+        },
+        {
+          "id": "bear_extra_cost",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 10、15、23",
+          "rationale": "前Q費用に対する追加固定費・準固定費。採用、育成、AI開発の負担増を想定。前Q総費用の約2%強のストレス幅であり、利益目標からの逆算ではない。",
+          "sensitivity": "1百万円増えると営業利益1百万円減少。",
+          "material": true
+        },
+        {
+          "id": "base_extra_cost",
+          "value": 5,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 10、15、23",
+          "rationale": "採用と開発の継続による前Q費用からの小幅増。費用適正化が続くため大幅増は置かない。",
+          "sensitivity": "1百万円増えると営業利益1百万円減少。",
+          "material": true
+        },
+        {
+          "id": "bull_extra_cost",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 10、15、23",
+          "rationale": "育成・開発負担を業務効率化で吸収し、固定費が前Q並みとなる条件。追加の費用削減額は計上しない。",
+          "sensitivity": "1百万円増えると営業利益1百万円減少。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_revenue",
+          "formula": "fy25_rev-q325_rev"
+        },
+        {
+          "id": "prior_op",
+          "formula": "fy25_op-q325_op"
+        },
+        {
+          "id": "prev_revenue",
+          "formula": "q326_rev-q226_rev"
+        },
+        {
+          "id": "prev_op",
+          "formula": "q326_op-q226_op"
+        },
+        {
+          "id": "prev_sol",
+          "formula": "q326_sol-q226_sol"
+        },
+        {
+          "id": "prev_ana",
+          "formula": "q326_ana-q226_ana"
+        },
+        {
+          "id": "prev_ma",
+          "formula": "q326_ma-q226_ma"
+        },
+        {
+          "id": "prev_cost",
+          "formula": "prev_revenue-prev_op"
+        },
+        {
+          "id": "guid_q4_revenue",
+          "formula": "guid_rev-q326_rev"
+        },
+        {
+          "id": "guid_q4_op",
+          "formula": "guid_op-q326_op"
+        },
+        {
+          "id": "guid_q4_ord",
+          "formula": "guid_ord-q326_ord"
+        },
+        {
+          "id": "guid_q4_net",
+          "formula": "guid_net-q326_net"
+        },
+        {
+          "id": "bear_sol",
+          "formula": "jul_arr/year_months*months*bear_sol_factor+bear_sol_other"
+        },
+        {
+          "id": "base_sol",
+          "formula": "jul_arr/year_months*months*base_sol_factor+base_sol_other"
+        },
+        {
+          "id": "bull_sol",
+          "formula": "jul_arr/year_months*months*bull_sol_factor+bull_sol_other"
+        },
+        {
+          "id": "bear_ana",
+          "formula": "bear_ana_clients*bear_ana_price*months"
+        },
+        {
+          "id": "base_ana",
+          "formula": "base_ana_clients*base_ana_price*months"
+        },
+        {
+          "id": "bull_ana",
+          "formula": "bull_ana_clients*bull_ana_price*months"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_sol+bear_ana+ma_sales"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_sol+base_ana+ma_sales"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_sol+bull_ana+ma_sales"
+        },
+        {
+          "id": "bear_cost",
+          "formula": "prev_cost+(bear_revenue-prev_revenue)*variable_cost_rate+bear_extra_cost"
+        },
+        {
+          "id": "base_cost",
+          "formula": "prev_cost+(base_revenue-prev_revenue)*variable_cost_rate+base_extra_cost"
+        },
+        {
+          "id": "bull_cost",
+          "formula": "prev_cost+(bull_revenue-prev_revenue)*variable_cost_rate+bull_extra_cost"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cost"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cost"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cost"
+        },
+        {
+          "id": "historical_revenue_gap",
+          "formula": "prev_revenue-prior_revenue"
+        },
+        {
+          "id": "historical_op_gap",
+          "formula": "prev_op-prior_op"
+        },
+        {
+          "id": "base_vs_guid_revenue",
+          "formula": "base_revenue-guid_q4_revenue"
+        },
+        {
+          "id": "base_vs_guid_op",
+          "formula": "base_op-guid_q4_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ソリューション事業・外部売上",
+              "revenue": "bear_sol"
+            },
+            {
+              "name": "アナリティクス事業・外部売上代理モデル",
+              "revenue": "bear_ana"
+            },
+            {
+              "name": "M&A仲介事業・追加成約なし",
+              "revenue": "ma_sales"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ソリューション事業・外部売上",
+              "revenue": "base_sol"
+            },
+            {
+              "name": "アナリティクス事業・外部売上代理モデル",
+              "revenue": "base_ana"
+            },
+            {
+              "name": "M&A仲介事業・追加成約なし",
+              "revenue": "ma_sales"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ソリューション事業・外部売上",
+              "revenue": "bull_sol"
+            },
+            {
+              "name": "アナリティクス事業・外部売上代理モデル",
+              "revenue": "bull_ana"
+            },
+            {
+              "name": "M&A仲介事業・追加成約なし",
+              "revenue": "ma_sales"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 3,
+          "period_start": "2024-11-01",
+          "period_end": "2025-07-31",
+          "revenue": 1381.075,
+          "operating_profit": -85.672,
+          "ordinary_profit": -82.232,
+          "net_profit": -117.667,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・遡及修正なし・3報告セグメント。資産除去債務見積変更前",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 2、8、11"
+        },
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 4,
+          "period_start": "2024-11-01",
+          "period_end": "2025-10-31",
+          "revenue": 1824.903,
+          "operating_profit": -112.744,
+          "ordinary_profit": -106.893,
+          "net_profit": -152.586,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "公表原数値・遡及修正なし・3報告セグメント。資産除去債務見積変更を当期に反映",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2、9、13–14",
+          "comparability_note": "見積変更は遡及組替えではないため、公表累計差引によるQ4を使用。見積変更の損益影響は分離できない。"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 2,
+          "period_start": "2025-11-01",
+          "period_end": "2026-04-30",
+          "revenue": 852.819,
+          "operating_profit": 54.886,
+          "ordinary_profit": 57.406,
+          "net_profit": 42.46,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年公表原数値・会計方針変更、見積変更、修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2、9"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 3,
+          "period_start": "2025-11-01",
+          "period_end": "2026-07-31",
+          "revenue": 1264.115,
+          "operating_profit": 33.58,
+          "ordinary_profit": 36.692,
+          "net_profit": 25.976,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "2026年公表原数値・会計方針変更、見積変更、修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2、8"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "KeywordmapのMRR減少と関連売上",
+          "mechanism": "7月末ARRを月額化し、解約と新規獲得を反映した平均MRR係数を乗じる。ARR対象外売上を別に加える。",
+          "source_ids": [
+            "S02",
+            "S06"
+          ],
+          "locator": "S02 pages 12–13、S06 page 12",
+          "calculation_ids": [
+            "bear_sol",
+            "base_sol",
+            "bull_sol"
+          ],
+          "not_quantified_reason": "新規獲得件数、価格改定、BPO・AIsearchmap別売上は保存原文で未確認のため、合算仮定とした。"
+        },
+        {
+          "name": "アナリティクスの契約数・単価・供給能力",
+          "mechanism": "期末顧客数と月額単価を四半期平均へ置き換え、AI案件構成と契約維持を反映。採用・育成負担は費用側に計上。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 14–17、23",
+          "calculation_ids": [
+            "bear_ana",
+            "base_ana",
+            "bull_ana"
+          ],
+          "not_quantified_reason": "KPI対象とセグメント全体の厳密な対応表、稼働率、採用人数・給与は未確認。代理モデルのため精度は限定的。"
+        },
+        {
+          "name": "費用適正化と追加投資",
+          "mechanism": "前Qの実績総費用を基準に、増減収への提供費用と採用・開発負担を加減する。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S02"
+          ],
+          "locator": "S01 page 8、S03 page 9、S02 pages 10、15、23",
+          "calculation_ids": [
+            "prev_cost",
+            "bear_cost",
+            "base_cost",
+            "bull_cost"
+          ],
+          "not_quantified_reason": "限界費用率の直接開示はない。開発費資産計上、償却、採用費の個別予測は分離していない。"
+        },
+        {
+          "name": "M&A成約と子会社統合",
+          "mechanism": "追加成約を見込まない条件で予測。対象Qは連結を維持し、翌期の単体移行による管理費削減を先取りしない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S08"
+          ],
+          "locator": "S01 page 5、S03 page 5、S08 pages 1、3",
+          "calculation_ids": [],
+          "not_quantified_reason": "案件パイプラインと成功報酬額は保存原文で未確認。債権放棄の単体損失を連結損失として加算しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "ソリューションのMRR・関連売上",
+              "formula": "bear_sol-prev_sol",
+              "reason": "解約超過と関連売上の弱気条件"
+            },
+            {
+              "label": "アナリティクスの契約数・単価",
+              "formula": "bear_ana-prev_ana",
+              "reason": "7月末KPIからの四半期平均仮定"
+            },
+            {
+              "label": "M&A成約売上",
+              "formula": "ma_sales-prev_ma",
+              "reason": "前Qも対象Q仮定も追加成約売上なし"
+            }
+          ],
+          "residual": 0.001,
+          "residual_type": "rounding",
+          "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 page 12、S03 page 13。千円表示のセグメント合計と連結額の差"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "ソリューションのMRR・関連売上",
+              "formula": "base_sol-prev_sol",
+              "reason": "MRR純減と関連売上維持"
+            },
+            {
+              "label": "アナリティクスの契約数・単価",
+              "formula": "base_ana-prev_ana",
+              "reason": "7月末KPI水準の維持"
+            },
+            {
+              "label": "M&A成約売上",
+              "formula": "ma_sales-prev_ma",
+              "reason": "追加成約なし"
+            }
+          ],
+          "residual": 0.001,
+          "residual_type": "rounding",
+          "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 page 12、S03 page 13。千円表示の合計差"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prev_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "ソリューションのMRR・関連売上",
+              "formula": "bull_sol-prev_sol",
+              "reason": "MRR下げ止まりと有償提供拡大"
+            },
+            {
+              "label": "アナリティクスの契約数・単価",
+              "formula": "bull_ana-prev_ana",
+              "reason": "顧客増加と案件構成改善"
+            },
+            {
+              "label": "M&A成約売上",
+              "formula": "ma_sales-prev_ma",
+              "reason": "追加成約なし"
+            }
+          ],
+          "residual": 0.001,
+          "residual_type": "rounding",
+          "residual_explanation": "前Q連結売上と外部顧客セグメント売上差引合計の表示差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 page 12、S03 page 13。千円表示の合計差"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "前Qからのドライバーモデル増減",
+              "formula": "bear_revenue-prev_revenue",
+              "reason": "MRR、関連売上、契約数・単価を積み上げた対象Qと前Qとの差"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績差。前年Q4イベント売上などの内訳額が確認できず、数量・価格要因への分解は行わない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "前Qからのドライバーモデル増減",
+              "formula": "base_revenue-prev_revenue",
+              "reason": "MRR、関連売上、契約数・単価による差"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "前Qからのドライバーモデル増減",
+              "formula": "bull_revenue-prev_revenue",
+              "reason": "MRR下げ止まり、関連売上、顧客数・単価改善による差"
+            }
+          ],
+          "residual": "historical_revenue_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績差。イベント収入と顧客・単価の寄与額は分離できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "増減収に伴う限界利益",
+              "formula": "(bear_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "増減収から仮定した追加提供費用を控除"
+            },
+            {
+              "label": "採用・育成・開発費増",
+              "formula": "ma_sales-bear_extra_cost",
+              "reason": "前Q費用からの追加負担"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル内では差額を全て説明。費用率自体は仮定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "増減収に伴う限界利益",
+              "formula": "(base_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "追加提供費用控除後の売上効果"
+            },
+            {
+              "label": "採用・育成・開発費増",
+              "formula": "ma_sales-base_extra_cost",
+              "reason": "前Q費用からの追加負担"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル内では差額を全て説明。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "増減収に伴う限界利益",
+              "formula": "(bull_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "追加提供費用控除後の売上効果"
+            },
+            {
+              "label": "採用・開発負担の吸収",
+              "formula": "ma_sales-bull_extra_cost",
+              "reason": "追加固定費を効率化で吸収する条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル内では差額を全て説明。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "前Q比売上の限界利益効果",
+              "formula": "(bear_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "ドライバーモデルに基づく前Q以降の変化"
+            },
+            {
+              "label": "追加投資負担",
+              "formula": "ma_sales-bear_extra_cost",
+              "reason": "採用・育成・開発の追加費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績利益差。M&A費用削減、既存事業採算悪化等の純額を個別要因へ配分していない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "前Q比売上の限界利益効果",
+              "formula": "(base_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "ドライバーモデルに基づく前Q以降の変化"
+            },
+            {
+              "label": "追加投資負担",
+              "formula": "ma_sales-base_extra_cost",
+              "reason": "採用・育成・開発の追加費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "前Q比売上の限界利益効果",
+              "formula": "(bull_revenue-prev_revenue)*(one-variable_cost_rate)",
+              "reason": "ドライバーモデルに基づく前Q以降の変化"
+            },
+            {
+              "label": "追加固定費",
+              "formula": "ma_sales-bull_extra_cost",
+              "reason": "前Q並みの固定費条件"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q4から当年Q3への実績利益差。既存費用削減効果を予測に再加算しない。"
+        }
+      ],
+      "company_guidance": "S01で据置きが確認できる通期連結予想を登録。通期予想から第3四半期累計を差し引いた対象Q相当額はguid_q4_revenue、guid_q4_op、guid_q4_ord、guid_q4_netであり、会社が直接公表した四半期予想ではない。百万円未満切捨ての予想値を使うため概算。期後修正見込みは使用していない。",
+      "consensus": "未確認。提示保存原文に市場コンセンサスの記載はない。",
+      "independent_forecast": "ARR、契約数、月額単価から売上を積み上げ、前Q総費用に追加提供費用と採用・開発負担を加えた条件付き独自予測。全シナリオでM&A追加成約なし。会社予想差引額との一致を目的とした費用逆算は行っていない。経常利益・純利益は営業外損益、税効果、期末調整の根拠不足によりnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き予測",
+          "text": "中心ケースの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。アナリティクスの期末契約数・単価を維持できれば、KeywordmapのMRR減少を補う。ただし採用・育成とAI開発の費用負担が残り、四半期黒字化には届かない条件となる。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 12–15、23"
+        },
+        {
+          "heading": "上振れ・下振れの条件",
+          "text": "弱気ケースは売上{{value:bear_revenue}}、営業利益{{value:bear_op}}。解約超過、顧客構成の悪化、追加投資負担を想定する。強気ケースは売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。MRR下げ止まりとアナリティクスの顧客・単価改善、固定費維持が必要。M&A成約による上振れはこの範囲に含めていない。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 page 5、S02 pages 12–15"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "据置き通期予想の差引額は売上{{value:guid_q4_revenue}}、営業利益{{value:guid_q4_op}}。中心ケースとの差は売上{{value:base_vs_guid_revenue}}、営業利益{{value:base_vs_guid_op}}。これは比較用の差引推計であり、会社の四半期見通しや期後修正を確認したものではない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5、8"
+        },
+        {
+          "heading": "対象期間と比較の限界",
+          "text": "子会社合併と単体決算への移行は翌期からであり、対象Qは連結で予測する。期後の認定パートナー制度開始や新機能の提供を対象Q売上へ遡及加算しない。前年Q4のイベント収入などを金額分離できないため、前年比ブリッジには未説明の実績差を残した。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S09",
+            "S10"
+          ],
+          "locator": "S07 page 6、S08 pages 1・3、S09「今後の展望」、S10提供開始日"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "partial",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象Qの月次契約数、MRR、新規獲得・解約、実現単価は保存原文で未確認。",
+        "アナリティクスKPIとエキスパートソーシングを含むセグメント売上の厳密な対応は未確認。顧客数×単価は代理モデルであり、別売上の追加を行っていない。",
+        "追加M&A成約なしを共通条件とする。成約報酬の分布と案件進捗を確認できず、全事象を網羅する予測レンジではない。",
+        "費用の固定・変動分解は非開示のため近似。採用数、戦力化時期、開発費資産計上と償却の対象Q内訳は未確認。"
+      ],
+      "material_unresolved": [
+        "決算発表予定日は提示条件を採用したが、S12の保存本文がなく、基準日時以前の掲載履歴は未確認。",
+        "S02はPDF page 51途中で短縮されている。以降のM&A説明、注記その他の必要範囲は原文未確認であり、全資料読了とは扱わない。",
+        "S07のKPIスナップショット等には数値抽出欠落があり、グラフの不明瞭な対応や欠落値を補作していない。",
+        "S01 page 4の利益説明には累計営業黒字との整合が不明瞭な文言があるため、金額はpage 8の損益計算書を優先した。",
+        "S01・S03の千円表示セグメント合計に微小な端数差がある。連結売上の基準値を優先し、前Q比売上ブリッジで表示差を明示した。",
+        "前年Q4の資産除去債務見積変更はS04で確認できるが、営業利益への影響額は分離できない。遡及修正ではないため公表累計差引を採用した。",
+        "前年Q4のイベント収入額はS07 page 6に金額開示がなく、前年比差額の全てを経済要因に分解できない。",
+        "営業利益は総費用の条件付きモデルであり、セグメント別利益、設備投資・償却、採用費を個別積上げできる精度の原文数値は不足している。",
+        "経常利益・親会社株主帰属純利益は営業外項目、税効果、期末調整の合理的範囲を設定できずnull。",
+        "基準日時までの開示網羅性は確認できない。S08の会社作成本文は提示されているが、会社IR・取引所の直接取得元は未確認。市場コンセンサスも未確認。"
+      ],
+      "guidance_records": [
+        {
+          "id": "guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guid_rev",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。期初予想を据置き"
+        },
+        {
+          "id": "guidance_operating_profit",
+          "metric": "operating_profit",
+          "value_ref": "guid_op",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。期初予想を据置き"
+        },
+        {
+          "id": "guidance_ordinary_profit",
+          "metric": "ordinary_profit",
+          "value_ref": "guid_ord",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。期初予想を据置き"
+        },
+        {
+          "id": "guidance_net_profit",
+          "metric": "net_profit",
+          "value_ref": "guid_net",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。期初予想を据置き"
+        }
+      ],
+      "_truncated_source_ids": [
+        "S02"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "S01 page 4の利益説明には累計営業黒字との整合が不明瞭な文言があるため、金額はpage 8の損益計算書を優先した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "S01・S03の千円表示セグメント合計に微小な端数差がある。連結売上の基準値を優先し、前Q比売上ブリッジで表示差を明示した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "S02はPDF page 51途中で短縮されている。以降のM&A説明、注記その他の必要範囲は原文未確認であり、全資料読了とは扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "S07のKPIスナップショット等には数値抽出欠落があり、グラフの不明瞭な対応や欠落値を補作していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "前年Q4のイベント収入額はS07 page 6に金額開示がなく、前年比差額の全てを経済要因に分解できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "前年Q4の資産除去債務見積変更はS04で確認できるが、営業利益への影響額は分離できない。遡及修正ではないため公表累計差引を採用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "営業利益は総費用の条件付きモデルであり、セグメント別利益、設備投資・償却、採用費を個別積上げできる精度の原文数値は不足している。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "基準日時までの開示網羅性は確認できない。S08の会社作成本文は提示されているが、会社IR・取引所の直接取得元は未確認。市場コンセンサスも未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-10-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "経常利益・親会社株主帰属純利益は営業外項目、税効果、期末調整の合理的範囲を設定できずnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "資料確認未了: presentation",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "issue",
+      "message": "AIへ渡した原文に省略あり: S02",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "base_ana_clients: 四半期平均契約数を7月末と同水準に置く。長期契約割合の上昇を考慮し、追加の顧客純増を要求しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "base_ana_price: 7月平均単価を維持。顧客数×単価をセグメント売上の代理モデルとし、エキスパートソーシング等は別加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "base_extra_cost: 採用と開発の継続による前Q費用からの小幅増。費用適正化が続くため大幅増は置かない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "base_sol_factor: 四半期平均MRRを7月末の97%と置く。直近のARR純減を参考に、解約の一部を新規獲得で補う条件。会社予想の按分ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "base_sol_other: ARR対象外の外部売上を直近の概算差額に近い水準とする。初期費用、BPO、新製品を一括し、AIsearchmap売上を別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bear_ana_clients: 四半期平均契約数。7月末124社から一部解約・開始遅延が発生し、4月末117社との間に戻る条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bear_ana_price: 平均月額単価を4月0.72と7月0.76の間に設定し、案件構成の一部悪化を想定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bear_extra_cost: 前Q費用に対する追加固定費・準固定費。採用、育成、AI開発の負担増を想定。前Q総費用の約2%強のストレス幅であり、利益目標からの逆算ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bear_sol_factor: 四半期平均MRRを7月末の93%と置く。月次解約率3.6%に対して新規獲得が弱く、4月から7月のARR減少より悪化する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bear_sol_other: ARR対象外の外部売上の仮定。前Q外部売上から4月・7月ARRの平均を四半期換算した額を控除すると約13百万円となるため、その下側を採用。実績の内訳としては未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bull_ana_clients: 直近四半期の契約社数増加とAI支援先拡大を参考に、四半期平均が7月末を4社上回る条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bull_ana_price: 直近四半期の単価上昇幅の半分を追加し、大手・AI案件構成の改善を想定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bull_extra_cost: 育成・開発負担を業務効率化で吸収し、固定費が前Q並みとなる条件。追加の費用削減額は計上しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bull_sol_factor: AI対応機能と販売機会拡大が解約を相殺し、平均MRRが7月末水準を維持する条件。純増までは見込まない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "bull_sol_other: 直近概算差額に小幅な有償提供拡大を加えた条件。契約実績ではなく感応度上の上側。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "ma_sales: 全シナリオ共通で追加成約なしという条件。累計成約数は中間期から増加しておらず、対象Qの成約候補と報酬額を確認できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "months: 対象四半期の月数。月額収入を四半期収入へ換算する計算定数。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "one: 限界利益率計算用の定数。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "variable_cost_rate: 前Q売上原価率約42%を参考に、増減収に伴う追加提供費用率を40%と置く。原価率と限界費用率は同一ではないため、費用構造の条件付き近似。前Q総費用を起点にし、既存削減効果は再加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "year_months: ARRをMRRへ換算する計算定数。S02 page 12のARR定義に対応。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "アナリティクスKPIとエキスパートソーシングを含むセグメント売上の厳密な対応は未確認。顧客数×単価は代理モデルであり、別売上の追加を行っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "対象Qの月次契約数、MRR、新規獲得・解約、実現単価は保存原文で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "費用の固定・変動分解は非開示のため近似。採用数、戦力化時期、開発費資産計上と償却の対象Q内訳は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4378",
+      "company_name": "株式会社ＣＩＮＣ",
+      "kind": "condition",
+      "message": "追加M&A成約なしを共通条件とする。成約報酬の分布と案件進捗を確認できず、全事象を網羅する予測レンジではない。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/4378/result.json": "4e25fd49f90a3a1b278c0a15ff1dd71e3970028e17fe5bd4911c9b03a403f936",
+    "reports/4378.md": "50bbdcf32ad2fcff082dbe38ec6dde909e8815c3955176153ee2ee224cb82320"
+  }
+}

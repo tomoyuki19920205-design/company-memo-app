@@ -1,0 +1,2722 @@
+{
+  "id": "3930-5b238d707806cce5b3ff0d7906c766f5ea39a9e06a7476ab8a6f06126604fb93",
+  "code": "3930",
+  "companyName": "株式会社はてな",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3930-generation-74f372890594dfbe · 5b238d70",
+  "savedAt": "2026-11-21T21:58:16+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 949.6460000000002,
+  "operatingProfit": 34.646000000000186,
+  "revenueYoY": {
+    "rate": 0.08400024199338646,
+    "label": "+8.4%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": 9.376160527103979,
+    "label": "+937.6%",
+    "tone": "positive",
+    "note": ""
+  },
+  "markdown": "# 3930 株式会社はてな｜2027-07-31期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 886.45 | 949.65 | 1,006.15 |\n| 営業利益 | -73.55 | 34.65 | 118.15 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 73.59 | 8.40% |  |\n| YoY | 営業利益 | 31.31 | 937.62% |  |\n| QnQ | 売上高 | 20.52 | 2.21% |  |\n| QnQ | 営業利益 | -42.50 | -55.09% |  |\n\n## 会社予想\nS01の通期会社予想を独自予測と区別して保存。latest_confirmedは提示資料内で確認した最新版を意味し、開示の網羅性を保証しない。四半期単独予想は未確認。通期予想の四等分や会社修正見込みからの差引きは使用していない。\n\n## 市場コンセンサス\n未確認。提示資料に対象四半期の市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n前Qのサービス別実績を起点に受託関連とSaaSの純増減を設定し、他サービスは事業状況と観測された四半期規模から条件付き範囲を設定。人件費・DC利用料・その他経費は営業利益から逆算せず独立に積み上げた。弱気・中心・強気は統計的信頼区間ではなく、需要と費用の組合せによる感応度シナリオ。経常・純利益は営業外項目と税効果の根拠不足でnull。\n\n## 対象四半期と中心予測\n対象は翌年七月期の第１四半期単独。中心の売上は949.65、営業利益は34.65。受託開発・保守運用の回復を主因に、CMS関連の弱さを吸収する条件を置いた。発表予定日は指定値を保持しており、公式日程は原文で確認できていない。\n\n## 需要と費用の感応度\n弱気は売上886.45、営業利益-73.55、強気は売上1,006.15、営業利益118.15。開発売上の認識時期とレベニューシェアの変動に加え、人件費・アプリ広告・DC費用が利益幅を広げる。中心の営業費用は915.00。前Qの費用抑制には賞与や租税公課の影響があり、低い費用水準の単純継続は置いていない。\n\n## 生成AI収益の扱い\n既存AI連携の売上計上開始は確認できるが、契約額は非公開。中心のプラットフォーム売上80.00は既存AI連携を含むサービス総額であり、別途AI収入を加算しない。会社説明資料の通年寄与方針と質疑応答の確定額を織り込まない説明は、金額の包含範囲が判然としない。新規大型契約が発生する場合は本予測範囲を超え得る。\n\n## 比較と利益段階\n前Q単独の売上929.13と営業利益77.15は同一会計版の通期から第３四半期累計を差し引いた値。資金流出事案の特別損失や株主優待引当の営業外費用を営業利益の回復要因には使わない。税効果や営業外損益の四半期配分は根拠が不足するため、経常・純利益は予測しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| テクノロジー | 30.24 | 受託関連とSaaS等の条件付き変化 |\n| マーケティング | -17.72 | CMS・編集受託縮小とtoittaの相殺 |\n| プラットフォーム | -0.84 | 広告・課金・既存AI連携を含む合計変化 |\n| その他 | -1.28 | バリデータ報酬 |\n| 残差（none） | 0.00 | 前年同Qのサービス別合計と全社売上は一致。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 受託関連 | -20.00 | 開発認識と保守・分配収入の純増減 |\n| SaaS等 | 0.00 | テクノロジーSaaSの回復度合い |\n| マーケティング | -16.43 | CMS縮小とtoitta成長 |\n| プラットフォーム | -6.22 | 既存AI収入を含む合計比較 |\n| その他 | -0.03 | バリデータ報酬 |\n| 残差（unclassified） | -0.00 | 公表累計から算出したサービス別前Q合計と全社前Q売上に微差がある。保存原文に差の説明がないため丸め差と断定せず残す。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | 10.39 | サービス別積上げ売上の変化 |\n| 営業費用差 | -87.28 | 人件費・DC・その他経費の独立仮定と前年費用総額との差 |\n| 残差（none） | 0.00 | 費用内訳への厳密な寄与配賦は行わず、営業費用総額で接続。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | -42.68 | 全社売上比較のためサービス合計の微差も包含 |\n| 営業費用差 | -108.02 | 投資先行と前Q費用抑制効果の持続性 |\n| 残差（none） | 0.00 | 全社売上と全社営業費用で接続。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| テクノロジー | 78.24 | 受託関連回復とAPM拡販 |\n| マーケティング | -9.72 | CMS縮小をtoittaが一部相殺 |\n| プラットフォーム | 6.16 | 広告・課金と既存AI連携の合計変化 |\n| その他 | -1.08 | バリデータ報酬 |\n| 残差（none） | 0.00 | 前年同Qのサービス別合計と全社売上は一致。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 受託関連 | 25.00 | 保守運用積上げと追加開発進捗 |\n| SaaS等 | 3.00 | APM拡販を中心とする緩やかな増分 |\n| マーケティング | -8.43 | CMS縮小とtoitta成長 |\n| プラットフォーム | 0.78 | 既存AI収入を重複加算しない合計比較 |\n| その他 | 0.17 | バリデータ報酬 |\n| 残差（unclassified） | -0.00 | 公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | 73.59 | サービス別売上積上げ |\n| 営業費用差 | -42.28 | 人材・DC・広告・AI費用の独立仮定 |\n| 残差（none） | 0.00 | 費用差は総額比較。サービス別利益率を捏造しない。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | 20.52 | 全社売上の変化 |\n| 営業費用差 | -63.02 | 前Qの賞与・租税公課・DC費用抑制を恒久化せず、投資増を反映 |\n| 残差（none） | 0.00 | 全社費用で算術的に接続。個別費用要因の実績寄与額は未確認。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| テクノロジー | 117.24 | 開発進捗と分配収入、APM拡販が改善 |\n| マーケティング | -0.72 | toitta成長でCMS縮小を概ね相殺 |\n| プラットフォーム | 14.16 | 広告改善と既存AI連携の継続寄与 |\n| その他 | -0.58 | バリデータ報酬 |\n| 残差（none） | 0.00 | 前年同Qのサービス別合計と全社売上は一致。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 受託関連 | 60.00 | 追加開発・検収・レベニューシェアの改善 |\n| SaaS等 | 7.00 | APM拡販・新規獲得 |\n| マーケティング | 0.57 | toittaと伴走支援が下支え |\n| プラットフォーム | 8.78 | 既存AI収入を含むサービス全体の回復 |\n| その他 | 0.67 | バリデータ報酬 |\n| 残差（unclassified） | -0.00 | 公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | 130.09 | サービス別売上積上げ |\n| 営業費用差 | -15.28 | 人員最適化・DC効率化が投資増を吸収 |\n| 残差（none） | 0.00 | 人件費・DC・その他経費の合計で接続。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上差 | 77.02 | 全社売上の変化 |\n| 営業費用差 | -36.02 | 前Q比では投資費用増を見込むが、効率化が続く条件 |\n| 残差（none） | 0.00 | 全社売上と全社営業費用で接続。 |\n\n## エラー・未解決事項\n- 2026-12-11の発表予定日は公式原文で未確認。S12は資料一覧にあるが、本文・カレンダー画像は提示されていない。\n- S01のGigaViewer導入社数・サービス数とS04・S06の同時期表記が一致しない。導入数を売上へ直接乗じず、確認できる導入案件と方向性のみ利用した。\n- S01のテクノロジーSaaS等売上とS04のMackerel売上は一致しないため、同一範囲と扱っていない。\n- S01～S10はtruncated=falseで提示されているが、PDF画像との照合は行っていない。S11・S12の保存本文は未提示であり、非開示とは区別する。\n- S04 page 21のCMS運用件数当たり平均月次売上の図は保存テキストから単位・集計定義を確定できず、数量×単価の計算には使用しない。\n- S04・S06はAI連携の通年寄与を説明する一方、S05は具体額を確定的に予想へ織り込まないと説明。既存契約と追加協議の包含範囲を確定できない。\n- S09の減資は対象期間後の効力発生予定で、会社は業績影響なしと説明。S10の人事異動も対象期間後であり、当Qの利益改善に織り込んでいない。\n- サービス別採算は単一セグメントとして非開示。売上変動を限界利益率で厳密に変換できないため、全社費用を独立に設定した条件付き予測である。\n- 前Qのサービス別売上合計と全社売上の微差は原因未確認としてunclassifiedで残した。\n- 四半期の営業外費用、株主優待引当の調整、資金流出事案の追加損益、実効税率と繰延税金資産の変化に根拠ある範囲を置けず、経常・純利益はnull。\n- 対象決算が基準日時点で未発表という扱いは提示されたdiscoveryに従う。保存原文のみでは開示一覧の網羅的な確認はできない。\n- 費用図表は丸められた表示であり、S04の費用構成とS06の販管費内訳は範囲も異なる。費用予測の参照はS04の営業費用全体に統一し、実績比較は短信の売上と営業利益から求めた営業費用総額を使用。\n- 資料確認未了: already_announced\n- 開発・保守の増分、プラットフォーム総額、費用幅は観測実績と会社の方向性に基づく仮定であり、当Qの確定受注や契約上限による保証はない。\n\n## 条件・不確実性\n- Mackerelの課金対象量と単価、toittaの正確なARRと計測時点は保存資料で未確認。\n- base_cm: CMSの件数・顧客単価への圧力で前Qを下回る一方、ARR目標に迫ると説明されたtoittaが減収を部分的に緩和する条件。toittaのARRを確定値とせず、既存売上に別建てで加算しない。\n- base_contract_delta: 直近アプリ導入の保守運用の通期化と追加開発の進捗を、前Q比の受託関連純増として置く。既存の前Q売上に含まれる導入効果は重ねて加えない。具体的な案件単価や受注確定を意味しない。\n- base_cp: 前Q水準を起点に、既存AI連携の継続寄与と広告・有料契約の弱さが概ね相殺する条件。前Qに含まれるAI収入を再加算せず、AI契約金額を推定しない。\n- base_dc: 利用量・為替負担増で前Qの低水準から戻るが、既存の最適化施策が一部を吸収する条件。\n- base_labor: 直近四半期の人件費範囲上限付近に、開発提供体制の強化を反映。前Qの賞与適正化による抑制がそのまま続くとは置かない。\n- base_other_cost: アプリ広告とAI関連費用の増加を直近四半期水準に上乗せする一方、外注・一般経費の管理を継続する条件。前Qの租税公課減少を恒久的節減として外挿しない。\n- bear_cm: CMS運用件数減少と編集受託・広告予算縮小が継続し、toittaの成長で補えない条件。前年同Q・前Qの約133・131から低下させる。会社の通期予想の四等分ではない。\n- bear_contract_delta: 前Qのテクノロジー売上を起点に、受託開発・保守・レベニューシェアの合計が減少する条件。S04 page 18の直近アプリ導入による継続収入は支えになるが、S06 page 34は提案・商談段階を含み、当Qの検収を確約しない。減収幅は直近四半期のサービス売上変動に収まるストレス幅とする。\n- bear_cp: 広告単価下落と有料契約減少が続き、既存AI連携収入を含めても前年同Q付近となる条件。AI収入をゼロと断定した値ではない。\n- bear_dc: 前年度四半期のDC利用料187～206を起点に、利用量と為替負担が増加し最適化効果が弱い条件。\n- bear_labor: 直近年度の四半期人件費450～478を基礎に、採用・報酬・賞与負担が先行する条件。期末人員を大幅増員とはせず、費用化単価と引当の不確実性を含む。\n- bear_other_cost: 直近年度四半期のその他経費205～216を基礎に、アプリ広告・AI利用・内部統制強化費用が先行する条件。売上原価と販管費を横断した費用区分であり、別途売上原価は加算しない。\n- bull_cm: toittaと伴走支援の拡大がCMS・編集受託の減少をほぼ相殺し、直近四半期水準を維持する条件。toittaの正確なARR・単価・契約数は確認できないためサービス合計で設定。\n- bull_contract_delta: 追加開発の進捗・短期案件の検収とアプリ課金レベニューシェアが同時に改善する条件。前Qの開発・保守売上規模に対して約1割の上積みに相当する。確定受注による上限ではなく、会社が示す受託回復方針を踏まえた条件付き感応度。\n- bull_cp: 既存AI連携の継続寄与と広告改善が進み、直近年度の四半期売上上限付近に戻る条件。非公開のAI契約から独立した大幅増収は仮定しない。\n- bull_dc: 利用量増を最適化で吸収し、直近年度の観測範囲内に費用を抑える条件。売上増がインフラ費に比例するとは仮定しない。\n- bull_labor: 適正な人員規模とAI・配置転換による効率化が継続し、直近年度の観測範囲内に収まる条件。\n- bull_other_cost: 広告・AI投資は増えるものの、外注費等の抑制で直近年度の費用水準を小幅に上回る範囲に収まる条件。\n- 当Qの平均人員・賞与負担・広告費実行額・DC為替負担が仮定を上回ると、増収でも利益が下振れする。\n- 新規大型AI契約、被害資金回収、追加の税効果変更は予測に含めていない。\n- 生成AIベンダーとの契約内容・金額はS05で明示的に非公開。\n- 開発案件別の受注確定額、総工数、進捗、検収時期とレベニューシェア率は保存資料で未確認。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/39300/140120260910534559.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `a2a52f5d21c5b285c33462c142966bd7a170d29782d314dfc8592b12ec1f6114`\n- S02 [2026年7月期 第1四半期決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/39300/140120251209516792.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `870ec9600ae91bde6137bcca40b10e44deb521f7317d0f8f7b25e8f9e515e6e7`\n- S03 [2026年7月期 第3四半期決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/39300/140120260611567820.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `276c81d6b3eb0ae0c07191e63dfca9ce0143f6c1215bbff0919043226c496ba2`\n- S04 [2026年7月期 通期決算説明会資料](https://www2.jpx.co.jp/disc/39300/140120260910534560.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `fe2a59a65b3a1946cd8a428b1a1f040b05cf01096b6b9b8f16447bb3990ec491`\n- S05 [2026年7月期 通期決算説明会の質疑応答（要旨）について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536177.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `bbd3568d6de585ea3c5cc10643653eda4cc88f0d951b4fdaa98e42b68cc96c88`\n- S06 [事業計画及び成長可能性に関する説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555296.pdf) / 公表 2026-10-26 / retrieved / SHA-256 `401a3bb7db6c8e9a6a18f8d186bfdc92a89290ac83f6423fbdc9e36fe6639331`\n- S07 [2026年7月期通期業績予想と実績値との差異、株主優待引当金繰入額及び特別損失の計上並びに繰延税金資産の取り崩しに関するお知らせ](https://www2.jpx.co.jp/disc/39300/140120260910534562.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `1b9c0637542fee6132faf046a1cd24c3353e6f845450d77f25231f766246d64a`\n- S08 [上場維持基準への適合に向けた計画について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261015550493.pdf) / 公表 2026-10-16 / retrieved / SHA-256 `75790aa7c60f6e00d62461df1a0b5e86338c824058557d2ad5fd7347af8053b8`\n- S09 [資本金の額の減少に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260916537528.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `f4cfdc1e074bf1a9b4af1cc5214b6c3a23d7ba404b4bf27d85108de0c33efe20`\n- S10 [人事異動に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261113/20261112577496.pdf) / 公表 2026-11-13 / retrieved / SHA-256 `f207e20188dc9c0d6308a7f112339b4488e86483a242846f64b7a6d528ba8eec`\n- S11 [株式情報](https://hatena.co.jp/ir/stock.html) / 公表  / unavailable / SHA-256 `なし`\n- S12 [IRスケジュール](https://hatena.co.jp/ir/calendar.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3930",
+    "company_name": "株式会社はてな",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 886.4460000000001,
+        "operating_profit": -73.55399999999986,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 949.6460000000002,
+        "operating_profit": 34.646000000000186,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 1006.1460000000002,
+        "operating_profit": 118.14600000000019,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 20.51700000000028,
+          "rate": 0.022081971394715138,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -42.50199999999981,
+          "rate": -0.5509151241769042,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 73.58900000000017,
+          "rate": 0.08400024199338646,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 31.307000000000187,
+          "rate": 9.376160527103979,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy_revenue": 3647.171,
+      "fy_op": 173.606,
+      "q3_revenue": 2718.042,
+      "q3_op": 96.458,
+      "yoy_revenue": 876.057,
+      "yoy_op": 3.339,
+      "yoy_tech": 667.407,
+      "yoy_cm": 132.723,
+      "yoy_cp": 73.844,
+      "yoy_other": 2.083,
+      "fy_tech": 2780.927,
+      "fy_cm": 541.274,
+      "fy_cp": 319.022,
+      "fy_other": 5.946,
+      "q3_tech": 2063.281,
+      "q3_cm": 409.841,
+      "q3_cp": 239.807,
+      "q3_other": 5.112,
+      "guidance_revenue": 3968.0,
+      "guidance_op": 159.0,
+      "guidance_ordinary": 121.0,
+      "guidance_net": 117.0,
+      "bear_contract_delta": -20.0,
+      "base_contract_delta": 25.0,
+      "bull_contract_delta": 60.0,
+      "bear_saas_delta": 0.0,
+      "base_saas_delta": 3.0,
+      "bull_saas_delta": 7.0,
+      "bear_cm": 115.0,
+      "base_cm": 123.0,
+      "bull_cm": 132.0,
+      "bear_cp": 73.0,
+      "base_cp": 80.0,
+      "bull_cp": 88.0,
+      "bear_other": 0.8,
+      "base_other": 1.0,
+      "bull_other": 1.5,
+      "bear_labor": 495.0,
+      "base_labor": 480.0,
+      "bull_labor": 470.0,
+      "bear_dc": 215.0,
+      "base_dc": 205.0,
+      "bull_dc": 198.0,
+      "bear_other_cost": 250.0,
+      "base_other_cost": 230.0,
+      "bull_other_cost": 220.0,
+      "qoq_revenue": 929.1289999999999,
+      "qoq_op": 77.148,
+      "qoq_cost": 851.9809999999999,
+      "yoy_cost": 872.718,
+      "qoq_tech": 717.6460000000002,
+      "qoq_cm": 131.433,
+      "qoq_cp": 79.215,
+      "qoq_other": 0.8339999999999996,
+      "qoq_revenue_residual": -0.0009999999997489795,
+      "yoy_revenue_residual": 1.1368683772161603e-13,
+      "bear_tech": 697.6460000000002,
+      "base_tech": 745.6460000000002,
+      "bull_tech": 784.6460000000002,
+      "bear_revenue": 886.4460000000001,
+      "base_revenue": 949.6460000000002,
+      "bull_revenue": 1006.1460000000002,
+      "bear_cost": 960.0,
+      "base_cost": 915.0,
+      "bull_cost": 888.0,
+      "bear_op": -73.55399999999986,
+      "base_op": 34.646000000000186,
+      "bull_op": 118.14600000000019
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2,10 会計方針変更・修正再表示なし、当第1四半期累計",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 876.057,
+        "operating_profit": 3.339,
+        "ordinary_profit": 8.496,
+        "net_profit": 5.742
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2,10 会計方針変更・修正再表示なし、当第3四半期累計",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 2,12 会計方針変更・修正再表示なし、当事業年度",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 929.1289999999999,
+        "operating_profit": 77.148,
+        "ordinary_profit": 0.06399999999999295,
+        "net_profit": -277.135
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "テクノロジー",
+            "formula": "bear_tech-yoy_tech",
+            "reason": "受託関連とSaaS等の条件付き変化",
+            "amount": 30.239000000000146
+          },
+          {
+            "label": "マーケティング",
+            "formula": "bear_cm-yoy_cm",
+            "reason": "CMS・編集受託縮小とtoittaの相殺",
+            "amount": -17.723000000000013
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "bear_cp-yoy_cp",
+            "reason": "広告・課金・既存AI連携を含む合計変化",
+            "amount": -0.8439999999999941
+          },
+          {
+            "label": "その他",
+            "formula": "bear_other-yoy_other",
+            "reason": "バリデータ報酬",
+            "amount": -1.2830000000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "受託関連",
+            "formula": "bear_contract_delta",
+            "reason": "開発認識と保守・分配収入の純増減",
+            "amount": -20.0
+          },
+          {
+            "label": "SaaS等",
+            "formula": "bear_saas_delta",
+            "reason": "テクノロジーSaaSの回復度合い",
+            "amount": 0.0
+          },
+          {
+            "label": "マーケティング",
+            "formula": "bear_cm-qoq_cm",
+            "reason": "CMS縮小とtoitta成長",
+            "amount": -16.432999999999993
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "bear_cp-qoq_cp",
+            "reason": "既存AI収入を含む合計比較",
+            "amount": -6.215000000000003
+          },
+          {
+            "label": "その他",
+            "formula": "bear_other-qoq_other",
+            "reason": "バリデータ報酬",
+            "amount": -0.033999999999999586
+          }
+        ],
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "residual_explanation": "公表累計から算出したサービス別前Q合計と全社前Q売上に微差がある。保存原文に差の説明がないため丸め差と断定せず残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "bear_revenue-yoy_revenue",
+            "reason": "サービス別積上げ売上の変化",
+            "amount": 10.389000000000124
+          },
+          {
+            "label": "営業費用差",
+            "formula": "yoy_cost-bear_cost",
+            "reason": "人件費・DC・その他経費の独立仮定と前年費用総額との差",
+            "amount": -87.28200000000004
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用内訳への厳密な寄与配賦は行わず、営業費用総額で接続。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "bear_revenue-qoq_revenue",
+            "reason": "全社売上比較のためサービス合計の微差も包含",
+            "amount": -42.682999999999765
+          },
+          {
+            "label": "営業費用差",
+            "formula": "qoq_cost-bear_cost",
+            "reason": "投資先行と前Q費用抑制効果の持続性",
+            "amount": -108.01900000000012
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "全社売上と全社営業費用で接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "テクノロジー",
+            "formula": "base_tech-yoy_tech",
+            "reason": "受託関連回復とAPM拡販",
+            "amount": 78.23900000000015
+          },
+          {
+            "label": "マーケティング",
+            "formula": "base_cm-yoy_cm",
+            "reason": "CMS縮小をtoittaが一部相殺",
+            "amount": -9.723000000000013
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "base_cp-yoy_cp",
+            "reason": "広告・課金と既存AI連携の合計変化",
+            "amount": 6.156000000000006
+          },
+          {
+            "label": "その他",
+            "formula": "base_other-yoy_other",
+            "reason": "バリデータ報酬",
+            "amount": -1.0830000000000002
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "受託関連",
+            "formula": "base_contract_delta",
+            "reason": "保守運用積上げと追加開発進捗",
+            "amount": 25.0
+          },
+          {
+            "label": "SaaS等",
+            "formula": "base_saas_delta",
+            "reason": "APM拡販を中心とする緩やかな増分",
+            "amount": 3.0
+          },
+          {
+            "label": "マーケティング",
+            "formula": "base_cm-qoq_cm",
+            "reason": "CMS縮小とtoitta成長",
+            "amount": -8.432999999999993
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "base_cp-qoq_cp",
+            "reason": "既存AI収入を重複加算しない合計比較",
+            "amount": 0.7849999999999966
+          },
+          {
+            "label": "その他",
+            "formula": "base_other-qoq_other",
+            "reason": "バリデータ報酬",
+            "amount": 0.16600000000000037
+          }
+        ],
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "base_revenue-yoy_revenue",
+            "reason": "サービス別売上積上げ",
+            "amount": 73.58900000000017
+          },
+          {
+            "label": "営業費用差",
+            "formula": "yoy_cost-base_cost",
+            "reason": "人材・DC・広告・AI費用の独立仮定",
+            "amount": -42.28200000000004
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用差は総額比較。サービス別利益率を捏造しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "base_revenue-qoq_revenue",
+            "reason": "全社売上の変化",
+            "amount": 20.51700000000028
+          },
+          {
+            "label": "営業費用差",
+            "formula": "qoq_cost-base_cost",
+            "reason": "前Qの賞与・租税公課・DC費用抑制を恒久化せず、投資増を反映",
+            "amount": -63.01900000000012
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "全社費用で算術的に接続。個別費用要因の実績寄与額は未確認。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "テクノロジー",
+            "formula": "bull_tech-yoy_tech",
+            "reason": "開発進捗と分配収入、APM拡販が改善",
+            "amount": 117.23900000000015
+          },
+          {
+            "label": "マーケティング",
+            "formula": "bull_cm-yoy_cm",
+            "reason": "toitta成長でCMS縮小を概ね相殺",
+            "amount": -0.7230000000000132
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "bull_cp-yoy_cp",
+            "reason": "広告改善と既存AI連携の継続寄与",
+            "amount": 14.156000000000006
+          },
+          {
+            "label": "その他",
+            "formula": "bull_other-yoy_other",
+            "reason": "バリデータ報酬",
+            "amount": -0.5830000000000002
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "受託関連",
+            "formula": "bull_contract_delta",
+            "reason": "追加開発・検収・レベニューシェアの改善",
+            "amount": 60.0
+          },
+          {
+            "label": "SaaS等",
+            "formula": "bull_saas_delta",
+            "reason": "APM拡販・新規獲得",
+            "amount": 7.0
+          },
+          {
+            "label": "マーケティング",
+            "formula": "bull_cm-qoq_cm",
+            "reason": "toittaと伴走支援が下支え",
+            "amount": 0.5670000000000073
+          },
+          {
+            "label": "プラットフォーム",
+            "formula": "bull_cp-qoq_cp",
+            "reason": "既存AI収入を含むサービス全体の回復",
+            "amount": 8.784999999999997
+          },
+          {
+            "label": "その他",
+            "formula": "bull_other-qoq_other",
+            "reason": "バリデータ報酬",
+            "amount": 0.6660000000000004
+          }
+        ],
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "bull_revenue-yoy_revenue",
+            "reason": "サービス別売上積上げ",
+            "amount": 130.08900000000017
+          },
+          {
+            "label": "営業費用差",
+            "formula": "yoy_cost-bull_cost",
+            "reason": "人員最適化・DC効率化が投資増を吸収",
+            "amount": -15.282000000000039
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "人件費・DC・その他経費の合計で接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上差",
+            "formula": "bull_revenue-qoq_revenue",
+            "reason": "全社売上の変化",
+            "amount": 77.01700000000028
+          },
+          {
+            "label": "営業費用差",
+            "formula": "qoq_cost-bull_cost",
+            "reason": "前Q比では投資費用増を見込むが、効率化が続く条件",
+            "amount": -36.01900000000012
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "全社売上と全社営業費用で接続。"
+      }
+    ],
+    "issues": [
+      "2026-12-11の発表予定日は公式原文で未確認。S12は資料一覧にあるが、本文・カレンダー画像は提示されていない。",
+      "S01のGigaViewer導入社数・サービス数とS04・S06の同時期表記が一致しない。導入数を売上へ直接乗じず、確認できる導入案件と方向性のみ利用した。",
+      "S01のテクノロジーSaaS等売上とS04のMackerel売上は一致しないため、同一範囲と扱っていない。",
+      "S01～S10はtruncated=falseで提示されているが、PDF画像との照合は行っていない。S11・S12の保存本文は未提示であり、非開示とは区別する。",
+      "S04 page 21のCMS運用件数当たり平均月次売上の図は保存テキストから単位・集計定義を確定できず、数量×単価の計算には使用しない。",
+      "S04・S06はAI連携の通年寄与を説明する一方、S05は具体額を確定的に予想へ織り込まないと説明。既存契約と追加協議の包含範囲を確定できない。",
+      "S09の減資は対象期間後の効力発生予定で、会社は業績影響なしと説明。S10の人事異動も対象期間後であり、当Qの利益改善に織り込んでいない。",
+      "サービス別採算は単一セグメントとして非開示。売上変動を限界利益率で厳密に変換できないため、全社費用を独立に設定した条件付き予測である。",
+      "前Qのサービス別売上合計と全社売上の微差は原因未確認としてunclassifiedで残した。",
+      "四半期の営業外費用、株主優待引当の調整、資金流出事案の追加損益、実効税率と繰延税金資産の変化に根拠ある範囲を置けず、経常・純利益はnull。",
+      "対象決算が基準日時点で未発表という扱いは提示されたdiscoveryに従う。保存原文のみでは開示一覧の網羅的な確認はできない。",
+      "費用図表は丸められた表示であり、S04の費用構成とS06の販管費内訳は範囲も異なる。費用予測の参照はS04の営業費用全体に統一し、実績比較は短信の売上と営業利益から求めた営業費用総額を使用。",
+      "資料確認未了: already_announced",
+      "開発・保守の増分、プラットフォーム総額、費用幅は観測実績と会社の方向性に基づく仮定であり、当Qの確定受注や契約上限による保証はない。"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -42.682999999999765,
+            "rate": -0.045938723255866266,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -150.70199999999986,
+            "rate": -1.9534142168299873,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 10.389000000000124,
+            "rate": 0.011858817405716893,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -76.89299999999986,
+            "rate": -23.028751123090704,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 20.51700000000028,
+            "rate": 0.022081971394715138,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -42.50199999999981,
+            "rate": -0.5509151241769042,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 73.58900000000017,
+            "rate": 0.08400024199338646,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 31.307000000000187,
+            "rate": 9.376160527103979,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 77.01700000000028,
+            "rate": 0.0828916113908836,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 40.99800000000019,
+            "rate": 0.5314201275470549,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 130.08900000000017,
+            "rate": 0.1484937623921733,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 114.80700000000019,
+            "rate": 34.383647798742196,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 10.389000000000124,
+        "explained_sum": 10.38900000000014,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.5987211554602254e-14,
+        "status": "passed",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -42.682999999999765,
+        "explained_sum": -42.681999999999995,
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "difference": -2.1316282072803006e-14,
+        "status": "passed",
+        "residual_explanation": "公表累計から算出したサービス別前Q合計と全社前Q売上に微差がある。保存原文に差の説明がないため丸め差と断定せず残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -76.89299999999986,
+        "explained_sum": -76.89299999999992,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "費用内訳への厳密な寄与配賦は行わず、営業費用総額で接続。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -150.70199999999986,
+        "explained_sum": -150.70199999999988,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "全社売上と全社営業費用で接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 73.58900000000017,
+        "explained_sum": 73.58900000000014,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 20.51700000000028,
+        "explained_sum": 20.518000000000004,
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "difference": 2.4868995751603507e-14,
+        "status": "passed",
+        "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 31.307000000000187,
+        "explained_sum": 31.30700000000013,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "費用差は総額比較。サービス別利益率を捏造しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -42.50199999999981,
+        "explained_sum": -42.50199999999984,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "全社費用で算術的に接続。個別費用要因の実績寄与額は未確認。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 130.08900000000017,
+        "explained_sum": 130.08900000000014,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 77.01700000000028,
+        "explained_sum": 77.018,
+        "residual": -0.0009999999997489795,
+        "residual_type": "unclassified",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 114.80700000000019,
+        "explained_sum": 114.80700000000013,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "人件費・DC・その他経費の合計で接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 40.99800000000019,
+        "explained_sum": 40.99800000000016,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "全社売上と全社営業費用で接続。"
+      }
+    ],
+    "conditions": [
+      "Mackerelの課金対象量と単価、toittaの正確なARRと計測時点は保存資料で未確認。",
+      "base_cm: CMSの件数・顧客単価への圧力で前Qを下回る一方、ARR目標に迫ると説明されたtoittaが減収を部分的に緩和する条件。toittaのARRを確定値とせず、既存売上に別建てで加算しない。",
+      "base_contract_delta: 直近アプリ導入の保守運用の通期化と追加開発の進捗を、前Q比の受託関連純増として置く。既存の前Q売上に含まれる導入効果は重ねて加えない。具体的な案件単価や受注確定を意味しない。",
+      "base_cp: 前Q水準を起点に、既存AI連携の継続寄与と広告・有料契約の弱さが概ね相殺する条件。前Qに含まれるAI収入を再加算せず、AI契約金額を推定しない。",
+      "base_dc: 利用量・為替負担増で前Qの低水準から戻るが、既存の最適化施策が一部を吸収する条件。",
+      "base_labor: 直近四半期の人件費範囲上限付近に、開発提供体制の強化を反映。前Qの賞与適正化による抑制がそのまま続くとは置かない。",
+      "base_other_cost: アプリ広告とAI関連費用の増加を直近四半期水準に上乗せする一方、外注・一般経費の管理を継続する条件。前Qの租税公課減少を恒久的節減として外挿しない。",
+      "bear_cm: CMS運用件数減少と編集受託・広告予算縮小が継続し、toittaの成長で補えない条件。前年同Q・前Qの約133・131から低下させる。会社の通期予想の四等分ではない。",
+      "bear_contract_delta: 前Qのテクノロジー売上を起点に、受託開発・保守・レベニューシェアの合計が減少する条件。S04 page 18の直近アプリ導入による継続収入は支えになるが、S06 page 34は提案・商談段階を含み、当Qの検収を確約しない。減収幅は直近四半期のサービス売上変動に収まるストレス幅とする。",
+      "bear_cp: 広告単価下落と有料契約減少が続き、既存AI連携収入を含めても前年同Q付近となる条件。AI収入をゼロと断定した値ではない。",
+      "bear_dc: 前年度四半期のDC利用料187～206を起点に、利用量と為替負担が増加し最適化効果が弱い条件。",
+      "bear_labor: 直近年度の四半期人件費450～478を基礎に、採用・報酬・賞与負担が先行する条件。期末人員を大幅増員とはせず、費用化単価と引当の不確実性を含む。",
+      "bear_other_cost: 直近年度四半期のその他経費205～216を基礎に、アプリ広告・AI利用・内部統制強化費用が先行する条件。売上原価と販管費を横断した費用区分であり、別途売上原価は加算しない。",
+      "bull_cm: toittaと伴走支援の拡大がCMS・編集受託の減少をほぼ相殺し、直近四半期水準を維持する条件。toittaの正確なARR・単価・契約数は確認できないためサービス合計で設定。",
+      "bull_contract_delta: 追加開発の進捗・短期案件の検収とアプリ課金レベニューシェアが同時に改善する条件。前Qの開発・保守売上規模に対して約1割の上積みに相当する。確定受注による上限ではなく、会社が示す受託回復方針を踏まえた条件付き感応度。",
+      "bull_cp: 既存AI連携の継続寄与と広告改善が進み、直近年度の四半期売上上限付近に戻る条件。非公開のAI契約から独立した大幅増収は仮定しない。",
+      "bull_dc: 利用量増を最適化で吸収し、直近年度の観測範囲内に費用を抑える条件。売上増がインフラ費に比例するとは仮定しない。",
+      "bull_labor: 適正な人員規模とAI・配置転換による効率化が継続し、直近年度の観測範囲内に収まる条件。",
+      "bull_other_cost: 広告・AI投資は増えるものの、外注費等の抑制で直近年度の費用水準を小幅に上回る範囲に収まる条件。",
+      "当Qの平均人員・賞与負担・広告費実行額・DC為替負担が仮定を上回ると、増収でも利益が下振れする。",
+      "新規大型AI契約、被害資金回収、追加の税効果変更は予測に含めていない。",
+      "生成AIベンダーとの契約内容・金額はS05で明示的に非公開。",
+      "開発案件別の受注確定額、総工数、進捗、検収時期とレベニューシェア率は保存資料で未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/39300/140120260910534559.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/39300/140120260910534559.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S01.txt",
+        "sha256": "a2a52f5d21c5b285c33462c142966bd7a170d29782d314dfc8592b12ec1f6114",
+        "text_sha256": "af9ae81473d06c364a47b84d1d3d27adb37c85c88ac382c302cff0bbda73aad5",
+        "retrieved_at": "2026-11-18T18:32:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 30679,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/39300/140120251209516792.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/39300/140120251209516792.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S02.txt",
+        "sha256": "870ec9600ae91bde6137bcca40b10e44deb521f7317d0f8f7b25e8f9e515e6e7",
+        "text_sha256": "183dbdc020034c207733cc8a4d560fb79d5695464b514e539f288529ada3c861",
+        "retrieved_at": "2026-11-18T18:32:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 21623,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/39300/140120260611567820.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/39300/140120260611567820.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S03.txt",
+        "sha256": "276c81d6b3eb0ae0c07191e63dfca9ce0143f6c1215bbff0919043226c496ba2",
+        "text_sha256": "e745e7bc83dd54070b9e91abc0155a60b500c1699d4dd1ae0cb5519a17bf9e81",
+        "retrieved_at": "2026-11-18T18:32:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18259,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 通期決算説明会資料",
+        "url": "https://www2.jpx.co.jp/disc/39300/140120260910534560.pdf",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/39300/140120260910534560.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S04.txt",
+        "sha256": "fe2a59a65b3a1946cd8a428b1a1f040b05cf01096b6b9b8f16447bb3990ec491",
+        "text_sha256": "2f1dbef057c94d87bf4ee0091f6dbdf7d3a6154c6e4eb492e12cd0e3ce5e450a",
+        "retrieved_at": "2026-11-18T18:32:39+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 22314,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期 通期決算説明会の質疑応答（要旨）について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536177.pdf",
+        "published_at": "2026-09-14",
+        "category": "qa",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914536177.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S05.txt",
+        "sha256": "bbd3568d6de585ea3c5cc10643653eda4cc88f0d951b4fdaa98e42b68cc96c88",
+        "text_sha256": "d3756b2ab1d6017126ba411666dd08d7b1337a5e0877036fe8482105ec4fce3b",
+        "retrieved_at": "2026-11-18T18:32:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 787,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "事業計画及び成長可能性に関する説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555296.pdf",
+        "published_at": "2026-10-26",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261026/20261023555296.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S06.txt",
+        "sha256": "401a3bb7db6c8e9a6a18f8d186bfdc92a89290ac83f6423fbdc9e36fe6639331",
+        "text_sha256": "39f03e759c52d2548e34823d80caedbd11250fddae58b746089e9ff5efcea35a",
+        "retrieved_at": "2026-11-18T18:32:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 21598,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年7月期通期業績予想と実績値との差異、株主優待引当金繰入額及び特別損失の計上並びに繰延税金資産の取り崩しに関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/39300/140120260910534562.pdf",
+        "published_at": "2026-09-11",
+        "category": "other",
+        "final_url": "https://www2.jpx.co.jp/disc/39300/140120260910534562.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S07.txt",
+        "sha256": "1b9c0637542fee6132faf046a1cd24c3353e6f845450d77f25231f766246d64a",
+        "text_sha256": "a5448f3b1ff026204e1cf7aa6349cc99848a166be34e81aca9046a7f7884cb9e",
+        "retrieved_at": "2026-11-18T18:32:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1536,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "上場維持基準への適合に向けた計画について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261015550493.pdf",
+        "published_at": "2026-10-16",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261015550493.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S08.txt",
+        "sha256": "75790aa7c60f6e00d62461df1a0b5e86338c824058557d2ad5fd7347af8053b8",
+        "text_sha256": "eb459effffb5b1c60915a006e81d295a404ee466bb35375109e77f7b2e54b3ef",
+        "retrieved_at": "2026-11-18T18:32:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3571,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "資本金の額の減少に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260916537528.pdf",
+        "published_at": "2026-09-18",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260916537528.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S09.txt",
+        "sha256": "f4cfdc1e074bf1a9b4af1cc5214b6c3a23d7ba404b4bf27d85108de0c33efe20",
+        "text_sha256": "cc8f0acd24262007c559c8f2032bda38a3afbe38270eb0ea009f8003aff5fb87",
+        "retrieved_at": "2026-11-18T18:32:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 884,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "人事異動に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261113/20261112577496.pdf",
+        "published_at": "2026-11-13",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261113/20261112577496.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3930\\sources\\S10.txt",
+        "sha256": "f207e20188dc9c0d6308a7f112339b4488e86483a242846f64b7a6d528ba8eec",
+        "text_sha256": "89f4843e95af5c0d95d6cd6aa46bea1a09c4c7472eeae949af9c4e4dca95f198",
+        "retrieved_at": "2026-11-18T18:32:45+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 408,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "株式情報",
+        "url": "https://hatena.co.jp/ir/stock.html",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:54:08+09:00"
+      },
+      {
+        "id": "S12",
+        "title": "IRスケジュール",
+        "url": "https://hatena.co.jp/ir/calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:54:08+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3930",
+      "announcement_date": "2026-12-11",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy_revenue",
+          "value": 3647.171,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12 当事業年度損益計算書"
+        },
+        {
+          "id": "fy_op",
+          "value": 173.606,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12 当事業年度損益計算書"
+        },
+        {
+          "id": "q3_revenue",
+          "value": 2718.042,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10 当第3四半期累計"
+        },
+        {
+          "id": "q3_op",
+          "value": 96.458,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10 当第3四半期累計"
+        },
+        {
+          "id": "yoy_revenue",
+          "value": 876.057,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10 当第1四半期累計"
+        },
+        {
+          "id": "yoy_op",
+          "value": 3.339,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10 当第1四半期累計"
+        },
+        {
+          "id": "yoy_tech",
+          "value": 667.407,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 13 当第1四半期サービス別売上"
+        },
+        {
+          "id": "yoy_cm",
+          "value": 132.723,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 13 当第1四半期サービス別売上"
+        },
+        {
+          "id": "yoy_cp",
+          "value": 73.844,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 13 当第1四半期サービス別売上"
+        },
+        {
+          "id": "yoy_other",
+          "value": 2.083,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 13 当第1四半期サービス別売上"
+        },
+        {
+          "id": "fy_tech",
+          "value": 2780.927,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 17 当事業年度サービス別売上"
+        },
+        {
+          "id": "fy_cm",
+          "value": 541.274,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 17 当事業年度サービス別売上"
+        },
+        {
+          "id": "fy_cp",
+          "value": 319.022,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 17 当事業年度サービス別売上"
+        },
+        {
+          "id": "fy_other",
+          "value": 5.946,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 17 当事業年度サービス別売上"
+        },
+        {
+          "id": "q3_tech",
+          "value": 2063.281,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13 当第3四半期累計サービス別売上"
+        },
+        {
+          "id": "q3_cm",
+          "value": 409.841,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13 当第3四半期累計サービス別売上"
+        },
+        {
+          "id": "q3_cp",
+          "value": 239.807,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13 当第3四半期累計サービス別売上"
+        },
+        {
+          "id": "q3_other",
+          "value": 5.112,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 13 当第3四半期累計サービス別売上"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 3968,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 159,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 121,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 117,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "bear_contract_delta",
+          "value": -20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Qのテクノロジー売上を起点に、受託開発・保守・レベニューシェアの合計が減少する条件。S04 page 18の直近アプリ導入による継続収入は支えになるが、S06 page 34は提案・商談段階を含み、当Qの検収を確約しない。減収幅は直近四半期のサービス売上変動に収まるストレス幅とする。",
+          "sensitivity": "前Q比増減が10変わると売上・費用一定時の営業利益が10変わる。弱気から強気までの幅は80。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 15,18; S06 PDF pages 34,44",
+          "material": true
+        },
+        {
+          "id": "base_contract_delta",
+          "value": 25,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近アプリ導入の保守運用の通期化と追加開発の進捗を、前Q比の受託関連純増として置く。既存の前Q売上に含まれる導入効果は重ねて加えない。具体的な案件単価や受注確定を意味しない。",
+          "sensitivity": "認識時期の後ずれ等で増分が10減れば、費用一定時に売上・営業利益が10減少する。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 18,33; S06 PDF page 34",
+          "material": true
+        },
+        {
+          "id": "bull_contract_delta",
+          "value": 60,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "追加開発の進捗・短期案件の検収とアプリ課金レベニューシェアが同時に改善する条件。前Qの開発・保守売上規模に対して約1割の上積みに相当する。確定受注による上限ではなく、会社が示す受託回復方針を踏まえた条件付き感応度。",
+          "sensitivity": "開発・保守・レベニューシェア合計の増分が10変わると、費用一定時に売上・営業利益が10変わる。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S06"
+          ],
+          "locator": "S01 PDF page 17; S03 PDF page 13; S06 PDF page 34",
+          "material": true
+        },
+        {
+          "id": "bear_saas_delta",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "テクノロジー領域のSaaS等は前Q水準を維持。APMによる回復が一服する条件。11月予定のログ機能正式提供は対象四半期外なので加算しない。",
+          "sensitivity": "前Q比増減が1変わると、売上・費用一定時の営業利益が1変わる。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF page 19; S06 PDF page 35",
+          "material": false
+        },
+        {
+          "id": "base_saas_delta",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "APMの既存顧客拡販と解約抑止による緩やかな回復を仮定。Mackerelと収益認識注記のSaaS等は範囲が一致しないため、Mackerel売上実績として置かず、テクノロジー領域全体への増分とする。",
+          "sensitivity": "増分が1変わると、売上・費用一定時の営業利益が1変わる。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF page 17; S04 PDF pages 17,19",
+          "material": false
+        },
+        {
+          "id": "bull_saas_delta",
+          "value": 7,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "APMの既存顧客拡販と新規顧客獲得が進む条件。前QのテクノロジーSaaS等売上規模に対する数％の増分に限定し、対象期間外のログ機能による売上は追加しない。",
+          "sensitivity": "増分が1変わると、売上・費用一定時の営業利益が1変わる。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF page 17; S03 PDF page 13; S04 PDF pages 19,34",
+          "material": false
+        },
+        {
+          "id": "bear_cm",
+          "value": 115,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "CMS運用件数減少と編集受託・広告予算縮小が継続し、toittaの成長で補えない条件。前年同Q・前Qの約133・131から低下させる。会社の通期予想の四等分ではない。",
+          "sensitivity": "CMS・編集受託・広告・toitta合計が5変わると、費用一定時に売上・営業利益が5変わる。",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S06"
+          ],
+          "locator": "S02 PDF page 13; S04 PDF pages 21,22; S06 PDF page 32",
+          "material": true
+        },
+        {
+          "id": "base_cm",
+          "value": 123,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "CMSの件数・顧客単価への圧力で前Qを下回る一方、ARR目標に迫ると説明されたtoittaが減収を部分的に緩和する条件。toittaのARRを確定値とせず、既存売上に別建てで加算しない。",
+          "sensitivity": "合計売上が5変わると、費用一定時に売上・営業利益が5変わる。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 21,22; S06 PDF page 32",
+          "material": true
+        },
+        {
+          "id": "bull_cm",
+          "value": 132,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "toittaと伴走支援の拡大がCMS・編集受託の減少をほぼ相殺し、直近四半期水準を維持する条件。toittaの正確なARR・単価・契約数は確認できないためサービス合計で設定。",
+          "sensitivity": "合計売上が5変わると、費用一定時に売上・営業利益が5変わる。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 15,21; S06 PDF pages 32,35",
+          "material": true
+        },
+        {
+          "id": "bear_cp",
+          "value": 73,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "広告単価下落と有料契約減少が続き、既存AI連携収入を含めても前年同Q付近となる条件。AI収入をゼロと断定した値ではない。",
+          "sensitivity": "広告・課金・AI連携を含む合計が5変わると、費用一定時に売上・営業利益が5変わる。",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S05"
+          ],
+          "locator": "S02 PDF page 13; S04 PDF pages 25,26; S05 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "base_cp",
+          "value": 80,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q水準を起点に、既存AI連携の継続寄与と広告・有料契約の弱さが概ね相殺する条件。前Qに含まれるAI収入を再加算せず、AI契約金額を推定しない。",
+          "sensitivity": "合計売上が5変わると、費用一定時に売上・営業利益が5変わる。新規大型AI契約は範囲外。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF page 17; S03 PDF page 13; S04 PDF pages 25,26,35; S05 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bull_cp",
+          "value": 88,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "既存AI連携の継続寄与と広告改善が進み、直近年度の四半期売上上限付近に戻る条件。非公開のAI契約から独立した大幅増収は仮定しない。",
+          "sensitivity": "合計売上が5変わると、費用一定時に売上・営業利益が5変わる。これはAI収益の契約上限ではない。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 15,25,26; S05 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bear_other",
+          "value": 0.8,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "バリデータ報酬を前Q付近に設定。数量・トークン価格の独立した根拠はない。",
+          "sensitivity": "報酬売上が0.5変われば売上・費用一定時の営業利益が0.5変わる。",
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF page 17; S03 PDF page 13",
+          "material": false
+        },
+        {
+          "id": "base_other",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "毎月のバリデータ報酬継続を仮定し、前Qと前年同Qの間に設定。",
+          "sensitivity": "報酬売上が0.5変われば売上・費用一定時の営業利益が0.5変わる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF page 17; S02 PDF pages 5,13; S03 PDF page 13",
+          "material": false
+        },
+        {
+          "id": "bull_other",
+          "value": 1.5,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "報酬売上が前Qから回復するが前年同Qを下回る条件。",
+          "sensitivity": "報酬売上が0.5変われば売上・費用一定時の営業利益が0.5変わる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF page 17; S02 PDF page 13; S03 PDF page 13",
+          "material": false
+        },
+        {
+          "id": "bear_labor",
+          "value": 495,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近年度の四半期人件費450～478を基礎に、採用・報酬・賞与負担が先行する条件。期末人員を大幅増員とはせず、費用化単価と引当の不確実性を含む。",
+          "sensitivity": "人件費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38",
+          "material": true
+        },
+        {
+          "id": "base_labor",
+          "value": 480,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近四半期の人件費範囲上限付近に、開発提供体制の強化を反映。前Qの賞与適正化による抑制がそのまま続くとは置かない。",
+          "sensitivity": "人件費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38",
+          "material": true
+        },
+        {
+          "id": "bull_labor",
+          "value": 470,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "適正な人員規模とAI・配置転換による効率化が継続し、直近年度の観測範囲内に収まる条件。",
+          "sensitivity": "人件費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38",
+          "material": true
+        },
+        {
+          "id": "bear_dc",
+          "value": 215,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年度四半期のDC利用料187～206を起点に、利用量と為替負担が増加し最適化効果が弱い条件。",
+          "sensitivity": "DC利用料が10増えると営業利益が10減る。顧客への転嫁率は未確認。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38",
+          "material": true
+        },
+        {
+          "id": "base_dc",
+          "value": 205,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "利用量・為替負担増で前Qの低水準から戻るが、既存の最適化施策が一部を吸収する条件。",
+          "sensitivity": "DC利用料が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S07"
+          ],
+          "locator": "S04 PDF page 29; S06 PDF page 38; S07 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bull_dc",
+          "value": 198,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "利用量増を最適化で吸収し、直近年度の観測範囲内に費用を抑える条件。売上増がインフラ費に比例するとは仮定しない。",
+          "sensitivity": "DC利用料が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S07"
+          ],
+          "locator": "S04 PDF pages 29,30; S07 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bear_other_cost",
+          "value": 250,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近年度四半期のその他経費205～216を基礎に、アプリ広告・AI利用・内部統制強化費用が先行する条件。売上原価と販管費を横断した費用区分であり、別途売上原価は加算しない。",
+          "sensitivity": "その他経費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 10,29,30; S06 PDF page 38",
+          "material": true
+        },
+        {
+          "id": "base_other_cost",
+          "value": 230,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "アプリ広告とAI関連費用の増加を直近四半期水準に上乗せする一方、外注・一般経費の管理を継続する条件。前Qの租税公課減少を恒久的節減として外挿しない。",
+          "sensitivity": "その他経費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S07"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38; S07 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bull_other_cost",
+          "value": 220,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "広告・AI投資は増えるものの、外注費等の抑制で直近年度の費用水準を小幅に上回る範囲に収まる条件。",
+          "sensitivity": "その他経費が10増えると営業利益が10減る。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "qoq_revenue",
+          "formula": "fy_revenue-q3_revenue"
+        },
+        {
+          "id": "qoq_op",
+          "formula": "fy_op-q3_op"
+        },
+        {
+          "id": "qoq_cost",
+          "formula": "qoq_revenue-qoq_op"
+        },
+        {
+          "id": "yoy_cost",
+          "formula": "yoy_revenue-yoy_op"
+        },
+        {
+          "id": "qoq_tech",
+          "formula": "fy_tech-q3_tech"
+        },
+        {
+          "id": "qoq_cm",
+          "formula": "fy_cm-q3_cm"
+        },
+        {
+          "id": "qoq_cp",
+          "formula": "fy_cp-q3_cp"
+        },
+        {
+          "id": "qoq_other",
+          "formula": "fy_other-q3_other"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "qoq_tech+qoq_cm+qoq_cp+qoq_other-qoq_revenue"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "yoy_tech+yoy_cm+yoy_cp+yoy_other-yoy_revenue"
+        },
+        {
+          "id": "bear_tech",
+          "formula": "qoq_tech+bear_contract_delta+bear_saas_delta"
+        },
+        {
+          "id": "base_tech",
+          "formula": "qoq_tech+base_contract_delta+base_saas_delta"
+        },
+        {
+          "id": "bull_tech",
+          "formula": "qoq_tech+bull_contract_delta+bull_saas_delta"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_tech+bear_cm+bear_cp+bear_other"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_tech+base_cm+base_cp+base_other"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_tech+bull_cm+bull_cp+bull_other"
+        },
+        {
+          "id": "bear_cost",
+          "formula": "bear_labor+bear_dc+bear_other_cost"
+        },
+        {
+          "id": "base_cost",
+          "formula": "base_labor+base_dc+base_other_cost"
+        },
+        {
+          "id": "bull_cost",
+          "formula": "bull_labor+bull_dc+bull_other_cost"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cost"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cost"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cost"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "テクノロジーソリューション",
+              "revenue": "bear_tech"
+            },
+            {
+              "name": "コンテンツマーケティング",
+              "revenue": "bear_cm"
+            },
+            {
+              "name": "コンテンツプラットフォーム",
+              "revenue": "bear_cp"
+            },
+            {
+              "name": "その他",
+              "revenue": "bear_other"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "テクノロジーソリューション",
+              "revenue": "base_tech"
+            },
+            {
+              "name": "コンテンツマーケティング",
+              "revenue": "base_cm"
+            },
+            {
+              "name": "コンテンツプラットフォーム",
+              "revenue": "base_cp"
+            },
+            {
+              "name": "その他",
+              "revenue": "base_other"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "テクノロジーソリューション",
+              "revenue": "bull_tech"
+            },
+            {
+              "name": "コンテンツマーケティング",
+              "revenue": "bull_cm"
+            },
+            {
+              "name": "コンテンツプラットフォーム",
+              "revenue": "bull_cp"
+            },
+            {
+              "name": "その他",
+              "revenue": "bull_other"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 876.057,
+          "operating_profit": 3.339,
+          "ordinary_profit": 8.496,
+          "net_profit": 5.742,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "FY2026_original_no_policy_change_or_restatement",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2,10 会計方針変更・修正再表示なし、当第1四半期累計"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 2718.042,
+          "operating_profit": 96.458,
+          "ordinary_profit": 103.459,
+          "net_profit": -718.492,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "FY2026_original_no_policy_change_or_restatement",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,10 会計方針変更・修正再表示なし、当第3四半期累計"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 3647.171,
+          "operating_profit": 173.606,
+          "ordinary_profit": 103.523,
+          "net_profit": -995.627,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "FY2026_original_no_policy_change_or_restatement",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,12 会計方針変更・修正再表示なし、当事業年度"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "GigaViewerの保守運用、追加開発、レベニューシェア",
+          "mechanism": "導入済みサービスの継続運用が売上の基盤。長期開発は工数進捗、短期開発は検収、広告・課金の分配は利用動向で認識額が変わる。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S06"
+          ],
+          "locator": "S01 PDF pages 16,19; S04 PDF page 18; S06 PDF page 34",
+          "calculation_ids": [
+            "bear_tech",
+            "base_tech",
+            "bull_tech"
+          ],
+          "not_quantified_reason": "案件別受注残・単価・総工数・分配率は保存資料で未確認。受託関連の純増減に集約。"
+        },
+        {
+          "name": "MackerelのAPM拡販",
+          "mechanism": "既存顧客の利用拡大、解約抑止、新規獲得が継続売上を支える。ログ機能正式リリース予定は対象期間後。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF page 19; S06 PDF page 35",
+          "calculation_ids": [
+            "bear_tech",
+            "base_tech",
+            "bull_tech"
+          ],
+          "not_quantified_reason": "課金対象量・単価・解約率が未確認のため、テクノロジー領域への増分仮定。"
+        },
+        {
+          "name": "CMS縮小とtoitta成長の構成変化",
+          "mechanism": "CMSの解約と編集受託縮小を、toittaと支援サービスの成長が部分的に相殺する。",
+          "source_ids": [
+            "S04",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 21,22; S06 PDF pages 32,35",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "toittaの正確なARRと計測時点、CMS平均単価の定義が未確認。サービス合計で感応度を設定。"
+        },
+        {
+          "name": "広告・有料課金と生成AI連携",
+          "mechanism": "既存広告・有料課金の弱さと、前期末に開始したAI連携収入の継続寄与が相殺する可能性。",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "locator": "S04 PDF pages 25,26,35; S05 PDF page 1; S06 PDF page 36",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "AI契約内容は明示的に非公開。契約額を推定せず、既存寄与を含むサービス全体の範囲で予測。"
+        },
+        {
+          "name": "人件費、DC利用料、広告・AI投資",
+          "mechanism": "人員・報酬・賞与、インフラ利用量と為替、広告投資の時期が費用を左右する。費用を独立に設定して売上から差し引く。",
+          "source_ids": [
+            "S04",
+            "S06",
+            "S07"
+          ],
+          "locator": "S04 PDF pages 29,30; S06 PDF page 38; S07 PDF page 1",
+          "calculation_ids": [
+            "bear_cost",
+            "base_cost",
+            "bull_cost",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "当Qの人員平均・賞与・広告実行額・為替前提の具体値が未確認。設備取得額から当Q償却額を独立に算定できず、その他経費に含める。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "テクノロジー",
+              "formula": "bear_tech-yoy_tech",
+              "reason": "受託関連とSaaS等の条件付き変化"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "bear_cm-yoy_cm",
+              "reason": "CMS・編集受託縮小とtoittaの相殺"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "bear_cp-yoy_cp",
+              "reason": "広告・課金・既存AI連携を含む合計変化"
+            },
+            {
+              "label": "その他",
+              "formula": "bear_other-yoy_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "受託関連",
+              "formula": "bear_contract_delta",
+              "reason": "開発認識と保守・分配収入の純増減"
+            },
+            {
+              "label": "SaaS等",
+              "formula": "bear_saas_delta",
+              "reason": "テクノロジーSaaSの回復度合い"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "bear_cm-qoq_cm",
+              "reason": "CMS縮小とtoitta成長"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "bear_cp-qoq_cp",
+              "reason": "既存AI収入を含む合計比較"
+            },
+            {
+              "label": "その他",
+              "formula": "bear_other-qoq_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "unclassified",
+          "residual_explanation": "公表累計から算出したサービス別前Q合計と全社前Q売上に微差がある。保存原文に差の説明がないため丸め差と断定せず残す。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "bear_revenue-yoy_revenue",
+              "reason": "サービス別積上げ売上の変化"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "yoy_cost-bear_cost",
+              "reason": "人件費・DC・その他経費の独立仮定と前年費用総額との差"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用内訳への厳密な寄与配賦は行わず、営業費用総額で接続。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "bear_revenue-qoq_revenue",
+              "reason": "全社売上比較のためサービス合計の微差も包含"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "qoq_cost-bear_cost",
+              "reason": "投資先行と前Q費用抑制効果の持続性"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "全社売上と全社営業費用で接続。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "テクノロジー",
+              "formula": "base_tech-yoy_tech",
+              "reason": "受託関連回復とAPM拡販"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "base_cm-yoy_cm",
+              "reason": "CMS縮小をtoittaが一部相殺"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "base_cp-yoy_cp",
+              "reason": "広告・課金と既存AI連携の合計変化"
+            },
+            {
+              "label": "その他",
+              "formula": "base_other-yoy_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "受託関連",
+              "formula": "base_contract_delta",
+              "reason": "保守運用積上げと追加開発進捗"
+            },
+            {
+              "label": "SaaS等",
+              "formula": "base_saas_delta",
+              "reason": "APM拡販を中心とする緩やかな増分"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "base_cm-qoq_cm",
+              "reason": "CMS縮小とtoitta成長"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "base_cp-qoq_cp",
+              "reason": "既存AI収入を重複加算しない合計比較"
+            },
+            {
+              "label": "その他",
+              "formula": "base_other-qoq_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "unclassified",
+          "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "base_revenue-yoy_revenue",
+              "reason": "サービス別売上積上げ"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "yoy_cost-base_cost",
+              "reason": "人材・DC・広告・AI費用の独立仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用差は総額比較。サービス別利益率を捏造しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "base_revenue-qoq_revenue",
+              "reason": "全社売上の変化"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "qoq_cost-base_cost",
+              "reason": "前Qの賞与・租税公課・DC費用抑制を恒久化せず、投資増を反映"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "全社費用で算術的に接続。個別費用要因の実績寄与額は未確認。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "テクノロジー",
+              "formula": "bull_tech-yoy_tech",
+              "reason": "開発進捗と分配収入、APM拡販が改善"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "bull_cm-yoy_cm",
+              "reason": "toitta成長でCMS縮小を概ね相殺"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "bull_cp-yoy_cp",
+              "reason": "広告改善と既存AI連携の継続寄与"
+            },
+            {
+              "label": "その他",
+              "formula": "bull_other-yoy_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "前年同Qのサービス別合計と全社売上は一致。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "受託関連",
+              "formula": "bull_contract_delta",
+              "reason": "追加開発・検収・レベニューシェアの改善"
+            },
+            {
+              "label": "SaaS等",
+              "formula": "bull_saas_delta",
+              "reason": "APM拡販・新規獲得"
+            },
+            {
+              "label": "マーケティング",
+              "formula": "bull_cm-qoq_cm",
+              "reason": "toittaと伴走支援が下支え"
+            },
+            {
+              "label": "プラットフォーム",
+              "formula": "bull_cp-qoq_cp",
+              "reason": "既存AI収入を含むサービス全体の回復"
+            },
+            {
+              "label": "その他",
+              "formula": "bull_other-qoq_other",
+              "reason": "バリデータ報酬"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "unclassified",
+          "residual_explanation": "公表累計のサービス別合計と全社合計の微差。原文に説明がなく丸め差と断定しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "bull_revenue-yoy_revenue",
+              "reason": "サービス別売上積上げ"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "yoy_cost-bull_cost",
+              "reason": "人員最適化・DC効率化が投資増を吸収"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "人件費・DC・その他経費の合計で接続。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上差",
+              "formula": "bull_revenue-qoq_revenue",
+              "reason": "全社売上の変化"
+            },
+            {
+              "label": "営業費用差",
+              "formula": "qoq_cost-bull_cost",
+              "reason": "前Q比では投資費用増を見込むが、効率化が続く条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "全社売上と全社営業費用で接続。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "g_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "g_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "g_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        },
+        {
+          "id": "g_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-11",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期通期業績予想"
+        }
+      ],
+      "company_guidance": "S01の通期会社予想を独自予測と区別して保存。latest_confirmedは提示資料内で確認した最新版を意味し、開示の網羅性を保証しない。四半期単独予想は未確認。通期予想の四等分や会社修正見込みからの差引きは使用していない。",
+      "consensus": "未確認。提示資料に対象四半期の市場コンセンサスはない。",
+      "independent_forecast": "前Qのサービス別実績を起点に受託関連とSaaSの純増減を設定し、他サービスは事業状況と観測された四半期規模から条件付き範囲を設定。人件費・DC利用料・その他経費は営業利益から逆算せず独立に積み上げた。弱気・中心・強気は統計的信頼区間ではなく、需要と費用の組合せによる感応度シナリオ。経常・純利益は営業外項目と税効果の根拠不足でnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期と中心予測",
+          "text": "対象は翌年七月期の第１四半期単独。中心の売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。受託開発・保守運用の回復を主因に、CMS関連の弱さを吸収する条件を置いた。発表予定日は指定値を保持しており、公式日程は原文で確認できていない。"
+        },
+        {
+          "heading": "需要と費用の感応度",
+          "text": "弱気は売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気は売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。開発売上の認識時期とレベニューシェアの変動に加え、人件費・アプリ広告・DC費用が利益幅を広げる。中心の営業費用は{{value:base_cost}}。前Qの費用抑制には賞与や租税公課の影響があり、低い費用水準の単純継続は置いていない。"
+        },
+        {
+          "heading": "生成AI収益の扱い",
+          "text": "既存AI連携の売上計上開始は確認できるが、契約額は非公開。中心のプラットフォーム売上{{value:base_cp}}は既存AI連携を含むサービス総額であり、別途AI収入を加算しない。会社説明資料の通年寄与方針と質疑応答の確定額を織り込まない説明は、金額の包含範囲が判然としない。新規大型契約が発生する場合は本予測範囲を超え得る。"
+        },
+        {
+          "heading": "比較と利益段階",
+          "text": "前Q単独の売上{{value:qoq_revenue}}と営業利益{{value:qoq_op}}は同一会計版の通期から第３四半期累計を差し引いた値。資金流出事案の特別損失や株主優待引当の営業外費用を営業利益の回復要因には使わない。税効果や営業外損益の四半期配分は根拠が不足するため、経常・純利益は予測しない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "reviewed",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "開発案件別の受注確定額、総工数、進捗、検収時期とレベニューシェア率は保存資料で未確認。",
+        "生成AIベンダーとの契約内容・金額はS05で明示的に非公開。",
+        "Mackerelの課金対象量と単価、toittaの正確なARRと計測時点は保存資料で未確認。",
+        "当Qの平均人員・賞与負担・広告費実行額・DC為替負担が仮定を上回ると、増収でも利益が下振れする。",
+        "新規大型AI契約、被害資金回収、追加の税効果変更は予測に含めていない。"
+      ],
+      "material_unresolved": [
+        "2026-12-11の発表予定日は公式原文で未確認。S12は資料一覧にあるが、本文・カレンダー画像は提示されていない。",
+        "対象決算が基準日時点で未発表という扱いは提示されたdiscoveryに従う。保存原文のみでは開示一覧の網羅的な確認はできない。",
+        "S01～S10はtruncated=falseで提示されているが、PDF画像との照合は行っていない。S11・S12の保存本文は未提示であり、非開示とは区別する。",
+        "S01のGigaViewer導入社数・サービス数とS04・S06の同時期表記が一致しない。導入数を売上へ直接乗じず、確認できる導入案件と方向性のみ利用した。",
+        "S01のテクノロジーSaaS等売上とS04のMackerel売上は一致しないため、同一範囲と扱っていない。",
+        "S04 page 21のCMS運用件数当たり平均月次売上の図は保存テキストから単位・集計定義を確定できず、数量×単価の計算には使用しない。",
+        "S04・S06はAI連携の通年寄与を説明する一方、S05は具体額を確定的に予想へ織り込まないと説明。既存契約と追加協議の包含範囲を確定できない。",
+        "費用図表は丸められた表示であり、S04の費用構成とS06の販管費内訳は範囲も異なる。費用予測の参照はS04の営業費用全体に統一し、実績比較は短信の売上と営業利益から求めた営業費用総額を使用。",
+        "サービス別採算は単一セグメントとして非開示。売上変動を限界利益率で厳密に変換できないため、全社費用を独立に設定した条件付き予測である。",
+        "開発・保守の増分、プラットフォーム総額、費用幅は観測実績と会社の方向性に基づく仮定であり、当Qの確定受注や契約上限による保証はない。",
+        "前Qのサービス別売上合計と全社売上の微差は原因未確認としてunclassifiedで残した。",
+        "四半期の営業外費用、株主優待引当の調整、資金流出事案の追加損益、実効税率と繰延税金資産の変化に根拠ある範囲を置けず、経常・純利益はnull。",
+        "S09の減資は対象期間後の効力発生予定で、会社は業績影響なしと説明。S10の人事異動も対象期間後であり、当Qの利益改善に織り込んでいない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "2026-12-11の発表予定日は公式原文で未確認。S12は資料一覧にあるが、本文・カレンダー画像は提示されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S01のGigaViewer導入社数・サービス数とS04・S06の同時期表記が一致しない。導入数を売上へ直接乗じず、確認できる導入案件と方向性のみ利用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S01のテクノロジーSaaS等売上とS04のMackerel売上は一致しないため、同一範囲と扱っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S01～S10はtruncated=falseで提示されているが、PDF画像との照合は行っていない。S11・S12の保存本文は未提示であり、非開示とは区別する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S04 page 21のCMS運用件数当たり平均月次売上の図は保存テキストから単位・集計定義を確定できず、数量×単価の計算には使用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S04・S06はAI連携の通年寄与を説明する一方、S05は具体額を確定的に予想へ織り込まないと説明。既存契約と追加協議の包含範囲を確定できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "S09の減資は対象期間後の効力発生予定で、会社は業績影響なしと説明。S10の人事異動も対象期間後であり、当Qの利益改善に織り込んでいない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "サービス別採算は単一セグメントとして非開示。売上変動を限界利益率で厳密に変換できないため、全社費用を独立に設定した条件付き予測である。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "前Qのサービス別売上合計と全社売上の微差は原因未確認としてunclassifiedで残した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "四半期の営業外費用、株主優待引当の調整、資金流出事案の追加損益、実効税率と繰延税金資産の変化に根拠ある範囲を置けず、経常・純利益はnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "対象決算が基準日時点で未発表という扱いは提示されたdiscoveryに従う。保存原文のみでは開示一覧の網羅的な確認はできない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "費用図表は丸められた表示であり、S04の費用構成とS06の販管費内訳は範囲も異なる。費用予測の参照はS04の営業費用全体に統一し、実績比較は短信の売上と営業利益から求めた営業費用総額を使用。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "issue",
+      "message": "開発・保守の増分、プラットフォーム総額、費用幅は観測実績と会社の方向性に基づく仮定であり、当Qの確定受注や契約上限による保証はない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "Mackerelの課金対象量と単価、toittaの正確なARRと計測時点は保存資料で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_cm: CMSの件数・顧客単価への圧力で前Qを下回る一方、ARR目標に迫ると説明されたtoittaが減収を部分的に緩和する条件。toittaのARRを確定値とせず、既存売上に別建てで加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_contract_delta: 直近アプリ導入の保守運用の通期化と追加開発の進捗を、前Q比の受託関連純増として置く。既存の前Q売上に含まれる導入効果は重ねて加えない。具体的な案件単価や受注確定を意味しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_cp: 前Q水準を起点に、既存AI連携の継続寄与と広告・有料契約の弱さが概ね相殺する条件。前Qに含まれるAI収入を再加算せず、AI契約金額を推定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_dc: 利用量・為替負担増で前Qの低水準から戻るが、既存の最適化施策が一部を吸収する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_labor: 直近四半期の人件費範囲上限付近に、開発提供体制の強化を反映。前Qの賞与適正化による抑制がそのまま続くとは置かない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "base_other_cost: アプリ広告とAI関連費用の増加を直近四半期水準に上乗せする一方、外注・一般経費の管理を継続する条件。前Qの租税公課減少を恒久的節減として外挿しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_cm: CMS運用件数減少と編集受託・広告予算縮小が継続し、toittaの成長で補えない条件。前年同Q・前Qの約133・131から低下させる。会社の通期予想の四等分ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_contract_delta: 前Qのテクノロジー売上を起点に、受託開発・保守・レベニューシェアの合計が減少する条件。S04 page 18の直近アプリ導入による継続収入は支えになるが、S06 page 34は提案・商談段階を含み、当Qの検収を確約しない。減収幅は直近四半期のサービス売上変動に収まるストレス幅とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_cp: 広告単価下落と有料契約減少が続き、既存AI連携収入を含めても前年同Q付近となる条件。AI収入をゼロと断定した値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_dc: 前年度四半期のDC利用料187～206を起点に、利用量と為替負担が増加し最適化効果が弱い条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_labor: 直近年度の四半期人件費450～478を基礎に、採用・報酬・賞与負担が先行する条件。期末人員を大幅増員とはせず、費用化単価と引当の不確実性を含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bear_other_cost: 直近年度四半期のその他経費205～216を基礎に、アプリ広告・AI利用・内部統制強化費用が先行する条件。売上原価と販管費を横断した費用区分であり、別途売上原価は加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_cm: toittaと伴走支援の拡大がCMS・編集受託の減少をほぼ相殺し、直近四半期水準を維持する条件。toittaの正確なARR・単価・契約数は確認できないためサービス合計で設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_contract_delta: 追加開発の進捗・短期案件の検収とアプリ課金レベニューシェアが同時に改善する条件。前Qの開発・保守売上規模に対して約1割の上積みに相当する。確定受注による上限ではなく、会社が示す受託回復方針を踏まえた条件付き感応度。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_cp: 既存AI連携の継続寄与と広告改善が進み、直近年度の四半期売上上限付近に戻る条件。非公開のAI契約から独立した大幅増収は仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_dc: 利用量増を最適化で吸収し、直近年度の観測範囲内に費用を抑える条件。売上増がインフラ費に比例するとは仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_labor: 適正な人員規模とAI・配置転換による効率化が継続し、直近年度の観測範囲内に収まる条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "bull_other_cost: 広告・AI投資は増えるものの、外注費等の抑制で直近年度の費用水準を小幅に上回る範囲に収まる条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "当Qの平均人員・賞与負担・広告費実行額・DC為替負担が仮定を上回ると、増収でも利益が下振れする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "新規大型AI契約、被害資金回収、追加の税効果変更は予測に含めていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "生成AIベンダーとの契約内容・金額はS05で明示的に非公開。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3930",
+      "company_name": "株式会社はてな",
+      "kind": "condition",
+      "message": "開発案件別の受注確定額、総工数、進捗、検収時期とレベニューシェア率は保存資料で未確認。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3930/result.json": "74f372890594dfbe3c68f74f4bd9994b75d2e7986728404f24c515bd9d78aaa2",
+    "reports/3930.md": "3bb6c018fdbb04705cfc81154110ca3ebc0496bcd2fe8c5541f318b03e1e22eb"
+  }
+}
