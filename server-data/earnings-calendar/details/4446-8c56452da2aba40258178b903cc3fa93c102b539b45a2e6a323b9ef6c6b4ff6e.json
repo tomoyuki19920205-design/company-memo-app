@@ -1,0 +1,2937 @@
+{
+  "id": "4446-8c56452da2aba40258178b903cc3fa93c102b539b45a2e6a323b9ef6c6b4ff6e",
+  "code": "4446",
+  "companyName": "Link-Uグループ株式会社",
+  "announcementDate": "2026-12-14",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "4446-review-0f5faec57cc36d4b · 8c56452d",
+  "savedAt": "2026-11-22T00:43:21+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 4446 Link-Uグループ株式会社｜2027-07-31期 Q1単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS01で対象年度の通期連結予想を確認。対象四半期単独の会社予想は提示原文で確認できない。公表値はguidance_recordsに上下限を分けて保存し、四等分しない。基準日時までの修正開示の網羅性を検証できないためrevision_statusはunverified。これは公表値の存在・期間・定義が未確認という意味ではない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n売上収益、営業利益、親会社所有者帰属利益の独自予測はnull相当としてscenariosを空にする。継続する事業の成長方向は確認できるが、旧分類の四半期実績から新しい連結範囲・事業分類への接続に必要な数量・売上・採算の情報が不足する。通期実績の均等配賦や根拠のない除外額の上下幅を置かずに、連結四半期全体の合理的な弱気・中心・強気レンジを設定することはできない。会社予想からの差引き推計は行っていない。経常利益はIFRS連結に該当指標がないためnull。\n\n## 予測判断\n成長要因は海外マンガ配信の拡大、国内運用の効率化、開発技術の横展開である。ただし、連結除外と事業分類変更が同時に生じるため、旧分類の最高売上更新をそのまま対象四半期へ延長できない。独自予測は数値化を保留する。\n\n## 比較基準\n前四半期の報告売上は1,252.12、営業利益は-623.97。通期累計と直前累計の差引きで算定した。これらは除外前の各社の損益を含む比較基準であり、新しい連結範囲に合わせた四半期実績ではない。\n\n## 連結範囲変更の重要性\n報告売上と会社説明上の継続事業ベース売上との差は年間で1,072.65。この差の四半期分布が不明であるため、海外成長による増収と連結除外による減収を四半期単位で分離できない。\n\n## 利益の評価\n前四半期の営業赤字には減損が含まれるため、営業利益の改善が実現しても、その全額を事業成長とは評価できない。海外展開費用、広告費、持分法利益を新しい連結範囲で確認する必要がある。資本調達と将来の合併効果は対象四半期の利益へ直接加算しない。\n\n## エラー・未解決事項\n- S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。\n- S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。\n- S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。\n- S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。\n- S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。\n- S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。\n- announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。\n- target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 直前累計不足: 2026-07-31\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n- 連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。\n- 増減要因の照合未了: bear/qoq/operating_profit\n- 増減要因の照合未了: bear/qoq/revenue\n- 増減要因の照合未了: bear/yoy/operating_profit\n- 増減要因の照合未了: bear/yoy/revenue\n- 増減要因の照合未了: base/qoq/operating_profit\n- 増減要因の照合未了: base/qoq/revenue\n- 増減要因の照合未了: base/yoy/operating_profit\n- 増減要因の照合未了: base/yoy/revenue\n- 増減要因の照合未了: bull/qoq/operating_profit\n- 増減要因の照合未了: bull/qoq/revenue\n- 増減要因の照合未了: bull/yoy/operating_profit\n- 増減要因の照合未了: bull/yoy/revenue\n- 会社予想比較の条件: fy2027_revenue_lower\n- 会社予想比較の条件: fy2027_revenue_upper\n- 会社予想比較の条件: fy2027_op_lower\n- 会社予想比較の条件: fy2027_op_upper\n- 会社予想比較の条件: fy2027_pretax_lower\n- 会社予想比較の条件: fy2027_pretax_upper\n- 会社予想比較の条件: fy2027_net_lower\n- 会社予想比較の条件: fy2027_net_upper\n- 再計算結果の第4四半期実績nullは入力・算式と矛盾する。通期と第3四半期累計が揃っているため、報告ベースの売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625百万円を復元できる。比較実績の存在と、対象四半期予測の欠落を分離して処理すること。\n- 年間連結範囲差1072.646百万円は確認できるが、その4分の1を前年同四半期・前四半期から控除する根拠はない。除外会社別の売上・費用・内部取引消去と、コンパス持分法化後の損益を接続する必要がある。持分法投資利益は提示損益計算書では営業利益に含まれており、営業利益外へ移してはならない。\n- S04の第4四半期営業利益-625百万円は、S01とS02の差引値-623.972百万円より1.028百万円低い。通常の百万円単位の四捨五入・切捨てだけでは説明できない。会計上の比較基準変更も確認できず、表示・抽出・原資料間不一致として未解決のまま保持する。経済的残差や丸め差へ自動分類しない。\n- 1252.1209999999996と1252.121、1072.6459999999997と1072.646の差は二進浮動小数点の表現誤差であり、経済的残差ではない。一方、シナリオブリッジの残差は予測未設定のため未定義であり、ゼロに変更できない。\n- S08の過年度表示とS01の相違は一括して丸め差と扱えない。営業損失-383百万円などは四捨五入で説明可能だが、EPS-39.18円とS01の-39.14円、1株当たり持分161.48円と161.52円は表示精度内の通常の丸めでは一致しない。現行入力はS01と一致しており変更せず、訂正履歴・算定根拠を照合する。\n- 独自予測を保留する判断は、根拠のない成長率や利益率を置くことを避ける点で合理的。ただし予測品質の検証完了を意味しない。全シナリオの数量・価格・費用・一時要因とYoY/QnQ説明は未完成であり、会社の成長方針だけでは係数をsupportedにできない。\n- S01の通期会社予想の存在・対象期間・公表日は確認できるが、基準日時までの改定・据置確認とは別問題。S08の『精査中』を数値改定として扱うことはできない。large_gap=falseは乖離が小さい証拠ではなく、予測未設定により判定不能。\n\n## 条件・不確実性\n- Crunchyroll Mangaの課金会員数、国別単価、当社への収益配分は提示原文に記載がない。全資料で非開示であるとは断定しない。\n- コンパスの持分法化後の対象四半期利益、金融損益、税負担を合理的に推計する情報が不足している。\n- 新地域展開の初期費用と既存海外サービスの収益増加の時間差は未確認。\n- 補助金の当社帰属額、対象四半期の認識額、対応費用は提示原文に記載がない。制度上限を収益に使用しない。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔IFRS〕（連結）（2027年7月期会社予想を含む）](https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-4Q.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `4bf50332fe3d314852e8d5e7eca78a05b0d79bc5c5de985d73af20c351dba2cf`\n- S02 [2026年7月期 第3四半期決算短信〔IFRS〕（連結）](https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-3Q.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `8cd58696adc2b2d5108303b2f5f3b39b0860881659c1efd3b9798c99cffe4c6a`\n- S03 [2026年7月期 第1四半期決算短信〔IFRS〕（連結）](https://content.link-u.co.jp/irdata/news/ir-news_251212_01.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `3a1febbd14704478790da4c5626e2609629f4d32dea6862e4b7d5f2256534838`\n- S04 [2026年7月期 決算説明資料及び中期経営計画2030（会社予想・事業別指標・KPIを含む）](https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-4Q.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `9e0c4cd8bba860743feaafc88177260ea108044c6f89d005e7d48ab8c55ef091`\n- S05 [2026年7月期4Q 決算説明・質疑応答書き起こし](https://link-u.group/ir/library/results/log/2026-4Q) / 公表 2026-09-18 / unavailable / SHA-256 `なし`\n- S06 [2026年7月期 第3四半期決算説明資料](https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-3Q.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `44f90c58b6a3055694c987b4d746390393370cd21149d32596f6e2ef63b69b2c`\n- S07 [2026年7月期 第1四半期決算説明資料](https://content.link-u.co.jp/irdata/library/results/Financial_Results_2026-1Q.pdf) / 公表 2025-12-12 / unavailable / SHA-256 `なし`\n- S08 [第三者割当による新株式の発行に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535400.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `ea296e697dbd5cdcb6249a7060b3d70b78e84cf1fe899c498a105bcabc11fe35`\n- S09 [第三者割当による新株式発行の払込完了に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261008547589.pdf) / 公表 2026-10-08 / retrieved / SHA-256 `a25d12854526e7ff000396a0ba2e01d8c4f98bda338351cb89e338abddd0f0c3`\n- S10 [「Crunchyroll Manga」が英語圏での展開を拡大](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261006546682.pdf) / 公表 2026-10-08 / retrieved / SHA-256 `41e124988448cfc40709b1d580c7883609aad00740e3a50acdae472a4b2541f7`\n- S11 [Studio株式会社で発生した不正アクセスに伴う個人情報漏えいの可能性に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261016552453.pdf) / 公表 2026-10-16 / retrieved / SHA-256 `81f5559bd425e271ecbe126d04d5b1f787d2dfe8fc7b702959414b612c854b2c`\n- S12 [連結子会社間の吸収合併に関するお知らせ](https://www.release.tdnet.info/inbs/140120261028557987.pdf) / 公表 2026-10-28 / retrieved / SHA-256 `4473ad5f048664f150765250296f8679c9dccb2caa016d288866b42838a62bc3`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](4446_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 4446 Link-Uグループ株式会社 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n原資料の公表日は基準日時以前で、19件の入力は本文の数値・符号・千円から百万円への換算と一致する。4本の差引算式も正しい。ただし、再計算結果は存在する第3四半期累計を利用せず、第4四半期実績をnullとしており修正が必要。独自予測の保留には合理的理由があるが、全シナリオの経済的検証は未了。S04の第4四半期営業損失表示と短信差引値の不一致も未解決。公式発表日の未確認は経済的品質判定から除外した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | S01・S02・S03本文と19件の入力を照合し一致を確認した。純利益は非支配持分を含む利益ではなく親会社所有者帰属利益を採用している。差引結果は第4四半期売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625、年間連結範囲差1072.646百万円で、提示算式と一致する。 | S01, S02, S03 S01 PDF pages 6, 9; S02 PDF page 8; S03 PDF page 8 |\n| 2 | conditional | 対象は2027年7月期第1四半期、2026年8月1日～10月31日、IFRS連結。前年第1四半期・前第4四半期の報告実績には期末除外3社が含まれ、対象四半期と連結範囲が異なる。報告ベース比較は可能だが、同一範囲比較は未完成。会社説明上の継続事業売上をIFRSの非継続事業組替えとして使用していない点は妥当。 | S01, S02, S03 S01 PDF pages 1, 6, 15; S02 PDF page 8; S03 PDF page 8 |\n| 3 | unresolved | assumptionsは空でmaterial=trueの登録はなく、assumption_reviewsの対象はない。定量予測も未設定であり、数値仮定をsupportedと認定する対象はない。海外拡大や効率化の方向性は確認できるが、会員数、単価、当社取り分、四半期費用の数値設定は裏付けられない。diagnostic_perturbationも提示されていない。 | S01, S10 S01 PDF pages 6, 18; S10 PDF page 2 |\n| 4 | conditional | 提示された算式は実績差引のみで、利益率や費用を会社予想へ合わせる逆算は確認されない。ただし費用予測自体が存在しないため、その合理性を合格判定できない。S04の通期予算中央値や目標利益率は対象四半期の利益率を直接裏付けない。 | S04 PDF page 27 |\n| 5 | conditional | 減損、資本調達、補助金、合併効果を予測へ加算する算式はなく、提示範囲で二重計上は確認されない。ただし予測未設定のため実装後の検証は必要。減損767.242百万円とRomanzのれん減損745百万円は全体と内数であり別々に加算できない。調整後営業利益は減損だけでなくその他収益・費用も調整する。 | S01, S04, S09, S12 S01 PDF pages 5, 9; S04 PDF page 5; S09 PDF page 1; S12 PDF pages 1–2 |\n| 6 | fail | bear・base・bullすべての売上・営業利益・純利益は未設定で、YoY/QnQと12本の売上・営業利益ブリッジは検証不能。残差は未定義でありゼロではない。また、第4四半期の直前累計はS02に存在するため、再計算の『直前累計不足: 2026-07-31』と第4四半期実績nullは誤り。第3四半期単独の算出に必要な第2四半期累計の不足とは区別する。 | S01, S02 S01 PDF page 9; S02 PDF page 8; recalculation.historicals |\n| 7 | unresolved | 第4四半期実績の再計算処理を修正し、資料間の営業利益不一致を照合する必要がある。同一連結範囲の四半期売上・費用、海外収益配分、投資費用化時期、持分法損益・税負担が不足。S05・S07は本文未提示、S06はページ番号のみであり確認済みと扱えない。基準日時までの予想改定・資料差替えの網羅性も未確認。 | S01, S04, S05, S06, S07, S08 S01 PDF page 16; S04 PDF page 12; S05・S07 source_metadata; S06 PDF pages 1–32; S08 PDF page 5 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| revenue_lower_bound / fy2027_revenue_lower | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期下限4000百万円を確認。対象四半期単独とは期間不一致で、独自予測もないため乖離は未定義。通期の報告売上減少は連結除外、継続範囲の増収は事業成長として説明されるが、四半期配賦根拠はない。基準日時までの最新改定状態は未確認。 |\n| revenue_upper_bound / fy2027_revenue_upper | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期上限4200百万円を確認。対象四半期単独とは期間不一致で、予測未設定のため乖離なしとの判定はできない。数量・価格・連結除外影響の四半期分解と最新改定状態は未確認。 |\n| operating_profit_lower_bound / fy2027_op_lower | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期下限400百万円を確認。四半期予想ではなく独自予測もないため乖離説明の対象外。効率化の一般論から四半期利益率や費用額は設定できず、最新改定状態も未確認。 |\n| operating_profit_upper_bound / fy2027_op_upper | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期上限480百万円を確認。対象四半期との期間不一致と予測未設定により乖離は未定義。減損反動と継続費用改善の四半期内訳、最新改定状態は未確認。 |\n| pretax_profit_lower_bound / fy2027_pretax_lower | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期下限370百万円を確認。四半期予想ではなく対応する独自予測もない。金融損益の四半期見積りと最新改定状態は未確認。経常利益へ置換していない点は妥当。 |\n| pretax_profit_upper_bound / fy2027_pretax_upper | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期上限450百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。 |\n| parent_attributable_net_profit_lower_bound / fy2027_net_lower | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期親会社所有者帰属利益下限241百万円を確認。四半期との期間不一致と予測未設定により乖離は未定義。税負担・帰属利益の四半期内訳と最新改定状態は未確認。 |\n| parent_attributable_net_profit_upper_bound / fy2027_net_upper | 未算定 | 未算定 | 未算定 | 対象期間外 / 2026年9月14日公表の2027年7月期通期親会社所有者帰属利益上限293百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。\n- **Medium** / machine: S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。\n- **Medium** / machine: S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。\n- **Medium** / machine: S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。\n- **Medium** / machine: S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。\n- **Medium** / machine: S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。\n- **Medium** / machine: announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。\n- **Medium** / machine: target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 直前累計不足: 2026-07-31\n- **High** / machine: 資料確認未了: already_announced\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **Medium** / machine: 連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。\n- **Medium** / missing_bridge: 増減要因の照合未了: bear/qoq/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: bear/qoq/revenue\n- **Medium** / missing_bridge: 増減要因の照合未了: bear/yoy/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: bear/yoy/revenue\n- **Medium** / missing_bridge: 増減要因の照合未了: base/qoq/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: base/qoq/revenue\n- **Medium** / missing_bridge: 増減要因の照合未了: base/yoy/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: base/yoy/revenue\n- **Medium** / missing_bridge: 増減要因の照合未了: bull/qoq/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: bull/qoq/revenue\n- **Medium** / missing_bridge: 増減要因の照合未了: bull/yoy/operating_profit\n- **Medium** / missing_bridge: 増減要因の照合未了: bull/yoy/revenue\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_revenue_lower\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_revenue_upper\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_op_lower\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_op_upper\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_pretax_lower\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_pretax_upper\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_net_lower\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy2027_net_upper\n- **High** / fact: 再計算結果の第4四半期実績nullは入力・算式と矛盾する。通期と第3四半期累計が揃っているため、報告ベースの売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625百万円を復元できる。比較実績の存在と、対象四半期予測の欠落を分離して処理すること。\n- **High** / period: 年間連結範囲差1072.646百万円は確認できるが、その4分の1を前年同四半期・前四半期から控除する根拠はない。除外会社別の売上・費用・内部取引消去と、コンパス持分法化後の損益を接続する必要がある。持分法投資利益は提示損益計算書では営業利益に含まれており、営業利益外へ移してはならない。\n- **Medium** / residual: S04の第4四半期営業利益-625百万円は、S01とS02の差引値-623.972百万円より1.028百万円低い。通常の百万円単位の四捨五入・切捨てだけでは説明できない。会計上の比較基準変更も確認できず、表示・抽出・原資料間不一致として未解決のまま保持する。経済的残差や丸め差へ自動分類しない。\n- **Low** / residual: 1252.1209999999996と1252.121、1072.6459999999997と1072.646の差は二進浮動小数点の表現誤差であり、経済的残差ではない。一方、シナリオブリッジの残差は予測未設定のため未定義であり、ゼロに変更できない。\n- **Medium** / fact: S08の過年度表示とS01の相違は一括して丸め差と扱えない。営業損失-383百万円などは四捨五入で説明可能だが、EPS-39.18円とS01の-39.14円、1株当たり持分161.48円と161.52円は表示精度内の通常の丸めでは一致しない。現行入力はS01と一致しており変更せず、訂正履歴・算定根拠を照合する。\n- **High** / assumption: 独自予測を保留する判断は、根拠のない成長率や利益率を置くことを避ける点で合理的。ただし予測品質の検証完了を意味しない。全シナリオの数量・価格・費用・一時要因とYoY/QnQ説明は未完成であり、会社の成長方針だけでは係数をsupportedにできない。\n- **Medium** / guidance: S01の通期会社予想の存在・対象期間・公表日は確認できるが、基準日時までの改定・据置確認とは別問題。S08の『精査中』を数値改定として扱うことはできない。large_gap=falseは乖離が小さい証拠ではなく、予測未設定により判定不能。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-14\", \"official_date\": \"\", \"declared_verified\": false, \"verified\": false, \"evidence\": \"https://finance.yahoo.co.jp/quote/4446.T および https://kabuwatch.app/stocks/4446 に2026年12月14日の予定表示があるが、基準日時2026年11月18日14:33以前に公表された会社IR・取引所の予定日根拠を確認できなかった。公式IRカレンダー https://link-u.group/ir/calendar/ は本文を取得できず、予定日は未検証。\", \"warnings\": [\"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[\n  {\n    \"target\": \"recalculation.historicals[2].revenue\",\n    \"old_value\": null,\n    \"new_value\": 1252.121,\n    \"reason\": \"2026年7月期第4四半期の報告売上は4800.392-3548.271。対象四半期予測や同一範囲調整値ではなく、確認可能な過去実績の復元。\",\n    \"source_ids\": [\n      \"S01\",\n      \"S02\"\n    ],\n    \"locator\": \"S01 PDF page 9; S02 PDF page 8\",\n    \"evidence_excerpt\": \"売上収益 4,835,406 4,800,392\"\n  },\n  {\n    \"target\": \"recalculation.historicals[2].operating_profit\",\n    \"old_value\": null,\n    \"new_value\": -623.972,\n    \"reason\": \"2026年7月期第4四半期の報告営業利益は-382.566-241.406。S04の-625百万円とは未解決の不一致を併記し、短信差引値として保存する。\",\n    \"source_ids\": [\n      \"S01\",\n      \"S02\"\n    ],\n    \"locator\": \"S01 PDF page 9; S02 PDF page 8\",\n    \"evidence_excerpt\": \"営業利益（△損失） 326,968 △382,566\"\n  },\n  {\n    \"target\": \"recalculation.historicals[2].net_profit\",\n    \"old_value\": null,\n    \"new_value\": -694.625,\n    \"reason\": \"2026年7月期第4四半期の親会社所有者帰属利益は-554.815-139.810。非支配持分を含む当期利益と混同しない。\",\n    \"source_ids\": [\n      \"S01\",\n      \"S02\"\n    ],\n    \"locator\": \"S01 PDF page 9; S02 PDF page 8\",\n    \"evidence_excerpt\": \"親会社の所有者 147,986 △554,815\"\n  }\n]\n[\n  \"基準日時以前に公表された、除外3社の前年第1四半期・前第4四半期の売上、原価、販管費、内部取引消去および継続範囲への調整表。\",\n  \"基準日時以前の海外サービス別課金人数、国別料金、当社収益配分、開発案件の認識時期、費用化・資産計上計画、補助金認識条件、持分法損益・税負担の根拠資料。\",\n  \"S04 PDF page 12の第4四半期営業利益とS01・S02差引値の不一致を解消する原版・訂正資料。S08 PDF page 5のEPS・1株当たり持分についても算定根拠または訂正資料。\",\n  \"S05・S07の本文、S06の判読可能な原資料、S04 PDF pages 14–17の系列・期間を識別できる図表。\",\n  \"基準日時までの会社予想改定・据置、重要開示、資料差替え履歴を確認できる公表記録。取得日時は基準日時後であり、掲載公表日と版の同一性は区別して確認する。\",\n  \"第3四半期単独実績も整備する場合に限り、2026年7月期第2四半期累計短信。第4四半期差引計算には不要。\",\n  \"公式発表予定日と対象決算の公表状況を確認できる基準日時以前の会社・取引所資料。日程照合専用とする。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/4446/quality_review.json) / [レビュー原回答](../companies/4446/independent_review.json) / [計算検査](../companies/4446/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "4446",
+    "company_name": "Link-Uグループ株式会社",
+    "announcement_date": "2026-12-14",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prior_q1_revenue": 1089.359,
+      "prior_q1_op": -43.742,
+      "prior_q1_net": -38.633,
+      "prior_q3_cum_revenue": 3548.271,
+      "prior_q3_cum_op": 241.406,
+      "prior_q3_cum_net": 139.81,
+      "prior_fy_revenue": 4800.392,
+      "prior_fy_op": -382.566,
+      "prior_fy_net": -554.815,
+      "retained_business_fy_revenue": 3727.746,
+      "fy_impairment": 767.242,
+      "guidance_revenue_low": 4000.0,
+      "guidance_revenue_high": 4200.0,
+      "guidance_op_low": 400.0,
+      "guidance_op_high": 480.0,
+      "guidance_pretax_low": 370.0,
+      "guidance_pretax_high": 450.0,
+      "guidance_net_low": 241.0,
+      "guidance_net_high": 293.0,
+      "prior_q4_revenue": 1252.1209999999996,
+      "prior_q4_op": -623.972,
+      "prior_q4_net": -694.625,
+      "annual_scope_revenue_difference": 1072.6459999999997
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2, 8。net_profitは親会社の所有者に帰属する四半期利益",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 1089.359,
+        "operating_profit": -43.742,
+        "ordinary_profit": null,
+        "net_profit": -38.633
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2, 8。net_profitは親会社の所有者に帰属する四半期利益",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2, 9, 15。net_profitは親会社の所有者に帰属する当期利益",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [],
+    "issues": [
+      "S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。",
+      "S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。",
+      "S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。",
+      "S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。",
+      "S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。",
+      "S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。",
+      "announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。",
+      "target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "直前累計不足: 2026-07-31",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures",
+      "連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。",
+      "増減要因の照合未了: bear/qoq/operating_profit",
+      "増減要因の照合未了: bear/qoq/revenue",
+      "増減要因の照合未了: bear/yoy/operating_profit",
+      "増減要因の照合未了: bear/yoy/revenue",
+      "増減要因の照合未了: base/qoq/operating_profit",
+      "増減要因の照合未了: base/qoq/revenue",
+      "増減要因の照合未了: base/yoy/operating_profit",
+      "増減要因の照合未了: base/yoy/revenue",
+      "増減要因の照合未了: bull/qoq/operating_profit",
+      "増減要因の照合未了: bull/qoq/revenue",
+      "増減要因の照合未了: bull/yoy/operating_profit",
+      "増減要因の照合未了: bull/yoy/revenue",
+      "会社予想比較の条件: fy2027_revenue_lower",
+      "会社予想比較の条件: fy2027_revenue_upper",
+      "会社予想比較の条件: fy2027_op_lower",
+      "会社予想比較の条件: fy2027_op_upper",
+      "会社予想比較の条件: fy2027_pretax_lower",
+      "会社予想比較の条件: fy2027_pretax_upper",
+      "会社予想比較の条件: fy2027_net_lower",
+      "会社予想比較の条件: fy2027_net_upper",
+      "再計算結果の第4四半期実績nullは入力・算式と矛盾する。通期と第3四半期累計が揃っているため、報告ベースの売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625百万円を復元できる。比較実績の存在と、対象四半期予測の欠落を分離して処理すること。",
+      "年間連結範囲差1072.646百万円は確認できるが、その4分の1を前年同四半期・前四半期から控除する根拠はない。除外会社別の売上・費用・内部取引消去と、コンパス持分法化後の損益を接続する必要がある。持分法投資利益は提示損益計算書では営業利益に含まれており、営業利益外へ移してはならない。",
+      "S04の第4四半期営業利益-625百万円は、S01とS02の差引値-623.972百万円より1.028百万円低い。通常の百万円単位の四捨五入・切捨てだけでは説明できない。会計上の比較基準変更も確認できず、表示・抽出・原資料間不一致として未解決のまま保持する。経済的残差や丸め差へ自動分類しない。",
+      "1252.1209999999996と1252.121、1072.6459999999997と1072.646の差は二進浮動小数点の表現誤差であり、経済的残差ではない。一方、シナリオブリッジの残差は予測未設定のため未定義であり、ゼロに変更できない。",
+      "S08の過年度表示とS01の相違は一括して丸め差と扱えない。営業損失-383百万円などは四捨五入で説明可能だが、EPS-39.18円とS01の-39.14円、1株当たり持分161.48円と161.52円は表示精度内の通常の丸めでは一致しない。現行入力はS01と一致しており変更せず、訂正履歴・算定根拠を照合する。",
+      "独自予測を保留する判断は、根拠のない成長率や利益率を置くことを避ける点で合理的。ただし予測品質の検証完了を意味しない。全シナリオの数量・価格・費用・一時要因とYoY/QnQ説明は未完成であり、会社の成長方針だけでは係数をsupportedにできない。",
+      "S01の通期会社予想の存在・対象期間・公表日は確認できるが、基準日時までの改定・据置確認とは別問題。S08の『精査中』を数値改定として扱うことはできない。large_gap=falseは乖離が小さい証拠ではなく、予測未設定により判定不能。"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "status": "missing",
+        "expected_delta": null,
+        "residual": null,
+        "residual_type": "not_reported"
+      }
+    ],
+    "conditions": [
+      "Crunchyroll Mangaの課金会員数、国別単価、当社への収益配分は提示原文に記載がない。全資料で非開示であるとは断定しない。",
+      "コンパスの持分法化後の対象四半期利益、金融損益、税負担を合理的に推計する情報が不足している。",
+      "新地域展開の初期費用と既存海外サービスの収益増加の時間差は未確認。",
+      "補助金の当社帰属額、対象四半期の認識額、対応費用は提示原文に記載がない。制度上限を収益に使用しない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔IFRS〕（連結）（2027年7月期会社予想を含む）",
+        "url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-4Q.pdf",
+        "published_at": "2026-09-14",
+        "category": "latest_results",
+        "final_url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-4Q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S01.txt",
+        "sha256": "4bf50332fe3d314852e8d5e7eca78a05b0d79bc5c5de985d73af20c351dba2cf",
+        "text_sha256": "b3a3c07ad25ba693480b071a154777af953a5ab7e9cbbc8088851cea19417cdc",
+        "retrieved_at": "2026-11-22T00:03:46+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18508,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第3四半期決算短信〔IFRS〕（連結）",
+        "url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-3Q.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Summary_2026-3Q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S02.txt",
+        "sha256": "8cd58696adc2b2d5108303b2f5f3b39b0860881659c1efd3b9798c99cffe4c6a",
+        "text_sha256": "69fb082b989a35a87c314ab01c4b0fe3eeab08b0c5e9b718a808c388683bfd37",
+        "retrieved_at": "2026-11-22T00:03:46+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7779,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第1四半期決算短信〔IFRS〕（連結）",
+        "url": "https://content.link-u.co.jp/irdata/news/ir-news_251212_01.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://content.link-u.co.jp/irdata/news/ir-news_251212_01.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S03.txt",
+        "sha256": "3a1febbd14704478790da4c5626e2609629f4d32dea6862e4b7d5f2256534838",
+        "text_sha256": "86fc212122353c67d7db5bf547c9e472636f10741491b1d5c87710538b73e6b8",
+        "retrieved_at": "2026-11-22T00:03:47+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7692,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 決算説明資料及び中期経営計画2030（会社予想・事業別指標・KPIを含む）",
+        "url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-4Q.pdf",
+        "published_at": "2026-09-14",
+        "category": "presentation",
+        "final_url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-4Q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S04.txt",
+        "sha256": "9e0c4cd8bba860743feaafc88177260ea108044c6f89d005e7d48ab8c55ef091",
+        "text_sha256": "b369146c2f3e4e810f0bb84e5354ab019fe2397bcc961018d0ed3d762201da9e",
+        "retrieved_at": "2026-11-22T00:03:52+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10412,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期4Q 決算説明・質疑応答書き起こし",
+        "url": "https://link-u.group/ir/library/results/log/2026-4Q",
+        "published_at": "2026-09-18",
+        "category": "qa",
+        "final_url": "https://link-u.group/ir/library/results/log/2026-4Q",
+        "status": "unavailable",
+        "error": "原文抽出が空または不足。画像・音声資料は未検証",
+        "retrieved_at": "2026-11-22T00:03:52+09:00"
+      },
+      {
+        "id": "S06",
+        "title": "2026年7月期 第3四半期決算説明資料",
+        "url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-3Q.pdf",
+        "published_at": "2026-06-12",
+        "category": "presentation",
+        "final_url": "https://content.link-u.co.jp/irdata/library/resluts/Financial_Results_2026-3Q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S06.txt",
+        "sha256": "44f90c58b6a3055694c987b4d746390393370cd21149d32596f6e2ef63b69b2c",
+        "text_sha256": "1f894159fbee62ad91ffaf0e6f9a313cdb5119183b08b0a7fd11ae9d5b6ee746",
+        "retrieved_at": "2026-11-22T00:03:58+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 437,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年7月期 第1四半期決算説明資料",
+        "url": "https://content.link-u.co.jp/irdata/library/results/Financial_Results_2026-1Q.pdf",
+        "published_at": "2025-12-12",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-22T00:04:00+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "第三者割当による新株式の発行に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535400.pdf",
+        "published_at": "2026-09-14",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535400.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S08.txt",
+        "sha256": "ea296e697dbd5cdcb6249a7060b3d70b78e84cf1fe899c498a105bcabc11fe35",
+        "text_sha256": "a84a5772781ff29602184e09cce71596d7ac311d7656873cd1ad3ddfa67e4734",
+        "retrieved_at": "2026-11-22T00:04:00+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7226,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "第三者割当による新株式発行の払込完了に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261008547589.pdf",
+        "published_at": "2026-10-08",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261008547589.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S09.txt",
+        "sha256": "a25d12854526e7ff000396a0ba2e01d8c4f98bda338351cb89e338abddd0f0c3",
+        "text_sha256": "d1aaa3a4714f77b2194b3654d7349118c78a9bf63524b60bc50f988ee2ed6b85",
+        "retrieved_at": "2026-11-22T00:04:00+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1006,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "「Crunchyroll Manga」が英語圏での展開を拡大",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261006546682.pdf",
+        "published_at": "2026-10-08",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261008/20261006546682.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S10.txt",
+        "sha256": "41e124988448cfc40709b1d580c7883609aad00740e3a50acdae472a4b2541f7",
+        "text_sha256": "7696fba9becc7966d296b7f25b67afe2eb12d22e26ea7e458778fa3fb1a54dae",
+        "retrieved_at": "2026-11-22T00:04:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2861,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "Studio株式会社で発生した不正アクセスに伴う個人情報漏えいの可能性に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261016552453.pdf",
+        "published_at": "2026-10-16",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261016/20261016552453.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S11.txt",
+        "sha256": "81f5559bd425e271ecbe126d04d5b1f787d2dfe8fc7b702959414b612c854b2c",
+        "text_sha256": "2a8afcfc78f9b613877d2d4eb8fba2fee6967e843a31f8a66bf56895efafe945",
+        "retrieved_at": "2026-11-22T00:04:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 990,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "連結子会社間の吸収合併に関するお知らせ",
+        "url": "https://www.release.tdnet.info/inbs/140120261028557987.pdf",
+        "published_at": "2026-10-28",
+        "category": "other",
+        "final_url": "https://www.release.tdnet.info/inbs/140120261028557987.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\4446\\sources\\S12.txt",
+        "sha256": "4473ad5f048664f150765250296f8679c9dccb2caa016d288866b42838a62bc3",
+        "text_sha256": "00fd68a6f3cce9fc6902ff1f84d72e471c5e5c83338d12ea2650dd680dfad48b",
+        "retrieved_at": "2026-11-22T00:04:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1558,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "code": "4446",
+      "announcement_date": "2026-12-14",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "prior_q1_revenue",
+          "value": 1089.359,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 当第1四半期連結累計期間"
+        },
+        {
+          "id": "prior_q1_op",
+          "value": -43.742,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 営業利益（△損失）"
+        },
+        {
+          "id": "prior_q1_net",
+          "value": -38.633,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8 四半期利益の帰属・親会社の所有者"
+        },
+        {
+          "id": "prior_q3_cum_revenue",
+          "value": 3548.271,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 当第3四半期連結累計期間"
+        },
+        {
+          "id": "prior_q3_cum_op",
+          "value": 241.406,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 営業利益"
+        },
+        {
+          "id": "prior_q3_cum_net",
+          "value": 139.81,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 四半期利益の帰属・親会社の所有者"
+        },
+        {
+          "id": "prior_fy_revenue",
+          "value": 4800.392,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 当連結会計年度"
+        },
+        {
+          "id": "prior_fy_op",
+          "value": -382.566,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 営業利益（△損失）"
+        },
+        {
+          "id": "prior_fy_net",
+          "value": -554.815,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 当期利益の帰属・親会社の所有者"
+        },
+        {
+          "id": "retained_business_fy_revenue",
+          "value": 3727.746,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 会社説明上の連結範囲変更の影響を除いた継続事業ベース売上収益。IFRS上の非継続事業への組替えを意味する値としては使用しない"
+        },
+        {
+          "id": "fy_impairment",
+          "value": 767.242,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 減損損失"
+        },
+        {
+          "id": "guidance_revenue_low",
+          "value": 4000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・売上収益下限"
+        },
+        {
+          "id": "guidance_revenue_high",
+          "value": 4200,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・売上収益上限"
+        },
+        {
+          "id": "guidance_op_low",
+          "value": 400,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・営業利益下限"
+        },
+        {
+          "id": "guidance_op_high",
+          "value": 480,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・営業利益上限"
+        },
+        {
+          "id": "guidance_pretax_low",
+          "value": 370,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・税引前利益下限"
+        },
+        {
+          "id": "guidance_pretax_high",
+          "value": 450,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・税引前利益上限"
+        },
+        {
+          "id": "guidance_net_low",
+          "value": 241,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・親会社所有者帰属利益下限"
+        },
+        {
+          "id": "guidance_net_high",
+          "value": 293,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 2027年7月期連結業績予想・親会社所有者帰属利益上限"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q4_revenue",
+          "formula": "prior_fy_revenue-prior_q3_cum_revenue"
+        },
+        {
+          "id": "prior_q4_op",
+          "formula": "prior_fy_op-prior_q3_cum_op"
+        },
+        {
+          "id": "prior_q4_net",
+          "formula": "prior_fy_net-prior_q3_cum_net"
+        },
+        {
+          "id": "annual_scope_revenue_difference",
+          "formula": "prior_fy_revenue-retained_business_fy_revenue"
+        }
+      ],
+      "scenarios": {},
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 1089.359,
+          "operating_profit": -43.742,
+          "ordinary_profit": null,
+          "net_profit": -38.633,
+          "accounting_basis": "IFRS",
+          "accounting_version": "FY2026公表IFRS版。提示原文に取得原価配分確定による遡及修正・会計組替えの記載なし。期末除外3社を含む当時の連結損益",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2, 8。net_profitは親会社の所有者に帰属する四半期利益"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 3548.271,
+          "operating_profit": 241.406,
+          "ordinary_profit": null,
+          "net_profit": 139.81,
+          "accounting_basis": "IFRS",
+          "accounting_version": "FY2026公表IFRS版。提示原文に取得原価配分確定による遡及修正・会計組替えの記載なし。期末除外3社を含む当時の連結損益",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2, 8。net_profitは親会社の所有者に帰属する四半期利益"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 4800.392,
+          "operating_profit": -382.566,
+          "ordinary_profit": null,
+          "net_profit": -554.815,
+          "accounting_basis": "IFRS",
+          "accounting_version": "FY2026公表IFRS版。提示原文に取得原価配分確定による遡及修正・会計組替えの記載なし。期末除外3社の支配喪失日までの経営成績を含む",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2, 9, 15。net_profitは親会社の所有者に帰属する当期利益"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "fy2027_revenue_lower",
+          "metric": "revenue_lower_bound",
+          "value_ref": "guidance_revenue_low",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_revenue_upper",
+          "metric": "revenue_upper_bound",
+          "value_ref": "guidance_revenue_high",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_op_lower",
+          "metric": "operating_profit_lower_bound",
+          "value_ref": "guidance_op_low",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_op_upper",
+          "metric": "operating_profit_upper_bound",
+          "value_ref": "guidance_op_high",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_pretax_lower",
+          "metric": "pretax_profit_lower_bound",
+          "value_ref": "guidance_pretax_low",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_pretax_upper",
+          "metric": "pretax_profit_upper_bound",
+          "value_ref": "guidance_pretax_high",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_net_lower",
+          "metric": "parent_attributable_net_profit_lower_bound",
+          "value_ref": "guidance_net_low",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        },
+        {
+          "id": "fy2027_net_upper",
+          "metric": "parent_attributable_net_profit_upper_bound",
+          "value_ref": "guidance_net_high",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "IFRS",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "連結範囲変更による売上減少と持分法損益への移行",
+          "mechanism": "Brightech、バリューコンサルティング、コンパスの経営成績は前期末まで連結損益に含まれる。対象四半期ではこれらの売上が連結売上から外れ、コンパスは持分法適用となる。過年度の報告売上と対象四半期は連結範囲が異なる。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 6, 15",
+          "calculation_ids": [
+            "annual_scope_revenue_difference"
+          ],
+          "not_quantified_reason": "年間の売上影響は確認できるが、除外各社の前年同四半期・前四半期売上、原価、販管費、持分法利益への移行額が提示原文にない。"
+        },
+        {
+          "name": "海外マンガ配信の利用拡大",
+          "mechanism": "既存地域の会員増加と英語圏への提供拡大が課金・配信収入の増加要因。新地域への展開は対象四半期末近くに開始しており、通期寄与とは区別する必要がある。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S10"
+          ],
+          "locator": "S01 PDF page 18; S04 PDF pages 15, 28; S10 PDF pages 1–2",
+          "calculation_ids": [],
+          "not_quantified_reason": "マンガサービス自体の有料会員数、国別料金、当社取り分、既存地域と新地域の売上内訳を確認できない。Crunchyroll全体の会員数をマンガ課金人数として使用できない。"
+        },
+        {
+          "name": "国内運用効率化と開発案件",
+          "mechanism": "国内マンガサービスの広告・運用最適化は採算改善要因。開発案件の売上認識とAI活用による工数削減は制作収益を左右する。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4, 6; S04 PDF pages 13, 16, 28",
+          "calculation_ids": [],
+          "not_quantified_reason": "新分類への四半期売上の対応表、案件別受注残・認識時期、継続する開発体制の工数・費用が提示原文にない。旧制作売上には連結除外の影響があるため、そのまま延長できない。"
+        },
+        {
+          "name": "減損と成長投資",
+          "mechanism": "前四半期の営業損失には減損が含まれる。一方、海外展開に伴う開発・運営・ローカライズ投資は対象四半期以降の費用を増やし得る。資本調達額は売上や利益ではない。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S08",
+            "S09"
+          ],
+          "locator": "S01 PDF pages 5, 9; S04 PDF page 12; S08 PDF page 2; S09 PDF page 1",
+          "calculation_ids": [
+            "prior_q4_op"
+          ],
+          "not_quantified_reason": "調達資金の用途別総額と複数年度の支出期間はあるが、対象四半期の支出・費用化・資産計上の内訳は確認できない。減損の反動だけでは対象四半期の営業利益を決められない。"
+        },
+        {
+          "name": "子会社合併と外部サービス不正アクセス",
+          "mechanism": "ビューンとLink-U Productsの合併効力発生予定日は対象四半期後。外部サービスの不正アクセスはコーポレートサイトに関するもので、会社は運営サービスへの影響を否定している。",
+          "source_ids": [
+            "S11",
+            "S12"
+          ],
+          "locator": "S11 PDF page 1; S12 PDF pages 1–2",
+          "calculation_ids": [],
+          "not_quantified_reason": "合併による将来の削減額を対象四半期に前倒し計上しない。不正アクセス対応費用は提示原文に金額がなく、サービス減収も仮定しない。"
+        }
+      ],
+      "bridges": [],
+      "company_guidance": "S01で対象年度の通期連結予想を確認。対象四半期単独の会社予想は提示原文で確認できない。公表値はguidance_recordsに上下限を分けて保存し、四等分しない。基準日時までの修正開示の網羅性を検証できないためrevision_statusはunverified。これは公表値の存在・期間・定義が未確認という意味ではない。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスは含まれていない。",
+      "independent_forecast": "売上収益、営業利益、親会社所有者帰属利益の独自予測はnull相当としてscenariosを空にする。継続する事業の成長方向は確認できるが、旧分類の四半期実績から新しい連結範囲・事業分類への接続に必要な数量・売上・採算の情報が不足する。通期実績の均等配賦や根拠のない除外額の上下幅を置かずに、連結四半期全体の合理的な弱気・中心・強気レンジを設定することはできない。会社予想からの差引き推計は行っていない。経常利益はIFRS連結に該当指標がないためnull。",
+      "narrative": [
+        {
+          "heading": "予測判断",
+          "text": "成長要因は海外マンガ配信の拡大、国内運用の効率化、開発技術の横展開である。ただし、連結除外と事業分類変更が同時に生じるため、旧分類の最高売上更新をそのまま対象四半期へ延長できない。独自予測は数値化を保留する。"
+        },
+        {
+          "heading": "比較基準",
+          "text": "前四半期の報告売上は{{value:prior_q4_revenue}}、営業利益は{{value:prior_q4_op}}。通期累計と直前累計の差引きで算定した。これらは除外前の各社の損益を含む比較基準であり、新しい連結範囲に合わせた四半期実績ではない。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 9, 15; S02 PDF page 8"
+        },
+        {
+          "heading": "連結範囲変更の重要性",
+          "text": "報告売上と会社説明上の継続事業ベース売上との差は年間で{{value:annual_scope_revenue_difference}}。この差の四半期分布が不明であるため、海外成長による増収と連結除外による減収を四半期単位で分離できない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 6, 15"
+        },
+        {
+          "heading": "利益の評価",
+          "text": "前四半期の営業赤字には減損が含まれるため、営業利益の改善が実現しても、その全額を事業成長とは評価できない。海外展開費用、広告費、持分法利益を新しい連結範囲で確認する必要がある。資本調達と将来の合併効果は対象四半期の利益へ直接加算しない。",
+          "source_ids": [
+            "S01",
+            "S08",
+            "S09",
+            "S12"
+          ],
+          "locator": "S01 PDF pages 5, 9, 15; S08 PDF page 2; S09 PDF page 1; S12 PDF pages 1–2"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "Crunchyroll Mangaの課金会員数、国別単価、当社への収益配分は提示原文に記載がない。全資料で非開示であるとは断定しない。",
+        "補助金の当社帰属額、対象四半期の認識額、対応費用は提示原文に記載がない。制度上限を収益に使用しない。",
+        "新地域展開の初期費用と既存海外サービスの収益増加の時間差は未確認。",
+        "コンパスの持分法化後の対象四半期利益、金融損益、税負担を合理的に推計する情報が不足している。"
+      ],
+      "material_unresolved": [
+        "announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。",
+        "target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。",
+        "S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。",
+        "S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。",
+        "S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。",
+        "S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。",
+        "S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。",
+        "S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。",
+        "基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。",
+        "連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。"
+      ],
+      "schema_version": "2.0",
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 0,
+      "High": 8,
+      "Medium": 35,
+      "Low": 1
+    },
+    "material_assumption_count": 0,
+    "schedule_check": {
+      "input_date": "2026-12-14",
+      "official_date": "",
+      "declared_verified": false,
+      "verified": false,
+      "evidence": "https://finance.yahoo.co.jp/quote/4446.T および https://kabuwatch.app/stocks/4446 に2026年12月14日の予定表示があるが、基準日時2026年11月18日14:33以前に公表された会社IR・取引所の予定日根拠を確認できなかった。公式IRカレンダー https://link-u.group/ir/calendar/ は本文を取得できず、予定日は未検証。",
+      "warnings": [
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "fy2027_revenue_lower",
+        "metric": "revenue_lower_bound",
+        "value_ref": "guidance_revenue_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_revenue_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限4000百万円を確認。対象四半期単独とは期間不一致で、独自予測もないため乖離は未定義。通期の報告売上減少は連結除外、継続範囲の増収は事業成長として説明されるが、四半期配賦根拠はない。基準日時までの最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "３．2027年７月期の連結業績予想（2026年８月１日～2027年７月31日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_revenue_upper",
+        "metric": "revenue_upper_bound",
+        "value_ref": "guidance_revenue_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_revenue_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限4200百万円を確認。対象四半期単独とは期間不一致で、予測未設定のため乖離なしとの判定はできない。数量・価格・連結除外影響の四半期分解と最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "売上収益4,000,000千円～4,200,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_op_lower",
+        "metric": "operating_profit_lower_bound",
+        "value_ref": "guidance_op_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_op_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限400百万円を確認。四半期予想ではなく独自予測もないため乖離説明の対象外。効率化の一般論から四半期利益率や費用額は設定できず、最新改定状態も未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "400,000千円～480,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_op_upper",
+        "metric": "operating_profit_upper_bound",
+        "value_ref": "guidance_op_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_op_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限480百万円を確認。対象四半期との期間不一致と予測未設定により乖離は未定義。減損反動と継続費用改善の四半期内訳、最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "400,000千円～480,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_pretax_lower",
+        "metric": "pretax_profit_lower_bound",
+        "value_ref": "guidance_pretax_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_pretax_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限370百万円を確認。四半期予想ではなく対応する独自予測もない。金融損益の四半期見積りと最新改定状態は未確認。経常利益へ置換していない点は妥当。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "税引前利益370,000千円～450,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_pretax_upper",
+        "metric": "pretax_profit_upper_bound",
+        "value_ref": "guidance_pretax_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_pretax_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限450百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "税引前利益370,000千円～450,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_net_lower",
+        "metric": "parent_attributable_net_profit_lower_bound",
+        "value_ref": "guidance_net_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_net_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期親会社所有者帰属利益下限241百万円を確認。四半期との期間不一致と予測未設定により乖離は未定義。税負担・帰属利益の四半期内訳と最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "親会社の所有者に帰属する当期利益241,000\n千円～293,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_net_upper",
+        "metric": "parent_attributable_net_profit_upper_bound",
+        "value_ref": "guidance_net_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_net_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期親会社所有者帰属利益上限293百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "親会社の所有者に帰属する当期利益241,000\n千円～293,000千円"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "要修正",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "直前累計不足: 2026-07-31"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bear/qoq/operating_profit",
+        "details": {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bear/qoq/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bear/yoy/operating_profit",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bear/yoy/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: base/qoq/operating_profit",
+        "details": {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: base/qoq/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: base/yoy/operating_profit",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: base/yoy/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bull/qoq/operating_profit",
+        "details": {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bull/qoq/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bull/yoy/operating_profit",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "missing_bridge",
+        "message": "増減要因の照合未了: bull/yoy/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "status": "missing",
+          "expected_delta": null,
+          "residual": null,
+          "residual_type": "not_reported"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_revenue_lower",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_revenue_upper",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_op_lower",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_op_upper",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_pretax_lower",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_pretax_upper",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_net_lower",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy2027_net_upper",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "fact",
+        "message": "再計算結果の第4四半期実績nullは入力・算式と矛盾する。通期と第3四半期累計が揃っているため、報告ベースの売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625百万円を復元できる。比較実績の存在と、対象四半期予測の欠落を分離して処理すること。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF page 9; S02 PDF page 8; recalculation.historicals[2]",
+        "evidence_excerpt": "営業利益 278,704 241,406",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "period",
+        "message": "年間連結範囲差1072.646百万円は確認できるが、その4分の1を前年同四半期・前四半期から控除する根拠はない。除外会社別の売上・費用・内部取引消去と、コンパス持分法化後の損益を接続する必要がある。持分法投資利益は提示損益計算書では営業利益に含まれており、営業利益外へ移してはならない。",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 6, 9, 15",
+        "evidence_excerpt": "持分法による投資利益 34,777 26,147\n営業利益（△損失） 326,968 △382,566",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "residual",
+        "message": "S04の第4四半期営業利益-625百万円は、S01とS02の差引値-623.972百万円より1.028百万円低い。通常の百万円単位の四捨五入・切捨てだけでは説明できない。会計上の比較基準変更も確認できず、表示・抽出・原資料間不一致として未解決のまま保持する。経済的残差や丸め差へ自動分類しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S04"
+        ],
+        "locator": "S01 PDF page 9; S02 PDF page 8; S04 PDF page 12",
+        "evidence_excerpt": "営業利益\n▲   625 百万円",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "residual",
+        "message": "1252.1209999999996と1252.121、1072.6459999999997と1072.646の差は二進浮動小数点の表現誤差であり、経済的残差ではない。一方、シナリオブリッジの残差は予測未設定のため未定義であり、ゼロに変更できない。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF pages 6, 9; S02 PDF page 8; recalculation.values",
+        "evidence_excerpt": "売上収益 3,681,389 3,548,271",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "fact",
+        "message": "S08の過年度表示とS01の相違は一括して丸め差と扱えない。営業損失-383百万円などは四捨五入で説明可能だが、EPS-39.18円とS01の-39.14円、1株当たり持分161.48円と161.52円は表示精度内の通常の丸めでは一致しない。現行入力はS01と一致しており変更せず、訂正履歴・算定根拠を照合する。",
+        "source_ids": [
+          "S01",
+          "S08"
+        ],
+        "locator": "S01 PDF pages 1, 17; S08 PDF page 5",
+        "evidence_excerpt": "基本的１株当たり当期利益（円） 11.10  10.44 △39.18",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "独自予測を保留する判断は、根拠のない成長率や利益率を置くことを避ける点で合理的。ただし予測品質の検証完了を意味しない。全シナリオの数量・価格・費用・一時要因とYoY/QnQ説明は未完成であり、会社の成長方針だけでは係数をsupportedにできない。",
+        "source_ids": [
+          "S01",
+          "S10"
+        ],
+        "locator": "S01 PDF page 6; S10 PDF page 2",
+        "evidence_excerpt": "国内においては、運用の最適化によるコスト削減を進めることで利益率の向上を図ります。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "S01の通期会社予想の存在・対象期間・公表日は確認できるが、基準日時までの改定・据置確認とは別問題。S08の『精査中』を数値改定として扱うことはできない。large_gap=falseは乖離が小さい証拠ではなく、予測未設定により判定不能。",
+        "source_ids": [
+          "S01",
+          "S08"
+        ],
+        "locator": "S01 PDF pages 1, 6; S08 PDF page 5",
+        "evidence_excerpt": "なお、2027 年７月期の連結業績については現在精査中であり",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 0,
+      "High": 8,
+      "Medium": 35,
+      "Low": 1
+    },
+    "assumptions": [],
+    "guidance": [
+      {
+        "id": "fy2027_revenue_lower",
+        "metric": "revenue_lower_bound",
+        "value_ref": "guidance_revenue_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_revenue_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限4000百万円を確認。対象四半期単独とは期間不一致で、独自予測もないため乖離は未定義。通期の報告売上減少は連結除外、継続範囲の増収は事業成長として説明されるが、四半期配賦根拠はない。基準日時までの最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "３．2027年７月期の連結業績予想（2026年８月１日～2027年７月31日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_revenue_upper",
+        "metric": "revenue_upper_bound",
+        "value_ref": "guidance_revenue_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_revenue_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限4200百万円を確認。対象四半期単独とは期間不一致で、予測未設定のため乖離なしとの判定はできない。数量・価格・連結除外影響の四半期分解と最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "売上収益4,000,000千円～4,200,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_op_lower",
+        "metric": "operating_profit_lower_bound",
+        "value_ref": "guidance_op_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_op_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限400百万円を確認。四半期予想ではなく独自予測もないため乖離説明の対象外。効率化の一般論から四半期利益率や費用額は設定できず、最新改定状態も未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "400,000千円～480,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_op_upper",
+        "metric": "operating_profit_upper_bound",
+        "value_ref": "guidance_op_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_op_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限480百万円を確認。対象四半期との期間不一致と予測未設定により乖離は未定義。減損反動と継続費用改善の四半期内訳、最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "400,000千円～480,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_pretax_lower",
+        "metric": "pretax_profit_lower_bound",
+        "value_ref": "guidance_pretax_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_pretax_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期下限370百万円を確認。四半期予想ではなく対応する独自予測もない。金融損益の四半期見積りと最新改定状態は未確認。経常利益へ置換していない点は妥当。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "税引前利益370,000千円～450,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_pretax_upper",
+        "metric": "pretax_profit_upper_bound",
+        "value_ref": "guidance_pretax_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_pretax_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期上限450百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "税引前利益370,000千円～450,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_net_lower",
+        "metric": "parent_attributable_net_profit_lower_bound",
+        "value_ref": "guidance_net_low",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_net_lower",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期親会社所有者帰属利益下限241百万円を確認。四半期との期間不一致と予測未設定により乖離は未定義。税負担・帰属利益の四半期内訳と最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "親会社の所有者に帰属する当期利益241,000\n千円～293,000千円"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy2027_net_upper",
+        "metric": "parent_attributable_net_profit_upper_bound",
+        "value_ref": "guidance_net_high",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "IFRS",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-14",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1, 6",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy2027_net_upper",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "2026年9月14日公表の2027年7月期通期親会社所有者帰属利益上限293百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1, 6",
+          "evidence_excerpt": "親会社の所有者に帰属する当期利益241,000\n千円～293,000千円"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S01 PDF page 15によれば前期連結損益は期末除外3社の経営成績を含む。継続する連結範囲の前年同四半期・前四半期の売上と費用は提示原文で確認できず、年間の除外影響を均等配賦する根拠もない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S01 PDF page 16では単一セグメントを理由にセグメント情報を省略。事業分類別の営業利益を確認できず、S04の全社費用増減説明だけでは新しい連結範囲の費用構造を復元できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S04 PDF pages 14–17のグラフ抽出テキストは数値と系列・期間の対応が一部不明瞭。旧事業分類と新分類の四半期対応表も確認できないため、曖昧な数値を予測の入力に採用していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S05とS07は資料一覧に存在するが保存本文が提示されていない。S06はページ番号のみで本文を確認できない。いずれも非開示ではなく原本未確認として扱う。truncated=falseでも本文の実質的な確認を意味しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S08 PDF page 5の過年度利益・1株当たり指標にはS01と異なる表示がある。財務実績はS01の千円単位の連結損益計算書を優先し、不一致を推測で修正していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S12 PDF page 2のビューン及びLink-U Productsの直前事業年度財務情報は、競争上・取引上の理由による非開示が明記されている。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "announcement_dateはユーザー指定の予定日を保持したもの。基準日時以前の会社・取引所による正式な日程根拠は提示原文にない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "target_already_announced=falseは提示された対象条件を保持している。保存原文に対象四半期実績はないが、公表状況の網羅的確認はしていない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "基準日時までの追加業績修正、重要開示の網羅性及び原資料の差替え有無は未確認。S08の業績影響精査中という記載を会社の修正予想として扱っていない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "直前累計不足: 2026-07-31",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "連結売上と営業利益の予測範囲を根拠付きで設定できないためscenariosは空。予測との差額自体が未定義となるため、12本のシナリオ別bridgesも作成していない。説明不能差をゼロや丸め差として処理していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bear/qoq/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bear/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bear/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bear/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: base/qoq/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: base/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: base/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: base/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bull/qoq/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bull/qoq/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bull/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "missing_bridge",
+      "message": "増減要因の照合未了: bull/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_revenue_lower",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_revenue_upper",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_op_lower",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_op_upper",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_pretax_lower",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_pretax_upper",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_net_lower",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy2027_net_upper",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "fact",
+      "message": "再計算結果の第4四半期実績nullは入力・算式と矛盾する。通期と第3四半期累計が揃っているため、報告ベースの売上1252.121、営業利益-623.972、親会社所有者帰属利益-694.625百万円を復元できる。比較実績の存在と、対象四半期予測の欠落を分離して処理すること。",
+      "source_ids": "['S01', 'S02']",
+      "locator": "S01 PDF page 9; S02 PDF page 8; recalculation.historicals[2]",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "period",
+      "message": "年間連結範囲差1072.646百万円は確認できるが、その4分の1を前年同四半期・前四半期から控除する根拠はない。除外会社別の売上・費用・内部取引消去と、コンパス持分法化後の損益を接続する必要がある。持分法投資利益は提示損益計算書では営業利益に含まれており、営業利益外へ移してはならない。",
+      "source_ids": "['S01']",
+      "locator": "PDF pages 6, 9, 15",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "residual",
+      "message": "S04の第4四半期営業利益-625百万円は、S01とS02の差引値-623.972百万円より1.028百万円低い。通常の百万円単位の四捨五入・切捨てだけでは説明できない。会計上の比較基準変更も確認できず、表示・抽出・原資料間不一致として未解決のまま保持する。経済的残差や丸め差へ自動分類しない。",
+      "source_ids": "['S01', 'S02', 'S04']",
+      "locator": "S01 PDF page 9; S02 PDF page 8; S04 PDF page 12",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Low",
+      "category": "residual",
+      "message": "1252.1209999999996と1252.121、1072.6459999999997と1072.646の差は二進浮動小数点の表現誤差であり、経済的残差ではない。一方、シナリオブリッジの残差は予測未設定のため未定義であり、ゼロに変更できない。",
+      "source_ids": "['S01', 'S02']",
+      "locator": "S01 PDF pages 6, 9; S02 PDF page 8; recalculation.values",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "fact",
+      "message": "S08の過年度表示とS01の相違は一括して丸め差と扱えない。営業損失-383百万円などは四捨五入で説明可能だが、EPS-39.18円とS01の-39.14円、1株当たり持分161.48円と161.52円は表示精度内の通常の丸めでは一致しない。現行入力はS01と一致しており変更せず、訂正履歴・算定根拠を照合する。",
+      "source_ids": "['S01', 'S08']",
+      "locator": "S01 PDF pages 1, 17; S08 PDF page 5",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "独自予測を保留する判断は、根拠のない成長率や利益率を置くことを避ける点で合理的。ただし予測品質の検証完了を意味しない。全シナリオの数量・価格・費用・一時要因とYoY/QnQ説明は未完成であり、会社の成長方針だけでは係数をsupportedにできない。",
+      "source_ids": "['S01', 'S10']",
+      "locator": "S01 PDF page 6; S10 PDF page 2",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "company_name": "Link-Uグループ株式会社",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "S01の通期会社予想の存在・対象期間・公表日は確認できるが、基準日時までの改定・据置確認とは別問題。S08の『精査中』を数値改定として扱うことはできない。large_gap=falseは乖離が小さい証拠ではなく、予測未設定により判定不能。",
+      "source_ids": "['S01', 'S08']",
+      "locator": "S01 PDF pages 1, 6; S08 PDF page 5",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [
+    {
+      "code": "4446",
+      "id": "fy2027_revenue_lower",
+      "metric": "revenue_lower_bound",
+      "value_ref": "guidance_revenue_low",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_revenue_lower\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期下限4000百万円を確認。対象四半期単独とは期間不一致で、独自予測もないため乖離は未定義。通期の報告売上減少は連結除外、継続範囲の増収は事業成長として説明されるが、四半期配賦根拠はない。基準日時までの最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"３．2027年７月期の連結業績予想（2026年８月１日～2027年７月31日）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_revenue_upper",
+      "metric": "revenue_upper_bound",
+      "value_ref": "guidance_revenue_high",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_revenue_upper\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期上限4200百万円を確認。対象四半期単独とは期間不一致で、予測未設定のため乖離なしとの判定はできない。数量・価格・連結除外影響の四半期分解と最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"売上収益4,000,000千円～4,200,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_op_lower",
+      "metric": "operating_profit_lower_bound",
+      "value_ref": "guidance_op_low",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_op_lower\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期下限400百万円を確認。四半期予想ではなく独自予測もないため乖離説明の対象外。効率化の一般論から四半期利益率や費用額は設定できず、最新改定状態も未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"400,000千円～480,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_op_upper",
+      "metric": "operating_profit_upper_bound",
+      "value_ref": "guidance_op_high",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_op_upper\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期上限480百万円を確認。対象四半期との期間不一致と予測未設定により乖離は未定義。減損反動と継続費用改善の四半期内訳、最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"400,000千円～480,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_pretax_lower",
+      "metric": "pretax_profit_lower_bound",
+      "value_ref": "guidance_pretax_low",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_pretax_lower\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期下限370百万円を確認。四半期予想ではなく対応する独自予測もない。金融損益の四半期見積りと最新改定状態は未確認。経常利益へ置換していない点は妥当。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"税引前利益370,000千円～450,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_pretax_upper",
+      "metric": "pretax_profit_upper_bound",
+      "value_ref": "guidance_pretax_high",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_pretax_upper\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期上限450百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"税引前利益370,000千円～450,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_net_lower",
+      "metric": "parent_attributable_net_profit_lower_bound",
+      "value_ref": "guidance_net_low",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_net_lower\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期親会社所有者帰属利益下限241百万円を確認。四半期との期間不一致と予測未設定により乖離は未定義。税負担・帰属利益の四半期内訳と最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"親会社の所有者に帰属する当期利益241,000\\n千円～293,000千円\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "4446",
+      "id": "fy2027_net_upper",
+      "metric": "parent_attributable_net_profit_upper_bound",
+      "value_ref": "guidance_net_high",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "IFRS",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-14",
+      "revision_status": "unverified",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF pages 1, 6",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy2027_net_upper\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"2026年9月14日公表の2027年7月期通期親会社所有者帰属利益上限293百万円を確認。対象四半期単独とは期間不一致で、独自予測との乖離は未定義。最新改定状態は未確認。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF pages 1, 6\", \"evidence_excerpt\": \"親会社の所有者に帰属する当期利益241,000\\n千円～293,000千円\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "4446",
+    "input_date": "2026-12-14",
+    "official_date": "",
+    "declared_verified": "False",
+    "verified": "False",
+    "evidence": "https://finance.yahoo.co.jp/quote/4446.T および https://kabuwatch.app/stocks/4446 に2026年12月14日の予定表示があるが、基準日時2026年11月18日14:33以前に公表された会社IR・取引所の予定日根拠を確認できなかった。公式IRカレンダー https://link-u.group/ir/calendar/ は本文を取得できず、予定日は未検証。",
+    "warnings": "['資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/4446/result.json": "0f5faec57cc36d4b6158212d0e20d6a9b1a14f37a5ce0cea0de5086a729cc4bb",
+    "reports/4446.md": "c59d2ac8aefc2be6d8279ff7b3b50df9f07b0dca7efd39188c7f92878eae1b4e",
+    "reports/4446_review.md": "b783ceb29f42cb1457fefe967a545ba1857f7029d4a46f7899864efd6a43d59f",
+    "companies/4446/quality_review.json": "6658b9bb67889055f38dc3c72146afa7da7d06f25d673a5a42c1c6e758ab0e68",
+    "companies/4446/independent_review.json": "10d2bdc10939329f3eb598bf99632d0e7f99b7b7056ef37d9b690c2dfa760387"
+  }
+}
