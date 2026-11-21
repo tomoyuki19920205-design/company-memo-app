@@ -1,0 +1,2450 @@
+{
+  "id": "441A-947a475842efbcf019050a95c990fe215400910df503fe5479f583b347208a22",
+  "code": "441A",
+  "companyName": "ＮＥ株式会社",
+  "announcementDate": "2026-12-14",
+  "target": {
+    "fiscalYearEnd": "2027-04-30",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "441A-generation-dd27f4101726d26b · 947a4758",
+  "savedAt": "2026-11-22T00:05:09+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 923.615,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": -0.07130690616289875,
+    "label": "-7.1%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 441A ＮＥ株式会社｜2027-04-30期 Q2単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 867.36 | 923.62 | 987.14 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -70.92 | -7.13% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | -42.77 | -4.43% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS01で確認した中間累計・通期予想はS06の期初予想から据え置き。guidance_recordsのlatest_confirmedは提示資料内の最新確認を意味する。中間累計から確定Q1を引いた対象四半期の機械的含意をcalculationsに保存したが、会社が直接公表した四半期単独予想でも独自予測でもない。ふるさと納税支援事業の寄与消失と譲渡益は期初予想に包含されており、差引値へ再加減しない。\n\n## 市場コンセンサス\n未確認。提示された保存原文には対象四半期または通期の公表市場コンセンサスがない。\n\n## 独自予測・差引推計の区分\n単体継続を条件に、主力事業を契約社数×ARPU×月数、他事業を直近実績と事業構成変化に基づく条件付き範囲で積み上げた売上予測。会社予想差引値からは独立。弱気・中心・強気は売上の条件であり、利益の順位を示さない。営業利益は投資費用の時期・費用化割合に根拠ある範囲を設定できずnull。経常利益・純利益もnullとする。\n\n## 対象四半期の条件付き予測\n単体継続を条件とした売上は、弱気867.36、中心923.62、強気987.14。主力の契約基盤と受託開発が下支えする一方、ふるさと納税支援事業の譲渡が前年の特需売上を失わせる。対象決算が連結へ移行する場合、この予測を連結数値として使用できない。\n\n## 会社予想との違い\n中間累計会社予想から確定Q1を差し引いた売上の含意は1,022.62、営業利益の含意は25.18。独自中心売上との差は-99.00。差は主に、主力ARPUの季節低下を残し、講座販売とリテール販路拡張を慎重に置いたことによる。会社の対象期別事業計画がないため、計画差を事業別に完全照合することはできない。\n\n## リテールの推計と利益の限界\n保存原文の事業別増減から得られる直近リテール売上の参考推計は26.02。これは丸められた成長率を使う差引推計であり、直接開示実績ではない。営業利益は、投資の後ろ倒し解消と譲渡後の費用構造によって大きく変わる。会社予想の利益水準に合わせて費用を逆算することはせず、未定量とした。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | 20.59 | 契約数とARPUの条件付き積上げとの差 |\n| コンサルティング | -25.21 | 人員制約と講座販売停滞 |\n| 旧ロカルコから譲渡後リテールへの構成変化 | -122.55 | ふるさと納税支援寄与消失とリテール販売の合計差。個別寄与は分離不能 |\n| 残差（rounding） | 0.00 | 千円単位で表示された累計セグメント値と全社値の差引差。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | -65.75 | 季節的なARPU低下と契約基盤の弱含み |\n| コンサルティング | -6.18 | 講座販売停滞と既存案件縮小 |\n| コマーステック | -27.09 | ふるさと納税支援事業の譲渡とリテール販売の合計差 |\n| 残差（rounding） | -0.00 | 直近Q1のセグメント表示値合計と全社表示値の端数差。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | 56.85 | 契約基盤の拡大と受託開発を含むARPU改善 |\n| コンサルティング | -10.21 | 直近から回復するが前年Q2には届かない条件 |\n| 旧ロカルコから譲渡後リテールへの構成変化 | -117.55 | ふるさと納税支援寄与消失と販路拡張の合計差 |\n| 残差（rounding） | 0.00 | 千円単位で表示された累計セグメント値と全社値の差引差。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | -29.50 | 契約純増が一部補うものの季節的なARPU低下 |\n| コンサルティング | 8.82 | アップセルと一部案件の売上回復 |\n| コマーステック | -22.09 | ふるさと納税支援事業の譲渡とリテール拡大の合計差 |\n| 残差（rounding） | -0.00 | 直近Q1のセグメント表示値合計と全社表示値の端数差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | 94.37 | 契約獲得回復と高ARPU維持 |\n| コンサルティング | 9.79 | 教育商材の営業長期化が一部解消 |\n| 旧ロカルコから譲渡後リテールへの構成変化 | -111.55 | 譲渡による減収をリテール販路拡張が一部補う |\n| 残差（rounding） | 0.00 | 千円単位で表示された累計セグメント値と全社値の差引差。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ネクストエンジン | 8.03 | ARPU維持と契約基盤拡大 |\n| コンサルティング | 28.82 | 講座販売と既存契約アップセルの回復 |\n| コマーステック | -16.09 | ふるさと納税支援事業の譲渡とリテール販路拡張の合計差 |\n| 残差（rounding） | -0.00 | 直近Q1のセグメント表示値合計と全社表示値の端数差。 |\n\n## エラー・未解決事項\n- 2026年12月14日の発表予定は提示された二次情報にとどまり、会社・取引所の一次根拠を保存原文で確認できないためannouncement_dateはnull。S14の本文も提示されていない。\n- S01の前払費用増加は支出・資産残高情報であり、全額を対象四半期の費用とする根拠はない。S08のIPO資金使途も対象四半期の損益費用とは一致しない。\n- S02 page 23およびS07 page 18の前期末貸借対照表要約はS01・S06の短信と整合しない箇所があり、費用予測や会計版変更の根拠には採用していない。\n- S04とS01では前年Q1の減価償却費注記に差がある。全社売上・営業利益は一致するため同一会計版のS03とS04の累計差引を採用し、減価償却費差の理由は未確認。\n- S08は探索メタデータでは本文未確認とされているが、今回のdocumentsには全ページの保存本文が提示されているため、その本文を確認対象とした。S01～S12の提示本文に短縮フラグはないが、元PDFの画像・表配置との照合は行っていない。\n- S10・S11に韓国子会社による事業取得があるが、対象決算の連結移行と比較財務情報の扱いは確認できない。取得事業の年間売上を単純月割りして単体売上へ加算していない。\n- S11 page 1の取得資産のウォン単位表記は併記円額・負債額・対価との整合に疑義がある。推測訂正も取得原価配分への転用もしていない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 前年Q2のふるさと納税支援とリテールの個別売上・利益がなく、譲渡影響と既存リテール成長の前年比寄与は分離できない。ブリッジの構成変化項目は両者を合算したものである。\n- 営業利益の定量を妨げるのは投資計画の対象期配分、費用と資産計上の区別、譲渡後の残存費用である。これらは提示原文に金額の開示がなく、他の原本における開示有無までは未確認。\n- 基準日時までの追加修正・重要開示の網羅性と、S02等の差し替え履歴は未確認。独立レビュー済みとはしていない。\n- 基準日時点で対象決算の発表済みを示す原文はない。target_already_announced=falseは提示された探索結果に基づき、開示一覧の完全性を独立確認したものではない。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 純利益は営業利益の見積もり不足に加え、譲渡対価の最終調整、譲渡関連費用、税負担の対象期配分が不明。予定譲渡価額を確定利益として使用していない。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_arpu: S02 page 22の過去Q2の弱さを残しつつ、S01 page 4の受注処理件数と受託開発の改善によって前年ほどの季節低下にならないと仮定。新サービス効果もこの単価内に含め、別加算しない。\n- base_consult: S01 page 4の通常コンサルティングの計画超過とアップセルを踏まえ、直近Q1から小幅回復。S03とS04の差引で得られる前年Q2水準には届かない条件。\n- base_contracts: S02 page 22の直近期末契約数と過去の緩やかな純増を踏まえ、月末契約社数の四半期平均を直近末より20社多い水準とする。\n- base_retail: 直近リテール規模の逆算値に対し、S01 page 4の卸先開拓・海外モール・商品開発による小幅拡大を仮定。会社通期リテール計画の四等分は使用しない。\n- bear_arpu: S02 page 22の前年Q2のARPU低下とS05 page 16の受託開発案件の仕込み期間を考慮。前年Q2を小幅に上回るが直近Q1から季節的に低下する条件。\n- bear_consult: S01 page 4の直近売上を基準に、人員制約と助成金変更による営業長期化が継続し、既存契約の減少がアップセルを上回る条件。\n- bear_contracts: S02 page 22の直近契約純増鈍化と月次解約率を踏まえ、月末契約社数の四半期平均が直近末を小幅に下回る条件を置く。実際の対象期契約数ではない。\n- bear_retail: S01 pages 4–5とS02 page 5から逆算される直近リテール規模を下回る条件。ふるさと納税支援売上は含めない。\n- bull_arpu: 受託開発と新サービスが季節的な受注処理減少を補い、S02 page 22の直近Q1 ARPUをほぼ維持する条件。\n- bull_consult: S02 page 21の前期Q4規模を上限の参考に、講座販売のリードタイム長期化が一部解消する条件。確定受注に基づく見積もりではない。\n- bull_contracts: S02 page 22の前年Q2の契約純増規模と新サービス投入を参考に、顧客獲得が回復する場合の四半期平均契約数を設定。\n- bull_retail: 直近規模を基準に、卸販売と販路拡張の寄与が強まる条件。受注残で裏付けられた値ではなく、短期販路拡張の感応度ケース。\n- quarter_months: 対象四半期の全月に月額ARPUを適用する計算上の期間係数。\n- ふるさと納税支援寄与は会社説明に従い対象期に含めない。ただし個別契約の履行責任に伴う残存取引の認識額は未確認。\n- コンサルティングとリテールは受注残による裏付けがなく、直近規模に対する条件付き感応度である。\n- 契約社数は月末値の四半期平均を予測する。四半期末契約数を全期間の実績として扱っていない。\n- 対象決算も非連結で開示されることを条件とする。韓国子会社の連結開始時期は保存資料で確認できない。\n- 新サービス・受託開発の増収はARPU仮定に包含し、GMVや受注処理件数の成長を別途乗算しない。\n\n## 根拠・保存記録\n- S01 [2027年4月期第1四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535747.pdf) / 公表 2026-09-14T15:30:00+09:00 / retrieved / SHA-256 `3c628ac3b2b223194585da97feac519b2f6f2e647190ad11aed5067892cd5dbf`\n- S02 [2027年4月期第1四半期決算説明資料](https://note.com/api/v2/attachments/download/40530bf34c272d9455c1c40bcfeb6b53) / 公表 2026-09-14 / retrieved / SHA-256 `767e76587fcfebc45f640b5e351e3b1aab085b8994a3312a4fda8bf1f97be760`\n- S03 [2026年4月期第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519330.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `41f498a624054bcdeb7b476342a64d56f37606d9679fce78880e7892a4a83762`\n- S04 [東京証券取引所グロース市場への上場に伴う当社決算情報等のお知らせ（2026年4月期第1四半期決算短信を含む）](https://www2.jpx.co.jp/disc/441A0/140120251030583350.pdf) / 公表 2025-11-04 / retrieved / SHA-256 `9f39845dcdccbbd6b412272f8018cd0aada5da110dd936881357123bcd1022fa`\n- S05 [2026年4月期第2四半期決算説明資料](https://www2.jpx.co.jp/disc/441A0/140120251212519350.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `7c6e9aad77e29bb54b41e6df048e746ef3ca46bdbafb6c06a9e48f3773e6881d`\n- S06 [2026年4月期決算短信〔日本基準〕（非連結）（2027年4月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260508519883.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `04646f1beefd234dff9978da5c4e2f914842fc50d3d06de83f38d969f1cb2e6e`\n- S07 [2026年4月期通期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569310.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `ad20a4efe66b059247aebb9b3b82b4bcb1a3130a43a38a9a83e35b366b90e19c`\n- S08 [中期経営計画2029 事業計画及び成長可能性に関する事項](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569454.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `ebe7a34174636f11ded76aa65570ca2b5115e1eb0b87b26cefe53e142ce95214`\n- S09 [（開示事項の経過）ふるさと納税支援事業の「事業譲渡契約書」締結に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260730/20260730503483.pdf) / 公表 2026-07-30T18:30:00+09:00 / retrieved / SHA-256 `f26e53231ff0c0dd693195f56f3c8b690a7f439de10b381d9b7bb09d6e51abf2`\n- S10 [当社子会社による事業の譲り受けに関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260918538398.pdf) / 公表 2026-09-18T15:30:00+09:00 / retrieved / SHA-256 `6be5d1d5dd038b9f6d143f01dc3582232eb4b663f8c341c78b571e888040c6cb`\n- S11 [（開示事項の経過）当社子会社による事業の譲り受けに関する契約書締結のお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260930/20260930543025.pdf) / 公表 2026-09-30T15:30:00+09:00 / retrieved / SHA-256 `ec4ad06c15b2116dea60fbdf952a9a30d72cea7fee7ee7eb4c1679560ab85e22`\n- S12 [NE（441A）2027年4月期第1四半期決算のご説明（動画付き・会社IR note）](https://note.com/ne_ir/n/n191ac5dd06a0) / 公表 2026-09-30T12:16:00+09:00 / retrieved / SHA-256 `cf20e649941e3999370a261f71f11e45b2f38d35f7fa547a6a10b1f7b36e2497`\n- S13 [株式情報・IR](https://ne-inc.jp/investor/stock/info/) / 公表  / unavailable / SHA-256 `なし`\n- S14 [IRカレンダー](https://ne-inc.jp/investor/library/ir-calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "441A",
+    "company_name": "ＮＥ株式会社",
+    "announcement_date": "2026-12-14",
+    "target_period": "2027-04-30期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-04-30",
+      "quarter": 2,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円",
+      "scope_status": "最新短信の非連結ベースを条件付きで継続。対象決算での連結移行有無は未確認"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 867.36,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 923.615,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 987.1389999999999,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -42.76800000000003,
+          "rate": -0.04425574539287221,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -70.91700000000003,
+          "rate": -0.07130690616289875,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prev_q1_revenue": 993.446,
+      "prev_q1_op": 356.847,
+      "prev_h1_revenue": 1987.978,
+      "prev_h1_op": 723.35,
+      "current_q1_revenue": 966.383,
+      "current_q1_op": 310.824,
+      "current_q1_ordinary": 311.699,
+      "current_q1_net": 211.577,
+      "prev_q1_ne": 794.546,
+      "prev_q1_consult": 136.437,
+      "prev_q1_local": 62.431,
+      "prev_h1_ne": 1542.314,
+      "prev_h1_consult": 236.649,
+      "prev_h1_local": 208.983,
+      "current_q1_ne": 834.113,
+      "current_q1_consult": 81.184,
+      "current_q1_commerce": 51.085,
+      "donation_revenue_decline": 14.319,
+      "retail_growth": 0.129,
+      "q1_contracts": 6770.0,
+      "q1_arpu": 0.041069,
+      "prev_q1_arpu": 0.039878,
+      "prev_q2_arpu": 0.037202,
+      "guidance_h1_revenue": 1989.0,
+      "guidance_h1_op": 336.0,
+      "guidance_h1_ordinary": 336.0,
+      "guidance_h1_net": 394.0,
+      "guidance_fy_revenue": 4630.0,
+      "guidance_fy_op": 1190.0,
+      "guidance_fy_ordinary": 1190.0,
+      "guidance_fy_net": 1011.0,
+      "quarter_months": 3.0,
+      "bear_contracts": 6740.0,
+      "base_contracts": 6790.0,
+      "bull_contracts": 6830.0,
+      "bear_arpu": 0.038,
+      "base_arpu": 0.0395,
+      "bull_arpu": 0.0411,
+      "bear_consult": 75.0,
+      "base_consult": 90.0,
+      "bull_consult": 110.0,
+      "bear_retail": 24.0,
+      "base_retail": 29.0,
+      "bull_retail": 35.0,
+      "prev_q2_revenue": 994.532,
+      "prev_q2_op": 366.50300000000004,
+      "prev_q2_ne": 747.768,
+      "prev_q2_consult": 100.21199999999999,
+      "prev_q2_local": 146.55200000000002,
+      "q1_retail_increase": 2.9730000000000043,
+      "prev_q1_retail_inferred": 23.04651162790701,
+      "current_q1_retail_inferred": 26.019511627907015,
+      "guidance_implied_q2_revenue": 1022.617,
+      "guidance_implied_q2_op": 25.175999999999988,
+      "guidance_implied_q2_ordinary": 24.300999999999988,
+      "guidance_implied_q2_net": 182.423,
+      "bear_ne": 768.36,
+      "base_ne": 804.615,
+      "bull_ne": 842.1389999999999,
+      "bear_revenue": 867.36,
+      "base_revenue": 923.615,
+      "bull_revenue": 987.1389999999999,
+      "bear_yoy_revenue_change": -127.17200000000003,
+      "base_yoy_revenue_change": -70.91700000000003,
+      "bull_yoy_revenue_change": -7.393000000000143,
+      "bear_qoq_revenue_change": -99.02300000000002,
+      "base_qoq_revenue_change": -42.76800000000003,
+      "bull_qoq_revenue_change": 20.755999999999858,
+      "yoy_revenue_residual": 0.0,
+      "qoq_revenue_residual": -0.0009999999999763531,
+      "base_guidance_revenue_gap": -99.00199999999995
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 7, 13–14",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "1Q累計",
+        "revenue": 993.446,
+        "operating_profit": 356.847,
+        "ordinary_profit": 356.694,
+        "net_profit": 238.878
+      },
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "PDF pages 2, 8, 10",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": 994.532,
+        "operating_profit": 366.50300000000004,
+        "ordinary_profit": 357.965,
+        "net_profit": 251.111
+      },
+      {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2, 8–9",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "1Q累計",
+        "revenue": 966.383,
+        "operating_profit": 310.824,
+        "ordinary_profit": 311.699,
+        "net_profit": 211.577
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "change_ref": "bear_yoy_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "bear_ne-prev_q2_ne",
+            "reason": "契約数とARPUの条件付き積上げとの差",
+            "amount": 20.591999999999985
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "bear_consult-prev_q2_consult",
+            "reason": "人員制約と講座販売停滞",
+            "amount": -25.21199999999999
+          },
+          {
+            "label": "旧ロカルコから譲渡後リテールへの構成変化",
+            "formula": "bear_retail-prev_q2_local",
+            "reason": "ふるさと納税支援寄与消失とリテール販売の合計差。個別寄与は分離不能",
+            "amount": -122.55200000000002
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 10; S04 PDF page 14。累計セグメント表示値の合計と全社表示値に千円単位の端数差"
+        },
+        "rounding_tolerance": 0.004
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "bear_revenue",
+        "change_ref": "bear_qoq_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "bear_ne-current_q1_ne",
+            "reason": "季節的なARPU低下と契約基盤の弱含み",
+            "amount": -65.75300000000004
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "bear_consult-current_q1_consult",
+            "reason": "講座販売停滞と既存案件縮小",
+            "amount": -6.1839999999999975
+          },
+          {
+            "label": "コマーステック",
+            "formula": "bear_retail-current_q1_commerce",
+            "reason": "ふるさと納税支援事業の譲渡とリテール販売の合計差",
+            "amount": -27.085
+          }
+        ],
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+        },
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_revenue",
+        "forecast_ref": "base_revenue",
+        "change_ref": "base_yoy_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "base_ne-prev_q2_ne",
+            "reason": "契約基盤の拡大と受託開発を含むARPU改善",
+            "amount": 56.84699999999998
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "base_consult-prev_q2_consult",
+            "reason": "直近から回復するが前年Q2には届かない条件",
+            "amount": -10.211999999999989
+          },
+          {
+            "label": "旧ロカルコから譲渡後リテールへの構成変化",
+            "formula": "base_retail-prev_q2_local",
+            "reason": "ふるさと納税支援寄与消失と販路拡張の合計差",
+            "amount": -117.55200000000002
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 10; S04 PDF page 14、セグメント表示値合計と全社表示値"
+        },
+        "rounding_tolerance": 0.004
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "base_revenue",
+        "change_ref": "base_qoq_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "base_ne-current_q1_ne",
+            "reason": "契約純増が一部補うものの季節的なARPU低下",
+            "amount": -29.498000000000047
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "base_consult-current_q1_consult",
+            "reason": "アップセルと一部案件の売上回復",
+            "amount": 8.816000000000003
+          },
+          {
+            "label": "コマーステック",
+            "formula": "base_retail-current_q1_commerce",
+            "reason": "ふるさと納税支援事業の譲渡とリテール拡大の合計差",
+            "amount": -22.085
+          }
+        ],
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+        },
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "change_ref": "bull_yoy_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "bull_ne-prev_q2_ne",
+            "reason": "契約獲得回復と高ARPU維持",
+            "amount": 94.37099999999987
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "bull_consult-prev_q2_consult",
+            "reason": "教育商材の営業長期化が一部解消",
+            "amount": 9.788000000000011
+          },
+          {
+            "label": "旧ロカルコから譲渡後リテールへの構成変化",
+            "formula": "bull_retail-prev_q2_local",
+            "reason": "譲渡による減収をリテール販路拡張が一部補う",
+            "amount": -111.55200000000002
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 10; S04 PDF page 14、セグメント表示値合計と全社表示値"
+        },
+        "rounding_tolerance": 0.004
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "bull_revenue",
+        "change_ref": "bull_qoq_revenue_change",
+        "components": [
+          {
+            "label": "ネクストエンジン",
+            "formula": "bull_ne-current_q1_ne",
+            "reason": "ARPU維持と契約基盤拡大",
+            "amount": 8.02599999999984
+          },
+          {
+            "label": "コンサルティング",
+            "formula": "bull_consult-current_q1_consult",
+            "reason": "講座販売と既存契約アップセルの回復",
+            "amount": 28.816000000000003
+          },
+          {
+            "label": "コマーステック",
+            "formula": "bull_retail-current_q1_commerce",
+            "reason": "ふるさと納税支援事業の譲渡とリテール販路拡張の合計差",
+            "amount": -16.085
+          }
+        ],
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+        },
+        "rounding_tolerance": 0.003
+      }
+    ],
+    "issues": [
+      "2026年12月14日の発表予定は提示された二次情報にとどまり、会社・取引所の一次根拠を保存原文で確認できないためannouncement_dateはnull。S14の本文も提示されていない。",
+      "S01の前払費用増加は支出・資産残高情報であり、全額を対象四半期の費用とする根拠はない。S08のIPO資金使途も対象四半期の損益費用とは一致しない。",
+      "S02 page 23およびS07 page 18の前期末貸借対照表要約はS01・S06の短信と整合しない箇所があり、費用予測や会計版変更の根拠には採用していない。",
+      "S04とS01では前年Q1の減価償却費注記に差がある。全社売上・営業利益は一致するため同一会計版のS03とS04の累計差引を採用し、減価償却費差の理由は未確認。",
+      "S08は探索メタデータでは本文未確認とされているが、今回のdocumentsには全ページの保存本文が提示されているため、その本文を確認対象とした。S01～S12の提示本文に短縮フラグはないが、元PDFの画像・表配置との照合は行っていない。",
+      "S10・S11に韓国子会社による事業取得があるが、対象決算の連結移行と比較財務情報の扱いは確認できない。取得事業の年間売上を単純月割りして単体売上へ加算していない。",
+      "S11 page 1の取得資産のウォン単位表記は併記円額・負債額・対価との整合に疑義がある。推測訂正も取得原価配分への転用もしていない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "前年Q2のふるさと納税支援とリテールの個別売上・利益がなく、譲渡影響と既存リテール成長の前年比寄与は分離できない。ブリッジの構成変化項目は両者を合算したものである。",
+      "営業利益の定量を妨げるのは投資計画の対象期配分、費用と資産計上の区別、譲渡後の残存費用である。これらは提示原文に金額の開示がなく、他の原本における開示有無までは未確認。",
+      "基準日時までの追加修正・重要開示の網羅性と、S02等の差し替え履歴は未確認。独立レビュー済みとはしていない。",
+      "基準日時点で対象決算の発表済みを示す原文はない。target_already_announced=falseは提示された探索結果に基づき、開示一覧の完全性を独立確認したものではない。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "純利益は営業利益の見積もり不足に加え、譲渡対価の最終調整、譲渡関連費用、税負担の対象期配分が不明。予定譲渡価額を確定利益として使用していない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -99.02300000000002,
+            "rate": -0.10246765516363597,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -127.17200000000003,
+            "rate": -0.12787119972006936,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -42.76800000000003,
+            "rate": -0.04425574539287221,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -70.91700000000003,
+            "rate": -0.07130690616289875,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 20.755999999999858,
+            "rate": 0.021478026827872445,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -7.393000000000143,
+            "rate": -0.007433647182795669,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -127.17200000000003,
+        "explained_sum": -127.17200000000003,
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -99.02300000000002,
+        "explained_sum": -99.02200000000005,
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -70.91700000000003,
+        "explained_sum": -70.91700000000003,
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -42.76800000000003,
+        "explained_sum": -42.767000000000046,
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "difference": -7.105427357601002e-15,
+        "status": "passed",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -7.393000000000143,
+        "explained_sum": -7.393000000000143,
+        "residual": 0.0,
+        "residual_type": "rounding",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 20.755999999999858,
+        "explained_sum": 20.75699999999984,
+        "residual": -0.0009999999999763531,
+        "residual_type": "rounding",
+        "difference": -7.105427357601002e-15,
+        "status": "passed",
+        "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。"
+      }
+    ],
+    "conditions": [
+      "base_arpu: S02 page 22の過去Q2の弱さを残しつつ、S01 page 4の受注処理件数と受託開発の改善によって前年ほどの季節低下にならないと仮定。新サービス効果もこの単価内に含め、別加算しない。",
+      "base_consult: S01 page 4の通常コンサルティングの計画超過とアップセルを踏まえ、直近Q1から小幅回復。S03とS04の差引で得られる前年Q2水準には届かない条件。",
+      "base_contracts: S02 page 22の直近期末契約数と過去の緩やかな純増を踏まえ、月末契約社数の四半期平均を直近末より20社多い水準とする。",
+      "base_retail: 直近リテール規模の逆算値に対し、S01 page 4の卸先開拓・海外モール・商品開発による小幅拡大を仮定。会社通期リテール計画の四等分は使用しない。",
+      "bear_arpu: S02 page 22の前年Q2のARPU低下とS05 page 16の受託開発案件の仕込み期間を考慮。前年Q2を小幅に上回るが直近Q1から季節的に低下する条件。",
+      "bear_consult: S01 page 4の直近売上を基準に、人員制約と助成金変更による営業長期化が継続し、既存契約の減少がアップセルを上回る条件。",
+      "bear_contracts: S02 page 22の直近契約純増鈍化と月次解約率を踏まえ、月末契約社数の四半期平均が直近末を小幅に下回る条件を置く。実際の対象期契約数ではない。",
+      "bear_retail: S01 pages 4–5とS02 page 5から逆算される直近リテール規模を下回る条件。ふるさと納税支援売上は含めない。",
+      "bull_arpu: 受託開発と新サービスが季節的な受注処理減少を補い、S02 page 22の直近Q1 ARPUをほぼ維持する条件。",
+      "bull_consult: S02 page 21の前期Q4規模を上限の参考に、講座販売のリードタイム長期化が一部解消する条件。確定受注に基づく見積もりではない。",
+      "bull_contracts: S02 page 22の前年Q2の契約純増規模と新サービス投入を参考に、顧客獲得が回復する場合の四半期平均契約数を設定。",
+      "bull_retail: 直近規模を基準に、卸販売と販路拡張の寄与が強まる条件。受注残で裏付けられた値ではなく、短期販路拡張の感応度ケース。",
+      "quarter_months: 対象四半期の全月に月額ARPUを適用する計算上の期間係数。",
+      "ふるさと納税支援寄与は会社説明に従い対象期に含めない。ただし個別契約の履行責任に伴う残存取引の認識額は未確認。",
+      "コンサルティングとリテールは受注残による裏付けがなく、直近規模に対する条件付き感応度である。",
+      "契約社数は月末値の四半期平均を予測する。四半期末契約数を全期間の実績として扱っていない。",
+      "対象決算も非連結で開示されることを条件とする。韓国子会社の連結開始時期は保存資料で確認できない。",
+      "新サービス・受託開発の増収はARPU仮定に包含し、GMVや受注処理件数の成長を別途乗算しない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年4月期第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535747.pdf",
+        "published_at": "2026-09-14T15:30:00+09:00",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535747.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S01.txt",
+        "sha256": "3c628ac3b2b223194585da97feac519b2f6f2e647190ad11aed5067892cd5dbf",
+        "text_sha256": "332a38c353d4628bf00a1fa17f4fe299fd2bd879829cd1a3f74709b116ac4b2f",
+        "retrieved_at": "2026-11-22T00:01:10+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11947,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年4月期第1四半期決算説明資料",
+        "url": "https://note.com/api/v2/attachments/download/40530bf34c272d9455c1c40bcfeb6b53",
+        "published_at": "2026-09-14",
+        "category": "presentation",
+        "final_url": "https://note.com/api/v2/attachments/download/40530bf34c272d9455c1c40bcfeb6b53",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S02.txt",
+        "sha256": "767e76587fcfebc45f640b5e351e3b1aab085b8994a3312a4fda8bf1f97be760",
+        "text_sha256": "261d841b8856cf76da4a1973e68415118055154fd500b0fafa2ff6a5ccb03737",
+        "retrieved_at": "2026-11-22T00:01:11+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12153,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年4月期第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519330.pdf",
+        "published_at": "2025-12-15",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251212519330.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S03.txt",
+        "sha256": "41f498a624054bcdeb7b476342a64d56f37606d9679fce78880e7892a4a83762",
+        "text_sha256": "78e3b4e2bdee17c0a1639f4d2cb911b10474694d164ad0ae1753324835a7cd15",
+        "retrieved_at": "2026-11-22T00:01:12+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10892,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "東京証券取引所グロース市場への上場に伴う当社決算情報等のお知らせ（2026年4月期第1四半期決算短信を含む）",
+        "url": "https://www2.jpx.co.jp/disc/441A0/140120251030583350.pdf",
+        "published_at": "2025-11-04",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/441A0/140120251030583350.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S04.txt",
+        "sha256": "9f39845dcdccbbd6b412272f8018cd0aada5da110dd936881357123bcd1022fa",
+        "text_sha256": "ddbdb5df8d41c82f25bfb4e1b4bce484afdbd568923fc1e50f6792251cc615e9",
+        "retrieved_at": "2026-11-22T00:01:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16419,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年4月期第2四半期決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/441A0/140120251212519350.pdf",
+        "published_at": "2025-12-15",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/441A0/140120251212519350.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S05.txt",
+        "sha256": "7c6e9aad77e29bb54b41e6df048e746ef3ca46bdbafb6c06a9e48f3773e6881d",
+        "text_sha256": "886c8630c97da1a0f6f0e13636de0358d540eb1b9648e8a65bcb8ac422e7f616",
+        "retrieved_at": "2026-11-22T00:01:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 27093,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年4月期決算短信〔日本基準〕（非連結）（2027年4月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260508519883.pdf",
+        "published_at": "2026-06-12",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260508519883.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S06.txt",
+        "sha256": "04646f1beefd234dff9978da5c4e2f914842fc50d3d06de83f38d969f1cb2e6e",
+        "text_sha256": "50b058df255de2a15569073f025c50e1fab3048e35e743204138d4469ec481b5",
+        "retrieved_at": "2026-11-22T00:01:16+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 22706,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年4月期通期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569310.pdf",
+        "published_at": "2026-06-12",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569310.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S07.txt",
+        "sha256": "ad20a4efe66b059247aebb9b3b82b4bcb1a3130a43a38a9a83e35b366b90e19c",
+        "text_sha256": "0538087d965d623ae39cbdee61269c58d361a7532a2dc1213ca1881b581f8718",
+        "retrieved_at": "2026-11-22T00:01:18+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11534,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "中期経営計画2029 事業計画及び成長可能性に関する事項",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569454.pdf",
+        "published_at": "2026-06-12",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260612/20260612569454.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S08.txt",
+        "sha256": "ebe7a34174636f11ded76aa65570ca2b5115e1eb0b87b26cefe53e142ce95214",
+        "text_sha256": "1e75e0bff57cf5b43d848c8204b1af92c4270079c01420f94974d8e3181c7e5d",
+        "retrieved_at": "2026-11-22T00:01:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 20031,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "（開示事項の経過）ふるさと納税支援事業の「事業譲渡契約書」締結に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260730/20260730503483.pdf",
+        "published_at": "2026-07-30T18:30:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260730/20260730503483.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S09.txt",
+        "sha256": "f26e53231ff0c0dd693195f56f3c8b690a7f439de10b381d9b7bb09d6e51abf2",
+        "text_sha256": "8fe6a6fdd9c878bb710313b68b1e17bfbcc19414aa0399df82ad21798c4b7708",
+        "retrieved_at": "2026-11-22T00:01:22+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1819,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "当社子会社による事業の譲り受けに関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260918538398.pdf",
+        "published_at": "2026-09-18T15:30:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260918/20260918538398.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S10.txt",
+        "sha256": "6be5d1d5dd038b9f6d143f01dc3582232eb4b663f8c341c78b571e888040c6cb",
+        "text_sha256": "1471970c614797c4bf4eff4af0e7741608c962d4990d29626a7e9833580946a5",
+        "retrieved_at": "2026-11-22T00:01:22+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2342,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "（開示事項の経過）当社子会社による事業の譲り受けに関する契約書締結のお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260930/20260930543025.pdf",
+        "published_at": "2026-09-30T15:30:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260930/20260930543025.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S11.txt",
+        "sha256": "ec4ad06c15b2116dea60fbdf952a9a30d72cea7fee7ee7eb4c1679560ab85e22",
+        "text_sha256": "1771a3e7bf5f3146da2b3d3324892e5c2c02bcea184e9c2e2d2ab3d29ace7ea2",
+        "retrieved_at": "2026-11-22T00:01:23+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2397,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "NE（441A）2027年4月期第1四半期決算のご説明（動画付き・会社IR note）",
+        "url": "https://note.com/ne_ir/n/n191ac5dd06a0",
+        "published_at": "2026-09-30T12:16:00+09:00",
+        "category": "kpi",
+        "final_url": "https://note.com/ne_ir/n/n191ac5dd06a0",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S12.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\441A\\sources\\S12.txt",
+        "sha256": "cf20e649941e3999370a261f71f11e45b2f38d35f7fa547a6a10b1f7b36e2497",
+        "text_sha256": "c6b73c6134aa455e32317bbd90736ac9b429ff108dc9edbb9c881b04928e4e7d",
+        "retrieved_at": "2026-11-22T00:01:23+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2956,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "株式情報・IR",
+        "url": "https://ne-inc.jp/investor/stock/info/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:01:23+09:00"
+      },
+      {
+        "id": "S14",
+        "title": "IRカレンダー",
+        "url": "https://ne-inc.jp/investor/library/ir-calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:01:23+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "441A",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 2,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "scope_status": "最新短信の非連結ベースを条件付きで継続。対象決算での連結移行有無は未確認"
+      },
+      "inputs": [
+        {
+          "id": "prev_q1_revenue",
+          "value": 993.446,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 13"
+        },
+        {
+          "id": "prev_q1_op",
+          "value": 356.847,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 13"
+        },
+        {
+          "id": "prev_h1_revenue",
+          "value": 1987.978,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prev_h1_op",
+          "value": 723.35,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "current_q1_revenue",
+          "value": 966.383,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "current_q1_op",
+          "value": 310.824,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "current_q1_ordinary",
+          "value": 311.699,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "current_q1_net",
+          "value": 211.577,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prev_q1_ne",
+          "value": 794.546,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 14、外部顧客への売上高"
+        },
+        {
+          "id": "prev_q1_consult",
+          "value": 136.437,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 14、外部顧客への売上高"
+        },
+        {
+          "id": "prev_q1_local",
+          "value": 62.431,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 14、外部顧客への売上高"
+        },
+        {
+          "id": "prev_h1_ne",
+          "value": 1542.314,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10、外部顧客への売上高"
+        },
+        {
+          "id": "prev_h1_consult",
+          "value": 236.649,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10、外部顧客への売上高"
+        },
+        {
+          "id": "prev_h1_local",
+          "value": 208.983,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10、外部顧客への売上高"
+        },
+        {
+          "id": "current_q1_ne",
+          "value": 834.113,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、外部顧客への売上高"
+        },
+        {
+          "id": "current_q1_consult",
+          "value": 81.184,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、外部顧客への売上高"
+        },
+        {
+          "id": "current_q1_commerce",
+          "value": 51.085,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、外部顧客への売上高"
+        },
+        {
+          "id": "donation_revenue_decline",
+          "value": 14.319,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4、ふるさと納税支援事業の前年同期比減収額"
+        },
+        {
+          "id": "retail_growth",
+          "value": 0.129,
+          "kind": "fact",
+          "unit": "比率",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5、伝統工芸品EC販売の前年同期比増収率"
+        },
+        {
+          "id": "q1_contracts",
+          "value": 6770,
+          "kind": "fact",
+          "unit": "社",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 22、2027年4月期1Q総契約社数"
+        },
+        {
+          "id": "q1_arpu",
+          "value": 0.041069,
+          "kind": "fact",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 22、2027年4月期1Q ARPU、円を百万円に換算"
+        },
+        {
+          "id": "prev_q1_arpu",
+          "value": 0.039878,
+          "kind": "fact",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 22、2026年4月期1Q ARPU"
+        },
+        {
+          "id": "prev_q2_arpu",
+          "value": 0.037202,
+          "kind": "fact",
+          "unit": "百万円/社/月",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 22、2026年4月期2Q ARPU"
+        },
+        {
+          "id": "guidance_h1_revenue",
+          "value": 1989,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_op",
+          "value": 336,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_ordinary",
+          "value": 336,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_h1_net",
+          "value": 394,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期第2四半期累計予想"
+        },
+        {
+          "id": "guidance_fy_revenue",
+          "value": 4630,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期通期予想"
+        },
+        {
+          "id": "guidance_fy_op",
+          "value": 1190,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期通期予想"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "value": 1190,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期通期予想"
+        },
+        {
+          "id": "guidance_fy_net",
+          "value": 1011,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年4月期通期予想"
+        },
+        {
+          "id": "quarter_months",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "月",
+          "rationale": "対象四半期の全月に月額ARPUを適用する計算上の期間係数。",
+          "sensitivity": "売上認識対象月数が変われば、ネクストエンジン売上は月数に比例する。"
+        },
+        {
+          "id": "bear_contracts",
+          "value": 6740,
+          "kind": "assumption",
+          "unit": "社",
+          "rationale": "S02 page 22の直近契約純増鈍化と月次解約率を踏まえ、月末契約社数の四半期平均が直近末を小幅に下回る条件を置く。実際の対象期契約数ではない。",
+          "sensitivity": "平均契約社数が100社増減すると、当シナリオ売上は11.4百万円増減。",
+          "material": true
+        },
+        {
+          "id": "base_contracts",
+          "value": 6790,
+          "kind": "assumption",
+          "unit": "社",
+          "rationale": "S02 page 22の直近期末契約数と過去の緩やかな純増を踏まえ、月末契約社数の四半期平均を直近末より20社多い水準とする。",
+          "sensitivity": "平均契約社数が100社増減すると、当シナリオ売上は11.85百万円増減。",
+          "material": true
+        },
+        {
+          "id": "bull_contracts",
+          "value": 6830,
+          "kind": "assumption",
+          "unit": "社",
+          "rationale": "S02 page 22の前年Q2の契約純増規模と新サービス投入を参考に、顧客獲得が回復する場合の四半期平均契約数を設定。",
+          "sensitivity": "平均契約社数が100社増減すると、当シナリオ売上は12.33百万円増減。",
+          "material": true
+        },
+        {
+          "id": "bear_arpu",
+          "value": 0.038,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "rationale": "S02 page 22の前年Q2のARPU低下とS05 page 16の受託開発案件の仕込み期間を考慮。前年Q2を小幅に上回るが直近Q1から季節的に低下する条件。",
+          "sensitivity": "月額ARPUが0.001百万円増減すると、当シナリオ売上は20.22百万円増減。",
+          "material": true
+        },
+        {
+          "id": "base_arpu",
+          "value": 0.0395,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "rationale": "S02 page 22の過去Q2の弱さを残しつつ、S01 page 4の受注処理件数と受託開発の改善によって前年ほどの季節低下にならないと仮定。新サービス効果もこの単価内に含め、別加算しない。",
+          "sensitivity": "月額ARPUが0.001百万円増減すると、当シナリオ売上は20.37百万円増減。",
+          "material": true
+        },
+        {
+          "id": "bull_arpu",
+          "value": 0.0411,
+          "kind": "assumption",
+          "unit": "百万円/社/月",
+          "rationale": "受託開発と新サービスが季節的な受注処理減少を補い、S02 page 22の直近Q1 ARPUをほぼ維持する条件。",
+          "sensitivity": "月額ARPUが0.001百万円増減すると、当シナリオ売上は20.49百万円増減。",
+          "material": true
+        },
+        {
+          "id": "bear_consult",
+          "value": 75,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S01 page 4の直近売上を基準に、人員制約と助成金変更による営業長期化が継続し、既存契約の減少がアップセルを上回る条件。",
+          "sensitivity": "サービス売上または講座認識売上が10百万円変われば全社売上も10百万円変化。講座数と単価の内訳は確認できない。",
+          "material": true
+        },
+        {
+          "id": "base_consult",
+          "value": 90,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S01 page 4の通常コンサルティングの計画超過とアップセルを踏まえ、直近Q1から小幅回復。S03とS04の差引で得られる前年Q2水準には届かない条件。",
+          "sensitivity": "回復が起きず直近Q1水準にとどまれば、売上は8.816百万円下振れ。",
+          "material": true
+        },
+        {
+          "id": "bull_consult",
+          "value": 110,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S02 page 21の前期Q4規模を上限の参考に、講座販売のリードタイム長期化が一部解消する条件。確定受注に基づく見積もりではない。",
+          "sensitivity": "中心条件まで回復が弱まれば売上は20百万円下振れ。",
+          "material": true
+        },
+        {
+          "id": "bear_retail",
+          "value": 24,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S01 pages 4–5とS02 page 5から逆算される直近リテール規模を下回る条件。ふるさと納税支援売上は含めない。",
+          "sensitivity": "販売数量・単価の積が10%変われば売上は2.4百万円変化。",
+          "material": true
+        },
+        {
+          "id": "base_retail",
+          "value": 29,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近リテール規模の逆算値に対し、S01 page 4の卸先開拓・海外モール・商品開発による小幅拡大を仮定。会社通期リテール計画の四等分は使用しない。",
+          "sensitivity": "販売数量・単価の積が10%変われば売上は2.9百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_retail",
+          "value": 35,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近規模を基準に、卸販売と販路拡張の寄与が強まる条件。受注残で裏付けられた値ではなく、短期販路拡張の感応度ケース。",
+          "sensitivity": "中心条件まで販路拡張が弱まれば売上は6百万円下振れ。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prev_q2_revenue",
+          "formula": "prev_h1_revenue-prev_q1_revenue"
+        },
+        {
+          "id": "prev_q2_op",
+          "formula": "prev_h1_op-prev_q1_op"
+        },
+        {
+          "id": "prev_q2_ne",
+          "formula": "prev_h1_ne-prev_q1_ne"
+        },
+        {
+          "id": "prev_q2_consult",
+          "formula": "prev_h1_consult-prev_q1_consult"
+        },
+        {
+          "id": "prev_q2_local",
+          "formula": "prev_h1_local-prev_q1_local"
+        },
+        {
+          "id": "q1_retail_increase",
+          "formula": "current_q1_commerce-prev_q1_local+donation_revenue_decline"
+        },
+        {
+          "id": "prev_q1_retail_inferred",
+          "formula": "q1_retail_increase/retail_growth"
+        },
+        {
+          "id": "current_q1_retail_inferred",
+          "formula": "prev_q1_retail_inferred+q1_retail_increase"
+        },
+        {
+          "id": "guidance_implied_q2_revenue",
+          "formula": "guidance_h1_revenue-current_q1_revenue"
+        },
+        {
+          "id": "guidance_implied_q2_op",
+          "formula": "guidance_h1_op-current_q1_op"
+        },
+        {
+          "id": "guidance_implied_q2_ordinary",
+          "formula": "guidance_h1_ordinary-current_q1_ordinary"
+        },
+        {
+          "id": "guidance_implied_q2_net",
+          "formula": "guidance_h1_net-current_q1_net"
+        },
+        {
+          "id": "bear_ne",
+          "formula": "bear_contracts*bear_arpu*quarter_months"
+        },
+        {
+          "id": "base_ne",
+          "formula": "base_contracts*base_arpu*quarter_months"
+        },
+        {
+          "id": "bull_ne",
+          "formula": "bull_contracts*bull_arpu*quarter_months"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_ne+bear_consult+bear_retail"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_ne+base_consult+base_retail"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_ne+bull_consult+bull_retail"
+        },
+        {
+          "id": "bear_yoy_revenue_change",
+          "formula": "bear_revenue-prev_q2_revenue"
+        },
+        {
+          "id": "base_yoy_revenue_change",
+          "formula": "base_revenue-prev_q2_revenue"
+        },
+        {
+          "id": "bull_yoy_revenue_change",
+          "formula": "bull_revenue-prev_q2_revenue"
+        },
+        {
+          "id": "bear_qoq_revenue_change",
+          "formula": "bear_revenue-current_q1_revenue"
+        },
+        {
+          "id": "base_qoq_revenue_change",
+          "formula": "base_revenue-current_q1_revenue"
+        },
+        {
+          "id": "bull_qoq_revenue_change",
+          "formula": "bull_revenue-current_q1_revenue"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "prev_q2_ne+prev_q2_consult+prev_q2_local-prev_q2_revenue"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "current_q1_ne+current_q1_consult+current_q1_commerce-current_q1_revenue"
+        },
+        {
+          "id": "base_guidance_revenue_gap",
+          "formula": "base_revenue-guidance_implied_q2_revenue"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネクストエンジン事業",
+              "revenue": "bear_ne"
+            },
+            {
+              "name": "コンサルティング事業",
+              "revenue": "bear_consult"
+            },
+            {
+              "name": "コマーステック事業・リテール",
+              "revenue": "bear_retail"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネクストエンジン事業",
+              "revenue": "base_ne"
+            },
+            {
+              "name": "コンサルティング事業",
+              "revenue": "base_consult"
+            },
+            {
+              "name": "コマーステック事業・リテール",
+              "revenue": "base_retail"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネクストエンジン事業",
+              "revenue": "bull_ne"
+            },
+            {
+              "name": "コンサルティング事業",
+              "revenue": "bull_consult"
+            },
+            {
+              "name": "コマーステック事業・リテール",
+              "revenue": "bull_retail"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 1,
+          "period_start": "2025-05-01",
+          "period_end": "2025-07-31",
+          "revenue": 993.446,
+          "operating_profit": 356.847,
+          "ordinary_profit": 356.694,
+          "net_profit": 238.878,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・旧ロカルコ区分・その他を含む。会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 7, 13–14"
+        },
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 2,
+          "period_start": "2025-05-01",
+          "period_end": "2025-10-31",
+          "revenue": 1987.978,
+          "operating_profit": 723.35,
+          "ordinary_profit": 714.659,
+          "net_profit": 489.989,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・旧ロカルコ区分・その他を含む。会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2, 8, 10"
+        },
+        {
+          "fiscal_year_end": "2027-04-30",
+          "quarter": 1,
+          "period_start": "2026-05-01",
+          "period_end": "2026-07-31",
+          "revenue": 966.383,
+          "operating_profit": 310.824,
+          "ordinary_profit": 311.699,
+          "net_profit": 211.577,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・コマーステック名称へ変更・その他区分廃止。全社損益の会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2, 8–9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "契約社数とARPU",
+          "mechanism": "月末契約社数の四半期平均に月額ARPUと対象月数を乗じる。従量課金、受託開発、アプリ寄与はARPUに含め、GMV成長を別途加算しない。",
+          "source_ids": [
+            "S04",
+            "S02",
+            "S05"
+          ],
+          "locator": "S04 PDF page 4; S02 PDF pages 3, 22; S05 PDF pages 16, 29",
+          "calculation_ids": [
+            "bear_ne",
+            "base_ne",
+            "bull_ne"
+          ],
+          "not_quantified_reason": "契約階層別件数と価格、受託開発の検収日が保存資料にないため、数量・価格の詳細分解はできない。"
+        },
+        {
+          "name": "通常コンサルティングと教育商材",
+          "mechanism": "通常サービスのアップセルが支える一方、講座販売は助成金変更に伴うリードタイム長期化の影響を受ける。直近と過去四半期の事業規模で条件付き範囲を設定。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 4; S02 PDF page 21",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "対象期の契約数、講座販売数、単価および手数料率は保存資料にない。"
+        },
+        {
+          "name": "ふるさと納税支援事業の譲渡とリテール",
+          "mechanism": "会社説明に従い対象期のふるさと納税支援寄与を除外。リテールの直近規模はセグメント増減、譲渡事業の減収額、リテール成長率から参考推計する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S09"
+          ],
+          "locator": "S01 PDF pages 4–5, 10–11; S02 PDF page 5; S09 PDF pages 1–2",
+          "calculation_ids": [
+            "current_q1_retail_inferred",
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "前年Q2のふるさと納税支援とリテールの個別売上は保存資料にないため、前年比ブリッジでは事業構成変化を一括表示する。"
+        },
+        {
+          "name": "成長投資と営業採算",
+          "mechanism": "開発・セキュリティ・マーケティング投資の後ろ倒し解消が対象期利益を左右する。資産計上する開発費と即時費用を分ける必要がある。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S08",
+            "S12"
+          ],
+          "locator": "S01 PDF pages 8–9; S02 PDF pages 4, 6–7; S08 PDF page 42; S12「通期業績予想と今後の投資方針」",
+          "calculation_ids": [],
+          "not_quantified_reason": "投資の対象四半期配分、資産計上割合、部門別配賦、譲渡後の残存固定費が不明。IPO資金使途は支払予定であり、そのまま対象期費用にはできない。"
+        },
+        {
+          "name": "韓国子会社と取得事業",
+          "mechanism": "対象期に子会社設立・事業取得がある。単体予測に子会社売上を直接加算しない。",
+          "source_ids": [
+            "S02",
+            "S10",
+            "S11"
+          ],
+          "locator": "S02 PDF page 14; S10 PDF pages 1–2; S11 PDF pages 1–2",
+          "calculation_ids": [],
+          "not_quantified_reason": "対象決算の連結範囲、取得後実績、内部取引、費用配賦を確認できない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "change_ref": "bear_yoy_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "bear_ne-prev_q2_ne",
+              "reason": "契約数とARPUの条件付き積上げとの差"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "bear_consult-prev_q2_consult",
+              "reason": "人員制約と講座販売停滞"
+            },
+            {
+              "label": "旧ロカルコから譲渡後リテールへの構成変化",
+              "formula": "bear_retail-prev_q2_local",
+              "reason": "ふるさと納税支援寄与消失とリテール販売の合計差。個別寄与は分離不能"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03",
+              "S04"
+            ],
+            "locator": "S03 PDF page 10; S04 PDF page 14。累計セグメント表示値の合計と全社表示値に千円単位の端数差"
+          },
+          "rounding_tolerance": 0.004
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "bear_revenue",
+          "change_ref": "bear_qoq_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "bear_ne-current_q1_ne",
+              "reason": "季節的なARPU低下と契約基盤の弱含み"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "bear_consult-current_q1_consult",
+              "reason": "講座販売停滞と既存案件縮小"
+            },
+            {
+              "label": "コマーステック",
+              "formula": "bear_retail-current_q1_commerce",
+              "reason": "ふるさと納税支援事業の譲渡とリテール販売の合計差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "対象期投資費用と譲渡後の残存費用に根拠ある範囲を設定できず、営業利益差全体が未定量。ゼロ残差とは扱わない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "投資の後ろ倒し解消額と事業譲渡による採算変化が未定量。営業利益差を算定できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_revenue",
+          "forecast_ref": "base_revenue",
+          "change_ref": "base_yoy_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "base_ne-prev_q2_ne",
+              "reason": "契約基盤の拡大と受託開発を含むARPU改善"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "base_consult-prev_q2_consult",
+              "reason": "直近から回復するが前年Q2には届かない条件"
+            },
+            {
+              "label": "旧ロカルコから譲渡後リテールへの構成変化",
+              "formula": "base_retail-prev_q2_local",
+              "reason": "ふるさと納税支援寄与消失と販路拡張の合計差"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03",
+              "S04"
+            ],
+            "locator": "S03 PDF page 10; S04 PDF page 14、セグメント表示値合計と全社表示値"
+          },
+          "rounding_tolerance": 0.004
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "base_revenue",
+          "change_ref": "base_qoq_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "base_ne-current_q1_ne",
+              "reason": "契約純増が一部補うものの季節的なARPU低下"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "base_consult-current_q1_consult",
+              "reason": "アップセルと一部案件の売上回復"
+            },
+            {
+              "label": "コマーステック",
+              "formula": "base_retail-current_q1_commerce",
+              "reason": "ふるさと納税支援事業の譲渡とリテール拡大の合計差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年のふるさと納税特需による利益と対象期投資費用を個別定量できず、営業利益差全体が未定量。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "投資実行額・費用化割合と譲渡後の固定費が不明であり、直近利益率の延長では算定しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "change_ref": "bull_yoy_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "bull_ne-prev_q2_ne",
+              "reason": "契約獲得回復と高ARPU維持"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "bull_consult-prev_q2_consult",
+              "reason": "教育商材の営業長期化が一部解消"
+            },
+            {
+              "label": "旧ロカルコから譲渡後リテールへの構成変化",
+              "formula": "bull_retail-prev_q2_local",
+              "reason": "譲渡による減収をリテール販路拡張が一部補う"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "千円単位で表示された累計セグメント値と全社値の差引差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S03",
+              "S04"
+            ],
+            "locator": "S03 PDF page 10; S04 PDF page 14、セグメント表示値合計と全社表示値"
+          },
+          "rounding_tolerance": 0.004
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "bull_revenue",
+          "change_ref": "bull_qoq_revenue_change",
+          "components": [
+            {
+              "label": "ネクストエンジン",
+              "formula": "bull_ne-current_q1_ne",
+              "reason": "ARPU維持と契約基盤拡大"
+            },
+            {
+              "label": "コンサルティング",
+              "formula": "bull_consult-current_q1_consult",
+              "reason": "講座販売と既存契約アップセルの回復"
+            },
+            {
+              "label": "コマーステック",
+              "formula": "bull_retail-current_q1_commerce",
+              "reason": "ふるさと納税支援事業の譲渡とリテール販路拡張の合計差"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直近Q1のセグメント表示値合計と全社表示値の端数差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 9、千円単位の外部顧客売上の各区分と合計"
+          },
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増収時の受託開発外注費、教育商材手数料、追加投資の費用化を限定できず、営業利益差は未定量。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "売上強気条件は利益強気条件を保証しない。投資と構成変化による費用差が不明であり、残差も算定不能。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "g_h1_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_h1_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_h1_op",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_h1_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_h1_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_h1_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_h1_net",
+          "period_start": "2026-05-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_fy_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_fy_op",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_fy_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "g_fy_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_fy_net",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        }
+      ],
+      "company_guidance": "S01で確認した中間累計・通期予想はS06の期初予想から据え置き。guidance_recordsのlatest_confirmedは提示資料内の最新確認を意味する。中間累計から確定Q1を引いた対象四半期の機械的含意をcalculationsに保存したが、会社が直接公表した四半期単独予想でも独自予測でもない。ふるさと納税支援事業の寄与消失と譲渡益は期初予想に包含されており、差引値へ再加減しない。",
+      "consensus": "未確認。提示された保存原文には対象四半期または通期の公表市場コンセンサスがない。",
+      "independent_forecast": "単体継続を条件に、主力事業を契約社数×ARPU×月数、他事業を直近実績と事業構成変化に基づく条件付き範囲で積み上げた売上予測。会社予想差引値からは独立。弱気・中心・強気は売上の条件であり、利益の順位を示さない。営業利益は投資費用の時期・費用化割合に根拠ある範囲を設定できずnull。経常利益・純利益もnullとする。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き予測",
+          "text": "単体継続を条件とした売上は、弱気{{value:bear_revenue}}、中心{{value:base_revenue}}、強気{{value:bull_revenue}}。主力の契約基盤と受託開発が下支えする一方、ふるさと納税支援事業の譲渡が前年の特需売上を失わせる。対象決算が連結へ移行する場合、この予測を連結数値として使用できない。"
+        },
+        {
+          "heading": "会社予想との違い",
+          "text": "中間累計会社予想から確定Q1を差し引いた売上の含意は{{value:guidance_implied_q2_revenue}}、営業利益の含意は{{value:guidance_implied_q2_op}}。独自中心売上との差は{{value:base_guidance_revenue_gap}}。差は主に、主力ARPUの季節低下を残し、講座販売とリテール販路拡張を慎重に置いたことによる。会社の対象期別事業計画がないため、計画差を事業別に完全照合することはできない。"
+        },
+        {
+          "heading": "リテールの推計と利益の限界",
+          "text": "保存原文の事業別増減から得られる直近リテール売上の参考推計は{{value:current_q1_retail_inferred}}。これは丸められた成長率を使う差引推計であり、直接開示実績ではない。営業利益は、投資の後ろ倒し解消と譲渡後の費用構造によって大きく変わる。会社予想の利益水準に合わせて費用を逆算することはせず、未定量とした。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象決算も非連結で開示されることを条件とする。韓国子会社の連結開始時期は保存資料で確認できない。",
+        "契約社数は月末値の四半期平均を予測する。四半期末契約数を全期間の実績として扱っていない。",
+        "新サービス・受託開発の増収はARPU仮定に包含し、GMVや受注処理件数の成長を別途乗算しない。",
+        "ふるさと納税支援寄与は会社説明に従い対象期に含めない。ただし個別契約の履行責任に伴う残存取引の認識額は未確認。",
+        "コンサルティングとリテールは受注残による裏付けがなく、直近規模に対する条件付き感応度である。"
+      ],
+      "material_unresolved": [
+        "2026年12月14日の発表予定は提示された二次情報にとどまり、会社・取引所の一次根拠を保存原文で確認できないためannouncement_dateはnull。S14の本文も提示されていない。",
+        "基準日時点で対象決算の発表済みを示す原文はない。target_already_announced=falseは提示された探索結果に基づき、開示一覧の完全性を独立確認したものではない。",
+        "S10・S11に韓国子会社による事業取得があるが、対象決算の連結移行と比較財務情報の扱いは確認できない。取得事業の年間売上を単純月割りして単体売上へ加算していない。",
+        "営業利益の定量を妨げるのは投資計画の対象期配分、費用と資産計上の区別、譲渡後の残存費用である。これらは提示原文に金額の開示がなく、他の原本における開示有無までは未確認。",
+        "S01の前払費用増加は支出・資産残高情報であり、全額を対象四半期の費用とする根拠はない。S08のIPO資金使途も対象四半期の損益費用とは一致しない。",
+        "純利益は営業利益の見積もり不足に加え、譲渡対価の最終調整、譲渡関連費用、税負担の対象期配分が不明。予定譲渡価額を確定利益として使用していない。",
+        "S02 page 23およびS07 page 18の前期末貸借対照表要約はS01・S06の短信と整合しない箇所があり、費用予測や会計版変更の根拠には採用していない。",
+        "S11 page 1の取得資産のウォン単位表記は併記円額・負債額・対価との整合に疑義がある。推測訂正も取得原価配分への転用もしていない。",
+        "S04とS01では前年Q1の減価償却費注記に差がある。全社売上・営業利益は一致するため同一会計版のS03とS04の累計差引を採用し、減価償却費差の理由は未確認。",
+        "前年Q2のふるさと納税支援とリテールの個別売上・利益がなく、譲渡影響と既存リテール成長の前年比寄与は分離できない。ブリッジの構成変化項目は両者を合算したものである。",
+        "S08は探索メタデータでは本文未確認とされているが、今回のdocumentsには全ページの保存本文が提示されているため、その本文を確認対象とした。S01～S12の提示本文に短縮フラグはないが、元PDFの画像・表配置との照合は行っていない。",
+        "基準日時までの追加修正・重要開示の網羅性と、S02等の差し替え履歴は未確認。独立レビュー済みとはしていない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "2026年12月14日の発表予定は提示された二次情報にとどまり、会社・取引所の一次根拠を保存原文で確認できないためannouncement_dateはnull。S14の本文も提示されていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S01の前払費用増加は支出・資産残高情報であり、全額を対象四半期の費用とする根拠はない。S08のIPO資金使途も対象四半期の損益費用とは一致しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S02 page 23およびS07 page 18の前期末貸借対照表要約はS01・S06の短信と整合しない箇所があり、費用予測や会計版変更の根拠には採用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S04とS01では前年Q1の減価償却費注記に差がある。全社売上・営業利益は一致するため同一会計版のS03とS04の累計差引を採用し、減価償却費差の理由は未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S08は探索メタデータでは本文未確認とされているが、今回のdocumentsには全ページの保存本文が提示されているため、その本文を確認対象とした。S01～S12の提示本文に短縮フラグはないが、元PDFの画像・表配置との照合は行っていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S10・S11に韓国子会社による事業取得があるが、対象決算の連結移行と比較財務情報の扱いは確認できない。取得事業の年間売上を単純月割りして単体売上へ加算していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "S11 page 1の取得資産のウォン単位表記は併記円額・負債額・対価との整合に疑義がある。推測訂正も取得原価配分への転用もしていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "前年Q2のふるさと納税支援とリテールの個別売上・利益がなく、譲渡影響と既存リテール成長の前年比寄与は分離できない。ブリッジの構成変化項目は両者を合算したものである。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "営業利益の定量を妨げるのは投資計画の対象期配分、費用と資産計上の区別、譲渡後の残存費用である。これらは提示原文に金額の開示がなく、他の原本における開示有無までは未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "基準日時までの追加修正・重要開示の網羅性と、S02等の差し替え履歴は未確認。独立レビュー済みとはしていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "基準日時点で対象決算の発表済みを示す原文はない。target_already_announced=falseは提示された探索結果に基づき、開示一覧の完全性を独立確認したものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "純利益は営業利益の見積もり不足に加え、譲渡対価の最終調整、譲渡関連費用、税負担の対象期配分が不明。予定譲渡価額を確定利益として使用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "base_arpu: S02 page 22の過去Q2の弱さを残しつつ、S01 page 4の受注処理件数と受託開発の改善によって前年ほどの季節低下にならないと仮定。新サービス効果もこの単価内に含め、別加算しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "base_consult: S01 page 4の通常コンサルティングの計画超過とアップセルを踏まえ、直近Q1から小幅回復。S03とS04の差引で得られる前年Q2水準には届かない条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "base_contracts: S02 page 22の直近期末契約数と過去の緩やかな純増を踏まえ、月末契約社数の四半期平均を直近末より20社多い水準とする。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "base_retail: 直近リテール規模の逆算値に対し、S01 page 4の卸先開拓・海外モール・商品開発による小幅拡大を仮定。会社通期リテール計画の四等分は使用しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bear_arpu: S02 page 22の前年Q2のARPU低下とS05 page 16の受託開発案件の仕込み期間を考慮。前年Q2を小幅に上回るが直近Q1から季節的に低下する条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bear_consult: S01 page 4の直近売上を基準に、人員制約と助成金変更による営業長期化が継続し、既存契約の減少がアップセルを上回る条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bear_contracts: S02 page 22の直近契約純増鈍化と月次解約率を踏まえ、月末契約社数の四半期平均が直近末を小幅に下回る条件を置く。実際の対象期契約数ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bear_retail: S01 pages 4–5とS02 page 5から逆算される直近リテール規模を下回る条件。ふるさと納税支援売上は含めない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bull_arpu: 受託開発と新サービスが季節的な受注処理減少を補い、S02 page 22の直近Q1 ARPUをほぼ維持する条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bull_consult: S02 page 21の前期Q4規模を上限の参考に、講座販売のリードタイム長期化が一部解消する条件。確定受注に基づく見積もりではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bull_contracts: S02 page 22の前年Q2の契約純増規模と新サービス投入を参考に、顧客獲得が回復する場合の四半期平均契約数を設定。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "bull_retail: 直近規模を基準に、卸販売と販路拡張の寄与が強まる条件。受注残で裏付けられた値ではなく、短期販路拡張の感応度ケース。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "quarter_months: 対象四半期の全月に月額ARPUを適用する計算上の期間係数。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "ふるさと納税支援寄与は会社説明に従い対象期に含めない。ただし個別契約の履行責任に伴う残存取引の認識額は未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "コンサルティングとリテールは受注残による裏付けがなく、直近規模に対する条件付き感応度である。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "契約社数は月末値の四半期平均を予測する。四半期末契約数を全期間の実績として扱っていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "対象決算も非連結で開示されることを条件とする。韓国子会社の連結開始時期は保存資料で確認できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "441A",
+      "company_name": "ＮＥ株式会社",
+      "kind": "condition",
+      "message": "新サービス・受託開発の増収はARPU仮定に包含し、GMVや受注処理件数の成長を別途乗算しない。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/441A/result.json": "dd27f4101726d26b50215b3d7fd00ad470e96738162f0c946865c81d946d5315",
+    "reports/441A.md": "e2bbc2f42e4c50a56c64191e34e7391ff98a6207292437b39f36c24c5f8f6840"
+  }
+}

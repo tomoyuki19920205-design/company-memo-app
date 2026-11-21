@@ -1,0 +1,1901 @@
+{
+  "id": "3441-f1fa94da649b19c4ca86421393fc973fb4aa11d801944570c11e1f174d4f7f7a",
+  "code": "3441",
+  "companyName": "株式会社山王",
+  "announcementDate": "2026-12-14",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3441-generation-c4eeee2808b983c7 · f1fa94da",
+  "savedAt": "2026-11-21T23:51:09+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 4420.927699999999,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": 0.3508841239643611,
+    "label": "+35.1%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3441 株式会社山王｜2027-07-31期 Q1単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 3,972.82 | 4,420.93 | 4,644.98 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 1,148.31 | 35.09% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | -60.17 | -1.34% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存資料内で確認した最新会社予想はS01の2027年7月期通期予想。原材料価格変動と設備投資に伴う償却負担を織り込む。対象第1四半期単独の会社予想は記載されていない。通期予想を四等分せず、独自売上推計の計算には使用していない。S05は過年度の予想と確定実績の差異説明であり、対象期の期後修正見込みではない。\n\n## 市場コンセンサス\n未確認。提示された保存資料に市場コンセンサスの数値・集計日・対象期間はない。\n\n## 独自予測・差引推計の区分\n売上のみ、直近四半期の地域別外部売上と需要動向を基礎とする条件付き推計を提示。数量×単価の完全な積上げではなく、地域別の売上継続・調整幅を明示した独自感応度モデルであり、統計的信頼区間ではない。利益は直近の採算急変を合理的に分解できないためnull。会社予想差引による推計、費用の逆算、期後修正効果の加算は行っていない。\n\n## 条件付き売上予測\n中心売上は4,420.93、弱気は3,972.82、強気は4,644.98。日本はAI・データセンターとADAS需要、フィリピンは自動車向け出荷を主因とする。地域別の直近実績を基準とし、新ラインや既存価格改定の効果を重ねて加算していない。\n\n## 利益推計の制約\n前四半期単独は売上4,481.10に対して営業利益-266.62。売上総利益は237.31、販管費は503.93となり、需要拡大だけでは利益を説明できない。金価格、価格転嫁、人材投資、設備負担の継続性が不明であり、前年同期の利益率や通期会社予想から利益を当てはめない。\n\n## 比較可能性\n前四半期は同じ定額法変更後の通期累計と第3四半期累計の差引で算出した。前年同四半期も定額法変更後であり、減価償却方法変更による増益効果を再度加算しない。明王化成の吸収合併は共通支配下の取引で、対象期に新規連結売上が発生すると扱わない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | 511.44 | 需要拡大後の直近水準から調整する条件。数量・価格・構成の合計。 |\n| フィリピンの外部売上差 | 188.76 | 自動車需要を維持しつつ顧客出荷が調整する条件。 |\n| 残差（none） | 0.00 | 地域別外部売上で一致。経済要因の個別寄与まで説明できたことを意味しない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | -327.76 | 直近売上からの調整仮定。 |\n| フィリピンの外部売上差 | -180.53 | 顧客集中を踏まえた出荷調整仮定。 |\n| 残差（rounding） | 0.00 | 地域別表示値と連結表示値の差引に伴う端数。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | 839.19 | AI・ADAS等の拡大後の直近売上を維持する条件。 |\n| フィリピンの外部売上差 | 309.11 | 自動車需要を背景に直近高水準を大部分維持する条件。 |\n| 残差（none） | 0.00 | 地域別外部売上で一致。数量・価格・構成の寄与は分離していない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | 0.00 | 直近売上維持の仮定。 |\n| フィリピンの外部売上差 | -60.18 | 直近売上に顧客出荷調整を織り込む仮定。 |\n| 残差（rounding） | 0.00 | 地域別表示値と連結表示値の差引に伴う端数。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | 1,003.07 | 直近需要の継続に加え、受注・稼働が緩やかに拡大する条件。 |\n| フィリピンの外部売上差 | 369.29 | 自動車向け出荷の直近高水準維持。 |\n| 残差（none） | 0.00 | 地域別外部売上で一致。数量・価格・構成の寄与は分離していない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 日本の外部売上差 | 163.88 | 受注と稼働の追加改善を仮定。 |\n| フィリピンの外部売上差 | 0.00 | 直近売上維持を仮定。 |\n| 残差（rounding） | 0.00 | 地域別表示値と連結表示値の差引に伴う端数。 |\n\n## エラー・未解決事項\n- S01～S07は提示テキストに短縮表示がないが、PDF画像、訂正履歴、未提示の追加開示は確認していない。guidance_recordsのlatest_confirmedは提示された判読可能資料内での最新を意味する。\n- S04の分野別売上は上期までで、直近四半期の分野構成は未確認。端数調整の注意書きもあるため、地域別モデルと重複加算しない。\n- S04の地域別売上は連結売上と単純一致せず、内部売上を含む可能性があるが定義を確定できない。予測基準にはS01・S03の明示された外部顧客売上を使用した。\n- S08は保存テキストが文字化けしており、処分額、株数、費用認識期間の原文は判読確認できない。非開示と断定せず、予測に数値を取り込まない。\n- S09は末尾が短縮されている。企業同一性に関する山王の掲載はPDF page 3で確認できるが、省略範囲は未確認であり業績根拠には使用しない。\n- target_already_announced=falseは提示された調査条件と保存資料の範囲に基づく。基準日時点の全開示を独自に網羅確認したものではない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 営業利益は直近四半期の粗利益急減と販管費増加の内訳不足が重要。S05は方向を説明するが、各要因の金額や一過性・継続性を示していない。利益予測と営業利益ブリッジの残差は未算定。\n- 増減要因エラー: Finite number required\n- 売上シナリオの幅は地域実績と需要説明から設定した条件であり、受注数量に裏付けられた確度の高い予測ではない。想定範囲外の出荷・金価格転嫁・為替変動では成立しない。\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 指定された2026年12月14日という発表予定日の公式根拠は保存原文にないため、announcement_dateはnull。対象は2027年7月期第1四半期単独とした。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n- AIへ渡した原文に省略あり: S09\n\n## 条件・不確実性\n- base_japan_factor: AI・データセンター、ADAS、PC・タブレット需要の継続と稼働済み新ラインを踏まえ、直近四半期の日本外部売上を維持すると仮定。新ラインや価格改定は基準売上に包含されるため別途上乗せしない。\n- base_philippines_factor: 自動車需要の堅調さを認めつつ、直近四半期までの増収がそのまま継続するとは置かず、顧客集中を考慮して直近売上を5％割り引く。季節性の確定値ではなく、出荷水準に関する独自仮定。\n- bear_japan_factor: 直近四半期の日本外部売上を基準に、AI・ADAS需要の拡大が続いても高い直近水準から受注・出荷が一服する条件を置く。前四半期比10％減は独自のストレス幅であり、会社の数量計画ではない。前年同期の地域売上をなお上回る水準に限定した条件付き推計。\n- bear_philippines_factor: 自動車需要が牽引する一方、主要顧客への集中が大きいため、直近四半期から15％減の出荷調整を仮定。前年同期を上回り、直近の高水準を部分的に維持するストレス条件。為替や顧客別発注実績を観測した値ではない。\n- bull_japan_factor: 受注拡大と既存新ラインの稼働向上が継続する条件として直近四半期から5％増を置く。過去の高い前年比成長率は延長せず、直近水準からの限定的な増収にとどめる。増産数量・価格改定率の確認値ではない。\n- bull_philippines_factor: 自動車需要が堅調に推移し、直近四半期の外部売上を維持する条件。地域別の追加受注残や能力増強量がないため、直近実績を超える増収は置かない。\n- 営業外損益、特別損益、繰延税金資産の回収可能性が不足し、経常利益・純利益の範囲も設定していない。\n- 地域別売上係数は独自仮定であり、受注残、出荷計画、為替実績で検証できていない。\n- 対象期の金価格負担、価格転嫁の時間差、人員増、設備稼働日、償却費は提示資料内で未確認。\n- 数量と価格の個別情報は提示資料内に記載がなく、売上変動を両者に分離できない。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535513.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `bf07c3582d26bee9f485c36822029f20668feb6e6728fa68e439188d8b9992ed`\n- S02 [2026年7月期 第1四半期決算短信〔日本基準〕（連結）](https://pdf.irpocket.com/C3441/PDLX/ivUg/KV0Q.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `704b3366ffe8aae8686cbfe7b041d24e00e53afd3701e0664b818d096cd477b0`\n- S03 [2026年7月期 第3四半期決算短信〔日本基準〕（連結）](https://pdf.irpocket.com/C3441/ccdN/RQAd/Cz63.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `3b563c9d3f19783163f7c0020ce3d4a70080fceb75e1a54e95b6050c0f038d82`\n- S04 [2026年7月期 第2四半期決算説明資料（地域別・分野別売上、設備投資等を含む）](https://pdf.irpocket.com/C3441/LseR/LvMz/VdNn.pdf) / 公表 2026-03-30 / retrieved / SHA-256 `aa6d7f39dbd10059cf46e2510f68654a8c0c213865d27153daeabfc326e2ba69`\n- S05 [2026年7月期連結業績予想数値と実績値との差異に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535927.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `faf2fbb55f1a8d32a1e0d8f22a901746126c7bf56273b7f62cb0f17357405909`\n- S06 [剰余金の配当（増配）に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535963.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `fa6f6d6333066344fa51593310c6ababf6c77950d5bbb943c7adff410017607e`\n- S07 [役員の異動および新経営体制の内定に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535969.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `524ef64907311d2e2b6a620d5ca26a5e2a886518402942fc3d8e8b7c4ce3d803`\n- S08 [譲渡制限付株式報酬としての自己株式の処分に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559559.pdf) / 公表 2026-10-29T15:30:00+09:00 / retrieved / SHA-256 `909adbfb0eac034f38e8dca9a5908804af3a60d6d090372e74853e7a2b4f43da`\n- S09 [名古屋証券取引所日報 2026年11月10日](https://www.nse.or.jp/market/condition/report/files/20261110.pdf) / 公表 2026-11-10 / retrieved / SHA-256 `2127ab28c366480f201609c07eb0bdc8886b1b5258ce68162313f6d052e56e2b`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3441",
+    "company_name": "株式会社山王",
+    "announcement_date": "2026-12-14",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 3972.8173999999995,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 4420.927699999999,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 4644.98285,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -60.174299999999675,
+          "rate": -0.013428460231434073,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 1148.3096999999993,
+          "rate": 0.3508841239643611,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy_revenue": 15531.141,
+      "fy_op": 1315.694,
+      "fy_gp": 2915.467,
+      "fy_sga": 1599.773,
+      "nine_revenue": 11050.039,
+      "nine_op": 1582.313,
+      "nine_gp": 2678.161,
+      "nine_sga": 1095.847,
+      "prior_revenue": 3272.618,
+      "prior_op": 477.18,
+      "prior_japan": 2438.402,
+      "prior_philippines": 834.216,
+      "fy_japan": 11468.193,
+      "fy_philippines": 4062.948,
+      "nine_japan": 8190.596,
+      "nine_philippines": 2859.442,
+      "guidance_revenue": 15600.0,
+      "guidance_op": 800.0,
+      "guidance_ordinary": 815.0,
+      "guidance_net": 676.0,
+      "bear_japan_factor": 0.9,
+      "base_japan_factor": 1.0,
+      "bull_japan_factor": 1.05,
+      "bear_philippines_factor": 0.85,
+      "base_philippines_factor": 0.95,
+      "bull_philippines_factor": 1.0,
+      "q4_revenue": 4481.101999999999,
+      "q4_op": -266.61900000000014,
+      "q4_gp": 237.30600000000004,
+      "q4_sga": 503.92599999999993,
+      "q4_japan": 3277.5969999999998,
+      "q4_philippines": 1203.5059999999999,
+      "qoq_revenue_rounding": 0.0010000000002037268,
+      "bear_japan_revenue": 2949.8372999999997,
+      "bear_philippines_revenue": 1022.9800999999999,
+      "bear_revenue": 3972.8173999999995,
+      "base_japan_revenue": 3277.5969999999998,
+      "base_philippines_revenue": 1143.3306999999998,
+      "base_revenue": 4420.927699999999,
+      "bull_japan_revenue": 3441.47685,
+      "bull_philippines_revenue": 1203.5059999999999,
+      "bull_revenue": 4644.98285
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 7,9",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 3272.618,
+        "operating_profit": 477.18,
+        "ordinary_profit": 473.938,
+        "net_profit": 372.365
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 7,9,11",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03"
+        ],
+        "locator": "PDF pages 8,13,18",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 4481.101999999999,
+        "operating_profit": -266.61900000000014,
+        "ordinary_profit": -269.164,
+        "net_profit": -278.6980000000001
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "bear_japan_revenue-prior_japan",
+            "reason": "需要拡大後の直近水準から調整する条件。数量・価格・構成の合計。",
+            "amount": 511.43529999999964
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "bear_philippines_revenue-prior_philippines",
+            "reason": "自動車需要を維持しつつ顧客出荷が調整する条件。",
+            "amount": 188.76409999999987
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "地域別外部売上で一致。経済要因の個別寄与まで説明できたことを意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "bear_japan_revenue-q4_japan",
+            "reason": "直近売上からの調整仮定。",
+            "amount": -327.75970000000007
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "bear_philippines_revenue-q4_philippines",
+            "reason": "顧客集中を踏まえた出荷調整仮定。",
+            "amount": -180.52589999999998
+          }
+        ],
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "rounding_tolerance": 0.002,
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+          "explanation": "千円表示の第3四半期累計では日本とフィリピンの外部売上の合計が連結売上より1千円少ない。通期では一致するため、差引四半期で逆方向の表示端数が残る。"
+        },
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "base_japan_revenue-prior_japan",
+            "reason": "AI・ADAS等の拡大後の直近売上を維持する条件。",
+            "amount": 839.1949999999997
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "base_philippines_revenue-prior_philippines",
+            "reason": "自動車需要を背景に直近高水準を大部分維持する条件。",
+            "amount": 309.11469999999974
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "base_japan_revenue-q4_japan",
+            "reason": "直近売上維持の仮定。",
+            "amount": 0.0
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "base_philippines_revenue-q4_philippines",
+            "reason": "直近売上に顧客出荷調整を織り込む仮定。",
+            "amount": -60.17530000000011
+          }
+        ],
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "rounding_tolerance": 0.002,
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+          "explanation": "千円表示の第3四半期累計の地域別外部売上合計と連結売上に1千円の差があり、通期では一致する。"
+        },
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "bull_japan_revenue-prior_japan",
+            "reason": "直近需要の継続に加え、受注・稼働が緩やかに拡大する条件。",
+            "amount": 1003.07485
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "bull_philippines_revenue-prior_philippines",
+            "reason": "自動車向け出荷の直近高水準維持。",
+            "amount": 369.28999999999985
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q4_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "日本の外部売上差",
+            "formula": "bull_japan_revenue-q4_japan",
+            "reason": "受注と稼働の追加改善を仮定。",
+            "amount": 163.87985000000026
+          },
+          {
+            "label": "フィリピンの外部売上差",
+            "formula": "bull_philippines_revenue-q4_philippines",
+            "reason": "直近売上維持を仮定。",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "rounding_tolerance": 0.002,
+        "rounding_evidence": {
+          "source_ids": [
+            "S01",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+          "explanation": "千円表示の第3四半期累計の地域別外部売上合計と連結売上に1千円の差があり、通期では一致する。"
+        },
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      }
+    ],
+    "issues": [
+      "S01～S07は提示テキストに短縮表示がないが、PDF画像、訂正履歴、未提示の追加開示は確認していない。guidance_recordsのlatest_confirmedは提示された判読可能資料内での最新を意味する。",
+      "S04の分野別売上は上期までで、直近四半期の分野構成は未確認。端数調整の注意書きもあるため、地域別モデルと重複加算しない。",
+      "S04の地域別売上は連結売上と単純一致せず、内部売上を含む可能性があるが定義を確定できない。予測基準にはS01・S03の明示された外部顧客売上を使用した。",
+      "S08は保存テキストが文字化けしており、処分額、株数、費用認識期間の原文は判読確認できない。非開示と断定せず、予測に数値を取り込まない。",
+      "S09は末尾が短縮されている。企業同一性に関する山王の掲載はPDF page 3で確認できるが、省略範囲は未確認であり業績根拠には使用しない。",
+      "target_already_announced=falseは提示された調査条件と保存資料の範囲に基づく。基準日時点の全開示を独自に網羅確認したものではない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "営業利益は直近四半期の粗利益急減と販管費増加の内訳不足が重要。S05は方向を説明するが、各要因の金額や一過性・継続性を示していない。利益予測と営業利益ブリッジの残差は未算定。",
+      "増減要因エラー: Finite number required",
+      "売上シナリオの幅は地域実績と需要説明から設定した条件であり、受注数量に裏付けられた確度の高い予測ではない。想定範囲外の出荷・金価格転嫁・為替変動では成立しない。",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "指定された2026年12月14日という発表予定日の公式根拠は保存原文にないため、announcement_dateはnull。対象は2027年7月期第1四半期単独とした。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures",
+      "AIへ渡した原文に省略あり: S09"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -508.2845999999995,
+            "rate": -0.11342848254737331,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 700.1993999999995,
+            "rate": 0.21395696045184606,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -60.174299999999675,
+            "rate": -0.013428460231434073,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 1148.3096999999993,
+            "rate": 0.3508841239643611,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 163.88085000000137,
+            "rate": 0.036571550926535794,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 1372.3648500000004,
+            "rate": 0.4193477057206189,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 700.1993999999995,
+        "explained_sum": 700.1993999999995,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "地域別外部売上で一致。経済要因の個別寄与まで説明できたことを意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -508.2845999999995,
+        "explained_sum": -508.28560000000004,
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "difference": 3.410605131648481e-13,
+        "status": "passed",
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 1148.3096999999993,
+        "explained_sum": 1148.3096999999993,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -60.174299999999675,
+        "explained_sum": -60.17530000000011,
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "difference": 2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 1372.3648500000004,
+        "explained_sum": 1372.36485,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 163.88085000000137,
+        "explained_sum": 163.87985000000026,
+        "residual": 0.0010000000002037268,
+        "residual_type": "rounding",
+        "difference": 9.094947017729282e-13,
+        "status": "passed",
+        "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+      }
+    ],
+    "conditions": [
+      "base_japan_factor: AI・データセンター、ADAS、PC・タブレット需要の継続と稼働済み新ラインを踏まえ、直近四半期の日本外部売上を維持すると仮定。新ラインや価格改定は基準売上に包含されるため別途上乗せしない。",
+      "base_philippines_factor: 自動車需要の堅調さを認めつつ、直近四半期までの増収がそのまま継続するとは置かず、顧客集中を考慮して直近売上を5％割り引く。季節性の確定値ではなく、出荷水準に関する独自仮定。",
+      "bear_japan_factor: 直近四半期の日本外部売上を基準に、AI・ADAS需要の拡大が続いても高い直近水準から受注・出荷が一服する条件を置く。前四半期比10％減は独自のストレス幅であり、会社の数量計画ではない。前年同期の地域売上をなお上回る水準に限定した条件付き推計。",
+      "bear_philippines_factor: 自動車需要が牽引する一方、主要顧客への集中が大きいため、直近四半期から15％減の出荷調整を仮定。前年同期を上回り、直近の高水準を部分的に維持するストレス条件。為替や顧客別発注実績を観測した値ではない。",
+      "bull_japan_factor: 受注拡大と既存新ラインの稼働向上が継続する条件として直近四半期から5％増を置く。過去の高い前年比成長率は延長せず、直近水準からの限定的な増収にとどめる。増産数量・価格改定率の確認値ではない。",
+      "bull_philippines_factor: 自動車需要が堅調に推移し、直近四半期の外部売上を維持する条件。地域別の追加受注残や能力増強量がないため、直近実績を超える増収は置かない。",
+      "営業外損益、特別損益、繰延税金資産の回収可能性が不足し、経常利益・純利益の範囲も設定していない。",
+      "地域別売上係数は独自仮定であり、受注残、出荷計画、為替実績で検証できていない。",
+      "対象期の金価格負担、価格転嫁の時間差、人員増、設備稼働日、償却費は提示資料内で未確認。",
+      "数量と価格の個別情報は提示資料内に記載がなく、売上変動を両者に分離できない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535513.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535513.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S01.txt",
+        "sha256": "bf07c3582d26bee9f485c36822029f20668feb6e6728fa68e439188d8b9992ed",
+        "text_sha256": "b90cdcc7312a62c8b53dd99275210ae4658c972a4bbae5bff0101caa3a8fe553",
+        "retrieved_at": "2026-11-21T23:47:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18134,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://pdf.irpocket.com/C3441/PDLX/ivUg/KV0Q.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://pdf.irpocket.com/C3441/PDLX/ivUg/KV0Q.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S02.txt",
+        "sha256": "704b3366ffe8aae8686cbfe7b041d24e00e53afd3701e0664b818d096cd477b0",
+        "text_sha256": "13f36a647cc0f05e615a745fa644d7017732b43ac7c2c667b0fd9141b3bc8f65",
+        "retrieved_at": "2026-11-21T23:47:39+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11836,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://pdf.irpocket.com/C3441/ccdN/RQAd/Cz63.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://pdf.irpocket.com/C3441/ccdN/RQAd/Cz63.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S03.txt",
+        "sha256": "3b563c9d3f19783163f7c0020ce3d4a70080fceb75e1a54e95b6050c0f038d82",
+        "text_sha256": "a930a076cdda0081f31b2309896ee4407ccd9d29fb0879752c1864594f49f131",
+        "retrieved_at": "2026-11-21T23:47:39+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13593,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 第2四半期決算説明資料（地域別・分野別売上、設備投資等を含む）",
+        "url": "https://pdf.irpocket.com/C3441/LseR/LvMz/VdNn.pdf",
+        "published_at": "2026-03-30",
+        "category": "presentation",
+        "final_url": "https://pdf.irpocket.com/C3441/LseR/LvMz/VdNn.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S04.txt",
+        "sha256": "aa6d7f39dbd10059cf46e2510f68654a8c0c213865d27153daeabfc326e2ba69",
+        "text_sha256": "e4b0418dc27cef167ec3ecc72a256d2614b28b48a1f9790bf9445d41d87c4cda",
+        "retrieved_at": "2026-11-21T23:47:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8285,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期連結業績予想数値と実績値との差異に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535927.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535927.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S05.txt",
+        "sha256": "faf2fbb55f1a8d32a1e0d8f22a901746126c7bf56273b7f62cb0f17357405909",
+        "text_sha256": "f5126a51b11406df997d22c82cd8ea1b6573785db68e571c0cb6c0f7ce3ed02e",
+        "retrieved_at": "2026-11-21T23:47:41+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 968,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "剰余金の配当（増配）に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535963.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535963.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S06.txt",
+        "sha256": "fa6f6d6333066344fa51593310c6ababf6c77950d5bbb943c7adff410017607e",
+        "text_sha256": "658277776b64554790cf70a91310e91179264bde9a131b58e6f2b99ac1e5aeb8",
+        "retrieved_at": "2026-11-21T23:47:42+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 793,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "役員の異動および新経営体制の内定に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535969.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535969.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S07.txt",
+        "sha256": "524ef64907311d2e2b6a620d5ca26a5e2a886518402942fc3d8e8b7c4ce3d803",
+        "text_sha256": "0ce64b85f68661a31dbc850d55f3453f46b7d8b1710f26ace25920e93ae57d68",
+        "retrieved_at": "2026-11-21T23:47:42+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 568,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "譲渡制限付株式報酬としての自己株式の処分に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559559.pdf",
+        "published_at": "2026-10-29T15:30:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261029/20261029559559.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S08.txt",
+        "sha256": "909adbfb0eac034f38e8dca9a5908804af3a60d6d090372e74853e7a2b4f43da",
+        "text_sha256": "b94629062cda8dc285d6c38138c1d6226f9a2f8224638d2ed3e8dd84498f1269",
+        "retrieved_at": "2026-11-21T23:47:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2888,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "名古屋証券取引所日報 2026年11月10日",
+        "url": "https://www.nse.or.jp/market/condition/report/files/20261110.pdf",
+        "published_at": "2026-11-10",
+        "category": "identity",
+        "final_url": "https://www.nse.or.jp/market/condition/report/files/20261110.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261214\\companies\\3441\\sources\\S09.txt",
+        "sha256": "2127ab28c366480f201609c07eb0bdc8886b1b5258ce68162313f6d052e56e2b",
+        "text_sha256": "92272eb72ea30d3ee0db2500b42a10f950c46037fac7b3b2903d02c1ddbe101a",
+        "retrieved_at": "2026-11-21T23:47:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 67821,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "announcement_date": null,
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy_revenue",
+          "value": 15531.141,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・売上高、千円から換算"
+        },
+        {
+          "id": "fy_op",
+          "value": 1315.694,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・営業利益、千円から換算"
+        },
+        {
+          "id": "fy_gp",
+          "value": 2915.467,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・売上総利益"
+        },
+        {
+          "id": "fy_sga",
+          "value": 1599.773,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当連結会計年度・販売費及び一般管理費"
+        },
+        {
+          "id": "nine_revenue",
+          "value": 11050.039,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・売上高"
+        },
+        {
+          "id": "nine_op",
+          "value": 1582.313,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・営業利益"
+        },
+        {
+          "id": "nine_gp",
+          "value": 2678.161,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・売上総利益"
+        },
+        {
+          "id": "nine_sga",
+          "value": 1095.847,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7 当第3四半期連結累計期間・販売費及び一般管理費"
+        },
+        {
+          "id": "prior_revenue",
+          "value": 3272.618,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当第1四半期連結累計期間・売上高"
+        },
+        {
+          "id": "prior_op",
+          "value": 477.18,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7 当第1四半期連結累計期間・営業利益"
+        },
+        {
+          "id": "prior_japan",
+          "value": 2438.402,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10 当第1四半期・日本の外部顧客への売上高"
+        },
+        {
+          "id": "prior_philippines",
+          "value": 834.216,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 10 当第1四半期・フィリピンの外部顧客への売上高"
+        },
+        {
+          "id": "fy_japan",
+          "value": 11468.193,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 15 日本の外部顧客への売上高"
+        },
+        {
+          "id": "fy_philippines",
+          "value": 4062.948,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 15 フィリピンの外部顧客への売上高"
+        },
+        {
+          "id": "nine_japan",
+          "value": 8190.596,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10 当第3四半期累計・日本の外部顧客への売上高"
+        },
+        {
+          "id": "nine_philippines",
+          "value": 2859.442,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 10 当第3四半期累計・フィリピンの外部顧客への売上高"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 15600,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期の連結業績予想・通期売上高"
+        },
+        {
+          "id": "guidance_op",
+          "value": 800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期の連結業績予想・通期営業利益"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 815,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期の連結業績予想・通期経常利益"
+        },
+        {
+          "id": "guidance_net",
+          "value": 676,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期の連結業績予想・親会社株主に帰属する当期純利益"
+        },
+        {
+          "id": "bear_japan_factor",
+          "value": 0.9,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,15; S03 PDF page 10; S05 PDF page 1",
+          "rationale": "直近四半期の日本外部売上を基準に、AI・ADAS需要の拡大が続いても高い直近水準から受注・出荷が一服する条件を置く。前四半期比10％減は独自のストレス幅であり、会社の数量計画ではない。前年同期の地域売上をなお上回る水準に限定した条件付き推計。",
+          "sensitivity": "係数が0.01変化すると売上はq4_japan×0.01百万円変化。数量、価格、製品構成の個別寄与には分解できない。",
+          "material": true
+        },
+        {
+          "id": "base_japan_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 1",
+          "rationale": "AI・データセンター、ADAS、PC・タブレット需要の継続と稼働済み新ラインを踏まえ、直近四半期の日本外部売上を維持すると仮定。新ラインや価格改定は基準売上に包含されるため別途上乗せしない。",
+          "sensitivity": "係数が0.01変化すると売上はq4_japan×0.01百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_japan_factor",
+          "value": 1.05,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S03 PDF page 4; S05 PDF page 1",
+          "rationale": "受注拡大と既存新ラインの稼働向上が継続する条件として直近四半期から5％増を置く。過去の高い前年比成長率は延長せず、直近水準からの限定的な増収にとどめる。増産数量・価格改定率の確認値ではない。",
+          "sensitivity": "係数が0.01変化すると売上はq4_japan×0.01百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bear_philippines_factor",
+          "value": 0.85,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 15,16; S03 PDF page 10; S04 PDF page 5",
+          "rationale": "自動車需要が牽引する一方、主要顧客への集中が大きいため、直近四半期から15％減の出荷調整を仮定。前年同期を上回り、直近の高水準を部分的に維持するストレス条件。為替や顧客別発注実績を観測した値ではない。",
+          "sensitivity": "係数が0.01変化すると売上はq4_philippines×0.01百万円変化。円換算・数量・価格を含む総合変動。",
+          "material": true
+        },
+        {
+          "id": "base_philippines_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 15,16; S03 PDF page 10; S04 PDF page 5",
+          "rationale": "自動車需要の堅調さを認めつつ、直近四半期までの増収がそのまま継続するとは置かず、顧客集中を考慮して直近売上を5％割り引く。季節性の確定値ではなく、出荷水準に関する独自仮定。",
+          "sensitivity": "係数が0.01変化すると売上はq4_philippines×0.01百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_philippines_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 4,15; S04 PDF page 5",
+          "rationale": "自動車需要が堅調に推移し、直近四半期の外部売上を維持する条件。地域別の追加受注残や能力増強量がないため、直近実績を超える増収は置かない。",
+          "sensitivity": "係数が0.01変化すると売上はq4_philippines×0.01百万円変化。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "q4_revenue",
+          "formula": "fy_revenue-nine_revenue"
+        },
+        {
+          "id": "q4_op",
+          "formula": "fy_op-nine_op"
+        },
+        {
+          "id": "q4_gp",
+          "formula": "fy_gp-nine_gp"
+        },
+        {
+          "id": "q4_sga",
+          "formula": "fy_sga-nine_sga"
+        },
+        {
+          "id": "q4_japan",
+          "formula": "fy_japan-nine_japan"
+        },
+        {
+          "id": "q4_philippines",
+          "formula": "fy_philippines-nine_philippines"
+        },
+        {
+          "id": "qoq_revenue_rounding",
+          "formula": "q4_japan+q4_philippines-q4_revenue"
+        },
+        {
+          "id": "bear_japan_revenue",
+          "formula": "q4_japan*bear_japan_factor"
+        },
+        {
+          "id": "bear_philippines_revenue",
+          "formula": "q4_philippines*bear_philippines_factor"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_japan_revenue+bear_philippines_revenue"
+        },
+        {
+          "id": "base_japan_revenue",
+          "formula": "q4_japan*base_japan_factor"
+        },
+        {
+          "id": "base_philippines_revenue",
+          "formula": "q4_philippines*base_philippines_factor"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_japan_revenue+base_philippines_revenue"
+        },
+        {
+          "id": "bull_japan_revenue",
+          "formula": "q4_japan*bull_japan_factor"
+        },
+        {
+          "id": "bull_philippines_revenue",
+          "formula": "q4_philippines*bull_philippines_factor"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_japan_revenue+bull_philippines_revenue"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "日本・外部顧客売上",
+              "revenue": "bear_japan_revenue"
+            },
+            {
+              "name": "フィリピン・外部顧客売上",
+              "revenue": "bear_philippines_revenue"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "日本・外部顧客売上",
+              "revenue": "base_japan_revenue"
+            },
+            {
+              "name": "フィリピン・外部顧客売上",
+              "revenue": "base_philippines_revenue"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "日本・外部顧客売上",
+              "revenue": "bull_japan_revenue"
+            },
+            {
+              "name": "フィリピン・外部顧客売上",
+              "revenue": "bull_philippines_revenue"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 3272.618,
+          "operating_profit": 477.18,
+          "ordinary_profit": 473.938,
+          "net_profit": 372.365,
+          "accounting_basis": "日本基準",
+          "accounting_version": "2026年7月期・定額法変更後・損益修正再表示なし。貸借対照表の電子記録債権債務独立掲記前",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 7,9"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 11050.039,
+          "operating_profit": 1582.313,
+          "ordinary_profit": 1589.1,
+          "net_profit": 1460.334,
+          "accounting_basis": "日本基準",
+          "accounting_version": "2026年7月期・定額法変更後・損益修正再表示なし・貸借対照表の電子記録債権債務独立掲記後・明王化成吸収合併後",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 7,9,11"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 15531.141,
+          "operating_profit": 1315.694,
+          "ordinary_profit": 1319.936,
+          "net_profit": 1181.636,
+          "accounting_basis": "日本基準",
+          "accounting_version": "2026年7月期・定額法変更後・損益修正再表示なし・貸借対照表の電子記録債権債務独立掲記後・明王化成吸収合併後",
+          "scope": "連結",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 8,13,18"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "日本のAI・データセンター、ADAS関連需要",
+          "mechanism": "先端分野の受注拡大がめっき・プレス・成形加工売上を押し上げる。直近地域売上を起点に需要継続と調整の幅を設定。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S03 PDF page 4; S05 PDF page 1",
+          "calculation_ids": [
+            "bear_japan_revenue",
+            "base_japan_revenue",
+            "bull_japan_revenue"
+          ],
+          "not_quantified_reason": "地域売上は推計したが、数量・単価・分野別構成への分離は保存資料だけではできない。"
+        },
+        {
+          "name": "フィリピンの自動車需要と主要顧客集中",
+          "mechanism": "自動車向け出荷が地域売上を左右し、主要顧客の発注変動と円換算が短期変動を拡大させる。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 PDF pages 15,16; S04 PDF page 5",
+          "calculation_ids": [
+            "bear_philippines_revenue",
+            "base_philippines_revenue",
+            "bull_philippines_revenue"
+          ],
+          "not_quantified_reason": "顧客別四半期出荷、現地通貨売上、想定為替の内訳は未確認。"
+        },
+        {
+          "name": "金価格と価格転嫁の時間差",
+          "mechanism": "金などの原材料価格上昇と販売価格見直しの時期の違いが粗利益を変動させる。",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; S05 PDF page 1",
+          "calculation_ids": [
+            "q4_gp",
+            "q4_op"
+          ],
+          "not_quantified_reason": "材料使用量、金の調達単価、価格転嫁率、在庫評価の影響がなく、直近の採算悪化の持続性を定量化できない。"
+        },
+        {
+          "name": "人的投資・設備投資と償却負担",
+          "mechanism": "増産設備と一貫加工体制が生産性を支える一方、人件費・減価償却費が利益を圧迫する。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,12,13,18; S04 PDF pages 13,21,22; S05 PDF page 1",
+          "calculation_ids": [
+            "q4_sga"
+          ],
+          "not_quantified_reason": "対象四半期の稼働開始日、償却予定、人員増、費用配賦がない。過年度の設備投資見込を対象期の費用として流用しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "bear_japan_revenue-prior_japan",
+              "reason": "需要拡大後の直近水準から調整する条件。数量・価格・構成の合計。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "bear_philippines_revenue-prior_philippines",
+              "reason": "自動車需要を維持しつつ顧客出荷が調整する条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "地域別外部売上で一致。経済要因の個別寄与まで説明できたことを意味しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "bear_japan_revenue-q4_japan",
+              "reason": "直近売上からの調整仮定。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "bear_philippines_revenue-q4_philippines",
+              "reason": "顧客集中を踏まえた出荷調整仮定。"
+            }
+          ],
+          "residual": "qoq_revenue_rounding",
+          "residual_type": "rounding",
+          "rounding_tolerance": 0.002,
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+            "explanation": "千円表示の第3四半期累計では日本とフィリピンの外部売上の合計が連結売上より1千円少ない。通期では一致するため、差引四半期で逆方向の表示端数が残る。"
+          },
+          "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "対象期営業利益を設定できず、前年同期との差も未算定。材料・価格転嫁・人的投資・設備費用の影響額が不足。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直近赤字の一過性費用と継続費用を分離できず、利益回復額を置けない。残差ゼロとは扱わない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "base_japan_revenue-prior_japan",
+              "reason": "AI・ADAS等の拡大後の直近売上を維持する条件。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "base_philippines_revenue-prior_philippines",
+              "reason": "自動車需要を背景に直近高水準を大部分維持する条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "base_japan_revenue-q4_japan",
+              "reason": "直近売上維持の仮定。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "base_philippines_revenue-q4_philippines",
+              "reason": "直近売上に顧客出荷調整を織り込む仮定。"
+            }
+          ],
+          "residual": "qoq_revenue_rounding",
+          "residual_type": "rounding",
+          "rounding_tolerance": 0.002,
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+            "explanation": "千円表示の第3四半期累計の地域別外部売上合計と連結売上に1千円の差があり、通期では一致する。"
+          },
+          "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同期の高採算を維持する根拠がなく、材料・価格転嫁・費用増の内訳不足により差額未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "直近赤字からの正常化幅に裏付けがないため、未説明差は金額未算定のまま残す。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "bull_japan_revenue-prior_japan",
+              "reason": "直近需要の継続に加え、受注・稼働が緩やかに拡大する条件。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "bull_philippines_revenue-prior_philippines",
+              "reason": "自動車向け出荷の直近高水準維持。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "地域別外部売上で一致。数量・価格・構成の寄与は分離していない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q4_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "日本の外部売上差",
+              "formula": "bull_japan_revenue-q4_japan",
+              "reason": "受注と稼働の追加改善を仮定。"
+            },
+            {
+              "label": "フィリピンの外部売上差",
+              "formula": "bull_philippines_revenue-q4_philippines",
+              "reason": "直近売上維持を仮定。"
+            }
+          ],
+          "residual": "qoq_revenue_rounding",
+          "residual_type": "rounding",
+          "rounding_tolerance": 0.002,
+          "rounding_evidence": {
+            "source_ids": [
+              "S01",
+              "S03"
+            ],
+            "locator": "S01 PDF pages 8,15; S03 PDF pages 7,10",
+            "explanation": "千円表示の第3四半期累計の地域別外部売上合計と連結売上に1千円の差があり、通期では一致する。"
+          },
+          "residual_explanation": "地域別表示値と連結表示値の差引に伴う端数。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増収でも金価格上昇や人的投資を吸収できるとは限らず、営業利益差を推計できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q4_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増収の限界利益率と前四半期費用の再発額が不足し、営業利益差は未算定。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "annual_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期連結業績予想"
+        },
+        {
+          "id": "annual_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期連結業績予想"
+        },
+        {
+          "id": "annual_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期連結業績予想"
+        },
+        {
+          "id": "annual_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 2027年7月期連結業績予想"
+        }
+      ],
+      "company_guidance": "保存資料内で確認した最新会社予想はS01の2027年7月期通期予想。原材料価格変動と設備投資に伴う償却負担を織り込む。対象第1四半期単独の会社予想は記載されていない。通期予想を四等分せず、独自売上推計の計算には使用していない。S05は過年度の予想と確定実績の差異説明であり、対象期の期後修正見込みではない。",
+      "consensus": "未確認。提示された保存資料に市場コンセンサスの数値・集計日・対象期間はない。",
+      "independent_forecast": "売上のみ、直近四半期の地域別外部売上と需要動向を基礎とする条件付き推計を提示。数量×単価の完全な積上げではなく、地域別の売上継続・調整幅を明示した独自感応度モデルであり、統計的信頼区間ではない。利益は直近の採算急変を合理的に分解できないためnull。会社予想差引による推計、費用の逆算、期後修正効果の加算は行っていない。",
+      "narrative": [
+        {
+          "heading": "条件付き売上予測",
+          "text": "中心売上は{{value:base_revenue}}、弱気は{{value:bear_revenue}}、強気は{{value:bull_revenue}}。日本はAI・データセンターとADAS需要、フィリピンは自動車向け出荷を主因とする。地域別の直近実績を基準とし、新ラインや既存価格改定の効果を重ねて加算していない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 4,15; S03 PDF page 10; S04 PDF page 5; S05 PDF page 1"
+        },
+        {
+          "heading": "利益推計の制約",
+          "text": "前四半期単独は売上{{value:q4_revenue}}に対して営業利益{{value:q4_op}}。売上総利益は{{value:q4_gp}}、販管費は{{value:q4_sga}}となり、需要拡大だけでは利益を説明できない。金価格、価格転嫁、人材投資、設備負担の継続性が不明であり、前年同期の利益率や通期会社予想から利益を当てはめない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF page 8; S03 PDF page 7; S05 PDF page 1"
+        },
+        {
+          "heading": "比較可能性",
+          "text": "前四半期は同じ定額法変更後の通期累計と第3四半期累計の差引で算出した。前年同四半期も定額法変更後であり、減価償却方法変更による増益効果を再度加算しない。明王化成の吸収合併は共通支配下の取引で、対象期に新規連結売上が発生すると扱わない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 13,18; S02 PDF page 9; S03 PDF pages 9,11"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "地域別売上係数は独自仮定であり、受注残、出荷計画、為替実績で検証できていない。",
+        "数量と価格の個別情報は提示資料内に記載がなく、売上変動を両者に分離できない。",
+        "対象期の金価格負担、価格転嫁の時間差、人員増、設備稼働日、償却費は提示資料内で未確認。",
+        "営業外損益、特別損益、繰延税金資産の回収可能性が不足し、経常利益・純利益の範囲も設定していない。"
+      ],
+      "material_unresolved": [
+        "指定された2026年12月14日という発表予定日の公式根拠は保存原文にないため、announcement_dateはnull。対象は2027年7月期第1四半期単独とした。",
+        "target_already_announced=falseは提示された調査条件と保存資料の範囲に基づく。基準日時点の全開示を独自に網羅確認したものではない。",
+        "営業利益は直近四半期の粗利益急減と販管費増加の内訳不足が重要。S05は方向を説明するが、各要因の金額や一過性・継続性を示していない。利益予測と営業利益ブリッジの残差は未算定。",
+        "売上シナリオの幅は地域実績と需要説明から設定した条件であり、受注数量に裏付けられた確度の高い予測ではない。想定範囲外の出荷・金価格転嫁・為替変動では成立しない。",
+        "S04の地域別売上は連結売上と単純一致せず、内部売上を含む可能性があるが定義を確定できない。予測基準にはS01・S03の明示された外部顧客売上を使用した。",
+        "S04の分野別売上は上期までで、直近四半期の分野構成は未確認。端数調整の注意書きもあるため、地域別モデルと重複加算しない。",
+        "S08は保存テキストが文字化けしており、処分額、株数、費用認識期間の原文は判読確認できない。非開示と断定せず、予測に数値を取り込まない。",
+        "S09は末尾が短縮されている。企業同一性に関する山王の掲載はPDF page 3で確認できるが、省略範囲は未確認であり業績根拠には使用しない。",
+        "S01～S07は提示テキストに短縮表示がないが、PDF画像、訂正履歴、未提示の追加開示は確認していない。guidance_recordsのlatest_confirmedは提示された判読可能資料内での最新を意味する。"
+      ],
+      "_truncated_source_ids": [
+        "S09"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "S01～S07は提示テキストに短縮表示がないが、PDF画像、訂正履歴、未提示の追加開示は確認していない。guidance_recordsのlatest_confirmedは提示された判読可能資料内での最新を意味する。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "S04の分野別売上は上期までで、直近四半期の分野構成は未確認。端数調整の注意書きもあるため、地域別モデルと重複加算しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "S04の地域別売上は連結売上と単純一致せず、内部売上を含む可能性があるが定義を確定できない。予測基準にはS01・S03の明示された外部顧客売上を使用した。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "S08は保存テキストが文字化けしており、処分額、株数、費用認識期間の原文は判読確認できない。非開示と断定せず、予測に数値を取り込まない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "S09は末尾が短縮されている。企業同一性に関する山王の掲載はPDF page 3で確認できるが、省略範囲は未確認であり業績根拠には使用しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "target_already_announced=falseは提示された調査条件と保存資料の範囲に基づく。基準日時点の全開示を独自に網羅確認したものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "営業利益は直近四半期の粗利益急減と販管費増加の内訳不足が重要。S05は方向を説明するが、各要因の金額や一過性・継続性を示していない。利益予測と営業利益ブリッジの残差は未算定。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "売上シナリオの幅は地域実績と需要説明から設定した条件であり、受注数量に裏付けられた確度の高い予測ではない。想定範囲外の出荷・金価格転嫁・為替変動では成立しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "指定された2026年12月14日という発表予定日の公式根拠は保存原文にないため、announcement_dateはnull。対象は2027年7月期第1四半期単独とした。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "issue",
+      "message": "AIへ渡した原文に省略あり: S09",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "base_japan_factor: AI・データセンター、ADAS、PC・タブレット需要の継続と稼働済み新ラインを踏まえ、直近四半期の日本外部売上を維持すると仮定。新ラインや価格改定は基準売上に包含されるため別途上乗せしない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "base_philippines_factor: 自動車需要の堅調さを認めつつ、直近四半期までの増収がそのまま継続するとは置かず、顧客集中を考慮して直近売上を5％割り引く。季節性の確定値ではなく、出荷水準に関する独自仮定。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "bear_japan_factor: 直近四半期の日本外部売上を基準に、AI・ADAS需要の拡大が続いても高い直近水準から受注・出荷が一服する条件を置く。前四半期比10％減は独自のストレス幅であり、会社の数量計画ではない。前年同期の地域売上をなお上回る水準に限定した条件付き推計。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "bear_philippines_factor: 自動車需要が牽引する一方、主要顧客への集中が大きいため、直近四半期から15％減の出荷調整を仮定。前年同期を上回り、直近の高水準を部分的に維持するストレス条件。為替や顧客別発注実績を観測した値ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "bull_japan_factor: 受注拡大と既存新ラインの稼働向上が継続する条件として直近四半期から5％増を置く。過去の高い前年比成長率は延長せず、直近水準からの限定的な増収にとどめる。増産数量・価格改定率の確認値ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "bull_philippines_factor: 自動車需要が堅調に推移し、直近四半期の外部売上を維持する条件。地域別の追加受注残や能力増強量がないため、直近実績を超える増収は置かない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "営業外損益、特別損益、繰延税金資産の回収可能性が不足し、経常利益・純利益の範囲も設定していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "地域別売上係数は独自仮定であり、受注残、出荷計画、為替実績で検証できていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "対象期の金価格負担、価格転嫁の時間差、人員増、設備稼働日、償却費は提示資料内で未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "3441",
+      "company_name": "株式会社山王",
+      "kind": "condition",
+      "message": "数量と価格の個別情報は提示資料内に記載がなく、売上変動を両者に分離できない。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3441/result.json": "c4eeee2808b983c7c65f80c96baf77834d4ad664c1abf6542c7727a391eaf9db",
+    "reports/3441.md": "94e166cef552a2b36949acfc4270190b9b55385cd2121e447424ef65476a22e0"
+  }
+}
