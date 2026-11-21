@@ -1,0 +1,1362 @@
+{
+  "id": "3653-9679b49f8969327c42c8b8078735a46d7fc35848670e79755fe118efe673beba",
+  "code": "3653",
+  "companyName": "株式会社モルフォ",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2026-10-31",
+    "quarter": 4
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3653-review-134ff2d2c445de3c · 9679b49f",
+  "savedAt": "2026-11-21T23:09:10+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3653 株式会社モルフォ｜2026-10-31期 Q4単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS11の掲載ページ見出しから通期連結業績予想の修正公表は確認できる。しかし、修正数値、対象期間の詳細、修正理由、S03時点での据置・再修正は原本未確認。guidance_recordsに登録できる数値はなく、通期予想から累計実績を差し引く推計もできない。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場予想の数値はない。\n\n## 独自予測・差引推計の区分\n売上・営業利益・経常利益・純利益はいずれも算定不能。決算実績と数量・価格・受注・構成・採算・費用の基礎数値が保存原文に含まれず、仮定の範囲や感応度を裏付けられないためscenariosは空とした。会社予想の差引き推計も独自積上げ予測も作成していない。\n\n## 予測の成立条件\n主力のライセンス事業と研究開発型の受託開発・共同研究は確認できる。しかし、保存された決算資料掲載ページには財務表や業績説明が含まれておらず、四半期単独の実績比較と予測の基準を作れない。\n\n## 期末後の製品発表\nVLM活用ソリューションは開発・検証と活用可能性の検討が中心で、対象四半期に売上を計上した証拠はない。発表を根拠に対象四半期の増収や採算改善を織り込むことはできない。\n\n## 利益段階の区別\n助成金収入、構造改革費用、減損損失、投資有価証券評価損については公表見出しのみ確認できる。計上期間や金額が不明なため、対象四半期へ再計上せず、営業利益から経常利益・純利益への調整も行わない。\n\n## エラー・未解決事項\n- S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。\n- S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。\n- S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。\n- S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。\n- ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。\n- 全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。\n- 前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。\n- 取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。\n- 同一会計・連結範囲の比較四半期不足: qoq\n- 同一会計・連結範囲の比較四半期不足: yoy\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。\n- 日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。\n- 期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。\n- 資料確認未了: company_guidance\n- 資料確認未了: historical\n- 資料確認未了: latest_results\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n- 財務表を含まない掲載ページを取得済みとする状態と、原資料本文の確認完了を区別する必要がある。入力・算式・比較実績・予測値が全て欠け、財務予測として検証可能な成果物になっていない。\n- S08の訂正が比較数値やKPIに影響するか不明。同一会計版・同一連結範囲の累計差引きを確立するまで、前年Q4と当年Q3を比較基準として確定できない。\n- 会社予想修正候補は存在するが、数値・対象期間・基準日時点での最新性が不明。乖離自体を誤りとは判定せず、原本取得後に数量・価格・費用・一時要因による説明を検査する必要がある。\n- S16の発表日は対象期末後かつ基準日時前。開発・検証の記載は対象Q4の売上寄与を証明せず、反対に売上ゼロを証明するものでもない。数量・単価・費用の係数や代替予測の裏付けに使えない。\n- 特殊要因の金額・認識期間・累計織込みを照合できない。S11とS12の減損損失を独立した追加費用と決めつけたり、S13の配当受領を連結利益へ加算したりする根拠はない。\n- 全12ブリッジの残差は未算定であり、経済的な説明充足率を評価できない。機械エラー「Finite number required」は欠損値の処理問題を示すにとどまり、重大な数値誤算の証明ではない。ゼロ補完せず、比較値と予測値の確定後に丸め差・会計比較基準変更・未説明の経済的残差を分離する必要がある。\n\n## 条件・不確実性\n- S16には新ソリューションの契約金額、受注数量、売上計上時期、費用額の記載がない。他の未取得資料でも非開示かどうかは判断できない。\n- 構造改革による固定費削減の開始時期と規模、会社予想への織込み範囲は原本未確認。\n\n## 根拠・保存記録\n- S01 [株式情報・株主メモ](https://www.morphoinc.com/ir/info) / 公表  / unavailable / SHA-256 `なし`\n- S02 [IRカレンダー](https://www.morphoinc.com/ir/calendar) / 公表  / unavailable / SHA-256 `なし`\n- S03 [2026年10月期 第3四半期決算短信](https://www.morphoinc.com/news/20260911-ir-3) / 公表 2026-09-11 / retrieved / SHA-256 `50843dc8ac2f9ded206f85cd01f781862c11403ef820cf4cf75d2394927f32e5`\n- S04 [2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www.morphoinc.com/news/20260612-ir-3) / 公表 2026-06-12 / retrieved / SHA-256 `f7f0726a33ca392d78551f50032f243266f4ab88c2aba8049795681d1496ab6f`\n- S05 [2025年10月期 決算短信〔日本基準〕（連結）](https://www.morphoinc.com/news/20251212-ir-1) / 公表 2025-12-12 / retrieved / SHA-256 `1729af50b5252fd24b3e5c36b079b1fd55393886539d187a9737dcc76836f12f`\n- S06 [2025年10月期 第3四半期 決算短信](https://www.morphoinc.com/news/20250912-ir-2) / 公表 2025-09-12 / retrieved / SHA-256 `d38df6b48b07a8d2791694fb51b1266bee433863a2eab4275ffd5fd012785091`\n- S07 [2026年10月期 第3四半期決算補足説明資料](https://www.morphoinc.com/news/20260911-ir-2) / 公表 2026-09-11 / retrieved / SHA-256 `32247b5591ad6a97bcb5aff3ba439470a032670e2f27e03debd36b609a87c6a2`\n- S08 [（訂正後）2026年10月期 第2四半期決算補足説明資料](https://www.morphoinc.com/news/20260617-ir-1) / 公表 2026-06-17 / retrieved / SHA-256 `4b508bd2471de04156ec72ffc1d656ff773fb2b7198e9f22915676173e1bca25`\n- S09 [2025年10月期 通期決算補足説明資料](https://www.morphoinc.com/news/20251212-ir-2) / 公表 2025-12-12 / retrieved / SHA-256 `8f631568be8cb21aca25e7099e36d3542e9e4280a3862edae69f0a4cf66f7c6e`\n- S10 [2025年10月期 第3四半期 決算補足説明資料](https://www.morphoinc.com/news/20250912-ir-3) / 公表 2025-09-12 / retrieved / SHA-256 `4638867348b725542913bcc1e15e90a4d28686dbb34abd022d07344b11465ba8`\n- S11 [営業外収益（助成金収入）及び特別損失（構造改革費用、減損損失）の発生並びに通期連結業績予想の修正に関するお知らせ](https://www.morphoinc.com/news/20260612-ir-1) / 公表 2026-06-12 / retrieved / SHA-256 `5beb8b8c398a9bc1fda19764b22611182234c778025fffa69e58f213e96c3b29`\n- S12 [特別損失（投資有価証券評価損・減損損失）の計上に関するお知らせ](https://www.morphoinc.com/news/20260911-ir-1) / 公表 2026-09-11 / retrieved / SHA-256 `5dd82dbf4078177bd50a134d888f02a780cf50cfeb1ecfb5133ccddd6cbeebcb`\n- S13 [連結子会社からの配当金受領に関するお知らせ](https://www.morphoinc.com/news/20260728-ir) / 公表 2026-07-28 / retrieved / SHA-256 `e72fcd2911cf7c0fa50b83ce586ca017ee819dd6b794f6a64c8f30b182ce648d`\n- S14 [2026年10月期 第2四半期決算説明（動画）](https://www.morphoinc.com/news/20260622-ir) / 公表 2026-06-22 / retrieved / SHA-256 `404d0429a9838f6f08631d3ebcd7a7a2d89d517c21f930f027e407116e33cdcc`\n- S15 [事業計画及び成長可能性に関する事項（中期経営計画Vision2027 進捗）](https://www.morphoinc.com/news/20260128-ir-1) / 公表 2026-01-28 / retrieved / SHA-256 `f3bc112c980a2e25b63468fad1a176597c0ef4cfc516b2857498b5ab352b63e3`\n- S16 [モルフォ、カメラ映像の「検知」を「対応」につなげるVLM活用ソリューション『Morpho VLM Fluid Action』を発表](https://www.morphoinc.com/news/20261110-jpr-vlm-f) / 公表 2026-11-10 / retrieved / SHA-256 `c83b2a5ce1c08b648ff478597e526e98a0d40ccbab8957933d0088c66aec7def`\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](3653_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 3653 株式会社モルフォ 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n添付原文を独立に照合した結果、S03～S15には財務数値・予想数値・注記の本文がなく、入力・算式・全シナリオも空のため、予測の経済的妥当性は検証できない。S16は事業内容と開発・検証活動を裏付けるが、対象四半期の収益寄与や採用係数の根拠にはならない。数値誤り、恣意的逆算、二重計上を確認したわけではなく、検証対象の不足による保留である。発表予定日の原文未確認は別途の照合警告とし、経済的品質判定には含めない。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | unresolved | inputsとcalculationsは空で、S03～S06の保存原文にも財務表がない。原文数値と入力の一致、単位、符号、累計値の転記を検査できない。truncated=falseはリンク先資料本文の収録を保証しない。 | S03 掲載ページ本文「News」直下の日付・資料見出し |\n| 2 | unresolved | S04・S05の見出しは日本基準・連結を示すが、対象四半期の期首・期末、年度初日、連結範囲変更、会計方針変更、比較数値の訂正・組替えは確認できない。2026年8月1日～10月31日というモデル設定との完全な照合は未了。 | S04, S05, S08 S04 掲載ページ本文の資料見出し |\n| 3 | unresolved | assumptionsは空で、material=trueの仮定は提示されていないためassumption_reviewsの記録対象はない。ライセンス事業の存在は確認できるが、数量連動契約、単価、採算、成長率の数値設定は裏付けられない。感応度テストも提示されていない。定性説明を数値仮定の支持と扱うことはできない。 | S16 本文「株式会社モルフォについて」 |\n| 4 | unresolved | 利益率・費用・予測利益の入力および算式がなく、恣意的な逆算は観察されないものの、その不存在を検証済みとはできない。研究開発活動の説明だけでは、人件費・外注費・研究開発費・償却費や固定費削減額を設定できない。 | S16 本文「株式会社モルフォについて」 |\n| 5 | unresolved | 特殊要因を数値として加減する処理は提示されていない。S11は営業外収益と特別損失の区分を示すが、S11・S12の金額、計上期間、累計実績・会社予想への織込み、両開示の減損損失の関係は未確認。S13の個別・連結への影響も未確認で、二重計上検査は完了できない。 | S11, S12, S13 S11 掲載ページ本文の資料見出し |\n| 6 | unresolved | bear・base・bullの全シナリオで売上・営業利益・経常利益・純利益が未算定。YoY・QoQ比較値と算式がなく、売上・営業利益の12ブリッジもcomponentsが空、residualがnullである。同一会計版を確認したうえで、前年Q4＝前年通期累計－前年Q3累計、当年Q3＝当年Q3累計－当年中間期累計を計算する必要がある。増減額＝予測値－比較値、残差＝増減額－説明要因合計を検算できず、丸め差・会計比較基準変更・未説明の経済的残差への分類も未了。nullはゼロや丸め差を意味しない。 | S03, S04, S05, S06 S06 掲載ページ本文の資料見出し |\n| 7 | unresolved | 決算短信・説明資料・適時開示の本文、訂正内容、会社予想の期間・改定履歴、定量ドライバーが必要。S03～S16の掲載日は基準日時前であることを添付原文で確認できるが、資料取得時刻は基準日時後であり、保存版の更新履歴は提示されていない。現状では予測数値の確定修正を行う根拠はない。 | S08 掲載ページ本文の日付・資料見出し |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。\n- **Medium** / machine: S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。\n- **Medium** / machine: S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。\n- **Medium** / machine: S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。\n- **Medium** / machine: ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。\n- **Medium** / machine: 全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。\n- **Medium** / machine: 前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。\n- **Medium** / machine: 取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。\n- **Medium** / machine: 同一会計・連結範囲の比較四半期不足: qoq\n- **Medium** / machine: 同一会計・連結範囲の比較四半期不足: yoy\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。\n- **Medium** / machine: 日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。\n- **Medium** / machine: 期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。\n- **Medium** / machine: 資料確認未了: company_guidance\n- **Medium** / machine: 資料確認未了: historical\n- **High** / machine: 資料確認未了: latest_results\n- **Medium** / machine: 資料確認未了: presentation\n- **Medium** / machine: 資料確認未了: segments_kpi\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **High** / fact: 財務表を含まない掲載ページを取得済みとする状態と、原資料本文の確認完了を区別する必要がある。入力・算式・比較実績・予測値が全て欠け、財務予測として検証可能な成果物になっていない。\n- **High** / period: S08の訂正が比較数値やKPIに影響するか不明。同一会計版・同一連結範囲の累計差引きを確立するまで、前年Q4と当年Q3を比較基準として確定できない。\n- **High** / guidance: 会社予想修正候補は存在するが、数値・対象期間・基準日時点での最新性が不明。乖離自体を誤りとは判定せず、原本取得後に数量・価格・費用・一時要因による説明を検査する必要がある。\n- **Medium** / assumption: S16の発表日は対象期末後かつ基準日時前。開発・検証の記載は対象Q4の売上寄与を証明せず、反対に売上ゼロを証明するものでもない。数量・単価・費用の係数や代替予測の裏付けに使えない。\n- **Medium** / double_count: 特殊要因の金額・認識期間・累計織込みを照合できない。S11とS12の減損損失を独立した追加費用と決めつけたり、S13の配当受領を連結利益へ加算したりする根拠はない。\n- **High** / residual: 全12ブリッジの残差は未算定であり、経済的な説明充足率を評価できない。機械エラー「Finite number required」は欠損値の処理問題を示すにとどまり、重大な数値誤算の証明ではない。ゼロ補完せず、比較値と予測値の確定後に丸め差・会計比較基準変更・未説明の経済的残差を分離する必要がある。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-11\", \"official_date\": \"2026-12-11\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://www.morphoinc.com/ir/calendar に「2026/12/11 2026年10月期 決算発表（予定）」と記載。対象は2026年10月期第4四半期単独（2026年8月1日～10月31日）。基準日時までの公式IR掲載で確認できた最新決算は2026年9月11日公表の第3四半期。\", \"warnings\": []}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[]\n[\n  \"基準日時以前に公表されたS03～S06の決算短信本文・財務表・注記。売上と各利益、年度初日、単位、会計基準、連結範囲を確認し、当年Q3と前年Q4の単独実績を再計算するため。\",\n  \"S07～S10の説明資料本文とS08の訂正内容・訂正前後対照。事業別実績、費用、比較数値の会計版と訂正影響を確認するため。\",\n  \"S11の予想修正本文、S03の予想欄、基準日時までの後続予想改定資料。対象期間、修正前後数値、最新性、修正理由を確認するため。\",\n  \"S12・S13の適時開示本文と関連注記。特殊損益の金額・計上期間・累計織込み、配当の個別・連結への影響を確認するため。\",\n  \"S14の説明内容およびS15の計画本文。中期目標と単年度予想を区別し、構造改革効果の開始時期・費用削減規模を確認するため。\",\n  \"基準日時以前に利用可能だった数量・単価・契約条件・受注残・案件進捗・売上認識・売上構成・人員・研究開発費・外注費・償却費の原資料。開示が存在しない場合は非開示と未取得を区別するため。\",\n  \"原資料に対応づけた入力表、算式、materialフラグ付き仮定一覧、全シナリオ、比較増減表、残差分類。独立再計算と重要仮定の全件審査を行うため。\",\n  \"S01・S02の基準日時点の原文、および基準日時までの開示一覧・保存版の更新情報。公式予定日、未発表判定、後続開示の網羅性を確認するため。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/3653/quality_review.json) / [レビュー原回答](../companies/3653/independent_review.json) / [計算検査](../companies/3653/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "3653",
+    "company_name": "株式会社モルフォ",
+    "announcement_date": "2026-12-11",
+    "target_period": "2026-10-31期 Q4単独",
+    "period": {
+      "fiscal_year_end": "2026-10-31",
+      "quarter": 4,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {},
+    "historicals": [],
+    "bridges": [],
+    "issues": [
+      "S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。",
+      "S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。",
+      "S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。",
+      "S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。",
+      "ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。",
+      "全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。",
+      "前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。",
+      "取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。",
+      "同一会計・連結範囲の比較四半期不足: qoq",
+      "同一会計・連結範囲の比較四半期不足: yoy",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。",
+      "日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。",
+      "期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。",
+      "資料確認未了: company_guidance",
+      "資料確認未了: historical",
+      "資料確認未了: latest_results",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures",
+      "財務表を含まない掲載ページを取得済みとする状態と、原資料本文の確認完了を区別する必要がある。入力・算式・比較実績・予測値が全て欠け、財務予測として検証可能な成果物になっていない。",
+      "S08の訂正が比較数値やKPIに影響するか不明。同一会計版・同一連結範囲の累計差引きを確立するまで、前年Q4と当年Q3を比較基準として確定できない。",
+      "会社予想修正候補は存在するが、数値・対象期間・基準日時点での最新性が不明。乖離自体を誤りとは判定せず、原本取得後に数量・価格・費用・一時要因による説明を検査する必要がある。",
+      "S16の発表日は対象期末後かつ基準日時前。開発・検証の記載は対象Q4の売上寄与を証明せず、反対に売上ゼロを証明するものでもない。数量・単価・費用の係数や代替予測の裏付けに使えない。",
+      "特殊要因の金額・認識期間・累計織込みを照合できない。S11とS12の減損損失を独立した追加費用と決めつけたり、S13の配当受領を連結利益へ加算したりする根拠はない。",
+      "全12ブリッジの残差は未算定であり、経済的な説明充足率を評価できない。機械エラー「Finite number required」は欠損値の処理問題を示すにとどまり、重大な数値誤算の証明ではない。ゼロ補完せず、比較値と予測値の確定後に丸め差・会計比較基準変更・未説明の経済的残差を分離する必要がある。"
+    ],
+    "schedule_warnings": [],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [
+      "S16には新ソリューションの契約金額、受注数量、売上計上時期、費用額の記載がない。他の未取得資料でも非開示かどうかは判断できない。",
+      "構造改革による固定費削減の開始時期と規模、会社予想への織込み範囲は原本未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "株式情報・株主メモ",
+        "url": "https://www.morphoinc.com/ir/info",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T18:29:05+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "IRカレンダー",
+        "url": "https://www.morphoinc.com/ir/calendar",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-18T18:29:05+09:00"
+      },
+      {
+        "id": "S03",
+        "title": "2026年10月期 第3四半期決算短信",
+        "url": "https://www.morphoinc.com/news/20260911-ir-3",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www.morphoinc.com/news/20260911-ir-3",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S03.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S03.txt",
+        "sha256": "50843dc8ac2f9ded206f85cd01f781862c11403ef820cf4cf75d2394927f32e5",
+        "text_sha256": "8b5e63e6d7661fa1423d0730340bba11ddceae7a5dfc38c2205b5c0b752d34e3",
+        "retrieved_at": "2026-11-18T18:29:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1046,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www.morphoinc.com/news/20260612-ir-3",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://www.morphoinc.com/news/20260612-ir-3",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S04.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S04.txt",
+        "sha256": "f7f0726a33ca392d78551f50032f243266f4ab88c2aba8049795681d1496ab6f",
+        "text_sha256": "86dc821c21ed1621cb160d828101f5f77e9d06234a222bab65641a7f82a2c3bb",
+        "retrieved_at": "2026-11-18T18:29:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1076,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2025年10月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www.morphoinc.com/news/20251212-ir-1",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://www.morphoinc.com/news/20251212-ir-1",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S05.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S05.txt",
+        "sha256": "1729af50b5252fd24b3e5c36b079b1fd55393886539d187a9737dcc76836f12f",
+        "text_sha256": "9291b7e2646795ebcdf95d8edee0a2b640c79e4686ce5e89a7649889d15dffd5",
+        "retrieved_at": "2026-11-18T18:29:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1058,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2025年10月期 第3四半期 決算短信",
+        "url": "https://www.morphoinc.com/news/20250912-ir-2",
+        "published_at": "2025-09-12",
+        "category": "historical",
+        "final_url": "https://www.morphoinc.com/news/20250912-ir-2",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S06.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S06.txt",
+        "sha256": "d38df6b48b07a8d2791694fb51b1266bee433863a2eab4275ffd5fd012785091",
+        "text_sha256": "d2cf993e884da2728f65bf9ab52a2bf8d5f258942117ba6da380867318f661fa",
+        "retrieved_at": "2026-11-18T18:29:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1048,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年10月期 第3四半期決算補足説明資料",
+        "url": "https://www.morphoinc.com/news/20260911-ir-2",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "final_url": "https://www.morphoinc.com/news/20260911-ir-2",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S07.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S07.txt",
+        "sha256": "32247b5591ad6a97bcb5aff3ba439470a032670e2f27e03debd36b609a87c6a2",
+        "text_sha256": "4be21b48322e202c91d9ffe4ada59ffeb07203f83dcd3408060673ba0125d030",
+        "retrieved_at": "2026-11-18T18:29:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1054,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "（訂正後）2026年10月期 第2四半期決算補足説明資料",
+        "url": "https://www.morphoinc.com/news/20260617-ir-1",
+        "published_at": "2026-06-17",
+        "category": "presentation",
+        "final_url": "https://www.morphoinc.com/news/20260617-ir-1",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S08.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S08.txt",
+        "sha256": "4b508bd2471de04156ec72ffc1d656ff773fb2b7198e9f22915676173e1bca25",
+        "text_sha256": "ab7e7a21f5aa4c6affc2246dacd63b3109e3268daaa7b6d15fb24c6308e674af",
+        "retrieved_at": "2026-11-18T18:29:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1064,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2025年10月期 通期決算補足説明資料",
+        "url": "https://www.morphoinc.com/news/20251212-ir-2",
+        "published_at": "2025-12-12",
+        "category": "presentation",
+        "final_url": "https://www.morphoinc.com/news/20251212-ir-2",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S09.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S09.txt",
+        "sha256": "8f631568be8cb21aca25e7099e36d3542e9e4280a3862edae69f0a4cf66f7c6e",
+        "text_sha256": "03f8226331b99238a2b6234b079bddea2a38d1b0707fda53b635fe2f72023260",
+        "retrieved_at": "2026-11-18T18:29:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1050,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "2025年10月期 第3四半期 決算補足説明資料",
+        "url": "https://www.morphoinc.com/news/20250912-ir-3",
+        "published_at": "2025-09-12",
+        "category": "presentation",
+        "final_url": "https://www.morphoinc.com/news/20250912-ir-3",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S10.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S10.txt",
+        "sha256": "4638867348b725542913bcc1e15e90a4d28686dbb34abd022d07344b11465ba8",
+        "text_sha256": "c17973b2261b2c8a26fa58864a7a62881142568a31e5e33a62e6fe5577be90c5",
+        "retrieved_at": "2026-11-18T18:29:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1056,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "営業外収益（助成金収入）及び特別損失（構造改革費用、減損損失）の発生並びに通期連結業績予想の修正に関するお知らせ",
+        "url": "https://www.morphoinc.com/news/20260612-ir-1",
+        "published_at": "2026-06-12",
+        "category": "guidance",
+        "final_url": "https://www.morphoinc.com/news/20260612-ir-1",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S11.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S11.txt",
+        "sha256": "5beb8b8c398a9bc1fda19764b22611182234c778025fffa69e58f213e96c3b29",
+        "text_sha256": "b88ebe578bba576a2fcf2b681156c1650231b5618fb317745ad7f9ce3fcf4c56",
+        "retrieved_at": "2026-11-18T18:29:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1120,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "特別損失（投資有価証券評価損・減損損失）の計上に関するお知らせ",
+        "url": "https://www.morphoinc.com/news/20260911-ir-1",
+        "published_at": "2026-09-11",
+        "category": "other",
+        "final_url": "https://www.morphoinc.com/news/20260911-ir-1",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S12.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S12.txt",
+        "sha256": "5dd82dbf4078177bd50a134d888f02a780cf50cfeb1ecfb5133ccddd6cbeebcb",
+        "text_sha256": "1a35bb4d355bec883485c9bad900af7d178377b9437c1f10a23da1cb25481731",
+        "retrieved_at": "2026-11-18T18:29:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1070,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "連結子会社からの配当金受領に関するお知らせ",
+        "url": "https://www.morphoinc.com/news/20260728-ir",
+        "published_at": "2026-07-28",
+        "category": "other",
+        "final_url": "https://www.morphoinc.com/news/20260728-ir",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S13.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S13.txt",
+        "sha256": "e72fcd2911cf7c0fa50b83ce586ca017ee819dd6b794f6a64c8f30b182ce648d",
+        "text_sha256": "30269bc5bdf5fd235f64780ccc3ffe860f63676c20a7b3445e84611201672e51",
+        "retrieved_at": "2026-11-18T18:29:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1050,
+        "parser_version": 2
+      },
+      {
+        "id": "S14",
+        "title": "2026年10月期 第2四半期決算説明（動画）",
+        "url": "https://www.morphoinc.com/news/20260622-ir",
+        "published_at": "2026-06-22",
+        "category": "presentation",
+        "final_url": "https://www.morphoinc.com/news/20260622-ir",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S14.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S14.txt",
+        "sha256": "404d0429a9838f6f08631d3ebcd7a7a2d89d517c21f930f027e407116e33cdcc",
+        "text_sha256": "b832b6a5ee544e21505e92b712be21af89376466faacc5a03ea37f20a00a4c01",
+        "retrieved_at": "2026-11-18T18:29:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1054,
+        "parser_version": 2
+      },
+      {
+        "id": "S15",
+        "title": "事業計画及び成長可能性に関する事項（中期経営計画Vision2027 進捗）",
+        "url": "https://www.morphoinc.com/news/20260128-ir-1",
+        "published_at": "2026-01-28",
+        "category": "guidance",
+        "final_url": "https://www.morphoinc.com/news/20260128-ir-1",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S15.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S15.txt",
+        "sha256": "f3bc112c980a2e25b63468fad1a176597c0ef4cfc516b2857498b5ab352b63e3",
+        "text_sha256": "a38ce25c54f9d63a0257fed581b7d4ec1a12254829286e3c1f0ee54d8729133c",
+        "retrieved_at": "2026-11-18T18:29:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1084,
+        "parser_version": 2
+      },
+      {
+        "id": "S16",
+        "title": "モルフォ、カメラ映像の「検知」を「対応」につなげるVLM活用ソリューション『Morpho VLM Fluid Action』を発表",
+        "url": "https://www.morphoinc.com/news/20261110-jpr-vlm-f",
+        "published_at": "2026-11-10",
+        "category": "other",
+        "final_url": "https://www.morphoinc.com/news/20261110-jpr-vlm-f",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S16.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3653\\sources\\S16.txt",
+        "sha256": "c83b2a5ce1c08b648ff478597e526e98a0d40ccbab8957933d0088c66aec7def",
+        "text_sha256": "0ed61f8e57d5652587c59ab3ed8ece795723fe5a0441bb18071003df670c4026",
+        "retrieved_at": "2026-11-18T18:29:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 4629,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "code": "3653",
+      "announcement_date": "2026-12-11",
+      "period": {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 4,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [],
+      "calculations": [],
+      "scenarios": {},
+      "cumulative_historicals": [],
+      "quarterly_historicals": [],
+      "guidance_records": [],
+      "drivers": [
+        {
+          "name": "スマートフォン・半導体メーカー向けライセンス",
+          "mechanism": "主力のライセンス事業の利用数量、契約単価、顧客・製品構成が売上と採算を左右する。ただし、数量連動などの契約条件は保存原文では確認できない。",
+          "source_ids": [
+            "S16"
+          ],
+          "locator": "本文「株式会社モルフォについて」",
+          "calculation_ids": [],
+          "not_quantified_reason": "主力事業であることは確認できるが、対象四半期の数量、単価、売上構成、利益率と比較実績が未確認で、合理的な予測範囲を設定できない。"
+        },
+        {
+          "name": "車載・産業IoT向け受託開発・共同研究",
+          "mechanism": "研究開発型の受託開発・共同研究を推進している。案件の売上計上時期、契約金額、開発工数が四半期売上と利益に影響する。",
+          "source_ids": [
+            "S16"
+          ],
+          "locator": "本文「株式会社モルフォについて」",
+          "calculation_ids": [],
+          "not_quantified_reason": "受注残、案件別進捗、売上認識条件、人件費・外注費の原文が未確認で、案件の積上げができない。"
+        },
+        {
+          "name": "Morpho VLM Fluid Actionの開発・検証",
+          "mechanism": "車載領域を中心に開発・検証し、他領域への活用可能性を検討している。事業化は将来の収益機会となり得るが、発表だけでは対象四半期の売上計上を示さない。",
+          "source_ids": [
+            "S16"
+          ],
+          "locator": "本文「様々な業界に広がる活用可能性」「今後の展開」",
+          "calculation_ids": [],
+          "not_quantified_reason": "期末後の発表であり、同記事には契約金額、受注数量、売上計上時期、開発費の記載がない。対象四半期への寄与を加算する根拠がない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前年同四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期売上と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_explanation": "前四半期営業利益と予測値が未算定のため、差額全体が未算定。",
+          "residual_type": "unclassified"
+        }
+      ],
+      "company_guidance": "S11の掲載ページ見出しから通期連結業績予想の修正公表は確認できる。しかし、修正数値、対象期間の詳細、修正理由、S03時点での据置・再修正は原本未確認。guidance_recordsに登録できる数値はなく、通期予想から累計実績を差し引く推計もできない。",
+      "consensus": "未確認。提示資料に公表市場予想の数値はない。",
+      "independent_forecast": "売上・営業利益・経常利益・純利益はいずれも算定不能。決算実績と数量・価格・受注・構成・採算・費用の基礎数値が保存原文に含まれず、仮定の範囲や感応度を裏付けられないためscenariosは空とした。会社予想の差引き推計も独自積上げ予測も作成していない。",
+      "narrative": [
+        {
+          "heading": "予測の成立条件",
+          "text": "主力のライセンス事業と研究開発型の受託開発・共同研究は確認できる。しかし、保存された決算資料掲載ページには財務表や業績説明が含まれておらず、四半期単独の実績比較と予測の基準を作れない。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S16"
+          ],
+          "locator": "S03～S06：掲載ページの日付・資料見出し、S16：本文「株式会社モルフォについて」"
+        },
+        {
+          "heading": "期末後の製品発表",
+          "text": "VLM活用ソリューションは開発・検証と活用可能性の検討が中心で、対象四半期に売上を計上した証拠はない。発表を根拠に対象四半期の増収や採算改善を織り込むことはできない。",
+          "source_ids": [
+            "S16"
+          ],
+          "locator": "本文「様々な業界に広がる活用可能性」「今後の展開」"
+        },
+        {
+          "heading": "利益段階の区別",
+          "text": "助成金収入、構造改革費用、減損損失、投資有価証券評価損については公表見出しのみ確認できる。計上期間や金額が不明なため、対象四半期へ再計上せず、営業利益から経常利益・純利益への調整も行わない。",
+          "source_ids": [
+            "S11",
+            "S12"
+          ],
+          "locator": "掲載ページの資料見出し"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "reviewed",
+        "latest_results": "unknown",
+        "presentation": "unknown",
+        "company_guidance": "unknown",
+        "historical": "unknown",
+        "segments_kpi": "unknown",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "S16には新ソリューションの契約金額、受注数量、売上計上時期、費用額の記載がない。他の未取得資料でも非開示かどうかは判断できない。",
+        "構造改革による固定費削減の開始時期と規模、会社予想への織込み範囲は原本未確認。"
+      ],
+      "material_unresolved": [
+        "S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。",
+        "当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。",
+        "前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。",
+        "取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。",
+        "日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。",
+        "S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。",
+        "S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。",
+        "ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。",
+        "S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。",
+        "企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。",
+        "期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。",
+        "全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。"
+      ],
+      "schema_version": "2.0",
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 9,
+      "Medium": 21,
+      "Low": 0
+    },
+    "material_assumption_count": 0,
+    "schedule_check": {
+      "input_date": "2026-12-11",
+      "official_date": "2026-12-11",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://www.morphoinc.com/ir/calendar に「2026/12/11 2026年10月期 決算発表（予定）」と記載。対象は2026年10月期第4四半期単独（2026年8月1日～10月31日）。基準日時までの公式IR掲載で確認できた最新決算は2026年9月11日公表の第3四半期。",
+      "warnings": []
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "保留",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "同一会計・連結範囲の比較四半期不足: qoq"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "同一会計・連結範囲の比較四半期不足: yoy"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: company_guidance"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: historical"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: latest_results"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: presentation"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "資料確認未了: segments_kpi"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "High",
+        "category": "fact",
+        "message": "財務表を含まない掲載ページを取得済みとする状態と、原資料本文の確認完了を区別する必要がある。入力・算式・比較実績・予測値が全て欠け、財務予測として検証可能な成果物になっていない。",
+        "source_ids": [
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "locator": "S03 掲載ページ本文の資料見出し",
+        "evidence_excerpt": "2026年10月期 第3四半期決算短信",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "period",
+        "message": "S08の訂正が比較数値やKPIに影響するか不明。同一会計版・同一連結範囲の累計差引きを確立するまで、前年Q4と当年Q3を比較基準として確定できない。",
+        "source_ids": [
+          "S08"
+        ],
+        "locator": "掲載ページ本文の資料見出し",
+        "evidence_excerpt": "（訂正後）2026年10月期 第2四半期決算補足説明資料",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "guidance",
+        "message": "会社予想修正候補は存在するが、数値・対象期間・基準日時点での最新性が不明。乖離自体を誤りとは判定せず、原本取得後に数量・価格・費用・一時要因による説明を検査する必要がある。",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "掲載ページ本文の資料見出し",
+        "evidence_excerpt": "通期連結業績予想の修正に関するお知らせ",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "assumption",
+        "message": "S16の発表日は対象期末後かつ基準日時前。開発・検証の記載は対象Q4の売上寄与を証明せず、反対に売上ゼロを証明するものでもない。数量・単価・費用の係数や代替予測の裏付けに使えない。",
+        "source_ids": [
+          "S16"
+        ],
+        "locator": "本文「様々な業界に広がる活用可能性」",
+        "evidence_excerpt": "『Morpho VLM Fluid Action』は、まず車載領域での開発・検証を進めています。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "double_count",
+        "message": "特殊要因の金額・認識期間・累計織込みを照合できない。S11とS12の減損損失を独立した追加費用と決めつけたり、S13の配当受領を連結利益へ加算したりする根拠はない。",
+        "source_ids": [
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "locator": "S12 掲載ページ本文の資料見出し",
+        "evidence_excerpt": "特別損失（投資有価証券評価損・減損損失）の計上に関するお知らせ",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "residual",
+        "message": "全12ブリッジの残差は未算定であり、経済的な説明充足率を評価できない。機械エラー「Finite number required」は欠損値の処理問題を示すにとどまり、重大な数値誤算の証明ではない。ゼロ補完せず、比較値と予測値の確定後に丸め差・会計比較基準変更・未説明の経済的残差を分離する必要がある。",
+        "source_ids": [],
+        "locator": "提示データ model.bridges、recalculation.errors",
+        "evidence_excerpt": "",
+        "origin": "independent_ai",
+        "citation_verified": false
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 9,
+      "Medium": 21,
+      "Low": 0
+    },
+    "assumptions": [],
+    "guidance": [],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S03～S15はtruncated=falseだが、保存テキストは主に掲載ページの見出しと共通ナビゲーションであり、リンク先の決算資料・説明資料・適時開示本文や動画内容を含まない。非開示ではなく原本未確認である。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S08は訂正後資料という見出しのみ確認でき、訂正内容と比較実績への影響は未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11の会社予想修正値とS03時点の最新性が未確認で、期間・定義を確定したguidance_recordsを作成できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S13は連結子会社からの配当金受領という見出しのみ確認でき、金額と会計上の影響は未確認。連結利益の増加要因として使用していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "ライセンス数量・単価、受注残、案件進捗、セグメント構成・利益率、研究開発費、人員、外注費、設備・償却費が未確認。条件付きシナリオにも合理的な数値範囲を設定できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "企業識別・発表予定日・対象決算未発表の判定は提示されたdiscovery情報とS16本文に基づく。S01・S02の保存原文はdocumentsに含まれていない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "全シナリオの比較基準は前年同四半期と前四半期で統一したが、比較実績と予測値が欠けるため、各ブリッジの差額と残差はnullとした。ゼロ差や丸め差を意味しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "前年度の年度初日からの通期累計と第3四半期累計はS05・S06の財務表未取得により未確認。前年同四半期単独の売上・各利益を計算できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "取得原価配分、会計組替え、連結範囲、継続事業の定義と比較数値の会計版は未確認。同一会計版の累計差引きと直接四半期開示のいずれも確認できないため、実績配列は空とした。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "同一会計・連結範囲の比較四半期不足: qoq",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "同一会計・連結範囲の比較四半期不足: yoy",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "当期の年度初日からの中間期累計と第3四半期累計はS04・S03の財務表未取得により未確認。前四半期単独の売上・各利益を計算できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "日本基準・連結はS04・S05の資料見出しに基づく。対象期末までの会計基準・集計範囲の変更有無は原本未確認。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "期末後開示はS16本文を確認したが、基準日時までの重要開示の網羅性は未確定。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: company_guidance",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: historical",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: latest_results",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: presentation",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "資料確認未了: segments_kpi",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "fact",
+      "message": "財務表を含まない掲載ページを取得済みとする状態と、原資料本文の確認完了を区別する必要がある。入力・算式・比較実績・予測値が全て欠け、財務予測として検証可能な成果物になっていない。",
+      "source_ids": "['S03', 'S04', 'S05', 'S06']",
+      "locator": "S03 掲載ページ本文の資料見出し",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "period",
+      "message": "S08の訂正が比較数値やKPIに影響するか不明。同一会計版・同一連結範囲の累計差引きを確立するまで、前年Q4と当年Q3を比較基準として確定できない。",
+      "source_ids": "['S08']",
+      "locator": "掲載ページ本文の資料見出し",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "guidance",
+      "message": "会社予想修正候補は存在するが、数値・対象期間・基準日時点での最新性が不明。乖離自体を誤りとは判定せず、原本取得後に数量・価格・費用・一時要因による説明を検査する必要がある。",
+      "source_ids": "['S11']",
+      "locator": "掲載ページ本文の資料見出し",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "assumption",
+      "message": "S16の発表日は対象期末後かつ基準日時前。開発・検証の記載は対象Q4の売上寄与を証明せず、反対に売上ゼロを証明するものでもない。数量・単価・費用の係数や代替予測の裏付けに使えない。",
+      "source_ids": "['S16']",
+      "locator": "本文「様々な業界に広がる活用可能性」",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "Medium",
+      "category": "double_count",
+      "message": "特殊要因の金額・認識期間・累計織込みを照合できない。S11とS12の減損損失を独立した追加費用と決めつけたり、S13の配当受領を連結利益へ加算したりする根拠はない。",
+      "source_ids": "['S11', 'S12', 'S13']",
+      "locator": "S12 掲載ページ本文の資料見出し",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3653",
+      "company_name": "株式会社モルフォ",
+      "severity": "High",
+      "category": "residual",
+      "message": "全12ブリッジの残差は未算定であり、経済的な説明充足率を評価できない。機械エラー「Finite number required」は欠損値の処理問題を示すにとどまり、重大な数値誤算の証明ではない。ゼロ補完せず、比較値と予測値の確定後に丸め差・会計比較基準変更・未説明の経済的残差を分離する必要がある。",
+      "source_ids": "[]",
+      "locator": "提示データ model.bridges、recalculation.errors",
+      "citation_verified": "False"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": {
+    "code": "3653",
+    "input_date": "2026-12-11",
+    "official_date": "2026-12-11",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://www.morphoinc.com/ir/calendar に「2026/12/11 2026年10月期 決算発表（予定）」と記載。対象は2026年10月期第4四半期単独（2026年8月1日～10月31日）。基準日時までの公式IR掲載で確認できた最新決算は2026年9月11日公表の第3四半期。",
+    "warnings": "[]"
+  },
+  "sourceHashes": {
+    "companies/3653/result.json": "134ff2d2c445de3ca526b8e0167e9499e4fcd2d2cb793b90006713c9170377b6",
+    "reports/3653.md": "d9fb84d545d198cf2586274d6e7f8b39ebe24e837b4ada8dc95f98964fecc514",
+    "reports/3653_review.md": "27be29357d5b59e47c277f9d73945a614d4f0dc52f5e0ebe44093aae08ec9e35",
+    "companies/3653/quality_review.json": "c379c07bc2080eadcc1e8b70c377fa6f12bc39b3dad5ad0959c3a4b72fdcbe41",
+    "companies/3653/independent_review.json": "21827c9415fc624dd73a640ce0298c9582bf4e7d2388e0b837feb023edd5946a"
+  }
+}

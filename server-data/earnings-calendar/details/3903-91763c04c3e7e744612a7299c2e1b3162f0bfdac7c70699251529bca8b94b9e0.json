@@ -1,0 +1,4162 @@
+{
+  "id": "3903-91763c04c3e7e744612a7299c2e1b3162f0bfdac7c70699251529bca8b94b9e0",
+  "code": "3903",
+  "companyName": "株式会社gumi",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-04-30",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3903-review-3064607c817b54c7 · 91763c04",
+  "savedAt": "2026-11-21T23:12:09+09:00",
+  "quality": "要修正",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 2228.0119999999997,
+  "operatingProfit": -201.421,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3903 株式会社gumi｜2027-04-30期 Q2単独\n品質状態：**要修正**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 1,678.01 | 2,228.01 | 2,728.01 |\n| 営業利益 | -606.42 | -201.42 | 113.58 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 600.00 | 36.85% |  |\n| QnQ | 営業利益 | -15.00 | 未算定 | 比較利益がゼロ以下のため伸長率非表示。増減額を参照 |\n\n## 会社予想\nS01 PDF pages 1,5で当年度の連結業績予想は非開示と確認。S02の収益回復方針は定性的な会社見通しであり、数値会社予想ではない。対象四半期の数値予想・期後修正予想は保存資料では確認できない。S05の旧年度中期目標は対象年度へ転用しない。\n\n## 市場コンセンサス\n未確認。保存原文に対象四半期の公表市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n前Qの確定セグメント実績に、新作・周年による事業売上増分、暗号資産関連収益の変化、売上連動費、追加広告、追加償却を積み上げた低確度の条件付き独自予測。会社予想の四等分や期後修正予想の差引きではない。シナリオ幅は統計的信頼区間ではなく、保存資料の過去新作投入規模と直近費用構造を参考とした仮定である。経常利益・親会社株主帰属純利益は合理的な範囲を設定できずnull。\n\n## 結論\n中心ケースの売上は2,228.01、営業利益は-201.42。新作の期間寄与と主力作の周年施策で増収を見込むが、販促と償却の追加負担が利益回復を抑える。弱気では売上1,678.01、営業利益-606.42、強気では売上2,728.01、営業利益113.58となる。\n\n## 営業利益を左右する条件\n中心ケースでは広告費を352.00、減価償却費を284.21と仮定する。開発費等の純負担は前Q並みとするため、受託案件の検収や開発費の資産計上が変われば予測は動く。共同開発先との収益分配条件が不明であり、ダウンロード実績だけでgumi売上を確定できない。\n\n## 比較と会計上の注意\n前年同Qは同じ連結会計基準の中間累計から直前累計を差し引き、売上2,496.03、営業利益-235.84を比較基準とする。前年セグメントの組替えが未完了のため、前年比ブリッジには未分解残差を残す。Evernorth上場の評価差額を営業利益や経常利益へ加算せず、前Q計上済みの暗号資産評価損も重複計上しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 新作・周年・既存作の純増収仮定 | 200.00 | 前Qから対象Qへのメディア増収 |\n| 暗号資産受領・運用収益の変化 | -150.00 | 前Qから対象Qへのクリプト減収 |\n| 残差（economic_unexplained） | -868.02 | 前年同Qから前Qまでの連結売上差。タイトル別寄与と同一区分の前年Q2セグメント値が不足し、金額を事業要因へ分解できない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア増収の変動費控除後寄与 | 100.00 | 追加広告・償却を除いた寄与 |\n| クリプト減収の寄与 | -120.00 | 変動費の減少を控除 |\n| 追加広告・償却・その他費用 | -400.00 | 前Q基準の純費用増 |\n| 残差（economic_unexplained） | 49.42 | 前年同Qから前Qまでの営業利益差。前年広告費の反動、売上構成、開発費資産計上等の寄与を同一定義で分離できないため全額を未説明残差とする。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア売上変化 | 200.00 | 新作・周年効果から既存減衰を控除する仮定 |\n| クリプト売上変化 | -150.00 | 受領・運用収益の減少仮定 |\n| 残差（none） | 0.00 | 条件付きモデル内の差額は全て配賦済み。実際の変動要因が全て確認できたことを意味しない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア限界利益 | 100.00 | 増収から追加変動費を控除 |\n| クリプト限界利益変化 | -120.00 | 減収から変動費減少を控除 |\n| 広告・償却等の増加 | -400.00 | 独立した費用仮定 |\n| 残差（none） | 0.00 | 費用据置き条件を含むモデル内の残差はない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 新作・周年・既存作の純増収仮定 | 650.00 | 前Qから対象Qへのメディア増収 |\n| 暗号資産受領・運用収益の変化 | -50.00 | 前Qから対象Qへのクリプト減収 |\n| 残差（economic_unexplained） | -868.02 | 前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア増収の変動費控除後寄与 | 325.00 | 追加広告・償却を除いた寄与 |\n| クリプト減収の寄与 | -40.00 | 変動費減少を控除 |\n| 追加広告・償却・その他費用 | -300.00 | 前Q基準の純費用増 |\n| 残差（economic_unexplained） | 49.42 | 前年同Qから前Qまでの営業利益差。前年の広告費反動を別途加算すると二重計上になるため、未分解の純差額として残す。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア売上変化 | 650.00 | 新作と周年施策の純効果 |\n| クリプト売上変化 | -50.00 | 運用移行等に伴う減収仮定 |\n| 残差（none） | 0.00 | 条件付きモデル内の差額は全て配賦済み。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア限界利益 | 325.00 | 増収から追加変動費を控除 |\n| クリプト限界利益変化 | -40.00 | 減収から変動費減少を控除 |\n| 広告・償却等の増加 | -300.00 | 独立した費用仮定 |\n| 残差（none） | 0.00 | その他純費用の前Q据置きを条件に残差なし。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 新作・周年・既存作の純増収仮定 | 1,100.00 | 前Qから対象Qへのメディア増収 |\n| 暗号資産受領・運用収益の変化 | 0.00 | 前Q売上維持の条件 |\n| 残差（economic_unexplained） | -868.02 | 前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア増収の変動費控除後寄与 | 550.00 | 追加広告・償却を除いた寄与 |\n| クリプト収益の変化 | 0.00 | 前Q収益維持の条件 |\n| 追加広告・償却・その他費用 | -250.00 | 前Q基準の純費用増 |\n| 残差（economic_unexplained） | 49.42 | 前年同Qから前Qまでの営業利益差。売上構成、広告、資産計上等の寄与が未分解。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア売上変化 | 1,100.00 | 新作課金と周年施策がともに奏功する条件 |\n| クリプト売上変化 | 0.00 | 前Q売上維持 |\n| 残差（none） | 0.00 | 条件付きモデル内の差額は全て配賦済み。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| メディア限界利益 | 550.00 | 増収から追加変動費を控除 |\n| クリプト限界利益変化 | 0.00 | 前Q収益維持 |\n| 広告・償却等の増加 | -250.00 | 広告効率改善と追加償却を別建て |\n| 残差（none） | 0.00 | その他純費用の前Q据置きを条件に残差なし。 |\n\n## エラー・未解決事項\n- S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。\n- S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。\n- S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。\n- S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。\n- S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。\n- その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。\n- 売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。\n- 対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。\n- 直前累計不足: 2025-10-31\n- 経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。\n- 資料確認未了: already_announced\n- 増減要因の照合未了: bear/yoy/revenue\n- 増減要因の照合未了: bear/yoy/operating_profit\n- 増減要因の照合未了: base/yoy/revenue\n- 増減要因の照合未了: base/yoy/operating_profit\n- 増減要因の照合未了: bull/yoy/revenue\n- 増減要因の照合未了: bull/yoy/operating_profit\n- 重要仮定の裏付け未検証: bear_media_add\n- 重要仮定の裏付け未検証: bull_media_add\n- 重要仮定の裏付け未検証: base_media_add\n- 重要仮定の裏付け未検証: bear_ad_add\n- 重要仮定の裏付け未検証: bull_ad_add\n- 重要仮定の裏付け未検証: bear_crypto_add\n- 重要仮定の裏付け未検証: bull_crypto_add\n- 重要仮定の裏付け未検証: base_ad_add\n- 重要仮定の裏付け未検証: base_crypto_add\n- 重要仮定の裏付け未検証: media_variable_rate\n- 重要仮定の裏付け未検証: da_add\n- 重要仮定の裏付け未検証: crypto_variable_rate\n- 重要仮定の裏付け未検証: other_cost_add\n- 前年Q1累計は存在する。前年Q2比較値をnullにした再計算出力と「直前累計不足」は誤り。売上2496.034、営業利益−235.838、経常利益267.775、親会社純利益103.698へ復元し、全シナリオのYoYを再計算する。予測値自体の変更は不要。\n- 重要仮定13件の数値根拠が不足。特に中心増収650、変動費50%、追加広告200、償却100が中心営業利益を決定する。会社一般論や機械的感応度を根拠にsupportedへ変更してはならない。\n- 全シナリオ共通のYoY売上残差−868.022、営業利益残差49.417は算術上正しいが、経済的には未説明。セグメント組替え不足だけで連結差額全体を説明したことにはならない。タイトル構成、広告、資産計上、範囲変更を分解し、未説明部分を残す。QnQ残差ゼロはモデル恒等式に限る。\n- S03の連結範囲変更「有」と社名欄空欄の不整合、S06の吸収合併・清算による3社除外を追加照合する。公表連結値の差引きは可能だが、構成企業一定の成長比較としては未確認。セグメント組替えは連結売上差を生む要因と混同しない。\n- 共同開発契約上の売上総額・純額と費用分配が不明。gumi帰属売上に既に分配控除が反映されている場合、50%変動費に共同開発分配を含めると重複し得る。実際の重複は未確認なので数値訂正は提案しない。\n- S02の営業損益イメージ−501/315とS01正式値−498.048/311.627の差はそれぞれ−2.952/+3.373。単なる百万円丸めと認定できない。正式値優先は妥当だが、配賦・定義・抽出差を確認する。\n- セグメント売上合計と連結売上の差0.001百万円は原文表示段階に存在する。端数処理由来かは未確定の表示差として独立管理し、経済的売上要因としない。約10の−13乗百万円の計算差は浮動小数点誤差であり別扱い。会計比較基準変更による残差額は未特定で、ゼロと断定しない。\n- guidance_recordsとcompany_guidance_comparisonsが空。予想非開示を含め候補を登録し、現年度の定性方針、旧年度税引前利益目標、個別事象の損益影響を分離する。現年度Q2の数値予想がないため、会社予想との差自体を誤りとは判定しない。\n\n## 条件・不確実性\n- FCT・OSHIの対象四半期末の活発な市場判定、処分見込価額、受領数量、売買・移行数量は未確認。\n- base_ad_add: 新作・周年の追加広告費を前年の自社配信新作時より抑制する条件。前Q広告費に上乗せし、前年の一過性広告費の反動減をさらに加算しない。\n- base_crypto_add: ノード運営の継続収益を残しつつ、上場廃止とポートフォリオ移行で前Q売上の約1割が減少する条件。新規ファンドの運用資産額を連結売上に加算しない。\n- base_media_add: 中心は新作の期間寄与と周年施策が既存作の減衰を上回る条件。前年新作投入時の連結増収規模より小さく設定し、共同開発タイトルの帰属割合不明と前Qの主力作不振を織り込む。ダウンロード数を課金人数へ直接換算せず、事業全体の条件付き増分として置く。\n- bear_ad_add: 新作投入と周年施策の追加広告費。前年オラドラの一過性広告費より小さいが、売上への転換効率が低い条件。共同開発タイトルの広告負担割合は不明。\n- bear_crypto_add: 売上の大部分が暗号資産受領等のその他収益であり、上場廃止に伴う流動性悪化や運用移行が受領時評価額・運用収入を押し下げる条件。前Q売上の約3割減をストレス幅とする。保有資産評価損そのものは売上減に含めない。\n- bear_media_add: ヒロサバのほぼ四半期全期間の寄与とオラドラ周年施策を合わせた、ネオメディア売上の前Q差額。前年の新作投入時に連結売上が大きく増加した実績を規模の参考とするが、今回はKLab配信・共同開発であるため同じ売上帰属を仮定しない。弱気は新作の収益化が弱く、既存作の自然減が周年効果を相殺する条件。タイトル別売上への分解はしない。\n- bull_ad_add: IPの自然流入と共同開発先の販促により、gumi負担の追加広告が比較的小さく収まる条件。売上増と広告効率改善が同時に成立する強気ケース。\n- bull_crypto_add: ノード収益維持と運用移行が減収要因を相殺し、前Q売上を維持する条件。ファンド・SaaSの料金や顧客数が不明なため、独立した成長額は加算しない。\n- bull_media_add: 強気はヒロサバの継続課金とオラドラ周年施策がともに奏功する条件。増分の規模は前年の新作投入時の連結増収に近い水準を上側の参考とする。これは確率的上限でもタイトル売上の確認値でもない。\n- crypto_variable_rate: 受領暗号資産等の売上変動は固定的な運用体制のもとで利益へ強く波及すると仮定し、増減収に連動する費用を20%と置く。前Qのセグメント利益率をそのまま限界利益率として使用しない。\n- da_add: ヒロサバの配信開始に伴うソフトウエア償却増を前Q比で追加する。仮勘定残高の一部が稼働資産へ振り替わる条件だが、対象資産額と償却方法は未確認。既存資産の償却は前Q費用に含めたまま据え置く。\n- media_variable_rate: メディア増収に対する追加の手数料、版権・共同開発分配、通信・運営費を合わせて50%と置く。前Qの連結支払手数料はメディア売上に対し約3割の規模だが、費用帰属が一致しないため参考に限り、残りをその他の変動費の余裕とする。広告と追加償却は別建て。\n- other_cost_add: 開発パイプラインが継続し、開発費が直近で横ばいという説明から、広告・追加償却・売上連動費以外の純費用を前Q並みとする。人員減少効果を別途利益に加算しない。受託検収ずれの解消も確定せず追加計上しない。\n- ヒロサバのgumi帰属売上、課金者数、継続率、単価、収益分配条件は保存原文に記載がない。公表資料全体での非開示までは断定しない。\n- ファンド運用資産残高はgumiの連結売上でも帰属利益でもない。持分法投資損益は別途未確認。\n- 受託検収ずれの対象四半期内解消は未確認。独立した検収収益や利益の上乗せはしない。\n- 広告負担割合と新作ソフトウエアの償却方法は原文未確認。売上成長と広告効率が同時に改善することが強気ケースの条件。\n\n## 根拠・保存記録\n- S01 [2027年4月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/39030/140120260910534566.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `8c44b5d42c51dc842d3218434745a8225f4f3f30accf7f6b7c322003784bdafa`\n- S02 [2027年4月期 第1四半期決算説明資料](https://www2.jpx.co.jp/disc/39030/140120260911534783.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `8c4ea8f1dcdb31bb2d98abca23f0718ca3a4e283c04e0d6e96d447b0ec0925ba`\n- S03 [2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://f.irbank.net/pdf/20251212/140120251212518477.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `46d0167030023823f61bf4f720e8e4da2479ef9c704ec2d4c16de0cb2f935243`\n- S04 [2026年4月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/39030/140120250909555273.pdf) / 公表 2025-09-12 / retrieved / SHA-256 `ba741393353783c8e2d6030e3131ca3f2cb64c9850ccd450b123831064ed6717`\n- S05 [2026年4月期 第2四半期決算説明資料](https://www2.jpx.co.jp/disc/39030/140120251212518926.pdf) / 公表 2025-12-12 / retrieved / SHA-256 `f19619bd98c70e207a1f601aaa3923e132fad9f1cc7edfc0dd00baf491f9d710`\n- S06 [2026年4月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/39030/140120260612568945.pdf) / 公表 2026-06-12 / retrieved / SHA-256 `342b2aa4deb6da67f6f77c11bde074e12714425d4840fce8b5f6b46ac5e1efd3`\n- S07 [営業外費用の計上に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534753.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `c6acb370c2f8f8e3c216d6f135e741fd5bd832a6d307a0b64b924bacbc63843b`\n- S08 [投資先（Evernorth Holdings Inc.）の米国NASDAQ市場への上場に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261014/20261014550414.pdf) / 公表 2026-10-14 / retrieved / SHA-256 `13a30775d53f7ba8f99890b6c7563a33696c8ec2940294379f1592b591d40a98`\n- S09 [グループ内組織再編（子会社に対する債権放棄、現物分配による子会社株式の取得、および完全子会社の吸収合併）に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260728/20260728500851.pdf) / 公表 2026-07-28 / retrieved / SHA-256 `5c8f1f2f79059ea27f6035ca8a3423f83a16985dd3e1019d5345e7e7e99bd144`\n- S10 [（訂正）「グループ内組織再編（子会社に対する債権放棄、現物分配による子会社株式の取得、および完全子会社の吸収合併）に関するお知らせ」の一部訂正について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260826/20260826526458.pdf) / 公表 2026-08-26 / retrieved / SHA-256 `cff9a24278eed1ab182ee4a6b8c96ecec4cb5b6eae45dcef68180c93fe7b84ed`\n- S11 [法定事後開示書類（吸収合併）（株式会社gC Games）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540379.pdf) / 公表 2026-09-25 / retrieved / SHA-256 `0a4f4b1231ae3c266409cef274b4ecc605c1ca22a2b0292927caa3b91a7e6642`\n- S12 [第19回定時株主総会 事前質問及び当日質問に関するご回答](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260731/20260731505498.pdf) / 公表 2026-07-31 / retrieved / SHA-256 `20f746bbfa5e9993711db5ec93c1cd8163af73e5b51c09584e499a9c0e918967`\n- S13 [『僕のヒーローアカデミア UNITED SURVIVAL』全世界100万ダウンロード突破のお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260813/20260813519272.pdf) / 公表 2026-08-13 / retrieved / SHA-256 `fe4003aeb22f5a853943c0600afcd78fa70d891afe760c4f8d4ea37ec646d7cb`\n- S14 [株式基本情報](https://gu3.co.jp/ir/information/) / 公表  / unavailable / SHA-256 `なし`\n- S15 [マネックス証券 銘柄スカウターライト gumi 決算発表予定](https://scouter.monex.co.jp/report/zaimu/3903) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[要修正：詳細レビュー](3903_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 3903 株式会社gumi 独立レビュー\n\n判定：**要修正**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n事実入力15件は添付原文の表示値・単位換算と一致し、予測3シナリオの算術も整合する。ただし、再計算処理が存在する前年Q1累計を取り込まず、前年Q2比較値と全シナリオのYoYを欠落させているため修正が必要。重要仮定13件は数値設定の裏付けがなく全件unsupported。前年の連結範囲変更と未説明の経済的残差も未解消であり、比較処理を修正しても経済的品質は検証済みにならない。公式発表日の未確認は日程警告に限定した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | 事実入力15件を照合した。S01・S03・S04の千円表示は1000で除した百万円入力と一致する。S02の広告152・支払手数料361は百万円表示値、S05の広告435は概数として一致。ソフトウエア仮勘定981.7、償却184.211も一致。原資料の日付はいずれも基準日時以前であり、取得日時が基準日時後であることと公表時点を区別した。 | S01, S02, S03, S04, S05 S01 PDF pages 6,8,12,13; S02 PDF page 21; S03・S04 PDF page 8; S05 PDF page 4 |\n| 2 | conditional | 対象は2026年8～10月のQ2単独。前年Q2は2025年5～10月累計から5～7月累計を差し引ける。日本基準・連結という報告属性は一致し、会計方針変更・修正再表示は無。ただしS03は連結範囲の重要な変更を「有」と記載する一方、社名欄が空欄。S06にも3社の除外があり、同一構成企業による比較とは確認できない。セグメント組替えと連結範囲変更を分けて説明すべき。 | S01, S03, S04, S06 S01 PDF pages 1,2,11,12; S03 PDF pages 2,8; S04 PDF pages 2,8; S06 PDF pages 2,19 |\n| 3 | unresolved | material=trueの13件を全件レビューした。配信日、共同開発、周年施策、運用移行は方向性の根拠になるが、売上増減額・変動費率・広告額・追加償却・その他費用ゼロの数値を裏付けない。diagnostic_perturbationは機械的感応度であり、会社予想や実証された予測幅ではない。 | S01, S02, S05, S13 S02 PDF pages 9,17,21,25; S13 PDF page 4 |\n| 4 | conditional | 算式は前Q営業利益に増収限界利益を加え、広告・償却等を控除しており、利益目標からの明示的な逆算は確認されない。ただしメディア50%、クリプト20%は実証されていない。連結手数料361をメディア売上1111.887で除した約32.5%は帰属範囲が違い、50%の根拠にならない。KLab配信タイトルの売上が分配後純額なら分配費用の追加控除が重複し得る。強気の増収1100と追加広告150の同時成立も未裏付け。 | S02, S13 S02 PDF page 21; S13 PDF page 4 |\n| 5 | passed | 特定された特殊要因について、算式に前年広告435の反動増益、前Q計上済み暗号資産評価損の再控除、Evernorth評価差額の損益加算、子会社損失消滅による増益、ファンド資産残高の売上加算はない。S07のQ1反映、S08の純資産計上、S10の連結影響軽微と整合する。これは変動費の契約上の重複リスクまで解消した判定ではない。 | S05, S07, S08, S10 S05 PDF page 4; S07 PDF page 1; S08 PDF page 1; S10 PDF page 6 |\n| 6 | fail | 前年Q2売上=3850.362−1354.328=2496.034、営業利益=−163.284−72.554=−235.838。bear/base/bullの売上は1678.012/2228.012/2728.012、営業利益は−606.421/−201.421/113.579で算式と一致。QnQ売上差は50/600/1100、増減率は約3.07%/36.85%/67.57%、営業利益差は−420/−15/300。YoY売上差は−818.022/−268.022/231.978、増減率は約−32.77%/−10.74%/9.29%、営業利益差は−370.583/34.417/349.417。YoYは各QnQ差に売上−868.022、営業利益49.417を加えると全件一致する。したがって再計算出力の「直前累計不足」と6件の「合計不一致」は提示データから支持されない。比較値抽出・照合処理の修正が必要。ただし残差の経済的説明は未了。 | S01, S03, S04 S01・S03・S04 PDF page 8; model.calculations; recalculation.historicals; recalculation.bridge_checks |\n| 7 | fail | 既存資料だけで前年Q2比較値とYoY欠落は修正可能。別途、契約上の売上認識・費用分配、月次課金・受領暗号資産、資産別償却、連結範囲変更の影響、前年Q2の新区分組替表が必要。会社見通し候補があるのにguidance_recordsが空であるため、非開示・定性方針・旧年度目標・個別事象見通しを区別して登録すべき。 | S01, S02, S03, S05, S06, S13 S01 PDF page 1; S02 PDF pages 4,5; S03 PDF page 2; S05 PDF page 5; S06 PDF page 19; S13 PDF page 4 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n| 1 | bear_media_add | 200.0 | 450.000 | 223.4% | 未検証：配信・周年施策は確認できるが、純増収200の課金数量、単価、既存減衰、gumi帰属率による裏付けがない。過去年の別タイトル増収は採用額の証明にならない。 |\n| 2 | bull_media_add | 1100.0 | 450.000 | 223.4% | 未検証：増収1100は前年の連結増収1141.706に近いが、配信主体、タイトル、売上認識、既存作品構成が異なる。継続課金と周年効果の数値裏付けもなく、上限とは確認できない。 |\n| 3 | base_media_add | 650.0 | 225.000 | 111.7% | 未検証：増収650を中心値とする数量・単価・契約根拠がない。前年新作増収より小さく置くことだけでは合理的な中心値と確認できない。 |\n| 4 | bear_ad_add | 300.0 | 150.000 | 74.5% | 未検証：追加広告300、総広告452の予算・契約負担・実施実績がない。前年の一過性広告約435は異なるタイトルの参考実績にとどまる。 |\n| 5 | bull_ad_add | 150.0 | 150.000 | 74.5% | 未検証：追加150、総広告302を支える負担契約や獲得効率の実績がない。最大増収と最小広告負担を同時採用する条件は可能性としては置けるが、原資料で裏付けられない。 |\n| 6 | bear_crypto_add | -150.0 | 120.000 | 59.6% | 未検証：上場廃止・運用移行リスクは確認できるが、売上150減を説明する受領数量・計上時価格・運用報酬がない。保有資産の評価問題と営業収益の減少幅は別問題。 |\n| 7 | bull_crypto_add | 0.0 | 120.000 | 59.6% | 未検証：売上増減ゼロも数値仮定であり、受領収益維持や移行による相殺額の根拠がない。新事業売上を別途上乗せしない慎重さとは区別する。 |\n| 8 | base_ad_add | 200.0 | 100.000 | 49.6% | 未検証：152+200=352の算術は正しいが、追加200の支出予定や共同開発先との負担割合がない。前年広告の反動を二重加算していないことは金額の裏付けとは別。 |\n| 9 | base_crypto_add | -50.0 | 80.000 | 39.7% | 未検証：前Q売上の約1割に相当する50減を中心値とする裏付けがない。ポートフォリオ移行方針は金額・時期・収益区分を確定しない。 |\n| 10 | media_variable_rate | 0.5 | 55.000 | 27.3% | 未検証：連結支払手数料の実績は確認できるが、メディア増収の変動費率50%を導く費用分解がない。売上帰属を分配後で測る場合、分配費用をさらに控除する重複の有無も確認が必要。45%・55%の感応度は会社予測ではない。 |\n| 11 | da_add | 100.0 | 10.000 | 5.0% | 未検証：仮勘定981.7と前Q償却184.211は事実だが、新作帰属資産・振替額・耐用年数・償却方法が不明で追加100を導けない。既存償却の据置きも別途検証が必要。90/110の機械的テストや50～150の独自帯に会社根拠はない。 |\n| 12 | crypto_variable_rate | 0.2 | 3.000 | 1.5% | 未検証：体制見直しによる外注費・広告費減少は確認できるが、売上増減に連動する費用20%は確認できない。18%・22%の機械的感応度は採用率の根拠にならない。 |\n| 13 | other_cost_add | 0.0 | 1.000 | 0.5% | 未検証：直近開発費の横ばいは、対象Qの費用化額・資産計上・管理費・検収損益を含む純費用ゼロを支持しない。連結全体の純費用差を全額メディアに配賦する設計にも裏付けがない。±1の感応度が小さいことは経済的重要性の低さを意味しない。 |\n\n## 予測の修正記録\n標準営業利益：旧 -201.42 → 新 -201.42 百万円。差 0.00。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。\n- **Medium** / machine: S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。\n- **Medium** / machine: S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。\n- **Medium** / machine: S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。\n- **Medium** / machine: S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。\n- **Medium** / machine: その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。\n- **Medium** / machine: 売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。\n- **Medium** / machine: 対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。\n- **Medium** / machine: 直前累計不足: 2025-10-31\n- **Medium** / machine: 経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。\n- **High** / machine: 資料確認未了: already_announced\n- **Medium** / comparability: 増減要因の照合未了: bear/yoy/revenue\n- **Medium** / comparability: 増減要因の照合未了: bear/yoy/operating_profit\n- **Medium** / comparability: 増減要因の照合未了: base/yoy/revenue\n- **Medium** / comparability: 増減要因の照合未了: base/yoy/operating_profit\n- **Medium** / comparability: 増減要因の照合未了: bull/yoy/revenue\n- **Medium** / comparability: 増減要因の照合未了: bull/yoy/operating_profit\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_media_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_media_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_media_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_ad_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_ad_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_crypto_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_crypto_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_ad_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_crypto_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: media_variable_rate\n- **High** / material_assumption: 重要仮定の裏付け未検証: da_add\n- **High** / material_assumption: 重要仮定の裏付け未検証: crypto_variable_rate\n- **High** / material_assumption: 重要仮定の裏付け未検証: other_cost_add\n- **High** / fact: 前年Q1累計は存在する。前年Q2比較値をnullにした再計算出力と「直前累計不足」は誤り。売上2496.034、営業利益−235.838、経常利益267.775、親会社純利益103.698へ復元し、全シナリオのYoYを再計算する。予測値自体の変更は不要。\n- **High** / assumption: 重要仮定13件の数値根拠が不足。特に中心増収650、変動費50%、追加広告200、償却100が中心営業利益を決定する。会社一般論や機械的感応度を根拠にsupportedへ変更してはならない。\n- **High** / residual: 全シナリオ共通のYoY売上残差−868.022、営業利益残差49.417は算術上正しいが、経済的には未説明。セグメント組替え不足だけで連結差額全体を説明したことにはならない。タイトル構成、広告、資産計上、範囲変更を分解し、未説明部分を残す。QnQ残差ゼロはモデル恒等式に限る。\n- **Medium** / period: S03の連結範囲変更「有」と社名欄空欄の不整合、S06の吸収合併・清算による3社除外を追加照合する。公表連結値の差引きは可能だが、構成企業一定の成長比較としては未確認。セグメント組替えは連結売上差を生む要因と混同しない。\n- **Medium** / double_count: 共同開発契約上の売上総額・純額と費用分配が不明。gumi帰属売上に既に分配控除が反映されている場合、50%変動費に共同開発分配を含めると重複し得る。実際の重複は未確認なので数値訂正は提案しない。\n- **Medium** / residual: S02の営業損益イメージ−501/315とS01正式値−498.048/311.627の差はそれぞれ−2.952/+3.373。単なる百万円丸めと認定できない。正式値優先は妥当だが、配賦・定義・抽出差を確認する。\n- **Low** / residual: セグメント売上合計と連結売上の差0.001百万円は原文表示段階に存在する。端数処理由来かは未確定の表示差として独立管理し、経済的売上要因としない。約10の−13乗百万円の計算差は浮動小数点誤差であり別扱い。会計比較基準変更による残差額は未特定で、ゼロと断定しない。\n- **Medium** / guidance: guidance_recordsとcompany_guidance_comparisonsが空。予想非開示を含め候補を登録し、現年度の定性方針、旧年度税引前利益目標、個別事象の損益影響を分離する。現年度Q2の数値予想がないため、会社予想との差自体を誤りとは判定しない。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-11\", \"official_date\": \"2026-12-11\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"https://scouter.monex.co.jp/report/zaimu/3903 の決算発表予定に、中間決算を2026年12月11日に発表予定と記載。ページの財務データ等更新日は2026年11月17日。公式IRカレンダー https://gu3.co.jp/ir/calendar/ は日程部分を取得できず、予定日の確認は公開の証券会社情報による。\", \"warnings\": [\"発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。\", \"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[\n  {\n    \"target\": \"recalculation.historicals[period_end=2025-10-31].revenue\",\n    \"old_value\": null,\n    \"new_value\": 2496.034,\n    \"reason\": \"3850.362−1354.328。必要な直前累計は提示済み。公表連結値として復元し、前年Q2売上比較へ反映する。\",\n    \"source_ids\": [\n      \"S03\",\n      \"S04\"\n    ],\n    \"locator\": \"各PDF page 8\",\n    \"evidence_excerpt\": \"売上高 5,494,123 3,850,362\"\n  },\n  {\n    \"target\": \"recalculation.historicals[period_end=2025-10-31].operating_profit\",\n    \"old_value\": null,\n    \"new_value\": -235.838,\n    \"reason\": \"−163.284−72.554。前年Q2営業利益比較を復元すると全YoYブリッジは残差込みで一致する。\",\n    \"source_ids\": [\n      \"S03\",\n      \"S04\"\n    ],\n    \"locator\": \"各PDF page 8\",\n    \"evidence_excerpt\": \"営業利益又は営業損失（△） 179,831 △163,284\"\n  },\n  {\n    \"target\": \"recalculation.historicals[period_end=2025-10-31].ordinary_profit\",\n    \"old_value\": null,\n    \"new_value\": 267.775,\n    \"reason\": \"1502.197−1234.422。歴史比較値のみ復元し、当期経常利益予測のnullは維持する。\",\n    \"source_ids\": [\n      \"S03\",\n      \"S04\"\n    ],\n    \"locator\": \"各PDF page 8\",\n    \"evidence_excerpt\": \"経常利益 990,465 1,502,197\"\n  },\n  {\n    \"target\": \"recalculation.historicals[period_end=2025-10-31].net_profit\",\n    \"old_value\": null,\n    \"new_value\": 103.698,\n    \"reason\": \"1351.633−1247.935。親会社株主帰属利益として差し引く。当期純利益予測のnullは維持する。\",\n    \"source_ids\": [\n      \"S03\",\n      \"S04\"\n    ],\n    \"locator\": \"各PDF page 8\",\n    \"evidence_excerpt\": \"親会社株主に帰属する中間純利益 599,886 1,351,633\"\n  }\n]\n[\n  \"基準日時以前に公表されたヒロサバの売上認識・gumi帰属率・広告費負担・分配費用の説明。増収額と変動費の重複有無を検証するため。存在しない場合は未確認を維持する。\",\n  \"基準日時以前に確認可能な対象Qのタイトル別売上、課金人数・単価・継続率、既存作減衰、周年効果。増収200/650/1100の数値設定を検証するため。\",\n  \"基準日時以前に公表された対象Qの暗号資産受領数量・計上価格・運用報酬・費用区分。売上減150/50/0と変動費20%を検証するため。\",\n  \"ソフトウエアのタイトル別振替額・稼働日・償却方法、開発費資産計上と費用化、対象Q広告予算・実施額の基準日時以前の資料。追加償却100、広告150～300、その他純費用ゼロを検証するため。\",\n  \"2025年中間期の連結範囲変更明細、S06記載3社除外の時期と損益影響、前年Q2の新区分組替表。範囲変更・表示変更・経済的残差を分離するため。\",\n  \"S01正式セグメント値とS02イメージ図の差の定義説明、表示端数処理方針。約3百万円の配賦差と0.001百万円の表示差を区別するため。\",\n  \"基準日時までの適時開示一覧と公式IRカレンダーの保存本文。対象実績の未発表状態と発表予定日を照合するため。日程確認は経済的品質判定と分離する。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/3903/quality_review.json) / [レビュー原回答](../companies/3903/independent_review.json) / [計算検査](../companies/3903/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "3903",
+    "company_name": "株式会社gumi",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-04-30期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-04-30",
+      "quarter": 2,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "要修正",
+    "scenarios": {
+      "bear": {
+        "revenue": 1678.012,
+        "operating_profit": -606.421,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 2228.0119999999997,
+        "operating_profit": -201.421,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 2728.0119999999997,
+        "operating_profit": 113.57900000000001,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 599.9999999999998,
+          "rate": 0.36854765198290906,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -15.0,
+          "rate": null,
+          "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "q1_rev": 1628.012,
+      "q1_op": -186.421,
+      "py_q1_rev": 1354.328,
+      "py_q1_op": 72.554,
+      "py_h1_rev": 3850.362,
+      "py_h1_op": -163.284,
+      "media_rev": 1111.887,
+      "media_op": -498.048,
+      "crypto_rev": 516.124,
+      "crypto_op": 311.627,
+      "q1_ad": 152.0,
+      "q1_da": 184.211,
+      "q1_fee": 361.0,
+      "prior_launch_ad": 435.0,
+      "software_pending": 981.7,
+      "bear_media_add": 200.0,
+      "base_media_add": 650.0,
+      "bull_media_add": 1100.0,
+      "bear_crypto_add": -150.0,
+      "base_crypto_add": -50.0,
+      "bull_crypto_add": 0.0,
+      "media_variable_rate": 0.5,
+      "crypto_variable_rate": 0.2,
+      "bear_ad_add": 300.0,
+      "base_ad_add": 200.0,
+      "bull_ad_add": 150.0,
+      "da_add": 100.0,
+      "other_cost_add": 0.0,
+      "py_q2_rev": 2496.034,
+      "py_q2_op": -235.838,
+      "historical_rev_gap": -868.0220000000002,
+      "historical_op_gap": 49.417,
+      "segment_display_gap": 0.0009999999999763531,
+      "bear_media_rev": 1311.887,
+      "base_media_rev": 1761.887,
+      "bull_media_rev": 2211.8869999999997,
+      "bear_crypto_rev": 366.124,
+      "base_crypto_rev": 466.124,
+      "bull_crypto_rev": 516.124,
+      "bear_media_contribution": 100.0,
+      "base_media_contribution": 325.0,
+      "bull_media_contribution": 550.0,
+      "bear_crypto_contribution": -120.0,
+      "base_crypto_contribution": -40.0,
+      "bull_crypto_contribution": 0.0,
+      "bear_media_op": -798.048,
+      "base_media_op": -473.048,
+      "bull_media_op": -198.048,
+      "bear_crypto_op": 191.627,
+      "base_crypto_op": 271.627,
+      "bull_crypto_op": 311.627,
+      "bear_revenue": 1678.012,
+      "base_revenue": 2228.0119999999997,
+      "bull_revenue": 2728.0119999999997,
+      "bear_op": -606.421,
+      "base_op": -201.421,
+      "bull_op": 113.57900000000001,
+      "base_ad": 352.0,
+      "base_da": 284.211
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04",
+          "S01"
+        ],
+        "locator": "S04 PDF pages 2,8; S01 PDF page 8",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "1Q累計",
+        "revenue": 1354.328,
+        "operating_profit": 72.554,
+        "ordinary_profit": 1234.422,
+        "net_profit": 1247.935
+      },
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2,8",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2,8,11,12",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "1Q累計",
+        "revenue": 1628.012,
+        "operating_profit": -186.421,
+        "ordinary_profit": -2018.036,
+        "net_profit": -1868.816
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "新作・周年・既存作の純増収仮定",
+            "formula": "bear_media_add",
+            "reason": "前Qから対象Qへのメディア増収",
+            "amount": 200.0
+          },
+          {
+            "label": "暗号資産受領・運用収益の変化",
+            "formula": "bear_crypto_add",
+            "reason": "前Qから対象Qへのクリプト減収",
+            "amount": -150.0
+          }
+        ],
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。タイトル別寄与と同一区分の前年Q2セグメント値が不足し、金額を事業要因へ分解できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア増収の変動費控除後寄与",
+            "formula": "bear_media_contribution",
+            "reason": "追加広告・償却を除いた寄与",
+            "amount": 100.0
+          },
+          {
+            "label": "クリプト減収の寄与",
+            "formula": "bear_crypto_contribution",
+            "reason": "変動費の減少を控除",
+            "amount": -120.0
+          },
+          {
+            "label": "追加広告・償却・その他費用",
+            "formula": "other_cost_add-other_cost_add-bear_ad_add-da_add-other_cost_add",
+            "reason": "前Q基準の純費用増",
+            "amount": -400.0
+          }
+        ],
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。前年広告費の反動、売上構成、開発費資産計上等の寄与を同一定義で分離できないため全額を未説明残差とする。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "メディア売上変化",
+            "formula": "bear_media_add",
+            "reason": "新作・周年効果から既存減衰を控除する仮定",
+            "amount": 200.0
+          },
+          {
+            "label": "クリプト売上変化",
+            "formula": "bear_crypto_add",
+            "reason": "受領・運用収益の減少仮定",
+            "amount": -150.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。実際の変動要因が全て確認できたことを意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア限界利益",
+            "formula": "bear_media_contribution",
+            "reason": "増収から追加変動費を控除",
+            "amount": 100.0
+          },
+          {
+            "label": "クリプト限界利益変化",
+            "formula": "bear_crypto_contribution",
+            "reason": "減収から変動費減少を控除",
+            "amount": -120.0
+          },
+          {
+            "label": "広告・償却等の増加",
+            "formula": "other_cost_add-other_cost_add-bear_ad_add-da_add-other_cost_add",
+            "reason": "独立した費用仮定",
+            "amount": -400.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用据置き条件を含むモデル内の残差はない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "新作・周年・既存作の純増収仮定",
+            "formula": "base_media_add",
+            "reason": "前Qから対象Qへのメディア増収",
+            "amount": 650.0
+          },
+          {
+            "label": "暗号資産受領・運用収益の変化",
+            "formula": "base_crypto_add",
+            "reason": "前Qから対象Qへのクリプト減収",
+            "amount": -50.0
+          }
+        ],
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア増収の変動費控除後寄与",
+            "formula": "base_media_contribution",
+            "reason": "追加広告・償却を除いた寄与",
+            "amount": 325.0
+          },
+          {
+            "label": "クリプト減収の寄与",
+            "formula": "base_crypto_contribution",
+            "reason": "変動費減少を控除",
+            "amount": -40.0
+          },
+          {
+            "label": "追加広告・償却・その他費用",
+            "formula": "other_cost_add-other_cost_add-base_ad_add-da_add-other_cost_add",
+            "reason": "前Q基準の純費用増",
+            "amount": -300.0
+          }
+        ],
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。前年の広告費反動を別途加算すると二重計上になるため、未分解の純差額として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "メディア売上変化",
+            "formula": "base_media_add",
+            "reason": "新作と周年施策の純効果",
+            "amount": 650.0
+          },
+          {
+            "label": "クリプト売上変化",
+            "formula": "base_crypto_add",
+            "reason": "運用移行等に伴う減収仮定",
+            "amount": -50.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア限界利益",
+            "formula": "base_media_contribution",
+            "reason": "増収から追加変動費を控除",
+            "amount": 325.0
+          },
+          {
+            "label": "クリプト限界利益変化",
+            "formula": "base_crypto_contribution",
+            "reason": "減収から変動費減少を控除",
+            "amount": -40.0
+          },
+          {
+            "label": "広告・償却等の増加",
+            "formula": "other_cost_add-other_cost_add-base_ad_add-da_add-other_cost_add",
+            "reason": "独立した費用仮定",
+            "amount": -300.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "新作・周年・既存作の純増収仮定",
+            "formula": "bull_media_add",
+            "reason": "前Qから対象Qへのメディア増収",
+            "amount": 1100.0
+          },
+          {
+            "label": "暗号資産受領・運用収益の変化",
+            "formula": "bull_crypto_add",
+            "reason": "前Q売上維持の条件",
+            "amount": 0.0
+          }
+        ],
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア増収の変動費控除後寄与",
+            "formula": "bull_media_contribution",
+            "reason": "追加広告・償却を除いた寄与",
+            "amount": 550.0
+          },
+          {
+            "label": "クリプト収益の変化",
+            "formula": "bull_crypto_contribution",
+            "reason": "前Q収益維持の条件",
+            "amount": 0.0
+          },
+          {
+            "label": "追加広告・償却・その他費用",
+            "formula": "other_cost_add-other_cost_add-bull_ad_add-da_add-other_cost_add",
+            "reason": "前Q基準の純費用増",
+            "amount": -250.0
+          }
+        ],
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。売上構成、広告、資産計上等の寄与が未分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "メディア売上変化",
+            "formula": "bull_media_add",
+            "reason": "新作課金と周年施策がともに奏功する条件",
+            "amount": 1100.0
+          },
+          {
+            "label": "クリプト売上変化",
+            "formula": "bull_crypto_add",
+            "reason": "前Q売上維持",
+            "amount": 0.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "メディア限界利益",
+            "formula": "bull_media_contribution",
+            "reason": "増収から追加変動費を控除",
+            "amount": 550.0
+          },
+          {
+            "label": "クリプト限界利益変化",
+            "formula": "bull_crypto_contribution",
+            "reason": "前Q収益維持",
+            "amount": 0.0
+          },
+          {
+            "label": "広告・償却等の増加",
+            "formula": "other_cost_add-other_cost_add-bull_ad_add-da_add-other_cost_add",
+            "reason": "広告効率改善と追加償却を別建て",
+            "amount": -250.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+      }
+    ],
+    "issues": [
+      "S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。",
+      "S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。",
+      "S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。",
+      "S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。",
+      "S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。",
+      "その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。",
+      "売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。",
+      "対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。",
+      "直前累計不足: 2025-10-31",
+      "経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。",
+      "資料確認未了: already_announced",
+      "増減要因の照合未了: bear/yoy/revenue",
+      "増減要因の照合未了: bear/yoy/operating_profit",
+      "増減要因の照合未了: base/yoy/revenue",
+      "増減要因の照合未了: base/yoy/operating_profit",
+      "増減要因の照合未了: bull/yoy/revenue",
+      "増減要因の照合未了: bull/yoy/operating_profit",
+      "重要仮定の裏付け未検証: bear_media_add",
+      "重要仮定の裏付け未検証: bull_media_add",
+      "重要仮定の裏付け未検証: base_media_add",
+      "重要仮定の裏付け未検証: bear_ad_add",
+      "重要仮定の裏付け未検証: bull_ad_add",
+      "重要仮定の裏付け未検証: bear_crypto_add",
+      "重要仮定の裏付け未検証: bull_crypto_add",
+      "重要仮定の裏付け未検証: base_ad_add",
+      "重要仮定の裏付け未検証: base_crypto_add",
+      "重要仮定の裏付け未検証: media_variable_rate",
+      "重要仮定の裏付け未検証: da_add",
+      "重要仮定の裏付け未検証: crypto_variable_rate",
+      "重要仮定の裏付け未検証: other_cost_add",
+      "前年Q1累計は存在する。前年Q2比較値をnullにした再計算出力と「直前累計不足」は誤り。売上2496.034、営業利益−235.838、経常利益267.775、親会社純利益103.698へ復元し、全シナリオのYoYを再計算する。予測値自体の変更は不要。",
+      "重要仮定13件の数値根拠が不足。特に中心増収650、変動費50%、追加広告200、償却100が中心営業利益を決定する。会社一般論や機械的感応度を根拠にsupportedへ変更してはならない。",
+      "全シナリオ共通のYoY売上残差−868.022、営業利益残差49.417は算術上正しいが、経済的には未説明。セグメント組替え不足だけで連結差額全体を説明したことにはならない。タイトル構成、広告、資産計上、範囲変更を分解し、未説明部分を残す。QnQ残差ゼロはモデル恒等式に限る。",
+      "S03の連結範囲変更「有」と社名欄空欄の不整合、S06の吸収合併・清算による3社除外を追加照合する。公表連結値の差引きは可能だが、構成企業一定の成長比較としては未確認。セグメント組替えは連結売上差を生む要因と混同しない。",
+      "共同開発契約上の売上総額・純額と費用分配が不明。gumi帰属売上に既に分配控除が反映されている場合、50%変動費に共同開発分配を含めると重複し得る。実際の重複は未確認なので数値訂正は提案しない。",
+      "S02の営業損益イメージ−501/315とS01正式値−498.048/311.627の差はそれぞれ−2.952/+3.373。単なる百万円丸めと認定できない。正式値優先は妥当だが、配賦・定義・抽出差を確認する。",
+      "セグメント売上合計と連結売上の差0.001百万円は原文表示段階に存在する。端数処理由来かは未確定の表示差として独立管理し、経済的売上要因としない。約10の−13乗百万円の計算差は浮動小数点誤差であり別扱い。会計比較基準変更による残差額は未特定で、ゼロと断定しない。",
+      "guidance_recordsとcompany_guidance_comparisonsが空。予想非開示を含め候補を登録し、現年度の定性方針、旧年度税引前利益目標、個別事象の損益影響を分離する。現年度Q2の数値予想がないため、会社予想との差自体を誤りとは判定しない。"
+    ],
+    "schedule_warnings": [
+      "発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。",
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 50.0,
+            "rate": 0.030712304331909104,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -420.00000000000006,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 599.9999999999998,
+            "rate": 0.36854765198290906,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -15.0,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 1099.9999999999998,
+            "rate": 0.6756706953020001,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 300.0,
+            "rate": null,
+            "note": "比較利益がゼロ以下のため伸長率非表示。増減額を参照"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 50.0,
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。タイトル別寄与と同一区分の前年Q2セグメント値が不足し、金額を事業要因へ分解できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -420.0,
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。前年広告費の反動、売上構成、開発費資産計上等の寄与を同一定義で分離できないため全額を未説明残差とする。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 50.0,
+        "explained_sum": 50.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。実際の変動要因が全て確認できたことを意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -420.00000000000006,
+        "explained_sum": -420.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -5.684341886080802e-14,
+        "status": "passed",
+        "residual_explanation": "費用据置き条件を含むモデル内の残差はない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 600.0,
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -15.0,
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。前年の広告費反動を別途加算すると二重計上になるため、未分解の純差額として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 599.9999999999998,
+        "explained_sum": 600.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -15.0,
+        "explained_sum": -15.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 1100.0,
+        "residual": -868.0220000000002,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 300.0,
+        "residual": 49.417,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年同Qから前Qまでの営業利益差。売上構成、広告、資産計上等の寄与が未分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 1099.9999999999998,
+        "explained_sum": 1100.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 300.0,
+        "explained_sum": 300.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+      }
+    ],
+    "conditions": [
+      "FCT・OSHIの対象四半期末の活発な市場判定、処分見込価額、受領数量、売買・移行数量は未確認。",
+      "base_ad_add: 新作・周年の追加広告費を前年の自社配信新作時より抑制する条件。前Q広告費に上乗せし、前年の一過性広告費の反動減をさらに加算しない。",
+      "base_crypto_add: ノード運営の継続収益を残しつつ、上場廃止とポートフォリオ移行で前Q売上の約1割が減少する条件。新規ファンドの運用資産額を連結売上に加算しない。",
+      "base_media_add: 中心は新作の期間寄与と周年施策が既存作の減衰を上回る条件。前年新作投入時の連結増収規模より小さく設定し、共同開発タイトルの帰属割合不明と前Qの主力作不振を織り込む。ダウンロード数を課金人数へ直接換算せず、事業全体の条件付き増分として置く。",
+      "bear_ad_add: 新作投入と周年施策の追加広告費。前年オラドラの一過性広告費より小さいが、売上への転換効率が低い条件。共同開発タイトルの広告負担割合は不明。",
+      "bear_crypto_add: 売上の大部分が暗号資産受領等のその他収益であり、上場廃止に伴う流動性悪化や運用移行が受領時評価額・運用収入を押し下げる条件。前Q売上の約3割減をストレス幅とする。保有資産評価損そのものは売上減に含めない。",
+      "bear_media_add: ヒロサバのほぼ四半期全期間の寄与とオラドラ周年施策を合わせた、ネオメディア売上の前Q差額。前年の新作投入時に連結売上が大きく増加した実績を規模の参考とするが、今回はKLab配信・共同開発であるため同じ売上帰属を仮定しない。弱気は新作の収益化が弱く、既存作の自然減が周年効果を相殺する条件。タイトル別売上への分解はしない。",
+      "bull_ad_add: IPの自然流入と共同開発先の販促により、gumi負担の追加広告が比較的小さく収まる条件。売上増と広告効率改善が同時に成立する強気ケース。",
+      "bull_crypto_add: ノード収益維持と運用移行が減収要因を相殺し、前Q売上を維持する条件。ファンド・SaaSの料金や顧客数が不明なため、独立した成長額は加算しない。",
+      "bull_media_add: 強気はヒロサバの継続課金とオラドラ周年施策がともに奏功する条件。増分の規模は前年の新作投入時の連結増収に近い水準を上側の参考とする。これは確率的上限でもタイトル売上の確認値でもない。",
+      "crypto_variable_rate: 受領暗号資産等の売上変動は固定的な運用体制のもとで利益へ強く波及すると仮定し、増減収に連動する費用を20%と置く。前Qのセグメント利益率をそのまま限界利益率として使用しない。",
+      "da_add: ヒロサバの配信開始に伴うソフトウエア償却増を前Q比で追加する。仮勘定残高の一部が稼働資産へ振り替わる条件だが、対象資産額と償却方法は未確認。既存資産の償却は前Q費用に含めたまま据え置く。",
+      "media_variable_rate: メディア増収に対する追加の手数料、版権・共同開発分配、通信・運営費を合わせて50%と置く。前Qの連結支払手数料はメディア売上に対し約3割の規模だが、費用帰属が一致しないため参考に限り、残りをその他の変動費の余裕とする。広告と追加償却は別建て。",
+      "other_cost_add: 開発パイプラインが継続し、開発費が直近で横ばいという説明から、広告・追加償却・売上連動費以外の純費用を前Q並みとする。人員減少効果を別途利益に加算しない。受託検収ずれの解消も確定せず追加計上しない。",
+      "ヒロサバのgumi帰属売上、課金者数、継続率、単価、収益分配条件は保存原文に記載がない。公表資料全体での非開示までは断定しない。",
+      "ファンド運用資産残高はgumiの連結売上でも帰属利益でもない。持分法投資損益は別途未確認。",
+      "受託検収ずれの対象四半期内解消は未確認。独立した検収収益や利益の上乗せはしない。",
+      "広告負担割合と新作ソフトウエアの償却方法は原文未確認。売上成長と広告効率が同時に改善することが強気ケースの条件。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年4月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/39030/140120260910534566.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/39030/140120260910534566.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S01.txt",
+        "sha256": "8c44b5d42c51dc842d3218434745a8225f4f3f30accf7f6b7c322003784bdafa",
+        "text_sha256": "1d9e96f16e28510c73a013b09fe8c0e424081f08314c019a314a9e0155bf978d",
+        "retrieved_at": "2026-11-18T18:32:24+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12219,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年4月期 第1四半期決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/39030/140120260911534783.pdf",
+        "published_at": "2026-09-11",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/39030/140120260911534783.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S02.txt",
+        "sha256": "8c4ea8f1dcdb31bb2d98abca23f0718ca3a4e283c04e0d6e96d447b0ec0925ba",
+        "text_sha256": "7a7306a9d5d3c4c0f318f35d9e2c1695d3ac001422cf09e24d1c0dde64dc9ade",
+        "retrieved_at": "2026-11-18T18:32:25+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11071,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://f.irbank.net/pdf/20251212/140120251212518477.pdf",
+        "published_at": "2025-12-12",
+        "category": "historical",
+        "final_url": "https://f.irbank.net/pdf/20251212/140120251212518477.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S03.txt",
+        "sha256": "46d0167030023823f61bf4f720e8e4da2479ef9c704ec2d4c16de0cb2f935243",
+        "text_sha256": "43f6dfedec1b20e978c2b71045979a9efbec09ad2a7c550b3c1fe09ae29e9d66",
+        "retrieved_at": "2026-11-18T18:32:26+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11755,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年4月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/39030/140120250909555273.pdf",
+        "published_at": "2025-09-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/39030/140120250909555273.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S04.txt",
+        "sha256": "ba741393353783c8e2d6030e3131ca3f2cb64c9850ccd450b123831064ed6717",
+        "text_sha256": "9606e6b7e276459c7ce775c37e9bcdff7aae5a5e4cf012b7f809d46304866dd8",
+        "retrieved_at": "2026-11-18T18:32:26+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9703,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年4月期 第2四半期決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/39030/140120251212518926.pdf",
+        "published_at": "2025-12-12",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/39030/140120251212518926.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S05.txt",
+        "sha256": "f19619bd98c70e207a1f601aaa3923e132fad9f1cc7edfc0dd00baf491f9d710",
+        "text_sha256": "8db1cd0a45c1f2b38f186b917dc632199c536eccd3303f3ba75f0bf5bfad2772",
+        "retrieved_at": "2026-11-18T18:32:28+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12768,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年4月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/39030/140120260612568945.pdf",
+        "published_at": "2026-06-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/39030/140120260612568945.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S06.txt",
+        "sha256": "342b2aa4deb6da67f6f77c11bde074e12714425d4840fce8b5f6b46ac5e1efd3",
+        "text_sha256": "cbb65e1678e6781a149f8f4e8a30c7b1c9934f0fd9b8d51c26bb030250d6779c",
+        "retrieved_at": "2026-11-18T18:32:29+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 18813,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "営業外費用の計上に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534753.pdf",
+        "published_at": "2026-09-11",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534753.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S07.txt",
+        "sha256": "c6acb370c2f8f8e3c216d6f135e741fd5bd832a6d307a0b64b924bacbc63843b",
+        "text_sha256": "90e23a6cfb0205845ac3764d47df6aabea5d18cb47383bbc31af1559f59def24",
+        "retrieved_at": "2026-11-18T18:32:29+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 497,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "投資先（Evernorth Holdings Inc.）の米国NASDAQ市場への上場に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261014/20261014550414.pdf",
+        "published_at": "2026-10-14",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261014/20261014550414.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S08.txt",
+        "sha256": "13a30775d53f7ba8f99890b6c7563a33696c8ec2940294379f1592b591d40a98",
+        "text_sha256": "7b1ce777a6cd794ca6bfddbb170fd12e500b421ed5acc6c3bfb0a7e1cad46a62",
+        "retrieved_at": "2026-11-18T18:32:29+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 762,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "グループ内組織再編（子会社に対する債権放棄、現物分配による子会社株式の取得、および完全子会社の吸収合併）に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260728/20260728500851.pdf",
+        "published_at": "2026-07-28",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260728/20260728500851.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S09.txt",
+        "sha256": "5c8f1f2f79059ea27f6035ca8a3423f83a16985dd3e1019d5345e7e7e99bd144",
+        "text_sha256": "3258ca8a881b1d93d300067438676eddadaf10d1317c376cacdf54757a99c368",
+        "retrieved_at": "2026-11-18T18:32:30+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3182,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "（訂正）「グループ内組織再編（子会社に対する債権放棄、現物分配による子会社株式の取得、および完全子会社の吸収合併）に関するお知らせ」の一部訂正について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260826/20260826526458.pdf",
+        "published_at": "2026-08-26",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260826/20260826526458.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S10.txt",
+        "sha256": "cff9a24278eed1ab182ee4a6b8c96ecec4cb5b6eae45dcef68180c93fe7b84ed",
+        "text_sha256": "8b410ac849a508172fdcc921bb8f083e0ce719853941d3315881e6e4bcda0c99",
+        "retrieved_at": "2026-11-18T18:32:30+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 6431,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "法定事後開示書類（吸収合併）（株式会社gC Games）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540379.pdf",
+        "published_at": "2026-09-25",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540379.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S11.txt",
+        "sha256": "0a4f4b1231ae3c266409cef274b4ecc605c1ca22a2b0292927caa3b91a7e6642",
+        "text_sha256": "6fc942c0804699488150aeb4f8aa1be96ed1a62ff70b72cf8ce98c7cb9631c7f",
+        "retrieved_at": "2026-11-18T18:32:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3186,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "第19回定時株主総会 事前質問及び当日質問に関するご回答",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260731/20260731505498.pdf",
+        "published_at": "2026-07-31",
+        "category": "qa",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260731/20260731505498.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S12.txt",
+        "sha256": "20f746bbfa5e9993711db5ec93c1cd8163af73e5b51c09584e499a9c0e918967",
+        "text_sha256": "495d915a95026a4901823a1b5603c81629a34a09457c3cda4366d5463bcf48e0",
+        "retrieved_at": "2026-11-18T18:32:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5421,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "『僕のヒーローアカデミア UNITED SURVIVAL』全世界100万ダウンロード突破のお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260813/20260813519272.pdf",
+        "published_at": "2026-08-13",
+        "category": "kpi",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260813/20260813519272.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S13.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261211\\companies\\3903\\sources\\S13.txt",
+        "sha256": "fe4003aeb22f5a853943c0600afcd78fa70d891afe760c4f8d4ea37ec646d7cb",
+        "text_sha256": "c3867a4fd05c27f9af39537ee35bece2db0ef8e09d9d19502ab7772e525e8065",
+        "retrieved_at": "2026-11-18T18:32:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2716,
+        "parser_version": 2
+      },
+      {
+        "id": "S14",
+        "title": "株式基本情報",
+        "url": "https://gu3.co.jp/ir/information/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:54:10+09:00"
+      },
+      {
+        "id": "S15",
+        "title": "マネックス証券 銘柄スカウターライト gumi 決算発表予定",
+        "url": "https://scouter.monex.co.jp/report/zaimu/3903",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-21T21:54:10+09:00"
+      }
+    ],
+    "model": {
+      "code": "3903",
+      "announcement_date": "2026-12-11",
+      "period": {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 2,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "q1_rev",
+          "value": 1628.012,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当第1四半期連結損益計算書"
+        },
+        {
+          "id": "q1_op",
+          "value": -186.421,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8 当第1四半期連結損益計算書"
+        },
+        {
+          "id": "py_q1_rev",
+          "value": 1354.328,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q1_op",
+          "value": 72.554,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_rev",
+          "value": 3850.362,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_op",
+          "value": -163.284,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "media_rev",
+          "value": 1111.887,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12 当第1四半期セグメント情報"
+        },
+        {
+          "id": "media_op",
+          "value": -498.048,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "crypto_rev",
+          "value": 516.124,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "crypto_op",
+          "value": 311.627,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12"
+        },
+        {
+          "id": "q1_ad",
+          "value": 152,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 21 広告宣伝費。百万円表示値"
+        },
+        {
+          "id": "q1_da",
+          "value": 184.211,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 13 減価償却費"
+        },
+        {
+          "id": "q1_fee",
+          "value": 361,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 21 売上原価内訳・支払手数料"
+        },
+        {
+          "id": "prior_launch_ad",
+          "value": 435,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 4 オラドラ配信時の一過性広告宣伝費。原資料の概数"
+        },
+        {
+          "id": "software_pending",
+          "value": 981.7,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 ソフトウエア仮勘定"
+        },
+        {
+          "id": "bear_media_add",
+          "value": 200,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+          "rationale": "ヒロサバのほぼ四半期全期間の寄与とオラドラ周年施策を合わせた、ネオメディア売上の前Q差額。前年の新作投入時に連結売上が大きく増加した実績を規模の参考とするが、今回はKLab配信・共同開発であるため同じ売上帰属を仮定しない。弱気は新作の収益化が弱く、既存作の自然減が周年効果を相殺する条件。タイトル別売上への分解はしない。",
+          "sensitivity": "売上増分が100変わると連結売上が100、追加広告・償却前の営業利益が50変動する。",
+          "material": true
+        },
+        {
+          "id": "base_media_add",
+          "value": 650,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+          "rationale": "中心は新作の期間寄与と周年施策が既存作の減衰を上回る条件。前年新作投入時の連結増収規模より小さく設定し、共同開発タイトルの帰属割合不明と前Qの主力作不振を織り込む。ダウンロード数を課金人数へ直接換算せず、事業全体の条件付き増分として置く。",
+          "sensitivity": "売上増分が100変わると連結売上が100、追加広告・償却前の営業利益が50変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_media_add",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+          "rationale": "強気はヒロサバの継続課金とオラドラ周年施策がともに奏功する条件。増分の規模は前年の新作投入時の連結増収に近い水準を上側の参考とする。これは確率的上限でもタイトル売上の確認値でもない。",
+          "sensitivity": "売上増分が100変わると連結売上が100、追加広告・償却前の営業利益が50変動する。",
+          "material": true
+        },
+        {
+          "id": "bear_crypto_add",
+          "value": -150,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+          "rationale": "売上の大部分が暗号資産受領等のその他収益であり、上場廃止に伴う流動性悪化や運用移行が受領時評価額・運用収入を押し下げる条件。前Q売上の約3割減をストレス幅とする。保有資産評価損そのものは売上減に含めない。",
+          "sensitivity": "暗号資産関連売上が100変動すると営業利益が80変動する条件。実際の受領数量・価格次第では設定幅を外れる。",
+          "material": true
+        },
+        {
+          "id": "base_crypto_add",
+          "value": -50,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+          "rationale": "ノード運営の継続収益を残しつつ、上場廃止とポートフォリオ移行で前Q売上の約1割が減少する条件。新規ファンドの運用資産額を連結売上に加算しない。",
+          "sensitivity": "暗号資産関連売上が100変動すると営業利益が80変動する。",
+          "material": true
+        },
+        {
+          "id": "bull_crypto_add",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+          "rationale": "ノード収益維持と運用移行が減収要因を相殺し、前Q売上を維持する条件。ファンド・SaaSの料金や顧客数が不明なため、独立した成長額は加算しない。",
+          "sensitivity": "暗号資産関連売上が100変動すると営業利益が80変動する。",
+          "material": true
+        },
+        {
+          "id": "media_variable_rate",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 21",
+          "rationale": "メディア増収に対する追加の手数料、版権・共同開発分配、通信・運営費を合わせて50%と置く。前Qの連結支払手数料はメディア売上に対し約3割の規模だが、費用帰属が一致しないため参考に限り、残りをその他の変動費の余裕とする。広告と追加償却は別建て。",
+          "sensitivity": "変動費率が10ポイント上昇すると営業利益は各シナリオのメディア増収額の10%減少する。",
+          "material": true
+        },
+        {
+          "id": "crypto_variable_rate",
+          "value": 0.2,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 4,12",
+          "rationale": "受領暗号資産等の売上変動は固定的な運用体制のもとで利益へ強く波及すると仮定し、増減収に連動する費用を20%と置く。前Qのセグメント利益率をそのまま限界利益率として使用しない。",
+          "sensitivity": "変動費率が10ポイント低下すると、減収シナリオの営業利益は減収額の10%だけさらに悪化する。",
+          "material": true
+        },
+        {
+          "id": "bear_ad_add",
+          "value": 300,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+          "rationale": "新作投入と周年施策の追加広告費。前年オラドラの一過性広告費より小さいが、売上への転換効率が低い条件。共同開発タイトルの広告負担割合は不明。",
+          "sensitivity": "追加広告費が100増えると営業利益が100減少する。",
+          "material": true
+        },
+        {
+          "id": "base_ad_add",
+          "value": 200,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+          "rationale": "新作・周年の追加広告費を前年の自社配信新作時より抑制する条件。前Q広告費に上乗せし、前年の一過性広告費の反動減をさらに加算しない。",
+          "sensitivity": "追加広告費が100増えると営業利益が100減少する。",
+          "material": true
+        },
+        {
+          "id": "bull_ad_add",
+          "value": 150,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+          "rationale": "IPの自然流入と共同開発先の販促により、gumi負担の追加広告が比較的小さく収まる条件。売上増と広告効率改善が同時に成立する強気ケース。",
+          "sensitivity": "追加広告費が100増えると営業利益が100減少する。",
+          "material": true
+        },
+        {
+          "id": "da_add",
+          "value": 100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S13"
+          ],
+          "locator": "S01 PDF pages 6,13; S13 PDF page 4",
+          "rationale": "ヒロサバの配信開始に伴うソフトウエア償却増を前Q比で追加する。仮勘定残高の一部が稼働資産へ振り替わる条件だが、対象資産額と償却方法は未確認。既存資産の償却は前Q費用に含めたまま据え置く。",
+          "sensitivity": "追加償却が50増減すると営業利益が同額逆方向に動く。追加額50～150を補助的な感応度帯とする。",
+          "material": true
+        },
+        {
+          "id": "other_cost_add",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 16,21,23",
+          "rationale": "開発パイプラインが継続し、開発費が直近で横ばいという説明から、広告・追加償却・売上連動費以外の純費用を前Q並みとする。人員減少効果を別途利益に加算しない。受託検収ずれの解消も確定せず追加計上しない。",
+          "sensitivity": "開発費、資産計上額、管理費等の純費用が100増えると営業利益が100減少する。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_q2_rev",
+          "formula": "py_h1_rev-py_q1_rev"
+        },
+        {
+          "id": "py_q2_op",
+          "formula": "py_h1_op-py_q1_op"
+        },
+        {
+          "id": "historical_rev_gap",
+          "formula": "q1_rev-py_q2_rev"
+        },
+        {
+          "id": "historical_op_gap",
+          "formula": "q1_op-py_q2_op"
+        },
+        {
+          "id": "segment_display_gap",
+          "formula": "q1_rev-media_rev-crypto_rev"
+        },
+        {
+          "id": "bear_media_rev",
+          "formula": "media_rev+bear_media_add"
+        },
+        {
+          "id": "base_media_rev",
+          "formula": "media_rev+base_media_add"
+        },
+        {
+          "id": "bull_media_rev",
+          "formula": "media_rev+bull_media_add"
+        },
+        {
+          "id": "bear_crypto_rev",
+          "formula": "crypto_rev+bear_crypto_add"
+        },
+        {
+          "id": "base_crypto_rev",
+          "formula": "crypto_rev+base_crypto_add"
+        },
+        {
+          "id": "bull_crypto_rev",
+          "formula": "crypto_rev+bull_crypto_add"
+        },
+        {
+          "id": "bear_media_contribution",
+          "formula": "bear_media_add-bear_media_add*media_variable_rate"
+        },
+        {
+          "id": "base_media_contribution",
+          "formula": "base_media_add-base_media_add*media_variable_rate"
+        },
+        {
+          "id": "bull_media_contribution",
+          "formula": "bull_media_add-bull_media_add*media_variable_rate"
+        },
+        {
+          "id": "bear_crypto_contribution",
+          "formula": "bear_crypto_add-bear_crypto_add*crypto_variable_rate"
+        },
+        {
+          "id": "base_crypto_contribution",
+          "formula": "base_crypto_add-base_crypto_add*crypto_variable_rate"
+        },
+        {
+          "id": "bull_crypto_contribution",
+          "formula": "bull_crypto_add-bull_crypto_add*crypto_variable_rate"
+        },
+        {
+          "id": "bear_media_op",
+          "formula": "media_op+bear_media_contribution-bear_ad_add-da_add-other_cost_add"
+        },
+        {
+          "id": "base_media_op",
+          "formula": "media_op+base_media_contribution-base_ad_add-da_add-other_cost_add"
+        },
+        {
+          "id": "bull_media_op",
+          "formula": "media_op+bull_media_contribution-bull_ad_add-da_add-other_cost_add"
+        },
+        {
+          "id": "bear_crypto_op",
+          "formula": "crypto_op+bear_crypto_contribution"
+        },
+        {
+          "id": "base_crypto_op",
+          "formula": "crypto_op+base_crypto_contribution"
+        },
+        {
+          "id": "bull_crypto_op",
+          "formula": "crypto_op+bull_crypto_contribution"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_media_rev+bear_crypto_rev+segment_display_gap"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_media_rev+base_crypto_rev+segment_display_gap"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_media_rev+bull_crypto_rev+segment_display_gap"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_media_op+bear_crypto_op"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_media_op+base_crypto_op"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_media_op+bull_crypto_op"
+        },
+        {
+          "id": "base_ad",
+          "formula": "q1_ad+base_ad_add"
+        },
+        {
+          "id": "base_da",
+          "formula": "q1_da+da_add"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネオメディアエンタメ事業",
+              "revenue": "bear_media_rev",
+              "operating_profit": "bear_media_op"
+            },
+            {
+              "name": "ネオクリプト事業",
+              "revenue": "bear_crypto_rev",
+              "operating_profit": "bear_crypto_op"
+            },
+            {
+              "name": "前Qの連結合計とセグメント表示値の差の持越し",
+              "revenue": "segment_display_gap"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネオメディアエンタメ事業",
+              "revenue": "base_media_rev",
+              "operating_profit": "base_media_op"
+            },
+            {
+              "name": "ネオクリプト事業",
+              "revenue": "base_crypto_rev",
+              "operating_profit": "base_crypto_op"
+            },
+            {
+              "name": "前Qの連結合計とセグメント表示値の差の持越し",
+              "revenue": "segment_display_gap"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ネオメディアエンタメ事業",
+              "revenue": "bull_media_rev",
+              "operating_profit": "bull_media_op"
+            },
+            {
+              "name": "ネオクリプト事業",
+              "revenue": "bull_crypto_rev",
+              "operating_profit": "bull_crypto_op"
+            },
+            {
+              "name": "前Qの連結合計とセグメント表示値の差の持越し",
+              "revenue": "segment_display_gap"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 1,
+          "period_start": "2025-05-01",
+          "period_end": "2025-07-31",
+          "revenue": 1354.328,
+          "operating_profit": 72.554,
+          "ordinary_profit": 1234.422,
+          "net_profit": 1247.935,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・旧セグメント区分。連結PLはS01の前年比較欄とも一致",
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "locator": "S04 PDF pages 2,8; S01 PDF page 8"
+        },
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 2,
+          "period_start": "2025-05-01",
+          "period_end": "2025-10-31",
+          "revenue": 3850.362,
+          "operating_profit": -163.284,
+          "ordinary_profit": 1502.197,
+          "net_profit": 1351.633,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・旧セグメント区分。会計方針変更・見積り変更・修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,8"
+        },
+        {
+          "fiscal_year_end": "2027-04-30",
+          "quarter": 1,
+          "period_start": "2026-05-01",
+          "period_end": "2026-07-31",
+          "revenue": 1628.012,
+          "operating_profit": -186.421,
+          "ordinary_profit": -2018.036,
+          "net_profit": -1868.816,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "当初公表版・新セグメント区分。前年Q1セグメント比較は組替後。連結PLの修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,8,11,12"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "新作の期間寄与と既存作の周年施策",
+          "mechanism": "ヒロサバは対象四半期の初めに配信開始。オラドラ周年施策と合わせてメディア売上を押し上げる一方、課金継続と共同開発契約によるgumiへの帰属が増収幅を左右する。",
+          "source_ids": [
+            "S02",
+            "S13"
+          ],
+          "locator": "S02 PDF pages 9,25; S13 PDF pages 1,4",
+          "calculation_ids": [
+            "bear_media_rev",
+            "base_media_rev",
+            "bull_media_rev"
+          ],
+          "not_quantified_reason": "タイトル別売上、課金率、ARPPU、収益分配率は保存原文に記載がなく、事業全体の条件付き増分で扱う。"
+        },
+        {
+          "name": "広告・開発・償却負担",
+          "mechanism": "新作と周年販促で広告費が増え、稼働開始したソフトウエアの償却も増加する。開発人件費・外注費は直近の横ばい傾向を基準とし、利益目標から逆算しない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 6,13; S02 PDF pages 21,23; S05 PDF page 4",
+          "calculation_ids": [
+            "base_ad",
+            "base_da",
+            "base_media_op"
+          ],
+          "not_quantified_reason": "資産別の稼働日、償却方法、広告負担契約は未確認。増分費用は独自仮定。"
+        },
+        {
+          "name": "暗号資産の受領・運用収益",
+          "mechanism": "売上計上時の受領数量と価格、ノード運営・運用ポートフォリオが営業収益を左右する。保有資産の期末評価損益は営業外として区別する。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 8,12,13; S02 PDF pages 17,18",
+          "calculation_ids": [
+            "bear_crypto_rev",
+            "base_crypto_rev",
+            "bull_crypto_rev"
+          ],
+          "not_quantified_reason": "対象四半期の銘柄別受領数量、実現運用利回り、売上計上時価格が未確認。"
+        },
+        {
+          "name": "営業外評価とグループ内再編",
+          "mechanism": "FCT・OSHIの市場判定と評価方法は経常利益に重大な影響を及ぼし得る。Evernorth上場時の評価差額は純資産計上で、会社は連結損益への影響なしと説明。吸収合併による旧子会社損失の消滅を連結増益として加算しない。",
+          "source_ids": [
+            "S01",
+            "S07",
+            "S08",
+            "S10",
+            "S11"
+          ],
+          "locator": "S01 PDF page 13; S07 PDF page 1; S08 PDF page 1; S10 PDF page 6; S11 PDF pages 2,3",
+          "calculation_ids": [],
+          "not_quantified_reason": "期末保有数量・処分見込価額・市場判定が未確認のため経常利益と純利益はnull。S07の評価損は前Qに反映済みで対象Qへ再計上しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "新作・周年・既存作の純増収仮定",
+              "formula": "bear_media_add",
+              "reason": "前Qから対象Qへのメディア増収"
+            },
+            {
+              "label": "暗号資産受領・運用収益の変化",
+              "formula": "bear_crypto_add",
+              "reason": "前Qから対象Qへのクリプト減収"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。タイトル別寄与と同一区分の前年Q2セグメント値が不足し、金額を事業要因へ分解できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア増収の変動費控除後寄与",
+              "formula": "bear_media_contribution",
+              "reason": "追加広告・償却を除いた寄与"
+            },
+            {
+              "label": "クリプト減収の寄与",
+              "formula": "bear_crypto_contribution",
+              "reason": "変動費の減少を控除"
+            },
+            {
+              "label": "追加広告・償却・その他費用",
+              "formula": "other_cost_add-other_cost_add-bear_ad_add-da_add-other_cost_add",
+              "reason": "前Q基準の純費用増"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。前年広告費の反動、売上構成、開発費資産計上等の寄与を同一定義で分離できないため全額を未説明残差とする。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "メディア売上変化",
+              "formula": "bear_media_add",
+              "reason": "新作・周年効果から既存減衰を控除する仮定"
+            },
+            {
+              "label": "クリプト売上変化",
+              "formula": "bear_crypto_add",
+              "reason": "受領・運用収益の減少仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内の差額は全て配賦済み。実際の変動要因が全て確認できたことを意味しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア限界利益",
+              "formula": "bear_media_contribution",
+              "reason": "増収から追加変動費を控除"
+            },
+            {
+              "label": "クリプト限界利益変化",
+              "formula": "bear_crypto_contribution",
+              "reason": "減収から変動費減少を控除"
+            },
+            {
+              "label": "広告・償却等の増加",
+              "formula": "other_cost_add-other_cost_add-bear_ad_add-da_add-other_cost_add",
+              "reason": "独立した費用仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用据置き条件を含むモデル内の残差はない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "新作・周年・既存作の純増収仮定",
+              "formula": "base_media_add",
+              "reason": "前Qから対象Qへのメディア増収"
+            },
+            {
+              "label": "暗号資産受領・運用収益の変化",
+              "formula": "base_crypto_add",
+              "reason": "前Qから対象Qへのクリプト減収"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア増収の変動費控除後寄与",
+              "formula": "base_media_contribution",
+              "reason": "追加広告・償却を除いた寄与"
+            },
+            {
+              "label": "クリプト減収の寄与",
+              "formula": "base_crypto_contribution",
+              "reason": "変動費減少を控除"
+            },
+            {
+              "label": "追加広告・償却・その他費用",
+              "formula": "other_cost_add-other_cost_add-base_ad_add-da_add-other_cost_add",
+              "reason": "前Q基準の純費用増"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。前年の広告費反動を別途加算すると二重計上になるため、未分解の純差額として残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "メディア売上変化",
+              "formula": "base_media_add",
+              "reason": "新作と周年施策の純効果"
+            },
+            {
+              "label": "クリプト売上変化",
+              "formula": "base_crypto_add",
+              "reason": "運用移行等に伴う減収仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア限界利益",
+              "formula": "base_media_contribution",
+              "reason": "増収から追加変動費を控除"
+            },
+            {
+              "label": "クリプト限界利益変化",
+              "formula": "base_crypto_contribution",
+              "reason": "減収から変動費減少を控除"
+            },
+            {
+              "label": "広告・償却等の増加",
+              "formula": "other_cost_add-other_cost_add-base_ad_add-da_add-other_cost_add",
+              "reason": "独立した費用仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "新作・周年・既存作の純増収仮定",
+              "formula": "bull_media_add",
+              "reason": "前Qから対象Qへのメディア増収"
+            },
+            {
+              "label": "暗号資産受領・運用収益の変化",
+              "formula": "bull_crypto_add",
+              "reason": "前Q売上維持の条件"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア増収の変動費控除後寄与",
+              "formula": "bull_media_contribution",
+              "reason": "追加広告・償却を除いた寄与"
+            },
+            {
+              "label": "クリプト収益の変化",
+              "formula": "bull_crypto_contribution",
+              "reason": "前Q収益維持の条件"
+            },
+            {
+              "label": "追加広告・償却・その他費用",
+              "formula": "other_cost_add-other_cost_add-bull_ad_add-da_add-other_cost_add",
+              "reason": "前Q基準の純費用増"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。売上構成、広告、資産計上等の寄与が未分解。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "メディア売上変化",
+              "formula": "bull_media_add",
+              "reason": "新作課金と周年施策がともに奏功する条件"
+            },
+            {
+              "label": "クリプト売上変化",
+              "formula": "bull_crypto_add",
+              "reason": "前Q売上維持"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "条件付きモデル内の差額は全て配賦済み。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "メディア限界利益",
+              "formula": "bull_media_contribution",
+              "reason": "増収から追加変動費を控除"
+            },
+            {
+              "label": "クリプト限界利益変化",
+              "formula": "bull_crypto_contribution",
+              "reason": "前Q収益維持"
+            },
+            {
+              "label": "広告・償却等の増加",
+              "formula": "other_cost_add-other_cost_add-bull_ad_add-da_add-other_cost_add",
+              "reason": "広告効率改善と追加償却を別建て"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "その他純費用の前Q据置きを条件に残差なし。"
+        }
+      ],
+      "company_guidance": "S01 PDF pages 1,5で当年度の連結業績予想は非開示と確認。S02の収益回復方針は定性的な会社見通しであり、数値会社予想ではない。対象四半期の数値予想・期後修正予想は保存資料では確認できない。S05の旧年度中期目標は対象年度へ転用しない。",
+      "consensus": "未確認。保存原文に対象四半期の公表市場コンセンサスはない。",
+      "independent_forecast": "前Qの確定セグメント実績に、新作・周年による事業売上増分、暗号資産関連収益の変化、売上連動費、追加広告、追加償却を積み上げた低確度の条件付き独自予測。会社予想の四等分や期後修正予想の差引きではない。シナリオ幅は統計的信頼区間ではなく、保存資料の過去新作投入規模と直近費用構造を参考とした仮定である。経常利益・親会社株主帰属純利益は合理的な範囲を設定できずnull。",
+      "narrative": [
+        {
+          "heading": "結論",
+          "text": "中心ケースの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。新作の期間寄与と主力作の周年施策で増収を見込むが、販促と償却の追加負担が利益回復を抑える。弱気では売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}、営業利益{{value:bull_op}}となる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S13"
+          ],
+          "locator": "S01 PDF pages 4,12,13; S02 PDF pages 9,21,25; S13 PDF page 4"
+        },
+        {
+          "heading": "営業利益を左右する条件",
+          "text": "中心ケースでは広告費を{{value:base_ad}}、減価償却費を{{value:base_da}}と仮定する。開発費等の純負担は前Q並みとするため、受託案件の検収や開発費の資産計上が変われば予測は動く。共同開発先との収益分配条件が不明であり、ダウンロード実績だけでgumi売上を確定できない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S13"
+          ],
+          "locator": "S01 PDF pages 6,13; S02 PDF pages 10,21; S13 PDF pages 1,4"
+        },
+        {
+          "heading": "比較と会計上の注意",
+          "text": "前年同Qは同じ連結会計基準の中間累計から直前累計を差し引き、売上{{value:py_q2_rev}}、営業利益{{value:py_q2_op}}を比較基準とする。前年セグメントの組替えが未完了のため、前年比ブリッジには未分解残差を残す。Evernorth上場の評価差額を営業利益や経常利益へ加算せず、前Q計上済みの暗号資産評価損も重複計上しない。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S07",
+            "S08"
+          ],
+          "locator": "S01 PDF pages 11,12; S03 PDF page 8; S04 PDF page 8; S07 PDF page 1; S08 PDF page 1"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "reviewed",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "ヒロサバのgumi帰属売上、課金者数、継続率、単価、収益分配条件は保存原文に記載がない。公表資料全体での非開示までは断定しない。",
+        "広告負担割合と新作ソフトウエアの償却方法は原文未確認。売上成長と広告効率が同時に改善することが強気ケースの条件。",
+        "受託検収ずれの対象四半期内解消は未確認。独立した検収収益や利益の上乗せはしない。",
+        "FCT・OSHIの対象四半期末の活発な市場判定、処分見込価額、受領数量、売買・移行数量は未確認。",
+        "ファンド運用資産残高はgumiの連結売上でも帰属利益でもない。持分法投資損益は別途未確認。"
+      ],
+      "material_unresolved": [
+        "発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。",
+        "対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。",
+        "売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。",
+        "S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。",
+        "S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。",
+        "S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。",
+        "S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。",
+        "経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。",
+        "S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。",
+        "その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。"
+      ],
+      "schema_version": "2.0",
+      "guidance_records": [],
+      "quarterly_historicals": [],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": -201.421,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 0,
+      "High": 17,
+      "Medium": 20,
+      "Low": 1
+    },
+    "material_assumption_count": 13,
+    "schedule_check": {
+      "input_date": "2026-12-11",
+      "official_date": "2026-12-11",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "https://scouter.monex.co.jp/report/zaimu/3903 の決算発表予定に、中間決算を2026年12月11日に発表予定と記載。ページの財務データ等更新日は2026年11月17日。公式IRカレンダー https://gu3.co.jp/ir/calendar/ は日程部分を取得できず、予定日の確認は公開の証券会社情報による。",
+      "warnings": [
+        "発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。",
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "要修正",
+    "quality": "要修正",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "直前累計不足: 2025-10-31"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bear/yoy/revenue",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 50.0,
+          "residual": -868.0220000000002,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。タイトル別寄与と同一区分の前年Q2セグメント値が不足し、金額を事業要因へ分解できない。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bear/yoy/operating_profit",
+        "details": {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "expected_delta": null,
+          "explained_sum": -420.0,
+          "residual": 49.417,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。前年広告費の反動、売上構成、開発費資産計上等の寄与を同一定義で分離できないため全額を未説明残差とする。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: base/yoy/revenue",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 600.0,
+          "residual": -868.0220000000002,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: base/yoy/operating_profit",
+        "details": {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "expected_delta": null,
+          "explained_sum": -15.0,
+          "residual": 49.417,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。前年の広告費反動を別途加算すると二重計上になるため、未分解の純差額として残す。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bull/yoy/revenue",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "expected_delta": null,
+          "explained_sum": 1100.0,
+          "residual": -868.0220000000002,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの連結売上差。同一区分の前年Q2セグメント値とタイトル別寄与が不足し、分解しない。"
+        }
+      },
+      {
+        "severity": "Medium",
+        "category": "comparability",
+        "message": "増減要因の照合未了: bull/yoy/operating_profit",
+        "details": {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "expected_delta": null,
+          "explained_sum": 300.0,
+          "residual": 49.417,
+          "residual_type": "economic_unexplained",
+          "difference": null,
+          "status": "unavailable",
+          "residual_explanation": "前年同Qから前Qまでの営業利益差。売上構成、広告、資産計上等の寄与が未分解。"
+        }
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_media_add",
+        "assumption_id": "bear_media_add",
+        "absolute_effect": 450.00000000000006,
+        "relative_effect": 2.2341265309972647
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_media_add",
+        "assumption_id": "bull_media_add",
+        "absolute_effect": 450.0,
+        "relative_effect": 2.2341265309972647
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_media_add",
+        "assumption_id": "base_media_add",
+        "absolute_effect": 225.0,
+        "relative_effect": 1.1170632654986323
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_ad_add",
+        "assumption_id": "bear_ad_add",
+        "absolute_effect": 150.00000000000006,
+        "relative_effect": 0.7447088436657551
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_ad_add",
+        "assumption_id": "bull_ad_add",
+        "absolute_effect": 150.0,
+        "relative_effect": 0.7447088436657548
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_crypto_add",
+        "assumption_id": "bear_crypto_add",
+        "absolute_effect": 120.00000000000006,
+        "relative_effect": 0.5957670749326042
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_crypto_add",
+        "assumption_id": "bull_crypto_add",
+        "absolute_effect": 120.0,
+        "relative_effect": 0.5957670749326038
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_ad_add",
+        "assumption_id": "base_ad_add",
+        "absolute_effect": 100.0,
+        "relative_effect": 0.4964725624438366
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_crypto_add",
+        "assumption_id": "base_crypto_add",
+        "absolute_effect": 80.0,
+        "relative_effect": 0.3971780499550692
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: media_variable_rate",
+        "assumption_id": "media_variable_rate",
+        "absolute_effect": 55.0,
+        "relative_effect": 0.2730599093441101
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: da_add",
+        "assumption_id": "da_add",
+        "absolute_effect": 10.0,
+        "relative_effect": 0.04964725624438365
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: crypto_variable_rate",
+        "assumption_id": "crypto_variable_rate",
+        "absolute_effect": 3.0,
+        "relative_effect": 0.014894176873315098
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: other_cost_add",
+        "assumption_id": "other_cost_add",
+        "absolute_effect": 1.0,
+        "relative_effect": 0.004964725624438365
+      },
+      {
+        "severity": "High",
+        "category": "fact",
+        "message": "前年Q1累計は存在する。前年Q2比較値をnullにした再計算出力と「直前累計不足」は誤り。売上2496.034、営業利益−235.838、経常利益267.775、親会社純利益103.698へ復元し、全シナリオのYoYを再計算する。予測値自体の変更は不要。",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "各PDF page 8; recalculation.historicals",
+        "evidence_excerpt": "営業利益 65,350 72,554",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "重要仮定13件の数値根拠が不足。特に中心増収650、変動費50%、追加広告200、償却100が中心営業利益を決定する。会社一般論や機械的感応度を根拠にsupportedへ変更してはならない。",
+        "source_ids": [
+          "S02",
+          "S13"
+        ],
+        "locator": "S02 PDF pages 9,21; S13 PDF page 4",
+        "evidence_excerpt": "価格：基本プレイ無料（アイテム課金制）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "residual",
+        "message": "全シナリオ共通のYoY売上残差−868.022、営業利益残差49.417は算術上正しいが、経済的には未説明。セグメント組替え不足だけで連結差額全体を説明したことにはならない。タイトル構成、広告、資産計上、範囲変更を分解し、未説明部分を残す。QnQ残差ゼロはモデル恒等式に限る。",
+        "source_ids": [
+          "S01",
+          "S03",
+          "S04"
+        ],
+        "locator": "各PDF page 8; model.bridges",
+        "evidence_excerpt": "売上高 1,354,328 1,628,012",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "period",
+        "message": "S03の連結範囲変更「有」と社名欄空欄の不整合、S06の吸収合併・清算による3社除外を追加照合する。公表連結値の差引きは可能だが、構成企業一定の成長比較としては未確認。セグメント組替えは連結売上差を生む要因と混同しない。",
+        "source_ids": [
+          "S03",
+          "S06"
+        ],
+        "locator": "S03 PDF page 2; S06 PDF page 19",
+        "evidence_excerpt": "有限公司は、清算結了により連結の範囲から除外しています。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "double_count",
+        "message": "共同開発契約上の売上総額・純額と費用分配が不明。gumi帰属売上に既に分配控除が反映されている場合、50%変動費に共同開発分配を含めると重複し得る。実際の重複は未確認なので数値訂正は提案しない。",
+        "source_ids": [
+          "S13"
+        ],
+        "locator": "PDF page 4",
+        "evidence_excerpt": "配信：KLab 株式会社",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "residual",
+        "message": "S02の営業損益イメージ−501/315とS01正式値−498.048/311.627の差はそれぞれ−2.952/+3.373。単なる百万円丸めと認定できない。正式値優先は妥当だが、配賦・定義・抽出差を確認する。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 10",
+        "evidence_excerpt": "セグメント利益又は損失(△) △498,048 311,627 △186,421",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "residual",
+        "message": "セグメント売上合計と連結売上の差0.001百万円は原文表示段階に存在する。端数処理由来かは未確定の表示差として独立管理し、経済的売上要因としない。約10の−13乗百万円の計算差は浮動小数点誤差であり別扱い。会計比較基準変更による残差額は未特定で、ゼロと断定しない。",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 12; recalculation.bridge_checks",
+        "evidence_excerpt": "外部顧客への売上高 1,111,887 516,124 1,628,012",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "guidance_recordsとcompany_guidance_comparisonsが空。予想非開示を含め候補を登録し、現年度の定性方針、旧年度税引前利益目標、個別事象の損益影響を分離する。現年度Q2の数値予想がないため、会社予想との差自体を誤りとは判定しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 1; S02 PDF page 4; S05 PDF page 5",
+        "evidence_excerpt": "修正中期計画利益目標(※3)",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 0,
+      "High": 17,
+      "Medium": 20,
+      "Low": 1
+    },
+    "assumptions": [
+      {
+        "id": "bear_media_add",
+        "category": "連結・事業売却",
+        "adopted_value": 200.0,
+        "unit": "百万円",
+        "rationale": "ヒロサバのほぼ四半期全期間の寄与とオラドラ周年施策を合わせた、ネオメディア売上の前Q差額。前年の新作投入時に連結売上が大きく増加した実績を規模の参考とするが、今回はKLab配信・共同開発であるため同じ売上帰属を仮定しない。弱気は新作の収益化が弱く、既存作の自然減が周年効果を相殺する条件。タイトル別売上への分解はしない。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_media_add",
+            "value": 650,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 225.00000000000006,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_media_add",
+            "value": 1100,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 450.00000000000006,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 450.00000000000006,
+        "relative_to_forecast_profit": 2.2341265309972647,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 1,
+        "independent_review": {
+          "id": "bear_media_add",
+          "status": "unsupported",
+          "reason": "配信・周年施策は確認できるが、純増収200の課金数量、単価、既存減衰、gumi帰属率による裏付けがない。過去年の別タイトル増収は採用額の証明にならない。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 25; S05 PDF page 4; S13 PDF page 4",
+          "evidence_excerpt": "配信：KLab 株式会社"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_media_add",
+        "category": "連結・事業売却",
+        "adopted_value": 1100.0,
+        "unit": "百万円",
+        "rationale": "強気はヒロサバの継続課金とオラドラ周年施策がともに奏功する条件。増分の規模は前年の新作投入時の連結増収に近い水準を上側の参考とする。これは確率的上限でもタイトル売上の確認値でもない。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_media_add",
+            "value": 200,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -450.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_media_add",
+            "value": 650,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -225.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 450.0,
+        "relative_to_forecast_profit": 2.2341265309972647,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 2,
+        "independent_review": {
+          "id": "bull_media_add",
+          "status": "unsupported",
+          "reason": "増収1100は前年の連結増収1141.706に近いが、配信主体、タイトル、売上認識、既存作品構成が異なる。継続課金と周年効果の数値裏付けもなく、上限とは確認できない。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S05 PDF page 4; S13 PDF page 4",
+          "evidence_excerpt": "Q２売上は『ジョジョの奇妙な冒険 オラオラオーバードライブ（オラドラ）』の大ヒットに伴い、Q１比で84%増収"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_media_add",
+        "category": "連結・事業売却",
+        "adopted_value": 650.0,
+        "unit": "百万円",
+        "rationale": "中心は新作の期間寄与と周年施策が既存作の減衰を上回る条件。前年新作投入時の連結増収規模より小さく設定し、共同開発タイトルの帰属割合不明と前Qの主力作不振を織り込む。ダウンロード数を課金人数へ直接換算せず、事業全体の条件付き増分として置く。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_media_add",
+            "value": 200,
+            "operating_profit": -426.421,
+            "change": -225.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -225.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_media_add",
+            "value": 1100,
+            "operating_profit": 23.579000000000008,
+            "change": 225.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 225.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 225.0,
+        "relative_to_forecast_profit": 1.1170632654986323,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 3,
+        "independent_review": {
+          "id": "base_media_add",
+          "status": "unsupported",
+          "reason": "増収650を中心値とする数量・単価・契約根拠がない。前年新作増収より小さく置くことだけでは合理的な中心値と確認できない。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 25; S05 PDF page 4; S13 PDF page 4",
+          "evidence_excerpt": "全世界100万ダウンロードを突破"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_ad_add",
+        "category": "その他事業仮定",
+        "adopted_value": 300.0,
+        "unit": "百万円",
+        "rationale": "新作投入と周年施策の追加広告費。前年オラドラの一過性広告費より小さいが、売上への転換効率が低い条件。共同開発タイトルの広告負担割合は不明。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_ad_add",
+            "value": 200,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 100.00000000000006,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_ad_add",
+            "value": 150,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 150.00000000000006,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 150.00000000000006,
+        "relative_to_forecast_profit": 0.7447088436657551,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 4,
+        "independent_review": {
+          "id": "bear_ad_add",
+          "status": "unsupported",
+          "reason": "追加広告300、総広告452の予算・契約負担・実施実績がない。前年の一過性広告約435は異なるタイトルの参考実績にとどまる。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S05 PDF page 14; S13 PDF page 4",
+          "evidence_excerpt": "『オラドラ』リリースに伴う一過性の広告宣伝費（約435百万円）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_ad_add",
+        "category": "その他事業仮定",
+        "adopted_value": 150.0,
+        "unit": "百万円",
+        "rationale": "IPの自然流入と共同開発先の販促により、gumi負担の追加広告が比較的小さく収まる条件。売上増と広告効率改善が同時に成立する強気ケース。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_ad_add",
+            "value": 300,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -150.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_ad_add",
+            "value": 200,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -50.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 150.0,
+        "relative_to_forecast_profit": 0.7447088436657548,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 5,
+        "independent_review": {
+          "id": "bull_ad_add",
+          "status": "unsupported",
+          "reason": "追加150、総広告302を支える負担契約や獲得効率の実績がない。最大増収と最小広告負担を同時採用する条件は可能性としては置けるが、原資料で裏付けられない。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S13 PDF page 4",
+          "evidence_excerpt": "配信：KLab 株式会社"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_crypto_add",
+        "category": "特殊要因",
+        "adopted_value": -150.0,
+        "unit": "百万円",
+        "rationale": "売上の大部分が暗号資産受領等のその他収益であり、上場廃止に伴う流動性悪化や運用移行が受領時評価額・運用収入を押し下げる条件。前Q売上の約3割減をストレス幅とする。保有資産評価損そのものは売上減に含めない。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_crypto_add",
+            "value": -50,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 80.0,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_crypto_add",
+            "value": 0,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 120.00000000000006,
+              "base": 0.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 120.00000000000006,
+        "relative_to_forecast_profit": 0.5957670749326042,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 6,
+        "independent_review": {
+          "id": "bear_crypto_add",
+          "status": "unsupported",
+          "reason": "上場廃止・運用移行リスクは確認できるが、売上150減を説明する受領数量・計上時価格・運用報酬がない。保有資産の評価問題と営業収益の減少幅は別問題。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 13; S02 PDF page 17",
+          "evidence_excerpt": "マーケット悪化により利回りが大幅に低下"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_crypto_add",
+        "category": "特殊要因",
+        "adopted_value": 0.0,
+        "unit": "百万円",
+        "rationale": "ノード収益維持と運用移行が減収要因を相殺し、前Q売上を維持する条件。ファンド・SaaSの料金や顧客数が不明なため、独立した成長額は加算しない。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_crypto_add",
+            "value": -150,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -120.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "base_crypto_add",
+            "value": -50,
+            "operating_profit": -201.421,
+            "change": 0.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 0.0,
+              "bull": -40.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 120.0,
+        "relative_to_forecast_profit": 0.5957670749326038,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 7,
+        "independent_review": {
+          "id": "bull_crypto_add",
+          "status": "unsupported",
+          "reason": "売上増減ゼロも数値仮定であり、受領収益維持や移行による相殺額の根拠がない。新事業売上を別途上乗せしない慎重さとは区別する。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 4; S02 PDF page 18",
+          "evidence_excerpt": "AI運用の実績・ノウハウを蓄積"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_ad_add",
+        "category": "その他事業仮定",
+        "adopted_value": 200.0,
+        "unit": "百万円",
+        "rationale": "新作・周年の追加広告費を前年の自社配信新作時より抑制する条件。前Q広告費に上乗せし、前年の一過性広告費の反動減をさらに加算しない。",
+        "source_ids": [
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_ad_add",
+            "value": 300,
+            "operating_profit": -301.421,
+            "change": -100.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -100.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_ad_add",
+            "value": 150,
+            "operating_profit": -151.421,
+            "change": 50.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 50.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 100.0,
+        "relative_to_forecast_profit": 0.4964725624438366,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 8,
+        "independent_review": {
+          "id": "base_ad_add",
+          "status": "unsupported",
+          "reason": "152+200=352の算術は正しいが、追加200の支出予定や共同開発先との負担割合がない。前年広告の反動を二重加算していないことは金額の裏付けとは別。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S13"
+          ],
+          "locator": "S02 PDF page 21; S05 PDF page 14; S13 PDF page 4",
+          "evidence_excerpt": "広告宣伝費 152 41 +262.8% 198 △23.3%"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_crypto_add",
+        "category": "連結・事業売却",
+        "adopted_value": -50.0,
+        "unit": "百万円",
+        "rationale": "ノード運営の継続収益を残しつつ、上場廃止とポートフォリオ移行で前Q売上の約1割が減少する条件。新規ファンドの運用資産額を連結売上に加算しない。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "existing_scenario",
+            "input_id": "bear_crypto_add",
+            "value": -150,
+            "operating_profit": -281.421,
+            "change": -80.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": -80.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "existing_scenario",
+            "input_id": "bull_crypto_add",
+            "value": 0,
+            "operating_profit": -161.421,
+            "change": 40.0,
+            "scenario_profit_changes": {
+              "bear": 0.0,
+              "base": 40.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 80.0,
+        "relative_to_forecast_profit": 0.3971780499550692,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 9,
+        "independent_review": {
+          "id": "base_crypto_add",
+          "status": "unsupported",
+          "reason": "前Q売上の約1割に相当する50減を中心値とする裏付けがない。ポートフォリオ移行方針は金額・時期・収益区分を確定しない。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 17",
+          "evidence_excerpt": "保有暗号資産をXRPへ適宜移行"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "media_variable_rate",
+        "category": "連結・事業売却",
+        "adopted_value": 0.5,
+        "unit": "比率",
+        "rationale": "メディア増収に対する追加の手数料、版権・共同開発分配、通信・運営費を合わせて50%と置く。前Qの連結支払手数料はメディア売上に対し約3割の規模だが、費用帰属が一致しないため参考に限り、残りをその他の変動費の余裕とする。広告と追加償却は別建て。",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "S01 PDF page 12; S02 PDF page 21",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 0.45,
+            "operating_profit": -168.921,
+            "change": 32.5,
+            "scenario_profit_changes": {
+              "bear": 10.0,
+              "base": 32.5,
+              "bull": 55.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 0.55,
+            "operating_profit": -233.92100000000005,
+            "change": -32.50000000000006,
+            "scenario_profit_changes": {
+              "bear": -10.0,
+              "base": -32.50000000000006,
+              "bull": -55.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 55.0,
+        "relative_to_forecast_profit": 0.2730599093441101,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 10,
+        "independent_review": {
+          "id": "media_variable_rate",
+          "status": "unsupported",
+          "reason": "連結支払手数料の実績は確認できるが、メディア増収の変動費率50%を導く費用分解がない。売上帰属を分配後で測る場合、分配費用をさらに控除する重複の有無も確認が必要。45%・55%の感応度は会社予測ではない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S13"
+          ],
+          "locator": "S01 PDF page 12; S02 PDF page 21; S13 PDF page 4",
+          "evidence_excerpt": "支払手数料 361 228 +58.6% 682 △47.0%"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "da_add",
+        "category": "減価償却",
+        "adopted_value": 100.0,
+        "unit": "百万円",
+        "rationale": "ヒロサバの配信開始に伴うソフトウエア償却増を前Q比で追加する。仮勘定残高の一部が稼働資産へ振り替わる条件だが、対象資産額と償却方法は未確認。既存資産の償却は前Q費用に含めたまま据え置く。",
+        "source_ids": [
+          "S01",
+          "S13"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05",
+          "S13"
+        ],
+        "locator": "S01 PDF pages 6,13; S13 PDF page 4",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 90.0,
+            "operating_profit": -191.421,
+            "change": 10.0,
+            "scenario_profit_changes": {
+              "bear": 10.0,
+              "base": 10.0,
+              "bull": 10.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 110.0,
+            "operating_profit": -211.421,
+            "change": -10.0,
+            "scenario_profit_changes": {
+              "bear": -10.0,
+              "base": -10.0,
+              "bull": -10.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 10.0,
+        "relative_to_forecast_profit": 0.04964725624438365,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": true,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 11,
+        "independent_review": {
+          "id": "da_add",
+          "status": "unsupported",
+          "reason": "仮勘定981.7と前Q償却184.211は事実だが、新作帰属資産・振替額・耐用年数・償却方法が不明で追加100を導けない。既存償却の据置きも別途検証が必要。90/110の機械的テストや50～150の独自帯に会社根拠はない。",
+          "source_ids": [
+            "S01",
+            "S13"
+          ],
+          "locator": "S01 PDF pages 6,13; S13 PDF page 4",
+          "evidence_excerpt": "ソフトウエア仮勘定 1,214,823 981,700"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "crypto_variable_rate",
+        "category": "特殊要因",
+        "adopted_value": 0.2,
+        "unit": "比率",
+        "rationale": "受領暗号資産等の売上変動は固定的な運用体制のもとで利益へ強く波及すると仮定し、増減収に連動する費用を20%と置く。前Qのセグメント利益率をそのまま限界利益率として使用しない。",
+        "source_ids": [
+          "S01"
+        ],
+        "context_source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 4,12",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 0.18,
+            "operating_profit": -202.421,
+            "change": -1.0,
+            "scenario_profit_changes": {
+              "bear": -3.0,
+              "base": -1.0,
+              "bull": 0.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 0.22000000000000003,
+            "operating_profit": -200.421,
+            "change": 1.0,
+            "scenario_profit_changes": {
+              "bear": 3.0,
+              "base": 1.0,
+              "bull": 0.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 3.0,
+        "relative_to_forecast_profit": 0.014894176873315098,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 12,
+        "independent_review": {
+          "id": "crypto_variable_rate",
+          "status": "unsupported",
+          "reason": "体制見直しによる外注費・広告費減少は確認できるが、売上増減に連動する費用20%は確認できない。18%・22%の機械的感応度は採用率の根拠にならない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "S01 PDF page 4",
+          "evidence_excerpt": "開発・運用体制の見直しによるコスト削減（主に外注費、広告費の減少）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "other_cost_add",
+        "category": "受注残転換",
+        "adopted_value": 0.0,
+        "unit": "百万円",
+        "rationale": "開発パイプラインが継続し、開発費が直近で横ばいという説明から、広告・追加償却・売上連動費以外の純費用を前Q並みとする。人員減少効果を別途利益に加算しない。受託検収ずれの解消も確定せず追加計上しない。",
+        "source_ids": [
+          "S02"
+        ],
+        "context_source_ids": [
+          "S01",
+          "S02",
+          "S05"
+        ],
+        "locator": "PDF pages 16,21,23",
+        "support_status": "未検証",
+        "alternative_scenarios": [
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": -1.0,
+            "operating_profit": -200.421,
+            "change": 1.0,
+            "scenario_profit_changes": {
+              "bear": 1.0,
+              "base": 1.0,
+              "bull": 1.0
+            }
+          },
+          {
+            "kind": "diagnostic_perturbation_not_forecast",
+            "value": 1.0,
+            "operating_profit": -202.421,
+            "change": -1.0,
+            "scenario_profit_changes": {
+              "bear": -1.0,
+              "base": -1.0,
+              "bull": -1.0
+            }
+          }
+        ],
+        "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+        "max_absolute_profit_change": 1.0,
+        "relative_to_forecast_profit": 0.004964725624438365,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": true,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "computed",
+        "sensitivity_constraint": null,
+        "priority": 13,
+        "independent_review": {
+          "id": "other_cost_add",
+          "status": "unsupported",
+          "reason": "直近開発費の横ばいは、対象Qの費用化額・資産計上・管理費・検収損益を含む純費用ゼロを支持しない。連結全体の純費用差を全額メディアに配賦する設計にも裏付けがない。±1の感応度が小さいことは経済的重要性の低さを意味しない。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "S02 PDF pages 10,21,23",
+          "evidence_excerpt": "開発費は、外注費や人件費に大きな変\n動はなく、前四半期と同水準で推移"
+        },
+        "citation_verified": true
+      }
+    ],
+    "guidance": [],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S01の前年Q1セグメント組替後値はS04の旧区分と異なる。前年Q2の同一区分累計が保存原文にないため、新区分と旧区分を差し引かず、前年比較は連結合計に限定した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S01の連結売上とセグメント売上の表示値合計には微小差がある。算式で独立表示して前Q基準を維持したが、将来の経済的売上要因ではない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S02 PDF page 10のセグメント損益イメージはS01 PDF page 12の正式セグメント値と一致しない。定義差が不明なためモデルはS01を採用し、差を丸めと断定しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S02の海外売上比率・グラフはS01の収益分解表との定義整合が確認できず、地域構成予測に使用しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11はtruncated=falseだがPDF pages 8～10の契約書本文の抽出が不完全。効力発生日と承継はpages 2～3で確認したが、契約全文の確認はできない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "その他の提示PDFは短縮フラグなし。ただし保存テキストのみを使用し、PDF画像・原本との再照合や独立レビューは実施していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のシナリオは規模比較に基づく低確度の条件付き推計。課金実績や契約条件から上下限を保証できず、提示範囲外の結果もあり得る。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "対象実績が既に発表済みとの証拠は保存資料にない。ただし基準日時までの開示網羅性は確認できず、target_already_announced=falseは提示条件に基づく。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "直前累計不足: 2025-10-31",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "経常利益は暗号資産評価・売却損益、デリバティブ、持分法損益の根拠不足でnull。純利益はこれらに加え税効果・非支配持分の見積り根拠が不足する。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bear/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bear/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: base/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: base/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bull/yoy/revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "comparability",
+      "message": "増減要因の照合未了: bull/yoy/operating_profit",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_media_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_media_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_media_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_ad_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_ad_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_crypto_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_crypto_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_ad_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_crypto_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: media_variable_rate",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: da_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: crypto_variable_rate",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: other_cost_add",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "fact",
+      "message": "前年Q1累計は存在する。前年Q2比較値をnullにした再計算出力と「直前累計不足」は誤り。売上2496.034、営業利益−235.838、経常利益267.775、親会社純利益103.698へ復元し、全シナリオのYoYを再計算する。予測値自体の変更は不要。",
+      "source_ids": "['S03', 'S04']",
+      "locator": "各PDF page 8; recalculation.historicals",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "assumption",
+      "message": "重要仮定13件の数値根拠が不足。特に中心増収650、変動費50%、追加広告200、償却100が中心営業利益を決定する。会社一般論や機械的感応度を根拠にsupportedへ変更してはならない。",
+      "source_ids": "['S02', 'S13']",
+      "locator": "S02 PDF pages 9,21; S13 PDF page 4",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "High",
+      "category": "residual",
+      "message": "全シナリオ共通のYoY売上残差−868.022、営業利益残差49.417は算術上正しいが、経済的には未説明。セグメント組替え不足だけで連結差額全体を説明したことにはならない。タイトル構成、広告、資産計上、範囲変更を分解し、未説明部分を残す。QnQ残差ゼロはモデル恒等式に限る。",
+      "source_ids": "['S01', 'S03', 'S04']",
+      "locator": "各PDF page 8; model.bridges",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "period",
+      "message": "S03の連結範囲変更「有」と社名欄空欄の不整合、S06の吸収合併・清算による3社除外を追加照合する。公表連結値の差引きは可能だが、構成企業一定の成長比較としては未確認。セグメント組替えは連結売上差を生む要因と混同しない。",
+      "source_ids": "['S03', 'S06']",
+      "locator": "S03 PDF page 2; S06 PDF page 19",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "double_count",
+      "message": "共同開発契約上の売上総額・純額と費用分配が不明。gumi帰属売上に既に分配控除が反映されている場合、50%変動費に共同開発分配を含めると重複し得る。実際の重複は未確認なので数値訂正は提案しない。",
+      "source_ids": "['S13']",
+      "locator": "PDF page 4",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "residual",
+      "message": "S02の営業損益イメージ−501/315とS01正式値−498.048/311.627の差はそれぞれ−2.952/+3.373。単なる百万円丸めと認定できない。正式値優先は妥当だが、配賦・定義・抽出差を確認する。",
+      "source_ids": "['S01', 'S02']",
+      "locator": "S01 PDF page 12; S02 PDF page 10",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Low",
+      "category": "residual",
+      "message": "セグメント売上合計と連結売上の差0.001百万円は原文表示段階に存在する。端数処理由来かは未確定の表示差として独立管理し、経済的売上要因としない。約10の−13乗百万円の計算差は浮動小数点誤差であり別扱い。会計比較基準変更による残差額は未特定で、ゼロと断定しない。",
+      "source_ids": "['S01']",
+      "locator": "PDF page 12; recalculation.bridge_checks",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "company_name": "株式会社gumi",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "guidance_recordsとcompany_guidance_comparisonsが空。予想非開示を含め候補を登録し、現年度の定性方針、旧年度税引前利益目標、個別事象の損益影響を分離する。現年度Q2の数値予想がないため、会社予想との差自体を誤りとは判定しない。",
+      "source_ids": "['S01', 'S02', 'S05']",
+      "locator": "S01 PDF page 1; S02 PDF page 4; S05 PDF page 5",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [
+    {
+      "code": "3903",
+      "id": "bear_media_add",
+      "category": "連結・事業売却",
+      "adopted_value": "200.0",
+      "unit": "百万円",
+      "rationale": "ヒロサバのほぼ四半期全期間の寄与とオラドラ周年施策を合わせた、ネオメディア売上の前Q差額。前年の新作投入時に連結売上が大きく増加した実績を規模の参考とするが、今回はKLab配信・共同開発であるため同じ売上帰属を仮定しない。弱気は新作の収益化が弱く、既存作の自然減が周年効果を相殺する条件。タイトル別売上への分解はしない。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_media_add\", \"value\": 650, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 225.00000000000006, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_media_add\", \"value\": 1100, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 450.00000000000006, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "450.00000000000006",
+      "relative_to_forecast_profit": "2.2341265309972647",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "1",
+      "independent_review": "{\"id\": \"bear_media_add\", \"status\": \"unsupported\", \"reason\": \"配信・周年施策は確認できるが、純増収200の課金数量、単価、既存減衰、gumi帰属率による裏付けがない。過去年の別タイトル増収は採用額の証明にならない。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S02 PDF page 25; S05 PDF page 4; S13 PDF page 4\", \"evidence_excerpt\": \"配信：KLab 株式会社\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "bull_media_add",
+      "category": "連結・事業売却",
+      "adopted_value": "1100.0",
+      "unit": "百万円",
+      "rationale": "強気はヒロサバの継続課金とオラドラ周年施策がともに奏功する条件。増分の規模は前年の新作投入時の連結増収に近い水準を上側の参考とする。これは確率的上限でもタイトル売上の確認値でもない。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_media_add\", \"value\": 200, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -450.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_media_add\", \"value\": 650, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -225.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "450.0",
+      "relative_to_forecast_profit": "2.2341265309972647",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "2",
+      "independent_review": "{\"id\": \"bull_media_add\", \"status\": \"unsupported\", \"reason\": \"増収1100は前年の連結増収1141.706に近いが、配信主体、タイトル、売上認識、既存作品構成が異なる。継続課金と周年効果の数値裏付けもなく、上限とは確認できない。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S05 PDF page 4; S13 PDF page 4\", \"evidence_excerpt\": \"Q２売上は『ジョジョの奇妙な冒険 オラオラオーバードライブ（オラドラ）』の大ヒットに伴い、Q１比で84%増収\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "base_media_add",
+      "category": "連結・事業売却",
+      "adopted_value": "650.0",
+      "unit": "百万円",
+      "rationale": "中心は新作の期間寄与と周年施策が既存作の減衰を上回る条件。前年新作投入時の連結増収規模より小さく設定し、共同開発タイトルの帰属割合不明と前Qの主力作不振を織り込む。ダウンロード数を課金人数へ直接換算せず、事業全体の条件付き増分として置く。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF pages 9,25; S05 PDF pages 4,21; S13 PDF pages 1,4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_media_add\", \"value\": 200, \"operating_profit\": -426.421, \"change\": -225.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -225.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_media_add\", \"value\": 1100, \"operating_profit\": 23.579000000000008, \"change\": 225.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 225.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "225.0",
+      "relative_to_forecast_profit": "1.1170632654986323",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "3",
+      "independent_review": "{\"id\": \"base_media_add\", \"status\": \"unsupported\", \"reason\": \"増収650を中心値とする数量・単価・契約根拠がない。前年新作増収より小さく置くことだけでは合理的な中心値と確認できない。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S02 PDF page 25; S05 PDF page 4; S13 PDF page 4\", \"evidence_excerpt\": \"全世界100万ダウンロードを突破\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "bear_ad_add",
+      "category": "その他事業仮定",
+      "adopted_value": "300.0",
+      "unit": "百万円",
+      "rationale": "新作投入と周年施策の追加広告費。前年オラドラの一過性広告費より小さいが、売上への転換効率が低い条件。共同開発タイトルの広告負担割合は不明。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_ad_add\", \"value\": 200, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 100.00000000000006, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_ad_add\", \"value\": 150, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 150.00000000000006, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "150.00000000000006",
+      "relative_to_forecast_profit": "0.7447088436657551",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "4",
+      "independent_review": "{\"id\": \"bear_ad_add\", \"status\": \"unsupported\", \"reason\": \"追加広告300、総広告452の予算・契約負担・実施実績がない。前年の一過性広告約435は異なるタイトルの参考実績にとどまる。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S02 PDF page 21; S05 PDF page 14; S13 PDF page 4\", \"evidence_excerpt\": \"『オラドラ』リリースに伴う一過性の広告宣伝費（約435百万円）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "bull_ad_add",
+      "category": "その他事業仮定",
+      "adopted_value": "150.0",
+      "unit": "百万円",
+      "rationale": "IPの自然流入と共同開発先の販促により、gumi負担の追加広告が比較的小さく収まる条件。売上増と広告効率改善が同時に成立する強気ケース。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_ad_add\", \"value\": 300, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -150.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_ad_add\", \"value\": 200, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -50.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "150.0",
+      "relative_to_forecast_profit": "0.7447088436657548",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "5",
+      "independent_review": "{\"id\": \"bull_ad_add\", \"status\": \"unsupported\", \"reason\": \"追加150、総広告302を支える負担契約や獲得効率の実績がない。最大増収と最小広告負担を同時採用する条件は可能性としては置けるが、原資料で裏付けられない。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S02 PDF page 21; S13 PDF page 4\", \"evidence_excerpt\": \"配信：KLab 株式会社\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "bear_crypto_add",
+      "category": "特殊要因",
+      "adopted_value": "-150.0",
+      "unit": "百万円",
+      "rationale": "売上の大部分が暗号資産受領等のその他収益であり、上場廃止に伴う流動性悪化や運用移行が受領時評価額・運用収入を押し下げる条件。前Q売上の約3割減をストレス幅とする。保有資産評価損そのものは売上減に含めない。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\"]",
+      "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"base_crypto_add\", \"value\": -50, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 80.0, \"base\": 0.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_crypto_add\", \"value\": 0, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 120.00000000000006, \"base\": 0.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "120.00000000000006",
+      "relative_to_forecast_profit": "0.5957670749326042",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "6",
+      "independent_review": "{\"id\": \"bear_crypto_add\", \"status\": \"unsupported\", \"reason\": \"上場廃止・運用移行リスクは確認できるが、売上150減を説明する受領数量・計上時価格・運用報酬がない。保有資産の評価問題と営業収益の減少幅は別問題。\", \"source_ids\": [\"S01\", \"S02\"], \"locator\": \"S01 PDF page 13; S02 PDF page 17\", \"evidence_excerpt\": \"マーケット悪化により利回りが大幅に低下\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "bull_crypto_add",
+      "category": "特殊要因",
+      "adopted_value": "0.0",
+      "unit": "百万円",
+      "rationale": "ノード収益維持と運用移行が減収要因を相殺し、前Q売上を維持する条件。ファンド・SaaSの料金や顧客数が不明なため、独立した成長額は加算しない。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\"]",
+      "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_crypto_add\", \"value\": -150, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -120.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"base_crypto_add\", \"value\": -50, \"operating_profit\": -201.421, \"change\": 0.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 0.0, \"bull\": -40.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "120.0",
+      "relative_to_forecast_profit": "0.5957670749326038",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "7",
+      "independent_review": "{\"id\": \"bull_crypto_add\", \"status\": \"unsupported\", \"reason\": \"売上増減ゼロも数値仮定であり、受領収益維持や移行による相殺額の根拠がない。新事業売上を別途上乗せしない慎重さとは区別する。\", \"source_ids\": [\"S01\", \"S02\"], \"locator\": \"S01 PDF page 4; S02 PDF page 18\", \"evidence_excerpt\": \"AI運用の実績・ノウハウを蓄積\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "base_ad_add",
+      "category": "その他事業仮定",
+      "adopted_value": "200.0",
+      "unit": "百万円",
+      "rationale": "新作・周年の追加広告費を前年の自社配信新作時より抑制する条件。前Q広告費に上乗せし、前年の一過性広告費の反動減をさらに加算しない。",
+      "source_ids": "[\"S02\", \"S05\", \"S13\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\", \"S13\"]",
+      "locator": "S02 PDF page 21; S05 PDF page 4; S13 PDF page 4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_ad_add\", \"value\": 300, \"operating_profit\": -301.421, \"change\": -100.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -100.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_ad_add\", \"value\": 150, \"operating_profit\": -151.421, \"change\": 50.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 50.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "100.0",
+      "relative_to_forecast_profit": "0.4964725624438366",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "8",
+      "independent_review": "{\"id\": \"base_ad_add\", \"status\": \"unsupported\", \"reason\": \"152+200=352の算術は正しいが、追加200の支出予定や共同開発先との負担割合がない。前年広告の反動を二重加算していないことは金額の裏付けとは別。\", \"source_ids\": [\"S02\", \"S05\", \"S13\"], \"locator\": \"S02 PDF page 21; S05 PDF page 14; S13 PDF page 4\", \"evidence_excerpt\": \"広告宣伝費 152 41 +262.8% 198 △23.3%\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "base_crypto_add",
+      "category": "連結・事業売却",
+      "adopted_value": "-50.0",
+      "unit": "百万円",
+      "rationale": "ノード運営の継続収益を残しつつ、上場廃止とポートフォリオ移行で前Q売上の約1割が減少する条件。新規ファンドの運用資産額を連結売上に加算しない。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\"]",
+      "locator": "S01 PDF pages 4,12,13; S02 PDF pages 17,18",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"existing_scenario\", \"input_id\": \"bear_crypto_add\", \"value\": -150, \"operating_profit\": -281.421, \"change\": -80.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": -80.0, \"bull\": 0.0}}, {\"kind\": \"existing_scenario\", \"input_id\": \"bull_crypto_add\", \"value\": 0, \"operating_profit\": -161.421, \"change\": 40.0, \"scenario_profit_changes\": {\"bear\": 0.0, \"base\": 40.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "80.0",
+      "relative_to_forecast_profit": "0.3971780499550692",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "9",
+      "independent_review": "{\"id\": \"base_crypto_add\", \"status\": \"unsupported\", \"reason\": \"前Q売上の約1割に相当する50減を中心値とする裏付けがない。ポートフォリオ移行方針は金額・時期・収益区分を確定しない。\", \"source_ids\": [\"S01\", \"S02\"], \"locator\": \"S01 PDF page 12; S02 PDF page 17\", \"evidence_excerpt\": \"保有暗号資産をXRPへ適宜移行\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "media_variable_rate",
+      "category": "連結・事業売却",
+      "adopted_value": "0.5",
+      "unit": "比率",
+      "rationale": "メディア増収に対する追加の手数料、版権・共同開発分配、通信・運営費を合わせて50%と置く。前Qの連結支払手数料はメディア売上に対し約3割の規模だが、費用帰属が一致しないため参考に限り、残りをその他の変動費の余裕とする。広告と追加償却は別建て。",
+      "source_ids": "[\"S01\", \"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "S01 PDF page 12; S02 PDF page 21",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 0.45, \"operating_profit\": -168.921, \"change\": 32.5, \"scenario_profit_changes\": {\"bear\": 10.0, \"base\": 32.5, \"bull\": 55.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 0.55, \"operating_profit\": -233.92100000000005, \"change\": -32.50000000000006, \"scenario_profit_changes\": {\"bear\": -10.0, \"base\": -32.50000000000006, \"bull\": -55.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "55.0",
+      "relative_to_forecast_profit": "0.2730599093441101",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "10",
+      "independent_review": "{\"id\": \"media_variable_rate\", \"status\": \"unsupported\", \"reason\": \"連結支払手数料の実績は確認できるが、メディア増収の変動費率50%を導く費用分解がない。売上帰属を分配後で測る場合、分配費用をさらに控除する重複の有無も確認が必要。45%・55%の感応度は会社予測ではない。\", \"source_ids\": [\"S01\", \"S02\", \"S13\"], \"locator\": \"S01 PDF page 12; S02 PDF page 21; S13 PDF page 4\", \"evidence_excerpt\": \"支払手数料 361 228 +58.6% 682 △47.0%\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "da_add",
+      "category": "減価償却",
+      "adopted_value": "100.0",
+      "unit": "百万円",
+      "rationale": "ヒロサバの配信開始に伴うソフトウエア償却増を前Q比で追加する。仮勘定残高の一部が稼働資産へ振り替わる条件だが、対象資産額と償却方法は未確認。既存資産の償却は前Q費用に含めたまま据え置く。",
+      "source_ids": "[\"S01\", \"S13\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\", \"S13\"]",
+      "locator": "S01 PDF pages 6,13; S13 PDF page 4",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 90.0, \"operating_profit\": -191.421, \"change\": 10.0, \"scenario_profit_changes\": {\"bear\": 10.0, \"base\": 10.0, \"bull\": 10.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 110.0, \"operating_profit\": -211.421, \"change\": -10.0, \"scenario_profit_changes\": {\"bear\": -10.0, \"base\": -10.0, \"bull\": -10.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "10.0",
+      "relative_to_forecast_profit": "0.04964725624438365",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "True",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "11",
+      "independent_review": "{\"id\": \"da_add\", \"status\": \"unsupported\", \"reason\": \"仮勘定981.7と前Q償却184.211は事実だが、新作帰属資産・振替額・耐用年数・償却方法が不明で追加100を導けない。既存償却の据置きも別途検証が必要。90/110の機械的テストや50～150の独自帯に会社根拠はない。\", \"source_ids\": [\"S01\", \"S13\"], \"locator\": \"S01 PDF pages 6,13; S13 PDF page 4\", \"evidence_excerpt\": \"ソフトウエア仮勘定 1,214,823 981,700\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "crypto_variable_rate",
+      "category": "特殊要因",
+      "adopted_value": "0.2",
+      "unit": "比率",
+      "rationale": "受領暗号資産等の売上変動は固定的な運用体制のもとで利益へ強く波及すると仮定し、増減収に連動する費用を20%と置く。前Qのセグメント利益率をそのまま限界利益率として使用しない。",
+      "source_ids": "[\"S01\"]",
+      "context_source_ids": "[\"S01\"]",
+      "locator": "PDF pages 4,12",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 0.18, \"operating_profit\": -202.421, \"change\": -1.0, \"scenario_profit_changes\": {\"bear\": -3.0, \"base\": -1.0, \"bull\": 0.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 0.22000000000000003, \"operating_profit\": -200.421, \"change\": 1.0, \"scenario_profit_changes\": {\"bear\": 3.0, \"base\": 1.0, \"bull\": 0.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "3.0",
+      "relative_to_forecast_profit": "0.014894176873315098",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "12",
+      "independent_review": "{\"id\": \"crypto_variable_rate\", \"status\": \"unsupported\", \"reason\": \"体制見直しによる外注費・広告費減少は確認できるが、売上増減に連動する費用20%は確認できない。18%・22%の機械的感応度は採用率の根拠にならない。\", \"source_ids\": [\"S01\"], \"locator\": \"S01 PDF page 4\", \"evidence_excerpt\": \"開発・運用体制の見直しによるコスト削減（主に外注費、広告費の減少）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "3903",
+      "id": "other_cost_add",
+      "category": "受注残転換",
+      "adopted_value": "0.0",
+      "unit": "百万円",
+      "rationale": "開発パイプラインが継続し、開発費が直近で横ばいという説明から、広告・追加償却・売上連動費以外の純費用を前Q並みとする。人員減少効果を別途利益に加算しない。受託検収ずれの解消も確定せず追加計上しない。",
+      "source_ids": "[\"S02\"]",
+      "context_source_ids": "[\"S01\", \"S02\", \"S05\"]",
+      "locator": "PDF pages 16,21,23",
+      "support_status": "未検証",
+      "alternative_scenarios": "[{\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": -1.0, \"operating_profit\": -200.421, \"change\": 1.0, \"scenario_profit_changes\": {\"bear\": 1.0, \"base\": 1.0, \"bull\": 1.0}}, {\"kind\": \"diagnostic_perturbation_not_forecast\", \"value\": 1.0, \"operating_profit\": -202.421, \"change\": -1.0, \"scenario_profit_changes\": {\"bear\": -1.0, \"base\": -1.0, \"bull\": -1.0}}]",
+      "alternative_note": "diagnostic_perturbation は±10%（ゼロは明示した単位ステップ）の機械的感応度で、裏付けられた予測範囲ではない。",
+      "max_absolute_profit_change": "1.0",
+      "relative_to_forecast_profit": "0.004964725624438365",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "True",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "computed",
+      "sensitivity_constraint": "",
+      "priority": "13",
+      "independent_review": "{\"id\": \"other_cost_add\", \"status\": \"unsupported\", \"reason\": \"直近開発費の横ばいは、対象Qの費用化額・資産計上・管理費・検収損益を含む純費用ゼロを支持しない。連結全体の純費用差を全額メディアに配賦する設計にも裏付けがない。±1の感応度が小さいことは経済的重要性の低さを意味しない。\", \"source_ids\": [\"S02\"], \"locator\": \"S02 PDF pages 10,21,23\", \"evidence_excerpt\": \"開発費は、外注費や人件費に大きな変\\n動はなく、前四半期と同水準で推移\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "guidance": [],
+  "scheduleCheck": {
+    "code": "3903",
+    "input_date": "2026-12-11",
+    "official_date": "2026-12-11",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "https://scouter.monex.co.jp/report/zaimu/3903 の決算発表予定に、中間決算を2026年12月11日に発表予定と記載。ページの財務データ等更新日は2026年11月17日。公式IRカレンダー https://gu3.co.jp/ir/calendar/ は日程部分を取得できず、予定日の確認は公開の証券会社情報による。",
+    "warnings": "['発表予定日は提示された対象条件を採用した。S15は資料一覧とdiscovery内の説明のみで保存原文がなく、公式発表日を原文確認できない。', '資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/3903/result.json": "3064607c817b54c728774c0024c39f74d61a691d09ffea1c24c6ee46a8333c36",
+    "reports/3903.md": "c311e7c9ddf53abd7917beda926f7a613e22b707293faf817e4f3ccebe71ccd0",
+    "reports/3903_review.md": "20167c791a2c6d34388698eda1d369a9ee2bb6a5789ad080484aa3bfb54100ac",
+    "companies/3903/quality_review.json": "775f87a6676949646d032fd545841e48e44ab9d1a9fc8e015954dd8680e24fe1",
+    "companies/3903/independent_review.json": "2e2a0fe3ff15b353c65e459ae1d255bde3d9c14e5238e58bdf4f150098da5401"
+  }
+}
