@@ -1,0 +1,3039 @@
+{
+  "id": "4194-4930534dd186213dec2529b42d4978a4425b18bdeaac9d338ea8f832d9b153be",
+  "code": "4194",
+  "companyName": "ビジョナル株式会社",
+  "announcementDate": "2026-12-15",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "4194-generation-75851e05edf3146d · 4930534d",
+  "savedAt": "2026-11-22T01:26:16+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 28179.391999999996,
+  "operatingProfit": 8109.391999999996,
+  "revenueYoY": {
+    "rate": 0.2074467392235837,
+    "label": "+20.7%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": 0.14733899264289702,
+    "label": "+14.7%",
+    "tone": "positive",
+    "note": ""
+  },
+  "markdown": "# 4194 ビジョナル株式会社｜2027-07-31期 Q1単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 26,775.38 | 28,179.39 | 29,736.63 |\n| 営業利益 | 6,105.38 | 8,109.39 | 10,166.63 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 4,841.39 | 20.74% |  |\n| YoY | 営業利益 | 1,041.39 | 14.73% |  |\n| QnQ | 売上高 | 2,036.39 | 7.79% |  |\n| QnQ | 営業利益 | 3,153.39 | 63.63% |  |\n\n## 会社予想\n保存原文で確認できる会社予想は2027年7月期通期の連結予想。対象第1四半期単独予想は保存範囲では確認できない。guidance_recordsには当該通期予想を保存したが、基準日時までの追加修正有無は未確認のためrevision_statusはunverified。独自四半期予測への四等分や差引配分は行っていない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に公表市場コンセンサスは見当たらない。\n\n## 独自予測・差引推計の区分\n事業別売上と営業費用増分を用いた条件付き独自予測。BizReachは前年同四半期の事業規模に活動量と実効単価を別々に設定し、HRMOSは直近ARRから継続収益を積み上げた。その他事業は直近・前年同四半期の規模を用いた低確度の範囲仮定。費用は前年同四半期の確定後営業費用に人材、販促、償却、その他費用を積み上げる。会社修正見込みからの差引推計ではない。営業外損益と税負担は対象四半期への配分根拠が不足するため経常利益・純利益をnullとした。\n\n## 条件付き予測\n中心ケースの売上高は28,179.39、営業利益は8,109.39。弱気ケースは売上高26,775.38、営業利益6,105.38、強気ケースは売上高29,736.63、営業利益10,166.63。採用需要の売上転換と販促費の発生時期を主要な分岐とする。確率区間ではなく、明示した条件が同時に成立する場合の予測である。\n\n## 売上を支える要因\nBizReachの顧客・会員基盤は拡大しているが、累計導入企業数をそのまま売上数量には置き換えない。料金改定も更新契約に限られるため、実効単価の寄与を小幅に置いた。HRMOSは既存ARRの積み上がりが売上を支え、買収先の連結月数増を別途加算しない。Incubationは新規事業の立ち上がり次第で振れが大きい。\n\n## 費用と反証条件\n中心ケースの営業費用は20,070.00。前年同四半期からの増分3,800.00は人材、販促、償却、その他費用の仮定に基づく。HRMOS投資の前倒し、オフィス増床費用の集中、採用成約への転換鈍化が中心ケースの反証となる。前四半期比の増益には期初の投資配分が影響するため、売上成長だけで説明しない。\n\n## 比較基準と予測の限界\n前年同四半期営業利益と直前四半期営業利益は取得原価配分確定後の会社直接開示を使用した。確定前累計との混在差引は行わない。ブリッジの残差がゼロであることはモデルの算術的一致を示すもので、事業別の数量・費用内訳まで実証できたことを意味しない。前年の違約金収入には一時的な会計処理変更の影響があり、経常利益へ単純延長しない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 1,965.50 | 利用・成約量と実効単価の条件付き変化。 |\n| HRMOS | 1,017.88 | ARR拡大と連結対象期間の違いを包含。 |\n| Incubation | 378.00 | 直近事業規模を起点とする停滞ケース。 |\n| その他・調整 | 76.00 | その他事業を集約。比較基準は連結総額から主要事業を控除。 |\n| 残差（none） | 0.00 | モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 1,209.50 | 同季節の前年基盤に活動指数を適用した予測と直前実績との差。 |\n| HRMOS | 168.88 | 期首ARR基盤と純増仮定。 |\n| Incubation | -25.00 | 案件計上の停滞。 |\n| その他・調整 | -721.00 | 期初売上構成の仮定。 |\n| 残差（none） | 0.00 | 事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 事業別増収の合計 | 3,437.38 | 売上ブリッジの合計。限界利益とはみなさず費用を別控除。 |\n| 人材関連費増 | -1,100.00 | 営業・開発採用と連結期間差を包含。 |\n| 販促費増 | -1,950.00 | 投資前倒し条件。 |\n| 償却費増 | -350.00 | 取得関連償却と設備負担。 |\n| その他営業費用増 | -1,000.00 | 売上原価、AI、外注、家賃等の独自仮定。 |\n| 残差（none） | 0.00 | 独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上構成変化 | 632.38 | 直前四半期からの事業別売上差。 |\n| 営業費用総額変化 | 517.00 | 前年1Q費用基盤に人材・販促・償却等を加えた予測と直前費用との差。 |\n| 残差（none） | 0.00 | 総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 2,975.77 | 顧客基盤拡大と料金改定の小幅な実効単価寄与。 |\n| HRMOS | 1,061.62 | ARR拡大と連結対象期間の違いを包含。 |\n| Incubation | 628.00 | 新規事業の部分的な売上化。 |\n| その他・調整 | 176.00 | その他採用関連事業の拡大仮定。 |\n| 残差（none） | 0.00 | モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 2,219.77 | 前年同季節を基準とした活動量・単価仮定。 |\n| HRMOS | 212.62 | 期首ARRと直近並み純増。 |\n| Incubation | 225.00 | 新規事業の売上化。 |\n| その他・調整 | -621.00 | 期初売上構成の仮定。 |\n| 残差（none） | 0.00 | 事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 事業別増収の合計 | 4,841.39 | 売上ブリッジの合計。費用は別控除。 |\n| 人材関連費増 | -1,100.00 | 営業・開発採用と連結期間差。 |\n| 販促費増 | -1,350.00 | HRMOSキャンペーン継続とBizReach投資。 |\n| 償却費増 | -350.00 | 取得関連償却と設備負担。 |\n| その他営業費用増 | -1,000.00 | 売上原価、AI、外注、家賃等の独自仮定。 |\n| 残差（none） | 0.00 | 独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上構成変化 | 2,036.39 | 直前四半期からの事業別売上差。 |\n| 営業費用総額変化 | 1,117.00 | 前年1Q費用基盤に追加投資を積み上げた予測と直前費用との差。 |\n| 残差（none） | 0.00 | 総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 4,001.76 | 採用成約への転換と実効単価がともに改善。 |\n| HRMOS | 1,092.88 | ARR純増加速。既存sonar ATSの効果は内包。 |\n| Incubation | 978.00 | 新規事業の案件計上が進展。 |\n| その他・調整 | 326.00 | その他採用関連事業の拡大。 |\n| 残差（none） | 0.00 | モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| BizReach | 3,245.76 | 前年同季節を基準とした活動量・単価改善。 |\n| HRMOS | 243.88 | ARR純増加速。 |\n| Incubation | 575.00 | 新規事業の売上化。 |\n| その他・調整 | -471.00 | 期初売上構成の仮定。 |\n| 残差（none） | 0.00 | 事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 事業別増収の合計 | 6,398.63 | 売上ブリッジの合計。費用は別控除。 |\n| 人材関連費増 | -1,100.00 | 営業・開発採用と連結期間差。 |\n| 販促費増 | -850.00 | 前年より増額するが広告効率改善と下期偏重を想定。 |\n| 償却費増 | -350.00 | 取得関連償却と設備負担。 |\n| その他営業費用増 | -1,000.00 | 売上原価、AI、外注、家賃等の独自仮定。 |\n| 残差（none） | 0.00 | 独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上構成変化 | 3,593.63 | 直前四半期からの事業別売上差。 |\n| 営業費用総額変化 | 1,617.00 | 広告効率と期初の投資配分を含む費用予測と直前費用との差。 |\n| 残差（none） | 0.00 | 総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。 |\n\n## エラー・未解決事項\n- BizReachの実効単価指数と活動指数は観測された価格・数量ではなく、顧客基盤と料金改定情報に基づく独自仮定。両者の実際の寄与分解は未確認。\n- HRMOSの支援収益補正はARR平均からの差額推定であり、収益認識時期差も含み得る。支援収益の確定実績として扱わない。\n- S02の第3四半期累計は取得原価配分確定前、S01通期は確定後。同一会計版の確定後第3四半期累計総額は保存範囲で直接確認できないため、直前四半期はS04の直接開示を採用した。四半期丸め値の合算で累計確定値を捏造していない。\n- S04はPDF page 57途中以降、S06はpage 45途中以降、S08はpage 49途中以降、S10はpage 75途中以降、S11はpage 18途中以降が短縮されている。特に通期の費用詳細、管理部門配賦調整、有報の後続財務注記・設備計画・後発事象は原本未確認であり、非開示とは断定しない。\n- S14・S15・S16は資料一覧とdiscoveryの確認記述のみで保存本文がない。発表予定日と対象未発表の状態は提示条件を採用しており、カレンダー本文・掲載履歴・ニュース一覧による独自照合は未実施。\n- Thinkingsを期首から連結した場合の過年度影響概算額はS01 PDF page 15で重要性が乏しいため記載省略と明記されている。これは原本未確認ではなく、採用した保存原文上の開示省略である。\n- 営業費用増分は人員拡大、過去費用規模、投資方針に基づく概算。事業別採算の精密な積み上げに必要な配賦表と対象四半期費用計画は未確認で、営業利益予測の確度は売上予測より低い。\n- 基準日時までの業績予想修正と追加M&Aの有無は未確認。S10は公開日が後でも内容基準日は2026年9月10日であり、最新状況の裏付けには用いない。\n- 直前累計不足: 2026-07-31\n- 経常利益は違約金収入の一時性と計上時期、純利益は四半期税率・非支配株主損益の根拠が不足するため予測しない。会社通期予想の税制影響を独自四半期予測へ再加算していない。\n- 資料確認未了: already_announced\n- 資料確認未了: presentation\n- 資料確認未了: subsequent_disclosures\n- AIへ渡した原文に省略あり: S04,S06,S08,S10,S11\n\n## 条件・不確実性\n- BizReachの対象四半期における実稼働企業数、採用成約数、成功報酬単価と料金改定契約の浸透率は保存原文で未確認。\n- HRMOSの期中MRR、サービス別ARR純増、支援収益額は保存原文で未確認。純増には解約と構成変化を包含する。\n- Incubationとその他HR Techの案件別売上計上時期は保存原文で未確認。\n- base_biz_activity: 顧客・会員基盤の拡大と堅調な採用需要を踏まえ、前年同四半期対比の課金利用量・採用成約量の合成指数を設定。年次利用企業数の拡大を全て当四半期の成約増には転換しない。\n- base_biz_yield: ヘッドハンター向け成功報酬改定が契約更新に伴い浸透する一方、対象が売上の一部に限られるため、全事業実効単価の上昇は小幅と仮定。実際の改定率や更新率を示す値ではない。\n- base_hr_arr_add: 直近四半期並みのARR純増を想定。テレビCM等による商談増が継続する条件。既存sonar ATSを含むARRから推計し、連結月数増を追加加算しない。\n- base_inc: 直前四半期の事業規模を起点に、新規事業の拡大が一部売上化する条件。通期会社予想の四等分ではなく、期初の立ち上がりを抑えた独自水準。\n- base_marketing_add: 前年1Q広告宣伝費を起点に、HRMOS投資拡大とBizReachのマーケティング継続を織り込む。前年費用比約2割の増分。例年の期初投資の軽さは一部残る条件。\n- base_other: 前年同四半期のその他売上と、その他採用関連事業の拡大方針から設定。四半期ごとのサービス構成は未確認のため集約して推計。\n- bear_biz_activity: 前年同四半期売上高に対する課金利用量・採用成約量の合成指数。累計導入企業数は前年1Q末40,000社以上から直近期末45,800社以上へ、会員数は319万人以上から353万人以上へ拡大したが、累計社数を稼働社数とはみなさず、採用心理の減速を想定する。前年成長率の延長ではない。\n- bear_biz_yield: 料金改定の効果が顧客構成や成約単価の変動で相殺され、全事業の実効単価は前年並みとする。\n- bear_hr_arr_add: 四半期末ARR純増の弱気仮定。直近の四半期純増は第3四半期531、第4四半期851であり、販促効果の鈍化を想定。解約・新規・単価構成変化を含む純増で、解約を別控除しない。\n- bear_inc: 直前四半期売上高1525に近い水準。新規事業の案件計上が進まず成長が停滞する条件。\n- bear_marketing_add: 前年1Q広告宣伝費6159を起点に、HRMOSキャンペーン継続とBizReach顧客獲得投資が前倒しとなる条件。前年費用比約3割の追加負担で、売上鈍化時も投資が残ると仮定。\n- bear_other: その他HR Techと連結売上調整の合計。前年同四半期の連結売上から主要3事業を除いた水準を起点に、小幅な事業拡大を仮定。直前四半期の高水準は期初へそのまま持ち越さない。\n- bull_biz_activity: 新規顧客獲得、既存顧客の利用拡大、会員基盤増が採用成約へ比較的順調に転換する条件。直近の累計導入企業数と年次利用企業数の拡大を上限判断の参考とした独自仮定。\n- bull_biz_yield: 料金改定の浸透と成約構成の改善が実効単価へ寄与する条件。価格と数量を分け、AI効果は数量仮定に含めて別途加算しない。\n- bull_hr_arr_add: 直近四半期の商談増と顧客開拓が加速する条件。直近ARR純増を約3割上回るストレス仮定で、会社公表値ではない。\n- bull_inc: 新規事業の立ち上がりと案件計上が進む条件。案件別受注残は保存原文で未確認のため、直前四半期実績と会社の事業拡大方針を用いた低確度の範囲仮定。\n- bull_marketing_add: 前年1Qより投資は増えるが、広告効率改善と下期偏重により期初負担を抑えられる条件。売上上振れと費用効率化が同時に成立する強気ケース。\n- bull_other: その他採用関連事業の顧客開拓が順調な条件。前年同四半期より増加する一方、直前四半期の推定水準を下回る範囲とする。\n- depreciation_add: 前年同四半期対比の償却費増分。前年1Q EBITDAと確定後営業利益の差は524、直前4Qは871であり、取得関連償却の四半期化を含め直近規模を維持する想定。オフィス増床に伴う償却もこの枠に含める。\n- half: 四半期内のARR純増が線形に発生すると仮定し、期間平均へ換算する。\n- hr_support: 直前四半期HRMOS売上高と、期首・期末ARR平均から推定する継続売上との差額を据え置く仮定。2636−(9486+10337)/8に対応。実際の支援売上開示値ではなく、一時収益・計上時期差を含む推計補正。\n- other_cost_add: 前年同四半期比の人件費・広告宣伝・償却以外の営業費用増。連結売上原価の直前4Q水準が前年1Qを上回ること、外注・AI利用・オフィス増床費用を考慮。うち売上原価・事業支援増600、家賃・AI・外注等400という概算仮定であり、公表費用内訳ではない。\n- personnel_add: 前年同四半期に対する給与・採用・関連人件費の増分。前年1Q給与手当等3277、期末人員の拡大、営業・開発採用方針を踏まえ、給与手当等の約3分の1に相当する追加負担を置く。前年1Qに1カ月のみ連結したThinkingsの通期四半期化も含む。\n- quarter_year: 年率換算のARRを3カ月分の売上へ換算する期間係数。会社通期業績予想の配分には使用しない。\n- zero: 算式上のゼロ。\n- 対象四半期の広告出稿、採用人数、AI利用費、オフィス増床の供用開始時期は保存原文で未確認。\n- 強気ケースは売上上振れと広告効率化の同時成立を仮定し、人材・その他費用の共通仮定が上振れる場合は利益も下がる。\n\n## 根拠・保存記録\n- S01 [2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想、セグメント・KPIを含む）](https://www.visional.inc/ja/ir/ir_news/auto_20260910534019/pdfFile.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `b925d3f62ecd42c3529dafbe5fe60d00cf89ed746832e661ade3a2dfa61763df`\n- S02 [2026年7月期 第3四半期決算短信〔日本基準〕（連結）（直前四半期の通期累計との差分用）](https://www.visional.inc/ja/ir/ir_news/auto_20260611568117/pdfFile.pdf) / 公表 2026-06-11 / retrieved / SHA-256 `0c5a87a7758230b237bfe26b178ad0d95462f38f17eb4a7f94fa4d3fdda9ed2f`\n- S03 [2026年7月期 第1四半期決算短信〔日本基準〕（連結）（前年同期間）](https://www.visional.inc/ja/ir/ir_news/auto_20251211517835/pdfFile.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `f3aedd0f568278993b3720c45341e64af5815d0823f76c0b3303c4492d0872ca`\n- S04 [2026年7月期 通期決算説明資料（会社予想、事業別業績・KPIを含む）](https://www.visional.inc/ja/ir/ir_news/auto_20260910534023/pdfFile.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `c537bf25dabf388dcb8224e763b9e698b19a13d5b2175a844bfa48a40d19b7ad`\n- S05 [2026年7月期 通期決算FAQ](https://www.visional.inc/ja/ir/ir_news/auto_20260910534025/pdfFile.pdf) / 公表 2026-09-10 / retrieved / SHA-256 `2b477021714b02f68d43dd2f43b5eaf30bcce9f16f2872948211a08984e57752`\n- S06 [2026年7月期 第3四半期決算説明資料](https://www.visional.inc/ja/ir/ir_news/auto_20260611568129/pdfFile.pdf) / 公表 2026-06-11 / retrieved / SHA-256 `5cf4af02f7bac97fa9dca99005a6547dd27a6b28ec2c62237237f1b3137f40ac`\n- S07 [2026年7月期 第3四半期決算FAQ](https://www.visional.inc/ja/ir/ir_news/auto_20260611568130/pdfFile.pdf) / 公表 2026-06-11 / retrieved / SHA-256 `387d4952dc415b5004aaa952beba7ecd800c905ba2e8a49cc95121e122551a0f`\n- S08 [2026年7月期 第1四半期決算説明資料](https://www.visional.inc/ja/ir/ir_news/auto_20251211517838/pdfFile.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `1d1202c2b69bef15f696155de4a28b681f08d6ead9ece722f370d7465c232d4b`\n- S09 [2026年7月期 第1四半期決算FAQ](https://www.visional.inc/ja/ir/ir_news/auto_20251211517840/pdfFile.pdf) / 公表 2025-12-11 / retrieved / SHA-256 `36e24cc6d02a30afdef5c3431ea07ac77eb74951c2d7474e1ee9e1a4ccf61088`\n- S10 [会社紹介資料（ビジネスモデルと戦略）](https://www.visional.inc/ja/ir/ir_news/ir_news-20261021/main/0/link/Business_Model_and_Strategy_Presentation_JPN.pdf) / 公表 2026-10-21 / retrieved / SHA-256 `43ae21a4ca61654e4fcedccaa7b12c7f47e325f19d65c94b72470fb432d34422`\n- S11 [第7期 有価証券報告書（2025年8月1日～2026年7月31日）](https://www.visional.inc/ja/ir/ir_news/auto_20261021153000_S100Z8ZJ/pdfFile.pdf) / 公表 2026-10-21 / retrieved / SHA-256 `467d7ec6601cb9c3f2c0a5ec56eaa9399476399822c1f8aca7c30b31c2c478de`\n- S12 [投資単位の引き下げに関する考え方及び方針等について](https://www.visional.inc/ja/ir/ir_news/auto_20261020553279/pdfFile.pdf) / 公表 2026-10-23 / retrieved / SHA-256 `b8a68c5e0ec7d1f0357d37f34fb061035b1a51153a8c1c94a700607f5c032927`\n- S13 [定款一部変更に関するお知らせ](https://www.visional.inc/ja/ir/ir_news/auto_20260918538524/pdfFile.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `31596982d499a0bf5fb583a619d21b031c8bbd3ee7734124ac3db95ed166a12a`\n- S14 [株式基本情報](https://www.visional.inc/ja/ir/stock/information.html) / 公表  / unavailable / SHA-256 `なし`\n- S15 [IRカレンダー](https://www.visional.inc/ja/ir/ir_calendar.html) / 公表  / unavailable / SHA-256 `なし`\n- S16 [IRニュース（公開日・期後開示の照合用）](https://www.visional.inc/ja/ir/ir_news.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "4194",
+    "company_name": "ビジョナル株式会社",
+    "announcement_date": "2026-12-15",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 26775.375,
+        "operating_profit": 6105.375,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 28179.391999999996,
+        "operating_profit": 8109.391999999996,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 29736.632999999998,
+        "operating_profit": 10166.632999999998,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 2036.3919999999962,
+          "rate": 0.07789435030409655,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 3153.391999999996,
+          "rate": 0.6362776432606934,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 4841.391999999996,
+          "rate": 0.2074467392235837,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 1041.3919999999962,
+          "rate": 0.14733899264289702,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_revenue": 23338.0,
+      "py_op": 7068.0,
+      "pq_revenue": 26143.0,
+      "pq_op": 4956.0,
+      "py_biz": 19655.0,
+      "pq_biz": 20411.0,
+      "py_hrmos": 1787.0,
+      "pq_hrmos": 2636.0,
+      "py_inc": 1122.0,
+      "pq_inc": 1525.0,
+      "hr_arr_start": 10337.0,
+      "hr_arr_prior": 9486.0,
+      "guide_revenue": 119850.0,
+      "guide_op": 26600.0,
+      "guide_ordinary": 27945.0,
+      "guide_net": 18569.0,
+      "bear_biz_activity": 1.1,
+      "base_biz_activity": 1.14,
+      "bull_biz_activity": 1.18,
+      "bear_biz_yield": 1.0,
+      "base_biz_yield": 1.01,
+      "bull_biz_yield": 1.02,
+      "bear_hr_arr_add": 500.0,
+      "base_hr_arr_add": 850.0,
+      "bull_hr_arr_add": 1100.0,
+      "hr_support": 158.125,
+      "bear_inc": 1500.0,
+      "base_inc": 1750.0,
+      "bull_inc": 2100.0,
+      "bear_other": 850.0,
+      "base_other": 950.0,
+      "bull_other": 1100.0,
+      "personnel_add": 1100.0,
+      "depreciation_add": 350.0,
+      "other_cost_add": 1000.0,
+      "bear_marketing_add": 1950.0,
+      "base_marketing_add": 1350.0,
+      "bull_marketing_add": 850.0,
+      "half": 0.5,
+      "quarter_year": 0.25,
+      "zero": 0.0,
+      "py_other": 774.0,
+      "pq_other": 1571.0,
+      "py_cost": 16270.0,
+      "pq_cost": 21187.0,
+      "hr_recent_arr_add": 851.0,
+      "bear_biz": 21620.5,
+      "base_biz": 22630.766999999996,
+      "bull_biz": 23656.757999999998,
+      "bear_hrmos": 2804.875,
+      "base_hrmos": 2848.625,
+      "bull_hrmos": 2879.875,
+      "bear_revenue": 26775.375,
+      "base_revenue": 28179.391999999996,
+      "bull_revenue": 29736.632999999998,
+      "bear_cost_add": 4400.0,
+      "base_cost_add": 3800.0,
+      "bull_cost_add": 3300.0,
+      "bear_cost": 20670.0,
+      "base_cost": 20070.0,
+      "bull_cost": 19570.0,
+      "bear_op": 6105.375,
+      "base_op": 8109.391999999996,
+      "bull_op": 10166.632999999998,
+      "bear_yoy_revenue": 3437.375,
+      "base_yoy_revenue": 4841.391999999996,
+      "bull_yoy_revenue": 6398.632999999998,
+      "bear_qoq_revenue": 632.375,
+      "base_qoq_revenue": 2036.3919999999962,
+      "bull_qoq_revenue": 3593.632999999998,
+      "bear_yoy_op": -962.625,
+      "base_yoy_op": 1041.3919999999962,
+      "bull_yoy_op": 3098.632999999998,
+      "bear_qoq_op": 1149.375,
+      "base_qoq_op": 3153.391999999996,
+      "bull_qoq_op": 5210.632999999998,
+      "bridge_zero": 0.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF page 1、PDF page 12",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "period_start": "2025-08-01",
+        "period_end": "2025-10-31",
+        "revenue": 23338,
+        "operating_profit": 7068,
+        "ordinary_profit": 8164,
+        "net_profit": 5483,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+        "source_ids": [
+          "S04",
+          "S05"
+        ],
+        "locator": "S04 PDF page 5、S05 PDF page 4反映後",
+        "selection_reason": "前年同四半期比較は取得原価配分確定後の会社直接開示を採用。",
+        "selection_status": "source_confirmed",
+        "method": "直接開示値・選択根拠記録あり"
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "period_start": "2026-05-01",
+        "period_end": "2026-07-31",
+        "revenue": 26143,
+        "operating_profit": 4956,
+        "ordinary_profit": null,
+        "net_profit": 4316,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+        "source_ids": [
+          "S04",
+          "S05"
+        ],
+        "locator": "S04 PDF page 5、S05 PDF pages 3–4 Q4",
+        "selection_reason": "確定前第3四半期累計と確定後通期の差引を避け、会社直接開示の第4四半期を採用。税引前利益を経常利益へ転用しない。",
+        "selection_status": "source_confirmed",
+        "method": "直接開示値・選択根拠記録あり"
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline": "py_revenue",
+        "forecast": "bear_revenue",
+        "difference": "bear_yoy_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "bear_biz-py_biz",
+            "reason": "利用・成約量と実効単価の条件付き変化。",
+            "amount": 1965.5
+          },
+          {
+            "label": "HRMOS",
+            "formula": "bear_hrmos-py_hrmos",
+            "reason": "ARR拡大と連結対象期間の違いを包含。",
+            "amount": 1017.875
+          },
+          {
+            "label": "Incubation",
+            "formula": "bear_inc-py_inc",
+            "reason": "直近事業規模を起点とする停滞ケース。",
+            "amount": 378.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "bear_other-py_other",
+            "reason": "その他事業を集約。比較基準は連結総額から主要事業を控除。",
+            "amount": 76.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "pq_revenue",
+        "forecast": "bear_revenue",
+        "difference": "bear_qoq_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "bear_biz-pq_biz",
+            "reason": "同季節の前年基盤に活動指数を適用した予測と直前実績との差。",
+            "amount": 1209.5
+          },
+          {
+            "label": "HRMOS",
+            "formula": "bear_hrmos-pq_hrmos",
+            "reason": "期首ARR基盤と純増仮定。",
+            "amount": 168.875
+          },
+          {
+            "label": "Incubation",
+            "formula": "bear_inc-pq_inc",
+            "reason": "案件計上の停滞。",
+            "amount": -25.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "bear_other-pq_other",
+            "reason": "期初売上構成の仮定。",
+            "amount": -721.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline": "py_op",
+        "forecast": "bear_op",
+        "difference": "bear_yoy_op",
+        "components": [
+          {
+            "label": "事業別増収の合計",
+            "formula": "bear_revenue-py_revenue",
+            "reason": "売上ブリッジの合計。限界利益とはみなさず費用を別控除。",
+            "amount": 3437.375
+          },
+          {
+            "label": "人材関連費増",
+            "formula": "zero-personnel_add",
+            "reason": "営業・開発採用と連結期間差を包含。",
+            "amount": -1100.0
+          },
+          {
+            "label": "販促費増",
+            "formula": "zero-bear_marketing_add",
+            "reason": "投資前倒し条件。",
+            "amount": -1950.0
+          },
+          {
+            "label": "償却費増",
+            "formula": "zero-depreciation_add",
+            "reason": "取得関連償却と設備負担。",
+            "amount": -350.0
+          },
+          {
+            "label": "その他営業費用増",
+            "formula": "zero-other_cost_add",
+            "reason": "売上原価、AI、外注、家賃等の独自仮定。",
+            "amount": -1000.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "pq_op",
+        "forecast": "bear_op",
+        "difference": "bear_qoq_op",
+        "components": [
+          {
+            "label": "売上構成変化",
+            "formula": "bear_revenue-pq_revenue",
+            "reason": "直前四半期からの事業別売上差。",
+            "amount": 632.375
+          },
+          {
+            "label": "営業費用総額変化",
+            "formula": "pq_cost-bear_cost",
+            "reason": "前年1Q費用基盤に人材・販促・償却等を加えた予測と直前費用との差。",
+            "amount": 517.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline": "py_revenue",
+        "forecast": "base_revenue",
+        "difference": "base_yoy_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "base_biz-py_biz",
+            "reason": "顧客基盤拡大と料金改定の小幅な実効単価寄与。",
+            "amount": 2975.766999999996
+          },
+          {
+            "label": "HRMOS",
+            "formula": "base_hrmos-py_hrmos",
+            "reason": "ARR拡大と連結対象期間の違いを包含。",
+            "amount": 1061.625
+          },
+          {
+            "label": "Incubation",
+            "formula": "base_inc-py_inc",
+            "reason": "新規事業の部分的な売上化。",
+            "amount": 628.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "base_other-py_other",
+            "reason": "その他採用関連事業の拡大仮定。",
+            "amount": 176.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "pq_revenue",
+        "forecast": "base_revenue",
+        "difference": "base_qoq_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "base_biz-pq_biz",
+            "reason": "前年同季節を基準とした活動量・単価仮定。",
+            "amount": 2219.766999999996
+          },
+          {
+            "label": "HRMOS",
+            "formula": "base_hrmos-pq_hrmos",
+            "reason": "期首ARRと直近並み純増。",
+            "amount": 212.625
+          },
+          {
+            "label": "Incubation",
+            "formula": "base_inc-pq_inc",
+            "reason": "新規事業の売上化。",
+            "amount": 225.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "base_other-pq_other",
+            "reason": "期初売上構成の仮定。",
+            "amount": -621.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline": "py_op",
+        "forecast": "base_op",
+        "difference": "base_yoy_op",
+        "components": [
+          {
+            "label": "事業別増収の合計",
+            "formula": "base_revenue-py_revenue",
+            "reason": "売上ブリッジの合計。費用は別控除。",
+            "amount": 4841.391999999996
+          },
+          {
+            "label": "人材関連費増",
+            "formula": "zero-personnel_add",
+            "reason": "営業・開発採用と連結期間差。",
+            "amount": -1100.0
+          },
+          {
+            "label": "販促費増",
+            "formula": "zero-base_marketing_add",
+            "reason": "HRMOSキャンペーン継続とBizReach投資。",
+            "amount": -1350.0
+          },
+          {
+            "label": "償却費増",
+            "formula": "zero-depreciation_add",
+            "reason": "取得関連償却と設備負担。",
+            "amount": -350.0
+          },
+          {
+            "label": "その他営業費用増",
+            "formula": "zero-other_cost_add",
+            "reason": "売上原価、AI、外注、家賃等の独自仮定。",
+            "amount": -1000.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "pq_op",
+        "forecast": "base_op",
+        "difference": "base_qoq_op",
+        "components": [
+          {
+            "label": "売上構成変化",
+            "formula": "base_revenue-pq_revenue",
+            "reason": "直前四半期からの事業別売上差。",
+            "amount": 2036.3919999999962
+          },
+          {
+            "label": "営業費用総額変化",
+            "formula": "pq_cost-base_cost",
+            "reason": "前年1Q費用基盤に追加投資を積み上げた予測と直前費用との差。",
+            "amount": 1117.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline": "py_revenue",
+        "forecast": "bull_revenue",
+        "difference": "bull_yoy_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "bull_biz-py_biz",
+            "reason": "採用成約への転換と実効単価がともに改善。",
+            "amount": 4001.757999999998
+          },
+          {
+            "label": "HRMOS",
+            "formula": "bull_hrmos-py_hrmos",
+            "reason": "ARR純増加速。既存sonar ATSの効果は内包。",
+            "amount": 1092.875
+          },
+          {
+            "label": "Incubation",
+            "formula": "bull_inc-py_inc",
+            "reason": "新規事業の案件計上が進展。",
+            "amount": 978.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "bull_other-py_other",
+            "reason": "その他採用関連事業の拡大。",
+            "amount": 326.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline": "pq_revenue",
+        "forecast": "bull_revenue",
+        "difference": "bull_qoq_revenue",
+        "components": [
+          {
+            "label": "BizReach",
+            "formula": "bull_biz-pq_biz",
+            "reason": "前年同季節を基準とした活動量・単価改善。",
+            "amount": 3245.757999999998
+          },
+          {
+            "label": "HRMOS",
+            "formula": "bull_hrmos-pq_hrmos",
+            "reason": "ARR純増加速。",
+            "amount": 243.875
+          },
+          {
+            "label": "Incubation",
+            "formula": "bull_inc-pq_inc",
+            "reason": "新規事業の売上化。",
+            "amount": 575.0
+          },
+          {
+            "label": "その他・調整",
+            "formula": "bull_other-pq_other",
+            "reason": "期初売上構成の仮定。",
+            "amount": -471.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline": "py_op",
+        "forecast": "bull_op",
+        "difference": "bull_yoy_op",
+        "components": [
+          {
+            "label": "事業別増収の合計",
+            "formula": "bull_revenue-py_revenue",
+            "reason": "売上ブリッジの合計。費用は別控除。",
+            "amount": 6398.632999999998
+          },
+          {
+            "label": "人材関連費増",
+            "formula": "zero-personnel_add",
+            "reason": "営業・開発採用と連結期間差。",
+            "amount": -1100.0
+          },
+          {
+            "label": "販促費増",
+            "formula": "zero-bull_marketing_add",
+            "reason": "前年より増額するが広告効率改善と下期偏重を想定。",
+            "amount": -850.0
+          },
+          {
+            "label": "償却費増",
+            "formula": "zero-depreciation_add",
+            "reason": "取得関連償却と設備負担。",
+            "amount": -350.0
+          },
+          {
+            "label": "その他営業費用増",
+            "formula": "zero-other_cost_add",
+            "reason": "売上原価、AI、外注、家賃等の独自仮定。",
+            "amount": -1000.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline": "pq_op",
+        "forecast": "bull_op",
+        "difference": "bull_qoq_op",
+        "components": [
+          {
+            "label": "売上構成変化",
+            "formula": "bull_revenue-pq_revenue",
+            "reason": "直前四半期からの事業別売上差。",
+            "amount": 3593.632999999998
+          },
+          {
+            "label": "営業費用総額変化",
+            "formula": "pq_cost-bull_cost",
+            "reason": "広告効率と期初の投資配分を含む費用予測と直前費用との差。",
+            "amount": 1617.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      }
+    ],
+    "issues": [
+      "BizReachの実効単価指数と活動指数は観測された価格・数量ではなく、顧客基盤と料金改定情報に基づく独自仮定。両者の実際の寄与分解は未確認。",
+      "HRMOSの支援収益補正はARR平均からの差額推定であり、収益認識時期差も含み得る。支援収益の確定実績として扱わない。",
+      "S02の第3四半期累計は取得原価配分確定前、S01通期は確定後。同一会計版の確定後第3四半期累計総額は保存範囲で直接確認できないため、直前四半期はS04の直接開示を採用した。四半期丸め値の合算で累計確定値を捏造していない。",
+      "S04はPDF page 57途中以降、S06はpage 45途中以降、S08はpage 49途中以降、S10はpage 75途中以降、S11はpage 18途中以降が短縮されている。特に通期の費用詳細、管理部門配賦調整、有報の後続財務注記・設備計画・後発事象は原本未確認であり、非開示とは断定しない。",
+      "S14・S15・S16は資料一覧とdiscoveryの確認記述のみで保存本文がない。発表予定日と対象未発表の状態は提示条件を採用しており、カレンダー本文・掲載履歴・ニュース一覧による独自照合は未実施。",
+      "Thinkingsを期首から連結した場合の過年度影響概算額はS01 PDF page 15で重要性が乏しいため記載省略と明記されている。これは原本未確認ではなく、採用した保存原文上の開示省略である。",
+      "営業費用増分は人員拡大、過去費用規模、投資方針に基づく概算。事業別採算の精密な積み上げに必要な配賦表と対象四半期費用計画は未確認で、営業利益予測の確度は売上予測より低い。",
+      "基準日時までの業績予想修正と追加M&Aの有無は未確認。S10は公開日が後でも内容基準日は2026年9月10日であり、最新状況の裏付けには用いない。",
+      "直前累計不足: 2026-07-31",
+      "経常利益は違約金収入の一時性と計上時期、純利益は四半期税率・非支配株主損益の根拠が不足するため予測しない。会社通期予想の税制影響を独自四半期予測へ再加算していない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: presentation",
+      "資料確認未了: subsequent_disclosures",
+      "AIへ渡した原文に省略あり: S04,S06,S08,S10,S11"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 632.375,
+            "rate": 0.024189075469532955,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 1149.375,
+            "rate": 0.23191585956416466,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 3437.375,
+            "rate": 0.14728661410575028,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -962.625,
+            "rate": -0.13619482173174874,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 2036.3919999999962,
+            "rate": 0.07789435030409655,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 3153.391999999996,
+            "rate": 0.6362776432606934,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 4841.391999999996,
+            "rate": 0.2074467392235837,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 1041.3919999999962,
+            "rate": 0.14733899264289702,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 3593.632999999998,
+            "rate": 0.13746062043376805,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 5210.632999999998,
+            "rate": 1.0513787328490714,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 6398.632999999998,
+            "rate": 0.27417229411260596,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 3098.632999999998,
+            "rate": 0.4384030843237122,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 3437.375,
+        "explained_sum": 3437.375,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 632.375,
+        "explained_sum": 632.375,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -962.625,
+        "explained_sum": -962.625,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 1149.375,
+        "explained_sum": 1149.375,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 4841.391999999996,
+        "explained_sum": 4841.391999999996,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 2036.3919999999962,
+        "explained_sum": 2036.3919999999962,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 1041.3919999999962,
+        "explained_sum": 1041.3919999999962,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 3153.391999999996,
+        "explained_sum": 3153.391999999996,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 6398.632999999998,
+        "explained_sum": 6398.632999999998,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 3593.632999999998,
+        "explained_sum": 3593.632999999998,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 3098.632999999998,
+        "explained_sum": 3098.632999999998,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 5210.632999999998,
+        "explained_sum": 5210.632999999998,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+      }
+    ],
+    "conditions": [
+      "BizReachの対象四半期における実稼働企業数、採用成約数、成功報酬単価と料金改定契約の浸透率は保存原文で未確認。",
+      "HRMOSの期中MRR、サービス別ARR純増、支援収益額は保存原文で未確認。純増には解約と構成変化を包含する。",
+      "Incubationとその他HR Techの案件別売上計上時期は保存原文で未確認。",
+      "base_biz_activity: 顧客・会員基盤の拡大と堅調な採用需要を踏まえ、前年同四半期対比の課金利用量・採用成約量の合成指数を設定。年次利用企業数の拡大を全て当四半期の成約増には転換しない。",
+      "base_biz_yield: ヘッドハンター向け成功報酬改定が契約更新に伴い浸透する一方、対象が売上の一部に限られるため、全事業実効単価の上昇は小幅と仮定。実際の改定率や更新率を示す値ではない。",
+      "base_hr_arr_add: 直近四半期並みのARR純増を想定。テレビCM等による商談増が継続する条件。既存sonar ATSを含むARRから推計し、連結月数増を追加加算しない。",
+      "base_inc: 直前四半期の事業規模を起点に、新規事業の拡大が一部売上化する条件。通期会社予想の四等分ではなく、期初の立ち上がりを抑えた独自水準。",
+      "base_marketing_add: 前年1Q広告宣伝費を起点に、HRMOS投資拡大とBizReachのマーケティング継続を織り込む。前年費用比約2割の増分。例年の期初投資の軽さは一部残る条件。",
+      "base_other: 前年同四半期のその他売上と、その他採用関連事業の拡大方針から設定。四半期ごとのサービス構成は未確認のため集約して推計。",
+      "bear_biz_activity: 前年同四半期売上高に対する課金利用量・採用成約量の合成指数。累計導入企業数は前年1Q末40,000社以上から直近期末45,800社以上へ、会員数は319万人以上から353万人以上へ拡大したが、累計社数を稼働社数とはみなさず、採用心理の減速を想定する。前年成長率の延長ではない。",
+      "bear_biz_yield: 料金改定の効果が顧客構成や成約単価の変動で相殺され、全事業の実効単価は前年並みとする。",
+      "bear_hr_arr_add: 四半期末ARR純増の弱気仮定。直近の四半期純増は第3四半期531、第4四半期851であり、販促効果の鈍化を想定。解約・新規・単価構成変化を含む純増で、解約を別控除しない。",
+      "bear_inc: 直前四半期売上高1525に近い水準。新規事業の案件計上が進まず成長が停滞する条件。",
+      "bear_marketing_add: 前年1Q広告宣伝費6159を起点に、HRMOSキャンペーン継続とBizReach顧客獲得投資が前倒しとなる条件。前年費用比約3割の追加負担で、売上鈍化時も投資が残ると仮定。",
+      "bear_other: その他HR Techと連結売上調整の合計。前年同四半期の連結売上から主要3事業を除いた水準を起点に、小幅な事業拡大を仮定。直前四半期の高水準は期初へそのまま持ち越さない。",
+      "bull_biz_activity: 新規顧客獲得、既存顧客の利用拡大、会員基盤増が採用成約へ比較的順調に転換する条件。直近の累計導入企業数と年次利用企業数の拡大を上限判断の参考とした独自仮定。",
+      "bull_biz_yield: 料金改定の浸透と成約構成の改善が実効単価へ寄与する条件。価格と数量を分け、AI効果は数量仮定に含めて別途加算しない。",
+      "bull_hr_arr_add: 直近四半期の商談増と顧客開拓が加速する条件。直近ARR純増を約3割上回るストレス仮定で、会社公表値ではない。",
+      "bull_inc: 新規事業の立ち上がりと案件計上が進む条件。案件別受注残は保存原文で未確認のため、直前四半期実績と会社の事業拡大方針を用いた低確度の範囲仮定。",
+      "bull_marketing_add: 前年1Qより投資は増えるが、広告効率改善と下期偏重により期初負担を抑えられる条件。売上上振れと費用効率化が同時に成立する強気ケース。",
+      "bull_other: その他採用関連事業の顧客開拓が順調な条件。前年同四半期より増加する一方、直前四半期の推定水準を下回る範囲とする。",
+      "depreciation_add: 前年同四半期対比の償却費増分。前年1Q EBITDAと確定後営業利益の差は524、直前4Qは871であり、取得関連償却の四半期化を含め直近規模を維持する想定。オフィス増床に伴う償却もこの枠に含める。",
+      "half: 四半期内のARR純増が線形に発生すると仮定し、期間平均へ換算する。",
+      "hr_support: 直前四半期HRMOS売上高と、期首・期末ARR平均から推定する継続売上との差額を据え置く仮定。2636−(9486+10337)/8に対応。実際の支援売上開示値ではなく、一時収益・計上時期差を含む推計補正。",
+      "other_cost_add: 前年同四半期比の人件費・広告宣伝・償却以外の営業費用増。連結売上原価の直前4Q水準が前年1Qを上回ること、外注・AI利用・オフィス増床費用を考慮。うち売上原価・事業支援増600、家賃・AI・外注等400という概算仮定であり、公表費用内訳ではない。",
+      "personnel_add: 前年同四半期に対する給与・採用・関連人件費の増分。前年1Q給与手当等3277、期末人員の拡大、営業・開発採用方針を踏まえ、給与手当等の約3分の1に相当する追加負担を置く。前年1Qに1カ月のみ連結したThinkingsの通期四半期化も含む。",
+      "quarter_year: 年率換算のARRを3カ月分の売上へ換算する期間係数。会社通期業績予想の配分には使用しない。",
+      "zero: 算式上のゼロ。",
+      "対象四半期の広告出稿、採用人数、AI利用費、オフィス増床の供用開始時期は保存原文で未確認。",
+      "強気ケースは売上上振れと広告効率化の同時成立を仮定し、人材・その他費用の共通仮定が上振れる場合は利益も下がる。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年7月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想、セグメント・KPIを含む）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534019/pdfFile.pdf",
+        "published_at": "2026-09-10",
+        "category": "latest_results",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534019/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S01.txt",
+        "sha256": "b925d3f62ecd42c3529dafbe5fe60d00cf89ed746832e661ade3a2dfa61763df",
+        "text_sha256": "365686240d586449b7dc637e94d8f5100485521f3d6f88a818dd9c8e7839b665",
+        "retrieved_at": "2026-11-22T01:21:31+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17667,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年7月期 第3四半期決算短信〔日本基準〕（連結）（直前四半期の通期累計との差分用）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568117/pdfFile.pdf",
+        "published_at": "2026-06-11",
+        "category": "historical",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568117/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S02.txt",
+        "sha256": "0c5a87a7758230b237bfe26b178ad0d95462f38f17eb4a7f94fa4d3fdda9ed2f",
+        "text_sha256": "80904797e7411d687670f09515a16de6ff1216e046ea70a5f1142c8d4d07b75c",
+        "retrieved_at": "2026-11-22T01:21:32+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10641,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年7月期 第1四半期決算短信〔日本基準〕（連結）（前年同期間）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517835/pdfFile.pdf",
+        "published_at": "2025-12-11",
+        "category": "historical",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517835/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S03.txt",
+        "sha256": "f3aedd0f568278993b3720c45341e64af5815d0823f76c0b3303c4492d0872ca",
+        "text_sha256": "9cde4a6a90c90cbc1bbfaa34464a8a4b0773fc6633b4ad2dbcedb0bb485a530b",
+        "retrieved_at": "2026-11-22T01:21:32+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11020,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年7月期 通期決算説明資料（会社予想、事業別業績・KPIを含む）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534023/pdfFile.pdf",
+        "published_at": "2026-09-10",
+        "category": "presentation",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534023/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S04.txt",
+        "sha256": "c537bf25dabf388dcb8224e763b9e698b19a13d5b2175a844bfa48a40d19b7ad",
+        "text_sha256": "5b4157b26acbeb6f4dfb600025b2b08d3bf1107a66d79d05c2c5fe1c1af690aa",
+        "retrieved_at": "2026-11-22T01:21:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 34170,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年7月期 通期決算FAQ",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534025/pdfFile.pdf",
+        "published_at": "2026-09-10",
+        "category": "qa",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260910534025/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S05.txt",
+        "sha256": "2b477021714b02f68d43dd2f43b5eaf30bcce9f16f2872948211a08984e57752",
+        "text_sha256": "1d5358d03505ae0fc223fdd98b0fc72bdf2d35476c9bb8ce5c24e122d2c08431",
+        "retrieved_at": "2026-11-22T01:21:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8678,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年7月期 第3四半期決算説明資料",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568129/pdfFile.pdf",
+        "published_at": "2026-06-11",
+        "category": "presentation",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568129/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S06.txt",
+        "sha256": "5cf4af02f7bac97fa9dca99005a6547dd27a6b28ec2c62237237f1b3137f40ac",
+        "text_sha256": "3e347bc1f16f301e2779bd78de0b539b012fa86adb9e28fa1c19be7120ca2687",
+        "retrieved_at": "2026-11-22T01:21:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 34918,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年7月期 第3四半期決算FAQ",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568130/pdfFile.pdf",
+        "published_at": "2026-06-11",
+        "category": "qa",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260611568130/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S07.txt",
+        "sha256": "387d4952dc415b5004aaa952beba7ecd800c905ba2e8a49cc95121e122551a0f",
+        "text_sha256": "2f90adf3be4ae4a3e840a2f090ca657e28f231aebf027a823a3f4545df6c8a65",
+        "retrieved_at": "2026-11-22T01:21:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10734,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年7月期 第1四半期決算説明資料",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517838/pdfFile.pdf",
+        "published_at": "2025-12-11",
+        "category": "presentation",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517838/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S08.txt",
+        "sha256": "1d1202c2b69bef15f696155de4a28b681f08d6ead9ece722f370d7465c232d4b",
+        "text_sha256": "5676d44429365a854f18a855535c677de6a5407189392c9ee059c4d217fe7abe",
+        "retrieved_at": "2026-11-22T01:21:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 31275,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2026年7月期 第1四半期決算FAQ",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517840/pdfFile.pdf",
+        "published_at": "2025-12-11",
+        "category": "qa",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20251211517840/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S09.txt",
+        "sha256": "36e24cc6d02a30afdef5c3431ea07ac77eb74951c2d7474e1ee9e1a4ccf61088",
+        "text_sha256": "9827edd0a9b011d088451308491fed10160361a175eb4e96bba8f72a283d87d3",
+        "retrieved_at": "2026-11-22T01:21:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9698,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "会社紹介資料（ビジネスモデルと戦略）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/ir_news-20261021/main/0/link/Business_Model_and_Strategy_Presentation_JPN.pdf",
+        "published_at": "2026-10-21",
+        "category": "presentation",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/ir_news-20261021/main/0/link/Business_Model_and_Strategy_Presentation_JPN.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S10.txt",
+        "sha256": "43ae21a4ca61654e4fcedccaa7b12c7f47e325f19d65c94b72470fb432d34422",
+        "text_sha256": "1e56da7f58be79754edbd81439b77f5aa1093883adeb57ada13464feaeb6753f",
+        "retrieved_at": "2026-11-22T01:21:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 30328,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "第7期 有価証券報告書（2025年8月1日～2026年7月31日）",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20261021153000_S100Z8ZJ/pdfFile.pdf",
+        "published_at": "2026-10-21",
+        "category": "other",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20261021153000_S100Z8ZJ/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S11.txt",
+        "sha256": "467d7ec6601cb9c3f2c0a5ec56eaa9399476399822c1f8aca7c30b31c2c478de",
+        "text_sha256": "66e6cf3d2f80441e1ea299643364844bb2533f7dd6d60463fe15809e9a755bb4",
+        "retrieved_at": "2026-11-22T01:21:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 155955,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "投資単位の引き下げに関する考え方及び方針等について",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20261020553279/pdfFile.pdf",
+        "published_at": "2026-10-23",
+        "category": "other",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20261020553279/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S12.txt",
+        "sha256": "b8a68c5e0ec7d1f0357d37f34fb061035b1a51153a8c1c94a700607f5c032927",
+        "text_sha256": "3724a2baa113bbf1de0560703153b79767b4c6ae1972d930a7a6b62cb201a38e",
+        "retrieved_at": "2026-11-22T01:21:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 440,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "定款一部変更に関するお知らせ",
+        "url": "https://www.visional.inc/ja/ir/ir_news/auto_20260918538524/pdfFile.pdf",
+        "published_at": "2026-09-18",
+        "category": "other",
+        "final_url": "https://www.visional.inc/ja/ir/ir_news/auto_20260918538524/pdfFile.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S13.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\4194\\sources\\S13.txt",
+        "sha256": "31596982d499a0bf5fb583a619d21b031c8bbd3ee7734124ac3db95ed166a12a",
+        "text_sha256": "6373cc7ea5c4eb61562761ad05705f57b7021d8b09d1bcfe223e87a2745d860e",
+        "retrieved_at": "2026-11-22T01:21:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1305,
+        "parser_version": 2
+      },
+      {
+        "id": "S14",
+        "title": "株式基本情報",
+        "url": "https://www.visional.inc/ja/ir/stock/information.html",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:21:43+09:00"
+      },
+      {
+        "id": "S15",
+        "title": "IRカレンダー",
+        "url": "https://www.visional.inc/ja/ir/ir_calendar.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:21:43+09:00"
+      },
+      {
+        "id": "S16",
+        "title": "IRニュース（公開日・期後開示の照合用）",
+        "url": "https://www.visional.inc/ja/ir/ir_news.html",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:21:43+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "announcement_date": "2026-12-15",
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_revenue",
+          "value": 23338,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 5、FY26/7 1Q"
+        },
+        {
+          "id": "py_op",
+          "value": 7068,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 5、S05 PDF page 4、取得原価配分確定反映後1Q"
+        },
+        {
+          "id": "pq_revenue",
+          "value": 26143,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 5、FY26/7 4Q"
+        },
+        {
+          "id": "pq_op",
+          "value": 4956,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 5、FY26/7 4Q"
+        },
+        {
+          "id": "py_biz",
+          "value": 19655,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 11、FY26/7 1Q"
+        },
+        {
+          "id": "pq_biz",
+          "value": 20411,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 11、FY26/7 4Q直接開示"
+        },
+        {
+          "id": "py_hrmos",
+          "value": 1787,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 22、FY26/7 1Q"
+        },
+        {
+          "id": "pq_hrmos",
+          "value": 2636,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 22、FY26/7 4Q"
+        },
+        {
+          "id": "py_inc",
+          "value": 1122,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 5、FY26/7 1Q Incubation売上高"
+        },
+        {
+          "id": "pq_inc",
+          "value": 1525,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 5、FY26/7 4Q Incubation売上高"
+        },
+        {
+          "id": "hr_arr_start",
+          "value": 10337,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 4、S11 PDF page 14、2026年7月末ARR"
+        },
+        {
+          "id": "hr_arr_prior",
+          "value": 9486,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02",
+            "S11"
+          ],
+          "locator": "S02 PDF page 4、S11 PDF page 14、2026年4月末ARR"
+        },
+        {
+          "id": "guide_revenue",
+          "value": 119850,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guide_op",
+          "value": 26600,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guide_ordinary",
+          "value": 27945,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guide_net",
+          "value": 18569,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期通期連結業績予想、親会社株主帰属"
+        },
+        {
+          "id": "bear_biz_activity",
+          "value": 1.1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前年同四半期売上高に対する課金利用量・採用成約量の合成指数。累計導入企業数は前年1Q末40,000社以上から直近期末45,800社以上へ、会員数は319万人以上から353万人以上へ拡大したが、累計社数を稼働社数とはみなさず、採用心理の減速を想定する。前年成長率の延長ではない。",
+          "sensitivity": "指数0.01の変化でBizReach売上高はpy_biz×0.01×当該単価指数だけ変動。費用一定なら営業利益も同額変動。",
+          "source_ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S03 PDF page 4、S04 PDF page 12、S05 PDF page 5 Q9・Q10",
+          "material": true
+        },
+        {
+          "id": "base_biz_activity",
+          "value": 1.14,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "顧客・会員基盤の拡大と堅調な採用需要を踏まえ、前年同四半期対比の課金利用量・採用成約量の合成指数を設定。年次利用企業数の拡大を全て当四半期の成約増には転換しない。",
+          "sensitivity": "指数0.01の変化で売上高と費用一定時の営業利益がpy_biz×0.01×当該単価指数だけ変動。",
+          "source_ids": [
+            "S04",
+            "S11"
+          ],
+          "locator": "S04 PDF pages 11–15、S11 PDF page 10",
+          "material": true
+        },
+        {
+          "id": "bull_biz_activity",
+          "value": 1.18,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "新規顧客獲得、既存顧客の利用拡大、会員基盤増が採用成約へ比較的順調に転換する条件。直近の累計導入企業数と年次利用企業数の拡大を上限判断の参考とした独自仮定。",
+          "sensitivity": "指数0.01の変化で売上高と費用一定時の営業利益がpy_biz×0.01×当該単価指数だけ変動。",
+          "source_ids": [
+            "S04",
+            "S11"
+          ],
+          "locator": "S04 PDF pages 12・15、S11 PDF page 10",
+          "material": true
+        },
+        {
+          "id": "bear_biz_yield",
+          "value": 1.0,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "料金改定の効果が顧客構成や成約単価の変動で相殺され、全事業の実効単価は前年並みとする。",
+          "sensitivity": "指数0.01の変化で売上高がpy_biz×bear_biz_activity×0.01変動。",
+          "source_ids": [
+            "S07",
+            "S10"
+          ],
+          "locator": "S07 PDF pages 5–6 Q14、S10 PDF page 13",
+          "material": true
+        },
+        {
+          "id": "base_biz_yield",
+          "value": 1.01,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "ヘッドハンター向け成功報酬改定が契約更新に伴い浸透する一方、対象が売上の一部に限られるため、全事業実効単価の上昇は小幅と仮定。実際の改定率や更新率を示す値ではない。",
+          "sensitivity": "指数0.01の変化で売上高がpy_biz×base_biz_activity×0.01変動。",
+          "source_ids": [
+            "S07",
+            "S11"
+          ],
+          "locator": "S07 PDF pages 5–6 Q14、S11 PDF page 7",
+          "material": true
+        },
+        {
+          "id": "bull_biz_yield",
+          "value": 1.02,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "料金改定の浸透と成約構成の改善が実効単価へ寄与する条件。価格と数量を分け、AI効果は数量仮定に含めて別途加算しない。",
+          "sensitivity": "指数0.01の変化で売上高がpy_biz×bull_biz_activity×0.01変動。",
+          "source_ids": [
+            "S07",
+            "S10"
+          ],
+          "locator": "S07 PDF pages 5–6 Q14、S10 PDF pages 13–14",
+          "material": true
+        },
+        {
+          "id": "bear_hr_arr_add",
+          "value": 500,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "四半期末ARR純増の弱気仮定。直近の四半期純増は第3四半期531、第4四半期851であり、販促効果の鈍化を想定。解約・新規・単価構成変化を含む純増で、解約を別控除しない。",
+          "sensitivity": "期末ARR純増が100変化すると、線形増加仮定の四半期継続売上は12.5変化。",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 14、FY26/7 ARR推移",
+          "material": true
+        },
+        {
+          "id": "base_hr_arr_add",
+          "value": 850,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近四半期並みのARR純増を想定。テレビCM等による商談増が継続する条件。既存sonar ATSを含むARRから推計し、連結月数増を追加加算しない。",
+          "sensitivity": "期末ARR純増が100変化すると四半期継続売上は12.5変化。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 5–6 Q12、S11 PDF page 14",
+          "material": true
+        },
+        {
+          "id": "bull_hr_arr_add",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直近四半期の商談増と顧客開拓が加速する条件。直近ARR純増を約3割上回るストレス仮定で、会社公表値ではない。",
+          "sensitivity": "期末ARR純増が100変化すると四半期継続売上は12.5変化。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 5–6 Q12、S11 PDF page 14",
+          "material": true
+        },
+        {
+          "id": "hr_support",
+          "value": 158.125,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前四半期HRMOS売上高と、期首・期末ARR平均から推定する継続売上との差額を据え置く仮定。2636−(9486+10337)/8に対応。実際の支援売上開示値ではなく、一時収益・計上時期差を含む推計補正。",
+          "sensitivity": "補正が100変わると売上高と費用一定時の営業利益は100変化。各シナリオ共通の未解消リスク。",
+          "source_ids": [
+            "S04",
+            "S11"
+          ],
+          "locator": "S04 PDF page 22、S11 PDF pages 12–14",
+          "material": true
+        },
+        {
+          "id": "bear_inc",
+          "value": 1500,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前四半期売上高1525に近い水準。新規事業の案件計上が進まず成長が停滞する条件。",
+          "sensitivity": "売上高100の変化は連結売上高100、費用一定時の営業利益100の変化。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 5、S05 PDF page 3、四半期売上の変動可能性",
+          "material": true
+        },
+        {
+          "id": "base_inc",
+          "value": 1750,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前四半期の事業規模を起点に、新規事業の拡大が一部売上化する条件。通期会社予想の四等分ではなく、期初の立ち上がりを抑えた独自水準。",
+          "sensitivity": "売上高100の変化は連結売上高100、費用一定時の営業利益100の変化。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9、S05 PDF page 3",
+          "material": true
+        },
+        {
+          "id": "bull_inc",
+          "value": 2100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "新規事業の立ち上がりと案件計上が進む条件。案件別受注残は保存原文で未確認のため、直前四半期実績と会社の事業拡大方針を用いた低確度の範囲仮定。",
+          "sensitivity": "売上高100の変化は連結売上高100、費用一定時の営業利益100の変化。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9、S05 PDF page 3",
+          "material": true
+        },
+        {
+          "id": "bear_other",
+          "value": 850,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "その他HR Techと連結売上調整の合計。前年同四半期の連結売上から主要3事業を除いた水準を起点に、小幅な事業拡大を仮定。直前四半期の高水準は期初へそのまま持ち越さない。",
+          "sensitivity": "100の変化で連結売上高および費用一定時の営業利益が100変化。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 5・9・11・22",
+          "material": true
+        },
+        {
+          "id": "base_other",
+          "value": 950,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同四半期のその他売上と、その他採用関連事業の拡大方針から設定。四半期ごとのサービス構成は未確認のため集約して推計。",
+          "sensitivity": "100の変化で連結売上高および費用一定時の営業利益が100変化。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9、S05 PDF page 2",
+          "material": true
+        },
+        {
+          "id": "bull_other",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "その他採用関連事業の顧客開拓が順調な条件。前年同四半期より増加する一方、直前四半期の推定水準を下回る範囲とする。",
+          "sensitivity": "100の変化で連結売上高および費用一定時の営業利益が100変化。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9・11・22、S05 PDF page 2",
+          "material": true
+        },
+        {
+          "id": "personnel_add",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同四半期に対する給与・採用・関連人件費の増分。前年1Q給与手当等3277、期末人員の拡大、営業・開発採用方針を踏まえ、給与手当等の約3分の1に相当する追加負担を置く。前年1Qに1カ月のみ連結したThinkingsの通期四半期化も含む。",
+          "sensitivity": "増分が300上下すると営業利益は逆方向に300変化。マーケティング増分とは別の共通感応度。",
+          "source_ids": [
+            "S08",
+            "S11",
+            "S05"
+          ],
+          "locator": "S08 PDF page 48、S11 PDF page 2、S05 PDF pages 3・5–6",
+          "material": true
+        },
+        {
+          "id": "depreciation_add",
+          "value": 350,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同四半期対比の償却費増分。前年1Q EBITDAと確定後営業利益の差は524、直前4Qは871であり、取得関連償却の四半期化を含め直近規模を維持する想定。オフィス増床に伴う償却もこの枠に含める。",
+          "sensitivity": "100の変化で営業利益が逆方向に100変化。取得関連償却を別途加算しない。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9、S05 PDF pages 3–4 Q4",
+          "material": true
+        },
+        {
+          "id": "other_cost_add",
+          "value": 1000,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年同四半期比の人件費・広告宣伝・償却以外の営業費用増。連結売上原価の直前4Q水準が前年1Qを上回ること、外注・AI利用・オフィス増床費用を考慮。うち売上原価・事業支援増600、家賃・AI・外注等400という概算仮定であり、公表費用内訳ではない。",
+          "sensitivity": "300の変化で営業利益が逆方向に300変化。償却費および給与関連費用はこの枠から除く。",
+          "source_ids": [
+            "S04",
+            "S08",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・6・9、S08 PDF page 48、S05 PDF page 1",
+          "material": true
+        },
+        {
+          "id": "bear_marketing_add",
+          "value": 1950,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年1Q広告宣伝費6159を起点に、HRMOSキャンペーン継続とBizReach顧客獲得投資が前倒しとなる条件。前年費用比約3割の追加負担で、売上鈍化時も投資が残ると仮定。",
+          "sensitivity": "300の変化で営業利益が逆方向に300変化。",
+          "source_ids": [
+            "S08",
+            "S04",
+            "S05"
+          ],
+          "locator": "S08 PDF page 48、S04 PDF pages 13・23、S05 PDF pages 5–6",
+          "material": true
+        },
+        {
+          "id": "base_marketing_add",
+          "value": 1350,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年1Q広告宣伝費を起点に、HRMOS投資拡大とBizReachのマーケティング継続を織り込む。前年費用比約2割の増分。例年の期初投資の軽さは一部残る条件。",
+          "sensitivity": "300の変化で営業利益が逆方向に300変化。",
+          "source_ids": [
+            "S08",
+            "S09",
+            "S05"
+          ],
+          "locator": "S08 PDF page 48、S09 PDF page 1、S05 PDF pages 5–6",
+          "material": true
+        },
+        {
+          "id": "bull_marketing_add",
+          "value": 850,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年1Qより投資は増えるが、広告効率改善と下期偏重により期初負担を抑えられる条件。売上上振れと費用効率化が同時に成立する強気ケース。",
+          "sensitivity": "300の変化で営業利益が逆方向に300変化。",
+          "source_ids": [
+            "S08",
+            "S09",
+            "S04"
+          ],
+          "locator": "S08 PDF page 48、S09 PDF page 1、S04 PDF pages 6・13",
+          "material": true
+        },
+        {
+          "id": "half",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "係数",
+          "rationale": "四半期内のARR純増が線形に発生すると仮定し、期間平均へ換算する。",
+          "sensitivity": "純増の発生が期首または期末に偏ると、継続売上は中心計算からARR純増÷8だけ上下する。"
+        },
+        {
+          "id": "quarter_year",
+          "value": 0.25,
+          "kind": "assumption",
+          "unit": "年",
+          "rationale": "年率換算のARRを3カ月分の売上へ換算する期間係数。会社通期業績予想の配分には使用しない。",
+          "sensitivity": "対象期間が3カ月である限り固定。"
+        },
+        {
+          "id": "zero",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "算式上のゼロ。",
+          "sensitivity": "感応度なし。"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_other",
+          "formula": "py_revenue-py_biz-py_hrmos-py_inc"
+        },
+        {
+          "id": "pq_other",
+          "formula": "pq_revenue-pq_biz-pq_hrmos-pq_inc"
+        },
+        {
+          "id": "py_cost",
+          "formula": "py_revenue-py_op"
+        },
+        {
+          "id": "pq_cost",
+          "formula": "pq_revenue-pq_op"
+        },
+        {
+          "id": "hr_recent_arr_add",
+          "formula": "hr_arr_start-hr_arr_prior"
+        },
+        {
+          "id": "bear_biz",
+          "formula": "py_biz*bear_biz_activity*bear_biz_yield"
+        },
+        {
+          "id": "base_biz",
+          "formula": "py_biz*base_biz_activity*base_biz_yield"
+        },
+        {
+          "id": "bull_biz",
+          "formula": "py_biz*bull_biz_activity*bull_biz_yield"
+        },
+        {
+          "id": "bear_hrmos",
+          "formula": "(hr_arr_start+bear_hr_arr_add*half)*quarter_year+hr_support"
+        },
+        {
+          "id": "base_hrmos",
+          "formula": "(hr_arr_start+base_hr_arr_add*half)*quarter_year+hr_support"
+        },
+        {
+          "id": "bull_hrmos",
+          "formula": "(hr_arr_start+bull_hr_arr_add*half)*quarter_year+hr_support"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_biz+bear_hrmos+bear_inc+bear_other"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_biz+base_hrmos+base_inc+base_other"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_biz+bull_hrmos+bull_inc+bull_other"
+        },
+        {
+          "id": "bear_cost_add",
+          "formula": "personnel_add+depreciation_add+other_cost_add+bear_marketing_add"
+        },
+        {
+          "id": "base_cost_add",
+          "formula": "personnel_add+depreciation_add+other_cost_add+base_marketing_add"
+        },
+        {
+          "id": "bull_cost_add",
+          "formula": "personnel_add+depreciation_add+other_cost_add+bull_marketing_add"
+        },
+        {
+          "id": "bear_cost",
+          "formula": "py_cost+bear_cost_add"
+        },
+        {
+          "id": "base_cost",
+          "formula": "py_cost+base_cost_add"
+        },
+        {
+          "id": "bull_cost",
+          "formula": "py_cost+bull_cost_add"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cost"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cost"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cost"
+        },
+        {
+          "id": "bear_yoy_revenue",
+          "formula": "bear_revenue-py_revenue"
+        },
+        {
+          "id": "base_yoy_revenue",
+          "formula": "base_revenue-py_revenue"
+        },
+        {
+          "id": "bull_yoy_revenue",
+          "formula": "bull_revenue-py_revenue"
+        },
+        {
+          "id": "bear_qoq_revenue",
+          "formula": "bear_revenue-pq_revenue"
+        },
+        {
+          "id": "base_qoq_revenue",
+          "formula": "base_revenue-pq_revenue"
+        },
+        {
+          "id": "bull_qoq_revenue",
+          "formula": "bull_revenue-pq_revenue"
+        },
+        {
+          "id": "bear_yoy_op",
+          "formula": "bear_op-py_op"
+        },
+        {
+          "id": "base_yoy_op",
+          "formula": "base_op-py_op"
+        },
+        {
+          "id": "bull_yoy_op",
+          "formula": "bull_op-py_op"
+        },
+        {
+          "id": "bear_qoq_op",
+          "formula": "bear_op-pq_op"
+        },
+        {
+          "id": "base_qoq_op",
+          "formula": "base_op-pq_op"
+        },
+        {
+          "id": "bull_qoq_op",
+          "formula": "bull_op-pq_op"
+        },
+        {
+          "id": "bridge_zero",
+          "formula": "zero+zero"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "BizReach",
+              "revenue": "bear_biz"
+            },
+            {
+              "name": "HRMOS",
+              "revenue": "bear_hrmos"
+            },
+            {
+              "name": "Incubation",
+              "revenue": "bear_inc"
+            },
+            {
+              "name": "その他HR Tech・連結売上調整",
+              "revenue": "bear_other"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "BizReach",
+              "revenue": "base_biz"
+            },
+            {
+              "name": "HRMOS",
+              "revenue": "base_hrmos"
+            },
+            {
+              "name": "Incubation",
+              "revenue": "base_inc"
+            },
+            {
+              "name": "その他HR Tech・連結売上調整",
+              "revenue": "base_other"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "BizReach",
+              "revenue": "bull_biz"
+            },
+            {
+              "name": "HRMOS",
+              "revenue": "bull_hrmos"
+            },
+            {
+              "name": "Incubation",
+              "revenue": "bull_inc"
+            },
+            {
+              "name": "その他HR Tech・連結売上調整",
+              "revenue": "bull_other"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 23338,
+          "operating_profit": 7069,
+          "ordinary_profit": 8165,
+          "net_profit": 5478,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定前・当初公表版",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1、PDF page 13",
+          "selection_reason": "当初累計を保存するが、比較計算には確定後の直接四半期開示を選択。"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 23338,
+          "operating_profit": 7068,
+          "ordinary_profit": 8164,
+          "net_profit": 5483,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 5、S05 PDF page 4反映後",
+          "selection_reason": "第1四半期は単独期間と年度初日からの累計期間が一致。"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 73157,
+          "operating_profit": 19612,
+          "ordinary_profit": 21438,
+          "net_profit": 14214,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定前・当初公表版",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1、PDF page 12",
+          "selection_reason": "直前累計として保存。ただし確定後通期との利益差引には使用しない。"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 99300,
+          "operating_profit": 24563,
+          "ordinary_profit": 26700,
+          "net_profit": 18566,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+          "source_ids": [
+            "S01",
+            "S05"
+          ],
+          "locator": "S01 PDF pages 1・15、S05 PDF pages 3–4",
+          "selection_reason": "年度累計確定実績。直前四半期は同じ会計版の直接開示を別途選択。"
+        }
+      ],
+      "quarterly_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 23338,
+          "operating_profit": 7068,
+          "ordinary_profit": 8164,
+          "net_profit": 5483,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 5、S05 PDF page 4反映後",
+          "selection_reason": "前年同四半期比較は取得原価配分確定後の会社直接開示を採用。",
+          "selection_status": "source_confirmed"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2026-05-01",
+          "period_end": "2026-07-31",
+          "revenue": 26143,
+          "operating_profit": 4956,
+          "ordinary_profit": null,
+          "net_profit": 4316,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "Thinkings取得原価配分確定後・2026-09-10開示版",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF page 5、S05 PDF pages 3–4 Q4",
+          "selection_reason": "確定前第3四半期累計と確定後通期の差引を避け、会社直接開示の第4四半期を採用。税引前利益を経常利益へ転用しない。",
+          "selection_status": "source_confirmed"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "BizReachの利用基盤・採用成約・実効単価",
+          "mechanism": "顧客と会員の拡大が課金利用と採用成功報酬につながる。累計導入企業数は稼働顧客数ではないため数量の直接乗算には使わず、合成活動指数の範囲設定に利用。料金改定は実効単価指数のみに含める。",
+          "source_ids": [
+            "S04",
+            "S07",
+            "S11"
+          ],
+          "locator": "S04 PDF pages 11–15、S07 PDF pages 5–6、S11 PDF pages 7・10",
+          "calculation_ids": [
+            "bear_biz",
+            "base_biz",
+            "bull_biz"
+          ],
+          "not_quantified_reason": "採用成功件数、平均理論年収、更新率別料金改定効果は保存原文で未確認。"
+        },
+        {
+          "name": "HRMOSのARRと導入支援収益",
+          "mechanism": "直近末ARRを期首基盤とし、四半期内純増の平均寄与を加算。sonar ATSの連結月数増はARR基盤に包含されており別加算しない。",
+          "source_ids": [
+            "S05",
+            "S11"
+          ],
+          "locator": "S05 PDF pages 2・5–6、S11 PDF pages 12–14",
+          "calculation_ids": [
+            "hr_recent_arr_add",
+            "bear_hrmos",
+            "base_hrmos",
+            "bull_hrmos"
+          ],
+          "not_quantified_reason": "期中MRR推移と支援収益の直接開示は保存原文で未確認。"
+        },
+        {
+          "name": "Incubationとその他採用関連事業",
+          "mechanism": "直近四半期の規模と新規事業拡大方針から事業ごとの売上範囲を設定。案件計上の変動が大きいため確度は低い。",
+          "source_ids": [
+            "S04",
+            "S05"
+          ],
+          "locator": "S04 PDF pages 5・9、S05 PDF pages 2–3",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "サービス別数量・価格・受注残・検収時期は保存原文で未確認。"
+        },
+        {
+          "name": "人材・販促・償却・オフィス等の費用",
+          "mechanism": "前年同四半期の確定後営業費用を基盤に人材、広告、償却、その他費用の増分を独立に置く。連結営業利益は売上から費用を差し引いた結果であり、利益目標からの逆算は行わない。",
+          "source_ids": [
+            "S04",
+            "S05",
+            "S08",
+            "S11"
+          ],
+          "locator": "S04 PDF pages 5・6・9・23、S05 PDF pages 5–6、S08 PDF page 48、S11 PDF page 2",
+          "calculation_ids": [
+            "py_cost",
+            "bear_cost",
+            "base_cost",
+            "bull_cost",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "対象四半期の採用人数、広告出稿額、オフィス供用開始月は保存原文で未確認。事業別利益と連結費用の精密な配賦は行わない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": "py_revenue",
+          "forecast": "bear_revenue",
+          "difference": "bear_yoy_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "bear_biz-py_biz",
+              "reason": "利用・成約量と実効単価の条件付き変化。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "bear_hrmos-py_hrmos",
+              "reason": "ARR拡大と連結対象期間の違いを包含。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "bear_inc-py_inc",
+              "reason": "直近事業規模を起点とする停滞ケース。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "bear_other-py_other",
+              "reason": "その他事業を集約。比較基準は連結総額から主要事業を控除。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "pq_revenue",
+          "forecast": "bear_revenue",
+          "difference": "bear_qoq_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "bear_biz-pq_biz",
+              "reason": "同季節の前年基盤に活動指数を適用した予測と直前実績との差。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "bear_hrmos-pq_hrmos",
+              "reason": "期首ARR基盤と純増仮定。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "bear_inc-pq_inc",
+              "reason": "案件計上の停滞。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "bear_other-pq_other",
+              "reason": "期初売上構成の仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": "py_op",
+          "forecast": "bear_op",
+          "difference": "bear_yoy_op",
+          "components": [
+            {
+              "label": "事業別増収の合計",
+              "formula": "bear_revenue-py_revenue",
+              "reason": "売上ブリッジの合計。限界利益とはみなさず費用を別控除。"
+            },
+            {
+              "label": "人材関連費増",
+              "formula": "zero-personnel_add",
+              "reason": "営業・開発採用と連結期間差を包含。"
+            },
+            {
+              "label": "販促費増",
+              "formula": "zero-bear_marketing_add",
+              "reason": "投資前倒し条件。"
+            },
+            {
+              "label": "償却費増",
+              "formula": "zero-depreciation_add",
+              "reason": "取得関連償却と設備負担。"
+            },
+            {
+              "label": "その他営業費用増",
+              "formula": "zero-other_cost_add",
+              "reason": "売上原価、AI、外注、家賃等の独自仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "pq_op",
+          "forecast": "bear_op",
+          "difference": "bear_qoq_op",
+          "components": [
+            {
+              "label": "売上構成変化",
+              "formula": "bear_revenue-pq_revenue",
+              "reason": "直前四半期からの事業別売上差。"
+            },
+            {
+              "label": "営業費用総額変化",
+              "formula": "pq_cost-bear_cost",
+              "reason": "前年1Q費用基盤に人材・販促・償却等を加えた予測と直前費用との差。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": "py_revenue",
+          "forecast": "base_revenue",
+          "difference": "base_yoy_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "base_biz-py_biz",
+              "reason": "顧客基盤拡大と料金改定の小幅な実効単価寄与。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "base_hrmos-py_hrmos",
+              "reason": "ARR拡大と連結対象期間の違いを包含。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "base_inc-py_inc",
+              "reason": "新規事業の部分的な売上化。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "base_other-py_other",
+              "reason": "その他採用関連事業の拡大仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "pq_revenue",
+          "forecast": "base_revenue",
+          "difference": "base_qoq_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "base_biz-pq_biz",
+              "reason": "前年同季節を基準とした活動量・単価仮定。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "base_hrmos-pq_hrmos",
+              "reason": "期首ARRと直近並み純増。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "base_inc-pq_inc",
+              "reason": "新規事業の売上化。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "base_other-pq_other",
+              "reason": "期初売上構成の仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": "py_op",
+          "forecast": "base_op",
+          "difference": "base_yoy_op",
+          "components": [
+            {
+              "label": "事業別増収の合計",
+              "formula": "base_revenue-py_revenue",
+              "reason": "売上ブリッジの合計。費用は別控除。"
+            },
+            {
+              "label": "人材関連費増",
+              "formula": "zero-personnel_add",
+              "reason": "営業・開発採用と連結期間差。"
+            },
+            {
+              "label": "販促費増",
+              "formula": "zero-base_marketing_add",
+              "reason": "HRMOSキャンペーン継続とBizReach投資。"
+            },
+            {
+              "label": "償却費増",
+              "formula": "zero-depreciation_add",
+              "reason": "取得関連償却と設備負担。"
+            },
+            {
+              "label": "その他営業費用増",
+              "formula": "zero-other_cost_add",
+              "reason": "売上原価、AI、外注、家賃等の独自仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "pq_op",
+          "forecast": "base_op",
+          "difference": "base_qoq_op",
+          "components": [
+            {
+              "label": "売上構成変化",
+              "formula": "base_revenue-pq_revenue",
+              "reason": "直前四半期からの事業別売上差。"
+            },
+            {
+              "label": "営業費用総額変化",
+              "formula": "pq_cost-base_cost",
+              "reason": "前年1Q費用基盤に追加投資を積み上げた予測と直前費用との差。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline": "py_revenue",
+          "forecast": "bull_revenue",
+          "difference": "bull_yoy_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "bull_biz-py_biz",
+              "reason": "採用成約への転換と実効単価がともに改善。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "bull_hrmos-py_hrmos",
+              "reason": "ARR純増加速。既存sonar ATSの効果は内包。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "bull_inc-py_inc",
+              "reason": "新規事業の案件計上が進展。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "bull_other-py_other",
+              "reason": "その他採用関連事業の拡大。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額は全額配賦。その他の細分化や個別案件への因果分解は未完了。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline": "pq_revenue",
+          "forecast": "bull_revenue",
+          "difference": "bull_qoq_revenue",
+          "components": [
+            {
+              "label": "BizReach",
+              "formula": "bull_biz-pq_biz",
+              "reason": "前年同季節を基準とした活動量・単価改善。"
+            },
+            {
+              "label": "HRMOS",
+              "formula": "bull_hrmos-pq_hrmos",
+              "reason": "ARR純増加速。"
+            },
+            {
+              "label": "Incubation",
+              "formula": "bull_inc-pq_inc",
+              "reason": "新規事業の売上化。"
+            },
+            {
+              "label": "その他・調整",
+              "formula": "bull_other-pq_other",
+              "reason": "期初売上構成の仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "事業区分によるモデル差額の配賦。季節性の個別金額は分離していない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline": "py_op",
+          "forecast": "bull_op",
+          "difference": "bull_yoy_op",
+          "components": [
+            {
+              "label": "事業別増収の合計",
+              "formula": "bull_revenue-py_revenue",
+              "reason": "売上ブリッジの合計。費用は別控除。"
+            },
+            {
+              "label": "人材関連費増",
+              "formula": "zero-personnel_add",
+              "reason": "営業・開発採用と連結期間差。"
+            },
+            {
+              "label": "販促費増",
+              "formula": "zero-bull_marketing_add",
+              "reason": "前年より増額するが広告効率改善と下期偏重を想定。"
+            },
+            {
+              "label": "償却費増",
+              "formula": "zero-depreciation_add",
+              "reason": "取得関連償却と設備負担。"
+            },
+            {
+              "label": "その他営業費用増",
+              "formula": "zero-other_cost_add",
+              "reason": "売上原価、AI、外注、家賃等の独自仮定。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "独立に設定した費用仮定により算術的に整合。費用内訳は会社実績ではない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline": "pq_op",
+          "forecast": "bull_op",
+          "difference": "bull_qoq_op",
+          "components": [
+            {
+              "label": "売上構成変化",
+              "formula": "bull_revenue-pq_revenue",
+              "reason": "直前四半期からの事業別売上差。"
+            },
+            {
+              "label": "営業費用総額変化",
+              "formula": "pq_cost-bull_cost",
+              "reason": "広告効率と期初の投資配分を含む費用予測と直前費用との差。"
+            }
+          ],
+          "residual": "bridge_zero",
+          "residual_type": "none",
+          "residual_explanation": "総費用段階で全額配賦。前四半期比の費用を項目別に帰属させる根拠は不足。"
+        }
+      ],
+      "company_guidance": "保存原文で確認できる会社予想は2027年7月期通期の連結予想。対象第1四半期単独予想は保存範囲では確認できない。guidance_recordsには当該通期予想を保存したが、基準日時までの追加修正有無は未確認のためrevision_statusはunverified。独自四半期予測への四等分や差引配分は行っていない。",
+      "consensus": "未確認。提示された保存原文に公表市場コンセンサスは見当たらない。",
+      "independent_forecast": "事業別売上と営業費用増分を用いた条件付き独自予測。BizReachは前年同四半期の事業規模に活動量と実効単価を別々に設定し、HRMOSは直近ARRから継続収益を積み上げた。その他事業は直近・前年同四半期の規模を用いた低確度の範囲仮定。費用は前年同四半期の確定後営業費用に人材、販促、償却、その他費用を積み上げる。会社修正見込みからの差引推計ではない。営業外損益と税負担は対象四半期への配分根拠が不足するため経常利益・純利益をnullとした。",
+      "narrative": [
+        {
+          "heading": "条件付き予測",
+          "text": "中心ケースの売上高は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気ケースは売上高{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気ケースは売上高{{value:bull_revenue}}、営業利益{{value:bull_op}}。採用需要の売上転換と販促費の発生時期を主要な分岐とする。確率区間ではなく、明示した条件が同時に成立する場合の予測である。"
+        },
+        {
+          "heading": "売上を支える要因",
+          "text": "BizReachの顧客・会員基盤は拡大しているが、累計導入企業数をそのまま売上数量には置き換えない。料金改定も更新契約に限られるため、実効単価の寄与を小幅に置いた。HRMOSは既存ARRの積み上がりが売上を支え、買収先の連結月数増を別途加算しない。Incubationは新規事業の立ち上がり次第で振れが大きい。"
+        },
+        {
+          "heading": "費用と反証条件",
+          "text": "中心ケースの営業費用は{{value:base_cost}}。前年同四半期からの増分{{value:base_cost_add}}は人材、販促、償却、その他費用の仮定に基づく。HRMOS投資の前倒し、オフィス増床費用の集中、採用成約への転換鈍化が中心ケースの反証となる。前四半期比の増益には期初の投資配分が影響するため、売上成長だけで説明しない。"
+        },
+        {
+          "heading": "比較基準と予測の限界",
+          "text": "前年同四半期営業利益と直前四半期営業利益は取得原価配分確定後の会社直接開示を使用した。確定前累計との混在差引は行わない。ブリッジの残差がゼロであることはモデルの算術的一致を示すもので、事業別の数量・費用内訳まで実証できたことを意味しない。前年の違約金収入には一時的な会計処理変更の影響があり、経常利益へ単純延長しない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "partial",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "partial",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "BizReachの対象四半期における実稼働企業数、採用成約数、成功報酬単価と料金改定契約の浸透率は保存原文で未確認。",
+        "HRMOSの期中MRR、サービス別ARR純増、支援収益額は保存原文で未確認。純増には解約と構成変化を包含する。",
+        "Incubationとその他HR Techの案件別売上計上時期は保存原文で未確認。",
+        "対象四半期の広告出稿、採用人数、AI利用費、オフィス増床の供用開始時期は保存原文で未確認。",
+        "強気ケースは売上上振れと広告効率化の同時成立を仮定し、人材・その他費用の共通仮定が上振れる場合は利益も下がる。"
+      ],
+      "material_unresolved": [
+        "S04はPDF page 57途中以降、S06はpage 45途中以降、S08はpage 49途中以降、S10はpage 75途中以降、S11はpage 18途中以降が短縮されている。特に通期の費用詳細、管理部門配賦調整、有報の後続財務注記・設備計画・後発事象は原本未確認であり、非開示とは断定しない。",
+        "S14・S15・S16は資料一覧とdiscoveryの確認記述のみで保存本文がない。発表予定日と対象未発表の状態は提示条件を採用しており、カレンダー本文・掲載履歴・ニュース一覧による独自照合は未実施。",
+        "基準日時までの業績予想修正と追加M&Aの有無は未確認。S10は公開日が後でも内容基準日は2026年9月10日であり、最新状況の裏付けには用いない。",
+        "S02の第3四半期累計は取得原価配分確定前、S01通期は確定後。同一会計版の確定後第3四半期累計総額は保存範囲で直接確認できないため、直前四半期はS04の直接開示を採用した。四半期丸め値の合算で累計確定値を捏造していない。",
+        "BizReachの実効単価指数と活動指数は観測された価格・数量ではなく、顧客基盤と料金改定情報に基づく独自仮定。両者の実際の寄与分解は未確認。",
+        "HRMOSの支援収益補正はARR平均からの差額推定であり、収益認識時期差も含み得る。支援収益の確定実績として扱わない。",
+        "営業費用増分は人員拡大、過去費用規模、投資方針に基づく概算。事業別採算の精密な積み上げに必要な配賦表と対象四半期費用計画は未確認で、営業利益予測の確度は売上予測より低い。",
+        "経常利益は違約金収入の一時性と計上時期、純利益は四半期税率・非支配株主損益の根拠が不足するため予測しない。会社通期予想の税制影響を独自四半期予測へ再加算していない。",
+        "Thinkingsを期首から連結した場合の過年度影響概算額はS01 PDF page 15で重要性が乏しいため記載省略と明記されている。これは原本未確認ではなく、採用した保存原文上の開示省略である。"
+      ],
+      "guidance_records": [
+        {
+          "id": "guidance_fy27_revenue",
+          "metric": "revenue",
+          "value_ref": "guide_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_fy27_op",
+          "metric": "operating_profit",
+          "value_ref": "guide_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_fy27_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guide_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期連結業績予想"
+        },
+        {
+          "id": "guidance_fy27_net",
+          "metric": "net_profit",
+          "value_ref": "guide_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-10",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2、2027年7月期連結業績予想"
+        }
+      ],
+      "_truncated_source_ids": [
+        "S04",
+        "S06",
+        "S08",
+        "S10",
+        "S11"
+      ]
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "BizReachの実効単価指数と活動指数は観測された価格・数量ではなく、顧客基盤と料金改定情報に基づく独自仮定。両者の実際の寄与分解は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "HRMOSの支援収益補正はARR平均からの差額推定であり、収益認識時期差も含み得る。支援収益の確定実績として扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "S02の第3四半期累計は取得原価配分確定前、S01通期は確定後。同一会計版の確定後第3四半期累計総額は保存範囲で直接確認できないため、直前四半期はS04の直接開示を採用した。四半期丸め値の合算で累計確定値を捏造していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "S04はPDF page 57途中以降、S06はpage 45途中以降、S08はpage 49途中以降、S10はpage 75途中以降、S11はpage 18途中以降が短縮されている。特に通期の費用詳細、管理部門配賦調整、有報の後続財務注記・設備計画・後発事象は原本未確認であり、非開示とは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "S14・S15・S16は資料一覧とdiscoveryの確認記述のみで保存本文がない。発表予定日と対象未発表の状態は提示条件を採用しており、カレンダー本文・掲載履歴・ニュース一覧による独自照合は未実施。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "Thinkingsを期首から連結した場合の過年度影響概算額はS01 PDF page 15で重要性が乏しいため記載省略と明記されている。これは原本未確認ではなく、採用した保存原文上の開示省略である。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "営業費用増分は人員拡大、過去費用規模、投資方針に基づく概算。事業別採算の精密な積み上げに必要な配賦表と対象四半期費用計画は未確認で、営業利益予測の確度は売上予測より低い。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "基準日時までの業績予想修正と追加M&Aの有無は未確認。S10は公開日が後でも内容基準日は2026年9月10日であり、最新状況の裏付けには用いない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2026-07-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "経常利益は違約金収入の一時性と計上時期、純利益は四半期税率・非支配株主損益の根拠が不足するため予測しない。会社通期予想の税制影響を独自四半期予測へ再加算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: presentation",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "issue",
+      "message": "AIへ渡した原文に省略あり: S04,S06,S08,S10,S11",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "BizReachの対象四半期における実稼働企業数、採用成約数、成功報酬単価と料金改定契約の浸透率は保存原文で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "HRMOSの期中MRR、サービス別ARR純増、支援収益額は保存原文で未確認。純増には解約と構成変化を包含する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "Incubationとその他HR Techの案件別売上計上時期は保存原文で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_biz_activity: 顧客・会員基盤の拡大と堅調な採用需要を踏まえ、前年同四半期対比の課金利用量・採用成約量の合成指数を設定。年次利用企業数の拡大を全て当四半期の成約増には転換しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_biz_yield: ヘッドハンター向け成功報酬改定が契約更新に伴い浸透する一方、対象が売上の一部に限られるため、全事業実効単価の上昇は小幅と仮定。実際の改定率や更新率を示す値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_hr_arr_add: 直近四半期並みのARR純増を想定。テレビCM等による商談増が継続する条件。既存sonar ATSを含むARRから推計し、連結月数増を追加加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_inc: 直前四半期の事業規模を起点に、新規事業の拡大が一部売上化する条件。通期会社予想の四等分ではなく、期初の立ち上がりを抑えた独自水準。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_marketing_add: 前年1Q広告宣伝費を起点に、HRMOS投資拡大とBizReachのマーケティング継続を織り込む。前年費用比約2割の増分。例年の期初投資の軽さは一部残る条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "base_other: 前年同四半期のその他売上と、その他採用関連事業の拡大方針から設定。四半期ごとのサービス構成は未確認のため集約して推計。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_biz_activity: 前年同四半期売上高に対する課金利用量・採用成約量の合成指数。累計導入企業数は前年1Q末40,000社以上から直近期末45,800社以上へ、会員数は319万人以上から353万人以上へ拡大したが、累計社数を稼働社数とはみなさず、採用心理の減速を想定する。前年成長率の延長ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_biz_yield: 料金改定の効果が顧客構成や成約単価の変動で相殺され、全事業の実効単価は前年並みとする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_hr_arr_add: 四半期末ARR純増の弱気仮定。直近の四半期純増は第3四半期531、第4四半期851であり、販促効果の鈍化を想定。解約・新規・単価構成変化を含む純増で、解約を別控除しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_inc: 直前四半期売上高1525に近い水準。新規事業の案件計上が進まず成長が停滞する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_marketing_add: 前年1Q広告宣伝費6159を起点に、HRMOSキャンペーン継続とBizReach顧客獲得投資が前倒しとなる条件。前年費用比約3割の追加負担で、売上鈍化時も投資が残ると仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bear_other: その他HR Techと連結売上調整の合計。前年同四半期の連結売上から主要3事業を除いた水準を起点に、小幅な事業拡大を仮定。直前四半期の高水準は期初へそのまま持ち越さない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_biz_activity: 新規顧客獲得、既存顧客の利用拡大、会員基盤増が採用成約へ比較的順調に転換する条件。直近の累計導入企業数と年次利用企業数の拡大を上限判断の参考とした独自仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_biz_yield: 料金改定の浸透と成約構成の改善が実効単価へ寄与する条件。価格と数量を分け、AI効果は数量仮定に含めて別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_hr_arr_add: 直近四半期の商談増と顧客開拓が加速する条件。直近ARR純増を約3割上回るストレス仮定で、会社公表値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_inc: 新規事業の立ち上がりと案件計上が進む条件。案件別受注残は保存原文で未確認のため、直前四半期実績と会社の事業拡大方針を用いた低確度の範囲仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_marketing_add: 前年1Qより投資は増えるが、広告効率改善と下期偏重により期初負担を抑えられる条件。売上上振れと費用効率化が同時に成立する強気ケース。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "bull_other: その他採用関連事業の顧客開拓が順調な条件。前年同四半期より増加する一方、直前四半期の推定水準を下回る範囲とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "depreciation_add: 前年同四半期対比の償却費増分。前年1Q EBITDAと確定後営業利益の差は524、直前4Qは871であり、取得関連償却の四半期化を含め直近規模を維持する想定。オフィス増床に伴う償却もこの枠に含める。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "half: 四半期内のARR純増が線形に発生すると仮定し、期間平均へ換算する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "hr_support: 直前四半期HRMOS売上高と、期首・期末ARR平均から推定する継続売上との差額を据え置く仮定。2636−(9486+10337)/8に対応。実際の支援売上開示値ではなく、一時収益・計上時期差を含む推計補正。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "other_cost_add: 前年同四半期比の人件費・広告宣伝・償却以外の営業費用増。連結売上原価の直前4Q水準が前年1Qを上回ること、外注・AI利用・オフィス増床費用を考慮。うち売上原価・事業支援増600、家賃・AI・外注等400という概算仮定であり、公表費用内訳ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "personnel_add: 前年同四半期に対する給与・採用・関連人件費の増分。前年1Q給与手当等3277、期末人員の拡大、営業・開発採用方針を踏まえ、給与手当等の約3分の1に相当する追加負担を置く。前年1Qに1カ月のみ連結したThinkingsの通期四半期化も含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "quarter_year: 年率換算のARRを3カ月分の売上へ換算する期間係数。会社通期業績予想の配分には使用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "zero: 算式上のゼロ。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "対象四半期の広告出稿、採用人数、AI利用費、オフィス増床の供用開始時期は保存原文で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4194",
+      "company_name": "ビジョナル株式会社",
+      "kind": "condition",
+      "message": "強気ケースは売上上振れと広告効率化の同時成立を仮定し、人材・その他費用の共通仮定が上振れる場合は利益も下がる。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/4194/result.json": "75851e05edf3146d17cfc37a7f95b24537b5732399816724eaa84337bb76e4df",
+    "reports/4194.md": "4ce6fa35633f71a5250c5cec3e9a3a8ad978b49adc1654e71d18f7cc3d06220b"
+  }
+}
