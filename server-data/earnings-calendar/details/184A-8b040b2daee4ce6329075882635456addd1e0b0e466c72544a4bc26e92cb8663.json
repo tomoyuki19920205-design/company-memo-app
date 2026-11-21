@@ -1,0 +1,2029 @@
+{
+  "id": "184A-8b040b2daee4ce6329075882635456addd1e0b0e466c72544a4bc26e92cb8663",
+  "code": "184A",
+  "companyName": "株式会社学びエイド",
+  "announcementDate": "2026-12-15",
+  "target": {
+    "fiscalYearEnd": "2027-04-30",
+    "quarter": 2
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "184A-generation-358f46283f66b54c · 8b040b2d",
+  "savedAt": "2026-11-22T00:59:31+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 192.45999999999998,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": 1.3567300156739812,
+    "label": "+135.7%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 184A 株式会社学びエイド｜2027-04-30期 Q2単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 172.64 | 192.46 | 215.12 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 110.80 | 135.67% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 115.53 | 150.18% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存原文内の最新確認会社予想は期初予想据置き。本部運営受託は既に通期予想に包含される。S02 PDF page 9に四半期別の売上進捗計画と第2四半期以降の黒字化方針があるが、対象四半期単独の確定実績でも独自予測でもない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に公表市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n売上のみ条件付きサービス別推計。既存サービスは直前実績と過去のEnterprise四半期実績を基準に継続率・単価・案件回復を仮定。本部運営受託は会社の事業別通期織込額を稼働期間と受領ロイヤリティ感応度で配分するため、完全な数量・価格の独立積上げではない。会社予想から既公表累計を差し引いた対象四半期見込みではなく、期後修正予想も使用していない。営業・経常・純利益は根拠不足によりnull。\n\n## 対象四半期の条件付き売上\n中心売上は192.46、弱気は172.64、強気は215.12。主因は四半期初日から開始した本部運営受託であり、既存事業の成長だけで説明する予測ではない。各シナリオは実績で較正された確率区間ではなく、契約構造と過去実績に基づく条件付き感応度である。\n\n## 会社予想との関係\n会社の通期売上予想は708.00、営業利益予想は105.00。本部運営受託の通期織込額330.00は既に包含されているため、これを会社予想へ追加しない。本推計の中心受託売上110.00は月次ロイヤリティ受領が均等という仮定による。\n\n## 利益を数値化しない理由\n受託事業では実務人員と運営コストの主たる部分を負担する。新規設備投資が不要であることは、高い営業利益率を保証しない。人件費・支援利用料・開発外注費の対象四半期負担を裏付けられず、会社の黒字化方針に合わせた費用逆算は行わない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | -8.02 | 個人塾・forSchoolの弱含みとEnterprise低水準継続を含む条件付き差額。数量と価格への厳密な分離はできない。 |\n| 本部運営受託開始 | 99.00 | 前年同四半期には存在しない新規受託収入。 |\n| 残差（none） | 0.00 | モデル上のサービス構成差で全額を接続。実績による要因検証ではない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | -3.29 | 個人塾とforSchoolの弱含みを反映。 |\n| 本部運営受託開始 | 99.00 | 対象四半期から受託開始。 |\n| 残差（none） | 0.00 | モデル上の差額を全額接続。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | 0.80 | 塾向け直前水準維持とEnterprise前年同四半期水準回復を仮定。 |\n| 本部運営受託開始 | 110.00 | 稼働期間に応じた均等ロイヤリティ受領を仮定。 |\n| 残差（none） | 0.00 | モデル上のサービス構成差で全額を接続。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | 5.53 | Enterpriseの検収回復を中心とする。 |\n| 本部運営受託開始 | 110.00 | 対象四半期から受託開始。 |\n| 残差（none） | 0.00 | モデル上の差額を全額接続。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | 12.46 | アップセル・開発寄与とEnterprise回復を反映する条件付き差額。 |\n| 本部運営受託開始 | 121.00 | 対象期間のロイヤリティ受領が均等配分を上回る条件。 |\n| 残差（none） | 0.00 | モデル上のサービス構成差で全額を接続。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 既存サービス合計の変化 | 17.19 | 塾向け単価・開発収入の増加とEnterprise検収回復を仮定。 |\n| 本部運営受託開始 | 121.00 | 対象四半期から受託開始。 |\n| 残差（none） | 0.00 | モデル上の差額を全額接続。 |\n\n## エラー・未解決事項\n- S02 PDF page 7の営業損益改善に関する本文と、S01損益計算書及びS02他ページの記載が整合しない。費用改善額の予測根拠として当該本文を採用していない。\n- S02 PDF page 9の累計進捗計画が示唆する第2四半期収益拡大に対し、開発案件の金額・検収時期の内訳が不足している。本推計は大型開発の追加額を確定できず、会社計画に沿った全収益を捕捉しているとはいえない。\n- S07はtruncated=falseだが、多数のページで本文やグラフ数値が欠落している。通期サービス別計画、四半期別計画、原価構成の必要範囲を確認できず、非開示とは断定しない。\n- S09 PDF page 12の過年度forSchool売上表示には他のサービス別実績と整合しない箇所があり、数量・単価の積上げには使用していない。\n- S09 PDF page 19とS02 PDF page 13でイベント申込増加倍率が不一致。売上への変換には使用していない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 基準日時までの追加開示・修正予想は原本未確認。latest_confirmedは保存原文内での最新確認を意味する。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 対象実績の開示は提示原文にない。target_already_announced=falseは入力条件に従うもので、基準日時までの開示網羅性を独自確認した結果ではない。\n- 新事業費用の合理的な上限・下限を保存原文から設定できないため、営業利益とそれに依存する経常・純利益、各利益ブリッジ残差はnullとした。\n- 本部運営受託の稼働期間配分と上下感応度は実測季節性ではない。月次受領額が偏る場合、売上は提示シナリオ外となり得る。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- Enterpriseの回復シナリオは過去の四半期実績を参照する独自条件であり、受注済案件による裏付けはない。\n- hq_base_weight: S08の事業開始日と通期織込額に基づき、稼働9か月中の3か月について受領ロイヤリティが均等と仮定。通期全社予想の四等分ではなく、本部運営受託収入だけの稼働期間配分。\n- hq_bear_weight: S08の開始日から期末までの9か月のうち対象は3か月。月次受領ロイヤリティが均等な場合の期間配分を中心とし、弱気はその90%。季節性を実測した下限ではなく、契約収入の条件付き感応度。\n- hq_bull_weight: 本部運営受託の対象四半期受領ロイヤリティが均等稼働配分を10%上回る条件。S08の契約構造を用いた感応度であり、実績や会社の四半期計画ではない。\n- master_base_factor: 契約教室減少をアップセルが補い、直前四半期の売上水準を維持する条件。根拠はS01 page 4、S09 page 11。\n- master_bear_factor: S01 page 4の個人塾縮小とS09 page 11の契約教室減少を踏まえ、直前四半期からさらに5%減収の条件。\n- master_bull_factor: S01 page 4の質問対応・添削等のサービス充実が進み、直前四半期比5%増収となる条件。\n- other_factor: S02 page 6で直営塾の生徒数・単価増加を確認したが、対象四半期の追加数量は不明のため直前四半期水準を据え置く。\n- school_base_factor: S02 pages 4–6の大手塾継続利用と保守収益の積上がりを根拠に直前四半期水準を維持。新システム開発の未確認金額は追加しない。\n- school_bear_factor: S02 pages 4–6の継続利用・保守収益を基礎とするが、開発収入の期ずれを考慮して直前四半期比5%減収とする。\n- school_bull_factor: S02 pages 6、9–12の新規導入・開発収益寄与を踏まえ、直前四半期比10%増収とする限定的な上振れ条件。受注金額の確認値ではない。\n- 新事業の実務人員数、人件費、親会社支援利用料と費用区分は提示原文に非開示。\n- 既存サービスの対象四半期契約数・単価・新規開発検収額は提示原文に非開示。\n- 本部運営受託の対象校舎数、実際のロイヤリティ受領額、月次季節性は提示原文に非開示。\n- 本部運営受託は分析上独立した収益項目として表示した。対象決算での会社のサービス区分表示は未確認。\n\n## 根拠・保存記録\n- S01 [2027年4月期 第1四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535798.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `018f02751cb70d9404c0f92015fe4b43d50d665d85eff82f6433157f4a009b4e`\n- S02 [2027年4月期 第1四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535814.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `8a6a5223f4727457b5f325bf3e8c7b9bec3c50a5950865a03bd096bc2c0211a3`\n- S03 [2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519792.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `b350a5f8dcca959446eed6334ab41b895bdd99a70d59b5665b925f38243369da`\n- S04 [2026年4月期 第1四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250916/20250916558276.pdf) / 公表 2025-09-16 / retrieved / SHA-256 `8d02db73e6411296b1c2e0a16f75c2fa8ea20f8655d4e6e2136d9ac3eb5507c4`\n- S05 [2026年4月期 第2四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519846.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `e66730880b5426bcf8428201efdd2b7f7f992c990c8b7335e0b8a39c2fc99a22`\n- S06 [2026年4月期 決算短信〔日本基準〕（非連結）（2027年4月期会社予想を収録）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570693.pdf) / 公表 2026-06-15T16:00:00+09:00 / retrieved / SHA-256 `c52155308508eaa37cb5ef64baa54446409c84f5570ff4b19eaadc4aecfa3657`\n- S07 [2026年4月期 第4四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570698.pdf) / 公表 2026-06-15T16:00:00+09:00 / retrieved / SHA-256 `beca72a47c3ab37d1ca3359cabca5a40a71656ad19157f65cf02a15fdc9ec068`\n- S08 [新たな事業の開始に関するお知らせ ～学習塾本部運営事業の開始～](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535828.pdf) / 公表 2026-09-14T16:00:00+09:00 / retrieved / SHA-256 `b01a575666f7680deab8160210215efeeb1cf20225da2920db1ca6493553fc49`\n- S09 [事業計画及び成長可能性に関する事項](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501601.pdf) / 公表 2026-07-29T16:00:00+09:00 / retrieved / SHA-256 `f9bfbb2cb7f7388f5e0d8fc1fad42f50db98ed40070df020ec66a880791ea93c`\n- S10 [上場維持基準（流通株式時価総額）への適合に向けた計画（改善期間入り）について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501526.pdf) / 公表 2026-07-29T16:00:00+09:00 / retrieved / SHA-256 `b5285f459cbc5ca9e2534343146801e38e86ed065011ba3ecd07071613af5483`\n- S11 [上場維持基準への適合に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250926/20250926562989.pdf) / 公表 2025-09-26 / retrieved / SHA-256 `21e6827a9f7569c5d5de314b3ca8f59b512b3c8b74615400170693e2d8004d25`\n- S12 [新規上場会社概要 株式会社学びエイド](https://www.jpx.co.jp/listing/stocks/new/mklp7700000055ar-att/04Manabi-aid-Outline.pdf) / 公表 2024-04-22 / retrieved / SHA-256 `d45a694535bece2589f0803d8b88b21fabf30db9736c8de762ea68f58831fbbd`\n- S13 [株式基本情報](https://corp.manabi-aid.jp/ir/stock/) / 公表  / unavailable / SHA-256 `なし`\n- S14 [IRカレンダー](https://corp.manabi-aid.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 指定発表日2026-12-15の会社・取引所一次根拠は未確認。S14は資料一覧にあるが保存原文が提示されていない。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "184A",
+    "company_name": "株式会社学びエイド",
+    "announcement_date": "2026-12-15",
+    "target_period": "2027-04-30期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-04-30",
+      "quarter": 2,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 172.6403,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 192.45999999999998,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 215.12190000000004,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 115.53199999999998,
+          "rate": 1.501819883527454,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 110.79599999999999,
+          "rate": 1.3567300156739812,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prior_q1_revenue": 57.276,
+      "prior_h1_revenue": 138.94,
+      "prior_q1_op": -77.682,
+      "prior_h1_op": -122.488,
+      "current_q1_revenue": 76.928,
+      "current_q1_op": -44.272,
+      "current_q1_master": 16.07,
+      "current_q1_school": 49.684,
+      "current_q1_enterprise": 7.832,
+      "current_q1_other": 3.342,
+      "prior_q1_enterprise": 19.254,
+      "prior_h1_enterprise": 32.618,
+      "guidance_revenue": 708.0,
+      "guidance_op": 105.0,
+      "guidance_ordinary": 106.0,
+      "guidance_net": 83.0,
+      "guidance_hq_revenue": 330.0,
+      "hq_fee_share": 0.75,
+      "hq_bear_weight": 0.3,
+      "hq_base_weight": 0.3333333333333333,
+      "hq_bull_weight": 0.3666666666666667,
+      "master_bear_factor": 0.95,
+      "master_base_factor": 1.0,
+      "master_bull_factor": 1.05,
+      "school_bear_factor": 0.95,
+      "school_base_factor": 1.0,
+      "school_bull_factor": 1.1,
+      "other_factor": 1.0,
+      "prior_q2_revenue": 81.66399999999999,
+      "prior_q2_op": -44.806,
+      "prior_q2_enterprise": 13.364,
+      "company_revenue_reference": 708.0,
+      "company_op_reference": 105.0,
+      "company_hq_reference": 330.0,
+      "bear_master": 15.266499999999999,
+      "base_master": 16.07,
+      "bull_master": 16.8735,
+      "bear_school": 47.199799999999996,
+      "base_school": 49.684,
+      "bull_school": 54.6524,
+      "bear_enterprise": 7.832,
+      "base_enterprise": 13.364,
+      "bull_enterprise": 19.254,
+      "forecast_other": 3.342,
+      "bear_hq": 99.0,
+      "base_hq": 110.0,
+      "bull_hq": 121.00000000000001,
+      "bear_existing": 73.6403,
+      "base_existing": 82.46,
+      "bull_existing": 94.12190000000001,
+      "bear_revenue": 172.6403,
+      "base_revenue": 192.45999999999998,
+      "bull_revenue": 215.12190000000004
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 2、9",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "1Q累計",
+        "revenue": 57.276,
+        "operating_profit": -77.682,
+        "ordinary_profit": -85.397,
+        "net_profit": -85.29
+      },
+      {
+        "fiscal_year_end": "2026-04-30",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "PDF pages 2、9",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": 81.66399999999999,
+        "operating_profit": -44.806,
+        "ordinary_profit": -44.58399999999999,
+        "net_profit": -44.73299999999999
+      },
+      {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2、9",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "1Q累計",
+        "revenue": 76.928,
+        "operating_profit": -44.272,
+        "ordinary_profit": -44.328,
+        "net_profit": -44.348
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "bear_existing-prior_q2_revenue",
+            "reason": "個人塾・forSchoolの弱含みとEnterprise低水準継続を含む条件付き差額。数量と価格への厳密な分離はできない。",
+            "amount": -8.023699999999991
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "bear_hq",
+            "reason": "前年同四半期には存在しない新規受託収入。",
+            "amount": 99.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。実績による要因検証ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "bear_existing-current_q1_revenue",
+            "reason": "個人塾とforSchoolの弱含みを反映。",
+            "amount": -3.287700000000001
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "bear_hq",
+            "reason": "対象四半期から受託開始。",
+            "amount": 99.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "base_existing-prior_q2_revenue",
+            "reason": "塾向け直前水準維持とEnterprise前年同四半期水準回復を仮定。",
+            "amount": 0.7960000000000065
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "base_hq",
+            "reason": "稼働期間に応じた均等ロイヤリティ受領を仮定。",
+            "amount": 110.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "base_existing-current_q1_revenue",
+            "reason": "Enterpriseの検収回復を中心とする。",
+            "amount": 5.5319999999999965
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "base_hq",
+            "reason": "対象四半期から受託開始。",
+            "amount": 110.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "bull_existing-prior_q2_revenue",
+            "reason": "アップセル・開発寄与とEnterprise回復を反映する条件付き差額。",
+            "amount": 12.457900000000024
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "bull_hq",
+            "reason": "対象期間のロイヤリティ受領が均等配分を上回る条件。",
+            "amount": 121.00000000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "current_q1_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "既存サービス合計の変化",
+            "formula": "bull_existing-current_q1_revenue",
+            "reason": "塾向け単価・開発収入の増加とEnterprise検収回復を仮定。",
+            "amount": 17.193900000000014
+          },
+          {
+            "label": "本部運営受託開始",
+            "formula": "bull_hq",
+            "reason": "対象四半期から受託開始。",
+            "amount": 121.00000000000001
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      }
+    ],
+    "issues": [
+      "S02 PDF page 7の営業損益改善に関する本文と、S01損益計算書及びS02他ページの記載が整合しない。費用改善額の予測根拠として当該本文を採用していない。",
+      "S02 PDF page 9の累計進捗計画が示唆する第2四半期収益拡大に対し、開発案件の金額・検収時期の内訳が不足している。本推計は大型開発の追加額を確定できず、会社計画に沿った全収益を捕捉しているとはいえない。",
+      "S07はtruncated=falseだが、多数のページで本文やグラフ数値が欠落している。通期サービス別計画、四半期別計画、原価構成の必要範囲を確認できず、非開示とは断定しない。",
+      "S09 PDF page 12の過年度forSchool売上表示には他のサービス別実績と整合しない箇所があり、数量・単価の積上げには使用していない。",
+      "S09 PDF page 19とS02 PDF page 13でイベント申込増加倍率が不一致。売上への変換には使用していない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "基準日時までの追加開示・修正予想は原本未確認。latest_confirmedは保存原文内での最新確認を意味する。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "対象実績の開示は提示原文にない。target_already_announced=falseは入力条件に従うもので、基準日時までの開示網羅性を独自確認した結果ではない。",
+      "新事業費用の合理的な上限・下限を保存原文から設定できないため、営業利益とそれに依存する経常・純利益、各利益ブリッジ残差はnullとした。",
+      "本部運営受託の稼働期間配分と上下感応度は実測季節性ではない。月次受領額が偏る場合、売上は提示シナリオ外となり得る。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "指定発表日2026-12-15の会社・取引所一次根拠は未確認。S14は資料一覧にあるが保存原文が提示されていない。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": 95.7123,
+            "rate": 1.2441802724625624,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 90.97630000000001,
+            "rate": 1.1140318867554861,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 115.53199999999998,
+            "rate": 1.501819883527454,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 110.79599999999999,
+            "rate": 1.3567300156739812,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 138.19390000000004,
+            "rate": 1.7964057300332785,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 133.45790000000005,
+            "rate": 1.6342317300156748,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 90.97630000000001,
+        "explained_sum": 90.97630000000001,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。実績による要因検証ではない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 95.7123,
+        "explained_sum": 95.7123,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 110.79599999999999,
+        "explained_sum": 110.796,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 115.53199999999998,
+        "explained_sum": 115.532,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 133.45790000000005,
+        "explained_sum": 133.45790000000005,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 138.19390000000004,
+        "explained_sum": 138.19390000000004,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "モデル上の差額を全額接続。"
+      }
+    ],
+    "conditions": [
+      "Enterpriseの回復シナリオは過去の四半期実績を参照する独自条件であり、受注済案件による裏付けはない。",
+      "hq_base_weight: S08の事業開始日と通期織込額に基づき、稼働9か月中の3か月について受領ロイヤリティが均等と仮定。通期全社予想の四等分ではなく、本部運営受託収入だけの稼働期間配分。",
+      "hq_bear_weight: S08の開始日から期末までの9か月のうち対象は3か月。月次受領ロイヤリティが均等な場合の期間配分を中心とし、弱気はその90%。季節性を実測した下限ではなく、契約収入の条件付き感応度。",
+      "hq_bull_weight: 本部運営受託の対象四半期受領ロイヤリティが均等稼働配分を10%上回る条件。S08の契約構造を用いた感応度であり、実績や会社の四半期計画ではない。",
+      "master_base_factor: 契約教室減少をアップセルが補い、直前四半期の売上水準を維持する条件。根拠はS01 page 4、S09 page 11。",
+      "master_bear_factor: S01 page 4の個人塾縮小とS09 page 11の契約教室減少を踏まえ、直前四半期からさらに5%減収の条件。",
+      "master_bull_factor: S01 page 4の質問対応・添削等のサービス充実が進み、直前四半期比5%増収となる条件。",
+      "other_factor: S02 page 6で直営塾の生徒数・単価増加を確認したが、対象四半期の追加数量は不明のため直前四半期水準を据え置く。",
+      "school_base_factor: S02 pages 4–6の大手塾継続利用と保守収益の積上がりを根拠に直前四半期水準を維持。新システム開発の未確認金額は追加しない。",
+      "school_bear_factor: S02 pages 4–6の継続利用・保守収益を基礎とするが、開発収入の期ずれを考慮して直前四半期比5%減収とする。",
+      "school_bull_factor: S02 pages 6、9–12の新規導入・開発収益寄与を踏まえ、直前四半期比10%増収とする限定的な上振れ条件。受注金額の確認値ではない。",
+      "新事業の実務人員数、人件費、親会社支援利用料と費用区分は提示原文に非開示。",
+      "既存サービスの対象四半期契約数・単価・新規開発検収額は提示原文に非開示。",
+      "本部運営受託の対象校舎数、実際のロイヤリティ受領額、月次季節性は提示原文に非開示。",
+      "本部運営受託は分析上独立した収益項目として表示した。対象決算での会社のサービス区分表示は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年4月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535798.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "latest_results",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535798.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S01.txt",
+        "sha256": "018f02751cb70d9404c0f92015fe4b43d50d665d85eff82f6433157f4a009b4e",
+        "text_sha256": "e003e5ebc16c801052ba9ecd2985bbea5e6bf0ca68bc2919dbb9baacf533963c",
+        "retrieved_at": "2026-11-22T00:56:22+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9325,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年4月期 第1四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535814.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535814.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S02.txt",
+        "sha256": "8a6a5223f4727457b5f325bf3e8c7b9bec3c50a5950865a03bd096bc2c0211a3",
+        "text_sha256": "255be3a8b9bf2b259762b5e459bd3c9fd884a8185b8ef162e774021cc4ed0c6f",
+        "retrieved_at": "2026-11-22T00:56:24+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7332,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年4月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519792.pdf",
+        "published_at": "2025-12-15",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519792.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S03.txt",
+        "sha256": "b350a5f8dcca959446eed6334ab41b895bdd99a70d59b5665b925f38243369da",
+        "text_sha256": "54da185e6390cc9331708de72ed4eb3bdb27bf7628f05ef9144ccffd916f7bde",
+        "retrieved_at": "2026-11-22T00:56:25+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10459,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年4月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250916/20250916558276.pdf",
+        "published_at": "2025-09-16",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250916/20250916558276.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S04.txt",
+        "sha256": "8d02db73e6411296b1c2e0a16f75c2fa8ea20f8655d4e6e2136d9ac3eb5507c4",
+        "text_sha256": "cb4007fb0edd8805ebee7ceb787402ea266243f55dacdd7cc4c6aeed6fe79c8e",
+        "retrieved_at": "2026-11-22T00:56:26+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8701,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年4月期 第2四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519846.pdf",
+        "published_at": "2025-12-15",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251215519846.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S05.txt",
+        "sha256": "e66730880b5426bcf8428201efdd2b7f7f992c990c8b7335e0b8a39c2fc99a22",
+        "text_sha256": "007b5eaba2eb75ffd8d457e6c911ed9ebb7a1edc792039fd612eef2cf6c03d90",
+        "retrieved_at": "2026-11-22T00:56:28+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5508,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年4月期 決算短信〔日本基準〕（非連結）（2027年4月期会社予想を収録）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570693.pdf",
+        "published_at": "2026-06-15T16:00:00+09:00",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570693.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S06.txt",
+        "sha256": "c52155308508eaa37cb5ef64baa54446409c84f5570ff4b19eaadc4aecfa3657",
+        "text_sha256": "d22b433c80f2691c02c9b034559850b2e27c6202e07f6f8ad6cd937b643e38c0",
+        "retrieved_at": "2026-11-22T00:56:29+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 15056,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年4月期 第4四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570698.pdf",
+        "published_at": "2026-06-15T16:00:00+09:00",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260615/20260615570698.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S07.txt",
+        "sha256": "beca72a47c3ab37d1ca3359cabca5a40a71656ad19157f65cf02a15fdc9ec068",
+        "text_sha256": "6f9e915f047530275d0b75b390f0f1fa3fbd689813b4244c7838164e77ebc5e9",
+        "retrieved_at": "2026-11-22T00:56:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1994,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "新たな事業の開始に関するお知らせ ～学習塾本部運営事業の開始～",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535828.pdf",
+        "published_at": "2026-09-14T16:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260914/20260914535828.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S08.txt",
+        "sha256": "b01a575666f7680deab8160210215efeeb1cf20225da2920db1ca6493553fc49",
+        "text_sha256": "19ddf563a7d84c314e3b48575c9bc9b51dace80af9217008bff05f6576f93785",
+        "retrieved_at": "2026-11-22T00:56:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 4407,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "事業計画及び成長可能性に関する事項",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501601.pdf",
+        "published_at": "2026-07-29T16:00:00+09:00",
+        "category": "kpi",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501601.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S09.txt",
+        "sha256": "f9bfbb2cb7f7388f5e0d8fc1fad42f50db98ed40070df020ec66a880791ea93c",
+        "text_sha256": "01841b11d2fd64710e63510c7d183bab5ce34b71c4649509d3eb198dafcc556f",
+        "retrieved_at": "2026-11-22T00:56:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16179,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "上場維持基準（流通株式時価総額）への適合に向けた計画（改善期間入り）について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501526.pdf",
+        "published_at": "2026-07-29T16:00:00+09:00",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260729/20260729501526.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S10.txt",
+        "sha256": "b5285f459cbc5ca9e2534343146801e38e86ed065011ba3ecd07071613af5483",
+        "text_sha256": "b05f25c0012554123d9fcd326b4cdd829d8bd3832dc7bdbf673aee1b28613ffc",
+        "retrieved_at": "2026-11-22T00:56:38+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2462,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "上場維持基準への適合に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250926/20250926562989.pdf",
+        "published_at": "2025-09-26",
+        "category": "identity",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250926/20250926562989.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S11.txt",
+        "sha256": "21e6827a9f7569c5d5de314b3ca8f59b512b3c8b74615400170693e2d8004d25",
+        "text_sha256": "a83d5a3b7335d236b80bd2866e1823549b197b0ac06f71d6c54c9089c8ea40ec",
+        "retrieved_at": "2026-11-22T00:56:39+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1474,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "新規上場会社概要 株式会社学びエイド",
+        "url": "https://www.jpx.co.jp/listing/stocks/new/mklp7700000055ar-att/04Manabi-aid-Outline.pdf",
+        "published_at": "2024-04-22",
+        "category": "identity",
+        "final_url": "https://www.jpx.co.jp/listing/stocks/new/mklp7700000055ar-att/04Manabi-aid-Outline.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\184A\\sources\\S12.txt",
+        "sha256": "d45a694535bece2589f0803d8b88b21fabf30db9736c8de762ea68f58831fbbd",
+        "text_sha256": "8caf8f774451e838cab581b37d8b086a8026165e50add4272ca67b8d21723814",
+        "retrieved_at": "2026-11-22T00:56:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2012,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "株式基本情報",
+        "url": "https://corp.manabi-aid.jp/ir/stock/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:56:40+09:00"
+      },
+      {
+        "id": "S14",
+        "title": "IRカレンダー",
+        "url": "https://corp.manabi-aid.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T00:56:40+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "announcement_date": "2026-12-15",
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "period": {
+        "fiscal_year_end": "2027-04-30",
+        "quarter": 2,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "prior_q1_revenue",
+          "value": 57.276,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 9 当第1四半期累計期間"
+        },
+        {
+          "id": "prior_h1_revenue",
+          "value": 138.94,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 当中間会計期間"
+        },
+        {
+          "id": "prior_q1_op",
+          "value": -77.682,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_h1_op",
+          "value": -122.488,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "current_q1_revenue",
+          "value": 76.928,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "current_q1_op",
+          "value": -44.272,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "current_q1_master",
+          "value": 16.07,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 サービス区分別売上高"
+        },
+        {
+          "id": "current_q1_school",
+          "value": 49.684,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 サービス区分別売上高"
+        },
+        {
+          "id": "current_q1_enterprise",
+          "value": 7.832,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 サービス区分別売上高"
+        },
+        {
+          "id": "current_q1_other",
+          "value": 3.342,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 サービス区分別売上高"
+        },
+        {
+          "id": "prior_q1_enterprise",
+          "value": 19.254,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 4"
+        },
+        {
+          "id": "prior_h1_enterprise",
+          "value": 32.618,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 4"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 708,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 105,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 106,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 83,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_hq_revenue",
+          "value": 330,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 3 第5項 今後の見通し。約数"
+        },
+        {
+          "id": "hq_fee_share",
+          "value": 0.75,
+          "kind": "fact",
+          "unit": "比率",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF pages 1–2 第2項 業務委託料の算定条件"
+        },
+        {
+          "id": "hq_bear_weight",
+          "value": 0.3,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "S08の開始日から期末までの9か月のうち対象は3か月。月次受領ロイヤリティが均等な場合の期間配分を中心とし、弱気はその90%。季節性を実測した下限ではなく、契約収入の条件付き感応度。",
+          "sensitivity": "配分比率が0.01動くと対象売上は3.3百万円変動。",
+          "material": true
+        },
+        {
+          "id": "hq_base_weight",
+          "value": 0.3333333333333333,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "S08の事業開始日と通期織込額に基づき、稼働9か月中の3か月について受領ロイヤリティが均等と仮定。通期全社予想の四等分ではなく、本部運営受託収入だけの稼働期間配分。",
+          "sensitivity": "月次ロイヤリティの季節性・回収時期によって変動。弱気・強気はこの配分の上下10%。",
+          "material": true
+        },
+        {
+          "id": "hq_bull_weight",
+          "value": 0.3666666666666667,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "本部運営受託の対象四半期受領ロイヤリティが均等稼働配分を10%上回る条件。S08の契約構造を用いた感応度であり、実績や会社の四半期計画ではない。",
+          "sensitivity": "配分比率が0.01動くと対象売上は3.3百万円変動。",
+          "material": true
+        },
+        {
+          "id": "master_bear_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S01 page 4の個人塾縮小とS09 page 11の契約教室減少を踏まえ、直前四半期からさらに5%減収の条件。",
+          "sensitivity": "倍率0.01につき売上0.1607百万円変動。"
+        },
+        {
+          "id": "master_base_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "契約教室減少をアップセルが補い、直前四半期の売上水準を維持する条件。根拠はS01 page 4、S09 page 11。",
+          "sensitivity": "継続率と単価の合成変化を上下5%で確認。"
+        },
+        {
+          "id": "master_bull_factor",
+          "value": 1.05,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S01 page 4の質問対応・添削等のサービス充実が進み、直前四半期比5%増収となる条件。",
+          "sensitivity": "倍率0.01につき売上0.1607百万円変動。"
+        },
+        {
+          "id": "school_bear_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S02 pages 4–6の継続利用・保守収益を基礎とするが、開発収入の期ずれを考慮して直前四半期比5%減収とする。",
+          "sensitivity": "倍率0.01につき売上0.49684百万円変動。",
+          "material": true
+        },
+        {
+          "id": "school_base_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S02 pages 4–6の大手塾継続利用と保守収益の積上がりを根拠に直前四半期水準を維持。新システム開発の未確認金額は追加しない。",
+          "sensitivity": "弱気は5%減、強気は10%増。大型開発検収があれば上振れ幅はこの範囲を超え得る。",
+          "material": true
+        },
+        {
+          "id": "school_bull_factor",
+          "value": 1.1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S02 pages 6、9–12の新規導入・開発収益寄与を踏まえ、直前四半期比10%増収とする限定的な上振れ条件。受注金額の確認値ではない。",
+          "sensitivity": "倍率0.01につき売上0.49684百万円変動。",
+          "material": true
+        },
+        {
+          "id": "other_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S02 page 6で直営塾の生徒数・単価増加を確認したが、対象四半期の追加数量は不明のため直前四半期水準を据え置く。",
+          "sensitivity": "倍率0.1につき売上0.3342百万円変動。"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q2_revenue",
+          "formula": "prior_h1_revenue-prior_q1_revenue"
+        },
+        {
+          "id": "prior_q2_op",
+          "formula": "prior_h1_op-prior_q1_op"
+        },
+        {
+          "id": "prior_q2_enterprise",
+          "formula": "prior_h1_enterprise-prior_q1_enterprise"
+        },
+        {
+          "id": "company_revenue_reference",
+          "formula": "guidance_revenue"
+        },
+        {
+          "id": "company_op_reference",
+          "formula": "guidance_op"
+        },
+        {
+          "id": "company_hq_reference",
+          "formula": "guidance_hq_revenue"
+        },
+        {
+          "id": "bear_master",
+          "formula": "current_q1_master*master_bear_factor"
+        },
+        {
+          "id": "base_master",
+          "formula": "current_q1_master*master_base_factor"
+        },
+        {
+          "id": "bull_master",
+          "formula": "current_q1_master*master_bull_factor"
+        },
+        {
+          "id": "bear_school",
+          "formula": "current_q1_school*school_bear_factor"
+        },
+        {
+          "id": "base_school",
+          "formula": "current_q1_school*school_base_factor"
+        },
+        {
+          "id": "bull_school",
+          "formula": "current_q1_school*school_bull_factor"
+        },
+        {
+          "id": "bear_enterprise",
+          "formula": "current_q1_enterprise"
+        },
+        {
+          "id": "base_enterprise",
+          "formula": "prior_q2_enterprise"
+        },
+        {
+          "id": "bull_enterprise",
+          "formula": "prior_q1_enterprise"
+        },
+        {
+          "id": "forecast_other",
+          "formula": "current_q1_other*other_factor"
+        },
+        {
+          "id": "bear_hq",
+          "formula": "guidance_hq_revenue*hq_bear_weight"
+        },
+        {
+          "id": "base_hq",
+          "formula": "guidance_hq_revenue*hq_base_weight"
+        },
+        {
+          "id": "bull_hq",
+          "formula": "guidance_hq_revenue*hq_bull_weight"
+        },
+        {
+          "id": "bear_existing",
+          "formula": "bear_master+bear_school+bear_enterprise+forecast_other"
+        },
+        {
+          "id": "base_existing",
+          "formula": "base_master+base_school+base_enterprise+forecast_other"
+        },
+        {
+          "id": "bull_existing",
+          "formula": "bull_master+bull_school+bull_enterprise+forecast_other"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_existing+bear_hq"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_existing+base_hq"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_existing+bull_hq"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "学びエイドマスター",
+              "revenue": "bear_master"
+            },
+            {
+              "name": "学びエイドマスターforSchool",
+              "revenue": "bear_school"
+            },
+            {
+              "name": "学びエイドforEnterprise",
+              "revenue": "bear_enterprise"
+            },
+            {
+              "name": "既存その他",
+              "revenue": "forecast_other"
+            },
+            {
+              "name": "学習塾本部運営受託",
+              "revenue": "bear_hq"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "学びエイドマスター",
+              "revenue": "base_master"
+            },
+            {
+              "name": "学びエイドマスターforSchool",
+              "revenue": "base_school"
+            },
+            {
+              "name": "学びエイドforEnterprise",
+              "revenue": "base_enterprise"
+            },
+            {
+              "name": "既存その他",
+              "revenue": "forecast_other"
+            },
+            {
+              "name": "学習塾本部運営受託",
+              "revenue": "base_hq"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "学びエイドマスター",
+              "revenue": "bull_master"
+            },
+            {
+              "name": "学びエイドマスターforSchool",
+              "revenue": "bull_school"
+            },
+            {
+              "name": "学びエイドforEnterprise",
+              "revenue": "bull_enterprise"
+            },
+            {
+              "name": "既存その他",
+              "revenue": "forecast_other"
+            },
+            {
+              "name": "学習塾本部運営受託",
+              "revenue": "bull_hq"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 1,
+          "period_start": "2025-05-01",
+          "period_end": "2025-07-31",
+          "revenue": 57.276,
+          "operating_profit": -77.682,
+          "ordinary_profit": -85.397,
+          "net_profit": -85.29,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2、9"
+        },
+        {
+          "fiscal_year_end": "2026-04-30",
+          "quarter": 2,
+          "period_start": "2025-05-01",
+          "period_end": "2025-10-31",
+          "revenue": 138.94,
+          "operating_profit": -122.488,
+          "ordinary_profit": -129.981,
+          "net_profit": -130.023,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2、9"
+        },
+        {
+          "fiscal_year_end": "2027-04-30",
+          "quarter": 1,
+          "period_start": "2026-05-01",
+          "period_end": "2026-07-31",
+          "revenue": 76.928,
+          "operating_profit": -44.272,
+          "ordinary_profit": -44.328,
+          "net_profit": -44.348,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示・会計方針変更及び修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2、9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "本部運営受託の通期織込額と稼働期間",
+          "mechanism": "対象四半期初日から本部運営受託が開始。親会社が実際に受領した対象ロイヤリティの契約割合を受託収入とする。既存教育サービスとは別の増収要因。",
+          "source_ids": [
+            "S08",
+            "S01"
+          ],
+          "locator": "S08 PDF pages 1–3、S01 PDF pages 10–11",
+          "calculation_ids": [
+            "bear_hq",
+            "base_hq",
+            "bull_hq"
+          ],
+          "not_quantified_reason": "対象校舎別ロイヤリティ額と月次回収額は提示原文に非開示。会社の通期織込額を稼働期間で配分する条件付き推計とした。"
+        },
+        {
+          "name": "既存塾向けサービスの継続利用・単価・開発",
+          "mechanism": "個人塾の縮小を大手塾導入と運用保守収益が補う。forSchoolには開発収入も含まれるため、全額を確定継続収入とは扱わない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S09"
+          ],
+          "locator": "S01 PDF page 4、S02 PDF pages 4–6、9–12、S09 PDF pages 11–12",
+          "calculation_ids": [
+            "bear_master",
+            "base_master",
+            "bull_master",
+            "bear_school",
+            "base_school",
+            "bull_school"
+          ],
+          "not_quantified_reason": "対象四半期の契約数・単価・開発検収額が非開示。直前実績を基準に限定的な感応度を設定。"
+        },
+        {
+          "name": "Enterpriseの案件検収",
+          "mechanism": "弱気は直前四半期の低水準継続、中心は前年同四半期水準への回復、強気は前年第1四半期水準への回復を条件とする。",
+          "source_ids": [
+            "S01",
+            "S03",
+            "S04",
+            "S09"
+          ],
+          "locator": "S01・S03・S04 PDF page 4、S09 PDF page 32",
+          "calculation_ids": [
+            "bear_enterprise",
+            "base_enterprise",
+            "bull_enterprise"
+          ],
+          "not_quantified_reason": "各参照額は確定実績だが、その対象四半期への適用は独自仮定。受注回復の方向は提案活動・アップセルを根拠とし、実際の受注残や検収確約は未確認。"
+        },
+        {
+          "name": "新事業の人件費・支援利用料と既存事業原価",
+          "mechanism": "本部運営の実務人員・運営費の主たる部分を負担し、親会社のシステム・コールセンター・オフィス・管理業務支援にも対価を支払う。設備投資不要でも費用負担は増える。",
+          "source_ids": [
+            "S08",
+            "S01",
+            "S02"
+          ],
+          "locator": "S08 PDF pages 2、3–4、S01 PDF page 9、S02 PDF pages 5、7",
+          "calculation_ids": [],
+          "not_quantified_reason": "新事業の人員数、給与、支援利用料、原価と販管費の区分が非開示。既存全社原価率や映像使用許諾料率を新事業へ転用できず、営業利益の合理的な範囲を設定できない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "bear_existing-prior_q2_revenue",
+              "reason": "個人塾・forSchoolの弱含みとEnterprise低水準継続を含む条件付き差額。数量と価格への厳密な分離はできない。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "bear_hq",
+              "reason": "前年同四半期には存在しない新規受託収入。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上のサービス構成差で全額を接続。実績による要因検証ではない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "bear_existing-current_q1_revenue",
+              "reason": "個人塾とforSchoolの弱含みを反映。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "bear_hq",
+              "reason": "対象四半期から受託開始。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を全額接続。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "新事業人件費・支援利用料とサービス別採算が不明で予測差額そのものを算定できない。残差をゼロとは置かない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "新事業の増分費用を定量化できず、営業利益差額は未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "base_existing-prior_q2_revenue",
+              "reason": "塾向け直前水準維持とEnterprise前年同四半期水準回復を仮定。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "base_hq",
+              "reason": "稼働期間に応じた均等ロイヤリティ受領を仮定。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "base_existing-current_q1_revenue",
+              "reason": "Enterpriseの検収回復を中心とする。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "base_hq",
+              "reason": "対象四半期から受託開始。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を全額接続。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "新事業の費用積上げに必要な金額が非開示であり、会社の黒字化計画から費用を逆算していない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増収による増益と新規運営費負担の差引額を算定できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "bull_existing-prior_q2_revenue",
+              "reason": "アップセル・開発寄与とEnterprise回復を反映する条件付き差額。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "bull_hq",
+              "reason": "対象期間のロイヤリティ受領が均等配分を上回る条件。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上のサービス構成差で全額を接続。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "current_q1_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "既存サービス合計の変化",
+              "formula": "bull_existing-current_q1_revenue",
+              "reason": "塾向け単価・開発収入の増加とEnterprise検収回復を仮定。"
+            },
+            {
+              "label": "本部運営受託開始",
+              "formula": "bull_hq",
+              "reason": "対象四半期から受託開始。"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル上の差額を全額接続。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "売上上振れ時の人件費・外注費・支援利用料の連動性が不明であり、営業利益差額は未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "current_q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "新事業の限界利益率を裏付ける原資料がなく、利益改善額を定量化できない。"
+        }
+      ],
+      "guidance_records": [
+        {
+          "id": "fy_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。保存原文内で最新確認、期初予想据置き"
+        },
+        {
+          "id": "fy_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。保存原文内で最新確認"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。保存原文内で最新確認"
+        },
+        {
+          "id": "fy_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、5。保存原文内で最新確認"
+        },
+        {
+          "id": "fy_hq_guidance",
+          "metric": "hq_operation_revenue",
+          "value_ref": "guidance_hq_revenue",
+          "period_start": "2026-05-01",
+          "period_end": "2027-04-30",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-14T16:00:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S08",
+            "S01"
+          ],
+          "locator": "S08 PDF page 3 第5項、S01 PDF page 1。通期予想への約額の織込みであり、実際の事業稼働は8月開始"
+        }
+      ],
+      "company_guidance": "保存原文内の最新確認会社予想は期初予想据置き。本部運営受託は既に通期予想に包含される。S02 PDF page 9に四半期別の売上進捗計画と第2四半期以降の黒字化方針があるが、対象四半期単独の確定実績でも独自予測でもない。",
+      "consensus": "未確認。提示された保存原文に公表市場コンセンサスはない。",
+      "independent_forecast": "売上のみ条件付きサービス別推計。既存サービスは直前実績と過去のEnterprise四半期実績を基準に継続率・単価・案件回復を仮定。本部運営受託は会社の事業別通期織込額を稼働期間と受領ロイヤリティ感応度で配分するため、完全な数量・価格の独立積上げではない。会社予想から既公表累計を差し引いた対象四半期見込みではなく、期後修正予想も使用していない。営業・経常・純利益は根拠不足によりnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期の条件付き売上",
+          "text": "中心売上は{{value:base_revenue}}、弱気は{{value:bear_revenue}}、強気は{{value:bull_revenue}}。主因は四半期初日から開始した本部運営受託であり、既存事業の成長だけで説明する予測ではない。各シナリオは実績で較正された確率区間ではなく、契約構造と過去実績に基づく条件付き感応度である。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S08"
+          ],
+          "locator": "S01 PDF page 4、S02 PDF pages 4–12、S08 PDF pages 1–3"
+        },
+        {
+          "heading": "会社予想との関係",
+          "text": "会社の通期売上予想は{{value:company_revenue_reference}}、営業利益予想は{{value:company_op_reference}}。本部運営受託の通期織込額{{value:company_hq_reference}}は既に包含されているため、これを会社予想へ追加しない。本推計の中心受託売上{{value:base_hq}}は月次ロイヤリティ受領が均等という仮定による。",
+          "source_ids": [
+            "S01",
+            "S08"
+          ],
+          "locator": "S01 PDF pages 1、11、S08 PDF page 3"
+        },
+        {
+          "heading": "利益を数値化しない理由",
+          "text": "受託事業では実務人員と運営コストの主たる部分を負担する。新規設備投資が不要であることは、高い営業利益率を保証しない。人件費・支援利用料・開発外注費の対象四半期負担を裏付けられず、会社の黒字化方針に合わせた費用逆算は行わない。",
+          "source_ids": [
+            "S08",
+            "S02"
+          ],
+          "locator": "S08 PDF pages 2–4、S02 PDF pages 7、9"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "本部運営受託の対象校舎数、実際のロイヤリティ受領額、月次季節性は提示原文に非開示。",
+        "新事業の実務人員数、人件費、親会社支援利用料と費用区分は提示原文に非開示。",
+        "既存サービスの対象四半期契約数・単価・新規開発検収額は提示原文に非開示。",
+        "Enterpriseの回復シナリオは過去の四半期実績を参照する独自条件であり、受注済案件による裏付けはない。",
+        "本部運営受託は分析上独立した収益項目として表示した。対象決算での会社のサービス区分表示は未確認。"
+      ],
+      "material_unresolved": [
+        "指定発表日2026-12-15の会社・取引所一次根拠は未確認。S14は資料一覧にあるが保存原文が提示されていない。",
+        "対象実績の開示は提示原文にない。target_already_announced=falseは入力条件に従うもので、基準日時までの開示網羅性を独自確認した結果ではない。",
+        "基準日時までの追加開示・修正予想は原本未確認。latest_confirmedは保存原文内での最新確認を意味する。",
+        "S07はtruncated=falseだが、多数のページで本文やグラフ数値が欠落している。通期サービス別計画、四半期別計画、原価構成の必要範囲を確認できず、非開示とは断定しない。",
+        "S02 PDF page 9の累計進捗計画が示唆する第2四半期収益拡大に対し、開発案件の金額・検収時期の内訳が不足している。本推計は大型開発の追加額を確定できず、会社計画に沿った全収益を捕捉しているとはいえない。",
+        "S02 PDF page 7の営業損益改善に関する本文と、S01損益計算書及びS02他ページの記載が整合しない。費用改善額の予測根拠として当該本文を採用していない。",
+        "S09 PDF page 19とS02 PDF page 13でイベント申込増加倍率が不一致。売上への変換には使用していない。",
+        "S09 PDF page 12の過年度forSchool売上表示には他のサービス別実績と整合しない箇所があり、数量・単価の積上げには使用していない。",
+        "本部運営受託の稼働期間配分と上下感応度は実測季節性ではない。月次受領額が偏る場合、売上は提示シナリオ外となり得る。",
+        "新事業費用の合理的な上限・下限を保存原文から設定できないため、営業利益とそれに依存する経常・純利益、各利益ブリッジ残差はnullとした。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "S02 PDF page 7の営業損益改善に関する本文と、S01損益計算書及びS02他ページの記載が整合しない。費用改善額の予測根拠として当該本文を採用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "S02 PDF page 9の累計進捗計画が示唆する第2四半期収益拡大に対し、開発案件の金額・検収時期の内訳が不足している。本推計は大型開発の追加額を確定できず、会社計画に沿った全収益を捕捉しているとはいえない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "S07はtruncated=falseだが、多数のページで本文やグラフ数値が欠落している。通期サービス別計画、四半期別計画、原価構成の必要範囲を確認できず、非開示とは断定しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "S09 PDF page 12の過年度forSchool売上表示には他のサービス別実績と整合しない箇所があり、数量・単価の積上げには使用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "S09 PDF page 19とS02 PDF page 13でイベント申込増加倍率が不一致。売上への変換には使用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "基準日時までの追加開示・修正予想は原本未確認。latest_confirmedは保存原文内での最新確認を意味する。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "対象実績の開示は提示原文にない。target_already_announced=falseは入力条件に従うもので、基準日時までの開示網羅性を独自確認した結果ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "新事業費用の合理的な上限・下限を保存原文から設定できないため、営業利益とそれに依存する経常・純利益、各利益ブリッジ残差はnullとした。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "本部運営受託の稼働期間配分と上下感応度は実測季節性ではない。月次受領額が偏る場合、売上は提示シナリオ外となり得る。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "Enterpriseの回復シナリオは過去の四半期実績を参照する独自条件であり、受注済案件による裏付けはない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "hq_base_weight: S08の事業開始日と通期織込額に基づき、稼働9か月中の3か月について受領ロイヤリティが均等と仮定。通期全社予想の四等分ではなく、本部運営受託収入だけの稼働期間配分。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "hq_bear_weight: S08の開始日から期末までの9か月のうち対象は3か月。月次受領ロイヤリティが均等な場合の期間配分を中心とし、弱気はその90%。季節性を実測した下限ではなく、契約収入の条件付き感応度。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "hq_bull_weight: 本部運営受託の対象四半期受領ロイヤリティが均等稼働配分を10%上回る条件。S08の契約構造を用いた感応度であり、実績や会社の四半期計画ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "master_base_factor: 契約教室減少をアップセルが補い、直前四半期の売上水準を維持する条件。根拠はS01 page 4、S09 page 11。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "master_bear_factor: S01 page 4の個人塾縮小とS09 page 11の契約教室減少を踏まえ、直前四半期からさらに5%減収の条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "master_bull_factor: S01 page 4の質問対応・添削等のサービス充実が進み、直前四半期比5%増収となる条件。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "other_factor: S02 page 6で直営塾の生徒数・単価増加を確認したが、対象四半期の追加数量は不明のため直前四半期水準を据え置く。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "school_base_factor: S02 pages 4–6の大手塾継続利用と保守収益の積上がりを根拠に直前四半期水準を維持。新システム開発の未確認金額は追加しない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "school_bear_factor: S02 pages 4–6の継続利用・保守収益を基礎とするが、開発収入の期ずれを考慮して直前四半期比5%減収とする。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "school_bull_factor: S02 pages 6、9–12の新規導入・開発収益寄与を踏まえ、直前四半期比10%増収とする限定的な上振れ条件。受注金額の確認値ではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "新事業の実務人員数、人件費、親会社支援利用料と費用区分は提示原文に非開示。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "既存サービスの対象四半期契約数・単価・新規開発検収額は提示原文に非開示。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "本部運営受託の対象校舎数、実際のロイヤリティ受領額、月次季節性は提示原文に非開示。",
+      "quality": "保留"
+    },
+    {
+      "code": "184A",
+      "company_name": "株式会社学びエイド",
+      "kind": "condition",
+      "message": "本部運営受託は分析上独立した収益項目として表示した。対象決算での会社のサービス区分表示は未確認。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/184A/result.json": "358f46283f66b54c599d1ad8fedd51edd76e0a925bd81f0126da608bf0c32e06",
+    "reports/184A.md": "51a1b9112627d82fd8ed37fdaadd526614df7d99abc77d19c02dbfd42f91426a"
+  }
+}

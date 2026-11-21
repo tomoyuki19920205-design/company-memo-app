@@ -1,0 +1,2730 @@
+{
+  "id": "3565-e94e40fefab6f8168d089f3c6ee59db63a91e1a5834d01185c192eb26d6dbcf7",
+  "code": "3565",
+  "companyName": "アセンテック株式会社",
+  "announcementDate": "2026-12-15",
+  "target": {
+    "fiscalYearEnd": "2027-01-31",
+    "quarter": 3
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "3565-generation-953be6664846acd6 · e94e40fe",
+  "savedAt": "2026-11-22T01:17:42+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 4400.0,
+  "operatingProfit": 492.0,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3565 アセンテック株式会社｜2027-01-31期 Q3単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 3,400.00 | 4,400.00 | 5,600.00 |\n| 営業利益 | 166.00 | 492.00 | 937.00 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存原文で最新確認できる会社予想はS01の通期連結予想で、据え置きと明記されている。対象第3四半期単独の会社予想は保存資料中にない。通期予想から上期実績を引いた値は下期全体の必要額であり、第3四半期予想ではない。基準日時点までの修正開示の網羅性は未確認。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n事業領域別の直近売上、リモートPCアレイ受注残、CSP計上の季節性、大型案件反動から売上レンジを積み上げた条件付き独自予測。営業利益は実績範囲内の連結粗利益率仮定と、独立に設定した販管費を用いる。数量×単価・領域別原価の完全な積上げではないため確度は低い。会社予想の四等分、前年比一律延長、期後修正予想からの差引きは使用していない。経常・純利益は外貨建債務評価、ヘッジ損益、特別損益の対象四半期推計根拠が不足するためnull。\n\n## 条件付き予測\n中心条件の売上は4,400.00、営業利益は492.00。弱気では売上3,400.00・営業利益166.00、強気では売上5,600.00・営業利益937.00となる。受注残の検収とCSP更新の進捗が売上の主要な分岐点であり、採算仮定は売上条件とは別に外れる可能性がある。\n\n## 比較と採算の注意点\n前年同四半期の売上は3,240.73、営業利益は1,384.92。前年にはCSG契約条件に沿った大型案件獲得収益があり、その採算を通常水準として延長できない。直前四半期の営業利益291.00からの回復には、売上構成と報告粗利益率の改善が必要である。利益ブリッジでは、個別金額を識別できない採算差を経済的未説明残差として残した。\n\n## 会社予想との区別\n会社通期予想から上期実績を引いた下期全体の必要額は、売上9,597.89、営業利益1,137.65。これは会社予想の残額であり、独自予測の目標値や対象四半期への配分根拠にはしていない。\n\n## 重複計上と期後情報\nストック売上は各事業領域に内包し、受注額やAI提携を追加売上として重ねていない。長期売掛金の繰延利益も自動的な戻入として加算していない。期後の法律事務所導入事例は需要の参考に限定し、対象四半期の検収実績には扱わない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | -618.55 | CSP更新・案件計上の弱気条件と前年領域売上との差 |\n| クラウドインフラ | 399.37 | 受注残の検収進捗を抑えた領域売上との差 |\n| ゼロトラストセキュリティ | 378.45 | 当期の事業拡大を含む弱気売上と前年との差 |\n| 残差（unclassified） | -0.00 | 前年領域売上合計と累計差引売上の微差。表示単位に起因する可能性はあるが、丸め方法の原文確認がないため丸めと断定しない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | 301.48 | CSP更新等による回復条件 |\n| クラウドインフラ | -59.16 | 金融機関案件の検収遅延条件 |\n| ゼロトラストセキュリティ | -1,334.33 | 直前四半期大型案件の反動条件 |\n| 残差（unclassified） | -0.00 | 領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | 83.10 | 前年の実効粗利益率を固定した数量・価格・構成未分離の計算効果 |\n| 販管費差 | -4.05 | 実績費用と独自費用仮定の差 |\n| 残差（economic_unexplained） | -1,297.97 | 前年大型案件獲得収益、製品構成、仕入条件、現在価値評価を個別金額に分解できない粗利益率差。特定要因の実績額とは扱わない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | -142.66 | 直前四半期の実効粗利益率を固定した計算効果 |\n| 販管費差 | -14.16 | 直前費用と弱気費用仮定の差 |\n| 残差（economic_unexplained） | 31.82 | 構成・原価・現在価値評価の未分離部分を含む粗利益率差。繰延額の全額戻入を意味しない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | -218.55 | CSP更新と下期回復の中心条件 |\n| クラウドインフラ | 749.37 | 受注残の部分的検収による領域拡大条件 |\n| ゼロトラストセキュリティ | 628.45 | 大企業向け導入拡大を含む中心条件 |\n| 残差（unclassified） | -0.00 | 前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | 701.48 | 第1四半期付近までの回復条件 |\n| クラウドインフラ | 290.84 | 受注残の部分的検収条件 |\n| ゼロトラストセキュリティ | -1,084.33 | 大型案件の反動と通常案件の継続条件 |\n| 残差（unclassified） | -0.00 | 領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | 604.86 | 前年実効粗利益率を固定した計算効果。大型案件収益の再現を意味しない |\n| 販管費差 | 5.95 | 前年実績費用と中心費用仮定の差 |\n| 残差（economic_unexplained） | -1,503.73 | 前年の特殊な案件収益を含む採算と当期仮定との差。大型案件反動額を単独で識別できないため、全体を採算の経済的未説明差とする。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | -12.02 | 直前実効粗利益率を固定した計算効果 |\n| 販管費差 | -4.16 | 直前実績費用と中心費用仮定の差 |\n| 残差（economic_unexplained） | 217.17 | 上期程度の採算への回復仮定。製品構成・仕入価格・現在価値評価の寄与は分離できず、説明済み要因には振り替えない。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | 181.45 | CSP更新と案件計上の強気条件 |\n| クラウドインフラ | 1,149.37 | 金融機関向け受注残の検収集中条件 |\n| ゼロトラストセキュリティ | 1,028.45 | 大企業向け導入継続の強気条件 |\n| 残差（unclassified） | -0.00 | 前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 仮想デスクトップ | 1,101.48 | 下期案件とCSP更新の集中条件 |\n| クラウドインフラ | 690.84 | 受注残の検収集中条件 |\n| ゼロトラストセキュリティ | -684.33 | 大型案件の反動を残しつつ導入継続 |\n| 残差（unclassified） | -0.00 | 領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | 1,230.96 | 前年実効粗利益率を固定した計算効果 |\n| 販管費差 | 10.95 | 前年費用と直前並み費用条件との差 |\n| 残差（economic_unexplained） | -1,689.84 | 強気でも前年大型案件獲得収益を再現しない採算条件。前年特殊収益と通常構成差の金額分離はできない。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上規模差の機械的効果 | 144.75 | 直前実効粗利益率を固定した計算効果 |\n| 販管費差 | 0.84 | 直前四半期並みの費用維持条件 |\n| 残差（economic_unexplained） | 500.40 | 自社製品・高採算案件の寄与と評価減負担を含む粗利益率改善仮定。個別の寄与金額は識別できない。 |\n\n## エラー・未解決事項\n- S06のストックKPIは集計対象見直し後。S03・S04・S07の旧定義ストックKPIと混ぜて成長率や単独売上を算出していない。\n- S08の訂正理由ページ、S09の訂正理由ページは文字化けがあり、訂正範囲の完全な原文照合はできない。読める損益数値と後続資料を使用し、純額処理対象額の資料間相違は補正推定していない。\n- S10の動画本文は未提示。質疑応答を確認済みとは扱っていない。\n- S12の約260台は利用者向け業務基盤の規模であり、リモートPCアレイのシャーシ出荷台数と同一とは確認できない。公表日も対象四半期末後で、検収日・売上額は非開示。\n- S13・S14の保存本文は提示されていない。企業名・コードはS01等で確認したが、決算予定日は対象条件として採用し、公式スケジュール原文及び基準日時点の掲載履歴は未確認。\n- 保存資料はtruncated=falseだが、文字化けや図表抽出の配置崩れがある。画像・原本をツールで再確認していないため、抽出が不明瞭な値を補完していない。\n- 前年大型案件獲得収益の独立金額が非開示のため、営業利益の前年対比を個別ドライバーですべて説明できない。残差を丸め差や会計組替え差として処理していない。\n- 前年第3四半期売上はS03−S04を使用し、S06及びS07の直接四半期領域売上で照合した。過年度訂正の全履歴は未確認だが、提示資料に当該累計損益の別会計版は確認されない。\n- 増減要因の合計不一致: base/qoq/operating_profit\n- 増減要因の合計不一致: base/qoq/revenue\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/qoq/operating_profit\n- 増減要因の合計不一致: bear/qoq/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/qoq/operating_profit\n- 増減要因の合計不一致: bull/qoq/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 売上は領域別実績と受注・製品展開から条件付き範囲を設定したが、受注残からの厳密な数量・価格積上げはできない。粗利益率の裏付けは連結実績範囲に限定され、予測利益の主要な不確実性である。\n- 対象実績は提示資料中に存在しないためtarget_already_announced=falseとした。基準日時点までの開示網羅性を独自に検証したものではない。\n- 直前累計不足: 2025-10-31\n- 直前累計不足: 2026-07-31\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- CSP更新の対象契約、契約年数及び今期の売上集中時期は非開示。\n- base_cloud: 上期出荷を上回る受注残と会社の下期伸長見通しから、直前四半期を上回る検収進捗を仮定。金融機関案件をすべて当四半期へ配賦せず、サーバ等も含む領域売上として設定。\n- base_margin: 当期上期の粗利益率約18%を基準に、第1四半期と第2四半期の採算差を均した条件。自社製品・CSP・代理人取引の構成及び現在価値評価はこの率に包含し、繰延利益の戻入を別途加算しない。\n- base_sga: 直前四半期と前年第3四半期の販管費の間に設定し、既存の人員・開発・営業体制の費用水準が続く条件。\n- base_vdi: 下期伸長とCSP更新集中により当期第1四半期付近まで回復する一方、前年第3四半期を下回る条件。前年の大型案件獲得収益の再現は前提にしない。純額認識・現在価値評価後。\n- base_zero: Numecent大規模案件及びForcepoint展開の寄与を領域売上に包含し、当期第1四半期と大型案件を含む第2四半期の間に設定。既に上期計上された大型案件を別途加算しない。\n- bear_cloud: 直前四半期の領域売上を基準に、金融機関向け受注残の検収が第4四半期へ偏る条件。受注残は需要の裏付けだが、単価非開示のため台数から金額を捏造せず、直前実績付近を下限条件とする。\n- bear_margin: 当期第2四半期の粗利益率約13%に近い低採算条件。仕入原価、案件構成、長期売掛金の現在価値評価を含む報告ベースの粗利益率。領域別採算は非開示のため連結段階で条件を置く。\n- bear_sga: 直前四半期と前年第3四半期の販管費を基準に、AI事業展開・営業活動費用がやや増える条件。利益目標から逆算していない。\n- bear_vdi: 下期伸長見通しとCSPの第3四半期集中を踏まえ、第2四半期から回復するが、当期第1四半期及び前年第3四半期に届かない弱気条件。代理人取引の純額認識及び現在価値評価後の売上を仮定。\n- bear_zero: 第2四半期の大型案件を反復せず、当期第1四半期の領域売上付近へ低下する条件。Forcepoint等の展開と製造業向け案件の存在により、第1四半期をやや上回る水準を置く。\n- bull_cloud: 金融機関向け大型受注残の検収が当四半期に集中し、領域売上が上期累計に近づく強気条件。受注残の台数を売上に直接換算した推計ではなく、上期実績と受注残の規模に基づく条件付き上限。\n- bull_margin: 自社製品や高採算案件の寄与が強く、当期第1四半期の粗利益率約25%に近づくが下回る条件。前年第3四半期の大型案件獲得収益による異常に高い採算は外挿しない。現在価値評価を包含。\n- bull_sga: 直前四半期並みの販管費で案件増加に対応できる条件。売上に比例した販管費増加や利益からの逆算は行わない。\n- bull_vdi: 下期の案件計上とCSP更新が進み、前年第3四半期を小幅に上回る条件。前年大型案件の利益額を追加計上する仮定ではない。純額認識・現在価値評価後。\n- bull_zero: 大企業向け導入が続き、上期の四半期平均程度の売上を維持する条件。第2四半期大型案件と同規模の反復までは仮定しない。\n- ゼロトラスト大型案件について、上期既計上分と下期未計上分の内訳は非開示。\n- リモートPCアレイの受注残金額、実現単価、案件別検収日及び対象四半期内の出荷数量は保存資料では非開示。\n- 事業領域別の売上原価・粗利益・営業利益は非開示。会社はITインフラ事業の単一セグメントであり、領域別売上を報告セグメント利益と混同していない。\n- 売上シナリオと粗利益率シナリオの組合せは独自条件であり、統計的な信頼区間ではない。\n- 対象四半期末の外貨建債務評価、為替予約評価及び長期売掛金の現在価値評価額は未確認。\n\n## 根拠・保存記録\n- S01 [2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/35650/140120260911535349.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `65ee897b8d6f9ef1e1b98f3240d4c6094efeae3350519fc2e770881762b025aa`\n- S02 [2027年1月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/35650/140120260611568736.pdf) / 公表 2026-06-15 / retrieved / SHA-256 `2e006475ebd3bcc617a2e560f33db13fca16e52fd45452c74adc23dc37760570`\n- S03 [2026年1月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/35650/140120251212519394.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `dd141ebceb47346e7fd95c3a11b7d2615d46714548ba133fdc82ede0668cb161`\n- S04 [2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/35650/140120250912557517.pdf) / 公表 2025-09-16 / retrieved / SHA-256 `530ea885518b435c45a11838fb9b5bda8a9bba147c5e1f6643ce96e7e8f98342`\n- S05 [2027年1月期 第2四半期 決算説明会資料](https://www2.jpx.co.jp/disc/35650/140120260911535351.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `025575719c5491c8dfba3385d8c0cf34ea6fc33b2aa214a21ff99419be03a1cd`\n- S06 [2027年1月期 第2四半期 決算短信補足資料](https://www2.jpx.co.jp/disc/35650/140120260911535350.pdf) / 公表 2026-09-14 / retrieved / SHA-256 `0d48cd17eac3ec925655ef8c5a7b623bbe7a114167504ba799c2dd4f4090dd57`\n- S07 [2026年1月期 第3四半期 決算短信補足資料](https://www2.jpx.co.jp/disc/35650/140120251212519405.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `fe4d9f01dc4688f814280eb937088e162c182486d2d85df090e4c022ce973e59`\n- S08 [（訂正・数値データ訂正）2026年1月期 決算短信〔日本基準〕（連結）の一部訂正について](https://www.ascentech.co.jp/ir/pdf/ir260401_01.pdf) / 公表 2026-04-01 / retrieved / SHA-256 `2a34d1f7c4acfe0cd8828c8dd1854d96523a359549015e97c33930ea39fa3483`\n- S09 [（訂正）2026年1月期 決算説明会資料の一部訂正](https://www2.jpx.co.jp/disc/35650/140120260401596410.pdf) / 公表 2026-04-01 / retrieved / SHA-256 `ba1322789a1766a24013f1e79c63459106538bfc3e3743be6b5d4889bd1017dd`\n- S10 [IR関連動画：2026年9月14日開催決算説明会・質疑応答編](https://www.ascentech.co.jp/ir/movie.html) / 公表  / unavailable / SHA-256 `なし`\n- S11 [アセンテックとレトリバ、企業の安全なAI活用を推進する業務提携契約を締結](https://ascentech.co.jp/news/press/pr260820_01.html) / 公表 2026-08-20 / retrieved / SHA-256 `6b67f91f93e018546564596907aacc029f9ec2806bb03ba91c15dc58c6eb12bf`\n- S12 [弁護士法人子浩法律事務所が、業務基盤としてリモートPCアレイを採用](https://ascentech.co.jp/news/press/pr261111_01.html) / 公表 2026-11-11 / retrieved / SHA-256 `75e624304167a400d14dd6fce72061534b52fad325564dd43643afe573fb9cb5`\n- S13 [株式情報](https://www.ascentech.co.jp/ir/stockinfo.html) / 公表  / unavailable / SHA-256 `なし`\n- S14 [IRスケジュール](https://www.ascentech.co.jp/ir/schedule.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 資料確認未了: schedule\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3565",
+    "company_name": "アセンテック株式会社",
+    "announcement_date": "2026-12-15",
+    "target_period": "2027-01-31期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-01-31",
+      "quarter": 3,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 3400.0,
+        "operating_profit": 166.00000000000006,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 4400.0,
+        "operating_profit": 492.0,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 5600.0,
+        "operating_profit": 937.0,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "cy_h1_revenue": 7902.106,
+      "cy_h1_op": 862.352,
+      "cy_h1_sga": 565.536,
+      "cy_q1_revenue": 3410.092,
+      "cy_q1_op": 571.347,
+      "cy_q1_sga": 269.695,
+      "py_9m_revenue": 14073.986,
+      "py_9m_op": 2483.524,
+      "py_9m_sga": 886.442,
+      "py_h1_revenue": 10833.253,
+      "py_h1_op": 1098.604,
+      "py_h1_sga": 580.488,
+      "q2_vdi": 1498.523,
+      "q2_cloud": 1159.164,
+      "q2_zero": 1834.325,
+      "py_q3_vdi": 2418.55,
+      "py_q3_cloud": 700.627,
+      "py_q3_zero": 121.554,
+      "rpa_backlog": 272.0,
+      "rpa_financial_backlog": 215.0,
+      "rpa_h1_shipments": 130.0,
+      "stock_h1_sales": 1180.704,
+      "stock_q2_sales": 492.858,
+      "stock_py_q3_sales": 672.712,
+      "discount_q2_increment": 123.0,
+      "guidance_revenue": 17500.0,
+      "guidance_op": 2000.0,
+      "guidance_ordinary": 2100.0,
+      "guidance_net": 1430.0,
+      "bear_vdi": 1800.0,
+      "base_vdi": 2200.0,
+      "bull_vdi": 2600.0,
+      "bear_cloud": 1100.0,
+      "base_cloud": 1450.0,
+      "bull_cloud": 1850.0,
+      "bear_zero": 500.0,
+      "base_zero": 750.0,
+      "bull_zero": 1150.0,
+      "bear_margin": 0.14,
+      "base_margin": 0.18,
+      "bull_margin": 0.22,
+      "bear_sga": 310.0,
+      "base_sga": 300.0,
+      "bull_sga": 295.0,
+      "q2_revenue": 4492.013999999999,
+      "q2_op": 291.005,
+      "q2_sga": 295.84099999999995,
+      "q2_effective_gp": 586.846,
+      "q2_effective_margin": 0.1306420683461806,
+      "py_q3_revenue": 3240.733,
+      "py_q3_op": 1384.9199999999998,
+      "py_q3_sga": 305.95399999999995,
+      "py_q3_effective_gp": 1690.8739999999998,
+      "py_q3_effective_margin": 0.5217566519673171,
+      "qoq_revenue_reconciliation": -0.001999999999497959,
+      "yoy_revenue_reconciliation": -0.0019999999999527063,
+      "bear_revenue": 3400.0,
+      "bear_gp": 476.00000000000006,
+      "bear_op": 166.00000000000006,
+      "base_revenue": 4400.0,
+      "base_gp": 792.0,
+      "base_op": 492.0,
+      "bull_revenue": 5600.0,
+      "bull_gp": 1232.0,
+      "bull_op": 937.0,
+      "bear_yoy_margin_residual": -1297.9726166888781,
+      "bear_qoq_margin_residual": 31.816967622985963,
+      "base_yoy_margin_residual": -1503.7292686561955,
+      "base_qoq_margin_residual": 217.1748992768053,
+      "bull_yoy_margin_residual": -1689.837251016976,
+      "bull_qoq_margin_residual": 500.4044172613886,
+      "guidance_remaining_revenue": 9597.894,
+      "guidance_remaining_op": 1137.6480000000001
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04",
+          "S01"
+        ],
+        "locator": "両資料PDF page 7、S04 PDF page 10",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-01-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 7・9。売上差引はS06・S07の直接四半期領域売上とも概ね整合。",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2・6",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "1Q累計",
+        "revenue": 3410.092,
+        "operating_profit": 571.347,
+        "ordinary_profit": 363.285,
+        "net_profit": 249.343
+      },
+      {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2・7",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "bear_vdi-py_q3_vdi",
+            "reason": "CSP更新・案件計上の弱気条件と前年領域売上との差",
+            "amount": -618.5500000000002
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "bear_cloud-py_q3_cloud",
+            "reason": "受注残の検収進捗を抑えた領域売上との差",
+            "amount": 399.37300000000005
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "bear_zero-py_q3_zero",
+            "reason": "当期の事業拡大を含む弱気売上と前年との差",
+            "amount": 378.446
+          }
+        ],
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差。表示単位に起因する可能性はあるが、丸め方法の原文確認がないため丸めと断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "bear_vdi-q2_vdi",
+            "reason": "CSP更新等による回復条件",
+            "amount": 301.4770000000001
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "bear_cloud-q2_cloud",
+            "reason": "金融機関案件の検収遅延条件",
+            "amount": -59.16399999999999
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "bear_zero-q2_zero",
+            "reason": "直前四半期大型案件の反動条件",
+            "amount": -1334.325
+          }
+        ],
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(bear_revenue-py_q3_revenue)*py_q3_effective_margin",
+            "reason": "前年の実効粗利益率を固定した数量・価格・構成未分離の計算効果",
+            "amount": 83.09861668887861
+          },
+          {
+            "label": "販管費差",
+            "formula": "py_q3_sga-bear_sga",
+            "reason": "実績費用と独自費用仮定の差",
+            "amount": -4.046000000000049
+          }
+        ],
+        "residual": -1297.9726166888781,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年大型案件獲得収益、製品構成、仕入条件、現在価値評価を個別金額に分解できない粗利益率差。特定要因の実績額とは扱わない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(bear_revenue-q2_revenue)*q2_effective_margin",
+            "reason": "直前四半期の実効粗利益率を固定した計算効果",
+            "amount": -142.66296762298597
+          },
+          {
+            "label": "販管費差",
+            "formula": "q2_sga-bear_sga",
+            "reason": "直前費用と弱気費用仮定の差",
+            "amount": -14.159000000000049
+          }
+        ],
+        "residual": 31.816967622985963,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "構成・原価・現在価値評価の未分離部分を含む粗利益率差。繰延額の全額戻入を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "base_vdi-py_q3_vdi",
+            "reason": "CSP更新と下期回復の中心条件",
+            "amount": -218.55000000000018
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "base_cloud-py_q3_cloud",
+            "reason": "受注残の部分的検収による領域拡大条件",
+            "amount": 749.373
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "base_zero-py_q3_zero",
+            "reason": "大企業向け導入拡大を含む中心条件",
+            "amount": 628.446
+          }
+        ],
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "base_vdi-q2_vdi",
+            "reason": "第1四半期付近までの回復条件",
+            "amount": 701.4770000000001
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "base_cloud-q2_cloud",
+            "reason": "受注残の部分的検収条件",
+            "amount": 290.836
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "base_zero-q2_zero",
+            "reason": "大型案件の反動と通常案件の継続条件",
+            "amount": -1084.325
+          }
+        ],
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(base_revenue-py_q3_revenue)*py_q3_effective_margin",
+            "reason": "前年実効粗利益率を固定した計算効果。大型案件収益の再現を意味しない",
+            "amount": 604.8552686561958
+          },
+          {
+            "label": "販管費差",
+            "formula": "py_q3_sga-base_sga",
+            "reason": "前年実績費用と中心費用仮定の差",
+            "amount": 5.953999999999951
+          }
+        ],
+        "residual": -1503.7292686561955,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年の特殊な案件収益を含む採算と当期仮定との差。大型案件反動額を単独で識別できないため、全体を採算の経済的未説明差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(base_revenue-q2_revenue)*q2_effective_margin",
+            "reason": "直前実効粗利益率を固定した計算効果",
+            "amount": -12.02089927680536
+          },
+          {
+            "label": "販管費差",
+            "formula": "q2_sga-base_sga",
+            "reason": "直前実績費用と中心費用仮定の差",
+            "amount": -4.159000000000049
+          }
+        ],
+        "residual": 217.1748992768053,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "上期程度の採算への回復仮定。製品構成・仕入価格・現在価値評価の寄与は分離できず、説明済み要因には振り替えない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "bull_vdi-py_q3_vdi",
+            "reason": "CSP更新と案件計上の強気条件",
+            "amount": 181.44999999999982
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "bull_cloud-py_q3_cloud",
+            "reason": "金融機関向け受注残の検収集中条件",
+            "amount": 1149.373
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "bull_zero-py_q3_zero",
+            "reason": "大企業向け導入継続の強気条件",
+            "amount": 1028.446
+          }
+        ],
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "components": [
+          {
+            "label": "仮想デスクトップ",
+            "formula": "bull_vdi-q2_vdi",
+            "reason": "下期案件とCSP更新の集中条件",
+            "amount": 1101.477
+          },
+          {
+            "label": "クラウドインフラ",
+            "formula": "bull_cloud-q2_cloud",
+            "reason": "受注残の検収集中条件",
+            "amount": 690.836
+          },
+          {
+            "label": "ゼロトラストセキュリティ",
+            "formula": "bull_zero-q2_zero",
+            "reason": "大型案件の反動を残しつつ導入継続",
+            "amount": -684.325
+          }
+        ],
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(bull_revenue-py_q3_revenue)*py_q3_effective_margin",
+            "reason": "前年実効粗利益率を固定した計算効果",
+            "amount": 1230.9632510169763
+          },
+          {
+            "label": "販管費差",
+            "formula": "py_q3_sga-bull_sga",
+            "reason": "前年費用と直前並み費用条件との差",
+            "amount": 10.95399999999995
+          }
+        ],
+        "residual": -1689.837251016976,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "強気でも前年大型案件獲得収益を再現しない採算条件。前年特殊収益と通常構成差の金額分離はできない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "components": [
+          {
+            "label": "売上規模差の機械的効果",
+            "formula": "(bull_revenue-q2_revenue)*q2_effective_margin",
+            "reason": "直前実効粗利益率を固定した計算効果",
+            "amount": 144.74958273861137
+          },
+          {
+            "label": "販管費差",
+            "formula": "q2_sga-bull_sga",
+            "reason": "直前四半期並みの費用維持条件",
+            "amount": 0.8409999999999513
+          }
+        ],
+        "residual": 500.4044172613886,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "自社製品・高採算案件の寄与と評価減負担を含む粗利益率改善仮定。個別の寄与金額は識別できない。"
+      }
+    ],
+    "issues": [
+      "S06のストックKPIは集計対象見直し後。S03・S04・S07の旧定義ストックKPIと混ぜて成長率や単独売上を算出していない。",
+      "S08の訂正理由ページ、S09の訂正理由ページは文字化けがあり、訂正範囲の完全な原文照合はできない。読める損益数値と後続資料を使用し、純額処理対象額の資料間相違は補正推定していない。",
+      "S10の動画本文は未提示。質疑応答を確認済みとは扱っていない。",
+      "S12の約260台は利用者向け業務基盤の規模であり、リモートPCアレイのシャーシ出荷台数と同一とは確認できない。公表日も対象四半期末後で、検収日・売上額は非開示。",
+      "S13・S14の保存本文は提示されていない。企業名・コードはS01等で確認したが、決算予定日は対象条件として採用し、公式スケジュール原文及び基準日時点の掲載履歴は未確認。",
+      "保存資料はtruncated=falseだが、文字化けや図表抽出の配置崩れがある。画像・原本をツールで再確認していないため、抽出が不明瞭な値を補完していない。",
+      "前年大型案件獲得収益の独立金額が非開示のため、営業利益の前年対比を個別ドライバーですべて説明できない。残差を丸め差や会計組替え差として処理していない。",
+      "前年第3四半期売上はS03−S04を使用し、S06及びS07の直接四半期領域売上で照合した。過年度訂正の全履歴は未確認だが、提示資料に当該累計損益の別会計版は確認されない。",
+      "増減要因の合計不一致: base/qoq/operating_profit",
+      "増減要因の合計不一致: base/qoq/revenue",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/qoq/operating_profit",
+      "増減要因の合計不一致: bear/qoq/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/qoq/operating_profit",
+      "増減要因の合計不一致: bull/qoq/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "売上は領域別実績と受注・製品展開から条件付き範囲を設定したが、受注残からの厳密な数量・価格積上げはできない。粗利益率の裏付けは連結実績範囲に限定され、予測利益の主要な不確実性である。",
+      "対象実績は提示資料中に存在しないためtarget_already_announced=falseとした。基準日時点までの開示網羅性を独自に検証したものではない。",
+      "直前累計不足: 2025-10-31",
+      "直前累計不足: 2026-07-31",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "資料確認未了: schedule"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 159.2689999999999,
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差。表示単位に起因する可能性はあるが、丸め方法の原文確認がないため丸めと断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -1092.012,
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 79.05261668887856,
+        "residual": -1297.9726166888781,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年大型案件獲得収益、製品構成、仕入条件、現在価値評価を個別金額に分解できない粗利益率差。特定要因の実績額とは扱わない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -156.82196762298602,
+        "residual": 31.816967622985963,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "構成・原価・現在価値評価の未分離部分を含む粗利益率差。繰延額の全額戻入を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 1159.2689999999998,
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -92.01199999999994,
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 610.8092686561957,
+        "residual": -1503.7292686561955,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年の特殊な案件収益を含む採算と当期仮定との差。大型案件反動額を単独で識別できないため、全体を採算の経済的未説明差とする。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -16.179899276805408,
+        "residual": 217.1748992768053,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "上期程度の採算への回復仮定。製品構成・仕入価格・現在価値評価の寄与は分離できず、説明済み要因には振り替えない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 2359.269,
+        "residual": -0.0019999999999527063,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 1107.988,
+        "residual": -0.001999999999497959,
+        "residual_type": "unclassified",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 1241.9172510169763,
+        "residual": -1689.837251016976,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "強気でも前年大型案件獲得収益を再現しない採算条件。前年特殊収益と通常構成差の金額分離はできない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 145.59058273861132,
+        "residual": 500.4044172613886,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "自社製品・高採算案件の寄与と評価減負担を含む粗利益率改善仮定。個別の寄与金額は識別できない。"
+      }
+    ],
+    "conditions": [
+      "CSP更新の対象契約、契約年数及び今期の売上集中時期は非開示。",
+      "base_cloud: 上期出荷を上回る受注残と会社の下期伸長見通しから、直前四半期を上回る検収進捗を仮定。金融機関案件をすべて当四半期へ配賦せず、サーバ等も含む領域売上として設定。",
+      "base_margin: 当期上期の粗利益率約18%を基準に、第1四半期と第2四半期の採算差を均した条件。自社製品・CSP・代理人取引の構成及び現在価値評価はこの率に包含し、繰延利益の戻入を別途加算しない。",
+      "base_sga: 直前四半期と前年第3四半期の販管費の間に設定し、既存の人員・開発・営業体制の費用水準が続く条件。",
+      "base_vdi: 下期伸長とCSP更新集中により当期第1四半期付近まで回復する一方、前年第3四半期を下回る条件。前年の大型案件獲得収益の再現は前提にしない。純額認識・現在価値評価後。",
+      "base_zero: Numecent大規模案件及びForcepoint展開の寄与を領域売上に包含し、当期第1四半期と大型案件を含む第2四半期の間に設定。既に上期計上された大型案件を別途加算しない。",
+      "bear_cloud: 直前四半期の領域売上を基準に、金融機関向け受注残の検収が第4四半期へ偏る条件。受注残は需要の裏付けだが、単価非開示のため台数から金額を捏造せず、直前実績付近を下限条件とする。",
+      "bear_margin: 当期第2四半期の粗利益率約13%に近い低採算条件。仕入原価、案件構成、長期売掛金の現在価値評価を含む報告ベースの粗利益率。領域別採算は非開示のため連結段階で条件を置く。",
+      "bear_sga: 直前四半期と前年第3四半期の販管費を基準に、AI事業展開・営業活動費用がやや増える条件。利益目標から逆算していない。",
+      "bear_vdi: 下期伸長見通しとCSPの第3四半期集中を踏まえ、第2四半期から回復するが、当期第1四半期及び前年第3四半期に届かない弱気条件。代理人取引の純額認識及び現在価値評価後の売上を仮定。",
+      "bear_zero: 第2四半期の大型案件を反復せず、当期第1四半期の領域売上付近へ低下する条件。Forcepoint等の展開と製造業向け案件の存在により、第1四半期をやや上回る水準を置く。",
+      "bull_cloud: 金融機関向け大型受注残の検収が当四半期に集中し、領域売上が上期累計に近づく強気条件。受注残の台数を売上に直接換算した推計ではなく、上期実績と受注残の規模に基づく条件付き上限。",
+      "bull_margin: 自社製品や高採算案件の寄与が強く、当期第1四半期の粗利益率約25%に近づくが下回る条件。前年第3四半期の大型案件獲得収益による異常に高い採算は外挿しない。現在価値評価を包含。",
+      "bull_sga: 直前四半期並みの販管費で案件増加に対応できる条件。売上に比例した販管費増加や利益からの逆算は行わない。",
+      "bull_vdi: 下期の案件計上とCSP更新が進み、前年第3四半期を小幅に上回る条件。前年大型案件の利益額を追加計上する仮定ではない。純額認識・現在価値評価後。",
+      "bull_zero: 大企業向け導入が続き、上期の四半期平均程度の売上を維持する条件。第2四半期大型案件と同規模の反復までは仮定しない。",
+      "ゼロトラスト大型案件について、上期既計上分と下期未計上分の内訳は非開示。",
+      "リモートPCアレイの受注残金額、実現単価、案件別検収日及び対象四半期内の出荷数量は保存資料では非開示。",
+      "事業領域別の売上原価・粗利益・営業利益は非開示。会社はITインフラ事業の単一セグメントであり、領域別売上を報告セグメント利益と混同していない。",
+      "売上シナリオと粗利益率シナリオの組合せは独自条件であり、統計的な信頼区間ではない。",
+      "対象四半期末の外貨建債務評価、為替予約評価及び長期売掛金の現在価値評価額は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120260911535349.pdf",
+        "published_at": "2026-09-14",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120260911535349.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S01.txt",
+        "sha256": "65ee897b8d6f9ef1e1b98f3240d4c6094efeae3350519fc2e770881762b025aa",
+        "text_sha256": "194b9ab11cf6f050e2ca6f823fb872c81cb15296d5f1cc32b1154c1c879d6cc8",
+        "retrieved_at": "2026-11-22T01:13:32+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10228,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年1月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120260611568736.pdf",
+        "published_at": "2026-06-15",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120260611568736.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S02.txt",
+        "sha256": "2e006475ebd3bcc617a2e560f33db13fca16e52fd45452c74adc23dc37760570",
+        "text_sha256": "8284b1f2287fa30113c0f3b46b3f5be5b476e54cec8f8b9e2a067b81c0201b7c",
+        "retrieved_at": "2026-11-22T01:13:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8939,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年1月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120251212519394.pdf",
+        "published_at": "2025-12-15",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120251212519394.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S03.txt",
+        "sha256": "dd141ebceb47346e7fd95c3a11b7d2615d46714548ba133fdc82ede0668cb161",
+        "text_sha256": "83b050bca677ee66df281d96228f95a13ea7af47dedfbbfcf7a263e58b55f30d",
+        "retrieved_at": "2026-11-22T01:13:33+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9197,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年1月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120250912557517.pdf",
+        "published_at": "2025-09-16",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120250912557517.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S04.txt",
+        "sha256": "530ea885518b435c45a11838fb9b5bda8a9bba147c5e1f6643ce96e7e8f98342",
+        "text_sha256": "4c90a96f5e107349bbee46ad19f27ed22f75f28abebbadcca1aab57d0a60c427",
+        "retrieved_at": "2026-11-22T01:13:34+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10439,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2027年1月期 第2四半期 決算説明会資料",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120260911535351.pdf",
+        "published_at": "2026-09-14",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120260911535351.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S05.txt",
+        "sha256": "025575719c5491c8dfba3385d8c0cf34ea6fc33b2aa214a21ff99419be03a1cd",
+        "text_sha256": "62e4f2a180a6cf2ae6d5d2e52b40cfc992c400418d83435f46bb86c07a37abe5",
+        "retrieved_at": "2026-11-22T01:13:35+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7420,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2027年1月期 第2四半期 決算短信補足資料",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120260911535350.pdf",
+        "published_at": "2026-09-14",
+        "category": "kpi",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120260911535350.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S06.txt",
+        "sha256": "0d48cd17eac3ec925655ef8c5a7b623bbe7a114167504ba799c2dd4f4090dd57",
+        "text_sha256": "64d200b0751c20ead384bbd0ed27f6115884c2162b12bdff08116b7654540383",
+        "retrieved_at": "2026-11-22T01:13:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1893,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年1月期 第3四半期 決算短信補足資料",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120251212519405.pdf",
+        "published_at": "2025-12-15",
+        "category": "kpi",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120251212519405.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S07.txt",
+        "sha256": "fe4d9f01dc4688f814280eb937088e162c182486d2d85df090e4c022ce973e59",
+        "text_sha256": "cfd16d3a0bd82f848c19e699da6aa9f23bc8a50de829d5de4642d0b76c6314f3",
+        "retrieved_at": "2026-11-22T01:13:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2116,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "（訂正・数値データ訂正）2026年1月期 決算短信〔日本基準〕（連結）の一部訂正について",
+        "url": "https://www.ascentech.co.jp/ir/pdf/ir260401_01.pdf",
+        "published_at": "2026-04-01",
+        "category": "guidance",
+        "final_url": "https://www.ascentech.co.jp/ir/pdf/ir260401_01.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S08.txt",
+        "sha256": "2a34d1f7c4acfe0cd8828c8dd1854d96523a359549015e97c33930ea39fa3483",
+        "text_sha256": "57970aa4511e4b91a1b2f3f391b242f9b2c51616bf76305b07de808a4fe95c74",
+        "retrieved_at": "2026-11-22T01:13:36+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17620,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "（訂正）2026年1月期 決算説明会資料の一部訂正",
+        "url": "https://www2.jpx.co.jp/disc/35650/140120260401596410.pdf",
+        "published_at": "2026-04-01",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/35650/140120260401596410.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S09.txt",
+        "sha256": "ba1322789a1766a24013f1e79c63459106538bfc3e3743be6b5d4889bd1017dd",
+        "text_sha256": "0dc56d54ce5e0c632659e7127e35334758caab8c5f64ac93705ac163f2b28538",
+        "retrieved_at": "2026-11-22T01:13:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8523,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "IR関連動画：2026年9月14日開催決算説明会・質疑応答編",
+        "url": "https://www.ascentech.co.jp/ir/movie.html",
+        "published_at": "",
+        "category": "qa",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:13:37+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "アセンテックとレトリバ、企業の安全なAI活用を推進する業務提携契約を締結",
+        "url": "https://ascentech.co.jp/news/press/pr260820_01.html",
+        "published_at": "2026-08-20",
+        "category": "other",
+        "final_url": "https://ascentech.co.jp/news/press/pr260820_01.html",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S11.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S11.txt",
+        "sha256": "6b67f91f93e018546564596907aacc029f9ec2806bb03ba91c15dc58c6eb12bf",
+        "text_sha256": "76ea18ccc086ac66a7fcde6e6db5229a21bc705c43a7a0913a4639a03d0974ac",
+        "retrieved_at": "2026-11-22T01:13:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2125,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "弁護士法人子浩法律事務所が、業務基盤としてリモートPCアレイを採用",
+        "url": "https://ascentech.co.jp/news/press/pr261111_01.html",
+        "published_at": "2026-11-11",
+        "category": "other",
+        "final_url": "https://ascentech.co.jp/news/press/pr261111_01.html",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S12.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\3565\\sources\\S12.txt",
+        "sha256": "75e624304167a400d14dd6fce72061534b52fad325564dd43643afe573fb9cb5",
+        "text_sha256": "3c4bf47c6ace175470608a6c2500e38b2dee2cbecb6e84f1c638f81eef3578c1",
+        "retrieved_at": "2026-11-22T01:13:37+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2151,
+        "parser_version": 2
+      },
+      {
+        "id": "S13",
+        "title": "株式情報",
+        "url": "https://www.ascentech.co.jp/ir/stockinfo.html",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:13:37+09:00"
+      },
+      {
+        "id": "S14",
+        "title": "IRスケジュール",
+        "url": "https://www.ascentech.co.jp/ir/schedule.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:13:38+09:00"
+      }
+    ],
+    "model": {
+      "code": "3565",
+      "announcement_date": "2026-12-15",
+      "period": {
+        "fiscal_year_end": "2027-01-31",
+        "quarter": 3,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "cy_h1_revenue",
+          "value": 7902.106,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7、当中間連結損益計算書"
+        },
+        {
+          "id": "cy_h1_op",
+          "value": 862.352,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7、当中間連結損益計算書"
+        },
+        {
+          "id": "cy_h1_sga",
+          "value": 565.536,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7、販売費及び一般管理費"
+        },
+        {
+          "id": "cy_q1_revenue",
+          "value": 3410.092,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 6、当第1四半期連結損益計算書"
+        },
+        {
+          "id": "cy_q1_op",
+          "value": 571.347,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 6、当第1四半期連結損益計算書"
+        },
+        {
+          "id": "cy_q1_sga",
+          "value": 269.695,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 6、販売費及び一般管理費"
+        },
+        {
+          "id": "py_9m_revenue",
+          "value": 14073.986,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、当第3四半期累計"
+        },
+        {
+          "id": "py_9m_op",
+          "value": 2483.524,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、当第3四半期累計"
+        },
+        {
+          "id": "py_9m_sga",
+          "value": 886.442,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 7、販売費及び一般管理費"
+        },
+        {
+          "id": "py_h1_revenue",
+          "value": 10833.253,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7、当中間連結損益計算書"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 1098.604,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7、当中間連結損益計算書"
+        },
+        {
+          "id": "py_h1_sga",
+          "value": 580.488,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 7、販売費及び一般管理費"
+        },
+        {
+          "id": "q2_vdi",
+          "value": 1498.523,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、事業領域別売上、第2四半期"
+        },
+        {
+          "id": "q2_cloud",
+          "value": 1159.164,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、事業領域別売上、第2四半期"
+        },
+        {
+          "id": "q2_zero",
+          "value": 1834.325,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、事業領域別売上、第2四半期"
+        },
+        {
+          "id": "py_q3_vdi",
+          "value": 2418.55,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S07"
+          ],
+          "locator": "各PDF page 1、前年第3四半期の事業領域別売上"
+        },
+        {
+          "id": "py_q3_cloud",
+          "value": 700.627,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S07"
+          ],
+          "locator": "各PDF page 1、前年第3四半期の事業領域別売上"
+        },
+        {
+          "id": "py_q3_zero",
+          "value": 121.554,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S07"
+          ],
+          "locator": "各PDF page 1、前年第3四半期の事業領域別売上"
+        },
+        {
+          "id": "rpa_backlog",
+          "value": 272,
+          "kind": "fact",
+          "unit": "台",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 13、9月4日時点受注残"
+        },
+        {
+          "id": "rpa_financial_backlog",
+          "value": 215,
+          "kind": "fact",
+          "unit": "台",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 13、受注残のうち金融機関向け"
+        },
+        {
+          "id": "rpa_h1_shipments",
+          "value": 130,
+          "kind": "fact",
+          "unit": "台",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 13、上期実績"
+        },
+        {
+          "id": "stock_h1_sales",
+          "value": 1180.704,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、ストックビジネス売上累計"
+        },
+        {
+          "id": "stock_q2_sales",
+          "value": 492.858,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、ストックビジネス売上四半期単独"
+        },
+        {
+          "id": "stock_py_q3_sales",
+          "value": 672.712,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 1、集計対象見直し後の前年第3四半期ストック売上"
+        },
+        {
+          "id": "discount_q2_increment",
+          "value": 123,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 6–7、長期売掛金の利益繰延の前四半期比増加額"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 17500,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年1月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 2000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年1月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 2100,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年1月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 1430,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年1月期通期連結業績予想"
+        },
+        {
+          "id": "bear_vdi",
+          "value": 1800,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "locator": "S05 PDF page 4、S06・S07 PDF page 1",
+          "rationale": "下期伸長見通しとCSPの第3四半期集中を踏まえ、第2四半期から回復するが、当期第1四半期及び前年第3四半期に届かない弱気条件。代理人取引の純額認識及び現在価値評価後の売上を仮定。",
+          "sensitivity": "売上が100変化すると、他条件一定で営業利益はbear_margin×100変化する。CSP更新の遅延が主な下振れ要因。",
+          "material": true
+        },
+        {
+          "id": "base_vdi",
+          "value": 2200,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "locator": "S05 PDF page 4、S06・S07 PDF page 1",
+          "rationale": "下期伸長とCSP更新集中により当期第1四半期付近まで回復する一方、前年第3四半期を下回る条件。前年の大型案件獲得収益の再現は前提にしない。純額認識・現在価値評価後。",
+          "sensitivity": "売上が100変化すると、他条件一定で営業利益はbase_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_vdi",
+          "value": 2600,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "locator": "S05 PDF page 4、S06・S07 PDF page 1",
+          "rationale": "下期の案件計上とCSP更新が進み、前年第3四半期を小幅に上回る条件。前年大型案件の利益額を追加計上する仮定ではない。純額認識・現在価値評価後。",
+          "sensitivity": "売上が100変化すると、他条件一定で営業利益はbull_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "bear_cloud",
+          "value": 1100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・13、S06 PDF page 1",
+          "rationale": "直前四半期の領域売上を基準に、金融機関向け受注残の検収が第4四半期へ偏る条件。受注残は需要の裏付けだが、単価非開示のため台数から金額を捏造せず、直前実績付近を下限条件とする。",
+          "sensitivity": "検収売上100の移動で当四半期売上が100変化し、営業利益はbear_margin×100変化する。受注残の大半が翌四半期以降なら、この下限も保証されない。",
+          "material": true
+        },
+        {
+          "id": "base_cloud",
+          "value": 1450,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・13、S06 PDF page 1",
+          "rationale": "上期出荷を上回る受注残と会社の下期伸長見通しから、直前四半期を上回る検収進捗を仮定。金融機関案件をすべて当四半期へ配賦せず、サーバ等も含む領域売上として設定。",
+          "sensitivity": "検収売上100の移動で当四半期売上が100変化し、営業利益はbase_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_cloud",
+          "value": 1850,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・13、S06 PDF page 1",
+          "rationale": "金融機関向け大型受注残の検収が当四半期に集中し、領域売上が上期累計に近づく強気条件。受注残の台数を売上に直接換算した推計ではなく、上期実績と受注残の規模に基づく条件付き上限。",
+          "sensitivity": "検収売上100の移動で当四半期売上が100変化し、営業利益はbull_margin×100変化する。納入集中がなければ中心条件へ近づく。",
+          "material": true
+        },
+        {
+          "id": "bear_zero",
+          "value": 500,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・15、S06 PDF page 1",
+          "rationale": "第2四半期の大型案件を反復せず、当期第1四半期の領域売上付近へ低下する条件。Forcepoint等の展開と製造業向け案件の存在により、第1四半期をやや上回る水準を置く。",
+          "sensitivity": "案件計上額100の変化で売上が100、営業利益がbear_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "base_zero",
+          "value": 750,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・15、S06 PDF page 1",
+          "rationale": "Numecent大規模案件及びForcepoint展開の寄与を領域売上に包含し、当期第1四半期と大型案件を含む第2四半期の間に設定。既に上期計上された大型案件を別途加算しない。",
+          "sensitivity": "案件計上額100の変化で売上が100、営業利益がbase_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_zero",
+          "value": 1150,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・15、S06 PDF page 1",
+          "rationale": "大企業向け導入が続き、上期の四半期平均程度の売上を維持する条件。第2四半期大型案件と同規模の反復までは仮定しない。",
+          "sensitivity": "案件計上額100の変化で売上が100、営業利益がbull_margin×100変化する。",
+          "material": true
+        },
+        {
+          "id": "bear_margin",
+          "value": 0.14,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 7、S02 PDF page 6、S05 PDF pages 5–7",
+          "rationale": "当期第2四半期の粗利益率約13%に近い低採算条件。仕入原価、案件構成、長期売掛金の現在価値評価を含む報告ベースの粗利益率。領域別採算は非開示のため連結段階で条件を置く。",
+          "sensitivity": "粗利益率1ポイントの変化で営業利益はbear_revenue×0.01変化する。独立した原価積上げではなく、実績採算範囲に基づく条件付き推計。",
+          "material": true
+        },
+        {
+          "id": "base_margin",
+          "value": 0.18,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 7、S02 PDF page 6、S05 PDF pages 5–7",
+          "rationale": "当期上期の粗利益率約18%を基準に、第1四半期と第2四半期の採算差を均した条件。自社製品・CSP・代理人取引の構成及び現在価値評価はこの率に包含し、繰延利益の戻入を別途加算しない。",
+          "sensitivity": "粗利益率1ポイントの変化で営業利益はbase_revenue×0.01変化する。領域別原価が不明なため、構成改善による率の上昇を確定視しない。",
+          "material": true
+        },
+        {
+          "id": "bull_margin",
+          "value": 0.22,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4・7、S02 PDF page 6、S05 PDF pages 5–7",
+          "rationale": "自社製品や高採算案件の寄与が強く、当期第1四半期の粗利益率約25%に近づくが下回る条件。前年第3四半期の大型案件獲得収益による異常に高い採算は外挿しない。現在価値評価を包含。",
+          "sensitivity": "粗利益率1ポイントの変化で営業利益はbull_revenue×0.01変化する。案件構成と評価減次第では売上が強くてもこの率は成立しない。",
+          "material": true
+        },
+        {
+          "id": "bear_sga",
+          "value": 310,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各損益計算書：S01・S03・S04 PDF page 7、S02 PDF page 6",
+          "rationale": "直前四半期と前年第3四半期の販管費を基準に、AI事業展開・営業活動費用がやや増える条件。利益目標から逆算していない。",
+          "sensitivity": "販管費が10増えると営業利益は10減少する。",
+          "material": true
+        },
+        {
+          "id": "base_sga",
+          "value": 300,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各損益計算書：S01・S03・S04 PDF page 7、S02 PDF page 6",
+          "rationale": "直前四半期と前年第3四半期の販管費の間に設定し、既存の人員・開発・営業体制の費用水準が続く条件。",
+          "sensitivity": "販管費が10増えると営業利益は10減少する。",
+          "material": true
+        },
+        {
+          "id": "bull_sga",
+          "value": 295,
+          "kind": "assumption",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 7、S02 PDF page 6",
+          "rationale": "直前四半期並みの販管費で案件増加に対応できる条件。売上に比例した販管費増加や利益からの逆算は行わない。",
+          "sensitivity": "販管費が10増えると営業利益は10減少する。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "q2_revenue",
+          "formula": "cy_h1_revenue-cy_q1_revenue"
+        },
+        {
+          "id": "q2_op",
+          "formula": "cy_h1_op-cy_q1_op"
+        },
+        {
+          "id": "q2_sga",
+          "formula": "cy_h1_sga-cy_q1_sga"
+        },
+        {
+          "id": "q2_effective_gp",
+          "formula": "q2_op+q2_sga"
+        },
+        {
+          "id": "q2_effective_margin",
+          "formula": "q2_effective_gp/q2_revenue"
+        },
+        {
+          "id": "py_q3_revenue",
+          "formula": "py_9m_revenue-py_h1_revenue"
+        },
+        {
+          "id": "py_q3_op",
+          "formula": "py_9m_op-py_h1_op"
+        },
+        {
+          "id": "py_q3_sga",
+          "formula": "py_9m_sga-py_h1_sga"
+        },
+        {
+          "id": "py_q3_effective_gp",
+          "formula": "py_q3_op+py_q3_sga"
+        },
+        {
+          "id": "py_q3_effective_margin",
+          "formula": "py_q3_effective_gp/py_q3_revenue"
+        },
+        {
+          "id": "qoq_revenue_reconciliation",
+          "formula": "q2_vdi+q2_cloud+q2_zero-q2_revenue"
+        },
+        {
+          "id": "yoy_revenue_reconciliation",
+          "formula": "py_q3_vdi+py_q3_cloud+py_q3_zero-py_q3_revenue"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_vdi+bear_cloud+bear_zero"
+        },
+        {
+          "id": "bear_gp",
+          "formula": "bear_revenue*bear_margin"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_gp-bear_sga"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_vdi+base_cloud+base_zero"
+        },
+        {
+          "id": "base_gp",
+          "formula": "base_revenue*base_margin"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_gp-base_sga"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_vdi+bull_cloud+bull_zero"
+        },
+        {
+          "id": "bull_gp",
+          "formula": "bull_revenue*bull_margin"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_gp-bull_sga"
+        },
+        {
+          "id": "bear_yoy_margin_residual",
+          "formula": "bear_revenue*(bear_margin-py_q3_effective_margin)"
+        },
+        {
+          "id": "bear_qoq_margin_residual",
+          "formula": "bear_revenue*(bear_margin-q2_effective_margin)"
+        },
+        {
+          "id": "base_yoy_margin_residual",
+          "formula": "base_revenue*(base_margin-py_q3_effective_margin)"
+        },
+        {
+          "id": "base_qoq_margin_residual",
+          "formula": "base_revenue*(base_margin-q2_effective_margin)"
+        },
+        {
+          "id": "bull_yoy_margin_residual",
+          "formula": "bull_revenue*(bull_margin-py_q3_effective_margin)"
+        },
+        {
+          "id": "bull_qoq_margin_residual",
+          "formula": "bull_revenue*(bull_margin-q2_effective_margin)"
+        },
+        {
+          "id": "guidance_remaining_revenue",
+          "formula": "guidance_revenue-cy_h1_revenue"
+        },
+        {
+          "id": "guidance_remaining_op",
+          "formula": "guidance_op-cy_h1_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "仮想デスクトップ",
+              "revenue": "bear_vdi"
+            },
+            {
+              "name": "クラウドインフラ",
+              "revenue": "bear_cloud"
+            },
+            {
+              "name": "ゼロトラストセキュリティ",
+              "revenue": "bear_zero"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "仮想デスクトップ",
+              "revenue": "base_vdi"
+            },
+            {
+              "name": "クラウドインフラ",
+              "revenue": "base_cloud"
+            },
+            {
+              "name": "ゼロトラストセキュリティ",
+              "revenue": "base_zero"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "仮想デスクトップ",
+              "revenue": "bull_vdi"
+            },
+            {
+              "name": "クラウドインフラ",
+              "revenue": "bull_cloud"
+            },
+            {
+              "name": "ゼロトラストセキュリティ",
+              "revenue": "bull_zero"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 2,
+          "period_start": "2025-02-01",
+          "period_end": "2025-07-31",
+          "revenue": 10833.253,
+          "operating_profit": 1098.604,
+          "ordinary_profit": 1116.68,
+          "net_profit": 773.477,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S04公表版。税関係会計基準適用後、財務諸表への影響なし。S01比較情報とも一致。PPA変更の記載なし。",
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "locator": "両資料PDF page 7、S04 PDF page 10"
+        },
+        {
+          "fiscal_year_end": "2026-01-31",
+          "quarter": 3,
+          "period_start": "2025-02-01",
+          "period_end": "2025-10-31",
+          "revenue": 14073.986,
+          "operating_profit": 2483.524,
+          "ordinary_profit": 2351.638,
+          "net_profit": 1686.905,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S03公表版。S04と同じ税関係会計基準適用後、影響なし。グループ内吸収合併による子会社除外。PPA変更の記載なし。",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 7・9。売上差引はS06・S07の直接四半期領域売上とも概ね整合。"
+        },
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 1,
+          "period_start": "2026-02-01",
+          "period_end": "2026-04-30",
+          "revenue": 3410.092,
+          "operating_profit": 571.347,
+          "ordinary_profit": 363.285,
+          "net_profit": 249.343,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S02公表版。会計方針・見積り変更、修正再表示なし。PPA変更の記載なし。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2・6"
+        },
+        {
+          "fiscal_year_end": "2027-01-31",
+          "quarter": 2,
+          "period_start": "2026-02-01",
+          "period_end": "2026-07-31",
+          "revenue": 7902.106,
+          "operating_profit": 862.352,
+          "ordinary_profit": 773.142,
+          "net_profit": 752.811,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S01公表版。S02から会計方針・見積り変更、修正再表示なし。PPA変更の記載なし。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2・7"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "リモートPCアレイの受注残と検収",
+          "mechanism": "金融機関向けを中心とする受注残の納入・検収時期がクラウドインフラ売上を左右する。領域にはサーバ等も含まれるため、全売上をシャーシ台数で除して製品単価にはしない。",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・13、S06 PDF page 1",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "製品別実現単価、受注残金額及び案件別検収日が保存資料では非開示。領域実績を基準とした金額レンジで条件付けした。"
+        },
+        {
+          "name": "CSP更新と仮想デスクトップの下期回復",
+          "mechanism": "前年第3四半期にはCSPの単年・複数年ライセンスが集中。今期も更新が進めば売上を押し上げるが、同じ契約の毎年再計上は保証されない。",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S07"
+          ],
+          "locator": "S05 PDF page 4、S06 PDF page 1、S07 PDF page 1末尾注記",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "今期の契約別更新額・契約年数は非開示。ストック売上は事業領域に内包されるため独立に加算していない。"
+        },
+        {
+          "name": "ゼロトラスト大型案件の反動と継続展開",
+          "mechanism": "第2四半期大型案件の反動を織り込みつつ、Numecent製造業案件とForcepointの展開をシナリオ幅に反映する。",
+          "source_ids": [
+            "S05",
+            "S06"
+          ],
+          "locator": "S05 PDF pages 4・15、S06 PDF page 1",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "受注済み案件の既計上分・未計上分が分離されていないため、個別案件売上を追加しない。"
+        },
+        {
+          "name": "CSG契約採算・純額認識・現在価値評価",
+          "mechanism": "代理人取引の純額認識と長期売掛金の現在価値評価により、取扱規模と報告売上、報告粗利益率は一致しない。前年第3四半期には大型案件獲得に伴う収益も含まれる。",
+          "source_ids": [
+            "S03",
+            "S05",
+            "S06",
+            "S09"
+          ],
+          "locator": "S03 PDF page 4、S05 PDF pages 5–7、S06 PDF page 1注記、S09 PDF page 12",
+          "calculation_ids": [
+            "bear_gp",
+            "base_gp",
+            "bull_gp"
+          ],
+          "not_quantified_reason": "契約別利益額・前払費用償却配分・対象四半期の評価減額は非開示。報告ベース粗利益率に包含し、過去の繰延額を戻入利益として追加しない。"
+        },
+        {
+          "name": "販管費とAI事業",
+          "mechanism": "既存の販管費水準に営業・開発活動の増減条件を置く。AI提携は製品展開の根拠になるが、売上・利益寄与を別枠加算できる情報はない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S11"
+          ],
+          "locator": "S01 PDF page 7、S02 PDF page 6、S11「業務提携の内容」",
+          "calculation_ids": [
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "AI案件金額、人員増加計画、設備投資の対象四半期計画は保存資料では非開示。減価償却費を既存費用に重ねて追加していない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "bear_vdi-py_q3_vdi",
+              "reason": "CSP更新・案件計上の弱気条件と前年領域売上との差"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "bear_cloud-py_q3_cloud",
+              "reason": "受注残の検収進捗を抑えた領域売上との差"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "bear_zero-py_q3_zero",
+              "reason": "当期の事業拡大を含む弱気売上と前年との差"
+            }
+          ],
+          "residual": "yoy_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "前年領域売上合計と累計差引売上の微差。表示単位に起因する可能性はあるが、丸め方法の原文確認がないため丸めと断定しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "bear_vdi-q2_vdi",
+              "reason": "CSP更新等による回復条件"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "bear_cloud-q2_cloud",
+              "reason": "金融機関案件の検収遅延条件"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "bear_zero-q2_zero",
+              "reason": "直前四半期大型案件の反動条件"
+            }
+          ],
+          "residual": "qoq_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(bear_revenue-py_q3_revenue)*py_q3_effective_margin",
+              "reason": "前年の実効粗利益率を固定した数量・価格・構成未分離の計算効果"
+            },
+            {
+              "label": "販管費差",
+              "formula": "py_q3_sga-bear_sga",
+              "reason": "実績費用と独自費用仮定の差"
+            }
+          ],
+          "residual": "bear_yoy_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年大型案件獲得収益、製品構成、仕入条件、現在価値評価を個別金額に分解できない粗利益率差。特定要因の実績額とは扱わない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(bear_revenue-q2_revenue)*q2_effective_margin",
+              "reason": "直前四半期の実効粗利益率を固定した計算効果"
+            },
+            {
+              "label": "販管費差",
+              "formula": "q2_sga-bear_sga",
+              "reason": "直前費用と弱気費用仮定の差"
+            }
+          ],
+          "residual": "bear_qoq_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "構成・原価・現在価値評価の未分離部分を含む粗利益率差。繰延額の全額戻入を意味しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "base_vdi-py_q3_vdi",
+              "reason": "CSP更新と下期回復の中心条件"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "base_cloud-py_q3_cloud",
+              "reason": "受注残の部分的検収による領域拡大条件"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "base_zero-py_q3_zero",
+              "reason": "大企業向け導入拡大を含む中心条件"
+            }
+          ],
+          "residual": "yoy_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "base_vdi-q2_vdi",
+              "reason": "第1四半期付近までの回復条件"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "base_cloud-q2_cloud",
+              "reason": "受注残の部分的検収条件"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "base_zero-q2_zero",
+              "reason": "大型案件の反動と通常案件の継続条件"
+            }
+          ],
+          "residual": "qoq_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(base_revenue-py_q3_revenue)*py_q3_effective_margin",
+              "reason": "前年実効粗利益率を固定した計算効果。大型案件収益の再現を意味しない"
+            },
+            {
+              "label": "販管費差",
+              "formula": "py_q3_sga-base_sga",
+              "reason": "前年実績費用と中心費用仮定の差"
+            }
+          ],
+          "residual": "base_yoy_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年の特殊な案件収益を含む採算と当期仮定との差。大型案件反動額を単独で識別できないため、全体を採算の経済的未説明差とする。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(base_revenue-q2_revenue)*q2_effective_margin",
+              "reason": "直前実効粗利益率を固定した計算効果"
+            },
+            {
+              "label": "販管費差",
+              "formula": "q2_sga-base_sga",
+              "reason": "直前実績費用と中心費用仮定の差"
+            }
+          ],
+          "residual": "base_qoq_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "上期程度の採算への回復仮定。製品構成・仕入価格・現在価値評価の寄与は分離できず、説明済み要因には振り替えない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "bull_vdi-py_q3_vdi",
+              "reason": "CSP更新と案件計上の強気条件"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "bull_cloud-py_q3_cloud",
+              "reason": "金融機関向け受注残の検収集中条件"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "bull_zero-py_q3_zero",
+              "reason": "大企業向け導入継続の強気条件"
+            }
+          ],
+          "residual": "yoy_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "前年領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [
+            {
+              "label": "仮想デスクトップ",
+              "formula": "bull_vdi-q2_vdi",
+              "reason": "下期案件とCSP更新の集中条件"
+            },
+            {
+              "label": "クラウドインフラ",
+              "formula": "bull_cloud-q2_cloud",
+              "reason": "受注残の検収集中条件"
+            },
+            {
+              "label": "ゼロトラストセキュリティ",
+              "formula": "bull_zero-q2_zero",
+              "reason": "大型案件の反動を残しつつ導入継続"
+            }
+          ],
+          "residual": "qoq_revenue_reconciliation",
+          "residual_type": "unclassified",
+          "residual_explanation": "領域売上合計と累計差引売上の微差を保持。丸めとは断定しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(bull_revenue-py_q3_revenue)*py_q3_effective_margin",
+              "reason": "前年実効粗利益率を固定した計算効果"
+            },
+            {
+              "label": "販管費差",
+              "formula": "py_q3_sga-bull_sga",
+              "reason": "前年費用と直前並み費用条件との差"
+            }
+          ],
+          "residual": "bull_yoy_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "強気でも前年大型案件獲得収益を再現しない採算条件。前年特殊収益と通常構成差の金額分離はできない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [
+            {
+              "label": "売上規模差の機械的効果",
+              "formula": "(bull_revenue-q2_revenue)*q2_effective_margin",
+              "reason": "直前実効粗利益率を固定した計算効果"
+            },
+            {
+              "label": "販管費差",
+              "formula": "q2_sga-bull_sga",
+              "reason": "直前四半期並みの費用維持条件"
+            }
+          ],
+          "residual": "bull_qoq_margin_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "自社製品・高採算案件の寄与と評価減負担を含む粗利益率改善仮定。個別の寄与金額は識別できない。"
+        }
+      ],
+      "company_guidance": "保存原文で最新確認できる会社予想はS01の通期連結予想で、据え置きと明記されている。対象第3四半期単独の会社予想は保存資料中にない。通期予想から上期実績を引いた値は下期全体の必要額であり、第3四半期予想ではない。基準日時点までの修正開示の網羅性は未確認。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスはない。",
+      "independent_forecast": "事業領域別の直近売上、リモートPCアレイ受注残、CSP計上の季節性、大型案件反動から売上レンジを積み上げた条件付き独自予測。営業利益は実績範囲内の連結粗利益率仮定と、独立に設定した販管費を用いる。数量×単価・領域別原価の完全な積上げではないため確度は低い。会社予想の四等分、前年比一律延長、期後修正予想からの差引きは使用していない。経常・純利益は外貨建債務評価、ヘッジ損益、特別損益の対象四半期推計根拠が不足するためnull。",
+      "narrative": [
+        {
+          "heading": "条件付き予測",
+          "text": "中心条件の売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気では売上{{value:bear_revenue}}・営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}・営業利益{{value:bull_op}}となる。受注残の検収とCSP更新の進捗が売上の主要な分岐点であり、採算仮定は売上条件とは別に外れる可能性がある。"
+        },
+        {
+          "heading": "比較と採算の注意点",
+          "text": "前年同四半期の売上は{{value:py_q3_revenue}}、営業利益は{{value:py_q3_op}}。前年にはCSG契約条件に沿った大型案件獲得収益があり、その採算を通常水準として延長できない。直前四半期の営業利益{{value:q2_op}}からの回復には、売上構成と報告粗利益率の改善が必要である。利益ブリッジでは、個別金額を識別できない採算差を経済的未説明残差として残した。"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "会社通期予想から上期実績を引いた下期全体の必要額は、売上{{value:guidance_remaining_revenue}}、営業利益{{value:guidance_remaining_op}}。これは会社予想の残額であり、独自予測の目標値や対象四半期への配分根拠にはしていない。"
+        },
+        {
+          "heading": "重複計上と期後情報",
+          "text": "ストック売上は各事業領域に内包し、受注額やAI提携を追加売上として重ねていない。長期売掛金の繰延利益も自動的な戻入として加算していない。期後の法律事務所導入事例は需要の参考に限定し、対象四半期の検収実績には扱わない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "リモートPCアレイの受注残金額、実現単価、案件別検収日及び対象四半期内の出荷数量は保存資料では非開示。",
+        "CSP更新の対象契約、契約年数及び今期の売上集中時期は非開示。",
+        "ゼロトラスト大型案件について、上期既計上分と下期未計上分の内訳は非開示。",
+        "事業領域別の売上原価・粗利益・営業利益は非開示。会社はITインフラ事業の単一セグメントであり、領域別売上を報告セグメント利益と混同していない。",
+        "対象四半期末の外貨建債務評価、為替予約評価及び長期売掛金の現在価値評価額は未確認。",
+        "売上シナリオと粗利益率シナリオの組合せは独自条件であり、統計的な信頼区間ではない。"
+      ],
+      "material_unresolved": [
+        "S13・S14の保存本文は提示されていない。企業名・コードはS01等で確認したが、決算予定日は対象条件として採用し、公式スケジュール原文及び基準日時点の掲載履歴は未確認。",
+        "対象実績は提示資料中に存在しないためtarget_already_announced=falseとした。基準日時点までの開示網羅性を独自に検証したものではない。",
+        "S10の動画本文は未提示。質疑応答を確認済みとは扱っていない。",
+        "S08の訂正理由ページ、S09の訂正理由ページは文字化けがあり、訂正範囲の完全な原文照合はできない。読める損益数値と後続資料を使用し、純額処理対象額の資料間相違は補正推定していない。",
+        "前年第3四半期売上はS03−S04を使用し、S06及びS07の直接四半期領域売上で照合した。過年度訂正の全履歴は未確認だが、提示資料に当該累計損益の別会計版は確認されない。",
+        "S06のストックKPIは集計対象見直し後。S03・S04・S07の旧定義ストックKPIと混ぜて成長率や単独売上を算出していない。",
+        "S12の約260台は利用者向け業務基盤の規模であり、リモートPCアレイのシャーシ出荷台数と同一とは確認できない。公表日も対象四半期末後で、検収日・売上額は非開示。",
+        "保存資料はtruncated=falseだが、文字化けや図表抽出の配置崩れがある。画像・原本をツールで再確認していないため、抽出が不明瞭な値を補完していない。",
+        "売上は領域別実績と受注・製品展開から条件付き範囲を設定したが、受注残からの厳密な数量・価格積上げはできない。粗利益率の裏付けは連結実績範囲に限定され、予測利益の主要な不確実性である。",
+        "前年大型案件獲得収益の独立金額が非開示のため、営業利益の前年対比を個別ドライバーですべて説明できない。残差を丸め差や会計組替え差として処理していない。"
+      ],
+      "schema_version": "2.0",
+      "guidance_records": [
+        {
+          "id": "fy_guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想。PDF page 5、据え置き説明"
+        },
+        {
+          "id": "fy_guidance_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想。PDF page 5、据え置き説明"
+        },
+        {
+          "id": "fy_guidance_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想。PDF page 5、据え置き説明"
+        },
+        {
+          "id": "fy_guidance_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-02-01",
+          "period_end": "2027-01-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-09-14",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想。PDF page 5、据え置き説明"
+        }
+      ],
+      "quarterly_historicals": [],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "S06のストックKPIは集計対象見直し後。S03・S04・S07の旧定義ストックKPIと混ぜて成長率や単独売上を算出していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "S08の訂正理由ページ、S09の訂正理由ページは文字化けがあり、訂正範囲の完全な原文照合はできない。読める損益数値と後続資料を使用し、純額処理対象額の資料間相違は補正推定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "S10の動画本文は未提示。質疑応答を確認済みとは扱っていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "S12の約260台は利用者向け業務基盤の規模であり、リモートPCアレイのシャーシ出荷台数と同一とは確認できない。公表日も対象四半期末後で、検収日・売上額は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "S13・S14の保存本文は提示されていない。企業名・コードはS01等で確認したが、決算予定日は対象条件として採用し、公式スケジュール原文及び基準日時点の掲載履歴は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "保存資料はtruncated=falseだが、文字化けや図表抽出の配置崩れがある。画像・原本をツールで再確認していないため、抽出が不明瞭な値を補完していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "前年大型案件獲得収益の独立金額が非開示のため、営業利益の前年対比を個別ドライバーですべて説明できない。残差を丸め差や会計組替え差として処理していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "前年第3四半期売上はS03−S04を使用し、S06及びS07の直接四半期領域売上で照合した。過年度訂正の全履歴は未確認だが、提示資料に当該累計損益の別会計版は確認されない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/qoq/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/qoq/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "売上は領域別実績と受注・製品展開から条件付き範囲を設定したが、受注残からの厳密な数量・価格積上げはできない。粗利益率の裏付けは連結実績範囲に限定され、予測利益の主要な不確実性である。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "対象実績は提示資料中に存在しないためtarget_already_announced=falseとした。基準日時点までの開示網羅性を独自に検証したものではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-10-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "直前累計不足: 2026-07-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "CSP更新の対象契約、契約年数及び今期の売上集中時期は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "base_cloud: 上期出荷を上回る受注残と会社の下期伸長見通しから、直前四半期を上回る検収進捗を仮定。金融機関案件をすべて当四半期へ配賦せず、サーバ等も含む領域売上として設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "base_margin: 当期上期の粗利益率約18%を基準に、第1四半期と第2四半期の採算差を均した条件。自社製品・CSP・代理人取引の構成及び現在価値評価はこの率に包含し、繰延利益の戻入を別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "base_sga: 直前四半期と前年第3四半期の販管費の間に設定し、既存の人員・開発・営業体制の費用水準が続く条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "base_vdi: 下期伸長とCSP更新集中により当期第1四半期付近まで回復する一方、前年第3四半期を下回る条件。前年の大型案件獲得収益の再現は前提にしない。純額認識・現在価値評価後。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "base_zero: Numecent大規模案件及びForcepoint展開の寄与を領域売上に包含し、当期第1四半期と大型案件を含む第2四半期の間に設定。既に上期計上された大型案件を別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bear_cloud: 直前四半期の領域売上を基準に、金融機関向け受注残の検収が第4四半期へ偏る条件。受注残は需要の裏付けだが、単価非開示のため台数から金額を捏造せず、直前実績付近を下限条件とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bear_margin: 当期第2四半期の粗利益率約13%に近い低採算条件。仕入原価、案件構成、長期売掛金の現在価値評価を含む報告ベースの粗利益率。領域別採算は非開示のため連結段階で条件を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bear_sga: 直前四半期と前年第3四半期の販管費を基準に、AI事業展開・営業活動費用がやや増える条件。利益目標から逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bear_vdi: 下期伸長見通しとCSPの第3四半期集中を踏まえ、第2四半期から回復するが、当期第1四半期及び前年第3四半期に届かない弱気条件。代理人取引の純額認識及び現在価値評価後の売上を仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bear_zero: 第2四半期の大型案件を反復せず、当期第1四半期の領域売上付近へ低下する条件。Forcepoint等の展開と製造業向け案件の存在により、第1四半期をやや上回る水準を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bull_cloud: 金融機関向け大型受注残の検収が当四半期に集中し、領域売上が上期累計に近づく強気条件。受注残の台数を売上に直接換算した推計ではなく、上期実績と受注残の規模に基づく条件付き上限。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bull_margin: 自社製品や高採算案件の寄与が強く、当期第1四半期の粗利益率約25%に近づくが下回る条件。前年第3四半期の大型案件獲得収益による異常に高い採算は外挿しない。現在価値評価を包含。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bull_sga: 直前四半期並みの販管費で案件増加に対応できる条件。売上に比例した販管費増加や利益からの逆算は行わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bull_vdi: 下期の案件計上とCSP更新が進み、前年第3四半期を小幅に上回る条件。前年大型案件の利益額を追加計上する仮定ではない。純額認識・現在価値評価後。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "bull_zero: 大企業向け導入が続き、上期の四半期平均程度の売上を維持する条件。第2四半期大型案件と同規模の反復までは仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "ゼロトラスト大型案件について、上期既計上分と下期未計上分の内訳は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "リモートPCアレイの受注残金額、実現単価、案件別検収日及び対象四半期内の出荷数量は保存資料では非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "事業領域別の売上原価・粗利益・営業利益は非開示。会社はITインフラ事業の単一セグメントであり、領域別売上を報告セグメント利益と混同していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "売上シナリオと粗利益率シナリオの組合せは独自条件であり、統計的な信頼区間ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3565",
+      "company_name": "アセンテック株式会社",
+      "kind": "condition",
+      "message": "対象四半期末の外貨建債務評価、為替予約評価及び長期売掛金の現在価値評価額は未確認。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3565/result.json": "953be6664846acd61b5117fcc0aced070c5215d8499f2aeb8a5e406e1744a57c",
+    "reports/3565.md": "f38ce734e497e7112cb11659eee2fe69d45658ecbb08e4fcd5c47131574d4167"
+  }
+}
