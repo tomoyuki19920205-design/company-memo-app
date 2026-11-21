@@ -1,0 +1,2753 @@
+{
+  "id": "7983-d49c65f939c68f599dede4db6982b1a07a0398b3bb63ce61f7acdb5651223cd2",
+  "code": "7983",
+  "companyName": "株式会社ミロク",
+  "announcementDate": "2026-12-15",
+  "target": {
+    "fiscalYearEnd": "2026-10-31",
+    "quarter": 4
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "7983-generation-c21701c923953a6e · d49c65f9",
+  "savedAt": "2026-11-22T02:00:39+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 3020.0,
+  "operatingProfit": -43.5,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 7983 株式会社ミロク｜2026-10-31期 Q4単独\n品質状態：**検証未了**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 2,770.00 | 3,020.00 | 3,340.00 |\n| 営業利益 | -149.50 | -43.50 | 100.20 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | -334.30 | -9.97% |  |\n| QnQ | 営業利益 | -182.62 | -131.27% |  |\n\n## 会社予想\n保存資料内で最新確認できる通期会社予想はS06の修正予想で、S07にて据置きが確認される。Q3累計を差し引いたQ4相当額は売上2,640.82、営業利益-346.58、経常利益-357.16、親会社株主帰属純利益2,445.49。これらは通期予想の機械的な差引き推計であり、会社が直接公表した四半期予想でも独自予測でもない。補助金と証券売却益をこの純利益差引き推計へ再加算しない。\n\n## 市場コンセンサス\n未確認。保存資料に公表市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n猟銃と工作機械の外部売上・製品構成・セグメント採算を条件付きで設定し、小規模事業と全社費用・内部利益消去を積み上げた独自予測。会社通期予想の四等分や残額への利益合わせはしていない。実績から観測できる採算範囲を利用した低確度の条件付き予測であり、統計的な信頼区間ではない。経常利益と純利益は営業外損益・税効果・期末特別損失の範囲を十分に限定できないためnull。\n\n## 対象と中心予測\n対象は通期決算で判明する第4四半期単独。中心予測は売上3,020.00、営業利益-43.50。猟銃はライフル不振と価格転嫁難を見込み、工作機械は加工部門の回復を認めつつ、直前四半期の高価格機械販売の集中が弱まると仮定した。\n\n## 条件付きの幅\n弱気は売上2,770.00、営業利益-149.50。強気は売上3,340.00、営業利益100.20。主な分岐は猟銃の出荷・固定費吸収と、工作機械の検収・製品構成である。強気でも猟銃の価格転嫁成功は前提とせず、直前四半期付近の採算維持にとどめた。セグメント利益の合計から全社費用と内部利益消去を控除して連結営業利益を求めている。\n\n## 比較と残差\n比較基準は前年第4四半期の売上3,037.15・営業利益-194.46、直前第3四半期の売上3,354.30・営業利益139.12。各シナリオで同じ累計差引き値を使用した。ブリッジは主力事業別の変化を示し、小規模事業と全社費用等について因果別に説明できない差は残差に残した。\n\n## 特別利益と純利益\n確定した証券売却益と補助金の合計は3,243.00。営業利益や経常利益とは分けて扱う。会社通期予想には既に織り込まれているため二重加算しない。税負担や期末調整の影響を確認できない以上、この合計をそのまま独自純利益とすることもできない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | -284.72 | 受注低調・ライフル不振が強まる条件 |\n| 工作機械外部売上 | 16.30 | 前年期末並みの検収に加工等の回復を加味 |\n| 残差（economic_unexplained） | 1.27 | クラウド・その他外部売上の差。予測は直前Q3近辺だが前年期末との差を契約数・単価で説明できない。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | -328.34 | 受注・販売構成の悪化条件 |\n| 工作機械外部売上 | -256.42 | 高価格機械の検収集中の反落 |\n| 残差（economic_unexplained） | 0.46 | クラウド・その他外部売上をほぼ横ばいとした差。案件別内訳は説明不能。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | 34.76 | 償却負担減少と原材料高・値下げ・稼働低下を合成した採算仮定 |\n| 工作機械セグメント損益 | 23.14 | 加工回復を含む採算仮定 |\n| 残差（economic_unexplained） | -12.94 | クラウド・その他損益、全社費用、内部利益消去の合計差。費用水準は仮定したが、前年からの因果別金額分解はできない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | -142.79 | 販売減少と固定費吸収悪化の条件 |\n| 工作機械セグメント損益 | -121.35 | 高価格製品の売上・構成比低下 |\n| 残差（economic_unexplained） | -24.47 | クラウド・その他損益、全社費用、内部利益消去の合計差。全社費用増は実績確認値ではなく期末費用仮定。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | -134.72 | 上下二連銃の安定とライフル不振 |\n| 工作機械外部売上 | 116.30 | 加工・ツール回復と一定の機械販売 |\n| 残差（economic_unexplained） | 1.27 | クラウド・その他外部売上の差を顧客数・単価に分解できない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | -178.34 | 受注低調の継続 |\n| 工作機械外部売上 | -156.42 | 高価格機械の販売集中が一部反落 |\n| 残差（economic_unexplained） | 0.46 | クラウド・その他をほぼ横ばいとした差。案件別変動は未確認。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | 100.76 | 償却負担減少を含む一方、原材料高と価格転嫁難から赤字を想定 |\n| 工作機械セグメント損益 | 63.14 | 加工回復と高価格機械の一定の貢献 |\n| 残差（economic_unexplained） | -12.94 | 小規模事業と全社費用・消去の合計差。詳細な経済要因別説明はできない。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | -76.79 | 販売減と価格転嫁難による小幅赤字化 |\n| 工作機械セグメント損益 | -81.35 | 高価格機械の構成比と販売額の低下 |\n| 残差（economic_unexplained） | -24.47 | 小規模事業と全社費用・消去の合計差。直前Q3の低い全社費用を恒常化しない仮定を含む。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | 35.28 | 上下二連銃の安定とライフル追加悪化の停止 |\n| 工作機械外部売上 | 266.30 | 高価格機械販売と加工回復の継続 |\n| 残差（economic_unexplained） | 1.27 | クラウド・その他外部売上の差を契約別に説明できない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃外部売上 | -8.34 | 直前Q3並みの販売を維持 |\n| 工作機械外部売上 | -6.42 | 直前Q3並みの検収を維持 |\n| 残差（economic_unexplained） | 0.46 | クラウド・その他の小幅差。具体的な案件増減は未確認。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | 175.96 | 減損後の償却負担と安定稼働を含む小幅黒字条件 |\n| 工作機械セグメント損益 | 131.64 | 高価格機械・加工による高採算構成 |\n| 残差（economic_unexplained） | -12.94 | 小規模事業、全社費用、消去の合計差。因果別に未説明のため残差とする。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 猟銃セグメント損益 | -1.59 | 直前Q3近辺の採算維持 |\n| 工作機械セグメント損益 | -12.85 | 高採算を維持するが直前Q3より若干低い構成 |\n| 残差（economic_unexplained） | -24.47 | 小規模事業、全社費用、消去の合計差。期末の費用水準仮定による未説明差を含む。 |\n\n## エラー・未解決事項\n- 2026年10月期第3四半期補足説明資料はS01で作成有とされるが原本本文は未提示。製品別最新売上や詳細KPIが非開示と断定できるわけではない。\n- S02はグループ通算制度への移行を当中間期から、S01は第1四半期からと記載。税務注記の開始時点表現に差がある。営業損益の累計差引きは可能だが、税金の四半期予測には採用しない。\n- S04の訂正は役員異動予定日のみで、比較損益に数値修正はない。前年Q4の減損はその期の費用認識であり、過年度累計の会計版変更として扱わない。\n- S07で確定売却益が当初見込みを下回っても会社は通期予想を据え置いた。これを独自の税引後減益修正に直結させる根拠はなく、補助金を含む会社予想の再調整はしていない。\n- セグメント採算仮定は観測実績と定性説明に基づく条件付き範囲。製品別限界利益率や固定費の開示がなく、数量・単価・材料費・償却費をそれぞれ独立した金額へ完全分解できない。\n- ブリッジ残差は小規模事業と全社費用等の未説明差であり、丸め誤差とは認定していない。\n- 保存資料には対象四半期を含む通期実績がなく、target_already_announced=falseは保存資料で未確認という意味。基準日時までの全開示を網羅していない。\n- 入力条件の決算発表候補日は2026-12-15だが、基準日時以前の会社・取引所による予定日原文は提示されていないためannouncement_dateはnull。\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 提示documentsはすべてtruncated=false。ただし図表の文字抽出で系列対応が不明瞭な箇所は図版原本未確認として数値採用していない。S12は本文未提示であり企業同定はS01等の短信を使用した。\n- 特別利益の個別確定額は確認できるが、税金・追加減損・営業外損益の合理的な予測幅が不足するため、独自経常利益と純利益はnull。\n- 直前累計不足: 2025-10-31\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- base_gun_margin: 直前Q3の低い黒字率から、販売減少と価格転嫁難によって小幅赤字へ移る条件。前年Q4よりは減損後の償却負担軽減が効く。償却減少や工場稼働効果を利益率に含め、別途加算しない。\n- base_gun_sales: 上下二連銃は横ばい、ライフルは不振という最新説明を基礎に、前年Q4と直前Q3を下回る売上を置く。通期会社予想の残額をそのまま採用せず、受注低調と既存販売水準の間に設定。\n- base_machine_margin: 中間期の約9.2%と直前Q3の約21.6%の間。加工回復を維持しつつ高価格機械の販売集中が弱まる構成を想定。利益率は内部取引を含むセグメント利益対外部売上で定義。\n- base_machine_sales: 中間期の外部売上平均に近い水準に、加工・ツールの回復を反映。直前Q3に寄与した高価格機械の販売は一部反落すると仮定。\n- bear_gun_margin: 前年Q4の約5.8%の赤字率と直前Q3の約1.1%の黒字率を参照。減損後の償却費減少は織り込む一方、値下げ、原材料高、減産による固定費負担で再び赤字となる条件。営業利益を先に設定した費用逆算ではない。\n- bear_gun_sales: 前年Q4と直前Q3の猟銃売上を参照し、ブローニング受注低調とライフル不振がさらに強まる条件。上下二連銃の全面的な失速は仮定しない。実数の販売丁数と単価は得られないため、数量・価格を合成したセグメント売上仮定。\n- bear_machine_margin: 前年通期のセグメント利益対外部売上比率付近。高価格機械の構成比低下を想定するが、最新資料で改善した加工部門が前年Q4の低採算を緩和する条件。内部取引を含むセグメント利益と外部売上の比率であり、製品粗利率ではない。\n- bear_machine_sales: 前年Q4外部売上付近まで高価格機械の検収が減る条件。ツール・加工等の回復により前年Q4を若干上回るが、直前Q3の高額案件集中は継続しない。\n- bull_gun_margin: 直前Q3並みの稼働と製品構成を保ち、原材料高を抱えながら直前Q3並みの小幅黒字を確保する条件。価格転嫁の成功は前提にしない。\n- bull_gun_sales: 上下二連銃の安定販売とライフルの追加悪化停止により、直前Q3並みの出荷を確保する条件。受注急回復や新たな大型値上げは仮定しない。\n- bull_machine_margin: 直前Q3の約21.6%を少し下回る水準。高価格機械と加工部門の好調が続く条件。利益率は内部取引を含むセグメント利益対外部売上で定義。\n- bull_machine_sales: 機械部門の一定の受注と高価格製品の販売、加工部門の回復が続き、直前Q3に近い外部売上を維持する条件。\n- corporate_cost: 前年Q4の全社費用約58.4、中間期累計約116.0、直前Q3約36.3を参照し、直前Q3の低水準を恒常化せず期末は60とする。連結利益目標から逆算していない。\n- 価格転嫁難と関税を一因とする値下げは確認できるが、対象四半期の追加値下げ実施額は未確認。\n- 全社費用の期末増減要因、内部取引利益消去の対象四半期額は非開示。\n- 対象四半期の販売丁数、実現単価、受注残、値下げ適用時期、工場稼働率は保存資料では非開示。\n- 工作機械の案件別検収予定と高価格製品の構成比は保存資料では非開示。\n- 持分法投資損益、デリバティブ評価損益、支払利息、期末税効果の対象四半期額は未確認。\n\n## 根拠・保存記録\n- S01 [2026年10月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/79830/140120260910534293.pdf) / 公表 2026-09-11 / retrieved / SHA-256 `d358d97276315f969e4325c94a088c2fa7a4c66de5e9f0d16c8a4d4f89d1288f`\n- S02 [2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/79830/140120260608565009.pdf) / 公表 2026-06-09 / retrieved / SHA-256 `e2d47db571dfb7e77dbaa7b74cfdd27ba51211e9a8a1600d24e2252d73685177`\n- S03 [2025年10月期 決算短信〔日本基準〕（連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251214519447.pdf) / 公表 2025-12-15 / retrieved / SHA-256 `c8a588fa263f346b03ea261729c27708c5bf2149d1f40112ec0b43ccc1555981`\n- S04 [（訂正）「2025年10月期 決算短信〔日本基準〕（連結）」の一部訂正について](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251216/20251216520388.pdf) / 公表 2025-12-16 / retrieved / SHA-256 `cb40a6906efed04f6c9833a3a1b8be50f472b4e52180f03aa4b470424e837b7d`\n- S05 [2025年10月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/79830/140120250911556475.pdf) / 公表 2025-09-12 / retrieved / SHA-256 `27aa6c54dab72c9fc143bb4c27dd5d9298770499608505202e1cfb0ba6582384`\n- S06 [投資有価証券売却益（特別利益）の計上見込み及び2026年10月期通期連結業績予想の修正に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260825/20260825525613.pdf) / 公表 2026-08-25 / retrieved / SHA-256 `37e0cb283d4d169c835042947eeb0bd42a605439d1b18107cbb08dc12cced987`\n- S07 [投資有価証券売却益（特別利益）の計上に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261006/20261005546104.pdf) / 公表 2026-10-06 / retrieved / SHA-256 `1c49ba3e9a1d1e3c3c833901ba2af8b1bd278b601d4a0b9dabd4b5c93f84d407`\n- S08 [特別利益の計上に関するお知らせ](https://www2.jpx.co.jp/disc/79830/140120260911535089.pdf) / 公表 2026-09-25 / retrieved / SHA-256 `d5cc101f90cb452c8b0b29e202325696fa02a6c9dab23528e7ebed62e5277fae`\n- S09 [2026年10月期 第2四半期（中間期）決算補足説明資料](https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/205888/00.pdf) / 公表 2026-06-09 / retrieved / SHA-256 `0688100ad159a75baac75915e8aef72f840fa215edf939b7d8be1424b6491be1`\n- S10 [「2025年10月期決算」及び「2026 中期経営計画」説明資料](https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/195361/00.pdf) / 公表 2026-01-08 / retrieved / SHA-256 `a6be0c5e478f56467fe4f8a1e14f7f998f97e53f423d93107cdba6f227a9a09b`\n- S11 [2025年10月期 第3四半期決算補足説明資料](https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/187073/00.pdf) / 公表 2025-09-12 / retrieved / SHA-256 `ddd3ee68f0fe0ce7fb672a41e9e4f8b6e99022917fb7ff5c59521077dfaba84c`\n- S12 [会社概要](https://www.miroku-jp.com/company/profile.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "7983",
+    "company_name": "株式会社ミロク",
+    "announcement_date": "2026-12-15",
+    "target_period": "2026-10-31期 Q4単独",
+    "period": {
+      "fiscal_year_end": "2026-10-31",
+      "quarter": 4,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 2770.0,
+        "operating_profit": -149.5,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 3020.0,
+        "operating_profit": -43.5,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 3340.0,
+        "operating_profit": 100.19999999999999,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -334.3010000000004,
+          "rate": -0.0996633873942739,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -182.615,
+          "rate": -1.312690939151062,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy25_revenue": 12518.322,
+      "fy25_op": -24.598,
+      "y25_q3_revenue": 9481.169,
+      "y25_q3_op": 169.867,
+      "y26_q2_revenue": 6204.878,
+      "y26_q2_op": 107.461,
+      "y26_q3_revenue": 9559.179,
+      "y26_q3_op": 246.576,
+      "y26_q3_ordinary": 417.161,
+      "y26_q3_net": 394.508,
+      "fy25_gun_sales": 10680.423,
+      "fy25_gun_op": 117.643,
+      "fy25_machine_sales": 1773.008,
+      "fy25_machine_op": 128.561,
+      "y25_q3_gun_sales": 8095.703,
+      "y25_q3_gun_op": 267.405,
+      "y25_q3_machine_sales": 1339.31,
+      "y25_q3_machine_op": 120.2,
+      "y26_q2_gun_sales": 5096.374,
+      "y26_q2_gun_op": 125.121,
+      "y26_q2_machine_sales": 1072.659,
+      "y26_q2_machine_op": 99.125,
+      "y26_q3_gun_sales": 7724.71,
+      "y26_q3_gun_op": 152.912,
+      "y26_q3_machine_sales": 1779.084,
+      "y26_q3_machine_op": 251.977,
+      "guidance_revenue": 12200.0,
+      "guidance_op": -100.0,
+      "guidance_ordinary": 60.0,
+      "guidance_net": 2840.0,
+      "securities_gain": 2056.0,
+      "factory_subsidy": 1187.0,
+      "bear_gun_sales": 2300.0,
+      "base_gun_sales": 2450.0,
+      "bull_gun_sales": 2620.0,
+      "bear_gun_margin": -0.05,
+      "base_gun_margin": -0.02,
+      "bull_gun_margin": 0.01,
+      "bear_machine_sales": 450.0,
+      "base_machine_sales": 550.0,
+      "bull_machine_sales": 700.0,
+      "bear_machine_margin": 0.07,
+      "base_machine_margin": 0.13,
+      "bull_machine_margin": 0.2,
+      "small_sales": 20.0,
+      "small_cost": 25.0,
+      "corporate_cost": 60.0,
+      "elimination_cost": 1.0,
+      "prior_revenue": 3037.1530000000002,
+      "prior_op": -194.46499999999997,
+      "previous_revenue": 3354.3010000000004,
+      "previous_op": 139.115,
+      "prior_gun_sales": 2584.7200000000003,
+      "prior_gun_op": -149.76199999999997,
+      "prior_machine_sales": 433.6980000000001,
+      "prior_machine_op": 8.361000000000004,
+      "previous_gun_sales": 2628.3360000000002,
+      "previous_gun_op": 27.79100000000001,
+      "previous_machine_sales": 706.425,
+      "previous_machine_op": 152.852,
+      "implied_q4_revenue": 2640.821,
+      "implied_q4_op": -346.576,
+      "implied_q4_ordinary": -357.161,
+      "implied_q4_net": 2445.492,
+      "confirmed_special_gains": 3243.0,
+      "small_op": -5.0,
+      "common_op_adjustment": -66.0,
+      "bear_gun_op": -115.0,
+      "base_gun_op": -49.0,
+      "bull_gun_op": 26.2,
+      "bear_machine_op": 31.500000000000004,
+      "base_machine_op": 71.5,
+      "bull_machine_op": 140.0,
+      "bear_revenue": 2770.0,
+      "base_revenue": 3020.0,
+      "bull_revenue": 3340.0,
+      "bear_op": -149.5,
+      "base_op": -43.5,
+      "bull_op": 100.19999999999999,
+      "yoy_revenue_residual": 1.2650000000001,
+      "qoq_revenue_residual": 0.459999999999809,
+      "yoy_op_residual": -12.935999999999993,
+      "qoq_op_residual": -24.47200000000001
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S05",
+          "S01"
+        ],
+        "locator": "S05 PDF pages 2,7,10; S01 PDF page 7の比較情報と一致",
+        "period_end": "2025-07-31",
+        "period_start": "2025-05-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2025-10-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "S03 PDF pages 2,8; S04 PDF page 1",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2,8,12",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF pages 2,7,10",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 3354.3010000000004,
+        "operating_profit": 139.115,
+        "ordinary_profit": 208.145,
+        "net_profit": 189.35099999999997
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "bear_gun_sales-prior_gun_sales",
+            "reason": "受注低調・ライフル不振が強まる条件",
+            "amount": -284.72000000000025
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "bear_machine_sales-prior_machine_sales",
+            "reason": "前年期末並みの検収に加工等の回復を加味",
+            "amount": 16.301999999999907
+          }
+        ],
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他外部売上の差。予測は直前Q3近辺だが前年期末との差を契約数・単価で説明できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "bear_gun_sales-previous_gun_sales",
+            "reason": "受注・販売構成の悪化条件",
+            "amount": -328.33600000000024
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "bear_machine_sales-previous_machine_sales",
+            "reason": "高価格機械の検収集中の反落",
+            "amount": -256.42499999999995
+          }
+        ],
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他外部売上をほぼ横ばいとした差。案件別内訳は説明不能。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "bear_gun_op-prior_gun_op",
+            "reason": "償却負担減少と原材料高・値下げ・稼働低下を合成した採算仮定",
+            "amount": 34.76199999999997
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "bear_machine_op-prior_machine_op",
+            "reason": "加工回復を含む採算仮定",
+            "amount": 23.139
+          }
+        ],
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。費用水準は仮定したが、前年からの因果別金額分解はできない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "bear_gun_op-previous_gun_op",
+            "reason": "販売減少と固定費吸収悪化の条件",
+            "amount": -142.791
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "bear_machine_op-previous_machine_op",
+            "reason": "高価格製品の売上・構成比低下",
+            "amount": -121.352
+          }
+        ],
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。全社費用増は実績確認値ではなく期末費用仮定。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "base_gun_sales-prior_gun_sales",
+            "reason": "上下二連銃の安定とライフル不振",
+            "amount": -134.72000000000025
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "base_machine_sales-prior_machine_sales",
+            "reason": "加工・ツール回復と一定の機械販売",
+            "amount": 116.30199999999991
+          }
+        ],
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他外部売上の差を顧客数・単価に分解できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "base_gun_sales-previous_gun_sales",
+            "reason": "受注低調の継続",
+            "amount": -178.33600000000024
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "base_machine_sales-previous_machine_sales",
+            "reason": "高価格機械の販売集中が一部反落",
+            "amount": -156.42499999999995
+          }
+        ],
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他をほぼ横ばいとした差。案件別変動は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "base_gun_op-prior_gun_op",
+            "reason": "償却負担減少を含む一方、原材料高と価格転嫁難から赤字を想定",
+            "amount": 100.76199999999997
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "base_machine_op-prior_machine_op",
+            "reason": "加工回復と高価格機械の一定の貢献",
+            "amount": 63.138999999999996
+          }
+        ],
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "小規模事業と全社費用・消去の合計差。詳細な経済要因別説明はできない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "base_gun_op-previous_gun_op",
+            "reason": "販売減と価格転嫁難による小幅赤字化",
+            "amount": -76.79100000000001
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "base_machine_op-previous_machine_op",
+            "reason": "高価格機械の構成比と販売額の低下",
+            "amount": -81.352
+          }
+        ],
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "小規模事業と全社費用・消去の合計差。直前Q3の低い全社費用を恒常化しない仮定を含む。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "bull_gun_sales-prior_gun_sales",
+            "reason": "上下二連銃の安定とライフル追加悪化の停止",
+            "amount": 35.279999999999745
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "bull_machine_sales-prior_machine_sales",
+            "reason": "高価格機械販売と加工回復の継続",
+            "amount": 266.3019999999999
+          }
+        ],
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他外部売上の差を契約別に説明できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "previous_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "猟銃外部売上",
+            "formula": "bull_gun_sales-previous_gun_sales",
+            "reason": "直前Q3並みの販売を維持",
+            "amount": -8.33600000000024
+          },
+          {
+            "label": "工作機械外部売上",
+            "formula": "bull_machine_sales-previous_machine_sales",
+            "reason": "直前Q3並みの検収を維持",
+            "amount": -6.4249999999999545
+          }
+        ],
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "クラウド・その他の小幅差。具体的な案件増減は未確認。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "bull_gun_op-prior_gun_op",
+            "reason": "減損後の償却負担と安定稼働を含む小幅黒字条件",
+            "amount": 175.96199999999996
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "bull_machine_op-prior_machine_op",
+            "reason": "高価格機械・加工による高採算構成",
+            "amount": 131.639
+          }
+        ],
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "小規模事業、全社費用、消去の合計差。因果別に未説明のため残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "previous_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "猟銃セグメント損益",
+            "formula": "bull_gun_op-previous_gun_op",
+            "reason": "直前Q3近辺の採算維持",
+            "amount": -1.5910000000000117
+          },
+          {
+            "label": "工作機械セグメント損益",
+            "formula": "bull_machine_op-previous_machine_op",
+            "reason": "高採算を維持するが直前Q3より若干低い構成",
+            "amount": -12.852000000000004
+          }
+        ],
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "小規模事業、全社費用、消去の合計差。期末の費用水準仮定による未説明差を含む。"
+      }
+    ],
+    "issues": [
+      "2026年10月期第3四半期補足説明資料はS01で作成有とされるが原本本文は未提示。製品別最新売上や詳細KPIが非開示と断定できるわけではない。",
+      "S02はグループ通算制度への移行を当中間期から、S01は第1四半期からと記載。税務注記の開始時点表現に差がある。営業損益の累計差引きは可能だが、税金の四半期予測には採用しない。",
+      "S04の訂正は役員異動予定日のみで、比較損益に数値修正はない。前年Q4の減損はその期の費用認識であり、過年度累計の会計版変更として扱わない。",
+      "S07で確定売却益が当初見込みを下回っても会社は通期予想を据え置いた。これを独自の税引後減益修正に直結させる根拠はなく、補助金を含む会社予想の再調整はしていない。",
+      "セグメント採算仮定は観測実績と定性説明に基づく条件付き範囲。製品別限界利益率や固定費の開示がなく、数量・単価・材料費・償却費をそれぞれ独立した金額へ完全分解できない。",
+      "ブリッジ残差は小規模事業と全社費用等の未説明差であり、丸め誤差とは認定していない。",
+      "保存資料には対象四半期を含む通期実績がなく、target_already_announced=falseは保存資料で未確認という意味。基準日時までの全開示を網羅していない。",
+      "入力条件の決算発表候補日は2026-12-15だが、基準日時以前の会社・取引所による予定日原文は提示されていないためannouncement_dateはnull。",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "提示documentsはすべてtruncated=false。ただし図表の文字抽出で系列対応が不明瞭な箇所は図版原本未確認として数値採用していない。S12は本文未提示であり企業同定はS01等の短信を使用した。",
+      "特別利益の個別確定額は確認できるが、税金・追加減損・営業外損益の合理的な予測幅が不足するため、独自経常利益と純利益はnull。",
+      "直前累計不足: 2025-10-31",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -584.3010000000004,
+            "rate": -0.17419456393448302,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -288.615,
+            "rate": -2.0746504690364085,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -334.3010000000004,
+            "rate": -0.0996633873942739,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -182.615,
+            "rate": -1.312690939151062,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -14.301000000000386,
+            "rate": -0.0042634814228062375,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -38.91500000000002,
+            "rate": -0.2797325953347951,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -268.41800000000035,
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "クラウド・その他外部売上の差。予測は直前Q3近辺だが前年期末との差を契約数・単価で説明できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -584.3010000000004,
+        "explained_sum": -584.7610000000002,
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "クラウド・その他外部売上をほぼ横ばいとした差。案件別内訳は説明不能。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 57.90099999999997,
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。費用水準は仮定したが、前年からの因果別金額分解はできない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -288.615,
+        "explained_sum": -264.14300000000003,
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。全社費用増は実績確認値ではなく期末費用仮定。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -18.418000000000347,
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "クラウド・その他外部売上の差を顧客数・単価に分解できない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -334.3010000000004,
+        "explained_sum": -334.7610000000002,
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "クラウド・その他をほぼ横ばいとした差。案件別変動は未確認。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 163.90099999999995,
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "小規模事業と全社費用・消去の合計差。詳細な経済要因別説明はできない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -182.615,
+        "explained_sum": -158.14300000000003,
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "difference": 2.842170943040401e-14,
+        "status": "passed",
+        "residual_explanation": "小規模事業と全社費用・消去の合計差。直前Q3の低い全社費用を恒常化しない仮定を含む。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 301.58199999999965,
+        "residual": 1.2650000000001,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "クラウド・その他外部売上の差を契約別に説明できない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -14.301000000000386,
+        "explained_sum": -14.761000000000195,
+        "residual": 0.459999999999809,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "クラウド・その他の小幅差。具体的な案件増減は未確認。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 307.601,
+        "residual": -12.935999999999993,
+        "residual_type": "economic_unexplained",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "小規模事業、全社費用、消去の合計差。因果別に未説明のため残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -38.91500000000002,
+        "explained_sum": -14.443000000000016,
+        "residual": -24.47200000000001,
+        "residual_type": "economic_unexplained",
+        "difference": 3.552713678800501e-15,
+        "status": "passed",
+        "residual_explanation": "小規模事業、全社費用、消去の合計差。期末の費用水準仮定による未説明差を含む。"
+      }
+    ],
+    "conditions": [
+      "base_gun_margin: 直前Q3の低い黒字率から、販売減少と価格転嫁難によって小幅赤字へ移る条件。前年Q4よりは減損後の償却負担軽減が効く。償却減少や工場稼働効果を利益率に含め、別途加算しない。",
+      "base_gun_sales: 上下二連銃は横ばい、ライフルは不振という最新説明を基礎に、前年Q4と直前Q3を下回る売上を置く。通期会社予想の残額をそのまま採用せず、受注低調と既存販売水準の間に設定。",
+      "base_machine_margin: 中間期の約9.2%と直前Q3の約21.6%の間。加工回復を維持しつつ高価格機械の販売集中が弱まる構成を想定。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+      "base_machine_sales: 中間期の外部売上平均に近い水準に、加工・ツールの回復を反映。直前Q3に寄与した高価格機械の販売は一部反落すると仮定。",
+      "bear_gun_margin: 前年Q4の約5.8%の赤字率と直前Q3の約1.1%の黒字率を参照。減損後の償却費減少は織り込む一方、値下げ、原材料高、減産による固定費負担で再び赤字となる条件。営業利益を先に設定した費用逆算ではない。",
+      "bear_gun_sales: 前年Q4と直前Q3の猟銃売上を参照し、ブローニング受注低調とライフル不振がさらに強まる条件。上下二連銃の全面的な失速は仮定しない。実数の販売丁数と単価は得られないため、数量・価格を合成したセグメント売上仮定。",
+      "bear_machine_margin: 前年通期のセグメント利益対外部売上比率付近。高価格機械の構成比低下を想定するが、最新資料で改善した加工部門が前年Q4の低採算を緩和する条件。内部取引を含むセグメント利益と外部売上の比率であり、製品粗利率ではない。",
+      "bear_machine_sales: 前年Q4外部売上付近まで高価格機械の検収が減る条件。ツール・加工等の回復により前年Q4を若干上回るが、直前Q3の高額案件集中は継続しない。",
+      "bull_gun_margin: 直前Q3並みの稼働と製品構成を保ち、原材料高を抱えながら直前Q3並みの小幅黒字を確保する条件。価格転嫁の成功は前提にしない。",
+      "bull_gun_sales: 上下二連銃の安定販売とライフルの追加悪化停止により、直前Q3並みの出荷を確保する条件。受注急回復や新たな大型値上げは仮定しない。",
+      "bull_machine_margin: 直前Q3の約21.6%を少し下回る水準。高価格機械と加工部門の好調が続く条件。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+      "bull_machine_sales: 機械部門の一定の受注と高価格製品の販売、加工部門の回復が続き、直前Q3に近い外部売上を維持する条件。",
+      "corporate_cost: 前年Q4の全社費用約58.4、中間期累計約116.0、直前Q3約36.3を参照し、直前Q3の低水準を恒常化せず期末は60とする。連結利益目標から逆算していない。",
+      "価格転嫁難と関税を一因とする値下げは確認できるが、対象四半期の追加値下げ実施額は未確認。",
+      "全社費用の期末増減要因、内部取引利益消去の対象四半期額は非開示。",
+      "対象四半期の販売丁数、実現単価、受注残、値下げ適用時期、工場稼働率は保存資料では非開示。",
+      "工作機械の案件別検収予定と高価格製品の構成比は保存資料では非開示。",
+      "持分法投資損益、デリバティブ評価損益、支払利息、期末税効果の対象四半期額は未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年10月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/79830/140120260910534293.pdf",
+        "published_at": "2026-09-11",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/79830/140120260910534293.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S01.txt",
+        "sha256": "d358d97276315f969e4325c94a088c2fa7a4c66de5e9f0d16c8a4d4f89d1288f",
+        "text_sha256": "5687835d88de6cac6e0d3c383f8d040236279e815ae7c5eead5a9701261a2690",
+        "retrieved_at": "2026-11-22T01:56:16+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9617,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年10月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/79830/140120260608565009.pdf",
+        "published_at": "2026-06-09",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/79830/140120260608565009.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S02.txt",
+        "sha256": "e2d47db571dfb7e77dbaa7b74cfdd27ba51211e9a8a1600d24e2252d73685177",
+        "text_sha256": "160367ffd3ec0d0fcea71b1bac16ae87b5465ac0b03ab29d652fb1fd148c3a5a",
+        "retrieved_at": "2026-11-22T01:56:17+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10469,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2025年10月期 決算短信〔日本基準〕（連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251214519447.pdf",
+        "published_at": "2025-12-15",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251215/20251214519447.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S03.txt",
+        "sha256": "c8a588fa263f346b03ea261729c27708c5bf2149d1f40112ec0b43ccc1555981",
+        "text_sha256": "c35d4fd607136a2e96e54a9477f0635d0a4a3fbd7018085716e26299cd2ff51e",
+        "retrieved_at": "2026-11-22T01:56:18+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17374,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "（訂正）「2025年10月期 決算短信〔日本基準〕（連結）」の一部訂正について",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251216/20251216520388.pdf",
+        "published_at": "2025-12-16",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251216/20251216520388.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S04.txt",
+        "sha256": "cb40a6906efed04f6c9833a3a1b8be50f472b4e52180f03aa4b470424e837b7d",
+        "text_sha256": "77009d66239b939aebf25d482ce8ce77eae413a093169f95e063e43b66207467",
+        "retrieved_at": "2026-11-22T01:56:18+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 710,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2025年10月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/79830/140120250911556475.pdf",
+        "published_at": "2025-09-12",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/79830/140120250911556475.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S05.txt",
+        "sha256": "27aa6c54dab72c9fc143bb4c27dd5d9298770499608505202e1cfb0ba6582384",
+        "text_sha256": "e621ebe42336ee0dd355b741c253869bc55bd15ff3cc364b30c18b9865c155b3",
+        "retrieved_at": "2026-11-22T01:56:18+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9407,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "投資有価証券売却益（特別利益）の計上見込み及び2026年10月期通期連結業績予想の修正に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260825/20260825525613.pdf",
+        "published_at": "2026-08-25",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260825/20260825525613.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S06.txt",
+        "sha256": "37e0cb283d4d169c835042947eeb0bd42a605439d1b18107cbb08dc12cced987",
+        "text_sha256": "0e2744bfef7e696c49bfa071fa44d30684a5d51dfc11aac3e7272c0da375cf68",
+        "retrieved_at": "2026-11-22T01:56:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1312,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "投資有価証券売却益（特別利益）の計上に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261006/20261005546104.pdf",
+        "published_at": "2026-10-06",
+        "category": "other",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261006/20261005546104.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S07.txt",
+        "sha256": "1c49ba3e9a1d1e3c3c833901ba2af8b1bd278b601d4a0b9dabd4b5c93f84d407",
+        "text_sha256": "2be9672c09b6536aa00b5acd3885b555f0b7a8712b9002de17d83308354200f5",
+        "retrieved_at": "2026-11-22T01:56:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1020,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "特別利益の計上に関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/79830/140120260911535089.pdf",
+        "published_at": "2026-09-25",
+        "category": "other",
+        "final_url": "https://www2.jpx.co.jp/disc/79830/140120260911535089.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S08.txt",
+        "sha256": "d5cc101f90cb452c8b0b29e202325696fa02a6c9dab23528e7ebed62e5277fae",
+        "text_sha256": "5279a7710d76dd330d94f0cf63c25e9dcf0ad2d2c41e74b6146b8e7a1e4eb7ce",
+        "retrieved_at": "2026-11-22T01:56:19+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 694,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2026年10月期 第2四半期（中間期）決算補足説明資料",
+        "url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/205888/00.pdf",
+        "published_at": "2026-06-09",
+        "category": "presentation",
+        "final_url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/205888/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S09.txt",
+        "sha256": "0688100ad159a75baac75915e8aef72f840fa215edf939b7d8be1424b6491be1",
+        "text_sha256": "5f26660cc44b4325695758ddfdd5b168456c806d24229a1175b14c54f06f29af",
+        "retrieved_at": "2026-11-22T01:56:21+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5825,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "「2025年10月期決算」及び「2026 中期経営計画」説明資料",
+        "url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/195361/00.pdf",
+        "published_at": "2026-01-08",
+        "category": "presentation",
+        "final_url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/195361/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S10.txt",
+        "sha256": "a6be0c5e478f56467fe4f8a1e14f7f998f97e53f423d93107cdba6f227a9a09b",
+        "text_sha256": "c333bdc63d73006ef24af18ff74c08c117a5669eb666ef2f4d73c27678d79d92",
+        "retrieved_at": "2026-11-22T01:56:25+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16365,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "2025年10月期 第3四半期決算補足説明資料",
+        "url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/187073/00.pdf",
+        "published_at": "2025-09-12",
+        "category": "presentation",
+        "final_url": "https://ssl4.eir-parts.net/doc/7983/ir_material_for_fiscal_ym/187073/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\runs\\20261215\\companies\\7983\\sources\\S11.txt",
+        "sha256": "ddd3ee68f0fe0ce7fb672a41e9e4f8b6e99022917fb7ff5c59521077dfaba84c",
+        "text_sha256": "63ce208503ad2893726454b92397cb22aee526678b8094028e3ce8af5bd8793a",
+        "retrieved_at": "2026-11-22T01:56:27+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 6387,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "会社概要",
+        "url": "https://www.miroku-jp.com/company/profile.html",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-22T01:56:27+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2026-10-31",
+        "quarter": 4,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy25_revenue",
+          "value": 12518.322,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 8; S04 PDF page 1（訂正は役員異動日のみ）"
+        },
+        {
+          "id": "fy25_op",
+          "value": -24.598,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF page 8; S04 PDF page 1"
+        },
+        {
+          "id": "y25_q3_revenue",
+          "value": 9481.169,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "y25_q3_op",
+          "value": 169.867,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "y26_q2_revenue",
+          "value": 6204.878,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "y26_q2_op",
+          "value": 107.461,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "y26_q3_revenue",
+          "value": 9559.179,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "y26_q3_op",
+          "value": 246.576,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "y26_q3_ordinary",
+          "value": 417.161,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "y26_q3_net",
+          "value": 394.508,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "fy25_gun_sales",
+          "value": 10680.423,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 14、外部顧客売上高"
+        },
+        {
+          "id": "fy25_gun_op",
+          "value": 117.643,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 14"
+        },
+        {
+          "id": "fy25_machine_sales",
+          "value": 1773.008,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 14、外部顧客売上高"
+        },
+        {
+          "id": "fy25_machine_op",
+          "value": 128.561,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 14"
+        },
+        {
+          "id": "y25_q3_gun_sales",
+          "value": 8095.703,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9、外部顧客売上高"
+        },
+        {
+          "id": "y25_q3_gun_op",
+          "value": 267.405,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "y25_q3_machine_sales",
+          "value": 1339.31,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9、外部顧客売上高"
+        },
+        {
+          "id": "y25_q3_machine_op",
+          "value": 120.2,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "y26_q2_gun_sales",
+          "value": 5096.374,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11、外部顧客売上高"
+        },
+        {
+          "id": "y26_q2_gun_op",
+          "value": 125.121,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "y26_q2_machine_sales",
+          "value": 1072.659,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11、外部顧客売上高"
+        },
+        {
+          "id": "y26_q2_machine_op",
+          "value": 99.125,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 11"
+        },
+        {
+          "id": "y26_q3_gun_sales",
+          "value": 7724.71,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、外部顧客売上高"
+        },
+        {
+          "id": "y26_q3_gun_op",
+          "value": 152.912,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "y26_q3_machine_sales",
+          "value": 1779.084,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9、外部顧客売上高"
+        },
+        {
+          "id": "y26_q3_machine_op",
+          "value": 251.977,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 12200,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、修正予想; S01 PDF page 1; S07 PDF page 1、据置き"
+        },
+        {
+          "id": "guidance_op",
+          "value": -100,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、修正予想; S01 PDF page 1; S07 PDF page 1、据置き"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 60,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、修正予想; S01 PDF page 1; S07 PDF page 1、据置き"
+        },
+        {
+          "id": "guidance_net",
+          "value": 2840,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、修正予想; S01 PDF page 1; S07 PDF page 1、据置き"
+        },
+        {
+          "id": "securities_gain",
+          "value": 2056,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、売却完了と確定売却益"
+        },
+        {
+          "id": "factory_subsidy",
+          "value": 1187,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、交付額確定。通期決算実績ではなく確定した個別事項"
+        },
+        {
+          "id": "bear_gun_sales",
+          "value": 2300,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年Q4と直前Q3の猟銃売上を参照し、ブローニング受注低調とライフル不振がさらに強まる条件。上下二連銃の全面的な失速は仮定しない。実数の販売丁数と単価は得られないため、数量・価格を合成したセグメント売上仮定。",
+          "sensitivity": "売上が100変わると連結売上も100変化。営業利益への影響はこのシナリオの仮定利益率を固定した場合に限り売上変化×bear_gun_margin。固定費吸収の追加影響は含まない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05"
+          ],
+          "locator": "各PDFセグメント情報; S01 PDF page 4",
+          "material": true
+        },
+        {
+          "id": "base_gun_sales",
+          "value": 2450,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "上下二連銃は横ばい、ライフルは不振という最新説明を基礎に、前年Q4と直前Q3を下回る売上を置く。通期会社予想の残額をそのまま採用せず、受注低調と既存販売水準の間に設定。",
+          "sensitivity": "売上が100変わると連結売上も100変化。利益率固定時の営業利益感応度は100×base_gun_margin。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF page 4; 各PDFセグメント情報",
+          "material": true
+        },
+        {
+          "id": "bull_gun_sales",
+          "value": 2620,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "上下二連銃の安定販売とライフルの追加悪化停止により、直前Q3並みの出荷を確保する条件。受注急回復や新たな大型値上げは仮定しない。",
+          "sensitivity": "売上が100変わると連結売上も100変化。利益率固定時の営業利益感応度は100×bull_gun_margin。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11",
+          "material": true
+        },
+        {
+          "id": "bear_gun_margin",
+          "value": -0.05,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年Q4の約5.8%の赤字率と直前Q3の約1.1%の黒字率を参照。減損後の償却費減少は織り込む一方、値下げ、原材料高、減産による固定費負担で再び赤字となる条件。営業利益を先に設定した費用逆算ではない。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が猟銃売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05",
+            "S10"
+          ],
+          "locator": "各PDFセグメント情報; S10 PDF pages 18-19",
+          "material": true
+        },
+        {
+          "id": "base_gun_margin",
+          "value": -0.02,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "直前Q3の低い黒字率から、販売減少と価格転嫁難によって小幅赤字へ移る条件。前年Q4よりは減損後の償却負担軽減が効く。償却減少や工場稼働効果を利益率に含め、別途加算しない。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が猟銃売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05",
+            "S10"
+          ],
+          "locator": "S01 PDF page 4; 各PDFセグメント情報; S10 PDF pages 18-19",
+          "material": true
+        },
+        {
+          "id": "bull_gun_margin",
+          "value": 0.01,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "直前Q3並みの稼働と製品構成を保ち、原材料高を抱えながら直前Q3並みの小幅黒字を確保する条件。価格転嫁の成功は前提にしない。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が猟銃売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11",
+          "material": true
+        },
+        {
+          "id": "bear_machine_sales",
+          "value": 450,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年Q4外部売上付近まで高価格機械の検収が減る条件。ツール・加工等の回復により前年Q4を若干上回るが、直前Q3の高額案件集中は継続しない。",
+          "sensitivity": "検収が100ずれると連結売上が100変化。利益率固定時の営業利益感応度は100×bear_machine_margin。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05",
+            "S09"
+          ],
+          "locator": "各PDFセグメント情報; S01 PDF page 4; S09 PDF page 6",
+          "material": true
+        },
+        {
+          "id": "base_machine_sales",
+          "value": 550,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "中間期の外部売上平均に近い水準に、加工・ツールの回復を反映。直前Q3に寄与した高価格機械の販売は一部反落すると仮定。",
+          "sensitivity": "検収が100ずれると連結売上が100変化。利益率固定時の営業利益感応度は100×base_machine_margin。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S09"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11; S09 PDF page 6",
+          "material": true
+        },
+        {
+          "id": "bull_machine_sales",
+          "value": 700,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "機械部門の一定の受注と高価格製品の販売、加工部門の回復が続き、直前Q3に近い外部売上を維持する条件。",
+          "sensitivity": "検収が100ずれると連結売上が100変化。利益率固定時の営業利益感応度は100×bull_machine_margin。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11",
+          "material": true
+        },
+        {
+          "id": "bear_machine_margin",
+          "value": 0.07,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "前年通期のセグメント利益対外部売上比率付近。高価格機械の構成比低下を想定するが、最新資料で改善した加工部門が前年Q4の低採算を緩和する条件。内部取引を含むセグメント利益と外部売上の比率であり、製品粗利率ではない。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が工作機械外部売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11; S03 PDF page 14",
+          "material": true
+        },
+        {
+          "id": "base_machine_margin",
+          "value": 0.13,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "中間期の約9.2%と直前Q3の約21.6%の間。加工回復を維持しつつ高価格機械の販売集中が弱まる構成を想定。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が工作機械外部売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11",
+          "material": true
+        },
+        {
+          "id": "bull_machine_margin",
+          "value": 0.2,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "直前Q3の約21.6%を少し下回る水準。高価格機械と加工部門の好調が続く条件。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+          "sensitivity": "利益率1ポイントの変化で営業利益が工作機械外部売上×0.01変化。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11",
+          "material": true
+        },
+        {
+          "id": "small_sales",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前Q3のクラウド・その他外部売上合計が約19.5であることから、両事業合計をほぼ横ばいとする。持分法適用会社ミロクテクノウッドの総売上は加算しない。",
+          "sensitivity": "売上1の変化で連結売上1変化。費用固定なら営業利益も1変化。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S10"
+          ],
+          "locator": "S01 PDF page 9; S02 PDF page 11; S10 PDF page 22",
+          "material": false
+        },
+        {
+          "id": "small_cost",
+          "value": 25,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前Q3のクラウド・その他合計は外部売上約19.5、セグメント損益約マイナス5.2であり、差額の約24.7を費用等の基準に採用。内部取引を含む実効的な費用控除額であり、開示原価ではない。",
+          "sensitivity": "費用等が1増加すると営業利益が1減少。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 9; S02 PDF page 11",
+          "material": false
+        },
+        {
+          "id": "corporate_cost",
+          "value": 60,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年Q4の全社費用約58.4、中間期累計約116.0、直前Q3約36.3を参照し、直前Q3の低水準を恒常化せず期末は60とする。連結利益目標から逆算していない。",
+          "sensitivity": "全社費用が10変わると連結営業利益が逆方向に10変化。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05"
+          ],
+          "locator": "S01 PDF page 9; S02 PDF page 11; S03 PDF page 14; S05 PDF page 9",
+          "material": true
+        },
+        {
+          "id": "elimination_cost",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "当期累計のセグメント間利益消去が小額であることから控除1を置く。内部売上は各売上予測から既に除外済み。",
+          "sensitivity": "消去控除が1増えると連結営業利益が1減少。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF page 9、利益調整注記; S02 PDF page 11",
+          "material": false
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_revenue",
+          "formula": "fy25_revenue-y25_q3_revenue"
+        },
+        {
+          "id": "prior_op",
+          "formula": "fy25_op-y25_q3_op"
+        },
+        {
+          "id": "previous_revenue",
+          "formula": "y26_q3_revenue-y26_q2_revenue"
+        },
+        {
+          "id": "previous_op",
+          "formula": "y26_q3_op-y26_q2_op"
+        },
+        {
+          "id": "prior_gun_sales",
+          "formula": "fy25_gun_sales-y25_q3_gun_sales"
+        },
+        {
+          "id": "prior_gun_op",
+          "formula": "fy25_gun_op-y25_q3_gun_op"
+        },
+        {
+          "id": "prior_machine_sales",
+          "formula": "fy25_machine_sales-y25_q3_machine_sales"
+        },
+        {
+          "id": "prior_machine_op",
+          "formula": "fy25_machine_op-y25_q3_machine_op"
+        },
+        {
+          "id": "previous_gun_sales",
+          "formula": "y26_q3_gun_sales-y26_q2_gun_sales"
+        },
+        {
+          "id": "previous_gun_op",
+          "formula": "y26_q3_gun_op-y26_q2_gun_op"
+        },
+        {
+          "id": "previous_machine_sales",
+          "formula": "y26_q3_machine_sales-y26_q2_machine_sales"
+        },
+        {
+          "id": "previous_machine_op",
+          "formula": "y26_q3_machine_op-y26_q2_machine_op"
+        },
+        {
+          "id": "implied_q4_revenue",
+          "formula": "guidance_revenue-y26_q3_revenue"
+        },
+        {
+          "id": "implied_q4_op",
+          "formula": "guidance_op-y26_q3_op"
+        },
+        {
+          "id": "implied_q4_ordinary",
+          "formula": "guidance_ordinary-y26_q3_ordinary"
+        },
+        {
+          "id": "implied_q4_net",
+          "formula": "guidance_net-y26_q3_net"
+        },
+        {
+          "id": "confirmed_special_gains",
+          "formula": "securities_gain+factory_subsidy"
+        },
+        {
+          "id": "small_op",
+          "formula": "small_sales-small_cost"
+        },
+        {
+          "id": "common_op_adjustment",
+          "formula": "small_op-corporate_cost-elimination_cost"
+        },
+        {
+          "id": "bear_gun_op",
+          "formula": "bear_gun_sales*bear_gun_margin"
+        },
+        {
+          "id": "base_gun_op",
+          "formula": "base_gun_sales*base_gun_margin"
+        },
+        {
+          "id": "bull_gun_op",
+          "formula": "bull_gun_sales*bull_gun_margin"
+        },
+        {
+          "id": "bear_machine_op",
+          "formula": "bear_machine_sales*bear_machine_margin"
+        },
+        {
+          "id": "base_machine_op",
+          "formula": "base_machine_sales*base_machine_margin"
+        },
+        {
+          "id": "bull_machine_op",
+          "formula": "bull_machine_sales*bull_machine_margin"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_gun_sales+bear_machine_sales+small_sales"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_gun_sales+base_machine_sales+small_sales"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_gun_sales+bull_machine_sales+small_sales"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_gun_op+bear_machine_op+common_op_adjustment"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_gun_op+base_machine_op+common_op_adjustment"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_gun_op+bull_machine_op+common_op_adjustment"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "small_sales-prior_revenue+prior_gun_sales+prior_machine_sales"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "small_sales-previous_revenue+previous_gun_sales+previous_machine_sales"
+        },
+        {
+          "id": "yoy_op_residual",
+          "formula": "common_op_adjustment-prior_op+prior_gun_op+prior_machine_op"
+        },
+        {
+          "id": "qoq_op_residual",
+          "formula": "common_op_adjustment-previous_op+previous_gun_op+previous_machine_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "猟銃事業・外部売上",
+              "revenue": "bear_gun_sales",
+              "operating_profit": "bear_gun_op"
+            },
+            {
+              "name": "工作機械事業・外部売上",
+              "revenue": "bear_machine_sales",
+              "operating_profit": "bear_machine_op"
+            },
+            {
+              "name": "クラウドソリューション・その他事業",
+              "revenue": "small_sales",
+              "operating_profit": "small_op"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "猟銃事業・外部売上",
+              "revenue": "base_gun_sales",
+              "operating_profit": "base_gun_op"
+            },
+            {
+              "name": "工作機械事業・外部売上",
+              "revenue": "base_machine_sales",
+              "operating_profit": "base_machine_op"
+            },
+            {
+              "name": "クラウドソリューション・その他事業",
+              "revenue": "small_sales",
+              "operating_profit": "small_op"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "猟銃事業・外部売上",
+              "revenue": "bull_gun_sales",
+              "operating_profit": "bull_gun_op"
+            },
+            {
+              "name": "工作機械事業・外部売上",
+              "revenue": "bull_machine_sales",
+              "operating_profit": "bull_machine_op"
+            },
+            {
+              "name": "クラウドソリューション・その他事業",
+              "revenue": "small_sales",
+              "operating_profit": "small_op"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 3,
+          "period_start": "2024-11-01",
+          "period_end": "2025-07-31",
+          "revenue": 9481.169,
+          "operating_profit": 169.867,
+          "ordinary_profit": 420.871,
+          "net_profit": 361.367,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2025公表版・損益修正再表示なし・セグメント名称変更のみ",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF pages 2,7,10; S01 PDF page 7の比較情報と一致"
+        },
+        {
+          "fiscal_year_end": "2025-10-31",
+          "quarter": 4,
+          "period_start": "2024-11-01",
+          "period_end": "2025-10-31",
+          "revenue": 12518.322,
+          "operating_profit": -24.598,
+          "ordinary_profit": 211.059,
+          "net_profit": -2525.115,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2025公表版・S04訂正確認済み・損益数値の訂正なし",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF pages 2,8; S04 PDF page 1"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 2,
+          "period_start": "2025-11-01",
+          "period_end": "2026-04-30",
+          "revenue": 6204.878,
+          "operating_profit": 107.461,
+          "ordinary_profit": 209.016,
+          "net_profit": 205.157,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表版・会計方針変更及び修正再表示なし・グループ通算制度適用",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2,8,12"
+        },
+        {
+          "fiscal_year_end": "2026-10-31",
+          "quarter": 3,
+          "period_start": "2025-11-01",
+          "period_end": "2026-07-31",
+          "revenue": 9559.179,
+          "operating_profit": 246.576,
+          "ordinary_profit": 417.161,
+          "net_profit": 394.508,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表版・会計方針変更及び修正再表示なし・グループ通算制度適用",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,7,10"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "latest_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、今回修正予想; S01 PDF page 1; S07 PDF page 1で2026-10-06に据置き確認"
+        },
+        {
+          "id": "latest_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、今回修正予想; S01 PDF page 1; S07 PDF page 1で2026-10-06に据置き確認"
+        },
+        {
+          "id": "latest_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、今回修正予想; S01 PDF page 1; S07 PDF page 1で2026-10-06に据置き確認"
+        },
+        {
+          "id": "latest_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2025-11-01",
+          "period_end": "2026-10-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-08-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S01",
+            "S07"
+          ],
+          "locator": "S06 PDF page 1、親会社株主に帰属する当期純利益; S01 PDF page 1; S07 PDF page 1で2026-10-06に据置き確認"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "猟銃の受注・数量・販売価格",
+          "mechanism": "上下二連銃は販売数量と売上がおおむね前年並みだが、ボルトアクションライフルとブローニングからの受注が低調。関税を一因とする値下げと原材料高の転嫁難が採算を圧迫する。",
+          "source_ids": [
+            "S01",
+            "S09",
+            "S10"
+          ],
+          "locator": "S01 PDF page 4; S09 PDF page 5; S10 PDF pages 18-19",
+          "calculation_ids": [
+            "bear_gun_op",
+            "base_gun_op",
+            "bull_gun_op"
+          ],
+          "not_quantified_reason": "販売丁数、単価、値下げ適用時期の数値は保存本文にない。売上とセグメント採算の条件付き範囲として反映し、数量と価格への厳密な分解は行わない。"
+        },
+        {
+          "name": "工作機械の高価格製品・検収と加工部門構成",
+          "mechanism": "直前Q3は高価格機械の販売と加工部門の利益確保が寄与。案件検収の集中が続くかで売上と利益率が同時に変動する。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S09"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF pages 4,11; S09 PDF page 6",
+          "calculation_ids": [
+            "bear_machine_op",
+            "base_machine_op",
+            "bull_machine_op"
+          ],
+          "not_quantified_reason": "対象四半期の受注残、機械別検収予定、加工稼働率は保存資料で非開示。直前Q3の高採算を全シナリオへ延長しない。"
+        },
+        {
+          "name": "減損後の償却費と日章工場",
+          "mechanism": "過年度減損による償却費軽減と新工場の経費負担が猟銃採算に影響する。既に当期実績に含まれる効果を仮定利益率へ反映し、別途利益加算しない。",
+          "source_ids": [
+            "S01",
+            "S09",
+            "S10"
+          ],
+          "locator": "S01 PDF pages 4,10; S09 PDF page 14; S10 PDF page 19",
+          "calculation_ids": [
+            "bear_gun_op",
+            "base_gun_op",
+            "bull_gun_op"
+          ],
+          "not_quantified_reason": "対象四半期の工場別償却額、稼働率、追加経費の内訳は非開示。通期費用計画の四等分は行わない。"
+        },
+        {
+          "name": "全社費用と小規模事業",
+          "mechanism": "クラウド・その他事業は直前Q3近辺、全社費用は前年期末と当期中間期の費用水準を参照する。持分法会社の売上・営業利益は連結営業損益へ合算しない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S05",
+            "S10"
+          ],
+          "locator": "各PDFセグメント情報; S10 PDF page 22",
+          "calculation_ids": [
+            "small_op",
+            "common_op_adjustment"
+          ],
+          "not_quantified_reason": "季節費用の詳細とクラウドの顧客別契約数は非開示。比較差額の因果分解ができない部分はブリッジ残差に残す。"
+        },
+        {
+          "name": "確定した特別利益",
+          "mechanism": "投資有価証券売却益と日章工場補助金は営業利益・経常利益に加算しない。両者は会社通期予想に織り込み済みである。",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S08"
+          ],
+          "locator": "各PDF page 1",
+          "calculation_ids": [
+            "confirmed_special_gains",
+            "implied_q4_net"
+          ],
+          "not_quantified_reason": "税効果、期末税率調整、追加減損の有無を合理的な範囲に絞れず、独自純利益は算定しない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "bear_gun_sales-prior_gun_sales",
+              "reason": "受注低調・ライフル不振が強まる条件"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "bear_machine_sales-prior_machine_sales",
+              "reason": "前年期末並みの検収に加工等の回復を加味"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他外部売上の差。予測は直前Q3近辺だが前年期末との差を契約数・単価で説明できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "bear_gun_sales-previous_gun_sales",
+              "reason": "受注・販売構成の悪化条件"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "bear_machine_sales-previous_machine_sales",
+              "reason": "高価格機械の検収集中の反落"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他外部売上をほぼ横ばいとした差。案件別内訳は説明不能。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "bear_gun_op-prior_gun_op",
+              "reason": "償却負担減少と原材料高・値下げ・稼働低下を合成した採算仮定"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "bear_machine_op-prior_machine_op",
+              "reason": "加工回復を含む採算仮定"
+            }
+          ],
+          "residual": "yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。費用水準は仮定したが、前年からの因果別金額分解はできない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "bear_gun_op-previous_gun_op",
+              "reason": "販売減少と固定費吸収悪化の条件"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "bear_machine_op-previous_machine_op",
+              "reason": "高価格製品の売上・構成比低下"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他損益、全社費用、内部利益消去の合計差。全社費用増は実績確認値ではなく期末費用仮定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "base_gun_sales-prior_gun_sales",
+              "reason": "上下二連銃の安定とライフル不振"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "base_machine_sales-prior_machine_sales",
+              "reason": "加工・ツール回復と一定の機械販売"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他外部売上の差を顧客数・単価に分解できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "base_gun_sales-previous_gun_sales",
+              "reason": "受注低調の継続"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "base_machine_sales-previous_machine_sales",
+              "reason": "高価格機械の販売集中が一部反落"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他をほぼ横ばいとした差。案件別変動は未確認。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "base_gun_op-prior_gun_op",
+              "reason": "償却負担減少を含む一方、原材料高と価格転嫁難から赤字を想定"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "base_machine_op-prior_machine_op",
+              "reason": "加工回復と高価格機械の一定の貢献"
+            }
+          ],
+          "residual": "yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "小規模事業と全社費用・消去の合計差。詳細な経済要因別説明はできない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "base_gun_op-previous_gun_op",
+              "reason": "販売減と価格転嫁難による小幅赤字化"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "base_machine_op-previous_machine_op",
+              "reason": "高価格機械の構成比と販売額の低下"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "小規模事業と全社費用・消去の合計差。直前Q3の低い全社費用を恒常化しない仮定を含む。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "bull_gun_sales-prior_gun_sales",
+              "reason": "上下二連銃の安定とライフル追加悪化の停止"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "bull_machine_sales-prior_machine_sales",
+              "reason": "高価格機械販売と加工回復の継続"
+            }
+          ],
+          "residual": "yoy_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他外部売上の差を契約別に説明できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "previous_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "猟銃外部売上",
+              "formula": "bull_gun_sales-previous_gun_sales",
+              "reason": "直前Q3並みの販売を維持"
+            },
+            {
+              "label": "工作機械外部売上",
+              "formula": "bull_machine_sales-previous_machine_sales",
+              "reason": "直前Q3並みの検収を維持"
+            }
+          ],
+          "residual": "qoq_revenue_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "クラウド・その他の小幅差。具体的な案件増減は未確認。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "bull_gun_op-prior_gun_op",
+              "reason": "減損後の償却負担と安定稼働を含む小幅黒字条件"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "bull_machine_op-prior_machine_op",
+              "reason": "高価格機械・加工による高採算構成"
+            }
+          ],
+          "residual": "yoy_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "小規模事業、全社費用、消去の合計差。因果別に未説明のため残差とする。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "previous_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "猟銃セグメント損益",
+              "formula": "bull_gun_op-previous_gun_op",
+              "reason": "直前Q3近辺の採算維持"
+            },
+            {
+              "label": "工作機械セグメント損益",
+              "formula": "bull_machine_op-previous_machine_op",
+              "reason": "高採算を維持するが直前Q3より若干低い構成"
+            }
+          ],
+          "residual": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "小規模事業、全社費用、消去の合計差。期末の費用水準仮定による未説明差を含む。"
+        }
+      ],
+      "company_guidance": "保存資料内で最新確認できる通期会社予想はS06の修正予想で、S07にて据置きが確認される。Q3累計を差し引いたQ4相当額は売上{{value:implied_q4_revenue}}、営業利益{{value:implied_q4_op}}、経常利益{{value:implied_q4_ordinary}}、親会社株主帰属純利益{{value:implied_q4_net}}。これらは通期予想の機械的な差引き推計であり、会社が直接公表した四半期予想でも独自予測でもない。補助金と証券売却益をこの純利益差引き推計へ再加算しない。",
+      "consensus": "未確認。保存資料に公表市場コンセンサスは含まれていない。",
+      "independent_forecast": "猟銃と工作機械の外部売上・製品構成・セグメント採算を条件付きで設定し、小規模事業と全社費用・内部利益消去を積み上げた独自予測。会社通期予想の四等分や残額への利益合わせはしていない。実績から観測できる採算範囲を利用した低確度の条件付き予測であり、統計的な信頼区間ではない。経常利益と純利益は営業外損益・税効果・期末特別損失の範囲を十分に限定できないためnull。",
+      "narrative": [
+        {
+          "heading": "対象と中心予測",
+          "text": "対象は通期決算で判明する第4四半期単独。中心予測は売上{{value:base_revenue}}、営業利益{{value:base_op}}。猟銃はライフル不振と価格転嫁難を見込み、工作機械は加工部門の回復を認めつつ、直前四半期の高価格機械販売の集中が弱まると仮定した。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF pages 4,11"
+        },
+        {
+          "heading": "条件付きの幅",
+          "text": "弱気は売上{{value:bear_revenue}}、営業利益{{value:bear_op}}。強気は売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。主な分岐は猟銃の出荷・固定費吸収と、工作機械の検収・製品構成である。強気でも猟銃の価格転嫁成功は前提とせず、直前四半期付近の採算維持にとどめた。セグメント利益の合計から全社費用と内部利益消去を控除して連結営業利益を求めている。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S10"
+          ],
+          "locator": "S01 PDF pages 4,9; S02 PDF page 11; S10 PDF pages 18-20"
+        },
+        {
+          "heading": "比較と残差",
+          "text": "比較基準は前年第4四半期の売上{{value:prior_revenue}}・営業利益{{value:prior_op}}、直前第3四半期の売上{{value:previous_revenue}}・営業利益{{value:previous_op}}。各シナリオで同じ累計差引き値を使用した。ブリッジは主力事業別の変化を示し、小規模事業と全社費用等について因果別に説明できない差は残差に残した。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "locator": "S01 PDF page 7; S02 PDF page 8; S03 PDF page 8; S04 PDF page 1; S05 PDF page 7"
+        },
+        {
+          "heading": "特別利益と純利益",
+          "text": "確定した証券売却益と補助金の合計は{{value:confirmed_special_gains}}。営業利益や経常利益とは分けて扱う。会社通期予想には既に織り込まれているため二重加算しない。税負担や期末調整の影響を確認できない以上、この合計をそのまま独自純利益とすることもできない。",
+          "source_ids": [
+            "S06",
+            "S07",
+            "S08"
+          ],
+          "locator": "各PDF page 1"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象四半期の販売丁数、実現単価、受注残、値下げ適用時期、工場稼働率は保存資料では非開示。",
+        "工作機械の案件別検収予定と高価格製品の構成比は保存資料では非開示。",
+        "価格転嫁難と関税を一因とする値下げは確認できるが、対象四半期の追加値下げ実施額は未確認。",
+        "全社費用の期末増減要因、内部取引利益消去の対象四半期額は非開示。",
+        "持分法投資損益、デリバティブ評価損益、支払利息、期末税効果の対象四半期額は未確認。"
+      ],
+      "material_unresolved": [
+        "入力条件の決算発表候補日は2026-12-15だが、基準日時以前の会社・取引所による予定日原文は提示されていないためannouncement_dateはnull。",
+        "保存資料には対象四半期を含む通期実績がなく、target_already_announced=falseは保存資料で未確認という意味。基準日時までの全開示を網羅していない。",
+        "2026年10月期第3四半期補足説明資料はS01で作成有とされるが原本本文は未提示。製品別最新売上や詳細KPIが非開示と断定できるわけではない。",
+        "提示documentsはすべてtruncated=false。ただし図表の文字抽出で系列対応が不明瞭な箇所は図版原本未確認として数値採用していない。S12は本文未提示であり企業同定はS01等の短信を使用した。",
+        "セグメント採算仮定は観測実績と定性説明に基づく条件付き範囲。製品別限界利益率や固定費の開示がなく、数量・単価・材料費・償却費をそれぞれ独立した金額へ完全分解できない。",
+        "S02はグループ通算制度への移行を当中間期から、S01は第1四半期からと記載。税務注記の開始時点表現に差がある。営業損益の累計差引きは可能だが、税金の四半期予測には採用しない。",
+        "S04の訂正は役員異動予定日のみで、比較損益に数値修正はない。前年Q4の減損はその期の費用認識であり、過年度累計の会計版変更として扱わない。",
+        "S07で確定売却益が当初見込みを下回っても会社は通期予想を据え置いた。これを独自の税引後減益修正に直結させる根拠はなく、補助金を含む会社予想の再調整はしていない。",
+        "特別利益の個別確定額は確認できるが、税金・追加減損・営業外損益の合理的な予測幅が不足するため、独自経常利益と純利益はnull。",
+        "ブリッジ残差は小規模事業と全社費用等の未説明差であり、丸め誤差とは認定していない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "2026年10月期第3四半期補足説明資料はS01で作成有とされるが原本本文は未提示。製品別最新売上や詳細KPIが非開示と断定できるわけではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "S02はグループ通算制度への移行を当中間期から、S01は第1四半期からと記載。税務注記の開始時点表現に差がある。営業損益の累計差引きは可能だが、税金の四半期予測には採用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "S04の訂正は役員異動予定日のみで、比較損益に数値修正はない。前年Q4の減損はその期の費用認識であり、過年度累計の会計版変更として扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "S07で確定売却益が当初見込みを下回っても会社は通期予想を据え置いた。これを独自の税引後減益修正に直結させる根拠はなく、補助金を含む会社予想の再調整はしていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "セグメント採算仮定は観測実績と定性説明に基づく条件付き範囲。製品別限界利益率や固定費の開示がなく、数量・単価・材料費・償却費をそれぞれ独立した金額へ完全分解できない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "ブリッジ残差は小規模事業と全社費用等の未説明差であり、丸め誤差とは認定していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "保存資料には対象四半期を含む通期実績がなく、target_already_announced=falseは保存資料で未確認という意味。基準日時までの全開示を網羅していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "入力条件の決算発表候補日は2026-12-15だが、基準日時以前の会社・取引所による予定日原文は提示されていないためannouncement_dateはnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "提示documentsはすべてtruncated=false。ただし図表の文字抽出で系列対応が不明瞭な箇所は図版原本未確認として数値採用していない。S12は本文未提示であり企業同定はS01等の短信を使用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "特別利益の個別確定額は確認できるが、税金・追加減損・営業外損益の合理的な予測幅が不足するため、独自経常利益と純利益はnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-10-31",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "base_gun_margin: 直前Q3の低い黒字率から、販売減少と価格転嫁難によって小幅赤字へ移る条件。前年Q4よりは減損後の償却負担軽減が効く。償却減少や工場稼働効果を利益率に含め、別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "base_gun_sales: 上下二連銃は横ばい、ライフルは不振という最新説明を基礎に、前年Q4と直前Q3を下回る売上を置く。通期会社予想の残額をそのまま採用せず、受注低調と既存販売水準の間に設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "base_machine_margin: 中間期の約9.2%と直前Q3の約21.6%の間。加工回復を維持しつつ高価格機械の販売集中が弱まる構成を想定。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "base_machine_sales: 中間期の外部売上平均に近い水準に、加工・ツールの回復を反映。直前Q3に寄与した高価格機械の販売は一部反落すると仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bear_gun_margin: 前年Q4の約5.8%の赤字率と直前Q3の約1.1%の黒字率を参照。減損後の償却費減少は織り込む一方、値下げ、原材料高、減産による固定費負担で再び赤字となる条件。営業利益を先に設定した費用逆算ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bear_gun_sales: 前年Q4と直前Q3の猟銃売上を参照し、ブローニング受注低調とライフル不振がさらに強まる条件。上下二連銃の全面的な失速は仮定しない。実数の販売丁数と単価は得られないため、数量・価格を合成したセグメント売上仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bear_machine_margin: 前年通期のセグメント利益対外部売上比率付近。高価格機械の構成比低下を想定するが、最新資料で改善した加工部門が前年Q4の低採算を緩和する条件。内部取引を含むセグメント利益と外部売上の比率であり、製品粗利率ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bear_machine_sales: 前年Q4外部売上付近まで高価格機械の検収が減る条件。ツール・加工等の回復により前年Q4を若干上回るが、直前Q3の高額案件集中は継続しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bull_gun_margin: 直前Q3並みの稼働と製品構成を保ち、原材料高を抱えながら直前Q3並みの小幅黒字を確保する条件。価格転嫁の成功は前提にしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bull_gun_sales: 上下二連銃の安定販売とライフルの追加悪化停止により、直前Q3並みの出荷を確保する条件。受注急回復や新たな大型値上げは仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bull_machine_margin: 直前Q3の約21.6%を少し下回る水準。高価格機械と加工部門の好調が続く条件。利益率は内部取引を含むセグメント利益対外部売上で定義。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "bull_machine_sales: 機械部門の一定の受注と高価格製品の販売、加工部門の回復が続き、直前Q3に近い外部売上を維持する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "corporate_cost: 前年Q4の全社費用約58.4、中間期累計約116.0、直前Q3約36.3を参照し、直前Q3の低水準を恒常化せず期末は60とする。連結利益目標から逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "価格転嫁難と関税を一因とする値下げは確認できるが、対象四半期の追加値下げ実施額は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "全社費用の期末増減要因、内部取引利益消去の対象四半期額は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "対象四半期の販売丁数、実現単価、受注残、値下げ適用時期、工場稼働率は保存資料では非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "工作機械の案件別検収予定と高価格製品の構成比は保存資料では非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7983",
+      "company_name": "株式会社ミロク",
+      "kind": "condition",
+      "message": "持分法投資損益、デリバティブ評価損益、支払利息、期末税効果の対象四半期額は未確認。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/7983/result.json": "c21701c923953a6ea2e13f31ea904bf53ae11b91e18be24384d9c24a88b90bf5",
+    "reports/7983.md": "0978ca5d26c00adf70748dc40746de59a38f521063eac4bed50b56e056f7aecd"
+  }
+}
