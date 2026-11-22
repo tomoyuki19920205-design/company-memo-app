@@ -15,7 +15,7 @@ export function validSummary(x: unknown): x is AnalysisSummary {
   if (!x || typeof x !== "object") return false;
   const v = x as AnalysisSummary;
   return v.schema === 1 && /^[a-f0-9]{64}$/.test(v.card_id ?? "") && /^[a-f0-9]{64}$/.test(v.revision ?? "") &&
-    typeof v.company_name === "string" && typeof v.ticker === "string" &&
+    typeof v.company_name === "string" && typeof v.ticker === "string" && /^[0-9A-Z]{4}$/.test(v.ticker) &&
     !!v.period && typeof v.period.fy_end === "string" && [1,2,3,4].includes(v.period.quarter) &&
     v.calculation?.candidate === true && typeof v.calculation.verified_acceleration_pt === "string" &&
     Number.isFinite(Number(v.calculation.verified_acceleration_pt)) &&
@@ -37,7 +37,10 @@ export function safeSourceURL(url: string): string | undefined {
   catch { return undefined; }
 }
 export function validDetail(v: unknown, card: AnalysisSummary): v is AnalysisDetail {
-  if (!validSummary(v) || v.card_id !== card.card_id || v.revision !== card.revision) return false;
+  if (!validSummary(v) || v.card_id !== card.card_id || v.revision !== card.revision ||
+    v.ticker !== card.ticker || v.period.fy_end !== card.period.fy_end ||
+    v.period.quarter !== card.period.quarter || v.period.scope !== card.period.scope ||
+    v.period.standard !== card.period.standard) return false;
   const d = v as AnalysisDetail;
   return typeof d.pl === "string" && Array.isArray(d.analysis?.sections) &&
     d.analysis.sections.every(s => typeof s.heading === "string" && Array.isArray(s.paragraphs) && s.paragraphs.every(p => typeof p === "string")) &&

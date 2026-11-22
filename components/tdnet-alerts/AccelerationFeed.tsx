@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import { uniqueCards, safeSourceURL, validDetail, type AnalysisSummary, type AnalysisDetail } from "@/lib/opacc-v2";
 
@@ -15,9 +15,10 @@ export function AccelerationCard({ card, open }: { card: AnalysisSummary; open: 
     </button>
   </article>;
 }
-export function AccelerationDetail({ detail }: { detail: AnalysisDetail }) {
+export function AccelerationDetail({ detail, onOpenPL }: { detail: AnalysisDetail; onOpenPL?: (ticker: string) => void }) {
   return <div>
     <h3>{detail.company_name}（{detail.ticker}）</h3>
+    {onOpenPL && <button onClick={() => onOpenPL(detail.ticker)}>この企業のPLを表示</button>}
     <p>{detail.calculation.classification_scope}</p><p>{detail.calculation.classification_note}</p>
     <h4>原本照合済みの企業PL・単独四半期</h4><pre style={{whiteSpace:"pre-wrap",overflowWrap:"anywhere"}}>{detail.pl}</pre>
     {detail.analysis.sections.map((s,i) => <section key={i}><h4>{s.heading}</h4>{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}</section>)}
@@ -30,10 +31,11 @@ export function AccelerationDetail({ detail }: { detail: AnalysisDetail }) {
     })}
   </div>;
 }
-function Feed() {
+function Feed({onOpenPL}: {onOpenPL?: (ticker: string) => void}) {
   const enabled=process.env.NEXT_PUBLIC_OPACC_V2_DISPLAY_ENABLED === "1";
   const [cards,setCards]=useState<AnalysisSummary[]>([]);
   const [detail,setDetail]=useState<AnalysisDetail|null>(null);
+  const requestId=useRef(0);
   const [error,setError]=useState("");const [loading,setLoading]=useState(false);
   useEffect(()=>{
     if (!enabled) return;
@@ -46,24 +48,26 @@ function Feed() {
       } catch { if (alive) setError("利益加速の分析情報を取得できません。通常の決算通知は利用できます。"); }
     };
     void load();const timer=setInterval(()=>void load(),60000);
-    return ()=>{alive=false;clearInterval(timer);};
+    return ()=>{alive=false;requestId.current++;clearInterval(timer);};
   },[enabled]);
   if (!enabled) return null;
   const open=async(card: AnalysisSummary)=>{
+    const current=++requestId.current;
     setLoading(true);setDetail(null);
     try {
       const {data,error}=await createSupabaseBrowser().from("opacc_v2_cards").select("payload").eq("card_id",card.card_id).eq("revision",card.revision).single();
+      if (current!==requestId.current) return;
       if (error || !validDetail(data?.payload,card)) throw new Error("detail unavailable");
       setDetail(data.payload);setError("");
-    } catch { setError("考察の取得・検証に失敗しました。カードの更新後に再度お試しください。"); }
-    finally {setLoading(false);}
+    } catch { if (current===requestId.current) setError("考察の取得・検証に失敗しました。カードの更新後に再度お試しください。"); }
+    finally {if (current===requestId.current) setLoading(false);}
   };
   return <section aria-label="営業利益YoY加速の分析" style={{maxHeight:"48vh",overflowY:"auto"}}>
     <h3 style={{margin:12}}>営業利益YoY加速の分析</h3>
     {error && <p role="status">{error}</p>}{loading && <p role="status">考察を読み込み中...</p>}
     {cards.map(card=><AccelerationCard key={card.card_id} card={card} open={()=>void open(card)} />)}
     {detail && <dialog open aria-label="営業利益加速の考察全文" style={{position:"fixed",inset:24,zIndex:1100,maxWidth:960,width:"90vw",maxHeight:"90vh",overflowY:"auto",background:"var(--bg-primary,white)",color:"var(--text-primary,#172a3c)"}}>
-      <button onClick={()=>setDetail(null)}>閉じる</button><AccelerationDetail detail={detail}/>
+      <button onClick={()=>{requestId.current++;setDetail(null);}}>閉じる</button><AccelerationDetail detail={detail} onOpenPL={onOpenPL ? ticker=>{requestId.current++;setDetail(null);onOpenPL(ticker);} : undefined}/>
     </dialog>}
   </section>;
 }
@@ -71,4 +75,4 @@ class FeedBoundary extends React.Component<{children: React.ReactNode},{failed:b
   state={failed:false};static getDerivedStateFromError(){return {failed:true};}
   render(){return this.state.failed ? <p role="status">利益加速分析の表示を保留しています。</p> : this.props.children;}
 }
-export default function AccelerationFeed(){return <FeedBoundary><Feed/></FeedBoundary>;}
+export default function AccelerationFeed({onOpenPL}: {onOpenPL?: (ticker: string) => void}){return <FeedBoundary><Feed onOpenPL={onOpenPL}/></FeedBoundary>;}

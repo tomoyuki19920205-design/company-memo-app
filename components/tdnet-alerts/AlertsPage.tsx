@@ -1744,7 +1744,12 @@ export default function AlertsPage({ userId, userEmail }: AlertsPageProps) {
           ref={listPaneRef}
           style={{ width: leftPaneWidth, flexShrink: 0 }}
         >
-          <AccelerationFeed />
+          <AccelerationFeed onOpenPL={ticker => {
+            if (!/^[0-9A-Z]{4}$/.test(ticker)) return;
+            setMobilePane("company");
+            setRightPaneTab("company");
+            viewerRef.current?.loadTicker(ticker, "pl");
+          }} />
           <div className="alerts-list-controls">
             {loadError && (
               <div role="alert" style={{ padding: "8px 16px", background: "#542b1c", color: "#fff" }}>
