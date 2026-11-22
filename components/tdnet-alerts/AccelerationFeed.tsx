@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
-import { uniqueCards, safeSourceURL, validDetail, type AnalysisSummary, type AnalysisDetail } from "@/lib/opacc-v2";
+import { uniqueCards, validDetail, type AnalysisSummary, type AnalysisDetail } from "@/lib/opacc-v2";
+import { verifiedPDFLink } from "@/lib/opacc-pdf-links";
 
 export function AccelerationCard({ card, open }: { card: AnalysisSummary; open: () => void }) {
   const calc = card.calculation;
@@ -15,6 +16,34 @@ export function AccelerationCard({ card, open }: { card: AnalysisSummary; open: 
     </button>
   </article>;
 }
+type PDFStatus = "idle" | "checking" | "available" | "unavailable";
+const pdfChecks = new Map<string, {at: number; request: Promise<boolean>}>();
+function checkPDF(sha: string): Promise<boolean> {
+  const cached=pdfChecks.get(sha);
+  if(cached && Date.now()-cached.at<15000) return cached.request;
+  const request=fetch(`/api/opacc-pdf?sha=${encodeURIComponent(sha)}`,{cache:"no-store",signal:AbortSignal.timeout(9000)})
+    .then(async r=>r.ok && (await r.json()).available===true).catch(()=>false);
+  pdfChecks.set(sha,{at:Date.now(),request});return request;
+}
+export function CitationPDF({source,page,quote}: {source: AnalysisDetail["source_index"][number] | undefined;page:number;quote:string}) {
+  const [status,setStatus]=useState<PDFStatus>("idle");
+  const current=useRef(0);
+  const url=source ? verifiedPDFLink(source,page) : undefined;
+  useEffect(()=>()=>{current.current++;},[]);
+  const check=async()=>{
+    const id=++current.current;
+    if(!source || !url){setStatus("unavailable");return;}
+    setStatus("checking");const available=await checkPDF(source.sha256);
+    if(id===current.current)setStatus(available?"available":"unavailable");
+  };
+  return <details onToggle={e=>{if(e.currentTarget.open)void check();}}>
+    <summary>{source?.id} p.{page} — {source?.title}</summary>
+    {status==="available" && url ? <><a href={url} target="_blank" rel="noopener noreferrer">原本PDFを開く</a><small>（IR BANK掲載・保存原本と同一PDF）</small></>
+      : status==="unavailable" ? <p role="status">この引用のPDFは現在利用不可です。引用原文は以下で確認できます。<button onClick={()=>void check()}>再確認</button></p>
+      : <p role="status">原本PDFを確認中...</p>}
+    <blockquote style={{whiteSpace:"pre-wrap"}}>{quote}</blockquote>
+  </details>;
+}
 export function AccelerationDetail({ detail, onOpenPL }: { detail: AnalysisDetail; onOpenPL?: (ticker: string) => void }) {
   return <div>
     <h3>{detail.company_name}（{detail.ticker}）</h3>
@@ -23,12 +52,7 @@ export function AccelerationDetail({ detail, onOpenPL }: { detail: AnalysisDetai
     <h4>原本照合済みの企業PL・単独四半期</h4><pre style={{whiteSpace:"pre-wrap",overflowWrap:"anywhere"}}>{detail.pl}</pre>
     {detail.analysis.sections.map((s,i) => <section key={i}><h4>{s.heading}</h4>{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}</section>)}
     <h4>検証上の制約</h4><ul>{detail.limitations.map((v,i)=><li key={i}>{v}</li>)}</ul>
-    <h4>引用原文</h4>{detail.analysis.evidence.map((e,i)=>{
-      const source=detail.source_index.find(s=>s.id===e.source_id);const url=source ? safeSourceURL(source.url) : undefined;
-      return <details key={i}><summary>{e.source_id} p.{e.page} — {source?.title}</summary>
-        {url && <a href={`${url.split("#")[0]}#page=${e.page}`} target="_blank" rel="noopener noreferrer">原本PDFを開く</a>}
-        <blockquote style={{whiteSpace:"pre-wrap"}}>{e.quote}</blockquote></details>;
-    })}
+    <h4>引用原文</h4>{detail.analysis.evidence.map((e,i)=><CitationPDF key={i} source={detail.source_index.find(s=>s.id===e.source_id)} page={e.page} quote={e.quote}/>)}
   </div>;
 }
 function Feed({onOpenPL}: {onOpenPL?: (ticker: string) => void}) {
