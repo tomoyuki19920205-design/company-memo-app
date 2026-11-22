@@ -104,7 +104,7 @@ test('schedule-only company ignores unsupported PL period labels without breakin
  assert.equal(p.target?.fiscalYearEnd,'2026-07-31');assert.equal(p.target?.quarter,4);
  assert.equal(p.current?.revenue,300);assert.ok(p.notes.some(n=>n.includes('除外')));
 });
-test("calendar navigation is last and uniquely active",()=>{
+test("calendar navigation follows margin and is uniquely active",()=>{
  const html=renderToStaticMarkup(<TopNavigation active="calendar"/>);
  assert.equal((html.match(/aria-current="page"/g)??[]).length,1);
  assert.ok(html.indexOf('/earnings-calendar')>html.indexOf('/margin-interest'));
