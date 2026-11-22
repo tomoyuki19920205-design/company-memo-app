@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
-import { uniqueCards, validDetail, type AnalysisSummary, type AnalysisDetail } from "@/lib/opacc-v2";
+import { countTodayPublished, jstDayWindow, uniqueCards, validDetail, type AnalysisSummary, type AnalysisDetail, type DisclosureNotice } from "@/lib/opacc-v2";
 import { verifiedPDFLink } from "@/lib/opacc-pdf-links";
 
 export function AccelerationCard({ card, open }: { card: AnalysisSummary; open: () => void }) {
@@ -58,21 +58,54 @@ export function AccelerationDetail({ detail, onOpenPL }: { detail: AnalysisDetai
 function Feed({onOpenPL}: {onOpenPL?: (ticker: string) => void}) {
   const enabled=process.env.NEXT_PUBLIC_OPACC_V2_DISPLAY_ENABLED === "1";
   const [cards,setCards]=useState<AnalysisSummary[]>([]);
+  const [expanded,setExpanded]=useState(false);
+  const panelId=useId();
+  const [notices,setNotices]=useState<DisclosureNotice[]>([]);
+  const [now,setNow]=useState(()=>Date.now());
   const [detail,setDetail]=useState<AnalysisDetail|null>(null);
   const requestId=useRef(0);
   const [error,setError]=useState("");const [loading,setLoading]=useState(false);
   useEffect(()=>{
     if (!enabled) return;
-    let alive=true;
+    let alive=true;let inFlight=false;
     const load=async()=>{
+      if(inFlight)return;
+      inFlight=true;const checkedAt=Date.now();setNow(checkedAt);
       try {
-        const {data,error}=await createSupabaseBrowser().from("opacc_v2_cards").select("summary").order("completed_at",{ascending:false}).limit(30);
-        if (error) throw error;
-        if (alive) { setCards(uniqueCards((data??[]).map(x=>x.summary)));setError(""); }
-      } catch { if (alive) setError("利益加速の分析情報を取得できません。通常の決算通知は利用できます。"); }
+        const client=createSupabaseBrowser();const summaries:unknown[]=[];
+        for(let offset=0;;offset+=100){
+          const {data,error}=await client.from("opacc_v2_cards").select("summary").order("completed_at",{ascending:false}).order("card_id").range(offset,offset+99);
+          if(error)throw error;
+          summaries.push(...(data??[]).map(x=>x.summary));
+          if((data??[]).length<100)break;
+        }
+        const published=uniqueCards(summaries);
+        if(!alive)return;
+        setCards(published);setError("");
+        // Independent of the normal notification pane's date, search and category filters.
+        const tickers=[...new Set(published.filter(c=>/^\d{14}$/.test(c.disclosure_id??"")).map(c=>c.ticker))];
+        const day=jstDayWindow(checkedAt);const today:DisclosureNotice[]=[];
+        try {
+          for(let i=0;i<tickers.length;i+=50){
+            for(let offset=0;;offset+=100){
+              const {data,error}=await client.from("tdnet_events").select("ticker,disclosed_at,pdf_url,source_url")
+                .in("ticker",tickers.slice(i,i+50)).gte("disclosed_at",new Date(day.start).toISOString()).lt("disclosed_at",new Date(day.end).toISOString())
+                .order("disclosed_at",{ascending:false}).order("id").range(offset,offset+99);
+              if(error)throw error;
+              today.push(...(data??[]));if((data??[]).length<100)break;
+            }
+          }
+          if(alive)setNotices(today);
+        } catch {if(alive)setNotices([]);} // Unknown disclosure dates must not create a new badge.
+      } catch { if (alive) {setNotices([]);setError("利益加速の分析情報を取得できません。通常の決算通知は利用できます。");} }
+      finally {inFlight=false;}
     };
+    const refresh=()=>{if(document.visibilityState==="visible")void load();};
+    let dayTimer:ReturnType<typeof setTimeout>;
+    const tickDay=()=>{const time=Date.now();setNow(time);dayTimer=setTimeout(tickDay,jstDayWindow(time).end-time+10);};
+    tickDay();document.addEventListener("visibilitychange",refresh);
     void load();const timer=setInterval(()=>void load(),60000);
-    return ()=>{alive=false;requestId.current++;clearInterval(timer);};
+    return ()=>{alive=false;requestId.current++;clearInterval(timer);clearTimeout(dayTimer);document.removeEventListener("visibilitychange",refresh);};
   },[enabled]);
   if (!enabled) return null;
   const open=async(card: AnalysisSummary)=>{
@@ -86,10 +119,21 @@ function Feed({onOpenPL}: {onOpenPL?: (ticker: string) => void}) {
     } catch { if (current===requestId.current) setError("考察の取得・検証に失敗しました。カードの更新後に再度お試しください。"); }
     finally {if (current===requestId.current) setLoading(false);}
   };
-  return <section aria-label="営業利益YoY加速の分析" style={{maxHeight:"48vh",overflowY:"auto"}}>
-    <h3 style={{margin:12}}>営業利益YoY加速の分析</h3>
+  const newCount=countTodayPublished(cards,notices,now);
+  const label=`営業利益YoY加速分析（${cards.length}件）${newCount>0 ? ` 新着あり ${newCount}件` : ""}`;
+  return <section aria-label="営業利益YoY加速の分析" style={{minWidth:0,flexShrink:0}}>
+    <button type="button" aria-expanded={expanded} aria-controls={panelId} aria-label={label} title={label}
+      onClick={()=>{setExpanded(v=>!v);if(expanded){requestId.current++;setDetail(null);setLoading(false);}}}
+      style={{display:"flex",alignItems:"center",gap:5,width:"100%",minWidth:0,boxSizing:"border-box",padding:"8px 10px",border:0,borderBottom:"1px solid var(--border,#8196ac)",background:"var(--card-bg,transparent)",color:"inherit",fontSize:12,lineHeight:"18px",textAlign:"left",cursor:"pointer"}}>
+      <span aria-hidden="true" style={{flexShrink:0}}>{expanded ? "▼" : "▶"}</span>
+      <span style={{minWidth:0,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>営業利益YoY加速分析</span>
+      <span style={{flexShrink:0,whiteSpace:"nowrap"}}>（{cards.length}件）</span>
+      {newCount>0 && <span style={{marginLeft:"auto",flexShrink:0,whiteSpace:"nowrap",fontSize:11,color:"var(--warning,#b45309)"}}>● 新着あり {newCount}件</span>}
+    </button>
+    <div id={panelId} hidden={!expanded} style={{maxHeight:"min(42vh,420px)",overflowY:"auto",overscrollBehavior:"contain"}}>
     {error && <p role="status">{error}</p>}{loading && <p role="status">考察を読み込み中...</p>}
     {cards.map(card=><AccelerationCard key={card.card_id} card={card} open={()=>void open(card)} />)}
+    </div>
     {detail && <dialog open aria-label="営業利益加速の考察全文" style={{position:"fixed",inset:24,zIndex:1100,maxWidth:960,width:"90vw",maxHeight:"90vh",overflowY:"auto",background:"var(--bg-primary,white)",color:"var(--text-primary,#172a3c)"}}>
       <button onClick={()=>{requestId.current++;setDetail(null);}}>閉じる</button><AccelerationDetail detail={detail} onOpenPL={onOpenPL ? ticker=>{requestId.current++;setDetail(null);onOpenPL(ticker);} : undefined}/>
     </dialog>}

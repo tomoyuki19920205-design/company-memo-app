@@ -1,5 +1,6 @@
 export interface AnalysisSummary {
   schema: 1; card_id: string; revision: string; ticker: string; company_name: string;
+  disclosure_id?: string;
   period: { fy_end: string; quarter: number; standard: string; scope: string };
   calculation: { candidate: boolean; classification: string; verified_acceleration_pt: string;
     profit_yoy_change_improvement_yen: string; classification_scope?: string; classification_note?: string; rounding_interval_pt?: string[] };
@@ -31,6 +32,46 @@ export function uniqueCards(rows: unknown[]): AnalysisSummary[] {
     if (!old || Date.parse(row.completed_at) > Date.parse(old.completed_at)) map.set(row.card_id,row);
   }
   return [...map.values()].sort((a,b) => Date.parse(b.completed_at)-Date.parse(a.completed_at));
+}
+export interface DisclosureNotice {
+  ticker: string; disclosed_at: string | null; pdf_url: string | null; source_url: string | null;
+}
+const JST_OFFSET = 9 * 60 * 60 * 1000;
+const DAY = 24 * 60 * 60 * 1000;
+export function jstDayWindow(now: number) {
+  const start = Math.floor((now + JST_OFFSET) / DAY) * DAY - JST_OFFSET;
+  return { start, end: start + DAY, key: new Date(start + JST_OFFSET).toISOString().slice(0,10) };
+}
+function zonedInstant(value: string | null): number {
+  return typeof value === "string" && /(?:Z|[+-]\d{2}:?\d{2})$/i.test(value) ? Date.parse(value) : NaN;
+}
+function noticeDocumentId(value: string | null): string | undefined {
+  if (!value) return undefined;
+  try {
+    let u = new URL(value);
+    if (u.hostname === "webapi.yanoshin.jp" && u.pathname === "/rd.php") u = new URL(decodeURIComponent(u.search.slice(1)));
+    if (u.protocol !== "https:") return undefined;
+    return /\/1401(\d{14})\.pdf$/i.exec(u.pathname)?.[1];
+  } catch { return undefined; }
+}
+/** Input cards come only from the published cards table, never jobs or version history. */
+export function countTodayPublished(cards: AnalysisSummary[], notices: DisclosureNotice[], now: number): number {
+  const {start,end}=jstDayWindow(now);
+  const announced = new Set<string>();
+  for (const notice of notices) {
+    const time=zonedInstant(notice.disclosed_at);
+    if (!Number.isFinite(time) || time<start || time>=end || time>now) continue;
+    for (const url of [notice.pdf_url,notice.source_url]) {
+      const id=noticeDocumentId(url);if(id)announced.add(`${notice.ticker}:${id}`);
+    }
+  }
+  const counted = new Set<string>();
+  for (const card of cards) {
+    const completed=zonedInstant(card.completed_at);
+    if (/^\d{14}$/.test(card.disclosure_id??"") && Number.isFinite(completed) && completed<=now &&
+        announced.has(`${card.ticker}:${card.disclosure_id}`)) counted.add(card.card_id);
+  }
+  return counted.size;
 }
 export function safeSourceURL(url: string): string | undefined {
   try { const u = new URL(url); return u.protocol === "https:" && !u.username && !u.password ? u.href : undefined; }
