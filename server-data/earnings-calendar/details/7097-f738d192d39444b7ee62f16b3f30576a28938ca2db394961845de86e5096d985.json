@@ -1,0 +1,2374 @@
+{
+  "id": "7097-f738d192d39444b7ee62f16b3f30576a28938ca2db394961845de86e5096d985",
+  "code": "7097",
+  "companyName": "株式会社さくらさくプラス",
+  "announcementDate": "2026-12-11",
+  "target": {
+    "fiscalYearEnd": "2027-07-31",
+    "quarter": 1
+  },
+  "asOf": "2026-11-18T14:33:00+09:00",
+  "version": "7097-supplement-review-e5689bba581e36f7 · f738d192",
+  "savedAt": "2026-11-26T19:12:39+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 7097 株式会社さくらさくプラス｜2027-07-31期 Q1単独\n品質状態：**保留**。情報基準日時：2026-11-18T14:33:00+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS01で2027年7月期通期の連結会社予想を確認。対象第1四半期単独予想は提示資料に記載なし。通期予想の四等分や前年同期への通期増減率適用は行っていない。\n\n## 市場コンセンサス\n未確認。提示資料に市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n対象四半期単独の売上高・営業利益・経常利益・親会社株主帰属純利益は根拠ある連結レンジを設定できず保留。保育の継続収益基盤は確認できたが、通期収益と期末人数から四半期単価を同定できず、不動産・周辺事業の規模と採算にも独立した制約が不足する。会社修正見込みからの差引き推計は使用していない。\n\n## 予測判断\n保育所の通期増収額は459.00で、継続収益の拡大は確認できる。ただし対象四半期では、不動産の引渡し、事業撤退による売上剥落、ホテルの本格稼働を分ける必要がある。これらの金額に根拠ある上下限を置けないため、連結の弱気・中心・強気予測は保留する。\n\n## 前四半期比較の確定\n訂正後の第3四半期累計と通期実績の差引きにより、前四半期売上は3,914.00、営業利益は-20.00。両者は通期説明資料の直接四半期表示と一致する。売上原価は3,411.00、販管費は523.00であり、前四半期の費用負担を無条件に反転させることはできない。\n\n## 費用積上げの限界\n有価証券報告書で確認した販管費主要項目の合計は907.00、それ以外は874.00。売上原価も給料及び手当と施設賃料以外が6,428.00残る。これらは開示費目の差額であり、予測利益に合わせる調整項目ではない。\n\n## 会社予想との区別\n公表通期予想は売上19,417.00、営業利益1,201.00、経常利益1,353.00、親会社株主帰属純利益772.00。対象四半期への配分は会社から示されておらず、独自四半期予測とは区別する。\n\n## エラー・未解決事項\n- S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。\n- S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。\n- S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。\n- S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。\n- S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。\n- 保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。\n- 単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。\n- 営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。\n- 基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n- 会社予想比較の条件: fy27_guidance_revenue\n- 会社予想比較の条件: fy27_guidance_op\n- 会社予想比較の条件: fy27_guidance_ordinary\n- 会社予想比較の条件: fy27_guidance_net\n- 3シナリオ・4指標の予測と金額ブリッジが未設定。定性的事業説明だけではレンジを支持できず、検証済み予測として利用できない。根拠不足を任意係数で埋めず保留を維持する。\n- recalculation.historicalsの2Q・3Q売上nullは資料不足ではない。S02に4,023・5,364の直接表示があり、累計差引でも一致する。営業利益221・470も直接表示されているため、訂正後の累計との整合を明記して追加利用を検討できる。\n- S02の後日資料でも前年1Q営業利益304が再掲されているが、これだけで福利費訂正65の1Q帰属がゼロとは断定できない。訂正による比較基準差を経済的増減や丸め差と混ぜず、四半期別帰属を確認する。\n- 収益内訳差2は、17,490−15,807−1,682＝1と17,593−17,490−102＝1に分けられ、百万円表示の端数処理と整合する。通期及び3Q累計の売上−原価−販管費と営業利益にも各1の表示差があり、4Q差引では相殺される。これらの表示差、福利費訂正の比較基準差、未算定の経済的ブリッジ残差を別管理する。経済的残差は引き続きnullでありゼロではない。\n- 会社予想履歴にS05の旧2027年7月期計画19,140・1,208が欠落している。S01の19,417・1,201への更新を記録する必要がある。latest_confirmedは提示資料内の最新という限定付きであり、基準日時まで改定なしの確認とは区別する。\n- 全比較の『比較値なし』は予測欠落と実績欠落を混同している。比較実績の出典と値を保持し、『予測未設定のため増減未算定』へ表示を修正する。null処理の機械エラーは計算経路の未対応として扱い、原資料数値の誤りと区別する。\n- S08の株式報酬はモデルの条件欄にはあるが出典参照が付いていない。取締役の役務提供開始は対象四半期内であり、77.8968百万円全額の当期計上も全額ゼロも支持されない。割当区分と費用認識期間の確認が必要。\n\n## 条件・不確実性\n- 前四半期の賃上げに伴う賞与・社会保険料増加のうち、継続費用と一時的費用の区分は不明。\n- 期末園児数と対象四半期の月次平均園児数は一致するとは限らず、年齢構成と補助金精算も単価に影響する。\n- 白山プロジェクトが対象四半期に引き渡され、連結売上に計上されるかは未確認。完成予定日だけでは認識できない。\n- 譲渡制限付株式の払込予定は対象四半期後だが、取締役の役務提供期間は対象四半期内に始まる。払込日だけで対象四半期費用をゼロとしない。\n\n## 根拠・保存記録\n- S01 [2026年７月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260910534185.pdf) / 公表 2026-09-11T15:30:00+09:00 / retrieved / SHA-256 `2ce168b36dacba6a60aee953db1d853bbef54735df57d0999aa6f8d1ea0553cf`\n- S02 [2026年７月期 決算説明資料（事業計画及び成長可能性に関する事項）](https://www2.jpx.co.jp/disc/70970/140120260911534630.pdf) / 公表 2026-09-11T15:30:00+09:00 / retrieved / SHA-256 `2d32156a133417fa0fdcf9e2a7be8105182b119835164c8fded225ca7b1c9b13`\n- S03 [2026年７月期 第１四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/70970/140120251210517270.pdf) / 公表 2025-12-12T15:30:00+09:00 / retrieved / SHA-256 `b4dadd2dfef4de03510fc1a56416ff1307685cad098aca69c2e0c5932d3fac84`\n- S04 [（訂正・数値データ訂正）「2026年７月期 第３四半期決算短信〔日本基準〕（連結）」の一部訂正に関するお知らせ（訂正後全文添付）](https://www2.jpx.co.jp/disc/70970/140120260716595232.pdf) / 公表 2026-07-16T15:30:00+09:00 / retrieved / SHA-256 `c0245e3decfda7d24cec29d1792d5ba754343da8b3050f67b72a2cc48a7bea4c`\n- S05 [2026年７月期 第１四半期決算説明資料](https://www2.jpx.co.jp/disc/70970/140120251212518578.pdf) / 公表 2025-12-12T15:30:00+09:00 / retrieved / SHA-256 `2a8b42eba77d2d68ada7de819366ab2cb22c9c81662cb0a007b50cfd987a37d7`\n- S06 [特別損失（減損損失）の計上に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534629.pdf) / 公表 2026-09-11T15:30:00+09:00 / retrieved / SHA-256 `1a33ad6feb4fa61c569cffa929fe1918f42287e749e57eb9101c6feed76cdf64`\n- S07 [資本金及び資本準備金の額の減少に関するお知らせ](https://www2.jpx.co.jp/disc/70970/140120260818522508.pdf) / 公表 2026-08-19T15:30:00+09:00 / retrieved / SHA-256 `78a9c5547518b94c5fde502cde24dafda28912c4ef709636ff79f55ddd287dda`\n- S08 [当社取締役及び従業員並びに当社子会社従業員に対する譲渡制限付株式としての自己株式の処分に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261023/20261022554859.pdf) / 公表 2026-10-23T15:30:00+09:00 / retrieved / SHA-256 `8c0026251cfebd1bd0e863df41b0bb6c7bc532a7a0a6136fc79d90b71b317682`\n- S09 [株式情報](https://www.sakurasakuplus.jp/ir/stock/overview/) / 公表  / unavailable / SHA-256 `なし`\n- S10 [IRカレンダー](https://www.sakurasakuplus.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n- S11 [2026年7月期 有価証券報告書](https://ssl4.eir-parts.net/doc/7097/yuho_pdf/S100Z9L4/00.pdf) / 公表 2026-10-22T00:00:00+09:00 / retrieved / SHA-256 `d8fde109ed9a43c286d6955e87ad7f02f5bcc9b0607bca6380c16d786f1d7d4a`\n\n## 対象日照合（経済的品質と別管理）\n- 指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。\n- 資料確認未了: schedule\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](7097_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 7097 株式会社さくらさくプラス 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n基準日時以前の日付を確認できる提示原資料本文と照合した結果、35件の入力数値と15件の計算結果に誤りは認められない。ただし、全シナリオの予測と増減ブリッジが未設定であり、予測の経済的妥当性は検証できない。予測保留は合理的だが、比較実績まで欠落させる処理、会社計画の候補管理、残差分類には改善が必要。公式発表日未確認は経済的品質判定から除外した。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | 入力35件は提示本文の該当期間・費目・数値と一致する。15件の算式も再計算一致。前4Qは売上3,914、営業利益△20、経常利益△36、純利益△139、原価3,411、販管費523。保育増収459、原価未列挙分6,428、販管費列挙分907、未列挙分874、収益内訳差2。これは提示本文との照合であり、PDF画像との同一性検証は含まない。 | S01, S03, S04, S11 S01 PDF pages 1、9；S03 PDF page 7；S04 PDF pages 1、8；S11 PDF pages 20、49、51、62、63、79、80 |\n| 2 | conditional | 対象は2027年7月期1Q、2026年8～10月、日本基準・連結として整合。前4Qの累計差引も対象期間が正しい。新リース基準は2028年7月期からの予定であり対象期への適用を仮定しない。一方、VAMOS及びみんなのみらいの除外で前年同期との構成が異なる。前年1Q利益に対する法定福利費訂正の帰属は未確認で、完全な同一比較基準とは認定できない。 | S01, S03, S04, S11 S01 PDF pages 1、6；S03 PDF pages 1、7；S04 PDF page 1；S11 PDF pages 56、60 |\n| 3 | unresolved | assumptionsは空で、material=trueの登録仮定は0件。採用係数やdiagnostic_perturbationもないためassumption_reviewsは空とする。保育・不動産・人件費等の定性的機序には根拠があるが、対象四半期の数量、単価、季節配分、費用の数値設定を支持する証拠は不足する。一般論を予測係数の裏付けとは扱わない。 | S02, S11 S02 PDF pages 18、29、41、47；S11 PDF page 57 |\n| 4 | conditional | 提示算式に目標利益率からの費用逆算はない。6,428及び874は実績費用の未列挙部分であり予測調整項目ではない。ただし予測費用の積上げ自体が未作成なので、予測モデルとしての合格にはできない。sga_bonusの22は賞与総額ではなく賞与引当金繰入額である。 | S11 S11 PDF pages 20、51、63 |\n| 5 | conditional | 提示算式では福利費訂正65、減損190、VAMOS損益183・7の二重加減算は認められない。減損は前期特別損失で営業利益の回復要因ではなく、減資も利益ではない。VAMOS損益は前年1Q単独ではない。株式報酬について払込日だけで対象期費用をゼロにしない判断は妥当だが、費用額の確定には追加根拠が必要。 | S04, S06, S07, S08, S11 S04 PDF page 1；S06 PDF page 1；S07 PDF page 2；S08 PDF page 3；S11 PDF page 79 |\n| 6 | unresolved | bear・base・bullの4指標すべて未設定で、YoY・QnQの差額・率・要因算式を検証できない。12本のブリッジは空の要因配列とnull残差であり未完成。null維持は妥当で、機械のFinite number requiredを経済的な重大誤計算とは断定しない。前1Q及び前4Qの比較値は存在するため、一律の『比較値なし』は不正確。前4Q利益は赤字なので、完成時には増減額を主表示し、負の基準値を用いた増減率の扱いを明記する必要がある。 | S02, S03, S04, S01 model.scenarios、model.bridges、recalculation.scenario_comparisons；S02 PDF page 5；S03 PDF page 1；S04 PDF page 8；S01 PDF page 9 |\n| 7 | unresolved | 対象期の事業別数量・価格・費用と特殊要因の配賦資料が必要。追加資料は基準日時以前に利用可能だったものに限定する。既存資料だけでも2Q・3Q売上の欠落を補えるほか、S05の旧2027年7月期計画を会社予想候補履歴へ追加すべき。予測値の確定修正を支持する資料・算式の誤りは確認されていない。 | S02, S05, S11 S02 PDF page 5；S05 PDF page 13；S11 PDF pages 57、88 |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| revenue / fy27_guidance_revenue | 未算定 | 未算定 | 未算定 | 対象期間外 / 19,417は2026年9月11日公表の2027年7月期通期連結予想として確認。対象1Qとは期間不一致。基準日時まで改定がないことの網羅確認はできない。四半期予測未設定のため乖離なしとは判定しない。 |\n| operating_profit / fy27_guidance_op | 未算定 | 未算定 | 未算定 | 対象期間外 / 1,201は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。数量・価格・費用による四半期乖離説明は予測未設定のため評価対象外。 |\n| ordinary_profit / fy27_guidance_ordinary | 未算定 | 未算定 | 未算定 | 対象期間外 / 1,353は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。補助金や開業準備費の季節性から単純四等分は支持できない。 |\n| net_profit / fy27_guidance_net | 未算定 | 未算定 | 未算定 | 対象期間外 / 772は2026年9月11日公表の2027年7月期通期連結・親会社株主帰属純利益予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。予測未設定につき税効果・一時損益からの乖離評価はできない。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。\n- **Medium** / machine: S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。\n- **Medium** / machine: S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。\n- **Medium** / machine: S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。\n- **Medium** / machine: S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。\n- **Medium** / machine: 保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。\n- **Medium** / machine: 単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。\n- **Medium** / machine: 営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。\n- **Medium** / machine: 基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。\n- **High** / machine: 資料確認未了: already_announced\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy27_guidance_revenue\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy27_guidance_op\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy27_guidance_ordinary\n- **Medium** / guidance_metadata: 会社予想比較の条件: fy27_guidance_net\n- **High** / assumption: 3シナリオ・4指標の予測と金額ブリッジが未設定。定性的事業説明だけではレンジを支持できず、検証済み予測として利用できない。根拠不足を任意係数で埋めず保留を維持する。\n- **Medium** / fact: recalculation.historicalsの2Q・3Q売上nullは資料不足ではない。S02に4,023・5,364の直接表示があり、累計差引でも一致する。営業利益221・470も直接表示されているため、訂正後の累計との整合を明記して追加利用を検討できる。\n- **Medium** / period: S02の後日資料でも前年1Q営業利益304が再掲されているが、これだけで福利費訂正65の1Q帰属がゼロとは断定できない。訂正による比較基準差を経済的増減や丸め差と混ぜず、四半期別帰属を確認する。\n- **Low** / residual: 収益内訳差2は、17,490−15,807−1,682＝1と17,593−17,490−102＝1に分けられ、百万円表示の端数処理と整合する。通期及び3Q累計の売上−原価−販管費と営業利益にも各1の表示差があり、4Q差引では相殺される。これらの表示差、福利費訂正の比較基準差、未算定の経済的ブリッジ残差を別管理する。経済的残差は引き続きnullでありゼロではない。\n- **Medium** / guidance: 会社予想履歴にS05の旧2027年7月期計画19,140・1,208が欠落している。S01の19,417・1,201への更新を記録する必要がある。latest_confirmedは提示資料内の最新という限定付きであり、基準日時まで改定なしの確認とは区別する。\n- **Medium** / other: 全比較の『比較値なし』は予測欠落と実績欠落を混同している。比較実績の出典と値を保持し、『予測未設定のため増減未算定』へ表示を修正する。null処理の機械エラーは計算経路の未対応として扱い、原資料数値の誤りと区別する。\n- **Medium** / assumption: S08の株式報酬はモデルの条件欄にはあるが出典参照が付いていない。取締役の役務提供開始は対象四半期内であり、77.8968百万円全額の当期計上も全額ゼロも支持されない。割当区分と費用認識期間の確認が必要。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-11\", \"official_date\": \"\", \"declared_verified\": false, \"verified\": false, \"evidence\": \"公式IRカレンダー https://www.sakurasakuplus.jp/ir/calendar/ は「決算発表日は約1か月前にTDnet及びホームページにてお知らせ」と記載するが、取得できた本文では具体的な日付を確認できなかった。https://data.kabu-trendpro.com/company/7097/ の検索結果には収録日2026年11月3日、次回2026年12月11日・第1四半期とあるが、二次情報のスニペットであり、基準日時以前の公式根拠としては未確認。\", \"warnings\": [\"指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。\", \"資料確認未了: schedule\"]}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[\n  {\n    \"target\": \"recalculation.historicals[fiscal_year_end=2026-07-31,quarter=2].revenue\",\n    \"old_value\": null,\n    \"new_value\": 4023,\n    \"reason\": \"S02の2Q単独売上直接表示と一致し、8,315−4,292＝4,023でも確認できる。予測値の変更ではない。\",\n    \"source_ids\": [\n      \"S02\",\n      \"S11\",\n      \"S03\"\n    ],\n    \"locator\": \"S02 PDF page 5；S11 PDF page 88；S03 PDF page 7\",\n    \"evidence_excerpt\": \"4,292\\n4,023\\n5,364\\n3,914\"\n  },\n  {\n    \"target\": \"recalculation.historicals[fiscal_year_end=2026-07-31,quarter=3].revenue\",\n    \"old_value\": null,\n    \"new_value\": 5364,\n    \"reason\": \"S02の3Q単独売上直接表示と一致し、13,679−8,315＝5,364でも確認できる。予測値の変更ではない。\",\n    \"source_ids\": [\n      \"S02\",\n      \"S04\",\n      \"S11\"\n    ],\n    \"locator\": \"S02 PDF page 5；S04 PDF page 8；S11 PDF page 88\",\n    \"evidence_excerpt\": \"4,292\\n4,023\\n5,364\\n3,914\"\n  }\n]\n[\n  \"基準日時以前に利用可能だった、保育所の月次平均園児数・年齢構成・自治体別給付単価・補助金精算額及び四半期収益資料。数量と価格を分離するため。\",\n  \"白山及び買取再販案件の契約価格・原価・引渡予定／実績・計上主体・共同事業持分の資料。完成予定を連結売上と誤認しないため。\",\n  \"対象四半期の給与改定率・適用人数・賞与及び社会保険料の計上期間・採用費・株式報酬費用の資料。継続費用と一時費用を分離するため。\",\n  \"福利費訂正65百万円の四半期別帰属資料、半期報告書及び関連訂正資料。前年1Qと半期の利益比較基準を確定するため。\",\n  \"VAMOS及びみんなのみらいの前年1Q単独損益、ホテルの客室数・稼働率・単価・費用、研修の受託量・単価・採算資料。撤退及び事業構成変化を定量化するため。\",\n  \"営業外補助金・開業準備費・持分法利益・特別損益・税効果の対象期帰属資料。経常利益及び純利益の独立予測を組み立てるため。\",\n  \"基準日時までの公式開示一覧及び予想改定原文。会社予想の最新性と追加開示の網羅性を確認するため。発表予定日の公式資料は日程照合用に別途必要。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/7097/quality_review.json) / [レビュー原回答](../companies/7097/independent_review.json) / [計算検査](../companies/7097/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "7097",
+    "company_name": "株式会社さくらさくプラス",
+    "announcement_date": "2026-12-11",
+    "target_period": "2027-07-31期 Q1単独",
+    "period": {
+      "fiscal_year_end": "2027-07-31",
+      "quarter": 1,
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-18T14:33:00+09:00",
+    "source_as_of": "2026-11-18T14:33:00+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy26_revenue": 17593.0,
+      "fy26_op": 975.0,
+      "fy26_ordinary": 1027.0,
+      "fy26_net": 652.0,
+      "q3_revenue": 13679.0,
+      "q3_op": 995.0,
+      "q3_ordinary": 1063.0,
+      "q3_net": 791.0,
+      "prior_q1_revenue": 4292.0,
+      "prior_q1_op": 304.0,
+      "fy26_cogs": 14836.0,
+      "fy26_sga": 1781.0,
+      "q3_cogs": 11425.0,
+      "q3_sga": 1258.0,
+      "nursery_fy26": 15807.0,
+      "nursery_fy25": 15348.0,
+      "other_contract_revenue": 1682.0,
+      "lease_revenue": 102.0,
+      "cogs_salary": 5985.0,
+      "cogs_rent": 2423.0,
+      "sga_director": 118.0,
+      "sga_salary": 434.0,
+      "sga_bonus": 22.0,
+      "sga_retirement": 3.0,
+      "sga_rent": 149.0,
+      "sga_taxes": 181.0,
+      "real_estate_inventory": 1604.0,
+      "inventory_transfer": 1072.0,
+      "vamos_revenue": 183.0,
+      "vamos_op": 7.0,
+      "welfare_correction": 65.0,
+      "guidance_revenue": 19417.0,
+      "guidance_op": 1201.0,
+      "guidance_ordinary": 1353.0,
+      "guidance_net": 772.0,
+      "prior_q4_revenue": 3914.0,
+      "prior_q4_op": -20.0,
+      "prior_q4_ordinary": -36.0,
+      "prior_q4_net": -139.0,
+      "prior_q4_cogs": 3411.0,
+      "prior_q4_sga": 523.0,
+      "nursery_annual_growth": 459.0,
+      "cogs_remaining": 6428.0,
+      "sga_identified": 907.0,
+      "sga_remaining": 874.0,
+      "revenue_disaggregation_gap": 2.0,
+      "guidance_revenue_display": 19417.0,
+      "guidance_op_display": 1201.0,
+      "guidance_ordinary_display": 1353.0,
+      "guidance_net_display": 772.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S02"
+        ],
+        "locator": "S03 PDF pages 1、7、S02 PDF page 5",
+        "period_end": "2025-10-31",
+        "period_start": "2025-08-01",
+        "method": "1Q累計",
+        "revenue": 4292.0,
+        "operating_profit": 304.0,
+        "ordinary_profit": 268.0,
+        "net_profit": 173.0
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "PDF page 88",
+        "period_end": "2026-01-31",
+        "period_start": "2025-11-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 1、2、8、2026年7月16日訂正後",
+        "period_end": "2026-04-30",
+        "period_start": "2026-02-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-07-31",
+        "quarter": 4,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S04",
+          "S11"
+        ],
+        "locator": "S01 PDF page 9、S11 PDF page 51。S02 PDF page 5の直接四半期表示とも売上高・営業利益の累計差引が一致",
+        "period_end": "2026-07-31",
+        "period_start": "2026-05-01",
+        "method": "累計−直前累計",
+        "revenue": 3914.0,
+        "operating_profit": -20.0,
+        "ordinary_profit": -36.0,
+        "net_profit": -139.0
+      }
+    ],
+    "bridges": [],
+    "issues": [
+      "S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。",
+      "S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。",
+      "S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。",
+      "S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。",
+      "S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。",
+      "保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。",
+      "単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。",
+      "営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。",
+      "基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures",
+      "会社予想比較の条件: fy27_guidance_revenue",
+      "会社予想比較の条件: fy27_guidance_op",
+      "会社予想比較の条件: fy27_guidance_ordinary",
+      "会社予想比較の条件: fy27_guidance_net",
+      "3シナリオ・4指標の予測と金額ブリッジが未設定。定性的事業説明だけではレンジを支持できず、検証済み予測として利用できない。根拠不足を任意係数で埋めず保留を維持する。",
+      "recalculation.historicalsの2Q・3Q売上nullは資料不足ではない。S02に4,023・5,364の直接表示があり、累計差引でも一致する。営業利益221・470も直接表示されているため、訂正後の累計との整合を明記して追加利用を検討できる。",
+      "S02の後日資料でも前年1Q営業利益304が再掲されているが、これだけで福利費訂正65の1Q帰属がゼロとは断定できない。訂正による比較基準差を経済的増減や丸め差と混ぜず、四半期別帰属を確認する。",
+      "収益内訳差2は、17,490−15,807−1,682＝1と17,593−17,490−102＝1に分けられ、百万円表示の端数処理と整合する。通期及び3Q累計の売上−原価−販管費と営業利益にも各1の表示差があり、4Q差引では相殺される。これらの表示差、福利費訂正の比較基準差、未算定の経済的ブリッジ残差を別管理する。経済的残差は引き続きnullでありゼロではない。",
+      "会社予想履歴にS05の旧2027年7月期計画19,140・1,208が欠落している。S01の19,417・1,201への更新を記録する必要がある。latest_confirmedは提示資料内の最新という限定付きであり、基準日時まで改定なしの確認とは区別する。",
+      "全比較の『比較値なし』は予測欠落と実績欠落を混同している。比較実績の出典と値を保持し、『予測未設定のため増減未算定』へ表示を修正する。null処理の機械エラーは計算経路の未対応として扱い、原資料数値の誤りと区別する。",
+      "S08の株式報酬はモデルの条件欄にはあるが出典参照が付いていない。取締役の役務提供開始は対象四半期内であり、77.8968百万円全額の当期計上も全額ゼロも支持されない。割当区分と費用認識期間の確認が必要。"
+    ],
+    "schedule_warnings": [
+      "指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [
+      "前四半期の賃上げに伴う賞与・社会保険料増加のうち、継続費用と一時的費用の区分は不明。",
+      "期末園児数と対象四半期の月次平均園児数は一致するとは限らず、年齢構成と補助金精算も単価に影響する。",
+      "白山プロジェクトが対象四半期に引き渡され、連結売上に計上されるかは未確認。完成予定日だけでは認識できない。",
+      "譲渡制限付株式の払込予定は対象四半期後だが、取締役の役務提供期間は対象四半期内に始まる。払込日だけで対象四半期費用をゼロとしない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2026年７月期 決算短信〔日本基準〕（連結）（2027年7月期会社予想を含む）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260910534185.pdf",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "category": "latest_results",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S01.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S01.txt",
+        "sha256": "2ce168b36dacba6a60aee953db1d853bbef54735df57d0999aa6f8d1ea0553cf",
+        "text_sha256": "47b2bcc29866a15f79934c6c4790cc345a51c89b3767c82026c9593f71d1b7b9",
+        "retrieved_at": "2026-11-26T19:07:21+09:00",
+        "method": "local saved evidence",
+        "characters": 12850,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年７月期 決算説明資料（事業計画及び成長可能性に関する事項）",
+        "url": "https://www2.jpx.co.jp/disc/70970/140120260911534630.pdf",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "category": "presentation",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S02.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S02.txt",
+        "sha256": "2d32156a133417fa0fdcf9e2a7be8105182b119835164c8fded225ca7b1c9b13",
+        "text_sha256": "ad01934fc06c7f725bd8fa9ecea6308abe576dc75be17a27462474f3f0ad7b93",
+        "retrieved_at": "2026-11-26T19:07:21+09:00",
+        "method": "local saved evidence",
+        "characters": 18114,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年７月期 第１四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/70970/140120251210517270.pdf",
+        "published_at": "2025-12-12T15:30:00+09:00",
+        "category": "historical",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S03.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S03.txt",
+        "sha256": "b4dadd2dfef4de03510fc1a56416ff1307685cad098aca69c2e0c5932d3fac84",
+        "text_sha256": "0d0affb3100a08490dc0f07518cbe745ee1ff578ae9604bbde5aeae6c6fe5cb6",
+        "retrieved_at": "2026-11-26T19:07:21+09:00",
+        "method": "local saved evidence",
+        "characters": 6936,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "（訂正・数値データ訂正）「2026年７月期 第３四半期決算短信〔日本基準〕（連結）」の一部訂正に関するお知らせ（訂正後全文添付）",
+        "url": "https://www2.jpx.co.jp/disc/70970/140120260716595232.pdf",
+        "published_at": "2026-07-16T15:30:00+09:00",
+        "category": "historical",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S04.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S04.txt",
+        "sha256": "c0245e3decfda7d24cec29d1792d5ba754343da8b3050f67b72a2cc48a7bea4c",
+        "text_sha256": "ac56df5f326353f5e85c2f9afe26ee6ec19322ca827f13c7ea1c2b74c5bab10e",
+        "retrieved_at": "2026-11-26T19:07:22+09:00",
+        "method": "local saved evidence",
+        "characters": 8848,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年７月期 第１四半期決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/70970/140120251212518578.pdf",
+        "published_at": "2025-12-12T15:30:00+09:00",
+        "category": "presentation",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S05.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S05.txt",
+        "sha256": "2a8b42eba77d2d68ada7de819366ab2cb22c9c81662cb0a007b50cfd987a37d7",
+        "text_sha256": "16179d967d3507ba727ce0fe42718a87737dc1aea15f3bd4a28544545484c028",
+        "retrieved_at": "2026-11-26T19:07:22+09:00",
+        "method": "local saved evidence",
+        "characters": 6994,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "特別損失（減損損失）の計上に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260911/20260911534629.pdf",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "category": "other",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S06.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S06.txt",
+        "sha256": "1a33ad6feb4fa61c569cffa929fe1918f42287e749e57eb9101c6feed76cdf64",
+        "text_sha256": "f1c49a98a560d7dd2e6efef68f2358b00410dd5727e1895477c82bb3e3d77cb3",
+        "retrieved_at": "2026-11-26T19:07:22+09:00",
+        "method": "local saved evidence",
+        "characters": 482,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "資本金及び資本準備金の額の減少に関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/70970/140120260818522508.pdf",
+        "published_at": "2026-08-19T15:30:00+09:00",
+        "category": "other",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S07.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S07.txt",
+        "sha256": "78a9c5547518b94c5fde502cde24dafda28912c4ef709636ff79f55ddd287dda",
+        "text_sha256": "aac7441297d891fac3f3a4096e591d9963e8cf346628053157845e19a442727b",
+        "retrieved_at": "2026-11-26T19:07:22+09:00",
+        "method": "local saved evidence",
+        "characters": 1323,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "当社取締役及び従業員並びに当社子会社従業員に対する譲渡制限付株式としての自己株式の処分に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261023/20261022554859.pdf",
+        "published_at": "2026-10-23T15:30:00+09:00",
+        "category": "other",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S08.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S08.txt",
+        "sha256": "8c0026251cfebd1bd0e863df41b0bb6c7bc532a7a0a6136fc79d90b71b317682",
+        "text_sha256": "cae417ab4b8ad1ae5ea4cf6c5be97a0e609852bc15989b889046bd97a6efa839",
+        "retrieved_at": "2026-11-26T19:07:22+09:00",
+        "method": "local saved evidence",
+        "characters": 3388,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "株式情報",
+        "url": "https://www.sakurasakuplus.jp/ir/stock/overview/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-26T19:07:22+09:00"
+      },
+      {
+        "id": "S10",
+        "title": "IRカレンダー",
+        "url": "https://www.sakurasakuplus.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-26T19:07:22+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "2026年7月期 有価証券報告書",
+        "url": "https://ssl4.eir-parts.net/doc/7097/yuho_pdf/S100Z9L4/00.pdf",
+        "published_at": "2026-10-22T00:00:00+09:00",
+        "category": "annual_report",
+        "issuer_text": "さくらさくプラス",
+        "publication_evidence_url": "https://ssl4.eir-parts.net/V4Public/eir/7097/ja/announcement/announcement_0.js",
+        "publication_evidence_file": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\sakurasaku-announcement.js",
+        "prior_unavailable_url": "https://ssl4.eir-parts.net/doc/7097/yuho_pdf/S100Z9L4/00.pdf",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repair-inputs\\7097\\sources\\S11.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261119-20261215\\repairs\\7097-supplement-v1\\companies\\7097\\sources\\S11.txt",
+        "sha256": "d8fde109ed9a43c286d6955e87ad7f02f5bcc9b0607bca6380c16d786f1d7d4a",
+        "text_sha256": "d4b647d26e716ccc69ca605b60be4cc0c6899511efb7d9e39fc1d2ebc9c12c38",
+        "retrieved_at": "2026-11-26T19:07:29+09:00",
+        "method": "local saved evidence",
+        "characters": 114166,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "7097",
+      "announcement_date": "2026-12-11",
+      "as_of": "2026-11-18T14:33:00+09:00",
+      "period": {
+        "fiscal_year_end": "2027-07-31",
+        "quarter": 1,
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy26_revenue",
+          "value": 17593,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9、S11 PDF page 51"
+        },
+        {
+          "id": "fy26_op",
+          "value": 975,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9、S11 PDF page 51"
+        },
+        {
+          "id": "fy26_ordinary",
+          "value": 1027,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "fy26_net",
+          "value": 652,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q3_revenue",
+          "value": 13679,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2、8、訂正後累計"
+        },
+        {
+          "id": "q3_op",
+          "value": 995,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 2、8、訂正後累計"
+        },
+        {
+          "id": "q3_ordinary",
+          "value": 1063,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "q3_net",
+          "value": 791,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "prior_q1_revenue",
+          "value": 4292,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S02"
+          ],
+          "locator": "S03 PDF page 7、S02 PDF page 5"
+        },
+        {
+          "id": "prior_q1_op",
+          "value": 304,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03",
+            "S02"
+          ],
+          "locator": "S03 PDF page 7、S02 PDF page 5"
+        },
+        {
+          "id": "fy26_cogs",
+          "value": 14836,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 51"
+        },
+        {
+          "id": "fy26_sga",
+          "value": 1781,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 51"
+        },
+        {
+          "id": "q3_cogs",
+          "value": 11425,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8、訂正後"
+        },
+        {
+          "id": "q3_sga",
+          "value": 1258,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 8、訂正後"
+        },
+        {
+          "id": "nursery_fy26",
+          "value": 15807,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 80、保育所収益"
+        },
+        {
+          "id": "nursery_fy25",
+          "value": 15348,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 80、保育所収益"
+        },
+        {
+          "id": "other_contract_revenue",
+          "value": 1682,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 80、顧客との契約から生じる収益のその他"
+        },
+        {
+          "id": "lease_revenue",
+          "value": 102,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 80、その他の収益"
+        },
+        {
+          "id": "cogs_salary",
+          "value": 5985,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 20、売上原価の給料及び手当"
+        },
+        {
+          "id": "cogs_rent",
+          "value": 2423,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 20、売上原価の施設賃料"
+        },
+        {
+          "id": "sga_director",
+          "value": 118,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "sga_salary",
+          "value": 434,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "sga_bonus",
+          "value": 22,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "sga_retirement",
+          "value": 3,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "sga_rent",
+          "value": 149,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "sga_taxes",
+          "value": 181,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 63"
+        },
+        {
+          "id": "real_estate_inventory",
+          "value": 1604,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 49、販売用不動産"
+        },
+        {
+          "id": "inventory_transfer",
+          "value": 1072,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 62、有形固定資産から販売用不動産への振替"
+        },
+        {
+          "id": "vamos_revenue",
+          "value": 183,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 79、当年度の連結損益計算書に含まれる譲渡子会社の損益"
+        },
+        {
+          "id": "vamos_op",
+          "value": 7,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 79"
+        },
+        {
+          "id": "welfare_correction",
+          "value": 65,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 19417,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 1201,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 1353,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、2027年7月期通期連結業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 772,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、親会社株主に帰属する当期純利益予想"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q4_revenue",
+          "formula": "fy26_revenue-q3_revenue"
+        },
+        {
+          "id": "prior_q4_op",
+          "formula": "fy26_op-q3_op"
+        },
+        {
+          "id": "prior_q4_ordinary",
+          "formula": "fy26_ordinary-q3_ordinary"
+        },
+        {
+          "id": "prior_q4_net",
+          "formula": "fy26_net-q3_net"
+        },
+        {
+          "id": "prior_q4_cogs",
+          "formula": "fy26_cogs-q3_cogs"
+        },
+        {
+          "id": "prior_q4_sga",
+          "formula": "fy26_sga-q3_sga"
+        },
+        {
+          "id": "nursery_annual_growth",
+          "formula": "nursery_fy26-nursery_fy25"
+        },
+        {
+          "id": "cogs_remaining",
+          "formula": "fy26_cogs-cogs_salary-cogs_rent"
+        },
+        {
+          "id": "sga_identified",
+          "formula": "sga_director+sga_salary+sga_bonus+sga_retirement+sga_rent+sga_taxes"
+        },
+        {
+          "id": "sga_remaining",
+          "formula": "fy26_sga-sga_identified"
+        },
+        {
+          "id": "revenue_disaggregation_gap",
+          "formula": "fy26_revenue-nursery_fy26-other_contract_revenue-lease_revenue"
+        },
+        {
+          "id": "guidance_revenue_display",
+          "formula": "guidance_revenue"
+        },
+        {
+          "id": "guidance_op_display",
+          "formula": "guidance_op"
+        },
+        {
+          "id": "guidance_ordinary_display",
+          "formula": "guidance_ordinary"
+        },
+        {
+          "id": "guidance_net_display",
+          "formula": "guidance_net"
+        }
+      ],
+      "scenarios": {},
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 1,
+          "period_start": "2025-08-01",
+          "period_end": "2025-10-31",
+          "revenue": 4292,
+          "operating_profit": 304,
+          "ordinary_profit": 268,
+          "net_profit": 173,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S03当初公表版。S02通期説明資料でも売上高・営業利益を再掲。後日の法定福利費訂正の当四半期帰属は未確認",
+          "source_ids": [
+            "S03",
+            "S02"
+          ],
+          "locator": "S03 PDF pages 1、7、S02 PDF page 5"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 2,
+          "period_start": "2025-08-01",
+          "period_end": "2026-01-31",
+          "revenue": 8315,
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": 259,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "S11有価証券報告書掲載半期情報。法定福利費訂正の半期帰属は未確認",
+          "source_ids": [
+            "S11"
+          ],
+          "locator": "PDF page 88"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 3,
+          "period_start": "2025-08-01",
+          "period_end": "2026-04-30",
+          "revenue": 13679,
+          "operating_profit": 995,
+          "ordinary_profit": 1063,
+          "net_profit": 791,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "fy26_welfare_corrected_pl",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 1、2、8、2026年7月16日訂正後"
+        },
+        {
+          "fiscal_year_end": "2026-07-31",
+          "quarter": 4,
+          "period_start": "2025-08-01",
+          "period_end": "2026-07-31",
+          "revenue": 17593,
+          "operating_profit": 975,
+          "ordinary_profit": 1027,
+          "net_profit": 652,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "fy26_welfare_corrected_pl",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 9、S11 PDF page 51。S02 PDF page 5の直接四半期表示とも売上高・営業利益の累計差引が一致"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "在園児数・年齢構成・自治体給付",
+          "mechanism": "保育所収益は園児数だけでなく、保育士数や補助金の要件に依存する。東平園開設、晴海園増床、既存園の進級が数量と構成に影響する。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S11"
+          ],
+          "locator": "S02 PDF pages 41、47、S05 PDF page 20、S11 PDF pages 20、57、80",
+          "calculation_ids": [
+            "nursery_annual_growth"
+          ],
+          "not_quantified_reason": "期末利用者数は確認できるが、月次平均人数、年齢別構成、四半期別給付・精算額がない。通期収益を期末人数で割って実効単価とすることはできない。"
+        },
+        {
+          "name": "不動産の引渡しと共同事業の帰属",
+          "mechanism": "白山プロジェクトの完成予定は対象四半期内だが、売上認識は引渡し時点。共同事業の連結売上と持分法利益への帰属も確認が必要。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S11"
+          ],
+          "locator": "S02 PDF pages 18、35、S05 PDF page 11、S11 PDF pages 57、62",
+          "calculation_ids": [],
+          "not_quantified_reason": "案件別販売価格、原価、引渡日、共同事業の持分・計上主体が提示原文にない。販売用不動産には固定資産からの振替が含まれ、残高から対象四半期の売却額は導けない。"
+        },
+        {
+          "name": "賃上げ・賞与・社会保険・採用費",
+          "mechanism": "前四半期に実施した賃上げは対象四半期の継続費用になり得る一方、賞与と社会保険料の計上時期、採用内製化が費用を変動させる。",
+          "source_ids": [
+            "S02",
+            "S04",
+            "S11"
+          ],
+          "locator": "S02 PDF pages 5、29、S04 PDF page 1、S11 PDF pages 20、46、47、63",
+          "calculation_ids": [
+            "prior_q4_cogs",
+            "prior_q4_sga",
+            "cogs_remaining",
+            "sga_identified",
+            "sga_remaining"
+          ],
+          "not_quantified_reason": "通期主要費目は確認できたが、賃上げ率・適用人数・四半期配賦、福利費や採用費の内訳が不足。利益目標から不足費用を逆算しない。"
+        },
+        {
+          "name": "事業撤退とホテル・研修の構成変化",
+          "mechanism": "VAMOSの連結除外で前年同期との範囲が変わる。ホテルの通期稼働開始、研修需要、フェムケア販路拡大が残存事業の売上と採算に影響する。",
+          "source_ids": [
+            "S02",
+            "S11"
+          ],
+          "locator": "S02 PDF pages 17～19、S11 PDF pages 8、79、80",
+          "calculation_ids": [],
+          "not_quantified_reason": "VAMOSの連結計上期間合計は確認できるが前年第1四半期分は不明。ホテルの客室数・稼働率・単価、研修の受講量・単価・採算も提示原文で確認できない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q1_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "連結売上予測を設定できず差額も未算定。保育・撤退事業・不動産の前年同期内訳が不足。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q1_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "利益予測未設定。賃上げ、構成変化、法定福利費訂正の前年同期帰属を金額分解できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。対象四半期の引渡し・保育給付・ホテル収益を定量化できず予測差は未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。賞与等の一時性と賃上げの継続費用を分離できず予測差は未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q1_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "連結売上予測を設定できず差額も未算定。保育・撤退事業・不動産の前年同期内訳が不足。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q1_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "利益予測未設定。賃上げ、構成変化、法定福利費訂正の前年同期帰属を金額分解できない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。対象四半期の引渡し・保育給付・ホテル収益を定量化できず予測差は未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。賞与等の一時性と賃上げの継続費用を分離できず予測差は未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q1_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "連結売上予測を設定できず差額も未算定。保育・撤退事業・不動産の前年同期内訳が不足。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q1_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "利益予測未設定。賃上げ、構成変化、法定福利費訂正の前年同期帰属を金額分解できない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "prior_q4_revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。対象四半期の引渡し・保育給付・ホテル収益を定量化できず予測差は未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q4_op",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前四半期比較値は算定済み。賞与等の一時性と賃上げの継続費用を分離できず予測差は未算定。"
+        }
+      ],
+      "company_guidance": "S01で2027年7月期通期の連結会社予想を確認。対象第1四半期単独予想は提示資料に記載なし。通期予想の四等分や前年同期への通期増減率適用は行っていない。",
+      "consensus": "未確認。提示資料に市場コンセンサスは含まれていない。",
+      "independent_forecast": "対象四半期単独の売上高・営業利益・経常利益・親会社株主帰属純利益は根拠ある連結レンジを設定できず保留。保育の継続収益基盤は確認できたが、通期収益と期末人数から四半期単価を同定できず、不動産・周辺事業の規模と採算にも独立した制約が不足する。会社修正見込みからの差引き推計は使用していない。",
+      "narrative": [
+        {
+          "heading": "予測判断",
+          "text": "保育所の通期増収額は{{value:nursery_annual_growth}}で、継続収益の拡大は確認できる。ただし対象四半期では、不動産の引渡し、事業撤退による売上剥落、ホテルの本格稼働を分ける必要がある。これらの金額に根拠ある上下限を置けないため、連結の弱気・中心・強気予測は保留する。"
+        },
+        {
+          "heading": "前四半期比較の確定",
+          "text": "訂正後の第3四半期累計と通期実績の差引きにより、前四半期売上は{{value:prior_q4_revenue}}、営業利益は{{value:prior_q4_op}}。両者は通期説明資料の直接四半期表示と一致する。売上原価は{{value:prior_q4_cogs}}、販管費は{{value:prior_q4_sga}}であり、前四半期の費用負担を無条件に反転させることはできない。"
+        },
+        {
+          "heading": "費用積上げの限界",
+          "text": "有価証券報告書で確認した販管費主要項目の合計は{{value:sga_identified}}、それ以外は{{value:sga_remaining}}。売上原価も給料及び手当と施設賃料以外が{{value:cogs_remaining}}残る。これらは開示費目の差額であり、予測利益に合わせる調整項目ではない。"
+        },
+        {
+          "heading": "会社予想との区別",
+          "text": "公表通期予想は売上{{value:guidance_revenue_display}}、営業利益{{value:guidance_op_display}}、経常利益{{value:guidance_ordinary_display}}、親会社株主帰属純利益{{value:guidance_net_display}}。対象四半期への配分は会社から示されておらず、独自四半期予測とは区別する。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "白山プロジェクトが対象四半期に引き渡され、連結売上に計上されるかは未確認。完成予定日だけでは認識できない。",
+        "期末園児数と対象四半期の月次平均園児数は一致するとは限らず、年齢構成と補助金精算も単価に影響する。",
+        "前四半期の賃上げに伴う賞与・社会保険料増加のうち、継続費用と一時的費用の区分は不明。",
+        "譲渡制限付株式の払込予定は対象四半期後だが、取締役の役務提供期間は対象四半期内に始まる。払込日だけで対象四半期費用をゼロとしない。"
+      ],
+      "material_unresolved": [
+        "指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。",
+        "提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。",
+        "保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。",
+        "S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。",
+        "S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。",
+        "S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。",
+        "S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。",
+        "S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。",
+        "単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。",
+        "営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。",
+        "予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。",
+        "基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。"
+      ],
+      "guidance_records": [
+        {
+          "id": "fy27_guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、提示資料内で確認できる最新通期予想"
+        },
+        {
+          "id": "fy27_guidance_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、提示資料内で確認できる最新通期予想"
+        },
+        {
+          "id": "fy27_guidance_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、提示資料内で確認できる最新通期予想"
+        },
+        {
+          "id": "fy27_guidance_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-08-01",
+          "period_end": "2027-07-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-11T15:30:00+09:00",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、親会社株主に帰属する当期純利益、提示資料内で確認できる最新通期予想"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 6,
+      "Medium": 21,
+      "Low": 1
+    },
+    "material_assumption_count": 0,
+    "schedule_check": {
+      "input_date": "2026-12-11",
+      "official_date": "",
+      "declared_verified": false,
+      "verified": false,
+      "evidence": "公式IRカレンダー https://www.sakurasakuplus.jp/ir/calendar/ は「決算発表日は約1か月前にTDnet及びホームページにてお知らせ」と記載するが、取得できた本文では具体的な日付を確認できなかった。https://data.kabu-trendpro.com/company/7097/ の検索結果には収録日2026年11月3日、次回2026年12月11日・第1四半期とあるが、二次情報のスニペットであり、基準日時以前の公式根拠としては未確認。",
+      "warnings": [
+        "指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。",
+        "資料確認未了: schedule"
+      ]
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "fy27_guidance_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_revenue",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "19,417は2026年9月11日公表の2027年7月期通期連結予想として確認。対象1Qとは期間不一致。基準日時まで改定がないことの網羅確認はできない。四半期予測未設定のため乖離なしとは判定しない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_op",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "1,201は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。数量・価格・費用による四半期乖離説明は予測未設定のため評価対象外。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "1,353は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。補助金や開業準備費の季節性から単純四等分は支持できない。",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 1；S11 PDF page 15",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_net",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、親会社株主に帰属する当期純利益、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_net",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "772は2026年9月11日公表の2027年7月期通期連結・親会社株主帰属純利益予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。予測未設定につき税効果・一時損益からの乖離評価はできない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "保留",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: already_announced"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy27_guidance_revenue",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy27_guidance_op",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy27_guidance_ordinary",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: fy27_guidance_net",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "3シナリオ・4指標の予測と金額ブリッジが未設定。定性的事業説明だけではレンジを支持できず、検証済み予測として利用できない。根拠不足を任意係数で埋めず保留を維持する。",
+        "source_ids": [
+          "S11"
+        ],
+        "locator": "model.scenarios、model.bridges；S11 PDF page 57",
+        "evidence_excerpt": "契約期間にわたり収益を認識しております。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "fact",
+        "message": "recalculation.historicalsの2Q・3Q売上nullは資料不足ではない。S02に4,023・5,364の直接表示があり、累計差引でも一致する。営業利益221・470も直接表示されているため、訂正後の累計との整合を明記して追加利用を検討できる。",
+        "source_ids": [
+          "S02",
+          "S11",
+          "S03",
+          "S04"
+        ],
+        "locator": "S02 PDF page 5；S11 PDF page 88；S03 PDF page 7；S04 PDF page 8",
+        "evidence_excerpt": "4,292\n4,023\n5,364\n3,914",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "period",
+        "message": "S02の後日資料でも前年1Q営業利益304が再掲されているが、これだけで福利費訂正65の1Q帰属がゼロとは断定できない。訂正による比較基準差を経済的増減や丸め差と混ぜず、四半期別帰属を確認する。",
+        "source_ids": [
+          "S04",
+          "S02"
+        ],
+        "locator": "S04 PDF page 1；S02 PDF page 5",
+        "evidence_excerpt": "法定福利費として追加で計上すべき金額が 65 百万円（保育所に係るものが 63 百万円、本社に係る\nものが２百万円）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "residual",
+        "message": "収益内訳差2は、17,490−15,807−1,682＝1と17,593−17,490−102＝1に分けられ、百万円表示の端数処理と整合する。通期及び3Q累計の売上−原価−販管費と営業利益にも各1の表示差があり、4Q差引では相殺される。これらの表示差、福利費訂正の比較基準差、未算定の経済的ブリッジ残差を別管理する。経済的残差は引き続きnullでありゼロではない。",
+        "source_ids": [
+          "S01",
+          "S04",
+          "S11"
+        ],
+        "locator": "S01 PDF pages 1、9；S04 PDF page 8；S11 PDF page 80",
+        "evidence_excerpt": "（百万円未満切捨て）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "会社予想履歴にS05の旧2027年7月期計画19,140・1,208が欠落している。S01の19,417・1,201への更新を記録する必要がある。latest_confirmedは提示資料内の最新という限定付きであり、基準日時まで改定なしの確認とは区別する。",
+        "source_ids": [
+          "S05",
+          "S02"
+        ],
+        "locator": "S05 PDF page 13；S02 PDF page 13",
+        "evidence_excerpt": "営業利益 1,139 986 △13.4% 1,208 22.5% 1,339 10.9%",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "other",
+        "message": "全比較の『比較値なし』は予測欠落と実績欠落を混同している。比較実績の出典と値を保持し、『予測未設定のため増減未算定』へ表示を修正する。null処理の機械エラーは計算経路の未対応として扱い、原資料数値の誤りと区別する。",
+        "source_ids": [
+          "S03",
+          "S01",
+          "S04"
+        ],
+        "locator": "recalculation.comparisons、recalculation.scenario_comparisons；S03 PDF page 7；S01 PDF page 9；S04 PDF page 8",
+        "evidence_excerpt": "売上高 3,766 4,292",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "assumption",
+        "message": "S08の株式報酬はモデルの条件欄にはあるが出典参照が付いていない。取締役の役務提供開始は対象四半期内であり、77.8968百万円全額の当期計上も全額ゼロも支持されない。割当区分と費用認識期間の確認が必要。",
+        "source_ids": [
+          "S08"
+        ],
+        "locator": "PDF pages 1～3",
+        "evidence_excerpt": "払込期日の直前の当社定時株主総会の日から翌年に開催\nされる当社定時株主総会の日までの間",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 6,
+      "Medium": 21,
+      "Low": 1
+    },
+    "assumptions": [],
+    "guidance": [
+      {
+        "id": "fy27_guidance_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_revenue",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "19,417は2026年9月11日公表の2027年7月期通期連結予想として確認。対象1Qとは期間不一致。基準日時まで改定がないことの網羅確認はできない。四半期予測未設定のため乖離なしとは判定しない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_op",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_op",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "1,201は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。数量・価格・費用による四半期乖離説明は予測未設定のため評価対象外。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_ordinary",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "1,353は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。補助金や開業準備費の季節性から単純四等分は支持できない。",
+          "source_ids": [
+            "S01",
+            "S11"
+          ],
+          "locator": "S01 PDF page 1；S11 PDF page 15",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "fy27_guidance_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_net",
+        "period_start": "2026-08-01",
+        "period_end": "2027-07-31",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-11T15:30:00+09:00",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF page 1、親会社株主に帰属する当期純利益、提示資料内で確認できる最新通期予想",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "fy27_guidance_net",
+          "period_confirmed": true,
+          "revision_confirmed": false,
+          "explanation_status": "not_applicable",
+          "reason": "772は2026年9月11日公表の2027年7月期通期連結・親会社株主帰属純利益予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。予測未設定につき税効果・一時損益からの乖離評価はできない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1",
+          "evidence_excerpt": "通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S04の法定福利費訂正は第3四半期累計に反映済み。前年第1四半期への帰属は明記されておらず、任意配賦や対象四半期への再計上はしない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11 PDF page 79のVAMOS損益は当年度の連結計上期間合計。前年第1四半期の売上・利益として使用できず、撤退効果を一律の増益要因ともしない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11 PDF page 80の収益内訳と合計には表示単位上の差がある。差額はrevenue_disaggregation_gapに保存し、未知の追加収益として予測に利用しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11で通期収益分解と主要費目は確認できたが、対象四半期の数量・価格・費用レンジを裏付ける季節配分が不足する。通期保育収益の単純四等分を四半期実績や実効単価の代わりにしない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S11の貸借対照表表示組替えは損益の組替えとは区別した。前四半期の売上高・営業利益は累計差引とS02の直接表示で整合する。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "予測未設定のためbridgesの残差はゼロではなくnull。12本は比較基準と未算定理由を保存するもので、金額ブリッジの完成を意味しない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "保育所の四半期別収益、月次平均園児数、年齢別単価、補助金精算時期は提示原文に記載がない。会社全体として非公表かどうかまでは確認できない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "単一セグメントのため事業別営業利益は省略されている。不動産案件別の販売価格・原価・持分、ホテルの稼働指標、研修の単価・受託量は提示原文にない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "営業外補助金・開業準備費には季節性があり、持分法損益の案件帰属も不足する。経常利益予測は保留。税効果・特別損益の根拠も不足し、純利益予測は保留。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "基準日時までの追加開示の網羅性と対象実績の未発表状態は独自確認していない。target_already_announcedは提示条件を引き継いだ。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "提示されたdocumentsはすべてtruncated=false。S09・S10の原文本文は含まれていない。PDF画像と抽出本文の照合は実施していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: already_announced",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy27_guidance_revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy27_guidance_op",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy27_guidance_ordinary",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: fy27_guidance_net",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "High",
+      "category": "assumption",
+      "message": "3シナリオ・4指標の予測と金額ブリッジが未設定。定性的事業説明だけではレンジを支持できず、検証済み予測として利用できない。根拠不足を任意係数で埋めず保留を維持する。",
+      "source_ids": "['S11']",
+      "locator": "model.scenarios、model.bridges；S11 PDF page 57",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "fact",
+      "message": "recalculation.historicalsの2Q・3Q売上nullは資料不足ではない。S02に4,023・5,364の直接表示があり、累計差引でも一致する。営業利益221・470も直接表示されているため、訂正後の累計との整合を明記して追加利用を検討できる。",
+      "source_ids": "['S02', 'S11', 'S03', 'S04']",
+      "locator": "S02 PDF page 5；S11 PDF page 88；S03 PDF page 7；S04 PDF page 8",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "period",
+      "message": "S02の後日資料でも前年1Q営業利益304が再掲されているが、これだけで福利費訂正65の1Q帰属がゼロとは断定できない。訂正による比較基準差を経済的増減や丸め差と混ぜず、四半期別帰属を確認する。",
+      "source_ids": "['S04', 'S02']",
+      "locator": "S04 PDF page 1；S02 PDF page 5",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Low",
+      "category": "residual",
+      "message": "収益内訳差2は、17,490−15,807−1,682＝1と17,593−17,490−102＝1に分けられ、百万円表示の端数処理と整合する。通期及び3Q累計の売上−原価−販管費と営業利益にも各1の表示差があり、4Q差引では相殺される。これらの表示差、福利費訂正の比較基準差、未算定の経済的ブリッジ残差を別管理する。経済的残差は引き続きnullでありゼロではない。",
+      "source_ids": "['S01', 'S04', 'S11']",
+      "locator": "S01 PDF pages 1、9；S04 PDF page 8；S11 PDF page 80",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "会社予想履歴にS05の旧2027年7月期計画19,140・1,208が欠落している。S01の19,417・1,201への更新を記録する必要がある。latest_confirmedは提示資料内の最新という限定付きであり、基準日時まで改定なしの確認とは区別する。",
+      "source_ids": "['S05', 'S02']",
+      "locator": "S05 PDF page 13；S02 PDF page 13",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "other",
+      "message": "全比較の『比較値なし』は予測欠落と実績欠落を混同している。比較実績の出典と値を保持し、『予測未設定のため増減未算定』へ表示を修正する。null処理の機械エラーは計算経路の未対応として扱い、原資料数値の誤りと区別する。",
+      "source_ids": "['S03', 'S01', 'S04']",
+      "locator": "recalculation.comparisons、recalculation.scenario_comparisons；S03 PDF page 7；S01 PDF page 9；S04 PDF page 8",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "company_name": "株式会社さくらさくプラス",
+      "severity": "Medium",
+      "category": "assumption",
+      "message": "S08の株式報酬はモデルの条件欄にはあるが出典参照が付いていない。取締役の役務提供開始は対象四半期内であり、77.8968百万円全額の当期計上も全額ゼロも支持されない。割当区分と費用認識期間の確認が必要。",
+      "source_ids": "['S08']",
+      "locator": "PDF pages 1～3",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [
+    {
+      "code": "7097",
+      "id": "fy27_guidance_revenue",
+      "metric": "revenue",
+      "value_ref": "guidance_revenue",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy27_guidance_revenue\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"19,417は2026年9月11日公表の2027年7月期通期連結予想として確認。対象1Qとは期間不一致。基準日時まで改定がないことの網羅確認はできない。四半期予測未設定のため乖離なしとは判定しない。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 1\", \"evidence_excerpt\": \"通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "id": "fy27_guidance_op",
+      "metric": "operating_profit",
+      "value_ref": "guidance_op",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy27_guidance_op\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"1,201は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。数量・価格・費用による四半期乖離説明は予測未設定のため評価対象外。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 1\", \"evidence_excerpt\": \"通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "id": "fy27_guidance_ordinary",
+      "metric": "ordinary_profit",
+      "value_ref": "guidance_ordinary",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF page 1、提示資料内で確認できる最新通期予想",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy27_guidance_ordinary\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"1,353は2026年9月11日公表の2027年7月期通期連結予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。補助金や開業準備費の季節性から単純四等分は支持できない。\", \"source_ids\": [\"S01\", \"S11\"], \"locator\": \"S01 PDF page 1；S11 PDF page 15\", \"evidence_excerpt\": \"通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "7097",
+      "id": "fy27_guidance_net",
+      "metric": "net_profit",
+      "value_ref": "guidance_net",
+      "period_start": "2026-08-01",
+      "period_end": "2027-07-31",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-11T15:30:00+09:00",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S01\"]",
+      "locator": "PDF page 1、親会社株主に帰属する当期純利益、提示資料内で確認できる最新通期予想",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "large_gap": "False",
+      "independent_review": "{\"id\": \"fy27_guidance_net\", \"period_confirmed\": true, \"revision_confirmed\": false, \"explanation_status\": \"not_applicable\", \"reason\": \"772は2026年9月11日公表の2027年7月期通期連結・親会社株主帰属純利益予想。対象1Qとは期間不一致で、最新改定状態の網羅確認は未了。予測未設定につき税効果・一時損益からの乖離評価はできない。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 1\", \"evidence_excerpt\": \"通期 19,417 10.4 1,201 23.2 1,353 31.7 772 18.3 174.59\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "7097",
+    "input_date": "2026-12-11",
+    "official_date": "",
+    "declared_verified": "False",
+    "verified": "False",
+    "evidence": "公式IRカレンダー https://www.sakurasakuplus.jp/ir/calendar/ は「決算発表日は約1か月前にTDnet及びホームページにてお知らせ」と記載するが、取得できた本文では具体的な日付を確認できなかった。https://data.kabu-trendpro.com/company/7097/ の検索結果には収録日2026年11月3日、次回2026年12月11日・第1四半期とあるが、二次情報のスニペットであり、基準日時以前の公式根拠としては未確認。",
+    "warnings": "['指定発表予定日2026年12月11日は入力条件として保持した。S10の具体的日付を示す原文は提示されておらず、公式日程確認済みとは扱わない。', '資料確認未了: schedule']"
+  },
+  "sourceHashes": {
+    "companies/7097/result.json": "e5689bba581e36f70dc76cd4b0edff8ff675d1c1e3ca423d5d3aacac5615a1ec",
+    "reports/7097.md": "05ce64244b07596054b42d80ff6bf69d1eeaef3b00c51c983bb4ca39f2290005",
+    "reports/7097_review.md": "abcdf6fd9da0ea9f6cc7204dcdb8a3ec3d1f8867645a234003ce30b332532027",
+    "companies/7097/quality_review.json": "d404c57e7659e48ff9341bd69111a5e6f7e412f6acca9aeb368f07894cd0f7af",
+    "companies/7097/independent_review.json": "a46c012fa47d7769910b920a65f98e747273cd09f752c9a9e244c8c131a2c260"
+  }
+}
