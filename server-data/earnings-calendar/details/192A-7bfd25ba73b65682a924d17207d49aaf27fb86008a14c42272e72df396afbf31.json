@@ -1,0 +1,2220 @@
+{
+  "id": "192A-7bfd25ba73b65682a924d17207d49aaf27fb86008a14c42272e72df396afbf31",
+  "code": "192A",
+  "companyName": "インテグループ",
+  "announcementDate": "2026-12-28",
+  "target": {
+    "fiscalYearEnd": "2027-05-31",
+    "quarter": 2
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "192A-generation-3538a6643a61d7c9 · 7bfd25ba",
+  "savedAt": "2026-11-28T14:17:11+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 490.0,
+  "operatingProfit": 103.00849999999997,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 192A インテグループ｜2027-05-31期 Q2単独\n品質状態：**検証未了**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 330.00 | 490.00 | 680.00 |\n| 営業利益 | -8.99 | 103.01 | 236.01 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 50.48 | 11.48% |  |\n| QnQ | 営業利益 | 27.33 | 36.12% |  |\n\n## 会社予想\nS01で2027年5月期通期予想の据え置きを確認。第2四半期単独予想は保存資料に記載されていない。guidance_recordsのlatest_confirmedは提示資料内の最新確認を意味し、その後の修正不存在を保証しない。\n\n## 市場コンセンサス\n未確認。提示された保存原文に市場コンセンサスの記載はない。\n\n## 独自予測・差引推計の区分\n成約組数と平均手数料を掛け合わせた条件付き独自予測。営業利益は直前四半期の原価・販管費を基礎に売上連動費と追加固定費を積み上げる。通期会社予想の四等分や会社修正見込みからの差引きは用いない。改善施策の効果は成約組数に包含し、追加売上として重ねない。費用内訳不足のため営業利益の確度は売上より低い。\n\n## 対象四半期の予測\n中心シナリオの売上は490.00、営業利益は103.01。案件残の厚みとマッチング改善により成約増を見込む一方、直前四半期の高めの平均単価は一部平常化すると置いた。前年同四半期の営業利益106.48に対しては、増収効果が費用増で相殺される。\n\n## 下振れと上振れ\n成約の期ずれと小型案件中心の構成が重なる弱気条件では、売上330.00、営業利益-8.99。案件進行改善が強く発現し直前並みの単価を維持する強気条件では、売上680.00、営業利益236.01。いずれも確定受注の検収表に基づく予測ではなく、実績数量・単価を参照した条件付きの幅である。\n\n## 費用推計の限界\nインセンティブと紹介料による売上連動費を織り込み、増員・支援部門強化の費用を別途加算した。賞与計上時期や案件紹介経路の構成が変われば営業利益は振れる。ブリッジの残差は開示表示額間の端数差であり、モデル上の一致が費用仮定の正確性を意味するものではない。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | -37.81 | 前年単価で数量差を評価 |\n| 案件構成・平均単価 | -85.93 | 数量との交差項を含む単価差 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | 0.00 | 直前四半期単価で数量差を評価 |\n| 案件構成・平均単価 | -109.52 | 小型中心への構成変化 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | -123.74 | 成約数量・平均単価の変化 |\n| 売上原価変化 | 33.70 | 直前原価に売上連動費と増員費を加えた条件付き推計との差 |\n| 販管費変化 | -25.43 | 直前販管費と支援部門等追加費用による推計との差 |\n| 残差（rounding） | 0.00 | 前年単独損益の表示額間の差。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | -109.52 | 成約数量・平均単価の変化 |\n| 売上原価変化 | 29.86 | 売上連動費変化と固定原価増加 |\n| 販管費変化 | -5.00 | 支援部門等の追加費用 |\n| 残差（rounding） | 0.00 | 直前四半期損益の表示額間の差。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | 75.62 | 案件残と進行改善に基づく数量仮定 |\n| 案件構成・平均単価 | -39.36 | 数量との交差項を含む単価差 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | 119.87 | 第2四半期への成約集中と進行改善 |\n| 案件構成・平均単価 | -69.40 | 直前四半期の高単価構成が一部平常化 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | 36.26 | 成約数量・平均単価の変化 |\n| 売上原価変化 | -14.30 | 売上連動費と固定原価増加を含む推計との差 |\n| 販管費変化 | -25.43 | 直前販管費と支援部門等追加費用による推計との差 |\n| 残差（rounding） | 0.00 | 前年単独損益の表示額間の差。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | 50.48 | 成約数量・平均単価の変化 |\n| 売上原価変化 | -18.14 | 売上連動費増加と固定原価増加 |\n| 販管費変化 | -5.00 | 支援部門等の追加費用 |\n| 残差（rounding） | 0.00 | 直前四半期損益の表示額間の差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | 189.06 | 案件進行改善が強く発現する数量仮定 |\n| 案件構成・平均単価 | 37.20 | 直前四半期並みの案件構成を維持 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 成約組数 | 239.74 | 第2四半期への集中と進行改善の強い発現 |\n| 案件構成・平均単価 | 0.73 | 直前四半期に近い単価条件 |\n| 残差（none） | 0.00 | 数量と平均単価の恒等分解。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | 226.26 | 成約数量・平均単価の変化 |\n| 売上原価変化 | -71.30 | 売上連動費と固定原価増加を含む推計との差 |\n| 販管費変化 | -25.43 | 直前販管費と支援部門等追加費用による推計との差 |\n| 残差（rounding） | 0.00 | 前年単独損益の表示額間の差。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化 | 240.48 | 成約数量・平均単価の変化 |\n| 売上原価変化 | -75.14 | 売上連動費増加と固定原価増加 |\n| 販管費変化 | -5.00 | 支援部門等の追加費用 |\n| 残差（rounding） | 0.00 | 直前四半期損益の表示額間の差。 |\n\n## エラー・未解決事項\n- S01公表後から基準日時までの追加開示・会社予想修正の有無は未確認。修正がないことを仮定して確定扱いしない。\n- S02 page 15、S08 page 18、S09 page 27の前期通期売上表示は、S07 page 7の損益計算書と不整合。該当グラフ値は採用せず、誤記か抽出誤りかは原本画像未確認。\n- 会社が表示する通期単価・生産性・平均人数は表示精度が限定され、その積が売上予想と完全一致しない。未表示の精密値を補完していない。\n- 保存テキストに短縮表示はないが、PDF原本画像との照合は実施していない。S10・S11は本文未提示。案件別情報については提示資料内での記載欠如と、会社全体での非開示を区別する。\n- 増減要因の合計不一致: base/yoy/operating_profit\n- 増減要因の合計不一致: base/yoy/revenue\n- 増減要因の合計不一致: bear/yoy/operating_profit\n- 増減要因の合計不一致: bear/yoy/revenue\n- 増減要因の合計不一致: bull/yoy/operating_profit\n- 増減要因の合計不一致: bull/yoy/revenue\n- 直前累計不足: 2025-11-30\n- 経常利益は対象期の受取利息の認識時期等、純利益は税効果・実効税率の対象期情報が不足するためnullとした。\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- additional_fixed_cogs: 直前四半期の売上原価を基礎に、S02 page 4・S07 page 5の採用抑制下の緩やかな増員を反映した追加固定原価。人数別給与の内訳は保存資料にないため、追加額を限定的に置く。\n- additional_sga: S02 pages 4,11の支援部門増強と給与増、S08 page 14の広告・採用教育費増加を踏まえ、直前四半期販管費へ追加。季節的な販管費減少は確実視しない。売上原価側のコンサル増員費とは分けて設定。\n- base_deals: S05 page 4の第2四半期への成約集中傾向、前年同四半期12組、S02 pages 4,9,10の案件残142件・期末コンサル50人・マッチング改善を踏まえ、小幅な成約増を置く。案件残と成約組数は集計範囲が異なるため、機械的な成約率は用いない。\n- base_price: S07 page 5の通期単価想定、S03・S04から求める前年同四半期単価、S01の直前四半期単価を参照。直前四半期の高単価構成が一部平常化する条件。料金改定を仮定せず案件規模・片側FA構成の差とする。\n- bear_deals: S02 pages 4,8,9の直前四半期成約組数と高水準の案件残を踏まえるが、成約長期化により第2四半期への集中が発現せず、直前四半期並みにとどまる条件。\n- bear_price: S09 pages 40,44の双方受領の小型仲介案件モデルを参考に、小型中心の構成を仮定。FAの片側報酬もあるため全案件共通の最低売上とは扱わない。\n- bull_deals: S02 pages 4,8,9の進行安定化と案件残を背景に、過去の第2四半期12～15組を上回る条件。前年第4四半期20組の実績範囲内だが、確定したクロージング予定ではない。\n- bull_price: S01 pages 4,6の直前四半期売上と成約組数から得られる平均単価に近い構成を維持する条件。特定の大型案件の存在や成約を仮定しない。\n- incremental_cogs_rate: S03・S04 page 6の前年第1四半期から第2四半期への売上原価増分を売上増分で除すと約29.6%。これを参考に30%を条件設定。S09 pages 21,40のインセンティブ・紹介料という変動費構造とも整合するが、公表された限界原価率ではない。\n- 固定給・インセンティブ・紹介料の四半期別内訳と対象期の賞与費用計上は提示資料に記載されていない。\n- 対象四半期の案件別クロージング日、フェーズ別案件数、報酬額は提示資料に記載されていない。\n- 数量と単価の上下限は統計的信頼区間ではなく、過去実績と事業説明を参照した条件設定である。\n- 進捗案件残数は買いFAのみの案件を除くため、全成約組数の母集団と一致しない。\n\n## 根拠・保存記録\n- S01 [2027年5月期 第1四半期決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/192A0/140120260929542483.pdf) / 公表 2026-09-30 / retrieved / SHA-256 `29fcc7dda34640027fa4445608b7160eb7b082d90fe9ce9693362b946a01dfe4`\n- S02 [2027年5月期 第1四半期 決算説明資料](https://www2.jpx.co.jp/disc/192A0/140120260929542484.pdf) / 公表 2026-09-30 / retrieved / SHA-256 `ec9728615987f7da24f4631e51a2c26100ee5679c9d5a491db416521b2b216d2`\n- S03 [2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）](https://www2.jpx.co.jp/disc/192A0/140120251225526768.pdf) / 公表 2025-12-26 / retrieved / SHA-256 `346df2f8193ec537f0a1935266b53552bbc1933106c0c8f841866ca1ae2145a0`\n- S04 [2026年5月期 第1四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250930/20250929564532.pdf) / 公表 2025-09-30 / retrieved / SHA-256 `0d1419aac69eeb2e80aca6e6a5041ccd3e0dea85d65d80ec1d55dbfc4c9fb6c9`\n- S05 [2026年5月期 第2四半期 決算説明資料](https://www2.jpx.co.jp/disc/192A0/140120251225526793.pdf) / 公表 2025-12-26 / retrieved / SHA-256 `c8798734534b819dd6a527addc21c7e99a5fcd6222dcd3c56ff0dac37004ea6f`\n- S06 [2026年5月期 第1四半期 決算説明資料](https://www2.jpx.co.jp/disc/192A0/140120250929564551.pdf) / 公表 2025-09-30 / retrieved / SHA-256 `91a16e1b4570fdb5ae55cf4fb154734cbbdb10c3b2e283853457d27106e4f9ba`\n- S07 [2026年5月期 決算短信〔日本基準〕（非連結）（2027年5月期会社予想を含む）](https://www2.jpx.co.jp/disc/192A0/140120260629583893.pdf) / 公表 2026-06-30 / retrieved / SHA-256 `03f726a52414a7f4a82aa826bfe0f0c09cb0b0edbbc7bfa86c319f5687fcc75d`\n- S08 [2026年5月期 通期 決算説明資料](https://www2.jpx.co.jp/disc/192A0/140120260629583896.pdf) / 公表 2026-06-30 / retrieved / SHA-256 `4051dd90f848a1380c9493836498fa104a9f483625b5b7336bb3595e0942e11f`\n- S09 [事業計画及び成長可能性に関する資料](https://www2.jpx.co.jp/disc/192A0/140120260629583898.pdf) / 公表 2026-06-30 / retrieved / SHA-256 `47f1f318c9324ba1d68f71213700d03c8670efc9d7884419bbf3a6f391e9092e`\n- S10 [株式情報](https://www.integroup.jp/ir/stock/overview/) / 公表  / unavailable / SHA-256 `なし`\n- S11 [IRカレンダー](https://www.integroup.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 入力の発表予定日2026-12-28は会社・取引所原文で確認できないためannouncement_dateをnullとした。S11の保存本文は未提示であり、公式日程の非開示とは断定しない。\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "192A",
+    "company_name": "インテグループ",
+    "announcement_date": "2026-12-28",
+    "target_period": "2027-05-31期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-05-31",
+      "quarter": 2,
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 330.0,
+        "operating_profit": -8.99150000000003,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 490.0,
+        "operating_profit": 103.00849999999997,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 680.0,
+        "operating_profit": 236.00849999999997,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 50.47500000000002,
+          "rate": 0.11483988396564479,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 27.334499999999963,
+          "rate": 0.3612138911647324,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "q1_revenue": 439.525,
+      "q1_op": 75.674,
+      "q1_cogs": 211.025,
+      "q1_sga": 152.824,
+      "q1_deals": 11.0,
+      "prior_q1_revenue": 168.5,
+      "prior_q1_op": -101.721,
+      "prior_q1_cogs": 130.384,
+      "prior_q1_sga": 139.837,
+      "prior_h1_revenue": 622.24,
+      "prior_h1_op": 4.76,
+      "prior_h1_cogs": 345.247,
+      "prior_h1_sga": 272.232,
+      "prior_q2_deals": 12.0,
+      "pipeline": 142.0,
+      "consultants": 50.0,
+      "guidance_revenue": 2093.0,
+      "guidance_op": 306.0,
+      "guidance_ordinary": 318.0,
+      "guidance_net": 218.0,
+      "bear_deals": 11.0,
+      "base_deals": 14.0,
+      "bull_deals": 17.0,
+      "bear_price": 30.0,
+      "base_price": 35.0,
+      "bull_price": 40.0,
+      "incremental_cogs_rate": 0.3,
+      "additional_fixed_cogs": 3.0,
+      "additional_sga": 5.0,
+      "prior_q2_revenue": 453.74,
+      "prior_q2_op": 106.48100000000001,
+      "prior_q2_cogs": 214.86300000000003,
+      "prior_q2_sga": 132.39500000000004,
+      "prior_q2_price": 37.81166666666667,
+      "q1_price": 39.95681818181818,
+      "historical_incremental_cogs_rate": 0.29616813911092427,
+      "forecast_sga": 157.824,
+      "bear_revenue": 330.0,
+      "bear_cogs": 181.16750000000002,
+      "bear_op": -8.99150000000003,
+      "base_revenue": 490.0,
+      "base_cogs": 229.16750000000002,
+      "base_op": 103.00849999999997,
+      "bull_revenue": 680.0,
+      "bull_cogs": 286.1675,
+      "bull_op": 236.00849999999997,
+      "yoy_rounding_residual": 0.0009999999999337206,
+      "qoq_rounding_residual": 0.0019999999999527063
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-05-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S04",
+          "S01"
+        ],
+        "locator": "S04 PDF pages 2,6; S01 PDF page 6",
+        "period_end": "2025-08-31",
+        "period_start": "2025-06-01",
+        "method": "1Q累計",
+        "revenue": 168.5,
+        "operating_profit": -101.721,
+        "ordinary_profit": -99.83,
+        "net_profit": -68.57
+      },
+      {
+        "fiscal_year_end": "2026-05-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2,6",
+        "period_end": "2025-11-30",
+        "period_start": "2025-09-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2027-05-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2,6",
+        "period_end": "2026-08-31",
+        "period_start": "2026-06-01",
+        "method": "1Q累計",
+        "revenue": 439.525,
+        "operating_profit": 75.674,
+        "ordinary_profit": 79.33,
+        "net_profit": 55.295
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(bear_deals-prior_q2_deals)*prior_q2_price",
+            "reason": "前年単価で数量差を評価",
+            "amount": -37.81166666666667
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "bear_deals*(bear_price-prior_q2_price)",
+            "reason": "数量との交差項を含む単価差",
+            "amount": -85.92833333333334
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(bear_deals-q1_deals)*q1_price",
+            "reason": "直前四半期単価で数量差を評価",
+            "amount": 0.0
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "bear_deals*(bear_price-q1_price)",
+            "reason": "小型中心への構成変化",
+            "amount": -109.52499999999996
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q2_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "bear_revenue-prior_q2_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": -123.74000000000001
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "prior_q2_cogs-bear_cogs",
+            "reason": "直前原価に売上連動費と増員費を加えた条件付き推計との差",
+            "amount": 33.69550000000001
+          },
+          {
+            "label": "販管費変化",
+            "formula": "prior_q2_sga-forecast_sga",
+            "reason": "直前販管費と支援部門等追加費用による推計との差",
+            "amount": -25.428999999999974
+          }
+        ],
+        "residual": 0.001,
+        "residual_formula": "yoy_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年単独損益の表示額間の差。",
+        "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "bear_revenue-q1_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": -109.52499999999998
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "q1_cogs-bear_cogs",
+            "reason": "売上連動費変化と固定原価増加",
+            "amount": 29.857499999999987
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q1_sga-forecast_sga",
+            "reason": "支援部門等の追加費用",
+            "amount": -5.0
+          }
+        ],
+        "residual": 0.002,
+        "residual_formula": "qoq_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "直前四半期損益の表示額間の差。",
+        "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(base_deals-prior_q2_deals)*prior_q2_price",
+            "reason": "案件残と進行改善に基づく数量仮定",
+            "amount": 75.62333333333333
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "base_deals*(base_price-prior_q2_price)",
+            "reason": "数量との交差項を含む単価差",
+            "amount": -39.363333333333344
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(base_deals-q1_deals)*q1_price",
+            "reason": "第2四半期への成約集中と進行改善",
+            "amount": 119.87045454545454
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "base_deals*(base_price-q1_price)",
+            "reason": "直前四半期の高単価構成が一部平常化",
+            "amount": -69.3954545454545
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q2_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "base_revenue-prior_q2_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": 36.25999999999999
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "prior_q2_cogs-base_cogs",
+            "reason": "売上連動費と固定原価増加を含む推計との差",
+            "amount": -14.30449999999999
+          },
+          {
+            "label": "販管費変化",
+            "formula": "prior_q2_sga-forecast_sga",
+            "reason": "直前販管費と支援部門等追加費用による推計との差",
+            "amount": -25.428999999999974
+          }
+        ],
+        "residual": 0.001,
+        "residual_formula": "yoy_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年単独損益の表示額間の差。",
+        "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "base_revenue-q1_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": 50.47500000000002
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "q1_cogs-base_cogs",
+            "reason": "売上連動費増加と固定原価増加",
+            "amount": -18.142500000000013
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q1_sga-forecast_sga",
+            "reason": "支援部門等の追加費用",
+            "amount": -5.0
+          }
+        ],
+        "residual": 0.002,
+        "residual_formula": "qoq_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "直前四半期損益の表示額間の差。",
+        "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(bull_deals-prior_q2_deals)*prior_q2_price",
+            "reason": "案件進行改善が強く発現する数量仮定",
+            "amount": 189.05833333333334
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "bull_deals*(bull_price-prior_q2_price)",
+            "reason": "直前四半期並みの案件構成を維持",
+            "amount": 37.201666666666654
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "成約組数",
+            "formula": "(bull_deals-q1_deals)*q1_price",
+            "reason": "第2四半期への集中と進行改善の強い発現",
+            "amount": 239.74090909090907
+          },
+          {
+            "label": "案件構成・平均単価",
+            "formula": "bull_deals*(bull_price-q1_price)",
+            "reason": "直前四半期に近い単価条件",
+            "amount": 0.7340909090909662
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prior_q2_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "bull_revenue-prior_q2_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": 226.26
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "prior_q2_cogs-bull_cogs",
+            "reason": "売上連動費と固定原価増加を含む推計との差",
+            "amount": -71.30449999999999
+          },
+          {
+            "label": "販管費変化",
+            "formula": "prior_q2_sga-forecast_sga",
+            "reason": "直前販管費と支援部門等追加費用による推計との差",
+            "amount": -25.428999999999974
+          }
+        ],
+        "residual": 0.001,
+        "residual_formula": "yoy_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前年単独損益の表示額間の差。",
+        "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+        "rounding_tolerance": 0.003
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変化",
+            "formula": "bull_revenue-q1_revenue",
+            "reason": "成約数量・平均単価の変化",
+            "amount": 240.47500000000002
+          },
+          {
+            "label": "売上原価変化",
+            "formula": "q1_cogs-bull_cogs",
+            "reason": "売上連動費増加と固定原価増加",
+            "amount": -75.14250000000001
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q1_sga-forecast_sga",
+            "reason": "支援部門等の追加費用",
+            "amount": -5.0
+          }
+        ],
+        "residual": 0.002,
+        "residual_formula": "qoq_rounding_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "直前四半期損益の表示額間の差。",
+        "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+        "rounding_tolerance": 0.003
+      }
+    ],
+    "issues": [
+      "S01公表後から基準日時までの追加開示・会社予想修正の有無は未確認。修正がないことを仮定して確定扱いしない。",
+      "S02 page 15、S08 page 18、S09 page 27の前期通期売上表示は、S07 page 7の損益計算書と不整合。該当グラフ値は採用せず、誤記か抽出誤りかは原本画像未確認。",
+      "会社が表示する通期単価・生産性・平均人数は表示精度が限定され、その積が売上予想と完全一致しない。未表示の精密値を補完していない。",
+      "保存テキストに短縮表示はないが、PDF原本画像との照合は実施していない。S10・S11は本文未提示。案件別情報については提示資料内での記載欠如と、会社全体での非開示を区別する。",
+      "増減要因の合計不一致: base/yoy/operating_profit",
+      "増減要因の合計不一致: base/yoy/revenue",
+      "増減要因の合計不一致: bear/yoy/operating_profit",
+      "増減要因の合計不一致: bear/yoy/revenue",
+      "増減要因の合計不一致: bull/yoy/operating_profit",
+      "増減要因の合計不一致: bull/yoy/revenue",
+      "直前累計不足: 2025-11-30",
+      "経常利益は対象期の受取利息の認識時期等、純利益は税効果・実効税率の対象期情報が不足するためnullとした。",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "入力の発表予定日2026-12-28は会社・取引所原文で確認できないためannouncement_dateをnullとした。S11の保存本文は未提示であり、公式日程の非開示とは断定しない。",
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -109.52499999999998,
+            "rate": -0.24918946590068822,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -84.66550000000004,
+            "rate": -1.118818880989508,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 50.47500000000002,
+            "rate": 0.11483988396564479,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 27.334499999999963,
+            "rate": 0.3612138911647324,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 240.47500000000002,
+            "rate": 0.5471247369319152,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 160.33449999999996,
+            "rate": 2.118752808097893,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": -123.74000000000001,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -109.52499999999998,
+        "explained_sum": -109.52499999999996,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -115.47349999999997,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年単独損益の表示額間の差。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -84.66550000000004,
+        "explained_sum": -84.66749999999999,
+        "residual": 0.002,
+        "residual_type": "rounding",
+        "difference": -4.729376612555569e-14,
+        "status": "passed",
+        "residual_explanation": "直前四半期損益の表示額間の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 36.25999999999999,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 50.47500000000002,
+        "explained_sum": 50.47500000000004,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.4210854715202004e-14,
+        "status": "passed",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": -3.473499999999973,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年単独損益の表示額間の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 27.334499999999963,
+        "explained_sum": 27.33250000000001,
+        "residual": 0.002,
+        "residual_type": "rounding",
+        "difference": -4.729376612555569e-14,
+        "status": "passed",
+        "residual_explanation": "直前四半期損益の表示額間の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": null,
+        "explained_sum": 226.26,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 240.47500000000002,
+        "explained_sum": 240.47500000000002,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "数量と平均単価の恒等分解。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": null,
+        "explained_sum": 129.52650000000003,
+        "residual": 0.001,
+        "residual_type": "rounding",
+        "difference": null,
+        "status": "unavailable",
+        "residual_explanation": "前年単独損益の表示額間の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 160.33449999999996,
+        "explained_sum": 160.3325,
+        "residual": 0.002,
+        "residual_type": "rounding",
+        "difference": -4.729376612555569e-14,
+        "status": "passed",
+        "residual_explanation": "直前四半期損益の表示額間の差。"
+      }
+    ],
+    "conditions": [
+      "additional_fixed_cogs: 直前四半期の売上原価を基礎に、S02 page 4・S07 page 5の採用抑制下の緩やかな増員を反映した追加固定原価。人数別給与の内訳は保存資料にないため、追加額を限定的に置く。",
+      "additional_sga: S02 pages 4,11の支援部門増強と給与増、S08 page 14の広告・採用教育費増加を踏まえ、直前四半期販管費へ追加。季節的な販管費減少は確実視しない。売上原価側のコンサル増員費とは分けて設定。",
+      "base_deals: S05 page 4の第2四半期への成約集中傾向、前年同四半期12組、S02 pages 4,9,10の案件残142件・期末コンサル50人・マッチング改善を踏まえ、小幅な成約増を置く。案件残と成約組数は集計範囲が異なるため、機械的な成約率は用いない。",
+      "base_price: S07 page 5の通期単価想定、S03・S04から求める前年同四半期単価、S01の直前四半期単価を参照。直前四半期の高単価構成が一部平常化する条件。料金改定を仮定せず案件規模・片側FA構成の差とする。",
+      "bear_deals: S02 pages 4,8,9の直前四半期成約組数と高水準の案件残を踏まえるが、成約長期化により第2四半期への集中が発現せず、直前四半期並みにとどまる条件。",
+      "bear_price: S09 pages 40,44の双方受領の小型仲介案件モデルを参考に、小型中心の構成を仮定。FAの片側報酬もあるため全案件共通の最低売上とは扱わない。",
+      "bull_deals: S02 pages 4,8,9の進行安定化と案件残を背景に、過去の第2四半期12～15組を上回る条件。前年第4四半期20組の実績範囲内だが、確定したクロージング予定ではない。",
+      "bull_price: S01 pages 4,6の直前四半期売上と成約組数から得られる平均単価に近い構成を維持する条件。特定の大型案件の存在や成約を仮定しない。",
+      "incremental_cogs_rate: S03・S04 page 6の前年第1四半期から第2四半期への売上原価増分を売上増分で除すと約29.6%。これを参考に30%を条件設定。S09 pages 21,40のインセンティブ・紹介料という変動費構造とも整合するが、公表された限界原価率ではない。",
+      "固定給・インセンティブ・紹介料の四半期別内訳と対象期の賞与費用計上は提示資料に記載されていない。",
+      "対象四半期の案件別クロージング日、フェーズ別案件数、報酬額は提示資料に記載されていない。",
+      "数量と単価の上下限は統計的信頼区間ではなく、過去実績と事業説明を参照した条件設定である。",
+      "進捗案件残数は買いFAのみの案件を除くため、全成約組数の母集団と一致しない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年5月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120260929542483.pdf",
+        "published_at": "2026-09-30",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120260929542483.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S01.txt",
+        "sha256": "29fcc7dda34640027fa4445608b7160eb7b082d90fe9ce9693362b946a01dfe4",
+        "text_sha256": "c66f5cbbfaac81115056787a879b4cdb13c4bd737d5bdf9889c5aa05d04d497b",
+        "retrieved_at": "2026-11-28T14:14:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5854,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年5月期 第1四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120260929542484.pdf",
+        "published_at": "2026-09-30",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120260929542484.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S02.txt",
+        "sha256": "ec9728615987f7da24f4631e51a2c26100ee5679c9d5a491db416521b2b216d2",
+        "text_sha256": "57c84c3f9ffd18013d17963df840f2b9b2f700ebe1c51d5b4105d943a385be2a",
+        "retrieved_at": "2026-11-28T14:14:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11488,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120251225526768.pdf",
+        "published_at": "2025-12-26",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120251225526768.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S03.txt",
+        "sha256": "346df2f8193ec537f0a1935266b53552bbc1933106c0c8f841866ca1ae2145a0",
+        "text_sha256": "3cd0654864e37feb2760f7539d06c31fbf5208c0db4badf69506123cc4a7df26",
+        "retrieved_at": "2026-11-28T14:14:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 6604,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年5月期 第1四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250930/20250929564532.pdf",
+        "published_at": "2025-09-30",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250930/20250929564532.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S04.txt",
+        "sha256": "0d1419aac69eeb2e80aca6e6a5041ccd3e0dea85d65d80ec1d55dbfc4c9fb6c9",
+        "text_sha256": "0c61bdc98ddc97bf491b83695c10720b9dda0a89a6e59c9d95aeceba3e44ec6d",
+        "retrieved_at": "2026-11-28T14:14:06+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 5888,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年5月期 第2四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120251225526793.pdf",
+        "published_at": "2025-12-26",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120251225526793.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S05.txt",
+        "sha256": "c8798734534b819dd6a527addc21c7e99a5fcd6222dcd3c56ff0dac37004ea6f",
+        "text_sha256": "a97d7b88018fe3628bb78b86df5d04227ea40906995221c7acad97be606a1b6b",
+        "retrieved_at": "2026-11-28T14:14:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10830,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年5月期 第1四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120250929564551.pdf",
+        "published_at": "2025-09-30",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120250929564551.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S06.txt",
+        "sha256": "91a16e1b4570fdb5ae55cf4fb154734cbbdb10c3b2e283853457d27106e4f9ba",
+        "text_sha256": "a02ff38930e423e9f162f6dbb545674560280be1ec83206199f715d718c6d7cf",
+        "retrieved_at": "2026-11-28T14:14:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10749,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年5月期 決算短信〔日本基準〕（非連結）（2027年5月期会社予想を含む）",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120260629583893.pdf",
+        "published_at": "2026-06-30",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120260629583893.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S07.txt",
+        "sha256": "03f726a52414a7f4a82aa826bfe0f0c09cb0b0edbbc7bfa86c319f5687fcc75d",
+        "text_sha256": "3d26aaa4a303a5723c6140268510eb88ec0b814629d4e90e74f9518d24ad57c8",
+        "retrieved_at": "2026-11-28T14:14:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11155,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年5月期 通期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120260629583896.pdf",
+        "published_at": "2026-06-30",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120260629583896.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S08.txt",
+        "sha256": "4051dd90f848a1380c9493836498fa104a9f483625b5b7336bb3595e0942e11f",
+        "text_sha256": "85261af28d884438e7c666d3287934f074d69e39f96fe7f3e26da442cc977ad5",
+        "retrieved_at": "2026-11-28T14:14:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13595,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "事業計画及び成長可能性に関する資料",
+        "url": "https://www2.jpx.co.jp/disc/192A0/140120260629583898.pdf",
+        "published_at": "2026-06-30",
+        "category": "kpi",
+        "final_url": "https://www2.jpx.co.jp/disc/192A0/140120260629583898.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\192A\\sources\\S09.txt",
+        "sha256": "47f1f318c9324ba1d68f71213700d03c8670efc9d7884419bbf3a6f391e9092e",
+        "text_sha256": "cabfc0ef6b4e6eda27814ff5523bf948fb329f7c9787df3d57aad59afd24dae5",
+        "retrieved_at": "2026-11-28T14:14:10+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 19284,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "株式情報",
+        "url": "https://www.integroup.jp/ir/stock/overview/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T14:14:10+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "IRカレンダー",
+        "url": "https://www.integroup.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T14:14:10+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "192A",
+      "company_name": "インテグループ",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-05-31",
+        "quarter": 2,
+        "start": "2026-09-01",
+        "end": "2026-11-30",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "q1_revenue",
+          "value": 439.525,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6 当第1四半期損益計算書"
+        },
+        {
+          "id": "q1_op",
+          "value": 75.674,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "q1_cogs",
+          "value": 211.025,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "q1_sga",
+          "value": 152.824,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "q1_deals",
+          "value": 11,
+          "kind": "fact",
+          "unit": "組",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4"
+        },
+        {
+          "id": "prior_q1_revenue",
+          "value": 168.5,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_q1_op",
+          "value": -101.721,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_q1_cogs",
+          "value": 130.384,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_q1_sga",
+          "value": 139.837,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_h1_revenue",
+          "value": 622.24,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_h1_op",
+          "value": 4.76,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_h1_cogs",
+          "value": 345.247,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_h1_sga",
+          "value": 272.232,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 6"
+        },
+        {
+          "id": "prior_q2_deals",
+          "value": 12,
+          "kind": "fact",
+          "unit": "組",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8 四半期推移"
+        },
+        {
+          "id": "pipeline",
+          "value": 142,
+          "kind": "fact",
+          "unit": "件",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 6,9。買いFAのみの案件を除く"
+        },
+        {
+          "id": "consultants",
+          "value": 50,
+          "kind": "fact",
+          "unit": "人",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4 第1四半期末"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 2093,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 306,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 318,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 218,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 通期業績予想"
+        },
+        {
+          "id": "bear_deals",
+          "value": 11,
+          "kind": "assumption",
+          "unit": "組",
+          "rationale": "S02 pages 4,8,9の直前四半期成約組数と高水準の案件残を踏まえるが、成約長期化により第2四半期への集中が発現せず、直前四半期並みにとどまる条件。",
+          "sensitivity": "成約が1組増減すると売上はbear_price、営業利益はbear_priceから同売上に対応する増分原価を控除した額だけ増減。",
+          "material": true
+        },
+        {
+          "id": "base_deals",
+          "value": 14,
+          "kind": "assumption",
+          "unit": "組",
+          "rationale": "S05 page 4の第2四半期への成約集中傾向、前年同四半期12組、S02 pages 4,9,10の案件残142件・期末コンサル50人・マッチング改善を踏まえ、小幅な成約増を置く。案件残と成約組数は集計範囲が異なるため、機械的な成約率は用いない。",
+          "sensitivity": "1組の翌四半期へのずれで売上35百万円減少。増分原価率30%の条件では営業利益24.5百万円減少。",
+          "material": true
+        },
+        {
+          "id": "bull_deals",
+          "value": 17,
+          "kind": "assumption",
+          "unit": "組",
+          "rationale": "S02 pages 4,8,9の進行安定化と案件残を背景に、過去の第2四半期12～15組を上回る条件。前年第4四半期20組の実績範囲内だが、確定したクロージング予定ではない。",
+          "sensitivity": "1組の増減で売上40百万円、増分原価控除後の営業利益28百万円が増減。",
+          "material": true
+        },
+        {
+          "id": "bear_price",
+          "value": 30,
+          "kind": "assumption",
+          "unit": "百万円/組",
+          "rationale": "S09 pages 40,44の双方受領の小型仲介案件モデルを参考に、小型中心の構成を仮定。FAの片側報酬もあるため全案件共通の最低売上とは扱わない。",
+          "sensitivity": "平均単価が1百万円変化すると売上11百万円、営業利益7.7百万円が変化。",
+          "material": true
+        },
+        {
+          "id": "base_price",
+          "value": 35,
+          "kind": "assumption",
+          "unit": "百万円/組",
+          "rationale": "S07 page 5の通期単価想定、S03・S04から求める前年同四半期単価、S01の直前四半期単価を参照。直前四半期の高単価構成が一部平常化する条件。料金改定を仮定せず案件規模・片側FA構成の差とする。",
+          "sensitivity": "平均単価が1百万円変化すると売上14百万円、営業利益9.8百万円が変化。",
+          "material": true
+        },
+        {
+          "id": "bull_price",
+          "value": 40,
+          "kind": "assumption",
+          "unit": "百万円/組",
+          "rationale": "S01 pages 4,6の直前四半期売上と成約組数から得られる平均単価に近い構成を維持する条件。特定の大型案件の存在や成約を仮定しない。",
+          "sensitivity": "平均単価が1百万円変化すると売上17百万円、営業利益11.9百万円が変化。",
+          "material": true
+        },
+        {
+          "id": "incremental_cogs_rate",
+          "value": 0.3,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "S03・S04 page 6の前年第1四半期から第2四半期への売上原価増分を売上増分で除すと約29.6%。これを参考に30%を条件設定。S09 pages 21,40のインセンティブ・紹介料という変動費構造とも整合するが、公表された限界原価率ではない。",
+          "sensitivity": "25～35%で再評価可能。中心シナリオでは5ポイント上昇で営業利益2.52375百万円減少。売上減少時にも対称的に費用が減るという仮定があり、賞与計上時期により外れる。",
+          "material": true
+        },
+        {
+          "id": "additional_fixed_cogs",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "直前四半期の売上原価を基礎に、S02 page 4・S07 page 5の採用抑制下の緩やかな増員を反映した追加固定原価。人数別給与の内訳は保存資料にないため、追加額を限定的に置く。",
+          "sensitivity": "0～6百万円の範囲で変更すると各シナリオの営業利益は中心設定比でプラス3～マイナス3百万円。",
+          "material": true
+        },
+        {
+          "id": "additional_sga",
+          "value": 5,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S02 pages 4,11の支援部門増強と給与増、S08 page 14の広告・採用教育費増加を踏まえ、直前四半期販管費へ追加。季節的な販管費減少は確実視しない。売上原価側のコンサル増員費とは分けて設定。",
+          "sensitivity": "0～10百万円の追加なら営業利益は中心設定比でプラス5～マイナス5百万円。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q2_revenue",
+          "formula": "prior_h1_revenue-prior_q1_revenue"
+        },
+        {
+          "id": "prior_q2_op",
+          "formula": "prior_h1_op-prior_q1_op"
+        },
+        {
+          "id": "prior_q2_cogs",
+          "formula": "prior_h1_cogs-prior_q1_cogs"
+        },
+        {
+          "id": "prior_q2_sga",
+          "formula": "prior_h1_sga-prior_q1_sga"
+        },
+        {
+          "id": "prior_q2_price",
+          "formula": "prior_q2_revenue/prior_q2_deals"
+        },
+        {
+          "id": "q1_price",
+          "formula": "q1_revenue/q1_deals"
+        },
+        {
+          "id": "historical_incremental_cogs_rate",
+          "formula": "(prior_q2_cogs-prior_q1_cogs)/(prior_q2_revenue-prior_q1_revenue)"
+        },
+        {
+          "id": "forecast_sga",
+          "formula": "q1_sga+additional_sga"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_deals*bear_price"
+        },
+        {
+          "id": "bear_cogs",
+          "formula": "q1_cogs+(bear_revenue-q1_revenue)*incremental_cogs_rate+additional_fixed_cogs"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cogs-forecast_sga"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_deals*base_price"
+        },
+        {
+          "id": "base_cogs",
+          "formula": "q1_cogs+(base_revenue-q1_revenue)*incremental_cogs_rate+additional_fixed_cogs"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cogs-forecast_sga"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_deals*bull_price"
+        },
+        {
+          "id": "bull_cogs",
+          "formula": "q1_cogs+(bull_revenue-q1_revenue)*incremental_cogs_rate+additional_fixed_cogs"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cogs-forecast_sga"
+        },
+        {
+          "id": "yoy_rounding_residual",
+          "formula": "prior_q2_revenue-prior_q2_cogs-prior_q2_sga-prior_q2_op"
+        },
+        {
+          "id": "qoq_rounding_residual",
+          "formula": "q1_revenue-q1_cogs-q1_sga-q1_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "M&A仲介・アドバイザリー",
+              "revenue": "bear_revenue",
+              "operating_profit": "bear_op"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "M&A仲介・アドバイザリー",
+              "revenue": "base_revenue",
+              "operating_profit": "base_op"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "M&A仲介・アドバイザリー",
+              "revenue": "bull_revenue",
+              "operating_profit": "bull_op"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-05-31",
+          "quarter": 1,
+          "period_start": "2025-06-01",
+          "period_end": "2025-08-31",
+          "revenue": 168.5,
+          "operating_profit": -101.721,
+          "ordinary_profit": -99.83,
+          "net_profit": -68.57,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示版。S04・S03で会計方針変更・修正再表示なし。S01の前年比較値とも一致",
+          "source_ids": [
+            "S04",
+            "S01"
+          ],
+          "locator": "S04 PDF pages 2,6; S01 PDF page 6"
+        },
+        {
+          "fiscal_year_end": "2026-05-31",
+          "quarter": 2,
+          "period_start": "2025-06-01",
+          "period_end": "2025-11-30",
+          "revenue": 622.24,
+          "operating_profit": 4.76,
+          "ordinary_profit": 7.701,
+          "net_profit": 5.025,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示版。S04・S03で会計方針変更・修正再表示なし。前年第1四半期と同一会計版",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2,6"
+        },
+        {
+          "fiscal_year_end": "2027-05-31",
+          "quarter": 1,
+          "period_start": "2026-06-01",
+          "period_end": "2026-08-31",
+          "revenue": 439.525,
+          "operating_profit": 75.674,
+          "ordinary_profit": 79.33,
+          "net_profit": 55.295,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "当初開示版。会計方針変更・修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2,6"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "成約組数とクロージング時期",
+          "mechanism": "完全成功報酬制のため案件の進行だけでは売上にならず、期内成約が必要。案件残とマッチング改善、第2四半期への成約集中傾向を数量仮定へ反映する。",
+          "source_ids": [
+            "S02",
+            "S05",
+            "S09"
+          ],
+          "locator": "S02 PDF pages 4,8,9; S05 PDF page 4; S09 PDF pages 40,41",
+          "calculation_ids": [
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "案件別の成約予定日・フェーズ別件数は保存資料に記載なし。案件残からの直接転換率は設定しない。"
+        },
+        {
+          "name": "案件規模と片側FA構成",
+          "mechanism": "案件規模、双方仲介か片側FAかにより平均受取手数料が変動。単価シナリオへ包含し、別建ての大型案件上乗せは行わない。",
+          "source_ids": [
+            "S02",
+            "S08",
+            "S09"
+          ],
+          "locator": "S02 PDF pages 22,24,26; S08 PDF page 4; S09 PDF page 40",
+          "calculation_ids": [
+            "prior_q2_price",
+            "q1_price",
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "対象四半期の中大型案件数とFA構成比は保存資料に記載なし。"
+        },
+        {
+          "name": "人件費・紹介料・支援部門費用",
+          "mechanism": "直前四半期原価に売上連動の費用変化と固定費増分を加算し、販管費は別途積み上げる。利益を目標にした費用調整は行わない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S09"
+          ],
+          "locator": "S01・S03・S04 PDF page 6; S02 PDF pages 4,11; S09 PDF pages 21,40",
+          "calculation_ids": [
+            "historical_incremental_cogs_rate",
+            "forecast_sga",
+            "bear_cogs",
+            "base_cogs",
+            "bull_cogs",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "固定給・インセンティブ・紹介料の四半期別内訳は保存資料に記載なし。費用率と追加固定費は感応度付き独自仮定。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(bear_deals-prior_q2_deals)*prior_q2_price",
+              "reason": "前年単価で数量差を評価"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "bear_deals*(bear_price-prior_q2_price)",
+              "reason": "数量との交差項を含む単価差"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(bear_deals-q1_deals)*q1_price",
+              "reason": "直前四半期単価で数量差を評価"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "bear_deals*(bear_price-q1_price)",
+              "reason": "小型中心への構成変化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "bear_revenue-prior_q2_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "prior_q2_cogs-bear_cogs",
+              "reason": "直前原価に売上連動費と増員費を加えた条件付き推計との差"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "prior_q2_sga-forecast_sga",
+              "reason": "直前販管費と支援部門等追加費用による推計との差"
+            }
+          ],
+          "residual": 0.001,
+          "residual_formula": "yoy_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年単独損益の表示額間の差。",
+          "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "bear_revenue-q1_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "q1_cogs-bear_cogs",
+              "reason": "売上連動費変化と固定原価増加"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q1_sga-forecast_sga",
+              "reason": "支援部門等の追加費用"
+            }
+          ],
+          "residual": 0.002,
+          "residual_formula": "qoq_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直前四半期損益の表示額間の差。",
+          "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(base_deals-prior_q2_deals)*prior_q2_price",
+              "reason": "案件残と進行改善に基づく数量仮定"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "base_deals*(base_price-prior_q2_price)",
+              "reason": "数量との交差項を含む単価差"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(base_deals-q1_deals)*q1_price",
+              "reason": "第2四半期への成約集中と進行改善"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "base_deals*(base_price-q1_price)",
+              "reason": "直前四半期の高単価構成が一部平常化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "base_revenue-prior_q2_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "prior_q2_cogs-base_cogs",
+              "reason": "売上連動費と固定原価増加を含む推計との差"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "prior_q2_sga-forecast_sga",
+              "reason": "直前販管費と支援部門等追加費用による推計との差"
+            }
+          ],
+          "residual": 0.001,
+          "residual_formula": "yoy_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年単独損益の表示額間の差。",
+          "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "base_revenue-q1_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "q1_cogs-base_cogs",
+              "reason": "売上連動費増加と固定原価増加"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q1_sga-forecast_sga",
+              "reason": "支援部門等の追加費用"
+            }
+          ],
+          "residual": 0.002,
+          "residual_formula": "qoq_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直前四半期損益の表示額間の差。",
+          "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(bull_deals-prior_q2_deals)*prior_q2_price",
+              "reason": "案件進行改善が強く発現する数量仮定"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "bull_deals*(bull_price-prior_q2_price)",
+              "reason": "直前四半期並みの案件構成を維持"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "成約組数",
+              "formula": "(bull_deals-q1_deals)*q1_price",
+              "reason": "第2四半期への集中と進行改善の強い発現"
+            },
+            {
+              "label": "案件構成・平均単価",
+              "formula": "bull_deals*(bull_price-q1_price)",
+              "reason": "直前四半期に近い単価条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "数量と平均単価の恒等分解。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "bull_revenue-prior_q2_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "prior_q2_cogs-bull_cogs",
+              "reason": "売上連動費と固定原価増加を含む推計との差"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "prior_q2_sga-forecast_sga",
+              "reason": "直前販管費と支援部門等追加費用による推計との差"
+            }
+          ],
+          "residual": 0.001,
+          "residual_formula": "yoy_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前年単独損益の表示額間の差。",
+          "rounding_evidence": "S03・S04 PDF page 6の千円表示を累計差引すると、売上－原価－販管費と営業利益に0.001百万円の差がある。",
+          "rounding_tolerance": 0.003
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変化",
+              "formula": "bull_revenue-q1_revenue",
+              "reason": "成約数量・平均単価の変化"
+            },
+            {
+              "label": "売上原価変化",
+              "formula": "q1_cogs-bull_cogs",
+              "reason": "売上連動費増加と固定原価増加"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q1_sga-forecast_sga",
+              "reason": "支援部門等の追加費用"
+            }
+          ],
+          "residual": 0.002,
+          "residual_formula": "qoq_rounding_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "直前四半期損益の表示額間の差。",
+          "rounding_evidence": "S01 PDF page 6の千円表示では、売上－原価－販管費と営業利益に0.002百万円の差がある。",
+          "rounding_tolerance": 0.003
+        }
+      ],
+      "company_guidance": "S01で2027年5月期通期予想の据え置きを確認。第2四半期単独予想は保存資料に記載されていない。guidance_recordsのlatest_confirmedは提示資料内の最新確認を意味し、その後の修正不存在を保証しない。",
+      "consensus": "未確認。提示された保存原文に市場コンセンサスの記載はない。",
+      "independent_forecast": "成約組数と平均手数料を掛け合わせた条件付き独自予測。営業利益は直前四半期の原価・販管費を基礎に売上連動費と追加固定費を積み上げる。通期会社予想の四等分や会社修正見込みからの差引きは用いない。改善施策の効果は成約組数に包含し、追加売上として重ねない。費用内訳不足のため営業利益の確度は売上より低い。",
+      "narrative": [
+        {
+          "heading": "対象四半期の予測",
+          "text": "中心シナリオの売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。案件残の厚みとマッチング改善により成約増を見込む一方、直前四半期の高めの平均単価は一部平常化すると置いた。前年同四半期の営業利益{{value:prior_q2_op}}に対しては、増収効果が費用増で相殺される。"
+        },
+        {
+          "heading": "下振れと上振れ",
+          "text": "成約の期ずれと小型案件中心の構成が重なる弱気条件では、売上{{value:bear_revenue}}、営業利益{{value:bear_op}}。案件進行改善が強く発現し直前並みの単価を維持する強気条件では、売上{{value:bull_revenue}}、営業利益{{value:bull_op}}。いずれも確定受注の検収表に基づく予測ではなく、実績数量・単価を参照した条件付きの幅である。"
+        },
+        {
+          "heading": "費用推計の限界",
+          "text": "インセンティブと紹介料による売上連動費を織り込み、増員・支援部門強化の費用を別途加算した。賞与計上時期や案件紹介経路の構成が変われば営業利益は振れる。ブリッジの残差は開示表示額間の端数差であり、モデル上の一致が費用仮定の正確性を意味するものではない。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象四半期の案件別クロージング日、フェーズ別案件数、報酬額は提示資料に記載されていない。",
+        "進捗案件残数は買いFAのみの案件を除くため、全成約組数の母集団と一致しない。",
+        "固定給・インセンティブ・紹介料の四半期別内訳と対象期の賞与費用計上は提示資料に記載されていない。",
+        "数量と単価の上下限は統計的信頼区間ではなく、過去実績と事業説明を参照した条件設定である。"
+      ],
+      "material_unresolved": [
+        "入力の発表予定日2026-12-28は会社・取引所原文で確認できないためannouncement_dateをnullとした。S11の保存本文は未提示であり、公式日程の非開示とは断定しない。",
+        "S01公表後から基準日時までの追加開示・会社予想修正の有無は未確認。修正がないことを仮定して確定扱いしない。",
+        "S02 page 15、S08 page 18、S09 page 27の前期通期売上表示は、S07 page 7の損益計算書と不整合。該当グラフ値は採用せず、誤記か抽出誤りかは原本画像未確認。",
+        "会社が表示する通期単価・生産性・平均人数は表示精度が限定され、その積が売上予想と完全一致しない。未表示の精密値を補完していない。",
+        "経常利益は対象期の受取利息の認識時期等、純利益は税効果・実効税率の対象期情報が不足するためnullとした。",
+        "保存テキストに短縮表示はないが、PDF原本画像との照合は実施していない。S10・S11は本文未提示。案件別情報については提示資料内での記載欠如と、会社全体での非開示を区別する。"
+      ],
+      "guidance_records": [
+        {
+          "id": "guidance_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-30",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1,4 通期予想・変更なし"
+        },
+        {
+          "id": "guidance_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-30",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1,4 通期予想・変更なし"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-30",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1,4 通期予想・変更なし"
+        },
+        {
+          "id": "guidance_fy_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-30",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1,4 通期予想・変更なし"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "S01公表後から基準日時までの追加開示・会社予想修正の有無は未確認。修正がないことを仮定して確定扱いしない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "S02 page 15、S08 page 18、S09 page 27の前期通期売上表示は、S07 page 7の損益計算書と不整合。該当グラフ値は採用せず、誤記か抽出誤りかは原本画像未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "会社が表示する通期単価・生産性・平均人数は表示精度が限定され、その積が売上予想と完全一致しない。未表示の精密値を補完していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "保存テキストに短縮表示はないが、PDF原本画像との照合は実施していない。S10・S11は本文未提示。案件別情報については提示資料内での記載欠如と、会社全体での非開示を区別する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: base/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bear/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/operating_profit",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "増減要因の合計不一致: bull/yoy/revenue",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "直前累計不足: 2025-11-30",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "経常利益は対象期の受取利息の認識時期等、純利益は税効果・実効税率の対象期情報が不足するためnullとした。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "additional_fixed_cogs: 直前四半期の売上原価を基礎に、S02 page 4・S07 page 5の採用抑制下の緩やかな増員を反映した追加固定原価。人数別給与の内訳は保存資料にないため、追加額を限定的に置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "additional_sga: S02 pages 4,11の支援部門増強と給与増、S08 page 14の広告・採用教育費増加を踏まえ、直前四半期販管費へ追加。季節的な販管費減少は確実視しない。売上原価側のコンサル増員費とは分けて設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "base_deals: S05 page 4の第2四半期への成約集中傾向、前年同四半期12組、S02 pages 4,9,10の案件残142件・期末コンサル50人・マッチング改善を踏まえ、小幅な成約増を置く。案件残と成約組数は集計範囲が異なるため、機械的な成約率は用いない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "base_price: S07 page 5の通期単価想定、S03・S04から求める前年同四半期単価、S01の直前四半期単価を参照。直前四半期の高単価構成が一部平常化する条件。料金改定を仮定せず案件規模・片側FA構成の差とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "bear_deals: S02 pages 4,8,9の直前四半期成約組数と高水準の案件残を踏まえるが、成約長期化により第2四半期への集中が発現せず、直前四半期並みにとどまる条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "bear_price: S09 pages 40,44の双方受領の小型仲介案件モデルを参考に、小型中心の構成を仮定。FAの片側報酬もあるため全案件共通の最低売上とは扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "bull_deals: S02 pages 4,8,9の進行安定化と案件残を背景に、過去の第2四半期12～15組を上回る条件。前年第4四半期20組の実績範囲内だが、確定したクロージング予定ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "bull_price: S01 pages 4,6の直前四半期売上と成約組数から得られる平均単価に近い構成を維持する条件。特定の大型案件の存在や成約を仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "incremental_cogs_rate: S03・S04 page 6の前年第1四半期から第2四半期への売上原価増分を売上増分で除すと約29.6%。これを参考に30%を条件設定。S09 pages 21,40のインセンティブ・紹介料という変動費構造とも整合するが、公表された限界原価率ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "固定給・インセンティブ・紹介料の四半期別内訳と対象期の賞与費用計上は提示資料に記載されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "対象四半期の案件別クロージング日、フェーズ別案件数、報酬額は提示資料に記載されていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "数量と単価の上下限は統計的信頼区間ではなく、過去実績と事業説明を参照した条件設定である。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "192A",
+      "company_name": "インテグループ",
+      "kind": "condition",
+      "message": "進捗案件残数は買いFAのみの案件を除くため、全成約組数の母集団と一致しない。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/192A/result.json": "3538a6643a61d7c9e0cc9ebca59e681ae14c05a8faed02a7717fbd881086252b",
+    "reports/192A.md": "b9f6ee1c7aaf207a9a8e3c4b4bcc11b405fb2bcfd4b08ee9f2f49f4c1c05c94e"
+  }
+}

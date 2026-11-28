@@ -1,0 +1,2733 @@
+{
+  "id": "4825-aee6735570bf1d5b90d4fabcc07e21b3e42c2ea5eceb6113957eef510713f40b",
+  "code": "4825",
+  "companyName": "株式会社ウェザーニューズ",
+  "announcementDate": "2026-12-28",
+  "target": {
+    "fiscalYearEnd": "2027-05-31",
+    "quarter": 2
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "4825-generation-841eb3c3edc192ff · aee67355",
+  "savedAt": "2026-11-28T14:24:07+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 6376.449,
+  "operatingProfit": 1044.8014999999987,
+  "revenueYoY": {
+    "rate": 0.040756558459109755,
+    "label": "+4.1%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.22956048583043823,
+    "label": "-23.0%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 4825 株式会社ウェザーニューズ｜2027-05-31期 Q2単独\n品質状態：**検証未了**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 6,106.45 | 6,376.45 | 6,616.45 |\n| 営業利益 | 647.21 | 1,044.80 | 1,418.40 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 249.70 | 4.08% |  |\n| YoY | 営業利益 | -311.31 | -22.96% |  |\n| QnQ | 売上高 | 38.00 | 0.60% |  |\n| QnQ | 営業利益 | 152.00 | 17.02% |  |\n\n## 会社予想\nS01の通期連結予想を保存。S07でも据置を確認した。対象Q単独の会社予想は提示本文では確認できない。latest_confirmedは提示資料内での最新確認を意味し、その後の修正開示の網羅性は未確認。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n前Qの新区分ドメイン売上を基盤に、既存サービス、契約導入、価格改定を内包したInternet純増減、フロー検収を個別に仮定した条件付き予測。営業費用は前Q実績に限界費用、前年費用変動の再現率、追加投資を加えて算定した。会社通期予想の四等分・差引き推計ではなく、会社修正見込みも使用していない。数量と単価の完全積上げではなく、予測確度は低い。\n\n## 対象Qの条件付き予測\n中心の売上は6,376.45、営業利益は1,044.80。弱気では売上6,106.45、営業利益647.21、強気では売上6,616.45、営業利益1,418.40となる。契約基盤の積み上がりを見込む一方、広告収入の天候依存と成長投資の執行が利益レンジを左右する。\n\n## 企業固有の増減要因\nLandのコアプロダクト導入とSkyの機体・顧客拡大が中心となる。Seaの大型サービス刷新は下期の施策として対象Qに先取りしない。Internetでは自社広告・サブスク成長とAndroid価格改定を評価するが、キャリア向け減収と前Qの強い天候需要の反動を相殺要因とする。価格改定の効果はInternetの仮定に含め、別加算しない。\n\n## 利益と比較上の留意点\n前年同Qの売上は6,126.74、営業利益は1,356.11。前年のQ1からQ2への総営業費用変動は-323.19で、中心ではこの半分が再現すると仮定した。人員の原価部門から営業部門への再配置は費用総額の削減ではなく、粗利率改善をそのまま営業増益に換算しない。YoYブリッジでは前年同Qから当年前Qへの実績差を未説明残差として残している。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Seaの前Qからの変動 | -40.00 | 為替・航海構成の逆風 |\n| Skyの前Qからの変動 | 0.00 | 新規契約寄与を見送る |\n| Landの前Qからの変動 | -30.00 | 大型案件寄与の変動 |\n| Internetの前Qからの変動 | -120.00 | 天候需要反落とキャリア減収 |\n| フローの前Qからの変動 | -42.00 | 検収減少 |\n| 残差（economic_unexplained） | 211.70 | 前年同Qから当年前Qへの実績差。成長・季節性・為替等に金額分解できない部分を残す。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Sea | -40.00 | 為替・航海構成の逆風 |\n| Sky | 0.00 | 既存水準維持 |\n| Land | -30.00 | 大型案件寄与の変動 |\n| Internet | -120.00 | 天候需要反落とキャリア減収 |\n| フロー | -42.00 | 検収減少 |\n| 残差（none） | 0.00 | 仮定したドメイン別純増減の合計。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからの売上変動と限界費用 | -185.60 | 売上差から仮定した変動費を控除 |\n| 前Qからの費用季節変動 | 0.00 | 前年費用減少は再現しない |\n| 追加投資費用 | -60.00 | AI・データ・開発運営費用 |\n| 残差（economic_unexplained） | -463.31 | 前年同Qから当年前Qへの実績営業利益差。広告・天候・事業成長等の個別寄与額を特定できない。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変動と限界費用 | -185.60 | 独自限界費用率による寄与 |\n| 費用季節変動 | 0.00 | 前年費用減少は再現しない |\n| 追加投資費用 | -60.00 | 前Qからの追加支出 |\n| 残差（none） | 0.00 | 費用モデル上の残差なし。費目別実額の確認を意味しない。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Seaの前Qからの変動 | 10.00 | 既存顧客と欧州拡販 |\n| Skyの前Qからの変動 | 10.00 | 機体導入・契約開始 |\n| Landの前Qからの変動 | 40.00 | コアプロダクトの純増 |\n| Internetの前Qからの変動 | 0.00 | 自社成長・価格改定と旧サービス減収が相殺 |\n| フローの前Qからの変動 | -22.00 | 前年同Q付近の検収水準 |\n| 残差（economic_unexplained） | 211.70 | 前年同Qから当年前Qへの実績差を、説明できない成長・季節性・為替等の残差として表示。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Sea | 10.00 | 既存顧客と欧州拡販 |\n| Sky | 10.00 | 機体導入・契約開始 |\n| Land | 40.00 | コアプロダクト純増 |\n| Internet | 0.00 | 増収要因と減収要因の相殺 |\n| フロー | -22.00 | 検収水準の正常化仮定 |\n| 残差（none） | 0.00 | ドメイン別仮定の合計。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからの売上変動と限界費用 | 30.40 | 売上差に対する限界利益 |\n| 前Qからの費用季節変動 | 161.60 | 前年費用減少の半分を再現 |\n| 追加投資費用 | -40.00 | AI・データ・開発運営費用 |\n| 残差（economic_unexplained） | -463.31 | 前年同Qから当年前Qへの実績営業利益差は費目別に説明できず残す。人員再配置による見かけの粗利改善を利益要因としない。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変動と限界費用 | 30.40 | 独自限界費用率による寄与 |\n| 費用季節変動 | 161.60 | 前年費用減少の半分を再現 |\n| 追加投資費用 | -40.00 | 前Qからの追加支出 |\n| 残差（none） | 0.00 | 費用モデル上の残差なし。季節性の再現には不確実性がある。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Seaの前Qからの変動 | 40.00 | 欧州獲得・アップセル進捗 |\n| Skyの前Qからの変動 | 20.00 | 新規契約計上 |\n| Landの前Qからの変動 | 100.00 | 大型顧客導入の進展 |\n| Internetの前Qからの変動 | 100.00 | 自社広告・サブスクと価格改定の純寄与 |\n| フローの前Qからの変動 | 18.00 | 検収増加 |\n| 残差（economic_unexplained） | 211.70 | 前年同Qから当年前Qへの実績差のうち要因別金額が確認できない部分。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| Sea | 40.00 | 欧州獲得・アップセル進捗 |\n| Sky | 20.00 | 新規契約計上 |\n| Land | 100.00 | 大型顧客導入の進展 |\n| Internet | 100.00 | 自社サービス増収が旧サービス減収を上回る |\n| フロー | 18.00 | 検収増加 |\n| 残差（none） | 0.00 | ドメイン別仮定の合計。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 前Qからの売上変動と限界費用 | 222.40 | 売上差に対する限界利益 |\n| 前Qからの費用季節変動 | 323.19 | 前年と同額の総営業費用減少を再現 |\n| 追加投資費用 | -20.00 | 既存リソース活用で追加支出を限定 |\n| 残差（economic_unexplained） | -463.31 | 前年同Qから当年前Qへの実績営業利益差。利益への個別寄与を特定できないため全額残差とする。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変動と限界費用 | 222.40 | 独自限界費用率による寄与 |\n| 費用季節変動 | 323.19 | 前年費用減少を再現 |\n| 追加投資費用 | -20.00 | 前Qからの追加支出 |\n| 残差（none） | 0.00 | 費用モデル上の残差なし。費目別の完全な説明ではない。 |\n\n## エラー・未解決事項\n- S04・S05は短縮フラグこそfalseだが本文に文字化けがあり、図表の数値も欠落している。図表画像やPDF原本は未確認。ドメイン別KPI絶対値や販促費増減額を復元・創作していない。\n- S07の添付本文には質疑応答Q1～Q12が実際に含まれるため、discoveryの質疑応答未確認という記載より添付本文を優先した。\n- ドメイン区分は当期に変更されている。連結売上・営業利益の前年Q単独は同一会計版のS02累計からS03累計を差し引けるが、旧区分と新区分のドメイン値は直接差し引いていない。\n- ドメイン表示値と千円単位連結PLの差は計算上分離し、前Q差を予測にも据え置いた。この表示桁差を実体的な売上ドライバーとは扱わない。\n- モデルの売上レンジは前Qのストック規模と会社の定性的説明に基づく判断幅であり、受注残・会員数・単価により実証された上下限ではない。\n- 単一セグメントでありドメイン別営業利益は非開示。ドメイン別採算を実績として作らず、共通の独自限界費用率を使用した。\n- 営業外為替損益、特別損益、対象Q税率について根拠あるレンジを設定できず、経常利益及び親会社株主帰属純利益の独自予測はnull。\n- 基準日時以前の訂正・業績予想修正・重要開示を網羅したことは確認できない。提示された後続ニュースのみを評価した。\n- 総営業費用の前年季節変動には広告費以外の要因も含まれる。費目別実額は未確認であり、営業利益予測は季節費用の再現率に強く依存する。\n- 資料確認未了: presentation\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- Android通常コース対象会員数、更新日の分布、解約率及び売上認識方法が未確認。\n- S11では配送・販売への大きな影響はないと説明するが、対応費用や補償額は非開示。追加の重大費用が生じないことを予測の条件とする。\n- base_flow_delta: 前Q比。前年上期フロー431から前年Q1の210を引いた221付近を参考に、対象Q売上220を仮定。前年の総売上成長率は外挿しない。\n- base_internet_delta: 前Q比。S07の自社広告・サブスク増とキャリア減収を相殺。S09のAndroid通常コース値上げは既存会員への適用が順次であり、天候需要反落を補う一要因として内包する。\n- base_investment_cost: 前Qの営業費用基盤を維持したうえでAI・データ・開発運営への小幅な追加支出を仮定。根拠はS01 page 4、S07、S10。人員再配置を人件費削減として加算しない。\n- base_land_delta: 前Q比。S07のコアプロダクト契約・ID増加とCS強化を受け、既存専用サービスからの置換を相殺した純増を約2%に限定する。\n- base_sea_delta: 前Q比。S07 Sea説明・質疑Q2～Q3の欧州獲得とサービス提供維持を踏まえ、既存顧客への拡販による小幅増収を仮定。為替の追加追い風や即時値上げは見込まない。\n- base_season_factor: 前年のQ1からQ2への総営業費用減少を参考に、天候・広告執行に依存するため半分だけ再現すると仮定。費用減少の全額を広告費と断定しない。\n- bear_flow_delta: 前Q比。S01 page 5、S02 page 5、S03 page 5のフロー実績を参考に、案件検収が弱い場合の売上200を仮定。\n- bear_internet_delta: 前Q比。S07 Internet説明の前Qの強い天候需要、キャリア・端末向け減収、広告成長が下期中心という説明から、広告需要の反落がアプリ成長と価格改定を上回る約5%減収を仮定。\n- bear_investment_cost: S01 page 4、S07のAI環境・通信データ投資継続、S10の本格実装を踏まえ、売上連動分と広告等の季節変動を除く前Q比追加営業費用を60とする。\n- bear_land_delta: 前Q比。S01 page 4の大型受注とS07 Land説明・質疑Q5の既存サービス置換を踏まえ、大型案件の寄与変動が継続契約増を上回る場合を想定。\n- bear_sea_delta: 前Q比。S01 page 4、S07 Sea説明・質疑Q2～Q3では既存サービス提供を維持し欧州顧客獲得が進む一方、為替寄与がある。為替と航海構成の逆風を想定し、前Q売上から約3%弱の減収。下期の新サービス効果は含めない。\n- bear_season_factor: S02 page 4、S03 page 4では広告戦略・天候が費用を左右した。S01とS07では広告投資継続を掲げるため、前年Q1からQ2への総営業費用減少が再現しないケース。\n- bull_flow_delta: 前Q比。前Qフロー242を基準に、調査・システム案件の検収がやや増える対象Q売上260を仮定。受注残を確認した値ではない。\n- bull_internet_delta: 前Q比。S07の自社メディア強化とS09価格改定がキャリア減収を上回る約4%増収を仮定。S10の機能改善や海外展開に独立した追加売上は付けない。\n- bull_investment_cost: S07の既存リソース活用によりAI・データ投資の追加費用が限定される条件。既に前Q費用に含む投資は再加算しない。\n- bull_land_delta: 前Q比。S07の大型顧客への導入とコアプロダクト拡販が速やかに売上化する場合の約5%増収。イベント利用人数に標準単価を掛ける推計は行わない。\n- bull_sea_delta: 前Q比。S07の欧州新規獲得・アップセルが進む場合の約3%弱の増収。正式リリース前の全船常時監視による売上上乗せは含めない。\n- bull_season_factor: S07質疑Q11、S08 page 4の費用対効果に基づく投資運用を踏まえ、前年のQ1からQ2への総営業費用減少と同額が再現する条件。\n- marginal_cost_rate: S01 pages 4・11、S07、S08 pages 3～4のストック中心、AI運営、既存人員再配置を踏まえ、既存費用基盤に対する売上増減の限界費用率を20%と置く。実績粗利率やドメイン別利益率ではない。\n- 対象Qの航海数・機体数・契約開始日・実現単価の絶対値は提示本文で未確認。\n- 広告単価、DAUの対象Q実績、キャリア向け減収額は未確認。\n- 広告投資の季節変動の再現性とAI・データ関連追加費用により営業利益が大きく変動する。\n\n## 根拠・保存記録\n- S01 [2027年5月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/48250/140120261007547547.pdf) / 公表 2026-10-08 / retrieved / SHA-256 `7f262eec865e4e9d5fe16446474226f5c20ef67fd3cdaed3658705754cfec5a3`\n- S02 [2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/48250/140120251225526898.pdf) / 公表 2025-12-26 / retrieved / SHA-256 `e288d9f83f4e340978feaeb006559c49e1238df3888f5cfffaa937d7abfe6044`\n- S03 [2026年5月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/48250/140120251007569720.pdf) / 公表 2025-10-08 / retrieved / SHA-256 `0793b5157663bfe4731fab77fb52f286170fcc1897f9fa259ca30d9585612515`\n- S04 [2027年5月期 第1四半期 決算説明資料](https://www2.jpx.co.jp/disc/48250/140120261007547550.pdf) / 公表 2026-10-08 / retrieved / SHA-256 `15376659b390a5a19ebed7476ce593901d02fea226b36ec89462c666a1ee9354`\n- S05 [2026年5月期 第2四半期 決算説明資料](https://www2.jpx.co.jp/disc/48250/140120251225526909.pdf) / 公表 2025-12-26 / retrieved / SHA-256 `a09d57decedb7e162c5679232d88faa6c6e0b85578cdcfc724444a21b74cbfd6`\n- S06 [2026年5月期 決算短信〔日本基準〕（連結）（2027年5月期会社予想を含む）](https://www2.jpx.co.jp/disc/48250/140120260708589783.pdf) / 公表 2026-07-09 / retrieved / SHA-256 `2fb1bc948d4fc56af45fb977c67695b8f89960960e90232fbaee8eed71597830`\n- S07 [【スクリプト】2027年5月期 第1四半期決算説明会](https://jp.weathernews.com/irinfo/ir-library/20261008-2) / 公表 2026-10-13 / retrieved / SHA-256 `8a8f1c6591db9cc474bf207a844adb9dd0cf6a009615a5ab34cfa4a75ab6df09`\n- S08 [＜粗利率60％超へ＞AI活用と高粗利プロダクトによる売上高総利益率の収益性向上策について（中期Vision 2026補足資料）](https://www2.jpx.co.jp/disc/48250/140120260826526637.pdf) / 公表 2026-08-26 / retrieved / SHA-256 `5e9f2ec37de0c7794b028805d265b7f6a2ca07adadd350516f55d465cac645a6`\n- S09 [Android版アプリ「ウェザーニュース」月額利用料金改定のお知らせ](https://jp.weathernews.com/news/57497/) / 公表 2026-09-10 / retrieved / SHA-256 `c93d33ae5a087e6dc3acadcca6c23ca1f37227034f05c30b953246f0c02da78a`\n- S10 [ウェザーニューズ、独自開発のAI気象予測モデルを本格実装](https://jp.weathernews.com/news/57759) / 公表 2026-10-15 / retrieved / SHA-256 `71eea354e6a35b89f293f3061099dbc8b6b16e6f09490422b8811f67e1a536d9`\n- S11 [配送業務委託先への不正アクセスによるお客様情報漏えいの可能性について](https://jp.weathernews.com/news/58120/) / 公表 2026-11-12 / retrieved / SHA-256 `2f4d4ae0ec6ad425f11641b78bf5cc8ed9d2bebbd8d7161d7e967a20b79cbeb6`\n- S12 [IRカレンダー](https://jp.weathernews.com/irinfo/ir-event/calendar) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 入力された2026-12-28の決算発表日は一次資料で未確認。S12は資料一覧にあるが本文が添付されていないため、announcement_dateはnull。\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "4825",
+    "company_name": "株式会社ウェザーニューズ",
+    "announcement_date": "2026-12-28",
+    "target_period": "2027-05-31期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-05-31",
+      "quarter": 2,
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 6106.449,
+        "operating_profit": 647.2059999999992,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 6376.449,
+        "operating_profit": 1044.8014999999987,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 6616.449,
+        "operating_profit": 1418.396999999999,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 38.0,
+          "rate": 0.005995157490420764,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": 151.99549999999863,
+          "rate": 0.17024471161707988,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 249.70499999999993,
+          "rate": 0.040756558459109755,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -311.30950000000144,
+          "rate": -0.22956048583043823,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "prev_q1_rev": 6006.611,
+      "prev_q1_op": 912.787,
+      "prev_h1_rev": 12133.355,
+      "prev_h1_op": 2268.898,
+      "q1_rev": 6338.449,
+      "q1_op": 892.806,
+      "q1_sea": 1478.0,
+      "q1_sky": 401.0,
+      "q1_land": 1928.0,
+      "q1_internet": 2288.0,
+      "q1_flow": 242.0,
+      "guide_rev": 25800.0,
+      "guide_op": 5400.0,
+      "guide_ordinary": 5500.0,
+      "guide_net": 3850.0,
+      "bear_sea_delta": -40.0,
+      "base_sea_delta": 10.0,
+      "bull_sea_delta": 40.0,
+      "bear_sky_delta": 0.0,
+      "base_sky_delta": 10.0,
+      "bull_sky_delta": 20.0,
+      "bear_land_delta": -30.0,
+      "base_land_delta": 40.0,
+      "bull_land_delta": 100.0,
+      "bear_internet_delta": -120.0,
+      "base_internet_delta": 0.0,
+      "bull_internet_delta": 100.0,
+      "bear_flow_delta": -42.0,
+      "base_flow_delta": -22.0,
+      "bull_flow_delta": 18.0,
+      "marginal_cost_rate": 0.2,
+      "bear_season_factor": 0.0,
+      "base_season_factor": 0.5,
+      "bull_season_factor": 1.0,
+      "bear_investment_cost": 60.0,
+      "base_investment_cost": 40.0,
+      "bull_investment_cost": 20.0,
+      "prev_q2_rev": 6126.744,
+      "prev_q2_op": 1356.111,
+      "prev_q1_cost": 5093.824,
+      "prev_q2_cost": 4770.633,
+      "historical_cost_season": -323.1909999999998,
+      "q1_cost": 5445.643,
+      "domain_precision_gap": 1.4489999999996144,
+      "historical_rev_gap": 211.70499999999993,
+      "historical_op_gap": -463.30500000000006,
+      "zero": 0.0,
+      "bear_sea": 1438.0,
+      "bear_sky": 401.0,
+      "bear_land": 1898.0,
+      "bear_internet": 2168.0,
+      "bear_flow": 200.0,
+      "base_sea": 1488.0,
+      "base_sky": 411.0,
+      "base_land": 1968.0,
+      "base_internet": 2288.0,
+      "base_flow": 220.0,
+      "bull_sea": 1518.0,
+      "bull_sky": 421.0,
+      "bull_land": 2028.0,
+      "bull_internet": 2388.0,
+      "bull_flow": 260.0,
+      "bear_revenue": 6106.449,
+      "base_revenue": 6376.449,
+      "bull_revenue": 6616.449,
+      "bear_rev_delta": -232.0,
+      "base_rev_delta": 38.0,
+      "bull_rev_delta": 278.0,
+      "bear_cost": 5459.243,
+      "base_cost": 5331.647500000001,
+      "bull_cost": 5198.052000000001,
+      "bear_op": 647.2059999999992,
+      "base_op": 1044.8014999999987,
+      "bull_op": 1418.396999999999
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-05-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 2・9",
+        "period_end": "2025-08-31",
+        "period_start": "2025-06-01",
+        "method": "1Q累計",
+        "revenue": 6006.611,
+        "operating_profit": 912.787,
+        "ordinary_profit": 915.78,
+        "net_profit": 672.617
+      },
+      {
+        "fiscal_year_end": "2026-05-31",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02",
+          "S03"
+        ],
+        "locator": "PDF pages 2・8",
+        "period_end": "2025-11-30",
+        "period_start": "2025-09-01",
+        "method": "累計−直前累計",
+        "revenue": 6126.744,
+        "operating_profit": 1356.111,
+        "ordinary_profit": 1408.2949999999998,
+        "net_profit": 965.7070000000001
+      },
+      {
+        "fiscal_year_end": "2027-05-31",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 2・4・5・9",
+        "period_end": "2026-08-31",
+        "period_start": "2026-06-01",
+        "method": "1Q累計",
+        "revenue": 6338.449,
+        "operating_profit": 892.806,
+        "ordinary_profit": 896.558,
+        "net_profit": 592.594
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_rev",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "Seaの前Qからの変動",
+            "formula": "bear_sea_delta",
+            "reason": "為替・航海構成の逆風",
+            "amount": -40.0
+          },
+          {
+            "label": "Skyの前Qからの変動",
+            "formula": "bear_sky_delta",
+            "reason": "新規契約寄与を見送る",
+            "amount": 0.0
+          },
+          {
+            "label": "Landの前Qからの変動",
+            "formula": "bear_land_delta",
+            "reason": "大型案件寄与の変動",
+            "amount": -30.0
+          },
+          {
+            "label": "Internetの前Qからの変動",
+            "formula": "bear_internet_delta",
+            "reason": "天候需要反落とキャリア減収",
+            "amount": -120.0
+          },
+          {
+            "label": "フローの前Qからの変動",
+            "formula": "bear_flow_delta",
+            "reason": "検収減少",
+            "amount": -42.0
+          }
+        ],
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績差。成長・季節性・為替等に金額分解できない部分を残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_rev",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "Sea",
+            "formula": "bear_sea_delta",
+            "reason": "為替・航海構成の逆風",
+            "amount": -40.0
+          },
+          {
+            "label": "Sky",
+            "formula": "bear_sky_delta",
+            "reason": "既存水準維持",
+            "amount": 0.0
+          },
+          {
+            "label": "Land",
+            "formula": "bear_land_delta",
+            "reason": "大型案件寄与の変動",
+            "amount": -30.0
+          },
+          {
+            "label": "Internet",
+            "formula": "bear_internet_delta",
+            "reason": "天候需要反落とキャリア減収",
+            "amount": -120.0
+          },
+          {
+            "label": "フロー",
+            "formula": "bear_flow_delta",
+            "reason": "検収減少",
+            "amount": -42.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "仮定したドメイン別純増減の合計。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_q2_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "前Qからの売上変動と限界費用",
+            "formula": "bear_rev_delta-bear_rev_delta*marginal_cost_rate",
+            "reason": "売上差から仮定した変動費を控除",
+            "amount": -185.6
+          },
+          {
+            "label": "前Qからの費用季節変動",
+            "formula": "zero-historical_cost_season*bear_season_factor",
+            "reason": "前年費用減少は再現しない",
+            "amount": 0.0
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-bear_investment_cost",
+            "reason": "AI・データ・開発運営費用",
+            "amount": -60.0
+          }
+        ],
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。広告・天候・事業成長等の個別寄与額を特定できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変動と限界費用",
+            "formula": "bear_rev_delta-bear_rev_delta*marginal_cost_rate",
+            "reason": "独自限界費用率による寄与",
+            "amount": -185.6
+          },
+          {
+            "label": "費用季節変動",
+            "formula": "zero-historical_cost_season*bear_season_factor",
+            "reason": "前年費用減少は再現しない",
+            "amount": 0.0
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-bear_investment_cost",
+            "reason": "前Qからの追加支出",
+            "amount": -60.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル上の残差なし。費目別実額の確認を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_rev",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "Seaの前Qからの変動",
+            "formula": "base_sea_delta",
+            "reason": "既存顧客と欧州拡販",
+            "amount": 10.0
+          },
+          {
+            "label": "Skyの前Qからの変動",
+            "formula": "base_sky_delta",
+            "reason": "機体導入・契約開始",
+            "amount": 10.0
+          },
+          {
+            "label": "Landの前Qからの変動",
+            "formula": "base_land_delta",
+            "reason": "コアプロダクトの純増",
+            "amount": 40.0
+          },
+          {
+            "label": "Internetの前Qからの変動",
+            "formula": "base_internet_delta",
+            "reason": "自社成長・価格改定と旧サービス減収が相殺",
+            "amount": 0.0
+          },
+          {
+            "label": "フローの前Qからの変動",
+            "formula": "base_flow_delta",
+            "reason": "前年同Q付近の検収水準",
+            "amount": -22.0
+          }
+        ],
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績差を、説明できない成長・季節性・為替等の残差として表示。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_rev",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "Sea",
+            "formula": "base_sea_delta",
+            "reason": "既存顧客と欧州拡販",
+            "amount": 10.0
+          },
+          {
+            "label": "Sky",
+            "formula": "base_sky_delta",
+            "reason": "機体導入・契約開始",
+            "amount": 10.0
+          },
+          {
+            "label": "Land",
+            "formula": "base_land_delta",
+            "reason": "コアプロダクト純増",
+            "amount": 40.0
+          },
+          {
+            "label": "Internet",
+            "formula": "base_internet_delta",
+            "reason": "増収要因と減収要因の相殺",
+            "amount": 0.0
+          },
+          {
+            "label": "フロー",
+            "formula": "base_flow_delta",
+            "reason": "検収水準の正常化仮定",
+            "amount": -22.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "ドメイン別仮定の合計。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_q2_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "前Qからの売上変動と限界費用",
+            "formula": "base_rev_delta-base_rev_delta*marginal_cost_rate",
+            "reason": "売上差に対する限界利益",
+            "amount": 30.4
+          },
+          {
+            "label": "前Qからの費用季節変動",
+            "formula": "zero-historical_cost_season*base_season_factor",
+            "reason": "前年費用減少の半分を再現",
+            "amount": 161.5954999999999
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-base_investment_cost",
+            "reason": "AI・データ・開発運営費用",
+            "amount": -40.0
+          }
+        ],
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差は費目別に説明できず残す。人員再配置による見かけの粗利改善を利益要因としない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変動と限界費用",
+            "formula": "base_rev_delta-base_rev_delta*marginal_cost_rate",
+            "reason": "独自限界費用率による寄与",
+            "amount": 30.4
+          },
+          {
+            "label": "費用季節変動",
+            "formula": "zero-historical_cost_season*base_season_factor",
+            "reason": "前年費用減少の半分を再現",
+            "amount": 161.5954999999999
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-base_investment_cost",
+            "reason": "前Qからの追加支出",
+            "amount": -40.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル上の残差なし。季節性の再現には不確実性がある。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prev_q2_rev",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "Seaの前Qからの変動",
+            "formula": "bull_sea_delta",
+            "reason": "欧州獲得・アップセル進捗",
+            "amount": 40.0
+          },
+          {
+            "label": "Skyの前Qからの変動",
+            "formula": "bull_sky_delta",
+            "reason": "新規契約計上",
+            "amount": 20.0
+          },
+          {
+            "label": "Landの前Qからの変動",
+            "formula": "bull_land_delta",
+            "reason": "大型顧客導入の進展",
+            "amount": 100.0
+          },
+          {
+            "label": "Internetの前Qからの変動",
+            "formula": "bull_internet_delta",
+            "reason": "自社広告・サブスクと価格改定の純寄与",
+            "amount": 100.0
+          },
+          {
+            "label": "フローの前Qからの変動",
+            "formula": "bull_flow_delta",
+            "reason": "検収増加",
+            "amount": 18.0
+          }
+        ],
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績差のうち要因別金額が確認できない部分。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_rev",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "Sea",
+            "formula": "bull_sea_delta",
+            "reason": "欧州獲得・アップセル進捗",
+            "amount": 40.0
+          },
+          {
+            "label": "Sky",
+            "formula": "bull_sky_delta",
+            "reason": "新規契約計上",
+            "amount": 20.0
+          },
+          {
+            "label": "Land",
+            "formula": "bull_land_delta",
+            "reason": "大型顧客導入の進展",
+            "amount": 100.0
+          },
+          {
+            "label": "Internet",
+            "formula": "bull_internet_delta",
+            "reason": "自社サービス増収が旧サービス減収を上回る",
+            "amount": 100.0
+          },
+          {
+            "label": "フロー",
+            "formula": "bull_flow_delta",
+            "reason": "検収増加",
+            "amount": 18.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "ドメイン別仮定の合計。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "prev_q2_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "前Qからの売上変動と限界費用",
+            "formula": "bull_rev_delta-bull_rev_delta*marginal_cost_rate",
+            "reason": "売上差に対する限界利益",
+            "amount": 222.4
+          },
+          {
+            "label": "前Qからの費用季節変動",
+            "formula": "zero-historical_cost_season*bull_season_factor",
+            "reason": "前年と同額の総営業費用減少を再現",
+            "amount": 323.1909999999998
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-bull_investment_cost",
+            "reason": "既存リソース活用で追加支出を限定",
+            "amount": -20.0
+          }
+        ],
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。利益への個別寄与を特定できないため全額残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q1_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変動と限界費用",
+            "formula": "bull_rev_delta-bull_rev_delta*marginal_cost_rate",
+            "reason": "独自限界費用率による寄与",
+            "amount": 222.4
+          },
+          {
+            "label": "費用季節変動",
+            "formula": "zero-historical_cost_season*bull_season_factor",
+            "reason": "前年費用減少を再現",
+            "amount": 323.1909999999998
+          },
+          {
+            "label": "追加投資費用",
+            "formula": "zero-bull_investment_cost",
+            "reason": "前Qからの追加支出",
+            "amount": -20.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "費用モデル上の残差なし。費目別の完全な説明ではない。"
+      }
+    ],
+    "issues": [
+      "S04・S05は短縮フラグこそfalseだが本文に文字化けがあり、図表の数値も欠落している。図表画像やPDF原本は未確認。ドメイン別KPI絶対値や販促費増減額を復元・創作していない。",
+      "S07の添付本文には質疑応答Q1～Q12が実際に含まれるため、discoveryの質疑応答未確認という記載より添付本文を優先した。",
+      "ドメイン区分は当期に変更されている。連結売上・営業利益の前年Q単独は同一会計版のS02累計からS03累計を差し引けるが、旧区分と新区分のドメイン値は直接差し引いていない。",
+      "ドメイン表示値と千円単位連結PLの差は計算上分離し、前Q差を予測にも据え置いた。この表示桁差を実体的な売上ドライバーとは扱わない。",
+      "モデルの売上レンジは前Qのストック規模と会社の定性的説明に基づく判断幅であり、受注残・会員数・単価により実証された上下限ではない。",
+      "単一セグメントでありドメイン別営業利益は非開示。ドメイン別採算を実績として作らず、共通の独自限界費用率を使用した。",
+      "営業外為替損益、特別損益、対象Q税率について根拠あるレンジを設定できず、経常利益及び親会社株主帰属純利益の独自予測はnull。",
+      "基準日時以前の訂正・業績予想修正・重要開示を網羅したことは確認できない。提示された後続ニュースのみを評価した。",
+      "総営業費用の前年季節変動には広告費以外の要因も含まれる。費目別実額は未確認であり、営業利益予測は季節費用の再現率に強く依存する。",
+      "資料確認未了: presentation",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "入力された2026-12-28の決算発表日は一次資料で未確認。S12は資料一覧にあるが本文が添付されていないため、announcement_dateはnull。",
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -232.0,
+            "rate": -0.03660201415204256,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -245.60000000000082,
+            "rate": -0.2750877570267234,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -20.295000000000073,
+            "rate": -0.0033125261966225573,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -708.9050000000009,
+            "rate": -0.5227485065750523,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 38.0,
+            "rate": 0.005995157490420764,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 151.99549999999863,
+            "rate": 0.17024471161707988,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 249.70499999999993,
+            "rate": 0.040756558459109755,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -311.30950000000144,
+            "rate": -0.22956048583043823,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 278.0,
+            "rate": 0.043859310061499276,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 525.590999999999,
+            "rate": 0.5886956404862859,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 489.7049999999999,
+            "rate": 0.07992907815309404,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": 62.28599999999892,
+            "rate": 0.045929868572704535,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -20.295000000000073,
+        "explained_sum": -232.0,
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績差。成長・季節性・為替等に金額分解できない部分を残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -232.0,
+        "explained_sum": -232.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "仮定したドメイン別純増減の合計。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -708.9050000000009,
+        "explained_sum": -245.6,
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "difference": -7.958078640513122e-13,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。広告・天候・事業成長等の個別寄与額を特定できない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -245.60000000000082,
+        "explained_sum": -245.6,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -8.242295734817162e-13,
+        "status": "passed",
+        "residual_explanation": "費用モデル上の残差なし。費目別実額の確認を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 249.70499999999993,
+        "explained_sum": 38.0,
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績差を、説明できない成長・季節性・為替等の残差として表示。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 38.0,
+        "explained_sum": 38.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "ドメイン別仮定の合計。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -311.30950000000144,
+        "explained_sum": 151.9954999999999,
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "difference": -1.2505552149377763e-12,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差は費目別に説明できず残す。人員再配置による見かけの粗利改善を利益要因としない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 151.99549999999863,
+        "explained_sum": 151.9954999999999,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -1.2789769243681803e-12,
+        "status": "passed",
+        "residual_explanation": "費用モデル上の残差なし。季節性の再現には不確実性がある。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 489.7049999999999,
+        "explained_sum": 278.0,
+        "residual": 211.70499999999993,
+        "residual_type": "economic_unexplained",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績差のうち要因別金額が確認できない部分。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 278.0,
+        "explained_sum": 278.0,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "ドメイン別仮定の合計。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": 62.28599999999892,
+        "explained_sum": 525.5909999999998,
+        "residual": -463.30500000000006,
+        "residual_type": "economic_unexplained",
+        "difference": -7.958078640513122e-13,
+        "status": "passed",
+        "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。利益への個別寄与を特定できないため全額残差とする。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": 525.590999999999,
+        "explained_sum": 525.5909999999998,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -7.958078640513122e-13,
+        "status": "passed",
+        "residual_explanation": "費用モデル上の残差なし。費目別の完全な説明ではない。"
+      }
+    ],
+    "conditions": [
+      "Android通常コース対象会員数、更新日の分布、解約率及び売上認識方法が未確認。",
+      "S11では配送・販売への大きな影響はないと説明するが、対応費用や補償額は非開示。追加の重大費用が生じないことを予測の条件とする。",
+      "base_flow_delta: 前Q比。前年上期フロー431から前年Q1の210を引いた221付近を参考に、対象Q売上220を仮定。前年の総売上成長率は外挿しない。",
+      "base_internet_delta: 前Q比。S07の自社広告・サブスク増とキャリア減収を相殺。S09のAndroid通常コース値上げは既存会員への適用が順次であり、天候需要反落を補う一要因として内包する。",
+      "base_investment_cost: 前Qの営業費用基盤を維持したうえでAI・データ・開発運営への小幅な追加支出を仮定。根拠はS01 page 4、S07、S10。人員再配置を人件費削減として加算しない。",
+      "base_land_delta: 前Q比。S07のコアプロダクト契約・ID増加とCS強化を受け、既存専用サービスからの置換を相殺した純増を約2%に限定する。",
+      "base_sea_delta: 前Q比。S07 Sea説明・質疑Q2～Q3の欧州獲得とサービス提供維持を踏まえ、既存顧客への拡販による小幅増収を仮定。為替の追加追い風や即時値上げは見込まない。",
+      "base_season_factor: 前年のQ1からQ2への総営業費用減少を参考に、天候・広告執行に依存するため半分だけ再現すると仮定。費用減少の全額を広告費と断定しない。",
+      "bear_flow_delta: 前Q比。S01 page 5、S02 page 5、S03 page 5のフロー実績を参考に、案件検収が弱い場合の売上200を仮定。",
+      "bear_internet_delta: 前Q比。S07 Internet説明の前Qの強い天候需要、キャリア・端末向け減収、広告成長が下期中心という説明から、広告需要の反落がアプリ成長と価格改定を上回る約5%減収を仮定。",
+      "bear_investment_cost: S01 page 4、S07のAI環境・通信データ投資継続、S10の本格実装を踏まえ、売上連動分と広告等の季節変動を除く前Q比追加営業費用を60とする。",
+      "bear_land_delta: 前Q比。S01 page 4の大型受注とS07 Land説明・質疑Q5の既存サービス置換を踏まえ、大型案件の寄与変動が継続契約増を上回る場合を想定。",
+      "bear_sea_delta: 前Q比。S01 page 4、S07 Sea説明・質疑Q2～Q3では既存サービス提供を維持し欧州顧客獲得が進む一方、為替寄与がある。為替と航海構成の逆風を想定し、前Q売上から約3%弱の減収。下期の新サービス効果は含めない。",
+      "bear_season_factor: S02 page 4、S03 page 4では広告戦略・天候が費用を左右した。S01とS07では広告投資継続を掲げるため、前年Q1からQ2への総営業費用減少が再現しないケース。",
+      "bull_flow_delta: 前Q比。前Qフロー242を基準に、調査・システム案件の検収がやや増える対象Q売上260を仮定。受注残を確認した値ではない。",
+      "bull_internet_delta: 前Q比。S07の自社メディア強化とS09価格改定がキャリア減収を上回る約4%増収を仮定。S10の機能改善や海外展開に独立した追加売上は付けない。",
+      "bull_investment_cost: S07の既存リソース活用によりAI・データ投資の追加費用が限定される条件。既に前Q費用に含む投資は再加算しない。",
+      "bull_land_delta: 前Q比。S07の大型顧客への導入とコアプロダクト拡販が速やかに売上化する場合の約5%増収。イベント利用人数に標準単価を掛ける推計は行わない。",
+      "bull_sea_delta: 前Q比。S07の欧州新規獲得・アップセルが進む場合の約3%弱の増収。正式リリース前の全船常時監視による売上上乗せは含めない。",
+      "bull_season_factor: S07質疑Q11、S08 page 4の費用対効果に基づく投資運用を踏まえ、前年のQ1からQ2への総営業費用減少と同額が再現する条件。",
+      "marginal_cost_rate: S01 pages 4・11、S07、S08 pages 3～4のストック中心、AI運営、既存人員再配置を踏まえ、既存費用基盤に対する売上増減の限界費用率を20%と置く。実績粗利率やドメイン別利益率ではない。",
+      "対象Qの航海数・機体数・契約開始日・実現単価の絶対値は提示本文で未確認。",
+      "広告単価、DAUの対象Q実績、キャリア向け減収額は未確認。",
+      "広告投資の季節変動の再現性とAI・データ関連追加費用により営業利益が大きく変動する。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年5月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120261007547547.pdf",
+        "published_at": "2026-10-08",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120261007547547.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S01.txt",
+        "sha256": "7f262eec865e4e9d5fe16446474226f5c20ef67fd3cdaed3658705754cfec5a3",
+        "text_sha256": "c2a2aeb9db86ecfa749b812151fa7d2c737b82b170f79ab6d2562374c2fb182b",
+        "retrieved_at": "2026-11-28T14:20:07+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10745,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120251225526898.pdf",
+        "published_at": "2025-12-26",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120251225526898.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S02.txt",
+        "sha256": "e288d9f83f4e340978feaeb006559c49e1238df3888f5cfffaa937d7abfe6044",
+        "text_sha256": "5008bcdded7657070a075f1b6a9593c1ca1916dcec267f2586900f2cc7867319",
+        "retrieved_at": "2026-11-28T14:20:08+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10993,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年5月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120251007569720.pdf",
+        "published_at": "2025-10-08",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120251007569720.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S03.txt",
+        "sha256": "0793b5157663bfe4731fab77fb52f286170fcc1897f9fa259ca30d9585612515",
+        "text_sha256": "b9c970340e634935ec9b901f6447eff7da9ebd766143648454cc5f4a49fd4a09",
+        "retrieved_at": "2026-11-28T14:20:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9264,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2027年5月期 第1四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120261007547550.pdf",
+        "published_at": "2026-10-08",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120261007547550.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S04.txt",
+        "sha256": "15376659b390a5a19ebed7476ce593901d02fea226b36ec89462c666a1ee9354",
+        "text_sha256": "96a90d4048fad540bb685f1ff853d87b53f969ddd9385267ac8d4194c51429cb",
+        "retrieved_at": "2026-11-28T14:20:10+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9773,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年5月期 第2四半期 決算説明資料",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120251225526909.pdf",
+        "published_at": "2025-12-26",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120251225526909.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S05.txt",
+        "sha256": "a09d57decedb7e162c5679232d88faa6c6e0b85578cdcfc724444a21b74cbfd6",
+        "text_sha256": "eb4c9c45a618d904f8884561e2cc2e2630b0a562e6c0ef638c9be26ea183261c",
+        "retrieved_at": "2026-11-28T14:20:12+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8768,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年5月期 決算短信〔日本基準〕（連結）（2027年5月期会社予想を含む）",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120260708589783.pdf",
+        "published_at": "2026-07-09",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120260708589783.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S06.txt",
+        "sha256": "2fb1bc948d4fc56af45fb977c67695b8f89960960e90232fbaee8eed71597830",
+        "text_sha256": "0d822fbd05d1f6d2c617ce71f052a46400c40a0ea5be54056a70d33604f63336",
+        "retrieved_at": "2026-11-28T14:20:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 17570,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "【スクリプト】2027年5月期 第1四半期決算説明会",
+        "url": "https://jp.weathernews.com/irinfo/ir-library/20261008-2",
+        "published_at": "2026-10-13",
+        "category": "presentation",
+        "final_url": "https://jp.weathernews.com/irinfo/ir-library/20261008-2",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S07.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S07.txt",
+        "sha256": "8a8f1c6591db9cc474bf207a844adb9dd0cf6a009615a5ab34cfa4a75ab6df09",
+        "text_sha256": "b2036011c00c9ffec2436af0232e20637d2428ee355632bc0885d74924343352",
+        "retrieved_at": "2026-11-28T14:20:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7616,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "＜粗利率60％超へ＞AI活用と高粗利プロダクトによる売上高総利益率の収益性向上策について（中期Vision 2026補足資料）",
+        "url": "https://www2.jpx.co.jp/disc/48250/140120260826526637.pdf",
+        "published_at": "2026-08-26",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/48250/140120260826526637.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S08.txt",
+        "sha256": "5e9f2ec37de0c7794b028805d265b7f6a2ca07adadd350516f55d465cac645a6",
+        "text_sha256": "0caadd0d59cc241935c81421bfab7b5191b971d387be2a54582b0ac30ee0b739",
+        "retrieved_at": "2026-11-28T14:20:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1183,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "Android版アプリ「ウェザーニュース」月額利用料金改定のお知らせ",
+        "url": "https://jp.weathernews.com/news/57497/",
+        "published_at": "2026-09-10",
+        "category": "other",
+        "final_url": "https://jp.weathernews.com/news/57497/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S09.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S09.txt",
+        "sha256": "c93d33ae5a087e6dc3acadcca6c23ca1f37227034f05c30b953246f0c02da78a",
+        "text_sha256": "a0b43532c1510abff0a43b8caba5372b81c4fc627f9255061209b131d047aa0d",
+        "retrieved_at": "2026-11-28T14:20:14+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2510,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "ウェザーニューズ、独自開発のAI気象予測モデルを本格実装",
+        "url": "https://jp.weathernews.com/news/57759",
+        "published_at": "2026-10-15",
+        "category": "other",
+        "final_url": "https://jp.weathernews.com/news/57759",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S10.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S10.txt",
+        "sha256": "71eea354e6a35b89f293f3061099dbc8b6b16e6f09490422b8811f67e1a536d9",
+        "text_sha256": "e9611b9300760594eac9a592203823dc47c88af6dd5dfd2f5041d9f25f71c505",
+        "retrieved_at": "2026-11-28T14:20:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 3366,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "配送業務委託先への不正アクセスによるお客様情報漏えいの可能性について",
+        "url": "https://jp.weathernews.com/news/58120/",
+        "published_at": "2026-11-12",
+        "category": "other",
+        "final_url": "https://jp.weathernews.com/news/58120/",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S11.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261228\\companies\\4825\\sources\\S11.txt",
+        "sha256": "2f4d4ae0ec6ad425f11641b78bf5cc8ed9d2bebbd8d7161d7e967a20b79cbeb6",
+        "text_sha256": "18a51ee182c78ce47daf9302892349a36cc37c5c379e0c6d7ef8be3d1c5f063a",
+        "retrieved_at": "2026-11-28T14:20:15+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2948,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "IRカレンダー",
+        "url": "https://jp.weathernews.com/irinfo/ir-event/calendar",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T14:20:15+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "4825",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-05-31",
+        "quarter": 2,
+        "start": "2026-09-01",
+        "end": "2026-11-30",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "prev_q1_rev",
+          "value": 6006.611,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 売上高"
+        },
+        {
+          "id": "prev_q1_op",
+          "value": 912.787,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9 営業利益"
+        },
+        {
+          "id": "prev_h1_rev",
+          "value": 12133.355,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 売上高"
+        },
+        {
+          "id": "prev_h1_op",
+          "value": 2268.898,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8 営業利益"
+        },
+        {
+          "id": "q1_rev",
+          "value": 6338.449,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 売上高"
+        },
+        {
+          "id": "q1_op",
+          "value": 892.806,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 9 営業利益"
+        },
+        {
+          "id": "q1_sea",
+          "value": 1478,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 新区分ストック売上"
+        },
+        {
+          "id": "q1_sky",
+          "value": 401,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 新区分ストック売上"
+        },
+        {
+          "id": "q1_land",
+          "value": 1928,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 新区分ストック売上"
+        },
+        {
+          "id": "q1_internet",
+          "value": 2288,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 新区分ストック売上"
+        },
+        {
+          "id": "q1_flow",
+          "value": 242,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 フロー売上"
+        },
+        {
+          "id": "guide_rev",
+          "value": 25800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想"
+        },
+        {
+          "id": "guide_op",
+          "value": 5400,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想"
+        },
+        {
+          "id": "guide_ordinary",
+          "value": 5500,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想"
+        },
+        {
+          "id": "guide_net",
+          "value": 3850,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想"
+        },
+        {
+          "id": "bear_sea_delta",
+          "value": -40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S01 page 4、S07 Sea説明・質疑Q2～Q3では既存サービス提供を維持し欧州顧客獲得が進む一方、為替寄与がある。為替と航海構成の逆風を想定し、前Q売上から約3%弱の減収。下期の新サービス効果は含めない。",
+          "sensitivity": "売上変動10につき連結売上10、採用した限界費用率の下で営業利益8変動。",
+          "material": true
+        },
+        {
+          "id": "base_sea_delta",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07 Sea説明・質疑Q2～Q3の欧州獲得とサービス提供維持を踏まえ、既存顧客への拡販による小幅増収を仮定。為替の追加追い風や即時値上げは見込まない。",
+          "sensitivity": "弱気から強気の前Q差は-40～40。為替別売上がないため為替感応度は分離不能。",
+          "material": true
+        },
+        {
+          "id": "bull_sea_delta",
+          "value": 40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07の欧州新規獲得・アップセルが進む場合の約3%弱の増収。正式リリース前の全船常時監視による売上上乗せは含めない。",
+          "sensitivity": "新規導入・航海需要が中心仮定にとどまれば売上30減少。",
+          "material": true
+        },
+        {
+          "id": "bear_sky_delta",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S01 page 4の国内ヘリ導入増加を維持するが、S07質疑Q4の航空顧客獲得に時間を要する特性から新規寄与を見送る。",
+          "sensitivity": "契約開始の前倒しで売上10増えると営業利益8増加。",
+          "material": false
+        },
+        {
+          "id": "base_sky_delta",
+          "value": 10,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S01 page 4の導入機体数増加とS07のアジア拡販を背景に約2.5%の逐次増収を仮定。対応空港数を有料契約数とは扱わない。",
+          "sensitivity": "契約開始時期により前Q差0～20。",
+          "material": false
+        },
+        {
+          "id": "bull_sky_delta",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。国内ヘリ拡販に加えアジア契約の計上が進む条件で約5%の逐次増収。根拠はS01 page 4、S07質疑Q4。",
+          "sensitivity": "中心仮定まで契約開始が遅れれば売上10減少。",
+          "material": false
+        },
+        {
+          "id": "bear_land_delta",
+          "value": -30,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S01 page 4の大型受注とS07 Land説明・質疑Q5の既存サービス置換を踏まえ、大型案件の寄与変動が継続契約増を上回る場合を想定。",
+          "sensitivity": "案件開始・置換時期によって前Q差-30～100。スポットIDを継続契約として外挿しない。",
+          "material": true
+        },
+        {
+          "id": "base_land_delta",
+          "value": 40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07のコアプロダクト契約・ID増加とCS強化を受け、既存専用サービスからの置換を相殺した純増を約2%に限定する。",
+          "sensitivity": "売上純増が10変動すると営業利益8変動。大型受注全額を追加売上にしない。",
+          "material": true
+        },
+        {
+          "id": "bull_land_delta",
+          "value": 100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07の大型顧客への導入とコアプロダクト拡販が速やかに売上化する場合の約5%増収。イベント利用人数に標準単価を掛ける推計は行わない。",
+          "sensitivity": "中心ケースにとどまれば売上60減少。",
+          "material": true
+        },
+        {
+          "id": "bear_internet_delta",
+          "value": -120,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07 Internet説明の前Qの強い天候需要、キャリア・端末向け減収、広告成長が下期中心という説明から、広告需要の反落がアプリ成長と価格改定を上回る約5%減収を仮定。",
+          "sensitivity": "DAU、広告単価、キャリア減収、対象会員数で前Q差-120～100。価格改定を別途加算しない。",
+          "material": true
+        },
+        {
+          "id": "base_internet_delta",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07の自社広告・サブスク増とキャリア減収を相殺。S09のAndroid通常コース値上げは既存会員への適用が順次であり、天候需要反落を補う一要因として内包する。",
+          "sensitivity": "値上げの対象会員数と解約率が未確認のため価格効果単独は算定しない。総売上10変動で営業利益8変動。",
+          "material": true
+        },
+        {
+          "id": "bull_internet_delta",
+          "value": 100,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S07の自社メディア強化とS09価格改定がキャリア減収を上回る約4%増収を仮定。S10の機能改善や海外展開に独立した追加売上は付けない。",
+          "sensitivity": "前Q並みなら売上100減少。価格改定効果は本仮定に包含。",
+          "material": true
+        },
+        {
+          "id": "bear_flow_delta",
+          "value": -42,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。S01 page 5、S02 page 5、S03 page 5のフロー実績を参考に、案件検収が弱い場合の売上200を仮定。",
+          "sensitivity": "検収10のずれで売上10、営業利益8変動。ただし案件別原価は未確認。",
+          "material": true
+        },
+        {
+          "id": "base_flow_delta",
+          "value": -22,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。前年上期フロー431から前年Q1の210を引いた221付近を参考に、対象Q売上220を仮定。前年の総売上成長率は外挿しない。",
+          "sensitivity": "検収時期により対象Q売上200～260。",
+          "material": true
+        },
+        {
+          "id": "bull_flow_delta",
+          "value": 18,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Q比。前Qフロー242を基準に、調査・システム案件の検収がやや増える対象Q売上260を仮定。受注残を確認した値ではない。",
+          "sensitivity": "中心ケースとの差40が翌Qへずれれば売上40減少。",
+          "material": true
+        },
+        {
+          "id": "marginal_cost_rate",
+          "value": 0.2,
+          "kind": "assumption",
+          "unit": "比率",
+          "rationale": "S01 pages 4・11、S07、S08 pages 3～4のストック中心、AI運営、既存人員再配置を踏まえ、既存費用基盤に対する売上増減の限界費用率を20%と置く。実績粗利率やドメイン別利益率ではない。",
+          "sensitivity": "10～40%で再評価可能。率が0.1上昇すると営業利益は前Q売上差の0.1倍減少する。減収時は逆方向。",
+          "material": true
+        },
+        {
+          "id": "bear_season_factor",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S02 page 4、S03 page 4では広告戦略・天候が費用を左右した。S01とS07では広告投資継続を掲げるため、前年Q1からQ2への総営業費用減少が再現しないケース。",
+          "sensitivity": "前年の費用減少の再現率が0.1上がるごとに、その減少幅の0.1倍だけ営業利益改善。",
+          "material": true
+        },
+        {
+          "id": "base_season_factor",
+          "value": 0.5,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "前年のQ1からQ2への総営業費用減少を参考に、天候・広告執行に依存するため半分だけ再現すると仮定。費用減少の全額を広告費と断定しない。",
+          "sensitivity": "再現率0～1を弱気・強気とし、利益を決めて費用を逆算しない。",
+          "material": true
+        },
+        {
+          "id": "bull_season_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "rationale": "S07質疑Q11、S08 page 4の費用対効果に基づく投資運用を踏まえ、前年のQ1からQ2への総営業費用減少と同額が再現する条件。",
+          "sensitivity": "中心ケースとの差は前年費用減少の半分。季節性の再現は確定していない。",
+          "material": true
+        },
+        {
+          "id": "bear_investment_cost",
+          "value": 60,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S01 page 4、S07のAI環境・通信データ投資継続、S10の本格実装を踏まえ、売上連動分と広告等の季節変動を除く前Q比追加営業費用を60とする。",
+          "sensitivity": "追加費用10につき営業利益10減少。実際の投資額は提示資料に非開示。",
+          "material": true
+        },
+        {
+          "id": "base_investment_cost",
+          "value": 40,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前Qの営業費用基盤を維持したうえでAI・データ・開発運営への小幅な追加支出を仮定。根拠はS01 page 4、S07、S10。人員再配置を人件費削減として加算しない。",
+          "sensitivity": "追加費用20～60。中心から20の変動で営業利益が逆方向に20変動。",
+          "material": true
+        },
+        {
+          "id": "bull_investment_cost",
+          "value": 20,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S07の既存リソース活用によりAI・データ投資の追加費用が限定される条件。既に前Q費用に含む投資は再加算しない。",
+          "sensitivity": "中心ケースの費用まで増加すれば営業利益20減少。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prev_q2_rev",
+          "formula": "prev_h1_rev-prev_q1_rev"
+        },
+        {
+          "id": "prev_q2_op",
+          "formula": "prev_h1_op-prev_q1_op"
+        },
+        {
+          "id": "prev_q1_cost",
+          "formula": "prev_q1_rev-prev_q1_op"
+        },
+        {
+          "id": "prev_q2_cost",
+          "formula": "prev_q2_rev-prev_q2_op"
+        },
+        {
+          "id": "historical_cost_season",
+          "formula": "prev_q2_cost-prev_q1_cost"
+        },
+        {
+          "id": "q1_cost",
+          "formula": "q1_rev-q1_op"
+        },
+        {
+          "id": "domain_precision_gap",
+          "formula": "q1_rev-q1_sea-q1_sky-q1_land-q1_internet-q1_flow"
+        },
+        {
+          "id": "historical_rev_gap",
+          "formula": "q1_rev-prev_q2_rev"
+        },
+        {
+          "id": "historical_op_gap",
+          "formula": "q1_op-prev_q2_op"
+        },
+        {
+          "id": "zero",
+          "formula": "q1_rev-q1_rev"
+        },
+        {
+          "id": "bear_sea",
+          "formula": "q1_sea+bear_sea_delta"
+        },
+        {
+          "id": "bear_sky",
+          "formula": "q1_sky+bear_sky_delta"
+        },
+        {
+          "id": "bear_land",
+          "formula": "q1_land+bear_land_delta"
+        },
+        {
+          "id": "bear_internet",
+          "formula": "q1_internet+bear_internet_delta"
+        },
+        {
+          "id": "bear_flow",
+          "formula": "q1_flow+bear_flow_delta"
+        },
+        {
+          "id": "base_sea",
+          "formula": "q1_sea+base_sea_delta"
+        },
+        {
+          "id": "base_sky",
+          "formula": "q1_sky+base_sky_delta"
+        },
+        {
+          "id": "base_land",
+          "formula": "q1_land+base_land_delta"
+        },
+        {
+          "id": "base_internet",
+          "formula": "q1_internet+base_internet_delta"
+        },
+        {
+          "id": "base_flow",
+          "formula": "q1_flow+base_flow_delta"
+        },
+        {
+          "id": "bull_sea",
+          "formula": "q1_sea+bull_sea_delta"
+        },
+        {
+          "id": "bull_sky",
+          "formula": "q1_sky+bull_sky_delta"
+        },
+        {
+          "id": "bull_land",
+          "formula": "q1_land+bull_land_delta"
+        },
+        {
+          "id": "bull_internet",
+          "formula": "q1_internet+bull_internet_delta"
+        },
+        {
+          "id": "bull_flow",
+          "formula": "q1_flow+bull_flow_delta"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_sea+bear_sky+bear_land+bear_internet+bear_flow+domain_precision_gap"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_sea+base_sky+base_land+base_internet+base_flow+domain_precision_gap"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_sea+bull_sky+bull_land+bull_internet+bull_flow+domain_precision_gap"
+        },
+        {
+          "id": "bear_rev_delta",
+          "formula": "bear_revenue-q1_rev"
+        },
+        {
+          "id": "base_rev_delta",
+          "formula": "base_revenue-q1_rev"
+        },
+        {
+          "id": "bull_rev_delta",
+          "formula": "bull_revenue-q1_rev"
+        },
+        {
+          "id": "bear_cost",
+          "formula": "q1_cost+historical_cost_season*bear_season_factor+bear_rev_delta*marginal_cost_rate+bear_investment_cost"
+        },
+        {
+          "id": "base_cost",
+          "formula": "q1_cost+historical_cost_season*base_season_factor+base_rev_delta*marginal_cost_rate+base_investment_cost"
+        },
+        {
+          "id": "bull_cost",
+          "formula": "q1_cost+historical_cost_season*bull_season_factor+bull_rev_delta*marginal_cost_rate+bull_investment_cost"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cost"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cost"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cost"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "Seaストック",
+              "revenue": "bear_sea"
+            },
+            {
+              "name": "Skyストック",
+              "revenue": "bear_sky"
+            },
+            {
+              "name": "Landストック",
+              "revenue": "bear_land"
+            },
+            {
+              "name": "Internetストック",
+              "revenue": "bear_internet"
+            },
+            {
+              "name": "フロー",
+              "revenue": "bear_flow"
+            },
+            {
+              "name": "前Qの総額とドメイン表示桁差の据置",
+              "revenue": "domain_precision_gap"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "Seaストック",
+              "revenue": "base_sea"
+            },
+            {
+              "name": "Skyストック",
+              "revenue": "base_sky"
+            },
+            {
+              "name": "Landストック",
+              "revenue": "base_land"
+            },
+            {
+              "name": "Internetストック",
+              "revenue": "base_internet"
+            },
+            {
+              "name": "フロー",
+              "revenue": "base_flow"
+            },
+            {
+              "name": "前Qの総額とドメイン表示桁差の据置",
+              "revenue": "domain_precision_gap"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "Seaストック",
+              "revenue": "bull_sea"
+            },
+            {
+              "name": "Skyストック",
+              "revenue": "bull_sky"
+            },
+            {
+              "name": "Landストック",
+              "revenue": "bull_land"
+            },
+            {
+              "name": "Internetストック",
+              "revenue": "bull_internet"
+            },
+            {
+              "name": "フロー",
+              "revenue": "bull_flow"
+            },
+            {
+              "name": "前Qの総額とドメイン表示桁差の据置",
+              "revenue": "domain_precision_gap"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-05-31",
+          "quarter": 1,
+          "period_start": "2025-06-01",
+          "period_end": "2025-08-31",
+          "revenue": 6006.611,
+          "operating_profit": 912.787,
+          "ordinary_profit": 915.78,
+          "net_profit": 672.617,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "連結PL原開示版・会計方針変更及び修正再表示なし。ドメイン売上は旧区分。",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2・9"
+        },
+        {
+          "fiscal_year_end": "2026-05-31",
+          "quarter": 2,
+          "period_start": "2025-06-01",
+          "period_end": "2025-11-30",
+          "revenue": 12133.355,
+          "operating_profit": 2268.898,
+          "ordinary_profit": 2324.075,
+          "net_profit": 1638.324,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "連結PL原開示版・会計方針変更及び修正再表示なし。ドメイン売上は旧区分。",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2・8"
+        },
+        {
+          "fiscal_year_end": "2027-05-31",
+          "quarter": 1,
+          "period_start": "2026-06-01",
+          "period_end": "2026-08-31",
+          "revenue": 6338.449,
+          "operating_profit": 892.806,
+          "ordinary_profit": 896.558,
+          "net_profit": 592.594,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "連結PL原開示版・会計方針変更及び修正再表示なし。ドメイン売上は新区分。原価人件費から販管費への人員再配置あり。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2・4・5・9"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "fy_revenue_guidance",
+          "metric": "revenue",
+          "value_ref": "guide_rev",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-08",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・修正なし"
+        },
+        {
+          "id": "fy_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guide_op",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-08",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・修正なし"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guide_ordinary",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-08",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・修正なし"
+        },
+        {
+          "id": "fy_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guide_net",
+          "period_start": "2026-06-01",
+          "period_end": "2027-05-31",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主帰属",
+          "unit": "百万円",
+          "published_at": "2026-10-08",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 2 通期連結業績予想・修正なし"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "Sea既存航海サービスと顧客獲得",
+          "mechanism": "欧州新規獲得、既存顧客アップセル、航海需要、為替が売上を左右する。全船常時監視の本格寄与は下期で、対象Qに先取りしない。",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 4、S07 Sea説明・質疑Q2～Q3",
+          "calculation_ids": [
+            "bear_sea",
+            "base_sea",
+            "bull_sea"
+          ],
+          "not_quantified_reason": "提供航海数・実現単価・通貨別売上の絶対値は確認できないため、前Q基準の条件付き純増減とした。"
+        },
+        {
+          "name": "Skyの導入機体数と契約開始",
+          "mechanism": "国内ヘリの導入機体数増とアジア航空契約の開始が継続売上に寄与する。",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 4、S07質疑Q4",
+          "calculation_ids": [
+            "bear_sky",
+            "base_sky",
+            "bull_sky"
+          ],
+          "not_quantified_reason": "機体別単価と契約開始月は提示資料で未確認。"
+        },
+        {
+          "name": "Landのコアプロダクト移行",
+          "mechanism": "CSによる導入・利用拡大が売上を支えるが、既存専用サービスの置換を含むため大型受注を全額純増扱いしない。",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "Land説明・質疑Q5・Q9",
+          "calculation_ids": [
+            "bear_land",
+            "base_land",
+            "bull_land"
+          ],
+          "not_quantified_reason": "コア契約とスポット契約の売上内訳、置換前後の純増額は非開示。"
+        },
+        {
+          "name": "Internet広告・サブスクと旧サービス減収",
+          "mechanism": "自社メディア利用増とAndroid価格改定が増収要因。キャリア減収と天候需要の反動が相殺要因。価格効果はInternet全体の仮定に内包。",
+          "source_ids": [
+            "S07",
+            "S09"
+          ],
+          "locator": "S07 Internet説明・質疑Q6～Q7・Q10、S09 改定内容・新料金適用時期",
+          "calculation_ids": [
+            "bear_internet",
+            "base_internet",
+            "bull_internet"
+          ],
+          "not_quantified_reason": "対象有料会員数、解約率、広告単価、税込料金から売上への認識方法が未確認で、値上げ額の単独積上げは行わない。"
+        },
+        {
+          "name": "広告執行・AI投資と営業費用",
+          "mechanism": "前Qの総営業費用に売上連動費、前年費用変動の条件付き再現、追加投資費用を積み上げる。原価から販管費への人員再配置は営業利益改善として計上しない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S07",
+            "S08",
+            "S10"
+          ],
+          "locator": "S01 PDF pages 4・9、S02 PDF pages 4・8、S03 PDF pages 4・9、S07質疑Q8～Q11、S08 PDF pages 3～4、S10 本格実装説明",
+          "calculation_ids": [
+            "historical_cost_season",
+            "bear_cost",
+            "base_cost",
+            "bull_cost"
+          ],
+          "not_quantified_reason": "販促費・通信データ費・人件費の四半期別絶対額が確認できず、費目別の完全積上げではない。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_rev",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "Seaの前Qからの変動",
+              "formula": "bear_sea_delta",
+              "reason": "為替・航海構成の逆風"
+            },
+            {
+              "label": "Skyの前Qからの変動",
+              "formula": "bear_sky_delta",
+              "reason": "新規契約寄与を見送る"
+            },
+            {
+              "label": "Landの前Qからの変動",
+              "formula": "bear_land_delta",
+              "reason": "大型案件寄与の変動"
+            },
+            {
+              "label": "Internetの前Qからの変動",
+              "formula": "bear_internet_delta",
+              "reason": "天候需要反落とキャリア減収"
+            },
+            {
+              "label": "フローの前Qからの変動",
+              "formula": "bear_flow_delta",
+              "reason": "検収減少"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績差。成長・季節性・為替等に金額分解できない部分を残す。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_rev",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "Sea",
+              "formula": "bear_sea_delta",
+              "reason": "為替・航海構成の逆風"
+            },
+            {
+              "label": "Sky",
+              "formula": "bear_sky_delta",
+              "reason": "既存水準維持"
+            },
+            {
+              "label": "Land",
+              "formula": "bear_land_delta",
+              "reason": "大型案件寄与の変動"
+            },
+            {
+              "label": "Internet",
+              "formula": "bear_internet_delta",
+              "reason": "天候需要反落とキャリア減収"
+            },
+            {
+              "label": "フロー",
+              "formula": "bear_flow_delta",
+              "reason": "検収減少"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "仮定したドメイン別純増減の合計。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "前Qからの売上変動と限界費用",
+              "formula": "bear_rev_delta-bear_rev_delta*marginal_cost_rate",
+              "reason": "売上差から仮定した変動費を控除"
+            },
+            {
+              "label": "前Qからの費用季節変動",
+              "formula": "zero-historical_cost_season*bear_season_factor",
+              "reason": "前年費用減少は再現しない"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-bear_investment_cost",
+              "reason": "AI・データ・開発運営費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。広告・天候・事業成長等の個別寄与額を特定できない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変動と限界費用",
+              "formula": "bear_rev_delta-bear_rev_delta*marginal_cost_rate",
+              "reason": "独自限界費用率による寄与"
+            },
+            {
+              "label": "費用季節変動",
+              "formula": "zero-historical_cost_season*bear_season_factor",
+              "reason": "前年費用減少は再現しない"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-bear_investment_cost",
+              "reason": "前Qからの追加支出"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル上の残差なし。費目別実額の確認を意味しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_rev",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "Seaの前Qからの変動",
+              "formula": "base_sea_delta",
+              "reason": "既存顧客と欧州拡販"
+            },
+            {
+              "label": "Skyの前Qからの変動",
+              "formula": "base_sky_delta",
+              "reason": "機体導入・契約開始"
+            },
+            {
+              "label": "Landの前Qからの変動",
+              "formula": "base_land_delta",
+              "reason": "コアプロダクトの純増"
+            },
+            {
+              "label": "Internetの前Qからの変動",
+              "formula": "base_internet_delta",
+              "reason": "自社成長・価格改定と旧サービス減収が相殺"
+            },
+            {
+              "label": "フローの前Qからの変動",
+              "formula": "base_flow_delta",
+              "reason": "前年同Q付近の検収水準"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績差を、説明できない成長・季節性・為替等の残差として表示。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_rev",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "Sea",
+              "formula": "base_sea_delta",
+              "reason": "既存顧客と欧州拡販"
+            },
+            {
+              "label": "Sky",
+              "formula": "base_sky_delta",
+              "reason": "機体導入・契約開始"
+            },
+            {
+              "label": "Land",
+              "formula": "base_land_delta",
+              "reason": "コアプロダクト純増"
+            },
+            {
+              "label": "Internet",
+              "formula": "base_internet_delta",
+              "reason": "増収要因と減収要因の相殺"
+            },
+            {
+              "label": "フロー",
+              "formula": "base_flow_delta",
+              "reason": "検収水準の正常化仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "ドメイン別仮定の合計。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "前Qからの売上変動と限界費用",
+              "formula": "base_rev_delta-base_rev_delta*marginal_cost_rate",
+              "reason": "売上差に対する限界利益"
+            },
+            {
+              "label": "前Qからの費用季節変動",
+              "formula": "zero-historical_cost_season*base_season_factor",
+              "reason": "前年費用減少の半分を再現"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-base_investment_cost",
+              "reason": "AI・データ・開発運営費用"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績営業利益差は費目別に説明できず残す。人員再配置による見かけの粗利改善を利益要因としない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変動と限界費用",
+              "formula": "base_rev_delta-base_rev_delta*marginal_cost_rate",
+              "reason": "独自限界費用率による寄与"
+            },
+            {
+              "label": "費用季節変動",
+              "formula": "zero-historical_cost_season*base_season_factor",
+              "reason": "前年費用減少の半分を再現"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-base_investment_cost",
+              "reason": "前Qからの追加支出"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル上の残差なし。季節性の再現には不確実性がある。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prev_q2_rev",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "Seaの前Qからの変動",
+              "formula": "bull_sea_delta",
+              "reason": "欧州獲得・アップセル進捗"
+            },
+            {
+              "label": "Skyの前Qからの変動",
+              "formula": "bull_sky_delta",
+              "reason": "新規契約計上"
+            },
+            {
+              "label": "Landの前Qからの変動",
+              "formula": "bull_land_delta",
+              "reason": "大型顧客導入の進展"
+            },
+            {
+              "label": "Internetの前Qからの変動",
+              "formula": "bull_internet_delta",
+              "reason": "自社広告・サブスクと価格改定の純寄与"
+            },
+            {
+              "label": "フローの前Qからの変動",
+              "formula": "bull_flow_delta",
+              "reason": "検収増加"
+            }
+          ],
+          "residual": "historical_rev_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績差のうち要因別金額が確認できない部分。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_rev",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "Sea",
+              "formula": "bull_sea_delta",
+              "reason": "欧州獲得・アップセル進捗"
+            },
+            {
+              "label": "Sky",
+              "formula": "bull_sky_delta",
+              "reason": "新規契約計上"
+            },
+            {
+              "label": "Land",
+              "formula": "bull_land_delta",
+              "reason": "大型顧客導入の進展"
+            },
+            {
+              "label": "Internet",
+              "formula": "bull_internet_delta",
+              "reason": "自社サービス増収が旧サービス減収を上回る"
+            },
+            {
+              "label": "フロー",
+              "formula": "bull_flow_delta",
+              "reason": "検収増加"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "ドメイン別仮定の合計。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prev_q2_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "前Qからの売上変動と限界費用",
+              "formula": "bull_rev_delta-bull_rev_delta*marginal_cost_rate",
+              "reason": "売上差に対する限界利益"
+            },
+            {
+              "label": "前Qからの費用季節変動",
+              "formula": "zero-historical_cost_season*bull_season_factor",
+              "reason": "前年と同額の総営業費用減少を再現"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-bull_investment_cost",
+              "reason": "既存リソース活用で追加支出を限定"
+            }
+          ],
+          "residual": "historical_op_gap",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同Qから当年前Qへの実績営業利益差。利益への個別寄与を特定できないため全額残差とする。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変動と限界費用",
+              "formula": "bull_rev_delta-bull_rev_delta*marginal_cost_rate",
+              "reason": "独自限界費用率による寄与"
+            },
+            {
+              "label": "費用季節変動",
+              "formula": "zero-historical_cost_season*bull_season_factor",
+              "reason": "前年費用減少を再現"
+            },
+            {
+              "label": "追加投資費用",
+              "formula": "zero-bull_investment_cost",
+              "reason": "前Qからの追加支出"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "費用モデル上の残差なし。費目別の完全な説明ではない。"
+        }
+      ],
+      "company_guidance": "S01の通期連結予想を保存。S07でも据置を確認した。対象Q単独の会社予想は提示本文では確認できない。latest_confirmedは提示資料内での最新確認を意味し、その後の修正開示の網羅性は未確認。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスはない。",
+      "independent_forecast": "前Qの新区分ドメイン売上を基盤に、既存サービス、契約導入、価格改定を内包したInternet純増減、フロー検収を個別に仮定した条件付き予測。営業費用は前Q実績に限界費用、前年費用変動の再現率、追加投資を加えて算定した。会社通期予想の四等分・差引き推計ではなく、会社修正見込みも使用していない。数量と単価の完全積上げではなく、予測確度は低い。",
+      "narrative": [
+        {
+          "heading": "対象Qの条件付き予測",
+          "text": "中心の売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気では売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}、営業利益{{value:bull_op}}となる。契約基盤の積み上がりを見込む一方、広告収入の天候依存と成長投資の執行が利益レンジを左右する。"
+        },
+        {
+          "heading": "企業固有の増減要因",
+          "text": "Landのコアプロダクト導入とSkyの機体・顧客拡大が中心となる。Seaの大型サービス刷新は下期の施策として対象Qに先取りしない。Internetでは自社広告・サブスク成長とAndroid価格改定を評価するが、キャリア向け減収と前Qの強い天候需要の反動を相殺要因とする。価格改定の効果はInternetの仮定に含め、別加算しない。"
+        },
+        {
+          "heading": "利益と比較上の留意点",
+          "text": "前年同Qの売上は{{value:prev_q2_rev}}、営業利益は{{value:prev_q2_op}}。前年のQ1からQ2への総営業費用変動は{{value:historical_cost_season}}で、中心ではこの半分が再現すると仮定した。人員の原価部門から営業部門への再配置は費用総額の削減ではなく、粗利率改善をそのまま営業増益に換算しない。YoYブリッジでは前年同Qから当年前Qへの実績差を未説明残差として残している。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "partial",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "partial",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "対象Qの航海数・機体数・契約開始日・実現単価の絶対値は提示本文で未確認。",
+        "Android通常コース対象会員数、更新日の分布、解約率及び売上認識方法が未確認。",
+        "広告単価、DAUの対象Q実績、キャリア向け減収額は未確認。",
+        "広告投資の季節変動の再現性とAI・データ関連追加費用により営業利益が大きく変動する。",
+        "S11では配送・販売への大きな影響はないと説明するが、対応費用や補償額は非開示。追加の重大費用が生じないことを予測の条件とする。"
+      ],
+      "material_unresolved": [
+        "入力された2026-12-28の決算発表日は一次資料で未確認。S12は資料一覧にあるが本文が添付されていないため、announcement_dateはnull。",
+        "S04・S05は短縮フラグこそfalseだが本文に文字化けがあり、図表の数値も欠落している。図表画像やPDF原本は未確認。ドメイン別KPI絶対値や販促費増減額を復元・創作していない。",
+        "S07の添付本文には質疑応答Q1～Q12が実際に含まれるため、discoveryの質疑応答未確認という記載より添付本文を優先した。",
+        "ドメイン区分は当期に変更されている。連結売上・営業利益の前年Q単独は同一会計版のS02累計からS03累計を差し引けるが、旧区分と新区分のドメイン値は直接差し引いていない。",
+        "単一セグメントでありドメイン別営業利益は非開示。ドメイン別採算を実績として作らず、共通の独自限界費用率を使用した。",
+        "モデルの売上レンジは前Qのストック規模と会社の定性的説明に基づく判断幅であり、受注残・会員数・単価により実証された上下限ではない。",
+        "総営業費用の前年季節変動には広告費以外の要因も含まれる。費目別実額は未確認であり、営業利益予測は季節費用の再現率に強く依存する。",
+        "ドメイン表示値と千円単位連結PLの差は計算上分離し、前Q差を予測にも据え置いた。この表示桁差を実体的な売上ドライバーとは扱わない。",
+        "基準日時以前の訂正・業績予想修正・重要開示を網羅したことは確認できない。提示された後続ニュースのみを評価した。",
+        "営業外為替損益、特別損益、対象Q税率について根拠あるレンジを設定できず、経常利益及び親会社株主帰属純利益の独自予測はnull。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "S04・S05は短縮フラグこそfalseだが本文に文字化けがあり、図表の数値も欠落している。図表画像やPDF原本は未確認。ドメイン別KPI絶対値や販促費増減額を復元・創作していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "S07の添付本文には質疑応答Q1～Q12が実際に含まれるため、discoveryの質疑応答未確認という記載より添付本文を優先した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "ドメイン区分は当期に変更されている。連結売上・営業利益の前年Q単独は同一会計版のS02累計からS03累計を差し引けるが、旧区分と新区分のドメイン値は直接差し引いていない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "ドメイン表示値と千円単位連結PLの差は計算上分離し、前Q差を予測にも据え置いた。この表示桁差を実体的な売上ドライバーとは扱わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "モデルの売上レンジは前Qのストック規模と会社の定性的説明に基づく判断幅であり、受注残・会員数・単価により実証された上下限ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "単一セグメントでありドメイン別営業利益は非開示。ドメイン別採算を実績として作らず、共通の独自限界費用率を使用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "営業外為替損益、特別損益、対象Q税率について根拠あるレンジを設定できず、経常利益及び親会社株主帰属純利益の独自予測はnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "基準日時以前の訂正・業績予想修正・重要開示を網羅したことは確認できない。提示された後続ニュースのみを評価した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "総営業費用の前年季節変動には広告費以外の要因も含まれる。費目別実額は未確認であり、営業利益予測は季節費用の再現率に強く依存する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "資料確認未了: presentation",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "資料確認未了: segments_kpi",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "Android通常コース対象会員数、更新日の分布、解約率及び売上認識方法が未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "S11では配送・販売への大きな影響はないと説明するが、対応費用や補償額は非開示。追加の重大費用が生じないことを予測の条件とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_flow_delta: 前Q比。前年上期フロー431から前年Q1の210を引いた221付近を参考に、対象Q売上220を仮定。前年の総売上成長率は外挿しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_internet_delta: 前Q比。S07の自社広告・サブスク増とキャリア減収を相殺。S09のAndroid通常コース値上げは既存会員への適用が順次であり、天候需要反落を補う一要因として内包する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_investment_cost: 前Qの営業費用基盤を維持したうえでAI・データ・開発運営への小幅な追加支出を仮定。根拠はS01 page 4、S07、S10。人員再配置を人件費削減として加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_land_delta: 前Q比。S07のコアプロダクト契約・ID増加とCS強化を受け、既存専用サービスからの置換を相殺した純増を約2%に限定する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_sea_delta: 前Q比。S07 Sea説明・質疑Q2～Q3の欧州獲得とサービス提供維持を踏まえ、既存顧客への拡販による小幅増収を仮定。為替の追加追い風や即時値上げは見込まない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "base_season_factor: 前年のQ1からQ2への総営業費用減少を参考に、天候・広告執行に依存するため半分だけ再現すると仮定。費用減少の全額を広告費と断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_flow_delta: 前Q比。S01 page 5、S02 page 5、S03 page 5のフロー実績を参考に、案件検収が弱い場合の売上200を仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_internet_delta: 前Q比。S07 Internet説明の前Qの強い天候需要、キャリア・端末向け減収、広告成長が下期中心という説明から、広告需要の反落がアプリ成長と価格改定を上回る約5%減収を仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_investment_cost: S01 page 4、S07のAI環境・通信データ投資継続、S10の本格実装を踏まえ、売上連動分と広告等の季節変動を除く前Q比追加営業費用を60とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_land_delta: 前Q比。S01 page 4の大型受注とS07 Land説明・質疑Q5の既存サービス置換を踏まえ、大型案件の寄与変動が継続契約増を上回る場合を想定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_sea_delta: 前Q比。S01 page 4、S07 Sea説明・質疑Q2～Q3では既存サービス提供を維持し欧州顧客獲得が進む一方、為替寄与がある。為替と航海構成の逆風を想定し、前Q売上から約3%弱の減収。下期の新サービス効果は含めない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bear_season_factor: S02 page 4、S03 page 4では広告戦略・天候が費用を左右した。S01とS07では広告投資継続を掲げるため、前年Q1からQ2への総営業費用減少が再現しないケース。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_flow_delta: 前Q比。前Qフロー242を基準に、調査・システム案件の検収がやや増える対象Q売上260を仮定。受注残を確認した値ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_internet_delta: 前Q比。S07の自社メディア強化とS09価格改定がキャリア減収を上回る約4%増収を仮定。S10の機能改善や海外展開に独立した追加売上は付けない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_investment_cost: S07の既存リソース活用によりAI・データ投資の追加費用が限定される条件。既に前Q費用に含む投資は再加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_land_delta: 前Q比。S07の大型顧客への導入とコアプロダクト拡販が速やかに売上化する場合の約5%増収。イベント利用人数に標準単価を掛ける推計は行わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_sea_delta: 前Q比。S07の欧州新規獲得・アップセルが進む場合の約3%弱の増収。正式リリース前の全船常時監視による売上上乗せは含めない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "bull_season_factor: S07質疑Q11、S08 page 4の費用対効果に基づく投資運用を踏まえ、前年のQ1からQ2への総営業費用減少と同額が再現する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "marginal_cost_rate: S01 pages 4・11、S07、S08 pages 3～4のストック中心、AI運営、既存人員再配置を踏まえ、既存費用基盤に対する売上増減の限界費用率を20%と置く。実績粗利率やドメイン別利益率ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "対象Qの航海数・機体数・契約開始日・実現単価の絶対値は提示本文で未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "広告単価、DAUの対象Q実績、キャリア向け減収額は未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "4825",
+      "company_name": "株式会社ウェザーニューズ",
+      "kind": "condition",
+      "message": "広告投資の季節変動の再現性とAI・データ関連追加費用により営業利益が大きく変動する。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/4825/result.json": "841eb3c3edc192ffd7b3f0d4fa770d4907aad7e8fa36f7e7307a0ac05c911b5e",
+    "reports/4825.md": "78042627cb226500ed6064c34bfe1c8f76197e08f24dc3daae40337843122785"
+  }
+}
