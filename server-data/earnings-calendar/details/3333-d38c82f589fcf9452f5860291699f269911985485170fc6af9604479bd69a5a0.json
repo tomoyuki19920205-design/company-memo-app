@@ -1,0 +1,2876 @@
+{
+  "id": "3333-d38c82f589fcf9452f5860291699f269911985485170fc6af9604479bd69a5a0",
+  "code": "3333",
+  "companyName": "株式会社あさひ",
+  "announcementDate": "2026-12-25",
+  "target": {
+    "fiscalYearEnd": "2027-02-20",
+    "quarter": 3
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "3333-supplement-0079452c50c6a46b · d38c82f5",
+  "savedAt": "2026-11-28T22:48:29+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 17572.606367999997,
+  "operatingProfit": -80.35820436799804,
+  "revenueYoY": {
+    "rate": -0.03496000000000001,
+    "label": "-3.5%",
+    "tone": "negative",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "赤転",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 3333 株式会社あさひ｜2027-02-20期 Q3単独\n品質状態：**検証未了**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 17,281.26 | 17,572.61 | 17,863.95 |\n| 営業利益 | -262.68 | -80.36 | 103.13 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | -636.59 | -3.50% |  |\n| YoY | 営業利益 | -644.44 | -114.25% |  |\n| QnQ | 売上高 | -871.62 | -4.73% |  |\n| QnQ | 営業利益 | -213.95 | -160.15% |  |\n\n## 会社予想\nS01で通期予想の据置きを確認。対象Q3単独の会社予想は提示資料にない。通期予想から中間実績を引いた下期必要額は会社が新たに公表した下期予想ではなく、単なる差引き値である。対象期後の会社修正見込みは使用していない。\n\n## 市場コンセンサス\n未確認。提示資料に公表市場コンセンサスの数値はない。\n\n## 独自予測・差引推計の区分\n前年Q3の季節的な売上規模を月別に仮配分し、9月・10月の公表全店速報指数と11月の条件付き需要指数で売上を積み上げた。粗利益は前年Q3粗利率と原価・価格・構成改善の感応度から、販管費は人件費・運送保管料・償却費・その他費用から別々に推計した。会社予想の四等分や利益からの費用逆算はしていない。費用仮定は全シナリオ共通で、シナリオ差は11月需要と粗利率改善。経常利益・純利益は営業外損益、特別損失、税負担の合理的な範囲を置けずnull。\n\n## 対象四半期と条件付き予測\n対象は2027年2月期Q3単独。中心条件の売上は17,572.61、営業利益は-80.36。弱気では売上17,281.26、営業利益-262.68、強気では売上17,863.95、営業利益103.13となる。月別金額の仮配分を含むため、確定的な予測区間ではない。\n\n## 客数と採算\n価格是正と電動車構成は客単価を支えるが、客数減少が売上を押し下げている。修理・サービスと調達改善は粗利率を支える一方、電動車の構成増は粗利率の制約にもなる。中心粗利益8,912.35に対し、独立に積み上げた販管費は8,992.71。賃上げ後の費用基盤を吸収できるかが焦点である。\n\n## 比較と会社予想\n前年Q3単独は売上18,209.20、営業利益564.09、直前Q2単独は売上18,444.22、営業利益133.59。会社通期予想から中間実績を差し引いた下期必要額は売上40,047.20、営業利益1,068.60であり、独自Q3予測とは区別する。前四半期比較には季節性と年度間変化を分離できない残差を明示した。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 公表全店速報指数と仮定月別構成比 |\n| 10月度売上 | -142.40 | 公表全店速報指数と仮定月別構成比 |\n| 11月度需要 | -407.89 | 弱気の客数・価格構成条件 |\n| 残差（none） | 0.00 | モデル内で一致。月次速報と決算の差異がないという条件付きであり、実際の差異がゼロと確認されたものではない |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 前年Q3基準で識別した月次変化 |\n| 10月度売上 | -142.40 | 前年Q3基準で識別した月次変化 |\n| 11月度需要 | -407.89 | 前年Q3基準で識別した弱気条件 |\n| 残差（economic_unexplained） | -235.02 | 前年Q3単独と当期Q2単独の基準差。季節性と年度間変化を分離できず、全額を未説明残差として保持 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -466.91 | 前年同季節の粗利率を使用。純粋な数量効果ではない |\n| 粗利率改善 | 34.56 | 原価・価格・構成の改善が限定的な条件 |\n| 人件費 | -299.95 | 賃上げ・人員増 |\n| 運送保管料 | 0.00 | 数量減と単価上昇の相殺条件 |\n| 減価償却費 | -25.00 | 店舗・システム投資 |\n| その他販管費 | -69.47 | 店舗運営・IT費用等 |\n| 残差（none） | 0.00 | 独自費用仮定と粗利率仮定によるモデル上の一致 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -466.91 | 前年Q3基準で識別した変化 |\n| 粗利率改善 | 34.56 | 弱気条件 |\n| 人件費 | -299.95 | 前年Q3基準 |\n| 運送保管料 | 0.00 | 前年Q3基準 |\n| 減価償却費 | -25.00 | 前年Q3基準 |\n| その他販管費 | -69.47 | 前年Q3基準 |\n| 残差（economic_unexplained） | 430.50 | 前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 公表全店速報指数と仮定月別構成比 |\n| 10月度売上 | -142.40 | 公表全店速報指数と仮定月別構成比 |\n| 11月度需要 | -116.54 | 10月に近い需要継続条件 |\n| 残差（none） | 0.00 | 月次速報と決算の差異がないという条件付きモデル内の一致 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 前年Q3基準で識別した月次変化 |\n| 10月度売上 | -142.40 | 前年Q3基準で識別した月次変化 |\n| 11月度需要 | -116.54 | 前年Q3基準で識別した中心条件 |\n| 残差（economic_unexplained） | -235.02 | 前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -320.32 | 前年同季節の粗利率を使用 |\n| 粗利率改善 | 70.29 | 中間期に確認された改善幅の継続条件 |\n| 人件費 | -299.95 | 賃上げ・人員増 |\n| 運送保管料 | 0.00 | 数量減と単価上昇の相殺条件 |\n| 減価償却費 | -25.00 | 店舗・システム投資 |\n| その他販管費 | -69.47 | 店舗運営・IT費用等 |\n| 残差（none） | 0.00 | 独自費用仮定と粗利率仮定によるモデル上の一致 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -320.32 | 前年Q3基準で識別した変化 |\n| 粗利率改善 | 70.29 | 中心条件 |\n| 人件費 | -299.95 | 前年Q3基準 |\n| 運送保管料 | 0.00 | 前年Q3基準 |\n| 減価償却費 | -25.00 | 前年Q3基準 |\n| その他販管費 | -69.47 | 前年Q3基準 |\n| 残差（economic_unexplained） | 430.50 | 前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 公表全店速報指数と仮定月別構成比 |\n| 10月度売上 | -142.40 | 公表全店速報指数と仮定月別構成比 |\n| 11月度需要 | 174.81 | 客数回復と価格構成効果が両立する条件 |\n| 残差（none） | 0.00 | 月次速報と決算の差異がないという条件付きモデル内の一致 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 9月度売上 | -377.66 | 前年Q3基準で識別した月次変化 |\n| 10月度売上 | -142.40 | 前年Q3基準で識別した月次変化 |\n| 11月度需要 | 174.81 | 前年Q3基準で識別した強気条件 |\n| 残差（economic_unexplained） | -235.02 | 前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -173.72 | 前年同季節の粗利率を使用 |\n| 粗利率改善 | 107.18 | 追加価格是正と原価低減が進む条件 |\n| 人件費 | -299.95 | 賃上げ・人員増 |\n| 運送保管料 | 0.00 | 数量減と単価上昇の相殺条件 |\n| 減価償却費 | -25.00 | 店舗・システム投資 |\n| その他販管費 | -69.47 | 店舗運営・IT費用等 |\n| 残差（none） | 0.00 | 独自費用仮定と粗利率仮定によるモデル上の一致 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化の粗利影響 | -173.72 | 前年Q3基準で識別した変化 |\n| 粗利率改善 | 107.18 | 強気条件 |\n| 人件費 | -299.95 | 前年Q3基準 |\n| 運送保管料 | 0.00 | 前年Q3基準 |\n| 減価償却費 | -25.00 | 前年Q3基準 |\n| その他販管費 | -69.47 | 前年Q3基準 |\n| 残差（economic_unexplained） | 430.50 | 前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分 |\n\n## エラー・未解決事項\n- QnQブリッジの未説明残差は季節性だけと断定できない。前年Q3と当期Q2の基準差を経済的未説明残差として残した。\n- S04は訂正後全文ではなくCF内訳の訂正通知。前年中間期PLはS12原短信とS01比較欄で確認し、S03と同一の損益計算書会計版として差し引いた。\n- 前年Q3の自転車・パーツ等の収益認識分類と当期説明資料の新車・パーツサービス・周辺事業分類は一致しないため、異なる分類を無理に差し引いた品目別予測は作成していない。\n- 営業外為替損益、特別損失、税効果の対象Q3における見通しは根拠不足のため、経常利益と純利益を予測していない。\n- 対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された調査条件に基づき、基準日時までの開示一覧を網羅確認した結果ではない。\n- 指定された2026年12月25日の発表予定日は保存原文で確認できない。S10・S11の本文が提示されていないためannouncement_dateはnull。\n- 提示本文のtruncatedは全件false。ただしS05表紙の総ページ表記と抽出されたページ数に不一致があり、欠落の有無は原本画像未確認。採用数値は提示された該当ページ本文に限る。\n- 販管費内訳は説明資料の百万円単位表示から前年Q3単独を差し引いており、内訳の精度は短信総額より低い。その他費用は短信総額と表示内訳の差で定義しているため、内訳の端数も含む。\n- 資料確認未了: already_announced\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- 11月度の月次営業速報は提示資料にない。非開示と確定せず、基準日時点の原文未確認として扱う。\n- S08は速報であり決算確定値ではない。月次指数を全社決算売上に適用する際の範囲・収益認識差は未定量化。\n- dep_increment: 前年Q3販管費内償却費に追加。中間期の償却費増加と、下期のシステム・店舗投資計画から緩やかな増加を置く。設備投資額そのものを費用計上しない\n- gm_base_delta: 前年Q3の季節的な商品構成を基礎に、中間期で確認された価格是正・原価低減・修理サービス構成による約0.4ポイント改善が継続する条件\n- gm_bear_delta: 前年Q3粗利率に対する改善幅を0.2ポイントとする。中間期の約0.4ポイント改善に対し、低粗利の電動車構成と価格競争で改善が半減する条件\n- gm_bull_delta: 中間期の改善幅に部分的な追加価格是正と原価低減が加わる条件。品目別粗利率が非開示のため、改善幅は中間期の約1.5倍までの感応度設定にとどめる\n- labor_factor: 前年Q3人件費に、中間期で確認された賃上げ・人員増による7.2%増を適用。需要の短期変動で人件費を機械的に削減しない\n- nov_base: 10月の全店客数95.2%、客単価102.3%、売上97.7%を踏まえ、11月も需要回復が限定的と仮定。価格・数量・構成の合成指数であり別途値上げ効果を加算しない\n- nov_bear: 9月度の客数減少が再び強まり、価格是正でも補えない条件。全店売上の9月速報93.9%に近い弱い需要を想定\n- nov_bull: 失われた需要の一部回復で客数が前年並みとなり、直近の価格・構成効果が残る条件。会社の挽回方針は実績とは扱わない\n- oct_weight: 前年Q3の月別売上金額未確認のため10月度もほぼ均等配分。残りを11月度とする\n- one: 指数を増減率に変換するための計算定数。経済予測ではない\n- other_factor: 前年Q3販管費から人件費・運送保管料・償却費を除いた費用に2%増を適用。店舗網拡大とIT運営費増を考慮する一方、中間期は人件費以外の増加が比較的小さいことを反映\n- sep_weight: 前年Q3の月別売上金額が提示されていないため、9月度の前年四半期売上構成比をほぼ均等と置く。実績として扱わない\n- shipping_factor: 前年Q3運送保管料を維持。販売数量の弱さと在庫適正化による減少余地が運送単価上昇を相殺する条件。売上の客単価上昇を輸送数量増と取り違えない\n- 下期の追加価格是正について商品別の対象、実施時期、改定率は提示資料では非開示。\n- 前年Q3の月別売上構成比は未確認。ほぼ均等の配分仮定を変えると予測額が変わる。\n- 品目別粗利率、Q3人員数、リペア処理能力、システム稼働時期は未確認。費用と粗利率は明示した独自仮定である。\n\n## 根拠・保存記録\n- S01 [2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540214.pdf) / 公表 2026-09-25 / retrieved / SHA-256 `82b0ba31dff122d883dea85f9c96f5e1a3e9b1c9769c9746626c40c6cf975023`\n- S02 [2027年2月期 第1四半期決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260622/20260622575617.pdf) / 公表 2026-06-22 / retrieved / SHA-256 `68caeafbe2370251da47146352b2c5093c6639e711547d878226ddcfc554df4b`\n- S03 [2026年2月期 第3四半期決算短信〔日本基準〕（非連結）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251222/20251222523732.pdf) / 公表 2025-12-22 / retrieved / SHA-256 `a9e4115466dd46cfd12f25f58f7054f32fa09ed8db7a5fdb15b2c1033820e732`\n- S04 [(訂正・数値データ訂正)2026年2月期第2四半期（中間期）決算短信の一部訂正通知（訂正後全文ではない）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250926/20250926563097.pdf) / 公表 2025-09-26 / retrieved / SHA-256 `4bca44e20f20c81822fcfd3907699470f044e5798d4d3b76d0110ff39e68b07b`\n- S05 [2027年2月期 第2四半期（中間期）決算説明資料（会社開示の第三者保存先）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540164.pdf) / 公表 2026-09-25 / retrieved / SHA-256 `6aa654af39802fd4934d330875d6ab1a856e2df4b72f2cc3921b0f9e3e4b802f`\n- S06 [2026年2月期 第3四半期決算説明資料](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251222/20251222523766.pdf) / 公表 2025-12-22 / retrieved / SHA-256 `ad6228dd98f60894a6d9c51fb4caf66328b7e67d74898ca7d87ac70dcfca9f65`\n- S07 [2026年2月期 決算短信〔日本基準〕（非連結）（2027年2月期会社予想を収録）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260403/20260403598019.pdf) / 公表 2026-04-03 / retrieved / SHA-256 `013774bfc484c376b9b4db2d2a7da77574f7b02148e659c52a39cc1fdd231909`\n- S08 [2026年10月度 月次営業速報に関するお知らせ](https://c1.cb-asahi.co.jp/ir/monthly-report/5210_jp_Preliminary_Monthly_Business_Report_for_October_2026.pdf) / 公表 2026-11-04 / retrieved / SHA-256 `1c8c6099fdddae61478de37fcc128a2efc14b0017f04115f6ba6653b735e19f4`\n- S09 [2027年2月期 中間期決算説明会書き起こし・質疑応答（第三者掲載）](https://finance.yahoo.co.jp/quote/3333.T/financials?styl=presentation) / 公表 2026-10-13 / retrieved / SHA-256 `c0a1c8aa5f053462fab6aa7cad0ab96967b17452fde00772fa420815baa707ce`\n- S10 [公式IRライブラリー・IRカレンダー](https://corporate.cb-asahi.co.jp/ir/library/index.html) / 公表  / unavailable / SHA-256 `なし`\n- S11 [公式IRニュース一覧](https://corporate.cb-asahi.co.jp/ir/news/index.html) / 公表  / unavailable / SHA-256 `なし`\n- S12 [2026年2月期 第2四半期（中間期）決算短信（当初版。S04訂正通知と併読）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250922/20250922560752.pdf) / 公表 2025-09-22T13:00:00+09:00 / retrieved / SHA-256 `cb38d0dc3411f0a59e2fe0ee9d90ecf68274b279316b844607f58efdfc8081fe`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3333",
+    "company_name": "株式会社あさひ",
+    "announcement_date": "2026-12-25",
+    "target_period": "2027-02-20期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-02-20",
+      "quarter": 3,
+      "start": "2026-08-21",
+      "end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "非連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 17281.259167999997,
+        "operating_profit": -262.6841755039968,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 17572.606367999997,
+        "operating_profit": -80.35820436799804,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 17863.953567999997,
+        "operating_profit": 103.13315556800262,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -871.6166320000011,
+          "rate": -0.047256890789056344,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -213.94620436799778,
+          "rate": -1.6015375959517186,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": -636.5936320000001,
+          "rate": -0.03496000000000001,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -644.4442043679983,
+          "rate": -1.142457363536762,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "py_h1_sales": 45900.919,
+      "py_h1_op": 3756.599,
+      "py_h1_gp": 21486.768,
+      "py_h1_sga": 17730.168,
+      "py_q3c_sales": 64110.119,
+      "py_q3c_op": 4320.685,
+      "py_q3c_gp": 30649.147,
+      "py_q3c_sga": 26328.461,
+      "cy_q1_sales": 27786.574,
+      "cy_q1_op": 3097.809,
+      "cy_h1_sales": 46230.797,
+      "cy_h1_op": 3231.397,
+      "py_h1_labor": 8338.0,
+      "py_q3c_labor": 12504.0,
+      "py_h1_shipping": 1234.0,
+      "py_q3c_shipping": 1720.0,
+      "py_h1_dep": 880.0,
+      "py_q3c_dep": 1353.0,
+      "sep_sales_index": 0.939,
+      "oct_sales_index": 0.977,
+      "guide_sales": 86278.0,
+      "guide_op": 4300.0,
+      "guide_ordinary": 4440.0,
+      "guide_net": 2730.0,
+      "one": 1.0,
+      "sep_weight": 0.34,
+      "oct_weight": 0.34,
+      "nov_bear": 0.93,
+      "nov_base": 0.98,
+      "nov_bull": 1.03,
+      "gm_bear_delta": 0.002,
+      "gm_base_delta": 0.004,
+      "gm_bull_delta": 0.006,
+      "labor_factor": 1.072,
+      "shipping_factor": 1.0,
+      "dep_increment": 25.0,
+      "other_factor": 1.02,
+      "py_q3_sales": 18209.199999999997,
+      "py_q3_op": 564.0860000000002,
+      "py_q3_gp": 9162.379,
+      "py_q3_sga": 8598.292999999998,
+      "py_q3_gm": 0.5031730663620588,
+      "cy_q2_sales": 18444.222999999998,
+      "cy_q2_op": 133.58799999999974,
+      "py_q3_labor": 4166.0,
+      "py_q3_shipping": 486.0,
+      "py_q3_dep": 473.0,
+      "py_q3_other": 3473.292999999998,
+      "forecast_labor": 4465.952,
+      "forecast_shipping": 486.0,
+      "forecast_dep": 498.0,
+      "forecast_other": 3542.7588599999976,
+      "forecast_sga": 8992.710859999997,
+      "nov_weight": 0.3199999999999999,
+      "sep_revenue": 5813.469192,
+      "oct_revenue": 6048.732056,
+      "bear_nov_revenue": 5419.0579199999975,
+      "base_nov_revenue": 5710.405119999997,
+      "bull_nov_revenue": 6001.752319999997,
+      "bear_revenue": 17281.259167999997,
+      "base_revenue": 17572.606367999997,
+      "bull_revenue": 17863.953567999997,
+      "bear_gp": 8730.026684496,
+      "base_gp": 8912.352655632,
+      "bull_gp": 9095.844015568,
+      "bear_op": -262.6841755039968,
+      "base_op": -80.35820436799804,
+      "bull_op": 103.13315556800262,
+      "sep_sales_change": -377.6588080000003,
+      "oct_sales_change": -142.39594400000013,
+      "bear_nov_change": -407.8860799999995,
+      "base_nov_change": -116.53888000000003,
+      "bull_nov_change": 174.80832000000007,
+      "labor_effect": -299.9520000000002,
+      "shipping_effect": 0.0,
+      "dep_effect": -25.0,
+      "other_effect": -69.4658599999998,
+      "qoq_sales_residual": -235.02300000000105,
+      "qoq_op_residual": 430.4980000000005,
+      "guidance_remaining_sales": 40047.203,
+      "guidance_remaining_op": 1068.603
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-02-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2、7、前年同期比較欄",
+        "period_end": "2025-05-20",
+        "period_start": "2025-02-21",
+        "method": "1Q累計",
+        "revenue": 27104.657,
+        "operating_profit": 3270.856,
+        "ordinary_profit": 3403.363,
+        "net_profit": 2336.136
+      },
+      {
+        "fiscal_year_end": "2026-02-20",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S04",
+          "S12"
+        ],
+        "locator": "S12 PDF pages 2、8、S04 PDF pages 1–3、S01 PDF page 7。CF訂正後もPL数値は不変",
+        "period_end": "2025-08-20",
+        "period_start": "2025-05-21",
+        "method": "累計−直前累計",
+        "revenue": 18796.262000000002,
+        "operating_profit": 485.74299999999994,
+        "ordinary_profit": 520.2070000000003,
+        "net_profit": 294.2449999999999
+      },
+      {
+        "fiscal_year_end": "2026-02-20",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S03",
+          "S04",
+          "S12"
+        ],
+        "locator": "PDF pages 2、8",
+        "period_end": "2025-11-20",
+        "period_start": "2025-08-21",
+        "method": "累計−直前累計",
+        "revenue": 18209.199999999997,
+        "operating_profit": 564.0860000000002,
+        "ordinary_profit": 587.1489999999999,
+        "net_profit": 297.3250000000003
+      },
+      {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2、7",
+        "period_end": "2026-05-20",
+        "period_start": "2026-02-21",
+        "method": "1Q累計",
+        "revenue": 27786.574,
+        "operating_profit": 3097.809,
+        "ordinary_profit": 3138.62,
+        "net_profit": 2140.23
+      },
+      {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF pages 2、7",
+        "period_end": "2026-08-20",
+        "period_start": "2026-05-21",
+        "method": "累計−直前累計",
+        "revenue": 18444.222999999998,
+        "operating_profit": 133.58799999999974,
+        "ordinary_profit": 188.96000000000004,
+        "net_profit": 53.11499999999978
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_sales",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "bear_nov_change",
+            "reason": "弱気の客数・価格構成条件",
+            "amount": -407.8860799999995
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "モデル内で一致。月次速報と決算の差異がないという条件付きであり、実際の差異がゼロと確認されたものではない"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q2_sales",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "bear_nov_change",
+            "reason": "前年Q3基準で識別した弱気条件",
+            "amount": -407.8860799999995
+          }
+        ],
+        "residual": -235.023,
+        "residual_formula": "qoq_sales_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3単独と当期Q2単独の基準差。季節性と年度間変化を分離できず、全額を未説明残差として保持"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(bear_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年同季節の粗利率を使用。純粋な数量効果ではない",
+            "amount": -466.9148338400002
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "bear_revenue*gm_bear_delta",
+            "reason": "原価・価格・構成の改善が限定的な条件",
+            "amount": 34.562518336
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "賃上げ・人員増",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "数量減と単価上昇の相殺条件",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "店舗・システム投資",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "店舗運営・IT費用等",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q2_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(bear_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年Q3基準で識別した変化",
+            "amount": -466.9148338400002
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "bear_revenue*gm_bear_delta",
+            "reason": "弱気条件",
+            "amount": 34.562518336
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "前年Q3基準",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "前年Q3基準",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "前年Q3基準",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "前年Q3基準",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 430.498,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_sales",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "base_nov_change",
+            "reason": "10月に近い需要継続条件",
+            "amount": -116.53888000000003
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q2_sales",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "base_nov_change",
+            "reason": "前年Q3基準で識別した中心条件",
+            "amount": -116.53888000000003
+          }
+        ],
+        "residual": -235.023,
+        "residual_formula": "qoq_sales_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(base_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年同季節の粗利率を使用",
+            "amount": -320.3167698400001
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "base_revenue*gm_base_delta",
+            "reason": "中間期に確認された改善幅の継続条件",
+            "amount": 70.290425472
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "賃上げ・人員増",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "数量減と単価上昇の相殺条件",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "店舗・システム投資",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "店舗運営・IT費用等",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q2_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(base_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年Q3基準で識別した変化",
+            "amount": -320.3167698400001
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "base_revenue*gm_base_delta",
+            "reason": "中心条件",
+            "amount": 70.290425472
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "前年Q3基準",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "前年Q3基準",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "前年Q3基準",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "前年Q3基準",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 430.498,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_sales",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "公表全店速報指数と仮定月別構成比",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "bull_nov_change",
+            "reason": "客数回復と価格構成効果が両立する条件",
+            "amount": 174.80832000000007
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "cy_q2_sales",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "9月度売上",
+            "formula": "sep_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -377.6588080000003
+          },
+          {
+            "label": "10月度売上",
+            "formula": "oct_sales_change",
+            "reason": "前年Q3基準で識別した月次変化",
+            "amount": -142.39594400000013
+          },
+          {
+            "label": "11月度需要",
+            "formula": "bull_nov_change",
+            "reason": "前年Q3基準で識別した強気条件",
+            "amount": 174.80832000000007
+          }
+        ],
+        "residual": -235.023,
+        "residual_formula": "qoq_sales_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(bull_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年同季節の粗利率を使用",
+            "amount": -173.71870583999998
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "bull_revenue*gm_bull_delta",
+            "reason": "追加価格是正と原価低減が進む条件",
+            "amount": 107.18372140799998
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "賃上げ・人員増",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "数量減と単価上昇の相殺条件",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "店舗・システム投資",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "店舗運営・IT費用等",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "cy_q2_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変化の粗利影響",
+            "formula": "(bull_revenue-py_q3_sales)*py_q3_gm",
+            "reason": "前年Q3基準で識別した変化",
+            "amount": -173.71870583999998
+          },
+          {
+            "label": "粗利率改善",
+            "formula": "bull_revenue*gm_bull_delta",
+            "reason": "強気条件",
+            "amount": 107.18372140799998
+          },
+          {
+            "label": "人件費",
+            "formula": "labor_effect",
+            "reason": "前年Q3基準",
+            "amount": -299.9520000000002
+          },
+          {
+            "label": "運送保管料",
+            "formula": "shipping_effect",
+            "reason": "前年Q3基準",
+            "amount": 0.0
+          },
+          {
+            "label": "減価償却費",
+            "formula": "dep_effect",
+            "reason": "前年Q3基準",
+            "amount": -25.0
+          },
+          {
+            "label": "その他販管費",
+            "formula": "other_effect",
+            "reason": "前年Q3基準",
+            "amount": -69.4658599999998
+          }
+        ],
+        "residual": 430.498,
+        "residual_formula": "qoq_op_residual",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      }
+    ],
+    "issues": [
+      "QnQブリッジの未説明残差は季節性だけと断定できない。前年Q3と当期Q2の基準差を経済的未説明残差として残した。",
+      "S04は訂正後全文ではなくCF内訳の訂正通知。前年中間期PLはS12原短信とS01比較欄で確認し、S03と同一の損益計算書会計版として差し引いた。",
+      "前年Q3の自転車・パーツ等の収益認識分類と当期説明資料の新車・パーツサービス・周辺事業分類は一致しないため、異なる分類を無理に差し引いた品目別予測は作成していない。",
+      "営業外為替損益、特別損失、税効果の対象Q3における見通しは根拠不足のため、経常利益と純利益を予測していない。",
+      "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された調査条件に基づき、基準日時までの開示一覧を網羅確認した結果ではない。",
+      "指定された2026年12月25日の発表予定日は保存原文で確認できない。S10・S11の本文が提示されていないためannouncement_dateはnull。",
+      "提示本文のtruncatedは全件false。ただしS05表紙の総ページ表記と抽出されたページ数に不一致があり、欠落の有無は原本画像未確認。採用数値は提示された該当ページ本文に限る。",
+      "販管費内訳は説明資料の百万円単位表示から前年Q3単独を差し引いており、内訳の精度は短信総額より低い。その他費用は短信総額と表示内訳の差で定義しているため、内訳の端数も含む。",
+      "資料確認未了: already_announced",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -1162.9638320000013,
+            "rate": -0.06305301296780035,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -396.27217550399655,
+            "rate": -2.966375539000489,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -927.9408320000002,
+            "rate": -0.05096000000000002,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -826.770175503997,
+            "rate": -1.4656810761195929,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -871.6166320000011,
+            "rate": -0.047256890789056344,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -213.94620436799778,
+            "rate": -1.6015375959517186,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -636.5936320000001,
+            "rate": -0.03496000000000001,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -644.4442043679983,
+            "rate": -1.142457363536762,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -580.269432000001,
+            "rate": -0.03146076861031235,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -30.454844431997117,
+            "rate": -0.2279758992723686,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": -345.2464319999999,
+            "rate": -0.018959999999999998,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -460.9528444319976,
+            "rate": -0.8171676737802346,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -927.9408320000002,
+        "explained_sum": -927.9408319999999,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -3.410605131648481e-13,
+        "status": "passed",
+        "residual_explanation": "モデル内で一致。月次速報と決算の差異がないという条件付きであり、実際の差異がゼロと確認されたものではない"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -1162.9638320000013,
+        "explained_sum": -927.9408319999999,
+        "residual": -235.023,
+        "residual_type": "economic_unexplained",
+        "difference": -1.3926637620897964e-12,
+        "status": "passed",
+        "residual_explanation": "前年Q3単独と当期Q2単独の基準差。季節性と年度間変化を分離できず、全額を未説明残差として保持"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -826.770175503997,
+        "explained_sum": -826.7701755040002,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 3.183231456205249e-12,
+        "status": "passed",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -396.27217550399655,
+        "explained_sum": -826.7701755040002,
+        "residual": 430.498,
+        "residual_type": "economic_unexplained",
+        "difference": 3.694822225952521e-12,
+        "status": "passed",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -636.5936320000001,
+        "explained_sum": -636.5936320000005,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -871.6166320000011,
+        "explained_sum": -636.5936320000005,
+        "residual": -235.023,
+        "residual_type": "economic_unexplained",
+        "difference": -5.968558980384842e-13,
+        "status": "passed",
+        "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -644.4442043679983,
+        "explained_sum": -644.4442043680001,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.8189894035458565e-12,
+        "status": "passed",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -213.94620436799778,
+        "explained_sum": -644.4442043680001,
+        "residual": 430.498,
+        "residual_type": "economic_unexplained",
+        "difference": 2.3305801732931286e-12,
+        "status": "passed",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": -345.2464319999999,
+        "explained_sum": -345.24643200000037,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -580.269432000001,
+        "explained_sum": -345.24643200000037,
+        "residual": -235.023,
+        "residual_type": "economic_unexplained",
+        "difference": -5.968558980384842e-13,
+        "status": "passed",
+        "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -460.9528444319976,
+        "explained_sum": -460.952844432,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.3874235921539366e-12,
+        "status": "passed",
+        "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -30.454844431997117,
+        "explained_sum": -460.952844432,
+        "residual": 430.498,
+        "residual_type": "economic_unexplained",
+        "difference": 2.8990143619012088e-12,
+        "status": "passed",
+        "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+      }
+    ],
+    "conditions": [
+      "11月度の月次営業速報は提示資料にない。非開示と確定せず、基準日時点の原文未確認として扱う。",
+      "S08は速報であり決算確定値ではない。月次指数を全社決算売上に適用する際の範囲・収益認識差は未定量化。",
+      "dep_increment: 前年Q3販管費内償却費に追加。中間期の償却費増加と、下期のシステム・店舗投資計画から緩やかな増加を置く。設備投資額そのものを費用計上しない",
+      "gm_base_delta: 前年Q3の季節的な商品構成を基礎に、中間期で確認された価格是正・原価低減・修理サービス構成による約0.4ポイント改善が継続する条件",
+      "gm_bear_delta: 前年Q3粗利率に対する改善幅を0.2ポイントとする。中間期の約0.4ポイント改善に対し、低粗利の電動車構成と価格競争で改善が半減する条件",
+      "gm_bull_delta: 中間期の改善幅に部分的な追加価格是正と原価低減が加わる条件。品目別粗利率が非開示のため、改善幅は中間期の約1.5倍までの感応度設定にとどめる",
+      "labor_factor: 前年Q3人件費に、中間期で確認された賃上げ・人員増による7.2%増を適用。需要の短期変動で人件費を機械的に削減しない",
+      "nov_base: 10月の全店客数95.2%、客単価102.3%、売上97.7%を踏まえ、11月も需要回復が限定的と仮定。価格・数量・構成の合成指数であり別途値上げ効果を加算しない",
+      "nov_bear: 9月度の客数減少が再び強まり、価格是正でも補えない条件。全店売上の9月速報93.9%に近い弱い需要を想定",
+      "nov_bull: 失われた需要の一部回復で客数が前年並みとなり、直近の価格・構成効果が残る条件。会社の挽回方針は実績とは扱わない",
+      "oct_weight: 前年Q3の月別売上金額未確認のため10月度もほぼ均等配分。残りを11月度とする",
+      "one: 指数を増減率に変換するための計算定数。経済予測ではない",
+      "other_factor: 前年Q3販管費から人件費・運送保管料・償却費を除いた費用に2%増を適用。店舗網拡大とIT運営費増を考慮する一方、中間期は人件費以外の増加が比較的小さいことを反映",
+      "sep_weight: 前年Q3の月別売上金額が提示されていないため、9月度の前年四半期売上構成比をほぼ均等と置く。実績として扱わない",
+      "shipping_factor: 前年Q3運送保管料を維持。販売数量の弱さと在庫適正化による減少余地が運送単価上昇を相殺する条件。売上の客単価上昇を輸送数量増と取り違えない",
+      "下期の追加価格是正について商品別の対象、実施時期、改定率は提示資料では非開示。",
+      "前年Q3の月別売上構成比は未確認。ほぼ均等の配分仮定を変えると予測額が変わる。",
+      "品目別粗利率、Q3人員数、リペア処理能力、システム稼働時期は未確認。費用と粗利率は明示した独自仮定である。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540214.pdf",
+        "published_at": "2026-09-25",
+        "category": "latest_results",
+        "prior_unavailable_url": "https://pdf.catr.jp/2026/09/0000783904_776d5937a5823195fbbb0796806e9001.pdf",
+        "issuer_text": "株式会社あさひ",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S01.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S01.txt",
+        "sha256": "82b0ba31dff122d883dea85f9c96f5e1a3e9b1c9769c9746626c40c6cf975023",
+        "text_sha256": "f81d806af994dd916338a911627beb0a5b059ec32ee507788d4d9a04589fde17",
+        "retrieved_at": "2026-11-28T22:44:41+09:00",
+        "method": "local saved evidence",
+        "characters": 9589,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年2月期 第1四半期決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260622/20260622575617.pdf",
+        "published_at": "2026-06-22",
+        "category": "historical",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S02.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S02.txt",
+        "sha256": "68caeafbe2370251da47146352b2c5093c6639e711547d878226ddcfc554df4b",
+        "text_sha256": "0c7668602637e6ad9c3896a51226db46027bc93cddd3e6b5c1ad0070e2cec803",
+        "retrieved_at": "2026-11-28T22:44:41+09:00",
+        "method": "local saved evidence",
+        "characters": 7711,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年2月期 第3四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251222/20251222523732.pdf",
+        "published_at": "2025-12-22",
+        "category": "historical",
+        "prior_unavailable_url": "https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "issuer_text": "株式会社あさひ",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S03.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S03.txt",
+        "sha256": "a9e4115466dd46cfd12f25f58f7054f32fa09ed8db7a5fdb15b2c1033820e732",
+        "text_sha256": "e191c094b0e4e9184d0cdb10aa9acdfdc356676098c01272e62a26d2edf51e7f",
+        "retrieved_at": "2026-11-28T22:44:41+09:00",
+        "method": "local saved evidence",
+        "characters": 8581,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "(訂正・数値データ訂正)2026年2月期第2四半期（中間期）決算短信の一部訂正通知（訂正後全文ではない）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250926/20250926563097.pdf",
+        "published_at": "2025-09-26",
+        "category": "historical",
+        "prior_unavailable_url": "https://corporate.cb-asahi.co.jp/ir/library/%28%E8%A8%82%E6%AD%A3%E5%BE%8C%292026%E5%B9%B42%E6%9C%88%E6%9C%9F%20%E7%AC%AC2%E5%9B%9B%E5%8D%8A%E6%9C%9F%28%E4%B8%AD%E9%96%93%E6%9C%9F%29%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "issuer_text": "株式会社あさひ",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S04.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S04.txt",
+        "sha256": "4bca44e20f20c81822fcfd3907699470f044e5798d4d3b76d0110ff39e68b07b",
+        "text_sha256": "7c3b78320343fa13e3a8182a88a3ce11e1a9beadde5dba557c87bbf9475e3b6b",
+        "retrieved_at": "2026-11-28T22:44:41+09:00",
+        "method": "local saved evidence",
+        "characters": 2368,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2027年2月期 第2四半期（中間期）決算説明資料（会社開示の第三者保存先）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540164.pdf",
+        "published_at": "2026-09-25",
+        "category": "presentation",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S05.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S05.txt",
+        "sha256": "6aa654af39802fd4934d330875d6ab1a856e2df4b72f2cc3921b0f9e3e4b802f",
+        "text_sha256": "4e492a050ebdb48885895be9c2499fab774e32a629cb9b3a0126ee7a00ebad4f",
+        "retrieved_at": "2026-11-28T22:44:42+09:00",
+        "method": "local saved evidence",
+        "characters": 8174,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年2月期 第3四半期決算説明資料",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20251222/20251222523766.pdf",
+        "published_at": "2025-12-22",
+        "category": "presentation",
+        "prior_unavailable_url": "https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "issuer_text": "株式会社あさひ",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S06.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S06.txt",
+        "sha256": "ad6228dd98f60894a6d9c51fb4caf66328b7e67d74898ca7d87ac70dcfca9f65",
+        "text_sha256": "2b6695af591c52759445d53a2bb2c4b417fc4b1e15443b80634df07750dfdbc4",
+        "retrieved_at": "2026-11-28T22:44:42+09:00",
+        "method": "local saved evidence",
+        "characters": 12214,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年2月期 決算短信〔日本基準〕（非連結）（2027年2月期会社予想を収録）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260403/20260403598019.pdf",
+        "published_at": "2026-04-03",
+        "category": "guidance",
+        "prior_unavailable_url": "https://corporate.cb-asahi.co.jp/ir/library/Non-consolidated-Financial-Results-for-the-Fiscal-Year-Ended-February-20-2026_ja.pdf",
+        "issuer_text": "株式会社あさひ",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S07.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S07.txt",
+        "sha256": "013774bfc484c376b9b4db2d2a7da77574f7b02148e659c52a39cc1fdd231909",
+        "text_sha256": "96dc704b9b9ca7228b22f1f437c4e8e7c09f114bb36650d605f1271f1aacd6d8",
+        "retrieved_at": "2026-11-28T22:44:43+09:00",
+        "method": "local saved evidence",
+        "characters": 18328,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年10月度 月次営業速報に関するお知らせ",
+        "url": "https://c1.cb-asahi.co.jp/ir/monthly-report/5210_jp_Preliminary_Monthly_Business_Report_for_October_2026.pdf",
+        "published_at": "2026-11-04",
+        "category": "kpi",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S08.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S08.txt",
+        "sha256": "1c8c6099fdddae61478de37fcc128a2efc14b0017f04115f6ba6653b735e19f4",
+        "text_sha256": "69a2cbb351c6575be3c8f78ace37163f18e9fee86fbf09afed37f044207281a2",
+        "retrieved_at": "2026-11-28T22:44:43+09:00",
+        "method": "local saved evidence",
+        "characters": 1640,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2027年2月期 中間期決算説明会書き起こし・質疑応答（第三者掲載）",
+        "url": "https://finance.yahoo.co.jp/quote/3333.T/financials?styl=presentation",
+        "published_at": "2026-10-13",
+        "category": "qa",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S09.html",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S09.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S09.txt",
+        "sha256": "c0a1c8aa5f053462fab6aa7cad0ab96967b17452fde00772fa420815baa707ce",
+        "text_sha256": "073ca43c47443c648b6c47295735284ddc0c967644174899bb91078b47ad8332",
+        "retrieved_at": "2026-11-28T22:44:43+09:00",
+        "method": "local saved evidence",
+        "characters": 9600,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "公式IRライブラリー・IRカレンダー",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/index.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T22:44:43+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "公式IRニュース一覧",
+        "url": "https://corporate.cb-asahi.co.jp/ir/news/index.html",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T22:44:43+09:00"
+      },
+      {
+        "id": "S12",
+        "title": "2026年2月期 第2四半期（中間期）決算短信（当初版。S04訂正通知と併読）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250922/20250922560752.pdf",
+        "published_at": "2025-09-22T13:00:00+09:00",
+        "category": "historical",
+        "issuer_text": "株式会社あさひ",
+        "prior_unavailable_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20250922/20250922560752.pdf",
+        "local_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repair-inputs\\3333\\sources\\S12.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S12.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\repairs\\3333-supplement-v1\\companies\\3333\\sources\\S12.txt",
+        "sha256": "cb38d0dc3411f0a59e2fe0ee9d90ecf68274b279316b844607f58efdfc8081fe",
+        "text_sha256": "e4c0e812b26d48de8fc8e59c4ce3916abfaa7efd02ff00fb0d65725e928d3fb5",
+        "retrieved_at": "2026-11-28T22:44:43+09:00",
+        "method": "local saved evidence",
+        "characters": 10218,
+        "parser_version": 2
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3333",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 3,
+        "start": "2026-08-21",
+        "end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "非連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "py_h1_sales",
+          "value": 45900.919,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S12",
+            "S04"
+          ],
+          "locator": "S12 PDF page 8、S04 PDF pages 1–3。訂正はCF内訳のみ"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 3756.599,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S12",
+            "S04"
+          ],
+          "locator": "S12 PDF page 8、S04 PDF pages 1–3"
+        },
+        {
+          "id": "py_h1_gp",
+          "value": 21486.768,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S12"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_sga",
+          "value": 17730.168,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S12"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q3c_sales",
+          "value": 64110.119,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q3c_op",
+          "value": 4320.685,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q3c_gp",
+          "value": 30649.147,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q3c_sga",
+          "value": 26328.461,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cy_q1_sales",
+          "value": 27786.574,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "cy_q1_op",
+          "value": 3097.809,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "cy_h1_sales",
+          "value": 46230.797,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "cy_h1_op",
+          "value": 3231.397,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 7"
+        },
+        {
+          "id": "py_h1_labor",
+          "value": 8338,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、前年中間期実績"
+        },
+        {
+          "id": "py_q3c_labor",
+          "value": 12504,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_shipping",
+          "value": 1234,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、前年中間期実績"
+        },
+        {
+          "id": "py_q3c_shipping",
+          "value": 1720,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_h1_dep",
+          "value": 880,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、販管費内の減価償却費"
+        },
+        {
+          "id": "py_q3c_dep",
+          "value": 1353,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S06"
+          ],
+          "locator": "PDF page 8、販管費内の減価償却費"
+        },
+        {
+          "id": "sep_sales_index",
+          "value": 0.939,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、9月度全店売上高前年同月比。公表速報値であり決算確定値ではない"
+        },
+        {
+          "id": "oct_sales_index",
+          "value": 0.977,
+          "kind": "fact",
+          "unit": "倍",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF page 1、10月度全店売上高前年同月比。公表速報値であり決算確定値ではない"
+        },
+        {
+          "id": "guide_sales",
+          "value": 86278,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想"
+        },
+        {
+          "id": "guide_op",
+          "value": 4300,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想"
+        },
+        {
+          "id": "guide_ordinary",
+          "value": 4440,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想"
+        },
+        {
+          "id": "guide_net",
+          "value": 2730,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想"
+        },
+        {
+          "id": "one",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "定数",
+          "rationale": "指数を増減率に変換するための計算定数。経済予測ではない",
+          "sensitivity": "感応度なし"
+        },
+        {
+          "id": "sep_weight",
+          "value": 0.34,
+          "kind": "assumption",
+          "unit": "構成比",
+          "rationale": "前年Q3の月別売上金額が提示されていないため、9月度の前年四半期売上構成比をほぼ均等と置く。実績として扱わない",
+          "sensitivity": "11月度から5ポイント振り替えると売上がpy_q3_sales×0.05×(sep_sales_index－各シナリオの11月指数)変化",
+          "material": true
+        },
+        {
+          "id": "oct_weight",
+          "value": 0.34,
+          "kind": "assumption",
+          "unit": "構成比",
+          "rationale": "前年Q3の月別売上金額未確認のため10月度もほぼ均等配分。残りを11月度とする",
+          "sensitivity": "11月度から5ポイント振り替えると売上がpy_q3_sales×0.05×(oct_sales_index－各シナリオの11月指数)変化",
+          "material": true
+        },
+        {
+          "id": "nov_bear",
+          "value": 0.93,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "9月度の客数減少が再び強まり、価格是正でも補えない条件。全店売上の9月速報93.9%に近い弱い需要を想定",
+          "sensitivity": "11月指数1ポイントで四半期売上がpy_q3_sales×nov_weight×0.01変化",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、S09 質疑応答：通期計画達成に向けた下半期での取り返しについて",
+          "material": true
+        },
+        {
+          "id": "nov_base",
+          "value": 0.98,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "10月の全店客数95.2%、客単価102.3%、売上97.7%を踏まえ、11月も需要回復が限定的と仮定。価格・数量・構成の合成指数であり別途値上げ効果を加算しない",
+          "sensitivity": "11月指数1ポイントで四半期売上がpy_q3_sales×nov_weight×0.01変化",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、S09 質疑応答：下半期の価格改定の予定について",
+          "material": true
+        },
+        {
+          "id": "nov_bull",
+          "value": 1.03,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "失われた需要の一部回復で客数が前年並みとなり、直近の価格・構成効果が残る条件。会社の挽回方針は実績とは扱わない",
+          "sensitivity": "11月指数1ポイントで四半期売上がpy_q3_sales×nov_weight×0.01変化",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、S09 質疑応答：通期計画達成に向けた下半期での取り返しについて",
+          "material": true
+        },
+        {
+          "id": "gm_bear_delta",
+          "value": 0.002,
+          "kind": "assumption",
+          "unit": "比率差",
+          "rationale": "前年Q3粗利率に対する改善幅を0.2ポイントとする。中間期の約0.4ポイント改善に対し、低粗利の電動車構成と価格競争で改善が半減する条件",
+          "sensitivity": "粗利率0.1ポイントで営業利益がbear_revenue×0.001変化",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 6–9、S09 決算実績・商品戦略の説明",
+          "material": true
+        },
+        {
+          "id": "gm_base_delta",
+          "value": 0.004,
+          "kind": "assumption",
+          "unit": "比率差",
+          "rationale": "前年Q3の季節的な商品構成を基礎に、中間期で確認された価格是正・原価低減・修理サービス構成による約0.4ポイント改善が継続する条件",
+          "sensitivity": "粗利率0.1ポイントで営業利益がbase_revenue×0.001変化",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 6–9、S09 決算実績・営業利益の増減分析",
+          "material": true
+        },
+        {
+          "id": "gm_bull_delta",
+          "value": 0.006,
+          "kind": "assumption",
+          "unit": "比率差",
+          "rationale": "中間期の改善幅に部分的な追加価格是正と原価低減が加わる条件。品目別粗利率が非開示のため、改善幅は中間期の約1.5倍までの感応度設定にとどめる",
+          "sensitivity": "粗利率0.1ポイントで営業利益がbull_revenue×0.001変化",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF page 9、S09 質疑応答：下半期の価格改定の予定について",
+          "material": true
+        },
+        {
+          "id": "labor_factor",
+          "value": 1.072,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前年Q3人件費に、中間期で確認された賃上げ・人員増による7.2%増を適用。需要の短期変動で人件費を機械的に削減しない",
+          "sensitivity": "人件費増加率1ポイントで営業利益がpy_q3_labor×0.01減少",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF page 8、S09 販管費、設備投資額の実績",
+          "material": true
+        },
+        {
+          "id": "shipping_factor",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前年Q3運送保管料を維持。販売数量の弱さと在庫適正化による減少余地が運送単価上昇を相殺する条件。売上の客単価上昇を輸送数量増と取り違えない",
+          "sensitivity": "運送保管料5%増で営業利益がpy_q3_shipping×0.05減少",
+          "source_ids": [
+            "S05",
+            "S08",
+            "S09"
+          ],
+          "locator": "S05 PDF page 8、S08 PDF page 1、S09 販管費、設備投資額の実績"
+        },
+        {
+          "id": "dep_increment",
+          "value": 25,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "前年Q3販管費内償却費に追加。中間期の償却費増加と、下期のシステム・店舗投資計画から緩やかな増加を置く。設備投資額そのものを費用計上しない",
+          "sensitivity": "追加償却費が10増えると営業利益が10減少",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 8、19、21",
+          "material": true
+        },
+        {
+          "id": "other_factor",
+          "value": 1.02,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前年Q3販管費から人件費・運送保管料・償却費を除いた費用に2%増を適用。店舗網拡大とIT運営費増を考慮する一方、中間期は人件費以外の増加が比較的小さいことを反映",
+          "sensitivity": "増加率1ポイントで営業利益がpy_q3_other×0.01減少",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 8、10、19、S06 PDF page 8、S09 販管費説明",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "py_q3_sales",
+          "formula": "py_q3c_sales-py_h1_sales"
+        },
+        {
+          "id": "py_q3_op",
+          "formula": "py_q3c_op-py_h1_op"
+        },
+        {
+          "id": "py_q3_gp",
+          "formula": "py_q3c_gp-py_h1_gp"
+        },
+        {
+          "id": "py_q3_sga",
+          "formula": "py_q3c_sga-py_h1_sga"
+        },
+        {
+          "id": "py_q3_gm",
+          "formula": "py_q3_gp/py_q3_sales"
+        },
+        {
+          "id": "cy_q2_sales",
+          "formula": "cy_h1_sales-cy_q1_sales"
+        },
+        {
+          "id": "cy_q2_op",
+          "formula": "cy_h1_op-cy_q1_op"
+        },
+        {
+          "id": "py_q3_labor",
+          "formula": "py_q3c_labor-py_h1_labor"
+        },
+        {
+          "id": "py_q3_shipping",
+          "formula": "py_q3c_shipping-py_h1_shipping"
+        },
+        {
+          "id": "py_q3_dep",
+          "formula": "py_q3c_dep-py_h1_dep"
+        },
+        {
+          "id": "py_q3_other",
+          "formula": "py_q3_sga-py_q3_labor-py_q3_shipping-py_q3_dep"
+        },
+        {
+          "id": "forecast_labor",
+          "formula": "py_q3_labor*labor_factor"
+        },
+        {
+          "id": "forecast_shipping",
+          "formula": "py_q3_shipping*shipping_factor"
+        },
+        {
+          "id": "forecast_dep",
+          "formula": "py_q3_dep+dep_increment"
+        },
+        {
+          "id": "forecast_other",
+          "formula": "py_q3_other*other_factor"
+        },
+        {
+          "id": "forecast_sga",
+          "formula": "forecast_labor+forecast_shipping+forecast_dep+forecast_other"
+        },
+        {
+          "id": "nov_weight",
+          "formula": "one-sep_weight-oct_weight"
+        },
+        {
+          "id": "sep_revenue",
+          "formula": "py_q3_sales*sep_weight*sep_sales_index"
+        },
+        {
+          "id": "oct_revenue",
+          "formula": "py_q3_sales*oct_weight*oct_sales_index"
+        },
+        {
+          "id": "bear_nov_revenue",
+          "formula": "py_q3_sales*nov_weight*nov_bear"
+        },
+        {
+          "id": "base_nov_revenue",
+          "formula": "py_q3_sales*nov_weight*nov_base"
+        },
+        {
+          "id": "bull_nov_revenue",
+          "formula": "py_q3_sales*nov_weight*nov_bull"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "sep_revenue+oct_revenue+bear_nov_revenue"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "sep_revenue+oct_revenue+base_nov_revenue"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "sep_revenue+oct_revenue+bull_nov_revenue"
+        },
+        {
+          "id": "bear_gp",
+          "formula": "bear_revenue*(py_q3_gm+gm_bear_delta)"
+        },
+        {
+          "id": "base_gp",
+          "formula": "base_revenue*(py_q3_gm+gm_base_delta)"
+        },
+        {
+          "id": "bull_gp",
+          "formula": "bull_revenue*(py_q3_gm+gm_bull_delta)"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_gp-forecast_sga"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_gp-forecast_sga"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_gp-forecast_sga"
+        },
+        {
+          "id": "sep_sales_change",
+          "formula": "py_q3_sales*sep_weight*(sep_sales_index-one)"
+        },
+        {
+          "id": "oct_sales_change",
+          "formula": "py_q3_sales*oct_weight*(oct_sales_index-one)"
+        },
+        {
+          "id": "bear_nov_change",
+          "formula": "py_q3_sales*nov_weight*(nov_bear-one)"
+        },
+        {
+          "id": "base_nov_change",
+          "formula": "py_q3_sales*nov_weight*(nov_base-one)"
+        },
+        {
+          "id": "bull_nov_change",
+          "formula": "py_q3_sales*nov_weight*(nov_bull-one)"
+        },
+        {
+          "id": "labor_effect",
+          "formula": "py_q3_labor-forecast_labor"
+        },
+        {
+          "id": "shipping_effect",
+          "formula": "py_q3_shipping-forecast_shipping"
+        },
+        {
+          "id": "dep_effect",
+          "formula": "py_q3_dep-forecast_dep"
+        },
+        {
+          "id": "other_effect",
+          "formula": "py_q3_other-forecast_other"
+        },
+        {
+          "id": "qoq_sales_residual",
+          "formula": "py_q3_sales-cy_q2_sales"
+        },
+        {
+          "id": "qoq_op_residual",
+          "formula": "py_q3_op-cy_q2_op"
+        },
+        {
+          "id": "guidance_remaining_sales",
+          "formula": "guide_sales-cy_h1_sales"
+        },
+        {
+          "id": "guidance_remaining_op",
+          "formula": "guide_op-cy_h1_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "9月度・全社推計",
+              "revenue": "sep_revenue"
+            },
+            {
+              "name": "10月度・全社推計",
+              "revenue": "oct_revenue"
+            },
+            {
+              "name": "11月度・全社推計",
+              "revenue": "bear_nov_revenue"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "9月度・全社推計",
+              "revenue": "sep_revenue"
+            },
+            {
+              "name": "10月度・全社推計",
+              "revenue": "oct_revenue"
+            },
+            {
+              "name": "11月度・全社推計",
+              "revenue": "base_nov_revenue"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "9月度・全社推計",
+              "revenue": "sep_revenue"
+            },
+            {
+              "name": "10月度・全社推計",
+              "revenue": "oct_revenue"
+            },
+            {
+              "name": "11月度・全社推計",
+              "revenue": "bull_nov_revenue"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-02-20",
+          "quarter": 1,
+          "period_start": "2025-02-21",
+          "period_end": "2025-05-20",
+          "revenue": 27104.657,
+          "operating_profit": 3270.856,
+          "ordinary_profit": 3403.363,
+          "net_profit": 2336.136,
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "accounting_version": "JGAAP_PL_unchanged",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2、7、前年同期比較欄"
+        },
+        {
+          "fiscal_year_end": "2026-02-20",
+          "quarter": 2,
+          "period_start": "2025-02-21",
+          "period_end": "2025-08-20",
+          "revenue": 45900.919,
+          "operating_profit": 3756.599,
+          "ordinary_profit": 3923.57,
+          "net_profit": 2630.381,
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "accounting_version": "JGAAP_PL_unchanged",
+          "source_ids": [
+            "S12",
+            "S04",
+            "S01"
+          ],
+          "locator": "S12 PDF pages 2、8、S04 PDF pages 1–3、S01 PDF page 7。CF訂正後もPL数値は不変"
+        },
+        {
+          "fiscal_year_end": "2026-02-20",
+          "quarter": 3,
+          "period_start": "2025-02-21",
+          "period_end": "2025-11-20",
+          "revenue": 64110.119,
+          "operating_profit": 4320.685,
+          "ordinary_profit": 4510.719,
+          "net_profit": 2927.706,
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "accounting_version": "JGAAP_PL_unchanged",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 2、8"
+        },
+        {
+          "fiscal_year_end": "2027-02-20",
+          "quarter": 1,
+          "period_start": "2026-02-21",
+          "period_end": "2026-05-20",
+          "revenue": 27786.574,
+          "operating_profit": 3097.809,
+          "ordinary_profit": 3138.62,
+          "net_profit": 2140.23,
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "accounting_version": "JGAAP_PL_unchanged",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2、7"
+        },
+        {
+          "fiscal_year_end": "2027-02-20",
+          "quarter": 2,
+          "period_start": "2026-02-21",
+          "period_end": "2026-08-20",
+          "revenue": 46230.797,
+          "operating_profit": 3231.397,
+          "ordinary_profit": 3327.58,
+          "net_profit": 2193.345,
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "accounting_version": "JGAAP_PL_unchanged",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 2、7"
+        }
+      ],
+      "quarterly_historicals": [],
+      "drivers": [
+        {
+          "name": "客数減少と価格・商品構成",
+          "mechanism": "9月の大幅な客数減少は客単価上昇で補えず、10月も売上は前年割れ。月次売上指数を直接使い、客数指数と客単価指数の丸め・集計差を無理に乗算しない。全店指数に既に含まれる出店、EC、価格効果は追加しない",
+          "source_ids": [
+            "S08"
+          ],
+          "locator": "PDF pages 1–2",
+          "calculation_ids": [
+            "sep_revenue",
+            "oct_revenue",
+            "bear_revenue",
+            "base_revenue",
+            "bull_revenue"
+          ],
+          "not_quantified_reason": "数量と純粋な価格効果の金額分離は不可。客数は自転車販売台数ではない"
+        },
+        {
+          "name": "修理・サービス、原価低減と電動車構成",
+          "mechanism": "新車需要低迷に対し修理・メンテナンスが粗利を支える。電動車の増加は単価を上げる一方、低い粗利率が利益改善を抑える。前年同季節の粗利率に限定的な改善幅を加える",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 6–9、S09 決算実績・営業利益の増減分析",
+          "calculation_ids": [
+            "py_q3_gm",
+            "bear_gp",
+            "base_gp",
+            "bull_gp"
+          ],
+          "not_quantified_reason": "品目別粗利率と当期Q3品目別販売量は提示資料で非開示"
+        },
+        {
+          "name": "賃上げ・人員配置・店舗運営費",
+          "mechanism": "人件費は賃上げと人員増を基に積み上げ、運送保管料、償却費、その他費用を別途設定。売上が弱くても人件費の即時削減を前提にしない",
+          "source_ids": [
+            "S05",
+            "S06",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 8、19、S06 PDF page 8、S09 販管費説明",
+          "calculation_ids": [
+            "forecast_labor",
+            "forecast_shipping",
+            "forecast_dep",
+            "forecast_other",
+            "forecast_sga"
+          ],
+          "not_quantified_reason": "当期Q3の要員数、稼働時間、費用発生時期は非開示"
+        },
+        {
+          "name": "リユース生産体制・システム投資",
+          "mechanism": "サポートセンターのリペア能力強化は周辺収益を支え、システム・店舗投資は償却と運営費に波及する",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 13、19、21",
+          "calculation_ids": [
+            "forecast_dep",
+            "forecast_other"
+          ],
+          "not_quantified_reason": "処理台数、稼働率、新システム稼働月は未確認。独立した追加売上として加算しない"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_sales",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "bear_nov_change",
+              "reason": "弱気の客数・価格構成条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "モデル内で一致。月次速報と決算の差異がないという条件付きであり、実際の差異がゼロと確認されたものではない"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q2_sales",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "bear_nov_change",
+              "reason": "前年Q3基準で識別した弱気条件"
+            }
+          ],
+          "residual": -235.023,
+          "residual_formula": "qoq_sales_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3単独と当期Q2単独の基準差。季節性と年度間変化を分離できず、全額を未説明残差として保持"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(bear_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年同季節の粗利率を使用。純粋な数量効果ではない"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "bear_revenue*gm_bear_delta",
+              "reason": "原価・価格・構成の改善が限定的な条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "賃上げ・人員増"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "数量減と単価上昇の相殺条件"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "店舗・システム投資"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "店舗運営・IT費用等"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q2_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(bear_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年Q3基準で識別した変化"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "bear_revenue*gm_bear_delta",
+              "reason": "弱気条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "前年Q3基準"
+            }
+          ],
+          "residual": 430.498,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_sales",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "base_nov_change",
+              "reason": "10月に近い需要継続条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q2_sales",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "base_nov_change",
+              "reason": "前年Q3基準で識別した中心条件"
+            }
+          ],
+          "residual": -235.023,
+          "residual_formula": "qoq_sales_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(base_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年同季節の粗利率を使用"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "base_revenue*gm_base_delta",
+              "reason": "中間期に確認された改善幅の継続条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "賃上げ・人員増"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "数量減と単価上昇の相殺条件"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "店舗・システム投資"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "店舗運営・IT費用等"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q2_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(base_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年Q3基準で識別した変化"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "base_revenue*gm_base_delta",
+              "reason": "中心条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "前年Q3基準"
+            }
+          ],
+          "residual": 430.498,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_sales",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "公表全店速報指数と仮定月別構成比"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "bull_nov_change",
+              "reason": "客数回復と価格構成効果が両立する条件"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "月次速報と決算の差異がないという条件付きモデル内の一致"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "cy_q2_sales",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "9月度売上",
+              "formula": "sep_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "10月度売上",
+              "formula": "oct_sales_change",
+              "reason": "前年Q3基準で識別した月次変化"
+            },
+            {
+              "label": "11月度需要",
+              "formula": "bull_nov_change",
+              "reason": "前年Q3基準で識別した強気条件"
+            }
+          ],
+          "residual": -235.023,
+          "residual_formula": "qoq_sales_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3と当期Q2の基準差。季節性と年度間変化を分離できない"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(bull_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年同季節の粗利率を使用"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "bull_revenue*gm_bull_delta",
+              "reason": "追加価格是正と原価低減が進む条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "賃上げ・人員増"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "数量減と単価上昇の相殺条件"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "店舗・システム投資"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "店舗運営・IT費用等"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "独自費用仮定と粗利率仮定によるモデル上の一致"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "cy_q2_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変化の粗利影響",
+              "formula": "(bull_revenue-py_q3_sales)*py_q3_gm",
+              "reason": "前年Q3基準で識別した変化"
+            },
+            {
+              "label": "粗利率改善",
+              "formula": "bull_revenue*gm_bull_delta",
+              "reason": "強気条件"
+            },
+            {
+              "label": "人件費",
+              "formula": "labor_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "運送保管料",
+              "formula": "shipping_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "減価償却費",
+              "formula": "dep_effect",
+              "reason": "前年Q3基準"
+            },
+            {
+              "label": "その他販管費",
+              "formula": "other_effect",
+              "reason": "前年Q3基準"
+            }
+          ],
+          "residual": 430.498,
+          "residual_formula": "qoq_op_residual",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年Q3と当期Q2の利益差。季節構成、費用時期、年度間変化への因果分解ができない部分"
+        }
+      ],
+      "company_guidance": "S01で通期予想の据置きを確認。対象Q3単独の会社予想は提示資料にない。通期予想から中間実績を引いた下期必要額は会社が新たに公表した下期予想ではなく、単なる差引き値である。対象期後の会社修正見込みは使用していない。",
+      "consensus": "未確認。提示資料に公表市場コンセンサスの数値はない。",
+      "independent_forecast": "前年Q3の季節的な売上規模を月別に仮配分し、9月・10月の公表全店速報指数と11月の条件付き需要指数で売上を積み上げた。粗利益は前年Q3粗利率と原価・価格・構成改善の感応度から、販管費は人件費・運送保管料・償却費・その他費用から別々に推計した。会社予想の四等分や利益からの費用逆算はしていない。費用仮定は全シナリオ共通で、シナリオ差は11月需要と粗利率改善。経常利益・純利益は営業外損益、特別損失、税負担の合理的な範囲を置けずnull。",
+      "narrative": [
+        {
+          "heading": "対象四半期と条件付き予測",
+          "text": "対象は2027年2月期Q3単独。中心条件の売上は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気では売上{{value:bear_revenue}}、営業利益{{value:bear_op}}、強気では売上{{value:bull_revenue}}、営業利益{{value:bull_op}}となる。月別金額の仮配分を含むため、確定的な予測区間ではない。"
+        },
+        {
+          "heading": "客数と採算",
+          "text": "価格是正と電動車構成は客単価を支えるが、客数減少が売上を押し下げている。修理・サービスと調達改善は粗利率を支える一方、電動車の構成増は粗利率の制約にもなる。中心粗利益{{value:base_gp}}に対し、独立に積み上げた販管費は{{value:forecast_sga}}。賃上げ後の費用基盤を吸収できるかが焦点である。"
+        },
+        {
+          "heading": "比較と会社予想",
+          "text": "前年Q3単独は売上{{value:py_q3_sales}}、営業利益{{value:py_q3_op}}、直前Q2単独は売上{{value:cy_q2_sales}}、営業利益{{value:cy_q2_op}}。会社通期予想から中間実績を差し引いた下期必要額は売上{{value:guidance_remaining_sales}}、営業利益{{value:guidance_remaining_op}}であり、独自Q3予測とは区別する。前四半期比較には季節性と年度間変化を分離できない残差を明示した。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "11月度の月次営業速報は提示資料にない。非開示と確定せず、基準日時点の原文未確認として扱う。",
+        "前年Q3の月別売上構成比は未確認。ほぼ均等の配分仮定を変えると予測額が変わる。",
+        "S08は速報であり決算確定値ではない。月次指数を全社決算売上に適用する際の範囲・収益認識差は未定量化。",
+        "下期の追加価格是正について商品別の対象、実施時期、改定率は提示資料では非開示。",
+        "品目別粗利率、Q3人員数、リペア処理能力、システム稼働時期は未確認。費用と粗利率は明示した独自仮定である。"
+      ],
+      "material_unresolved": [
+        "指定された2026年12月25日の発表予定日は保存原文で確認できない。S10・S11の本文が提示されていないためannouncement_dateはnull。",
+        "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された調査条件に基づき、基準日時までの開示一覧を網羅確認した結果ではない。",
+        "提示本文のtruncatedは全件false。ただしS05表紙の総ページ表記と抽出されたページ数に不一致があり、欠落の有無は原本画像未確認。採用数値は提示された該当ページ本文に限る。",
+        "前年Q3の自転車・パーツ等の収益認識分類と当期説明資料の新車・パーツサービス・周辺事業分類は一致しないため、異なる分類を無理に差し引いた品目別予測は作成していない。",
+        "販管費内訳は説明資料の百万円単位表示から前年Q3単独を差し引いており、内訳の精度は短信総額より低い。その他費用は短信総額と表示内訳の差で定義しているため、内訳の端数も含む。",
+        "QnQブリッジの未説明残差は季節性だけと断定できない。前年Q3と当期Q2の基準差を経済的未説明残差として残した。",
+        "営業外為替損益、特別損失、税効果の対象Q3における見通しは根拠不足のため、経常利益と純利益を予測していない。",
+        "S04は訂正後全文ではなくCF内訳の訂正通知。前年中間期PLはS12原短信とS01比較欄で確認し、S03と同一の損益計算書会計版として差し引いた。"
+      ],
+      "guidance_records": [
+        {
+          "id": "fy_sales_guidance",
+          "metric": "revenue",
+          "value_ref": "guide_sales",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 1、5、S07 PDF page 1。当初予想を据置き再掲"
+        },
+        {
+          "id": "fy_op_guidance",
+          "metric": "operating_profit",
+          "value_ref": "guide_op",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 1、5、S07 PDF page 1。当初予想を据置き再掲"
+        },
+        {
+          "id": "fy_ordinary_guidance",
+          "metric": "ordinary_profit",
+          "value_ref": "guide_ordinary",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 1、5、S07 PDF page 1。当初予想を据置き再掲"
+        },
+        {
+          "id": "fy_net_guidance",
+          "metric": "net_profit",
+          "value_ref": "guide_net",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "非連結",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 1、5、S07 PDF page 1。当初予想を据置き再掲"
+        }
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "QnQブリッジの未説明残差は季節性だけと断定できない。前年Q3と当期Q2の基準差を経済的未説明残差として残した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "S04は訂正後全文ではなくCF内訳の訂正通知。前年中間期PLはS12原短信とS01比較欄で確認し、S03と同一の損益計算書会計版として差し引いた。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "前年Q3の自転車・パーツ等の収益認識分類と当期説明資料の新車・パーツサービス・周辺事業分類は一致しないため、異なる分類を無理に差し引いた品目別予測は作成していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "営業外為替損益、特別損失、税効果の対象Q3における見通しは根拠不足のため、経常利益と純利益を予測していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "対象四半期実績は提示資料に含まれない。target_already_announced=falseは提示された調査条件に基づき、基準日時までの開示一覧を網羅確認した結果ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "指定された2026年12月25日の発表予定日は保存原文で確認できない。S10・S11の本文が提示されていないためannouncement_dateはnull。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "提示本文のtruncatedは全件false。ただしS05表紙の総ページ表記と抽出されたページ数に不一致があり、欠落の有無は原本画像未確認。採用数値は提示された該当ページ本文に限る。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "販管費内訳は説明資料の百万円単位表示から前年Q3単独を差し引いており、内訳の精度は短信総額より低い。その他費用は短信総額と表示内訳の差で定義しているため、内訳の端数も含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "11月度の月次営業速報は提示資料にない。非開示と確定せず、基準日時点の原文未確認として扱う。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "S08は速報であり決算確定値ではない。月次指数を全社決算売上に適用する際の範囲・収益認識差は未定量化。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "dep_increment: 前年Q3販管費内償却費に追加。中間期の償却費増加と、下期のシステム・店舗投資計画から緩やかな増加を置く。設備投資額そのものを費用計上しない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "gm_base_delta: 前年Q3の季節的な商品構成を基礎に、中間期で確認された価格是正・原価低減・修理サービス構成による約0.4ポイント改善が継続する条件",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "gm_bear_delta: 前年Q3粗利率に対する改善幅を0.2ポイントとする。中間期の約0.4ポイント改善に対し、低粗利の電動車構成と価格競争で改善が半減する条件",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "gm_bull_delta: 中間期の改善幅に部分的な追加価格是正と原価低減が加わる条件。品目別粗利率が非開示のため、改善幅は中間期の約1.5倍までの感応度設定にとどめる",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "labor_factor: 前年Q3人件費に、中間期で確認された賃上げ・人員増による7.2%増を適用。需要の短期変動で人件費を機械的に削減しない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "nov_base: 10月の全店客数95.2%、客単価102.3%、売上97.7%を踏まえ、11月も需要回復が限定的と仮定。価格・数量・構成の合成指数であり別途値上げ効果を加算しない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "nov_bear: 9月度の客数減少が再び強まり、価格是正でも補えない条件。全店売上の9月速報93.9%に近い弱い需要を想定",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "nov_bull: 失われた需要の一部回復で客数が前年並みとなり、直近の価格・構成効果が残る条件。会社の挽回方針は実績とは扱わない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "oct_weight: 前年Q3の月別売上金額未確認のため10月度もほぼ均等配分。残りを11月度とする",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "one: 指数を増減率に変換するための計算定数。経済予測ではない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "other_factor: 前年Q3販管費から人件費・運送保管料・償却費を除いた費用に2%増を適用。店舗網拡大とIT運営費増を考慮する一方、中間期は人件費以外の増加が比較的小さいことを反映",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "sep_weight: 前年Q3の月別売上金額が提示されていないため、9月度の前年四半期売上構成比をほぼ均等と置く。実績として扱わない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "shipping_factor: 前年Q3運送保管料を維持。販売数量の弱さと在庫適正化による減少余地が運送単価上昇を相殺する条件。売上の客単価上昇を輸送数量増と取り違えない",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "下期の追加価格是正について商品別の対象、実施時期、改定率は提示資料では非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "前年Q3の月別売上構成比は未確認。ほぼ均等の配分仮定を変えると予測額が変わる。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "品目別粗利率、Q3人員数、リペア処理能力、システム稼働時期は未確認。費用と粗利率は明示した独自仮定である。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3333/result.json": "0079452c50c6a46b541738001b2180ebcddb10c15f07e643da36f392341441af",
+    "reports/3333.md": "e486f741138e0093dc045ccd13a919dd8561ff92b62d168366b61af420525a55"
+  }
+}
