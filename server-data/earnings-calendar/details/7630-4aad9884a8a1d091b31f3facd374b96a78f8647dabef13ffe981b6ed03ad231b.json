@@ -1,0 +1,3380 @@
+{
+  "id": "7630-4aad9884a8a1d091b31f3facd374b96a78f8647dabef13ffe981b6ed03ad231b",
+  "code": "7630",
+  "companyName": "株式会社壱番屋",
+  "announcementDate": "2026-12-25",
+  "target": {
+    "fiscalYearEnd": "2027-02-28",
+    "quarter": 3
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "7630-generation-d7425a71b4ca0dfe · 4aad9884",
+  "savedAt": "2026-11-28T13:59:34+09:00",
+  "quality": "検証未了",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 17431.014670364657,
+  "operatingProfit": 688.3844511110019,
+  "revenueYoY": {
+    "rate": 0.058863726786821585,
+    "label": "+5.9%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": -0.44619110932340955,
+    "label": "-44.6%",
+    "tone": "negative",
+    "note": ""
+  },
+  "markdown": "# 7630 株式会社壱番屋｜2027-02-28期 Q3単独\n品質状態：**検証未了**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 17,003.06 | 17,431.01 | 17,863.25 |\n| 営業利益 | 380.52 | 688.38 | 963.70 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 969.01 | 5.89% |  |\n| YoY | 営業利益 | -554.62 | -44.62% |  |\n| QnQ | 売上高 | -819.99 | -4.49% |  |\n| QnQ | 営業利益 | -317.62 | -31.57% |  |\n\n## 会社予想\nS01で確認できる最新の会社予想は2027年2月期通期の連結予想であり、S05の期初予想から変更なし。第3四半期単独予想ではない。S08の価格改定時にも予想修正なし。通期予想の四等分や下期必要額の四半期配分は実施していない。latest_confirmedは提示原文内での最新確認を意味し、基準日時までの開示網羅性は未確認。\n\n## 市場コンセンサス\n未確認。提示原文に市場コンセンサスの数値・対象期間・集計時点はない。\n\n## 独自予測・差引推計の区分\n第2四半期単独の連結実績を起点に、事業別配賦推計、国内客数・客単価・季節性、国内子会社の平均稼働能力、海外と外販の販売条件を積み上げた条件付き独自予測。費用は売上原価率と販管費の固定・変動モデルから計算する。会社修正見込みからの差引き推計ではない。事業別配賦と費用構造の不確実性が大きく、三つの条件は統計的な信頼区間ではない。営業外損益、特別損益、税負担の対象四半期における根拠が不足するため経常利益・純利益はnull。\n\n## 条件付き予測\n中心条件の売上高は17,431.01、営業利益は688.38。弱気条件は売上高17,003.06・営業利益380.52、強気条件は売上高17,863.25・営業利益963.70。国内の客数減少と固定費負担を主な下押し要因とし、国内子会社の増店と海外事業の拡大が一部を補う。\n\n## 価格改定と数量の関係\n国内月次では客単価上昇が客数減少を補い切れていない。深夜料金とトッピング改定の効果は月次客単価に含め、追加利益として加算しない。FCの小売価格上昇が本部連結売上へ反映する割合は不明であり、中心条件の国内等売上12,474.22は価格実現係数に依存する。\n\n## 採算と反証条件\n中心条件では売上原価8,845.87、販管費7,896.76を先に計算し、その差額として営業利益を求めた。客数の早期回復、FC向販売の想定以上の単価上昇、食材調達負担の改善が確認されれば上方修正要因となる。反対に、増店初期費用や販促費が想定を上回れば下方修正となる。\n\n## 比較の限界\n前年同四半期実績は売上高16,462.00・営業利益1,243.00、前四半期実績は売上高18,251.00・営業利益1,006.00。前年比ブリッジには、前年同四半期から前四半期基準額への売上差1,789.00、営業利益差-237.00を説明不能残差として残した。四半期別のFC供給単価と事業別採算がないため、買収・数量・原材料費等へ見かけ上の配分は行っていない。\n\n## 増減要因の接続\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の季節性・客数・価格・店舗数 | -1,180.67 | 国内等配賦額に店舗季節性と客数・客単価条件を適用 |\n| 海外 | -58.91 | 海外の需要・店舗稼働・為替を合算した弱気条件 |\n| 国内子会社 | -0.66 | 平均稼働能力と店舗当たり売上の変化 |\n| 外販・EC | -7.70 | 直近四半期からの販売変化 |\n| 残差（none） | 0.00 | 配賦推計モデル内で一致。事業別実績の確認を意味しない。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の季節性・客数・価格・店舗数 | -1,032.81 | 国内等配賦額に店舗季節性と客数・客単価条件を適用 |\n| 海外 | 88.37 | 海外の需要・店舗稼働・為替を合算した中心条件 |\n| 国内子会社 | 116.76 | 平均稼働能力と店舗当たり売上の変化 |\n| 外販・EC | 7.70 | 直近四半期からの販売変化 |\n| 残差（none） | 0.00 | 配賦推計モデル内で一致。事業別実績の確認を意味しない。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の季節性・客数・価格・店舗数 | -884.60 | 国内等配賦額に店舗季節性と客数・客単価条件を適用 |\n| 海外 | 235.64 | 海外の需要・店舗稼働・為替を合算した強気条件 |\n| 国内子会社 | 238.12 | 平均稼働能力と店舗当たり売上の変化 |\n| 外販・EC | 23.10 | 直近四半期からの販売変化 |\n| 残差（none） | 0.00 | 配賦推計モデル内で一致。事業別実績の確認を意味しない。 |\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の直近四半期からの変化 | -1,180.67 | 季節性・客数・価格・店舗数の弱気条件 |\n| 海外の直近四半期からの変化 | -58.91 | 海外合算条件 |\n| 国内子会社の直近四半期からの変化 | -0.66 | 平均稼働能力と店舗当たり売上 |\n| 外販の直近四半期からの変化 | -7.70 | 販売変化 |\n| 残差（economic_unexplained） | 1,789.00 | 前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の直近四半期からの変化 | -1,032.81 | 季節性・客数・価格・店舗数の中心条件 |\n| 海外の直近四半期からの変化 | 88.37 | 海外合算条件 |\n| 国内子会社の直近四半期からの変化 | 116.76 | 平均稼働能力と店舗当たり売上 |\n| 外販の直近四半期からの変化 | 7.70 | 販売変化 |\n| 残差（economic_unexplained） | 1,789.00 | 前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 国内の直近四半期からの変化 | -884.60 | 季節性・客数・価格・店舗数の強気条件 |\n| 海外の直近四半期からの変化 | 235.64 | 海外合算条件 |\n| 国内子会社の直近四半期からの変化 | 238.12 | 平均稼働能力と店舗当たり売上 |\n| 外販の直近四半期からの変化 | 23.10 | 販売変化 |\n| 残差（economic_unexplained） | 1,789.00 | 前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。 |\n\n### bear / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化による粗利益 | -614.64 | 第2四半期原価率で評価した売上変化 |\n| 原価率変化 | -85.02 | 食材・資材・構成・稼働率の純効果 |\n| 販管費変化 | 74.17 | 変動費調整と追加コスト上昇 |\n| 残差（none） | 0.00 | 第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。 |\n\n### base / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化による粗利益 | -403.86 | 第2四半期原価率で評価した売上変化 |\n| 原価率変化 | 0.00 | 価格・構成改善と仕入負担の純効果を据置 |\n| 販管費変化 | 86.24 | 変動費調整と追加コスト上昇 |\n| 残差（none） | 0.00 | 第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。 |\n\n### bull / qoq / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 売上変化による粗利益 | -190.97 | 第2四半期原価率で評価した売上変化 |\n| 原価率変化 | 89.32 | 価格・構成改善と仕入負担安定の純効果 |\n| 販管費変化 | 59.36 | 変動費調整と追加コスト抑制 |\n| 残差（none） | 0.00 | 第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。 |\n\n### bear / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 直近四半期からの売上変化による粗利益 | -614.64 | 第2四半期を起点とする数量・価格・構成条件 |\n| 直近四半期からの原価率変化 | -85.02 | 原価率悪化条件 |\n| 直近四半期からの販管費変化 | 74.17 | 固定・変動費モデル |\n| 残差（economic_unexplained） | -237.00 | 前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。 |\n\n### base / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 直近四半期からの売上変化による粗利益 | -403.86 | 第2四半期を起点とする数量・価格・構成条件 |\n| 直近四半期からの原価率変化 | 0.00 | 原価率維持条件 |\n| 直近四半期からの販管費変化 | 86.24 | 固定・変動費モデル |\n| 残差（economic_unexplained） | -237.00 | 前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。 |\n\n### bull / yoy / 営業利益\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| 直近四半期からの売上変化による粗利益 | -190.97 | 第2四半期を起点とする数量・価格・構成条件 |\n| 直近四半期からの原価率変化 | 89.32 | 原価率改善条件 |\n| 直近四半期からの販管費変化 | 59.36 | 固定・変動費モデル |\n| 残差（economic_unexplained） | -237.00 | 前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。 |\n\n## エラー・未解決事項\n- S01～S09の提示原文はtruncated=false。S10～S13は本文が添付されておらず未読。最新決算説明資料、会社自身の質疑応答、正確な決算日、基準日時までの追加開示の網羅性は原本未確認であり、非開示とは断定しない。\n- S07の国内全店上期増収率とS01の値には小差がある。また前年国内子会社店舗売上の合計とS01の前年増収率から逆算される額にも差がある。定義変更・集計修正の根拠は未確認であり、都合よく補正しない。\n- 入力された発表予定日2026-12-25は会社・取引所の保存原文で裏付けられないためannouncement_dateをnullとした。対象期間は2027年2月期第3四半期単独として設定。\n- 前年比ブリッジの経済的残差は解消していない。三つのシナリオで同一の比較実績と同一の残差定義を使用した。\n- 前年第2四半期国内店舗売上の近似に丸められた増収率を使用。店舗売上とFC向供給売上の時差、月次等加重の誤差も含むため、予測の小数桁に経済的精度はない。\n- 取得原価配分について、前年のLFD確定は確認できる。今期のGAKU・me等の配分確定状況は提示短信に詳細がない。S01・S02に修正再表示等の記載がない報告値として累計差引したのであり、全買収案件の最終配分確定を主張しない。\n- 国内子会社の連結換算係数と国内等の残余配賦は独自仮定。残余にはパスタ・デ・ココ等も含まれるため、国内CoCo壱番屋の客数・価格・季節性を完全には共有しない。\n- 基準日時は対象四半期終了前。対象決算が発表済みであることを示す原文はない。\n- 海外顧客所在地別売上／海外全店店舗売上の比率は異なる定義の数値から作る近似係数。海外FCと直営の構成変化や国内からの輸出があれば配賦がずれる。\n- 経常利益・純利益の条件を設定するには、対象期間の為替差損益等、減損・除却、税率、非支配株主損益の根拠が不足する。\n- 販管費の変動割合と費用増加率は公表予想ではない。販促日程、賞与、開店費用、製造固定費、事業構成の違いで利益予測が大きく変動しうる。\n- 資料確認未了: presentation\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- 11月月次は未公表扱い。保存S07の11月欄は空欄であり、11月の客数・客単価はシナリオ仮定。\n- S07の10月月次は速報。確定した連結業績とは区別してassumptionに保存した。\n- base_cogs_change: 第1・第2四半期で原価率がおおむね同水準だったことから、中心では第2四半期原価率を維持する。価格・構成と仕入高騰の純効果をまとめた条件であり、別途値上げ利益を加えない。\n- base_external_factor: EC取扱量拡大が続く一方、第1四半期から第2四半期への伸びは鈍化する条件。\n- base_nov_ticket: 11月客単価の増加が9～10月の間で推移する中心条件。深夜料金とトッピング改定を内包する。\n- base_nov_traffic: 前年配達代行キャンペーン反動の緩和を仮定し、11月は10月より客数減少が小さくなる中心条件。11月実績ではない。\n- base_overseas_factor: 連結海外店舗数の増加と中国・台湾の既存店改善を踏まえ、第2四半期比3％増を置く。店舗稼働、為替、既存店を合算した条件であり、別途増店効果を加算しない。\n- base_sga_inflation: 売上連動分調整後の費用に、人件費・物流費等の第2四半期比0.5％増を置く。既存の償却費・のれん償却は第2四半期費用に含まれるため再加算しない。\n- base_sub_capacity: 8月末から10月末までの大黒商事、竹井、KOZOU、GAKUの増店を平均稼働に反映し、第2四半期比5％増とする。\n- base_sub_productivity: 大黒商事と前田屋の既存店改善、他業態の弱さを合わせ、季節・業態構成を含む店舗当たり売上を第2四半期比2％増とする。\n- bear_cogs_change: 第2四半期原価率から0.5ポイント悪化する条件。食材・資材価格高騰と数量減による製造固定費負担を含む。\n- bear_external_factor: 外販・ECの第2四半期からの販売減速を仮定。前年増収率の延長は行わない。\n- bear_nov_ticket: 価格改定は継続するが高単価メニュー構成が弱まり、11月客単価増加率が10月を下回る条件。\n- bear_nov_traffic: 11月に9月並みの客数減少が継続する弱気条件。\n- bear_overseas_factor: 海外連結子会社の店舗拡大を需要・為替の悪化が相殺し、海外売上寄与が第2四半期から2％減る条件。対象に対応する海外子会社の会計期間は主として7～9月であり、国内9～11月の月次を流用しない。\n- bear_sga_inflation: 売上連動分調整後の費用に、人件費・物流費・増店維持費等の第2四半期比1.5％増を置く。\n- bear_sub_capacity: 国内子会社の期末店舗増を平均稼働店舗へ置き換え、開店時期と立ち上がりを保守的に考慮した第2四半期比2％増。\n- bear_sub_productivity: たけ井、KOZOU、GAKUの既存店軟調と開店初期の生産性を重く見て、店舗当たり売上を第2四半期比2％減とする。\n- bull_cogs_change: 価格・商品構成改善と仕入負担の安定で原価率が第2四半期から0.5ポイント改善する条件。米価格下落の確定情報はない。\n- bull_external_factor: EC取扱量と共同開発商品の販売が好調に推移する条件。\n- bull_nov_ticket: 高単価商品の構成改善により、11月客単価増加が9月を小幅に上回る条件。\n- bull_nov_traffic: 11月の販促が奏功し、客数が上期の前年並みに近づく強気条件。\n- bull_overseas_factor: 増店稼働に加えて既存店改善が続き、為替も悪化しない条件。直近の店舗売上の四半期増加を参考に8％増を上限条件とする。\n- bull_sga_inflation: 費用高騰を運営効率改善で吸収し、売上連動分以外の追加費用率が上昇しない条件。\n- bull_sub_capacity: 確認された増店が早期に売上へ寄与し、平均生産能力が第2四半期比8％増となる条件。未確認の買収は加えない。\n- bull_sub_productivity: 前田屋の季節需要と大黒商事の好調が継続し、店舗当たり売上が第2四半期比6％増となる条件。\n- dom_store_adjustment: 国内CoCo壱番屋店舗数が8月末から9～10月末に減少した影響を近似。月中稼働日、直営・FC構成、新旧店生産性は不明のため小幅減を置く。\n- oct_ticket: 当月速報の客単価倍率を採用。価格改定効果を別途加算しない。\n- oct_traffic: 当月速報の客数倍率を採用。前年の配達代行キャンペーン反動を含む。\n- one: 倍率と差分の計算に使用する算術定数。\n- overseas_conversion_adjustment: 前期の海外顧客売上高／海外店舗売上高を、今期第2四半期の連結海外売上寄与の近似に使用する。所在地別売上と店舗売上は定義が異なるため、確認済みの事業別売上とは扱わない。調整倍率は中心仮定として1とする。\n- price_realization: 店舗客単価の追加上昇が本部連結売上へ反映する割合。国内CoCo壱番屋はFC主体で、深夜料金や小売価格上昇の全額が本部売上になるわけではない。直営売上とFC向供給の商品構成への間接効果を合わせ0.4とする。FC卸価格の追加改定は仮定しない。\n- seasonality_adjustment: 前年国内CoCo壱番屋の第3四半期／第2四半期店舗売上比を国内等の季節係数に使う。前年第1四半期店舗売上は今期値と公表増収率から近似逆算する。店舗売上の季節性が本部供給売上等にも概ね反映すると仮定する。\n- sep_ticket: 保存月次の客単価倍率を採用。価格改定、深夜料金、商品構成の効果を含む観測値。\n- sep_traffic: 保存月次の公表客数倍率を予測用観測値として採用。月次情報であり、連結確定実績とは区別する。\n- sga_variable_share: 物流、雑給、水道光熱、消耗品と一部販促費を売上連動費用と見なし、販管費の35％を変動部分とする。給与、賃借料、償却費等は残る65％に含める。四半期費用内訳は非開示であり、利益目標から逆算していない。\n- sub_conversion: 国内子会社の店舗売上を連結売上寄与へ換算する係数。グループ外FCの店舗売上を全額連結せず、グループ内フランチャイジーの売上とFC向供給を考慮して0.95を置く。実際の業態別連結売上は非開示。\n- three: 対象四半期の月数。月別の前年売上構成比が未確認のため、月次倍率を等加重する。\n- 国内のFC向供給数量、卸単価、店舗在庫変動、深夜時間帯の売上構成は非開示。\n- 国内子会社の店舗別売上と立ち上がり費用、事業別連結売上と利益は提示短信で非開示。\n- 海外対象期間の国別販売と為替、店舗稼働は原文未確認。\n- 米・その他食材の四半期購入単価と数量、四半期別販管費内訳は提示原文では不足。\n- 非公開化はS09時点で未決定。取引費用や構造改革効果を予測へ加えていない。\n\n## 根拠・保存記録\n- S01 [2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/76300/140120261005545816.pdf) / 公表 2026-10-05 / retrieved / SHA-256 `19da8c561303bfb434b018e5270f2fd511ea6fce96b5a1b91af890943212b3d0`\n- S02 [2027年2月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/76300/140120260626581301.pdf) / 公表 2026-06-26 / retrieved / SHA-256 `d6df341d4cd37aa46ead539f4a61f8fb4256f63e5ff95c984ae97a4ac020bb76`\n- S03 [2026年2月期 第3四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/76300/140120251226527415.pdf) / 公表 2025-12-26 / retrieved / SHA-256 `6e7b7e3fc15fdcfc5a82b4ff372391a8c9125f6e3573bb788c480717a8483342`\n- S04 [2026年2月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/76300/140120251006568795.pdf) / 公表 2025-10-06 / retrieved / SHA-256 `2baad0431368fc8ef29ed53fad4c1731dbfb76e045d03754cc1831d4546321c4`\n- S05 [2026年2月期 決算短信〔日本基準〕（連結）（2027年2月期会社予想を含む）](https://www2.jpx.co.jp/disc/76300/140120260406598776.pdf) / 公表 2026-04-06 / retrieved / SHA-256 `cea623186d5bff783383a5252c26dee607be9ac3a53eef0fc98a71eb5c7d74d9`\n- S06 [中期経営計画の見直しに関するお知らせ](https://www2.jpx.co.jp/disc/76300/140120260406598803.pdf) / 公表 2026-04-06 / retrieved / SHA-256 `6a0c9c9fc2f00796c3727278e36b1acfd57e86b5462c8de6d746c6c8544c746c`\n- S07 [2026年10月度 月次データ](https://ssl4.eir-parts.net/doc/7630/ir_material_for_fiscal_ym4/217179/00.pdf) / 公表 2026-11-05 / retrieved / SHA-256 `0900e9ab753832eec0549148494d7ab57fb012965dca644e2e029651df235777`\n- S08 [深夜料金の導入および一部トッピング価格改定に関するお知らせ](https://ssl4.eir-parts.net/doc/7630/tdnet/2878725/00.pdf) / 公表 2026-08-28 / retrieved / SHA-256 `22bbbcf2a3f4a2b1a449601b2dce0234ab1042597be59a1d83a209ed765f9734`\n- S09 [当社に関する一部報道について](https://ssl4.eir-parts.net/doc/7630/tdnet/2879341/00.pdf) / 公表 2026-08-31 / retrieved / SHA-256 `4bf227bc97f51509abede6903947782edec2a2e8e7b46274f2b2d0533808b7d2`\n- S10 [ハウス食品グループ本社 2027年3月期 中間期決算説明会質疑応答（壱番屋の非公開化検討に関する説明）](https://housefoods-group.com/ir/ir_library/explanation/pdf/261118situgioutou.pdf) / 公表  / unavailable / SHA-256 `なし`\n- S11 [壱番屋 決算説明資料掲載ページ](https://www.ichibanya.jp/ir/library/explanation/) / 公表  / unavailable / SHA-256 `なし`\n- S12 [壱番屋 IRカレンダー](https://www.ichibanya.jp/ir/calendar/) / 公表  / unavailable / SHA-256 `なし`\n- S13 [壱番屋 株式情報](https://www.ichibanya.jp/ir/stockholder/info/) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "7630",
+    "company_name": "株式会社壱番屋",
+    "announcement_date": "2026-12-25",
+    "target_period": "2027-02-28期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-02-28",
+      "quarter": 3,
+      "start": "2026-09-01",
+      "end": "2026-11-30",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "検証未了",
+    "scenarios": {
+      "bear": {
+        "revenue": 17003.060852310082,
+        "operating_profit": 380.51652674236175,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 17431.014670364657,
+        "operating_profit": 688.3844511110019,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 17863.25358192769,
+        "operating_profit": 963.7032235483957,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": -819.9853296353431,
+          "rate": -0.044928241172283334,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -317.6155488889981,
+          "rate": -0.3157212215596403,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 969.0146703646569,
+          "rate": 0.058863726786821585,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": -554.6155488889981,
+          "rate": -0.44619110932340955,
+          "note": ""
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "cy_h1_revenue": 35227.0,
+      "cy_h1_op": 2091.0,
+      "cy_h1_cogs": 17863.0,
+      "cy_h1_sga": 15272.0,
+      "cy_q1_revenue": 16976.0,
+      "cy_q1_op": 1085.0,
+      "cy_q1_cogs": 8601.0,
+      "cy_q1_sga": 7289.0,
+      "py_q3_cum_revenue": 48480.0,
+      "py_q3_cum_op": 3769.0,
+      "py_h1_revenue": 32018.0,
+      "py_h1_op": 2526.0,
+      "cy_h1_overseas_store_sales": 10361.0,
+      "cy_q1_overseas_store_sales": 5031.0,
+      "py_fy_overseas_revenue": 10474.0,
+      "py_fy_overseas_store_sales": 18953.0,
+      "cy_h1_sub_store_sales": 3380.0,
+      "cy_q1_sub_store_sales": 1649.0,
+      "cy_h1_external_sales": 282.0,
+      "cy_q1_external_sales": 128.0,
+      "py_q3_cum_dom_store_sales": 69467.0,
+      "py_h1_dom_store_sales": 46353.0,
+      "cy_q1_dom_store_sales": 23103.0,
+      "cy_q1_dom_growth": 1.031,
+      "cy_q2_dom_traffic": 0.995,
+      "cy_q2_dom_ticket": 1.03,
+      "guidance_revenue": 72600.0,
+      "guidance_op": 5000.0,
+      "guidance_ordinary": 5040.0,
+      "guidance_net": 2720.0,
+      "one": 1.0,
+      "three": 3.0,
+      "overseas_conversion_adjustment": 1.0,
+      "sub_conversion": 0.95,
+      "seasonality_adjustment": 1.0,
+      "sep_traffic": 0.93,
+      "oct_traffic": 0.944,
+      "sep_ticket": 1.061,
+      "oct_ticket": 1.053,
+      "bear_nov_traffic": 0.93,
+      "base_nov_traffic": 0.96,
+      "bull_nov_traffic": 0.99,
+      "bear_nov_ticket": 1.045,
+      "base_nov_ticket": 1.055,
+      "bull_nov_ticket": 1.065,
+      "price_realization": 0.4,
+      "dom_store_adjustment": 0.9975,
+      "bear_overseas_factor": 0.98,
+      "base_overseas_factor": 1.03,
+      "bull_overseas_factor": 1.08,
+      "bear_sub_capacity": 1.02,
+      "base_sub_capacity": 1.05,
+      "bull_sub_capacity": 1.08,
+      "bear_sub_productivity": 0.98,
+      "base_sub_productivity": 1.02,
+      "bull_sub_productivity": 1.06,
+      "bear_external_factor": 0.95,
+      "base_external_factor": 1.05,
+      "bull_external_factor": 1.15,
+      "bear_cogs_change": 0.005,
+      "base_cogs_change": 0.0,
+      "bull_cogs_change": -0.005,
+      "sga_variable_share": 0.35,
+      "bear_sga_inflation": 0.015,
+      "base_sga_inflation": 0.005,
+      "bull_sga_inflation": 0.0,
+      "q2_revenue": 18251.0,
+      "q2_op": 1006.0,
+      "q2_cogs": 9262.0,
+      "q2_sga": 7983.0,
+      "py_q3_revenue": 16462.0,
+      "py_q3_op": 1243.0,
+      "q2_cogs_rate": 0.5074790422442605,
+      "overseas_conversion": 0.5526301904711655,
+      "q2_overseas": 2945.518915211312,
+      "q2_sub": 1644.4499999999998,
+      "q2_external": 154.0,
+      "q2_dom_other": 13507.031084788687,
+      "py_q1_dom_store_proxy": 22408.341416100873,
+      "py_q2_dom_store_proxy": 23944.658583899127,
+      "py_q3_dom_store": 23114.0,
+      "dom_seasonality": 0.9653092324958987,
+      "bear_traffic": 0.9346666666666668,
+      "base_traffic": 0.9446666666666667,
+      "bull_traffic": 0.9546666666666667,
+      "bear_ticket": 1.053,
+      "base_ticket": 1.0563333333333331,
+      "bull_ticket": 1.0596666666666665,
+      "bear_dom": 12326.360095402995,
+      "base_dom": 12474.224237697004,
+      "bull_dom": 12622.426793499475,
+      "bear_overseas": 2886.6085369070856,
+      "base_overseas": 3033.8844826676514,
+      "bull_overseas": 3181.160428428217,
+      "bear_sub": 1643.7922199999998,
+      "base_sub": 1761.20595,
+      "bull_sub": 1882.56636,
+      "bear_external": 146.29999999999998,
+      "base_external": 161.70000000000002,
+      "bull_external": 177.1,
+      "bear_revenue": 17003.060852310082,
+      "base_revenue": 17431.014670364657,
+      "bull_revenue": 17863.25358192769,
+      "bear_cogs": 8713.712340812752,
+      "base_cogs": 8845.874630262311,
+      "bull_cogs": 8975.910551213381,
+      "bear_sga": 7908.831984754968,
+      "base_sga": 7896.755588991344,
+      "bull_sga": 7923.639807165912,
+      "bear_op": 380.51652674236175,
+      "base_op": 688.3844511110019,
+      "bull_op": 963.7032235483957,
+      "yoy_revenue_unexplained": 1789.0,
+      "yoy_op_unexplained": -237.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2027-02-28",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 1–2,8；当期の取得原価配分確定による修正は記載なし",
+        "period_end": "2026-05-31",
+        "period_start": "2026-03-01",
+        "method": "1Q累計",
+        "revenue": 16976.0,
+        "operating_profit": 1085.0,
+        "ordinary_profit": 1144.0,
+        "net_profit": 728.0
+      },
+      {
+        "fiscal_year_end": "2027-02-28",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "locator": "PDF pages 1–2,8；当期の取得原価配分確定による修正は記載なし",
+        "period_end": "2026-08-31",
+        "period_start": "2026-06-01",
+        "method": "累計−直前累計",
+        "revenue": 18251.0,
+        "operating_profit": 1006.0,
+        "ordinary_profit": 1047.0,
+        "net_profit": 367.0
+      },
+      {
+        "fiscal_year_end": "2026-02-28",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 1,4,8,11；LFD取得原価配分確定後、税会計改正による損益影響なし",
+        "period_end": "2025-08-31",
+        "period_start": "2025-06-01",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2026-02-28",
+        "quarter": 3,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03",
+          "S04"
+        ],
+        "locator": "S03 PDF pages 1,8,10；S04 PDF page 4、LFD取得原価配分は前年度第3四半期に確定済み",
+        "period_end": "2025-11-30",
+        "period_start": "2025-09-01",
+        "method": "累計−直前累計",
+        "revenue": 16462.0,
+        "operating_profit": 1243.0,
+        "ordinary_profit": 1330.0,
+        "net_profit": 876.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "国内の季節性・客数・価格・店舗数",
+            "formula": "bear_dom-q2_dom_other",
+            "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用",
+            "amount": -1180.6709893856914
+          },
+          {
+            "label": "海外",
+            "formula": "bear_overseas-q2_overseas",
+            "reason": "海外の需要・店舗稼働・為替を合算した弱気条件",
+            "amount": -58.91037830422647
+          },
+          {
+            "label": "国内子会社",
+            "formula": "bear_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上の変化",
+            "amount": -0.6577800000000025
+          },
+          {
+            "label": "外販・EC",
+            "formula": "bear_external-q2_external",
+            "reason": "直近四半期からの販売変化",
+            "amount": -7.700000000000017
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q2_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "国内の季節性・客数・価格・店舗数",
+            "formula": "base_dom-q2_dom_other",
+            "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用",
+            "amount": -1032.8068470916824
+          },
+          {
+            "label": "海外",
+            "formula": "base_overseas-q2_overseas",
+            "reason": "海外の需要・店舗稼働・為替を合算した中心条件",
+            "amount": 88.36556745633925
+          },
+          {
+            "label": "国内子会社",
+            "formula": "base_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上の変化",
+            "amount": 116.75595000000021
+          },
+          {
+            "label": "外販・EC",
+            "formula": "base_external-q2_external",
+            "reason": "直近四半期からの販売変化",
+            "amount": 7.700000000000017
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "国内の季節性・客数・価格・店舗数",
+            "formula": "bull_dom-q2_dom_other",
+            "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用",
+            "amount": -884.6042912892117
+          },
+          {
+            "label": "海外",
+            "formula": "bull_overseas-q2_overseas",
+            "reason": "海外の需要・店舗稼働・為替を合算した強気条件",
+            "amount": 235.64151321690497
+          },
+          {
+            "label": "国内子会社",
+            "formula": "bull_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上の変化",
+            "amount": 238.1163600000002
+          },
+          {
+            "label": "外販・EC",
+            "formula": "bull_external-q2_external",
+            "reason": "直近四半期からの販売変化",
+            "amount": 23.099999999999994
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "国内の直近四半期からの変化",
+            "formula": "bear_dom-q2_dom_other",
+            "reason": "季節性・客数・価格・店舗数の弱気条件",
+            "amount": -1180.6709893856914
+          },
+          {
+            "label": "海外の直近四半期からの変化",
+            "formula": "bear_overseas-q2_overseas",
+            "reason": "海外合算条件",
+            "amount": -58.91037830422647
+          },
+          {
+            "label": "国内子会社の直近四半期からの変化",
+            "formula": "bear_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上",
+            "amount": -0.6577800000000025
+          },
+          {
+            "label": "外販の直近四半期からの変化",
+            "formula": "bear_external-q2_external",
+            "reason": "販売変化",
+            "amount": -7.700000000000017
+          }
+        ],
+        "residual": 1789.0,
+        "residual_formula": "q2_revenue-py_q3_revenue",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "国内の直近四半期からの変化",
+            "formula": "base_dom-q2_dom_other",
+            "reason": "季節性・客数・価格・店舗数の中心条件",
+            "amount": -1032.8068470916824
+          },
+          {
+            "label": "海外の直近四半期からの変化",
+            "formula": "base_overseas-q2_overseas",
+            "reason": "海外合算条件",
+            "amount": 88.36556745633925
+          },
+          {
+            "label": "国内子会社の直近四半期からの変化",
+            "formula": "base_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上",
+            "amount": 116.75595000000021
+          },
+          {
+            "label": "外販の直近四半期からの変化",
+            "formula": "base_external-q2_external",
+            "reason": "販売変化",
+            "amount": 7.700000000000017
+          }
+        ],
+        "residual": 1789.0,
+        "residual_formula": "q2_revenue-py_q3_revenue",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "py_q3_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "国内の直近四半期からの変化",
+            "formula": "bull_dom-q2_dom_other",
+            "reason": "季節性・客数・価格・店舗数の強気条件",
+            "amount": -884.6042912892117
+          },
+          {
+            "label": "海外の直近四半期からの変化",
+            "formula": "bull_overseas-q2_overseas",
+            "reason": "海外合算条件",
+            "amount": 235.64151321690497
+          },
+          {
+            "label": "国内子会社の直近四半期からの変化",
+            "formula": "bull_sub-q2_sub",
+            "reason": "平均稼働能力と店舗当たり売上",
+            "amount": 238.1163600000002
+          },
+          {
+            "label": "外販の直近四半期からの変化",
+            "formula": "bull_external-q2_external",
+            "reason": "販売変化",
+            "amount": 23.099999999999994
+          }
+        ],
+        "residual": 1789.0,
+        "residual_formula": "q2_revenue-py_q3_revenue",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q2_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "売上変化による粗利益",
+            "formula": "(bear_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期原価率で評価した売上変化",
+            "amount": -614.6361842411197
+          },
+          {
+            "label": "原価率変化",
+            "formula": "(one-one-bear_cogs_change)*bear_revenue",
+            "reason": "食材・資材・構成・稼働率の純効果",
+            "amount": -85.01530426155041
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q2_sga-bear_sga",
+            "reason": "変動費調整と追加コスト上昇",
+            "amount": 74.16801524503171
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q2_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "売上変化による粗利益",
+            "formula": "(base_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期原価率で評価した売上変化",
+            "amount": -403.8599598976549
+          },
+          {
+            "label": "原価率変化",
+            "formula": "(one-one-base_cogs_change)*base_revenue",
+            "reason": "価格・構成改善と仕入負担の純効果を据置",
+            "amount": 0.0
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q2_sga-base_sga",
+            "reason": "変動費調整と追加コスト上昇",
+            "amount": 86.24441100865624
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "baseline_ref": "q2_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "売上変化による粗利益",
+            "formula": "(bull_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期原価率で評価した売上変化",
+            "amount": -190.97323719533193
+          },
+          {
+            "label": "原価率変化",
+            "formula": "(one-one-bull_cogs_change)*bull_revenue",
+            "reason": "価格・構成改善と仕入負担安定の純効果",
+            "amount": 89.31626790963844
+          },
+          {
+            "label": "販管費変化",
+            "formula": "q2_sga-bull_sga",
+            "reason": "変動費調整と追加コスト抑制",
+            "amount": 59.360192834087684
+          }
+        ],
+        "residual": 0.0,
+        "residual_type": "none",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "bear_op",
+        "components": [
+          {
+            "label": "直近四半期からの売上変化による粗利益",
+            "formula": "(bear_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期を起点とする数量・価格・構成条件",
+            "amount": -614.6361842411197
+          },
+          {
+            "label": "直近四半期からの原価率変化",
+            "formula": "(one-one-bear_cogs_change)*bear_revenue",
+            "reason": "原価率悪化条件",
+            "amount": -85.01530426155041
+          },
+          {
+            "label": "直近四半期からの販管費変化",
+            "formula": "q2_sga-bear_sga",
+            "reason": "固定・変動費モデル",
+            "amount": 74.16801524503171
+          }
+        ],
+        "residual": -237.0,
+        "residual_formula": "q2_op-py_q3_op",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "base_op",
+        "components": [
+          {
+            "label": "直近四半期からの売上変化による粗利益",
+            "formula": "(base_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期を起点とする数量・価格・構成条件",
+            "amount": -403.8599598976549
+          },
+          {
+            "label": "直近四半期からの原価率変化",
+            "formula": "(one-one-base_cogs_change)*base_revenue",
+            "reason": "原価率維持条件",
+            "amount": 0.0
+          },
+          {
+            "label": "直近四半期からの販管費変化",
+            "formula": "q2_sga-base_sga",
+            "reason": "固定・変動費モデル",
+            "amount": 86.24441100865624
+          }
+        ],
+        "residual": -237.0,
+        "residual_formula": "q2_op-py_q3_op",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "baseline_ref": "py_q3_op",
+        "forecast_ref": "bull_op",
+        "components": [
+          {
+            "label": "直近四半期からの売上変化による粗利益",
+            "formula": "(bull_revenue-q2_revenue)*(one-q2_cogs_rate)",
+            "reason": "第2四半期を起点とする数量・価格・構成条件",
+            "amount": -190.97323719533193
+          },
+          {
+            "label": "直近四半期からの原価率変化",
+            "formula": "(one-one-bull_cogs_change)*bull_revenue",
+            "reason": "原価率改善条件",
+            "amount": 89.31626790963844
+          },
+          {
+            "label": "直近四半期からの販管費変化",
+            "formula": "q2_sga-bull_sga",
+            "reason": "固定・変動費モデル",
+            "amount": 59.360192834087684
+          }
+        ],
+        "residual": -237.0,
+        "residual_formula": "q2_op-py_q3_op",
+        "residual_type": "economic_unexplained",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      }
+    ],
+    "issues": [
+      "S01～S09の提示原文はtruncated=false。S10～S13は本文が添付されておらず未読。最新決算説明資料、会社自身の質疑応答、正確な決算日、基準日時までの追加開示の網羅性は原本未確認であり、非開示とは断定しない。",
+      "S07の国内全店上期増収率とS01の値には小差がある。また前年国内子会社店舗売上の合計とS01の前年増収率から逆算される額にも差がある。定義変更・集計修正の根拠は未確認であり、都合よく補正しない。",
+      "入力された発表予定日2026-12-25は会社・取引所の保存原文で裏付けられないためannouncement_dateをnullとした。対象期間は2027年2月期第3四半期単独として設定。",
+      "前年比ブリッジの経済的残差は解消していない。三つのシナリオで同一の比較実績と同一の残差定義を使用した。",
+      "前年第2四半期国内店舗売上の近似に丸められた増収率を使用。店舗売上とFC向供給売上の時差、月次等加重の誤差も含むため、予測の小数桁に経済的精度はない。",
+      "取得原価配分について、前年のLFD確定は確認できる。今期のGAKU・me等の配分確定状況は提示短信に詳細がない。S01・S02に修正再表示等の記載がない報告値として累計差引したのであり、全買収案件の最終配分確定を主張しない。",
+      "国内子会社の連結換算係数と国内等の残余配賦は独自仮定。残余にはパスタ・デ・ココ等も含まれるため、国内CoCo壱番屋の客数・価格・季節性を完全には共有しない。",
+      "基準日時は対象四半期終了前。対象決算が発表済みであることを示す原文はない。",
+      "海外顧客所在地別売上／海外全店店舗売上の比率は異なる定義の数値から作る近似係数。海外FCと直営の構成変化や国内からの輸出があれば配賦がずれる。",
+      "経常利益・純利益の条件を設定するには、対象期間の為替差損益等、減損・除却、税率、非支配株主損益の根拠が不足する。",
+      "販管費の変動割合と費用増加率は公表予想ではない。販促日程、賞与、開店費用、製造固定費、事業構成の違いで利益予測が大きく変動しうる。",
+      "資料確認未了: presentation",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -1247.9391476899182,
+            "rate": -0.06837648061420844,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -625.4834732576383,
+            "rate": -0.6217529555244913,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 541.0608523100818,
+            "rate": 0.03286726110497399,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -862.4834732576383,
+            "rate": -0.6938724644067886,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": -819.9853296353431,
+            "rate": -0.044928241172283334,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -317.6155488889981,
+            "rate": -0.3157212215596403,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 969.0146703646569,
+            "rate": 0.058863726786821585,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -554.6155488889981,
+            "rate": -0.44619110932340955,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": -387.7464180723109,
+            "rate": -0.02124521495108821,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -42.29677645160427,
+            "rate": -0.042044509395232875,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 1401.253581927689,
+            "rate": 0.08512049458921693,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": -279.2967764516043,
+            "rate": -0.2246957171774773,
+            "note": ""
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -1247.9391476899182,
+        "explained_sum": -1247.939147689918,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -819.9853296353431,
+        "explained_sum": -819.9853296353429,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -387.7464180723109,
+        "explained_sum": -387.7464180723065,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": -4.433786671143025e-12,
+        "status": "passed",
+        "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 541.0608523100818,
+        "explained_sum": -1247.939147689918,
+        "residual": 1789.0,
+        "residual_type": "economic_unexplained",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 969.0146703646569,
+        "explained_sum": -819.9853296353429,
+        "residual": 1789.0,
+        "residual_type": "economic_unexplained",
+        "difference": -2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 1401.253581927689,
+        "explained_sum": -387.7464180723065,
+        "residual": 1789.0,
+        "residual_type": "economic_unexplained",
+        "difference": -4.547473508864641e-12,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -625.4834732576383,
+        "explained_sum": -625.4834732576385,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -317.6155488889981,
+        "explained_sum": -317.61554888899866,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 5.684341886080801e-13,
+        "status": "passed",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "operating_profit",
+        "expected_delta": -42.29677645160427,
+        "explained_sum": -42.29677645160581,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 1.5347723092418164e-12,
+        "status": "passed",
+        "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -862.4834732576383,
+        "explained_sum": -625.4834732576385,
+        "residual": -237.0,
+        "residual_type": "economic_unexplained",
+        "difference": 2.2737367544323206e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -554.6155488889981,
+        "explained_sum": -317.61554888899866,
+        "residual": -237.0,
+        "residual_type": "economic_unexplained",
+        "difference": 5.684341886080801e-13,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "operating_profit",
+        "expected_delta": -279.2967764516043,
+        "explained_sum": -42.29677645160581,
+        "residual": -237.0,
+        "residual_type": "economic_unexplained",
+        "difference": 1.5347723092418164e-12,
+        "status": "passed",
+        "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+      }
+    ],
+    "conditions": [
+      "11月月次は未公表扱い。保存S07の11月欄は空欄であり、11月の客数・客単価はシナリオ仮定。",
+      "S07の10月月次は速報。確定した連結業績とは区別してassumptionに保存した。",
+      "base_cogs_change: 第1・第2四半期で原価率がおおむね同水準だったことから、中心では第2四半期原価率を維持する。価格・構成と仕入高騰の純効果をまとめた条件であり、別途値上げ利益を加えない。",
+      "base_external_factor: EC取扱量拡大が続く一方、第1四半期から第2四半期への伸びは鈍化する条件。",
+      "base_nov_ticket: 11月客単価の増加が9～10月の間で推移する中心条件。深夜料金とトッピング改定を内包する。",
+      "base_nov_traffic: 前年配達代行キャンペーン反動の緩和を仮定し、11月は10月より客数減少が小さくなる中心条件。11月実績ではない。",
+      "base_overseas_factor: 連結海外店舗数の増加と中国・台湾の既存店改善を踏まえ、第2四半期比3％増を置く。店舗稼働、為替、既存店を合算した条件であり、別途増店効果を加算しない。",
+      "base_sga_inflation: 売上連動分調整後の費用に、人件費・物流費等の第2四半期比0.5％増を置く。既存の償却費・のれん償却は第2四半期費用に含まれるため再加算しない。",
+      "base_sub_capacity: 8月末から10月末までの大黒商事、竹井、KOZOU、GAKUの増店を平均稼働に反映し、第2四半期比5％増とする。",
+      "base_sub_productivity: 大黒商事と前田屋の既存店改善、他業態の弱さを合わせ、季節・業態構成を含む店舗当たり売上を第2四半期比2％増とする。",
+      "bear_cogs_change: 第2四半期原価率から0.5ポイント悪化する条件。食材・資材価格高騰と数量減による製造固定費負担を含む。",
+      "bear_external_factor: 外販・ECの第2四半期からの販売減速を仮定。前年増収率の延長は行わない。",
+      "bear_nov_ticket: 価格改定は継続するが高単価メニュー構成が弱まり、11月客単価増加率が10月を下回る条件。",
+      "bear_nov_traffic: 11月に9月並みの客数減少が継続する弱気条件。",
+      "bear_overseas_factor: 海外連結子会社の店舗拡大を需要・為替の悪化が相殺し、海外売上寄与が第2四半期から2％減る条件。対象に対応する海外子会社の会計期間は主として7～9月であり、国内9～11月の月次を流用しない。",
+      "bear_sga_inflation: 売上連動分調整後の費用に、人件費・物流費・増店維持費等の第2四半期比1.5％増を置く。",
+      "bear_sub_capacity: 国内子会社の期末店舗増を平均稼働店舗へ置き換え、開店時期と立ち上がりを保守的に考慮した第2四半期比2％増。",
+      "bear_sub_productivity: たけ井、KOZOU、GAKUの既存店軟調と開店初期の生産性を重く見て、店舗当たり売上を第2四半期比2％減とする。",
+      "bull_cogs_change: 価格・商品構成改善と仕入負担の安定で原価率が第2四半期から0.5ポイント改善する条件。米価格下落の確定情報はない。",
+      "bull_external_factor: EC取扱量と共同開発商品の販売が好調に推移する条件。",
+      "bull_nov_ticket: 高単価商品の構成改善により、11月客単価増加が9月を小幅に上回る条件。",
+      "bull_nov_traffic: 11月の販促が奏功し、客数が上期の前年並みに近づく強気条件。",
+      "bull_overseas_factor: 増店稼働に加えて既存店改善が続き、為替も悪化しない条件。直近の店舗売上の四半期増加を参考に8％増を上限条件とする。",
+      "bull_sga_inflation: 費用高騰を運営効率改善で吸収し、売上連動分以外の追加費用率が上昇しない条件。",
+      "bull_sub_capacity: 確認された増店が早期に売上へ寄与し、平均生産能力が第2四半期比8％増となる条件。未確認の買収は加えない。",
+      "bull_sub_productivity: 前田屋の季節需要と大黒商事の好調が継続し、店舗当たり売上が第2四半期比6％増となる条件。",
+      "dom_store_adjustment: 国内CoCo壱番屋店舗数が8月末から9～10月末に減少した影響を近似。月中稼働日、直営・FC構成、新旧店生産性は不明のため小幅減を置く。",
+      "oct_ticket: 当月速報の客単価倍率を採用。価格改定効果を別途加算しない。",
+      "oct_traffic: 当月速報の客数倍率を採用。前年の配達代行キャンペーン反動を含む。",
+      "one: 倍率と差分の計算に使用する算術定数。",
+      "overseas_conversion_adjustment: 前期の海外顧客売上高／海外店舗売上高を、今期第2四半期の連結海外売上寄与の近似に使用する。所在地別売上と店舗売上は定義が異なるため、確認済みの事業別売上とは扱わない。調整倍率は中心仮定として1とする。",
+      "price_realization: 店舗客単価の追加上昇が本部連結売上へ反映する割合。国内CoCo壱番屋はFC主体で、深夜料金や小売価格上昇の全額が本部売上になるわけではない。直営売上とFC向供給の商品構成への間接効果を合わせ0.4とする。FC卸価格の追加改定は仮定しない。",
+      "seasonality_adjustment: 前年国内CoCo壱番屋の第3四半期／第2四半期店舗売上比を国内等の季節係数に使う。前年第1四半期店舗売上は今期値と公表増収率から近似逆算する。店舗売上の季節性が本部供給売上等にも概ね反映すると仮定する。",
+      "sep_ticket: 保存月次の客単価倍率を採用。価格改定、深夜料金、商品構成の効果を含む観測値。",
+      "sep_traffic: 保存月次の公表客数倍率を予測用観測値として採用。月次情報であり、連結確定実績とは区別する。",
+      "sga_variable_share: 物流、雑給、水道光熱、消耗品と一部販促費を売上連動費用と見なし、販管費の35％を変動部分とする。給与、賃借料、償却費等は残る65％に含める。四半期費用内訳は非開示であり、利益目標から逆算していない。",
+      "sub_conversion: 国内子会社の店舗売上を連結売上寄与へ換算する係数。グループ外FCの店舗売上を全額連結せず、グループ内フランチャイジーの売上とFC向供給を考慮して0.95を置く。実際の業態別連結売上は非開示。",
+      "three: 対象四半期の月数。月別の前年売上構成比が未確認のため、月次倍率を等加重する。",
+      "国内のFC向供給数量、卸単価、店舗在庫変動、深夜時間帯の売上構成は非開示。",
+      "国内子会社の店舗別売上と立ち上がり費用、事業別連結売上と利益は提示短信で非開示。",
+      "海外対象期間の国別販売と為替、店舗稼働は原文未確認。",
+      "米・その他食材の四半期購入単価と数量、四半期別販管費内訳は提示原文では不足。",
+      "非公開化はS09時点で未決定。取引費用や構造改革効果を予測へ加えていない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120261005545816.pdf",
+        "published_at": "2026-10-05",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120261005545816.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S01.txt",
+        "sha256": "19da8c561303bfb434b018e5270f2fd511ea6fce96b5a1b91af890943212b3d0",
+        "text_sha256": "a3220c4a0ad9c29feaf965d12b9036443a33467734faf960d5d8fa68bdcb64ce",
+        "retrieved_at": "2026-11-28T13:53:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11697,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2027年2月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120260626581301.pdf",
+        "published_at": "2026-06-26",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120260626581301.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S02.txt",
+        "sha256": "d6df341d4cd37aa46ead539f4a61f8fb4256f63e5ff95c984ae97a4ac020bb76",
+        "text_sha256": "8c5dbb90234dbff741f402a247b1b1aca5d9494fc8615b70a76ad5e560990378",
+        "retrieved_at": "2026-11-28T13:53:40+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10092,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年2月期 第3四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120251226527415.pdf",
+        "published_at": "2025-12-26",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120251226527415.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S03.txt",
+        "sha256": "6e7b7e3fc15fdcfc5a82b4ff372391a8c9125f6e3573bb788c480717a8483342",
+        "text_sha256": "0abfa4f568415d75a557f0b870c86ff0d6ccd3da28ee51212867027958c500fd",
+        "retrieved_at": "2026-11-28T13:53:41+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 10825,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2026年2月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120251006568795.pdf",
+        "published_at": "2025-10-06",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120251006568795.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S04.txt",
+        "sha256": "2baad0431368fc8ef29ed53fad4c1731dbfb76e045d03754cc1831d4546321c4",
+        "text_sha256": "187eded6d77fa92814e53c96f71836e5ef4c3a1ce34fc9f7349bd3467997de7b",
+        "retrieved_at": "2026-11-28T13:53:42+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12436,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "2026年2月期 決算短信〔日本基準〕（連結）（2027年2月期会社予想を含む）",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120260406598776.pdf",
+        "published_at": "2026-04-06",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120260406598776.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S05.txt",
+        "sha256": "cea623186d5bff783383a5252c26dee607be9ac3a53eef0fc98a71eb5c7d74d9",
+        "text_sha256": "c5f3f6f35baf8e8a0ed23b2a8d67d9e2146d67c7bda79f4303708d0ea0243068",
+        "retrieved_at": "2026-11-28T13:53:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 19477,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "中期経営計画の見直しに関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/76300/140120260406598803.pdf",
+        "published_at": "2026-04-06",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/76300/140120260406598803.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S06.txt",
+        "sha256": "6a0c9c9fc2f00796c3727278e36b1acfd57e86b5462c8de6d746c6c8544c746c",
+        "text_sha256": "674c93ea0a475a66b738a700ac45d55a43cfab777bf21cfa7d2159ffe7b29333",
+        "retrieved_at": "2026-11-28T13:53:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1075,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年10月度 月次データ",
+        "url": "https://ssl4.eir-parts.net/doc/7630/ir_material_for_fiscal_ym4/217179/00.pdf",
+        "published_at": "2026-11-05",
+        "category": "kpi",
+        "final_url": "https://ssl4.eir-parts.net/doc/7630/ir_material_for_fiscal_ym4/217179/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S07.txt",
+        "sha256": "0900e9ab753832eec0549148494d7ab57fb012965dca644e2e029651df235777",
+        "text_sha256": "670187b666195f089b664d15264bc2c3b1309f4323a39c814c55f3022861a3c7",
+        "retrieved_at": "2026-11-28T13:53:43+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 4167,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "深夜料金の導入および一部トッピング価格改定に関するお知らせ",
+        "url": "https://ssl4.eir-parts.net/doc/7630/tdnet/2878725/00.pdf",
+        "published_at": "2026-08-28",
+        "category": "other",
+        "final_url": "https://ssl4.eir-parts.net/doc/7630/tdnet/2878725/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S08.txt",
+        "sha256": "22bbbcf2a3f4a2b1a449601b2dce0234ab1042597be59a1d83a209ed765f9734",
+        "text_sha256": "f9ba9b20a7d0bb4b10b20a8c3f56f8dc3aa2563a7fb48f471e7d13c1106b95b7",
+        "retrieved_at": "2026-11-28T13:53:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1447,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "当社に関する一部報道について",
+        "url": "https://ssl4.eir-parts.net/doc/7630/tdnet/2879341/00.pdf",
+        "published_at": "2026-08-31",
+        "category": "other",
+        "final_url": "https://ssl4.eir-parts.net/doc/7630/tdnet/2879341/00.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\7630\\sources\\S09.txt",
+        "sha256": "4bf227bc97f51509abede6903947782edec2a2e8e7b46274f2b2d0533808b7d2",
+        "text_sha256": "db66014fc3e0dce6d9cc18f05e5e92150d6409d053fd524d55a404e620ab2db2",
+        "retrieved_at": "2026-11-28T13:53:44+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 362,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "ハウス食品グループ本社 2027年3月期 中間期決算説明会質疑応答（壱番屋の非公開化検討に関する説明）",
+        "url": "https://housefoods-group.com/ir/ir_library/explanation/pdf/261118situgioutou.pdf",
+        "published_at": "",
+        "category": "qa",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:53:44+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "壱番屋 決算説明資料掲載ページ",
+        "url": "https://www.ichibanya.jp/ir/library/explanation/",
+        "published_at": "",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:53:44+09:00"
+      },
+      {
+        "id": "S12",
+        "title": "壱番屋 IRカレンダー",
+        "url": "https://www.ichibanya.jp/ir/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:53:44+09:00"
+      },
+      {
+        "id": "S13",
+        "title": "壱番屋 株式情報",
+        "url": "https://www.ichibanya.jp/ir/stockholder/info/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:53:44+09:00"
+      }
+    ],
+    "model": {
+      "code": "7630",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-02-28",
+        "quarter": 3,
+        "start": "2026-09-01",
+        "end": "2026-11-30",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "cy_h1_revenue",
+          "value": 35227,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "cy_h1_op",
+          "value": 2091,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "cy_h1_cogs",
+          "value": 17863,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cy_h1_sga",
+          "value": 15272,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cy_q1_revenue",
+          "value": 16976,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "cy_q1_op",
+          "value": 1085,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "cy_q1_cogs",
+          "value": 8601,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "cy_q1_sga",
+          "value": 7289,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 8"
+        },
+        {
+          "id": "py_q3_cum_revenue",
+          "value": 48480,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "py_q3_cum_op",
+          "value": 3769,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "py_h1_revenue",
+          "value": 32018,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "py_h1_op",
+          "value": 2526,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 1"
+        },
+        {
+          "id": "cy_h1_overseas_store_sales",
+          "value": 10361,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4、海外事業の全店店舗売上高"
+        },
+        {
+          "id": "cy_q1_overseas_store_sales",
+          "value": 5031,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 4、海外事業の全店店舗売上高"
+        },
+        {
+          "id": "py_fy_overseas_revenue",
+          "value": 10474,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 16、顧客所在地別海外売上高"
+        },
+        {
+          "id": "py_fy_overseas_store_sales",
+          "value": 18953,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 4、海外事業の全店店舗売上高"
+        },
+        {
+          "id": "cy_h1_sub_store_sales",
+          "value": 3380,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4、国内子会社事業"
+        },
+        {
+          "id": "cy_q1_sub_store_sales",
+          "value": 1649,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 4、国内子会社事業"
+        },
+        {
+          "id": "cy_h1_external_sales",
+          "value": 282,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5、外販事業"
+        },
+        {
+          "id": "cy_q1_external_sales",
+          "value": 128,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5、外販事業"
+        },
+        {
+          "id": "py_q3_cum_dom_store_sales",
+          "value": 69467,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 4、国内CoCo壱番屋"
+        },
+        {
+          "id": "py_h1_dom_store_sales",
+          "value": 46353,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 4、国内CoCo壱番屋"
+        },
+        {
+          "id": "cy_q1_dom_store_sales",
+          "value": 23103,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 4、国内CoCo壱番屋"
+        },
+        {
+          "id": "cy_q1_dom_growth",
+          "value": 1.031,
+          "kind": "fact",
+          "unit": "倍率",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 4、国内全店売上高前年同期比3.1％増を倍率表示"
+        },
+        {
+          "id": "cy_q2_dom_traffic",
+          "value": 0.995,
+          "kind": "fact",
+          "unit": "倍率",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12、国内第2四半期既存店客数前年同期比"
+        },
+        {
+          "id": "cy_q2_dom_ticket",
+          "value": 1.03,
+          "kind": "fact",
+          "unit": "倍率",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 12、国内第2四半期既存店客単価前年同期比"
+        },
+        {
+          "id": "guidance_revenue",
+          "value": 72600,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guidance_op",
+          "value": 5000,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guidance_ordinary",
+          "value": 5040,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期連結業績予想"
+        },
+        {
+          "id": "guidance_net",
+          "value": 2720,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、親会社株主に帰属する通期純利益予想"
+        },
+        {
+          "id": "one",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "定数",
+          "rationale": "倍率と差分の計算に使用する算術定数。",
+          "sensitivity": "固定定数であり感応度なし。"
+        },
+        {
+          "id": "three",
+          "value": 3,
+          "kind": "assumption",
+          "unit": "月",
+          "rationale": "対象四半期の月数。月別の前年売上構成比が未確認のため、月次倍率を等加重する。",
+          "sensitivity": "月別前年売上構成比が異なる場合、四半期の実際の加重平均倍率と乖離する。"
+        },
+        {
+          "id": "overseas_conversion_adjustment",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S05",
+            "S01",
+            "S02"
+          ],
+          "locator": "S05 PDF pages 4,16；S01・S02 PDF page 4",
+          "rationale": "前期の海外顧客売上高／海外店舗売上高を、今期第2四半期の連結海外売上寄与の近似に使用する。所在地別売上と店舗売上は定義が異なるため、確認済みの事業別売上とは扱わない。調整倍率は中心仮定として1とする。",
+          "sensitivity": "調整倍率を±10％変えると第2四半期の海外配賦額が±10％変わり、同額を国内等の配賦額から減増する。全社第2四半期実績は変わらないが、各領域の予測倍率が異なるため予測総額は変動する。",
+          "material": true
+        },
+        {
+          "id": "sub_conversion",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 4,13、国内子会社店舗売上と直営・FC店舗数",
+          "rationale": "国内子会社の店舗売上を連結売上寄与へ換算する係数。グループ外FCの店舗売上を全額連結せず、グループ内フランチャイジーの売上とFC向供給を考慮して0.95を置く。実際の業態別連結売上は非開示。",
+          "sensitivity": "係数0.90～1.00では第2四半期の国内子会社配賦額が約±87百万円変化し、国内等配賦額が反対方向に変化する。",
+          "material": true
+        },
+        {
+          "id": "seasonality_adjustment",
+          "value": 1,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各PDF page 4",
+          "rationale": "前年国内CoCo壱番屋の第3四半期／第2四半期店舗売上比を国内等の季節係数に使う。前年第1四半期店舗売上は今期値と公表増収率から近似逆算する。店舗売上の季節性が本部供給売上等にも概ね反映すると仮定する。",
+          "sensitivity": "季節係数の調整倍率を±2％動かすと国内等予測売上が±2％変動する。公表増収率の丸めとFC在庫時差も誤差要因。",
+          "material": true
+        },
+        {
+          "id": "sep_traffic",
+          "value": 0.93,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、2026年9月",
+          "rationale": "保存月次の公表客数倍率を予測用観測値として採用。月次情報であり、連結確定実績とは区別する。",
+          "sensitivity": "倍率が1ポイント変化すると四半期平均客数倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "oct_traffic",
+          "value": 0.944,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、2026年10月および注5",
+          "rationale": "当月速報の客数倍率を採用。前年の配達代行キャンペーン反動を含む。",
+          "sensitivity": "速報修正で1ポイント変化すると四半期平均客数倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "sep_ticket",
+          "value": 1.061,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、2026年9月",
+          "rationale": "保存月次の客単価倍率を採用。価格改定、深夜料金、商品構成の効果を含む観測値。",
+          "sensitivity": "倍率が1ポイント変化すると四半期平均客単価倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "oct_ticket",
+          "value": 1.053,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、2026年10月および注5",
+          "rationale": "当月速報の客単価倍率を採用。価格改定効果を別途加算しない。",
+          "sensitivity": "速報修正で1ポイント変化すると四半期平均客単価倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "bear_nov_traffic",
+          "value": 0.93,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、9～10月の客数",
+          "rationale": "11月に9月並みの客数減少が継続する弱気条件。",
+          "sensitivity": "11月客数が1ポイント変化すると四半期平均客数倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "base_nov_traffic",
+          "value": 0.96,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 1、10月概況",
+          "rationale": "前年配達代行キャンペーン反動の緩和を仮定し、11月は10月より客数減少が小さくなる中心条件。11月実績ではない。",
+          "sensitivity": "11月客数が1ポイント変化すると四半期平均客数倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "bull_nov_traffic",
+          "value": 0.99,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07",
+            "S01"
+          ],
+          "locator": "S07 PDF page 1；S01 PDF page 12",
+          "rationale": "11月の販促が奏功し、客数が上期の前年並みに近づく強気条件。",
+          "sensitivity": "11月客数が1ポイント変化すると四半期平均客数倍率が約0.33ポイント変化する。"
+        },
+        {
+          "id": "bear_nov_ticket",
+          "value": 1.045,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 1；S08 PDF pages 1–2",
+          "rationale": "価格改定は継続するが高単価メニュー構成が弱まり、11月客単価増加率が10月を下回る条件。",
+          "sensitivity": "11月客単価が1ポイント変わると、四半期平均を通じ国内等売上へ価格実現係数に応じて波及する。"
+        },
+        {
+          "id": "base_nov_ticket",
+          "value": 1.055,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 1；S08 PDF pages 1–2",
+          "rationale": "11月客単価の増加が9～10月の間で推移する中心条件。深夜料金とトッピング改定を内包する。",
+          "sensitivity": "11月客単価が1ポイント変わると、四半期平均を通じ国内等売上へ価格実現係数に応じて波及する。"
+        },
+        {
+          "id": "bull_nov_ticket",
+          "value": 1.065,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07",
+            "S08"
+          ],
+          "locator": "S07 PDF page 1；S08 PDF pages 1–2",
+          "rationale": "高単価商品の構成改善により、11月客単価増加が9月を小幅に上回る条件。",
+          "sensitivity": "11月客単価が1ポイント変わると、四半期平均を通じ国内等売上へ価格実現係数に応じて波及する。"
+        },
+        {
+          "id": "price_realization",
+          "value": 0.4,
+          "kind": "assumption",
+          "unit": "係数",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01 PDF page 13；S05 PDF page 18；S08 PDF page 1",
+          "rationale": "店舗客単価の追加上昇が本部連結売上へ反映する割合。国内CoCo壱番屋はFC主体で、深夜料金や小売価格上昇の全額が本部売上になるわけではない。直営売上とFC向供給の商品構成への間接効果を合わせ0.4とする。FC卸価格の追加改定は仮定しない。",
+          "sensitivity": "係数0.2～0.6で国内等予測売上への客単価寄与が中心条件の半分～1.5倍になる。",
+          "material": true
+        },
+        {
+          "id": "dom_store_adjustment",
+          "value": 0.9975,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 13；S07 PDF page 1",
+          "rationale": "国内CoCo壱番屋店舗数が8月末から9～10月末に減少した影響を近似。月中稼働日、直営・FC構成、新旧店生産性は不明のため小幅減を置く。",
+          "sensitivity": "倍率が0.1ポイント変化すると国内等予測売上が約0.1％変化する。"
+        },
+        {
+          "id": "bear_overseas_factor",
+          "value": 0.98,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 12,14；S02 PDF pages 11–12",
+          "rationale": "海外連結子会社の店舗拡大を需要・為替の悪化が相殺し、海外売上寄与が第2四半期から2％減る条件。対象に対応する海外子会社の会計期間は主として7～9月であり、国内9～11月の月次を流用しない。",
+          "sensitivity": "倍率が1ポイント変わると海外売上予測が第2四半期海外配賦額の1％変化する。",
+          "material": true
+        },
+        {
+          "id": "base_overseas_factor",
+          "value": 1.03,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 12,14；S02 PDF pages 11–12",
+          "rationale": "連結海外店舗数の増加と中国・台湾の既存店改善を踏まえ、第2四半期比3％増を置く。店舗稼働、為替、既存店を合算した条件であり、別途増店効果を加算しない。",
+          "sensitivity": "倍率が1ポイント変わると海外売上予測が第2四半期海外配賦額の1％変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_overseas_factor",
+          "value": 1.08,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "S01 PDF pages 12,14；S02 PDF pages 11–12",
+          "rationale": "増店稼働に加えて既存店改善が続き、為替も悪化しない条件。直近の店舗売上の四半期増加を参考に8％増を上限条件とする。",
+          "sensitivity": "倍率が1ポイント変わると海外売上予測が第2四半期海外配賦額の1％変化する。",
+          "material": true
+        },
+        {
+          "id": "bear_sub_capacity",
+          "value": 1.02,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 13；S07 PDF page 2、業態別店舗数",
+          "rationale": "国内子会社の期末店舗増を平均稼働店舗へ置き換え、開店時期と立ち上がりを保守的に考慮した第2四半期比2％増。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "base_sub_capacity",
+          "value": 1.05,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 13；S07 PDF page 2、業態別店舗数",
+          "rationale": "8月末から10月末までの大黒商事、竹井、KOZOU、GAKUの増店を平均稼働に反映し、第2四半期比5％増とする。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "bull_sub_capacity",
+          "value": 1.08,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF page 13；S07 PDF page 2、業態別店舗数",
+          "rationale": "確認された増店が早期に売上へ寄与し、平均生産能力が第2四半期比8％増となる条件。未確認の買収は加えない。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "bear_sub_productivity",
+          "value": 0.98,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 2、国内他業態既存店売上",
+          "rationale": "たけ井、KOZOU、GAKUの既存店軟調と開店初期の生産性を重く見て、店舗当たり売上を第2四半期比2％減とする。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "base_sub_productivity",
+          "value": 1.02,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 2、国内他業態既存店売上",
+          "rationale": "大黒商事と前田屋の既存店改善、他業態の弱さを合わせ、季節・業態構成を含む店舗当たり売上を第2四半期比2％増とする。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "bull_sub_productivity",
+          "value": 1.06,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "PDF page 2、国内他業態既存店売上",
+          "rationale": "前田屋の季節需要と大黒商事の好調が継続し、店舗当たり売上が第2四半期比6％増となる条件。",
+          "sensitivity": "倍率1ポイントにつき国内子会社予測売上が約1％変化する。"
+        },
+        {
+          "id": "bear_external_factor",
+          "value": 0.95,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF page 5、外販事業",
+          "rationale": "外販・ECの第2四半期からの販売減速を仮定。前年増収率の延長は行わない。",
+          "sensitivity": "倍率10ポイントにつき予測売上が15.4百万円変化する。"
+        },
+        {
+          "id": "base_external_factor",
+          "value": 1.05,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF page 5、外販事業",
+          "rationale": "EC取扱量拡大が続く一方、第1四半期から第2四半期への伸びは鈍化する条件。",
+          "sensitivity": "倍率10ポイントにつき予測売上が15.4百万円変化する。"
+        },
+        {
+          "id": "bull_external_factor",
+          "value": 1.15,
+          "kind": "assumption",
+          "unit": "倍率",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "locator": "各PDF page 5、外販事業",
+          "rationale": "EC取扱量と共同開発商品の販売が好調に推移する条件。",
+          "sensitivity": "倍率10ポイントにつき予測売上が15.4百万円変化する。"
+        },
+        {
+          "id": "bear_cogs_change",
+          "value": 0.005,
+          "kind": "assumption",
+          "unit": "売上高比",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF pages 4,8；S08 PDF page 1",
+          "rationale": "第2四半期原価率から0.5ポイント悪化する条件。食材・資材価格高騰と数量減による製造固定費負担を含む。",
+          "sensitivity": "原価率0.1ポイントにつき営業利益が対象売上高の0.1％逆方向に変化する。",
+          "material": true
+        },
+        {
+          "id": "base_cogs_change",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "売上高比",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF pages 4,8；S08 PDF page 1",
+          "rationale": "第1・第2四半期で原価率がおおむね同水準だったことから、中心では第2四半期原価率を維持する。価格・構成と仕入高騰の純効果をまとめた条件であり、別途値上げ利益を加えない。",
+          "sensitivity": "原価率0.1ポイントにつき営業利益が対象売上高の0.1％逆方向に変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_cogs_change",
+          "value": -0.005,
+          "kind": "assumption",
+          "unit": "売上高比",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF pages 4,8；S08 PDF page 1",
+          "rationale": "価格・商品構成改善と仕入負担の安定で原価率が第2四半期から0.5ポイント改善する条件。米価格下落の確定情報はない。",
+          "sensitivity": "原価率0.1ポイントにつき営業利益が対象売上高の0.1％逆方向に変化する。",
+          "material": true
+        },
+        {
+          "id": "sga_variable_share",
+          "value": 0.35,
+          "kind": "assumption",
+          "unit": "比率",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 8、販管費内訳；S01 PDF page 8",
+          "rationale": "物流、雑給、水道光熱、消耗品と一部販促費を売上連動費用と見なし、販管費の35％を変動部分とする。給与、賃借料、償却費等は残る65％に含める。四半期費用内訳は非開示であり、利益目標から逆算していない。",
+          "sensitivity": "変動割合を25～45％とすると、営業利益は第2四半期販管費×売上変化率×10％だけ中心値から変動する。",
+          "material": true
+        },
+        {
+          "id": "bear_sga_inflation",
+          "value": 0.015,
+          "kind": "assumption",
+          "unit": "増加率",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01 PDF page 4；S05 PDF pages 5,8；S08 PDF page 1",
+          "rationale": "売上連動分調整後の費用に、人件費・物流費・増店維持費等の第2四半期比1.5％増を置く。",
+          "sensitivity": "費用増加率0.5ポイントにつき営業利益が調整後販管費の0.5％変化する。",
+          "material": true
+        },
+        {
+          "id": "base_sga_inflation",
+          "value": 0.005,
+          "kind": "assumption",
+          "unit": "増加率",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01 PDF page 4；S05 PDF pages 5,8；S08 PDF page 1",
+          "rationale": "売上連動分調整後の費用に、人件費・物流費等の第2四半期比0.5％増を置く。既存の償却費・のれん償却は第2四半期費用に含まれるため再加算しない。",
+          "sensitivity": "費用増加率0.5ポイントにつき営業利益が調整後販管費の0.5％変化する。",
+          "material": true
+        },
+        {
+          "id": "bull_sga_inflation",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "増加率",
+          "source_ids": [
+            "S01",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01 PDF page 4；S05 PDF pages 5,8；S08 PDF page 1",
+          "rationale": "費用高騰を運営効率改善で吸収し、売上連動分以外の追加費用率が上昇しない条件。",
+          "sensitivity": "費用増加率0.5ポイントにつき営業利益が調整後販管費の0.5％変化する。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "q2_revenue",
+          "formula": "cy_h1_revenue-cy_q1_revenue"
+        },
+        {
+          "id": "q2_op",
+          "formula": "cy_h1_op-cy_q1_op"
+        },
+        {
+          "id": "q2_cogs",
+          "formula": "cy_h1_cogs-cy_q1_cogs"
+        },
+        {
+          "id": "q2_sga",
+          "formula": "cy_h1_sga-cy_q1_sga"
+        },
+        {
+          "id": "py_q3_revenue",
+          "formula": "py_q3_cum_revenue-py_h1_revenue"
+        },
+        {
+          "id": "py_q3_op",
+          "formula": "py_q3_cum_op-py_h1_op"
+        },
+        {
+          "id": "q2_cogs_rate",
+          "formula": "q2_cogs/q2_revenue"
+        },
+        {
+          "id": "overseas_conversion",
+          "formula": "py_fy_overseas_revenue/py_fy_overseas_store_sales*overseas_conversion_adjustment"
+        },
+        {
+          "id": "q2_overseas",
+          "formula": "(cy_h1_overseas_store_sales-cy_q1_overseas_store_sales)*overseas_conversion"
+        },
+        {
+          "id": "q2_sub",
+          "formula": "(cy_h1_sub_store_sales-cy_q1_sub_store_sales)*sub_conversion"
+        },
+        {
+          "id": "q2_external",
+          "formula": "cy_h1_external_sales-cy_q1_external_sales"
+        },
+        {
+          "id": "q2_dom_other",
+          "formula": "q2_revenue-q2_overseas-q2_sub-q2_external"
+        },
+        {
+          "id": "py_q1_dom_store_proxy",
+          "formula": "cy_q1_dom_store_sales/cy_q1_dom_growth"
+        },
+        {
+          "id": "py_q2_dom_store_proxy",
+          "formula": "py_h1_dom_store_sales-py_q1_dom_store_proxy"
+        },
+        {
+          "id": "py_q3_dom_store",
+          "formula": "py_q3_cum_dom_store_sales-py_h1_dom_store_sales"
+        },
+        {
+          "id": "dom_seasonality",
+          "formula": "py_q3_dom_store/py_q2_dom_store_proxy*seasonality_adjustment"
+        },
+        {
+          "id": "bear_traffic",
+          "formula": "(sep_traffic+oct_traffic+bear_nov_traffic)/three"
+        },
+        {
+          "id": "base_traffic",
+          "formula": "(sep_traffic+oct_traffic+base_nov_traffic)/three"
+        },
+        {
+          "id": "bull_traffic",
+          "formula": "(sep_traffic+oct_traffic+bull_nov_traffic)/three"
+        },
+        {
+          "id": "bear_ticket",
+          "formula": "(sep_ticket+oct_ticket+bear_nov_ticket)/three"
+        },
+        {
+          "id": "base_ticket",
+          "formula": "(sep_ticket+oct_ticket+base_nov_ticket)/three"
+        },
+        {
+          "id": "bull_ticket",
+          "formula": "(sep_ticket+oct_ticket+bull_nov_ticket)/three"
+        },
+        {
+          "id": "bear_dom",
+          "formula": "q2_dom_other*dom_seasonality*(bear_traffic/cy_q2_dom_traffic)*(one+(bear_ticket/cy_q2_dom_ticket-one)*price_realization)*dom_store_adjustment"
+        },
+        {
+          "id": "base_dom",
+          "formula": "q2_dom_other*dom_seasonality*(base_traffic/cy_q2_dom_traffic)*(one+(base_ticket/cy_q2_dom_ticket-one)*price_realization)*dom_store_adjustment"
+        },
+        {
+          "id": "bull_dom",
+          "formula": "q2_dom_other*dom_seasonality*(bull_traffic/cy_q2_dom_traffic)*(one+(bull_ticket/cy_q2_dom_ticket-one)*price_realization)*dom_store_adjustment"
+        },
+        {
+          "id": "bear_overseas",
+          "formula": "q2_overseas*bear_overseas_factor"
+        },
+        {
+          "id": "base_overseas",
+          "formula": "q2_overseas*base_overseas_factor"
+        },
+        {
+          "id": "bull_overseas",
+          "formula": "q2_overseas*bull_overseas_factor"
+        },
+        {
+          "id": "bear_sub",
+          "formula": "q2_sub*bear_sub_capacity*bear_sub_productivity"
+        },
+        {
+          "id": "base_sub",
+          "formula": "q2_sub*base_sub_capacity*base_sub_productivity"
+        },
+        {
+          "id": "bull_sub",
+          "formula": "q2_sub*bull_sub_capacity*bull_sub_productivity"
+        },
+        {
+          "id": "bear_external",
+          "formula": "q2_external*bear_external_factor"
+        },
+        {
+          "id": "base_external",
+          "formula": "q2_external*base_external_factor"
+        },
+        {
+          "id": "bull_external",
+          "formula": "q2_external*bull_external_factor"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_dom+bear_overseas+bear_sub+bear_external"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_dom+base_overseas+base_sub+base_external"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_dom+bull_overseas+bull_sub+bull_external"
+        },
+        {
+          "id": "bear_cogs",
+          "formula": "bear_revenue*(q2_cogs_rate+bear_cogs_change)"
+        },
+        {
+          "id": "base_cogs",
+          "formula": "base_revenue*(q2_cogs_rate+base_cogs_change)"
+        },
+        {
+          "id": "bull_cogs",
+          "formula": "bull_revenue*(q2_cogs_rate+bull_cogs_change)"
+        },
+        {
+          "id": "bear_sga",
+          "formula": "q2_sga*(one+sga_variable_share*(bear_revenue/q2_revenue-one))*(one+bear_sga_inflation)"
+        },
+        {
+          "id": "base_sga",
+          "formula": "q2_sga*(one+sga_variable_share*(base_revenue/q2_revenue-one))*(one+base_sga_inflation)"
+        },
+        {
+          "id": "bull_sga",
+          "formula": "q2_sga*(one+sga_variable_share*(bull_revenue/q2_revenue-one))*(one+bull_sga_inflation)"
+        },
+        {
+          "id": "bear_op",
+          "formula": "bear_revenue-bear_cogs-bear_sga"
+        },
+        {
+          "id": "base_op",
+          "formula": "base_revenue-base_cogs-base_sga"
+        },
+        {
+          "id": "bull_op",
+          "formula": "bull_revenue-bull_cogs-bull_sga"
+        },
+        {
+          "id": "yoy_revenue_unexplained",
+          "formula": "q2_revenue-py_q3_revenue"
+        },
+        {
+          "id": "yoy_op_unexplained",
+          "formula": "q2_op-py_q3_op"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": "bear_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内CoCo壱番屋を主体とする国内等・配賦推計",
+              "revenue": "bear_dom"
+            },
+            {
+              "name": "海外・配賦推計",
+              "revenue": "bear_overseas"
+            },
+            {
+              "name": "国内子会社・配賦推計",
+              "revenue": "bear_sub"
+            },
+            {
+              "name": "外販・EC",
+              "revenue": "bear_external"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": "base_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内CoCo壱番屋を主体とする国内等・配賦推計",
+              "revenue": "base_dom"
+            },
+            {
+              "name": "海外・配賦推計",
+              "revenue": "base_overseas"
+            },
+            {
+              "name": "国内子会社・配賦推計",
+              "revenue": "base_sub"
+            },
+            {
+              "name": "外販・EC",
+              "revenue": "base_external"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": "bull_op",
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "国内CoCo壱番屋を主体とする国内等・配賦推計",
+              "revenue": "bull_dom"
+            },
+            {
+              "name": "海外・配賦推計",
+              "revenue": "bull_overseas"
+            },
+            {
+              "name": "国内子会社・配賦推計",
+              "revenue": "bull_sub"
+            },
+            {
+              "name": "外販・EC",
+              "revenue": "bull_external"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2027-02-28",
+          "quarter": 1,
+          "period_start": "2026-03-01",
+          "period_end": "2026-05-31",
+          "revenue": 16976,
+          "operating_profit": 1085,
+          "ordinary_profit": 1144,
+          "net_profit": 728,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2027_S02_S01_reported_no_policy_change_or_restatement",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1–2,8；当期の取得原価配分確定による修正は記載なし"
+        },
+        {
+          "fiscal_year_end": "2027-02-28",
+          "quarter": 2,
+          "period_start": "2026-03-01",
+          "period_end": "2026-08-31",
+          "revenue": 35227,
+          "operating_profit": 2091,
+          "ordinary_profit": 2191,
+          "net_profit": 1095,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2027_S02_S01_reported_no_policy_change_or_restatement",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1–2,8；当期の取得原価配分確定による修正は記載なし"
+        },
+        {
+          "fiscal_year_end": "2026-02-28",
+          "quarter": 2,
+          "period_start": "2025-03-01",
+          "period_end": "2025-08-31",
+          "revenue": 32018,
+          "operating_profit": 2526,
+          "ordinary_profit": 2708,
+          "net_profit": 1384,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026_LFD_PPA_finalized_tax_standard_applied_no_PnL_effect",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF pages 1,4,8,11；LFD取得原価配分確定後、税会計改正による損益影響なし"
+        },
+        {
+          "fiscal_year_end": "2026-02-28",
+          "quarter": 3,
+          "period_start": "2025-03-01",
+          "period_end": "2025-11-30",
+          "revenue": 48480,
+          "operating_profit": 3769,
+          "ordinary_profit": 4038,
+          "net_profit": 2260,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026_LFD_PPA_finalized_tax_standard_applied_no_PnL_effect",
+          "source_ids": [
+            "S03",
+            "S04"
+          ],
+          "locator": "S03 PDF pages 1,8,10；S04 PDF page 4、LFD取得原価配分は前年度第3四半期に確定済み"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "国内の客数減少と客単価上昇",
+          "mechanism": "客数減少は直営販売数量とFC向供給数量を押し下げる。客単価上昇は直営売上等へ寄与するが、FC小売売上の増加を本部売上へ全額転写しない。価格改定は月次客単価へ包含済み。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S05"
+          ],
+          "locator": "S07 PDF page 1；S08 PDF pages 1–2；S05 PDF page 18",
+          "calculation_ids": [
+            "bear_dom",
+            "base_dom",
+            "bull_dom"
+          ],
+          "not_quantified_reason": "深夜売上比率、トッピング販売数量、FC卸単価は非開示。価格実現係数による条件付き推計。"
+        },
+        {
+          "name": "海外の店舗構成と会計期間差",
+          "mechanism": "中国・台湾の既存店改善と連結店舗増加が売上を支える。海外子会社の決算取込期間は国内対象四半期とずれる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "locator": "S01 PDF pages 12,14；S02 PDF pages 11–12；S03 PDF page 11",
+          "calculation_ids": [
+            "bear_overseas",
+            "base_overseas",
+            "bull_overseas"
+          ],
+          "not_quantified_reason": "対象海外期間の国別売上、為替、平均稼働店舗は原文未確認。合算した四半期変化条件を使用。"
+        },
+        {
+          "name": "国内子会社の増店と業態別需要",
+          "mechanism": "大黒商事、竹井、KOZOU、GAKUの増店と前田屋等の既存店変化を、平均稼働能力と店舗当たり売上に分ける。",
+          "source_ids": [
+            "S01",
+            "S07"
+          ],
+          "locator": "S01 PDF pages 4,13；S07 PDF page 2",
+          "calculation_ids": [
+            "bear_sub",
+            "base_sub",
+            "bull_sub"
+          ],
+          "not_quantified_reason": "店舗別売上と開店費用は非開示。買収済み業態は第2四半期基準額に含まれ、買収効果を追加計上しない。"
+        },
+        {
+          "name": "食材原価と販管費の固定性",
+          "mechanism": "売上原価を売上高と原価率から計算し、販管費は第2四半期実額を固定部分・変動部分に分ける。売上減少時に固定費が残るため営業利益の減少が大きくなる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF pages 4,8；S05 PDF page 8；S08 PDF page 1",
+          "calculation_ids": [
+            "bear_cogs",
+            "base_cogs",
+            "bull_cogs",
+            "bear_sga",
+            "base_sga",
+            "bull_sga",
+            "bear_op",
+            "base_op",
+            "bull_op"
+          ],
+          "not_quantified_reason": "米の購入量・単価、四半期の人件費・物流費・償却費の内訳は不足。費用率と固定・変動区分の感応度で表現。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "国内の季節性・客数・価格・店舗数",
+              "formula": "bear_dom-q2_dom_other",
+              "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用"
+            },
+            {
+              "label": "海外",
+              "formula": "bear_overseas-q2_overseas",
+              "reason": "海外の需要・店舗稼働・為替を合算した弱気条件"
+            },
+            {
+              "label": "国内子会社",
+              "formula": "bear_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上の変化"
+            },
+            {
+              "label": "外販・EC",
+              "formula": "bear_external-q2_external",
+              "reason": "直近四半期からの販売変化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q2_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "国内の季節性・客数・価格・店舗数",
+              "formula": "base_dom-q2_dom_other",
+              "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用"
+            },
+            {
+              "label": "海外",
+              "formula": "base_overseas-q2_overseas",
+              "reason": "海外の需要・店舗稼働・為替を合算した中心条件"
+            },
+            {
+              "label": "国内子会社",
+              "formula": "base_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上の変化"
+            },
+            {
+              "label": "外販・EC",
+              "formula": "base_external-q2_external",
+              "reason": "直近四半期からの販売変化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "国内の季節性・客数・価格・店舗数",
+              "formula": "bull_dom-q2_dom_other",
+              "reason": "国内等配賦額に店舗季節性と客数・客単価条件を適用"
+            },
+            {
+              "label": "海外",
+              "formula": "bull_overseas-q2_overseas",
+              "reason": "海外の需要・店舗稼働・為替を合算した強気条件"
+            },
+            {
+              "label": "国内子会社",
+              "formula": "bull_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上の変化"
+            },
+            {
+              "label": "外販・EC",
+              "formula": "bull_external-q2_external",
+              "reason": "直近四半期からの販売変化"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "配賦推計モデル内で一致。事業別実績の確認を意味しない。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "国内の直近四半期からの変化",
+              "formula": "bear_dom-q2_dom_other",
+              "reason": "季節性・客数・価格・店舗数の弱気条件"
+            },
+            {
+              "label": "海外の直近四半期からの変化",
+              "formula": "bear_overseas-q2_overseas",
+              "reason": "海外合算条件"
+            },
+            {
+              "label": "国内子会社の直近四半期からの変化",
+              "formula": "bear_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上"
+            },
+            {
+              "label": "外販の直近四半期からの変化",
+              "formula": "bear_external-q2_external",
+              "reason": "販売変化"
+            }
+          ],
+          "residual": "yoy_revenue_unexplained",
+          "residual_formula": "q2_revenue-py_q3_revenue",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "国内の直近四半期からの変化",
+              "formula": "base_dom-q2_dom_other",
+              "reason": "季節性・客数・価格・店舗数の中心条件"
+            },
+            {
+              "label": "海外の直近四半期からの変化",
+              "formula": "base_overseas-q2_overseas",
+              "reason": "海外合算条件"
+            },
+            {
+              "label": "国内子会社の直近四半期からの変化",
+              "formula": "base_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上"
+            },
+            {
+              "label": "外販の直近四半期からの変化",
+              "formula": "base_external-q2_external",
+              "reason": "販売変化"
+            }
+          ],
+          "residual": "yoy_revenue_unexplained",
+          "residual_formula": "q2_revenue-py_q3_revenue",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "py_q3_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "国内の直近四半期からの変化",
+              "formula": "bull_dom-q2_dom_other",
+              "reason": "季節性・客数・価格・店舗数の強気条件"
+            },
+            {
+              "label": "海外の直近四半期からの変化",
+              "formula": "bull_overseas-q2_overseas",
+              "reason": "海外合算条件"
+            },
+            {
+              "label": "国内子会社の直近四半期からの変化",
+              "formula": "bull_sub-q2_sub",
+              "reason": "平均稼働能力と店舗当たり売上"
+            },
+            {
+              "label": "外販の直近四半期からの変化",
+              "formula": "bull_external-q2_external",
+              "reason": "販売変化"
+            }
+          ],
+          "residual": "yoy_revenue_unexplained",
+          "residual_formula": "q2_revenue-py_q3_revenue",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への売上差は、季節性・買収・店舗構成・FC向供給単価等に分解できないため全額を説明不能差として残す。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q2_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "売上変化による粗利益",
+              "formula": "(bear_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期原価率で評価した売上変化"
+            },
+            {
+              "label": "原価率変化",
+              "formula": "(one-one-bear_cogs_change)*bear_revenue",
+              "reason": "食材・資材・構成・稼働率の純効果"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q2_sga-bear_sga",
+              "reason": "変動費調整と追加コスト上昇"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q2_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "売上変化による粗利益",
+              "formula": "(base_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期原価率で評価した売上変化"
+            },
+            {
+              "label": "原価率変化",
+              "formula": "(one-one-base_cogs_change)*base_revenue",
+              "reason": "価格・構成改善と仕入負担の純効果を据置"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q2_sga-base_sga",
+              "reason": "変動費調整と追加コスト上昇"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q2_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "売上変化による粗利益",
+              "formula": "(bull_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期原価率で評価した売上変化"
+            },
+            {
+              "label": "原価率変化",
+              "formula": "(one-one-bull_cogs_change)*bull_revenue",
+              "reason": "価格・構成改善と仕入負担安定の純効果"
+            },
+            {
+              "label": "販管費変化",
+              "formula": "q2_sga-bull_sga",
+              "reason": "変動費調整と追加コスト抑制"
+            }
+          ],
+          "residual": 0,
+          "residual_type": "none",
+          "residual_explanation": "第2四半期の売上・原価・販管費の累計差引は営業利益差引と一致。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "bear_op",
+          "components": [
+            {
+              "label": "直近四半期からの売上変化による粗利益",
+              "formula": "(bear_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期を起点とする数量・価格・構成条件"
+            },
+            {
+              "label": "直近四半期からの原価率変化",
+              "formula": "(one-one-bear_cogs_change)*bear_revenue",
+              "reason": "原価率悪化条件"
+            },
+            {
+              "label": "直近四半期からの販管費変化",
+              "formula": "q2_sga-bear_sga",
+              "reason": "固定・変動費モデル"
+            }
+          ],
+          "residual": "yoy_op_unexplained",
+          "residual_formula": "q2_op-py_q3_op",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "base_op",
+          "components": [
+            {
+              "label": "直近四半期からの売上変化による粗利益",
+              "formula": "(base_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期を起点とする数量・価格・構成条件"
+            },
+            {
+              "label": "直近四半期からの原価率変化",
+              "formula": "(one-one-base_cogs_change)*base_revenue",
+              "reason": "原価率維持条件"
+            },
+            {
+              "label": "直近四半期からの販管費変化",
+              "formula": "q2_sga-base_sga",
+              "reason": "固定・変動費モデル"
+            }
+          ],
+          "residual": "yoy_op_unexplained",
+          "residual_formula": "q2_op-py_q3_op",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "py_q3_op",
+          "forecast_ref": "bull_op",
+          "components": [
+            {
+              "label": "直近四半期からの売上変化による粗利益",
+              "formula": "(bull_revenue-q2_revenue)*(one-q2_cogs_rate)",
+              "reason": "第2四半期を起点とする数量・価格・構成条件"
+            },
+            {
+              "label": "直近四半期からの原価率変化",
+              "formula": "(one-one-bull_cogs_change)*bull_revenue",
+              "reason": "原価率改善条件"
+            },
+            {
+              "label": "直近四半期からの販管費変化",
+              "formula": "q2_sga-bull_sga",
+              "reason": "固定・変動費モデル"
+            }
+          ],
+          "residual": "yoy_op_unexplained",
+          "residual_formula": "q2_op-py_q3_op",
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "前年同四半期から今期第2四半期への利益差は、原材料・物流・人件費・買収構成・季節性の金額分解ができず説明不能差として残す。"
+        }
+      ],
+      "company_guidance": "S01で確認できる最新の会社予想は2027年2月期通期の連結予想であり、S05の期初予想から変更なし。第3四半期単独予想ではない。S08の価格改定時にも予想修正なし。通期予想の四等分や下期必要額の四半期配分は実施していない。latest_confirmedは提示原文内での最新確認を意味し、基準日時までの開示網羅性は未確認。",
+      "consensus": "未確認。提示原文に市場コンセンサスの数値・対象期間・集計時点はない。",
+      "independent_forecast": "第2四半期単独の連結実績を起点に、事業別配賦推計、国内客数・客単価・季節性、国内子会社の平均稼働能力、海外と外販の販売条件を積み上げた条件付き独自予測。費用は売上原価率と販管費の固定・変動モデルから計算する。会社修正見込みからの差引き推計ではない。事業別配賦と費用構造の不確実性が大きく、三つの条件は統計的な信頼区間ではない。営業外損益、特別損益、税負担の対象四半期における根拠が不足するため経常利益・純利益はnull。",
+      "narrative": [
+        {
+          "heading": "条件付き予測",
+          "text": "中心条件の売上高は{{value:base_revenue}}、営業利益は{{value:base_op}}。弱気条件は売上高{{value:bear_revenue}}・営業利益{{value:bear_op}}、強気条件は売上高{{value:bull_revenue}}・営業利益{{value:bull_op}}。国内の客数減少と固定費負担を主な下押し要因とし、国内子会社の増店と海外事業の拡大が一部を補う。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S07",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF pages 4,8；S07 PDF pages 1–2；S08 PDF page 1"
+        },
+        {
+          "heading": "価格改定と数量の関係",
+          "text": "国内月次では客単価上昇が客数減少を補い切れていない。深夜料金とトッピング改定の効果は月次客単価に含め、追加利益として加算しない。FCの小売価格上昇が本部連結売上へ反映する割合は不明であり、中心条件の国内等売上{{value:base_dom}}は価格実現係数に依存する。",
+          "source_ids": [
+            "S07",
+            "S08",
+            "S05"
+          ],
+          "locator": "S07 PDF page 1；S08 PDF pages 1–2；S05 PDF page 18"
+        },
+        {
+          "heading": "採算と反証条件",
+          "text": "中心条件では売上原価{{value:base_cogs}}、販管費{{value:base_sga}}を先に計算し、その差額として営業利益を求めた。客数の早期回復、FC向販売の想定以上の単価上昇、食材調達負担の改善が確認されれば上方修正要因となる。反対に、増店初期費用や販促費が想定を上回れば下方修正となる。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S05",
+            "S08"
+          ],
+          "locator": "S01・S02 PDF page 8；S05 PDF pages 5,8；S08 PDF page 1"
+        },
+        {
+          "heading": "比較の限界",
+          "text": "前年同四半期実績は売上高{{value:py_q3_revenue}}・営業利益{{value:py_q3_op}}、前四半期実績は売上高{{value:q2_revenue}}・営業利益{{value:q2_op}}。前年比ブリッジには、前年同四半期から前四半期基準額への売上差{{value:yoy_revenue_unexplained}}、営業利益差{{value:yoy_op_unexplained}}を説明不能残差として残した。四半期別のFC供給単価と事業別採算がないため、買収・数量・原材料費等へ見かけ上の配分は行っていない。",
+          "source_ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "locator": "各PDF pages 1,8"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "reviewed",
+        "presentation": "unknown",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "11月月次は未公表扱い。保存S07の11月欄は空欄であり、11月の客数・客単価はシナリオ仮定。",
+        "S07の10月月次は速報。確定した連結業績とは区別してassumptionに保存した。",
+        "国内のFC向供給数量、卸単価、店舗在庫変動、深夜時間帯の売上構成は非開示。",
+        "国内子会社の店舗別売上と立ち上がり費用、事業別連結売上と利益は提示短信で非開示。",
+        "海外対象期間の国別販売と為替、店舗稼働は原文未確認。",
+        "米・その他食材の四半期購入単価と数量、四半期別販管費内訳は提示原文では不足。",
+        "非公開化はS09時点で未決定。取引費用や構造改革効果を予測へ加えていない。"
+      ],
+      "material_unresolved": [
+        "入力された発表予定日2026-12-25は会社・取引所の保存原文で裏付けられないためannouncement_dateをnullとした。対象期間は2027年2月期第3四半期単独として設定。",
+        "基準日時は対象四半期終了前。対象決算が発表済みであることを示す原文はない。",
+        "S01～S09の提示原文はtruncated=false。S10～S13は本文が添付されておらず未読。最新決算説明資料、会社自身の質疑応答、正確な決算日、基準日時までの追加開示の網羅性は原本未確認であり、非開示とは断定しない。",
+        "海外顧客所在地別売上／海外全店店舗売上の比率は異なる定義の数値から作る近似係数。海外FCと直営の構成変化や国内からの輸出があれば配賦がずれる。",
+        "国内子会社の連結換算係数と国内等の残余配賦は独自仮定。残余にはパスタ・デ・ココ等も含まれるため、国内CoCo壱番屋の客数・価格・季節性を完全には共有しない。",
+        "前年第2四半期国内店舗売上の近似に丸められた増収率を使用。店舗売上とFC向供給売上の時差、月次等加重の誤差も含むため、予測の小数桁に経済的精度はない。",
+        "S07の国内全店上期増収率とS01の値には小差がある。また前年国内子会社店舗売上の合計とS01の前年増収率から逆算される額にも差がある。定義変更・集計修正の根拠は未確認であり、都合よく補正しない。",
+        "販管費の変動割合と費用増加率は公表予想ではない。販促日程、賞与、開店費用、製造固定費、事業構成の違いで利益予測が大きく変動しうる。",
+        "前年比ブリッジの経済的残差は解消していない。三つのシナリオで同一の比較実績と同一の残差定義を使用した。",
+        "取得原価配分について、前年のLFD確定は確認できる。今期のGAKU・me等の配分確定状況は提示短信に詳細がない。S01・S02に修正再表示等の記載がない報告値として累計差引したのであり、全買収案件の最終配分確定を主張しない。",
+        "経常利益・純利益の条件を設定するには、対象期間の為替差損益等、減損・除却、税率、非支配株主損益の根拠が不足する。"
+      ],
+      "schema_version": "2.0",
+      "guidance_records": [
+        {
+          "id": "fy_guidance_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_revenue",
+          "period_start": "2026-03-01",
+          "period_end": "2027-02-28",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-05",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想；PDF page 5、期初予想から変更なし"
+        },
+        {
+          "id": "fy_guidance_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_op",
+          "period_start": "2026-03-01",
+          "period_end": "2027-02-28",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-05",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想；PDF page 5、期初予想から変更なし"
+        },
+        {
+          "id": "fy_guidance_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_ordinary",
+          "period_start": "2026-03-01",
+          "period_end": "2027-02-28",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-10-05",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想；PDF page 5、期初予想から変更なし"
+        },
+        {
+          "id": "fy_guidance_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_net",
+          "period_start": "2026-03-01",
+          "period_end": "2027-02-28",
+          "accounting_basis": "日本基準",
+          "scope": "連結・親会社株主に帰属する当期純利益",
+          "unit": "百万円",
+          "published_at": "2026-10-05",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、通期予想；PDF page 5、期初予想から変更なし"
+        }
+      ],
+      "quarterly_historicals": [],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "S01～S09の提示原文はtruncated=false。S10～S13は本文が添付されておらず未読。最新決算説明資料、会社自身の質疑応答、正確な決算日、基準日時までの追加開示の網羅性は原本未確認であり、非開示とは断定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "S07の国内全店上期増収率とS01の値には小差がある。また前年国内子会社店舗売上の合計とS01の前年増収率から逆算される額にも差がある。定義変更・集計修正の根拠は未確認であり、都合よく補正しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "入力された発表予定日2026-12-25は会社・取引所の保存原文で裏付けられないためannouncement_dateをnullとした。対象期間は2027年2月期第3四半期単独として設定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "前年比ブリッジの経済的残差は解消していない。三つのシナリオで同一の比較実績と同一の残差定義を使用した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "前年第2四半期国内店舗売上の近似に丸められた増収率を使用。店舗売上とFC向供給売上の時差、月次等加重の誤差も含むため、予測の小数桁に経済的精度はない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "取得原価配分について、前年のLFD確定は確認できる。今期のGAKU・me等の配分確定状況は提示短信に詳細がない。S01・S02に修正再表示等の記載がない報告値として累計差引したのであり、全買収案件の最終配分確定を主張しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "国内子会社の連結換算係数と国内等の残余配賦は独自仮定。残余にはパスタ・デ・ココ等も含まれるため、国内CoCo壱番屋の客数・価格・季節性を完全には共有しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "基準日時は対象四半期終了前。対象決算が発表済みであることを示す原文はない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "海外顧客所在地別売上／海外全店店舗売上の比率は異なる定義の数値から作る近似係数。海外FCと直営の構成変化や国内からの輸出があれば配賦がずれる。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "経常利益・純利益の条件を設定するには、対象期間の為替差損益等、減損・除却、税率、非支配株主損益の根拠が不足する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "販管費の変動割合と費用増加率は公表予想ではない。販促日程、賞与、開店費用、製造固定費、事業構成の違いで利益予測が大きく変動しうる。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "資料確認未了: presentation",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "11月月次は未公表扱い。保存S07の11月欄は空欄であり、11月の客数・客単価はシナリオ仮定。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "S07の10月月次は速報。確定した連結業績とは区別してassumptionに保存した。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_cogs_change: 第1・第2四半期で原価率がおおむね同水準だったことから、中心では第2四半期原価率を維持する。価格・構成と仕入高騰の純効果をまとめた条件であり、別途値上げ利益を加えない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_external_factor: EC取扱量拡大が続く一方、第1四半期から第2四半期への伸びは鈍化する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_nov_ticket: 11月客単価の増加が9～10月の間で推移する中心条件。深夜料金とトッピング改定を内包する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_nov_traffic: 前年配達代行キャンペーン反動の緩和を仮定し、11月は10月より客数減少が小さくなる中心条件。11月実績ではない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_overseas_factor: 連結海外店舗数の増加と中国・台湾の既存店改善を踏まえ、第2四半期比3％増を置く。店舗稼働、為替、既存店を合算した条件であり、別途増店効果を加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_sga_inflation: 売上連動分調整後の費用に、人件費・物流費等の第2四半期比0.5％増を置く。既存の償却費・のれん償却は第2四半期費用に含まれるため再加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_sub_capacity: 8月末から10月末までの大黒商事、竹井、KOZOU、GAKUの増店を平均稼働に反映し、第2四半期比5％増とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "base_sub_productivity: 大黒商事と前田屋の既存店改善、他業態の弱さを合わせ、季節・業態構成を含む店舗当たり売上を第2四半期比2％増とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_cogs_change: 第2四半期原価率から0.5ポイント悪化する条件。食材・資材価格高騰と数量減による製造固定費負担を含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_external_factor: 外販・ECの第2四半期からの販売減速を仮定。前年増収率の延長は行わない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_nov_ticket: 価格改定は継続するが高単価メニュー構成が弱まり、11月客単価増加率が10月を下回る条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_nov_traffic: 11月に9月並みの客数減少が継続する弱気条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_overseas_factor: 海外連結子会社の店舗拡大を需要・為替の悪化が相殺し、海外売上寄与が第2四半期から2％減る条件。対象に対応する海外子会社の会計期間は主として7～9月であり、国内9～11月の月次を流用しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_sga_inflation: 売上連動分調整後の費用に、人件費・物流費・増店維持費等の第2四半期比1.5％増を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_sub_capacity: 国内子会社の期末店舗増を平均稼働店舗へ置き換え、開店時期と立ち上がりを保守的に考慮した第2四半期比2％増。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bear_sub_productivity: たけ井、KOZOU、GAKUの既存店軟調と開店初期の生産性を重く見て、店舗当たり売上を第2四半期比2％減とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_cogs_change: 価格・商品構成改善と仕入負担の安定で原価率が第2四半期から0.5ポイント改善する条件。米価格下落の確定情報はない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_external_factor: EC取扱量と共同開発商品の販売が好調に推移する条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_nov_ticket: 高単価商品の構成改善により、11月客単価増加が9月を小幅に上回る条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_nov_traffic: 11月の販促が奏功し、客数が上期の前年並みに近づく強気条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_overseas_factor: 増店稼働に加えて既存店改善が続き、為替も悪化しない条件。直近の店舗売上の四半期増加を参考に8％増を上限条件とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_sga_inflation: 費用高騰を運営効率改善で吸収し、売上連動分以外の追加費用率が上昇しない条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_sub_capacity: 確認された増店が早期に売上へ寄与し、平均生産能力が第2四半期比8％増となる条件。未確認の買収は加えない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "bull_sub_productivity: 前田屋の季節需要と大黒商事の好調が継続し、店舗当たり売上が第2四半期比6％増となる条件。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "dom_store_adjustment: 国内CoCo壱番屋店舗数が8月末から9～10月末に減少した影響を近似。月中稼働日、直営・FC構成、新旧店生産性は不明のため小幅減を置く。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "oct_ticket: 当月速報の客単価倍率を採用。価格改定効果を別途加算しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "oct_traffic: 当月速報の客数倍率を採用。前年の配達代行キャンペーン反動を含む。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "one: 倍率と差分の計算に使用する算術定数。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "overseas_conversion_adjustment: 前期の海外顧客売上高／海外店舗売上高を、今期第2四半期の連結海外売上寄与の近似に使用する。所在地別売上と店舗売上は定義が異なるため、確認済みの事業別売上とは扱わない。調整倍率は中心仮定として1とする。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "price_realization: 店舗客単価の追加上昇が本部連結売上へ反映する割合。国内CoCo壱番屋はFC主体で、深夜料金や小売価格上昇の全額が本部売上になるわけではない。直営売上とFC向供給の商品構成への間接効果を合わせ0.4とする。FC卸価格の追加改定は仮定しない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "seasonality_adjustment: 前年国内CoCo壱番屋の第3四半期／第2四半期店舗売上比を国内等の季節係数に使う。前年第1四半期店舗売上は今期値と公表増収率から近似逆算する。店舗売上の季節性が本部供給売上等にも概ね反映すると仮定する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "sep_ticket: 保存月次の客単価倍率を採用。価格改定、深夜料金、商品構成の効果を含む観測値。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "sep_traffic: 保存月次の公表客数倍率を予測用観測値として採用。月次情報であり、連結確定実績とは区別する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "sga_variable_share: 物流、雑給、水道光熱、消耗品と一部販促費を売上連動費用と見なし、販管費の35％を変動部分とする。給与、賃借料、償却費等は残る65％に含める。四半期費用内訳は非開示であり、利益目標から逆算していない。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "sub_conversion: 国内子会社の店舗売上を連結売上寄与へ換算する係数。グループ外FCの店舗売上を全額連結せず、グループ内フランチャイジーの売上とFC向供給を考慮して0.95を置く。実際の業態別連結売上は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "three: 対象四半期の月数。月別の前年売上構成比が未確認のため、月次倍率を等加重する。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "国内のFC向供給数量、卸単価、店舗在庫変動、深夜時間帯の売上構成は非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "国内子会社の店舗別売上と立ち上がり費用、事業別連結売上と利益は提示短信で非開示。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "海外対象期間の国別販売と為替、店舗稼働は原文未確認。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "米・その他食材の四半期購入単価と数量、四半期別販管費内訳は提示原文では不足。",
+      "quality": "検証未了"
+    },
+    {
+      "code": "7630",
+      "company_name": "株式会社壱番屋",
+      "kind": "condition",
+      "message": "非公開化はS09時点で未決定。取引費用や構造改革効果を予測へ加えていない。",
+      "quality": "検証未了"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/7630/result.json": "d7425a71b4ca0dfedaffa2a17f0886fd1d368ef8d2b162502f1b0643888eb499",
+    "reports/7630.md": "8804f1b9f9a388dd4b9e7bfdf6ce4d6840c5eede1d1bc793d6088dd8706d899e"
+  }
+}

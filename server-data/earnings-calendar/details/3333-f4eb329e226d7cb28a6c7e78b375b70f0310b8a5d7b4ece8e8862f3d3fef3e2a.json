@@ -1,0 +1,1296 @@
+{
+  "id": "3333-f4eb329e226d7cb28a6c7e78b375b70f0310b8a5d7b4ece8e8862f3d3fef3e2a",
+  "code": "3333",
+  "companyName": "株式会社あさひ",
+  "announcementDate": "2026-12-25",
+  "target": {
+    "fiscalYearEnd": "2027-02-20",
+    "quarter": 3
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "3333-generation-b8f2504d53c175e9 · f4eb329e",
+  "savedAt": "2026-11-28T13:49:23+09:00",
+  "quality": "保留",
+  "reviewExecuted": false,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": null,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 3333 株式会社あさひ｜2027-02-20期 Q3単独\n品質状態：**保留**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。not_independently_verified\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 未算定 | 未算定 | 未算定 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 未算定 | 未算定 | 比較値なし |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\n保存本文で確認できる通期会社予想をguidance_recordsに登録した。latest_confirmedは提示資料内で最後に確認できた予想を意味し、基準日時までの全開示の確認を意味しない。S09では通期計画据置きの説明がある。通期予想と中間期実績の差引きは下半期全体の必要額であり、対象四半期の会社予想や独自予測ではない。\n\n## 市場コンセンサス\n未確認。提示された保存本文に、期間・指標・集計主体を確認できる市場コンセンサスはない。\n\n## 独自予測・差引推計の区分\n対象四半期単独の売上高・営業利益・経常利益・純利益はいずれもnull相当とし、scenariosは空とする。月次速報から客数減と単価上昇の方向は判断できるが、前年同四半期の金額基準と品目別季節配分が原本未確認で、売上の絶対額に根拠ある範囲を設定できない。中間期構成を機械的に延長したり、会社通期計画の残額を四半期配分したりしない。営業外損益・特別損益にも対象四半期の推計根拠が不足している。\n\n## 需要と採算の見方\n対象四半期は、客数減少を価格是正と高単価商材への移行でどこまで補えるかが売上の主要因となる。修理・メンテナンスの増加と仕入れ原価低減は採算を支える一方、電動アシストの構成上昇と人件費増加が利益改善を抑える。価格改定による客数への影響は、会社自身も天候要因との分離が難しいと説明している。\n\n## 会社計画との差引きの扱い\n通期会社計画から中間期実績を控除した下半期必要売上は40,048.00、必要営業利益は1,069.00。これらは会社計画達成に必要な下半期合計であり、対象四半期の独自予測には使用しない。\n\n## 予測を数値化しない理由\n不足しているのは将来変数だけではなく、対象四半期の季節性を測る前年実績の原文と月次売上の金額基準である。中間期の品目別売上と費用だけでは、対象四半期の合理的な上下限を定められない。説明資料の粗利益・販管費・営業利益には表示上の差1.00があり、端数処理の根拠を確認せず丸め差と断定しない。\n\n## エラー・未解決事項\n- S01・S03・S04・S06・S07・S10・S11は資料一覧にあるが保存本文が提示されていない。資料の存在確認と本文確認を区別し、数値の根拠として使用していない。\n- S05は百万円表示、S02は千円表示で精度が異なる。S05の端数処理方法は提示本文で確認できず、損益の表示差を丸め差と断定していない。\n- S08は営業速報であり、決算確定値とは差異が生じ得る。前年比と累計比率は丸められており、決算売上との集計範囲の完全一致も未確認のため、これらから月次売上金額を逆算して確定値扱いしない。\n- guidance_recordsのlatest_confirmedは保存資料内の確認状況。S09以後から基準日時までの予想修正や重要開示を網羅確認できていない。\n- target_already_announced=falseは提示された対象条件に従ったものであり、対象決算の未発表を全開示原文で独立確認したものではない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 前年中間期はS05比較表から確認できるが、S04訂正版との整合と訂正内容は原本未確認。\n- 前年第3四半期累計のS03本文がなく、前年第3四半期単独の売上・営業利益は算定不能。非開示と判断したものではない。\n- 単一セグメントはS02 PDF pages 4, 8で確認。最新中間期短信のセグメント注記本文は未確認。\n- 同一会計・連結範囲の比較四半期不足: yoy\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 当期中間期はS05で実績を確認できるが、S01の会計方針変更・修正再表示等の注記が未確認。S02と同一会計版であることを確定できず、直前四半期単独の正式比較値を登録していない。\n- 提示されたdocumentsはtruncated=falseだが、資料一覧にある未収録本文を補完するものではない。\n- 直前累計不足: 2026-08-20\n- 販売数量・客単価の絶対額、前年の対象四半期売上、月別・品目別季節配分が不足し、条件付きシナリオの売上絶対額にも根拠ある範囲を設定できない。\n- 資料確認未了: already_announced\n- 資料確認未了: historical\n- 資料確認未了: latest_results\n- 資料確認未了: segments_kpi\n- 資料確認未了: subsequent_disclosures\n\n## 条件・不確実性\n- 11月度の客数・客単価・売上動向は提示本文で未確認。\n- 下半期の一部商品価格改定について、対象商品・改定率・実施日が提示本文にない。\n- 対象四半期の品目別売上構成、粗利益率、人員配置、システム稼働時期が未確認。\n\n## 根拠・保存記録\n- S01 [2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）](https://pdf.catr.jp/2026/09/0000783904_776d5937a5823195fbbb0796806e9001.pdf) / 公表 2026-09-25 / unavailable / SHA-256 `なし`\n- S02 [2027年2月期 第1四半期決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260622/20260622575617.pdf) / 公表 2026-06-22 / retrieved / SHA-256 `68caeafbe2370251da47146352b2c5093c6639e711547d878226ddcfc554df4b`\n- S03 [2026年2月期 第3四半期決算短信〔日本基準〕（非連結）](https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf) / 公表 2025-12-22 / unavailable / SHA-256 `なし`\n- S04 [2026年2月期 第2四半期（中間期）決算短信（訂正後）](https://corporate.cb-asahi.co.jp/ir/library/%28%E8%A8%82%E6%AD%A3%E5%BE%8C%292026%E5%B9%B42%E6%9C%88%E6%9C%9F%20%E7%AC%AC2%E5%9B%9B%E5%8D%8A%E6%9C%9F%28%E4%B8%AD%E9%96%93%E6%9C%9F%29%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf) / 公表 2025-09-26 / unavailable / SHA-256 `なし`\n- S05 [2027年2月期 第2四半期（中間期）決算説明資料（会社開示の第三者保存先）](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540164.pdf) / 公表 2026-09-25 / retrieved / SHA-256 `6aa654af39802fd4934d330875d6ab1a856e2df4b72f2cc3921b0f9e3e4b802f`\n- S06 [2026年2月期 第3四半期決算説明資料](https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf) / 公表 2025-12-22 / unavailable / SHA-256 `なし`\n- S07 [2026年2月期 決算短信〔日本基準〕（非連結）（2027年2月期会社予想を収録）](https://corporate.cb-asahi.co.jp/ir/library/Non-consolidated-Financial-Results-for-the-Fiscal-Year-Ended-February-20-2026_ja.pdf) / 公表 2026-04-03 / unavailable / SHA-256 `なし`\n- S08 [2026年10月度 月次営業速報に関するお知らせ](https://c1.cb-asahi.co.jp/ir/monthly-report/5210_jp_Preliminary_Monthly_Business_Report_for_October_2026.pdf) / 公表 2026-11-04 / retrieved / SHA-256 `1c8c6099fdddae61478de37fcc128a2efc14b0017f04115f6ba6653b735e19f4`\n- S09 [2027年2月期 中間期決算説明会書き起こし・質疑応答（第三者掲載）](https://finance.yahoo.co.jp/quote/3333.T/financials?styl=presentation) / 公表 2026-10-13 / retrieved / SHA-256 `c0a1c8aa5f053462fab6aa7cad0ab96967b17452fde00772fa420815baa707ce`\n- S10 [公式IRライブラリー・IRカレンダー](https://corporate.cb-asahi.co.jp/ir/library/index.html) / 公表  / unavailable / SHA-256 `なし`\n- S11 [公式IRニュース一覧](https://corporate.cb-asahi.co.jp/ir/news/index.html) / 公表  / unavailable / SHA-256 `なし`\n\n## 対象日照合（経済的品質と別管理）\n- 公式発表日未確認\n- 指定された2026年12月25日の正式な決算発表予定日は保存原文で確認できないため、announcement_dateはnullとした。\n- 資料確認未了: schedule\n- 決算予定日の根拠未確認\n",
+  "reviewMarkdown": "独立レビューは未作成です。",
+  "result": {
+    "schema_version": "1.0",
+    "code": "3333",
+    "company_name": "株式会社あさひ",
+    "announcement_date": "2026-12-25",
+    "target_period": "2027-02-20期 Q3単独",
+    "period": {
+      "fiscal_year_end": "2027-02-20",
+      "quarter": 3,
+      "start": "2026-08-21",
+      "end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "単体",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "fy27_q1_revenue": 27786.574,
+      "fy27_q1_op": 3097.809,
+      "fy27_h1_revenue": 46230.0,
+      "fy27_h1_op": 3231.0,
+      "fy27_h1_gp": 21837.0,
+      "fy27_h1_sga": 18605.0,
+      "fy27_h1_labor": 8940.0,
+      "fy27_h1_logistics": 1265.0,
+      "fy27_h1_depreciation": 904.0,
+      "fy27_h1_new_bicycles": 32009.0,
+      "fy27_h1_parts_services": 12653.0,
+      "fy27_h1_adjacent_business": 1568.0,
+      "fy27_guidance_revenue": 86278.0,
+      "fy27_guidance_op": 4300.0,
+      "fy27_guidance_ordinary": 4440.0,
+      "fy27_guidance_net": 2730.0,
+      "guidance_implied_h2_revenue": 40048.0,
+      "guidance_implied_h2_op": 1069.0,
+      "h1_other_sga": 7496.0,
+      "h1_display_reconciliation": 1.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-02-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF page 7、前第1四半期累計期間。千円から換算",
+        "period_end": "2025-05-20",
+        "period_start": "2025-02-21",
+        "method": "1Q累計",
+        "revenue": 27104.657,
+        "operating_profit": 3270.856,
+        "ordinary_profit": 3403.363,
+        "net_profit": 2336.136
+      },
+      {
+        "fiscal_year_end": "2026-02-20",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 6、2026年2月期中間期実績",
+        "period_end": "2025-08-20",
+        "period_start": "2025-05-21",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S02"
+        ],
+        "locator": "PDF pages 2, 7。損益計算書の千円表示から換算",
+        "period_end": "2026-05-20",
+        "period_start": "2026-02-21",
+        "method": "1Q累計",
+        "revenue": 27786.574,
+        "operating_profit": 3097.809,
+        "ordinary_profit": 3138.62,
+        "net_profit": 2140.23
+      },
+      {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円",
+        "source_ids": [
+          "S05",
+          "S02"
+        ],
+        "locator": "S05 PDF page 6、中間期実績。年度の開始日・決算日はS02 PDF page 1",
+        "period_end": "2026-08-20",
+        "period_start": "2026-05-21",
+        "method": "累計−直前累計",
+        "revenue": null,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    ],
+    "bridges": [],
+    "issues": [
+      "S01・S03・S04・S06・S07・S10・S11は資料一覧にあるが保存本文が提示されていない。資料の存在確認と本文確認を区別し、数値の根拠として使用していない。",
+      "S05は百万円表示、S02は千円表示で精度が異なる。S05の端数処理方法は提示本文で確認できず、損益の表示差を丸め差と断定していない。",
+      "S08は営業速報であり、決算確定値とは差異が生じ得る。前年比と累計比率は丸められており、決算売上との集計範囲の完全一致も未確認のため、これらから月次売上金額を逆算して確定値扱いしない。",
+      "guidance_recordsのlatest_confirmedは保存資料内の確認状況。S09以後から基準日時までの予想修正や重要開示を網羅確認できていない。",
+      "target_already_announced=falseは提示された対象条件に従ったものであり、対象決算の未発表を全開示原文で独立確認したものではない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "前年中間期はS05比較表から確認できるが、S04訂正版との整合と訂正内容は原本未確認。",
+      "前年第3四半期累計のS03本文がなく、前年第3四半期単独の売上・営業利益は算定不能。非開示と判断したものではない。",
+      "単一セグメントはS02 PDF pages 4, 8で確認。最新中間期短信のセグメント注記本文は未確認。",
+      "同一会計・連結範囲の比較四半期不足: yoy",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "当期中間期はS05で実績を確認できるが、S01の会計方針変更・修正再表示等の注記が未確認。S02と同一会計版であることを確定できず、直前四半期単独の正式比較値を登録していない。",
+      "提示されたdocumentsはtruncated=falseだが、資料一覧にある未収録本文を補完するものではない。",
+      "直前累計不足: 2026-08-20",
+      "販売数量・客単価の絶対額、前年の対象四半期売上、月別・品目別季節配分が不足し、条件付きシナリオの売上絶対額にも根拠ある範囲を設定できない。",
+      "資料確認未了: already_announced",
+      "資料確認未了: historical",
+      "資料確認未了: latest_results",
+      "資料確認未了: segments_kpi",
+      "資料確認未了: subsequent_disclosures"
+    ],
+    "schedule_warnings": [
+      "公式発表日未確認",
+      "指定された2026年12月25日の正式な決算発表予定日は保存原文で確認できないため、announcement_dateはnullとした。",
+      "資料確認未了: schedule",
+      "決算予定日の根拠未確認"
+    ],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [],
+    "conditions": [
+      "11月度の客数・客単価・売上動向は提示本文で未確認。",
+      "下半期の一部商品価格改定について、対象商品・改定率・実施日が提示本文にない。",
+      "対象四半期の品目別売上構成、粗利益率、人員配置、システム稼働時期が未確認。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年2月期 第2四半期（中間期）決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）",
+        "url": "https://pdf.catr.jp/2026/09/0000783904_776d5937a5823195fbbb0796806e9001.pdf",
+        "published_at": "2026-09-25",
+        "category": "latest_results",
+        "final_url": "https://pdf.catr.jp/2026/09/0000783904_776d5937a5823195fbbb0796806e9001.pdf",
+        "status": "unavailable",
+        "error": "原文抽出が空または不足。画像・音声資料は未検証",
+        "retrieved_at": "2026-11-28T13:47:04+09:00"
+      },
+      {
+        "id": "S02",
+        "title": "2027年2月期 第1四半期決算短信〔日本基準〕（非連結）（会社開示の第三者保存先）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260622/20260622575617.pdf",
+        "published_at": "2026-06-22",
+        "category": "historical",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260622/20260622575617.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S02.txt",
+        "sha256": "68caeafbe2370251da47146352b2c5093c6639e711547d878226ddcfc554df4b",
+        "text_sha256": "0c7668602637e6ad9c3896a51226db46027bc93cddd3e6b5c1ad0070e2cec803",
+        "retrieved_at": "2026-11-28T13:47:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 7711,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年2月期 第3四半期決算短信〔日本基準〕（非連結）",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "published_at": "2025-12-22",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-28T13:47:06+09:00"
+      },
+      {
+        "id": "S04",
+        "title": "2026年2月期 第2四半期（中間期）決算短信（訂正後）",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/%28%E8%A8%82%E6%AD%A3%E5%BE%8C%292026%E5%B9%B42%E6%9C%88%E6%9C%9F%20%E7%AC%AC2%E5%9B%9B%E5%8D%8A%E6%9C%9F%28%E4%B8%AD%E9%96%93%E6%9C%9F%29%E6%B1%BA%E7%AE%97%E7%9F%AD%E4%BF%A1%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "published_at": "2025-09-26",
+        "category": "historical",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-28T13:47:08+09:00"
+      },
+      {
+        "id": "S05",
+        "title": "2027年2月期 第2四半期（中間期）決算説明資料（会社開示の第三者保存先）",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540164.pdf",
+        "published_at": "2026-09-25",
+        "category": "presentation",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20260925/20260925540164.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S05.txt",
+        "sha256": "6aa654af39802fd4934d330875d6ab1a856e2df4b72f2cc3921b0f9e3e4b802f",
+        "text_sha256": "4e492a050ebdb48885895be9c2499fab774e32a629cb9b3a0126ee7a00ebad4f",
+        "retrieved_at": "2026-11-28T13:47:09+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 8174,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "2026年2月期 第3四半期決算説明資料",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/2025-12-22%20%E7%AC%AC51%E6%9C%9F%20%E7%AC%AC3%E5%9B%9B%E5%8D%8A%E6%9C%9F%E6%B1%BA%E7%AE%97%E8%AA%AC%E6%98%8E%E8%B3%87%E6%96%99%EF%BC%88%E5%92%8C%E6%96%87%EF%BC%89.pdf",
+        "published_at": "2025-12-22",
+        "category": "presentation",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-28T13:47:11+09:00"
+      },
+      {
+        "id": "S07",
+        "title": "2026年2月期 決算短信〔日本基準〕（非連結）（2027年2月期会社予想を収録）",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/Non-consolidated-Financial-Results-for-the-Fiscal-Year-Ended-February-20-2026_ja.pdf",
+        "published_at": "2026-04-03",
+        "category": "guidance",
+        "status": "unavailable",
+        "error": "HTTP Error 403: Forbidden",
+        "retrieved_at": "2026-11-28T13:47:12+09:00"
+      },
+      {
+        "id": "S08",
+        "title": "2026年10月度 月次営業速報に関するお知らせ",
+        "url": "https://c1.cb-asahi.co.jp/ir/monthly-report/5210_jp_Preliminary_Monthly_Business_Report_for_October_2026.pdf",
+        "published_at": "2026-11-04",
+        "category": "kpi",
+        "final_url": "https://c1.cb-asahi.co.jp/ir/monthly-report/5210_jp_Preliminary_Monthly_Business_Report_for_October_2026.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S08.txt",
+        "sha256": "1c8c6099fdddae61478de37fcc128a2efc14b0017f04115f6ba6653b735e19f4",
+        "text_sha256": "69a2cbb351c6575be3c8f78ace37163f18e9fee86fbf09afed37f044207281a2",
+        "retrieved_at": "2026-11-28T13:47:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1640,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2027年2月期 中間期決算説明会書き起こし・質疑応答（第三者掲載）",
+        "url": "https://finance.yahoo.co.jp/quote/3333.T/financials?styl=presentation",
+        "published_at": "2026-10-13",
+        "category": "qa",
+        "final_url": "https://finance.yahoo.co.jp/quote/3333.T/financials?styl=presentation",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S09.html",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261225\\companies\\3333\\sources\\S09.txt",
+        "sha256": "c0a1c8aa5f053462fab6aa7cad0ab96967b17452fde00772fa420815baa707ce",
+        "text_sha256": "073ca43c47443c648b6c47295735284ddc0c967644174899bb91078b47ad8332",
+        "retrieved_at": "2026-11-28T13:47:13+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 9600,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "公式IRライブラリー・IRカレンダー",
+        "url": "https://corporate.cb-asahi.co.jp/ir/library/index.html",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:47:13+09:00"
+      },
+      {
+        "id": "S11",
+        "title": "公式IRニュース一覧",
+        "url": "https://corporate.cb-asahi.co.jp/ir/news/index.html",
+        "published_at": "",
+        "category": "other",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:47:14+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "3333",
+      "announcement_date": null,
+      "period": {
+        "fiscal_year_end": "2027-02-20",
+        "quarter": 3,
+        "start": "2026-08-21",
+        "end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "単体",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "fy27_q1_revenue",
+          "value": 27786.574,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、当第1四半期累計期間・売上高。千円から換算"
+        },
+        {
+          "id": "fy27_q1_op",
+          "value": 3097.809,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、当第1四半期累計期間・営業利益。千円から換算"
+        },
+        {
+          "id": "fy27_h1_revenue",
+          "value": 46230,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 6、中間期実績"
+        },
+        {
+          "id": "fy27_h1_op",
+          "value": 3231,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 6、中間期実績"
+        },
+        {
+          "id": "fy27_h1_gp",
+          "value": 21837,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 6、売上総利益"
+        },
+        {
+          "id": "fy27_h1_sga",
+          "value": 18605,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、販管費"
+        },
+        {
+          "id": "fy27_h1_labor",
+          "value": 8940,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、人件費"
+        },
+        {
+          "id": "fy27_h1_logistics",
+          "value": 1265,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、運送保管料"
+        },
+        {
+          "id": "fy27_h1_depreciation",
+          "value": 904,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 8、減価償却費"
+        },
+        {
+          "id": "fy27_h1_new_bicycles",
+          "value": 32009,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7、新車売上高"
+        },
+        {
+          "id": "fy27_h1_parts_services",
+          "value": 12653,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7、パーツ・サービス売上高"
+        },
+        {
+          "id": "fy27_h1_adjacent_business",
+          "value": 1568,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 7、周辺事業売上高"
+        },
+        {
+          "id": "fy27_guidance_revenue",
+          "value": 86278,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 17、2027年2月期通期計画"
+        },
+        {
+          "id": "fy27_guidance_op",
+          "value": 4300,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 17、2027年2月期通期計画"
+        },
+        {
+          "id": "fy27_guidance_ordinary",
+          "value": 4440,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 17、2027年2月期通期計画"
+        },
+        {
+          "id": "fy27_guidance_net",
+          "value": 2730,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 17、2027年2月期通期計画"
+        }
+      ],
+      "calculations": [
+        {
+          "id": "guidance_implied_h2_revenue",
+          "formula": "fy27_guidance_revenue-fy27_h1_revenue"
+        },
+        {
+          "id": "guidance_implied_h2_op",
+          "formula": "fy27_guidance_op-fy27_h1_op"
+        },
+        {
+          "id": "h1_other_sga",
+          "formula": "fy27_h1_sga-fy27_h1_labor-fy27_h1_logistics-fy27_h1_depreciation"
+        },
+        {
+          "id": "h1_display_reconciliation",
+          "formula": "fy27_h1_gp-fy27_h1_sga-fy27_h1_op"
+        }
+      ],
+      "scenarios": {},
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-02-20",
+          "quarter": 1,
+          "period_start": "2025-02-21",
+          "period_end": "2025-05-20",
+          "revenue": 27104.657,
+          "operating_profit": 3270.856,
+          "ordinary_profit": 3403.363,
+          "net_profit": 2336.136,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "S02掲載の前年同期比較値",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 7、前第1四半期累計期間。千円から換算"
+        },
+        {
+          "fiscal_year_end": "2026-02-20",
+          "quarter": 2,
+          "period_start": "2025-02-21",
+          "period_end": "2025-08-20",
+          "revenue": 45900,
+          "operating_profit": 3756,
+          "ordinary_profit": 3923,
+          "net_profit": 2630,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "S05掲載の前年中間期比較値。S04訂正版との照合未了",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 6、2026年2月期中間期実績"
+        },
+        {
+          "fiscal_year_end": "2027-02-20",
+          "quarter": 1,
+          "period_start": "2026-02-21",
+          "period_end": "2026-05-20",
+          "revenue": 27786.574,
+          "operating_profit": 3097.809,
+          "ordinary_profit": 3138.62,
+          "net_profit": 2140.23,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "S02公表版。PDF page 2で会計方針変更・見積り変更・修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 2, 7。損益計算書の千円表示から換算"
+        },
+        {
+          "fiscal_year_end": "2027-02-20",
+          "quarter": 2,
+          "period_start": "2026-02-21",
+          "period_end": "2026-08-20",
+          "revenue": 46230,
+          "operating_profit": 3231,
+          "ordinary_profit": 3327,
+          "net_profit": 2193,
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "accounting_version": "S05中間期説明資料版。S01注記本文未確認のためS02との会計版一致は未確認",
+          "source_ids": [
+            "S05",
+            "S02"
+          ],
+          "locator": "S05 PDF page 6、中間期実績。年度の開始日・決算日はS02 PDF page 1"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "guidance_fy27_revenue",
+          "metric": "revenue",
+          "value_ref": "fy27_guidance_revenue",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05",
+            "S02",
+            "S09"
+          ],
+          "locator": "S05 PDF page 17、通期計画。S02 PDF page 1、期間と非連結区分。S09「通期計画達成に向けた下半期での取り返しについて」で据置きを確認"
+        },
+        {
+          "id": "guidance_fy27_op",
+          "metric": "operating_profit",
+          "value_ref": "fy27_guidance_op",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05",
+            "S02",
+            "S09"
+          ],
+          "locator": "S05 PDF page 17。S02 PDF page 1。S09「通期計画達成に向けた下半期での取り返しについて」"
+        },
+        {
+          "id": "guidance_fy27_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "fy27_guidance_ordinary",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05",
+            "S02",
+            "S09"
+          ],
+          "locator": "S05 PDF page 17。S02 PDF page 1。S09「通期計画達成に向けた下半期での取り返しについて」"
+        },
+        {
+          "id": "guidance_fy27_net",
+          "metric": "net_profit",
+          "value_ref": "fy27_guidance_net",
+          "period_start": "2026-02-21",
+          "period_end": "2027-02-20",
+          "accounting_basis": "日本基準",
+          "scope": "単体",
+          "unit": "百万円",
+          "published_at": "2026-09-25",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S05",
+            "S02",
+            "S09"
+          ],
+          "locator": "S05 PDF page 17。S02 PDF page 1。S09「通期計画達成に向けた下半期での取り返しについて」"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "客数減少と客単価上昇",
+          "mechanism": "月次速報では対象四半期の最初の二か月とも客数減を客単価上昇で補い切れていない。客単価には価格改定と商品構成の双方が含まれるため、純粋な値上げ効果として重ねて加算しない。",
+          "source_ids": [
+            "S08",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1、9月度・10月度単月。S09「価格改定の影響について」",
+          "calculation_ids": [],
+          "not_quantified_reason": "前年対応月の売上金額、対象四半期の販売数量・単価の絶対値、11月度速報が保存本文にない。速報は確定決算実績と区別する。"
+        },
+        {
+          "name": "新車・パーツサービス・周辺事業の構成",
+          "mechanism": "新車需要の低迷に対し、修理・メンテナンスとリユースの拡大が売上と粗利益を支える。電動アシストは売上単価を押し上げる一方、会社説明では粗利益率が相対的に低い。",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 7, 13。S09「第2四半期決算実績」「品目別売上高」",
+          "calculation_ids": [],
+          "not_quantified_reason": "中間期の品目別売上は確認できるが、対象四半期の季節構成と品目別粗利益率は保存本文から確認できない。"
+        },
+        {
+          "name": "価格是正と原価低減",
+          "mechanism": "価格是正と仕入れ原価低減は粗利益率の改善要因。下半期にも一部商品の価格改定予定があるが、需要減少と商品構成変化を同時に考慮する必要がある。",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 9, 20。S09「下半期の価格改定の予定について」",
+          "calculation_ids": [],
+          "not_quantified_reason": "改定対象の売上構成、改定率、実施日、対象四半期に実現する原価低減額が未確認。通期計画の改善額を対象四半期に按分できない。"
+        },
+        {
+          "name": "人件費・物流費・減価償却",
+          "mechanism": "賃上げ、人材育成、リペア体制強化、システム投資が費用を押し上げる。物流の効率化や人員適正配置が一部を吸収する。",
+          "source_ids": [
+            "S05",
+            "S09"
+          ],
+          "locator": "S05 PDF pages 8, 19, 21。S09「販管費、設備投資額の実績」",
+          "calculation_ids": [
+            "h1_other_sga"
+          ],
+          "not_quantified_reason": "上半期費用の内訳は確認できるが、対象四半期の人員数・賞与配分・システム稼働時期・その他費用の季節配分は未確認。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独売上と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独営業利益と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独売上と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独営業利益と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独売上と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "前年同四半期単独営業利益と予測値を確定できず、差額全体が未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "components": [],
+          "residual": null,
+          "residual_type": "unclassified",
+          "residual_explanation": "直前累計と当期中間期の会計版一致が未確認で、予測値も未算定。"
+        }
+      ],
+      "company_guidance": "保存本文で確認できる通期会社予想をguidance_recordsに登録した。latest_confirmedは提示資料内で最後に確認できた予想を意味し、基準日時までの全開示の確認を意味しない。S09では通期計画据置きの説明がある。通期予想と中間期実績の差引きは下半期全体の必要額であり、対象四半期の会社予想や独自予測ではない。",
+      "consensus": "未確認。提示された保存本文に、期間・指標・集計主体を確認できる市場コンセンサスはない。",
+      "independent_forecast": "対象四半期単独の売上高・営業利益・経常利益・純利益はいずれもnull相当とし、scenariosは空とする。月次速報から客数減と単価上昇の方向は判断できるが、前年同四半期の金額基準と品目別季節配分が原本未確認で、売上の絶対額に根拠ある範囲を設定できない。中間期構成を機械的に延長したり、会社通期計画の残額を四半期配分したりしない。営業外損益・特別損益にも対象四半期の推計根拠が不足している。",
+      "narrative": [
+        {
+          "heading": "需要と採算の見方",
+          "text": "対象四半期は、客数減少を価格是正と高単価商材への移行でどこまで補えるかが売上の主要因となる。修理・メンテナンスの増加と仕入れ原価低減は採算を支える一方、電動アシストの構成上昇と人件費増加が利益改善を抑える。価格改定による客数への影響は、会社自身も天候要因との分離が難しいと説明している。",
+          "source_ids": [
+            "S08",
+            "S05",
+            "S09"
+          ],
+          "locator": "S08 PDF page 1。S05 PDF pages 6–9。S09「価格改定の影響について」"
+        },
+        {
+          "heading": "会社計画との差引きの扱い",
+          "text": "通期会社計画から中間期実績を控除した下半期必要売上は{{value:guidance_implied_h2_revenue}}、必要営業利益は{{value:guidance_implied_h2_op}}。これらは会社計画達成に必要な下半期合計であり、対象四半期の独自予測には使用しない。",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 6, 17"
+        },
+        {
+          "heading": "予測を数値化しない理由",
+          "text": "不足しているのは将来変数だけではなく、対象四半期の季節性を測る前年実績の原文と月次売上の金額基準である。中間期の品目別売上と費用だけでは、対象四半期の合理的な上下限を定められない。説明資料の粗利益・販管費・営業利益には表示上の差{{value:h1_display_reconciliation}}があり、端数処理の根拠を確認せず丸め差と断定しない。",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF pages 6–8"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "unknown",
+        "latest_results": "partial",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "partial",
+        "segments_kpi": "partial",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "unknown"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "11月度の客数・客単価・売上動向は提示本文で未確認。",
+        "下半期の一部商品価格改定について、対象商品・改定率・実施日が提示本文にない。",
+        "対象四半期の品目別売上構成、粗利益率、人員配置、システム稼働時期が未確認。"
+      ],
+      "material_unresolved": [
+        "指定された2026年12月25日の正式な決算発表予定日は保存原文で確認できないため、announcement_dateはnullとした。",
+        "S01・S03・S04・S06・S07・S10・S11は資料一覧にあるが保存本文が提示されていない。資料の存在確認と本文確認を区別し、数値の根拠として使用していない。",
+        "前年第3四半期累計のS03本文がなく、前年第3四半期単独の売上・営業利益は算定不能。非開示と判断したものではない。",
+        "前年中間期はS05比較表から確認できるが、S04訂正版との整合と訂正内容は原本未確認。",
+        "当期中間期はS05で実績を確認できるが、S01の会計方針変更・修正再表示等の注記が未確認。S02と同一会計版であることを確定できず、直前四半期単独の正式比較値を登録していない。",
+        "S05は百万円表示、S02は千円表示で精度が異なる。S05の端数処理方法は提示本文で確認できず、損益の表示差を丸め差と断定していない。",
+        "S08は営業速報であり、決算確定値とは差異が生じ得る。前年比と累計比率は丸められており、決算売上との集計範囲の完全一致も未確認のため、これらから月次売上金額を逆算して確定値扱いしない。",
+        "販売数量・客単価の絶対額、前年の対象四半期売上、月別・品目別季節配分が不足し、条件付きシナリオの売上絶対額にも根拠ある範囲を設定できない。",
+        "単一セグメントはS02 PDF pages 4, 8で確認。最新中間期短信のセグメント注記本文は未確認。",
+        "guidance_recordsのlatest_confirmedは保存資料内の確認状況。S09以後から基準日時までの予想修正や重要開示を網羅確認できていない。",
+        "target_already_announced=falseは提示された対象条件に従ったものであり、対象決算の未発表を全開示原文で独立確認したものではない。",
+        "提示されたdocumentsはtruncated=falseだが、資料一覧にある未収録本文を補完するものではない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "not_independently_verified"
+  },
+  "review": {},
+  "issues": [
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "S01・S03・S04・S06・S07・S10・S11は資料一覧にあるが保存本文が提示されていない。資料の存在確認と本文確認を区別し、数値の根拠として使用していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "S05は百万円表示、S02は千円表示で精度が異なる。S05の端数処理方法は提示本文で確認できず、損益の表示差を丸め差と断定していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "S08は営業速報であり、決算確定値とは差異が生じ得る。前年比と累計比率は丸められており、決算売上との集計範囲の完全一致も未確認のため、これらから月次売上金額を逆算して確定値扱いしない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "guidance_recordsのlatest_confirmedは保存資料内の確認状況。S09以後から基準日時までの予想修正や重要開示を網羅確認できていない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "target_already_announced=falseは提示された対象条件に従ったものであり、対象決算の未発表を全開示原文で独立確認したものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "予測不足: base",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "予測不足: bear",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "予測不足: bull",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "前年中間期はS05比較表から確認できるが、S04訂正版との整合と訂正内容は原本未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "前年第3四半期累計のS03本文がなく、前年第3四半期単独の売上・営業利益は算定不能。非開示と判断したものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "単一セグメントはS02 PDF pages 4, 8で確認。最新中間期短信のセグメント注記本文は未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "同一会計・連結範囲の比較四半期不足: yoy",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "増減要因エラー: Finite number required",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "当期中間期はS05で実績を確認できるが、S01の会計方針変更・修正再表示等の注記が未確認。S02と同一会計版であることを確定できず、直前四半期単独の正式比較値を登録していない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "提示されたdocumentsはtruncated=falseだが、資料一覧にある未収録本文を補完するものではない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "直前累計不足: 2026-08-20",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "販売数量・客単価の絶対額、前年の対象四半期売上、月別・品目別季節配分が不足し、条件付きシナリオの売上絶対額にも根拠ある範囲を設定できない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: already_announced",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: historical",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: latest_results",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: segments_kpi",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "issue",
+      "message": "資料確認未了: subsequent_disclosures",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "11月度の客数・客単価・売上動向は提示本文で未確認。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "下半期の一部商品価格改定について、対象商品・改定率・実施日が提示本文にない。",
+      "quality": "保留"
+    },
+    {
+      "code": "3333",
+      "company_name": "株式会社あさひ",
+      "kind": "condition",
+      "message": "対象四半期の品目別売上構成、粗利益率、人員配置、システム稼働時期が未確認。",
+      "quality": "保留"
+    }
+  ],
+  "assumptions": [],
+  "guidance": [],
+  "scheduleCheck": null,
+  "sourceHashes": {
+    "companies/3333/result.json": "b8f2504d53c175e91204f23a851f32a31132c7a20eeb328e9a5a74ad2e5fc1ed",
+    "reports/3333.md": "ec600924eb53c0bc699f054c259bde0522f85b4a1830be80f34a586d893b7f54"
+  }
+}
