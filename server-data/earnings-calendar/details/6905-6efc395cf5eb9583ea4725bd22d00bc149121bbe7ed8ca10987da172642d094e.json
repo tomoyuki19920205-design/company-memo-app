@@ -1,0 +1,4406 @@
+{
+  "id": "6905-6efc395cf5eb9583ea4725bd22d00bc149121bbe7ed8ca10987da172642d094e",
+  "code": "6905",
+  "companyName": "コーセル株式会社",
+  "announcementDate": "2026-12-18",
+  "target": {
+    "fiscalYearEnd": "2027-05-20",
+    "quarter": 2
+  },
+  "asOf": "2026-11-28T12:59:44+09:00",
+  "version": "6905-review-2cdc0aa580b8923e · 6efc395c",
+  "savedAt": "2026-11-28T13:16:11+09:00",
+  "quality": "保留",
+  "reviewExecuted": true,
+  "reviewPassed": false,
+  "valid": true,
+  "preAnnouncement": true,
+  "revenue": 7945.035,
+  "operatingProfit": null,
+  "revenueYoY": {
+    "rate": 0.31127826373989104,
+    "label": "+31.1%",
+    "tone": "positive",
+    "note": ""
+  },
+  "profitYoY": {
+    "rate": null,
+    "label": "—",
+    "tone": "neutral",
+    "note": "比較値なし"
+  },
+  "markdown": "# 6905 コーセル株式会社｜2027-05-20期 Q2単独\n品質状態：**保留**。情報基準日時：2026-11-28T12:59:44+09:00。単位：百万円。\n数値検査と経済的な予測妥当性は別です。独立AIレビュー実施。実施と通過は別管理。\n\n| 指標 | 弱気 | 中心 | 強気 |\n|---|---:|---:|---:|\n| 売上高 | 7,534.55 | 7,945.03 | 8,362.11 |\n| 営業利益 | 未算定 | 未算定 | 未算定 |\n| 経常利益 | 未算定 | 未算定 | 未算定 |\n| 純利益 | 未算定 | 未算定 | 未算定 |\n\n| 比較 | 指標 | 増減額 | 伸長率 | 注記 |\n|---|---|---:|---:|---|\n| YoY | 売上高 | 1,886.03 | 31.13% |  |\n| YoY | 営業利益 | 未算定 | 未算定 | 比較値なし |\n| QnQ | 売上高 | 131.03 | 1.68% |  |\n| QnQ | 営業利益 | 未算定 | 未算定 | 比較値なし |\n\n## 会社予想\nS05の中間期修正予想からS01の第1四半期実績を差し引いた参考値をguidance_q2_revenue、guidance_q2_op、guidance_q2_ordinary、guidance_q2_netに保存した。これは会社が直接開示した四半期単独予想でも確定実績でもなく、公表累計予想の差引推計。修正日は対象四半期終了前であり、期後修正ではない。PRBX除外、操業度改善、経費発生時期、譲渡会計・税効果は修正予想に包含され、追加加算しない。S05転載本文の原本同一性は未確認のため中間期guidance_recordsをunverifiedとした。通期は保存資料内で据え置きが確認できるが、開示の完全性までは確認できない。\n\n## 市場コンセンサス\n未確認。提示された保存資料に公表市場コンセンサスは含まれていない。\n\n## 独自予測・差引推計の区分\n売上のみ、前Qの製品別実績を出発点として、受注残と事業別需要を踏まえた数量・構成指数、値上げ浸透仮定、PRBX連結除外を積み上げた条件付き予測。会社予想の四等分や前年比の一律延長ではない。仮定幅は統計的な信頼区間ではなく、前Q末受注残に対して無理のない出荷水準を置いた感応度分析である。会社予想差引は外部照合値として別管理し、独自利益は残存事業の費用構造を限定できないためnullとする。\n\n## 対象四半期の売上\n中心売上は7,945.03、弱気は7,534.55、強気は8,362.11。半導体製造装置向け受注残の消化、FA関連の回復、値上げが支える。一方、PRBX連結除外が報告売上を押し下げる。数量・構成と価格の仮定は別建てであり、新製品・協業効果をさらに上乗せしていない。\n\n## 会社予想との照合\n直近公表累計予想の差引による対象四半期売上は7,916.00、営業利益は580.00、経常利益は617.00、親会社株主帰属純利益は1,525.00。中心売上との差は29.03。これらの利益値は会社予想からの差引であり、独自予測としては採用していない。\n\n## 利益と比較の制約\n利益改善の方向は、稼働率上昇、価格転嫁、赤字子会社の連結除外で説明できる。ただし、残存事業の限界利益率、固定費、経費発生時期を定量分離できない。純利益には譲渡会計と税効果が含まれ、通常税率を機械的に適用できない。前年同Qは同一会計版の累計差引を用い、売上6,059.00、営業利益-270.00を全シナリオ共通の基準とした。\n\n## 増減要因の接続\n\n### bear / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 1,861.58 | 受注残消化、数量・構成、価格効果の条件付き差 |\n| オンボード電源 | 586.91 | 受注回復と価格効果 |\n| ノイズフィルタ | 212.06 | FA回復と価格効果 |\n| PRBX製品 | -1,185.00 | 連結除外と別建て残存販売を加算しない仮定 |\n| 残差（none） | 0.00 | 製品別累計差引の合計が比較基準と一致。 |\n\n### bear / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 695.58 | 受注残消化と価格効果 |\n| オンボード電源 | 201.91 | 数量・構成と価格効果 |\n| ノイズフィルタ | 51.06 | 数量・構成と価格効果 |\n| PRBX製品 | -1,226.00 | 連結除外と残存販売の仮定 |\n| 残差（rounding） | -2.00 | 前Qの製品別表示額合計と連結売上高の差。 |\n\n### base / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 2,130.77 | 受注残消化、数量・構成、価格効果の条件付き差 |\n| オンボード電源 | 699.69 | 受注回復と価格効果 |\n| ノイズフィルタ | 240.58 | FA回復と価格効果 |\n| PRBX製品 | -1,185.00 | 連結除外と別建て残存販売を加算しない仮定 |\n| 残差（none） | 0.00 | 製品別累計差引の合計が比較基準と一致。 |\n\n### base / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 964.77 | 受注残消化と価格効果 |\n| オンボード電源 | 314.69 | 数量・構成と価格効果 |\n| ノイズフィルタ | 79.58 | 数量・構成と価格効果 |\n| PRBX製品 | -1,226.00 | 連結除外と残存販売の仮定 |\n| 残差（rounding） | -2.00 | 前Qの製品別表示額合計と連結売上高の差。 |\n\n### bull / yoy / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 2,404.26 | 受注残消化、数量・構成、価格効果の条件付き差 |\n| オンボード電源 | 814.28 | 受注回復と価格効果 |\n| ノイズフィルタ | 269.56 | FA回復と価格効果 |\n| PRBX製品 | -1,185.00 | 連結除外と別建て残存販売を加算しない仮定 |\n| 残差（none） | 0.00 | 製品別累計差引の合計が比較基準と一致。 |\n\n### bull / qoq / 売上高\n| 要因 | 増減額 | 理由 |\n|---|---:|---|\n| ユニット電源 | 1,238.26 | 受注残消化と価格効果 |\n| オンボード電源 | 429.28 | 数量・構成と価格効果 |\n| ノイズフィルタ | 108.56 | 数量・構成と価格効果 |\n| PRBX製品 | -1,226.00 | 連結除外と残存販売の仮定 |\n| 残差（rounding） | -2.00 | 前Qの製品別表示額合計と連結売上高の差。 |\n\n## エラー・未解決事項\n- PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。\n- S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。\n- S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。\n- S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。\n- 予測不足: base\n- 予測不足: bear\n- 予測不足: bull\n- 会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。\n- 基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。\n- 増減要因エラー: Finite number required\n- 売上・営業利益のYoY/QnQ増減説明不足\n- 独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。\n- 独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。\n- 資料確認未了: subsequent_disclosures\n- 重要仮定の裏付け未検証: bear_unit_volume\n- 重要仮定の裏付け未検証: base_unit_volume\n- 重要仮定の裏付け未検証: bull_unit_volume\n- 重要仮定の裏付け未検証: bear_other_volume\n- 重要仮定の裏付け未検証: base_other_volume\n- 重要仮定の裏付け未検証: bull_other_volume\n- 重要仮定の裏付け未検証: bear_price\n- 重要仮定の裏付け未検証: base_price\n- 重要仮定の裏付け未検証: bull_price\n- 重要仮定の裏付け未検証: forecast_prbx\n- 会社予想比較の条件: g_h1_revenue\n- 会社予想比較の条件: g_h1_op\n- 会社予想比較の条件: g_h1_ordinary\n- 会社予想比較の条件: g_h1_net\n- 会社予想比較の条件: g_fy_revenue\n- 会社予想比較の条件: g_fy_op\n- 会社予想比較の条件: g_fy_ordinary\n- 会社予想比較の条件: g_fy_net\n- 数量・構成6係数と価格3係数に採用数値の原文根拠がない。シナリオを会社が示した予測幅、統計的区間、検証済み中心値として扱えない。納期別受注残、出荷能力、価格改定対象と浸透率による係数設定根拠が必要。\n- PRBX項目のYoY-1185、QnQ-1226は製品別売上全額の除去であり、純粋な連結範囲変更額としては未検証。旧子会社の外部売上、残存会社のPRBX製品販売、旧内部取引の外部化を区別する必要がある。残存売上の金額を推測で加算する修正も認められない。\n- 全シナリオの営業・経常・純利益が未算定。営業利益ブリッジのeconomic_unexplainedは未定量を表し、ゼロ残差でも全差額を数値把握した状態でもない。原価率、固定費、営業外損益、譲渡関連損益・税効果の積上げが必要。\n- Finite number requiredおよびNoneTypeの減算エラーは欠損値処理の問題であり、財務数値の重大な誤りを証明しない。独自予測欠損時は比較不能として保持し、会社差引参考値580・617・1525の算出と独自予測との比較処理を分離する。ゼロ補完は不可。\n- QnQの-2は製品表示額7812と連結7814の差で、百万円未満切捨てと整合する。前年累計製品合計11132とQ1製品合計5073は各連結合計より2小さく、差引で相殺するためYoY算術残差は0。会計基準変更による調整ではない。前年Q2直接表示6058・営業損失269と累計差引6059・営業損失270の1差も表示丸めと整合し、累計差引値を誤入力とは判定しない。\n- 中間期4候補の期間・11月12日改定、通期4候補の9月18日改定・11月12日時点据置は本文で確認可能。これを原本照合未了や最新開示の網羅性と混同しない。会社予想との売上差は小さくても、採用係数や残存取引の妥当性は未証明。\n\n## 条件・不確実性\n- PRBX譲渡後の継続取引による外部売上と連結消去変化は未定量。\n- base_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比15%増とする。受注残の裏付けと中国生産ライン増強を条件とした仮定。S01 page 5。\n- base_price: S04 page 12の値上げ開始に基づく実効価格効果2%の条件付き仮定。製品別改定率と適用対象は非開示であり、精密な推定ではない。\n- base_unit_volume: ユニット電源の数量・構成指数を前Q比20%増とする。値上げ前売上は前Q末受注残を十分下回り、半導体製造装置需要の売上化と増産対応を条件とする。S01 pages 4、5、S04 page 13。\n- bear_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比10%増とする。両製品の受注残とFAの在庫消化を根拠とし、ユニット電源より慎重な売上化を仮定。S01 page 5、S04 page 3。\n- bear_price: S04 page 12の第2四半期からの値上げを、製品売上全体に対する実効価格効果1%として仮定。公表された改定率ではなく、既受注品への適用遅れを含む弱気条件。\n- bear_unit_volume: 前Qのユニット電源売上を基準とする数量・構成指数。半導体製造装置需要と受注残を背景に15%増を仮定するが、先行手配と部材制約から受注の急増率は売上に延長しない。S01 page 5、S04 pages 7、13に依拠。\n- bull_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比20%増とする。FA回復と受注残消化が円滑な場合を想定。S01 page 5、S04 page 3。\n- bull_price: 値上げの浸透が比較的早い場合に実効価格効果3%を仮定。S04 page 12。数量・構成指数にはこの価格効果を含めない。\n- bull_unit_volume: ユニット電源の数量・構成指数を前Q比25%増とする。旺盛な受注残の消化が進み、部材確保と増産が円滑な場合の上限側仮定。受注残全額の売上化は見込まない。S01 pages 4、5。\n- forecast_prbx: S01 page 12の第2四半期からの連結除外に従い、旧PRBX子会社の外部売上を追加しない。譲渡後の仕入販売継続はS09 page 13に記載されるが、独立したPRBX製品再販売額は不明のため別建て加算をゼロとする条件。\n- 値上げ率、既受注品への適用条件、四半期内の浸透率は保存原文に非開示。\n- 増産設備の能力、稼働日、追加費用および経費繰延額は保存原文に非開示。\n- 対象四半期の為替実績と営業外損益、譲渡会計・税効果の詳細は未公表実績であり未確認。\n- 製品別の出荷数量、平均単価、受注残の納期別内訳は保存原文に非開示。数量・構成指数は実数量ではない。\n\n## 根拠・保存記録\n- S01 [2027年5月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/69050/140120260917537642.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `b53e2af91146de7d4a0ce3d6d38f69a19a4b003fcafb93313c4b8990f13229eb`\n- S02 [2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/69050/140120251218522288.pdf) / 公表 2025-12-19 / retrieved / SHA-256 `1d6653f89e9a82318771ea99da8ccba531ef4556e34e286a71108d2c54e3b479`\n- S03 [2026年5月期 第1四半期決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/69050/140120250918559256.pdf) / 公表 2025-09-19 / retrieved / SHA-256 `840754a78556d5a5867b8525846e1952b1a5d83b6998de1e90dcd0da6ac2fd45`\n- S04 [2027年5月期 第1四半期決算説明資料（スクリプト付き、地域別売上・受注高・受注残高を含む）](https://www2.jpx.co.jp/disc/69050/140120260917537745.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `c44ba8b71cb2c984c439c922193cb231cd6b394b44314e18f2720e050c0bf879`\n- S05 [第2四半期（中間期）業績予想の修正に関するお知らせ](https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf) / 公表 2026-11-12 / retrieved / SHA-256 `1dbe29d54df341b4f5861298441fd269d871a06bac012db537a7c699647ed7f3`\n- S06 [第2四半期（中間期）および通期業績予想の修正に関するお知らせ](https://www2.jpx.co.jp/disc/69050/140120260917537655.pdf) / 公表 2026-09-18 / retrieved / SHA-256 `b120c0e88d8399a6682246e9b5785468753a234425987c672ec125c78268a816`\n- S07 [2026年5月期 第2四半期（上期）決算説明資料（スクリプト付き）](https://www2.jpx.co.jp/disc/69050/140120251219522559.pdf) / 公表 2025-12-19 / retrieved / SHA-256 `12e94222278cde2c789db7f50d2a024b01df85980df17c91970c3b46ce9764cc`\n- S08 [2026年5月期 決算短信〔日本基準〕（連結）](https://www2.jpx.co.jp/disc/69050/140120260617572633.pdf) / 公表 2026-06-19 / retrieved / SHA-256 `49bccbe037766db0412b745601bcbad466c10f54fb0589797736fe369c873e10`\n- S09 [2026年5月期 通期決算説明資料（スクリプト付き）](https://www2.jpx.co.jp/disc/69050/140120260619574494.pdf) / 公表 2026-06-19 / retrieved / SHA-256 `d8eccd26606c9ba6defe30576d768ea7ff0cba91c53799d98551fae002d8d2e1`\n- S10 [（開示事項の経過）連結子会社の異動（株式譲渡）に関するお知らせ](https://www2.jpx.co.jp/disc/69050/140120260901530154.pdf) / 公表 2026-09-02 / retrieved / SHA-256 `918befc15f581dea30d5e84168a006bf0d532bfbc4cb1fb7c6fab0c68c67ce04`\n- S11 [自己株式立会外買付取引（ToSTNeT-3）による自己株式の取得結果及び取得終了に関するお知らせ](https://japanir.jp/wp-content/uploads/2026/11/6905-20261113-01.pdf) / 公表 2026-11-13 / retrieved / SHA-256 `3af642ec259b80e748aea984acbe7868b50de99d3cbd9defab9e19797c179b09`\n- S12 [IRカレンダー](https://www.cosel.com/ir/ircalendar/calendar/) / 公表  / unavailable / SHA-256 `なし`\n- S13 [株式基本情報](https://www.cosel.com/ir/stock/info/) / 公表  / unavailable / SHA-256 `なし`\n\n## 独立レビュー結果\n\n[保留：詳細レビュー](6905_review.md)。元の予測とレビューを別ファイルに保存。\n",
+  "reviewMarkdown": "# 6905 コーセル株式会社 独立レビュー\n\n判定：**保留**。AIレビュー実行済み：はい。通過：いいえ。完全検証済み：いいえ。\n提示された基準日時以前の原資料本文と照合した結果、実績・会社予想の入力値および売上算式に確認できる誤りはない。ただし、重要仮定10件はいずれも採用数値の裏付けが不足し、全シナリオの独自利益予測も未成立である。PRBX製品売上と旧子会社の連結除外効果は同一ではなく、売上ブリッジの経済的説明には未解決部分が残る。会社予想との差が小さいことや機械的なブリッジ一致を、予測の妥当性の証明とは扱わない。検索・外部API・シェルは使用していない。\n\n## 7項目の検査\n\n| 項目 | 状態 | 確認内容 | 根拠 |\n|---|---|---|---|\n| 1 | passed | S01～S03の各損益4項目、製品別売上、S01の受注残3項目、S05・S06の会社予想8項目は提示原文と一致する。前年Q2の累計差引は売上6059、営業利益-270、経常利益196、純利益62。会社中間期予想からQ1を差し引いた参考値は7916、580、617、1525で算術的に正しい。合格範囲は提示本文との一致であり、転載資料の原本同一性や開示網羅性を含まない。 | S01, S02, S03, S05, S06 S01 PDF pages 1、5、9；S02・S03 PDF pages 5、9；S05・S06 PDF page 1 |\n| 2 | conditional | 対象は2027年5月期Q2単独の2026年8月21日～11月20日であり、中間期とQ1の差引期間は整合する。日本基準・連結・百万円の区分も一致する。過年度資料は会計方針変更・修正再表示なし。比較実績にPRBXを含み対象予測から除外する扱いは開示に沿うが、旧子会社除外と製品別売上消失の金額一致は未確認。比較は継続事業へ遡及組替えした実績ではない。 | S01, S02, S03, S05, S10 S01 PDF pages 1、2、12；S02・S03 PDF pages 1、2；S05・S10 PDF page 1 |\n| 3 | unresolved | 需要回復、受注残、値上げ開始は確認できるが、数量・構成指数1.10～1.25、価格係数1.01～1.03、PRBX別建て販売ゼロを定量的に裏付ける原文はない。受注残を下回る売上計画だけでは納期・能力・調達制約を検証できない。重要仮定10件をすべてunsupportedとした。感応度やdiagnostic_perturbationは会社の代替予測や係数の根拠にはならない。 | S01, S04, S09 S01 PDF pages 4、5；S04 PDF pages 12、13；S09 PDF page 13 |\n| 4 | conditional | 提示算式に利益率や費用を利益目標から逆算する処理はなく、会社予想差引利益も独自予測とは分離されている。ただし独自営業・経常・純利益は全シナリオでnullであり、利益予測の合理性自体は未検証。過去の増減分析や通期設備計画を対象四半期の限界利益率・固定費へそのまま転用できない。 | S04, S05, S09 S04 PDF page 6；S05 PDF page 1；S09 PDF page 25 |\n| 5 | conditional | 協業製品は既存製品区分に含まれ、モデルに別建て加算はない。Q1整理益355やQ2の譲渡会計・税効果を会社予想へ再加算する算式もない。ただし数量・構成指数の推定根拠がないため、価格効果との実質的な重複を完全には検証できない。PRBX継続取引の漏れと連結消去変化も未解決。 | S01, S05, S09 S01 PDF pages 5、9、12；S05 PDF page 1；S09 PDF page 13 |\n| 6 | unresolved | 売上は弱気7534.5495、中心7945.035、強気8362.1065。YoYはそれぞれ+1475.5495（+24.3530%）、+1886.035（+31.1278%）、+2303.1065（+38.0113%）、QnQは-279.4505（-3.5763%）、+131.035（+1.6769%）、+548.1065（+7.0144%）で整合する。QnQは数量・構成効果876.05／1205.35／1534.65、価格効果74.5995／155.785／243.4565、PRBX項目-1226、表示丸め差-2の合計で再現できる。YoYの製品別差引合計6059と比較基準は一致し算術残差0。ただし経済的な説明完了を意味しない。営業利益の全6ブリッジは未定量で、経常・純利益の比較も未成立。nullをゼロや有限数として扱ってはならない。 | S01, S02, S03 S01 PDF pages 1、5；S02・S03 PDF pages 5、9；提示model.calculations・bridges |\n| 7 | unresolved | 係数設定、PRBX残存取引、残存事業費用、譲渡会計・税効果の追加根拠が必要。S05は本文が提供されており、期間・改定日・据置内容は読める一方、転載原本照合と基準日時までの追加訂正開示の網羅性は未確認。取得時刻が基準日時後であることと、本文の公表日が基準日時以前であることは区別した。予定日12月18日はS05本文に記載があり、S12未取得だけを経済的品質の減点理由とはしない。確認できた入力・予測数値の誤りがないため確定的数値修正は提案しない。 | S01, S05, S09 S01 PDF page 12；S05 PDF page 1；S09 PDF page 13；source_metadata |\n\n## 会社予想との比較\n\n| 指標・資料ID | 対象Q含意 | AI標準 | 差額 | 確認状態 |\n|---|---:|---:|---:|---|\n| revenue / g_h1_revenue | 7,916.00 | 7,945.03 | 29.03 | 未検証 / 提示S05本文で2026年5月21日～11月20日の連結予想と11月12日改定を確認。Q1控除後7916に対し弱気-381.4505、中心+29.035、強気+446.1065。差額は算術的に正しいが、会社側の数量・価格前提との対応がなく経済的な乖離説明は未成立。近接自体は妥当性の証拠ではない。revision_confirmedは提示本文内の改定確認であり、原本同一性・後続開示の網羅性を保証しない。 |\n| operating_profit / g_h1_op | 未算定 | 未算定 | 未算定 | 対象期間外 / S05本文の11月12日中間期改定1125からQ1の545を控除した580は正しい参考値。独自利益がnullのため乖離比較は成立しない。原本照合・最新性網羅確認は別途未了。 |\n| ordinary_profit / g_h1_ordinary | 未算定 | 未算定 | 未算定 | 対象期間外 / S05本文の11月12日中間期改定1197からQ1の580を控除した617は正しい参考値。独自経常利益がnullで乖離評価対象なし。原本同一性と後続訂正の有無は未確認。 |\n| net_profit / g_h1_net | 未算定 | 未算定 | 未算定 | 対象期間外 / S05本文の11月12日中間期改定2186からQ1の661を控除した1525は正しい参考値。譲渡会計・税効果を含み、営業利益に通常税率を適用した値ではない。独自純利益がnullで乖離評価対象なし。原本同一性・最新性の確認限界は残る。 |\n| revenue / g_fy_revenue | 未算定 | 7,945.03 | 未算定 | 対象期間外 / S06の9月18日通期改定31800とS05の11月12日時点据置を提示本文内で確認。通期期間は確認できるが、Q1控除後はQ2～Q4であり対象Q2単独と不一致。最新性確認は提示資料内に限定される。 |\n| operating_profit / g_fy_op | 未算定 | 未算定 | 未算定 | 対象期間外 / 9月18日通期改定2300と11月12日時点据置を確認。対象期間は通期でQ2単独との比較には使えない。中間期上方修正後も通期据置であるため、旧下期予想1330を最新中間期予想へ足すこともできない。原本照合と後続開示の網羅性は未確認。 |\n| ordinary_profit / g_fy_ordinary | 未算定 | 未算定 | 未算定 | 対象期間外 / 9月18日通期改定2400と11月12日時点据置を提示本文で確認。通期からQ1を引いた残期間は対象Q2と一致しない。独自経常利益も未算定。基準日時までの全開示確認を意味しない。 |\n| net_profit / g_fy_net | 未算定 | 未算定 | 未算定 | 対象期間外 / 9月18日通期改定2600と11月12日時点据置を提示本文で確認。中間期2186との差414は下期の差引参考値であり、対象Q2予想ではない。独自純利益との乖離比較はできない。転載原本照合と後続開示網羅性は未確認。 |\n\n## 重要仮定と感応度\n感応度は単独仮定を変化させた場合の営業利益差。機械的な±10%等の変化は根拠ある予測幅を意味しません。\n\n| 優先 | 仮定ID | 採用値 | 利益感応度・最大絶対額 | 相対比 | 裏付け |\n|---:|---|---:|---:|---:|---|\n| 1 | bear_unit_volume | 1.15 | 未算定（制約あり） | 非表示 | 未検証：需要回復は確認できるが、前Q比15%という数量・構成増加率の裏付けはない。受注の先行手配分と対象四半期の出荷を区別する資料が必要。 |\n| 2 | base_unit_volume | 1.2 | 未算定（制約あり） | 非表示 | 未検証：受注残8172は確認できるが、20%増の出荷を保証する納期別残高・生産能力の開示はない。受注残以下という条件は採用係数の証明にならない。 |\n| 3 | bull_unit_volume | 1.25 | 未算定（制約あり） | 非表示 | 未検証：25%増を上限側とする根拠や実現能力の検証がない。原文は供給懸念も示しており、受注増だけで出荷率を設定できない。 |\n| 4 | bear_other_volume | 1.1 | 未算定（制約あり） | 非表示 | 未検証：FA回復という方向性は支持されるが、オンボードとフィルタに共通の10%増を適用する定量根拠はない。 |\n| 5 | base_other_volume | 1.15 | 未算定（制約あり） | 非表示 | 未検証：中国生産ラインの増強は確認できるが、増産能力・稼働時期・製品配分を示さず、両製品共通の15%増を裏付けない。 |\n| 6 | bull_other_volume | 1.2 | 未算定（制約あり） | 非表示 | 未検証：受注回復は確認できるが、20%増という数量・構成指数、両製品の同率成長、強気側の上限設定を支持する数値はない。 |\n| 7 | bear_price | 1.01 | 未算定（制約あり） | 非表示 | 未検証：Q2からの値上げは確認できるが、改定率・対象売上・適用時期が不明であり、実効1%は裏付けられない。 |\n| 8 | base_price | 1.02 | 未算定（制約あり） | 非表示 | 未検証：値上げ開始の一般的説明は実効2%の証拠にならない。協業製品を含む対象3区分への一律適用も未確認。 |\n| 9 | bull_price | 1.03 | 未算定（制約あり） | 非表示 | 未検証：浸透が早い場合に実効3%となる計算根拠はない。数量・構成指数から価格を除いたというモデル上の宣言だけでは、実際の効果分離を証明できない。 |\n| 10 | forecast_prbx | 0 | 未算定（制約あり） | 非表示 | 未検証：旧子会社の連結除外は支持されるが、継続する仕入販売の外部売上、既存製品区分への包含、消去解除の影響は不明。別建て加算ゼロを支持する数値はない。ただし継続取引の存在だけで別建て額が必ず正になるとも断定できず、contradictedとはしない。 |\n\n## 予測の修正記録\n標準営業利益：旧 未算定 → 新 未算定 百万円。差 未算定。未算定値はゼロではありません。\n確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。\n\n## 警告\n- **Medium** / machine: PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。\n- **Medium** / machine: S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。\n- **Medium** / machine: S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。\n- **Medium** / machine: S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。\n- **High** / machine: 予測不足: base\n- **High** / machine: 予測不足: bear\n- **High** / machine: 予測不足: bull\n- **Medium** / machine: 会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。\n- **Medium** / machine: 基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。\n- **Critical** / machine: 増減要因エラー: Finite number required\n- **Medium** / machine: 売上・営業利益のYoY/QnQ増減説明不足\n- **Medium** / machine: 独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。\n- **Medium** / machine: 独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。\n- **High** / machine: 資料確認未了: subsequent_disclosures\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_unit_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_unit_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_unit_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_other_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_other_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_other_volume\n- **High** / material_assumption: 重要仮定の裏付け未検証: bear_price\n- **High** / material_assumption: 重要仮定の裏付け未検証: base_price\n- **High** / material_assumption: 重要仮定の裏付け未検証: bull_price\n- **High** / material_assumption: 重要仮定の裏付け未検証: forecast_prbx\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_h1_revenue\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_h1_op\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_h1_ordinary\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_h1_net\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_fy_revenue\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_fy_op\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_fy_ordinary\n- **Medium** / guidance_metadata: 会社予想比較の条件: g_fy_net\n- **High** / assumption: 数量・構成6係数と価格3係数に採用数値の原文根拠がない。シナリオを会社が示した予測幅、統計的区間、検証済み中心値として扱えない。納期別受注残、出荷能力、価格改定対象と浸透率による係数設定根拠が必要。\n- **High** / assumption: PRBX項目のYoY-1185、QnQ-1226は製品別売上全額の除去であり、純粋な連結範囲変更額としては未検証。旧子会社の外部売上、残存会社のPRBX製品販売、旧内部取引の外部化を区別する必要がある。残存売上の金額を推測で加算する修正も認められない。\n- **High** / residual: 全シナリオの営業・経常・純利益が未算定。営業利益ブリッジのeconomic_unexplainedは未定量を表し、ゼロ残差でも全差額を数値把握した状態でもない。原価率、固定費、営業外損益、譲渡関連損益・税効果の積上げが必要。\n- **Medium** / other: Finite number requiredおよびNoneTypeの減算エラーは欠損値処理の問題であり、財務数値の重大な誤りを証明しない。独自予測欠損時は比較不能として保持し、会社差引参考値580・617・1525の算出と独自予測との比較処理を分離する。ゼロ補完は不可。\n- **Low** / residual: QnQの-2は製品表示額7812と連結7814の差で、百万円未満切捨てと整合する。前年累計製品合計11132とQ1製品合計5073は各連結合計より2小さく、差引で相殺するためYoY算術残差は0。会計基準変更による調整ではない。前年Q2直接表示6058・営業損失269と累計差引6059・営業損失270の1差も表示丸めと整合し、累計差引値を誤入力とは判定しない。\n- **Medium** / guidance: 中間期4候補の期間・11月12日改定、通期4候補の9月18日改定・11月12日時点据置は本文で確認可能。これを原本照合未了や最新開示の網羅性と混同しない。会社予想との売上差は小さくても、採用係数や残存取引の妥当性は未証明。\n\n## 対象日照合（経済的品質と独立）\n{\"input_date\": \"2026-12-18\", \"official_date\": \"2026-12-18\", \"declared_verified\": true, \"verified\": false, \"evidence\": \"公式IRカレンダーに「2026/12/18 2027年5月期第2四半期決算発表」と記載。https://www.cosel.com/ir/ircalendar/calendar/ 。2026年11月12日の業績予想修正資料本文にも同日の中間期決算発表予定を記載。https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf\", \"warnings\": []}\n\n## 修正提案・追加資料\nAIの提案は確定修正と区別しています。承認・出典照合を経た corrections.json の変更だけを適用しています。\n[]\n[\n  \"基準日時以前の製品別納期付き受注残、出荷計画、生産能力・稼働日・部材調達制約。数量・構成指数の数値設定を検証するため。\",\n  \"基準日時以前の製品別価格改定率、対象製品・顧客・既受注への適用条件、適用日と売上構成。実効価格効果1～3%を検証するため。\",\n  \"PRBX譲渡後の販売・仕入取引の金額、製品分類、残存会社の外部売上、連結消去解除の調整表。別建て販売ゼロと連結除外ブリッジを検証するため。\",\n  \"残存事業の原価・人件費・固定費・減価償却費と経費発生時期の四半期内訳、および連結消去後PRBX損益。独自営業利益を積み上げるため。\",\n  \"対象四半期に適用可能な営業外損益、譲渡価額調整・整理益、税効果の基準日時以前の見積資料。経常・純利益を独立検証するため。\",\n  \"S05の会社または取引所原本と、基準日時までの訂正・追加開示を確認できる保存記録。転載原本同一性と採用予想の最新性を確認するため。基準日時後に初めて公表された実績は本予測レビューへ混入させない。\"\n]\n\n## 保存記録\n[全仮定・警告JSON](../companies/6905/quality_review.json) / [レビュー原回答](../companies/6905/independent_review.json) / [計算検査](../companies/6905/validation.json)\n",
+  "result": {
+    "schema_version": "2.0",
+    "code": "6905",
+    "company_name": "コーセル株式会社",
+    "announcement_date": "2026-12-18",
+    "target_period": "2027-05-20期 Q2単独",
+    "period": {
+      "fiscal_year_end": "2027-05-20",
+      "quarter": 2,
+      "start": "2026-08-21",
+      "end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円"
+    },
+    "requested_as_of": "2026-11-28T12:59:44+09:00",
+    "source_as_of": "2026-11-28T12:59:44+09:00",
+    "mode": "codex-chatgpt",
+    "quality": "保留",
+    "scenarios": {
+      "bear": {
+        "revenue": 7534.5495,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "base": {
+        "revenue": 7945.035,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      },
+      "bull": {
+        "revenue": 8362.1065,
+        "operating_profit": null,
+        "ordinary_profit": null,
+        "net_profit": null
+      }
+    },
+    "comparisons": {
+      "qoq": {
+        "revenue": {
+          "amount": 131.03499999999985,
+          "rate": 0.016769260302021992,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      },
+      "yoy": {
+        "revenue": {
+          "amount": 1886.0349999999999,
+          "rate": 0.31127826373989104,
+          "note": ""
+        },
+        "operating_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "ordinary_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        },
+        "net_profit": {
+          "amount": null,
+          "rate": null,
+          "note": "比較値なし"
+        }
+      }
+    },
+    "values": {
+      "q1_revenue": 7814.0,
+      "q1_op": 545.0,
+      "q1_ordinary": 580.0,
+      "q1_net": 661.0,
+      "prior_q1_revenue": 5075.0,
+      "prior_q1_op": -389.0,
+      "prior_q1_ordinary": -79.0,
+      "prior_q1_net": -68.0,
+      "prior_h1_revenue": 11134.0,
+      "prior_h1_op": -659.0,
+      "prior_h1_ordinary": 117.0,
+      "prior_h1_net": -6.0,
+      "q1_unit": 4307.0,
+      "q1_board": 1819.0,
+      "q1_filter": 460.0,
+      "q1_prbx": 1226.0,
+      "unit_backlog": 8172.0,
+      "board_backlog": 4267.0,
+      "filter_backlog": 716.0,
+      "prior_q1_unit": 2423.0,
+      "prior_q1_board": 1232.0,
+      "prior_q1_filter": 258.0,
+      "prior_q1_prbx": 1160.0,
+      "prior_h1_unit": 5564.0,
+      "prior_h1_board": 2666.0,
+      "prior_h1_filter": 557.0,
+      "prior_h1_prbx": 2345.0,
+      "guidance_h1_revenue": 15730.0,
+      "guidance_h1_op": 1125.0,
+      "guidance_h1_ordinary": 1197.0,
+      "guidance_h1_net": 2186.0,
+      "guidance_fy_revenue": 31800.0,
+      "guidance_fy_op": 2300.0,
+      "guidance_fy_ordinary": 2400.0,
+      "guidance_fy_net": 2600.0,
+      "bear_unit_volume": 1.15,
+      "base_unit_volume": 1.2,
+      "bull_unit_volume": 1.25,
+      "bear_other_volume": 1.1,
+      "base_other_volume": 1.15,
+      "bull_other_volume": 1.2,
+      "bear_price": 1.01,
+      "base_price": 1.02,
+      "bull_price": 1.03,
+      "forecast_prbx": 0.0,
+      "prior_q2_revenue": 6059.0,
+      "prior_q2_op": -270.0,
+      "prior_q2_ordinary": 196.0,
+      "prior_q2_net": 62.0,
+      "prior_q2_unit": 3141.0,
+      "prior_q2_board": 1434.0,
+      "prior_q2_filter": 299.0,
+      "prior_q2_prbx": 1185.0,
+      "guidance_q2_revenue": 7916.0,
+      "guidance_q2_op": 580.0,
+      "guidance_q2_ordinary": 617.0,
+      "guidance_q2_net": 1525.0,
+      "bear_unit": 5002.580499999999,
+      "bear_board": 2020.909,
+      "bear_filter": 511.06000000000006,
+      "bear_revenue": 7534.5495,
+      "base_unit": 5271.768,
+      "base_board": 2133.687,
+      "base_filter": 539.58,
+      "base_revenue": 7945.035,
+      "bull_unit": 5545.2625,
+      "bull_board": 2248.2839999999997,
+      "bull_filter": 568.5600000000001,
+      "bull_revenue": 8362.1065,
+      "base_guidance_gap": 29.034999999999854,
+      "qoq_revenue_residual": -2.0,
+      "yoy_revenue_residual": 0.0
+    },
+    "historicals": [
+      {
+        "fiscal_year_end": "2026-05-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S03"
+        ],
+        "locator": "PDF pages 1、2、9",
+        "period_end": "2025-08-20",
+        "period_start": "2025-05-21",
+        "method": "1Q累計",
+        "revenue": 5075.0,
+        "operating_profit": -389.0,
+        "ordinary_profit": -79.0,
+        "net_profit": -68.0
+      },
+      {
+        "fiscal_year_end": "2026-05-20",
+        "quarter": 2,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S02",
+          "S03"
+        ],
+        "locator": "PDF pages 1、2、9",
+        "period_end": "2025-11-20",
+        "period_start": "2025-08-21",
+        "method": "累計−直前累計",
+        "revenue": 6059.0,
+        "operating_profit": -270.0,
+        "ordinary_profit": 196.0,
+        "net_profit": 62.0
+      },
+      {
+        "fiscal_year_end": "2027-05-20",
+        "quarter": 1,
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "source_ids": [
+          "S01"
+        ],
+        "locator": "PDF pages 1、2、9、12",
+        "period_end": "2026-08-20",
+        "period_start": "2026-05-21",
+        "method": "1Q累計",
+        "revenue": 7814.0,
+        "operating_profit": 545.0,
+        "ordinary_profit": 580.0,
+        "net_profit": 661.0
+      }
+    ],
+    "bridges": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "bear_unit-prior_q2_unit",
+            "reason": "受注残消化、数量・構成、価格効果の条件付き差",
+            "amount": 1861.5804999999991
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "bear_board-prior_q2_board",
+            "reason": "受注回復と価格効果",
+            "amount": 586.9090000000001
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "bear_filter-prior_q2_filter",
+            "reason": "FA回復と価格効果",
+            "amount": 212.06000000000006
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-prior_q2_prbx",
+            "reason": "連結除外と別建て残存販売を加算しない仮定",
+            "amount": -1185.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "none",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "bear_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "bear_unit-q1_unit",
+            "reason": "受注残消化と価格効果",
+            "amount": 695.5804999999991
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "bear_board-q1_board",
+            "reason": "数量・構成と価格効果",
+            "amount": 201.9090000000001
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "bear_filter-q1_filter",
+            "reason": "数量・構成と価格効果",
+            "amount": 51.06000000000006
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-q1_prbx",
+            "reason": "連結除外と残存販売の仮定",
+            "amount": -1226.0
+          }
+        ],
+        "residual": -2.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+          "description": "各製品表示額の合計は7812、連結合計は7814。"
+        },
+        "rounding_tolerance": 3
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "base_unit-prior_q2_unit",
+            "reason": "受注残消化、数量・構成、価格効果の条件付き差",
+            "amount": 2130.768
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "base_board-prior_q2_board",
+            "reason": "受注回復と価格効果",
+            "amount": 699.6869999999999
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "base_filter-prior_q2_filter",
+            "reason": "FA回復と価格効果",
+            "amount": 240.58000000000004
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-prior_q2_prbx",
+            "reason": "連結除外と別建て残存販売を加算しない仮定",
+            "amount": -1185.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "none",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "base_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "base_unit-q1_unit",
+            "reason": "受注残消化と価格効果",
+            "amount": 964.768
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "base_board-q1_board",
+            "reason": "数量・構成と価格効果",
+            "amount": 314.6869999999999
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "base_filter-q1_filter",
+            "reason": "数量・構成と価格効果",
+            "amount": 79.58000000000004
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-q1_prbx",
+            "reason": "連結除外と残存販売の仮定",
+            "amount": -1226.0
+          }
+        ],
+        "residual": -2.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+          "description": "各製品表示額の合計は7812、連結合計は7814。"
+        },
+        "rounding_tolerance": 3
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "baseline_ref": "prior_q2_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "bull_unit-prior_q2_unit",
+            "reason": "受注残消化、数量・構成、価格効果の条件付き差",
+            "amount": 2404.2625
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "bull_board-prior_q2_board",
+            "reason": "受注回復と価格効果",
+            "amount": 814.2839999999997
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "bull_filter-prior_q2_filter",
+            "reason": "FA回復と価格効果",
+            "amount": 269.56000000000006
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-prior_q2_prbx",
+            "reason": "連結除外と別建て残存販売を加算しない仮定",
+            "amount": -1185.0
+          }
+        ],
+        "residual": 0.0,
+        "residual_formula": "yoy_revenue_residual",
+        "residual_type": "none",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "baseline_ref": "q1_revenue",
+        "forecast_ref": "bull_revenue",
+        "components": [
+          {
+            "label": "ユニット電源",
+            "formula": "bull_unit-q1_unit",
+            "reason": "受注残消化と価格効果",
+            "amount": 1238.2624999999998
+          },
+          {
+            "label": "オンボード電源",
+            "formula": "bull_board-q1_board",
+            "reason": "数量・構成と価格効果",
+            "amount": 429.28399999999965
+          },
+          {
+            "label": "ノイズフィルタ",
+            "formula": "bull_filter-q1_filter",
+            "reason": "数量・構成と価格効果",
+            "amount": 108.56000000000006
+          },
+          {
+            "label": "PRBX製品",
+            "formula": "forecast_prbx-q1_prbx",
+            "reason": "連結除外と残存販売の仮定",
+            "amount": -1226.0
+          }
+        ],
+        "residual": -2.0,
+        "residual_formula": "qoq_revenue_residual",
+        "residual_type": "rounding",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+        "rounding_evidence": {
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+          "description": "各製品表示額の合計は7812、連結合計は7814。"
+        },
+        "rounding_tolerance": 3
+      }
+    ],
+    "issues": [
+      "PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。",
+      "S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。",
+      "S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。",
+      "S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。",
+      "予測不足: base",
+      "予測不足: bear",
+      "予測不足: bull",
+      "会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。",
+      "基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。",
+      "増減要因エラー: Finite number required",
+      "売上・営業利益のYoY/QnQ増減説明不足",
+      "独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。",
+      "独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。",
+      "資料確認未了: subsequent_disclosures",
+      "重要仮定の裏付け未検証: bear_unit_volume",
+      "重要仮定の裏付け未検証: base_unit_volume",
+      "重要仮定の裏付け未検証: bull_unit_volume",
+      "重要仮定の裏付け未検証: bear_other_volume",
+      "重要仮定の裏付け未検証: base_other_volume",
+      "重要仮定の裏付け未検証: bull_other_volume",
+      "重要仮定の裏付け未検証: bear_price",
+      "重要仮定の裏付け未検証: base_price",
+      "重要仮定の裏付け未検証: bull_price",
+      "重要仮定の裏付け未検証: forecast_prbx",
+      "会社予想比較の条件: g_h1_revenue",
+      "会社予想比較の条件: g_h1_op",
+      "会社予想比較の条件: g_h1_ordinary",
+      "会社予想比較の条件: g_h1_net",
+      "会社予想比較の条件: g_fy_revenue",
+      "会社予想比較の条件: g_fy_op",
+      "会社予想比較の条件: g_fy_ordinary",
+      "会社予想比較の条件: g_fy_net",
+      "数量・構成6係数と価格3係数に採用数値の原文根拠がない。シナリオを会社が示した予測幅、統計的区間、検証済み中心値として扱えない。納期別受注残、出荷能力、価格改定対象と浸透率による係数設定根拠が必要。",
+      "PRBX項目のYoY-1185、QnQ-1226は製品別売上全額の除去であり、純粋な連結範囲変更額としては未検証。旧子会社の外部売上、残存会社のPRBX製品販売、旧内部取引の外部化を区別する必要がある。残存売上の金額を推測で加算する修正も認められない。",
+      "全シナリオの営業・経常・純利益が未算定。営業利益ブリッジのeconomic_unexplainedは未定量を表し、ゼロ残差でも全差額を数値把握した状態でもない。原価率、固定費、営業外損益、譲渡関連損益・税効果の積上げが必要。",
+      "Finite number requiredおよびNoneTypeの減算エラーは欠損値処理の問題であり、財務数値の重大な誤りを証明しない。独自予測欠損時は比較不能として保持し、会社差引参考値580・617・1525の算出と独自予測との比較処理を分離する。ゼロ補完は不可。",
+      "QnQの-2は製品表示額7812と連結7814の差で、百万円未満切捨てと整合する。前年累計製品合計11132とQ1製品合計5073は各連結合計より2小さく、差引で相殺するためYoY算術残差は0。会計基準変更による調整ではない。前年Q2直接表示6058・営業損失269と累計差引6059・営業損失270の1差も表示丸めと整合し、累計差引値を誤入力とは判定しない。",
+      "中間期4候補の期間・11月12日改定、通期4候補の9月18日改定・11月12日時点据置は本文で確認可能。これを原本照合未了や最新開示の網羅性と混同しない。会社予想との売上差は小さくても、採用係数や残存取引の妥当性は未証明。"
+    ],
+    "schedule_warnings": [],
+    "scenario_comparisons": {
+      "bear": {
+        "qoq": {
+          "revenue": {
+            "amount": -279.4504999999999,
+            "rate": -0.03576279754287176,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 1475.5495,
+            "rate": 0.24353020300379602,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "base": {
+        "qoq": {
+          "revenue": {
+            "amount": 131.03499999999985,
+            "rate": 0.016769260302021992,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 1886.0349999999999,
+            "rate": 0.31127826373989104,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      },
+      "bull": {
+        "qoq": {
+          "revenue": {
+            "amount": 548.1064999999999,
+            "rate": 0.07014416432045045,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        },
+        "yoy": {
+          "revenue": {
+            "amount": 2303.1065,
+            "rate": 0.38011330252516917,
+            "note": ""
+          },
+          "operating_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "ordinary_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          },
+          "net_profit": {
+            "amount": null,
+            "rate": null,
+            "note": "比較値なし"
+          }
+        }
+      }
+    },
+    "bridge_checks": [
+      {
+        "scenario": "bear",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 1475.5495,
+        "explained_sum": 1475.5494999999992,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 9.094947017729282e-13,
+        "status": "passed",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "bear",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": -279.4504999999999,
+        "explained_sum": -277.4505000000007,
+        "residual": -2.0,
+        "residual_type": "rounding",
+        "difference": 7.958078640513122e-13,
+        "status": "passed",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 1886.0349999999999,
+        "explained_sum": 1886.0349999999999,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 0.0,
+        "status": "passed",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "base",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 131.03499999999985,
+        "explained_sum": 133.03499999999997,
+        "residual": -2.0,
+        "residual_type": "rounding",
+        "difference": -1.1368683772161603e-13,
+        "status": "passed",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "yoy",
+        "metric": "revenue",
+        "expected_delta": 2303.1065,
+        "explained_sum": 2303.1064999999994,
+        "residual": 0.0,
+        "residual_type": "none",
+        "difference": 4.547473508864641e-13,
+        "status": "passed",
+        "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+      },
+      {
+        "scenario": "bull",
+        "comparison": "qoq",
+        "metric": "revenue",
+        "expected_delta": 548.1064999999999,
+        "explained_sum": 550.1064999999995,
+        "residual": -2.0,
+        "residual_type": "rounding",
+        "difference": 3.410605131648481e-13,
+        "status": "passed",
+        "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。"
+      }
+    ],
+    "conditions": [
+      "PRBX譲渡後の継続取引による外部売上と連結消去変化は未定量。",
+      "base_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比15%増とする。受注残の裏付けと中国生産ライン増強を条件とした仮定。S01 page 5。",
+      "base_price: S04 page 12の値上げ開始に基づく実効価格効果2%の条件付き仮定。製品別改定率と適用対象は非開示であり、精密な推定ではない。",
+      "base_unit_volume: ユニット電源の数量・構成指数を前Q比20%増とする。値上げ前売上は前Q末受注残を十分下回り、半導体製造装置需要の売上化と増産対応を条件とする。S01 pages 4、5、S04 page 13。",
+      "bear_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比10%増とする。両製品の受注残とFAの在庫消化を根拠とし、ユニット電源より慎重な売上化を仮定。S01 page 5、S04 page 3。",
+      "bear_price: S04 page 12の第2四半期からの値上げを、製品売上全体に対する実効価格効果1%として仮定。公表された改定率ではなく、既受注品への適用遅れを含む弱気条件。",
+      "bear_unit_volume: 前Qのユニット電源売上を基準とする数量・構成指数。半導体製造装置需要と受注残を背景に15%増を仮定するが、先行手配と部材制約から受注の急増率は売上に延長しない。S01 page 5、S04 pages 7、13に依拠。",
+      "bull_other_volume: オンボード電源とノイズフィルタの数量・構成指数を前Q比20%増とする。FA回復と受注残消化が円滑な場合を想定。S01 page 5、S04 page 3。",
+      "bull_price: 値上げの浸透が比較的早い場合に実効価格効果3%を仮定。S04 page 12。数量・構成指数にはこの価格効果を含めない。",
+      "bull_unit_volume: ユニット電源の数量・構成指数を前Q比25%増とする。旺盛な受注残の消化が進み、部材確保と増産が円滑な場合の上限側仮定。受注残全額の売上化は見込まない。S01 pages 4、5。",
+      "forecast_prbx: S01 page 12の第2四半期からの連結除外に従い、旧PRBX子会社の外部売上を追加しない。譲渡後の仕入販売継続はS09 page 13に記載されるが、独立したPRBX製品再販売額は不明のため別建て加算をゼロとする条件。",
+      "値上げ率、既受注品への適用条件、四半期内の浸透率は保存原文に非開示。",
+      "増産設備の能力、稼働日、追加費用および経費繰延額は保存原文に非開示。",
+      "対象四半期の為替実績と営業外損益、譲渡会計・税効果の詳細は未公表実績であり未確認。",
+      "製品別の出荷数量、平均単価、受注残の納期別内訳は保存原文に非開示。数量・構成指数は実数量ではない。"
+    ],
+    "sources": [
+      {
+        "id": "S01",
+        "title": "2027年5月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260917537642.pdf",
+        "published_at": "2026-09-18",
+        "category": "latest_results",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260917537642.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S01.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S01.txt",
+        "sha256": "b53e2af91146de7d4a0ce3d6d38f69a19a4b003fcafb93313c4b8990f13229eb",
+        "text_sha256": "29d125d3b44821591b61f810f8e62b347a185f04444458fde283a41bb441b764",
+        "retrieved_at": "2026-11-28T13:10:01+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12042,
+        "parser_version": 2
+      },
+      {
+        "id": "S02",
+        "title": "2026年5月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120251218522288.pdf",
+        "published_at": "2025-12-19",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120251218522288.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S02.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S02.txt",
+        "sha256": "1d6653f89e9a82318771ea99da8ccba531ef4556e34e286a71108d2c54e3b479",
+        "text_sha256": "3c56ff8de26b14e24a5f7b6c7dd48b9f05a858a7c01421e38bff9bc32e7a9213",
+        "retrieved_at": "2026-11-28T13:10:02+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 13297,
+        "parser_version": 2
+      },
+      {
+        "id": "S03",
+        "title": "2026年5月期 第1四半期決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120250918559256.pdf",
+        "published_at": "2025-09-19",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120250918559256.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S03.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S03.txt",
+        "sha256": "840754a78556d5a5867b8525846e1952b1a5d83b6998de1e90dcd0da6ac2fd45",
+        "text_sha256": "bf6233369f1fe648131487da4a4326c6f4cd977c3ac27c8b0f6b8ba16939da1a",
+        "retrieved_at": "2026-11-28T13:10:02+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 11550,
+        "parser_version": 2
+      },
+      {
+        "id": "S04",
+        "title": "2027年5月期 第1四半期決算説明資料（スクリプト付き、地域別売上・受注高・受注残高を含む）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260917537745.pdf",
+        "published_at": "2026-09-18",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260917537745.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S04.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S04.txt",
+        "sha256": "c44ba8b71cb2c984c439c922193cb231cd6b394b44314e18f2720e050c0bf879",
+        "text_sha256": "bc2ef63177b95b2c7fa1ceae921a94d40ce3a6c9a74e3861eb4ce9de56c95879",
+        "retrieved_at": "2026-11-28T13:10:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 12299,
+        "parser_version": 2
+      },
+      {
+        "id": "S05",
+        "title": "第2四半期（中間期）業績予想の修正に関するお知らせ",
+        "url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf",
+        "published_at": "2026-11-12",
+        "category": "guidance",
+        "final_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S05.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S05.txt",
+        "sha256": "1dbe29d54df341b4f5861298441fd269d871a06bac012db537a7c699647ed7f3",
+        "text_sha256": "0a8ea739bfbf6338ae6b94492ac92960b5bf8dcb15ff40e2801a837267c5ecfb",
+        "retrieved_at": "2026-11-28T13:10:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 1505,
+        "parser_version": 2
+      },
+      {
+        "id": "S06",
+        "title": "第2四半期（中間期）および通期業績予想の修正に関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260917537655.pdf",
+        "published_at": "2026-09-18",
+        "category": "guidance",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260917537655.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S06.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S06.txt",
+        "sha256": "b120c0e88d8399a6682246e9b5785468753a234425987c672ec125c78268a816",
+        "text_sha256": "ecd985cf8771b9899cffc999fa2594088f29739de1477ea292ef30159dd7dc9e",
+        "retrieved_at": "2026-11-28T13:10:03+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 2429,
+        "parser_version": 2
+      },
+      {
+        "id": "S07",
+        "title": "2026年5月期 第2四半期（上期）決算説明資料（スクリプト付き）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120251219522559.pdf",
+        "published_at": "2025-12-19",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120251219522559.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S07.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S07.txt",
+        "sha256": "12e94222278cde2c789db7f50d2a024b01df85980df17c91970c3b46ce9764cc",
+        "text_sha256": "0d9dc75aff894c9d904892538dd978c8f85bb0c29944d3d43dcde02cbad80819",
+        "retrieved_at": "2026-11-28T13:10:04+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 16987,
+        "parser_version": 2
+      },
+      {
+        "id": "S08",
+        "title": "2026年5月期 決算短信〔日本基準〕（連結）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260617572633.pdf",
+        "published_at": "2026-06-19",
+        "category": "historical",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260617572633.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S08.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S08.txt",
+        "sha256": "49bccbe037766db0412b745601bcbad466c10f54fb0589797736fe369c873e10",
+        "text_sha256": "f202f475f0cdbb21b8950622a982aeb37c87026b34169adfde0fcb41fa74292a",
+        "retrieved_at": "2026-11-28T13:10:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 21976,
+        "parser_version": 2
+      },
+      {
+        "id": "S09",
+        "title": "2026年5月期 通期決算説明資料（スクリプト付き）",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260619574494.pdf",
+        "published_at": "2026-06-19",
+        "category": "presentation",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260619574494.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S09.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S09.txt",
+        "sha256": "d8eccd26606c9ba6defe30576d768ea7ff0cba91c53799d98551fae002d8d2e1",
+        "text_sha256": "e0c939031141550223ab1724d40bfe794180389fd78a6c2cb75a6e7f428fbe21",
+        "retrieved_at": "2026-11-28T13:10:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 14696,
+        "parser_version": 2
+      },
+      {
+        "id": "S10",
+        "title": "（開示事項の経過）連結子会社の異動（株式譲渡）に関するお知らせ",
+        "url": "https://www2.jpx.co.jp/disc/69050/140120260901530154.pdf",
+        "published_at": "2026-09-02",
+        "category": "other",
+        "final_url": "https://www2.jpx.co.jp/disc/69050/140120260901530154.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S10.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S10.txt",
+        "sha256": "918befc15f581dea30d5e84168a006bf0d532bfbc4cb1fb7c6fab0c68c67ce04",
+        "text_sha256": "ba73c2aacc9b274881db7338123b90c24b3d10f9810cd64845d40a3e2e2f44ee",
+        "retrieved_at": "2026-11-28T13:10:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 723,
+        "parser_version": 2
+      },
+      {
+        "id": "S11",
+        "title": "自己株式立会外買付取引（ToSTNeT-3）による自己株式の取得結果及び取得終了に関するお知らせ",
+        "url": "https://japanir.jp/wp-content/uploads/2026/11/6905-20261113-01.pdf",
+        "published_at": "2026-11-13",
+        "category": "other",
+        "final_url": "https://japanir.jp/wp-content/uploads/2026/11/6905-20261113-01.pdf",
+        "status": "retrieved",
+        "path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S11.pdf",
+        "text_path": "C:\\Users\\takuy\\Documents\\Codex\\2026-11-18\\11\\work\\range-20261218-20261229-asof20261128-125944\\runs\\20261218\\companies\\6905\\sources\\S11.txt",
+        "sha256": "3af642ec259b80e748aea984acbe7868b50de99d3cbd9defab9e19797c179b09",
+        "text_sha256": "1301d31af76b3fe30dfbd69dc3b767a5db188bca8fb45932e6da1a461f06d9d4",
+        "retrieved_at": "2026-11-28T13:10:05+09:00",
+        "method": "public HTTP GET, no credentials",
+        "characters": 828,
+        "parser_version": 2
+      },
+      {
+        "id": "S12",
+        "title": "IRカレンダー",
+        "url": "https://www.cosel.com/ir/ircalendar/calendar/",
+        "published_at": "",
+        "category": "schedule",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:10:05+09:00"
+      },
+      {
+        "id": "S13",
+        "title": "株式基本情報",
+        "url": "https://www.cosel.com/ir/stock/info/",
+        "published_at": "",
+        "category": "identity",
+        "status": "unavailable",
+        "error": "Invalid isoformat string: 'T23:59:59+09:00'",
+        "retrieved_at": "2026-11-28T13:10:05+09:00"
+      }
+    ],
+    "model": {
+      "schema_version": "2.0",
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "announcement_date": "2026-12-18",
+      "as_of": "2026-11-28T12:59:44+09:00",
+      "period": {
+        "fiscal_year_end": "2027-05-20",
+        "quarter": 2,
+        "start": "2026-08-21",
+        "end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円"
+      },
+      "inputs": [
+        {
+          "id": "q1_revenue",
+          "value": 7814,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "q1_op",
+          "value": 545,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "q1_ordinary",
+          "value": 580,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "q1_net",
+          "value": 661,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 1、9"
+        },
+        {
+          "id": "prior_q1_revenue",
+          "value": 5075,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_q1_op",
+          "value": -389,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_q1_ordinary",
+          "value": -79,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_q1_net",
+          "value": -68,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_h1_revenue",
+          "value": 11134,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_h1_op",
+          "value": -659,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_h1_ordinary",
+          "value": 117,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "prior_h1_net",
+          "value": -6,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 9"
+        },
+        {
+          "id": "q1_unit",
+          "value": 4307,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 製品別売上高"
+        },
+        {
+          "id": "q1_board",
+          "value": 1819,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 製品別売上高"
+        },
+        {
+          "id": "q1_filter",
+          "value": 460,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 製品別売上高"
+        },
+        {
+          "id": "q1_prbx",
+          "value": 1226,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 製品別売上高"
+        },
+        {
+          "id": "unit_backlog",
+          "value": 8172,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 受注残高"
+        },
+        {
+          "id": "board_backlog",
+          "value": 4267,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 受注残高"
+        },
+        {
+          "id": "filter_backlog",
+          "value": 716,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5 受注残高"
+        },
+        {
+          "id": "prior_q1_unit",
+          "value": 2423,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_q1_board",
+          "value": 1232,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_q1_filter",
+          "value": 258,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_q1_prbx",
+          "value": 1160,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_h1_unit",
+          "value": 5564,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_h1_board",
+          "value": 2666,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_h1_filter",
+          "value": 557,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "prior_h1_prbx",
+          "value": 2345,
+          "kind": "fact",
+          "unit": "百万円",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF page 5"
+        },
+        {
+          "id": "guidance_h1_revenue",
+          "value": 15730,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 今回修正予想（B）"
+        },
+        {
+          "id": "guidance_h1_op",
+          "value": 1125,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 今回修正予想（B）"
+        },
+        {
+          "id": "guidance_h1_ordinary",
+          "value": 1197,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 今回修正予想（B）"
+        },
+        {
+          "id": "guidance_h1_net",
+          "value": 2186,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 今回修正予想（B）"
+        },
+        {
+          "id": "guidance_fy_revenue",
+          "value": 31800,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 通期据え置き"
+        },
+        {
+          "id": "guidance_fy_op",
+          "value": 2300,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 通期据え置き"
+        },
+        {
+          "id": "guidance_fy_ordinary",
+          "value": 2400,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 通期据え置き"
+        },
+        {
+          "id": "guidance_fy_net",
+          "value": 2600,
+          "kind": "company_guidance",
+          "unit": "百万円",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 通期据え置き"
+        },
+        {
+          "id": "bear_unit_volume",
+          "value": 1.15,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "前Qのユニット電源売上を基準とする数量・構成指数。半導体製造装置需要と受注残を背景に15%増を仮定するが、先行手配と部材制約から受注の急増率は売上に延長しない。S01 page 5、S04 pages 7、13に依拠。",
+          "sensitivity": "指数0.01の変化で値上げ前売上が43.07百万円変化。実数量の開示値ではない。",
+          "material": true
+        },
+        {
+          "id": "base_unit_volume",
+          "value": 1.2,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "ユニット電源の数量・構成指数を前Q比20%増とする。値上げ前売上は前Q末受注残を十分下回り、半導体製造装置需要の売上化と増産対応を条件とする。S01 pages 4、5、S04 page 13。",
+          "sensitivity": "指数0.01の変化で値上げ前売上が43.07百万円変化。納期後ずれで弱気側へ移行。",
+          "material": true
+        },
+        {
+          "id": "bull_unit_volume",
+          "value": 1.25,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "ユニット電源の数量・構成指数を前Q比25%増とする。旺盛な受注残の消化が進み、部材確保と増産が円滑な場合の上限側仮定。受注残全額の売上化は見込まない。S01 pages 4、5。",
+          "sensitivity": "指数0.01の変化で値上げ前売上が43.07百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bear_other_volume",
+          "value": 1.1,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比10%増とする。両製品の受注残とFAの在庫消化を根拠とし、ユニット電源より慎重な売上化を仮定。S01 page 5、S04 page 3。",
+          "sensitivity": "指数0.01の変化で値上げ前売上合計が22.79百万円変化。",
+          "material": true
+        },
+        {
+          "id": "base_other_volume",
+          "value": 1.15,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比15%増とする。受注残の裏付けと中国生産ライン増強を条件とした仮定。S01 page 5。",
+          "sensitivity": "指数0.01の変化で値上げ前売上合計が22.79百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bull_other_volume",
+          "value": 1.2,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比20%増とする。FA回復と受注残消化が円滑な場合を想定。S01 page 5、S04 page 3。",
+          "sensitivity": "指数0.01の変化で値上げ前売上合計が22.79百万円変化。",
+          "material": true
+        },
+        {
+          "id": "bear_price",
+          "value": 1.01,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "S04 page 12の第2四半期からの値上げを、製品売上全体に対する実効価格効果1%として仮定。公表された改定率ではなく、既受注品への適用遅れを含む弱気条件。",
+          "sensitivity": "実効価格効果1ポイントで値上げ前対象売上の1%だけ売上が変化。利益への全額転換は仮定しない。",
+          "material": true
+        },
+        {
+          "id": "base_price",
+          "value": 1.02,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "S04 page 12の値上げ開始に基づく実効価格効果2%の条件付き仮定。製品別改定率と適用対象は非開示であり、精密な推定ではない。",
+          "sensitivity": "実効価格効果1ポイントで値上げ前対象売上の1%だけ売上が変化。",
+          "material": true
+        },
+        {
+          "id": "bull_price",
+          "value": 1.03,
+          "kind": "assumption",
+          "unit": "倍",
+          "rationale": "値上げの浸透が比較的早い場合に実効価格効果3%を仮定。S04 page 12。数量・構成指数にはこの価格効果を含めない。",
+          "sensitivity": "実効価格効果1ポイントで値上げ前対象売上の1%だけ売上が変化。",
+          "material": true
+        },
+        {
+          "id": "forecast_prbx",
+          "value": 0,
+          "kind": "assumption",
+          "unit": "百万円",
+          "rationale": "S01 page 12の第2四半期からの連結除外に従い、旧PRBX子会社の外部売上を追加しない。譲渡後の仕入販売継続はS09 page 13に記載されるが、独立したPRBX製品再販売額は不明のため別建て加算をゼロとする条件。",
+          "sensitivity": "旧PRBX子会社除外と別に残存するPRBX製品販売が確認されれば、その連結外部売上分だけ予測を加算する。",
+          "material": true
+        }
+      ],
+      "calculations": [
+        {
+          "id": "prior_q2_revenue",
+          "formula": "prior_h1_revenue-prior_q1_revenue"
+        },
+        {
+          "id": "prior_q2_op",
+          "formula": "prior_h1_op-prior_q1_op"
+        },
+        {
+          "id": "prior_q2_ordinary",
+          "formula": "prior_h1_ordinary-prior_q1_ordinary"
+        },
+        {
+          "id": "prior_q2_net",
+          "formula": "prior_h1_net-prior_q1_net"
+        },
+        {
+          "id": "prior_q2_unit",
+          "formula": "prior_h1_unit-prior_q1_unit"
+        },
+        {
+          "id": "prior_q2_board",
+          "formula": "prior_h1_board-prior_q1_board"
+        },
+        {
+          "id": "prior_q2_filter",
+          "formula": "prior_h1_filter-prior_q1_filter"
+        },
+        {
+          "id": "prior_q2_prbx",
+          "formula": "prior_h1_prbx-prior_q1_prbx"
+        },
+        {
+          "id": "guidance_q2_revenue",
+          "formula": "guidance_h1_revenue-q1_revenue"
+        },
+        {
+          "id": "guidance_q2_op",
+          "formula": "guidance_h1_op-q1_op"
+        },
+        {
+          "id": "guidance_q2_ordinary",
+          "formula": "guidance_h1_ordinary-q1_ordinary"
+        },
+        {
+          "id": "guidance_q2_net",
+          "formula": "guidance_h1_net-q1_net"
+        },
+        {
+          "id": "bear_unit",
+          "formula": "q1_unit*bear_unit_volume*bear_price"
+        },
+        {
+          "id": "bear_board",
+          "formula": "q1_board*bear_other_volume*bear_price"
+        },
+        {
+          "id": "bear_filter",
+          "formula": "q1_filter*bear_other_volume*bear_price"
+        },
+        {
+          "id": "bear_revenue",
+          "formula": "bear_unit+bear_board+bear_filter+forecast_prbx"
+        },
+        {
+          "id": "base_unit",
+          "formula": "q1_unit*base_unit_volume*base_price"
+        },
+        {
+          "id": "base_board",
+          "formula": "q1_board*base_other_volume*base_price"
+        },
+        {
+          "id": "base_filter",
+          "formula": "q1_filter*base_other_volume*base_price"
+        },
+        {
+          "id": "base_revenue",
+          "formula": "base_unit+base_board+base_filter+forecast_prbx"
+        },
+        {
+          "id": "bull_unit",
+          "formula": "q1_unit*bull_unit_volume*bull_price"
+        },
+        {
+          "id": "bull_board",
+          "formula": "q1_board*bull_other_volume*bull_price"
+        },
+        {
+          "id": "bull_filter",
+          "formula": "q1_filter*bull_other_volume*bull_price"
+        },
+        {
+          "id": "bull_revenue",
+          "formula": "bull_unit+bull_board+bull_filter+forecast_prbx"
+        },
+        {
+          "id": "base_guidance_gap",
+          "formula": "base_revenue-guidance_q2_revenue"
+        },
+        {
+          "id": "qoq_revenue_residual",
+          "formula": "q1_unit+q1_board+q1_filter+q1_prbx-q1_revenue"
+        },
+        {
+          "id": "yoy_revenue_residual",
+          "formula": "prior_q2_unit+prior_q2_board+prior_q2_filter+prior_q2_prbx-prior_q2_revenue"
+        }
+      ],
+      "scenarios": {
+        "bear": {
+          "revenue": "bear_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ユニット電源（協業製品を含む）",
+              "revenue": "bear_unit"
+            },
+            {
+              "name": "オンボード電源（協業製品を含む）",
+              "revenue": "bear_board"
+            },
+            {
+              "name": "ノイズフィルタ",
+              "revenue": "bear_filter"
+            },
+            {
+              "name": "PRBX製品の別建て追加分",
+              "revenue": "forecast_prbx"
+            }
+          ]
+        },
+        "base": {
+          "revenue": "base_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ユニット電源（協業製品を含む）",
+              "revenue": "base_unit"
+            },
+            {
+              "name": "オンボード電源（協業製品を含む）",
+              "revenue": "base_board"
+            },
+            {
+              "name": "ノイズフィルタ",
+              "revenue": "base_filter"
+            },
+            {
+              "name": "PRBX製品の別建て追加分",
+              "revenue": "forecast_prbx"
+            }
+          ]
+        },
+        "bull": {
+          "revenue": "bull_revenue",
+          "operating_profit": null,
+          "ordinary_profit": null,
+          "net_profit": null,
+          "revenue_components": [
+            {
+              "name": "ユニット電源（協業製品を含む）",
+              "revenue": "bull_unit"
+            },
+            {
+              "name": "オンボード電源（協業製品を含む）",
+              "revenue": "bull_board"
+            },
+            {
+              "name": "ノイズフィルタ",
+              "revenue": "bull_filter"
+            },
+            {
+              "name": "PRBX製品の別建て追加分",
+              "revenue": "forecast_prbx"
+            }
+          ]
+        }
+      },
+      "cumulative_historicals": [
+        {
+          "fiscal_year_end": "2026-05-20",
+          "quarter": 1,
+          "period_start": "2025-05-21",
+          "period_end": "2025-08-20",
+          "revenue": 5075,
+          "operating_profit": -389,
+          "ordinary_profit": -79,
+          "net_profit": -68,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表累計版_PRBX含む_会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S03"
+          ],
+          "locator": "PDF pages 1、2、9"
+        },
+        {
+          "fiscal_year_end": "2026-05-20",
+          "quarter": 2,
+          "period_start": "2025-05-21",
+          "period_end": "2025-11-20",
+          "revenue": 11134,
+          "operating_profit": -659,
+          "ordinary_profit": 117,
+          "net_profit": -6,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2026公表累計版_PRBX含む_会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S02"
+          ],
+          "locator": "PDF pages 1、2、9"
+        },
+        {
+          "fiscal_year_end": "2027-05-20",
+          "quarter": 1,
+          "period_start": "2026-05-21",
+          "period_end": "2026-08-20",
+          "revenue": 7814,
+          "operating_profit": 545,
+          "ordinary_profit": 580,
+          "net_profit": 661,
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "accounting_version": "FY2027第1四半期公表版_PRBX含む_会計方針変更および修正再表示なし",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF pages 1、2、9、12"
+        }
+      ],
+      "quarterly_historicals": [],
+      "guidance_records": [
+        {
+          "id": "g_h1_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_h1_revenue",
+          "period_start": "2026-05-21",
+          "period_end": "2026-11-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 中間期連結今回修正予想"
+        },
+        {
+          "id": "g_h1_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_h1_op",
+          "period_start": "2026-05-21",
+          "period_end": "2026-11-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 中間期連結今回修正予想"
+        },
+        {
+          "id": "g_h1_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_h1_ordinary",
+          "period_start": "2026-05-21",
+          "period_end": "2026-11-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 中間期連結今回修正予想"
+        },
+        {
+          "id": "g_h1_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_h1_net",
+          "period_start": "2026-05-21",
+          "period_end": "2026-11-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-11-12",
+          "revision_status": "unverified",
+          "source_ids": [
+            "S05"
+          ],
+          "locator": "PDF page 1 親会社株主に帰属する中間純利益"
+        },
+        {
+          "id": "g_fy_revenue",
+          "metric": "revenue",
+          "value_ref": "guidance_fy_revenue",
+          "period_start": "2026-05-21",
+          "period_end": "2027-05-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-18",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載"
+        },
+        {
+          "id": "g_fy_op",
+          "metric": "operating_profit",
+          "value_ref": "guidance_fy_op",
+          "period_start": "2026-05-21",
+          "period_end": "2027-05-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-18",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載"
+        },
+        {
+          "id": "g_fy_ordinary",
+          "metric": "ordinary_profit",
+          "value_ref": "guidance_fy_ordinary",
+          "period_start": "2026-05-21",
+          "period_end": "2027-05-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-18",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載"
+        },
+        {
+          "id": "g_fy_net",
+          "metric": "net_profit",
+          "value_ref": "guidance_fy_net",
+          "period_start": "2026-05-21",
+          "period_end": "2027-05-20",
+          "accounting_basis": "日本基準",
+          "scope": "連結",
+          "unit": "百万円",
+          "published_at": "2026-09-18",
+          "revision_status": "latest_confirmed",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1 親会社株主に帰属する当期純利益、S05 PDF page 1 据え置き記載"
+        }
+      ],
+      "drivers": [
+        {
+          "name": "半導体製造装置向け受注の売上化",
+          "mechanism": "生成AI用メモリー製造装置向けの受注増と受注残がユニット電源を中心に出荷を支える。先行手配を含むため受注の伸びをそのまま売上へ延長しない。",
+          "source_ids": [
+            "S01",
+            "S04"
+          ],
+          "locator": "S01 pages 4、5、S04 pages 7、8、13",
+          "calculation_ids": [
+            "bear_unit",
+            "base_unit",
+            "bull_unit"
+          ],
+          "not_quantified_reason": "納期別受注残と製品数量は非開示。数量・構成を一体とした条件付き指数を使用。"
+        },
+        {
+          "name": "価格転嫁と新製品構成",
+          "mechanism": "第2四半期からの値上げが売上単価を押し上げる。協業製品は既にコーセル製品区分に含まれるため独立した売上上乗せを行わない。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S07"
+          ],
+          "locator": "S01 page 5 注記、S04 page 12、S07 page 17",
+          "calculation_ids": [
+            "base_revenue"
+          ],
+          "not_quantified_reason": "製品別値上げ率、適用割合、新旧製品別限界利益率は非開示。価格効果は感応度仮定。"
+        },
+        {
+          "name": "PRBX連結除外",
+          "mechanism": "旧子会社の売上と営業損失が連結から外れる一方、販売・仕入取引は継続する。欧州セグメント全体の営業損失を除外効果として扱うことはできない。",
+          "source_ids": [
+            "S01",
+            "S09",
+            "S10"
+          ],
+          "locator": "S01 pages 11、12、S09 page 13、S10 page 1",
+          "calculation_ids": [
+            "base_revenue"
+          ],
+          "not_quantified_reason": "連結消去後のPRBX単独営業損益と残存取引額が対象四半期の推計に十分な形では開示されていない。"
+        },
+        {
+          "name": "操業度、材料費、経費発生時期",
+          "mechanism": "増産で固定費吸収が改善する一方、材料高、人件費、設備稼働に伴う費用が利益を左右する。会社の直近修正は操業度改善と経費発生時期を既に含む。",
+          "source_ids": [
+            "S01",
+            "S04",
+            "S05",
+            "S09"
+          ],
+          "locator": "S01 pages 5、7、12、S04 page 6、S05 page 1、S09 page 25",
+          "calculation_ids": [
+            "guidance_q2_op"
+          ],
+          "not_quantified_reason": "残存事業の原価・固定費、経費繰延額、設備別稼働日が不明。会社予想に合わせた費用逆算を避け、独自営業利益はnull。"
+        }
+      ],
+      "bridges": [
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "bear_unit-prior_q2_unit",
+              "reason": "受注残消化、数量・構成、価格効果の条件付き差"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "bear_board-prior_q2_board",
+              "reason": "受注回復と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "bear_filter-prior_q2_filter",
+              "reason": "FA回復と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-prior_q2_prbx",
+              "reason": "連結除外と別建て残存販売を加算しない仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "none",
+          "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "bear_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "bear_unit-q1_unit",
+              "reason": "受注残消化と価格効果"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "bear_board-q1_board",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "bear_filter-q1_filter",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-q1_prbx",
+              "reason": "連結除外と残存販売の仮定"
+            }
+          ],
+          "residual": -2,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+            "description": "各製品表示額の合計は7812、連結合計は7814。"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "bear",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増収・価格転嫁・PRBX除外・材料費・固定費の純効果を独立に積み上げられず、全差額を未定量の残差として残す。"
+        },
+        {
+          "scenario": "bear",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "PRBX除外後の原価構造と経費発生時期が不明で、前Qからの全差額が未定量。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "base_unit-prior_q2_unit",
+              "reason": "受注残消化、数量・構成、価格効果の条件付き差"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "base_board-prior_q2_board",
+              "reason": "受注回復と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "base_filter-prior_q2_filter",
+              "reason": "FA回復と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-prior_q2_prbx",
+              "reason": "連結除外と別建て残存販売を加算しない仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "none",
+          "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "base_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "base_unit-q1_unit",
+              "reason": "受注残消化と価格効果"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "base_board-q1_board",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "base_filter-q1_filter",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-q1_prbx",
+              "reason": "連結除外と残存販売の仮定"
+            }
+          ],
+          "residual": -2,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+            "description": "各製品表示額の合計は7812、連結合計は7814。"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "base",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "売上回復による増益方向は確認できるが、限界利益率と連結除外・固定費変動を分離できず、全差額が未定量。"
+        },
+        {
+          "scenario": "base",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "会社予想差引値を独自積上げへ置換せず、原価・経費・除外効果の全差額を未定量として残す。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "revenue",
+          "baseline_ref": "prior_q2_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "bull_unit-prior_q2_unit",
+              "reason": "受注残消化、数量・構成、価格効果の条件付き差"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "bull_board-prior_q2_board",
+              "reason": "受注回復と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "bull_filter-prior_q2_filter",
+              "reason": "FA回復と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-prior_q2_prbx",
+              "reason": "連結除外と別建て残存販売を加算しない仮定"
+            }
+          ],
+          "residual": 0,
+          "residual_formula": "yoy_revenue_residual",
+          "residual_type": "none",
+          "residual_explanation": "製品別累計差引の合計が比較基準と一致。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "revenue",
+          "baseline_ref": "q1_revenue",
+          "forecast_ref": "bull_revenue",
+          "components": [
+            {
+              "label": "ユニット電源",
+              "formula": "bull_unit-q1_unit",
+              "reason": "受注残消化と価格効果"
+            },
+            {
+              "label": "オンボード電源",
+              "formula": "bull_board-q1_board",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "ノイズフィルタ",
+              "formula": "bull_filter-q1_filter",
+              "reason": "数量・構成と価格効果"
+            },
+            {
+              "label": "PRBX製品",
+              "formula": "forecast_prbx-q1_prbx",
+              "reason": "連結除外と残存販売の仮定"
+            }
+          ],
+          "residual": -2,
+          "residual_formula": "qoq_revenue_residual",
+          "residual_type": "rounding",
+          "residual_explanation": "前Qの製品別表示額合計と連結売上高の差。",
+          "rounding_evidence": {
+            "source_ids": [
+              "S01"
+            ],
+            "locator": "PDF page 1 百万円未満切捨て、page 5 製品別売上高",
+            "description": "各製品表示額の合計は7812、連結合計は7814。"
+          },
+          "rounding_tolerance": 3
+        },
+        {
+          "scenario": "bull",
+          "comparison": "yoy",
+          "metric": "operating_profit",
+          "baseline_ref": "prior_q2_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "増産時の材料調達費、追加人件費、固定費吸収と除外効果の金額を根拠ある範囲へ限定できず、全差額が未定量。"
+        },
+        {
+          "scenario": "bull",
+          "comparison": "qoq",
+          "metric": "operating_profit",
+          "baseline_ref": "q1_op",
+          "forecast_ref": null,
+          "components": [],
+          "residual": null,
+          "residual_type": "economic_unexplained",
+          "residual_explanation": "強い出荷が利益へ転換する比率と経費時期が不明のため、全差額を未定量として残す。"
+        }
+      ],
+      "company_guidance": "S05の中間期修正予想からS01の第1四半期実績を差し引いた参考値をguidance_q2_revenue、guidance_q2_op、guidance_q2_ordinary、guidance_q2_netに保存した。これは会社が直接開示した四半期単独予想でも確定実績でもなく、公表累計予想の差引推計。修正日は対象四半期終了前であり、期後修正ではない。PRBX除外、操業度改善、経費発生時期、譲渡会計・税効果は修正予想に包含され、追加加算しない。S05転載本文の原本同一性は未確認のため中間期guidance_recordsをunverifiedとした。通期は保存資料内で据え置きが確認できるが、開示の完全性までは確認できない。",
+      "consensus": "未確認。提示された保存資料に公表市場コンセンサスは含まれていない。",
+      "independent_forecast": "売上のみ、前Qの製品別実績を出発点として、受注残と事業別需要を踏まえた数量・構成指数、値上げ浸透仮定、PRBX連結除外を積み上げた条件付き予測。会社予想の四等分や前年比の一律延長ではない。仮定幅は統計的な信頼区間ではなく、前Q末受注残に対して無理のない出荷水準を置いた感応度分析である。会社予想差引は外部照合値として別管理し、独自利益は残存事業の費用構造を限定できないためnullとする。",
+      "narrative": [
+        {
+          "heading": "対象四半期の売上",
+          "text": "中心売上は{{value:base_revenue}}、弱気は{{value:bear_revenue}}、強気は{{value:bull_revenue}}。半導体製造装置向け受注残の消化、FA関連の回復、値上げが支える。一方、PRBX連結除外が報告売上を押し下げる。数量・構成と価格の仮定は別建てであり、新製品・協業効果をさらに上乗せしていない。"
+        },
+        {
+          "heading": "会社予想との照合",
+          "text": "直近公表累計予想の差引による対象四半期売上は{{value:guidance_q2_revenue}}、営業利益は{{value:guidance_q2_op}}、経常利益は{{value:guidance_q2_ordinary}}、親会社株主帰属純利益は{{value:guidance_q2_net}}。中心売上との差は{{value:base_guidance_gap}}。これらの利益値は会社予想からの差引であり、独自予測としては採用していない。"
+        },
+        {
+          "heading": "利益と比較の制約",
+          "text": "利益改善の方向は、稼働率上昇、価格転嫁、赤字子会社の連結除外で説明できる。ただし、残存事業の限界利益率、固定費、経費発生時期を定量分離できない。純利益には譲渡会計と税効果が含まれ、通常税率を機械的に適用できない。前年同Qは同一会計版の累計差引を用い、売上{{value:prior_q2_revenue}}、営業利益{{value:prior_q2_op}}を全シナリオ共通の基準とした。"
+        }
+      ],
+      "coverage": {
+        "identity": "reviewed",
+        "schedule": "reviewed",
+        "latest_results": "reviewed",
+        "presentation": "reviewed",
+        "company_guidance": "reviewed",
+        "historical": "reviewed",
+        "segments_kpi": "reviewed",
+        "subsequent_disclosures": "unknown",
+        "already_announced": "reviewed"
+      },
+      "target_already_announced": false,
+      "conditional_unknowns": [
+        "製品別の出荷数量、平均単価、受注残の納期別内訳は保存原文に非開示。数量・構成指数は実数量ではない。",
+        "値上げ率、既受注品への適用条件、四半期内の浸透率は保存原文に非開示。",
+        "増産設備の能力、稼働日、追加費用および経費繰延額は保存原文に非開示。",
+        "PRBX譲渡後の継続取引による外部売上と連結消去変化は未定量。",
+        "対象四半期の為替実績と営業外損益、譲渡会計・税効果の詳細は未公表実績であり未確認。"
+      ],
+      "material_unresolved": [
+        "独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。",
+        "独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。",
+        "PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。",
+        "S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。",
+        "S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。",
+        "S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。",
+        "会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。",
+        "S12・S13は資料一覧と発見情報のみで保存原文がない。決算予定日は保存本文のあるS05 page 1でも確認できる。",
+        "基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。"
+      ],
+      "_truncated_source_ids": []
+    },
+    "machine_passed": false,
+    "economic_review": "独立AIレビュー実施。実施と通過は別管理。",
+    "old_operating_profit": null,
+    "review_executed": true,
+    "review_passed": false,
+    "review_fully_verified": false,
+    "review_counts": {
+      "Critical": 1,
+      "High": 17,
+      "Medium": 19,
+      "Low": 1
+    },
+    "material_assumption_count": 10,
+    "schedule_check": {
+      "input_date": "2026-12-18",
+      "official_date": "2026-12-18",
+      "declared_verified": true,
+      "verified": false,
+      "evidence": "公式IRカレンダーに「2026/12/18 2027年5月期第2四半期決算発表」と記載。https://www.cosel.com/ir/ircalendar/calendar/ 。2026年11月12日の業績予想修正資料本文にも同日の中間期決算発表予定を記載。https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf",
+      "warnings": []
+    },
+    "revision_reason": "確認できた入力・算式の誤りによる予測修正なし。未検証仮定を恣意的に置き換えていない。",
+    "guidance_comparisons": [
+      {
+        "id": "g_h1_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_h1_revenue",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": true,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証"
+        ],
+        "implied_quarter": 7916.0,
+        "forecast": 7945.035,
+        "company_cumulative_forecast": 15730.0,
+        "actual_cumulative": 7814,
+        "actual_source_ids": [
+          "S01"
+        ],
+        "difference": 29.034999999999854,
+        "relative_difference": 0.0036678878221323716,
+        "large_gap": false,
+        "explanation_status": "未検証",
+        "independent_review": {
+          "id": "g_h1_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "unexplained",
+          "reason": "提示S05本文で2026年5月21日～11月20日の連結予想と11月12日改定を確認。Q1控除後7916に対し弱気-381.4505、中心+29.035、強気+446.1065。差額は算術的に正しいが、会社側の数量・価格前提との対応がなく経済的な乖離説明は未成立。近接自体は妥当性の証拠ではない。revision_confirmedは提示本文内の改定確認であり、原本同一性・後続開示の網羅性を保証しない。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "2027 年5 月期第2 四半期（中間期）連結業績予想の修正（2026 年5 月21 日～2026 年11 月20 日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_h1_op",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定1125からQ1の545を控除した580は正しい参考値。独自利益がnullのため乖離比較は成立しない。原本照合・最新性網羅確認は別途未了。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_h1_ordinary",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定1197からQ1の580を控除した617は正しい参考値。独自経常利益がnullで乖離評価対象なし。原本同一性と後続訂正の有無は未確認。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_h1_net",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 親会社株主に帰属する中間純利益",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_net",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定2186からQ1の661を控除した1525は正しい参考値。譲渡会計・税効果を含み、営業利益に通常税率を適用した値ではない。独自純利益がnullで乖離評価対象なし。原本同一性・最新性の確認限界は残る。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "の株式譲渡に伴う会計処理および税効果会計の影響について精査を進めた結果"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_fy_revenue",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 7945.035,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S06の9月18日通期改定31800とS05の11月12日時点据置を提示本文内で確認。通期期間は確認できるが、Q1控除後はQ2～Q4であり対象Q2単独と不一致。最新性確認は提示資料内に限定される。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "2027年５月期通期連結業績予想の修正（2026年５月21日～2027年５月20日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_fy_op",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2300と11月12日時点据置を確認。対象期間は通期でQ2単独との比較には使えない。中間期上方修正後も通期据置であるため、旧下期予想1330を最新中間期予想へ足すこともできない。原本照合と後続開示の網羅性は未確認。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_fy_ordinary",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2400と11月12日時点据置を提示本文で確認。通期からQ1を引いた残期間は対象Q2と一致しない。独自経常利益も未算定。基準日時までの全開示確認を意味しない。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_fy_net",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 親会社株主に帰属する当期純利益、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_net",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2600と11月12日時点据置を提示本文で確認。中間期2186との差414は下期の差引参考値であり、対象Q2予想ではない。独自純利益との乖離比較はできない。転載原本照合と後続開示網羅性は未確認。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      }
+    ],
+    "historical_selections": []
+  },
+  "review": {
+    "executed": true,
+    "reviewer_verdict": "保留",
+    "quality": "保留",
+    "passed": false,
+    "fully_verified": false,
+    "warnings": [
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: base"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bear"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "予測不足: bull"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。"
+      },
+      {
+        "severity": "Critical",
+        "category": "machine",
+        "message": "増減要因エラー: Finite number required"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "売上・営業利益のYoY/QnQ増減説明不足"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。"
+      },
+      {
+        "severity": "Medium",
+        "category": "machine",
+        "message": "独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。"
+      },
+      {
+        "severity": "High",
+        "category": "machine",
+        "message": "資料確認未了: subsequent_disclosures"
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_unit_volume",
+        "assumption_id": "bear_unit_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_unit_volume",
+        "assumption_id": "base_unit_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_unit_volume",
+        "assumption_id": "bull_unit_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_other_volume",
+        "assumption_id": "bear_other_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_other_volume",
+        "assumption_id": "base_other_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_other_volume",
+        "assumption_id": "bull_other_volume",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bear_price",
+        "assumption_id": "bear_price",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: base_price",
+        "assumption_id": "base_price",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: bull_price",
+        "assumption_id": "bull_price",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "High",
+        "category": "material_assumption",
+        "message": "重要仮定の裏付け未検証: forecast_prbx",
+        "assumption_id": "forecast_prbx",
+        "absolute_effect": null,
+        "relative_effect": null
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_h1_revenue",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_h1_op",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_h1_ordinary",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_h1_net",
+        "details": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_fy_revenue",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_fy_op",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_fy_ordinary",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance_metadata",
+        "message": "会社予想比較の条件: g_fy_net",
+        "details": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ]
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "数量・構成6係数と価格3係数に採用数値の原文根拠がない。シナリオを会社が示した予測幅、統計的区間、検証済み中心値として扱えない。納期別受注残、出荷能力、価格改定対象と浸透率による係数設定根拠が必要。",
+        "source_ids": [
+          "S04"
+        ],
+        "locator": "PDF pages 12、13",
+        "evidence_excerpt": "2Q以降は調整が入るが、通期では過熱感なく安定した受注が継続する見通し",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "assumption",
+        "message": "PRBX項目のYoY-1185、QnQ-1226は製品別売上全額の除去であり、純粋な連結範囲変更額としては未検証。旧子会社の外部売上、残存会社のPRBX製品販売、旧内部取引の外部化を区別する必要がある。残存売上の金額を推測で加算する修正も認められない。",
+        "source_ids": [
+          "S01",
+          "S09"
+        ],
+        "locator": "S01 PDF page 5；S09 PDF page 13",
+        "evidence_excerpt": "譲渡後も製品販売・仕入取引等を継続",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "High",
+        "category": "residual",
+        "message": "全シナリオの営業・経常・純利益が未算定。営業利益ブリッジのeconomic_unexplainedは未定量を表し、ゼロ残差でも全差額を数値把握した状態でもない。原価率、固定費、営業外損益、譲渡関連損益・税効果の積上げが必要。",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1；model.scenarios・bridges",
+        "evidence_excerpt": "今後の材料価格の動向や一部経費の発生時期、グループ各社の業績見通し等",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "other",
+        "message": "Finite number requiredおよびNoneTypeの減算エラーは欠損値処理の問題であり、財務数値の重大な誤りを証明しない。独自予測欠損時は比較不能として保持し、会社差引参考値580・617・1525の算出と独自予測との比較処理を分離する。ゼロ補完は不可。",
+        "source_ids": [
+          "S01",
+          "S05"
+        ],
+        "locator": "S01 PDF page 9；S05 PDF page 1；recalculation.errors・company_guidance_comparisons",
+        "evidence_excerpt": "今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Low",
+        "category": "residual",
+        "message": "QnQの-2は製品表示額7812と連結7814の差で、百万円未満切捨てと整合する。前年累計製品合計11132とQ1製品合計5073は各連結合計より2小さく、差引で相殺するためYoY算術残差は0。会計基準変更による調整ではない。前年Q2直接表示6058・営業損失269と累計差引6059・営業損失270の1差も表示丸めと整合し、累計差引値を誤入力とは判定しない。",
+        "source_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S07"
+        ],
+        "locator": "S01～S03 PDF pages 1、5；S02・S03 PDF page 9；S07 PDF pages 4、24",
+        "evidence_excerpt": "（百万円未満切捨て）",
+        "origin": "independent_ai",
+        "citation_verified": true
+      },
+      {
+        "severity": "Medium",
+        "category": "guidance",
+        "message": "中間期4候補の期間・11月12日改定、通期4候補の9月18日改定・11月12日時点据置は本文で確認可能。これを原本照合未了や最新開示の網羅性と混同しない。会社予想との売上差は小さくても、採用係数や残存取引の妥当性は未証明。",
+        "source_ids": [
+          "S05",
+          "S06"
+        ],
+        "locator": "S05・S06 PDF page 1",
+        "evidence_excerpt": "2026 年 9 月 18 日に公表しました2027 年 5 月期の第 2 四半期（中間期）の業績予想につきまして、下記のとおり\n修正しましたので、お知らせいたします。",
+        "origin": "independent_ai",
+        "citation_verified": true
+      }
+    ],
+    "counts": {
+      "Critical": 1,
+      "High": 17,
+      "Medium": 19,
+      "Low": 1
+    },
+    "assumptions": [
+      {
+        "id": "bear_unit_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.15,
+        "unit": "倍",
+        "rationale": "前Qのユニット電源売上を基準とする数量・構成指数。半導体製造装置需要と受注残を背景に15%増を仮定するが、先行手配と部材制約から受注の急増率は売上に延長しない。S01 page 5、S04 pages 7、13に依拠。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 1,
+        "independent_review": {
+          "id": "bear_unit_volume",
+          "status": "unsupported",
+          "reason": "需要回復は確認できるが、前Q比15%という数量・構成増加率の裏付けはない。受注の先行手配分と対象四半期の出荷を区別する資料が必要。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 13",
+          "evidence_excerpt": "顧客の先行手配による受注急増といった状況となりました。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_unit_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.2,
+        "unit": "倍",
+        "rationale": "ユニット電源の数量・構成指数を前Q比20%増とする。値上げ前売上は前Q末受注残を十分下回り、半導体製造装置需要の売上化と増産対応を条件とする。S01 pages 4、5、S04 page 13。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 2,
+        "independent_review": {
+          "id": "base_unit_volume",
+          "status": "unsupported",
+          "reason": "受注残8172は確認できるが、20%増の出荷を保証する納期別残高・生産能力の開示はない。受注残以下という条件は採用係数の証明にならない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5",
+          "evidence_excerpt": "ユニット電源 7,357 219.2％ 8,172 144.3％"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_unit_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.25,
+        "unit": "倍",
+        "rationale": "ユニット電源の数量・構成指数を前Q比25%増とする。旺盛な受注残の消化が進み、部材確保と増産が円滑な場合の上限側仮定。受注残全額の売上化は見込まない。S01 pages 4、5。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 3,
+        "independent_review": {
+          "id": "bull_unit_volume",
+          "status": "unsupported",
+          "reason": "25%増を上限側とする根拠や実現能力の検証がない。原文は供給懸念も示しており、受注増だけで出荷率を設定できない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 4",
+          "evidence_excerpt": "急速な需要拡大によりメモリやプリント基板等の供給懸念"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_other_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.1,
+        "unit": "倍",
+        "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比10%増とする。両製品の受注残とFAの在庫消化を根拠とし、ユニット電源より慎重な売上化を仮定。S01 page 5、S04 page 3。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 4,
+        "independent_review": {
+          "id": "bear_other_volume",
+          "status": "unsupported",
+          "reason": "FA回復という方向性は支持されるが、オンボードとフィルタに共通の10%増を適用する定量根拠はない。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 3",
+          "evidence_excerpt": "FA関連を中心に、顧客の在庫消化が進み回復"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_other_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.15,
+        "unit": "倍",
+        "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比15%増とする。受注残の裏付けと中国生産ライン増強を条件とした仮定。S01 page 5。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 5,
+        "independent_review": {
+          "id": "base_other_volume",
+          "status": "unsupported",
+          "reason": "中国生産ラインの増強は確認できるが、増産能力・稼働時期・製品配分を示さず、両製品共通の15%増を裏付けない。",
+          "source_ids": [
+            "S01"
+          ],
+          "locator": "PDF page 5",
+          "evidence_excerpt": "「ＦＤＡシリーズ」４モデル及び「ＰＪＡシリーズ」３モデルの生産ラインの整備・増強\nを実施いたしました。"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_other_volume",
+        "category": "数量・単価",
+        "adopted_value": 1.2,
+        "unit": "倍",
+        "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比20%増とする。FA回復と受注残消化が円滑な場合を想定。S01 page 5、S04 page 3。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 6,
+        "independent_review": {
+          "id": "bull_other_volume",
+          "status": "unsupported",
+          "reason": "受注回復は確認できるが、20%増という数量・構成指数、両製品の同率成長、強気側の上限設定を支持する数値はない。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 3",
+          "evidence_excerpt": "FA関連は、顧客の在庫消化に加え、AI関連需要増により堅調に推移"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bear_price",
+        "category": "数量・単価",
+        "adopted_value": 1.01,
+        "unit": "倍",
+        "rationale": "S04 page 12の第2四半期からの値上げを、製品売上全体に対する実効価格効果1%として仮定。公表された改定率ではなく、既受注品への適用遅れを含む弱気条件。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 7,
+        "independent_review": {
+          "id": "bear_price",
+          "status": "unsupported",
+          "reason": "Q2からの値上げは確認できるが、改定率・対象売上・適用時期が不明であり、実効1%は裏付けられない。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 12",
+          "evidence_excerpt": "今期２Qからの製品の値上げ効\n果"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "base_price",
+        "category": "数量・単価",
+        "adopted_value": 1.02,
+        "unit": "倍",
+        "rationale": "S04 page 12の値上げ開始に基づく実効価格効果2%の条件付き仮定。製品別改定率と適用対象は非開示であり、精密な推定ではない。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 8,
+        "independent_review": {
+          "id": "base_price",
+          "status": "unsupported",
+          "reason": "値上げ開始の一般的説明は実効2%の証拠にならない。協業製品を含む対象3区分への一律適用も未確認。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 12",
+          "evidence_excerpt": "今期２Qからの製品の値上げ効\n果"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "bull_price",
+        "category": "数量・単価",
+        "adopted_value": 1.03,
+        "unit": "倍",
+        "rationale": "値上げの浸透が比較的早い場合に実効価格効果3%を仮定。S04 page 12。数量・構成指数にはこの価格効果を含めない。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 9,
+        "independent_review": {
+          "id": "bull_price",
+          "status": "unsupported",
+          "reason": "浸透が早い場合に実効3%となる計算根拠はない。数量・構成指数から価格を除いたというモデル上の宣言だけでは、実際の効果分離を証明できない。",
+          "source_ids": [
+            "S04"
+          ],
+          "locator": "PDF page 12",
+          "evidence_excerpt": "今期２Qからの製品の値上げ効\n果"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "forecast_prbx",
+        "category": "連結・事業売却",
+        "adopted_value": 0,
+        "unit": "百万円",
+        "rationale": "S01 page 12の第2四半期からの連結除外に従い、旧PRBX子会社の外部売上を追加しない。譲渡後の仕入販売継続はS09 page 13に記載されるが、独立したPRBX製品再販売額は不明のため別建て加算をゼロとする条件。",
+        "source_ids": [],
+        "context_source_ids": [],
+        "locator": "",
+        "support_status": "未検証",
+        "alternative_scenarios": [],
+        "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+        "max_absolute_profit_change": null,
+        "relative_to_forecast_profit": null,
+        "near_zero_profit": false,
+        "material": true,
+        "affects_base_profit": false,
+        "declared_material": true,
+        "sensitivity_material": false,
+        "sensitivity_status": "forecast_unavailable",
+        "sensitivity_constraint": null,
+        "priority": 10,
+        "independent_review": {
+          "id": "forecast_prbx",
+          "status": "unsupported",
+          "reason": "旧子会社の連結除外は支持されるが、継続する仕入販売の外部売上、既存製品区分への包含、消去解除の影響は不明。別建て加算ゼロを支持する数値はない。ただし継続取引の存在だけで別建て額が必ず正になるとも断定できず、contradictedとはしない。",
+          "source_ids": [
+            "S01",
+            "S09",
+            "S10"
+          ],
+          "locator": "S01 PDF page 12；S09 PDF page 13；S10 PDF page 1",
+          "evidence_excerpt": "譲渡後も製品販売・仕入取引等を継続"
+        },
+        "citation_verified": true
+      }
+    ],
+    "guidance": [
+      {
+        "id": "g_h1_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_h1_revenue",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": true,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証"
+        ],
+        "implied_quarter": 7916.0,
+        "forecast": 7945.035,
+        "company_cumulative_forecast": 15730.0,
+        "actual_cumulative": 7814,
+        "actual_source_ids": [
+          "S01"
+        ],
+        "difference": 29.034999999999854,
+        "relative_difference": 0.0036678878221323716,
+        "large_gap": false,
+        "explanation_status": "未検証",
+        "independent_review": {
+          "id": "g_h1_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "unexplained",
+          "reason": "提示S05本文で2026年5月21日～11月20日の連結予想と11月12日改定を確認。Q1控除後7916に対し弱気-381.4505、中心+29.035、強気+446.1065。差額は算術的に正しいが、会社側の数量・価格前提との対応がなく経済的な乖離説明は未成立。近接自体は妥当性の証拠ではない。revision_confirmedは提示本文内の改定確認であり、原本同一性・後続開示の網羅性を保証しない。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "2027 年5 月期第2 四半期（中間期）連結業績予想の修正（2026 年5 月21 日～2026 年11 月20 日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_h1_op",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定1125からQ1の545を控除した580は正しい参考値。独自利益がnullのため乖離比較は成立しない。原本照合・最新性網羅確認は別途未了。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_h1_ordinary",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 中間期連結今回修正予想",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定1197からQ1の580を控除した617は正しい参考値。独自経常利益がnullで乖離評価対象なし。原本同一性と後続訂正の有無は未確認。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_h1_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_h1_net",
+        "period_start": "2026-05-21",
+        "period_end": "2026-11-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-11-12",
+        "revision_status": "unverified",
+        "source_ids": [
+          "S05"
+        ],
+        "locator": "PDF page 1 親会社株主に帰属する中間純利益",
+        "eligible": false,
+        "warnings": [
+          "予想改定・据置の最新確認状態が未検証",
+          "unsupported operand type(s) for -: 'NoneType' and 'float'"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_h1_net",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S05本文の11月12日中間期改定2186からQ1の661を控除した1525は正しい参考値。譲渡会計・税効果を含み、営業利益に通常税率を適用した値ではない。独自純利益がnullで乖離評価対象なし。原本同一性・最新性の確認限界は残る。",
+          "source_ids": [
+            "S05",
+            "S01"
+          ],
+          "locator": "S05 PDF page 1；S01 PDF page 9",
+          "evidence_excerpt": "の株式譲渡に伴う会計処理および税効果会計の影響について精査を進めた結果"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_revenue",
+        "metric": "revenue",
+        "value_ref": "guidance_fy_revenue",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": 7945.035,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_revenue",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "S06の9月18日通期改定31800とS05の11月12日時点据置を提示本文内で確認。通期期間は確認できるが、Q1控除後はQ2～Q4であり対象Q2単独と不一致。最新性確認は提示資料内に限定される。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "2027年５月期通期連結業績予想の修正（2026年５月21日～2027年５月20日）"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_op",
+        "metric": "operating_profit",
+        "value_ref": "guidance_fy_op",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_op",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2300と11月12日時点据置を確認。対象期間は通期でQ2単独との比較には使えない。中間期上方修正後も通期据置であるため、旧下期予想1330を最新中間期予想へ足すこともできない。原本照合と後続開示の網羅性は未確認。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_ordinary",
+        "metric": "ordinary_profit",
+        "value_ref": "guidance_fy_ordinary",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_ordinary",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2400と11月12日時点据置を提示本文で確認。通期からQ1を引いた残期間は対象Q2と一致しない。独自経常利益も未算定。基準日時までの全開示確認を意味しない。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      },
+      {
+        "id": "g_fy_net",
+        "metric": "net_profit",
+        "value_ref": "guidance_fy_net",
+        "period_start": "2026-05-21",
+        "period_end": "2027-05-20",
+        "accounting_basis": "日本基準",
+        "scope": "連結",
+        "unit": "百万円",
+        "published_at": "2026-09-18",
+        "revision_status": "latest_confirmed",
+        "source_ids": [
+          "S06",
+          "S05"
+        ],
+        "locator": "S06 PDF page 1 親会社株主に帰属する当期純利益、S05 PDF page 1 据え置き記載",
+        "eligible": false,
+        "warnings": [
+          "会社予想の残期間が対象四半期と一致しないため比較対象外"
+        ],
+        "implied_quarter": null,
+        "forecast": null,
+        "large_gap": false,
+        "independent_review": {
+          "id": "g_fy_net",
+          "period_confirmed": true,
+          "revision_confirmed": true,
+          "explanation_status": "not_applicable",
+          "reason": "9月18日通期改定2600と11月12日時点据置を提示本文で確認。中間期2186との差414は下期の差引参考値であり、対象Q2予想ではない。独自純利益との乖離比較はできない。転載原本照合と後続開示網羅性は未確認。",
+          "source_ids": [
+            "S06",
+            "S05"
+          ],
+          "locator": "S06 PDF page 1；S05 PDF page 1",
+          "evidence_excerpt": "今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21"
+        },
+        "citation_verified": true
+      }
+    ],
+    "coverage_missing": [],
+    "resolved_review_findings": []
+  },
+  "issues": [
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "PRBXの連結除外後も製品販売・仕入取引が継続する。旧子会社の売上消失とPRBX製品売上の完全消失は同義ではなく、別建て追加販売ゼロの仮定が売上予測を下振れさせる可能性がある。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S01～S11の提示本文に短縮フラグはない。ただしPDF図表の抽出順が崩れている箇所があるため、不明瞭なグラフ数値やS07 page 12の純利益表の崩れた数値は採用していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S05・S11は転載PDF由来の保存本文であり、会社または取引所の直接原本との同一性は未確認。本文未提供ではなく、原本照合未実施という制約である。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "S07 page 4・24とS04 page 20の前年第2四半期直接表示は、累計差引による売上・営業利益と表示単位相当の差がある。会計版変更は確認されず、全比較をS02－S03の累計差引に統一した。直接表示値を混在させていない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: base",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bear",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "予測不足: bull",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "会計上の継続事業への遡及組替えは行っていない。比較実績はPRBXを含む公表連結値、対象予測は連結除外後を想定するため、連結範囲変化を製品別ブリッジに明示した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "基準日時までの訂正・追加開示の網羅性は未確認。外部検索・ツール・APIは使用していない。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Critical",
+      "category": "machine",
+      "message": "増減要因エラー: Finite number required",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "売上・営業利益のYoY/QnQ増減説明不足",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "独自営業利益はnull。前Q連結利益にはPRBXが含まれ、欧州セグメント利益からPRBXのみを分離できない。会社修正理由も原価率改善と経費時期の金額を開示しておらず、残存事業の原価と固定費を利益目標から逆算せずに限定する根拠が不足する。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "machine",
+      "message": "独自経常利益・純利益もnull。営業利益の独自推計が未成立で、為替差損益、譲渡関連特別損益、税効果の根拠ある範囲も不足する。会社予想差引値は別途保持した。",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "machine",
+      "message": "資料確認未了: subsequent_disclosures",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_unit_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_unit_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_unit_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_other_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_other_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_other_volume",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bear_price",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: base_price",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: bull_price",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "material_assumption",
+      "message": "重要仮定の裏付け未検証: forecast_prbx",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_h1_revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_h1_op",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_h1_ordinary",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_h1_net",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_fy_revenue",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_fy_op",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_fy_ordinary",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance_metadata",
+      "message": "会社予想比較の条件: g_fy_net",
+      "source_ids": "",
+      "locator": "",
+      "citation_verified": ""
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "数量・構成6係数と価格3係数に採用数値の原文根拠がない。シナリオを会社が示した予測幅、統計的区間、検証済み中心値として扱えない。納期別受注残、出荷能力、価格改定対象と浸透率による係数設定根拠が必要。",
+      "source_ids": "['S04']",
+      "locator": "PDF pages 12、13",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "assumption",
+      "message": "PRBX項目のYoY-1185、QnQ-1226は製品別売上全額の除去であり、純粋な連結範囲変更額としては未検証。旧子会社の外部売上、残存会社のPRBX製品販売、旧内部取引の外部化を区別する必要がある。残存売上の金額を推測で加算する修正も認められない。",
+      "source_ids": "['S01', 'S09']",
+      "locator": "S01 PDF page 5；S09 PDF page 13",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "High",
+      "category": "residual",
+      "message": "全シナリオの営業・経常・純利益が未算定。営業利益ブリッジのeconomic_unexplainedは未定量を表し、ゼロ残差でも全差額を数値把握した状態でもない。原価率、固定費、営業外損益、譲渡関連損益・税効果の積上げが必要。",
+      "source_ids": "['S05']",
+      "locator": "PDF page 1；model.scenarios・bridges",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "other",
+      "message": "Finite number requiredおよびNoneTypeの減算エラーは欠損値処理の問題であり、財務数値の重大な誤りを証明しない。独自予測欠損時は比較不能として保持し、会社差引参考値580・617・1525の算出と独自予測との比較処理を分離する。ゼロ補完は不可。",
+      "source_ids": "['S01', 'S05']",
+      "locator": "S01 PDF page 9；S05 PDF page 1；recalculation.errors・company_guidance_comparisons",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Low",
+      "category": "residual",
+      "message": "QnQの-2は製品表示額7812と連結7814の差で、百万円未満切捨てと整合する。前年累計製品合計11132とQ1製品合計5073は各連結合計より2小さく、差引で相殺するためYoY算術残差は0。会計基準変更による調整ではない。前年Q2直接表示6058・営業損失269と累計差引6059・営業損失270の1差も表示丸めと整合し、累計差引値を誤入力とは判定しない。",
+      "source_ids": "['S01', 'S02', 'S03', 'S07']",
+      "locator": "S01～S03 PDF pages 1、5；S02・S03 PDF page 9；S07 PDF pages 4、24",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "company_name": "コーセル株式会社",
+      "severity": "Medium",
+      "category": "guidance",
+      "message": "中間期4候補の期間・11月12日改定、通期4候補の9月18日改定・11月12日時点据置は本文で確認可能。これを原本照合未了や最新開示の網羅性と混同しない。会社予想との売上差は小さくても、採用係数や残存取引の妥当性は未証明。",
+      "source_ids": "['S05', 'S06']",
+      "locator": "S05・S06 PDF page 1",
+      "citation_verified": "True"
+    }
+  ],
+  "assumptions": [
+    {
+      "code": "6905",
+      "id": "bear_unit_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.15",
+      "unit": "倍",
+      "rationale": "前Qのユニット電源売上を基準とする数量・構成指数。半導体製造装置需要と受注残を背景に15%増を仮定するが、先行手配と部材制約から受注の急増率は売上に延長しない。S01 page 5、S04 pages 7、13に依拠。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "1",
+      "independent_review": "{\"id\": \"bear_unit_volume\", \"status\": \"unsupported\", \"reason\": \"需要回復は確認できるが、前Q比15%という数量・構成増加率の裏付けはない。受注の先行手配分と対象四半期の出荷を区別する資料が必要。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 13\", \"evidence_excerpt\": \"顧客の先行手配による受注急増といった状況となりました。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "base_unit_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.2",
+      "unit": "倍",
+      "rationale": "ユニット電源の数量・構成指数を前Q比20%増とする。値上げ前売上は前Q末受注残を十分下回り、半導体製造装置需要の売上化と増産対応を条件とする。S01 pages 4、5、S04 page 13。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "2",
+      "independent_review": "{\"id\": \"base_unit_volume\", \"status\": \"unsupported\", \"reason\": \"受注残8172は確認できるが、20%増の出荷を保証する納期別残高・生産能力の開示はない。受注残以下という条件は採用係数の証明にならない。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 5\", \"evidence_excerpt\": \"ユニット電源 7,357 219.2％ 8,172 144.3％\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "bull_unit_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.25",
+      "unit": "倍",
+      "rationale": "ユニット電源の数量・構成指数を前Q比25%増とする。旺盛な受注残の消化が進み、部材確保と増産が円滑な場合の上限側仮定。受注残全額の売上化は見込まない。S01 pages 4、5。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "3",
+      "independent_review": "{\"id\": \"bull_unit_volume\", \"status\": \"unsupported\", \"reason\": \"25%増を上限側とする根拠や実現能力の検証がない。原文は供給懸念も示しており、受注増だけで出荷率を設定できない。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 4\", \"evidence_excerpt\": \"急速な需要拡大によりメモリやプリント基板等の供給懸念\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "bear_other_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.1",
+      "unit": "倍",
+      "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比10%増とする。両製品の受注残とFAの在庫消化を根拠とし、ユニット電源より慎重な売上化を仮定。S01 page 5、S04 page 3。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "4",
+      "independent_review": "{\"id\": \"bear_other_volume\", \"status\": \"unsupported\", \"reason\": \"FA回復という方向性は支持されるが、オンボードとフィルタに共通の10%増を適用する定量根拠はない。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 3\", \"evidence_excerpt\": \"FA関連を中心に、顧客の在庫消化が進み回復\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "base_other_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.15",
+      "unit": "倍",
+      "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比15%増とする。受注残の裏付けと中国生産ライン増強を条件とした仮定。S01 page 5。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "5",
+      "independent_review": "{\"id\": \"base_other_volume\", \"status\": \"unsupported\", \"reason\": \"中国生産ラインの増強は確認できるが、増産能力・稼働時期・製品配分を示さず、両製品共通の15%増を裏付けない。\", \"source_ids\": [\"S01\"], \"locator\": \"PDF page 5\", \"evidence_excerpt\": \"「ＦＤＡシリーズ」４モデル及び「ＰＪＡシリーズ」３モデルの生産ラインの整備・増強\\nを実施いたしました。\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "bull_other_volume",
+      "category": "数量・単価",
+      "adopted_value": "1.2",
+      "unit": "倍",
+      "rationale": "オンボード電源とノイズフィルタの数量・構成指数を前Q比20%増とする。FA回復と受注残消化が円滑な場合を想定。S01 page 5、S04 page 3。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "6",
+      "independent_review": "{\"id\": \"bull_other_volume\", \"status\": \"unsupported\", \"reason\": \"受注回復は確認できるが、20%増という数量・構成指数、両製品の同率成長、強気側の上限設定を支持する数値はない。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 3\", \"evidence_excerpt\": \"FA関連は、顧客の在庫消化に加え、AI関連需要増により堅調に推移\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "bear_price",
+      "category": "数量・単価",
+      "adopted_value": "1.01",
+      "unit": "倍",
+      "rationale": "S04 page 12の第2四半期からの値上げを、製品売上全体に対する実効価格効果1%として仮定。公表された改定率ではなく、既受注品への適用遅れを含む弱気条件。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "7",
+      "independent_review": "{\"id\": \"bear_price\", \"status\": \"unsupported\", \"reason\": \"Q2からの値上げは確認できるが、改定率・対象売上・適用時期が不明であり、実効1%は裏付けられない。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 12\", \"evidence_excerpt\": \"今期２Qからの製品の値上げ効\\n果\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "base_price",
+      "category": "数量・単価",
+      "adopted_value": "1.02",
+      "unit": "倍",
+      "rationale": "S04 page 12の値上げ開始に基づく実効価格効果2%の条件付き仮定。製品別改定率と適用対象は非開示であり、精密な推定ではない。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "8",
+      "independent_review": "{\"id\": \"base_price\", \"status\": \"unsupported\", \"reason\": \"値上げ開始の一般的説明は実効2%の証拠にならない。協業製品を含む対象3区分への一律適用も未確認。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 12\", \"evidence_excerpt\": \"今期２Qからの製品の値上げ効\\n果\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "bull_price",
+      "category": "数量・単価",
+      "adopted_value": "1.03",
+      "unit": "倍",
+      "rationale": "値上げの浸透が比較的早い場合に実効価格効果3%を仮定。S04 page 12。数量・構成指数にはこの価格効果を含めない。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "9",
+      "independent_review": "{\"id\": \"bull_price\", \"status\": \"unsupported\", \"reason\": \"浸透が早い場合に実効3%となる計算根拠はない。数量・構成指数から価格を除いたというモデル上の宣言だけでは、実際の効果分離を証明できない。\", \"source_ids\": [\"S04\"], \"locator\": \"PDF page 12\", \"evidence_excerpt\": \"今期２Qからの製品の値上げ効\\n果\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "forecast_prbx",
+      "category": "連結・事業売却",
+      "adopted_value": "0",
+      "unit": "百万円",
+      "rationale": "S01 page 12の第2四半期からの連結除外に従い、旧PRBX子会社の外部売上を追加しない。譲渡後の仕入販売継続はS09 page 13に記載されるが、独立したPRBX製品再販売額は不明のため別建て加算をゼロとする条件。",
+      "source_ids": "[]",
+      "context_source_ids": "[]",
+      "locator": "",
+      "support_status": "未検証",
+      "alternative_scenarios": "[]",
+      "alternative_note": "営業利益予測が未算定のため利益感応度も未算定。ゼロとは扱わない。",
+      "max_absolute_profit_change": "",
+      "relative_to_forecast_profit": "",
+      "near_zero_profit": "False",
+      "material": "True",
+      "affects_base_profit": "False",
+      "declared_material": "True",
+      "sensitivity_material": "False",
+      "sensitivity_status": "forecast_unavailable",
+      "sensitivity_constraint": "",
+      "priority": "10",
+      "independent_review": "{\"id\": \"forecast_prbx\", \"status\": \"unsupported\", \"reason\": \"旧子会社の連結除外は支持されるが、継続する仕入販売の外部売上、既存製品区分への包含、消去解除の影響は不明。別建て加算ゼロを支持する数値はない。ただし継続取引の存在だけで別建て額が必ず正になるとも断定できず、contradictedとはしない。\", \"source_ids\": [\"S01\", \"S09\", \"S10\"], \"locator\": \"S01 PDF page 12；S09 PDF page 13；S10 PDF page 1\", \"evidence_excerpt\": \"譲渡後も製品販売・仕入取引等を継続\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "guidance": [
+    {
+      "code": "6905",
+      "id": "g_h1_revenue",
+      "metric": "revenue",
+      "value_ref": "guidance_h1_revenue",
+      "period_start": "2026-05-21",
+      "period_end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-11-12",
+      "revision_status": "unverified",
+      "source_ids": "[\"S05\"]",
+      "locator": "PDF page 1 中間期連結今回修正予想",
+      "eligible": "True",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\"]",
+      "implied_quarter": "7916.0",
+      "forecast": "7945.035",
+      "company_cumulative_forecast": "15730.0",
+      "actual_cumulative": "7814",
+      "actual_source_ids": "[\"S01\"]",
+      "difference": "29.034999999999854",
+      "relative_difference": "0.0036678878221323716",
+      "large_gap": "False",
+      "explanation_status": "未検証",
+      "independent_review": "{\"id\": \"g_h1_revenue\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"unexplained\", \"reason\": \"提示S05本文で2026年5月21日～11月20日の連結予想と11月12日改定を確認。Q1控除後7916に対し弱気-381.4505、中心+29.035、強気+446.1065。差額は算術的に正しいが、会社側の数量・価格前提との対応がなく経済的な乖離説明は未成立。近接自体は妥当性の証拠ではない。revision_confirmedは提示本文内の改定確認であり、原本同一性・後続開示の網羅性を保証しない。\", \"source_ids\": [\"S05\", \"S01\"], \"locator\": \"S05 PDF page 1；S01 PDF page 9\", \"evidence_excerpt\": \"2027 年5 月期第2 四半期（中間期）連結業績予想の修正（2026 年5 月21 日～2026 年11 月20 日）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_h1_op",
+      "metric": "operating_profit",
+      "value_ref": "guidance_h1_op",
+      "period_start": "2026-05-21",
+      "period_end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-11-12",
+      "revision_status": "unverified",
+      "source_ids": "[\"S05\"]",
+      "locator": "PDF page 1 中間期連結今回修正予想",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"unsupported operand type(s) for -: 'NoneType' and 'float'\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_h1_op\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"S05本文の11月12日中間期改定1125からQ1の545を控除した580は正しい参考値。独自利益がnullのため乖離比較は成立しない。原本照合・最新性網羅確認は別途未了。\", \"source_ids\": [\"S05\", \"S01\"], \"locator\": \"S05 PDF page 1；S01 PDF page 9\", \"evidence_excerpt\": \"今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_h1_ordinary",
+      "metric": "ordinary_profit",
+      "value_ref": "guidance_h1_ordinary",
+      "period_start": "2026-05-21",
+      "period_end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-11-12",
+      "revision_status": "unverified",
+      "source_ids": "[\"S05\"]",
+      "locator": "PDF page 1 中間期連結今回修正予想",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"unsupported operand type(s) for -: 'NoneType' and 'float'\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_h1_ordinary\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"S05本文の11月12日中間期改定1197からQ1の580を控除した617は正しい参考値。独自経常利益がnullで乖離評価対象なし。原本同一性と後続訂正の有無は未確認。\", \"source_ids\": [\"S05\", \"S01\"], \"locator\": \"S05 PDF page 1；S01 PDF page 9\", \"evidence_excerpt\": \"今回修正予想（Ｂ） 15,730 1,125 1,197 2,186 53.14\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_h1_net",
+      "metric": "net_profit",
+      "value_ref": "guidance_h1_net",
+      "period_start": "2026-05-21",
+      "period_end": "2026-11-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-11-12",
+      "revision_status": "unverified",
+      "source_ids": "[\"S05\"]",
+      "locator": "PDF page 1 親会社株主に帰属する中間純利益",
+      "eligible": "False",
+      "warnings": "[\"予想改定・据置の最新確認状態が未検証\", \"unsupported operand type(s) for -: 'NoneType' and 'float'\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_h1_net\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"S05本文の11月12日中間期改定2186からQ1の661を控除した1525は正しい参考値。譲渡会計・税効果を含み、営業利益に通常税率を適用した値ではない。独自純利益がnullで乖離評価対象なし。原本同一性・最新性の確認限界は残る。\", \"source_ids\": [\"S05\", \"S01\"], \"locator\": \"S05 PDF page 1；S01 PDF page 9\", \"evidence_excerpt\": \"の株式譲渡に伴う会計処理および税効果会計の影響について精査を進めた結果\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_fy_revenue",
+      "metric": "revenue",
+      "value_ref": "guidance_fy_revenue",
+      "period_start": "2026-05-21",
+      "period_end": "2027-05-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-18",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S06\", \"S05\"]",
+      "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "7945.035",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_fy_revenue\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"S06の9月18日通期改定31800とS05の11月12日時点据置を提示本文内で確認。通期期間は確認できるが、Q1控除後はQ2～Q4であり対象Q2単独と不一致。最新性確認は提示資料内に限定される。\", \"source_ids\": [\"S06\", \"S05\"], \"locator\": \"S06 PDF page 1；S05 PDF page 1\", \"evidence_excerpt\": \"2027年５月期通期連結業績予想の修正（2026年５月21日～2027年５月20日）\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_fy_op",
+      "metric": "operating_profit",
+      "value_ref": "guidance_fy_op",
+      "period_start": "2026-05-21",
+      "period_end": "2027-05-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-18",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S06\", \"S05\"]",
+      "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_fy_op\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"9月18日通期改定2300と11月12日時点据置を確認。対象期間は通期でQ2単独との比較には使えない。中間期上方修正後も通期据置であるため、旧下期予想1330を最新中間期予想へ足すこともできない。原本照合と後続開示の網羅性は未確認。\", \"source_ids\": [\"S06\", \"S05\"], \"locator\": \"S06 PDF page 1；S05 PDF page 1\", \"evidence_excerpt\": \"今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_fy_ordinary",
+      "metric": "ordinary_profit",
+      "value_ref": "guidance_fy_ordinary",
+      "period_start": "2026-05-21",
+      "period_end": "2027-05-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-18",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S06\", \"S05\"]",
+      "locator": "S06 PDF page 1 通期連結今回修正予想、S05 PDF page 1 据え置き記載",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_fy_ordinary\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"9月18日通期改定2400と11月12日時点据置を提示本文で確認。通期からQ1を引いた残期間は対象Q2と一致しない。独自経常利益も未算定。基準日時までの全開示確認を意味しない。\", \"source_ids\": [\"S06\", \"S05\"], \"locator\": \"S06 PDF page 1；S05 PDF page 1\", \"evidence_excerpt\": \"今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21\"}",
+      "citation_verified": "True"
+    },
+    {
+      "code": "6905",
+      "id": "g_fy_net",
+      "metric": "net_profit",
+      "value_ref": "guidance_fy_net",
+      "period_start": "2026-05-21",
+      "period_end": "2027-05-20",
+      "accounting_basis": "日本基準",
+      "scope": "連結",
+      "unit": "百万円",
+      "published_at": "2026-09-18",
+      "revision_status": "latest_confirmed",
+      "source_ids": "[\"S06\", \"S05\"]",
+      "locator": "S06 PDF page 1 親会社株主に帰属する当期純利益、S05 PDF page 1 据え置き記載",
+      "eligible": "False",
+      "warnings": "[\"会社予想の残期間が対象四半期と一致しないため比較対象外\"]",
+      "implied_quarter": "",
+      "forecast": "",
+      "company_cumulative_forecast": "",
+      "actual_cumulative": "",
+      "actual_source_ids": "",
+      "difference": "",
+      "relative_difference": "",
+      "large_gap": "False",
+      "explanation_status": "",
+      "independent_review": "{\"id\": \"g_fy_net\", \"period_confirmed\": true, \"revision_confirmed\": true, \"explanation_status\": \"not_applicable\", \"reason\": \"9月18日通期改定2600と11月12日時点据置を提示本文で確認。中間期2186との差414は下期の差引参考値であり、対象Q2予想ではない。独自純利益との乖離比較はできない。転載原本照合と後続開示網羅性は未確認。\", \"source_ids\": [\"S06\", \"S05\"], \"locator\": \"S06 PDF page 1；S05 PDF page 1\", \"evidence_excerpt\": \"今回修正予想（Ｂ） 31,800 2,300 2,400 2,600 63.21\"}",
+      "citation_verified": "True"
+    }
+  ],
+  "scheduleCheck": {
+    "code": "6905",
+    "input_date": "2026-12-18",
+    "official_date": "2026-12-18",
+    "declared_verified": "True",
+    "verified": "False",
+    "evidence": "公式IRカレンダーに「2026/12/18 2027年5月期第2四半期決算発表」と記載。https://www.cosel.com/ir/ircalendar/calendar/ 。2026年11月12日の業績予想修正資料本文にも同日の中間期決算発表予定を記載。https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261112/20261112574799.pdf",
+    "warnings": "[]"
+  },
+  "sourceHashes": {
+    "companies/6905/result.json": "2cdc0aa580b8923ec7ea618a336d97efaca8c5f64031aab3f336e778d4726f31",
+    "reports/6905.md": "4f2bffda8600cbbb981e6e3205eb7f0946bbac4086856b089314c60775c3af5d",
+    "reports/6905_review.md": "38ba42219d68a85b4a61337cbfc107df60dc2c5774c75ac4ef12218156d8563e",
+    "companies/6905/quality_review.json": "5ce30b21275af4b33689190150273976136d25fec4da0d99557fcb71f1c940f8",
+    "companies/6905/independent_review.json": "aa7cc1a7cc4f4f875d17739f0a9f6383495d77c5637358c1e01e86e539f76855"
+  }
+}
